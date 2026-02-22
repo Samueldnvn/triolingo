@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity - Module 10: Defensive Strategies</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="light-theme">
+    <div class="main-wrapper">
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="page-header">
+                    <h1 class="page-title">MODULE 10</h1>
+                    <p class="page-subtitle">Defensive Strategies</p>
+                </div>
+
+                <div class="content-card">
+                    <h2 class="module-header">Introduction</h2>
+                    <p style="margin-bottom: 16px;">
+                        Defensive strategies integrate all cybersecurity capabilities into comprehensive, layered protection. Defense in depth, security frameworks, continuous monitoring, and continuous improvement form the foundation of organizational resilience. This final module synthesizes concepts from all previous modules into practical, implementable defensive strategies.
+                    </p>
+                </div>
+
+                <div class="alert-box critical">
+                    <div class="alert-label">Critical: Defense in Depth</div>
+                    <div class="alert-content>
+                    Defense in depth is the practice of layered security controls so that if one control fails, another provides protection. No single security measure provides complete protection. Layering controls (technical, administrative, physical) across multiple defense layers (network, host, application, data) increases overall resilience. Assume any one security control may fail and design accordingly.
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 1: Security Frameworks -->
+                <div id="section-frameworks">
+                    <h2 class="section-header">Security Frameworks</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Security frameworks provide structured approaches to implementing and managing cybersecurity programs. Frameworks translate abstract security goals into actionable controls and metrics.
+                    </p>
+
+                    <h3 class="subsection-header">NIST Cybersecurity Framework</h3>
+
+                    <div class="definition-box">
+                        <div class="definition-label">NIST CSF Functions</div>
+                        <div class="definition-content">
+                        <strong>Identify:</strong> Develop understanding to manage cybersecurity risk (asset management, business environment, governance, risk assessment)
+
+                        <strong>Protect:</strong> Develop and implement safeguards (identity management, access control, data security, protective technology)
+
+                        <strong>Detect:</strong> Identify cybersecurity events (anomalies and events, security continuous monitoring, detection processes)
+
+                        <strong>Respond:</strong> Take action (response planning, communications, analysis, mitigation, improvements)
+
+                        <strong>Recover:</strong> Restore capabilities (recovery planning, improvements, communications
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">ISO/IEC 27001</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        ISO/IEC 27001 is international standard for information security management systems (ISMS). Certification demonstrates compliance with international best practices.
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>ISMS:</strong> Information Security Management System - systematic approach to managing sensitive information</li>
+                        <li><strong>Controls:</strong> 114 controls across 14 domains (information security policies, organization of information security, human resource security)</li>
+                        <li><strong>Certification:</strong> External audit and certification process</li>
+                        <li><strong>Benefits:</strong> International recognition, customer confidence, regulatory compliance</li>
+                        <li><strong>Scope:</strong> Applicable to any organization requiring formalized security program</li>
+                    </ul>
+
+                    <h3 class="subsection-header">CIS Controls</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Center for Internet Security (CIS) Controls provide prioritized list of security actions.
+                    </p>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">CIS v8 Controls (Prioritized)</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Critical Controls (IG1):</strong> "Cyber Hygiene" - foundational for all organizations</li>
+                            <li><strong>Advanced Controls (IG2):</strong> Additional controls for organizations with higher security requirements</li>
+                            <li><strong>Expert Controls (IG3):</strong> Additional controls for organizations with mature security programs</li>
+                        </ul>
+                    </div>
+
+                    <div class="note-box">
+                        <div class="note-label">CIS v8 Top Controls</div>
+                        <div class="note-content">
+                        <strong>01:</strong> Inventory and Control of Enterprise Assets
+                        <strong>02:</strong> Inventory and Control of Software Assets
+                        <strong>03:</strong> Data Protection
+                        <strong>04:</strong> Secure Configuration
+                        <strong>05:</strong> Account Management
+                        <strong>06:</strong> Access Control Management
+                        <strong>07:</strong> Continuous Vulnerability Management
+                        <strong>08:</strong> Audit Log Management
+                        <strong>09:</strong> Email and Web Browser Protections
+                        <strong>10:</strong> Malware Defenses
+                        <strong>11:</strong> Data Recovery
+                        <strong>12:</strong> Network Infrastructure Management
+                        <strong>13:</strong> Network Device Monitoring
+                        <strong>14:</strong> Network Segmentation
+                        <strong>15:</strong> Wireless Access Control
+                        <strong>16:</strong> Application Security
+                        <strong>17:</strong> Incident Response Management
+                        <strong>18:</strong> Penetration Testing
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Choosing a Framework</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Mandatory frameworks:</strong> Some industries require specific frameworks (PCI DSS for payment cards, HIPAA for healthcare, SOX for publicly traded companies)</li>
+                        <li><strong>Voluntary frameworks:</strong> NIST CSF, ISO 27001, CIS Controls - choose based on organizational maturity, risk profile, and customer requirements</li>
+                        <li><strong>Hybrid approaches:</strong> Many organizations use multiple frameworks (NIST CSF for internal program, ISO 27001 for customer demonstrations)</li>
+                        <li><strong>Size considerations:</strong> Smaller organizations may use CIS Critical Controls; larger organizations may implement ISO 27001 certification</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 2: Monitoring and SOC -->
+                <div id="section-monitoring">
+                    <h2 class="section-header">Security Monitoring and SOC</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Security monitoring provides visibility into security posture, detects incidents early, and enables timely response. Security Operations Center (SOC) is central hub for monitoring, detection, and response.
+                    </p>
+
+                    <h3 class="subsection-header">SOC Functions</h3>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Level 1 (Tier 1): SOC Analysts</h4>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li>Monitor security tools and SIEM alerts</li>
+                            <li>Triage alerts (investigate, classify, escalate if necessary)</li>
+                            <li>Handle simple security incidents (password resets, account lockouts)</li>
+                            <li>Escalate complex or critical incidents to Level 2</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Level 2 (Tier 2): Security Analysts</h4>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li>Investigate escalated incidents from Level 1</li>
+                            <li>Perform forensic analysis and evidence collection</li>
+                            <li>Perform threat hunting (proactively search for threats)</li>
+                            <li>Lead containment and remediation for incidents</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Level 3 (Tier 3): Senior Security Analysts</h4>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li>Handle most complex security incidents</li>
+                            <li>Perform advanced forensics and malware analysis</li>
+                            <li>Develop detection rules and playbooks</li>
+                            <li>Liaise with law enforcement and external vendors</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">SOC Manager</h4>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li>Overall SOC operations and strategy</li>
+                            <li>Resource allocation and staffing</li>
+                            <li>KPI tracking and process improvement</li>
+                            <li>Liaison with other departments (IT, legal, PR)</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="subsection-header">SOC Metrics and KPIs</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Mean Time to Detect (MTTD):</strong> Average time from incident start to detection</li>
+                        <li><strong>Mean Time to Respond (MTTR):</strong> Average time to contain and remediate incidents</li>
+                        <li><strong>False positive rate:</strong> Percentage of alerts that are not actual incidents (target: minimize)</li>
+                        <li><strong>Alert triage time:</strong> Average time to investigate and classify alerts</li>
+                        <li><strong>Incident closure rate:</strong> Percentage of incidents resolved within SLA</li>
+                    </ul>
+
+                    <div class="alert-box">
+                        <div class="alert-label">SOC Maturity Levels</div>
+                        <div class="alert-content">
+                        <strong>Initial:</strong> Ad-hoc monitoring, no formalized processes
+
+                        <strong>Repeatable:</strong> Formalized processes and procedures exist
+
+                        <strong>Defined:</strong> Comprehensive security program, documented procedures
+
+                        <strong>Managed:</strong> Security controls measured, quantitative improvement tracked
+
+                        <strong>Optimized:</strong> Continuous improvement, optimized processes, automation
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Managed SOC Options</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>In-house SOC:</strong> Organization builds internal SOC (highest control, highest cost)</li>
+                        <li><strong>Managed Security Service Provider (MSSP):</strong> Outsource monitoring to provider (lower cost, less control)</li>
+                        <li><strong>Hybrid:</strong> In-house SOC for critical response, MSSP for routine monitoring</li>
+                        <li><strong>MSP vs MSSP:</strong> MSP provides IT services; MSSP specifically provides security monitoring</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 3: Threat Intelligence -->
+                <div id="section-threat-intel">
+                    <h2 class="section-header">Threat Intelligence</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Threat intelligence provides context about potential and current threats, enabling proactive defense. Effective threat intelligence transforms raw data into actionable intelligence.
+                    </p>
+
+                    <h3 class="subsection-header">Threat Intelligence Levels</h3>
+
+                    <div class="definition-box">
+                        <div class="definition-label">Pyramid of Pain (Intelligence Types)</div>
+                        <div class="definition-content">
+                        <strong>Hash values:</strong> File and binary hashes. Easiest for adversaries to change, provides least long-term value.
+
+                        <strong>IP addresses:</strong> C2 server IPs, scan sources. Moderately easy for adversary to change.
+
+                        <strong>Domain names:</strong> C2 domains, phishing domains. Harder for adversary to change.
+
+                        <strong>Network/host artifacts:</strong> Registry keys, file paths, mutexes. Difficult for adversary to change.
+
+                        <strong>Tools:</strong> Malware toolkits used. Harder for adversary to change.
+
+                        <strong>TTPs (Tactics, Techniques, Procedures):</strong> Attack methodology. Most difficult for adversary to change - provides most long-term detection value.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Threat Intelligence Sources</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Open Source Intelligence (OSINT):</strong> Vulnerability feeds (CVE), CISA alerts, security blogs, social media (Twitter #infosec)</li>
+                        <li><strong>Commercial threat intelligence:</strong> Recorded Future, Anomali ThreatStream, CrowdStrike Falcon X</li>
+                        <li><strong>Information sharing:</strong> ISACs (Information Sharing and Analysis Centers), FS-ISAC, Auto-ISAC</li>
+                        <li><strong>Government sources:</strong> CISA, FBI InfraGard, NCSC (UK), CERTs</li>
+                        <li><strong>In-house threat intelligence:</strong> Internal telemetry, incident history</li>
+                    </ul>
+
+                    <h3 class="subsection-header">MITRE ATT&CK Framework</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        MITRE ATT&CK is adversary tactics and techniques knowledge base used for threat hunting and detection rule development.
+                    </p>
+
+                    <div class="code-block">
+                        <code># ATT&CK Tactics (14 tactics)
+# T001 Initial Access
+# T002 Execution
+# T003 Persistence
+# T004 Privilege Escalation
+# T005 Defense Evasion
+# T006 Credential Access
+# T007 Discovery
+# T008 Lateral Movement
+# T009 Collection
+# T010 Exfiltration
+# T011 Command and Control
+# T012 Exfiltration
+# T013 Impact
+
+# Example: Techniques under Command and Control
+T1001 Data Obfuscation
+T1003 Application Layer Protocol
+T1071 Standard Application Layer Protocol
+
+# ATT&CK Navigator allows visualizing and mapping techniques</code>
+                    </div>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Adversary emulation:</strong> Use ATT&CK tactics to test detection capabilities</li>
+                        <li><strong>Detection rule development:</strong> Map ATT&CK techniques to SIEM and EDR detection rules</li>
+                        <li><strong>Threat hunting:</strong> Search for evidence of specific ATT&CK techniques</li>
+                        <li><strong>Red teaming:</strong> Red teams select ATT&CK techniques to emulate realistic adversary behaviors</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 4: Vulnerability Management -->
+                <div id="section-vuln-mgmt">
+                    <h2 class="section-header">Vulnerability Management</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Vulnerability management identifies, classifies, prioritizes, and remediates vulnerabilities to reduce attack surface. Effective vulnerability management requires continuous assessment and remediation processes.
+                    </p>
+
+                    <h3 class="subsection-header">Vulnerability Detection</h3>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Vulnerability Scanning</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Credentials required:</strong> Scan requires credentials to log into hosts for accurate vulnerability detection</li>
+                            <li><strong>Port scanning:</strong> Identifies open ports and services</li>
+                            <li><strong>Vulnerability identification:</strong> Matches services against vulnerability database</li>
+                            <li><strong>Tools:</strong> Nessus, Qualys, Rapid7, OpenVAS</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Penetration Testing</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Authorized, ethical hacking:</strong> Simulates real-world attack to identify exploitable vulnerabilities</li>
+                            <li><strong>Types:</strong> Black box (no prior knowledge), Grey box (partial knowledge), White box (full knowledge)</li>
+                            <li><strong>Internal vs external:</strong> External tests internet-facing infrastructure; internal tests internal network access</li>
+                            <li><strong>Value:</strong> Finds logic errors and vulnerabilities scanners miss</li>
+                            <li><strong>Reporting:</strong> Comprehensive report with findings, risk ratings, and remediation recommendations</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="subsection-header">Vulnerability Prioritization</h3>
+
+                    <div class="definition-box">
+                        <div class="definition-label">CVSS v3 Scoring</div>
+                        <div class="definition-content">
+                        <strong>CVSS (Common Vulnerability Scoring System) standardizes vulnerability severity ratings</strong>
+
+                        <strong>Base score (0.0 - 10.0):</strong> Intrinsic vulnerability characteristics (exploitability impact)
+
+                        <strong>Severity levels:</strong>
+                        - None: 0.0
+                        - Low: 0.1 - 3.9
+                        - Medium: 4.0 - 6.9
+                        - High: 7.0 - 8.9
+                        - Critical: 9.0 - 10.0
+                        </div>
+                    </div>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Prioritization factors:</strong> CVSS score, exploit availability, criticality of affected system, ease of exploitation, potential impact</li>
+                        <li><strong>Risk-based approach:</strong> Prioritize vulnerabilities that matter most to your organization (not just highest CVSS)</li>
+                        <li><strong>Zero-day vulnerabilities:</strong> Immediate priority if exploit available (no patch exists)</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Remediation</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Software updates:</strong> Patch to vulnerable version (remediation)</li>
+                        <li><strong>Workarounds:</strong> Disable vulnerable service (mitigation) until patch available</li>
+                        <li><strong>Compensating controls:</strong> Add network segmentation, additional monitoring (risk acceptance)</li>
+                        <li><strong>Exceptions:</strong> Documented exceptions for critical systems that cannot be patched immediately</li>
+                    </ul>
+
+                    <div class="alert-box critical">
+                        <div class="alert-label">Critical: Patch Management</div>
+                        <div class="alert-content">
+                        Effective vulnerability management requires prioritization and risk-based approach. Not all vulnerabilities need immediate remediation. Apply patches based on CVSS score, exploit availability, criticality of affected system, and organizational risk tolerance. Document exceptions and acceptance of risk when system cannot be patched.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 5: Security Awareness -->
+                <div id="section-awareness">
+                    <h2 class="section-header">Security Awareness Training</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Security awareness program trains employees to recognize and respond to security threats. People are often the weakest link in security - effective training reduces employee vulnerabilities.
+                    </p>
+
+                    <h3 class="subsection-header">Training Components</h3>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Initial Training</h4>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li>Security policies and procedures</li>
+                            <li>Phishing recognition (suspicious emails, URLs, attachments)</li>
+                            <li>Data handling and classification</li>
+                            <li>Physical security (badges, visitors, unattended devices)</li>
+                            <li>Mobile device security (BYOD policies, lost devices)</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px">Regular Refreshers</h4>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li>Quarterly or monthly micro-training (5-10 minutes)</li>
+                            <li>Current threat landscape updates</li>
+                            <li>New policies and procedures</li>
+                            <li>Real-world incident case studies</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px">Phishing Simulations</h4>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li>Simulated phishing attacks sent to employees</li>
+                            <li>Measure click rates and report rates</li>
+                            <li>Provide immediate feedback if employee clicks (educational, not punitive)</li>
+                            <li>Track improvement over time</li>
+                            <li>Simulate various phishing types (deceptive, spear phishing, Business Email Compromise)</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="subsection-header">Building Security Culture</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Leadership support:</strong> Executives must model security-conscious behavior</li>
+                        <li><strong>No blame culture:</strong> Focus on learning, not punishment for false positives or minor failures</li>
+                        <li><strong>Recognition:</strong> Reward and recognize security-conscious behavior</li>
+                        <li><strong>Engagement:</strong> Make training relevant and engaging (gamification, real-world examples)</li>
+                        <li><strong>Metrics:</strong> Track and report security awareness improvements</li>
+                    </ul>
+
+                    <div class="note-box">
+                        <div class="note-label">Training Frequency</div>
+                        <div class="note-content">
+                        <strong>Initial:</strong> Onboarding training for all employees
+
+                        <strong>Periodic:</strong> Annual refresher training
+
+                        <strong>Ongoing:</strong> Monthly micro-training or quarterly updates
+
+                        <strong>Triggered:</strong> When new threats emerge, immediately communicate with employees
+
+                        Training alone insufficient without supportive security culture and clear policies.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 6: Third-Party Risk Management -->
+                <div id="section-third-party">
+                    <h2 class="section-header">Third-Party Risk Management</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Third-party risk management identifies, assesses, and mitigates risk from vendors, suppliers, and partners. Third parties are increasingly common attack vectors (supply chain attacks).
+                    </p>
+
+                    <div class="alert-box critical">
+                        <div class="alert-label">Critical: Supply Chain Attacks</div>
+                        <div class="alert-content">
+                        Supply chain attacks target software vendors, service providers, or third-party components to compromise multiple organizations simultaneously. Examples:
+                        - SolarWinds (2020): Compromise of IT management software affected thousands of organizations
+                        - Kaseya (2021): MSP compromise affected downstream customers
+                        - Log4Shell (2021): Vulnerability in widely-used Java library
+                         Assess third-party security before integration and continuously monitor vendor security.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Third-Party Risk Assessment</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Vendor questionnaire:</strong> Assess security practices, certifications, controls</li>
+                        <li><strong>Security review:</strong> Review vendor security documentation (SOC 2 reports, penetration tests)</li>
+                        <li><strong>Risk classification:</strong> Classify vendors by risk tier based on access to data, criticality</li>
+                        <li><strong>Contractual requirements:</strong> Include security requirements in vendor contracts</li>
+                        <li><strong>Continuous monitoring:</strong> Monitor for vendor data breaches, CVEs in vendor software</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Vendor Tiering</h3>
+
+                    <div class="code-block">
+                        <code>Vendor Tiers (by risk and criticality):
+
+Tier 1 (Critical):
+- Access to sensitive data
+- Access to production systems
+- High financial/exposure if compromised
+- Require annual audit, penetration testing
+
+Tier 2 (High):
+- Access to non-sensitive data
+- Access to non-critical systems
+- Medium exposure if compromised
+- Require questionnaires, periodic review
+
+Tier 3 (Moderate):
+- Limited access
+- Minimal exposure
+- Require basic assessment
+
+Tier 4 (Low):
+- No access to data or systems
+- Low exposure
+- Minimal requirements</code>
+                    </div>
+
+                    <h3 class="subsection-header">Software Supply Chain Security</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Supply chain attack prevention:</strong> Vet open source dependencies, sign all software artifacts</li>
+                        <li><strong>Software composition analysis (SCA):</strong> Automated tool to scan code for third-party dependencies and known vulnerabilities</li>
+                        <li><strong>CI/CD security:</strong> Secure software development pipelines (branch protection, code review, signing artifacts)</li>
+                        <li><strong>SBOM (Software Bill of Materials):</strong> List of all software components in delivered product (enables rapid CVE response)</li>
+                        </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 7: Zero Trust Architecture -->
+                <div id="section-zero-trust">
+                    <h2 class="section-header">Zero Trust Architecture</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Zero Trust is security model based on principle "never trust, always verify." Zero Trust assumes breach and validates every request regardless of origin. Traditional perimeter-based security is replaced by per-request authentication and authorization.
+                    </p>
+
+                    <h3 class="subsection-header">Zero Trust Principles</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Verify explicitly:</strong> Always authenticate and authorize based on all available data points (identity, location, device, service)</li>
+                        <li><strong>Least privilege access:</strong> Grant minimum necessary access (just-in-time, just-enough access)</li>
+                        <li><strong>Assume breach:</strong> Design assuming adversary is already inside network</li>
+                        <li><strong>Microsegmentation:</strong> Segment network to limit lateral movement</li>
+                        <li><strong>Continuous monitoring:</strong> Monitor and verify security posture continuously</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Zero Trust Implementation</h3>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Identity Verification</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>MFA for all access:</strong> No exceptions, including internal network access</li>
+                            <li><strong>Conditional access policies:</strong> Require MFA for sensitive operations, block risky devices</li>
+                            <li><strong>Identity protection:</strong> Detect and respond to compromised credentials and accounts</li>
+                            <li><strong>Privileged access management (PAM):</strong> Just-in-time elevation for admin access</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Device Health</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Device compliance:</strong> Verify device health (patched, antivirus, security policies)</li>
+                            <li><strong>Device trust:</strong> Trust unknown/non-corporate devices less than known/corporate devices</li>
+                            <li><strong>BYOD policies:</strong> MDM (Mobile Device Management) for personal devices accessing corporate resources</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Network Segmentation</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Microsegmentation:</strong> Segment at application and workload level (not just network level)</li>
+                            <li><strong>Software-defined perimeters (SDP):</strong> Control access to applications before network connectivity established</li>
+                            <li><strong>Isolation:</strong> Isolate critical systems, databases, and applications</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="subsection-header">Zero Trust Benefits</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Reduced attack surface:</strong> Compromise of one system does not automatically grant access to others</li>
+                        <li><strong>Limited lateral movement:</strong> Attacker movement inside network constrained by continuous verification</li>
+                        <li><strong>Modern security posture:</strong> Accounts for cloud, mobile access, and remote work (traditional perimeter model insufficient)</li>
+                        <li><strong>Reduced risk from credential theft:</strong> MFA and device verification reduce impact of password compromise</li>
+                    </ul>
+
+                    <div class="alert-box">
+                        <div class="alert-label">Adoption Consideration</div>
+                        <div class="alert-content">
+                        Zero Trust is modern security model addressing current threat landscape and computing environment (cloud, mobile, remote work). Traditional perimeter-based security insufficient in modern environments. Implement Zero Trust gradually, starting with highest-risk systems and expanding over time.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div-->
+
+                <!-- Section 8: Measuring Security Success -->
+                <div id="section-measurement">
+                    <h2 class="section-header">Measuring Security Success</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Security effectiveness requires measurement. Metrics enable improvement, communicate security posture to leadership, and justify investment.
+                    </p>
+
+                    <h3 class="subsection-header">Leading vs Lagging Indicators</h3>
+
+                    <div class="definition-box">
+                        <div class="definition-label">Indicator Types</div>
+                        <div class="definition-content">
+                        <strong>Lagging indicators:</strong> Measure what has happened (incidents, breaches, vulnerabilities patched).
+                        - Number of security incidents
+                        - Time to patch critical vulnerabilities
+                        - Number of phishing attacks successful
+                        - Compliance audit results
+
+                        <strong>Leading indicators:</strong> Predict future security posture.
+                        - Security awareness training completion rates
+                        - MFA adoption rate
+                        - Vulnerability scan coverage
+                        - Patch management coverage
+                        - Number of security controls implemented
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Key Security Metrics</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>MTTD and MTTR:</strong> Mean Time to Detect and Mean Time to Respond (lower is better)</li>
+                        <li><strong>Vulnerability remediation SLA:</strong> Percentage of critical vulnerabilities patched within SLA</li>
+                        <li><strong>Phishing simulation results:</strong> Click rate improvement over time</li>
+                        <li><strong>Training completion:</strong> Percentage of employees completing security awareness training</li>
+                        <li><strong>Security controls coverage:</strong> Percentage of systems with required controls in place</li>
+                        <li><strong>False positive rate:</strong> Percentage of alerts that are false positives (target: minimize)</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Risk-Based Metrics</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Risk reduction over time:</strong> Quantified reduction in cyber risk (qualitative or quantitative)</li>
+                        <li><strong>Cybersecurity insurance premiums:</strong> Lower premiums indicate improved security posture</li>
+                        <li><strong>Audit findings:</strong> Number of findings decreasing over time</li>
+                        <li><strong>Penetration testing results:</strong> Number and severity of vulnerabilities decreasing over time</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 9: Continuous Improvement -->
+                <div id="section-continuous-improvement">
+                    <h2 class="section-header">Continuous Improvement</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Security is continuous improvement process, not one-time goal. Threats evolve, new vulnerabilities emerge, and technology changes. Mature security organizations continuously adapt and improve.
+                    </p>
+
+                    <h3 class="subsection-header">Plan-Do-Check-Act (PDCA) Cycle</h3>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Plan</h4>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li>Assess current security posture</li>
+                            <li>Establish security objectives and targets</li>
+                            <li>Create plans to address gaps</li>
+                            <li>Align with business objectives</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Do</h4>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li>Implement security controls and policies</li>
+                            <li>Train employees</li>
+                            <li>Deploy technology solutions</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Check</h4>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li>Measure performance against objectives</li>
+                            <li>Conduct audits and reviews</li>
+                            <li>Review incident metrics</li>
+                            <li>Assess emerging threats and vulnerabilities</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Act</h4>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li>Take corrective actions on deficiencies</li>
+                            <li>Adjust plans as necessary</li>
+                            <li>Update policies and procedures</li>
+                            <li>Cycle back to Plan phase</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="subsection-header">Feedback Loops</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Incident lessons learned:</strong> Incorporate incident learnings into future prevention</li>
+                        <li><strong>Threat intelligence feedback:</strong> Use threat intelligence to prioritize improvements</li>
+                        <li><strong>Employee feedback:</strong> Solicit feedback from employees on security policies and tools</li>
+                        <li><strong>Leadership feedback:</strong> Align security investments with business risk priorities</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Security Roadmap</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Create multi-year security roadmap for improvement:
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Current state assessment:</strong> Gap analysis against frameworks (NIST CSF, ISO 27001, CIS Controls)</li>
+                        <li><strong>Future state:</strong> Target maturity level and capability goals</li>
+                        <li><strong>Prioritized initiatives:</strong> Order initiatives by risk and business impact</li>
+                        <li><strong>Milestones:</strong> Timeline and milestones for achieving goals</li>
+                        <li><strong>Resource allocation:</strong> Budget and personnel requirements</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 10: Course Conclusion -->
+                <div id="section-conclusion">
+                    <h2 class="section-header">Course Conclusion</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        This comprehensive cybersecurity course covered all major domains of cybersecurity, from basic principles to advanced anonymous techniques and defensive strategies.
+                    </p>
+
+                    <h3 class="subsection-header">Course Content Summary</h3>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Modules Completed:</h4>
+
+                        <ol style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Foundations:</strong> CIA triad, threats, malware, attack vectors</li>
+                            <li><strong>Network Security:</strong> TCP/IP, firewalls, IDS/IPS, DDoS mitigation, VPNs</li>
+                            <li><strong>Operating System Security:</strong> Linux and Windows hardening, permissions, patches, authentication</li>
+                            <li><strong>Cryptography:</strong> Symmetric/asymmetric encryption, hash functions, PKI, secure development</li>
+                            <li><strong>Anonymity & Privacy (Core Focus):</strong> Tor, VPNs, OPSEC, digital footprint, surveillance</li>
+                            <li><strong>Web Application Security:</strong> OWASP Top 10, SQL injection, XSS, CSRF, secure coding</li>
+                            <li><strong>Social Engineering:</strong> Phishing, pretexting, OSINT, countermeasures</li>
+                            <li><strong>Incident Response & Forensics:</strong> IR lifecycle, disk/memory/network forensics, SIEM, legal reporting</li>
+                            <li><strong>Advanced Anonymity:</strong> Deep web, Tails, Qubes, privacy coins, counter-surveillance</li>
+                            <li><strong>Defensive Strategies:</strong> Security frameworks, SOC, threat intelligence, Zero Trust</li>
+                        </ol>
+                    </div>
+
+                    <h3 class="subsection-header">Key Takeaways</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Defense in depth:</strong> Layered security essential - no single control sufficient</li>
+                        <li><strong>Human factor:</strong> People are often security's weakest link - security awareness training critical</li>
+                        <li><strong>Continuous process:</strong> Security is journey, not destination - continuous improvement required</li>
+                        <li><strong>Risk-based approach:</strong> Prioritize based on business risk and threat landscape</li>
+                        <li><strong>Preparedness essential:</strong> Incident response plans, backup testing, business continuity planning</li>
+                        <li><strong>Compliance baseline:</strong> Frameworks provide structured approach - NIST CSF, ISO 27001, CIS Controls</li>
+                        <li><strong>Anonymity limitations:</strong> No perfect anonymity - assume determined adversaries may eventually correlate identities</li>
+                        <li><strong>Operational security:</strong> OPSEC fundamentals: compartmentalization, consistency, information control</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Next Steps</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Practice skills:</strong> Hands-on practice (practice environments, CTF challenges, labs)</li>
+                        <li><strong>Certifications:</strong> Industry certifications (CompTIA Security+, CISSP, CEH, OSCP)</li>
+                        <li><strong>Stay current:</strong> Follow security news (CVE alerts, threat intelligence, security blogs)</li>
+                        <li><strong>Networking:</strong> Join security communities (local meetups, conferences, forums)</li>
+                        <li><strong>Specialization:</strong> Identify area of interest (offensive security, incident response, cloud security, application security)</li>
+                    </ul>
+
+                    <div class="alert-box">
+                        <div class="alert-label">Congratulations!</div>
+                        <div class="alert-content">
+                        You have completed comprehensive cybersecurity education covering 10 major modules. This foundation prepares you for applied security work, further specialization, or certification pursuit. Practice hands-on skills continuously - cybersecurity requires both theoretical knowledge and practical experience. Stay curious and continue learning - threat landscape constantly evolves.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Navigation -->
+                <div class="nav-buttons">
+                    <a href="09-advanced-anonymity.html" class="nav-btn">Previous: Advanced Anonymity</a>
+                    <a href="../index.html" class="nav-btn primary">Return to Course Homepage</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => loadProgress());
+    </script>
+</body>
+</html>
