@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity - Module 3: Operating System Security</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="light-theme">
+    <div class="main-wrapper">
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="page-header">
+                    <h1 class="page-title">MODULE 3</h1>
+                    <p class="page-subtitle">Operating System Security</p>
+                </div>
+
+                <div class="content-card">
+                    <h2 class="module-header">Introduction</h2>
+                    <p style="margin-bottom: 16px;">
+                        Operating system security focuses on protecting the OS itself and the resources under its control. OS security mechanisms provide user authentication, access control, process isolation, and resource protection. Understanding both Linux and Windows hardening, patch management, and secure configuration is essential for securing any system.
+                    </p>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 1: Linux Security Basics -->
+                <div id="section-linux-basics">
+                    <h2 class="section-header">Linux Security Fundamentals</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Linux is built with multi-user security in mind from its Unix heritage. Understanding permissions, user accounts, and privileges is fundamental to Linux system administration and security.
+                    </p>
+
+                    <h3 class="subsection-header">Linux File Permissions</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Linux uses a discretionary access control (DAC) model where each file has permission bits defining access for owner, group, and others.
+                    </p>
+
+                    <div class="definition-box">
+                        <div class="definition-label">Permission Bits</div>
+                        <div class="definition-content">
+                        Each file has 9 permission bits + 3 special bits:
+
+                        <strong>Owner permissions (bits 1-3):</strong>
+                        - r (read): Allowed to read file contents or list directory
+                        - w (write): Allowed to modify file or create/delete files in directory
+                        - x (execute): Allowed to execute file or enter directory
+
+                        <strong>Group permissions (bits 4-6):</strong>
+                        - Same as owner, applied to group members
+
+                        <strong>Other permissions (bits 7-9):</strong>
+                        - Same as owner, applied to everyone else
+
+                        <strong>Special bits:</strong>
+                        - setuid (SUID): Execute with file owner's privileges
+                        - setgid (SGID): Execute with file group's privileges
+                        - sticky: Only owner can delete files in directory (critical for /tmp)
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <div class="example-label">Example: Permission Bits</div>
+                        <div class="example-content">
+                        <strong>ls -l</strong> output:
+                        <code>-rwxr-xr-- 1 alice staff 1234 Feb 21 10:30 script.sh</code>
+
+                        Breakdown:
+                        - <strong>-</strong> (regular file type)
+                        - <strong>rwx</strong> (owner permissions: read, write, execute)
+                        - <strong>r-x</strong> (group permissions: read, execute only)
+                        - <strong>r--</strong> (other permissions: read only)
+                        - <strong>alice</strong> (owner username)
+                        - <strong>staff</strong> (group name)
+                        - <strong>1234</strong> (file size in bytes)
+
+                        Octal representation: <strong>754</strong>
+                        r=4, w=2, x=1, so:
+                        - Owner: 4+2+1=7
+                        - Group: 4+1=5
+                        - Other: 4
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">chmod: Changing Permissions</h3>
+
+                    <div class="code-block">
+                        <code># Octal mode
+chmod 755 script.sh  # rwxr-xr-x
+
+chmod 644 file.txt   # rw-r--r--
+
+# Symbolic mode
+chmod u+x script.sh  # Add execute for owner (user)
+
+chmod g-w file.txt   # Remove write for group
+
+chmod o-r file.txt   # Remove read for others
+
+chmod a+r file.txt   # Add read for all (a=all)
+</code>
+                    </div>
+
+                    <h3 class="subsection-header">chown: Changing Ownership</h3>
+
+                    <div class="code-block">
+                        <code># Change owner
+chown bob file.txt  # Now owned by bob
+
+# Change group
+chown :staff file.txt # Now group staff
+
+# Change both
+chown bob:staff file.txt  # Owned by bob, group staff
+
+# Recursive change for directories
+chown -R bob:staff /home/bob/data
+</code>
+                    </div>
+
+                    <h3 class="subsection-header">Special Bits: SUID, SGID, Sticky</h3>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">SUID (Set User ID)</h4>
+                        <p style="margin-bottom: 8px;">When executable with SUID bit runs, it executes with file owner's permissions, not user's permissions:</p>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Purpose:</strong> Allow regular users to perform privileged operations (e.g., changing password requires writing /etc/shadow which is owned by root)</li>
+                            <li><strong>Representation:</strong> s in execute position (e.g., -rwsr-xr-x)</li>
+                            <li><strong>Risk:</strong> Vulnerable SUID binaries can be exploited for privilege escalation</li>
+                        </ul>
+
+                        <div class="code-block">
+                            <code># Set SUID bit
+chmod u+s /path/to/executable  # Sets SUID bit
+
+chmod 4755 /path/to/executable  # Same (4=100 in binary, SUID bit)
+
+# Find all SUID executables
+find / -perm -4000 2>/dev/null
+</code>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">SGID (Set Group ID)</h4>
+                        <p style="margin-bottom: 8px;">Similar to SUID but for group permissions. On directories, causes new files to inherit directory's group:</p>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Purpose:</strong> Collaborative directories (e.g., project directory where team members share group)</li>
+                            <li><strong>Directory:</strong> New files inherit group (useful for shared spaces)</li>
+                            <li><strong>Executables:</strong> Execute with file's group permissions</li>
+                        </ul>
+
+                        <div class="code-block">
+                            <code># Set SGID bit
+chmod g+s /shared/project  # New files inherit group
+
+chmod 2775 /shared/project  # Same (2=010 in binary, SGID bit)
+</code>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Sticky Bit</h4>
+                        <p style="margin-bottom: 8px;">On directories, only file owner can delete files, even if others have write permissions:</p>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Purpose:</strong> Critical for world-writable directories (/tmp prevents users from deleting each other's files)</li>
+                            <li><strong>Representation:</strong> t in execute position (e.g., drwxrwxrwt)</li>
+                        </ul>
+
+                        <div class="code-block">
+                            <code># Set sticky bit
+chmod +t /shared/world_writable  # Only owners can delete their files
+
+chmod 1777 /tmp  # /tmp typically has sticky bit
+</code>
+                    </div>
+
+                    <div class="alert-box critical">
+                        <div class="alert-label">Critical Permission Audit</div>
+                        <div class="alert-content">
+                        Regularly audit SUID executables for unnecessary permissions:
+                        <code>find / -perm -4000 -user root -type f 2>/dev/null</code>
+
+                        If SUID binary for unnecessary reason, remove with:
+                        <code>chmod u-s /path/to/executable</code>
+
+                        Common vulnerable SUID binaries: old versions of sudo, screen, vim with unusual configurations.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 2: Linux User Management -->
+                <div id="section-linux-users">
+                    <h2 class="section-header">Linux User and Privilege Management</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Effective user management prevents unauthorized access, implements privilege separation, and ensures system accountability through proper access controls.
+                    </p>
+
+                    <h3 class="subsection-header">User and Group Management</h3>
+
+                    <div class="code-block">
+                        <code># Create user (with home directory, copy skeleton files)
+useradd -m -s /bin/bash newuser
+
+# Set password
+passwd newuser
+
+# Delete user (remove home directory)
+userdel -r olduser
+
+# Create group
+groupadd developers
+
+# Add user to group
+usermod -a -G developers newuser
+
+# List user groups
+groups newuser
+
+# /etc/passwd format
+# username:password:UID:GID:comment:home:shell
+# x in password field means shadow file used
+</code>
+                    </div>
+
+                    <h3 class="subsection-header">sudo: Superuser Privileges</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        sudo allows configured users to execute commands with elevated privileges (typically root) while providing audit trail.
+                    </p>
+
+                    <div class="code-block">
+                        <code># Edit sudoers (always use visudo, never edit directly)
+visudo
+
+# Common sudoers entries
+alice ALL=(ALL:ALL) ALL  # Alice can execute all commands as any user
+
+bob   ALL=(ALL) NOPASSWD: /usr/bin/systemctl  # Bob can run systemctl without password
+
+%admin ALL=(ALL) ALL  # All members of admin group
+
+# View sudo rules for current user
+sudo -l
+
+# Execute command as root
+sudo command_name
+
+# Execute as specific user
+sudo -u postgres psql
+
+# Execute as root with new environment
+sudo -i
+</code>
+                    </div>
+
+                    <div class="note-box">
+                        <div class="note-label">sudo Security Best Practices</div>
+                        <div class="note-content">
+                        - <strong>Principle of least privilege:</strong> Grant only specific commands required, not ALL
+
+                        - <strong>Avoid NOPASSWD:</strong> Require password authentication unless automated
+
+                        - <strong>Audit log:</strong> sudo logs to /var/log/auth.log or /var/log/secure
+
+                        - <strong>Time-based:</strong> sudo ticket valid for 5 minutes by default (adjust via timestamp_timeout)
+
+                        - <strong>Limit sudo access:</strong> Create sudoers groups rather than individual users
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Root Account</h3>
+
+                    <div class="alert-box critical">
+                        <div class="alert-label">Critical Recommendation</div>
+                        <div class="alert-content">
+                        Lock root account and rely entirely on sudo:
+                        <code>sudo passwd -l root</code>
+
+                        Rationale:
+                        - Direct root login increases attack surface (password-based, remote exploitation)
+                        - sudo provides audit trail (who ran what command when)
+                        - sudo allows fine-grained control (specific users, specific commands)
+                        - Compromised individual account less damaging than direct root compromise
+
+                        Emergency recovery: If sudo misconfigured, boot into single-user mode or use recovery media to modify sudoers.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 3: Linux Hardening -->
+                <div id="section-linux-hardening">
+                    <h2 class="section-header">Linux Hardening</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Linux hardening involves configuring systems to minimize attack surface and resist common attacks. Many hardening measures can be applied during initial system setup and maintained through regular audits.
+                    </p>
+
+                    <h3 class="subsection-header">SSH Hardening</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        SSH is most common remote access method. Hardening SSH prevents brute force and unauthorized access.
+                    </p>
+
+                    <div class="code-block">
+                        <code># /etc/ssh/sshd_config
+
+# Disable root login
+PermitRootLogin no
+
+# Disable password authentication (use keys only)
+PasswordAuthentication no
+PubkeyAuthentication yes
+
+# Restrict to SSH protocol 2
+Protocol 2
+
+# Limit users allowed
+AllowUsers alice bob@specific_ip
+
+# Whitelist IP addresses (optional)
+AllowTcpForwarding no
+X11Forwarding no
+
+# Change default port (security through obscurity, but reduces automated attacks)
+Port 22222
+
+# Restart SSH daemon
+sudo systemctl restart sshd
+</code>
+                    </div>
+
+                    <div class="alert-box">
+                        <div class="alert-label">SSH Key Setup</div>
+                        <div class="alert-content">
+                        Use SSH keys instead of passwords:
+                        <code>
+# Generate ed25519 key (recommended)
+ssh-keygen -t ed25519 -C "user@example.com"
+
+# Copy public key to server
+ssh-copy-id user@server
+
+# Alternative (manual)
+ssh user@server "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys" < ~/.ssh/id_ed25519.pub
+                        </code>
+
+                        Keys are stronger than passwords and resistant to brute force.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Firewall: UFW (Uncomplicated Firewall)</h3>
+
+                    <div class="code-block">
+                        <code># Enable UFW
+sudo ufw enable
+
+# Allow SSH (do this before enabling firewall to avoid lockout)
+sudo ufw allow ssh
+
+# Or allow specific port (if SSH on non-default)
+sudo ufw allow 22222
+
+# Allow HTTP and HTTPS
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+
+# Deny all other traffic
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+
+# View status
+sudo ufw status verbose
+
+# Delete rule
+sudo ufw delete allow 80/tcp
+</code>
+                    </div>
+
+                    <h3 class="subsection-header">Automatic Security Updates</h3>
+
+                    <div class="code-block">
+                        <code># Install unattended-upgrades
+sudo apt install unattended-upgrades
+
+# Edit configuration
+sudo nano /etc/apt/apt.conf.d/50unattended-upgrades
+
+# Automatically install security updates
+Unattended-Upgrade::Allowed-Origins {
+    "${distro_id}:${distro_codename}-security";
+};
+
+# Reboot automatically if required (set to "true" or "false")
+Unattended-Upgrade::AutoFixInterruptedDpkg "true";
+Unattended-Upgrade::Automatic-Reboot "false";
+
+# Enable service
+sudo systemctl enable unattended-upgrades
+sudo systemctl start unattended-upgrades
+</code>
+                    </div>
+
+                    <h3 class="subsection-header">Fail2ban: Protect Against Brute Force</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Fail2ban monitors log files and temporarily bans IP addresses showing malicious behavior (too many failed login attempts).
+                    </p>
+
+                    <div class="code-block">
+                        <code># Install fail2ban
+sudo apt install fail2ban
+
+# Create local configuration
+sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+
+# Edit jail.local for SSH protection
+[sshd]
+enabled = true
+port = ssh
+filter = sshd
+logpath = /var/log/auth.log
+maxretry = 5
+findtime = 600
+bantime = 3600
+
+# Start and enable
+sudo systemctl enable fail2ban
+sudo systemctl start fail2ban
+
+# View status
+sudo fail2ban-client status
+sudo fail2ban-client status sshd
+</code>
+                    </div>
+
+                    <h3 class="subsection-header">Disable Unused Services</h3>
+
+                    <div class="code-block">
+                        <code># List all services
+systemctl list-units --type=service --state=running
+
+# Stop and disable service
+sudo systemctl stop service_name
+sudo systemctl disable service_name
+
+# Common services to disable if unnecessary
+sudo systemctl stop telnet  # Unencrypted, insecure
+sudo systemctl disable telnet
+
+sudo systemctl stop rsh  # Legacy, insecure
+
+# View listening ports
+sudo netstat -tlnp
+
+# Or use ss (modern replacement)
+sudo ss -tlnp
+</code>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 4: Windows Security Basics -->
+                <div id="section-windows-basics">
+                    <h2 class="section-header">Windows Security Fundamentals</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Windows Security Center (Windows Defender) provides integrated antivirus, firewall, and device security. Understanding Windows security mechanisms, policies, and hardening is essential for securing Windows systems.
+                    </p>
+
+                    <h3 class="subsection-header">Windows Access Control</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Windows uses an access control list (ACL) model with Security Identifiers (SIDs) for users and groups.
+                    </p>
+
+                    <div class="definition-box">
+                        <div class="definition-label">Windows Security Entities</div>
+                        <div class="definition-content">
+                        <strong>Security Identifiers (SIDs):</strong>
+                        - Unique identifier for each security principal (user, group, computer)
+
+                        - Examples: S-1-5-32-544 (Administrators), S-1-5-32-545 (Users), S-1-5-21-... (user SID)
+
+                        <strong>Access Control List (ACL):</strong> - List of Access Control Entries (ACEs) for resource
+
+                        <strong>Access Control Entry (ACE):</strong> - One permission entry (who, what rights, allow/deny)
+
+                        <strong>Permissions:</strong> - Read, Write, Execute, Delete, Full Control, Modify, etc.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">File and Folder Permissions</h3>
+
+                    <div class="code-block">
+                        <code># Via GUI
+Right-click file/folder → Properties → Security → Edit
+
+# Via PowerShell
+Get-Acl file.txt  # View ACL
+
+Set-Acl file.txt $acl  # Set ACL
+
+# Grant user "Alice" modify permission on folder
+$Path = "C:\Data"
+$User = "Alice"
+$Rights = "Modify"
+$Inheritance = "ContainerInherit, ObjectInherit"
+$acl = Get-Acl $Path
+$accessRule = New-Object System.Security.AccessControl.FileSystemAccessRule($User,$Rights,$Inheritance,"None","Allow")
+$acl.SetAccessRule($accessRule)
+Set-Acl $Path $acl
+</code>
+                    </div>
+
+                    <h3 class="subsection-header">Default Windows Accounts</h3>
+
+                    <table style="width: 100%; border-collapse: collapse; margin: 16px 0;">
+                        <tr style="border-bottom: 1px solid var(--border-light);">
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">Account</th>
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">Purpose</th>
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">Recommendation</th>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">Administrator</td>
+                            <td style="padding: 12px;">Built-in admin with full control</td>
+                            <td style="padding: 12px;">Rename, strong password, limit use</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">Guest</td>
+                            <td style="padding: 12px;">Limited guest access</td>
+                            <td style="padding: 12px;">Disable, not needed in most environments</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">DefaultAccount</td>
+                            <td style="padding: 12px;">System used for UAC</td>
+                            <td style="padding: 12px;">Do not modify, disabled by default</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px;">Local accounts created</td>
+                            <td style="padding: 12px;">Users created locally</td>
+                            <td style="padding: 12px;">Remove if domain accounts used</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 5: Windows Hardening -->
+                <div id="section-windows-hardening">
+                    <h2 class="section-header">Windows Hardening</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Windows hardening reduces attack surface through configuration, security policies, and built-in security features.
+                    </p>
+
+                    <h3 class="subsection-header">User Account Control (UAC)</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        UAC prompts and consent mechanism allow standard users to perform administrative tasks by temporarily elevating privileges.
+                    </p>
+
+                    <div class="note-box">
+                        <div class="note-label">UAC Best Practices</div>
+                        <div class="note-content">
+                        - <strong>Do not disable UAC</strong>: Provides security boundary between admin user and standard user
+
+                        - <strong>Always notify</strong>: Highest security level
+
+                        - <strong>Admin Approval Mode</strong>: Admin users run as standard, prompt for elevation
+
+                        - <strong>LuaElevatedPrompt</strong>: Secure desktop for admin prompts
+
+                        Configuration via:
+                        Control Panel → User Accounts → Change User Account Control settings
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Windows Defender Firewall</h3>
+
+                    <div class="code-block">
+                        <code># Enable firewall (default enabled)
+Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled True
+
+# Block incoming connections by default
+Set-NetFirewallProfile -DefaultInboundAction Block
+
+# Allow specific application
+New-NetFirewallRule -DisplayName "Allow Remote Desktop" -Direction Inbound -Protocol TCP -LocalPort 3389 -Action Allow
+
+# Block specific port
+New-NetFirewallRule -DisplayName "Block Telnet" -Direction Inbound -Protocol TCP -LocalPort 23 -Action Block
+
+# View rules
+Get-NetFirewallRule | Format-List
+</code>
+                    </div>
+
+                    <h3 class="subsection-header">Windows Updates</h3>
+
+                    <div class="code-block">
+                        <code># Check update status via PowerShell
+Get-WindowsUpdate
+
+# Install updates
+Install-WindowsUpdate -AutoReboot
+
+# Configure automatic updates
+Set-WindowsUpdateAuto -Enable
+
+# View update history
+Get-HotFix | Sort-Object -Property InstalledOn -Descending
+</code>
+                    </div>
+
+                    <h3 class="subsection-header">BitLocker: Full Disk Encryption</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        BitLocker encrypts entire drive, protecting data if device is lost or stolen.
+                    </p>
+
+                    <div class="code-block">
+                        <code># Enable BitLocker on C: drive (with TPM)
+Enable-BitLocker -MountPoint "C:" -EncryptionMethod XtsAes256 -UsedSpaceOnly -TpmProtector
+
+# Enable with password protector (add to TPM)
+Add-BitLockerKeyProtector -MountPoint "C:" -PasswordProtector
+
+# Backup recovery key to Active Directory
+Backup-BitLockerKeyProtector -MountPoint "C:" -RecoveryPasswordProtector
+
+# View BitLocker status
+Get-BitLockerVolume
+
+# Suspend BitLocker temporarily (e.g., for system update)
+Suspend-BitLocker -MountPoint "C:"
+</code>
+                    </div>
+
+                    <div class="alert-box critical">
+                        <div class="alert-label">Critical: Backup Recovery Keys</div>
+                        <div class="alert-content">
+                        BitLocker recovery keys are critical. If TPM fails or system changes, you must have recovery key to access encrypted drive.
+
+                        Backup recovery keys to:
+                        - Print and store securely
+                        - Save to USB drive in secure location
+                        - Store in password manager
+                        - Upload to cloud (encrypted)
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Windows Event Logging</h3>
+
+                    <div class="code-block">
+                        <code># View event logs
+Get-EventLog -LogName Security
+
+# View specific event (e.g., login events)
+Get-EventLog -LogName Security | Where-Object {$_.EventID -eq 4624}
+
+# Configure log size
+wevtutil sl Security /ms:1024000000  # 1GB
+
+# Export logs
+wevtutil epl Security C:\security-export.evtx
+
+# View via Event Viewer
+eventvwr.msc
+</code>
+                    </div>
+
+                    <h3 class="subsection-header">Disable Unused Services</h3>
+
+                    <div class="code-block">
+                        <code># List services
+Get-Service
+
+# Stop and disable service
+Stop-Service -Name "ServiceName"
+Set-Service -Name "ServiceName" -StartupType Disabled
+
+# Common unnecessary services
+Stop-Service -Name "Telnet"
+Set-Service -Name "Telnet" -StartupType Disabled
+
+# View dependencies
+Get-Service -Name "ServiceName" -DependentServices
+</code>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 6: Patch Management -->
+                <div id="section-patching">
+                    <h2 class="section-header">Patch Management</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Patch management is the process of acquiring, testing, and applying updates to software and operating systems. Regular patching addresses vulnerabilities and reduces attack surface.
+                    </p>
+
+                    <h3 class="subsection-header">Vulnerability Lifecycle</h3>
+
+                    <div class="note-box">
+                        <div class="note-label">Timeline</div>
+                        <div class="note-content">
+                        1. <strong>Discovery:</strong> Researcher or attacker finds vulnerability
+
+                        2. <strong>Responsible disclosure:</strong> Researcher reports to vendor (if ethical)
+
+                        3. <strong>Patch development:</strong> Vendor develops and tests patch
+
+                        4. <strong>Patch release:</strong> Vendor publishes update
+
+                        5. <strong>Zero-day window:</strong> Time between disclosure and patch deployment when systems are vulnerable
+
+                        6. <strong>Exploit development:</strong> Attackers develop exploits (sometimes before patch)
+
+                        7. <strong>Wide deployment:</strong> Patches widely deployed, remaining unpatched systems increasingly vulnerable
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Linux Patch Management</h3>
+
+                    <div class="code-block">
+                        <code># Debian/Ubuntu
+sudo apt update  # Update package lists
+sudo apt upgrade  # Upgrade all packages
+sudo apt full-upgrade  # Upgrade including dependencies
+sudo apt autoremove  # Remove unnecessary packages
+
+# CentOS/RHEL
+sudo yum update  # Update all packages
+sudo yum update package_name  # Update specific package
+
+# View history
+sudo apt history  # Ubuntu/Debian
+sudo yum history  # CentOS/RHEL
+</code>
+                    </div>
+
+                    <h3 class="subsection-header">Windows Patch Management</h3>
+
+                    <div class="code-block">
+                        <code># Windows Update (GUI)
+Settings → Update & Security → Windows Update
+
+# Windows Update (PowerShell)
+Get-WindowsUpdate  # View available updates
+Install-WindowsUpdate  # Install updates
+Install-WindowsUpdate -AutoReboot  # Install and reboot if needed
+
+# View update history
+Get-HotFix | Sort-Object InstalledOn -Descending
+
+# Configure automatic updates
+registry key: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU
+</code>
+                    </div>
+
+                    <h3 class="subsection-header">Patch Management Best Practices</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Test before deploying:</strong> Test patches in staging environment before production deployment</li>
+                        <li><strong>Prioritize critical patches:</strong> Deploy critical security patches first</li>
+                        <li><strong>Schedule regular updates:</strong> Set maintenance windows for patch deployment</li>
+                        <li><strong>Automate updates:</strong> Use automatic security updates where possible</li>
+                        <li><strong>Maintain backups:</strong> Always have recent backups before deploying patches</li>
+                        <li><strong>Monitor for issues:</strong> Watch for problems after updates</li>
+                        <li><strong>Document changes:</strong> Keep record of patches deployed and issues found</li>
+                    </ul>
+
+                    <div class="alert-box">
+                        <div class="alert-label">Emergency Patches</div>
+                        <div class="alert-content">
+                        If zero-day vulnerability with active exploitation is discovered:
+                        - Prioritize testing for critical systems
+                        - Deploy emergency patch soon after limited testing
+                        - Prepare rollback plan
+                        - Monitor closely for issues
+                        - Document emergency deployment process
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 7: File System Security -->
+                <div id="section-filesystem">
+                    <h2 class="section-header">File System Security</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        File system security prevents unauthorized access, modification, or deletion of files. Proper permissions, encryption, and access controls protect data both at rest and in transit.
+                    </p>
+
+                    <h3 class="subsection-header">Linux File System Hardening</h3>
+
+                    <div class="code-block">
+                        <code># Set umask (default permissions for new files)
+# Add to ~/.bashrc or /etc/profile
+umask 077  # New files: rw------- (600), directories: rwx------ (700)
+
+umask 022  # New files: rw-r--r-- (644), directories: rwxr-xr-x (755)
+
+# Verify current umask
+umask
+
+# Check for world-writable files
+find / -perm -0002 -type f 2>/dev/null
+
+# Check for SUID/SGID executables
+find / -perm -4000 -o -perm -2000 2>/dev/null
+</code>
+                    </div>
+
+                    <h3 class="subsection-header">Linux Encryption: LUKS</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        LUKS (Linux Unified Key Setup) provides disk encryption. Encrypting disks protects data at rest.
+                    </p>
+
+                    <div class="code-block">
+                        <code># Encrypt partition (BEFORE use, destroys data)
+cryptsetup -y -v luksFormat /dev/sdb1
+
+# Open encrypted partition
+cryptsetup luksOpen /dev/sdb1 encrypted_disk
+
+# Format with filesystem
+mkfs.ext4 /dev/mapper/encrypted_disk
+
+# Mount
+mount /dev/mapper/encrypted_disk /mnt/encrypted
+
+# On reboot, open and mount
+cryptsetup luksOpen /dev/sdb1 encrypted_disk
+mount /dev/mapper/encrypted_disk /mnt/encrypted
+
+# When done, unmount and close
+umount /mnt/encrypted
+cryptsetup luksClose encrypted_disk
+</code>
+                    </div>
+
+                    <h3 class="subsection-header">Windows File System Security</h3>
+
+                    <div class="code-block">
+                        <code># Encrypt individual file or folder (EFS - Encrypting File System)
+# Via GUI: Right-click → Properties → Advanced → Encrypt contents
+
+# Via PowerShell
+cipher /e C:\Data\secret.txt  # Encrypt
+cipher /d C:\Data\secret.txt  # Decrypt
+
+# Backup EFS certificate
+cipher /r  # Generate backup to PFX file
+
+# BitLocker (see Windows hardening section) for full disk encryption
+</code>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 8: Process Security -->
+                <div id="section-process">
+                    <h2 class="section-header">Process Security</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Process security ensures isolation between processes, prevents privilege escalation, and limits damage from compromised processes.
+                    </p>
+
+                    <h3 class="subsection-header">Linux Process Isolation</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>User namespaces:</strong> Isolate user ID and group ID between processes (containers)</li>
+                        <li><strong>Mount namespaces:</strong> Isolate filesystem mount points</li>
+                        <li><strong>Network namespaces:</strong> Isolate network stacks</li>
+                        <li><strong>PID namespaces:</strong> Isolate process ID spaces</li>
+                        <li><strong>cgroups:</strong> Limit resource usage (CPU, memory, I/O)</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Linux Containers (Docker)</h3>
+
+                    <div class="code-block">
+                        <code># Docker security best practices
+
+# Run as non-root (add USER instruction in Dockerfile)
+USER appuser
+
+# Drop capabilities (remove unnecessary privileges)
+--cap-drop=ALL --cap-add=CAP_NET_BIND_SERVICE
+
+# Read-only filesystem
+--read-only
+
+# Resource limits
+--memory=512m --cpus=1
+
+# Network isolation
+--network=none  # No network
+
+# Volume mounts with read-only
+-v /host/path:/container/path:ro
+
+# Example secure container run
+docker run --name myapp \
+  --cap-drop=ALL \
+  --cap-add=CAP_NET_BIND_SERVICE \
+  --read-only \
+  --network host \
+  -v mydata:/data:ro \
+  myimage:latest
+</code>
+                    </div>
+
+                    <h3 class="subsection-header">Windows Process Isolation</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>User Account Control:</strong> Elevation prompts</li>
+                        <li><strong>Windows Defender Application Control (WDAC):</strong> Restrict which applications can run</li>
+                        <li><strong>AppLocker:</strong> Application control policies</li>
+                        <li><strong>Windows Defender Credential Guard:</strong> Protect credentials in virtualization-based security</li>
+                        <li><strong>Sandboxing:</strong> Windows Sandbox for untrusted applications</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Navigation -->
+                <div class="nav-buttons">
+                    <a href="01-foundations.html" class="nav-btn">Previous: Foundations</a>
+                    <a href="02-network-security.html" class="nav-btn primary">Next: Network Security</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => loadProgress());
+    </script>
+</body>
+</html>
