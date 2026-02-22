@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity - Module 4: Cryptography</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="light-theme">
+    <div class="main-wrapper">
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="page-header">
+                    <h1 class="page-title">MODULE 4</h1>
+                    <p class="page-subtitle">Cryptography</p>
+                </div>
+
+                <div class="content-card">
+                    <h2 class="module-header">Introduction</h2>
+                    <p style="margin-bottom: 16px;">
+                        Cryptography is the science of protecting information through encryption, enabling secure communication, data integrity, authentication, and non-repudiation. Understanding modern cryptographic primitives, protocols, and implementation pitfalls is essential for building and auditing secure systems. This module covers symmetric encryption, public key cryptography, hash functions, digital signatures, and the infrastructure that ties them together.
+                    </p>
+                </div>
+
+                <div class="alert-box critical">
+                    <div class="alert-label">Critical Warning</div>
+                    <div class="alert-content">
+                        Do not implement your own cryptography. Use well-vetted, widely-analyzed cryptographic libraries. Even experts make mistakes implementing cryptography. The primitives themselves are correct; the weaknesses almost always lie in implementation details, key management, and protocol design.
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 1: Cryptographic Basics -->
+                <div id="section-basics">
+                    <h2 class="section-header">Cryptographic Fundamentals</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Cryptography provides security services at different layers of the security model. Understanding these services and when to apply them is fundamental to secure system design.
+                    </p>
+
+                    <h3 class="subsection-header">Cryptographic Goals</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Confidentiality:</strong> Preventing unauthorized parties from reading data (achieved through encryption)</li>
+                        <li><strong>Integrity:</strong> Ensuring data has not been modified (achieved through hash functions or message authentication codes)</li>
+                        <li><strong>Authentication:</strong> Verifying identity of communicating parties (achieved through digital signatures, MACs, or authentication protocols)</li>
+                        <li><strong>Non-repudiation:</strong> Proving that a party took an action (achieved through digital signatures with public keys)</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Terminology</h3>
+
+                    <div class="definition-box">
+                        <div class="definition-label">Key Terms</div>
+                        <div class="definition-content">
+                        <strong>Plaintext:</strong> Unencrypted, readable data
+
+                        <strong>Ciphertext:</strong> Encrypted, unreadable data
+
+                        <strong>Encryption:</strong> Process of transforming plaintext to ciphertext
+
+                        <strong>Decryption:</strong> Process of transforming ciphertext back to plaintext
+
+                        <strong>Key:</strong> Secret value used with algorithm for encryption/decryption
+
+                        <strong>Key space:</strong> Set of all possible keys (larger key space = stronger against brute force)
+
+                        <strong>Salt:</strong> Random data added to password before hashing to prevent rainbow table attacks
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Kerckhoff's Principle</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Kerckhoff's principle states that security should reside in the secrecy of the key, not the secrecy of the algorithm. Cryptographic algorithms should be public and well-analyzed.
+                    </p>
+
+                    <div class="note-box">
+                        <div class="note-label">Why Public Algorithms?</div>
+                        <div class="note-content">
+                        - <strong>Open analysis:</strong> More experts can analyze and find weaknesses
+
+                        - <strong>Trust through scrutiny:</strong> Algorithms withstand years of global analysis gain trust
+
+                        - <strong>No security through obscurity:</strong> Secret algorithms can be reverse-engineered
+
+                        - <strong>Implementation transparency:</strong> Open standards allow verified implementations
+
+                        Examples: AES was selected through public competition. RSA security relies on mathematical hardness, not secrecy.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Shannon's Theorem - Perfect Secrecy</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Claude Shannon proved that perfect secrecy requires a key as long as the message. In practice, this is impractical for most applications. Modern cryptography trades perfect secrecy for practical, "computationally secure" systems.
+                    </p>
+
+                    <p style="margin-bottom: 12px;">
+                        <strong>Computational security:</strong> An algorithm is secure if breaking it would require computational resources beyond current or foreseeable capabilities (e.g., requiring millions of years with current computers).
+                    </p>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 2: Symmetric Encryption -->
+                <div id="section-symmetric">
+                    <h2 class="section-header">Symmetric Encryption</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Symmetric encryption uses the same key for both encryption and decryption. It is faster than asymmetric encryption but requires secure key exchange between parties. symmetric encryption is ideal for encrypting large volumes of data.
+                    </p>
+
+                    <div class="definition-box">
+                        <div class="definition-label">Symmetric Encryption Process</div>
+                        <div class="definition-content">
+                        Alice wants to send encrypted message to Bob:
+
+                        1. Alice and Bob share secret key (via secure channel or key exchange protocol)
+
+                        2. Alice encrypts: `ciphertext = encrypt(key, plaintext)`
+
+                        3. Alice sends ciphertext to Bob (can be over insecure channel)
+
+                        4. Bob decrypts: `plaintext = decrypt(key, ciphertext)`
+
+                        Eve (adversary) sees ciphertext but cannot decrypt without key
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">AES (Advanced Encryption Standard)</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        AES is the most widely used symmetric encryption algorithm. Selected through NIST competition in 2001, AES supports 128-bit, 192-bit, and 256-bit keys.
+                    </p>
+
+                    <h4 style="margin-bottom: 12px;">AES Architecture</h4>
+
+                    <p style="margin-bottom: 8px;">AES encrypts data in 128-bit blocks using substitution-permutation network:</p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>SubBytes:</strong> Byte substitution using S-box (non-linear transformation)</li>
+                        <li><strong>ShiftRows:</strong> Row shifting (linear transformation)</li>
+                        <li><strong>MixColumns:</strong> Column mixing (linear transformation)</li>
+                        <li><strong>AddRoundKey:</strong> XOR with round key</li>
+                    </ul>
+
+                    <p style="margin-bottom: 12px;">
+                        Number of rounds depends on key size:
+                    </p>
+
+                    <table style="width: 100%; border-collapse: collapse; margin: 16px 0;">
+                        <tr style="border-bottom: 1px solid var(--border-light);">
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">Key Size</th>
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">Rounds</th>
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">Security Level</th>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">AES-128</td>
+                            <td style="padding: 12px;">10</td>
+                            <td style="padding: 12px;">Suitable for most applications</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">AES-192</td>
+                            <td style="padding: 12px;">12</td>
+                            <td style="padding: 12px;">Higher security margin</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px;">AES-256</td>
+                            <td style="padding: 12px;">14</td>
+                            <td style="padding: 12px;">Maximum recommended future-proofing</td>
+                        </tr>
+                    </table>
+
+                    <h4 style="margin-bottom: 12px;">AES Modes of Operation</h4>
+
+                    <p style="margin-bottom: 8px;">Block cipher modes define how AES processes messages longer than one block (128 bits):</p>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">ECB (Electronic Codebook)</h4>
+                        <p style="margin-bottom: 8px;">Encrypts each block independently with same key:</p>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Pros:</strong> Simple, parallelizable</li>
+                            <li><strong>Cons:</strong> Identical plaintext blocks produce identical ciphertext (pattern leakage)</li>
+                            <li><strong>Vulnerable:</strong> Not semantically secure, ECB reveals patterns</li>
+                        </ul>
+
+                        <div class="alert-box critical">
+                            <div class="alert-label">Critical: Do Not Use ECB</div>
+                            <div class="alert-content">
+                            ECB is never secure for real data. Images encrypted with ECB still reveal visual patterns. ECB fails the definition of encryption because adversaries can determine when two messages start with same prefix. Never use ECB.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">CBC (Cipher Block Chaining)</h4>
+                        <p style="margin-bottom: 8px;">Each plaintext block is XORed with previous ciphertext block before encryption:</p>
+
+                        <div class="code-block">
+                            <code>C1 = Encrypt(K, P1 XOR IV)
+C2 = Encrypt(K, P2 XOR C1)
+C3 = Encrypt(K, P3 XOR C2)
+...</code>
+                        </div>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>IV (Initialization Vector):</strong> Random value for first block, must be unpredictable</li>
+                            <li><strong>Pros:</strong> Same plaintext encrypts to different ciphertext each time</li>
+                            <li><strong>Cons:</strong> Not parallelizable (encryption only), IV reuse breaks security</li>
+                            <li><strong>Vulnerable:</strong> Bit-flipping attacks can modify ciphertext in predictable ways</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">CTR (Counter Mode)</h4>
+                        <p style="margin-bottom: 8px;">Encrypts a counter value to produce keystream, XORed with plaintext:</p>
+
+                        <div class="code-block">
+                            <code>Keystream = Encrypt(K, Counter)
+Ciphertext = Plaintext XOR Keystream</code>
+                        </div>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Nonce:</strong> Counter starting value (must never repeat with same key)</li>
+                            <li><strong>Pros:</strong> Parallelizable (both encryption and decryption), turns block cipher into stream cipher</li>
+                            <li><strong>Cons:</strong> Counter reuse catastrophic (XORing keystream with different messages reveals both plaintexts)</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">GCM (Galois/Counter Mode)</h4>
+                        <p style="margin-bottom: 8px;">Combines CTR encryption with MAC for authentication:</p>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Authenticated Encryption:</strong> Provides both confidentiality and integrity (AEAD)</li>
+                            <li><strong>Pros:</strong> Efficient, widely recommended, parallelizable</li>
+                            <li><strong>Cons:</strong> None significant for most applications</li>
+                            <li><strong>Default choice:</strong> AES-GCM is the default mode for new systems using authenticated encryption</li>
+                        </ul>
+                    </div>
+
+                    <div class="alert-box">
+                        <div class="alert-label">Recommendation</div>
+                        <div class="alert-content">
+                        For new development:
+                        - <strong>Default:</strong> AES-256-GCM for authenticated encryption
+
+                        - <strong>Alternative:</strong> ChaCha20-Poly1305 if AES not available or performance critical
+
+                        - <strong>Avoid:</strong> ECB, CBC without MAC (CBC-then-MAC or MAC-then-Encrypt is error-prone)
+
+                        Authenticated encryption modes (GCM, Poly1305) handle both confidentiality and integrity correctly, avoiding implementation pitfalls.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">ChaCha20-Poly1305</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        ChaCha20-Poly1305 is a modern alternative when AES acceleration is unavailable. Widely used in TLS (by default in many clients) and mobile applications.
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>ChaCha20:</strong> Stream cipher providing confidentiality</li>
+                        <li><strong>Poly1305:</strong> Message authentication code providing integrity</li>
+                        <li><strong>Advantages:</strong> Fast in software, no special hardware required, simpler implementation</li>
+                        <li><strong>Security:</strong> Proven security reduction, widely analyzed</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 3: Asymmetric Encryption -->
+                <div id="section-asymmetric">
+                    <h2 class="section-header">Asymmetric (Public Key) Encryption</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Asymmetric encryption uses different keys for encryption and decryption: public key (shared openly) and private key (kept secret). This enables secure communication without pre-shared keys and enables digital signatures.
+                    </p>
+
+                    <div class="definition-box">
+                        <div class="definition-label">Asymmetric Encryption Process</div>
+                        <div class="definition-content">
+                        Alice wants to send encrypted message to Bob:
+
+                        1. Bob publishes public key (accessible to anyone)
+
+                        2. Alice encrypts using Bob's public key:
+                           `ciphertext = encrypt(Bob_Public_Key, plaintext)`
+
+                        3. Alice sends ciphertext to Bob
+
+                        4. Bob decrypts using private key:
+                           `plaintext = decrypt(Bob_Private_Key, ciphertext)`
+
+                        Eve (adversary) has public key but cannot decrypt without private key
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">RSA</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        RSA, invented by Rivest, Shamir, and Adleman in 1977, is the most well-known public-key cryptosystem. RSA security relies on the difficulty of factoring large integers.
+                    </p>
+
+                    <h4 style="margin-bottom: 12px;">RSA Key Generation</h4>
+
+                    <ol style="margin: 16px 0; padding-left: 24px;">
+                        <li>Choose two large primes p and q (typically 1024+ bits each)</li>
+                        <li>Compute n = p × q (this is the modulus)</li>
+                        <li>Compute φ(n) = (p-1) × (q-1)</li>
+                        <li>Choose public exponent e (typically 65537) where 1 < e < φ(n) and gcd(e, φ(n)) = 1</li>
+                        <li>Compute private exponent d where e × d ≡ 1 mod φ(n)</li>
+                        <li>Public key: (n, e), Private key: (n, d)</li>
+                    </ol>
+
+                    <h4 style="margin-bottom: 12px;">RSA Encryption and Decryption</h4>
+
+                    <div class="code-block">
+                        <code>Encryption:  ciphertext = plaintext^e mod n</code>
+                        <br><br>
+                        <code>Decryption:  plaintext = ciphertext^d mod n</code>
+                    </div>
+
+                    <h4 style="margin-bottom: 12px;">RSA Key Sizes</h4>
+
+                    <table style="width: 100%; border-collapse: collapse; margin: 16px 0;">
+                        <tr style="border-bottom: 1px solid var(--border-light);">
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">Key Size</th>
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">Security Level</th>
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">Recommendation</th>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">1024 bits</td>
+                            <td style="padding: 12px;">~80 bits (obsolete)</td>
+                            <td style="padding: 12px;">Not recommended - factorable with moderate resources</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">2048 bits</td>
+                            <td style="padding: 12px;">~112 bits</td>
+                            <td style="padding: 12px;">Minimum recommended (adequate through 2030)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">3072 bits</td>
+                            <td style="padding: 12px;">~128 bits</td>
+                            <td style="padding: 12px;">Recommended for higher security requirements</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px;">4096 bits</td>
+                            <td style="padding: 12px;">~150 bits</td>
+                            <td style="padding: 12px;">Maximum recommended size beyond which performance costs increase</td>
+                        </tr>
+                    </table>
+
+                    <div class="alert-box">
+                        <div class="alert-label">RSA Limitations</div>
+                        <div class="alert-content">
+                        RSA is slow. 2048-bit RSA keys are orders of magnitude slower than AES-256 encryption. Practically, RSA is used:
+                        - To encrypt symmetric keys (hybrid encryption), not large data
+                        - For digital signatures (signing hashes, not full messages)
+                        - For key exchange protocols
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Elliptic Curve Cryptography (ECC)</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Elliptic curve cryptography provides comparable security to RSA with much smaller keys, offering better performance and bandwidth efficiency. ECC security relies on the elliptic curve discrete logarithm problem (ECDLP).
+                    </p>
+
+                    <h4 style="margin-bottom: 12px;">Key Size Comparison</h4>
+
+                    <table style="width: 100%; border-collapse: collapse; margin: 16px 0;">
+                        <tr style="border-bottom: 1px solid var(--border-light);">
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">Security Level</th>
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">RSA Key Size</th>
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">ECC Key Size</th>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">80 bits</td>
+                            <td style="padding: 12px;">1024</td>
+                            <td style="padding: 12px;">160-224</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">112 bits</td>
+                            <td style="padding: 12px;">2048</td>
+                            <td style="padding: 12px;">224-255</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">128 bits</td>
+                            <td style="padding: 12px;">3072</td>
+                            <td style="padding: 12px;">256-383</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px;">256 bits</td>
+                            <td style="padding: 12px;">15360</td>
+                            <td style="padding: 12px;">512+</td>
+                        </tr>
+                    </table>
+
+                    <h4 style="margin-bottom: 12px;">Common Elliptic Curves</h4>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>P-256 (secp256r1):</strong> NIST curve, broadly supported, ~128-bit security</li>
+                        <li><strong>P-384 (secp384r1):</strong> NIST curve, higher security ~192 bits</li>
+                        <li><strong>P-521 (secp521r1):</strong> NIST curve, ~254-bit security</li>
+                        <li><strong>Curve25519:</strong> Modern curve, ~128 bits, fast, designed for speed</li>
+                        <li><strong>ed25519:</strong> Edwards curve for digital signatures</li>
+                    </ul>
+
+                    <div class="note-box">
+                        <div class="note-label">Recommendation</div>
+                        <div class="note-content">
+                        For new development, prefer ECC over RSA:
+                        - <strong>Default:</strong> P-256 for compatibility, P-384 for higher security
+
+                        - <strong>Modern choice:</strong> Ed25519 for signatures, X25519 (Curve25519) for key exchange
+
+                        - <strong>Benefits:</strong> Smaller keys, faster computation, lower bandwidth
+
+                        Curve25519 and ed25519 are widely recommended for new applications due to careful design and simplicity.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Key Exchange</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Key exchange protocols allow two parties to securely establish shared secret over insecure channel. Diffie-Hellman is the foundational key exchange protocol.
+                    </p>
+
+                    <h4 style="margin-bottom: 12px;">Diffie-Hellman (DH)</h4>
+
+                    <p style="margin-bottom: 8px;">DH allows Alice and Bob to derive shared secret without transmitting it:</p>
+
+                    <div class="code-block">
+                        <code>Public parameters: G (generator), P (large prime)
+
+Alice:
+  Choose private key a (random)
+  Compute public key A = G^a mod P
+  Send A to Bob
+
+Bob:
+  Choose private key b (random)
+  Compute public key B = G^b mod P
+  Send B to Alice
+
+Shared secret:
+  Alice computes: S = B^a mod P = G^(ba) mod P
+  Bob computes:   S = A^b mod P = G^(ab) mod P
+
+Alice and Bob both compute S = G^(ab) mod P (same value)</code>
+                    </div>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Vulnerable:</strong> Man-in-the-middle attacks unless combined with authentication</li>
+                        <li><strong>Used:</strong> In TLS (Diffie-Hellman key exchange)</li>
+                        <li><strong>Modern:</strong> ECDH (Elliptic Curve Diffie-Hellman) is preferred for better performance</li>
+                    </ul>
+
+                    <h4 style="margin-bottom: 12px;">Forward Secrecy</h4>
+
+                    <p style="margin-bottom: 8px;">Forward secrecy (or perfect forward secrecy) ensures that compromise of long-term private keys does not compromise past session keys:</p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Traditional RSA key exchange:</strong> If RSA private key compromised, all past communications recorded by adversary can be decrypted</li>
+                        <li><strong>Diffie-Hellman with ephemeral keys (DHE/ECDHE):</strong> Session keys derived independently each session, long-term keys only used for authentication, not key derivation</li>
+                        <li><strong>Protection:</strong> Compromised long-term keys cannot decrypt past sessions</li>
+                    </ul>
+
+                    <div class="alert-box">
+                        <div class="alert-label">Recommendation</div>
+                        <div class="alert-content">
+                        Always use ephemeral key exchange (ECDHE) when possible. TLS should configure:
+                        - ECDHE key exchange (ephemeral)
+
+                        - RSA or ECDSA for server authentication
+
+                        This combination provides forward secrecy: compromise of server private key does not allow decryption of past TLS sessions recorded by adversary.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 4: Hash Functions -->
+                <div id="section-hashes">
+                    <h2 class="section-header">Hash Functions</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Cryptographic hash functions produce fixed-size output (digest) from arbitrary-size input. Hash functions provide integrity verification, password storage, and are building blocks for MACs, digital signatures, and random number generation.
+                    </p>
+
+                    <h3 class="subsection-header">Properties of Cryptographic Hash Functions</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Preimage resistance:</strong> Given hash output H, infeasible to find input M where hash(M) = H</li>
+                        <li><strong>Second preimage resistance:</strong> Given input M1, infeasible to find different input M2 where hash(M1) = hash(M2)</li>
+                        <li><strong>Collision resistance:</strong> Infeasible to find any two inputs M1 and M2 where hash(M1) = hash(M2)</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Common Hash Functions</h3>
+
+                    <table style="width: 100%; border-collapse: collapse; margin: 16px 0;">
+                        <tr style="border-bottom: 1px solid var(--border-light);">
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">Algorithm</th>
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">Output Size</th>
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">Status</th>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">MD5</td>
+                            <td style="padding: 12px;">128 bits</td>
+                            <td style="padding: 12px;">BROKEN - Collisions trivially computable</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">SHA-1</td>
+                            <td style="padding: 12px;">160 bits</td>
+                            <td style="padding: 12px;">BROKEN - Collisions demonstrated (SHAttered attack)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">SHA-256</td>
+                            <td style="padding: 12px;">256 bits</td>
+                            <td style="padding: 12px;">Secure - Widely recommended</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">SHA-512</td>
+                            <td style="padding: 12px;">512 bits</td>
+                            <td style="padding: 12px;">Secure - Higher security, faster on 64-bit systems</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px;">SHA-3</td>
+                            <td style="padding: 12px;">224/256/384/512</td>
+                            <td style="padding: 12px;">Secure - NIST standard, different construction than SHA-2</td>
+                        </tr>
+                    </table>
+
+                    <div class="alert-box critical">
+                        <div class="alert-label">Critical: Avoid Broken Hashes</div>
+                        <div class="alert-content">
+                        MD5 and SHA-1 are completely broken for security purposes. Practical collision attacks exist and can produce two files with same hash. Never use MD5 or SHA-1 for any security function. Use SHA-256 or SHA-3 (Keccak).
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Password Hashing</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Passwords require specialized hashing because:
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li>Passwords are low-entropy (limited character set, often short)</li>
+                        <li>Passwords are re-used frequently (credential stuffing)</li>
+                        <li>Attackers can use fast hash functions to brute force passwords</li>
+                    </ul>
+
+                    <p style="margin-bottom: 12px;">
+                        Password hashing must be:
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Slow:</strong> Deliberately computationally expensive to slow brute force</li>
+                        <li><strong>Salted:</strong> Random salt prevents rainbow table attacks (pre-computed hash tables)</li>
+                        <li><strong>Memory-hard:</strong> Require significant memory, increasing cost of GPU/ASIC attacks</li>
+                    </ul>
+
+                    <h4 style="margin-bottom: 12px;">Recommended Password Hash Algorithms</h4>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Argon2</h4>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Winner:</strong> Password Hashing Competition 2015</li>
+                            <li><strong>Types:</strong> Argon2d (data-dependent), Argon2i (data-independent), Argon2id (hybrid, recommended)</li>
+                            <li><strong>Configurable:</strong> Memory cost, time cost, parallelism</li>
+                            <li><strong>Status:</strong> NIST-recommended, widely supported</li>
+                            <li><strong>Default choice:</strong> Argon2id for password storage</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">bcrypt</h4>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Long-standing:</strong> Since 1999, extensively analyzed</li>
+                            <li><strong>Work factor:</strong> Adjustable cost parameter (2^work_factor iterations)</li>
+                            <li><strong>Built-in salt:</strong> Automatically handles salts</li>
+                            <li><strong>Limitations:</strong> 72-byte password limit (solved by pre-hashing)</li>
+                            <li><strong>Status:</strong> Still secure, widely used</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">PBKDF2</h4>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Standard:</strong> NIST standard (PKCS #5)</li>
+                            <li><strong>Iterations:</strong> Configurable iteration count</li>
+                            <li><strong>Algorithm:</strong> Can use HMAC with SHA-256, SHA-512, etc.</li>
+                            <li><strong>Status:</strong> Secure but less resistant to GPU/ASIC attacks than Argon2 or scrypt</li>
+                            <li><strong>Use case:</strong> When support for Argon2 or bcrypt unavailable</li>
+                        </ul>
+                    </div>
+
+                    <div class="alert-box critical">
+                        <div class="alert-label">Never Use Fast Hashes for Passwords</div>
+                        <div class="alert-content">
+                        Never use MD5, SHA-1, SHA-256, SHA-512, or other fast hashes to store passwords. Adversary can hash billions of passwords per second on GPUs. Always use Argon2id, bcrypt, or PBKDF2 (prefer Argon2id).
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">MAC (Message Authentication Code)</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        MACs provide integrity and authentication for messages using secret key. HMAC construction builds MAC from hash function.
+                    </p>
+
+                    <div class="code-block">
+                        <code>HMAC(K, M) = hash((K ⊕ opad) || hash((K ⊕ ipad) || M))</code>
+                    </div>
+
+                    <p style="margin-bottom: 12px;">
+                        Key terms:
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Key (K):</strong> Secret key shared by sender and receiver</li>
+                        <li><strong>Message (M):</strong> Data being authenticated</li>
+                        <li><strong>hash:</strong> Hash function (SHA-256, SHA-3)</li>
+                        <li><strong>iPad:</strong> Inner padding (0x36 repeated)</li>
+                        <li><strong>oPad:</strong> Outer padding (0x5c repeated)</li>
+                    </ul>
+
+                    <div class="example-box">
+                        <div class="example-label">HMAC Usage Example</div>
+                        <div class="example-content">
+                        Alice sends message with MAC to Bob:
+
+                        1. Alice computes: MAC = HMAC(K, M)
+
+                        2. Alice sends (M, MAC) to Bob
+
+                        3. Bob computes: MAC' = HMAC(K, M)
+
+                        4. Bob verifies: MAC == MAC'
+
+                        If message M tampered during transmission, MAC does not match, Bob rejects message.
+
+                        Adversary without key K cannot compute valid MAC for modified message.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 5: PKI and Certificates -->
+                <div id="section-pki">
+                    <h2 class="section-header">Public Key Infrastructure (PKI)</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Public Key Infrastructure is the system that binds public keys to entities (organizations, individuals, servers) through digital certificates issued by Certificate Authorities. PKI enables encryption and authentication at scale.
+                    </p>
+
+                    <h3 class="subsection-header">X.509 Certificates</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        X.509 is the standard format for digital certificates used in HTTPS (TLS), code signing, email encryption (S/MIME), and many other applications.
+                    </p>
+
+                    <h4 style="margin-bottom: 12px;">Certificate Structure</h4>
+
+                    <table style="width: 100%; border-collapse: collapse; margin: 16px 0;">
+                        <tr style="border-bottom: 1px solid var(--border-light);">
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">Field</th>
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">Purpose</th>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">Version</td>
+                            <td style="padding: 12px;">Certificate format version (usually v3)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">Serial Number</td>
+                            <td style="padding: 12px;">Unique identifier for certificate issued by CA</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">Issuer</td>
+                            <td style="padding: 12px;">Certificate Authority that issued this certificate</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">Subject</td>
+                            <td style="padding: 12px;">Entity certificate represents (e.g., example.com)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">Validity</td>
+                            <td style="padding: 12px;">Not Before and Not After dates</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">Public Key</td>
+                            <td style="padding: 12px;">Subject's public key (and algorithm)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">Issuer Signature</td>
+                            <td style="padding: 12px;">Signature over previous fields, signed by CA</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px;">Extensions</td>
+                            <td style="padding: 12px;">Additional info (Subject Alternative Name, Key Usage, etc.)</td>
+                        </tr>
+                    </table>
+
+                    <h3 class="subsection-header">Certificate Chain and Validation</h3>
+
+                    <div class="definition-box">
+                        <div class="definition-label">Certificate Chain</div>
+                        <div class="definition-content">
+                        Root CA (self-signed, pre-installed in browsers/operating systems)
+        |
+        ├─> Intermediate CA (signed by Root CA)
+                |
+                └─> Server Certificate (signed by Intermediate CA)
+
+                        Validation process:
+                        1. Verify server certificate signature using intermediate CA public key
+
+                        2. Verify intermediate CA signature using root CA public key
+
+                        3. Verify root CA signature (self-signed) against trusted root store
+
+                        4. Check validity (not expired)
+
+                        5. Check revocation (not in CRL or OCSP response)
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Certificate Revocation</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Certificates may need to be revoked before expiration (key compromise, CA compromise, change in ownership, fraudulent certificate).
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>CRL (Certificate Revocation List):</strong> List of revoked serial numbers published by CA</li>
+                        <li><strong>OCSP (Online Certificate Status Protocol):</strong> Real-time query to CA for revocation status</li>
+                        <li><strong>OCSP Stapling:</strong> Server includes OCSP response in TLS handshake</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Let's Encrypt</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Non-profit CA:</strong> Provides free X.509 certificates</li>
+                        <li><strong>Automated:</strong> ACME protocol for automated certificate issuance</li>
+                        <li><strong>90-day validity:</strong> Short lifetime encourages automation, limits damage if compromised</li>
+                        <li><strong>Universal trust:</strong> Trusted by all major browsers</li>
+                        <li><strong>Impact:</strong> Dramatically increased HTTPS adoption by removing cost barrier</li>
+                    </ul>
+
+                    <div class="alert-box">
+                        <div class="alert-label">Production Deployment</div>
+                        <div class="alert-content">
+                        For production HTTPS:
+                        - <strong>CA:</strong> Use Let's Encrypt (free, automated) or commercial CA (better support)
+
+                        - <strong>Renewals:</strong> Automate with certbot or similar ACME client
+
+                        - <strong>Monitoring:</strong> Monitor certificate expiration (set alerts 30 days before)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Navigation -->
+                <div class="nav-buttons">
+                    <a href="02-network-security.html" class="nav-btn">Previous: Network Security</a>
+                    <a href="05-anonymity-privacy.html" class="nav-btn primary">Next: Anonymity & Privacy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => loadProgress());
+    </script>
+</body>
+</html>
