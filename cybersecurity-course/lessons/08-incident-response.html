@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity - Module 8: Incident Response & Forensics</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="light-theme">
+    <div class="main-wrapper">
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="page-header">
+                    <h1 class="page-title">MODULE 8</h1>
+                    <p class="page-subtitle">Incident Response & Forensics</p>
+                </div>
+
+                <div class="content-card">
+                    <h2 class="module-header">Introduction</h2>
+                    <p style="margin-bottom: 16px;">
+                        Incident response is the systematic approach to preparing for, detecting, containing, and recovering from security incidents. Digital forensics involves collecting, preserving, and analyzing evidence to identify what happened, how it happened, and who was responsible. Together, incident response and forensics minimize damage while preserving evidence for legal and remediation purposes.
+                    </p>
+                </div>
+
+                <div class="alert-box critical">
+                    <div class="alert-label">Critical: Preparedness is Essential</div>
+                    <div class="alert-content">
+                    Organizations that prepare for incidents before they occur respond more effectively, minimize damage, and recover faster. Incident response cannot be improvised in the moment. Develop incident response plans, train teams, and test procedures regularly. The time to prepare is before the incident, not during.
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 1: Incident Response Lifecycle -->
+                <div id="section-lifecycle">
+                    <h2 class="section-header">Incident Response Lifecycle</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        NIST Special Publication 800-61 defines the incident response lifecycle with four phases. Understanding these phases provides framework for systematic incident handling.
+                    </p>
+
+                    <div class="definition-box">
+                        <div class="definition-label">NIST Incident Response Phases</div>
+                        <div class="definition-content">
+                        <strong>1. Preparation:</strong> Establish and train incident response team, develop procedures, acquire tools
+
+                        <strong>2. Detection and Analysis:</strong> Detect incidents, triage, identify scope and impact, determine containment strategy
+
+                        <strong>3. Containment, Eradication, and Recovery:</strong> Contain incident to prevent spread, eradicate attacker presence, restore normal operations
+
+                        <strong>4. Post-Incident Activity:</strong> Lessons learned, document incident, update procedures, improve defenses
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Phase 1: Preparation</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Preparation occurs before incidents happen. Good preparation dramatically improves response effectiveness.
+                    </p>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Incident Response Team</h4>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Incident Response Manager (IRM):</strong> Overall coordination, decision-making, communications</li>
+                            <li><strong>Technical leads:</strong> Forensic analysts, network security, security operations center analysts</li>
+                            <li><strong>Legal counsel:</strong> Legal implications, regulatory reporting, law enforcement coordination</li>
+                            <li><strong>Public relations/Communications:</strong> Public messaging, stakeholder communications</li>
+                            <li><strong>Human resources:</strong> Employee communications, disciplinary actions, personnel involved</li>
+                            <li><strong>IT operations:</strong> System recovery, restoration, technical support</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Incident Response Plan</h4>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Incident classification:</strong> Define incident categories and severity levels</li>
+                            <li><strong>Contact information:</strong> Team members, vendors, law enforcement, regulators contact details</li>
+                            <li><strong>Communication procedures:</strong> How to notify team, escalation procedures</li>
+                            <li><strong>Evidence collection:</strong> Procedures for preserving evidence, chain of custody</li>
+                            <li><strong>Containment procedures:</strong> Pre-approved containment strategies for different incident types</li>
+                            <li><strong>Recovery procedures:</strong> System restoration from backups, network reconfiguration</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Tools and Services</h4>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>SIEM:</strong> Security Information and Event Management - centralized log analysis</li>
+                            <li><strong>EDR:</strong> Endpoint Detection and Response - endpoint monitoring and response</li>
+                            <li><strong>Network monitoring:</strong> IDS/IPS, packet capture, netflow analysis</li>
+                            <li><strong>Forensics tools:</strong> Disk imaging, memory forensics, timeline analysis</li>
+                            <li><strong>Retained services:</strong> Forensic services provider on retainer for major incidents</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="subsection-header">Phase 2: Detection and Analysis</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Prompt detection limits damage. Analysis determines containment and recovery strategy.
+                    </p>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Detection Sources</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Automated alerts:</strong> IDS/IPS, SIEM rules, EDR alerts</li>
+                            <li><strong>User reports:</strong> Employees reporting suspicious emails, unusual activity, security concerns</li>
+                            <li><strong>External notifications:</strong> Third-party notifications (e.g., "your servers participating in DDoS")</li>
+                            <li><strong>Security monitoring:</strong> Log analysis, anomaly detection, threat intelligence feeds</li>
+                            <li><strong>System behavior:</strong> Unexpected reboots, performance issues, unusual network traffic</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Incident Triage</h4>
+
+                        <p style="margin-bottom: 8px;">Initial assessment to determine severity and required response:</p>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Incident confirmed?</strong> Is this real or false positive?</li>
+                            <li><strong>Type of incident:</strong> Malware, data breach, denial-of-service, unauthorized access, social engineering?</li>
+                            <li><strong>Scope affected:</strong> Which systems, networks, data?</li>
+                            <li><strong>Impact:</strong> Data exposure, financial loss, operational impact, reputation?</li>
+                            <li><strong>Timeframe:</strong> When did incident start? How long has attacker had access?</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Evidence Collection (During Analysis)</h4>
+
+                        <div class="code-block">
+                            <code># Linux system information collection
+# System time (for timeline)
+date
+
+# Logged-in users
+who -u
+w
+
+# Running processes (snapshot)
+ps aux > /tmp/processes_$(date +%s).txt
+
+# Network connections
+netstat -tulpn > /tmp/netstat_$(date +%s).txt
+ss -tulpn > /tmp/ss_$(date +%s).txt
+
+# Open files
+lsof > /tmp/lsof_$(date +%s).txt
+
+# Scheduled tasks
+crontab -l > /tmp/crontab_$(date +%s).txt
+
+# Last logins
+last
+
+# System boot time
+uptime
+
+# Firewall rules
+iptables -L -n > /tmp/iptables_$(date +%s).txt</code>
+                        </div>
+
+                        <code-block>
+                            <code># Windows system information collection
+# System time
+systeminfo | findstr /C:"System Boot Time"
+
+# Logged-in users
+query user
+
+# Running processes
+tasklist > processes_$(date /t)_$(time /t).txt
+
+# Network connections
+netstat -ano > netstat_$(date /t)_$(time /t).txt
+
+# Open files
+openfiles > openfiles_$(date /t)_$(time /t).txt
+
+# Scheduled tasks
+schtasks /query /fo LIST > tasks_$(date /t)_$(time /t).txt
+
+# Event logs
+wevtutil epl Security C:\security-export.evtx
+wevtutil epl System C:\system-export.evtx</code>
+                        </code-block>
+                    </div>
+
+                    <h3 class="subsection-header">Phase 3: Containment, Eradication, Recovery</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        This phase stops attacker, removes all presence, and restores normal operations.
+                    </p>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Containment Strategy</h4>
+                        <p style="margin-bottom: 8px;">Immediate actions to stop incident from spreading:</p>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>System isolation:</strong> Disconnect affected systems from network (unplug cable, disable network interface)</li>
+                            <li><strong>Account revocation:</strong> Revoke credentials of affected accounts</li>
+                            <li><strong>Network segmentation:</strong> Isolate affected network segments</li>
+                            <li><strong>Block attacker IPs:</strong> Block known malicious IPs at firewall</li>
+                            <li><strong>Change passwords:</strong> Force password resets for affected users</li>
+                            <li><strong>Disable services:</strong> Disable services being exploited</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Eradication</h4>
+                        <p style="margin-bottom: 8px;">Remove attacker presence and vulnerabilities:</p>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Malware removal:</strong> Identify and remove all malware, backdoors, webshells</li>
+                            <li><strong>Account cleanup:</strong> Remove attacker-created accounts, audit all accounts for unauthorized access</li>
+                            <li><strong>Backdoor identification:</strong> Check for scheduled tasks, persistence mechanisms, unauthorized services</li>
+                            <li><strong>Vulnerability patching:</strong> Patch vulnerabilities attacker exploited</li>
+                            <li><strong>Configuration review:</strong> Review and harden configurations (firewall rules, permissions, services)</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Recovery</h4>
+                        <p style="margin-bottom: 8px;">Restore normal operations:</p>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>System restoration:</strong> Restore from known-good backups created before incident</li>
+                            <li><strong>Configuration verification:</strong> Confirm restored systems match secure configuration baselines</li>
+                            <li><strong>Monitoring:</strong> Enhanced monitoring post-recovery to detect attacker return</li>
+                            <li><strong>Credential reset:</strong> Issue new credentials to all potentially affected users</li>
+                            <li><strong>Phased restoration:</strong> Restore critical systems first, monitor before restoring remaining systems</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="subsection-header">Phase 4: Post-Incident Activity</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        After incident resolved, perform thorough review and improve preparedness for future incidents.
+                    </p>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Lessons Learned Meeting</h4>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li>What happened? (timeline, scope, impact)</li>
+                            <li>How did we detect it? (detection effectiveness)</li>
+                            <li>How did we respond? (what worked, what didn't)</li>
+                            <li>What contributed to the incident? (root cause)</li>
+                            <li>What could have prevented it?</li>
+                            <li>What should we change?</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Documentation</h4>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Incident report:</strong> Detailed incident documentation for organizational learning</li>
+                            <li><strong>Timeline:</strong> Precise incident timeline (detection, actions, milestones)</li>
+                            <li><strong>Evidence summary:</strong> Collected evidence and forensic findings</li>
+                            <li><strong>Financial impact:</strong> Quantified costs (response, remediation, lost business, legal)</li>
+                            <li><strong>Procedural updates:</strong> Update incident response plan and security policies</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 2: Digital Forensics -->
+                <div id="section-forensics">
+                    <h2 class="section-header">Digital Forensics Fundamentals</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Digital forensics is scientific investigation and analysis of digital evidence. Forensic analysis determines what attackers did, how they gained access, and what data was accessed or stolen.
+                    </p>
+
+                    <h3 class="subsection-header">Forensic Principles</h3>
+
+                    <div class="definition-box">
+                        <div class="definition-label">ACPO Good Practice Guide Principles (UK)</div>
+                        <div class="definition-content">
+                        <strong>1. Actions taken to secure and audit exhibits should not change data</strong>
+
+                        <strong>2. Person accessing exhibits should be competent and able to explain their actions</strong>
+
+                        <strong>3. Audit trail or record of all processes applied to exhibits must be created</strong>
+
+                        <strong>4. Person in charge of investigation has overall responsibility for ensuring law and principles adhered to</strong>
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Chain of Custody</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Chain of custody documents who handled evidence, when, and for what purpose. Preserves evidentiary integrity for legal purposes.
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Documentation:</strong> Every access to evidence logged (who, when, purpose)</li>
+                        <li><strong>Sealing:</strong> Evidence sealed in tamper-evident bag with documentation</li>
+                        <li><strong>Hashing:</strong> Cryptographic hash calculated at each stage to verify integrity</li>
+                        <li><strong>Storage:</strong> Evidence stored in secure, access-controlled environment</li>
+                    </ul>
+
+                    <div class="alert-box critical">
+                        <div class="alert-label">Critical: Evidence Integrity</div>
+                        <div class="alert-content">
+                        Evidence must be preserved in original, unmodified state. Never analyze evidence directly - always create forensic image (bit-for-bit copy) and analyze the copy. Any modification to evidence renders it inadmissible in court.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Disk Forensics</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Disk forensics examines data stored on hard drives and solid state drives to reconstruct user activity and system state.
+                    </p>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Forensic Disk Imaging</h4>
+
+                        <div class="code-block">
+                            <code># Linux: Create disk image with dd (ensure no changes to evidence)
+dd if=/dev/sdb of=/dev/evidence/sdb_image.dd bs=4M conv=noerror,sync status=progress
+
+# Verify image with hash
+sha256sum /dev/evidence/sdb_image.dd > /dev/evidence/sdb_image.dd.sha256
+
+# Calculate hash of original for comparison
+sha256sum /dev/sdb</code>
+                        </div>
+
+                        <p style="margin-bottom: 8px;">dd copies every bit including free space and deleted files, preserving all evidence.</p>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">What Disk Forensics Reveals</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Deleted files:</strong> Files that user deleted may be recoverable from free space</li>
+                            <li><strong>File timestamps:</strong> MAC times (Modified, Accessed, Created) reveal file access patterns</li>
+                            <li><strong>Disk artifacts:</strong> Prefetch files, browser cache, application logs, registry (Windows), .bash_history (Linux)</li>
+                            <li><strong>Suspicious files:</strong> Malware, backdoors, stolen data archives</li>
+                            <li><strong>Tools used:</strong> Installed applications, recently opened documents</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Forensic Tools</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Autopsy:</strong> Open-source disk forensics suite (GUI, timeline, keyword search)</li>
+                            <li><strong>Sleuth Kit:</strong> Command-line toolkit underlying Autopsy</li>
+                            <li><strong>EnCase:</strong> Commercial forensics suite with extensive capabilities</li>
+                            <li><strong>FTK Imager:</strong> Disk imaging and basic analysis</li>
+                            <li><strong>Volatility:</strong> Memory forensics (see next section)</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="subsection-header">Memory Forensics</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Memory forensics analyzes RAM to find processes, network connections, and artifacts that do not persist to disk (fileless malware, encryption keys, injected code).
+                    </p>
+
+                    <div class="code-block">
+                        <code># Capture physical memory dump (Windows - requires admin privileges)
+# Using FTK Imager (GUI tool)
+# Or using Microsoft DumpIt utility
+
+# Linux: Capture memory
+cat /dev/mem > memory_dump.raw
+
+# Or using LiME (Linux Memory Extractor)
+insmod lime.ko "path=/evidence/memory_dump.raw format=lime"</code>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px">Memory Forensics with Volatility</h4>
+
+                        <div class="code-block">
+                            <code># Determine Windows profile
+volatility -f memory_dump.raw imageinfo
+
+# List running processes
+volatility -f memory_dump.raw --profile=Win7SP1x64 pslist
+
+# Process tree with parent/child relationships
+volatility -f memory_dump.raw --profile=Win7SP1x64 pstree
+
+# Network connections
+volatility -f memory_dump.raw --profile=Win7SP1x64 netscan
+
+# Console output (what user typed)
+volatility -f memory_dump.raw --profile=Win7SP1x64 consoles
+
+# Injected DLLs
+volatility -f memory_dump.raw --profile=Win7SP1x64 dlllist
+
+# Memory dump of specific process (analyze malware)
+volatility -f memory_dump.raw --profile=Win7SP1x64 memdump -p [PID] -D /evidence/</code>
+                        </div>
+                    </div>
+
+                    <p style="margin-bottom: 12px;">
+                        Memory forensics reveals evidence that never touches disk: fileless malware, injected code, encryption keys, clipboard data, unsaved documents.
+                    </p>
+
+                    <h3 class="subsection-header">Network Forensics</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Network forensics examines network traffic to reconstruct communications, identify attack vectors, and trace attacker activities.
+                    </p>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Packet Capture</h4>
+
+                        <div class="code-block">
+                            <code># Capture packets with tcpdump (Linux)
+tcpdump -i eth0 -w capture.pcap
+
+# Capture specific network
+tcpdump -i eth0 -w capture.pcap net 192.168.1.0/24
+
+# Capture specific port
+tcpdump -i eth0 -w capture.pcap port 443
+
+# Windows: Packet capture with Wireshark (GUI tool)</code>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Packet Analysis with Wireshark</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Follow TCP stream:</strong> Reconstruct full HTTP, FTP, or other TCP conversations</li>
+                            <li><strong>Filtering:</strong> Apply filters to isolate relevant traffic (e.g., "http.request.method == 'POST'")</li>
+                            <li><strong>Payload extraction:</strong> Extract files from pcap (files transmitted over HTTP, FTP)</li>
+                            <li><strong>TLS analysis:</strong> TLS details if keys available, confirm encryption, certificate validation</li>
+                            <li><strong>Conversation statistics:</strong> "Conversations" summary shows who talked to whom</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Netflow Analysis</h4>
+
+                        <p style="margin-bottom: 8px;">Netflow records summarize network communications for large-scale analysis:</p>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Source and destination IP</strong></li>
+                            <li><strong>Source and destination port</strong></li>
+                            <li><strong>Protocol (TCP, UDP, ICMP)</strong></li>
+                            <li><strong>Packet and byte counts</strong></li>
+                            <li><strong>Flow start and end timestamp</strong></li>
+                        </ul>
+
+                        <p style="margin-bottom: 8px;">
+                            Netflow enables detection of:
+                        </p>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Data exfiltration (unusually large outbound transfers)</strong></li>
+                            <li><strong>Suspicious connections (long-duration connections from unexpected IPs)</strong></li>
+                            <li><strong>Beaconing (regular connections to C2 servers)</strong></li>
+                        </ul>
+                    </div>
+
+                    <h3 class="subsection-header">Log Analysis</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Event logs from systems, applications, network devices, and security tools reconstruct incident timeline and attacker activities.
+                    </p>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Important Log Sources</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>System logs:</strong> /var/log/auth.log (Linux), Windows Event Log (Security, System, Application)</li>
+                            <li><strong>Application logs:</strong> Web server logs (Apache, Nginx), application logs (database, custom apps)</li>
+                            <li><strong>Network device logs:</strong> Firewall logs, router logs, switch logs, VPN logs</li>
+                            <li><strong>Security tools:</strong> IDS/IPS alerts, EDR alerts, antivirus logs</li>
+                            <li><strong>DNS logs:</strong> DNS query logs (useful for identifying C2 domain names)</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Log Collection</h4>
+
+                        <div class="code-block">
+                            <code># Linux logs
+/var/log/auth.log      # Authentication events (ssh, sudo)
+/var/log/syslog        # System messages
+/var/log/kern.log      # Kernel messages
+~/.bash_history       # User command history
+~/.zsh_history
+
+# Windows logs (via GUI: Event Viewer)
+Event Viewer → Windows Logs:
+  - Security (logon events, privilege changes)
+  - System (system events, service changes)
+  - Application (application errors, events)</code>
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Timeline Construction</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Forensic timeline reconstructs incident chronology. Timeline enables understanding of attack progression.
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Sources:</strong> Combine evidence from disk, memory, logs, network captures</li>
+                        <li><strong>Timeline types:</strong> MAC times (file), event timestamps (logs), packet timestamps (network)</li>
+                        <li><strong>Analysis:</strong> Identify initial access, lateral movement, persistence mechanisms, exfiltration</li>
+                        <li><strong>Tools:</strong> Autopsy timeline, Plaso (log2timeline), custom scripts</li>
+                    </ul>
+
+                    <div class="alert-box">
+                        <div class="alert-label">Timeline Indicators</div>
+                        <div class="alert-content">
+                        <strong>Initial access:</strong> First suspicious log entry from attacker IP
+
+                        <strong>Lateral movement:</strong> Access attempts to additional systems
+
+                        <strong>Persistence:</strong> Scheduled tasks, startup items, registry modifications
+
+                        <strong>Exfiltration:</strong> Large outbound data transfers
+
+                        <strong>Incident scope:</strong> Timeline reveals how long attacker had access and extent of compromise
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 3: Malware Analysis -->
+                <div id="section-malware">
+                    <h2 class="section-header">Malware Analysis Basics</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Malware analysis determines malware capabilities, behavior, and methods. Analysis enables understanding what attackers achieved and how to prevent similar threats.
+                    </p>
+
+                    <h3 class="subsection-header">Static Analysis</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Static analysis examines malware without executing it.
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>File hashing:</strong> Calculate SHA256 - compare to threat intelligence databases (VirusTotal)</li>
+                        <li><strong>Strings extraction:</strong> Extract readable strings (URLs, IPs, file paths, commands)</li>
+                        <li><strong>Packing detection:</strong> Identify if malware is packed/obfuscated</li>
+                        <li><strong>Disassembly:</strong> Examine assembly code (requires reverse engineering expertise)</li>
+                        <li><strong>Import and export analysis:</strong> Examine DLL imports (functions malware uses), exports</li>
+                    </ul>
+
+                    <div class="code-block">
+                        <code># Static analysis tools
+
+# Calculate hash
+sha256sum malware.exe > malware.sha256
+
+# Extract strings
+strings malware.exe > malware_strings.txt
+
+# Analyze ELF file (Linux)
+readelf -h malware_elf
+
+# Analyze PE file (Windows)
+objdump -p malware.exe
+pefile (Python library)
+
+# Check against VirusTotal
+python -m virustotal.malware_scanner malware.exe</code>
+                    </div>
+
+                    <h3 class="subsection-header">Dynamic Analysis</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Dynamic analysis executes malware in controlled environment to observe behavior.
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Sandbox:</strong> Execute malware in isolated virtual machine (Cuckoo Sandbox, Remnux)</li>
+                        <li><strong>Network monitoring:</strong> Capture communications with C2 servers</li>
+                        <li><strong>Process monitoring:</strong> Observe spawned processes, registry modifications, file system changes</li>
+                        <li><strong>Screenshot capture:</strong> Periodic screenshots observe malware GUI</li>
+                        <li><strong>Disk changes:</strong> Track file creation, deletion, modification</li>
+                    </ul>
+
+                    <div class="alert-box critical">
+                        <div class="alert-label">Critical: Isolated Environment Required</div>
+                        <div class="alert-content">
+                        Never execute suspicious malware on production systems or non-isolated environments. Malware can spread across networks, damage systems, and exfiltrate data. Use dedicated malware analysis sandbox (isolated virtual machine) that can be destroyed and restored after analysis.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 4: SIEM and Log Management -->
+                <div id="section-siem">
+                    <h2 class="section-header">Security Information and Event Management (SIEM)</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        SIEM systems collect, correlate, and analyze logs from across IT infrastructure. Effective SIEM implementation enables rapid incident detection and response.
+                    </p>
+
+                    <h3 class="subsection-header">SIEM Components</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Log collection:</strong> Ingest logs from systems, applications, network devices, security tools via agents or syslog</li>
+                        <li><strong>Parsing and normalization:</strong> Convert logs to common format for analysis</li>
+                        <li><strong>Correlation:</strong> Identify related events across different sources</li>
+                        <li><strong>Alerting:</strong> Generate alerts based on rules and anomalies</li>
+                        <li><strong>Dashboard and reporting:</strong> Visualize security posture and trends</li>
+                    </ul>
+
+                    <h3 class="subsection-header">SIEM Implementation Best Practices</h3>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Log Sources</h4>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Endpoints:</strong> Workstations, servers (Windows Event Log, Linux syslog)</li>
+                            <li><strong>Network devices:</strong> Firewalls, routers, switches, VPN logs</li>
+                            <li><strong>Applications:</strong> Web servers, databases, custom applications</li>
+                            <li><strong>Directory services:</strong> Active Directory, LDAP</li>
+                            <li><strong>Security tools:</strong> IDS/IPS, EDR, antivirus, DLP</li>
+                            <li><strong>Identity systems:</strong> IAM, MFA logs</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Alert Tuning</h4>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>False positive reduction:</strong> Tune alerts to reduce noise</li>
+                            <li><strong>Threshold adjustment:</strong> Optimize thresholds (number of failed logins before alert)</li>
+                            <li><strong>Suppression rules:</strong> Suppress expected, non-malicious events</li>
+                            <li><strong>Severity classification:</strong> Classify alerts by severity for prioritization</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="subsection-header">Open Source SIEM</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Wazuh:</strong> Open-source SIEM based on OSSEC, includes endpoint detection</li>
+                        <li><strong>ELK Stack (Elasticsearch, Logstash, Kibana):</strong> Flexible, widely used, requires configuration</li>
+                        <li><strong>Splunk:</strong> Commercial (has free version limited to daily volume)</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 5: Legal and Regulatory Reporting -->
+                <div id="section-legal">
+                    <h2 class="section-header">Legal and Regulatory Reporting</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Data breaches triggering legal reporting requirements differ by jurisdiction. Understanding obligations is critical for compliance.
+                    </p>
+
+                    <h3 class="subsection-header">US Regulations</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>State breach notification laws:</strong> All 50 states have laws requiring notification (typically 30-45 days)</li>
+                        <li><strong>HIPAA:</strong> Healthcare - breach affecting 500+ individuals requires notification</li>
+                        <li><strong>GLBA:</strong> Financial institutions - safeguard and security requirements</li>
+                        <li><strong>GRAMM-LEACH-BLILEY ACT:</strong> Safeguard customer records</li>
+                    </ul>
+
+                    <h3 class="subsection-header">GDPR (EU)</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Article 33:</strong> Notify supervisory authority within 72 hours of becoming aware of breach</li>
+                        <li><strong>Article 34:</strong> Notify affected individuals without undue delay if high risk</li>
+                        <li><strong>Scope:</strong> Applies to EU citizens' data, regardless of organization location</li>
+                        <li><strong>Fines:</strong> Up to 4% of global annual revenue or 20 million EUR (whichever larger)</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Working with Law Enforcement</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Report incidents:</strong> Report cybercrime to local FBI field office (US) or appropriate agency</li>
+                        <li><strong>Preserve evidence:</strong> Law enforcement requires properly preserved evidence (forensic imaging, chain of custody)</li>
+                        <li><strong>Consult legal:</strong> Legal counsel should advise on law enforcement engagement</li>
+                        <li><strong>International cooperation:</strong> For trans-border attacks, engage appropriate international authorities</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 6: Incident Response Scenarios -->
+                <div id="section-scenarios">
+                    <h2 class="section-header">Common Incident Response Scenarios</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Different incident types require specific response strategies.
+                    </p>
+
+                    <h3 class="subsection-header">Ransomware Response</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Immediate action:</strong> Disconnect affected systems immediately (do not reboot)</li>
+                        <li><strong>Evidence collection:</strong> Capture memory, volatile data before shutdown</li>
+                        <li><strong>Determine scope:</strong> Identify all affected systems (ransomware encrypts network shares)</li>
+                        <li><strong>Backup verification:</strong> Confirm backup integrity before restoration</li>
+                        <li><strong>Decryption:</strong> Check No More Ransom project for decryption keys</li>
+                        <li><strong>Restore:</strong> Restore from verified backups after malware eradication</li>
+                        <li><strong>Payment decision:</strong> Consult legal and FBI - payment not recommended</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Data Breach Response</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Containment:</strong> Stop data exfiltration (block attacker IPs, revoke credentials)</li>
+                        <li><strong>Investigation:</strong> Determine what data was stolen, when, how many individuals affected</li>
+                        <li><strong>Legal notification:</strong> Consult legal regarding reporting obligations (GDPR, state laws)</li>
+                        <li><strong>Customer notification:</strong> Prepare clear, concise notification with remediation steps</li>
+                        <li><strong>Credit monitoring:</strong> Offer free credit monitoring to affected individuals</li>
+                        <li><strong>Public relations:</strong> Manage public communications honestly and transparently</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Insider Threat Response</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Evidence collection:</strong> Preserve logs and evidence without alerting employee</li>
+                        <li><strong>Legal consultation:</strong> Consult legal regarding employee rights and investigation procedures</li>
+                        <li><strong>HR coordination:</strong> HR handles employee communications and disciplinary actions</li>
+                        <li><strong>Access revocation:</strong> Revoke access when investigation confirms insider threat</li>
+                        <li><strong>Law enforcement:</strong> For malicious insiders (theft, sabotage), report to law enforcement</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 7: Business Continuity and Disaster Recovery -->
+                <div id="section-bcdr">
+                    <h2 class="section-header">Business Continuity and Disaster Recovery</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Business continuity planning ensures operations continue or rapidly resume after incident. Disaster recovery focuses on restoring IT systems.
+                    </p>
+
+                    <h3 class="subsection-header">Backup Strategy</h3>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">3-2-1 Backup Rule</h4>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>3 copies of data:</strong> Original + 2 backups</li>
+                            <li><strong>2 different storage media:</strong> E.g., disk + tape, or disk + cloud</li>
+                            <li><strong>1 offsite backup:</strong> Backups stored in separate location (protects from physical disaster)</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="subsection-header">Backup Testing</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Regular testing:</strong> Test backup restoration at least quarterly</li>
+                        <li><strong>Test full restoration:</strong> Don't just verify files exist - test complete system restoration</li>
+                        <li><strong>Document procedures:</strong> Document restoration procedures clearly and test them</li>
+                        <li><strong>RTO/RPO:</strong> Define Recovery Time Objective (how long to restore) and Recovery Point Objective (data loss acceptable)</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Business Continuity Plan</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Impact analysis:</strong> Identify critical systems and dependencies</li>
+                        <li><strong>Alternative procedures:</strong> Manual workarounds when systems unavailable</li>
+                        <li><strong>Communication plan:</strong> How to notify employees, customers, stakeholders</li>
+                        <li><strong>Roles and responsibilities:</strong> Who makes decisions, who executes procedures</li>
+                        <li><strong>Regular testing:</strong> Test business continuity plan annually</li>
+                    </ul>
+
+                    <div class="alert-box critical">
+                        <div class="alert-label">Critical: Test Backups Regularly</div>
+                        <div class="alert-content">
+                        Backups that cannot be restored are worse than no backups. If you discover backup failure during incident response, you cannot recover. Test restoration regularly to ensure backups are valid and procedures work. Backup failures discovered during incident are catastrophic.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Navigation -->
+                <div class="nav-buttons">
+                    <a href="07-social-engineering.html" class="nav-btn">Previous: Social Engineering</a>
+                    <a href="09-advanced-anonymity.html" class="nav-btn primary">Next: Advanced Anonymity</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => loadProgress());
+    </script>
+</body>
+</html>
