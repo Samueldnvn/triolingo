@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity - Module 2: Network Security</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="light-theme">
+    <div class="main-wrapper">
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="page-header">
+                    <h1 class="page-title">MODULE 2</h1>
+                    <p class="page-subtitle">Network Security</p>
+                </div>
+
+                <div class="content-card">
+                    <h2 class="module-header">Introduction</h2>
+                    <p style="margin-bottom: 16px;">
+                        Network security involves protecting data during transmission, securing network infrastructure, and defending against network-based attacks. Understanding TCP/IP protocols, implementing firewalls and intrusion detection, and mitigating distributed denial-of-service attacks form the foundation of network security. This module covers the architecture of secure networks and the tools used to protect them.
+                    </p>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 1: TCP/IP Fundamentals -->
+                <div id="section-tcpip">
+                    <h2 class="section-header">TCP/IP Protocol Stack</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        The Internet Protocol Suite (TCP/IP) is the foundation of modern networking. Understanding its four-layer model is essential for identifying vulnerabilities, configuring security controls, and analyzing network traffic effectively.
+                    </p>
+
+                    <h3 class="subsection-header">The Four-Layer Model</h3>
+
+                    <div class="definition-box">
+                        <div class="definition-label">OSI vs TCP/IP Comparison</div>
+                        <div class="definition-content">
+                        <strong>TCP/IP Four Layers:</strong>
+                        1. Network Interface Layer (Data Link + Physical)
+
+                        2. Internet Layer (Network)
+
+                        3. Transport Layer
+
+                        4. Application Layer
+
+                        <strong>OSI Seven Layers (for reference):</strong>
+                        7. Application Layer
+
+                        6. Presentation Layer
+
+                        5. Session Layer
+
+                        4. Transport Layer
+
+                        3. Network Layer
+
+                        2. Data Link Layer
+
+                        1. Physical Layer
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">IP Layer (Layer 2)</h3>
+                    <p style="margin-bottom: 12px;">
+                        Internet Protocol (IP) handles packet routing and addressing across networks. Two versions are in use:
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>IPv4:</strong> 32-bit addresses, 4.3 billion possible addresses, largely exhausted</li>
+                        <li><strong>IPv6:</strong> 128-bit addresses, 340 undecillion possible addresses, future-proof</li>
+                    </ul>
+
+                    <h4 style="margin-bottom: 12px;">IP Security Considerations</h4>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>No built-in authentication:</strong> Source IP addresses can be spoofed (IP spoofing attacks)</li>
+                        <li><strong>No encryption:</strong> IP packets are transmitted in plaintext unless wrapped by IPsec</li>
+                        <li><strong>No integrity checking:</strong> Packets can be modified in transit without detection</li>
+                        <li><strong>Asymmetric routing:</strong> Packets may take different paths, complicating monitoring</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Transport Layer (Layer 3)</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Two primary protocols operate at the transport layer: TCP and UDP, each with different security characteristics.
+                    </p>
+
+                    <h4 style="margin-bottom: 12px;">Transmission Control Protocol (TCP)</h4>
+
+                    <p style="margin-bottom: 8px;">TCP provides reliable, ordered delivery through connection-oriented communication:</p>
+
+                    <div class="code-block">
+                        <code>Three-Way Handshake:
+SYN → Server: "I want to connect"
+SYN-ACK ← Server: "I hear you, let's connect"
+ACK → Server: "Connection established"</code>
+                    </div>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Connection state:</strong> Maintains state for ongoing connections</li>
+                        <li><strong>Reliability:</strong> Retransmits lost packets, detects out-of-order packets</li>
+                        <li><strong>Flow control:</strong> Prevents overwhelming the receiver</li>
+                        <li><strong>Congestion control:</strong> Adjusts transmission rate based on network conditions</li>
+                    </ul>
+
+                    <p style="margin-bottom: 12px;">
+                        <strong>TCP Security Issues:</strong> The three-way handshake exposes TCP to SYN flood attacks and connection hijacking. State table exhaustion attacks overwhelm connection-tracking systems.
+                    </p>
+
+                    <h4 style="margin-bottom: 12px;">User Datagram Protocol (UDP)</h4>
+
+                    <p style="margin-bottom: 8px;">UDP provides connectionless, unreliable datagram delivery:</p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>No connection:</strong> Packets sent without establishing state</li>
+                        <li><strong>No reliability:</strong> Lost packets are not retransmitted</li>
+                        <li><strong>Faster:</strong> Lower overhead than TCP, suitable for real-time applications</li>
+                        <li><strong>Best-effort:</strong> No guarantees of delivery or order</li>
+                    </ul>
+
+                    <p style="margin-bottom: 12px;">
+                        <strong>UDP Security Issues:</strong> UDP is often used for amplification DDoS attacks because UDP responses can be much larger than requests. UDP flood attacks overwhelm services with connectionless packets.
+                    </p>
+
+                    <h3 class="subsection-header">Application Layer (Layer 4)</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Applications use specific protocols at the application layer. Each protocol has unique security considerations:
+                    </p>
+
+                    <table style="width: 100%; border-collapse: collapse; margin: 16px 0;">
+                        <tr style="border-bottom: 1px solid var(--border-light);">
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">Protocol</th>
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">Port</th>
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">Uses</th>
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">Common Vulnerabilities</th>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">HTTP</td>
+                            <td style="padding: 12px;">80</td>
+                            <td style="padding: 12px;">Web browsing</td>
+                            <td style="padding: 12px;">Injection attacks, XSS, CSRF</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">HTTPS</td>
+                            <td style="padding: 12px;">443</td>
+                            <td style="padding: 12px;">Encrypted web</td>
+                            <td style="padding: 12px;">Certificate spoofing, downgrade attacks</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">FTP</td>
+                            <td style="padding: 12px;">20, 21</td>
+                            <td style="padding: 12px;">File transfer</td>
+                            <td style="padding: 12px;">Cleartext passwords, passive mode exploitation</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">SSH</td>
+                            <td style="padding: 12px;">22</td>
+                            <td style="padding: 12px;">Remote administration</td>
+                            <td style="padding: 12px;">Weak keys, authentication bypass</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">SMTP</td>
+                            <td style="padding: 12px;">25</td>
+                            <td style="padding: 12px;">Email sending</td>
+                            <td style="padding: 12px;">Email spoofing, spam relay</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">DNS</td>
+                            <td style="padding: 12px;">53</td>
+                            <td style="padding: 12px;">Domain resolution</td>
+                            <td style="padding: 12px;">DNS cache poisoning, amplification attacks</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px;">RDP</td>
+                            <td style="padding: 12px;">3389</td>
+                            <td style="padding: 12px;">Remote desktop</td>
+                            <td style="padding: 12px;">Brute force, BlueKeep vulnerability</td>
+                        </tr>
+                    </table>
+
+                    <div class="note-box">
+                        <div class="note-label">Note</div>
+                        <div class="note-content">
+                        Port numbers 0-1023 are well-known ports (require root/admin privileges). Ports 1024-49151 are registered ports. Ports 49152-65535 are dynamic or private ports used for client-side connections.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Network Address Translation (NAT)</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        NAT allows multiple devices to share a single public IP address, translating private IP addresses to public ones for internet communication. While NAT provides some security by hiding internal IP addresses, it was designed to address IPv4 address exhaustion, not security.
+                    </p>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Private IP Address Ranges (RFC 1918)</h4>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li>10.0.0.0 - 10.255.255.255 (10.0.0.0/8)</li>
+                            <li>172.16.0.0 - 172.31.255.255 (172.16.0.0/12)</li>
+                            <li>192.168.0.0 - 192.168.255.255 (192.168.0.0/16)</li>
+                        </ul>
+                    </div>
+
+                    <div class="alert-box">
+                        <div class="alert-label">Important</div>
+                        <div class="alert-content">
+                        NAT is not a firewall. While NAT complicates direct inbound connections, it can be bypassed through UPnP, port forwarding, or application-layer protocols that establish connections from internal networks. Firewalls should be configured independently, not assumed from NAT.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 2: Firewalls -->
+                <div id="section-firewalls">
+                    <h2 class="section-header">Firewalls</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Firewalls are network security devices that monitor and control incoming and outgoing traffic based on predetermined security rules. They act as the first line of defense, filtering malicious traffic and preventing unauthorized access.
+                    </p>
+
+                    <h3 class="subsection-header">Types of Firewalls</h3>
+
+                    <h4 style="margin-bottom: 12px;">Packet-Filtering Firewalls (Stateless)</h4>
+
+                    <p style="margin-bottom: 8px;">Stateless firewalls examine individual packets independently, making decisions based on header information:</p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Source IP and destination IP</strong></li>
+                        <li><strong>Source port and destination port</strong></li>
+                        <li><strong>Protocol (TCP, UDP, ICMP)</strong></li>
+                    </ul>
+
+                    <div class="example-box">
+                        <div class="example-label">Example: Stateless Firewall Rule</div>
+                        <div class="example-content">
+                        Allow: <strong>TCP</strong> from source <strong>192.168.1.10</strong> to destination <strong>ANY</strong> on port <strong>443</strong>
+
+                        Deny: <strong>ALL</strong> from source <strong>10.0.0.0/8</strong>
+
+                        The firewall examines each packet and applies rules independently, with no memory of previous packets.
+                        </div>
+                    </div>
+
+                    <p style="margin-bottom: 12px;">
+                        <strong>Limitations:</strong> Stateless firewalls cannot distinguish between response traffic and new connections because they do not track connection state. They also cannot detect application-layer attacks hidden within permitted traffic.
+                    </p>
+
+                    <h4 style="margin-bottom: 12px;">Stateful Inspection Firewalls</h4>
+
+                    <p style="margin-bottom: 8px;">Stateful firewalls maintain connection state tables to track ongoing connections:</p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>State tracking:</strong> Remembers connection details (source, destination, ports, sequence numbers)</li>
+                        <li><strong>Dynamic rules:</strong> Allows response traffic only for established connections</li>
+                        <li><strong>Context-aware:</strong> Understands TCP handshake, UDP flows, and ICMP associations</li>
+                    </ul>
+
+                    <div class="note-box">
+                        <div class="note-label">State Table Example</div>
+                        <div class="note-content">
+                        A connection is established when firewall sees SYN packet from internal host to external server.
+
+                        The firewall adds entry to state table:
+                        - Source: 192.168.1.10:45123
+                        - Destination: 93.184.216.34:443
+                        - State: ESTABLISHED
+
+                        Response packets (SYN-ACK, ACK) are automatically allowed because they match state table entry.
+
+                        If attacker tries to send packets to 192.168.1.10:45123 from 93.184.216.34 without prior SYN, packets are dropped because no matching state entry exists.
+                        </div>
+                    </div>
+
+                    <p style="margin-bottom: 12px;">
+                        <strong>Advantages:</strong> Stateful firewalls provide stronger security by automatically allowing only response traffic for authorized connections and blocking unsolicited inbound traffic.
+                    </p>
+
+                    <h4 style="margin-bottom: 12px;">Next-Generation Firewalls (NGFW)</h4>
+
+                    <p style="margin-bottom: 8px;">Next-generation firewalls add application-layer awareness:</p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Application identification:</strong> Recognizes applications, not just ports (e.g., distinguishes Facebook web chat from HTTP on port 443)</li>
+                        <li><strong>Deep packet inspection (DPI):</strong> Examines payload content for threats, signatures, and anomalies</li>
+                        <li><strong>IDPS integration:</strong> Intrusion detection and prevention built-in</li>
+                        <li><strong>User identity:</strong> Can enforce policies by user or group, not just IP address</li>
+                        <li><strong>SSL/TLS inspection:</strong> Decrypts and inspects encrypted traffic for threats</li>
+                    </ul>
+
+                    <div class="alert-box critical">
+                        <div class="alert-label">Critical Consideration: TLS Inspection</div>
+                        <div class="alert-content">
+                        Decrypting TLS traffic for inspection requires the firewall to act as a man-in-the-middle using its own certificates. This introduces:
+                        - Certificate trust concerns (systems must trust firewall CA)
+                        - Privacy considerations (firewall sees decrypted traffic)
+                        - Performance overhead (decryption is computationally expensive)
+
+                        Balance security needs with privacy and performance. Not all SSL/TLS traffic should necessarily be decrypted.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Firewall Rule Management</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Effective firewall configuration requires careful rule design:
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Default deny:</strong> Start by denying all traffic, then explicitly allow what is needed</li>
+                        <li><strong>Specificity:</strong> Make rules as specific as possible to reduce attack surface</li>
+                        <li><strong>Rule ordering:</strong> Firewall policies are evaluated top-down; first match wins</li>
+                        <li><strong>Rule simplification:</strong> Avoid unnecessary rules, consolidate when possible</li>
+                        <li><strong>Auditing:</strong> Regularly review and remove unused rules</li>
+                        <li><strong>Logging:</strong> Log dropped traffic to detect attacks and misconfigurations</li>
+                    </ul>
+
+                    <div class="note-box">
+                        <div class="note-label">Example: Firewall Rule Ordering</div>
+                        <div class="note-content">
+                        1. Allow: TCP 192.168.1.10 → ANY:443 (This user's web access)
+
+                        2. Deny: TCP ANY → 192.168.1.0/24:80 (Block inbound HTTP from anywhere)
+
+                        3. Allow: TCP 10.0.0.0/8 → 192.168.1.0/24:22 (SSH from corporate network)
+
+                        4. Deny: ALL (Drop everything else)
+
+                        If a packet from 10.0.0.50 to 192.168.1.10:22 arrives:
+                        - Rule 1: Does not match (not 443)
+                        - Rule 2: Does not match (to port 22, not 80)
+                        - Rule 3: MATCH! Allow packet.
+                        - Rules 4 never evaluated because rule 3 matched first.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Network Segmentation and DMZ</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Divide networks into segments to contain breaches and implement security zones:
+                    </p>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Common Network Segments</h4>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>DMZ (Demilitarized Zone):</strong> Public-facing servers (web, email, VPN) isolated from internal network</li>
+                            <li><strong>Internal network:</strong> Production workstations and servers</li>
+                            <li><strong>Server network:</strong> Database and application servers</li>
+                            <li><strong>Guest network:</strong> Completely isolated for visitors</li>
+                            <li><strong>Management network:</strong> Administrators only, separate from production</li>
+                        </ul>
+                    </div>
+
+                    <div class="definition-box">
+                        <div class="definition-label">DMZ Architecture</div>
+                        <div class="definition-content">
+                        Internet → External Firewall → DMZ (web servers) → Internal Firewall → Internal Network
+
+                        If DMZ server is compromised, attacker cannot easily reach internal network because internal firewall blocks DMZ-to-internal traffic. DMZ servers cannot initiate connections to internal network except through tightly controlled rules.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 3: Intrusion Detection and Prevention -->
+                <div id="section-idps">
+                    <h2 class="section-header">Intrusion Detection and Prevention Systems</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Intrusion Detection Systems (IDS) monitor network traffic or system activities to detect signs of malicious behavior. Intrusion Prevention Systems (IPS) go a step further by actively blocking detected threats.
+                    </p>
+
+                    <h3 class="subsection-header">Detection Methods</h3>
+
+                    <h4 style="margin-bottom: 12px;">Signature-Based Detection</h4>
+
+                    <p style="margin-bottom: 8px;">Compares traffic and patterns against known threat signatures:</p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Database-driven:</strong> Maintains signatures of known attacks</li>
+                        <li><strong>Pattern matching:</strong> Matches packets against signature patterns</li>
+                        <li><strong>Low false positives:</strong> Highly accurate for known threats</li>
+                        <li><strong>Misses new threats:</strong> Cannot detect zero-day attacks without existing signatures</li>
+                    </ul>
+
+                    <div class="example-box">
+                        <div class="example-label">Example Signature</div>
+                        <div class="example-content">
+                        Alert: TCP packet contains string <strong>"SELECT * FROM users WHERE password = '"</strong>
+
+                        This matches SQL injection attack pattern in HTTP payload. Signature indicates attacker attempting SQL injection against web application.
+                        </div>
+                    </div>
+
+                    <h4 style="margin-bottom: 12px;">Anomaly-Based Detection</h4>
+
+                    <p style="margin-bottom: 8px;">Detects deviations from baseline behavior:</p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Baseline learning:</strong> Learns normal traffic patterns over time</li>
+                        <li><strong>Statistical analysis:</strong> Detects statistically improbable deviations</li>
+                        <li><strong>Unknown threats:</strong> Can detect novel attacks without prior signatures</li>
+                        <li><strong>Higher false positives:</strong> Legitimate changes can trigger alerts</li>
+                    </ul>
+
+                    <div class="note-box">
+                        <div class="note-label">Anomaly Detection Examples</div>
+                        <div class="note-content">
+                        1. <strong>Traffic volume:</strong> Sudden spike from IP address scanning many ports
+
+                        2. <strong>Protocol distribution:</strong> ICMP traffic appears when baseline shows only TCP/UDP
+
+                        3. <strong>Time patterns:</strong> Activity at 3 AM network is normally quiet
+
+                        4. <strong>Data exfiltration:</strong> Large outbound transfers when normal pattern is inbound-heavy
+
+                        Each deviation produces alert; security team investigates legitimate vs malicious.
+                        </div>
+                    </div>
+
+                    <h4 style="margin-bottom: 12px;">Heuristic-Based Detection</h4>
+
+                    <p style="margin-bottom: 8px;">Uses rules and logic to identify suspicious behavior:</p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Behavioral rules:</strong> "If X happens, it's likely malicious"</li>
+                        <li><strong>Expert systems:</strong> Encodes security analyst knowledge</li>
+                        <li><strong>Faster than anomaly:</strong> No learning period required</li>
+                        <li><strong>Better than pure signature:</strong> Can detect variations of known attacks</li>
+                    </ul>
+
+                    <h3 class="subsection-header">IDS vs IPS</h3>
+
+                    <table style="width: 100%; border-collapse: collapse; margin: 16px 0;">
+                        <tr style="border-bottom: 1px solid var(--border-light);">
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">Aspect</th>
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">IDS</th>
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">IPS</th>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">Action</td>
+                            <td style="padding: 12px;">Alert only, does not block</td>
+                            <td style="padding: 12px;">Actively blocks threats</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">Latency</td>
+                            <td style="padding: 12px;">Minimal (can be out-of-band)</td>
+                            <td style="padding: 12px;">Higher (inline processing)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">Risk</td>
+                            <td style="padding: 12px;">Risk of missing attacks</td>
+                            <td style="padding: 12px;">Risk of false positives blocking legitimate traffic</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px;">Placement</td>
+                            <td style="padding: 12px;">Can mirror traffic anywhere</td>
+                            <td style="padding: 12px;">Must be inline (on network path)</td>
+                        </tr>
+                    </table>
+
+                    <div class="alert-box">
+                        <div class="alert-label">Guideline</div>
+                        <div class="alert-content">
+                        Use IPS in protect mode only after thoroughly tuning and validating rules in IDS (detect) mode. False positives in IPS can block legitimate business traffic. Start in detect mode, analyze alerts, and enable blocking for validated high-confidence rules.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Open Source IDPS Tools</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Snort:</strong> Widely used signature-based IDS/IPS</li>
+                        <li><strong>Suricata:</strong> Multi-threaded IDS/IPS with application-layer detection</li>
+                        <li><strong>OSSEC:</strong> Host-based intrusion detection (system logs)</li>
+                        <li><strong>Wazuh:</strong> Security monitoring platform based on OSSEC</li>
+                        <li><strong>Zeek:</strong> Network security monitoring with deep protocol analysis</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 4: DDoS Attacks and Mitigation -->
+                <div id="section-ddos">
+                    <h2 class="section-header">DDoS Attacks and Mitigation</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Distributed Denial-of-Service attacks aim to overwhelm resources with traffic, rendering services unavailable. Attackers use botnets (networks of compromised computers) to coordinate attacks, making them difficult to block.
+                    </p>
+
+                    <h3 class="subsection-header">Types of DDoS Attacks</h3>
+
+                    <h4 style="margin-bottom: 12px;">Volumetric Attacks</h4>
+
+                    <p style="margin-bottom: 8px;">Overwhelms network bandwidth with massive traffic volume:</p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>UDP floods:</strong> Large UDP packets flood target, saturating bandwidth</li>
+                        <li><strong>ICMP floods:</strong> Ping floods and ping of death attacks</li>
+                        <li><strong>Amplification attacks:</strong> Exploit services that return larger responses than requests</li>
+                    </ul>
+
+                    <div class="example-box">
+                        <div class="example-label">Example: DNS Amplification</div>
+                        <div class="example-content">
+                        Attacker sends DNS query <strong>"*" (request all records)</strong> to DNS resolver with spoofed source IP (victim's IP).
+
+                        Source IP: 203.0.113.50 (victim)
+                        Destination IP: 8.8.8.8 (DNS resolver)
+                        Query: 60 bytes
+
+                        DNS resolver responds to victim:
+                        Source IP: 8.8.8.8
+                        Destination IP: 203.0.113.50 (victim)
+                        Response: 4000 bytes
+
+                        Amplification: <strong>67x amplification</strong> (4000 / 60).
+
+                        Attacker sends queries to thousands of DNS resolvers, all responding to victim, overwhelming victim with 100+ Gbps traffic.
+                        </div>
+                    </div>
+
+                    <h4 style="margin-bottom: 12px;">Protocol Attacks</h4>
+
+                    <p style="margin-bottom: 8px;">Exploits weaknesses in network protocols and infrastructure:</p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>SYN floods:</strong> Sends many TCP SYN packets without completing handshake, exhausting connection tables</li>
+                        <li><strong>ACK floods:</strong> Overwhelms system with ACK responses</li>
+                        <li><strong>Fragmentation attacks:</strong> Sends malformed packet fragments that crash systems</li>
+                    </ul>
+
+                    <div class="definition-box">
+                        <div class="definition-label">SYN Flood Mechanism</div>
+                        <div class="definition-content">
+                        Attacker sends thousands of fake SYN packets with spoofed source IPs.
+
+        Victim: SYN (IP: random non-existent IP)
+        Victim's firewall: SYN-ACK sent to fake IP (no response)
+
+        Wait state: 75 seconds (typical) before timeout
+
+        Do this 1,000,000 times: 1,000,000 connection table entries remain in state.
+
+        Result: Connection table full, legitimate SYN packets dropped because no space available
+                        </div>
+                    </div>
+
+                    <h4 style="margin-bottom: 12px;">Application Layer Attacks</h4>
+
+                    <p style="margin-bottom: 8px;">Targets specific application vulnerabilities:</p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>HTTP floods:</strong> Overwhelms web server with HTTP requests</li>
+                        <li><strong>Slowloris:</strong> Sends HTTP requests slowly, keeping connections open to exhaust connection limits</li>
+                        <li><strong>Query-intensive attacks:</strong> Sends expensive queries (complex searches, large reports) to exhaust database/database connection pools</li>
+                    </ul>
+
+                    <h3 class="subsection-header">DDoS Mitigation Strategies</h3>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">1. Network-Based Mitigations</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Bandwidth over-provisioning:</strong> Have excess capacity to absorb attacks (costly)</li>
+                            <li><strong>Scrubbing centers:</strong> Route traffic through DDoS mitigation services that filter malicious traffic</li>
+                            <li><strong>Anycast routing:</strong> Distribute traffic across multiple geographic locations, distributing attack load</li>
+                            <li><strong>Rate limiting:</strong> Limit requests per IP address, per minute/second</li>
+                        </ul>
+
+                        <h4 style="margin-bottom: 12px;">2. Infrastructure Configurations</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>SYN cookies:</strong> Cryptographically encode TCP connection info in SYN-ACK, avoiding state table entries</li>
+                            <li><strong>Connection timeouts:</strong> Reduce SYN timeout from 75s to 5-10s, allowing faster recovery</li>
+                            <li><strong>Drop invalid packets:</strong> Drop packets with invalid headers, checksums, or source IPs (ingress filtering)</li>
+                            <li><strong>UDP rate limiting:</strong> Rate-limit responses to limit amplification attacks</li>
+                        </ul>
+
+                        <h4 style="margin-bottom: 12px;">3. Application-Level Mitigations</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Web application firewalls (WAF):</strong> Filter HTTP-based attacks and flood attempts</li>
+                            <li><strong>Caching:</strong> Use CDNs to cache content, reducing load on origin</li>
+                            <li><strong>Load balancing:</strong> Distribute traffic across multiple servers, distributing attack load</li>
+                            <li><strong>Resource limits:</strong> Limit query complexity, timeouts, and connections per user</li>
+                        </ul>
+
+                        <h4 style="margin-bottom: 12px;">4. DDoS Mitigation Services</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Cloudflare:</strong> Global CDN with automatic DDoS mitigation</li>
+                            <li><strong>AWS Shield / Cloudflare / Akamai:</strong> Managed services</li>
+                            <li><strong>Akamai Prolexic:</strong> Large-scale mitigation services</li>
+                            <li><strong>Imperva:</strong> Comprehensive DDoS protection</li>
+                        </ul>
+                    </div>
+
+                    <div class="alert-box critical">
+                        <div class="alert-label">Critical: No Single Solution</div>
+                        <div class="alert-content">
+                        No single DDoS mitigation technique handles all attacks. Defense in depth is required: leverage CDN caching, configure infrastructure hardening (SYN cookies, timeouts), rate limiting, and have DDoS mitigation service on standby. Plan responses before attacks occur.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 5: VPN Security -->
+                <div id="section-vpn">
+                    <h2 class="section-header">Virtual Private Networks</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Virtual Private Networks create encrypted tunnels over public networks, allowing secure remote access to private networks. VPNs are essential for remote workers, connecting branch offices, and securing public WiFi usage.
+                    </p>
+
+                    <h3 class="subsection-header">VPN Protocols</h3>
+
+                    <h4 style="margin-bottom: 12px;">IPsec VPN</h4>
+
+                    <p style="margin-bottom: 8px;">IPsec operates at the network layer (layer 3), providing strong encryption and authentication:</p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Two modes:</strong> Transport mode (IPsec in transport) and Tunnel mode (IPsec in tunnel)</li>
+                        <li><strong>Two protocols:</strong> AH (Authentication Header) and ESP (Encapsulating Security Payload)</li>
+                        <li><strong>Key exchange:</strong> IKE (Internet Key Exchange) for secure key negotiation</li>
+                        <li><strong>Strong encryption:</strong> Supports AES, AES-GCM, and modern ciphers</li>
+                    </ul>
+
+                    <div class="note-box">
+                        <div class="note-label">AH vs ESP</div>
+                        <div class="note-content">
+                        <strong>AH (Authentication Header):</strong>
+                        - Provides integrity and authentication
+                        - Does not encrypt payload (data visible)
+                        - Rarely used due to lack of encryption
+
+                        <strong>ESP (Encapsulating Security Payload):</strong>
+                        - Provides integrity, authentication, and encryption
+                        - Encrypts payload, making data unreadable
+                        - Most common IPsec protocol
+                        </div>
+                    </div>
+
+                    <h4 style="margin-bottom: 12px;">WireGuard</h4>
+
+                    <p style="margin-bottom: 8px;">Modern VPN protocol with improved simplicity and performance:</p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Cryptographically sound:</strong> Only uses modern, audited cryptography</li>
+                        <li><strong>Minimal codebase:</strong> 4,000 lines vs. 400,000+ for OpenVPN (easier to audit)</li>
+                        <li><strong>Performance:</strong> Kernel-space implementation, very fast throughput</li>
+                        <li><strong>No NAT traversal issues:</strong> Works through NAT with UDP hole punching</li>
+                        <li><strong>Simple configuration:</strong> Public keys only, no certificates hierarchy</li>
+                    </ul>
+
+                    <div class="alert-box">
+                        <div class="alert-label">Recommendation</div>
+                        <div class="alert-content">
+                        For new deployments, prefer WireGuard over IPsec/OpenVPN. WireGuard offers better security (simpler, smaller codebase), easier setup, superior performance, and modern cryptography. However, IPsec remains useful for network-to-network (site-to-site) VPNs where broad device compatibility is required.
+                        </div>
+                    </div>
+
+                    <h4 style="margin-bottom: 12px;">L2TP/IPsec</h4>
+
+                    <p style="margin-bottom: 8px;">Layer 2 Tunneling Protocol combined with IPsec encryption:</p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>L2TP:</strong> Provides tunneling (encapsulation)</li>
+                        <li><strong>IPsec:</strong> Provides encryption (ESP)</li>
+                        <li><strong>Broadly supported:</strong> Works on Windows, macOS, Linux, iOS, Android out-of-box</li>
+                        <li><strong>Performance overhead:</strong> Double encapsulation, higher overhead than pure IPsec or WireGuard</li>
+                    </ul>
+
+                    <h3 class="subsection-header">VPN Security Hardening</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Strong authentication:</strong> Use certificates rather than pre-shared keys where possible</li>
+                        <li><strong>Cryptographic best practices:</strong> Modern ciphers (AES-256-GCM, ChaCha20-Poly1305), no outdated algorithms (3DES, MD5, SHA1)</li>
+                        <li><strong>MFA (Multi-Factor Authentication):</strong> Require MFA for VPN access</li>
+                        <li><strong>Least privilege:</strong> VPN users access only required resources, not entire network</li>
+                        <li><strong>Network segmentation:</strong> Place VPN users in dedicated zone, not directly into internal network</li>
+                        <li><strong>Logging:</strong> Log VPN connections, users, and data transferred for audit and incident response</li>
+                        <li><strong>Regular updates:</strong> Keep VPN software patched for vulnerabilities</li>
+                    </ul>
+
+                    <div class="definition-box">
+                        <div class="definition-label">Site-to-Site vs Remote Access VPN</div>
+                        <div class="definition-content">
+                        <strong>Site-to-Site VPN:</strong>
+                        Connects two networks (e.g., branch office to headquarters)
+                        - Network-to-network tunnel
+                        - Gateways (routers/firewalls) handle VPN
+
+                        <strong>Remote Access VPN:</strong>
+                        Allows individual users to access corporate network remotely
+                        - User-to-network tunnel
+                        - Client software on user laptop connects to VPN gateway
+
+                        Use cases differ: Site-to-site for permanent connections between locations; Remote access for individual remote workers.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Common VPN Vulnerabilities</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Weak credentials:</strong> Brute force attacks on VPN accounts</li>
+                        <li><strong>Pre-shared key compromise:</strong> PSKs stored in insecure locations or shared inappropriately</li>
+                        <li><strong>NAT traversal issues:</strong> Misconfiguration blocking VPN through NAT</li>
+                        <li><strong>Outdated protocols:</strong> Using deprecated protocols (PPTP, L2F, L2TP without IPsec)</li>
+                        <li><strong>Cipher downgrade attacks:</strong> Allowing negotiation to weak ciphers for compatibility</li>
+                        <li><strong>VPN concentrator compromise:</strong> Attack on VPN gateway allows network access</li>
+                    </ul>
+
+                    <div class="alert-box critical">
+                        <div class="alert-label">Critical: Avoid PPTP</div>
+                        <div class="alert-content">
+                        PPTP (Point-to-Point Tunneling Protocol) is fundamentally broken:
+                        - Encryption can be cracked in hours (MS-CHAPv2 weaknesses)
+                        - Protocol vulnerabilities known since 1999
+                        - Microsoft officially deprecated PPTP in 2012
+
+                        PPTP provides no real security. Use IPsec, WireGuard, or OpenVPN instead.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Navigation -->
+                <div class="nav-buttons">
+                    <a href="01-foundations.html" class="nav-btn">Previous: Foundations</a>
+                    <a href="03-operating-system-security.html" class="nav-btn primary">Next: Operating System Security</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => loadProgress());
+    </script>
+</body>
+</html>
