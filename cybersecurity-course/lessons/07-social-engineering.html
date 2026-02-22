@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity - Module 7: Social Engineering</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="light-theme">
+    <div class="main-wrapper">
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="page-header">
+                    <h1 class="page-title">MODULE 7</h1>
+                    <p class="page-subtitle">Social Engineering</p>
+                </div>
+
+                <div class="content-card">
+                    <h2 class="module-header">Introduction</h2>
+                    <p style="margin-bottom: 16px;">
+                        Social engineering bypasses technical controls by exploiting human psychology. Attackers manipulate people into divulging confidential information, performing actions that compromise security, or granting unauthorized access. Understanding social engineering techniques and implementing robust training and verification processes is essential because people are often the weakest link in security.
+                    </p>
+                </div>
+
+                <div class="alert-box critical">
+                    <div class="alert-label">Critical: Technical Controls Alone Are Insufficient</div>
+                    <div class="alert-content">
+                    Even with perfect technical security (firewalls, encryption, MFA), a single social engineering attack can compromise an entire organization. The most sophisticated attackers target people because people can be manipulated while code cannot. Security awareness training and verification processes are critical controls against social engineering.
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 1: Psychology of Social Engineering -->
+                <div id="section-psychology">
+                    <h2 class="section-header">The Psychology Behind Social Engineering</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Social engineering exploits fundamental cognitive biases and psychological tendencies. Understanding these principles helps recognize manipulation attempts.
+                    </p>
+
+                    <h3 class="subsection-header">The 6 Principles of Influence (Cialdini)</h3>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">1. Reciprocity</h4>
+                        <p style="margin-bottom: 8px;">People feel obligated to return favors:</p>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li>Attacker offers free help, information, or service</li>
+                            <li>Victim feels obligated to reciprocate (provide password, grant access)</li>
+                            <li>Example: "I helped you with your computer problem last week. Can you give me your password?"</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">2. Commitment and Consistency</h4>
+                        <p style="margin-bottom: 8px;">People want to be consistent with past commitments:</p>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li>Attacker gets victim to make small initial commitment</li>
+                            <li>Victim feels compelled to continue to appear consistent</li>
+                            <li>Example: "You agreed to help with the project, right? I just need your admin access for 5 minutes."</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">3. Social Proof</h4>
+                        <p style="margin-bottom: 8px;">People follow actions of others, especially similar others:</p>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li>Attacker claims many others have taken the requested action</li>
+                            <li>Victim more likely to comply if they perceive peer acceptance</li>
+                            <li>Example: "Everyone else in accounting provided their credentials for the security audit."</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">4. Authority</h4>
+                        <p style="margin-bottom: 8px;">People defer to authority figures:</p>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li>Attacker impersonates executives, IT staff, law enforcement, or other authority</li>
+                            <li>Victim complies to avoid conflict with perceived superior</li>
+                            <li>Example: Attacker calls claiming to be CEO, demands urgent transfer or password</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">5. Liking</h4>
+                        <p style="margin-bottom: 8px;">People comply with those they like or find attractive:</p>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li>Attacker builds rapport, compliments victim, appears similar or attractive</li>
+                            <li>Victim more likely to help someone they like</li>
+                            <li>Example: Friendly new coworker asks for help with simple task, then escalates request</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">6. Scarcity</h4>
+                        <p style="margin-bottom: 8px;">People value rare or limited opportunities:</p>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li>Attacker creates sense of urgency or limited availability</li>
+                            <li>Victim acts quickly without careful consideration</li>
+                            <li>Example: "Special offer expires in 10 minutes. Click now to claim your prize!"</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="subsection-header">Cognitive Biases</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Authority bias:</strong> Excessive trust in authority figures</li>
+                        <li><strong>Confirmation bias:</strong> Interpreting information to confirm existing beliefs</li>
+                        <li><strong>Availability heuristic:</strong> Overestimating likelihood of vivid or recent events</li>
+                        <li><strong>Anchoring bias:</strong> Relying too heavily on first information</li>
+                        <li><strong>Halo effect:</strong> Positive impression in one area leads to positive impression in other areas</li>
+                        <li><strong>Optimism bias:</strong> Overestimating likelihood of positive outcomes</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 2: Phishing -->
+                <div id="section-phishing">
+                    <h2 class="section-header">Phishing</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Phishing is fraudulent communication attempting to obtain sensitive information or install malware by masquerading as trustworthy entity. Phishing is the most common social engineering attack vector.
+                    </p>
+
+                    <h3 class="subsection-header">Phishing Types</h3>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Deceptive Phishing (Mass Phishing)</h4>
+                        <p style="margin-bottom: 8px;">Generic phishing messages sent to large audiences:</p>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li>Not targeted - sent to thousands or millions of recipients</li>
+                            <li>Generic greetings ("Dear Customer", "Valued User")</li>
+                            <li>Common themes: password reset, account verification, delivery notification</li>
+                            <li>Success relies on volume rather than targeting</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Spear Phishing</h4>
+                        <p style="margin-bottom: 8px;">Targeted phishing attacks against specific individuals:</p>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li>Researches target (social media, company website, public information)</li>
+                            <li>Personalized content (uses target's name, job title, colleagues' names)</li>
+                            <li>Leverages specific context (project, meeting, business relationship)</li>
+                            <li>More convincing, lower success rate than mass phishing but higher impact</li>
+                        </ul>
+
+                        <div class="example-box">
+                            <div class="example-label">Spear Phishing Example</div>
+                            <div class="example-content">
+                            <strong>Research:</strong> Attacker learns targets work on Project Apollo with Manager Sarah
+
+                            <strong>Email subject:</strong> Updated Project Apollo deliverables
+
+                            <strong>Email body:</strong> "Hi John, I just uploaded the updated deliverables to our shared folder. Can you review and let me know if we're on track? Thanks, Sarah"
+
+                            <strong>Malicious link:</strong> Fake portal steals credentials when victim logs in
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Whaling</h4>
+                        <p style="margin-bottom: 8px;">Spear phishing targeting high-value individuals:</p>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li>Targets: executives (CEO, CFO), board members, senior management</li>
+                            <li>Goal: financial fraud, wire transfer, sensitive business intelligence</li>
+                            <li>Sophisticated, well-researched, uses business context</li>
+                            <li>Examples: Request to approve urgent invoice, authorized transfer, confidential data</li>
+                        </ul>
+
+                        <div class="alert-box critical">
+                            <div class="alert-label">Critical: CEO Fraud</div>
+                            <div class="alert-content">
+                            "CEO fraud" is whaling where attacker impersonates CEO directing subordinate to authorize fraudulent wire transfer. These emails often create urgent, confidential context ("This is for an international acquisition, cannot discuss with others, must act today").
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Vishing (Voice Phishing)</h4>
+                        <p style="margin-bottom: 8px;">Phishing via phone calls:</p>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li>Tech support scams ("Microsoft calling - your computer infected")</li>
+                            <li>IRS/government scams ("Pay taxes or legal action")</li>
+                            <li>Bank fraud scams ("Suspicious activity detected, verify identity")</li>
+                            <li>Uses urgency, fear, authority to compel compliance</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Smishing (SMS Phishing)</h4>
+                        <p style="margin-bottom: 8px;">Phishing via SMS/text messages:</p>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li>"Your package will be delivered today. Track here: [link]"</li>
+                            <li>"Bank alert: Unusual activity detected. Confirm login: [link]"</li>
+                            <li>Delivered to mobile devices, often clicked quickly</li>
+                            <li>High success rate due to trust in SMS</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="subsection-header">Identifying Phishing Emails</h3>
+
+                    <div class="definition-box">
+                        <div class="definition-label">Phishing Indicators</div>
+                        <div class="definition-content">
+                        <strong>Generic greetings:</strong> "Dear Customer" instead of personalized name
+
+                        <strong>Urgency or threats:</strong> "Account will be suspended in 24 hours"
+
+                        <strong>Requests for sensitive information:</strong> Legitimate companies never ask for passwords via email
+
+                        <strong>Suspicious URLs:</strong> Misleading domain names (exampl.com vs example.com), URL shorteners
+
+                        <strong>Poor grammar/spelling:</strong> Professional communications reviewed for errors
+
+                        <strong>Generic return addresses:</strong> Free email accounts (gmail.com, yahoo.com) instead of company domain
+
+                        <strong>Unexpected attachments:</strong>.exe, .zip, .docm files can contain malware
+
+                        <strong>Mismatched link text:</strong> Link text says "example.com" but URL is different
+                        </div>
+                    </div>
+
+                    <div class="code-block">
+                        <code># Phishing URL examples
+# Deceptive domain (typosquatting)
+exampl.com       # Missing 'e'
+example-security.com  # Adds '-security'
+
+# URL shortener (hides actual destination)
+bit.ly/2xY7z9   # Check with url expander before clicking
+goo.gl/abc123
+
+# Subdomain trick
+www.example.com.attacker-site.com  # Not actually example.com
+
+# Homograph attack (IDN)
+example.com (e) vs exаmple.com (Cyrillic 'a' looks identical but is different Unicode character)</code>
+                    </div>
+
+                    <h3 class="subsection-header">Phishing Prevention</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Email filtering:</strong> SPAM filters, DMARC, SPF, DKIM for email authentication</li>
+                        <li><strong>URL scanning:</strong> Link checking services before user clicks</li>
+                        <li><strong>Security awareness training:</strong> Regular phishing simulations and training</li>
+                        <li><strong>Two-factor authentication:</strong> Even with stolen credentials, MFA prevents access</li>
+                        <li><strong>Out-of-band verification:</strong> Verify requests via separate channel (call known number, not number in email)</li>
+                        <li><strong>Browser security:</strong> Anti-phishing toolbars, certificate warnings</li>
+                        <li><strong>Report phishing:</strong> Mechanism for users to report suspicious email</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 3: Pretexting -->
+                <div id="section-pretexting">
+                    <h2 class="section-header">Pretexting</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Pretexting involves creating fabricated scenario or fictional situation (pretext) to manipulate victim into divulging information or performing action. The attacker establishes credibility and reduces suspicion before making request.
+                    </p>
+
+                    <h3 class="subsection-header">Pretexting Examples</h3>
+
+                    <div class="example-box">
+                        <div class="example-label">IT Support Pretext</div>
+                        <div class="example-content">
+                        Attacker calls victim claiming to be IT support: "Hi, this is Sarah from IT. We're rolling out a security update but your password isn't syncing with our new system. Can you provide your current password so I can manually update it?"
+
+                        <strong>Elements:</strong>
+                        - Authority: IT support
+                        - Technical jargon: "security update", "syncing", "system"
+                        - Reasonable-sounding request (IT would need password to update)
+                        - Victim complies to be helpful or avoid problem
+
+                        <strong>Red flag:</strong> IT never asks for passwords over phone or email
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <div class="example-label">Survey Pretext</div>
+                        <div class="example-content">
+                        Attacker approaches victim claiming to conduct survey: "Hi, I'm conducting university research on remote work practices. Can I ask you a few quick questions about your company's remote access policies?"
+
+                        <strong>Elements:</strong>
+                        - Legitimate-appearing authority (university research)
+                        - Harmless-sounding topic (research, survey)
+                        - Escalates from general to detailed questions about systems, access, passwords
+
+                        <strong>Red flag:</strong> Verify researcher identity with university before providing sensitive information
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <div class="example-label">Delivery Pretext</div>
+                        <div class="example-content">
+                        Attacker calls: "Hi, I'm with the delivery service trying to deliver package to your office. I have the package but the recipient isn't here. Can you help me find them? What's their phone number? I also need to verify my delivery ID - can you provide your employee ID so I can complete the delivery form?"
+
+                        <strong>Elements:</strong>
+                        - Common, plausible situation (package delivery)
+                        - Victim naturally helpful (directing delivery)
+                        - Information creep: asks for progressively more information
+
+                        <strong>Red flag:</strong> Delivery services don't ask for employee IDs or internal information
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Elicitation Techniques</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Elicitation is the subtle extraction of information through conversation, often without victim realizing sensitive information revealed.
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Assumptive questioning:</strong> Assuming information and asking confirmatory question ("You use VPN for remote work, right?")</li>
+                        <li><strong>Hypothetical scenarios:</strong> "What would you do if X happened? What systems would you need access to?"</li>
+                        <li><strong>Complaining:</strong> "Our VPN system is so slow. Do you have issues with your VPN?" (elicits VPN information)</li>
+                        <li><strong>Gossip:</strong> Sharing industry news and asking for victim's opinion to elicit information</li>
+                        <li><strong>Bracketing:</strong> "Do you support 100 users? 1000? 10,000?" (elicits actual information as victim corrects)</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 4: Baiting and Quid Pro Quo -->
+                <div id="section-baiting">
+                    <h2 class="section-header">Baiting and Quid Pro Quo</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        These techniques exploit greed, curiosity, desire for reward, or sense of obligation.
+                    </p>
+
+                    <h3 class="subsection-header">Baiting</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Baiting exploits curiosity or greed by offering attractive lure. Victim accesses bait, triggering attack.
+                    </p>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">USB Bait Drop</h4>
+                        <p style="margin-bottom: 8px;">Attacker leaves infected USB drive in target location:</p>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li>USB drives left in parking lots, restrooms, conference rooms</li>
+                            <li>Labeled "Confidential", "Payroll", "Bonuses 2024" to create curiosity</li>
+                            <li>USB contains malware that executes when connected to computer</li>
+                            <li>Victim plugs USB out of curiosity, infecting entire network</li>
+                        </ul>
+
+                        <div class="alert-box critical">
+                            <div class="alert-label">Critical: Never Insert Unknown USB</div>
+                            <div class="alert-content">
+                            Never insert unknown USB drives into computers. USB-based malicious software can spread immediately and silently. If found USB, deliver to IT or security for analysis in isolated environment.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Online Baiting</h4>
+                        <p style="margin-bottom: 8px;">Malicious downloads disguised as legitimate content:</p>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li>Free software, cracked software, pirated media</li>
+                            <li>"You won!" lottery scams, prize notifications</li>
+                            <li>Online quizzes requiring email/password to "see results"</li>
+                            <li>Download links on forums, file-sharing sites</li>
+                        </ul>
+
+                        <div class="note-box">
+                            <div class="note-label">Malware Distribution</div>
+                            <div class="note-content">
+                            Pirated software is primary malware vector. Cracked software, keygens, and pirated games frequently contain malware, backdoors, or cryptocurrency miners. Download only from official sources.
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Quid Pro Quo</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Quid pro quo (this for that) offers something in return for sensitive information or access.
+                    </p>
+
+                    <div class="example-box">
+                        <div class="example-label">Tech Support Scam</div>
+                        <div class="example-content">
+                        Attacker calls offering free PC optimization: "Hi, we're providing free security optimization to all local businesses. I can remotely connect to show you vulnerabilities and fix them for free."
+
+                        <strong>Trade-off:</strong> Free optimization service → Remote access to victim's computer
+
+                        <strong>Outcome:</strong> Attacker installs malware, steals data, or installs backdoor while "optimizing"
+
+                        <strong>Red flag:</strong> Legitimate tech support charges for services (not free), doesn't initiate calls
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 5: Tailgating and Physical Security -->
+                <div id="section-tailgating">
+                    <h2 class="section-header">Tailgating and Physical Security</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Physical social engineering bypasses physical security controls by manipulating people or exploiting human behavior in physical spaces.
+                    </p>
+
+                    <h3 class="subsection-header">Tailgating (Piggybacking)</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Tailgating is unauthorized person entering secure area by following authorized person through door.
+                    </p>
+
+                    <div class="example-box">
+                        <div class="example-label">Tailgating Example</div>
+                        <div class="example-content">
+                        Attacker waits near building entrance. Employee with badge approaches door, swipes badge and enters. Attacker holds door open behind employee or follows quickly, entering building.
+
+                        <strong>Employee behavior:</strong> Victim's natural instinct is politeness - holding door for others
+
+                        <strong>Attacker behavior:</strong> Dressed professionally, carrying items (coffee, laptop), appearing to belong
+
+                        <strong>Outcome:</strong> Attacker gains physical access to secure building, offices, or data center
+
+                        <strong>Mitigation:</strong> Policies requiring badges for all individuals, security awareness training
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Badge Cloning</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Attackers clone valid access cards to bypass physical security:
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Proximity cloning:</strong> Attacker uses device near victim's card, copies card data</li>
+                        <li><strong>Skimming:</strong> Hidden card readers on legitimate access points capture card data</li>
+                        <li><strong>Physical theft:</strong> Stealing card temporarily for cloning, returning card unnoticed</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Physical Security Best Practices</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>No tailgating policy:</strong> Do not hold doors for others without verifying authorization</li>
+                        <li><strong>Challenge strangers:</strong> Politely ask to see badge for anyone unfamiliar in secure area</li>
+                        <li><strong>Escort visitors:</strong> All visitors accompanied by employee at all times</li>
+                        <li><strong>Report suspicious behavior:</strong> Report unknown individuals or suspicious activity to security</li>
+                        <li><strong>Secure workstations:</strong> Lock screens when away, never leave badges unattended</li>
+                        <li><strong>Clear desk policy:</strong> Sensitive documents, devices, screens not visible when unattended</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 6: Reconnaissance -->
+                <div id="section-recon">
+                    <h2 class="section-header">Social Engineering Reconnaissance</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Effective social engineering often begins with reconnaissance - gathering information about targets from publicly available sources.
+                    </p>
+
+                    <h3 class="subsection-header">OSINT (Open Source Intelligence)</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        OSINT is gathering information from publicly available sources:
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Company website:</strong> Employees, organizational structure, projects, technologies</li>
+                        <li><strong>Social media:</strong> LinkedIn (relationships, job roles), Facebook/Twitter (activities, interests)</li>
+                        <li><strong>Job postings:</strong> Infrastructure details, email formats, internal tools</li>
+                        <li><strong>Public records:</strong> Business registrations, press releases, financial filings</li>
+                        <li><strong>Vulnerability disclosures:</strong> CVE disclosures reveal internal systems and software</li>
+                        <li><strong>Google dorking:</strong> Advanced Google queries to find sensitive documents</li>
+                    </ul>
+
+                    <div class="code-block">
+                        <code># Google dorking examples
+site:example.com filetype:pdf  # PDFs on site
+site:example.com filetype:xls intext:"confidential"  # Confidential spreadsheets
+site:example.com inurl:admin  # Admin pages
+site:example.com intext:"password" filetype:doc  # Passwords in documents
+"password" filetype:xlsx OR filetype:csv OR filetype:txt</code>
+                    </div>
+
+                    <h3 class="subsection-header">Social Media Reconnaissance</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>LinkedIn:</strong> Employee names, job titles, departments, managers, company announcements</li>
+                        <li><strong>Twitter:</strong> Project updates, system status, company events, tech stack</li>
+                        <li><strong>Facebook:</strong> Personal relationships, activities, travel, work-from-office schedule</li>
+                        <li><strong>Instagram:</strong> Office photos, events, culture, employee faces</li>
+                    </ul>
+
+                    <div class="alert-box">
+                        <div class="alert-label">Reducing OSINT Exposure</div>
+                        <div class="alert-content">
+                        - Review corporate website for excessive information
+
+                        - Develop social media policy (employees encouraged not to share work details)
+
+                        - Minimize personal information in public profiles
+
+                        - Configure privacy settings on social media
+
+                        - Audit public disclosures (job postings, press releases)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 7: Countermeasures -->
+                <div id="section-countermeasures">
+                    <h2 class="section-header">Social Engineering Countermeasures</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Defense in depth combined with security awareness training provides best protection against social engineering.
+                    </p>
+
+                    <h3 class="subsection-header">Security Awareness Training</h3>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Training Elements</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Phishing simulations:</strong> Regular simulated phishing attacks to practice recognition</li>
+                            <li><strong>Security policies:</strong> Clear policies on data handling, passwords, visitor procedures</li>
+                            <li><strong>Reporting procedures:</strong> Mechanism to report suspicious activity without blame</li>
+                            <li><strong>Regular training:</strong> Quarterly or monthly training refreshers, not one-time</li>
+                            <li><strong>Real-world examples:</strong> Share current social engineering attacks to maintain awareness</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="subsection-header">Procedural Controls</h3>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Verification Procedures</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Out-of-band verification:</strong> Verify financial transfer requests via separate channel (call known number, not number in email)</li>
+                            <li><strong>Request verification:</strong> Verify sensitive requests (password resets, data access) directly to requester via known contact</li>
+                            <li><strong>Multi-party approval:</strong> Multiple approvals for critical actions (large transfers, admin access)</li>
+                            <li><strong>Visitor procedures:</strong> All visitors signed in, escorted, monitored</li>
+                            <li><strong>Identity verification:</strong> Verify identity before providing sensitive information (call back via known number)</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="subsection-header">Technical Controls</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Email filtering:</strong> Advanced threat protection, spam filtering, DMARC/SPF/DKIM</li>
+                        <li><strong>MFA:</strong> Multi-factor authentication for all systems (even with stolen credentials, MFA prevents access)</li>
+                        <li><strong>Minimum privilege:</strong> Users have minimum necessary access (reduces damage if compromised)</li>
+                        <li><strong>Physical security:</strong> Badge readers, cameras, security guards, visitor logs</li>
+                        <li><strong>Device security:</strong> Endpoint protection, application whitelisting to prevent malicious USB software</li>
+                        <li><strong>Data loss prevention (DLP):</strong> Monitor and block unauthorized data exfiltration</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Positive Security Culture</h3>
+
+                    <div class="note-box">
+                        <div class="note-label">Encouraging Reporting</div>
+                        <div class="note-content">
+                        Security culture should encourage reporting suspicious behavior without fear of blame:
+                        - "Better safe than sorry" - encourage verification
+
+                        - No punishment for false positives (reporting legitimate activity as suspicious)
+
+                        - Reward and recognize security awareness
+
+                        - Leaders model security-conscious behavior
+
+                        - Security is everyone's responsibility, not just IT
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 8: Case Studies -->
+                <div id="section-cases">
+                    <h2 class="section-header">Real-World Social Engineering Attacks</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Analyzing real attacks provides valuable lessons in preventing future incidents.
+                    </p>
+
+                    <h3 class="subsection-header">Case 1: 2016 Bangladesh Bank Heist ($81 Million)</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Attackers stole $81 million from Bangladesh Bank through combination of malware and social engineering.
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Attack vector:</strong> Spear phishing emails with malware-infected attachments</li>
+                        <li><strong>Reconnaissance:</strong> Attackers studied SWIFT (interbank messaging) procedures</li>
+                        <li><strong>Compromise:</strong> Malware provided remote access to bank's SWIFT payment system</li>
+                        <li><strong>Social engineering:</strong> Attackers drafted legitimate-appearing SWIFT transfer requests</li>
+                        <li><strong>Failure:</strong> Bank's security procedures failed to validate suspicious transfers</li>
+                        <li><strong>Lesson:</strong> Even sophisticated technical controls fail without strong verification procedures</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Case 2: 2013 Target Breach (40 Million Credit Cards)</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Breach originated with credential theft from HVAC vendor through phishing.
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Attack vector:</strong> Phishing against Target vendor (third-party risk)</li>
+                        <li><strong>Compromise:</strong> Attacker stole vendor's credentials for Target vendor portal</li>
+                        <li><strong>Lateral movement:</strong> Attacker gained access from vendor account to Target network</li>
+                        <li><strong>Privilege escalation:</strong> Attacker elevated privileges, accessed payment systems</li>
+                        <li><strong>Impact:</strong> 40 million credit cards stolen, massive financial and reputation damage</li>
+                        <li><strong>Lesson:</strong> Third-party access is significant risk - vendors must be held to same security standards</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Case 3: 2020 Twitter Compromise ($120K Bitcoin)</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        High-profile employees compromised through voice phishing (vishing).
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Attack vector:</strong> Voice phishing (vishing) targeting Twitter employees with access to internal tools</li>
+                        <li><strong>Pretexting:</strong> Attacker posed as IT support calling employees about VPN problems</li>
+                        <li><strong>Compromise:</strong> Attacker obtained employee credentials, accessed internal admin panel</li>
+                        <li><strong>Impact:</strong> Attacker took control of celebrity accounts (Elon Musk, Joe Biden, Apple, Uber) to post Bitcoin scam</li>
+                        <li><strong>Lesson:</strong> Even tech-savvy employees vulnerable to targeted social engineering with plausible pretext</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Navigation -->
+                <div class="nav-buttons">
+                    <a href="06-web-security.html" class="nav-btn">Previous: Web Application Security</a>
+                    <a href="08-incident-response.html" class="nav-btn primary">Next: Incident Response & Forensics</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => loadProgress());
+    </script>
+</body>
+</html>
