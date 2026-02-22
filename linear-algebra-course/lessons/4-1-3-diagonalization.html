@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4.1.3: Diagonalization - Linear Algebra</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="chapter-4">
+    <div class="main-wrapper">
+        <nav class="sidebar toc-green">
+            <div class="sidebar-header">
+                <div class="sidebar-title">Linear Algebra</div>
+            </div>
+            <div class="toc-chapter toc-green">
+                <div class="toc-chapter-title">Chapter 4: Advanced Topics</div>
+                <div class="toc-module">
+                    <div class="toc-module-title">Module 4.1: Eigenvalues</div>
+                    <div class="toc-lessons">
+                        <div class="toc-lesson"><a href="4-1-2-eigenvectors.html">Lesson 4.1.2: Eigenvectors</a></div>
+                        <div class="toc-lesson"><a href="4-1-3-diagonalization.html" class="active">Lesson 4.1.3: Diagonalization</a></div>
+                        <div class="toc-lesson"><a href="4-1-4-practice-eigen.html">Lesson 4.1.4: Practice Problems</a></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="module-header">
+                    <h2>Lesson 4.1.3: Diagonalization</h2>
+                    <p>Module 4.1: Eigenvalues | Chapter 4: Advanced Topics</p>
+                </div>
+                
+                <div class="content-card">
+                    <div class="definition-box">
+                        <div class="definition-title">Diagonalization</div>
+                        <p>A matrix A is diagonalizable if A = PDP^(-1) where D is diagonal and P contains eigenvectors.</p>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="note-box">
+                        <div class="note-title">Process</div>
+                        <p>1. Find eigenvalues</p>
+                        <p>2. Find independent eigenvectors</p>
+                        <p>3. Form P from eigenvectors</p>
+                        <p>4. Form D from eigenvalues</p>
+                    </div>
+                </div>
+                
+                <div class="content-card">
+                    <div class="practice-header">Practice Problems</div>
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 1</div>
+                        <div class="problem-question">If A = PDP^(-1), what does D contain?</div>
+                        <input type="text" class="problem-input" id="prob1" placeholder="Enter answer">
+                        <button class="check-btn" onclick="checkProblem(1)">Check Answer</button>
+                        <div class="feedback" id="prob1-feedback"></div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="nav-buttons">
+                    <a href="4-1-2-eigenvectors.html" class="nav-btn">Previous: Eigenvectors</a>
+                    <a href="4-1-4-practice-eigen.html" class="nav-btn primary">Next: Practice Eigen</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/navigation.js"></script>
+    <script>
+        const problems_4_1_3 = {
+            1: { alternatives: ['eigenvalues', 'the eigenvalues', 'eigenvalues on diagonal'] }
+        };
+        
+        function checkProblem(num) {
+            const userInput = document.getElementById('prob' + num).value.trim().toLowerCase();
+            const feedback = document.getElementById('prob' + num + '-feedback');
+            const alternatives = problems_4_1_3[num].alternatives;
+            
+            let isCorrect = alternatives.includes(userInput);
+            
+            if (isCorrect) {
+                feedback.className = 'feedback correct';
+                feedback.style.display = 'block';
+                feedback.textContent = 'Correct! Well done.';
+                markProblemSolved('4-1-3-' + num);
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.style.display = 'block';
+                feedback.textContent = 'Incorrect. Try again.';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+        });
+    </script>
+</body>
+</html>

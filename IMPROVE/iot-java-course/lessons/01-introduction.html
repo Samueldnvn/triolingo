@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1: Introduction to IoT - IoT Java Development Course</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Course Header -->
+    <div class="course-header">
+        <h1>MODULE 1: INTRODUCTION TO IOT</h1>
+        <h2>Understanding the Internet of Things</h2>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <ul class="nav-menu">
+            <li class="nav-item active" onclick="showSection('overview')">Overview</li>
+            <li class="nav-item" onclick="showSection('architecture')">Architecture</li>
+            <li class="nav-item" onclick="showSection('applications')">Applications</li>
+            <li class="nav-item" onclick="showSection('challenges')">Challenges</li>
+            <li class="nav-item" onclick="showSection('practice')">Practice Problems</li>
+            <li class="nav-item" onclick="showSection('quiz')">Module Quiz</li>
+        </ul>
+    </nav>
+
+    <!-- Progress for this module -->
+    <div class="progress-container">
+        <div class="progress-title">MODULE 1 PROGRESS</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="moduleProgress" style="width: 0%">0%</div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Overview Section -->
+        <div class="content-section active" id="overview">
+            <div class="lesson-header">
+                <h1>Introduction to the Internet of Things</h1>
+                <p>Foundations, Concepts, and Evolution of IoT</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                The <span class="keyword">Internet of Things (IoT)</span> represents one of the most transformative technology revolutions of the 21st century. It refers to the network of physical objects—devices, vehicles, buildings, and other items—that are embedded with sensors, software, and network connectivity, enabling them to collect and exchange data.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">WHAT IS IOT?</div>
+                <p class="info-content">
+                    IoT extends internet connectivity beyond traditional devices like computers and smartphones to a diverse range of everyday objects. These devices can communicate with each other and with centralized systems, creating new opportunities for automation, efficiency, and innovation across industries.
+                </p>
+                <ul class="info-list">
+                    <li><span class="keyword">Physical Objects:</span> Devices, vehicles, appliances, sensors, and smart systems</li>
+                    <li><span class="keyword"> Embedded Sensors:</span> Hardware that detects and measures physical properties</li>
+                    <li><span class="keyword">Connectivity:</span> Network interfaces enabling communication</li>
+                    <li><span class="keyword">Data Processing:</span> Cloud or edge computing for data analysis</li>
+                    <li><span class="keyword">Intelligence:</span> Smart algorithms and decision-making capabilities</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">History and Evolution</h3>
+
+            <p class="content-text">
+                The concept of connecting devices has evolved over several decades, with key milestones shaping what we now call IoT:
+            </p>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Period</th>
+                        <th>Development</th>
+                        <th>Significance</th>
+                    </tr>
+                    <tr>
+                        <td>1982</td>
+                        <td>First Internet-Connected Device</td>
+                        <td>Coke machine at Carnegie Mellon became the first ARPANET-connected appliance</td>
+                    </tr>
+                    <tr>
+                        <td>1990</td>
+                        <td>Web of Things Concept</td>
+                        <td>John Romkey created a toaster connected to the Internet</td>
+                    </tr>
+                    <tr>
+                        <td>1999</td>
+                        <td>Term "IoT" Coined</td>
+                        <td>Kevin Ashton coined "Internet of Things" at MIT</td>
+                    </tr>
+                    <tr>
+                        <td>2005</td>
+                        <td>Rise of RFID</td>
+                        <td>Radio-frequency identification adoption in supply chain</td>
+                    </tr>
+                    <tr>
+                        <td>2008</td>
+                        <td>IoT Officially Recognized</td>
+                        <td>Cisco identified IoT as distinct infrastructure with more connected devices than people</td>
+                    </tr>
+                    <tr>
+                        <td>2010s</td>
+                        <td>Smart Home Revolution</td>
+                        <td>Consumer IoT products proliferate (smart thermostats, lights, speakers)</td>
+                    </tr>
+                    <tr>
+                        <td>2020s</td>
+                        <td>Mature IoT Ecosystem</td>
+                        <td>Industrial IoT, smart cities, and edge computing adoption</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="attention-box important">
+                IOT DEVICES NOW OUTNUMBER HUMANS BY A RATIO OF OVER 3:1 GLOBALLY, AND THIS GAP CONTINUES TO EXPAND
+            </div>
+
+            <h3 class="subsection-title">IoT vs Traditional Internet</h3>
+
+            <div class="info-section">
+                <div class="info-title">KEY DIFFERENCES</div>
+                <p class="info-content">
+                    While traditional internet primarily involves human-computer interaction, IoT introduces new paradigms:
+                </p>
+                <ul class="info-list">
+                    <li><span class="keyword">Source of Data:</span> Traditional Internet: Human-generated; IoT: Sensor and machine-generated</li>
+                    <li><span class="keyword">Communication:</span> Traditional Internet: Request-response; IoT: Continuous telemetry</li>
+                    <li><span class="keyword">Scale:</span> Traditional Internet: Billions of users; IoT: Trillions of devices</li>
+                    <li><span class="keyword">Real-time Requirements:</span> Traditional Internet: Often tolerant of delay; IoT: Often requires immediate response</li>
+                    <li><span class="keyword">Resource Constraints:</span> Traditional Internet: Abundant computing resources; IoT: Limited power, memory, and bandwidth</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Core IoT Concepts</h3>
+
+            <h4 class="subsection-title">Smart Objects</h4>
+
+            <p class="content-text">
+                Smart objects are physical items that have been enhanced with digital capabilities. These objects can sense their environment, communicate with other devices and systems, process data, and sometimes take automated actions.
+            </p>
+
+            <div class="example-box">
+                <div class="example-title">EXAMPLE: SMART THERMOSTAT</div>
+                <p class="content-text">
+                    A smart thermostat is a classic IoT device that:
+                </p>
+                <ul class="info-list">
+                    <li>Senses temperature via built-in sensors</li>
+                    <li>Connects to WiFi for remote access</li>
+                    <li>Communicates with cloud services for weather data</li>
+                    <li>Processes data to optimize heating/cooling schedules</li>
+                    <li>Learns user preferences over time</li>
+                    <li>Can be controlled via smartphone apps</li>
+                </ul>
+            </div>
+
+            <h4 class="subsection-title">Connectivity Layers</h4>
+
+            <p class="content-text">
+                IoT operates across several connectivity layers that facilitate communication between devices and systems:
+            </p>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Layer</th>
+                        <th>Description</th>
+                        <th>Technologies</th>
+                    </tr>
+                    <tr>
+                        <td>Device Layer</td>
+                        <td>Physical devices and sensors</td>
+                        <td>Microcontrollers, sensors, actuators</td>
+                    </tr>
+                    <tr>
+                        <td>Connectivity Layer</td>
+                        <td>Network communication protocols</td>
+                        <td>WiFi, Bluetooth, Zigbee, LoRaWAN, Cellular</td>
+                    </tr>
+                    <tr>
+                        <td>Transport Layer</td>
+                        <td>Data transfer protocols</td>
+                        <td>MQTT, HTTP, CoAP, WebSockets</td>
+                    </tr>
+                    <tr>
+                        <td>Edge Layer</td>
+                        <td>Local processing and storage</td>
+                        <td>Gateways, edge servers, fog computing</td>
+                    </tr>
+                    <tr>
+                        <td>Cloud Layer</td>
+                        <td>Centralized processing and storage</td>
+                        <td>AWS IoT, Azure IoT, Google Cloud IoT</td>
+                    </tr>
+                    <tr>
+                        <td>Application Layer</td>
+                        <td>User interfaces and business logic</td>
+                        <td>Mobile apps, web dashboards, analytics</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Architecture Section -->
+        <div class="content-section" id="architecture">
+            <h2 class="section-title">IOT ARCHITECTURE</h2>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                IoT architecture describes how devices, networks, and systems interact to collect, transmit, process, and act upon data. Understanding IoT architecture is essential for designing scalable, efficient, and maintainable IoT solutions.
+            </p>
+
+            <h3 class="subsection-title">Four-Layer IoT Architecture</h3>
+
+            <div class="info-section">
+                <div class="info-title">LAYER 1: SENSING/PERCEPTION LAYER</div>
+                <p class="info-content">
+                    The sensing layer is the physical foundation of IoT, consisting of devices and sensors that collect data from the environment.
+                </p>
+                <ul class="info-list">
+                    <li><span class="keyword">Sensors:</span> Detect physical phenomena (temperature, humidity, motion, light)</li>
+                    <li><span class="keyword">Actuators:</span> Perform physical actions (motors, valves, speakers)</li>
+                    <li><span class="keyword">Microcontrollers:</span> Process data and manage device operations</li>
+                    <li><span class="keyword">Communication Modules:</span> Enable network connectivity</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <div class="info-title">LAYER 2: NETWORK LAYER</div>
+                <p class="info-content">
+                    The network layer facilitates data transmission between devices, gateways, and cloud systems using various communication technologies.
+                </p>
+                <ul class="info-list">
+                    <li><span class="keyword">Short-range:</span> Bluetooth, NFC, Infrared</li>
+                    <li><span class="keyword">Medium-range:</span> WiFi 6, Zigbee, Z-Wave</li>
+                    <li><span class="keyword">Long-range:</span> LoRaWAN, Cellular (4G/5G), Sigfox</li>
+                    <li><span class="keyword">Wired:</span> Ethernet, RS-485, CAN bus</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <div class="info-title">LAYER 3: MIDDLEWARE/SUPPORT LAYER</div>
+                <p class="info-content">
+                    The middleware layer provides services and capabilities that support application development and device management.
+                </p>
+                <ul class="info-list">
+                    <li><span class="keyword">Protocol Translation:</span> Bridges different communication protocols</li>
+                    <li><span class="keyword">Data Aggregation:</span> Combines data from multiple sources</li>
+                    <li><span class="keyword">Device Management:</span> Handles provisioning, monitoring, and updates</li>
+                    <li><span class="keyword">Security:</span> Implements authentication and encryption</li>
+                    <li><span class="keyword">Data Processing:</span> Filters, transforms, and enriches data</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <div class="info-title">LAYER 4: APPLICATION LAYER</div>
+                <p class="info-content">
+                    The application layer provides interfaces and functionality for end-users and business systems.
+                </p>
+                <ul class="info-list">
+                    <li><span class="keyword">User Interfaces:</span> Mobile apps, web dashboards, voice assistants</li>
+                    <li><span class="keyword">Business Logic:</span> Rules, workflows, and automation</li>
+                    <li><span class="keyword">Analytics:</span> Data visualization, reporting, insights</li>
+                    <li><span class="keyword">Integration:</span> Connects with enterprise systems (ERP, CRM)</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Edge Computing vs Cloud Computing</h3>
+
+            <div class="example-box">
+                <div class="example-title">EDGE COMPUTING</div>
+                <p class="content-text">
+                    Edge computing processes data closer to where it is generated—at the "edge" of the network near devices—rather than sending all data to centralized cloud servers.
+                </p>
+                <ul class="info-list">
+                    <li><span class="keyword">Lower Latency:</span> Processing happens locally, reducing response time</li>
+                    <li><span class="keyword">Bandwidth Optimization:</span> Only relevant data is sent to the cloud</li>
+                    <li><span class="keyword">Offline Capability:</span> Systems can function without internet connectivity</li>
+                    <li><span class="keyword">Privacy:</span> Sensitive data can be processed locally</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">CLOUD COMPUTING</div>
+                <p class="content-text">
+                    Cloud computing provides centralized processing, storage, and services that can scale horizontally to handle massive amounts of IoT data.
+                </p>
+                <ul class="info-list">
+                    <li><span class="keyword">Scalability:</span> Easily add resources as demand grows</li>
+                    <li><span class="keyword">Analytics:</span> Advanced processing with machine learning and AI</li>
+                    <li><span class="keyword">Accessibility:</span> Data accessible from anywhere</li>
+                    <li><span class="keyword">Integration:</span> Easier integration with other cloud services</li>
+                </ul>
+            </div>
+
+            <div class="attention-box">
+                MOST IOT SYSTEMS USE A HYBRID APPROACH: EDGE COMPUTING FOR REAL-TIME RESPONSES AND CLOUD COMPUTING FOR ADVANCED ANALYTICS AND LONG-TERM STORAGE
+            </div>
+
+            <h3 class="subsection-title">Fog Computing</h3>
+
+            <p class="content-text">
+                Fog computing is a decentralized computing infrastructure that extends cloud services to the edge of the network. It provides processing, storage, and networking services between edge devices and the cloud.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">FOG COMPUTING CHARACTERISTICS</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Distributed:</span> Processing occurs across multiple fog nodes</li>
+                    <li><span class="keyword">Proximity:</span> Located closer to end devices than cloud</li>
+                    <li><span class="keyword">Hierarchy:</span> Organized in layers from edge to cloud</li>
+                    <li><span class="keyword">Real-time:</span> Supports low-latency applications</li>
+                    <li><span class="keyword">Scalable:</span> Can handle millions of devices</li>
+                </ul>
+            </div>
+
+            <div class="code-block">
+                <span class="code-class">// Example: Data flow decision - Edge vs Cloud</span><br><br>
+                <span class="code-keyword">public class</span> DataProcessor {<br>
+                &nbsp;&nbsp;<span class="code-keyword">public void</span> processData(SensorReading data) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (data.isCritical()) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment">// Process locally for immediate action</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;edgeProcessor.processImmediate(data);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;} <span class="code-keyword">else</span> <span class="code-keyword">if</span> (data.needsAdvancedAnalysis()) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment">// Send to cloud for complex processing</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cloudService.uploadForAnalysis(data);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;} <span class="code-keyword">else</span> {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment">// Aggregate for periodic cloud sync</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;edgeProcessor.aggregate(data);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;}<br>
+                }
+            </div>
+        </div>
+
+        <!-- Applications Section -->
+        <div class="content-section" id="applications">
+            <h2 class="section-title">IOT APPLICATIONS AND USE CASES</h2>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                IoT technology has applications across virtually every industry, transforming how businesses operate and how people interact with technology in their daily lives.
+            </p>
+
+            <h3 class="subsection-title">Smart Home</h3>
+
+            <div class="info-section">
+                <div class="info-title">RESIDENTIAL IOT DEVICES</div>
+                <p class="info-content">Smart homes integrate IoT devices to enhance convenience, security, and energy efficiency:</p>
+                <ul class="info-list">
+                    <li><span class="keyword">Climate Control:</span> Smart thermostats that learn schedules and optimize heating/cooling</li>
+                    <li><span class="keyword">Lighting:</span> Automated, dimmable, and color-changing lights</li>
+                    <li><span class="keyword">Security:</span> Smart locks, cameras, motion sensors, and alarm systems</li>
+                    <li><span class="keyword">Appliances:</span> Smart refrigerators, ovens, washers, and dryers</li>
+                    <li><span class="keyword">Entertainment:</span> Smart speakers, TVs, and streaming devices</li>
+                    <li><span class="keyword">Energy Management:</span> Smart plugs that monitor and control power usage</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Smart Cities</h3>
+
+            <div class="info-section">
+                <div class="info-title">URBAN IOT SOLUTIONS</div>
+                <p class="info-content">Cities deploy IoT to improve quality of life, sustainability, and operational efficiency:</p>
+                <ul class="info-list">
+                    <li><span class="keyword">Traffic Management:</span> Adaptive traffic signals and parking management</li>
+                    <li><span class="keyword">Street Lighting:</span> Smart lighting that adjusts based on conditions</li>
+                    <li><span class="keyword">Waste Management:</span> Smart bins that optimize collection routes</li>
+                    <li><span class="keyword">Environmental Monitoring:</span> Air quality, noise, and water quality sensors</li>
+                    <li><span class="keyword">Public Safety:</span> Surveillance, emergency response systems</li>
+                    <li><span class="keyword">Utilities:</span> Smart water and electrical grid management</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Industrial IoT (IIoT)</h3>
+
+            <div class="info-section">
+                <div class="info-title">MANUFACTURING AND INDUSTRY</div>
+                <p class="info-content">Industrial IoT transforms manufacturing and operations through connected equipment:</p>
+                <ul class="info-list">
+                    <li><span class="keyword">Predictive Maintenance:</span> Monitor equipment health to predict failures before they occur</li>
+                    <li><span class="keyword">Asset Tracking:</span> Real-time location and status of equipment and inventory</li>
+                    <li><span class="keyword">Process Optimization:</span> Monitor and optimize production processes</li>
+                    <li><span class="keyword">Quality Control:</span> Automated inspection and defect detection</li>
+                    <li><span class="keyword">Energy Management:</span> Optimize energy consumption across facilities</li>
+                    <li><span class="keyword">Worker Safety:</span> Monitor environmental conditions and worker health</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Healthcare IoT (IoMT)</h3>
+
+            <div class="info-section">
+                <div class="info-title">MEDICAL AND HEALTH APPLICATIONS</div>
+                <p class="info-content">Internet of Medical Things improves patient care and healthcare delivery:</p>
+                <ul class="info-list">
+                    <li><span class="keyword">Wearable Devices:</span> Fitness trackers, smartwatches, health monitors</li>
+                    <li><span class="keyword">Remote Monitoring:</span> Continuous vital sign monitoring for chronic conditions</li>
+                    <li><span class="keyword">Smart Implants:</span> Pacemakers, insulin pumps, glucose monitors</li>
+                    <li><span class="keyword">Hospital Equipment:</span> Smart beds, medication dispensing systems</li>
+                    <li><span class="keyword">Telemedicine:</span> Connected devices enabling remote consultations</li>
+                    <li><span class="keyword">Asset Management:</span> Track medical equipment and supplies</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Agriculture (Smart Farming)</h3>
+
+            <div class="info-section">
+                <div class="info-title">PRECISION AGRICULTURE</div>
+                <p class="info-content">IoT in agriculture enables data-driven farming practices:</p>
+                <ul class="info-list">
+                    <li><span class="keyword">Soil Monitoring:</span> Moisture, pH, nutrient sensors</li>
+                    <li><span class="keyword">Weather Monitoring:</span> Local weather stations and forecasts</li>
+                    <li><span class="keyword">Crop Monitoring:</span> Satellite imagery, drone surveillance</li>
+                    <li><span class="keyword">Irrigation:</span> Automated, data-driven irrigation systems</li>
+                    <li><span class="keyword">Livestock:</span> Animal tracking, health monitoring</li>
+                    <li><span class="keyword">Machinery:</span> GPS-guided, automated farm equipment</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Supply Chain and Logistics</h3>
+
+            <div class="info-section">
+                <div class="info-title">LOGISTICS OPTIMIZATION</div>
+                <p class="info-content">IoT provides visibility and efficiency in supply chain operations:</p>
+                <ul class="info-list">
+                    <li><span class="keyword">Fleet Management:</span> Real-time vehicle tracking and route optimization</li>
+                    <li><span class="keyword">Condition Monitoring:</span> Temperature, humidity, shock sensors for sensitive cargo</li>
+                    <li><span class="keyword">Inventory Management:</span> Real-time stock levels and location tracking</li>
+                    <li><span class="keyword">Asset Tracking:</span> Locate and monitor equipment and containers</li>
+                    <li><span class="keyword">Predictive Maintenance:</span> Monitor fleet vehicle health</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Retail</h3>
+
+            <div class="info-section">
+                <div class="info-title">RETAIL TECHNOLOGY</div>
+                <p class="info-content">IoT reshapes the retail experience and operations:</p>
+                <ul class="info-list">
+                    <li><span class="keyword">Smart Shelves:</span> Automated inventory tracking and reordering</li>
+                    <li><span class="keyword">Beacons:</span> Location-based offers and navigation</li>
+                    <li><span class="keyword">Customer Analytics:</span> Track customer behavior and preferences</li>
+                    <li><span class="keyword">Checkout:</span> Automated, cashless checkout systems</li>
+                    <li><span class="keyword">Energy Management:</span> Optimize store energy consumption</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Challenges Section -->
+        <div class="content-section" id="challenges">
+            <h2 class="section-title">IOT CHALLENGES AND CONSIDERATIONS</h2>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                While IoT offers tremendous opportunities, it also presents significant technical and organizational challenges that must be addressed for successful implementations.
+            </p>
+
+            <h3 class="subsection-title">Security Challenges</h3>
+
+            <div class="caution-box">
+                <div class="caution-title">CRITICAL SECURITY CONCERNS</div>
+                <p class="content-text">
+                    Security is one of the most pressing challenges in IoT due to:
+                </p>
+                <ul class="info-list">
+                    <li><span class="keyword">Weak Default Credentials:</span> Many devices ship with easily guessable default passwords</li>
+                    <li><span class="keyword">Lack of Updates:</span> Limited mechanisms for security patches and firmware updates</li>
+                    <li><span class="keyword">Insecure Communication:</span> Unencrypted data transmission vulnerable to interception</li>
+                    <li><span class="keyword">Authentication Issues:</span> Difficulty of authenticating millions of devices</li>
+                    <li><span class="keyword">Botnets:</span> Compromised IoT devices form large botnets for DDoS attacks</li>
+                </ul>
+            </div>
+
+            <div class="attention-box important">
+                IOT SECURITY REQUIRES DEFENSE IN DEPTH: DEVICE AUTHENTICATION, NETWORK SECURITY, DATA ENCRYPTION, AND SECURE SOFTWARE DEVELOPMENT PRACTICES
+            </div>
+
+            <h3 class="subsection-title">Privacy Concerns</h3>
+
+            <div class="caution-box">
+                <div class="caution-title">DATA PRIVACY ISSUES</div>
+                <p class="content-text">
+                    IoT devices continuously collect data, raising privacy concerns:
+                </p>
+                <ul class="info-list">
+                    <li><span class="keyword">Continuous Monitoring:</span> Always-on devices track activities in homes and workplaces</li>
+                    <li><span class="keyword">Personal Data:</span> Health, location, and behavioral data exposure</li>
+                    <li><span class="keyword">Data Aggregation:</span> Combining data from multiple sources can reveal sensitive information</li>
+                    <li><span class="keyword">Third-party Sharing:</span> Data sharing with advertisers and service providers</li>
+                    <li><span class="keyword">Regulatory Compliance:</span> GDPR, CCPA, and other privacy regulations</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Technical Challenges</h3>
+
+            <div class="info-section">
+                <div class="info-title">INTEROPERABILITY</div>
+                <p class="info-content">
+                    Devices from different manufacturers often use incompatible protocols and data formats, making integration difficult:
+                </p>
+                <ul class="info-list">
+                    <li><span class="keyword">Protocol Diversity:</span> MQTT, CoAP, HTTP, proprietary protocols</li>
+                    <li><span class="keyword">Data Formats:</span> JSON, XML, binary formats</li>
+                    <li><span class="keyword">Standards Fragmentation:</span> Multiple competing standards organizations</li>
+                    <li><span class="keyword">Vendor Lock-in:</span> Proprietary ecosystems limit flexibility</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <div class="info-title">SCALABILITY</div>
+                <p class="info-content">
+                    IoT systems must scale to handle millions of devices and massive data volumes:
+                </p>
+                <ul class="info-list">
+                    <li><span class="keyword">Device Management:</span> Provisioning, monitoring, and updating millions of devices</li>
+                    <li><span class="keyword">Data Volume:</span> Handling petabytes of sensor data</li>
+                    <li><span class="keyword">Simultaneous Connections:</span> Supporting concurrent connections from many devices</li>
+                    <li><span class="keyword">Network Capacity:</span> Sufficient bandwidth to handle device communications</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <div class="info-title">POWER MANAGEMENT</div>
+                <p class="info-content">
+                    Many IoT devices are battery-powered and must operate for years:
+                </p>
+                <ul class="info-list">
+                    <li><span class="keyword">Low-Power Design:</span> Optimize energy consumption at hardware and software levels</li>
+                    <li><span class="keyword">Sleep Modes:</span> Devices sleep when possible and wake periodically</li>
+                    <li><span class="keyword">Energy Harvesting:</span> Solar, kinetic, thermal energy generation</li>
+                    <li><span class="keyword">Battery Technology:</span> Improvements in energy density and lifespan</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <div class="info-title">RELIABILITY AND AVAILABILITY</div>
+                <p class="info-content">
+                    IoT systems must maintain high availability and handle failures gracefully:
+                </p>
+                <ul class="info-list">
+                    <li><span class="keyword">Network Failures:</span> Devices must function during connectivity outages</li>
+                    <li><span class="keyword">Device Failures:</span> Fault tolerance and redundancy strategies</li>
+                    <li><span class="keyword">Environmental Conditions:</span> Operation in harsh environments</li>
+                    <li><span class="keyword">Safety-Critical Systems:</span> Failure could cause harm or damage</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <div class="info-title">DATA MANAGEMENT</div>
+                <p class="info-content">
+                    Managing IoT data presents unique challenges:
+                </p>
+                <ul class="info-list">
+                    <li><span class="keyword">Volume:</span> Enormous amounts of data generated</li>
+                    <li><span class="keyword">Velocity:</span> High-speed data streams</li>
+                    <li><span class="keyword">Variety:</span> Different data types and structures</li>
+                    <li><span class="keyword">Veracity:</span> Data quality and accuracy issues</li>
+                    <li><span class="keyword">Storage:</span> Cost-effective long-term retention</li>
+                    <li><span class="keyword">Processing:</span> Real-time vs. batch processing</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Organizational Challenges</h3>
+
+            <div class="info-section">
+                <div class="info-title">BUSINESS AND STRATEGIC</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Time to Market:</span> Pressure to develop and launch products quickly</li>
+                    <li><span="keyword">Cost:</span> Development, deployment, and ongoing maintenance costs</li>
+                    <li><span class="keyword">Skill Gap:</span> Shortage of experienced IoT developers and engineers</li>
+                    <li><span class="keyword">Lifecycle Management:</span> 10-20 year device lifespans require long-term support planning</li>
+                    <li><span class="keyword">ROI Calculation:</span> Measuring business value of IoT investments</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Practice Problems Section -->
+        <div class="content-section" id="practice">
+            <h2 class="section-title">PRACTICE PROBLEMS</h2>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                Complete these practice problems to reinforce your understanding of IoT fundamentals. Track your progress as you work through them!
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">CONCEPTUAL PROBLEMS</div>
+                
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 1:</strong> What does IoT stand for and what are the three key components of any IoT system?
+                    </div>
+                    <input type="text" class="problem-input" id="p-1" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkIoTProblem('1-1', 'Internet of Things', [], 'p-1')">Check</button>
+                    <div class="feedback" id="p-1-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 2:</strong> What is the main difference between edge computing and cloud computing in IoT?
+                    </div>
+                    <input type="text" class="problem-input" id="p-2" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkIoTProblem('1-3', 'Edge processes data near source, Cloud processes centrally', [], 'p-2')">Check</button>
+                    <div class="feedback" id="p-2-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 3:</strong> Name the four layers of classic IoT architecture.
+                    </div>
+                    <input type="text" class="problem-input" id="p-3" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkIoTProblem('1-11', 'Sensing, Network, Middleware, Application', ['Perception, Network, Support, Application'], 'p-3')">Check</button>
+                    <div class="feedback" id="p-3-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 4:</strong> Which protocol is specifically designed for lightweight messaging in IoT?
+                    </div>
+                    <input type="text" class="problem-input" id="p-4" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkIoTProblem('1-4', 'MQTT', ['Message Queuing Telemetry Transport'], 'p-4')">Check</button>
+                    <div class="feedback" id="p-4-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 5:</strong> What is a digital twin in the context of IoT?
+                    </div>
+                    <input type="text" class="problem-input" id="p-5" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkIoTProblem('1-5', 'Virtual replica of physical system', ['virtual representation'], 'p-5')">Check</button>
+                    <div class="feedback" id="p-5-feedback"></div>
+                </div>
+            </div>
+
+            <div class="attention-box">
+                PROBLEMS 6-50 ARE AVAILABLE IN THE FULL PROBLEM DATABASE. COMPLETE ADDITIONAL PRACTICE TO MASTER THESE CONCEPTS.
+            </div>
+        </div>
+
+        <!-- Module Quiz Section -->
+        <div class="content-section" id="quiz">
+            <h2 class="section-title">MODULE 1 QUIZ</h2>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                This quiz tests your understanding of IoT fundamentals, architecture, applications, and challenges.
+                Score at least 70% (9 of 12 questions correct) to proceed to the next module!
+            </p>
+
+            <div class="attention-box important">
+                12 QUESTIONS • 70% PASSING SCORE • NO TIME LIMIT
+            </div>
+
+            <!-- Quiz will be generated dynamically -->
+            <div id="quiz-container" class="quiz-container">
+                <!-- Quiz questions will be loaded here -->
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="submit-btn" onclick="loadModule1Quiz()">Load Quiz</button>
+                <button class="submit-btn" onclick="submitModule1Quiz()" style="display: none;">Submit Quiz</button>
+            </div>
+
+            <div id="quiz-result" class="score-display" style="display: none;">
+                <h2>QUIZ RESULTS</h2>
+                <div class="score-value" id="score-value">0/12</div>
+                <p id="score-message"></p>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <button class="nav-button prev-module-btn" disabled>Previous Module</button>
+            <a href="../index.html" class="nav-button">Back to Course Overview</a>
+            <a href="02-java-iot.html" class="nav-button next-module-btn">Next Module: Java for IoT</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p class="footer-text">
+            IOT DEVELOPMENT WITH JAVA - COMPLETE INTERACTIVE COURSE<br>
+            Module 1: Introduction to IoT<br>
+            50+ Practice Problems • 12 Quiz Questions
+        </p>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script src="../js/problems.js"></script>
+    <script src="../js/quizzes.js"></script>
+    <script>
+        // Module-specific quiz functions
+        let module1Answers = {};
+        
+        function loadModule1Quiz() {
+            const container = document.getElementById('quiz-container');
+            let html = '';
+            
+            quizQuestions.module1.forEach((question, index) => {
+                html += `
+                    <div class="quiz-question">
+                        <p><strong>Q${index + 1}:</strong> ${question.question}</p>
+                        <div class="quiz-options">
+                            ${question.options.map((opt, i) => `
+                                <div class="quiz-option" onclick="selectOption('${question.id}', '${opt.charAt(0)}', this)">
+                                    ${opt}
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+            document.querySelector('button[onclick="loadModule1Quiz()"]').style.display = 'none';
+            document.querySelector('button[onclick="submitModule1Quiz()"]').style.display = 'inline-block';
+        }
+        
+        function selectOption(questionId, option, element) {
+            module1Answers[questionId] = option;
+            
+            // Update visual selection
+            const options = element.parentElement.querySelectorAll('.quiz-option');
+            options.forEach(opt => opt.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+        
+        function submitModule1Quiz() {
+            let score = 0;
+            const total = quizQuestions.module1.length;
+            
+            quizQuestions.module1.forEach(q => {
+                if (module1Answers[q.id] === q.correct) {
+                    score++;
+                }
+            });
+            
+            const percentage = (score / total) * 100;
+            
+            // Show results
+            const resultDiv = document.getElementById('quiz-result');
+            const scoreValue = document.getElementById('score-value');
+            const scoreMessage = document.getElementById('score-message');
+            
+            resultDiv.style.display = 'block';
+            scoreValue.textContent = `${score}/${total} (${percentage}%)`;
+            
+            if (percentage >= 70) {
+                scoreMessage.textContent = 'Congratulations! You passed the quiz!';
+                if (typeof markQuizPassed === 'function') {
+                    markQuizPassed(1);
+                }
+            } else {
+                scoreMessage.textContent = 'You need to score at least 70% to pass. Please review the material and try again.';
+            }
+        }
+        
+        // Problem checker for practice problems
+        function checkIoTProblem(problemId, correct, alternatives, inputId) {
+            const input = document.getElementById(inputId).value.trim();
+            const feedback = document.getElementById(inputId + '-feedback');
+            
+            const normalized = input.toLowerCase().replace(/\s+/g, '');
+            const normalizedCorrect = correct.toLowerCase().replace(/\s+/g, '');
+            const matchesAlt = alternatives.some(alt => alt.toLowerCase().replace(/\s+/g, '') === normalized);
+            
+            if (normalized === normalizedCorrect || matchesAlt) {
+                feedback.className = 'feedback correct';
+                feedback.textContent = 'Correct!';
+                feedback.style.display = 'block';
+                
+                if (typeof markProblemSolved === 'function') {
+                    markProblemSolved(problemId);
+                }
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.textContent = 'Not correct. Review the material and try again.';
+                feedback.style.display = 'block';
+            }
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+            markLessonComplete(1);
+        });
+    </script>
+</body>
+</html>

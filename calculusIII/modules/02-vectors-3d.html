@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 2: Vectors in 3D - Calculus III</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="construction-header"><h1>🔧 MODULE 2: VECTORS IN 3D SPACE 🔧</h1><h2>Mastering Three-Dimensional Geometry</h2></div>
+    <div class="warning-banner"><span class="construction-icon">⚠️</span> HARD HAT - WORKING IN 3D <span class="construction-icon">⚠️</span></div>
+
+    <nav class="nav-container"><ul class="nav-menu">
+        <li class="nav-item active" onclick="showSection('vectors')">📐 Vectors</li>
+        <li class="nav-item" onclick="showSection('operations')">⚡ Operations</li>
+        <li class="nav-item" onclick="showSection('lines-planes')">✈️ Lines & Planes</li>
+        <li class="nav-item" onclick="showSection('practice')">🔧 Practice</li>
+        <li class="nav-item" onclick="showSection('quiz')">🎯 Quiz</li>
+    </ul></nav>
+
+    <div class="progress-container"><div class="progress-title">📊 MODULE 2 PROGRESS</div><div class="progress-bar"><div class="progress-fill" id="progress">0%</div></div></div>
+
+    <div class="container">
+        <div class="content-section active" id="vectors">
+            <div class="lesson-header"><h1>3D Vectors</h1><p>The Building Blocks of 3D Space</p></div>
+            <div class="construction-tape">🔨 ENTERING 3D SPACE 🔨</div>
+
+            <p class="content-text">Vectors with three components describe direction and magnitude in 3D space. Essential for physics, engineering, and graphics!</p>
+
+            <div class="definition-box">
+                <h4>Definition: 3D Vector</h4>
+                <p class="content-text">A vector in 3D is written with three components:</p>
+                <div class="formula-display">$$\vec{v} = \langle a, b, c \rangle = \begin{bmatrix}a \\ b \\ c\end{bmatrix}$$</div>
+            </div>
+
+            <div class="example-box">
+                <h4>Example: 3D Vectors</h4>
+                <p class="content-text">Position vector of point (3,4,5): $$\vec{r} = \langle 3, 4, 5 \rangle$$</p>
+                <p class="content-text">Velocity vector moving at speed 5 in direction (2,1,2): $$\vec{v} = \frac{5}{3}\langle 2, 1, 2 \rangle$$</p>
+            </div>
+
+            <h3 class="subsection-title">Magnitude and Unit Vectors</h3>
+
+            <div class="definition-box">
+                <h4>Magnitude of 3D Vector</h4>
+                <div class="formula-display">$$|\vec{v}| = \sqrt{a^2 + b^2 + c^2}$$</div>
+            </div>
+
+            <div class="example-box">
+                <h4>Example: Magnitude</h4>
+                <p class="content-text">Find $$|\langle 1, 2, 2 \rangle|$$</p>
+                <div class="formula-display">$$|\langle 1, 2, 2 \rangle| = \sqrt{1 + 4 + 4} = \sqrt{9} = 3$$</div>
+            </div>
+
+            <div class="definition-box">
+                <h4>Unit Vector</h4>
+                <p class="content-text">A unit vector has magnitude 1 and points in a specific direction:</p>
+                <div class="formula-display">$$\hat{u} = \frac{\vec{u}}{|\vec{u}|}$$</div>
+            </div>
+
+            <div class="blueprint-section">
+                <div class="blueprint-content">
+                    <h3>📋 STANDARD UNIT VECTORS</h3>
+                    <ul class="blueprint-list">
+                        <li>$$\vec{i} = \langle 1, 0, 0 \rangle$$ - points along x-axis</li>
+                        <li>$$\vec{j} = \langle 0, 1, 0 \rangle$$ - points along y-axis</li>
+                        <li>$$\vec{k} = \langle 0, 0, 1 \rangle$$ - points along z-axis</li>
+                        <li>Any 3D vector: $$\vec{v} = a\vec{i} + b\vec{j} + c\vec{k}$$</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section" id="operations">
+            <div class="lesson-header"><h1>Vector Operations</h1><p>Addition, Scalar Multiplication, and Products</p></div>
+
+            <h3 class="subsection-title">Basic Operations</h3>
+
+            <div class="definition-box">
+                <h4>Vector Addition</h4>
+                <div class="formula-display">$$\vec{v} + \vec{w} = \langle a_1+a_2, b_1+b_2, c_1+c_2 \rangle$$</div>
+            </div>
+
+            <div class="definition-box">
+                <h4>Scalar Multiplication</h4>
+                <div class="formula-display">$$k\vec{v} = k\langle a, b, c \rangle = \langle ka, kb, kc \rangle$$</div>
+            </div>
+
+            <div class="example-box">
+                <h4>Example</h4>
+                <p class="content-text">$$2\langle 1, 3, 5 \rangle + \langle 4, 0, 2 \rangle = \langle 6, 6, 12 \rangle$$</p>
+            </div>
+
+            <h3 class="subsection-title">The Dot Product</h3>
+
+            <div class="definition-box">
+                <h4>Definition: Dot Product</h4>
+                <div class="formula-display">$$\vec{v} \cdot \vec{w} = v_1 w_1 + v_2 w_2 + v_3 w_3$$</div>
+                <p class="content-text">The result is a SCALAR (number), not a vector!</p>
+            </div>
+
+            <div class="example-box">
+                <h4>Example: Dot Product</h4>
+                <p class="content-text">$$\langle 1, 2, 3 \rangle \cdot \langle 4, 5, 6 \rangle = 4 + 10 + 18 = 32$$</p>
+            </div>
+
+            <div class="interactive-box">
+                <div class="interactive-title">Geometric Meaning</div>
+                <p class="content-text">The dot product relates to the angle θ between vectors:</p>
+                <div class="formula-display">$$\vec{v} \cdot \vec{w} = |\vec{v}||\vec{w}|\cos(\theta)$$</div>
+                <p class="content-text">This means: <strong>Perpendicular vectors have dot product = 0</strong></p>
+            </div>
+
+            <h3 class="subsection-title">The Cross Product</h3>
+
+            <div class="safety-sign important">
+                🛠️ THE CROSS PRODUCT IS SPECIAL TO 3D!
+            </div>
+
+            <div class="definition-box">
+                <h4>Definition: Cross Product</h4>
+                <div class="formula-display">
+                    $$\vec{v} \times \vec{w} = \begin{vmatrix}\vec{i} & \vec{j} & \vec{k} \\ v_1 & v_2 & v_3 \\ w_1 & w_2 & w_3\end{vmatrix}$$
+                </div>
+                <p class="content-text">The result is a VECTOR perpendicular to both input vectors!</p>
+            </div>
+
+            <div class="example-box">
+                <h4>Standard Cross Products</h4>
+                <ul class="blueprint-list">
+                    <li>$$\vec{i} \times \vec{j} = \vec{k}$$ (right-hand rule)</li>
+                    <li>$$\vec{j} \times \vec{k} = \vec{i}$$</li>
+                    <li>$$\vec{k} \times \vec{i} = \vec{j}$$</li>
+                    <li>$$\vec{j} \times \vec{i} = -\vec{k}$$ (order matters!)</li>
+                </ul>
+            </div>
+
+            <div class="safety-sign warning">
+                ⚠️ REMEMBER: Cross product = ANTI-COMMUTATIVE! $$\vec{v} \times \vec{w} \neq \vec{w} \times \vec{v}$$
+            </div>
+        </div>
+
+        <div class="content-section" id="lines-planes">
+            <div class="lesson-header"><h1>Lines and Planes in 3D</h1><p>Describing Paths and Surfaces</p></div>
+
+            <h3 class="subsection-title">Lines in 3D Space</h3>
+
+            <div class="definition-box">
+                <h4>Parametric Equations of a Line</h4>
+                <div class="formula-display">$$x = x_0 + at, \quad y = y_0 + bt, \quad z = z_0 + ct$$</div>
+                <p class="content-text">OR in vector form:</p>
+                <div class="formula-display">$$\vec{r}(t) = \vec{r}_0 + t\vec{v}$$</div>
+                <p class="content-text">where $$\vec{r}_0 = \langle x_0, y_0, z_0 \rangle$$ is a point and $$\vec{v} = \langle a, b, c \rangle$$ is direction</p>
+            </div>
+
+            <div class="example-box">
+                <h4>Example: Line through (1,2,3) with direction (2,-1,4)</h4>
+                <div class="formula-display">
+                    $$\vec{r}(t) = \langle 1, 2, 3 \rangle + t\langle 2, -1, 4 \rangle$$
+                </div>
+                <div class="formula-display">
+                    $$x = 1 + 2t, \quad y = 2 - t, \quad z = 3 + 4t$$
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Planes in 3D Space</h3>
+
+            <div class="definition-box">
+                <h4>Equation of a Plane</h4>
+                <p class="content-text">Given a point $$(x_0, y_0, z_0)$$ and normal vector $$\vec{n} = \langle a, b, c \rangle$$:</p>
+                <div class="formula-display">
+                    $$a(x-x_0) + b(y-y_0) + c(z-z_0) = 0$$
+                </div>
+                <p class="content-text">Simplified form:</p>
+                <div class="formula-display">
+                    $$ax + by + cz = d$$
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>Example: Plane through (1,2,3) with normal (2,-1,4)</h4>
+                <div class="formula-display">
+                    $$2(x-1) - (y-2) + 4(z-3) = 0$$
+                </div>
+                <div class="formula-display">
+                    $$2x - y + 4z - 12 = 0$$
+                </div>
+            </div>
+
+            <div class="blueprint-section">
+                <div class="blueprint-content">
+                    <h3>📋 KEY RELATIONSHIPS</h3>
+                    <ul class="blueprint-list">
+                        <li>Line direction vector ⟂ Plane normal vector: PARALLEL to plane</li>
+                        <li>Line direction vector ∥ Plane normal vector: PERPENDICULAR to plane</li>
+                        <li>Two planes are parallel if normals are parallel</li>
+                        <li>Two planes intersect in a line</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section" id="practice">
+            <div class="lesson-header"><h1>Practice Problems</h1><p>Test Your 3D Vector Skills</p></div>
+
+            <div class="practice-section">
+                <h3>🔧 PRACTICE EXERCISES</h3>
+
+                <div class="practice-problem">
+                    <div class="problem-title">Problem 1: Magnitude</div>
+                    <p class="content-text">Find $$|\langle 3, 4, 12 \rangle|$$</p>
+                    <input type="text" class="problem-input" id="p1" placeholder="Answer">
+                    <button class="check-btn" onclick="chk(1)">Check</button>
+                    <div class="feedback" id="p1f"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-title">Problem 2: Dot Product</div>
+                    <p class="content-text">Calculate $$\langle 1, 2, 3 \rangle \cdot \langle 4, 5, 6 \rangle$$</p>
+                    <input type="text" class="problem-input" id="p2" placeholder="Answer">
+                    <button class="check-btn" onclick="chk(2)">Check</button>
+                    <div class="feedback" id="p2f"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-title">Problem 3: Unit Vector</div>
+                    <p class="content-text">Find unit vector in direction $$\langle 3, 4 \rangle$$ (2D)</p>
+                    <input type="text" class="problem-input" id="p3" placeholder="Answer">
+                    <button class="check-btn" onclick="chk(3)">Check</button>
+                    <div class="feedback" id="p3f"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section" id="quiz">
+            <div class="lesson-header"><h1>Module 2 Quiz</h1><p>Assessment</p></div>
+            <div class="quiz-container"><h3>🎯 QUIZ</h3><p class="content-text">70% to pass!</p>
+                <div class="quiz-question"><div class="quiz-question-text">Q1: $$|\langle 1, 0, 0 \rangle|$$</div><div class="quiz-options"><div onclick="s('Q1','A',this)">A. 0</div><div onclick="s('Q1','B',this)">B. 1</div><div onclick="s('Q1','C',this)">C. $$\sqrt{2}$$</div></div></div>
+                <div class="quiz-question"><div class="quiz-question-text">Q2: Cross product of parallel vectors:</div><div class="quiz-options"><div onclick="s('Q2','A',this)">A. Dot product</div><div onclick="s('Q2','B',this)">B. Zero vector</div><div onclick="s('Q2','C',this)">C. Unit vector</div></div></div>
+                <button class="quiz-button" onclick="sub()">SUBMIT</button></div>
+            <div class="quiz-container" id="res" style="display:none;"></div>
+        </div>
+
+        <div class="nav-buttons"><a href="01-introduction.html" class="nav-btn">← PREV MODULE</a><a href="03-vector-functions.html" class="nav-btn primary">VECTOR FUNCTIONS →</a></div>
+    </div>
+
+    <script>const an={};function s(q,a,e){an[q]=a;e.parentElement.querySelectorAll('.quiz-option').forEach(o=>o.classList.remove('selected'));e.classList.add('selected');}function sub(){const cor={'Q1':'B','Q2':'B'};let s=0;for(let q in cor)if(an[q]===cor[q])s++;const pct=Math.round((s/2)*100);document.querySelectorAll('.quiz-container').forEach(c=>{if(c.id!=='res')c.style.display='none';});document.getElementById('res').style.display='block';if(pct>=70){document.getElementById('res').innerHTML=`<div class="safety-sign important">🎉 PASSED! ${s}/2</div>`;up(100);}else{document.getElementById('res').innerHTML=`<div class="safety-sign danger">❌ ${s}/2 - RETRY</div>`;}}const p={1:{alt:['13'],fb:'✓ √(9+16+144)=13'},2:{alt:['32'],fb:'✓ 4+10+18=32'},3:{alt:['<3/5,4/5>','<0.6,0.8>'],fb:'✓ Unit = ⟨3/5,4/5⟩'}};function chk(n){const i=document.getElementById('p'+n).value.trim().toLowerCase();const fb=document.getElementById('p'+n+'f');const ans=p[n];if(ans.alt.some(a=>i.includes(a))){fb.className='feedback correct';fb.innerHTML=ans.fb;}else{fb.className='feedback incorrect';fb.textContent='❌ Try again!';}}function showSection(id){document.querySelectorAll('.content-section').forEach(s=>s.classList.remove('active'));document.querySelectorAll('.nav-item').forEach(i=>i.classList.remove('active'));document.getElementById(id).classList.add('active');event.target.classList.add('active');}function up(p){document.getElementById('progress').textContent=p+'%';document.getElementById('progress').style.width=p+'%';}</script>
+</body>
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 4: Power Series - Calculus II</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+
+  <!-- MathJax Configuration -->
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    },
+    startup: {
+      typeset: false
+    }
+  };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+  <header>
+    <h1>Calculus II <span>Chapter 4</span></h1>
+    <p class="tagline">Power Series and Taylor Series</p>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <div class="sidebar-title">📖 Chapter 4 Lessons</div>
+      <ul class="chapter-nav">
+        <li><a href="../index.html">← Back to Home</a></li>
+        <li><a href="#chapter-intro">Chapter Introduction</a></li>
+        <li><a href="#lesson-25">Lesson 25: Power Series</a></li>
+        <li><a href="#lesson-26">Lesson 26: Radius & Interval of Convergence</a></li>
+        <li><a href="#lesson-27">Lesson 27: Differentiating & Integrating Power Series</a></li>
+        <li><a href="#lesson-28">Lesson 28: Taylor & Maclaurin Series</a></li>
+        <li><a href="#lesson-29">Lesson 29: Convergence of Taylor Series</a></li>
+        <li><a href="#lesson-30">Lesson 30: Approximating Functions</a></li>
+        <li><a href="#lesson-31">Lesson 31: Error Estimates</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <div class="breadcrumbs"><a href="../index.html">Home</a> > Chapter 4: Power Series</div>
+
+      <section id="chapter-intro">
+        <h2>Chapter 4: Power Series</h2>
+
+        <div class="key-concepts">
+          <h3>📋 Chapter Overview</h3>
+          <p>Power series are infinite series where each term involves powers of (x-a). They're one of the most powerful tools in calculus, allowing us to represent functions as infinite polynomials and compute things that seem impossible otherwise.</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>🎯 Learning Objectives</h3>
+          <ul>
+            <li>Understand what power series are and their convergence properties</li>
+            <li>Find radius and interval of convergence using ratio test</li>
+            <li>Differentiate and integrate power series term-by-term</li>
+            <li>Derive Taylor and Maclaurin series for common functions</li>
+            <li>Understand when Taylor series converge to the original function</li>
+            <li>Use Taylor series to approximate functions and estimate errors</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- LESSON 25: Power Series -->
+      <section id="lesson-25" class="lesson">
+        <h1>Lesson 25: Power Series</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>A power series is an infinite series where each term is a constant coefficient times a power of (x-a). Power series blur the line between polynomials and more complex functions.</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 Definition of Power Series</h3>
+          <div class="formula-highlight">
+            A power series centered at a has the form:
+            $$\\sum_{n=0}^{\\infty} c_n (x-a)^n = c_0 + c_1(x-a) + c_2(x-a)^2 + c_3(x-a)^3 + \\cdots$$
+          </div>
+
+          <h4>Special Cases:</h4>
+          <ul>
+            <li><strong>Centered at 0:</strong> $\sum_{n=0}^{\infty} c_n x^n$ (Maclaurin series structure)</li>
+            <li><strong>Geometric series:</strong> $\sum_{n=0}^{\infty} x^n = 1 + x + x^2 + x^3 + \cdots = \frac{1}{1-x}$ for $|x| < 1$</li>
+          </ul>
+
+          <h3>📚 Convergence of Power Series</h3>
+          <div class="formula">
+            <strong>THEOREM:</strong> For a given power series $\sum c_n (x-a)^n$, exactly one of these holds:
+            <br><br>
+            1. The series converges only at $x = a$
+            <br>
+            2. The series converges for all $x$
+            <br>
+            3. There exists a number R > 0 such that:
+            <br>
+            &emsp;• Converges for $|x-a| < R$
+            <br>
+            &emsp;• Diverges for $|x-a| > R$
+          </div>
+
+          <p>This number R is called the <strong>radius of convergence</strong>.</p>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example: Recognize $\sum_{n=0}^{\infty} x^n$ as a geometric series</h4>
+
+          <div id="ch4-l1-ex1">
+            <div class="step" style="display: none;">Step 1: This is a geometric series with first term $a = 1$ and ratio $r = x$</div>
+            <div class="step" style="display: none;">Step 2: Geometric series converge when $|r| < 1$, so $|x| < 1$</div>
+            <div class="step" style="display: none;">Step 3: When it converges, sum = $\frac{a}{1-r} = \frac{1}{1-x}$</div>
+            <div class="step" style="display: none;">Step 4: Therefore: $\sum_{n=0}^{\infty} x^n = \frac{1}{1-x}$ for $|x| < 1$</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch4-l1-ex1')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div id="ch4-l25-practice"></div>
+        <div id="ch4-l25-quiz"></div>
+      </section>
+
+      <!-- LESSON 26: Radius and Interval of Convergence -->
+      <section id="lesson-26" class="lesson">
+        <h1>Lesson 26: Radius and Interval of Convergence</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>Power series don't converge everywhere - they converge on a specific interval. Finding the radius and interval of convergence is crucial for understanding where a power series representation is valid.</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 Finding the Radius of Convergence</h3>
+
+          <h4>Use the Ratio Test:</h4>
+          <div class="formula">
+            $R = \lim_{n \to \infty} \left|\frac{c_n}{c_{n+1}}\right|$
+            <br><br>
+            or compute: $L = \lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right| = \lim_{n \to \infty} \left|\frac{c_{n+1}(x-a)^{n+1}}{c_n(x-a)^n}\right|$
+          </div>
+
+          <h4>Three Cases for R:</h4>
+          <ul>
+            <li><strong>R = ∞:</strong> Converges for all x (entire real line)</li>
+            <li><strong>R = 0:</strong> Converges only at x = a</li>
+            <li><strong>0 < R < ∞:</strong> Converges for |x-a| < R, must test endpoints</li>
+          </ul>
+
+          <h3>📚 Finding the Interval of Convergence</h3>
+          <ol>
+            <li>Find R using ratio test</li>
+            <li>Check convergence at x = a - R (left endpoint)</li>
+            <li>Check convergence at x = a + R (right endpoint)</li>
+            <li>Combine to get the interval</li>
+          </ol>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example: Find radius of convergence for $\sum_{n=0}^{\infty} \frac{x^n}{n!}$</h4>
+
+          <div id="ch4-l2-ex1">
+            <div class="step" style="display: none;">Step 1: Apply Ratio Test: $L = \\lim_{n \\to \\infty} \\left|\\frac{x^{n+1}/(n+1)!}{x^n/n!}\\right|$</div>
+            <div class="step" style="display: none;">Step 2: Simplify: $L = \\lim_{n \\to \\infty} \\left|\\frac{x^{n+1} \\cdot n!}{x^n \\cdot (n+1)!}\\right| = \\lim_{n \\to \\infty} \\left|\\frac{x}{n+1}\\right|$</div>
+            <div class="step" style="display: none;">Step 3: Compute: $L = |x| \\cdot \\lim_{n \\to \\infty} \\frac{1}{n+1} = |x| \\cdot 0 = 0$</div>
+            <div class="step" style="display: none;">Step 4: Since $L = 0 < 1$ for all x, the series converges for all x</div>
+            <div class="step" style="display: none;">Step 5: Answer: $R = \\infty$ (converges everywhere)</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch4-l2-ex1')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div id="ch4-l26-practice"></div>
+        <div id="ch4-l26-quiz"></div>
+      </section>
+
+      <!-- LESSON 27: Differentiating and Integrating Power Series -->
+      <section id="lesson-27" class="lesson">
+        <h1>Lesson 27: Differentiating and Integrating Power Series</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>One of the most powerful properties of power series is that we can differentiate and integrate them term-by-term within their interval of convergence. This makes them invaluable for solving differential equations and more!</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 Term-by-Term Differentiation</h3>
+          <div class="formula-highlight">
+            If $f(x) = \sum_{n=0}^{\infty} c_n (x-a)^n$ has radius of convergence R > 0, then:
+            <br><br>
+            $f'(x) = \sum_{n=0}^{\infty} \frac{d}{dx}[c_n (x-a)^n] = \sum_{n=1}^{\infty} n \cdot c_n (x-a)^{n-1}$
+            <br><br>
+            for $|x-a| < R$.
+          </div>
+
+          <h4>Key Points:</h4>
+          <ul>
+            <li>The differentiated series has the SAME radius of convergence</li>
+            <li>Index shifts starting from n=1 (the first term becomes 0)</li>
+            <li>Bring down power n, then reduce power by 1</li>
+          </ul>
+
+          <h3>📚 Term-by-Term Integration</h3>
+          <div class="formula-highlight">
+            If $f(x) = \sum_{n=0}^{\infty} c_n (x-a)^n$ has radius of convergence R > 0, then:
+            <br><br>
+            $\int f(x) \, dx = C + \sum_{n=0}^{\infty} c_n \frac{(x-a)^{n+1}}{n+1}$
+            <br><br>
+            for $|x-a| < R$.
+          </div>
+
+          <h4>Key Points:</h4>
+          <ul>
+            <li>The integrated series has the SAME radius of convergence</li>
+            <li>Don't forget the +C (constant of integration)</li>
+            <li>Increase power by 1, divide by new power</li>
+          </ul>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example: Start with $\frac{1}{1-x} = 1 + x + x^2 + x^3 + \cdots$ and find $\frac{1}{(1-x)^2}$</h4>
+
+          <div id="ch4-l3-ex1">
+            <div class="step" style="display: none;">Step 1: Differentiate both sides: $\frac{d}{dx}[\\frac{1}{1-x}] = \\frac{d}{dx}[1 + x + x^2 + x^3 + \\cdots]$</div>
+            <div class="step" style="display: none;">Step 2: Left side: $\\frac{d}{dx}[(1-x)^{-1}] = (1-x)^{-2} = \\frac{1}{(1-x)^2}$</div>
+            <div class="step" style="display: none;">Step 3: Right side: $0 + 1 + 2x + 3x^2 + 4x^3 + \\cdots$</div>
+            <div class="step" style="display: none;">Step 4: Therefore: $\\frac{1}{(1-x)^2} = 1 + 2x + 3x^2 + 4x^3 + \\cdots = \sum_{n=0}^{\infty} (n+1)x^n$</div>
+            <div class="step" style="display: none;">Step 5: Valid for $|x| < 1$ (same radius of convergence)</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch4-l3-ex1')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div id="ch4-l27-practice"></div>
+        <div id="ch4-l27-quiz"></div>
+      </section>
+
+      <!-- LESSON 28: Taylor and Maclaurin Series -->
+      <section id="lesson-28" class="lesson">
+        <h1>Lesson 28: Taylor and Maclaurin Series</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>Taylor series allow us to represent any infinitely-differentiable function as a power series. This is perhaps the most important concept in approximation theory and has countless applications!</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 Taylor Series</h3>
+          <div class="formula-highlight">
+            If f has derivatives of all orders near x = a, then the Taylor series of f at a is:
+            <br><br>
+            $$f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^n$$
+            <br>
+            $$= f(a) + f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \frac{f'''(a)}{3!}(x-a)^3 + \cdots$$
+          </div>
+
+          <h3>📚 Maclaurin Series</h3>
+          <div class="formula">
+            A Maclaurin series is a Taylor series centered at a = 0:
+            <br><br>
+            $$f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!}x^n$$
+          </div>
+
+          <h4>Common Maclaurin Series (Memorize These!):</h4>
+          <div class="formula">
+            $e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots$ (R = ∞)
+            <br><br>
+            $\sin x = \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n+1}}{(2n+1)!} = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots$ (R = ∞)
+            <br><br>
+            $\cos x = \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n}}{(2n)!} = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \cdots$ (R = ∞)
+            <br><br>
+            $\frac{1}{1-x} = \sum_{n=0}^{\infty} x^n = 1 + x + x^2 + x^3 + \cdots$ (R = 1)
+            <br><br>
+            $\ln(1+x) = \sum_{n=1}^{\infty} \frac{(-1)^{n-1} x^n}{n} = x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots$ (R = 1)
+          </div>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example: Find Maclaurin series for $f(x) = e^{2x}$</h4>
+
+          <div id="ch4-l4-ex1">
+            <div class="step" style="display: none;">Step 1: Use Maclaurin formula: $f(x) = \sum \frac{f^{(n)}(0)}{n!}x^n$</div>
+            <div class="step" style="display: none;">Step 2: Find derivatives at 0:
+<br>$f(x) = e^{2x}$, $f(0) = 1$
+<br>$f'(x) = 2e^{2x}$, $f'(0) = 2$
+<br>$f''(x) = 4e^{2x}$, $f''(0) = 4$
+<br>$f'''(x) = 8e^{2x}$, $f'''(0) = 8$
+<br>Pattern: $f^{(n)}(0) = 2^n$</div>
+            <div class="step" style="display: none;">Step 3: Plug into formula: $e^{2x} = \sum \frac{2^n}{n!} x^n$</div>
+            <div class="step" style="display: none;">Step 4: Expand: $e^{2x} = 1 + 2x + \frac{4x^2}{2!} + \frac{8x^3}{3!} + \cdots$</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch4-l4-ex1')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div id="ch4-l28-practice"></div>
+        <div id="ch4-l28-quiz"></div>
+      </section>
+
+      <!-- LESSON 29: Convergence of Taylor Series (brief) -->
+      <section id="lesson-29" class="lesson">
+        <h1>Lesson 29: Convergence of Taylor Series</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>Not all Taylor series converge to the original function! Some functions have Taylor series that converge to the wrong value or don't converge at all. We need criteria to determine when Taylor series work.</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 Taylor's Theorem (with Remainder)</h3>
+          <div class="formula">
+            If f has (n+1) derivatives, then:
+            <br><br>
+            $f(x) = T_n(x) + R_n(x)$
+            <br><br>
+            where $T_n(x) = \sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!}(x-a)^k$ (nth Taylor polynomial)
+            <br>
+            and $R_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}$ for some c between a and x
+          </div>
+
+          <h4>Convergence Condition:</h4>
+          <div class="formula-highlight">
+            The Taylor series converges to f(x) if:
+            $$\lim_{n \to \infty} R_n(x) = 0$$
+          </div>
+
+          <h3>📚 Functions with Convergent Taylor Series (Analytic Functions)</h3>
+          <ul>
+            <li>$e^x$, $\sin x$, $\cos x$ (everywhere)</li>
+            <li>Polynomials (exact representation)</li>
+            <li>Rational functions like $\frac{1}{1-x}$ (within radius of convergence)</li>
+          </ul>
+
+          <h4>Functions with Non-Convergent Taylor Series:</h4>
+          <ul>
+            <li>Functions with discontinuities or corners (non-differentiable)</li>
+            <li>Functions where derivatives grow too rapidly</li>
+          </ul>
+        </div>
+
+        <div id="ch4-l29-practice"></div>
+        <div id="ch4-l29-quiz"></div>
+      </section>
+
+      <!-- LESSON 30 & 31 Combined: Applications and Error Estimates -->
+      <section id="lesson-30" class="lesson">
+        <h1>Lesson 30-31: Approximating Functions and Error Estimates</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>Taylor series are incredibly useful for approximation. By taking only the first few terms, we can approximate complicated functions with simple polynomials. Error bounds tell us how accurate our approximation is!</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 Taylor Polynomials</h3>
+          <p>The nth Taylor polynomial $T_n(x)$ approximates f(x) using the first n+1 terms:</p>
+          <div class="formula">
+            $T_n(x) = \sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!}(x-a)^k$
+          </div>
+
+          <h4>Practical Example:</h4>
+          <ul>
+            <li>$T_0(x) = f(a)$ (constant approximation)</li>
+            <li>$T_1(x) = f(a) + f'(a)(x-a)$ (linear approximation - tangent line)</li>
+            <li>$T_2(x) = f(a) + f'(a)(x-a) + \frac{f''(a)}{2}(x-a)^2$ (quadratic)</li>
+          </ul>
+
+          <h3>📚 Error Estimation</h3>
+
+          <h4>Remainder (Error) Formula:</h4>
+          <div class="formula">
+            $|R_n(x)| = \left|\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}\right|$
+            <br><br>
+            where c is some value between a and x.
+          </div>
+
+          <h4>Upper Bound for Error:</h4>
+          <div class="formula-highlight">
+            If $|f^{(n+1)}(t)| \leq M$ for all t between a and x, then:
+            <br><br>
+            $|R_n(x)| \leq \frac{M}{(n+1)!}|x-a|^{n+1}$
+          </div>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example: Approximate $\sqrt{e}$ using $f(x) = e^x$ at $a=0$ with error < 0.001</h4>
+
+          <div id="ch4-l5-ex1">
+            <div class="step" style="display: none;">Step 1: Maclaurin: $e^x = 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \\cdots$</div>
+            <div class="step" style="display: none;">Step 2: For $x = 0.5$ (since $\sqrt{e} = e^{0.5}$): $e^{0.5} = 1 + 0.5 + \frac{0.25}{2} + \frac{0.125}{6} + \\cdots$</div>
+            <div class="step" style="display: none;">Step 3: Bound $(n+1)^{th}$ derivative: $f^{(n+1)}(t) = e^t \leq e^{0.5} < 2$ for $t \in [0, 0.5]$</div>
+            <div class="step" style="display: null;">Step 4: Try n=2: Error $\leq \frac{2}{3!}(0.5)^3 = \frac{2}{6} \\cdot 0.125 = 0.0417$ (too large)</div>
+            <div class="step" style="display: none;">Step 5: Try n=3: Error $\leq \frac{2}{4!}(0.5)^4 = \frac{2}{24} \\cdot 0.0625 = 0.0052$ (still too large)</div>
+            <div class="step" style="display: none;">Step 6: Try n=4: Error $\leq \frac{2}{5!}(0.5)^5 = \frac{2}{120} \\cdot 0.03125 = 0.00052$ ✓</div>
+            <div class="step" style="display: none;">Step 7: Use $T_4(0.5) = 1 + 0.5 + \frac{0.25}{2} + \frac{0.125}{6} + \frac{0.0625}{24} = 1.6484...$</div>
+            <div class="step" style="display: none;">Step 8: Actual: $\sqrt{e} = 1.64872...$, which matches to error < 0.001 ✓</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch4-l5-ex1')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div id="ch4-l30-practice"></div>
+        <div id="ch4-l30-quiz"></div>
+
+        <div class="chapter-summary">
+          <h2>📓 Chapter 4 Summary</h2>
+          <ul>
+            <li><strong>Power Series:</strong> $\sum c_n(x-a)^n$ - functions represented as infinite polynomials</li>
+            <li><strong>Radius of Convergence:</strong> Use ratio test to find R</li>
+            <li><strong>Interval of Convergence:</strong> Test endpoints separately</li>
+            <li><strong>Term-by-Term:</strong> Can differentiate and integrate power series (same R)</li>
+            <li><strong>Taylor Series:</strong> $\sum \frac{f^{(n)}(a)}{n!}(x-a)^n$ - represent f as power series</li>
+            <li><strong>Maclaurin Series:</strong> Taylor series with a=0 (very common!)</li>
+            <li><strong>Approximation:</strong> Use partial sums (Taylor polynomials)</li>
+            <li><strong>Error:</strong> Remainder gives error bound $|R_n| \leq \frac{M}{(n+1)!}|x-a|^{n+1}$</li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer>
+    <p>Chapter 4: Power Series | Calculus II Complete Mastery Course</p>
+  </footer>
+
+  <script src="../assets/js/math.js"></script>
+  <script src="../assets/js/progress.js"></script>
+  <script src="../assets/js/quizzes.js"></script>
+  <script src="../assets/js/practice.js"></script>
+
+  <script>
+    // Force MathJax to render all math when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        if (window.MathJax && MathJax.typesetPromise) {
+          MathJax.typesetPromise().then(function() {
+            console.log('MathJax rendered successfully');
+          }).catch(function(err) {
+            console.log('MathJax error:', err);
+          });
+        }
+      }, 500);
+    });
+  </script>
+
+  <script>
+    function revealAllSteps(containerId) {
+      const container = document.getElementById(containerId);
+      const steps = container.querySelectorAll('.step');
+      steps.forEach(step => {
+        step.style.display = 'block';
+      });
+      renderMath(container);
+    }
+
+    // Initialize Practice Problems for Chapter 4
+    document.addEventListener('DOMContentLoaded', function() {
+      // Lesson 25 Practice
+      PracticeManager.init('ch4-l25', [
+        PracticeTemplates.multipleChoice('What is the general form of a power series centered at a?', ['$\\sum c_n (x-a)^n$', '$\\sum c_n x^n$', '$\\sum c_n a^n$', '$\\sum c_n$'], 0, 'Definition of power series', 'beginner'),
+        PracticeTemplates.trueFalse('A power series can converge for all x values.', true, 'e^x series converges everywhere'),
+        PracticeTemplates.numerical('$\sum_{n=0}^{\infty} x^n$ converges to $\\frac{1}{1-x}$ for what condition on x (enter like 1)?', '1', 'Geometric series needs |r| < 1, so |x| < 1', 0.01, 'intermediate')
+      ]);
+
+      QuizManager.init('ch4-l25-quiz', [
+        QuizTemplates.multipleChoice('$\sum_{n=0}^{\infty} x^n$ is what type of series?', ['Taylor series of 1/(1-x)', 'p-series', 'Alternating series', 'Harmonic series'], 0, 'Geometric series'),
+        QuizTemplates.numerical('In $\sum c_n (x-a)^n$, what is a called?', 'center', 'The center of the power series', 0.01)
+      ]);
+
+      if (ProgressManager) {
+        ProgressManager.startLesson('ch4-l25');
+      }
+    });
+  </script>
+</body>
+</html>

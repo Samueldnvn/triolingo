@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 9: Building IoT Applications - IoT Java Development Course</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="course-header">
+        <h1>MODULE 9: BUILDING IOT APPLICATIONS</h1>
+        <h2>End-to-End IoT System Development</h2>
+    </div>
+
+    <nav class="nav-container">
+        <ul class="nav-menu">
+            <li class="nav-item active" onclick="showSection('overview')">Overview</li>
+            <li class="nav-item" onclick="showSection('architecture')">Architecture</li>
+            <li class="nav-item" onclick="showSection('integration')">Integration</li>
+            <li class="nav-item" onclick="showSection('project1')">Smart Home</li>
+            <li class="nav-item" onclick="showSection('project2')">Industrial</li>
+            <li class="nav-item" onclick="showSection('deployment')">Deployment</li>
+            <li class="nav-item" onclick="showSection('practice')">Practice</li>
+            <li class="nav-item" onclick="showSection('quiz')">Quiz</li>
+        </ul>
+    </nav>
+
+    <div class="progress-container">
+        <div class="progress-title">MODULE 9 PROGRESS</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="moduleProgress" style="width: 0%">0%</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content-section active" id="overview">
+            <div class="lesson-header">
+                <h1>IoT Application Development Overview</h1>
+                <p>Building Complete End-to-End IoT Systems</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                Building a complete IoT application requires understanding the entire system: devices, connectivity, cloud, data processing, and user interfaces. This module ties together concepts from previous modules to guide you through designing, implementing, and deploying real-world IoT applications.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">IOT APPLICATION LAYERS</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Device Layer:</span> Sensors, gateways, data collection</li>
+                    <li><span class="keyword">Communication Layer:</span> Protocols (MQTT, HTTP, CoAP)</li>
+                    <li><span class="keyword">Cloud Layer:</span> Ingestion, processing, storage (AWS IoT, Azure IoT Hub)</li>
+                    <li><span class="keyword">Application Layer:</span> Business logic, APIs, analytics</li>
+                    <li><span class="keyword">Presentation Layer:</span> Dashboards, mobile apps, web UIs</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">IoT Application Development Lifecycle</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Phase</th>
+                        <th>Activities</th>
+                        <th>Deliverables</th>
+                    </tr>
+                    <tr>
+                        <td>Requirements</td>
+                        <td>Stakeholder interviews, constraint analysis</td>
+                        <td>Requirements document</td>
+                    </tr>
+                    <tr>
+                        <td>Design</td>
+                        <td>Architecture, connectivity, security design</td>
+                        <td>System design document</td>
+                    </tr>
+                    <tr>
+                        <td>Prototype</td>
+                        <td>MVP implementation, proof of concept</td>
+                        <td>Working prototype</td>
+                    </tr>
+                    <tr>
+                        <td>Implementation</td>
+                        <td>Full development, testing, integration</td>
+                        <td>Production-ready code</td>
+                    </tr>
+                    <tr>
+                        <td>Deployment</td>
+                        <td>Device provisioning, cloud setup, monitoring</td>
+                        <td>Deployed system</td>
+                    </tr>
+                    <tr>
+                        <td>Maintenance</td>
+                        <td> Updates, monitoring, issue resolution</td>
+                        <td>Ongoing operation</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">EXAMPLE: Smart Thermostat Application Stack</div>
+                <p class="example-content"><span class="keyword">Device:</span> Raspberry Pi + DHT22 sensor + relay (ESP32 for WiFi) + Java ME (Pi4J for GPIO) → <span class="keyword">MQTT:</span> Mosquitto broker → <span class="keyword">Cloud:</span> AWS IoT Core → Lambda (processing) → DynamoDB (time-series data) → S3 (archived data) → <span class="keyword">Fargate:</span> Spring Boot REST API → <span class="keyword">Frontend:</span> React dashboard</p>
+            </div>
+        </div>
+
+        <div class="content-section" id="architecture">
+            <div class="lesson-header">
+                <h1>IoT System Architecture</h1>
+                <p>Designing Scalable and Reliable IoT Systems</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                Good architecture separates concerns, enables scalability, and supports evolution. IoT architectures range from simple device-to-cloud to complex hierarchies with edge computing and multiple regional deployments.
+            </p>
+
+            <h3 class="subsection-title">Architecture Patterns</h3>
+
+            <div class="info-section">
+                <div class="info-title">COMMON IOT ARCHITECTURES</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Device-to-Cloud:</span> Simplest, all devices connect directly to cloud. Good for low device counts, low-latency requirements.</li>
+                    <li><span class="keyword">Gateway-Aggregated:</span> Local gateway aggregates multiple devices, single cloud connection. Good for home/building IoT.</li>
+                    <li><span class="keyword">Edge-Cloud Hybrid:</span> Some processing at edge, rest in cloud. Good for bandwidth optimization, offline capability.</li>
+                    <li><span class="keyword">Multi-Cloud:</span> Multiple cloud providers for redundancy or regulatory reasons.</li>
+                </ul>
+            </div>
+
+            <div class="formula-box">
+                <div class="formula-title">GATEWAY-AGGREGATED ARCHITECTURE DIAGRAM</div>
+                <div class="diagram-container" style="text-align:center; padding: 20px; background: #222; color: #00FF00; font-family: monospace; font-size: 12px;">
+<pre>
+  +----------+     +----------+     +----------+
+  | Sensor 1 |     | Sensor 2 |     | Sensor 3 |
+  | (Zigbee) |     | (Zigbee) |     | (BLE)    |
+  +----+-----+     +----+-----+     +----+-----+
+       |                |                |
+       +----------------+----------------+
+                       |
+                  +    v    +
+                  | Gateway  |  (Raspberry Pi)
+                  |  Java    |  - MQTT Broker
+                  |  Edge    |  - Local DB
+                  |  Proc.   |
+                  +----+-----+
+                       |      WiFi/Cellular
+                       v
+                    +-----+
+                    |Cloud|  - AWS IoT Hub
+                    |     |  - Lambda
+                    |     |  - TimeSeries DB
+                    +-----+
+                       |
+                    +-----+
+                    | Web |  - React dashboard
+                    | API |  - Mobile app
+                    +-----+
+</pre>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Device Shadow/Pattern for Offline Support</h3>
+
+            <div class="example-box">
+                <div class="example-title">EXAMPLE: DESIRED VS REPORTED STATE SYNC</div>
+                <pre class="code-block">
+{
+    "state": {
+        "desired": {
+            "color": "#FF0000",
+            "brightness": 80,
+            "power": "ON"
+        },
+        "reported": {
+            "color": "#00FF00",
+            "brightness": 50,
+            "power": "ON"
+        }
+    },
+    "metadata": {
+        "desired": {"timestamp": 1708300000},
+        "reported": {"timestamp": 1708300654}
+    },
+    "version": 42,
+    "timestamp": 1708300654
+}
+
+// Device receives: delta = {"color": "#FF0000", "brightness": 80}
+// Device applies changes and updates: reported = {"color": "#FF0000", "brightness": 80, "power": "ON"}
+                </pre>
+            </div>
+        </div>
+
+        <div class="content-section" id="integration">
+            <div class="lesson-header">
+                <h1>IoT System Integration</h1>
+                <p>Connecting Components Into a Coherent System</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                Integration involves ensuring all components work together: devices send data correctly, cloud processes and stores it, APIs expose it for consumption, and applications present it to users. APIs and message queues are the glue that holds IoT systems together.
+            </p>
+
+            <h3 class="subsection-title">REST API for IoT Data</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">SPRING BOOT IOT API</div>
+                <pre class="code-block">
+import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
+
+@RestController
+@RequestMapping("/api/iot")
+public class IoTDataController {
+    
+    @Autowired
+    private IoTDataService dataService;
+    
+    @GetMapping("/devices/{deviceId}/readings")
+    public List&lt;SensorReading&gt; getDeviceReadings(
+            @PathVariable String deviceId,
+            @RequestParam String startTime,
+            @RequestParam(required = false) String endTime) {
+        
+        ZonedDateTime start = ZonedDateTime.parse(startTime);
+        Optional&lt;ZonedDateTime&gt; end = Optional.ofNullable(endTime)
+            .map(ZonedDateTime::parse);
+            
+        return dataService.getReadings(deviceId, start, end);
+    }
+    
+    @GetMapping("/devices/{deviceId}/latest")
+    public SensorReading getLatestReading(
+            @PathVariable String deviceId) {
+        return dataService.getLatestReading(deviceId);
+    }
+    
+    @GetMapping("/devices/{deviceId}/history/{metric}")
+    public List&lt;DataPoint&gt; getMetricHistory(
+            @PathVariable String deviceId,
+            @PathVariable String metric,
+            @RequestParam String aggregation,
+            @RequestParam long periodMs) {
+        
+        return dataService.getAggregatedData(
+            deviceId, metric, aggregation, periodMs
+        );
+    }
+}
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Message Queue for Event-Driven Architecture</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">KAFKA PRODUCER FOR IOT EVENTS</div>
+                <pre class="code-block">
+import org.apache.kafka.clients.producer.*;
+import java.util.Properties;
+
+public class IoTEventProducer {
+    private Producer&lt;String, String&gt; producer;
+    
+    public void init() {
+        Properties props = new Properties();
+        props.put("bootstrap.servers", "kafka:9092");
+        props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        
+        producer = new KafkaProducer&lt;&gt;(props);
+    }
+    
+    public void sendDeviceEvent(String deviceId, String eventType, Object payload) {
+        ObjectMapper mapper = new ObjectMapper();
+        IoTEvent event = new IoTEvent(
+            deviceId,
+            eventType,
+            System.currentTimeMillis(),
+            payload
+        );
+        
+        String key = deviceId;
+        String value = mapper.writeValueAsString(event.getPayload());
+        
+        ProducerRecord&lt;String, String&gt; record = new ProducerRecord&lt;&gt;(
+            "iot-events",
+            key,
+            value
+        );
+        
+        producer.send(record, (metadata, exception) -> {
+            if (exception != null) {
+                System.err.println("Failed to send event: " + exception);
+            } else {
+                System.out.println("Event sent to partition " + metadata.partition());
+            }
+        });
+    }
+}
+
+class IoTEvent {
+    private String deviceId;
+    private String eventType;
+    private long timestamp;
+    private Object payload;
+}
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Real-Time Updates with WebSockets</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">SPRING WEBSOCKET FOR live UPDATES</div>
+                <pre class="code-block">
+import org.springframework.web.socket.*;
+import org.springframework.web.socket.handler.TextWebSocketHandler;
+
+@Component
+public class IoTWebSocketHandler extends TextWebSocketHandler {
+    
+    private static ConcurrentHashMap&lt;String, WebSocketSession&gt; sessions 
+        = new ConcurrentHashMap&lt;&gt;();
+    
+    @Override
+    public void afterConnectionEstablished(WebSocketSession session) throws Exception {
+        String deviceId = (String) session.getAttributes().get("deviceId");
+        sessions.put(deviceId, session);
+        System.out.println("Client connected for device: " + deviceId);
+    }
+    
+    @Override
+    public void afterConnectionClosed(WebSocketSession session, 
+                                     CloseStatus status) throws Exception {
+        String deviceId = (String) session.getAttributes().get("deviceId");
+        sessions.remove(deviceId);
+    }
+    
+    public void broadcastToClient(String deviceId, String message) {
+        WebSocketSession session = sessions.get(deviceId);
+        if (session != null && session.isOpen()) {
+            try {
+                session.sendMessage(new TextMessage(message));
+            } catch (IOException e) {
+                System.err.println("Failed to send message: " + e.getMessage());
+                sessions.remove(deviceId);
+            }
+        }
+    }
+}
+
+// Triggered when new sensor data arrives
+public void onNewSensorData(SensorData data) {
+    String jsonData = objectMapper.writeValueAsString(data);
+    webSocketHandler.broadcastToClient(data.getDeviceId(), jsonData);
+}
+                </pre>
+            </div>
+        </div>
+
+        <div class="content-section" id="project1">
+            <div class="lesson-header">
+                <h1>Sample Project: Smart Temperature Controller</h1>
+                <p>Hands-On Application Development Walkthrough</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                This project demonstrates building a complete IoT temperature monitoring and control application. The system monitors temperature from sensors, provides a web dashboard, and automatically controls heating/cooling based on thresholds.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">PROJECT REQUIREMENTS</div>
+                <ul class="info-list">
+                    <li>Collect temperature from multiple sensors (10 Hz)</li>
+                    <li>Store time-series data (keep 1 year hourly averages)</li>
+                    <li>Web dashboard showing real-time temperature charts</li>
+                    <li>Automatic control: turn on heater if < 18°C for 5min, AC if > 26°C for 5min</li>
+                    <li>Alert when temperature exceeds thresholds (15°C, 30°C)</li>
+                    <li>API for historical data queries</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Project Components</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Component</th>
+                        <th>Technology</th>
+                        <th>Responsibility</th>
+                    </tr>
+                    <tr>
+                        <td>Sensor Device</td>
+                        <td>ESP32 + DHT22 + Android Things</td>
+                        <td>Collect temperature, transmit via MQTT</td>
+                    </tr>
+                    <tr>
+                        <td>MQTT Broker</td>
+                        <td>EMQ X (or Mosquitto)</td>
+                        <td>Route messages between devices and cloud</td>
+                    </tr>
+                    <tr>
+                        <td>Message Processing</td>
+                        <td>Kafka Streams</td>
+                        <td>Aggregate, filter, trigger control logic</td>
+                    </tr>
+                    <tr>
+                        <td>Time-Series Storage</td>
+                        <td>InfluxDB</td>
+                        <td>Store sensor readings efficiently</td>
+                    </tr>
+                    <tr>
+                        <td>Control Module</td>
+                        <td>Spring Boot (Java)</td>
+                        <td>Rule engine, device control via MQTT</td>
+                    </tr>
+                    <tr>
+                        <td>REST API</td>
+                        <td>Spring Boot</td>
+                        <td>Query historical data, device status</td>
+                    </tr>
+                    <tr>
+                        <td>Web Dashboard</td>
+                        <td>React + Grafana</td>
+                        <td>Visualize real-time and historical data</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3 class="subsection-title">Device Code: Temperature Sensor with MQTT</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">ANDROID THINGS (JAVA) TEMPERATURE SENSING</div>
+                <pre class="code-block">
+import com.google.android.things.pio.Gpio;
+import com.google.android.things.contrib.driver.dhtxx.Dhtxx;
+import org.eclipse.paho.client.mqttv3.*;
+import java.nio.charset.StandardCharsets;
+
+public class TemperatureSensorService extends Service {
+    private Dhtxx dhtxxSensor;
+    private MqttClient mqttClient;
+    private String deviceId = "temp-sensor-001";
+    
+    @Override
+    public void onCreate() {
+        // Initialize DHT22 sensor
+        dhtxxSensor = new Dhtxx("BCM4", Dhtxx.DHT_TYPE_22);
+        
+        // Connect to MQTT broker
+        connectMQTT();
+        
+        // Start periodic reading (10 Hz)
+        Handler handler = new Handler();
+        Runnable readTask = new Runnable() {
+            @Override
+            public void run() {
+                readAndPublish();
+                handler.postDelayed(this, 100);
+            }
+        };
+        handler.post(readTask);
+    }
+    
+    private void connectMQTT() {
+        try {
+            mqttClient = new MqttClient(
+                "tcp://mqtt.example.com:1883",
+                deviceId
+            );
+            MqttConnectOptions options = new MqttConnectOptions();
+            options.setCleanSession(true);
+            options.setConnectionTimeout(30);
+            
+            mqttClient.connect(options);
+        } catch (MqttException e) {
+            System.err.println("MQTT connection failed");
+        }
+    }
+    
+    private void readAndPublish() {
+        try {
+            float[] values = dhtxxSensor.readValues();
+            float temperature = values[0];
+            float humidity = values[1];
+            
+            if (!Float.isNaN(temperature)) {
+                TemperatureReading reading = new TemperatureReading(
+                    deviceId,
+                    temperature,
+                    humidity,
+                    System.currentTimeMillis()
+                );
+                
+                String json = objectMapper.writeValueAsString(reading);
+                mqttClient.publish(
+                    "temperature/reading",
+                    new MqttMessage(json.getBytes(StandardCharsets.UTF_8))
+                );
+            }
+        } catch (Exception e) {
+            System.err.println("Sensor read failed");
+        }
+    }
+}
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Control Logic: Temperature Regulation</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">SPRING RULE ENGINE</div>
+                <pre class="code-block">
+@Service
+public class TemperatureControlService {
+    
+    @Value("${temp.heating-threshold:18}")
+    private int heatingThreshold;
+    
+    @Value("${temp.cooling-threshold:26}")
+    private int coolingThreshold;
+    
+    @Value("${temp.low-alert:15}")
+    private int lowAlertThreshold;
+    
+    @Value("${temp.high-alert:30}")
+    private int highAlertThreshold;
+    
+    private Map&lt;String, TempState&gt; deviceStates = new ConcurrentHashMap&lt;&gt;();
+    
+    @KafkaListener(topics = "temperature-readings")
+    public void processTemperature(TemperatureReading reading) {
+        String deviceId = reading.getDeviceId();
+        TempState state = deviceStates.computeIfAbsent(
+            deviceId, k -> new TempState()
+        );
+        
+        double temp = reading.getTemperature();
+        state.addReading(temp, System.currentTimeMillis());
+        
+        // Check alerts
+        if (temp < lowAlertThreshold) {
+            alertService.sendAlert(deviceId, "LOW_TEMP", 
+                "Temperature " + temp + "°C below " + lowAlertThreshold + "°C");
+        }
+        if (temp > highAlertThreshold) {
+            alertService.sendAlert(deviceId, "HIGH_TEMP",
+                "Temperature " + temp + "°C above " + highAlertThreshold + "°C");
+        }
+        
+        // Control logic (based on sustained state for 5 minutes)
+        if (state.hasLowTempFor(periodMs = 300000L)) {
+            controlDevice(deviceId, "heater", true);
+            controlDevice(deviceId, "ac", false);
+        }
+        else if (state.hasHighTempFor(periodMs = 300000L)) {
+            controlDevice(deviceId, "ac", true);
+            controlDevice(deviceId, "heater", false);
+        }
+        else {
+            controlDevice(deviceId, "heater", false);
+            controlDevice(deviceId, "ac", false);
+        }
+    }
+    
+    private void controlDevice(String deviceId, String device, boolean on) {
+        ControlMessage msg = new ControlMessage(deviceId, device, on);
+        mqttGateway.publish("device/control", msg);
+    }
+}
+
+class TempState {
+    private Queue&lt;Double&gt; readings = new LinkedList&lt;&gt;();
+    private Queue&lt;Long&gt; timestamps = new LinkedList&lt;&gt;();
+    
+    public void addReading(double temp, long timestamp) {
+        readings.add(temp);
+        timestamps.add(timestamp);
+    }
+    
+    public boolean hasLowTempFor(long periodMs) {
+        if (timestamps.isEmpty()) return false;
+        return timestamps.getLast() - timestamps.getFirst() >= periodMs &&
+               readings.stream().allMatch(t -> t < 18);
+    }
+    
+    public boolean hasHighTempFor(long periodMs) {
+        if (timestamps.isEmpty()) return false;
+        return timestamps.getLast() - timestamps.getFirst() >= periodMs &&
+               readings.stream().allMatch(t -> t > 26);
+    }
+}
+                </pre>
+            </div>
+        </div>
+
+        <div class="content-section" id="project2">
+            <div class="lesson-header">
+                <h1>Sample Project: Industrial Predictive Maintenance</h1>
+                <p>Monitoring Equipment Health with IoT</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                Predictive maintenance uses IoT sensors to monitor equipment health, predicting failures before they occur. This reduces downtime and maintenance costs by scheduling repairs only when needed.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">PROJECT OVERVIEW</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Equipment:</span> Industrial motor, pump, conveyor belt</li>
+                    <li><span class="keyword">Sensors:</span> Vibration (accelerometer), temperature, current draw</li>
+                    <li><span class="keyword">Goal:</span> Detect anomalies indicating imminent failure</li>
+                    <li><span class="keyword">Output:</span> Maintenance scheduled orders, alerts</li>
+                    <li><span class="keyword">Technologies:</span> LoRaWAN sensors, Kafka, Flink, ML model</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Anomaly Detection with ML</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">FLINK CEP + ML ANOMALY DETECTOR</div>
+                <pre class="code-block">
+public class PredictiveMaintenanceStream {
+    
+    private TensorFlowModel anomalyModel;
+    
+    public void setup() {
+        // Load trained anomaly detection model
+        anomalyModel = new TensorFlowModel("maintenance_model.pb");
+    }
+    
+    public void detectAnomalies(DataStream&lt;SensorReading&gt; readings) {
+        // Compute features: moving average, std dev, frequency spectrum
+        DataStream&lt;EquipmentFeatures&gt; features = readings
+            .keyBy(SensorReading::getEquipmentId)
+            .window(SlidingEventTimeWindows.of(Time.minutes(5), Time.minutes(1)))
+            .aggregate(new FeatureAggregator());
+        
+        // Run anomaly detection model
+        DataStream&lt;AnomalyScore&gt; scores = features
+            .map(new FeatureToAnomalyScore(anomalyModel));
+        
+        // Alert on high anomaly scores (> 0.8 threshold)
+        DataStream&lt;Alert&gt; alerts = scores.filter(score -> score.getScore() > 0.8)
+            .map(score -> new Alert(
+                PRIORITY.HIGH,
+                "EQUIPMENT_ANOMALY",
+                "Anomaly detected for equipment " + score.getEquipmentId() + 
+                " with score " + score.getScore(),
+                score.getEquipmentId()
+            ));
+        
+        scores.addSink(new MaintenanceOrderSink());
+    }
+}
+
+class FeatureAggregator implements AggregateFunction<SensorReading, FeatureState, EquipmentFeatures> {
+    @Override
+    public EquipmentFeatures add(SensorReading reading, FeatureState state) {
+        state.add(reading);
+        return state.toFeatures();
+    }
+    
+    @Override
+    public EquipmentFeatures getResult(FeatureState state) {
+        return state.toFeatures();
+    }
+}
+
+class EquipmentFeatures {
+    private String equipmentId;
+    private double vibrationMean;
+    private double vibrationStdDev;
+    private double temperatureMean;
+    private double temperatureStdDev;
+    private double currentDrawMean;
+    private double currentDrawStdDev;
+    // ... frequency spectrum features
+    // ... temporal trend features
+}
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Alert and Maintenance Ordering</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">MAINTENANCE ORDER SYSTEM</div>
+                <pre class="code-block">
+@Service
+public class MaintenanceService {
+    
+    @Autowired
+    private MaintenanceOrderRepository orderRepo;
+    
+    @Autowired
+    private SlackService slackService;
+    
+    @KafkaListener(topics = "maintenance-alerts")
+    public void handleAlert(Alert alert) {
+        System.out.println("Alert: " + alert.getMessage());
+        
+        // Check if maintenance order already exists
+        Optional&lt;MaintenanceOrder&gt; existing = 
+            orderRepo.findOpenByEquipmentId(alert.getEquipmentId());
+        
+        if (!existing.isPresent()) {
+            // Create new maintenance order
+            MaintenanceOrder order = new MaintenanceOrder(
+                alert.getEquipmentId(),
+                alert.getPriority(),
+                alert.getMessage(),
+                ScheduledStatus.PENDING
+            );
+            
+            orderRepo.save(order);
+            
+            // Notify maintenance team
+            slackService.sendAlert(
+                "#maintenance",
+                "New maintenance order: " + alert.getMessage() + 
+                "\nEquipment: " + alert.getEquipmentId() +
+                "\nOrder ID: " + order.getId()
+            );
+        }
+    }
+}
+                </pre>
+            </div>
+        </div>
+
+        <div class="content-section" id="deployment">
+            <div class="lesson-header">
+                <h1>Deployment and Monitoring</h1>
+                <p>Deploying and Operating IoT at Scale</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                Deploying IoT systems involves provisioning devices, configuring cloud infrastructure, setting up monitoring and alerting, and establishing maintenance procedures. For production systems, reliability and scalability are paramount.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">DEPLOYMENT CHECKLIST</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Device Provisioning:</span> Unique certificates per device, initial configuration</li>
+                    <li><span class="keyword">Cloud Infrastructure:</span> Regions, scaling policies, cost monitoring</li>
+                    <li><span class="keyword">Firmware Updates:</span> OTA mechanism, rollback capability</li>
+                    <li><span class="keyword">Monitoring:</span> Metrics collection, alerting thresholds, dashboards</li>
+                    <li><span class="keyword">Security:</span> Firewall rules, access controls, audits</li>
+                    <li><span class="keyword">Documentation:</span> Architecture diagrams, runbooks, contact info</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Device Provisioning with Unique Certificates</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">DEVICE PROVISIONING WORKFLOW</div>
+                <pre class="code-block">
+// Manufacturing process for 1000 devices
+
+1. Generate unique device certificate per device
+   for i in {1..1000}
+   do
+     # Generate device certificate
+     openssl genrsa -out device-$i.key 2048
+     openssl req -new -key device-$i.key -out device-$i.csr \
+         -subj "/OU=device-$i"
+     openssl x509 -req -in device-$i.csr -CA ca.crt -CAkey ca.key \
+         -CAcreateserial -out device-$i.crt -days 365
+   done
+
+2. Install certificate on device
+   - Flash device-$i.crt and device-$i.key to device flash
+   - Flash CA certificate for server validation
+
+3. Register device in cloud
+   POST /api/devices
+   {
+     "deviceId": "device-$i",
+     "certificate": "...base64 of device-$i.crt...",
+     "type": "temp-sensor",
+     "location": "warehouse-floor-3"
+   }
+
+4. Device authenticates using certificate on first boot
+   - MQTT client certificate authentication
+   - Device receives configuration
+   - Device registers as online
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Monitoring with Prometheus and Grafana</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">IOT SYSTEM METRICS TO MONITOR</div>
+                <ul class="formula-list">
+                    <li><span class="keyword">Device Metrics:</span> Online/offline count, last communication time, battery levels, signal strength</li>
+                    <li><span class="keyword">Network Metrics:</span> MQTT connection errors, message latency, throughput, packet loss</li>
+                    <li><span class="keyword">Application Metrics:</span> API request rates, database query times, cache hit rates</li>
+                    <li><span class="keyword">Infrastructure Metrics:</span> CPU, memory, disk usage, instance counts, auto-scaling triggers</li>
+                    <li><span class="keyword">Business Metrics:</span> Temperature anomalies, maintenance orders, alert response times</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">GRAFANA DASHBOARD EXAMPLE</div>
+                <pre class="code-block">
+Dashboard Title: IoT System Health
+
+Panel 1: Online Devices Gauge
+  Query: count(rate(device_online_status{status="online"}[5m]))
+  Thresholds: <50 (Critical), >500 (Good)
+
+Panel 2: Message Throughput Time Series
+  Query: sum(rate(mqtt_messages_total[5m]))
+  Y-axis: Messages/second
+
+Panel 3: Temperature Anomalies Bar Chart
+  Query: sum(increase(temperature_anomalies_total[1h])) by (device_id)
+
+Panel 4: Database Query Duration Histogram
+  Query: histogram_quantile(0.95, 
+         rate(db_query_duration_seconds_bucket[5m]))
+  Y-axis: Query duration (95th percentile)
+
+Panel 5: API Request Status Codes
+  Query: sum(increase(http_requests_total{status=~"5.."}[5m]))
+  Threshold: Alert if > 10 requests/min
+                </pre>
+            </div>
+        </div>
+
+        <div class="content-section" id="practice">
+            <div class="lesson-header">
+                <h1>Practice Problems</h1>
+                <p>Test Your Understanding of IoT Application Development</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <div class="practice-container" id="practiceProblems">
+                <div class="problem">
+                    <div class="problem-header">
+                        <span class="problem-id">9-1</span>
+                        <span class="problem-difficulty easy">Easy</span>
+                        <span class="problem-type">Definition</span>
+                    </div>
+                    <div class="problem-question">
+                        What is the purpose of a device shadow in IoT?
+                    </div>
+                    <div class="problem-answer">
+                        A device shadow stores desired and reported state, enabling control and synchronization for devices that may be offline or with intermittent connectivity
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                </div>
+                <div class="problem">
+                    <div class="problem-header">
+                        <span class="problem-id">9-2</span>
+                        <span class="problem-difficulty medium">Medium</span>
+                        <span class="problem-type">Concept</span>
+                    </div>
+                    <div class="problem-question">
+                        Why is a gateway typically used in IoT architectures?
+                    </div>
+                    <div class="problem-answer">
+                        Gateways aggregate multiple devices, perform protocol translation, provide edge processing, reduce cloud connections (cost and bandwidth), and enable offline operation
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                </div>
+                <div class="problem">
+                    <div class="problem-header">
+                        <span class="problem-id">9-3</span>
+                        <span class="problem-difficulty easy">Easy</span>
+                        <span class="problem-type">Concept</span>
+                    </div>
+                    <div class="problem-question">
+                        True or False: WebSockets are appropriate for IoT device-to-cloud communication.
+                    </div>
+                    <div class="problem-answer">
+                        False - WebSockets are useful for client-to-server real-time updates (dashboards). For device-to-cloud, MQTT is preferred due to lower overhead and better support for intermittent connectivity.
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                </div>
+                <div class="problem">
+                    <div class="problem-header">
+                        <span class="problem-id">9-4</span>
+                        <span class="problem-difficulty medium">Medium</span>
+                        <span class="problem-type">Application</span>
+                    </div>
+                    <div class="problem-question">
+                        You are building a smart lighting system with 1000 light bulbs that need real-time control. What architecture and technologies would you recommend?
+                    </div>
+                    <div class="problem-answer">
+                        Gateway-Aggregated Architecture: Zigbee mesh (lights are routers) → local gateway (Raspberry Pi) → MQTT → cloud. Use Zigbee for device communication (low power, mesh), MQTT for cloud (lightweight), WebSocket for real-time UI updates. Scale: multiple gateways for different floors/areas.
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section" id="quiz">
+            <div class="lesson-header">
+                <h1>Module 9 Quiz</h1>
+                <p>Test Your Knowledge of Building IoT Applications</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <div class="quiz-container" id="quizContainer">
+                <!-- Quiz questions loaded from quizzes.js -->
+            </div>
+            <button class="submit-quiz" onclick="submitQuiz('9')">Submit Quiz</button>
+            <div class="quiz-result" id="quizResult"></div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-buttons">
+            <button class="nav-btn prev" onclick="navigate('previous')">← Previous Module</button>
+            <button class="nav-btn next" onclick="navigate('next')">Next Module →</button>
+        </div>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script src="../js/problems.js"></script>
+    <script src="../js/quizzes.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPracticeProblems('buildingApplications');
+            loadQuiz('module9');
+            updateProgress();
+        });
+    </script>
+</body>
+</html>

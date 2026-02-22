@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 6: IoT Connectivity & Networking - IoT Java Development Course</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="course-header">
+        <h1>MODULE 6: IOT CONNECTIVITY & NETWORKING</h1>
+        <h2>Building Reliable IoT Communication Infrastructure</h2>
+    </div>
+
+    <nav class="nav-container">
+        <ul class="nav-menu">
+            <li class="nav-item active" onclick="showSection('overview')">Overview</li>
+            <li class="nav-item" onclick="showSection('wifi')">WiFi</li>
+            <li class="nav-item" onclick="showSection('ble')">Bluetooth LE</li>
+            <li class="nav-item" onclick="showSection('zigbee')">Zigbee</li>
+            <li class="nav-item" onclick="showSection('lorawan')">LoRaWAN</li>
+            <li class="nav-item" onclick="showSection('security')">Network Security</li>
+            <li class="nav-item" onclick="showSection('practice')">Practice</li>
+            <li class="nav-item" onclick="showSection('quiz')">Quiz</li>
+        </ul>
+    </nav>
+
+    <div class="progress-container">
+        <div class="progress-title">MODULE 6 PROGRESS</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="moduleProgress" style="width: 0%">0%</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content-section active" id="overview">
+            <div class="lesson-header">
+                <h1>IoT Connectivity & Networking Fundamentals</h1>
+                <p>Understanding Communication Protocols for IoT Devices</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                Connectivity is the backbone of any IoT system. Choosing the right networking technology determines power consumption, range, bandwidth, and overall system architecture. This module explores the major connectivity options for IoT devices and when to use each.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">CONNECTIVITY DECISION FACTORS</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Range:</span> Distance between devices (meters to kilometers)</li>
+                    <li><span class="keyword">Power Consumption:</span> Battery life implications</li>
+                    <li><span class="keyword">Bandwidth:</span> Data throughput requirements</li>
+                    <li><span class="keyword">Latency:</span> Communication delay sensitivity</li>
+                    <li><span class="keyword">Cost:</span> Hardware and infrastructure expenses</li>
+                    <li><span class="keyword">Topology:</span> Network structure (star, mesh, hybrid)</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">IoT Connectivity Spectrum</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Technology</th>
+                        <th>Range</th>
+                        <th>Bandwidth</th>
+                        <th>Power</th>
+                        <th>Best For</th>
+                    </tr>
+                    <tr>
+                        <td>WiFi</td>
+                        <td>~50m</td>
+                        <td>High (Mbps-Gbps)</td>
+                        <td>High</td>
+                        <td>High-bandwidth devices, indoor gateways</td>
+                    </tr>
+                    <tr>
+                        <td>Bluetooth LE</td>
+                        <td>~100m</td>
+                        <td>Low (Kbps)</td>
+                        <td>Very Low</td>
+                        <td>Short-range sensors, wearables</td>
+                    </tr>
+                    <tr>
+                        <td>Zigbee</td>
+                        <td>~100m (mesh extends)</td>
+                        <td>Low (250 Kbps)</td>
+                        <td>Low</td>
+                        <td>Home automation, sensor networks</td>
+                    </tr>
+                    <tr>
+                        <td>LoRaWAN</td>
+                        <td>2-15km</td>
+                        <td>Very Low (0.3-50 Kbps)</td>
+                        <td>Very Low</td>
+                        <td>Long-range sensors, agriculture</td>
+                    </tr>
+                    <tr>
+                        <td>Cellular (NB-IoT)</td>
+                        <td>Global</td>
+                        <td>Low (250 Kbps)</td>
+                        <td>Low-Medium</td>
+                        <td>Wide-area tracking, utilities</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">EXAMPLE: Smart Home Connectivity Mix</div>
+                <p class="example-content">A typical smart home uses multiple connectivity technologies: <span class="keyword">WiFi</span> for cameras and thermostats (high bandwidth), <span class="keyword">Zigbee</span> for smart lights and sensors (mesh network), and <span class="keyword">Bluetooth LE</span> for mobile phone connections to individual devices. A central hub bridges these networks to the internet.</p>
+            </div>
+
+            <div class="formula-box">
+                <div class="formula-title">PATH LOSS MODEL</div>
+                <div class="formula-content">Free-space path loss (in dB): FSPL = 20 log₁₀(d) + 20 log₁₀(f) + 32.44<br>where d = distance in km, f = frequency in MHz</div>
+            </div>
+        </div>
+
+        <div class="content-section" id="wifi">
+            <div class="lesson-header">
+                <h1>WiFi for IoT</h1>
+                <p>High-Bandwidth Connectivity for IoT Devices</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                WiFi (IEEE 802.11) is the most widely available connectivity option for IoT devices due to existing infrastructure. While power-hungry compared to alternatives, WiFi offers high bandwidth and broad device compatibility, making it ideal for IoT gateways and devices that can be mains-powered.
+            </p>
+
+            <h3 class="subsection-title">WiFi Standards for IoT</h3>
+
+            <div class="info-section">
+                <div class="info-title">WIFI STANDARDS COMPARISON</div>
+                <ul class="info-list">
+                    <li><span class="keyword">802.11b/g/n (2.4GHz):</span> Longest range, most interference Legacy but still common</li>
+                    <li><span class="keyword">802.11ac/n/a (5GHz):</span> Shorter range, less interference, higher bandwidth</li>
+                    <li><span class="keyword">802.11ax (WiFi 6):</span> Improved efficiency, better power management for IoT</li>
+                    <li><span class="keyword">802.11ah (HaLow):</span> Sub-1GHz, long range, low power (emerging)</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Java WiFi Programming</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">WIFI SCANNING WITH PI4J</div>
+                <pre class="code-block">
+import com.pi4j.Pi4J;
+import com.pi4j.io.net.NetworkUtil;
+
+public class WiFiScanner {
+    public void scanNetworks() {
+        // Get list of available WiFi networks
+        List&lt;NetworkInfo&gt; networks = NetworkUtil.getAvailableNetworks();
+        
+        for (NetworkInfo network : networks) {
+            System.out.println("SSID: " + network.getSsid());
+            System.out.println("Signal: " + network.getSignalStrength() + " dBm");
+            System.out.println("Encryption: " + network.getEncryptionType());
+        }
+    }
+}
+                </pre>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">POWER CONSIDERATIONS</div>
+                <p class="warning-content">WiFi consumes 100-500mA active vs 1-10mA for BLE. For battery-powered devices, WiFi requires careful power management: sleep modes, duty cycling, and wakeup scheduling are essential. Consider ESP32's deep sleep (0.1mA) vs active transmission (~150mA).</p>
+            </div>
+
+            <h3 class="subsection-title">WiFi Security Best Practices</h3>
+
+            <div class="attention-box important">
+                <div class="important-title">SECURITY REQUIREMENTS</div>
+                <ul class="important-list">
+                    <li>Always use WPA2-AES or WPA3 encryption</li>
+                    <li>Implement certificate-based device authentication</li>
+                    <li>Use enterprise WiFi (WPA2-EAP) for critical deployments</li>
+                    <li>Implement secure credential storage (never hardcode passwords)</li>
+                    <li>Regularly rotate WiFi credentials and certificates</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">EXAMPLE: ESP32 WiFi Manager</div>
+                <pre class="code-block">
+public class WiFiManager {
+    private SSID network;
+    private WiFiConfig config;
+    
+    public void connectSecurely(String ssid, byte[] certificate) {
+        config = new WiFiConfig(ssid, SecurityMode.WPA2_ENTERPRISE);
+        config.setCertificate(certificate);
+        network = WiFi.connect(config);
+        
+        while (!network.isConnected()) {
+            Thread.sleep(100);
+        }
+        
+        System.out.println("Connected to: " + network.getSSID());
+        System.out.println("IP: " + network.getIPAddress());
+    }
+}
+                </pre>
+            </div>
+        </div>
+
+        <div class="content-section" id="ble">
+            <div class="lesson-header">
+                <h1>Bluetooth Low Energy (BLE)</h1>
+                <p>Ultra-Low Power Short-Range Communication</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                Bluetooth Low Energy, part of Bluetooth 4.0+, was specifically designed for IoT applications. With power consumption measured in microamps and support for coin-cell batteries, BLE is ideal for sensors, wearables, and other battery-operated devices requiring intermittent communication.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">BLE KEY CHARACTERISTICS</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Peak Current:</span> 15mA (transmission) vs 40mA for classic Bluetooth</li>
+                    <li><span class="keyword">Sleep Current:</span> ~1µA in deep sleep</li>
+                    <li><span class="keyword">Connection Time:</span> <6ms (vs 100ms+ for classic)</li>
+                    <li><span class="keyword">Range:</span> Up to 100m (class 2), up to 1km with long-range extension</li>
+                    <li><span class="keyword">Throughput:</span> ~1 Mbps</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">BLE Architecture</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">BLE TERMINOLOGY</div>
+                <ul class="formula-list">
+                    <li><span class="keyword">GATT (Generic Attribute Profile):</span> Defines how data is transmitted</li>
+                    <li><span class="keyword">Service:</span> Collection of characteristics (e.g., Heart Rate Service)</li>
+                    <li><span class="keyword">Characteristic:</span> Data value with properties (read/write/notify)</li>
+                    <li><span class="keyword">Descriptor:</span> Additional information about characteristics</li>
+                    <li><span class="keyword">Peripheral:</span> Device that provides services (e.g., sensor)</li>
+                    <li><span class="keyword">Central:</span> Device that connects to peripherals</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Java BLE with TinyB</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">BLE PERIPHERAL WITH TINYB (RASPBERRY PI)</div>
+                <pre class="code-block">
+import tinyb.BluetoothAdapter;
+import tinyb.BluetoothDevice;
+import tinyb.BluetoothGattService;
+
+public class BLEPeripheral {
+    public void startSensorService() {
+        BluetoothAdapter adapter = BluetoothAdapter.getAdapter();
+        
+        // Create custom service
+        BluetoothGattService sensorService = new BluetoothGattService(
+            UUID.fromString("0000180A-0000-1000-8000-00805F9B34FB"),
+            BluetoothGattService.PRIMARY
+        );
+        
+        // Add temperature characteristic
+        BluetoothGattCharacteristic tempChar = new BluetoothGattCharacteristic(
+            UUID.fromString("00002A6E-0000-1000-8000-00805F9B34FB"),
+            BluetoothGattCharacteristic.READ | 
+            BluetoothGattCharacteristic.NOTIFY
+        );
+        
+        sensorService.addCharacteristic(tempChar);
+        adapter.addService(sensorService);
+    }
+}
+                </pre>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">EXAMPLE: BLE Sensor Data Format</div>
+                <pre class="code-block">
+// BLE Heart Rate Monitoring Service (UUID 0x180D)
+@Service
+public class HeartRateService {
+    @Characteristic(uuid = "0x2A37", properties = READ | NOTIFY)
+    private short heartRateMeasurement;
+    
+    @Characteristic(uuid = "0x2A38", properties = READ)
+    private byte bodySensorLocation;
+    
+    // Format: [flags(1B)][heartRateValue(1-2B)][rrInterval(2B)...]
+    public byte[] getMeasurementBytes() {
+        ByteBuffer buffer = ByteBuffer.allocate(3);
+        buffer.put((byte) 0x01); // 8-bit heart rate format, no sensor contact
+        buffer.put((byte) (heartRateMeasurement & 0xFF));
+        return buffer.array();
+    }
+}
+                </pre>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">BLE SECURITY CONSIDERATIONS</div>
+                <ul class="warning-list">
+                    <li>Use LE Secure Connections for key exchange</li>
+                    <li>Implement bonding to store encryption keys</li>
+                    <li>Validate all incoming data (BLE packet injection attacks)</li>
+                    <li>Use random addresses when privacy is required</li>
+                    <li>Away mode: disable discoverability after pairing complete</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section" id="zigbee">
+            <div class="lesson-header">
+                <h1>Zigbee Mesh Networking</h1>
+                <p>Low-Power, Self-Healing Sensor Networks</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                Zigbee is an IEEE 802.15.4-based specification for high-level communication protocols used to create personal area networks with small, low-power digital radios. Its mesh networking capability allows devices to relay data for each other, extending range and providing redundancy.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">ZIGBEE KEY FEATURES</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Mesh Topology:</span> Multi-hop routing extends range automatically</li>
+                    <li><span class="keyword">Self-Healing:</span> Network reconfigures when nodes fail</li>
+                    <li><span class="keyword">Low Power:</span> Years of battery life for sensors</li>
+                    <li><span class="keyword">Device Roles:</span> Coordinator, Router, End Device</li>
+                    <li><span class="keyword">Protocol Stack:</span> Physical, MAC, Network (NWK), Application (APS)</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Zigbee Device Types</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Role</th>
+                        <th>Function</th>
+                        <th>Power</th>
+                        <th>Mains Required</th>
+                    </tr>
+                    <tr>
+                        <td>Coordinator</td>
+                        <td>Forms network, trusts center</td>
+                        <td>Mains Powered</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Router</td>
+                        <td>Relays packets, extends mesh</td>
+                        <td>Mains Powered</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>End Device</td>
+                        <td>Leaf node, no routing</td>
+                        <td>Battery</td>
+                        <td>No</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3 class="subsection-title">Zigbee Applications Framework (ZCL)</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">COMMON ZIGBEE CLUSTERS</div>
+                <ul class="formula-list">
+                    <li><span class="keyword">Basic (0x0000):</span> Device identification, location</li>
+                    <li><span class="keyword">Power Configuration (0x0001):</span> Battery status</li>
+                    <li><span class="keyword">On/Off (0x0006):</span> Switch controls</li>
+                    <li><span class="keyword">Level Control (0x0008):</span> Dimming</li>
+                    <li><span class="keyword">Temperature Measurement (0x0402):</span> Sensors</li>
+                    <li><span class="keyword">Color Control (0x0300):</span> RGB color</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">EXAMPLE: Zigbee Light Cluster Implementation</div>
+                <pre class="code-block">
+public class OnOffCluster implements ZigbeeCluster {
+    private static final int CLUSTER_ID = 0x0006;
+    private boolean state = false;
+    
+    public byte[] handleCommand(int commandId, byte[] payload) {
+        switch (commandId) {
+            case 0x00: // Off
+                state = false;
+                updateHardware(false);
+                return new byte[] { (byte) commandId, 0x00 };
+                
+            case 0x01: // On
+                state = true;
+                updateHardware(true);
+                return new byte[] { (byte) commandId, 0x00 };
+                
+            case 0x02: // Toggle
+                state = !state;
+                updateHardware(state);
+                return new byte[] { (byte) commandId, 0x00 };
+        }
+        return null;
+    }
+}
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Java with Zigbee4J</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">ZIGBEE COORDINATOR WITH ZIGBEE4J</div>
+                <pre class="code-block">
+import com.zsmartsystems.zigbee.ZigBeeNetwork;
+import com.zsmartsystems.zigbee.ZigBeeNetworkManager;
+
+public class ZigbeeCoordinator {
+    private ZigBeeNetwork network;
+    
+    public void startNetwork() {
+        ZigBeeNetworkManager manager = new ZigBeeNetworkManager(
+            new SerialPort("/dev/ttyUSB0")
+        );
+        
+        manager.setSerializer(new ZigBeeSerializerZigBeeDongle());
+        network = manager.initialize();
+        
+        // Start discovery
+        network.addDiscoveryListener(this::onDeviceDiscovered);
+        network.startDiscovery();
+    }
+    
+    private void onDeviceDiscovered(ZigBeeEndpoint device) {
+        System.out.println("Device discovered: " + device.getEndpointId());
+        System.out.println("Clusters: " + device.getInputClusters());
+    }
+}
+                </pre>
+            </div>
+        </div>
+
+        <div class="content-section" id="lorawan">
+            <div class="lesson-header">
+                <h1>LoRaWAN Long-Range IoT</h1>
+                <p>Kilometer-Range Low-Power Wide Area Networking</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                LoRaWAN (Long Range Wide Area Network) enables long-range communication (up to 15 km in rural areas) at low power consumption. It's ideal for applications requiring periodic data transmission over wide areas: agriculture, smart cities, asset tracking, and environmental monitoring.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">LORAWAN ARCHITECTURE</div>
+                <ul class="info-list">
+                    <li><span class="keyword">End Devices:</span> Sensors, actuators (Class A/B/C)</li>
+                    <li><span class="keyword">Gateways:</span> Forward packets to network server (star-of-stars)</li>
+                    <li><span class="keyword">Network Server:</span> Manages devices, handles uplink/downlink</li>
+                    <li><span class="keyword">Application Server:</span> Processes application data</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">LoRaWAN Device Classes</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Class</th>
+                        <th>Downlink</th>
+                        <th>Power Use</th>
+                        <th>Best For</th>
+                    </tr>
+                    <tr>
+                        <td>Class A</td>
+                        <td>After uplink only</td>
+                        <td>Lowest</td>
+                        <td>Battery sensors</td>
+                    </tr>
+                    <tr>
+                        <td>Class B</td>
+                        <td>scheduled receive windows</td>
+                        <td>Low-Medium</td>
+                        <td>Controlled actuators</td>
+                    </tr>
+                    <tr>
+                        <td>Class C</td>
+                        <td>Continuous listening</td>
+                        <td>Highest</td>
+                        <td>Mains-powered devices</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="formula-box">
+                <div class="formula-title">SPREADING FACTOR TRADEOFFS</div>
+                <ul class="formula-list">
+                    <li><span class="keyword">SF7:</span> Fastest (293 bps), shortest range, least power</li>
+                    <li><span class="keyword">SF8:</span> 176 bps, ~12 km range</li>
+                    <li><span class="keyword">SF9:</span> 110 bps, ~14 km range</li>
+                    <li><span class="keyword">SF10:</span> 61 bps, ~15 km range</li>
+                    <li><span class="keyword">SF11:</span> 37 bps, ~18 km range</li>
+                    <li><span class="keyword">SF12:</span> Slowest (18 bps), longest range (~22 km), most power</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">LoRaWAN with Java</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">LORAWAN CLASS A DEVICE WITH SEMTECH SDK</div>
+                <pre class="code-block">
+import com.semtech.lorawan.LoRaDevice;
+import com.semtech.lorawan.LoRaPacket;
+
+public class LoRaSensor {
+    private LoRaDevice device;
+    private byte[] appEUI;
+    private byte[] appKey;
+    
+    public void sendSensorData(int temperature, int humidity) {
+        // Prepare payload (temperature in °C, humidity in %)
+        byte[] payload = new byte[2];
+        payload[0] = (byte) (temperature & 0xFF);
+        payload[1] = (byte) (humidity & 0xFF);
+        
+        LoRaPacket packet = new LoRaPacket();
+        packet.setPayload(payload);
+        packet.setPort(1); // Application port
+        packet.setSpreadingFactor(10); // Balance range/speed
+        
+        // Transmit and switch to receive windows
+        device.sendPacket(packet);
+        device.openRX1Window(1000); // 1 second after TX
+        device.openRX2Window(2000); // 2 seconds after TX
+    }
+    
+    public void onDownlink(LoRaPacket packet) {
+        byte[] fcntDown = packet.getFrameCounter();
+        byte[] fopts = packet.getFOpts();
+        byte[] payload = packet.getPayload();
+        
+        // Handle confirmed data or MAC commands
+        System.out.println("Downlink received on port " + packet.getPort());
+    }
+}
+                </pre>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">EXAMPLE: CayenneLPP LoRaWAN Payload Format</div>
+                <pre class="code-block">
+public class CayenneLPP {
+    public static byte[] encodeReading() {
+        // Cayenne Low Power Payload format
+        ByteBuffer buffer = ByteBuffer.allocate(11);
+        
+        // Digital Input (Channel 1)
+        buffer.put((byte) 0x01);        // Channel
+        buffer.put((byte) 0x00);        // Digital Input type
+        buffer.put((byte) 0x01);        // Value (1 = on)
+        
+        // Analog Input (Channel 2)
+        buffer.put((byte) 0x02);        // Channel
+        buffer.put((byte) 0x02);        // Analog Input type, 16-bit
+        buffer.putShort((short) 1234);  // Value
+        
+        // Temperature (Channel 3)
+        buffer.put((byte) 0x03);        // Channel
+        buffer.put((byte) 0x67);        // Temperature type, 16-bit, °C
+        buffer.putShort((short) 2250);  // 22.50°C
+        
+        return buffer.array();
+    }
+}
+                </pre>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">LORAWAN DUTY CYCLE LIMITATIONS</div>
+                <p class="warning-content">LoRaWAN regulations limit transmission time: EU (1% duty cycle), US (90 seconds/day per channel). Class A devices must respect these limits. Adaptive data rate (ADR) automatically optimizes spreading factor and power to maximize network capacity.</p>
+            </div>
+        </div>
+
+        <div class="content-section" id="security">
+            <div class="lesson-header">
+                <h1>Network Security</h1>
+                <p>Securing IoT Communication Infrastructure</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                IoT networks present unique security challenges: low-power devices with limited compute, often deployed in physically accessible locations. Security must be designed from the ground up, not added as an afterthought.
+            </p>
+
+            <div class="attention-box important">
+                <div class="important-title">IOT NETWORK SECURITY THREATS</div>
+                <ul class="important-list">
+                    <li><span class="keyword">Eavesdropping:</span> Intercepting unencrypted communications</li>
+                    <li><span class="keyword">Man-in-the-Middle:</span> Altering or relaying communications</li>
+                    <li><span class="keyword">Replay Attacks:</span> Resending captured valid packets</li>
+                    <li><span class="keyword">Jamming:</span> Disrupting wireless communications</li>
+                    <li><span class="keyword">Node Capture:</span> Physical access compromised</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Security Architecture Layers</h3>
+
+            <div class="info-section">
+                <div class="info-title">DEFENSE IN DEPTH</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Physical:</span> Tamper detection, secure boot</li>
+                    <li><span class="keyword">Network:</span> Encryption, authentication, firewalls</li>
+                    <li><span class="keyword">Application:</span> Secure protocols, input validation</li>
+                    <li><span class="keyword">Cloud:</span> Access controls, audit logging</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Encryption Protocols</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Protocol</th>
+                        <th>Key Size</th>
+                        <th>Overhead</th>
+                        <th>Best For</th>
+                    </tr>
+                    <tr>
+                        <td>AES-128</td>
+                        <td>128-bit</td>
+                        <td>Low</td>
+                        <td>Device encryption</td>
+                    </tr>
+                    <tr>
+                        <td>TLS 1.3</td>
+                        <td>256-bit</td>
+                        <td>High</td>
+                        <td>HTTPS, MQTT over TLS</td>
+                    </tr>
+                    <tr>
+                        <td>DTLS</td>
+                        <td>256-bit</td>
+                        <td>Medium</td>
+                        <td>CoAP, UDP-based</td>
+                    </tr>
+                    <tr>
+                        <td>ChaCha20-Poly1305</td>
+                        <td>256-bit</td>
+                        <td>Medium</td>
+                        <td>Mobile, constrained devices</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="formula-box">
+                <div class="formula-title">SECURE MQTT CONNECTION WITH JAVA</div>
+                <pre class="code-block">
+import org.eclipse.paho.client.mqttv3.MqttClient;
+import javax.net.ssl.SSLContext;
+import java.security.KeyStore;
+
+public class SecureMQTTClient {
+    public MqttClient createSecureClient() throws Exception {
+        // Load client certificate
+        KeyStore clientStore = KeyStore.getInstance("PKCS12");
+        clientStore.load(new FileInputStream("client.p12"), "password".toCharArray());
+        
+        // Configure SSL context
+        SSLContext sslContext = SSLContext.getInstance("TLSv1.3");
+        KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
+        kmf.init(clientStore, "password".toCharArray());
+        sslContext.init(kmf.getKeyManagers(), null, null);
+        
+        // Create MQTT client with SSL
+        String brokerUrl = "ssl://mqtt.example.com:8883";
+        MqttClient client = new MqttClient(brokerUrl, "iot-device-001");
+        MqttConnectOptions options = new MqttConnectOptions();
+        options.setSocketFactory(sslContext.getSocketFactory());
+        options.setCleanSession(true);
+        
+        client.connect(options);
+        return client;
+    }
+}
+                </pre>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">SECURE CREDENTIAL STORAGE</div>
+                <ul class="warning-list">
+                    <li>Never hardcode passwords or keys in source code</li>
+                    <li>Use hardware security modules (HSM) when available</li>
+                    <li>Encrypt credentials at rest with device-specific keys</li>
+                    <li>Implement certificate rotation without re-provisioning</li>
+                    <li>Secure boot ensures only signed firmware runs</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section" id="practice">
+            <div class="lesson-header">
+                <h1>Practice Problems</h1>
+                <p>Test Your Understanding of IoT Connectivity</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <div class="practice-container" id="practiceProblems">
+                <div class="problem">
+                    <div class="problem-header">
+                        <span class="problem-id">6-1</span>
+                        <span class="problem-difficulty easy">Easy</span>
+                        <span class="problem-type">Definition</span>
+                    </div>
+                    <div class="problem-question">
+                        What does BLE stand for in the context of IoT?
+                    </div>
+                    <div class="problem-answer">
+                        Bluetooth Low Energy
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                </div>
+                <div class="problem">
+                    <div class="problem-header">
+                        <span class="problem-id">6-2</span>
+                        <span class="problem-difficulty medium">Medium</span>
+                        <span class="problem-type">Concept</span>
+                    </div>
+                    <div class="problem-question">
+                        Which connectivity technology offers the longest range with the lowest power consumption?
+                    </div>
+                    <div class="problem-answer">
+                        LoRaWAN (up to 15+ km with microamp power draw)
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                </div>
+                <div class="problem">
+                    <div class="problem-header">
+                        <span class="problem-id">6-3</span>
+                        <span class="problem-difficulty easy">Easy</span>
+                        <span class="problem-type">Concept</span>
+                    </div>
+                    <div class="problem-question">
+                        True or False: WiFi is always the best choice for battery-powered IoT devices.
+                    </div>
+                    <div class="problem-answer">
+                        False - WiFi consumes significantly more power than BLE, Zigbee, or LoRaWAN
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                </div>
+                <div class="problem">
+                    <div class="problem-header">
+                        <span class="problem-id">6-4</span>
+                        <span class="problem-difficulty medium">Medium</span>
+                        <span class="problem-type">Application</span>
+                    </div>
+                    <div class="problem-question">
+                        A smart home needs to control 50 light bulbs, 15 window sensors, and 1 security camera. Which connectivity technologies would you use for each?
+                    </div>
+                    <div class="problem-answer">
+                        Lights: Zigbee (mesh network, can relay) ; Window sensors: Zigbee or BLE (low power) ; Security camera: WiFi (high bandwidth for video)
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section" id="quiz">
+            <div class="lesson-header">
+                <h1>Module 6 Quiz</h1>
+                <p>Test Your Knowledge of IoT Connectivity</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <div class="quiz-container" id="quizContainer">
+                <!-- Quiz questions loaded from quizzes.js -->
+            </div>
+            <button class="submit-quiz" onclick="submitQuiz('6')">Submit Quiz</button>
+            <div class="quiz-result" id="quizResult"></div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-buttons">
+            <button class="nav-btn prev" onclick="navigate('previous')">← Previous Module</button>
+            <button class="nav-btn next" onclick="navigate('next')">Next Module →</button>
+        </div>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script src="../js/problems.js"></script>
+    <script src="../js/quizzes.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPracticeProblems('connectivity');
+            loadQuiz('module6');
+            updateProgress();
+        });
+    </script>
+</body>
+</html>

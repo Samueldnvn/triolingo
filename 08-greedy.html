@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Module 8 - Greedy Algorithms</title><link rel="stylesheet" href="../css/styles.css"></head>
+<body>
+<div class="course-header"><h1>Module 8: Greedy Algorithms</h1></div>
+<div class="page-nav"><a href="07-dynamicprogramming.html">Prev</a><a href="09-graphs.html">Next</a></div>
+<nav class="section-nav"><div onclick="showSection('section1')">1. Greedy Fundamentals</div><div onclick="showSection('section2')">2. Graph Greedy</div><div onclick="showSection('section3')">3. Quiz</div></nav>
+<div class="content-container">
+<div id="section1" class="content-section active">
+    <h2>Greedy Fundamentals</h2>
+    <div class="content-block"><h3>When Greedy Works</h3>
+    <ul><li>Problem has <strong>greedy choice property</strong>: locally optimal leads to global optimum</li><li><strong>Optimal substructure</strong>: contains optimal sub-solutions</li></ul></div>
+    <div class="content-block"><h3>Common Greedy Problems</h3>
+    <p><strong>Activity Selection:</strong> Sort by finish time, pick earliest non-overlapping</p>
+    <p><strong>Job Sequencing:</strong> Sort by profit, schedule at latest possible slot before deadline</p>
+    <p><strong>Fractional Knapsack:</strong> Sort by value/weight ratio, take greedily</p></div>
+</div>
+<div id="section2" class="content-section">
+    <h2>Graph Greedy Algorithms</h2>
+    <div class="content-block"><h3>Dijkstra</h3>
+    <p>Shortest path, single-source, non-negative weights. Use priority queue. Always pick closest unvisited node.</p></div>
+    <div class="content-block"><h3>Prim (MST)</h3>
+    <p>Start from any vertex. Repeatedly add minimum edge connecting tree to new vertex. Use priority queue.</p></div>
+    <div class="content-block"><h3>Kruskal (MST)</h3>
+    <p>Sort all edges by weight. Process in order, add edge if connects different components (use Union-Find).</p></div>
+</div>
+<div id="section3" class="content-section">
+    <h2>Module 8 Quiz</h2>
+    <div id="quiz-container-greedy"></div>
+    <div id="quiz-results-greedy" class="quiz-results" style="display:none"></div>
+    <button onclick="loadQuiz('greedy')">Load Quiz</button><button onclick="submitQuiz('greedy')">Submit</button>
+</div>
+</div>
+<script src="../js/navigation.js"></script><script src="../js/quizzes.js"></script>
+</body>
+</html>

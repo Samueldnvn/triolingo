@@ -1,0 +1,3233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 2: Data Structures - Competitive Programming with Python</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <!-- Course Header -->
+    <div class="course-header">
+        <h1>MODULE 2: DATA STRUCTURES</h1>
+        <h2>The Building Blocks of Efficient Algorithms</h2>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <ul class="nav-menu">
+            <li class="nav-item active" onclick="showSection('overview')">Overview</li>
+            <li class="nav-item" onclick="showSection('arrays')">Arrays</li>
+            <li class="nav-item" onclick="showSection('strings')">Strings</li>
+            <li class="nav-item" onclick="showSection('linkedlist')">Linked Lists</li>
+            <li class="nav-item" onclick="showSection('stacksqueues')">Stacks & Queues</li>
+            <li class="nav-item" onclick="showSection('hash')">Hash Tables</li>
+            <li class="nav-item" onclick="showSection('trees')">Trees</li>
+            <li class="nav-item" onclick="showSection('graphsds')">Graphs (DS)</li>
+            <li class="nav-item" onclick="showSection('practice')">Practice Problems</li>
+            <li class="nav-item" onclick="showSection('quiz')">Module Quiz</li>
+        </ul>
+    </nav>
+
+    <!-- Progress for this module -->
+    <div class="progress-container">
+        <div class="progress-title">MODULE 2 PROGRESS</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="moduleProgress" style="width: 0%">0%</div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Overview Section -->
+        <div class="content-section active" id="overview">
+            <div class="lesson-header">
+                <h1>Data Structures: The Foundation of Algorithms</h1>
+                <p>Master the essential data structures for competitive programming</p>
+            </div>
+
+            <div class="blueprint-section">
+                <div class="blueprint-content">
+                    <h3>WHAT YOU'LL LEARN IN THIS MODULE</h3>
+                    <ul class="blueprint-list">
+                        <li>Arrays: when to use them, common operations, and variations</li>
+                        <li>String manipulation techniques and Python string methods</li>
+                        <li>Linked lists: implementation and when they're useful</li>
+                        <li>Stacks and queues: LIFO and FIFO data structures</li>
+                        <li>Hash tables: dictionaries and sets in Python</li>
+                        <li>Trees: binary trees, BST, and tree traversal algorithms</li>
+                        <li>Graph representations: adjacency lists and matrices</li>
+                        <li>Time and space complexity of each data structure</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Why Data Structures Matter</h3>
+
+            <p class="content-text">
+                Data structures are the foundation upon which we build efficient algorithms. Choosing the right data structure can transform an O(n^2) solution into O(n) or O(log n). In competitive programming, where time limits are strict, understanding when to use which data structure is crucial for success.
+            </p>
+
+            <div class="example-box">
+                <div class="example-title">KEY INSIGHT</div>
+                <p class="content-text">
+                    The right data structure often makes the difference between a solution that passes and one that times out. Before coding, always ask: "What is the best data structure for this problem?"
+                </p>
+            </div>
+
+            <h3 class="subsection-title">Python Data Structures Overview</h3>
+
+            <p class="content-text">
+                Python provides several built-in data structures that are optimized for performance:
+            </p>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Data Structure</th>
+                        <th>Type</th>
+                        <th>Access</th>
+                        <th>Search</th>
+                        <th>Insert</th>
+                        <th>Delete</th>
+                    </tr>
+                    <tr>
+                        <td>List</td>
+                        <td>Dynamic Array</td>
+                        <td>O(1)</td>
+                        <td>O(n)</td>
+                        <td>O(1)*</td>
+                        <td>O(n)</td>
+                    </tr>
+                    <tr>
+                        <td>Dictionary</td>
+                        <td>Hash Table</td>
+                        <td>O(1)</td>
+                        <td>O(1)</td>
+                        <td>O(1)</td>
+                        <td>O(1)</td>
+                    </tr>
+                    <tr>
+                        <td>Set</td>
+                        <td>Hash Set</td>
+                        <td>O(1)</td>
+                        <td>O(1)</td>
+                        <td>O(1)</td>
+                        <td>O(1)</td>
+                    </tr>
+                    <tr>
+                        <td>Tuple</td>
+                        <td>Immutable Array</td>
+                        <td>O(1)</td>
+                        <td>O(n)</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                    </tr>
+                </table>
+                <p><em>* Amortized O(1) for appends to end of list</em></p>
+            </div>
+
+            <h3 class="subsection-title">Common Competitive Programming Patterns</h3>
+
+            <p class="content-text">
+                Throughout this module, you'll learn to recognize patterns that indicate which data structure to use:
+            </p>
+
+            <div class="example-box">
+                <div class="example-title">PATTERN RECOGNITION</div>
+                <div class="data-table">
+                    <table>
+                        <tr>
+                            <th>Pattern</th>
+                            <th>Use This Data Structure</th>
+                            <th>Why</th>
+                        </tr>
+                        <tr>
+                            <td>Need to lookup by key quickly</td>
+                            <td>Dictionary/Hash Map</td>
+                            <td>O(1) average lookup</td>
+                        </tr>
+                        <tr>
+                            <td>Need fast membership testing</td>
+                            <td>Set</td>
+                            <td>O(1) average contains check</td>
+                        </tr>
+                        <tr>
+                            <td>Need to access elements by index</td>
+                            <td>List/Array</td>
+                            <td>O(1) index access</td>
+                        </tr>
+                        <tr>
+                            <td>Need to remove smallest element</td>
+                            <td>Heap</td>
+                            <td>O(log n) extract min</td>
+                        </tr>
+                        <tr>
+                            <td>Need to process elements in order</td>
+                            <td>Queue (collections.deque)</td>
+                            <td>O(1) append and popleft</td>
+                        </tr>
+                        <tr>
+                            <td>Need to reverse processing order</td>
+                            <td>Stack (list)</td>
+                            <td>O(1) append and pop</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="safety-sign important">
+                TIP: In competitive programming, dictionaries and sets are your best friends. Use them whenever you need fast lookups or membership tests.
+            </div>
+        </div>
+
+        <!-- Arrays Section -->
+        <div class="content-section" id="arrays">
+            <div class="lesson-header">
+                <h1>Arrays</h1>
+                <p>The fundamental data structure for sequential data</p>
+            </div>
+
+            <h3 class="subsection-title">Understanding Python Lists (Dynamic Arrays)</h3>
+
+            <p class="content-text">
+                In Python, the list data type implements a dynamic array. Unlike C or Java arrays, Python lists can grow and shrink dynamically. However, they still provide O(1) time complexity for index access and O(1) amortized time for appending to the end.
+            </p>
+
+            <h3 class="subsection-title">Key Operations and Their Complexities</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Operation</th>
+                        <th>Time Complexity</th>
+                        <th>Notes</th>
+                    </tr>
+                    <tr>
+                        <td>Access by index (arr[i])</td>
+                        <td>O(1)</td>
+                        <td>Direct memory access</td>
+                    </tr>
+                    <tr>
+                        <td>Append to end (arr.append(x))</td>
+                        <td>O(1) amortized</td>
+                        <td>May resize occasionally</td>
+                    </tr>
+                    <tr>
+                        <td>Insert at position (arr.insert(i, x))</td>
+                        <td>O(n)</td>
+                        <td>Must shift elements</td>
+                    </tr>
+                    <tr>
+                        <td>Delete at position (del arr[i])</td>
+                        <td>O(n)</td>
+                        <td>Must shift elements</td>
+                    </tr>
+                    <tr>
+                        <td>Search by value (x in arr)</td>
+                        <td>O(n)</td>
+                        <td>Linear search</td>
+                    </tr>
+                    <tr>
+                        <td>Sort (arr.sort())</td>
+                        <td>O(n log n)</td>
+                        <td>Timsort algorithm</td>
+                    </tr>
+                    <tr>
+                        <td>Reverse (arr.reverse())</td>
+                        <td>O(n)</td>
+                        <td>In-place reversal</td>
+                    </tr>
+                    <tr>
+                        <td>Get length (len(arr))</td>
+                        <td>O(1)</td>
+                        <td>Stored attribute</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3 class="subsection-title">Common Array Patterns in Competitive Programming</h3>
+
+            <p class="content-text">
+                Mastering these patterns will help you solve many array problems efficiently:
+            </p>
+
+            <h4 class="subsection-title">1. Prefix Sum Array</h4>
+
+            <p class="content-text">
+                Compute cumulative sums to answer range sum queries in O(1) time after O(n) preprocessing.
+            </p>
+
+            <div class="code-block">
+                <pre>
+# Build prefix sum array
+def build_prefix_sum(arr):
+    prefix = [0] * (len(arr) + 1)
+    for i in range(len(arr)):
+        prefix[i + 1] = prefix[i] + arr[i]
+    return prefix
+
+# Query sum from index l to r (inclusive) in O(1)
+def range_sum(prefix, l, r):
+    return prefix[r + 1] - prefix[l]
+
+# Example
+arr = [1, 2, 3, 4, 5]
+prefix = build_prefix_sum(arr)
+# prefix = [0, 1, 3, 6, 10, 15]
+# Sum of arr[1:4] = 2 + 3 + 4 = 9
+print(range_sum(prefix, 1, 4))  # Output: 9
+                </pre>
+            </div>
+
+            <p class="content-text">
+                <strong>When to use:</strong> When you need to answer many range sum queries. Common in problems involving subarrays, differences between ranges, or cumulative metrics.
+            </p>
+
+            <h4 class="subsection-title">2. Two Pointers on Arrays</h4>
+
+            <p class="content-text">
+                Use two pointers to process arrays from both ends or to find pairs/tuples satisfying certain conditions.
+            </p>
+
+            <div class="code-block">
+                <pre>
+# Find two numbers that sum to target
+def two_sum_sorted(arr, target):
+    left, right = 0, len(arr) - 1
+    while left < right:
+        current_sum = arr[left] + arr[right]
+        if current_sum == target:
+            return [left, right]
+        elif current_sum < target:
+            left += 1
+        else:
+            right -= 1
+    return None  # No solution found
+
+# Example
+arr = [1, 3, 5, 7, 9]
+print(two_sum_sorted(arr, 12))  # Output: [2, 3] (5 + 7 = 12)
+                </pre>
+            </div>
+
+            <p class="content-text">
+                <strong>When to use:</strong> When array is sorted and you need to find pairs/triplets, or when you need to process elements from both ends simultaneously. Reduces O(n^2) to O(n).
+            </p>
+
+            <h4 class="subsection-title">3. Sliding Window on Arrays</h4>
+
+            <p class="content-text">
+                Maintain a window of elements and slide it through the array to find subarrays meeting criteria.
+            </p>
+
+            <div class="code-block">
+                <pre>
+# Find maximum sum of subarray of size k
+def max_sum_subarray(arr, k):
+    if len(arr) < k:
+        return None
+    
+    # Compute sum of first window
+    window_sum = sum(arr[:k])
+    max_sum = window_sum
+    
+    # Slide the window
+    for i in range(len(arr) - k):
+        window_sum = window_sum - arr[i] + arr[i + k]
+        max_sum = max(max_sum, window_sum)
+    
+    return max_sum
+
+# Example
+arr = [2, 1, 5, 1, 3, 2]
+print(max_sum_subarray(arr, 3))  # Output: 9 (5 + 1 + 3)
+                </pre>
+            </div>
+
+            <p class="content-text">
+                <strong>When to use:</strong> When you need to analyze all subarrays of fixed or variable size. Covers problems like maximum/minimum subarray sums, longest substring with constraints, etc.
+            </p>
+
+            <h4 class="subsection-title">4. Frequency Array</h4>
+
+            <p class="content-text">
+                Use an array as a hash table when the range of values is limited.
+            </p>
+
+            <div class="code-block">
+                <pre>
+# Count frequencies when values are small (0 to max_val)
+def count_frequencies(arr, max_val):
+    freq = [0] * (max_val + 1)
+    for num in arr:
+        freq[num] += 1
+    
+    # Find elements that appear exactly once
+    unique = [i for i in range(max_val + 1) if freq[i] == 1]
+    return unique
+
+# Example
+arr = [1, 2, 3, 2, 4, 3, 5]
+print(count_frequencies(arr, 5))  # Output: [1, 4, 5]
+                </pre>
+            </div>
+
+            <p class="content-text">
+                <strong>When to use:</strong> When values are integers in a small, known range (e.g., 0 to 10^6). Faster than dictionary and preserves order (indices represent values).
+            </p>
+
+            <h4 class="subsection-title">5. Difference Array</h4>
+
+            <p class="content-text">
+                Efficiently apply range updates (add constant to all elements in range) using O(n) construction and O(1) per update.
+            </p>
+
+            <div class="code-block">
+                <pre>
+# Apply range updates using difference array
+def range_update(arr, updates):
+    # Each update is (l, r, val): add val to arr[l:r+1]
+    diff = [0] * (len(arr) + 1)
+    
+    for l, r, val in updates:
+        diff[l] += val
+        diff[r + 1] -= val
+    
+    # Reconstruct original array with updates
+    current = 0
+    for i in range(len(arr)):
+        current += diff[i]
+        arr[i] += current
+    
+    return arr
+
+# Example
+arr = [0, 0, 0, 0, 0]
+updates = [(0, 2, 5), (1, 3, 2)]
+# arr[0:3] += 5, then arr[1:4] += 2
+# Final: arr = [5, 7, 7, 2, 0]
+print(range_update(arr, updates))  # Output: [5, 7, 7, 2, 0]
+                </pre>
+            </div>
+
+            <p class="content-text">
+                <strong>When to use:</strong> When you have multiple range updates (add value to a range of indices). Converts O(n*k) or O(n log n) to O(n).
+            </p>
+
+            <h3 class="subsection-title">Common Pitfalls and Tips</h3>
+
+            <div class="example-box">
+                <div class="example-title">ARRAY OPTIMIZATION TIPS</div>
+                <ul class="blueprint-list">
+                    <li><strong>Avoid repeated concatenation:</strong> list1 + list2 creates a new list. Use extend() or list comprehension for efficiency.</li>
+                    <li><strong>Pre-allocate when size is known:</strong> Use [0] * n instead of appending in a loop when you know the final size.</li>
+                    <li><strong>Use list comprehensions:</strong> They're generally faster than explicit loops for creating lists.</li>
+                    <li><strong>Built-in functions are faster:</strong> sum(), min(), max() are optimized and faster than manual loops.</li>
+                    <li><strong>In-place operations:</strong> Use sort() instead of sorted() when you don't need the original order.</li>
+                    <li><strong>Avoid deletions from middle:</strong> del arr[i] is O(n). Consider building a new list or using a different data structure.</li>
+                    <li><strong>Use enumerate for index-value pairs:</strong> More Pythonic and sometimes faster than range(len()) loops.</li>
+                </ul>
+            </div>
+
+            <div class="safety-sign important">
+                REMEMBER: Array operations at the beginning or middle (insert, delete) are O(n) due to shifting. Always consider the complexity before using them in loops.
+            </div>
+        </div>
+
+        <!-- Strings Section -->
+        <div class="content-section" id="strings">
+            <div class="lesson-header">
+                <h1>Strings</h1>
+                <p>Efficient text manipulation and pattern matching</p>
+            </div>
+
+            <h3 class="subsection-title">Understanding Python Strings</h3>
+
+            <p class="content-text">
+                In Python, strings are immutable sequences of characters. This means you cannot modify a string in place; operations that seem to modify strings actually create new strings. Understanding this is crucial for performance optimization.
+            </p>
+
+            <h3 class="subsection-title">Key String Operations and Complexities</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Operation</th>
+                        <th>Time Complexity</th>
+                        <th>Notes</th>
+                    </tr>
+                    <tr>
+                        <td>Access character (s[i])</td>
+                        <td>O(1)</td>
+                        <td>Direct index access</td>
+                    </tr>
+                    <tr>
+                        <td>Length (len(s))</td>
+                        <td>O(1)</td>
+                        <td>Stored attribute</td>
+                    </tr>
+                    <tr>
+                        <td>Concatenation (s1 + s2)</td>
+                        <td>O(n+m)</td>
+                        <td>Creates new string</td>
+                    </tr>
+                    <tr>
+                        <td>Join (separator.join(list))</td>
+                        <td>O(total_length)</td>
+                        <td>Fast for many concatenations</td>
+                    </tr>
+                    <tr>
+                        <td>Slicing (s[i:j])</td>
+                        <td>O(j-i)</td>
+                        <td>Creates new string</td>
+                    </tr>
+                    <tr>
+                        <td>Find substring (s in t or s.find())</td>
+                        <td>O(n*m) worst</td>
+                        <td>Python uses optimized algorithms</td>
+                    </tr>
+                    <tr>
+                        <td>Replace (s.replace(old, new))</td>
+                        <td>O(n)</td>
+                        <td>Creates new string</td>
+                    </tr>
+                    <tr>
+                        <td>Split (s.split())</td>
+                        <td>O(n)</td>
+                        <td>Returns list of substrings</td>
+                    </tr>
+                    <tr>
+                        <td>Lower/Upper (s.lower(), s.upper())</td>
+                        <td>O(n)</td>
+                        <td>Creates new string</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3 class="subsection-title">Essential String Methods for Competitive Programming</h3>
+
+            <div class="code-block">
+                <pre>
+# Common methods you'll use frequently
+s = "Hello, World!"
+
+# Case conversion
+print(s.lower())    # "hello, world!"
+print(s.upper())    # "HELLO, WORLD!"
+print(s.title())    # "Hello, World!"
+
+# Substring operations
+print(s.startswith("Hello"))  # True
+print(s.endswith("!"))        # True
+print(s.find("World"))         # 7
+print(s.replace("Hello", "Hi"))  # "Hi, World!"
+
+# Split and join
+parts = s.split(",")  # ['Hello', ' World!']
+joined = "-".join(parts)  # "Hello- World!"
+
+# Strip whitespace
+s = "  trim me  "
+print(s.strip())   # "trim me"
+print(s.lstrip())  # "trim me  "
+print(s.rstrip())  # "  trim me"
+
+# Character checks
+print("123".isdigit())  # True
+print("abc".isalpha())  # True
+print("abc123".isalnum())  # True
+print("   ".isspace())  # True
+
+# Counting
+s = "banana"
+print(s.count("a"))  # 3
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Common String Patterns</h3>
+
+            <h4 class="subsection-title">1. Palindrome Check</h4>
+
+            <div class="code-block">
+                <pre>
+# Check if a string is a palindrome
+def is_palindrome(s):
+    return s == s[::-1]
+
+# Check palindrome ignoring case and non-alphanumeric
+def is_palindrome_clean(s):
+    # Remove non-alphanumeric and convert to lowercase
+    cleaned = ''.join(c.lower() for c in s if c.isalnum())
+    return cleaned == cleaned[::-1]
+
+# Two-pointer approach (more efficient for very long strings)
+def is_palindrome_two_pointer(s):
+    left, right = 0, len(s) - 1
+    while left < right:
+        if s[left] != s[right]:
+            return False
+        left += 1
+        right -= 1
+    return True
+
+# Examples
+print(is_palindrome("racecar"))  # True
+print(is_palindrome_clean("A man, a plan, a canal: Panama"))  # True
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">2. Anagram Check</h4>
+
+            <p class="content-text">
+                Two strings are anagrams if they contain the same characters in any order.
+            </p>
+
+            <div class="code-block">
+                <pre>
+# Method 1: Sorting (O(n log n))
+def is_anagram_sorting(s1, s2):
+    if len(s1) != len(s2):
+        return False
+    return sorted(s1) == sorted(s2)
+
+# Method 2: Character count (O(n)) - preferred
+from collections import Counter
+
+def is_anagram_counter(s1, s2):
+    return Counter(s1) == Counter(s2)
+
+# Method 3: Manual frequency array (O(n) for small alphabets)
+def is_anagram_frequency(s1, s2):
+    if len(s1) != len(s2):
+        return False
+    
+    freq = [0] * 26  # For lowercase English letters
+    for c1, c2 in zip(s1, s2):
+        freq[ord(c1) - ord('a')] += 1
+        freq[ord(c2) - ord('a')] -= 1
+    
+    return all(f == 0 for f in freq)
+
+# Example
+print(is_anagram_counter("listen", "silent"))  # True
+print(is_anagram_counter("hello", "world"))    # False
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">3. Longest Substring Without Repeating Characters</h4>
+
+            <p class="content-text">
+                This is a classic sliding window problem using a hash set to track characters.
+            </p>
+
+            <div class="code-block">
+                <pre>
+def longest_unique_substring(s):
+    if not s:
+        return 0
+    
+    max_length = 0
+    left = 0
+    seen = set()
+    
+    for right in range(len(s)):
+        # If character is already in set, shrink window
+        while s[right] in seen:
+            seen.remove(s[left])
+            left += 1
+        
+        # Add current character
+        seen.add(s[right])
+        
+        # Update maximum length
+        max_length = max(max_length, right - left + 1)
+    
+    return max_length
+
+# Example
+print(longest_unique_substring("abcabcbb"))  # 3 ("abc")
+print(longest_unique_substring("bbbbb"))     # 1 ("b")
+print(longest_unique_substring("pwwkew"))    # 3 ("wke")
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">4. String Transformation</h4>
+
+            <div class="code-block">
+                <pre>
+# Reverse a string
+def reverse_string(s):
+    return s[::-1]
+
+# Reverse words in a string
+def reverse_words(s):
+    words = s.split()
+    return ' '.join(reversed(words))
+
+# Remove all vowels
+def remove_vowels(s):
+    vowels = set('aeiouAEIOU')
+    return ''.join(c for c in s if c not in vowels)
+
+# Count character frequencies
+def char_frequency(s):
+    freq = {}
+    for c in s:
+        freq[c] = freq.get(c, 0) + 1
+    return freq
+
+# Example usage
+print(reverse_string("hello"))  # "olleh"
+print(reverse_words("Hello World"))  # "World Hello"
+print(remove_vowels("hello"))  # "hll"
+print(char_frequency("hello"))  # {'h': 1, 'e': 1, 'l': 2, 'o': 1}
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Regular Expressions (Brief Overview)</h3>
+
+            <p class="content-text">
+                While regex is powerful, it's often slower than manual string processing. Use it judiciously in time-constrained competitions.
+            </p>
+
+            <div class="code-block">
+                <pre>
+import re
+
+# Find all digits
+s = "abc123def456"
+digits = re.findall(r'\d+', s)  # ['123', '456']
+
+# Split on multiple delimiters
+s = "hello,world;how are you"
+parts = re.split(r'[,\s;]+', s)  # ['hello', 'world', 'how', 'are', 'you']
+
+# Check pattern
+email_pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
+print(re.match(email_pattern, "user@example.com"))  # Match object
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">String Optimization Tips</h3>
+
+            <div class="example-box">
+                <div class="example-title">STRING PERFORMANCE TIPS</div>
+                <ul class="blueprint-list">
+                    <li><strong>Use join for concatenation:</strong> ''.join(list_of_strings) is faster than repeated + in a loop.</li>
+                    <li><strong>Use list comprehension:</strong> For building strings, collect parts in a list then join.</li>
+                    <li><strong>Avoid repeated conversions:</strong> If you need to manipulate a string, convert to list first, then join back.</li>
+                    <li><strong>Use slicing carefully:</strong> s[i:j] creates a new string. In competitive programming, check if you can work with indices instead.</li>
+                    <li><strong>Use set for membership:</strong> Checking if a character is in a set is O(1), in a string is O(n).</li>
+                    <li><strong>Built-in string methods are fast:</strong> They're implemented in C and optimized.</li>
+                </ul>
+            </div>
+
+            <div class="safety-sign important">
+                WARNING: Strings are immutable! Never use string concatenation in a tight loop. Use list.append() and then ''.join(list) instead.
+            </div>
+        </div>
+
+        <!-- Linked Lists Section -->
+        <div class="content-section" id="linkedlist">
+            <div class="lesson-header">
+                <h1>Linked Lists</h1>
+                <p>Dynamic data structures with flexible insertion and deletion</p>
+            </div>
+
+            <h3 class="subsection-title">Understanding Linked Lists</h3>
+
+            <p class="content-text">
+                A linked list is a linear data structure where elements are not stored in contiguous memory locations. Each element (node) contains data and a reference (link) to the next node in the sequence.
+            </p>
+
+            <h3 class="subsection-title">Types of Linked Lists</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Type</th>
+                        <th>Description</th>
+                        <th>Use Cases</th>
+                    </tr>
+                    <tr>
+                        <td>Singly Linked List</td>
+                        <td>Each node points to next node</td>
+                        <td>Simple implementations, stacks, queues</td>
+                    </tr>
+                    <tr>
+                        <td>Doubly Linked List</td>
+                        <td>Each node points to next and previous</td>
+                        <td>Limited memory caches, undo operations</td>
+                    </tr>
+                    <tr>
+                        <td>Circular Linked List</td>
+                        <td>Last node points to first</td>
+                        <td>Round-robin scheduling</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3 class="subsection-title">Singly Linked List Implementation</h3>
+
+            <div class="code-block">
+                <pre>
+class ListNode:
+    """Node for a singly linked list"""
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+    
+    def __repr__(self):
+        return str(self.val)
+
+
+class LinkedList:
+    """Singly linked list implementation"""
+    def __init__(self):
+        self.head = None
+        self.tail = None
+        self.size = 0
+    
+    def append(self, val):
+        """Add node to end of list (O(1))"""
+        new_node = ListNode(val)
+        if not self.head:
+            self.head = self.tail = new_node
+        else:
+            self.tail.next = new_node
+            self.tail = new_node
+        self.size += 1
+    
+    def prepend(self, val):
+        """Add node to beginning of list (O(1))"""
+        new_node = ListNode(val)
+        if not self.head:
+            self.head = self.tail = new_node
+        else:
+            new_node.next = self.head
+            self.head = new_node
+        self.size += 1
+    
+    def insert_at(self, index, val):
+        """Insert node at specific index (O(n))"""
+        if index < 0 or index > self.size:
+            raise IndexError("Index out of range")
+        
+        if index == 0:
+            self.prepend(val)
+        elif index == self.size:
+            self.append(val)
+        else:
+            new_node = ListNode(val)
+            current = self.head
+            for _ in range(index - 1):
+                current = current.next
+            new_node.next = current.next
+            current.next = new_node
+            self.size += 1
+    
+    def delete_at(self, index):
+        """Delete node at specific index (O(n))"""
+        if index < 0 or index >= self.size:
+            raise IndexError("Index out of range")
+        
+        if index == 0:
+            self.head = self.head.next
+            if self.size == 1:
+                self.tail = None
+        else:
+            current = self.head
+            for _ in range(index - 1):
+                current = current.next
+            current.next = current.next.next
+            if index == self.size - 1:
+                self.tail = current
+        self.size -= 1
+    
+    def find(self, val):
+        """Find node with given value (O(n))"""
+        current = self.head
+        index = 0
+        while current:
+            if current.val == val:
+                return index
+            current = current.next
+            index += 1
+        return -1
+    
+    def to_list(self):
+        """Convert linked list to Python list"""
+        result = []
+        current = self.head
+        while current:
+            result.append(current.val)
+            current = current.next
+        return result
+    
+    def __len__(self):
+        return self.size
+    
+    def __repr__(self):
+        return f"LinkedList({self.to_list()})"
+
+
+# Usage example
+ll = LinkedList()
+ll.append(1)
+ll.append(2)
+ll.append(3)
+ll.prepend(0)
+ll.insert_at(2, 1.5)
+print(ll)  # LinkedList([0, 1, 1.5, 2, 3])
+ll.delete_at(2)
+print(ll)  # LinkedList([0, 1, 2, 3])
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Common Linked List Algorithms</h3>
+
+            <h4 class="subsection-title">1. Reverse a Linked List</h4>
+
+            <div class="code-block">
+                <pre>
+def reverse_linked_list(head):
+    """
+    Reverse a linked list iteratively
+    Time: O(n), Space: O(1)
+    """
+    prev = None
+    current = head
+    
+    while current:
+        next_node = current.next
+        current.next = prev
+        prev = current
+        current = next_node
+    
+    return prev
+
+
+# Recursive version
+def reverse_recursive(head):
+    """
+    Reverse a linked list recursively
+    Time: O(n), Space: O(n) due to recursion stack
+    """
+    if not head or not head.next:
+        return head
+    
+    new_head = reverse_recursive(head.next)
+    head.next.next = head
+    head.next = None
+    
+    return new_head
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">2. Detect Cycle (Floyd's Cycle Detection)</h4>
+
+            <div class="code-block">
+                <pre>
+def has_cycle(head):
+    """
+    Detect if linked list has cycle using fast/slow pointers
+    Time: O(n), Space: O(1)
+    """
+    slow = fast = head
+    
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+        
+        if slow == fast:
+            return True
+    
+    return False
+
+
+def find_cycle_start(head):
+    """
+    Find the starting node of the cycle
+    Time: O(n), Space: O(1)
+    """
+    # First, detect cycle
+    slow = fast = head
+    has_cycle = False
+    
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+        if slow == fast:
+            has_cycle = True
+            break
+    
+    if not has_cycle:
+        return None
+    
+    # Find cycle start
+    slow = head
+    while slow != fast:
+        slow = slow.next
+        fast = fast.next
+    
+    return slow
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">3. Find Middle Node</h4>
+
+            <div class="code-block">
+                <pre>
+def find_middle(head):
+    """
+    Find middle node using fast/slow pointers
+    For even length, returns second middle node
+    Time: O(n), Space: O(1)
+    """
+    slow = fast = head
+    
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+    
+    return slow
+
+
+# Return first middle for even length
+def find_middle_first(head):
+    slow = fast = head
+    
+    while fast.next and fast.next.next:
+        slow = slow.next
+        fast = fast.next.next
+    
+    return slow
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">4. Merge Two Sorted Lists</h4>
+
+            <div class="code-block">
+                <pre>
+def merge_sorted_lists(l1, l2):
+    """
+    Merge two sorted linked lists
+    Time: O(n + m), Space: O(1)
+    """
+    dummy = ListNode(0)
+    current = dummy
+    
+    while l1 and l2:
+        if l1.val <= l2.val:
+            current.next = l1
+            l1 = l1.next
+        else:
+            current.next = l2
+            l2 = l2.next
+        current = current.next
+    
+    # Append remaining nodes
+    current.next = l1 or l2
+    
+    return dummy.next
+
+
+# Recursive version
+def merge_sorted_lists_recursive(l1, l2):
+    if not l1:
+        return l2
+    if not l2:
+        return l1
+    
+    if l1.val <= l2.val:
+        l1.next = merge_sorted_lists_recursive(l1.next, l2)
+        return l1
+    else:
+        l2.next = merge_sorted_lists_recursive(l1, l2.next)
+        return l2
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">5. Remove Nth Node From End</h4>
+
+            <div class="code-block">
+                <pre>
+def remove_nth_from_end(head, n):
+    """
+    Remove nth node from end (1-indexed)
+    Time: O(n), Space: O(1)
+    """
+    dummy = ListNode(0)
+    dummy.next = head
+    
+    # Advance fast pointer n+1 steps
+    fast = dummy
+    for _ in range(n + 1):
+        fast = fast.next
+    
+    # Move slow and fast together
+    slow = dummy
+    while fast:
+        slow = slow.next
+        fast = fast.next
+    
+    # Remove node
+    slow.next = slow.next.next
+    
+    return dummy.next
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Linked List vs Array Comparison</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Operation</th>
+                        <th>Array/List</th>
+                        <th>Linked List</th>
+                        <th>Better Choice</th>
+                    </tr>
+                    <tr>
+                        <td>Access by index</td>
+                        <td>O(1)</td>
+                        <td>O(n)</td>
+                        <td>Array</td>
+                    </tr>
+                    <tr>
+                        <td>Insert at beginning</td>
+                        <td>O(n)</td>
+                        <td>O(1)</td>
+                        <td>Linked List</td>
+                    </tr>
+                    <tr>
+                        <td>Insert at end</td>
+                        <td>O(1)*</td>
+                        <td>O(1)*</td>
+                        <td>Array (faster)</td>
+                    </tr>
+                    <tr>
+                        <td>Delete from beginning</td>
+                        <td>O(n)</td>
+                        <td>O(1)</td>
+                        <td>Linked List</td>
+                    </tr>
+                    <tr>
+                        <td>Search</td>
+                        <td>O(n)</td>
+                        <td>O(n)</td>
+                        <td>Equal</td>
+                    </tr>
+                    <tr>
+                        <td>Memory overhead</td>
+                        <td>Low</td>
+                        <td>Higher (for pointers)</td>
+                        <td>Array</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="safety-sign important">
+                TIP: In competitive programming, linked lists are rarely used in Python because Python lists are more efficient for most use cases. However, some problems may require explicit node manipulation.
+            </div>
+        </div>
+
+        <!-- Stacks & Queues Section -->
+        <div class="content-section" id="stacksqueues">
+            <div class="lesson-header">
+                <h1>Stacks and Queues</h1>
+                <p>LIFO and FIFO data structures for ordered processing</p>
+            </div>
+
+            <h3 class="subsection-title">Stacks (LIFO - Last In First Out)</h3>
+
+            <p class="content-text">
+                A stack is a data structure that follows the Last In First Out principle. The last element added is the first one removed. Think of it as a stack of plates.
+            </p>
+
+            <h3 class="subsection-title">Stack Operations and Complexities</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Operation</th>
+                        <th>Time Complexity</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>push(x)</td>
+                        <td>O(1)</td>
+                        <td>Add element to top</td>
+                    </tr>
+                    <tr>
+                        <td>pop()</td>
+                        <td>O(1)</td>
+                        <td>Remove and return top element</td>
+                    </tr>
+                    <tr>
+                        <td>peek()/top()</td>
+                        <td>O(1)</td>
+                        <td>Return top element without removing</td>
+                    </tr>
+                    <tr>
+                        <td>is_empty()</td>
+                        <td>O(1)</td>
+                        <td>Check if stack is empty</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3 class="subsection-title">Python Stack Implementation</h3>
+
+            <p class="content-text">
+                In Python, we can use a list (with append/pop) or collections.deque for implementing a stack.
+            </p>
+
+            <div class="code-block">
+                <pre>
+# Method 1: Using list (simple and fast)
+stack = []
+
+stack.append(1)  # push: O(1)
+stack.append(2)
+stack.append(3)
+
+top = stack[-1]  # peek: O(1)
+popped = stack.pop()  # pop: O(1)
+
+print(stack)  # [1, 2]
+print(popped)  # 3
+
+
+# Method 2: Using deque (thread-safe)
+from collections import deque
+
+stack = deque()
+
+stack.append(1)
+stack.append(2)
+stack.append(3)
+
+top = stack[-1]
+popped = stack.pop()
+
+print(stack)  # deque([1, 2])
+print(popped)  # 3
+
+
+# Method 3: Custom Stack class
+class Stack:
+    def __init__(self):
+        self.items = []
+    
+    def push(self, item):
+        self.items.append(item)
+    
+    def pop(self):
+        if self.is_empty():
+            raise IndexError("Stack is empty")
+        return self.items.pop()
+    
+    def peek(self):
+        if self.is_empty():
+            raise IndexError("Stack is empty")
+        return self.items[-1]
+    
+    def is_empty(self):
+        return len(self.items) == 0
+    
+    def size(self):
+        return len(self.items)
+    
+    def __repr__(self):
+        return f"Stack({self.items})"
+
+
+# Usage
+s = Stack()
+s.push(10)
+s.push(20)
+print(s.peek())  # 20
+print(s.pop())   # 20
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Common Stack Applications</h3>
+
+            <h4 class="subsection-title">1. Balanced Parentheses Check</h4>
+
+            <div class="code-block">
+                <pre>
+def is_balanced_parentheses(s):
+    """
+    Check if parentheses/brackets are balanced
+    Time: O(n), Space: O(n)
+    """
+    stack = []
+    matching = {')': '(', '}': '{', ']': '['}
+    
+    for char in s:
+        if char in '({[':
+            stack.append(char)
+        elif char in ')}]':
+            if not stack or stack[-1] != matching[char]:
+                return False
+            stack.pop()
+    
+    return len(stack) == 0
+
+
+# Examples
+print(is_balanced_parentheses("()"))        # True
+print(is_balanced_parentheses("()[]{}"))    # True
+print(is_balanced_parentheses("(]"))        # False
+print(is_balanced_parentheses("{[()]}"))    # True
+print(is_balanced_parentheses("{[(])}"))    # False
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">2. Evaluate Postfix Expression</h4>
+
+            <div class="code-block">
+                <pre>
+def evaluate_postfix(expression):
+    """
+    Evaluate postfix (Reverse Polish Notation) expression
+    Time: O(n), Space: O(n)
+    """
+    stack = []
+    operators = {'+', '-', '*', '/'}
+    
+    for token in expression.split():
+        if token in operators:
+            if len(stack) < 2:
+                raise ValueError("Invalid expression")
+            
+            b = stack.pop()
+            a = stack.pop()
+            
+            if token == '+':
+                result = a + b
+            elif token == '-':
+                result = a - b
+            elif token == '*':
+                result = a * b
+            elif token == '/':
+                result = a / b
+            
+            stack.append(result)
+        else:
+            try:
+                stack.append(float(token))
+            except ValueError:
+                raise ValueError(f"Invalid token: {token}")
+    
+    if len(stack) != 1:
+        raise ValueError("Invalid expression")
+    
+    return stack[0]
+
+
+# Examples
+print(evaluate_postfix("3 4 +"))           # 7.0
+print(evaluate_postfix("5 1 2 + 4 * + 3 -"))  # 14.0
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">3. Next Greater Element</h4>
+
+            <div class="code-block">
+                <pre>
+def next_greater_element(arr):
+    """
+    Find next greater element for each element
+    Time: O(n), Space: O(n)
+    """
+    n = len(arr)
+    result = [-1] * n
+    stack = []  # Stack of indices
+    
+    for i in range(n):
+        while stack and arr[i] > arr[stack[-1]]:
+            idx = stack.pop()
+            result[idx] = arr[i]
+        stack.append(i)
+    
+    return result
+
+
+# Example
+arr = [4, 5, 2, 25]
+print(next_greater_element(arr))  # [5, 25, 25, -1]
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">4. Min Stack (Stack with O(1) min)</h4>
+
+            <div class="code-block">
+                <pre>
+class MinStack:
+    """
+    Stack that supports getMin() in O(1)
+    Time: O(1) for all operations, Space: O(n)
+    """
+    def __init__(self):
+        self.stack = []
+        self.min_stack = []
+    
+    def push(self, val):
+        self.stack.append(val)
+        if not self.min_stack:
+            self.min_stack.append(val)
+        else:
+            self.min_stack.append(min(val, self.min_stack[-1]))
+    
+    def pop(self):
+        self.min_stack.pop()
+        return self.stack.pop()
+    
+    def top(self):
+        return self.stack[-1]
+    
+    def getMin(self):
+        return self.min_stack[-1]
+
+
+# Usage
+min_stack = MinStack()
+min_stack.push(3)
+min_stack.push(1)
+min_stack.push(5)
+print(min_stack.getMin())  # 1
+min_stack.pop()
+print(min_stack.getMin())  # 1
+min_stack.pop()
+print(min_stack.getMin())  # 3
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Queues (FIFO - First In First Out)</h3>
+
+            <p class="content-text">
+                A queue is a data structure that follows the First In First Out principle. The first element added is the first one removed. Think of it as a line of people waiting.
+            </p>
+
+            <h3 class="subsection-title">Queue Operations and Complexities</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Operation</th>
+                        <th>Time Complexity</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>enqueue(x)</td>
+                        <td>O(1)</td>
+                        <td>Add element to back</td>
+                    </tr>
+                    <tr>
+                        <td>dequeue()</td>
+                        <td>O(1)</td>
+                        <td>Remove and return front element</td>
+                    </tr>
+                    <tr>
+                        <td>front()/peek()</td>
+                        <td>O(1)</td>
+                        <td>Return front element without removing</td>
+                    </tr>
+                    <tr>
+                        <td>is_empty()</td>
+                        <td>O(1)</td>
+                        <td>Check if queue is empty</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3 class="subsection-title">Python Queue Implementation</h3>
+
+            <div class="code-block">
+                <pre>
+# Method 1: Using deque (RECOMMENDED)
+from collections import deque
+
+queue = deque()
+
+queue.append(1)  # enqueue: O(1)
+queue.append(2)
+queue.append(3)
+
+front = queue[0]  # peek: O(1)
+dequeued = queue.popleft()  # dequeue: O(1)
+
+print(queue)  # deque([2, 3])
+print(dequeued)  # 1
+
+
+# Method 2: Using queue.Queue (thread-safe)
+import queue
+
+q = queue.Queue()
+
+q.put(1)  # enqueue
+q.put(2)
+q.put(3)
+
+front = q.queue[0]  # peek
+dequeued = q.get()  # dequeue
+
+print(q.queue)  # [2, 3]
+print(dequeued)  # 1
+
+
+# Method 3: Custom Queue class
+class Queue:
+    def __init__(self):
+        self.items = deque()
+    
+    def enqueue(self, item):
+        self.items.append(item)
+    
+    def dequeue(self):
+        if self.is_empty():
+            raise IndexError("Queue is empty")
+        return self.items.popleft()
+    
+    def peek(self):
+        if self.is_empty():
+            raise IndexError("Queue is empty")
+        return self.items[0]
+    
+    def is_empty(self):
+        return len(self.items) == 0
+    
+    def size(self):
+        return len(self.items)
+    
+    def __repr__(self):
+        return f"Queue({list(self.items)})"
+
+
+# Usage
+q = Queue()
+q.enqueue(10)
+q.enqueue(20)
+print(q.peek())  # 10
+print(q.dequeue())  # 10
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Common Queue Applications</h3>
+
+            <h4 class="subsection-title">1. Implement Stack Using Queues</h4>
+
+            <div class="code-block">
+                <pre>
+from collections import deque
+
+class StackWithQueue:
+    """
+    Implement stack using two queues
+    All operations O(1) amortized
+    """
+    def __init__(self):
+        self.queue1 = deque()
+        self.queue2 = deque()
+    
+    def push(self, x):
+        self.queue2.append(x)
+        while self.queue1:
+            self.queue2.append(self.queue1.popleft())
+        self.queue1, self.queue2 = self.queue2, self.queue1
+    
+    def pop(self):
+        if not self.queue1:
+            raise IndexError("Stack is empty")
+        return self.queue1.popleft()
+    
+    def top(self):
+        if not self.queue1:
+            raise IndexError("Stack is empty")
+        return self.queue1[0]
+    
+    def empty(self):
+        return len(self.queue1) == 0
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">2. Level Order Traversal (BFS)</h4>
+
+            <div class="code-block">
+                <pre>
+from collections import deque
+
+def level_order_traversal(root):
+    """
+    Binary tree level order traversal using queue
+    Time: O(n), Space: O(w) where w is max width
+    """
+    if not root:
+        return []
+    
+    result = []
+    queue = deque([root])
+    
+    while queue:
+        level_size = len(queue)
+        level = []
+        
+        for _ in range(level_size):
+            node = queue.popleft()
+            level.append(node.val)
+            
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+        
+        result.append(level)
+    
+    return result
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">3. Implement Queue Using Stacks</h4>
+
+            <div class="code-block">
+                <pre>
+class QueueWithStacks:
+    """
+    Implement queue using two stacks
+    amortized O(1) for all operations
+    """
+    def __init__(self):
+        self.stack_in = []
+        self.stack_out = []
+    
+    def push(self, x):
+        self.stack_in.append(x)
+    
+    def pop(self):
+        self._transfer()
+        return self.stack_out.pop()
+    
+    def peek(self):
+        self._transfer()
+        return self.stack_out[-1] if self.stack_out else None
+    
+    def empty(self):
+        return len(self.stack_in) == 0 and len(self.stack_out) == 0
+    
+    def _transfer(self):
+        """Transfer from stack_in to stack_out if stack_out is empty"""
+        if not self.stack_out:
+            while self.stack_in:
+                self.stack_out.append(self.stack_in.pop())
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">4. Sliding Window Maximum</h4>
+
+            <div class="code-block">
+                <pre>
+from collections import deque
+
+def max_sliding_window(nums, k):
+    """
+    Find maximum in each sliding window of size k
+    Time: O(n), Space: O(k)
+    Uses deque to maintain indices in decreasing order
+    """
+    result = []
+    window = deque()  # Stores indices
+    
+    for i, num in enumerate(nums):
+        # Remove indices outside the window
+        while window and window[0] <= i - k:
+            window.popleft()
+        
+        # Remove indices whose values are less than current
+        while window and nums[window[-1]] < num:
+            window.pop()
+        
+        window.append(i)
+        
+        # Add maximum to result when window is complete
+        if i >= k - 1:
+            result.append(nums[window[0]])
+    
+    return result
+
+
+# Example
+nums = [1, 3, -1, -3, 5, 3, 6, 7]
+k = 3
+print(max_sliding_window(nums, k))  # [3, 3, 5, 5, 6, 7]
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Priority Queue (heapq)</h3>
+
+            <p class="content-text">
+                Python's heapq module provides a priority queue implementation (min-heap by default).
+            </p>
+
+            <div class="code-block">
+                <pre>
+import heapq
+
+# Create heap (min-heap)
+heap = []
+
+heapq.heappush(heap, 5)
+heapq.heappush(heap, 3)
+heapq.heappush(heap, 7)
+heapq.heappush(heap, 1)
+
+print(heap)  # [1, 3, 7, 5]
+
+# Get minimum
+print(heap[0])  # 1
+
+# Extract minimum
+print(heapq.heappop(heap))  # 1
+print(heapq.heappop(heap))  # 3
+
+# Max-heap using negative values
+max_heap = []
+heapq.heappush(max_heap, -5)
+heapq.heappush(max_heap, -3)
+heapq.heappush(max_heap, -7)
+print(-heapq.heappop(max_heap))  # 7
+
+# Heapify a list
+arr = [4, 1, 7, 3, 9, 2]
+heapq.heapify(arr)
+print(arr)  # [1, 3, 2, 4, 9, 7]
+                </pre>
+            </div>
+
+            <div class="safety-sign important">
+                TIP: In Python, use list for stacks (append/pop) and deque for queues (append/popleft). Both are O(1) operations. Priority queues are implemented via heapq.
+            </div>
+        </div>
+
+        <!-- Hash Tables Section -->
+        <div class="content-section" id="hash">
+            <div class="lesson-header">
+                <h1>Hash Tables</h1>
+                <p>Dictionaries and sets for fast lookups</p>
+            </div>
+
+            <h3 class="subsection-title">Understanding Hash Tables</h3>
+
+            <p class="content-text">
+                A hash table is a data structure that implements an associative array, mapping keys to values. Python provides two built-in hash table implementations:
+            </p>
+
+            <ul class="blueprint-list">
+                <li><strong>dict (Dictionary):</strong> Maps keys to values. Used for key-value storage and retrieval.</li>
+                <li><strong>set:</strong> Stores only unique keys. Used for membership testing and deduplication.</li>
+            </ul>
+
+            <h3 class="subsection-title">Dictionary (dict) Operations</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Operation</th>
+                        <th>Time Complexity</th>
+                        <th>Notes</th>
+                    </tr>
+                    <tr>
+                        <td>Insert/Update (d[key] = value)</td>
+                        <td>O(1) average</td>
+                        <td>O(n) worst case (collision)</td>
+                    </tr>
+                    <tr>
+                        <td>Lookup (d[key])</td>
+                        <td>O(1) average</td>
+                        <td>O(n) worst case</td>
+                    </tr>
+                    <tr>
+                        <td>Delete (del d[key])</td>
+                        <td>O(1) average</td>
+                        <td>O(n) worst case</td>
+                    </tr>
+                    <tr>
+                        <td>Check key exists (key in d)</td>
+                        <td>O(1) average</td>
+                        <td>O(n) worst case</td>
+                    </tr>
+                    <tr>
+                        <td>Get all keys (d.keys())</td>
+                        <td>O(n)</td>
+                        <td>Returns view</td>
+                    </tr>
+                    <tr>
+                        <td>Get all values (d.values())</td>
+                        <td>O(n)</td>
+                        <td>Returns view</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3 class="subsection-title">Dictionary Patterns and Examples</h3>
+
+            <h4 class="subsection-title">1. Counting Frequencies</h4>
+
+            <div class="code-block">
+                <pre>
+# Method 1: Manual counting
+def count_frequencies(arr):
+    freq = {}
+    for item in arr:
+        freq[item] = freq.get(item, 0) + 1
+    return freq
+
+# Method 2: Using collections.Counter
+from collections import Counter
+
+def count_frequencies_counter(arr):
+    return Counter(arr)
+
+# Example
+arr = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]
+print(count_frequencies(arr))
+# {1: 1, 2: 2, 3: 3, 4: 4}
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">2. Group Anagrams</h4>
+
+            <div class="code-block">
+                <pre>
+from collections import defaultdict
+
+def group_anagrams(words):
+    """
+    Group words that are anagrams of each other
+    Time: O(n * k log k) where n = number of words, k = max word length
+    """
+    groups = defaultdict(list)
+    
+    for word in words:
+        # Sort characters to create key
+        key = ''.join(sorted(word))
+        groups[key].append(word)
+    
+    return list(groups.values())
+
+# Example
+words = ["eat", "tea", "tan", "ate", "nat", "bat"]
+print(group_anagrams(words))
+# [['eat', 'tea', 'ate'], ['tan', 'nat'], ['bat']]
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">3. Two Sum (Using Hash Table)</h4>
+
+            <div class="code-block">
+                <pre>
+def two_sum(nums, target):
+    """
+    Find two numbers that add up to target
+    Time: O(n), Space: O(n)
+    """
+    seen = {}  # value -> index
+    
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in seen:
+            return [seen[complement], i]
+        seen[num] = i
+    
+    return None  # No solution
+
+# Example
+nums = [2, 7, 11, 15]
+target = 9
+print(two_sum(nums, target))  # [0, 1]
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">4. Find Duplicates</h4>
+
+            <div class="code-block">
+                <pre>
+def find_duplicates(arr):
+    """
+    Find all elements that appear more than once
+    Time: O(n), Space: O(n)
+    """
+    freq = Counter(arr)
+    return [item for item, count in freq.items() if count > 1]
+
+def find_duplicate(arr):
+    """
+    Find if there's any duplicate
+    Time: O(n), Space: O(n)
+    """
+    seen = set()
+    for item in arr:
+        if item in seen:
+            return item
+        seen.add(item)
+    return None
+
+# Example
+arr = [1, 2, 3, 2, 4, 3, 5]
+print(find_duplicates(arr))  # [2, 3]
+print(find_duplicate(arr))  # 2
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Set Operations</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Operation</th>
+                        <th>Time Complexity</th>
+                        <th>Notes</th>
+                    </tr>
+                    <tr>
+                        <td>Add (s.add(x))</td>
+                        <td>O(1) average</td>
+                        <td>Already in set: ignored</td>
+                    </tr>
+                    <tr>
+                        <td>Remove (s.remove(x))</td>
+                        <td>O(1) average</td>
+                        <td>Error if not present</td>
+                    </tr>
+                    <tr>
+                        <td>Discard (s.discard(x))</td>
+                        <td>O(1) average</td>
+                        <td>No error if not present</td>
+                    </tr>
+                    <tr>
+                        <td>Check membership (x in s)</td>
+                        <td>O(1) average</td>
+                        <td>Most common operation</td>
+                    </tr>
+                    <tr>
+                        <td>Length (len(s))</td>
+                        <td>O(1)</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3 class="subsection-title">Set Patterns and Examples</h3>
+
+            <h4 class="subsection-title">1. Intersection of Two Arrays</h4>
+
+            <div class="code-block">
+                <pre>
+def intersection(nums1, nums2):
+    """
+    Find common elements between two arrays
+    Time: O(n + m), Space: O(min(n, m))
+    """
+    set1 = set(nums1)
+    set2 = set(nums2)
+    return list(set1 & set2)
+
+# Return unique elements
+def unique_intersection(nums1, nums2):
+    return list(set(nums1) & set(nums2))
+
+# Example
+nums1 = [1, 2, 2, 1]
+nums2 = [2, 2]
+print(intersection(nums1, nums2))  # [2]
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">2. Longest Substring Without Repeating Characters</h4>
+
+            <div class="code-block">
+                <pre>
+def length_of_longest_substring(s):
+    """
+    Find length of longest substring without repeating characters
+    Time: O(n), Space: O(min(n, charset))
+    """
+    char_index = {}
+    max_length = 0
+    left = 0
+    
+    for right, char in enumerate(s):
+        if char in char_index and char_index[char] >= left:
+            left = char_index[char] + 1
+        char_index[char] = right
+        max_length = max(max_length, right - left + 1)
+    
+    return max_length
+
+# Example
+print(length_of_longest_substring("abcabcbb"))  # 3
+print(length_of_longest_substring("bbbbb"))     # 1
+print(length_of_longest_substring("pwwkew"))    # 3
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">3. Subarray Sum Equals K</h4>
+
+            <div class="code-block">
+                <pre>
+def subarray_sum(nums, k):
+    """
+    Count number of subarrays with sum equal to k
+    Time: O(n), Space: O(n)
+    """
+    count = 0
+    sum_count = {0: 1}  # prefix_sum -> count
+    prefix_sum = 0
+    
+    for num in nums:
+        prefix_sum += num
+        
+        # Check if (prefix_sum - k) exists
+        count += sum_count.get(prefix_sum - k, 0)
+        
+        # Update count of current prefix_sum
+        sum_count[prefix_sum] = sum_count.get(prefix_sum, 0) + 1
+    
+    return count
+
+# Example
+nums = [1, 1, 1]
+k = 2
+print(subarray_sum(nums, k))  # 2
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Hash Table Optimization Tips</h3>
+
+            <div class="example-box">
+                <div class="example-title">HASH TABLE PERFORMANCE TIPS</div>
+                <ul class="blueprint-list">
+                    <li><strong>Use sets for membership testing:</strong> 'x in set' is O(1) vs O(n) for list.</li>
+                    <li><strong>Use collections.Counter for counting:</strong> Optimized for frequency counting.</li>
+                    <li><strong>Use dict.get(key, default):</strong> Avoid KeyError when key might not exist.</li>
+                    <li><strong>Use setdefault() or defaultdict:</strong> Cleaner than checking if key exists.</li>
+                    <li><strong>Pre-allocate with dict comprehension:</strong> Faster than empty dict + loop for known keys.</li>
+                    <li><strong>Small hash tables may be slower:</strong> For small datasets, list might be faster due to less overhead.</li>
+                </ul>
+            </div>
+
+            <div class="safety-sign important">
+                CRITICAL: Hash tables have O(1) average but O(n) worst-case complexity due to collisions. In competitive programming, problems are designed to avoid pathological cases, but be aware of this.
+            </div>
+        </div>
+
+        <!-- Trees Section -->
+        <div class="content-section" id="trees">
+            <div class="lesson-header">
+                <h1>Trees</h1>
+                <p>Hierarchical data structures and traversal algorithms</p>
+            </div>
+
+            <h3 class="subsection-title">Understanding Trees</h3>
+
+            <p class="content-text">
+                A tree is a hierarchical data structure consisting of nodes connected by edges. Unlike arrays, linked lists, stacks, and queues which are linear data structures, trees are nonlinear.
+            </p>
+
+            <h3 class="subsection-title">Key Tree Terminology</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Term</th>
+                        <th>Definition</th>
+                    </tr>
+                    <tr>
+                        <td>Root</td>
+                        <td>The top node of the tree</td>
+                    </tr>
+                    <tr>
+                        <td>Parent</td>
+                        <td>A node that has children</td>
+                    </tr>
+                    <tr>
+                        <td>Child</td>
+                        <td>A node that has a parent</td>
+                    </tr>
+                    <tr>
+                        <td>Leaf</td>
+                        <td>A node with no children</td>
+                    </tr>
+                    <tr>
+                        <td>Height</td>
+                        <td>Number of edges on longest path from node to leaf</td>
+                    </tr>
+                    <tr>
+                        <td>Depth</td>
+                        <td>Number of edges from node to root</td>
+                    </tr>
+                    <tr>
+                        <td>Binary Tree</td>
+                        <td>Each node has at most 2 children</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3 class="subsection-title">Binary Tree Node Definition</h3>
+
+            <div class="code-block">
+                <pre>
+class TreeNode:
+    """Binary tree node"""
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+    
+    def __repr__(self):
+        return str(self.val)
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Binary Search Tree (BST)</h3>
+
+            <p class="content-text">
+                A Binary Search Tree is a binary tree where for each node, all values in the left subtree are smaller, and all values in the right subtree are larger.
+            </p>
+
+            <div class="code-block">
+                <pre>
+class BSTNode:
+    """Binary Search Tree node"""
+    def __init__(self, val=0):
+        self.val = val
+        self.left = None
+        self.right = None
+
+
+class BST:
+    """Binary Search Tree implementation"""
+    def __init__(self):
+        self.root = None
+    
+    def insert(self, val):
+        """Insert value into BST"""
+        if not self.root:
+            self.root = BSTNode(val)
+            return
+        
+        self._insert_recursive(self.root, val)
+    
+    def _insert_recursive(self, node, val):
+        if val < node.val:
+            if node.left is None:
+                node.left = BSTNode(val)
+            else:
+                self._insert_recursive(node.left, val)
+        else:
+            if node.right is None:
+                node.right = BSTNode(val)
+            else:
+                self._insert_recursive(node.right, val)
+    
+    def search(self, val):
+        """Search for value in BST. Return node if found."""
+        return self._search_recursive(self.root, val)
+    
+    def _search_recursive(self, node, val):
+        if node is None or node.val == val:
+            return node
+        
+        if val < node.val:
+            return self._search_recursive(node.left, val)
+        else:
+            return self._search_recursive(node.right, val)
+    
+    def delete(self, val):
+        """Delete value from BST"""
+        self.root = self._delete_recursive(self.root, val)
+    
+    def _delete_recursive(self, node, val):
+        if node is None:
+            return None
+        
+        if val < node.val:
+            node.left = self._delete_recursive(node.left, val)
+        elif val > node.val:
+            node.right = self._delete_recursive(node.right, val)
+        else:
+            # Node with only one child or no child
+            if node.left is None:
+                return node.right
+            elif node.right is None:
+                return node.left
+            
+            # Node with two children: get inorder successor
+            temp = self._find_min(node.right)
+            node.val = temp.val
+            node.right = self._delete_recursive(node.right, temp.val)
+        
+        return node
+    
+    def _find_min(self, node):
+        current = node
+        while current.left is not None:
+            current = current.left
+        return current
+    
+    def inorder_traversal(self):
+        """Inorder traversal gives sorted order for BST"""
+        result = []
+        self._inorder_recursive(self.root, result)
+        return result
+    
+    def _inorder_recursive(self, node, result):
+        if node:
+            self._inorder_recursive(node.left, result)
+            result.append(node.val)
+            self._inorder_recursive(node.right, result)
+
+
+# Example
+bst = BST()
+bst.insert(5)
+bst.insert(3)
+bst.insert(7)
+bst.insert(1)
+bst.insert(4)
+print(bst.inorder_traversal())  # [1, 3, 4, 5, 7]
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Tree Traversal Algorithms</h3>
+
+            <h4 class="subsection-title">1. Depth-First Search (DFS) Traversals</h4>
+
+            <div class="code-block">
+                <pre>
+# Inorder: Left -> Root -> Right
+def inorder_traversal(root):
+    """
+    Inorder traversal: left, root, right
+    Time: O(n), Space: O(h) where h is height
+    For BST: gives sorted order
+    """
+    result = []
+    
+    def dfs(node):
+        if node:
+            dfs(node.left)
+            result.append(node.val)
+            dfs(node.right)
+    
+    dfs(root)
+    return result
+
+
+# Preorder: Root -> Left -> Right
+def preorder_traversal(root):
+    """
+    Preorder traversal: root, left, right
+    Useful for creating a copy of tree
+    """
+    result = []
+    
+    def dfs(node):
+        if node:
+            result.append(node.val)
+            dfs(node.left)
+            dfs(node.right)
+    
+    dfs(root)
+    return result
+
+
+# Postorder: Left -> Right -> Root
+def postorder_traversal(root):
+    """
+    Postorder traversal: left, right, root
+    Useful for deleting tree or evaluating expressions
+    """
+    result = []
+    
+    def dfs(node):
+        if node:
+            dfs(node.left)
+            dfs(node.right)
+            result.append(node.val)
+    
+    dfs(root)
+    return result
+
+
+# Iterative versions (using stack)
+def inorder_iterative(root):
+    result = []
+    stack = []
+    current = root
+    
+    while current or stack:
+        while current:
+            stack.append(current)
+            current = current.left
+        
+        current = stack.pop()
+        result.append(current.val)
+        current = current.right
+    
+    return result
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">2. Breadth-First Search (BFS) / Level Order</h4>
+
+            <div class="code-block">
+                <pre>
+from collections import deque
+
+def level_order_traversal(root):
+    """
+    Level order traversal: visit level by level
+    Time: O(n), Space: O(w) where w is max width
+    """
+    if not root:
+        return []
+    
+    result = []
+    queue = deque([root])
+    
+    while queue:
+        level = []
+        for _ in range(len(queue)):
+            node = queue.popleft()
+            level.append(node.val)
+            
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+        
+        result.append(level)
+    
+    return result
+
+
+# Example: Create simple tree
+#       1
+#      / \
+#     2   3
+#    / \
+#   4   5
+
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(3)
+root.left.left = TreeNode(4)
+root.left.right = TreeNode(5)
+
+print("Inorder:", inorder_traversal(root))     # [4, 2, 5, 1, 3]
+print("Preorder:", preorder_traversal(root))   # [1, 2, 4, 5, 3]
+print("Postorder:", postorder_traversal(root)) # [4, 5, 2, 3, 1]
+print("Level order:", level_order_traversal(root))  # [[1], [2, 3], [4, 5]]
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Common Tree Problems</h3>
+
+            <h4 class="subsection-title">1. Maximum Depth of Binary Tree</h4>
+
+            <div class="code-block">
+                <pre>
+def max_depth(root):
+    """
+    Find maximum depth of binary tree
+    Time: O(n), Space: O(h)
+    """
+    if not root:
+        return 0
+    
+    return 1 + max(max_depth(root.left), max_depth(root.right))
+
+
+# Iterative BFS version
+def max_depth_bfs(root):
+    if not root:
+        return 0
+    
+    queue = deque([root])
+    depth = 0
+    
+    while queue:
+        depth += 1
+        for _ in range(len(queue)):
+            node = queue.popleft()
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+    
+    return depth
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">2. Check if Tree is Balanced</h4>
+
+            <div class="code-block">
+                <pre>
+def is_balanced(root):
+    """
+    Check if tree is height-balanced
+    Time: O(n), Space: O(h)
+    """
+    def check(node):
+        if not node:
+            return 0
+        
+        left = check(node.left)
+        if left == -1:
+            return -1
+        
+        right = check(node.right)
+        if right == -1:
+            return -1
+        
+        if abs(left - right) > 1:
+            return -1
+        
+        return 1 + max(left, right)
+    
+    return check(root) != -1
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">3. Lowest Common Ancestor (LCA)</h4>
+
+            <div class="code-block">
+                <pre>
+def lowest_common_ancestor(root, p, q):
+    """
+    Find LCA of two nodes in BST
+    Time: O(h), Space: O(1)
+    """
+    current = root
+    
+    while current:
+        if p.val < current.val and q.val < current.val:
+            current = current.left
+        elif p.val > current.val and q.val > current.val:
+            current = current.right
+        else:
+            return current
+
+
+# For binary tree (not necessarily BST)
+def lca_binary_tree(root, p, q):
+    """
+    Find LCA in any binary tree
+    Time: O(n), Space: O(h)
+    """
+    if not root or root == p or root == q:
+        return root
+    
+    left = lca_binary_tree(root.left, p, q)
+    right = lca_binary_tree(root.right, p, q)
+    
+    if left and right:
+        return root
+    return left or right
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">4. Validate Binary Search Tree</h4>
+
+            <div class="code-block">
+                <pre>
+def is_valid_bst(root):
+    """
+    Check if tree is valid BST
+    Time: O(n), Space: O(h)
+    """
+    def validate(node, min_val, max_val):
+        if not node:
+            return True
+        
+        if min_val is not None and node.val <= min_val:
+            return False
+        if max_val is not None and node.val >= max_val:
+            return False
+        
+        return (validate(node.left, min_val, node.val) and
+                validate(node.right, node.val, max_val))
+    
+    return validate(root, None, None)
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">5. Serialize and Deserialize Binary Tree</h4>
+
+            <div class="code-block">
+                <pre>
+def serialize(root):
+    """Serialize tree to string (preorder with markers)"""
+    def dfs(node):
+        if not node:
+            return "null,"
+        return f"{node.val}," + dfs(node.left) + dfs(node.right)
+    
+    return dfs(root)
+
+
+def deserialize(data):
+    """Deserialize string to tree"""
+    values = iter(data.split(','))
+    
+    def dfs():
+        val = next(values)
+        if val == "null":
+            return None
+        node = TreeNode(int(val))
+        node.left = dfs()
+        node.right = dfs()
+        return node
+    
+    return dfs()
+
+# Example usage
+serialized = serialize(root)
+print("Serialized:", serialized)
+tree = deserialize(serialized)
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Tree Complexity Summary</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Operation</th>
+                        <th>Time</th>
+                        <th>Space</th>
+                    </tr>
+                    <tr>
+                        <td>Traversal (DFS)</td>
+                        <td>O(n)</td>
+                        <td>O(h)</td>
+                    </tr>
+                    <tr>
+                        <td>Traversal (BFS)</td>
+                        <td>O(n)</td>
+                        <td>O(w)</td>
+                    </tr>
+                    <tr>
+                        <td>BST Search</td>
+                        <td>O(h)</td>
+                        <td>O(1)</td>
+                    </tr>
+                    <tr>
+                        <td>BST Insert/Delete</td>
+                        <td>O(h)</td>
+                        <td>O(h)</td>
+                    </tr>
+                </table>
+                <p><em>h = height, n = number of nodes, w = max width (at most n)</em></p>
+            </div>
+
+            <div class="safety-sign important">
+                TIP: For BST operations, height h = O(log n) for balanced trees, but O(n) for skewed trees. Consider using self-balancing trees (AVL, Red-Black) for guaranteed performance.
+            </div>
+        </div>
+
+        <!-- Graphs Section -->
+        <div class="content-section" id="graphsds">
+            <div class="lesson-header">
+                <h1>Graph Data Structures</h1>
+                <p>Representing relationships and connections</p>
+            </div>
+
+            <h3 class="subsection-title">Understanding Graphs</h3>
+
+            <p class="content-text">
+                A graph is a nonlinear data structure consisting of vertices (nodes) connected by edges. Graphs are used to represent networks, relationships, and connections.
+            </p>
+
+            <h3 class="subsection-title">Graph Types</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Type</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                    <tr>
+                        <td>Undirected</td>
+                        <td>Edges have no direction</td>
+                        <td>Friendship network</td>
+                    </tr>
+                    <tr>
+                        <td>Directed</td>
+                        <td>Edges have direction</td>
+                        <td>Web links, follow relationships</td>
+                    </tr>
+                    <tr>
+                        <td>Weighted</td>
+                        <td>Edges have weights/costs</td>
+                        <td>Road distances</td>
+                    </tr>
+                    <tr>
+                        <td>Unweighted</td>
+                        <td>All edges equal</td>
+                        <td>Social connections</td>
+                    </tr>
+                    <tr>
+                        <td>Connected</td>
+                        <td>Path between any two vertices</td>
+                        <td>Fully connected network</td>
+                    </tr>
+                    <tr>
+                        <td>Disconnected</td>
+                        <td>Some vertices unreachable</td>
+                        <td>Isolated groups</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3 class="subsection-title">Graph Representations</h3>
+
+            <h4 class="subsection-title">1. Adjacency List (Recommended)</h4>
+
+            <div class="code-block">
+                <pre>
+# Adjacency list using dictionary of lists
+from collections import defaultdict, deque
+
+class Graph:
+    """Graph using adjacency list"""
+    def __init__(self, directed=False):
+        self.graph = defaultdict(list)
+        self.directed = directed
+        self.vertices = set()
+    
+    def add_edge(self, u, v, weight=1):
+        """Add edge (and reverse for undirected)"""
+        self.graph[u].append((v, weight))
+        self.vertices.add(u)
+        self.vertices.add(v)
+        
+        if not self.directed:
+            self.graph[v].append((u, weight))
+    
+    def remove_edge(self, u, v):
+        """Remove edge"""
+        self.graph[u] = [(node, w) for node, w in self.graph[u] if node != v]
+        if not self.directed:
+            self.graph[v] = [(node, w) for node, w in self.graph[v] if node != u]
+    
+    def get_neighbors(self, node):
+        """Get neighbors of a node"""
+        return self.graph[node]
+    
+    def __repr__(self):
+        return dict(self.graph).__repr__()
+
+
+# Example
+g = Graph(directed=False)
+g.add_edge(0, 1)
+g.add_edge(0, 2)
+g.add_edge(1, 2)
+g.add_edge(2, 3)
+
+print(g)
+# {0: [(1, 1), (2, 1)], 1: [(0, 1), (2, 1)], 2: [(0, 1), (1, 1), (3, 1)], 3: [(2, 1)]}
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">2. Adjacency Matrix</h4>
+
+            <div class="code-block">
+                <pre>
+class GraphMatrix:
+    """Graph using adjacency matrix"""
+    def __init__(self, num_vertices, directed=False):
+        self.num_vertices = num_vertices
+        self.directed = directed
+        self.matrix = [[0] * num_vertices for _ in range(num_vertices)]
+    
+    def add_edge(self, u, v, weight=1):
+        """Add edge"""
+        self.matrix[u][v] = weight
+        if not self.directed:
+            self.matrix[v][u] = weight
+    
+    def remove_edge(self, u, v):
+        """Remove edge"""
+        self.matrix[u][v] = 0
+        if not self.directed:
+            self.matrix[v][u] = 0
+    
+    def has_edge(self, u, v):
+        """Check if edge exists"""
+        return self.matrix[u][v] != 0
+    
+    def __repr__(self):
+        return '\n'.join([' '.join(map(str, row)) for row in self.matrix])
+
+
+# Example
+gm = GraphMatrix(4)
+gm.add_edge(0, 1)
+gm.add_edge(0, 2)
+gm.add_edge(1, 2)
+print(gm)
+# 0 1 1 0
+# 1 0 1 0
+# 1 1 0 0
+# 0 0 0 0
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Comparison: Adjacency List vs Matrix</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Operation</th>
+                        <th>Adjacency List</th>
+                        <th>Adjacency Matrix</th>
+                    </tr>
+                    <tr>
+                        <td>Space</td>
+                        <td>O(V + E)</td>
+                        <td>O(V^2)</td>
+                    </tr>
+                    <tr>
+                        <td>Add Edge</td>
+                        <td>O(1)</td>
+                        <td>O(1)</td>
+                    </tr>
+                    <tr>
+                        <td>Remove Edge</td>
+                        <td>O(E)</td>
+                        <td>O(1)</td>
+                    </tr>
+                    <tr>
+                        <td>Check Edge</td>
+                        <td>O(deg(v))</td>
+                        <td>O(1)</td>
+                    </tr>
+                    <tr>
+                        <td>Get Neighbors</td>
+                        <td>O(deg(v))</td>
+                        <td>O(V)</td>
+                    </tr>
+                </table>
+                <p><em>V = vertices, E = edges, deg(v) = degree of vertex v</em></p>
+            </div>
+
+            <h3 class="subsection-title">Graph Traversals</h3>
+
+            <h4 class="subsection-title">Breadth-First Search (BFS)</h4>
+
+            <div class="code-block">
+                <pre>
+def bfs(graph, start):
+    """
+    BFS traversal from start node
+    Time: O(V + E), Space: O(V)
+    """
+    visited = set()
+    queue = deque([start])
+    visited.add(start)
+    traversal = []
+    
+    while queue:
+        node = queue.popleft()
+        traversal.append(node)
+        
+        for neighbor, _ in graph.get_neighbors(node):
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append(neighbor)
+    
+    return traversal
+
+
+# BFS with distances
+def bfs_distances(graph, start):
+    """
+    Find shortest path distances from start (unweighted)
+    Time: O(V + E), Space: O(V)
+    """
+    visited = set([start])
+    queue = deque([(start, 0)])
+    distances = {start: 0}
+    
+    while queue:
+        node, distance = queue.popleft()
+        
+        for neighbor, _ in graph.get_neighbors(node):
+            if neighbor not in visited:
+                visited.add(neighbor)
+                distances[neighbor] = distance + 1
+                queue.append((neighbor, distance + 1))
+    
+    return distances
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">Depth-First Search (DFS)</h4>
+
+            <div class="code-block">
+                <pre>
+def dfs(graph, start):
+    """
+    DFS traversal from start node (recursive)
+    Time: O(V + E), Space: O(V)
+    """
+    visited = set()
+    traversal = []
+    
+    def explore(node):
+        if node not in visited:
+            visited.add(node)
+            traversal.append(node)
+            for neighbor, _ in graph.get_neighbors(node):
+                explore(neighbor)
+    
+    explore(start)
+    return traversal
+
+
+# Iterative DFS
+def dfs_iterative(graph, start):
+    """
+    DFS traversal (iterative with stack)
+    Time: O(V + E), Space: O(V)
+    """
+    visited = set()
+    stack = [start]
+    traversal = []
+    
+    while stack:
+        node = stack.pop()
+        if node not in visited:
+            visited.add(node)
+            traversal.append(node)
+            # Add neighbors in reverse order for consistent traversal
+            for neighbor, _ in reversed(graph.get_neighbors(node)):
+                if neighbor not in visited:
+                    stack.append(neighbor)
+    
+    return traversal
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Graph Algorithms Preview</h3>
+
+            <p class="content-text">
+                These algorithms are covered in detail in Module 9, but here's a quick preview:
+            </p>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Algorithm</th>
+                        <th>Purpose</th>
+                        <th>Time Complexity</th>
+                    </tr>
+                    <tr>
+                        <td>DFS/BFS</td>
+                        <td>Traversal, shortest path (unweighted)</td>
+                        <td>O(V + E)</td>
+                    </tr>
+                    <tr>
+                        <td>Dijkstra</td>
+                        <td>Shortest path (weighted, non-negative)</td>
+                        <td>O((V + E) log V)</td>
+                    </tr>
+                    <tr>
+                        <td>Bellman-Ford</td>
+                        <td>Shortest path (handles negative)</td>
+                        <td>O(VE)</td>
+                    </tr>
+                    <tr>
+                        <td>Floyd-Warshall</td>
+                        <td>All pairs shortest path</td>
+                        <td>O(V^3)</td>
+                    </tr>
+                    <tr>
+                        <td>Prim/Kruskal</td>
+                        <td>Minimum Spanning Tree</td>
+                        <td>O((V + E) log V)</td>
+                    </tr>
+                    <tr>
+                        <td>Topological Sort</td>
+                        <td>Order dependencies (DAGs)</td>
+                        <td>O(V + E)</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3 class="subsection-title">Common Graph Patterns</h3>
+
+            <h4 class="subsection-title">1. Detect Cycle (Using DFS)</h4>
+
+            <div class="code-block">
+                <pre>
+def has_cycle_undirected(graph):
+    """
+    Detect cycle in undirected graph
+    Time: O(V + E), Space: O(V)
+    """
+    visited = set()
+    
+    def dfs(node, parent):
+        visited.add(node)
+        for neighbor, _ in graph.get_neighbors(node):
+            if neighbor not in visited:
+                if dfs(neighbor, node):
+                    return True
+            elif neighbor != parent:
+                return True
+        return False
+    
+    for node in graph.vertices:
+        if node not in visited:
+            if dfs(node, None):
+                return True
+    
+    return False
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">2. Connected Components</h4>
+
+            <div class="code-block">
+                <pre>
+def connected_components(graph):
+    """
+    Find all connected components in undirected graph
+    Time: O(V + E), Space: O(V)
+    """
+    visited = set()
+    components = []
+    
+    def dfs(node, component):
+        visited.add(node)
+        component.append(node)
+        for neighbor, _ in graph.get_neighbors(node):
+            if neighbor not in visited:
+                dfs(neighbor, component)
+    
+    for node in graph.vertices:
+        if node not in visited:
+            component = []
+            dfs(node, component)
+            components.append(component)
+    
+    return components
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Graph Optimization Tips</h3>
+
+            <div class="example-box">
+                <div class="example-title">GRAPH PERFORMANCE TIPS</div>
+                <ul class="blueprint-list">
+                    <li><strong>Use adjacency list by default:</strong> More space-efficient for sparse graphs (most competitive programming graphs are sparse).</li>
+                    <li><strong>Use adjacency matrix for dense graphs:</strong> When E ≈ V^2, matrix may be faster.</li>
+                    <li><strong>Use set for adjacency:</strong> For faster edge checks (O(1) instead of O(deg(v))).</li>
+                    <li><strong>Track visited carefully:</strong> Prevent infinite loops in cyclic graphs.</li>
+                    <li><strong>Consider weighted edges:</strong> Store weights as tuples (neighbor, weight) in adjacency list.</li>
+                    <li><strong>Use deque for BFS:</strong> Faster than list for popleft operations.</li>
+                </ul>
+            </div>
+
+            <div class="safety-sign important">
+                NOTE: Module 9 will cover advanced graph algorithms in depth. This section focuses on graph representation and basic traversal. Practice these fundamentals before moving to complex algorithms.
+            </div>
+        </div>
+
+        <!-- Practice Problems Section -->
+        <div class="content-section" id="practice">
+            <div class="lesson-header">
+                <h1>Practice Problems</h1>
+                <p>Test your knowledge with these problems</p>
+            </div>
+
+            <div class="practice-intro">
+                <p>Practice problems are loaded from the problems database. Select a category to see problems:</p>
+            </div>
+
+            <div id="practiceProblems"></div>
+
+            <script src="../js/problems.js"></script>
+            <script>
+                // Display practice problems for this module
+                function displayPracticeProblems() {
+                    const container = document.getElementById('practiceProblems');
+                    const moduleKeys = ['arrays', 'strings', 'linkedlist', 'hash', 'trees', 'graphs'];
+                    const moduleNames = ['Arrays', 'Strings', 'Linked Lists', 'Hash Tables', 'Trees', 'Graphs'];
+                    
+                    let html = '';
+                    
+                    for (let i = 0; i < moduleKeys.length; i++) {
+                        const key = moduleKeys[i];
+                        const name = moduleNames[i];
+                        
+                        const problems = practiceProblems.datastructures[key];
+                        if (!problems || problems.length === 0) continue;
+                        
+                        html += `
+                            <div class="practice-category">
+                                <h3 class="subsection-title">${name}</h3>
+                        `;
+                        
+                        // Display first 3 problems as examples
+                        const displayProblems = problems.slice(0, 3);
+                        
+                        for (const problem of displayProblems) {
+                            const problemId = 'DS-' + problem.id;
+                            html += `
+                                <div class="practice-problem" id="${problemId}">
+                                    <div class="problem-question">
+                                        <p><strong>Problem ${problem.id}:</strong> ${problem.question}</p>
+                                        <div class="problem-meta">
+                                            <span class="difficulty-${problem.difficulty}">${problem.difficulty}</span>
+                                        </div>
+                                    </div>
+                                    <div class="problem-input">
+                                        <input type="text" id="${problemId}-input" placeholder="Your answer...">
+                                        <button onclick="checkAnswer('${problemId}', '${problem.answer.replace(/'/g, "\\'")}', [${problem.alternatives.map(a => `'${a.replace(/'/g, "\\'")}'`).join(',')}], '${problemId}-input', '${problemId}-hint', '${problemId}-explanation')" class="check-btn">Check</button>
+                                    </div>
+                                    <div id="${problemId}-feedback" class="feedback"></div>
+                                    <div id="${problemId}-hint" class="hint" style="display: none;">
+                                        <strong>Hint:</strong> ${problem.hint}
+                                    </div>
+                                    <div id="${problemId}-explanation" class="explanation" style="display: none;">
+                                        <strong>Explanation:</strong> ${problem.explanation}
+                                    </div>
+                                </div>
+                            `;
+                        }
+                        
+                        html += `
+                                <p style="margin-top: 20px; font-style: italic;">+ ${problems.length - 3} more problems in this category</p>
+                            </div>
+                        `;
+                    }
+                    
+                    container.innerHTML = html;
+                }
+                
+                displayPracticeProblems();
+            </script>
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="content-section" id="quiz">
+            <div class="lesson-header">
+                <h1>Module 2 Quiz</h1>
+                <p>Test your understanding of data structures</p>
+            </div>
+
+            <div class="quiz-intro">
+                <p>Answer the following questions. You need 70% to pass this module.</p>
+            </div>
+
+            <form id="moduleQuiz">
+                <div class="quiz-question">
+                    <p class="question-text">1. What is the time complexity of accessing an element in a Python list by index?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q1', 'A')"><input type="radio" name="Q1" value="A"> A. O(1)</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q1', 'B')"><input type="radio" name="Q1" value="B"> B. O(log n)</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q1', 'C')"><input type="radio" name="Q1" value="C"> C. O(n)</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q1', 'D')"><input type="radio" name="Q1" value="D"> D. O(n^2)</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="question-text">2. Which data structure provides O(1) average time for both insert and lookup by key?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q2', 'A')"><input type="radio" name="Q2" value="A"> A. List</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q2', 'B')"><input type="radio" name="Q2" value="B"> B. Dictionary (Hash Map)</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q2', 'C')"><input type="radio" name="Q2" value="C"> C. Tuple</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q2', 'D')"><input type="radio" name="Q2" value="D"> D. Stack</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="question-text">3. What is the time complexity of binary search on a sorted array?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q3', 'A')"><input type="radio" name="Q3" value="A"> A. O(1)</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q3', 'B')"><input type="radio" name="Q3" value="B"> B. O(n)</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q3', 'C')"><input type="radio" name="Q3" value="C"> C. O(log n)</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q3', 'D')"><input type="radio" name="Q3" value="D"> D. O(n log n)</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="question-text">4. In a stack, which operation removes and returns the top element?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q4', 'A')"><input type="radio" name="Q4" value="A"> A. push()</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q4', 'B')"><input type="radio" name="Q4" value="B"> B. peek()</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q4', 'C')"><input type="radio" name="Q4" value="C"> C. pop()</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q4', 'D')"><input type="radio" name="Q4" value="D"> D. dequeue()</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="question-text">5. Which Python data structure is best for implementing a queue?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q5', 'A')"><input type="radio" name="Q5" value="A"> A. list</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q5', 'B')"><input type="radio" name="Q5" value="B"> B. collections.deque</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q5', 'C')"><input type="radio" name="Q5" value="C"> C. dict</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q5', 'D')"><input type="radio" name="Q5" value="D"> D. set</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="question-text">6. What is the in-order traversal of a Binary Search Tree guaranteed to produce?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q6', 'A')"><input type="radio" name="Q6" value="A"> A. Reverse sorted order</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q6', 'B')"><input type="radio" name="Q6" value="B"> B. Level order</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q6', 'C')"><input type="radio" name="Q6" value="C"> C. Sorted order</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q6', 'D')><input type="radio" name="Q6" value="D"> D. Random order</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="question-text">7. Which graph representation is most space-efficient for sparse graphs?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q7', 'A')"><input type="radio" name="Q7" value="A"> A. Adjacency List</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q7', 'B')"><input type="radio" name="Q7" value="B"> B. Adjacency Matrix</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q7', 'C')"><input type="radio" name="Q7" value="C"> C. Both are equally efficient</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q7', 'D')"><input type="radio" name="Q7" value="D"> D. Edge List</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="question-text">8. What is the worst-case time complexity of checking membership in a Python set?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q8', 'A')"><input type="radio" name="Q8" value="A"> A. O(1)</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q8', 'B')"><input type="radio" name="Q8" value="B"> B. O(log n)</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q8', 'C')"><input type="radio" name="Q8" value="C"> C. O(n)</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q8', 'D')"><input type="radio" name="Q8" value="D"> D. O(n^2)</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="question-text">9. In BFS, which data structure is used to track which nodes to visit next?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q9', 'A')"><input type="radio" name="Q9" value="A"> A. Stack</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q9', 'B')"><input type="radio" name="Q9" value="B"> B. Queue</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q9', 'C')"><input type="radio" name="Q9" value="C"> C. Priority Queue</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q9', 'D')"><input type="radio" name="Q9" value="D"> D. Set</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="question-text">10. What type of tree has all leaf nodes at the same level (or within one level)?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q10', 'A')"><input type="radio" name="Q10" value="A"> A. Binary Search Tree</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q10', 'B')><input type="radio" name="Q10" value="B"> B. AVL Tree</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q10', 'C')"><input type="radio" name="Q10" value="C"> C. B-Tree</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q10', 'D')"><input type="radio" name="Q10" value="D"> D. Heap</label>
+                    </div>
+                </div>
+
+                <button type="button" class="quiz-submit" onclick="submitQuizModule2()">Submit Quiz</button>
+            </form>
+
+            <div class="quiz-results" id="quizResults"></div>
+        </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <button class="nav-btn primary" onclick="window.location.href='01-foundations.html'">Previous Module</button>
+        <button class="nav-btn primary" onclick="window.location.href='../index.html'">Back to Home</button>
+        <button class="nav-btn primary" onclick="window.location.href='03-hashtables.html'">Next Module</button>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script>
+        // Quiz answers
+        const quizAnswersModule2 = {
+            'Q1': 'A',
+            'Q2': 'B',
+            'Q3': 'C',
+            'Q4': 'C',
+            'Q5': 'B',
+            'Q6': 'C',
+            'Q7': 'A',
+            'Q8': 'C',
+            'Q9': 'B',
+            'Q10': 'C'
+        };
+
+        let quizAnswers = {};
+
+        function recordAnswer(question, answer) {
+            quizAnswers[question] = answer;
+        }
+
+        function submitQuizModule2() {
+            let score = 0;
+            let total = 10;
+            let results = [];
+
+            for (let q in quizAnswersModule2) {
+                if (quizAnswers[q] === quizAnswersModule2[q]) {
+                    score++;
+                    results.push(`Question ${q.substring(1)}: Correct`);
+                } else {
+                    results.push(`Question ${q.substring(1)}: Incorrect (Answer: ${quizAnswersModule2[q]})`);
+                }
+            }
+
+            const percentage = Math.round((score / total) * 100);
+            const passed = percentage >= 70;
+
+            let html = `
+                <div class="score-display ${passed ? 'pass' : 'fail'}">
+                    ${passed ? 'PASSED!' : 'NEEDS IMPROVEMENT'}
+                </div>
+                <div class="score-details">
+                    <p><strong>Score:</strong> ${score} / ${total} (${percentage}%)</p>
+                </div>
+                <div class="question-results">
+            `;
+
+            results.forEach(result => {
+                html += `<p>${result}</p>`;
+            });
+
+            html += '</div>';
+
+            if (passed) {
+                markQuizPassed('datastructures');
+            }
+
+            if (!passed) {
+                html += `
+                    <div class="safety-sign important">
+                        You need 70% to pass. Review the material and try again!
+                    </div>
+                `;
+            }
+
+            const resultsDiv = document.getElementById('quizResults');
+            resultsDiv.innerHTML = html;
+            resultsDiv.style.display = 'block';
+
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

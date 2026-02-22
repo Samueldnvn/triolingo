@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Module 4 - Sliding Window</title><link rel="stylesheet" href="../css/styles.css"></head>
+<body>
+<div class="course-header"><h1>Module 4: Sliding Window Pattern</h1></div>
+<div class="page-nav"><a href="03-hashtables.html">Prev</a><a href="05-twopointers.html">Next</a></div>
+<nav class="section-nav"><div onclick="showSection('section1')">1. Fixed-size Window</div><div onclick="showSection('section2')">2. Variable-size Window</div><div onclick="showSection('section3')">3. Quiz</div></nav>
+<div class="content-container">
+<div id="section1" class="content-section active">
+    <h2>Fixed-size Sliding Window</h2>
+    <div class="content-block"><h3>Maximum Sum of Subarray of Size K</h3>
+    <p>Calculate first k elements sum. Then: add new, subtract leaving element. Track max.</p>
+    <pre class="code-block">def max_sum(arr, k):
+    window_sum = sum(arr[:k])
+    max_sum = window_sum
+    for i in range(k, len(arr)):
+        window_sum += arr[i] - arr[i-k]
+        max_sum = max(max_sum, window_sum)
+    return max_sum</pre></div>
+</div>
+<div id="section2" class="content-section">
+    <h2>Variable-size Sliding Window</h2>
+    <div class="content-block"><h3>Window expands when valid, shrinks when invalid</h3>
+    <p>Key: Find condition to check validity. Expand right. When invalid, shrink left until valid.</p></div>
+    <div class="content-block"><h3>Longest Substring with at most K Distinct</h3>
+    <p>Use frequency map. Expand right. When distinct > k, shrink left. Track max length.</p></div>
+    <div class="content-block"><h3>Minimum Window Substring Containing Pattern</h3>
+    <p>Expand right until window contains all pattern chars. Then shrink left to find minimum.</p></div>
+</div>
+<div id="section3" class="content-section">
+    <h2>Module 4 Quiz</h2>
+    <div id="quiz-container-slidingwindow"></div>
+    <div id="quiz-results-slidingwindow" class="quiz-results" style="display:none"></div>
+    <button onclick="loadQuiz('slidingwindow')">Load Quiz</button><button onclick="submitQuiz('slidingwindow')">Submit</button>
+</div>
+</div>
+<script src="../js/navigation.js"></script><script src="../js/quizzes.js"></script>
+</body>
+</html>

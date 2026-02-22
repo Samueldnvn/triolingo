@@ -1,0 +1,115 @@
+FRENCH REVOLUTION VIDEO TIMELINE
+================================
+Target Runtime: 10 minutes (600 seconds)
+Target Word Count: 1500-1600 words
+Speaking Pace: ~150-160 words per minute
+Scenes: 12 segments
+
+SCENE 1 - INTRO: Why it sucks to be born as a French peasant in 1780s
+--------------------------------------------------------------------
+Duration: 45 seconds (112.5 words)
+Image: image001.png - Starving peasant family
+Background: Gray (miserable)
+Content: Set the scene - peasant life in 1780s France, no future, no hope
+
+SCENE 2 - ESTATES SYSTEM: The unfair three-tier society
+-------------------------------------------------------
+Duration: 60 seconds (150 words)
+Image: image002.png - Three estates illustration (three tiers)
+Background: Brown (oppressive)
+Content: First Estate (clergy), Second Estate (nobility), Third Estate (everyone else - 97% of population)
+
+SCENE 3 - FINANCIAL CRISIS: France going broke under Louis XVI
+--------------------------------------------------------------
+Duration: 60 seconds (150 words)
+Image: image003.png - King Louis XVI spending lavishly
+Background: Gold (wasteful excess)
+Content: Debts from wars, lavish court life at Versailles, Marie Antoinette's "let them eat cake"
+
+SCENE 4 - ESTATES GENERAL: The meeting that changed everything
+--------------------------------------------------------------
+Duration: 45 seconds (112.5 words)
+Image: image004.png - Angry peasants with pitchforks
+Background: Red (rising anger)
+Content: Louis XVI calls Estates General (1789), Third Estate breaks away, forms National Assembly
+
+SCENE 5 - TENNIS COURT OATH: The rebels make a stand
+----------------------------------------------------
+Duration: 45 seconds (112.5 words)
+Image: image005.png - Tennis Court Oath scene
+Background: Green (hopeful determination)
+Content: When locked out of their meeting hall, deputies swear to keep meeting until France has a constitution
+
+SCENE 6 - STORMING THE BASTILLE: Spark of revolution
+----------------------------------------------------
+Duration: 60 seconds (150 words)
+Image: image006.png - Storming Bastille
+Background: Dark Red (violent revolution)
+Content: July 14, 1789 - Parisians storm the prison, 7 prisoners freed, symbol of royal tyranny destroyed
+
+SCENE 7 - DECLARATION OF RIGHTS: New ideals
+-------------------------------------------
+Duration: 45 seconds (112.5 words)
+Image: image007.png - Declaration of Rights document
+Background: White/Blue (purity and liberty)
+Content: August 1789 - Declaration of Rights of Man and Citizen, liberty, equality, fraternity
+
+SCENE 8 - RADICAL TURN: Things get violent
+------------------------------------------
+Duration: 60 seconds (150 words)
+Image: image008.png - Mob/violence scene
+Background: Dark (chaos and violence)
+Content: 1791-1792 - War with Europe, September Massacres, King tries to flee France, monarchy abolished 1792
+
+SCENE 9 - REIGN OF TERROR: Robespierre's guillotine era
+-------------------------------------------------------
+Duration: 60 seconds (150 words)
+Image: image009.png - Guillotine/Robespierre
+Background: Black/Red (death and terror)
+Content: 1793-1794 - Committee of Public Safety, guillotine becomes symbol, 40,000+ executed
+
+SCENE 10 - FALL OF ROBESPIERRE: Terror ends with his head
+----------------------------------------------------------
+Duration: 45 seconds (112.5 words)
+Image: image010.png - Robespierre falling
+Background: Red (blood of the tyrant)
+Content: July 1794 - Thermidorian Reaction, Robespierre executed by guillotine, Terror ends
+
+SCENE 11 - AFTERMATH: The Directory & Napoleon
+----------------------------------------------
+Duration: 45 seconds (112.5 words)
+Image: image011.png - Napoleon appearing
+Background: Blue/White (French revolutionary colors)
+Content: The Directory governs (corrupt), Napoleon rises through military, becomes Emperor 1804
+
+SCENE 12 - CONCLUSION: Legacy and what changed
+----------------------------------------------
+Duration: 30 seconds (75 words)
+Image: image012.png - Peaceful ending with changed France
+Background: Bright (hope for future)
+Content: Revolution changed Europe forever, inspired future movements, monarchy returned but different
+
+TOTALS:
+-------
+Total Duration: 600 seconds (10 minutes exactly)
+Total Words: ~1500 words
+Scenes: 12
+Images: 12
+
+BACKGROUND COLOR KEY:
+--------------------
+Gray = Misery, poverty
+Brown = Oppression, injustice
+Gold = Wasteful excess, royalty
+Red = Revolution, anger
+Dark Red = Violent revolution
+Green = Hope, determination
+White = Purity, ideals
+Blue = Liberty, French colors
+Black = Death, terror
+Bright = Hope for future
+
+TIMING APPROACH:
+----------------
+Each scene is designed to match the audio duration. Images will be static and change only when the narration for that segment starts.
+Audio will be generated in 12 chunks matching the 12 scenes.

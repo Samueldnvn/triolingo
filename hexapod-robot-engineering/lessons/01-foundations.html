@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1: Foundations & Prerequisites</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['\\('\), '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/problems.js"></script>
+    <script src="../js/quizzes.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>MODULE 1: FOUNDATIONS & PREREQUISITES</h1>
+            <p class="subtitle">Mathematical Foundations for Hexapod Robotics</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+            <div class="progress-text">0% Complete</div>
+        </div>
+
+        <section class="content-section" id="overview">
+            <h2>Module Overview</h2>
+            <p>Hexapod robotics requires a strong foundation in mathematics including vectors, matrices, calculus, and linear algebra. This module reviews essential concepts needed throughout the course, ensuring you have the mathematical tools to understand mechanics, dynamics, kinematics, and control theory.</p>
+
+            <div class="org-box">
+                <h3>Learning Objectives</h3>
+                <ul>
+                    <li>Perform vector operations: dot product, cross product, gradient, divergence, curl</li>
+                    <li>Understand matrix operations and transformations</li>
+                    <li>Work with multiple coordinate systems and conversions</li>
+                    <li>Apply homogeneous transformations for spatial transformations</li>
+                    <li>Work with eigenvalues and eigenvectors</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section" id="vectors">
+            <h2>Section 1.1: Vector Operations</h2>
+
+            <div class="definition-box">
+                <span class="definition-term">Dot Product (Scalar Product):</span>
+                <p>Given two vectors \(\)\vec{A} = [A_x, A_y, A_z]\) and \(\)\vec{B} = [B_x, B_y, B_z]\), the dot product is:</p>
+                <div class="math-display">$$\vec{A} \cdot \vec{B} = A_x B_x + A_y B_y + A_z B_z = |\vec{A}||\vec{B}|\cos(\theta)$$</div>
+                <p>Where \(\)\theta\) is the angle between the vectors. The dot product results in a scalar quantity.</p>
+            </div>
+
+            <div class="example-box">
+                <h3>Example: Work Done by a Force</h3>
+                <p>If a hexapod leg exerts force \(\)\vec{F} = [10, 5, 0]\) N through a displacement \(\)\vec{d} = [0.02, 0.03, 0]\) m, the work done is:</p>
+                <div class="math-display">$$W = \vec{F} \cdot \vec{d} = (10)(0.02) + (5)(0.03) + (0)(0) = 0.2 + 0.15 = 0.35 \text{ J}$$</div>
+            </div>
+
+            <div class="definition-box">
+                <span class="definition-term">Cross Product (Vector Product):</span>
+                <div class="math-display">$$\vec{A} \times \vec{B} = [A_y B_z - A_z B_y, A_z B_x - A_x B_z, A_x B_y - A_y B_x]$$</div>
+                <div class="math-display">$$|\vec{A} \times \vec{B}| = |\vec{A}||\vec{B}|\sin(\theta)$$</div>
+            </div>
+
+            <div class="important-box">
+                <h3>Properties of Cross Product</h3>
+                <p>The cross product is <strong>not commutative</strong>: \(\)\vec{A} \times \vec{B} \neq \vec{B} \times \vec{A}\). In fact, \(\)\vec{A} \times \vec{B} = -(\vec{B} \times \vec{A})\). The direction follows the <strong>right-hand rule</strong>.</p>
+            </div>
+
+            <div class="definition-box">
+                <span class="definition-term">Gradient:</span>
+                <p>The gradient of a scalar field \(f(x,y,z)\) points in the direction of maximum rate of increase:</p>
+                <div class="math-display">$$\nabla f = \left[\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z}\right]$$</div>
+            </div>
+
+            <div class="definition-box">
+                <span class="definition-term">Divergence:</span>
+                <p>The divergence of a vector field \(\)\vec{F} = [F_x, F_y, F_z]\) measures how much the field "spreads out":</p>
+                <div class="math-display">$$\nabla \cdot \vec{F} = \frac{\partial F_x}{\partial x} + \frac{\partial F_y}{\partial y} + \frac{\partial F_z}{\partial z}$$</div>
+            </div>
+
+            <div class="definition-box">
+                <span class="definition-term">Curl:</span>
+                <p>The curl of a vector field measures rotation:</p>
+                <div class="math-display">$$\nabla \times \vec{F} = \left[\frac{\partial F_z}{\partial y} - \frac{\partial F_y}{\partial z}, \frac{\partial F_x}{\partial z} - \frac{\partial F_z}{\partial x}, \frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y}\right]$$</div>
+            </div>
+
+            <div class="important-box">
+                <h3>Vector Identities</h3>
+                <ul>
+                    <li><strong>Divergence of curl:</strong> \(\)\nabla \cdot (\nabla \times \vec{F}) = 0\) (always)</li>
+                    <li><strong>Curl of gradient:</strong> \(\)\nabla \times (\nabla f) = 0\) (always true)</li>
+                    <li><strong>Laplacian:</strong> \(\)\nabla^2 f = \nabla \cdot (\nabla f) = \frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} + \frac{\partial^2 f}{\partial z^2}\)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section" id="matrices">
+            <h2>Section 1.2: Matrix Operations</h2>
+
+            <div class="definition-box">
+                <span class="definition-term">Matrix Multiplication:</span>
+                <p>For matrices \(A\) (m×n) and \(B\) (n×p), the product \(C =\) AB\) is:</p>
+                <div class="math-display">$$C_{ij} = \sum_{k=1}^{n} A_{ik} B_{kj}$$</div>
+                <p>The result is an m×p matrix. Note that \(AB \)\neq BA\) generally (non-commutative).</p>
+            </div>
+
+            <div class="definition-box">
+                <span class="definition-term">Determinant:</span>
+                <p>The determinant of a matrix determines if it has an inverse.</p>
+                <p>For 2×2 matrices:</p>
+                <div class="math-display">$$\det(A) = \det\begin{bmatrix}a & b\\c & d\end{bmatrix} = ad - bc$$</div>
+            </div>
+
+            <div class="definition-box">
+                <span class="definition-term">Matrix Inverse:</span>
+                <p>A matrix \(A\) has an inverse \(A^{-1\)}\) if and only if \(\)\det(A) \neq 0\). The inverse satisfies \(AA^{-1\)} = A^{-1}A = I\)</p>
+            </div>
+
+            <div class="definition-box">
+                <span class="definition-term">Rotation Matrix (z-axis):</span>
+                <p><strong>Rotation about z-axis by angle \(\)\theta\):</strong></p>
+                <div class="math-display">$$R_z(\theta) = \begin{bmatrix}\cos\theta & -\sin\theta & 0\\\sin\theta & \cos\theta & 0\\0 & 0 & 1\end{bmatrix}$$</div>
+                <p><strong>Rotation about x-axis by angle \(\)\theta\):</strong></p>
+                <div class="math-display">$$R_x(\theta) = \begin{bmatrix}1 & 0 & 0\\0 & \cos\theta & -\sin\theta\\0 & \sin\theta & \cos\theta\end{bmatrix}$$</div>
+                <p><strong>Rotation about y-axis by angle \(\)\theta\):</strong></p>
+                <div class="math-display">$$R_y(\theta) = \begin{bmatrix}\cos\theta & 0 & \sin\theta\\0 & 1 & 0\\-\sin\theta & 0 & \cos\theta\end{bmatrix}$$</div>
+                <p>Rotation matrices are <strong>orthogonal</strong>: \(R^{-1\)} = R^T\) and \(\)\det(R) = 1\).</p>
+            </div>
+
+            <div class="definition-box">
+                <span class="definition-term">Eigenvalues and Eigenvectors:</span>
+                <p>For a square matrix \(A\), eigenvalues \(\)\lambda\) and eigenvectors \(\)\vec{v}\) satisfy:</p>
+                <div class="math-display">$$A\vec{v} = \lambda\vec{v}$$</div>
+                <p>Find eigenvalues by solving \(\)\det(A - \lambda I) = 0\). Eigenvectors reveal principal axes (modes) of transformation.</p>
+            </div>
+        </section>
+
+        <section class="content-section" id="coordinates">
+            <h2>Section 1.3: Coordinate Systems</h2>
+
+            <h3>Cartesian Coordinates</h3>
+            <p>Cartesian coordinates \((x, y, z)\) are the most common coordinate system, defined by three mutually perpendicular axes meeting at an origin. This system is ideal for:</p>
+            <ul>
+                <li>Simple vector addition and subtraction</li>
+                <li>Matrix transformations</li>
+                <li>Robot body frame and world frame</li>
+            </ul>
+            <p>Distance between two points:</p>
+            <div class="math-display">$$d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}$$</div>
+
+            <h3>Spherical Coordinates</h3>
+            <p>A point is specified by \((\rho, \theta, \phi)\) where:</p>
+            <ul>
+                <li><strong>\(\)\rho\)</strong> = distance from origin</li>
+                <li><strong>\(\)\theta\)</strong> = azimuthal angle in xy-plane from x-axis</li>
+                <li><strong>\(\)\phi\)</strong> = polar angle from positive z-axis</li>
+            </ul>
+            <p>Conversion to Cartesian:</p>
+            <div class="math-display">$$x = \rho \sin\phi \cos\theta, \quad y = \rho \sin\phi \sin\theta, \quad z = \rho \cos\phi$$</div>
+            <div class="important-box">
+                <h4>Hexapod Leg Mapping</h4>
+                <p>For hexapod control, cylindrical coordinates often map naturally to leg kinematics:</p>
+                <ul>
+                    <li><strong>Hip azimuth</strong> \(\)\leftrightarrow\) \(\)\theta\) (rotation in horizontal plane)</li>
+                    <li><strong>Femur elevation</strong> \(\)\leftrightarrow\) \(\)\phi\) (angle from vertical)</li>
+                    <li><strong>Leg extension</strong> \(\)\leftrightarrow\) \(\)\rho\) (distance from hip to foot)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section" id="transformations">
+            <h2>Section 1.4: Homogeneous Transformations</h2>
+
+            <div class="definition-box">
+                <span class="definition-term">Homogeneous Coordinates:</span>
+                <p>A point \((x, y, z)\) is represented as \((x, y, z, 1)\). Homogeneous transformations combine rotation and translation in single matrix operation:</p>
+                <div class="math-display">$$T = \begin{bmatrix}R & \vec{p}\\0 & 1\end{bmatrix} = \begin{bmatrix}r_{11} & r_{12} & r_{13} & p_x\\r_{21} & r_{22} & r_{23} & p_y\\r_{31} & r_{32} & r_{33} & p_z\\0 & 0 & 0 & 1\end{bmatrix}$$</div>
+            </div>
+            <div class="important-box">
+                <h4>Composition</h4>
+                <p>To apply transformations \(T_1\) then \(T_2\): multiply right to left: \(T =\) T_2 T_1\)</p>
+            </div>
+        </section>
+
+        <section class="quiz-section">
+            <h2>Module Quiz</h2>
+            <p>Answer all questions and click "Submit" when complete. You need 70% to pass.</p>
+
+            <div id="quiz-container"></div>
+            <button class="submit" onclick="module1Quiz()">Submit Quiz</button>
+            <div id="quiz-results"></div>
+        </section>
+
+        <div class="nav-buttons">
+            <button class="secondary" onclick="navigateTo('../index.html')">Back to Course Home</button>
+            <button onclick="navigateTo('02-statics-dynamics.html')">Next Module: Statics & Dynamics</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Hexapod Robot Engineering Course - Module 1</p>
+    </footer>
+
+    <script>
+        function module1Quiz() {
+            const correctAnswers = {
+                'M1-Q1': 'B',
+                'M1-Q2': 'B',
+                'M1-Q3': 'A',
+                'M1-Q4': 'B',
+                'M1-Q5': 'C',
+                'M1-Q6': 'B',
+                'M1-Q7': 'A',
+                'M1-Q8': 'B',
+                'M1-Q9': 'B',
+                'M1-Q10': 'B'
+            };
+            const result = submitQuiz('01', correctAnswers);
+            if (result.percentage >= 70) {
+                markModuleComplete('01');
+            }
+        }
+        window.addEventListener('load', function() {
+            const container = document.getElementById('quiz-container');
+            quizQuestions.module1.forEach((q, index) => {
+                let optionsHtml = '';
+                q.options.forEach(opt => {
+                    optionsHtml += `<label><input type="radio" name="${q.id}" value="${opt.substring(0,1)}"> ${opt}</label>`;
+                });
+                const html = `<div class="quiz-question"><div class="question-text">${q.question}</div><div class="options">${optionsHtml}</div><div id="explanation-${q.id}" class="explanation">${q.explanation}</div></div>`;
+                container.innerHTML += html;
+            });
+            updateProgressBar();
+        });
+    </script>
+</body>
+</html>

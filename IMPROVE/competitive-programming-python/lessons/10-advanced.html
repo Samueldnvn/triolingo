@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Module 10: Advanced Topics - Competitive Programming with Python</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="course-header"><h1>MODULE 10: ADVANCED TOPICS & FINAL REVIEW</h1><h2>Mastery and Beyond</h2></div>
+    <nav class="nav-container"><ul class="nav-menu"><li class="nav-item active" onclick="showSection('overview')">Overview</li><li class="nav-item" onclick="showSection('advancedds')">Advanced Data Structures</li><li class="nav-item" onclick="showSection('algorithms')">Advanced Algorithms</li><li class="nav-item" onclick="showSection('bitmanip')">Bit Manipulation</li><li class="nav-item" onclick="showSection('review')">Course Review</li><li class="nav-item" onclick="showSection('final')">Final Exam</li></ul></nav>
+    <div class="progress-container"><div class="progress-title">MODULE 10 PROGRESS</div><div class="progress-bar"><div class="progress-fill" id="moduleProgress" style="width:0%">0%</div></div></div>
+    <div class="container">
+        <div class="content-section active" id="overview">
+            <div class="lesson-header"><h1>Advanced Topics Overview</h1><p>Building on foundations for expert-level problem solving</p></div>
+            <div class="blueprint-section"><div class="blueprint-content"><h3>WHAT YOU'LL LEARN</h3><ul class="blueprint-list"><li>Segment Trees and Fenwick Trees</li><li>Trie data structure</li><li>Advanced DP (bitmask, state compression)</li><li>Bit manipulation techniques</li><li>Problem-solving strategies</li><li>Course review and final exam</li></ul></div></div>
+        </div>
+        <div class="content-section" id="advancedds">
+            <div class="lesson-header"><h1>Advanced Data Structures</h1></div><h3 class="subsection-title">Trie (Prefix Tree)</h3><div class="code-block"><pre>
+class TrieNode:
+    def __init__(self):
+        self.children = {}
+        self.is_end = False
+
+class Trie:
+    def __init__(self):
+        self.root = TrieNode()
+    
+    def insert(self, word):
+        node = self.root
+        for char in word:
+            if char not in node.children:
+                node.children[char] = TrieNode()
+            node = node.children[char]
+        node.is_end = True
+    
+    def search(self, word):
+        node = self.root
+        for char in word:
+            if char not in node.children:
+                return False
+            node = node.children[char]
+        return node.is_end
+    
+    def starts_with(self, prefix):
+        node = self.root
+        for char in prefix:
+            if char not in node.children:
+                return False
+            node = node.children[char]
+        return True
+
+# Use cases: autocomplete, spell checker, Trie + DFS
+            </pre></div>
+            <h3 class="subsection-title">Fenwick Tree (Binary Indexed Tree)</h3><div class="code-block"><pre>
+class FenwickTree:
+    def __init__(self, n):
+        self.n = n
+        self.tree = [0] * (n + 1)
+    
+    def update(self, i, delta):
+        while i <= self.n:
+            self.tree[i] += delta
+            i += i & -i
+    
+    def query(self, i):
+        s = 0
+        while i > 0:
+            s += self.tree[i]
+            i -= i & -i
+        return s
+
+# Range sum and point updates in O(log n)
+            </pre></div>
+        </div>
+        <div class="content-section" id="algorithms">
+            <div class="lesson-header"><h1>Advanced Algorithms</h1></div><h3 class="subsection-title">Backtracking</h3><div class="code-block"><pre>
+def subsets(nums):
+    """All subsets using backtracking"""
+    result = []
+    
+    def backtrack(start, path):
+        result.append(path[:])
+        for i in range(start, len(nums)):
+            path.append(nums[i])
+            backtrack(i + 1, path)
+            path.pop()
+    
+    backtrack(0, [])
+    return result
+
+def permute(nums):
+    """All permutations"""
+    result = []
+    
+    def backtrack(path, used):
+        if len(path) == len(nums):
+            result.append(path[:])
+            return
+        for i in range(len(nums)):
+            if not used[i]:
+                used[i] = True
+                path.append(nums[i])
+                backtrack(path, used)
+                path.pop()
+                used[i] = False
+    
+    backtrack([], [False] * len(nums))
+    return result
+            </pre></div>
+            <h3 class="subsection-title">Bitmask DP</h3><div class="code-block"><pre>
+def assign_work(n, cost):
+    """Minimum cost to assign N workers to N jobs"""
+    dp = [(1 << n, [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0]])]
+    for mask in range(1 << n):
+        if mask not in dp:
+            dp[mask] = [float('inf') for _ in range(n)]
+            for i in range(n):
+                if not (mask & (1 << i)):
+                    new_mask = mask | (1 << i)
+                    for j in range(n):
+                        if new_mask in dp:
+                            dp[mask][i] = min(dp[mask][i], cost[j][i] + dp[new_mask][j])
+    
+    return min(dp[1])
+            </pre></div>
+        </div>
+        <div class="content-section" id="bitmanip">
+            <div class="lesson-header"><h1>Bit Manipulation</h1></div><h3 class="subsection-title">Common Bit Operations</h3><div class="code-block"><pre>
+# Set bit
+n |= (1 << k)
+
+# Clear bit
+n &= ~(1 << k)
+
+# Toggle bit
+n ^= (1 << k)
+
+# Check bit
+if n & (1 << k):
+    # bit is set
+
+# Count set bits
+bin(n).count('1')  # or use built-in: n.bit_count()
+
+# Power of two check
+n > 0 and (n & (n - 1)) == 0
+
+# Get lowest set bit
+n & -n
+
+# Remove lowest set bit
+n &= n - 1
+            </pre></div>
+            <h3 class="subsection-title">Single Number</h3><div class="code-block"><pre>
+def single_number(nums):
+    """Find number that appears once, others twice"""
+    result = 0
+    for num in nums:
+        result ^= num
+    return result
+
+# XOR: a^a=0, a^0=a
+            </pre></div>
+        </div>
+        <div class="content-section" id="review">
+            <div class="lesson-header"><h1>Course Review</h1><p>Summary of all 10 modules</p></div>
+            <div class="blueprint-section"><div class="blueprint-content"><h3>COURSE SUMMARY</h3><ul class="blueprint-list"><li>Module 1: Foundations - Complexity analysis, Python basics</li><li>Module 2: Data Structures - Arrays, strings, linked lists, trees, graphs</li><li>Module 3: Hash Tables - Frequency counting, group anagrams</li><li>Module 4: Sliding Window - Fixed and variable size windows</li><li>Module 5: Two Pointers - Left-right and slow-fast patterns</li><li>Module 6: Binary Search - Standard and advanced applications</li><li>Module 7: Dynamic Programming - 1D, 2D, optimization techniques</li><li>Module 8: Greedy - Activity selection, interval problems</li><li>Module 9: Graph Algorithms - BFS, DFS, shortest paths, MST</li><li>Module 10: Advanced - Advanced DS, algorithms, bit manipulation</li></ul></div></div>
+            <h3 class="subsection-title">Problem-Solving Strategy</h3><ul class="blueprint-list"><li>1. Read problem carefully, understand constraints</li><li>2. Identify pattern (hash table, sliding window, DP, etc.)</li><li>3. Design algorithm considering time/space complexity</li><li>4. Implement step by step</li><li>5. Test with edge cases</li><li>6. Optimize if needed</li></ul>
+        </div>
+        <div class="content-section" id="final">
+            <div class="lesson-header"><h1>Final Exam</h1><p>Comprehensive assessment covering all 10 modules</p></div>
+            <form id="moduleQuiz">
+                <div class="quiz-question"><p>1. Big O of binary search?</p><div class="quiz-options"><label onclick="r('Q1','A')"><input type="radio" name="Q1" value="A"> A. O(n)</label><label onclick="r('Q1','B')><input type="radio" name="Q1" value="B"> B. O(log n)</label><label onclick="r('Q1','C')"><input type="radio" name="Q1" value="C"> C. O(1)</label></div></div>
+                <div class="quiz-question"><p>2. Hash table lookup average?</p><div class="quiz-options"><label onclick="r('Q2','A')"><input type="radio" name="Q2" value="A"> A. O(1)</label><label onclick="r('Q2','B')><input type="radio" name="Q2" value="B"> B. O(log n)</label><label onclick="r('Q2','C')"><input type="radio" name="Q2" value="C"> C. O(n)</label></div></div>
+                <div class="quiz-question"><p>3. Sliding window achieves O(?):</p><div class="quiz-options"><label onclick="r('Q3','A')"><input type="radio" name="Q3" value="A"> A. O(n)</label><label onclick="r('Q3','B')><input type="radio" name="Q3" value="B"> B. O(n^2)</label><label onclick="r('Q3','C')"><input type="radio" name="Q3" value="C"> C. O(n log n)</label></div></div>
+                <div class="quiz-question"><p>4. Floyd's uses _ pointers?</p><div class="quiz-options"><label onclick="r('Q4','A')"><input type="radio" name="Q4" value="A"> A. 2</label><label onclick="r('Q4','B')><input type="radio" name="Q4" value="B"> B. 3</label><label onclick="r('Q4','C')"><input type="radio" name="Q4" value="C"> C. 4</label></div></div>
+                <div class="quiz-question"><p>5. DP key property?</p><div class="quiz-options"><label onclick="r('Q5','A')"><input type="radio" name="Q5" value="A"> A. Optimal substructure</label><label onclick="r('Q5','B')><input type="radio" name="Q5" value="B"> B. Greedy choice</label><label onclick="r('Q5','C')"><input type="radio" name="Q5" value="C"> C. Random</label></div></div>
+                <div class="quiz-question"><p>6. BFS uses _?</p><div class="quiz-options"><label onclick="r('Q6','A')"><input type="radio" name="Q6" value="A"> A. Queue</label><label onclick="r('Q6','B')><input type="radio" name="Q6" value="B"> B. Stack</label><label onclick="r('Q6','C')"><input type="radio" name="Q6" value="C"> C. List</label></div></div>
+                <div class="quiz-question"><p>7. Dijkstra requires non-negative?</p><div class="quiz-options"><label onclick="r('Q7','A')"><input type="radio" name="Q7" value="A"> A. Yes</label><label onclick="r('Q7','B')><input type="radio" name="Q7" value="B"> B. No</label><label onclick="r('Q7','C')"><input type="radio" name="Q7" value="C"> C. Sometimes</label></div></div>
+                <div class="quiz-question"><p>8. MST has _ edges?</p><div class="quiz-options"><label onclick="r('Q8','A')"><input type="radio" name="Q8" value="A"> A. V-1</label><label onclick="r('Q8','B')><input type="radio" name="Q8" value="B"> B. V</label><label onclick="r('Q8','C')"><input type="radio" name="Q8" value="C"> C. V+1</label></div></div>
+                <div class="quiz-question"><p>9. Union-Find operation complexity?</p><div class="quiz-options"><label onclick="r('Q9','A')"><input type="radio" name="Q9" value="A"> A. O(1) amortized</label><label onclick="r('Q9','B')><input type="radio" name="Q9" value="B"> B. O(n)</label><label onclick="r('Q9','C')"><input type="radio" name="Q9" value="C"> C. O(log n)</label></div></div>
+                <div class="quiz-question"><p>10. Trie used for?</p><div class="quiz-options"><label onclick="r('Q10','A')"><input type="radio" name="Q10" value="A"> A. Prefix problems</label><label onclick="r('Q10','B')><input type="radio" name="Q10" value="B"> B. Sorting</label><label onclick="r('Q10','C')"><input type="radio" name="Q10" value="C"> C. Graph search</label></div></div>
+                <button type="button" class="quiz-submit" onclick="s10()">Submit Final Exam</button>
+            </form><div class="quiz-results" id="quizResults"></div>
+        </div>
+    </div>
+    <div class="nav-buttons"><button onclick="window.location.href='09-graphs.html'">Previous</button><button onclick="window.location.href='../index.html'">Home</button></div>
+    <script src="../js/navigation.js"></script><script>
+        const a10={'Q1':'B','Q2':'A','Q3':'A','Q4':'A','Q5':'A','Q6':'A','Q7':'A','Q8':'A','Q9':'A','Q10':'A'},q={};function r(x,y){q[x]=y;}
+        function s10(){
+            let s=0,t=10,r=[];for(let x in a10){if(q[x]===a10[x]){s++;r.push(`Q${x.substring(1)}: Correct`);}else{r.push(`Q${x.substring(1)}: Wrong (Ans: ${a10[x]})`);}}
+            const p=Math.round((s/t)*100);
+            document.getElementById('quizResults').innerHTML=`<div class="score-display ${p>=70?'pass':'fail'}">${p>=70?'PASSED':'IMPROVE'}</div><p>Score: ${s}/${t} (${p}%)</p>`+r.map(z=>`<p>${z}</p>`).join('');
+        }
+    </script>
+</body>
+</html>

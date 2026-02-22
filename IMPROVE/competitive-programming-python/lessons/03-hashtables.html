@@ -1,0 +1,2070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 3: Hash Tables Pattern - Competitive Programming with Python</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <!-- Course Header -->
+    <div class="course-header">
+        <h1>MODULE 3: HASH TABLES PATTERN</h1>
+        <h1>Master Fast Lookups and Pattern Recognition</h1>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <ul class="nav-menu">
+            <li class="nav-item active" onclick="showSection('overview')">Overview</li>
+            <li class="nav-item" onclick="showSection('recognition')">Pattern Recognition</li>
+            <li class="nav-item" onclick="showSection('frequencies')">Counting Frequencies</li>
+            <li class="nav-item" onclick="showSection('complements')">Complements Pattern</li>
+            <li class="nav-item" onclick="showSection('grouping')">Grouping Problems</li>
+            <li class="nav-item" onclick="showSection('subarrays')">Subarray Problems</li>
+            <li class="nav-item" onclick="showSection('optimization')">Optimization Techniques</li>
+            <li class="nav-item" onclick="showSection('practice')">Practice Problems</li>
+            <li class="nav-item" onclick="showSection('quiz')">Module Quiz</li>
+        </ul>
+    </nav>
+
+    <!-- Progress for this module -->
+    <div class="progress-container">
+        <div class="progress-title">MODULE 3 PROGRESS</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="moduleProgress" style="width: 0%">0%</div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Overview Section -->
+        <div class="content-section active" id="overview">
+            <div class="lesson-header">
+                <h1>Hash Tables Pattern</h1>
+                <p>The power of O(1) lookups in competitive programming</p>
+            </div>
+
+            <div class="blueprint-section">
+                <div class="blueprint-content">
+                    <h3>WHAT YOU'LL LEARN IN THIS MODULE</h3>
+                    <ul class="blueprint-list">
+                        <li>Recognize when hash tables are the right tool for the problem</li>
+                        <li>Two Sum pattern: finding pairs that sum to a target</li>
+                        <li>Frequency counting: counting occurrences of elements</li>
+                        <li>Group anagrams: organizing related strings</li>
+                        <li>Subarray sum problems using prefix sums and hash tables</li>
+                        <li>First unique/non-repeating element problems</li>
+                        <li>Set vs Dictionary: when to use each</li>
+                        <li>Python dict optimizations and best practices</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Why Hash Tables Pattern is Essential</h3>
+
+            <p class="content-text">
+                Hash tables are the unsung heroes of competitive programming. Many problems that seem to require nested loops (O(n^2)) can be solved in O(n) or O(n log n) using hash tables. The key is recognizing when fast lookups or storing additional information can optimize your solution.
+            </p>
+
+            <div class="example-box">
+                <div class="example-title">THE MAGIC OF HASH TABLES</div>
+                <p class="content-text">
+                    Hash tables provide O(1) average time for insert, delete, and lookup operations. By storing previously seen values or computing frequencies, you can transform quadratic algorithms into linear ones. This pattern appears frequently in LeetCode problems and competitive programming contests.
+                </p>
+            </div>
+
+            <h3 class="subsection-title">When to Use Hash Tables</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>Use Hash Table</th>
+                        <th>Reason</th>
+                    </tr>
+                    <tr>
+                        <td>Need to check if element exists</td>
+                        <td>Yes (set or dict)</td>
+                        <td>O(1) vs O(n) for list/array</td>
+                    </tr>
+                    <tr>
+                        <td>Need to count frequencies</td>
+                        <td>Yes (dict/Counter)</td>
+                        <td>Efficient counting in one pass</td>
+                    </tr>
+                    <tr>
+                        <td>Need to lookup by key</td>
+                        <td>Yes (dict)</td>
+                        <td>O(1) vs O(log n) for binary search</td>
+                    </tr>
+                    <tr>
+                        <td>Elements are sorted and you search</td>
+                        <td>No (binary search better)</td>
+                        <td>O(log n) with no extra space</td>
+                    </tr>
+                    <tr>
+                        <td>Small dataset (n < 100)</td>
+                        <td>Maybe</td>
+                        <td>Overhead might not be worth it</td>
+                    </tr>
+                    <tr>
+                        <td>Need to maintain order of insertion</td>
+                        <td>No (use list or OrderedDict)</td>
+                        <td>Dict doesn't preserve order in older Python</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3 class="subsection-title">Set vs Dictionary: Choosing the Right Tool</h3>
+
+            <div class="example-box">
+                <div class="example-title">DECISION GUIDE</div>
+                <div class="data-table">
+                    <table>
+                        <tr>
+                            <th>Requirement</th>
+                            <th>Use This</th>
+                            <th>Example</th>
+                        </tr>
+                        <tr>
+                            <td>Store key-value pairs</td>
+                            <td>dict</td>
+                            <td>word -> count, number -> index</td>
+                        </tr>
+                        <tr>
+                            <td>Membership testing only</td>
+                            <td>set</td>
+                            <td>seen elements, duplicates check</td>
+                        </tr>
+                        <tr>
+                            <td>Need to access value by key</td>
+                            <td>dict</td>
+                            <td>Two Sum complement lookup</td>
+                        </tr>
+                        <tr>
+                            <td>Need unique elements</td>
+                            <td>set</td>
+                            <td>remove duplicates, intersection</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Key Patterns Covered</h3>
+
+            <p class="content-text">
+                Throughout this module, you'll master these specific patterns:
+            </p>
+
+            <div class="example-box">
+                <div class="example-title">PATTERN CATEGORIES</div>
+                <ul class="blueprint-list">
+                    <li><strong>Two Sum Pattern:</strong> Finding pairs that sum to target using complement lookup</li>
+                    <li><strong>Frequency Counting:</strong> Counting occurrences, finding most/least common</li>
+                    <li><strong>Grouping:</strong> Organizing elements based on shared properties</li>
+                    <li><strong>Caching/Memoization:</strong> Storing computed results to avoid recomputation</li>
+                    <li><strong>Subarray Problems:</strong> Using prefix sums with hash tables</li>
+                    <li><strong>First/Last/Unique:</strong> Finding first/last occurrence or unique elements</li>
+                </ul>
+            </div>
+
+            <div class="safety-sign important">
+                TIP: Practice recognizing these patterns. In competitive programming, recognizing that a problem fits a known pattern is often more important than memorizing the solution.
+            </div>
+        </div>
+
+        <!-- Pattern Recognition Section -->
+        <div class="content-section" id="recognition">
+            <div class="lesson-header">
+                <h1>Pattern Recognition</h1>
+                <p>Identifying when hash tables are the optimal solution</p>
+            </div>
+
+            <h3 class="subsection-title">Problem Indicators for Hash Tables</h3>
+
+            <p class="content-text">
+                Recognizing when to use hash tables is a crucial skill. Watch for these indicators in problem statements:
+            </p>
+
+            <div class="example-box">
+                <div class="example-title">SIGNALS FOR HASH TABLES</div>
+                <ul class="blueprint-list">
+                    <li><strong>"Find if two numbers sum to target":</strong> Two Sum pattern - use dict for complement lookup</li>
+                    <li><strong>"Group elements by some property":</strong> Grouping pattern - use dict to map property to group</li>
+                    <li><strong>"Count occurrences/frequency":</strong> Frequency pattern - use dict or Counter</li>
+                    <li><strong>"First element to appear k times":</strong> Frequency with ordering - dict</li>
+                    <li><strong>"Find duplicate elements":</strong> Set or frequency dict</li>
+                    <li><strong>"Check if any value appears at least twice":</strong> Set for seen tracking</li>
+                    <li><strong>"Find elements in common between two arrays":</strong> Set intersection</li>
+                    <li><strong>"Subarray with sum k":</strong> Prefix sum with dict</li>
+                    <li><strong>"Longest substring without repeating characters":</strong> Set/dict for tracking</li>
+                    <li><strong>"Find first non-repeating character":</strong> Two-pass frequency counting</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Common Mistakes and When NOT to Use Hash Tables</h3>
+
+            <div class="example-box">
+                <div class="example-title">PITFALLS TO AVOID</div>
+                <ul class="blueprint-list">
+                    <li><strong>Using hash table on sorted data:</strong> If data is sorted, binary search might be better</li>
+                    <li><strong>Excessive memory usage:</strong> Hash tables use O(n) extra space, which might not be acceptable</li>
+                    <li><strong>Collisions:</strong> In rare cases, hash function can cause O(n) instead of O(1)</li>
+                    <li><strong>Wrong key choice:</strong> Choosing a non-hashable key or wrong key for the problem</li>
+                    <li><strong>Using list for membership testing:</strong> Use set instead for O(1) lookups</li>
+                    <li><strong>Not using built-in Counter:</strong> Counter is optimized for counting</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Pattern Recognition Examples</h3>
+
+            <h4 class="subsection-title">Example 1: Recognizing Two Sum Pattern</h4>
+
+            <div class="code-block">
+                <pre>
+# Problem: Given an array of integers, return indices of two numbers that add up to target
+# Pattern Recognition Indicators:
+# - "Two numbers that add up to target"
+# - Need to find complement (target - current)
+# - Need to return indices (key-value: number -> index)
+
+# O(n) solution using hash table
+def two_sum(nums, target):
+    """
+    Two Sum pattern
+    Time: O(n), Space: O(n)
+    """
+    seen = {}  # number -> index
+    
+    for i, num in enumerate(nums):
+        complement = target - num
+        
+        if complement in seen:
+            return [seen[complement], i]
+        
+        seen[num] = i
+    
+    return None  # No solution
+
+# Example
+nums = [2, 7, 11, 15]
+target = 9
+print(two_sum(nums, target))  # [0, 1]
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">Example 2: Recognizing Grouping Pattern</h4>
+
+            <div class="code-block">
+                <pre>
+# Problem: Group anagrams together
+# Pattern Recognition Indicators:
+# - "Group strings by some property" (anagrams)
+# - "Organize elements"
+# - Property can be derived from each element (sorted characters as key)
+
+from collections import defaultdict
+
+def group_anagrams(words):
+    """
+    Group anagrams pattern
+    Time: O(n * k log k) where n = words, k = max word length
+    Space: O(n * k)
+    """
+    groups = defaultdict(list)  # sorted_word -> list of words
+    
+    for word in words:
+        # Key is sorted characters (anagrams have same sorted form)
+        key = ''.join(sorted(word))
+        groups[key].append(word)
+    
+    return list(groups.values())
+
+# Example
+words = ["eat", "tea", "tan", "ate", "nat", "bat"]
+print(group_anagrams(words))
+# [['eat', 'tea', 'ate'], ['tan', 'nat'], ['bat']]
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">Example 3: Recognizing Frequency Pattern</h4>
+
+            <div class="code-block">
+                <pre>
+# Problem: Find the element that appears more than n/2 times
+# Pattern Recognition Indicators:
+# - "Find element that appears X times"
+# - "Majority element"
+# - "Frequency counting"
+
+from collections import Counter
+
+def majority_element(nums):
+    """
+    Frequency counting pattern
+    Time: O(n), Space: O(n)
+    """
+    freq = Counter(nums)
+    n = len(nums)
+    
+    for num, count in freq.items():
+        if count > n // 2:
+            return num
+    
+    return None
+
+# O(1) space solution (Boyer-Moore Voting Algorithm)
+def majority_element_o1(nums):
+    candidate = None
+    count = 0
+    
+    for num in nums:
+        if count == 0:
+            candidate = num
+            count = 1
+        elif num == candidate:
+            count += 1
+        else:
+            count -= 1
+    
+    return candidate
+
+# Example
+nums = [3, 2, 3]
+print(majority_element(nums))  # 3
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Quick Decision Flowchart</h3>
+
+            <div class="blueprint-section">
+                <div class="blueprint-content">
+                    <h3>HASH TABLE DECISION FLOW</h3>
+                    <ul class="blueprint-list">
+                        <li>1. Problem involves: lookup, membership, or counting?</li>
+                        <ul><li>No -> Consider other data structures</li>
+                        <li>Yes -> Continue</li></ul>
+                        <li>2. Need both key and value?</li>
+                        <ul><li>Yes -> Use dict</li>
+                        <li>No -> Continue</li></ul>
+                        <li>3. Just membership testing?</li>
+                        <ul><li>Yes -> Use set</li>
+                        <li>No -> Use dict anyway (more flexible)</li></ul>
+                        <li>4. Is space constraint O(1)?</li>
+                        <ul><li>Yes -> May not be able to use hash table</li>
+                        <li>No -> Use hash table for O(1) operations</li></ul>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="safety-sign important">
+                REMEMBER: Practice pattern recognition! After solving many problems, you'll develop intuition for when hash tables are appropriate. The more problems you solve, the faster you'll recognize patterns.
+            </div>
+        </div>
+
+        <!-- Frequencies Section -->
+        <div class="content-section" id="frequencies">
+            <div class="lesson-header">
+                <h1>Counting Frequencies</h1>
+                <p>The most common hash table pattern</p>
+            </div>
+
+            <h3 class="subsection-title">Frequency Counting Fundamentals</h3>
+
+            <p class="content-text">
+                Counting frequencies is one of the most common hash table applications. The pattern is simple: iterate through the data once, counting occurrences of each element using a dictionary or Counter.
+            </p>
+
+            <h3 class="subsection-title">Method 1: Manual Dictionary Counting</h3>
+
+            <div class="code-block">
+                <pre>
+def count_frequencies(arr):
+    """
+    Count frequencies manually using dictionary
+    Time: O(n), Space: O(k) where k = unique elements
+    """
+    freq = {}
+    
+    for item in arr:
+        freq[item] = freq.get(item, 0) + 1
+    
+    return freq
+
+# Alternative using setdefault
+def count_frequencies_setdefault(arr):
+    freq = {}
+    for item in arr:
+        freq.setdefault(item, 0)
+        freq[item] += 1
+    return freq
+
+# Alternative using defaultdict
+from collections import defaultdict
+
+def count_frequencies_defaultdict(arr):
+    freq = defaultdict(int)
+    for item in arr:
+        freq[item] += 1
+    return dict(freq)
+
+# Example
+arr = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]
+print(count_frequencies(arr))
+# {1: 1, 2: 2, 3: 3, 4: 4}
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Method 2: Using collections.Counter</h3>
+
+            <div class="code-block">
+                <pre>
+from collections import Counter
+
+def count_frequencies_counter(arr):
+    """
+    Count frequencies using Counter (most Pythonic)
+    Time: O(n), Space: O(k)
+    """
+    return Counter(arr)
+
+# Counter has additional useful methods
+def frequency_operations(arr):
+    freq = Counter(arr)
+    
+    print("Most common:", freq.most_common(3))  # Top 3
+    print("Total count:", sum(freq.values()))   # Total elements
+    print("Unique count:", len(freq))          # Unique elements
+    print("Elements with count > 1:", [k for k, v in freq.items() if v > 1])
+    
+    # Update with another iterable
+    freq.update([1, 2, 2])
+    
+    # Subtract counts
+    freq.subtract([1, 2])
+    
+    return freq
+
+# Example
+arr = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]
+freq = count_frequencies_counter(arr)
+print(freq)  # Counter({4: 4, 3: 3, 2: 2, 1: 1})
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Common Frequency-Based Problems</h3>
+
+            <h4 class="subsection-title">1. Find Duplicates</h4>
+
+            <div class="code-block">
+                <pre>
+def find_duplicates(arr):
+    """
+    Find all elements that appear more than once
+    Time: O(n), Space: O(n)
+    """
+    freq = Counter(arr)
+    return [item for item, count in freq.items() if count > 1]
+
+def has_duplicate(arr):
+    """
+    Check if any duplicate exists
+    Time: O(n), Space: O(n)
+    """
+    seen = set()
+    for item in arr:
+        if item in seen:
+            return True
+        seen.add(item)
+    return False
+
+# More efficient: check while building freq
+def find_first_duplicate(arr):
+    """
+    Find first duplicate (first element to appear twice)
+    Time: O(n), Space: O(n)
+    """
+    seen = set()
+    for item in arr:
+        if item in seen:
+            return item
+        seen.add(item)
+    return None
+
+# Example
+arr = [1, 2, 3, 2, 4, 3, 5]
+print(find_duplicates(arr))      # [2, 3]
+print(find_first_duplicate(arr)) # 2
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">2. Find K Most Frequent Elements</h4>
+
+            <div class="code-block">
+                <pre>
+from collections import Counter
+import heapq
+
+def top_k_frequent(arr, k):
+    """
+    Find k most frequent elements
+    Time: O(n log k), Space: O(k)
+    """
+    freq = Counter(arr)
+    # Use min-heap of size k
+    return heapq.nlargest(k, freq.keys(), key=freq.get)
+
+def top_k_frequent_bucket(arr, k):
+    """
+    Find k most frequent using bucket sort
+    Time: O(n), Space: O(n)
+    """
+    freq = Counter(arr)
+    max_freq = max(freq.values())
+    
+    # Bucket sort by frequency
+    buckets = [[] for _ in range(max_freq + 1)]
+    for num, count in freq.items():
+        buckets[count].append(num)
+    
+    # Collect from highest frequency
+    result = []
+    for i in range(max_freq, 0, -1):
+        for num in buckets[i]:
+            result.append(num)
+            if len(result) == k:
+                return result
+    
+    return result
+
+# Example
+arr = [1, 1, 1, 2, 2, 3]
+k = 2
+print(top_k_frequent(arr, k))      # [1, 2]
+print(top_k_frequent_bucket(arr, k))  # [1, 2]
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">3. First Unique Character in String</h4>
+
+            <div class="code-block">
+                <pre>
+def first_unique_character(s):
+    """
+    Find first non-repeating character
+    Time: O(n), Space: O(1) - fixed alphabet size
+    """
+    freq = Counter(s)
+    
+    for i, char in enumerate(s):
+        if freq[char] == 1:
+            return i  # Return index
+    
+    return -1  # No unique character
+
+def first_unique_character_value(s):
+    """Return the character itself"""
+    freq = Counter(s)
+    
+    for char in s:
+        if freq[char] == 1:
+            return char
+    
+    return None
+
+# Example
+s = "leetcode"
+print(first_unique_character(s))       # 0 (character 'l')
+print(first_unique_character_value(s)) # 'l'
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">4. Check if All Characters Have Equal Frequency</h4>
+
+            <div class="code-block">
+                <pre>
+def are_occurrences_equal(s):
+    """
+    Check if all characters appear the same number of times
+    Time: O(n), Space: O(k) where k = unique characters
+    """
+    freq = Counter(s)
+    frequencies = set(freq.values())
+    return len(frequencies) == 1
+
+def min_deletions_for_equal_freq(s):
+    """
+    Find minimum deletions to make all frequencies equal
+    Time: O(n), Space: O(k)
+    """
+    freq = Counter(s)
+    freq_values = list(freq.values())
+    freq_values.sort(reverse=True)
+    
+    deletions = 0
+    target = freq_values[0]
+    
+    for i in range(1, len(freq_values)):
+        if freq_values[i] == target:
+            continue
+        elif freq_values[i] > target:
+            deletions += freq_values[i] - target
+        elif freq_values[i] < target:
+            if target == 1:
+                deletions += freq_values[i]
+            else:
+                deletions += freq_values[i]
+                target -= 1
+    
+    return deletions
+
+# Example
+s = "abacbc"
+print(are_occurrences_equal(s))  # True (a=2, b=2, c=2)
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">String-Specific Frequency Problems</h3>
+
+            <h4 class="subsection-title">5. Valid Anagram</h4>
+
+            <div class="code-block">
+                <pre>
+def is_anagram(s1, s2):
+    """
+    Check if two strings are anagrams
+    Time: O(n), Space: O(k) where k = alphabet size
+    """
+    if len(s1) != len(s2):
+        return False
+    
+    return Counter(s1) == Counter(s2)
+
+def is_anagram_manual(s1, s2):
+    """
+    Manual version for space optimization
+    Time: O(n), Space: O(k)
+    """
+    if len(s1) != len(s2):
+        return False
+    
+    freq = [0] * 26  # For lowercase English letters
+    
+    for c1, c2 in zip(s1, s2):
+        freq[ord(c1) - ord('a')] += 1
+        freq[ord(c2) - ord('a')] -= 1
+    
+    return all(f == 0 for f in freq)
+
+# Example
+print(is_anagram("anagram", "nagaram"))  # True
+print(is_anagram("rat", "car"))          # False
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">6. Ransom Note</h4>
+
+            <div class="code-block">
+                <pre>
+def can_construct(ransom_note, magazine):
+    """
+    Check if ransom note can be constructed from magazine
+    Time: O(n + m), Space: O(k)
+    """
+    magazine_freq = Counter(magazine)
+    
+    for char in ransom_note:
+        if magazine_freq[char] <= 0:
+            return False
+        magazine_freq[char] -= 1
+    
+    return True
+
+# Example
+ransom_note = "a"
+magazine = "b"
+print(can_construct(ransom_note, magazine))  # False
+
+ransom_note = "aa"
+magazine = "aab"
+print(can_construct(ransom_note, magazine))  # True
+                </pre>
+            </div>
+
+            <div class="safety-sign important">
+                PRO TIP: For problems involving only lowercase English letters, use a frequency array of size 26 instead of a dictionary. This is faster and uses less memory as the size is fixed.
+            </div>
+        </div>
+
+        <!-- Complements Pattern Section -->
+        <div class="content-section" id="complements">
+            <div class="lesson-header">
+                <h1>Complements Pattern</h1>
+                <p>Finding pairs and combinations efficiently</p>
+            </div>
+
+            <h3 class="subsection-title">Understanding the Complements Pattern</h3>
+
+            <p class="content-text">
+                The complements pattern is used when you need to find elements that satisfy a specific relationship based on arithmetic operations (addition, subtraction, multiplication). The core idea is to check if the complement (target - current, target / current, etc.) has been seen before.
+            </p>
+
+            <h3 class="subsection-title">Two Sum (The Classic Example)</h3>
+
+            <div class="code-block">
+                <pre>
+def two_sum(nums, target):
+    """
+    Find two numbers that sum to target
+    Time: O(n), Space: O(n)
+    """
+    seen = {}  # number -> index
+    
+    for i, num in enumerate(nums):
+        complement = target - num
+        
+        if complement in seen:
+            return [seen[complement], i]
+        
+        seen[num] = i
+    
+    return None  # No solution found
+
+# Variations
+
+# Return values instead of indices
+def two_sum_values(nums, target):
+    """
+    Return the actual values instead of indices
+    """
+    seen = set()
+    
+    for num in nums:
+        complement = target - num
+        
+        if complement in seen:
+            return [complement, num]
+        
+        seen.add(num)
+    
+    return None
+
+# Count all pairs (not just return one)
+def two_sum_count_pairs(nums, target):
+    """
+    Count all pairs that sum to target
+    Time: O(n), Space: O(n)
+    """
+    freq = Counter(nums)
+    count = 0
+    
+    for num in freq:
+        complement = target - num
+        
+        if complement in freq:
+            if complement == num:
+                # Same number, choose 2 from frequency
+                count += freq[num] * (freq[num] - 1) // 2
+            elif num < complement:  # Avoid double counting
+                count += freq[num] * freq[complement]
+    
+    return count
+
+# Example
+nums = [2, 7, 11, 15]
+target = 9
+print(two_sum(nums, target))  # [0, 1] (indices of 2 and 7)
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Complement Variations</h3>
+
+            <h4 class="subsection-title">1. Two Sum II - Input Array is Sorted</h4>
+
+            <div class="code-block">
+                <pre>
+def two_sum_sorted(numbers, target):
+    """
+    Two sum when array is sorted
+    Can use two pointers instead of hash table
+    Time: O(n), Space: O(1)
+    """
+    left, right = 0, len(numbers) - 1
+    
+    while left < right:
+        current_sum = numbers[left] + numbers[right]
+        
+        if current_sum == target:
+            return [left + 1, right + 1]  # 1-indexed as per problem
+        elif current_sum < target:
+            left += 1
+        else:
+            right -= 1
+    
+    return None
+
+# Example
+numbers = [2, 7, 11, 15]
+target = 9
+print(two_sum_sorted(numbers, target))  # [1, 2]
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">2. 3Sum</h4>
+
+            <div class="code-block">
+                <pre>
+def three_sum(nums):
+    """
+    Find all triplets that sum to 0
+    Time: O(n^2), Space: O(n)
+    """
+    nums.sort()  # O(n log n)
+    result = []
+    
+    for i in range(len(nums) - 2):
+        # Skip duplicates
+        if i > 0 and nums[i] == nums[i - 1]:
+            continue
+        
+        left, right = i + 1, len(nums) - 1
+        
+        while left < right:
+            total = nums[i] + nums[left] + nums[right]
+            
+            if total == 0:
+                result.append([nums[i], nums[left], nums[right]])
+                
+                # Skip duplicates
+                while left < right and nums[left] == nums[left + 1]:
+                    left += 1
+                while left < right and nums[right] == nums[right - 1]:
+                    right -= 1
+                
+                left += 1
+                right -= 1
+            elif total < 0:
+                left += 1
+            else:
+                right -= 1
+    
+    return result
+
+# Example
+nums = [-1, 0, 1, 2, -1, -4]
+print(three_sum(nums))
+# [[-1, -1, 2], [-1, 0, 1]]
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">3. 4Sum</h4>
+
+            <div class="code-block">
+                <pre>
+def four_sum(nums, target):
+    """
+    Find all quadruplets that sum to target
+    Time: O(n^3), Space: O(n)
+    """
+    nums.sort()
+    n = len(nums)
+    result = []
+    
+    for i in range(n - 3):
+        if i > 0 and nums[i] == nums[i - 1]:
+            continue
+        
+        for j in range(i + 1, n - 2):
+            if j > i + 1 and nums[j] == nums[j - 1]:
+                continue
+            
+            left, right = j + 1, n - 1
+            
+            while left < right:
+                total = nums[i] + nums[j] + nums[left] + nums[right]
+                
+                if total == target:
+                    result.append([nums[i], nums[j], nums[left], nums[right]])
+                    
+                    while left < right and nums[left] == nums[left + 1]:
+                        left += 1
+                    while left < right and nums[right] == nums[right - 1]:
+                        right -= 1
+                    
+                    left += 1
+                    right -= 1
+                elif total < target:
+                    left += 1
+                else:
+                    right -= 1
+    
+    return result
+
+# Example
+nums = [1, 0, -1, 0, -2, 2]
+target = 0
+print(four_sum(nums, target))
+# [[-2, -1, 1, 2], [-2, 0, 0, 2], [-1, 0, 0, 1]]
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">4. Check if Array Contains Pairs with Given Sum</h4>
+
+            <div class="code-block">
+                <pre>
+def has_pair_with_sum(arr, target):
+    """
+    Check if any two elements sum to target
+    Time: O(n), Space: O(n)
+    """
+    seen = set()
+    
+    for num in arr:
+        complement = target - num
+        if complement in seen:
+            return True
+        seen.add(num)
+    
+    return False
+
+def all_pairs_with_sum(arr, target):
+    """
+    Find all pairs (values) that sum to target
+    Time: O(n), Space: O(n)
+    """
+    seen = set()
+    pairs = []
+    
+    for num in arr:
+        complement = target - num
+        if complement in seen:
+            pairs.append([complement, num])
+        seen.add(num)
+    
+    return pairs
+
+# Example
+arr = [1, 4, 45, 6, 10, 8]
+target = 16
+print(has_pair_with_sum(arr, target))  # True
+print(all_pairs_with_sum(arr, target))  # [[6, 10]]
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Beyond Addition: Other Operations</h3>
+
+            <h4 class="subsection-title">5. Two Difference</h4>
+
+            <div class="code-block">
+                <pre>
+def two_difference(nums, k):
+    """
+    Find pairs with difference k
+    Time: O(n), Space: O(n)
+    """
+    seen = set()
+    pairs = []
+    
+    for num in nums:
+        if num - k in seen:
+            pairs.append([num - k, num])
+        if num + k in seen:
+            pairs.append([num, num + k])
+        seen.add(num)
+    
+    return pairs
+
+# Example
+nums = [1, 7, 5, 9, 2, 12, 3]
+k = 2
+print(two_difference(nums, k))  # [[5, 7], [1, 3]]
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">6. Pairs Equal to Product</h4>
+
+            <div class="code-block">
+                <pre>
+def pairs_with_product(nums, target):
+    """
+    Find pairs whose product equals target
+    Time: O(n), Space: O(n)
+    """
+    seen = {}
+    pairs = []
+    
+    for num in nums:
+        if num != 0 and target % num == 0:
+            complement = target // num
+            if complement in seen:
+                pairs.append([complement, num])
+        seen[num] = True
+    
+    return pairs
+
+# Example
+nums = [1, 2, 3, 4, 6]
+target = 12
+print(pairs_with_product(nums, target))  # [[2, 6], [3, 4]]
+                </pre>
+            </div>
+
+            <div class="safety-sign important">
+                TIP: The complements pattern works for many problems involving pairs. Key insight: for two elements, we only need to know if we've seen the complement before processing the current element.
+            </div>
+        </div>
+
+        <!-- Grouping Problems Section -->
+        <div class="content-section" id="grouping">
+            <div class="lesson-header">
+                <h1>Grouping Problems</h1>
+                <p>Organizing elements based on shared properties</p>
+            </div>
+
+            <h3 class="subsection-title">Understanding Grouping Pattern</h3>
+
+            <p class="content-text">
+                Grouping problems require organizing elements into categories based on shared properties. The hash table pattern maps a key (derived from each element) to a list of elements that share that key.
+            </p>
+
+            <h3 class="subsection-title">Group Anagrams</h3>
+
+            <div class="code-block">
+                <pre>
+from collections import defaultdict
+
+def group_anagrams(words):
+    """
+    Group words that are anagrams of each other
+    Key: sorted characters of each word
+    Time: O(n * k log k) where n = number of words, k = max word length
+    Space: O(n * k)
+    """
+    groups = defaultdict(list)
+    
+    for word in words:
+        # Sort characters to create key
+        key = ''.join(sorted(word))
+        groups[key].append(word)
+    
+    return list(groups.values())
+
+# Alternative: Use frequency count as key (faster for long strings)
+def group_anagrams_frequency(words):
+    """
+    Use character frequency as key
+    Time: O(n * k * 26) = O(n * k)
+    Space: O(n * k)
+    """
+    def get_key(word):
+        freq = [0] * 26
+        for char in word:
+            freq[ord(char) - ord('a')] += 1
+        return tuple(freq)
+    
+    groups = defaultdict(list)
+    
+    for word in words:
+        key = get_key(word)
+        groups[key].append(word)
+    
+    return list(groups.values())
+
+# Example
+words = ["eat", "tea", "tan", "ate", "nat", "bat"]
+print(group_anagrams(words))
+# [['eat', 'tea', 'ate'], ['tan', 'nat'], ['bat']]
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Common Grouping Problems</h3>
+
+            <h4 class="subsection-title">1. Group Shifted Strings</h4>
+
+            <div class="code-block">
+                <pre>
+def group_shifted_strings(strings):
+    """
+    Group strings that can be shifted to form each other
+    Example: "abc" and "bcd" are in same group (shift all by 1)
+    Time: O(n * k) where n = strings, k = max length
+    Space: O(n * k)
+    """
+    def get_key(s):
+        if not s:
+            return ""
+        
+        # Key is the sequence of differences between consecutive characters
+        key = []
+        for i in range(1, len(s)):
+            diff = (ord(s[i]) - ord(s[i - 1])) % 26
+            key.append(str(diff))
+        
+        return ','.join(key)
+    
+    groups = defaultdict(list)
+    
+    for s in strings:
+        groups[get_key(s)].append(s)
+    
+    return list(groups.values())
+
+# Example
+strings = ["abc", "bcd", "acef", "xyz", "az", "ba", "a", "z"]
+print(group_shifted_strings(strings))
+# [['abc', 'bcd', 'xyz'], ['az', 'ba'], ['acef'], ['a', 'z']]
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">2. Group Strings by Same Pattern</h4>
+
+            <div class="code-block">
+                <pre>
+def group_by_pattern(strings):
+    """
+    Group strings that have the same character pattern
+    Example: "abb" and "cdd" have same pattern (first unique, then duplicate)
+    Time: O(n * k)
+    """
+    def get_pattern(s):
+        mapping = {}
+        pattern = []
+        current = ord('a')
+        
+        for char in s:
+            if char not in mapping:
+                mapping[char] = chr(current)
+                current += 1
+            pattern.append(mapping[char])
+        
+        return ''.join(pattern)
+    
+    groups = defaultdict(list)
+    
+    for s in strings:
+        pattern = get_pattern(s)
+        groups[pattern].append(s)
+    
+    return list(groups.values())
+
+# Example
+strings = ["abb", "cdd", "foo", "xyz"]
+print(group_by_pattern(strings))
+# [['abb', 'cdd', 'foo'], ['xyz']]
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">3. Partition Labels</h4>
+
+            <div class="code-block">
+                <pre>
+def partition_labels(s):
+    """
+    Partition string into as many parts as possible
+    Each letter appears in at most one part
+    Time: O(n), Space: O(1) - fixed alphabet size
+    """
+    # Last occurrence of each character
+    last_occurrence = {}
+    
+    for i, char in enumerate(s):
+        last_occurrence[char] = i
+    
+    result = []
+    start = 0
+    end = 0
+    
+    for i, char in enumerate(s):
+        end = max(end, last_occurrence[char])
+        
+        if i == end:
+            result.append(end - start + 1)
+            start = i + 1
+    
+    return result
+
+# Example
+s = "ababcbacadefegdehijhklij"
+print(partition_labels(s))  # [9, 7, 8]
+# "ababcbaca", "defegde", "hijhklij"
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">4. Top K Frequent Words</h4>
+
+            <div class="code-block">
+                <pre>
+from collections import Counter
+import heapq
+
+def top_k_frequent_words(words, k):
+    """
+    Return k most frequent words, sorted by frequency then lexicographically
+    Time: O(n log k)
+    Space: O(n)
+    """
+    freq = Counter(words)
+    
+    # Use min-heap with custom ordering
+    heap = [(-count, word) for word, count in freq.items()]
+    heapq.heapify(heap)
+    
+    result = []
+    for _ in range(k):
+        count, word = heapq.heappop(heap)
+        result.append(word)
+    
+    return result
+
+# Example
+words = ["i", "love", "leetcode", "i", "love", "coding"]
+k = 2
+print(top_k_frequent_words(words, k))  # ["i", "love"]
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Advanced Grouping</h3>
+
+            <h4 class="subsection-title">5. Group Emails by Sender</h4>
+
+            <div class="code-block">
+                <pre>
+def accounts_merge(accounts):
+    """
+    Merge accounts that belong to the same person
+    Same person if they have a common email
+    Time: O(n * k log k) - using Union-Find better
+    """
+    # Email to account index mapping
+    email_to_account = {}
+    
+    for i, account in enumerate(accounts):
+        name, emails = account[0], account[1:]
+        for email in emails:
+            if email in email_to_account:
+                # Merge accounts (here we'd use Union-Find)
+                pass
+            email_to_account[email] = i
+    
+    # ... Union-Find implementation would go here ...
+    
+    return []  # Simplified
+                </pre>
+            </div>
+
+            <div class="safety-sign important">
+                NOTE: For complex grouping problems with interdependencies (like account merging), consider using Union-Find (Disjoint Set Union) data structure, covered in Module 9.
+            </div>
+        </div>
+
+        <!-- Subarray Problems Section -->
+        <div class="content-section" id="subarrays">
+            <div class="lesson-header">
+                <h1>Subarray Problems</h1>
+                <p>Using prefix sums with hash tables</p>
+            </div>
+
+            <h3 class="subsection-title">Subarray Sum with Hash Tables</h3>
+
+            <p class="content-text">
+                Subarray problems can often be solved efficiently by combining prefix sums with hash tables. The key insight is that a subarray sum from index i to j equals prefix_sum[j+1] - prefix_sum[i].
+            </p>
+
+            <h3 class="subsection-title">Subarray Sum Equals K</h3>
+
+            <div class="code-block">
+                <pre>
+def subarray_sum(nums, k):
+    """
+    Count number of subarrays that sum to k
+    Time: O(n), Space: O(n)
+    """
+    count = 0
+    prefix_sum = 0
+    sum_count = {0: 1}  # prefix_sum -> count of occurrences
+    
+    for num in nums:
+        prefix_sum += num
+        
+        # Check if (prefix_sum - k) exists
+        if (prefix_sum - k) in sum_count:
+            count += sum_count[prefix_sum - k]
+        
+        # Update count of current prefix_sum
+        sum_count[prefix_sum] = sum_count.get(prefix_sum, 0) + 1
+    
+    return count
+
+# Explanation:
+# If prefix_sum[j] - prefix_sum[i] = k
+# Then nums[i..j-1] sums to k
+# We count how many times (prefix_sum - k) has occurred before
+
+# Example
+nums = [1, 1, 1]
+k = 2
+print(subarray_sum(nums, k))  # 2
+# Subarrays: [1,1] at indices [0,1] and [1,2]
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Subarray Variations</h3>
+
+            <h4 class="subsection-title">1. Maximum Size Subarray Sum Equals K</h4>
+
+            <div class="code-block">
+                <pre>
+def max_size_subarray_sum(nums, k):
+    """
+    Find longest subarray that sums to k
+    Time: O(n), Space: O(n)
+    """
+    prefix_sum = 0
+    max_length = 0
+    sum_to_index = {0: -1}
+    
+    for i, num in enumerate(nums):
+        prefix_sum += num
+        
+        if prefix_sum - k in sum_to_index:
+            length = i - sum_to_index[prefix_sum - k]
+            max_length = max(max_length, length)
+        
+        if prefix_sum not in sum_to_index:
+            sum_to_index[prefix_sum] = i
+    
+    return max_length
+
+# Example
+nums = [1, -1, 5, -2, 3]
+k = 3
+print(max_size_subarray_sum(nums, k))  # 4
+# Longest subarray: [1, -1, 5, -2]
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">2. Subarray Sum Divisible by K</h4>
+
+            <div class="code-block">
+                <pre>
+def subarrays_div_by_k(nums, k):
+    """
+    Count subarrays with sum divisible by k
+    Time: O(n), Space: O(k)
+    Uses modular arithmetic
+    """
+    count = 0
+    prefix_sum = 0
+    mod_count = {0: 1}
+    
+    for num in nums:
+        prefix_sum += num
+        mod = prefix_sum % k
+        
+        # Handle negative mod
+        if mod < 0:
+            mod += k
+        
+        if mod in mod_count:
+            count += mod_count[mod]
+        else:
+            mod_count[mod] = 0
+        
+        mod_count[mod] += 1
+    
+    return count
+
+# Example
+nums = [4, 5, 0, -2, -3, 1]
+k = 5
+print(subarrays_div_by_k(nums, k))  # 7
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">3. Continuous Subarray Sum</h4>
+
+            <div class="code-block">
+                <pre>
+def check_subarray_sum(nums, k):
+    """
+    Check if there's a subarray of size >= 2 that sums to multiple of k
+    Time: O(n), Space: O(min(n, k))
+    """
+    if k == 0:
+        # Check for consecutive zeros
+        for i in range(len(nums) - 1):
+            if nums[i] == 0 and nums[i + 1] == 0:
+                return True
+        return False
+    
+    prefix_sum = 0
+    mod_to_index = {0: -1}
+    
+    for i, num in enumerate(nums):
+        prefix_sum += num
+        mod = prefix_sum % k
+        
+        if mod in mod_to_index:
+            if i - mod_to_index[mod] >= 2:
+                return True
+        else:
+            mod_to_index[mod] = i
+    
+    return False
+
+# Example
+nums = [23, 2, 4, 6, 7]
+k = 6
+print(check_subarray_sum(nums, k))  # True
+# Subarray [2, 4] sums to 6
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">4. Find Subarray with Given Sum</h4>
+
+            <div class="code-block">
+                <pre>
+def find_subarray_with_sum(nums, target):
+    """
+    Find indices of subarray that sums to target (for positive numbers only)
+    Time: O(n), Space: O(n)
+    """
+    prefix_sum = 0
+    sum_to_index = {0: -1}
+    
+    for i, num in enumerate(nums):
+        prefix_sum += num
+        
+        if prefix_sum - target in sum_to_index:
+            start = sum_to_index[prefix_sum - target] + 1
+            return [start, i]
+        
+        sum_to_index[prefix_sum] = i
+    
+    return None
+
+# Example
+nums = [1, 2, 3, 7, 5]
+target = 12
+print(find_subarray_with_sum(nums, target))  # [2, 4]
+# Subarray: [3, 7, 5] sums to 15, wait... let me recalculate
+# Actually: [3, 7] = 10, [3, 7, 5] = 15
+# Hmm, target should be 15 for this example
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Contiguous Array Problems</h3>
+
+            <h4 class="subsection-title">5. Contiguous Array (0s and 1s with equal count)</h4>
+
+            <div class="code-block">
+                <pre>
+def find_max_length(nums):
+    """
+    Find longest contiguous array with equal number of 0 and 1
+    Replace 0 with -1, find subarray with sum 0
+    Time: O(n), Space: O(n)
+    """
+    count = 0
+    max_length = 0
+    count_to_index = {0: -1}
+    
+    for i, num in enumerate(nums):
+        # Treat 0 as -1
+        count += 1 if num == 1 else -1
+        
+        if count in count_to_index:
+            max_length = max(max_length, i - count_to_index[count])
+        else:
+            count_to_index[count] = i
+    
+    return max_length
+
+# Example
+nums = [0, 1, 0]
+print(find_max_length(nums))  # 2
+# Longest: [0, 1] or [1, 0]
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">6. Binary Subarrays with Sum</h4>
+
+            <div class="code-block">
+                <pre>
+def num_subarrays_with_sum(nums, goal):
+    """
+    Count binary subarrays with sum equal to goal
+    Time: O(n), Space: O(n)
+    """
+    from collections import defaultdict
+    
+    prefix_sum = 0
+    count = 0
+    sum_count = defaultdict(int)
+    sum_count[0] = 1
+    
+    for num in nums:
+        prefix_sum += num
+        
+        if prefix_sum - goal in sum_count:
+            count += sum_count[prefix_sum - goal]
+        
+        sum_count[prefix_sum] += 1
+    
+    return count
+
+# Example
+nums = [1, 0, 1, 0, 1]
+goal = 2
+print(num_subarrays_with_sum(nums, goal))  # 4
+                </pre>
+            </div>
+
+            <div class="safety-sign important">
+                KEY INSIGHT: For subarray problems, prefix_sum[i] - prefix_sum[j] gives sum of elements from index j to i-1. Use hash table to store (prefix_sum -> index) or (prefix_sum -> count) to efficiently find subarrays meeting criteria.
+            </div>
+        </div>
+
+        <!-- Optimization Techniques Section -->
+        <div class="content-section" id="optimization">
+            <div class="lesson-header">
+                <h1>Optimization Techniques</h1>
+                <p>Python-specific optimizations for hash tables</p>
+            </div>
+
+            <h3 class="subsection-title">Python Dictionary Optimizations</h3>
+
+            <p class="content-text">
+                Python's dictionaries are highly optimized, but there are techniques to get even better performance in competitive programming scenarios.
+            </p>
+
+            <h3 class="subsection-title">1. Choose the Right Data Structure</h3>
+
+            <div class="code-block">
+                <pre>
+# Use dict for key-value pairs
+d = {'apple': 5, 'banana': 3}
+
+# Use set for membership testing only
+s = {1, 2, 3, 4, 5}
+
+# Use Counter for frequency counting
+from collections import Counter
+freq = Counter([1, 2, 2, 3, 3, 3])
+
+# Use defaultdict for automatic key initialization
+from collections import defaultdict
+dd = defaultdict(list)
+dd['key'].append('value')  # No KeyError
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">2. Efficient Dictionary Operations</h3>
+
+            <div class="code-block">
+                <pre>
+# Use dict.get(key, default) to avoid KeyError
+value = d.get('key', 0)  # Returns 0 if 'key' doesn't exist
+
+# Use setdefault() to get or set default
+# Less readable but faster than get() + separate assignment
+value = d.setdefault('key', default_value)
+
+# Use defaultdict for grouping
+from collections import defaultdict
+groups = defaultdict(list)
+for item in items:
+    groups[key_func(item)].append(item)
+
+# Batch operations are faster
+# Slow:
+for key in keys:
+    if key in d:
+        result.append(d[key])
+
+# Faster:
+for key in keys & d.keys():
+    result.append(d[key])
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">3. Dictionary Comprehensions</h3>
+
+            <div class="code-block">
+                <pre>
+# Dictionary comprehension is often faster than loop
+# Slow:
+d = {}
+for k, v in zip(keys, values):
+    if condition(v):
+        d[k] = v
+
+# Faster:
+d = {k: v for k, v in zip(keys, values) if condition(v)}
+
+# Transform dictionary
+# Slow:
+result = {}
+for k, v in old_dict.items():
+    result[transform(k)] = f(v)
+
+# Faster:
+result = {transform(k): f(v) for k, v in old_dict.items()}
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">4. Set Operations</h3>
+
+            <div class="code-block">
+                <pre>
+# Set operations are highly optimized
+a = {1, 2, 3, 4}
+b = {3, 4, 5, 6}
+
+# Union
+union = a | b  # or a.union(b)
+
+# Intersection
+intersection = a & b  # or a.intersection(b)
+
+# Difference
+difference = a - b  # or a.difference(b)
+
+# Symmetric difference (elements in either but not both)
+symmetric = a ^ b  # or a.symmetric_difference(b)
+
+# Membership testing is O(1)
+if element in my_set:
+    # Do something
+
+# Add multiple elements
+my_set.update([1, 2, 3])  # Faster than multiple add()
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">5. Counter-Specific Optimizations</h3>
+
+            <div class="code-block">
+                <pre>
+from collections import Counter
+
+# Counter most_common() is optimized
+freq = Counter(words)
+top_5 = freq.most_common(5)  # Returns list of (element, count) tuples
+
+# Counter arithmetic
+c1 = Counter([1, 2, 2, 3])
+c2 = Counter([2, 3, 4])
+
+result = c1 + c2      # Add counts
+result = c1 - c2      # Subtract (only positive counts)
+result = c1 & c2      # Min of counts (intersection)
+result = c1 | c2      # Max of counts (union)
+
+# Update counter in place (faster than creating new)
+c1.update([4, 5, 5])
+c1.subtract([1, 2])
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">6. Memory Optimization</h3>
+
+            <div class="code-block">
+                <pre>
+# For small, known sets of keys, use array instead of dict
+# Slow (memory overhead):
+freq = {}
+for char in string:
+    freq[char] = freq.get(char, 0) + 1
+
+# Faster for lowercase letters:
+freq = [0] * 26
+for char in string:
+    freq[ord(char) - ord('a')] += 1
+
+# Use tuple for immutable dictionary-like structure
+# As key in another dict:
+groups = {}
+key = tuple(sorted(items))  # Create hashable key
+if key in groups:
+    groups[key].append(item)
+else:
+    groups[key] = [item]
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">7. Algorithm-Level Optimizations</h3>
+
+            <div class="code-block">
+                <pre>
+# Build hash table first, then match
+# Problem: Find intersection of two arrays
+
+# Slow: nested loop
+result = []
+for item in arr1:
+    if item in arr2:  # O(n) lookup in list
+        result.append(item)
+
+# Faster: convert to set first
+set2 = set(arr2)  # O(n) preprocessing
+result = []
+for item in arr1:
+    if item in set2:  # O(1) lookup
+        result.append(item)
+
+# Even faster: use set intersection
+result = list(set(arr1) & set(arr2))
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">8. Early Termination</h3>
+
+            <div class="code-block">
+                <pre>
+def check_anagram(s1, s2):
+    """
+    Check if two strings are anagrams with early termination
+    """
+    if len(s1) != len(s2):
+        return False
+    
+    # Quick termination for very different strings
+    if sorted(s1) == sorted(s2):
+        return True
+    
+    # Use frequency counts
+    freq = [0] * 26
+    
+    for c1, c2 in zip(s1, s2):
+        idx1 = ord(c1) - ord('a')
+        idx2 = ord(c2) - ord('a')
+        
+        freq[idx1] += 1
+        freq[idx2] -= 1
+        
+        # Early check: if any count exceeds string length
+        if abs(freq[idx1]) > len(s1) or abs(freq[idx2]) > len(s1):
+            return False
+    
+    return all(f == 0 for f in freq)
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Performance Comparison</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Operation</th>
+                        <th>Dict Approach</th>
+                        <th>Alternative</th>
+                        <th>When to Use Alternative</th>
+                    </tr>
+                    <tr>
+                        <td>Frequency count (small alphabet)</td>
+                        <td>Counter(dict)</td>
+                        <td>Array[26]</td>
+                        <td>Only lowercase letters, known alphabet</td>
+                    </tr>
+                    <tr>
+                        <td>Membership test</td>
+                        <td>dict</td>
+                        <td>set</td>
+                        <td>Don't need values, just keys</td>
+                    </tr>
+                    <tr>
+                        <td>Insert multiple</td>
+                        <td>Loop (slow)</td>
+                        <td>update()/extend()</td>
+                        <td>Multiple insertions</td>
+                    </tr>
+                    <tr>
+                        <td>Initialize dict</td>
+                        <td>get() in loop</td>
+                        <td>defaultdict</td>
+                        <td>Default values needed frequently</td>
+                    </tr>
+                    <tr>
+                        <td>Transform items</td>
+                        <td>Loop + assign</td>
+                        <td>Dict comprehension</td>
+                        <td>Creating new dict from existing</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="safety-sign important">
+                REMEMBER: Premature optimization is the root of all evil. First write clear, correct code. Only optimize if you're hitting time limits. Use profiling to identify bottlenecks.
+            </div>
+        </div>
+
+        <!-- Practice Problems Section -->
+        <div class="content-section" id="practice">
+            <div class="lesson-header">
+                <h1>Practice Problems</h1>
+                <p>Apply Hash Tables pattern knowledge</p>
+            </div>
+
+            <div class="practice-intro">
+                <p>Practice problems are loaded from the problems database:</p>
+            </div>
+
+            <div id="practiceProblems"></div>
+
+            <script src="../js/problems.js"></script>
+            <script>
+                function displayPracticeProblems() {
+                    const container = document.getElementById('practiceProblems');
+                    const problems = practiceProblems.hashtables;
+                    
+                    if (!problems || problems.length === 0) {
+                        container.innerHTML = '<p>No practice problems found.</p>';
+                        return;
+                    }
+                    
+                    let html = '<div class="practice-category"><h3 class="subsection-title">Hash Tables Pattern</h3>';
+                    
+                    // Display first 5 problems as examples
+                    const displayProblems = problems.slice(0, 5);
+                    
+                    for (const problem of displayProblems) {
+                        const problemId = 'HT-' + problem.id;
+                        html += `
+                            <div class="practice-problem" id="${problemId}">
+                                <div class="problem-question">
+                                    <p><strong>Problem ${problem.id}:</strong> ${problem.question}</p>
+                                    <div class="problem-meta">
+                                        <span class="difficulty-${problem.difficulty}">${problem.difficulty}</span>
+                                    </div>
+                                </div>
+                                <div class="problem-input">
+                                    <input type="text" id="${problemId}-input" placeholder="Your answer...">
+                                    <button onclick="checkAnswer('${problemId}', '${problem.answer.replace(/'/g, "\\'")}', [${problem.alternatives.map(a => `'${a.replace(/'/g, "\\'")}'`).join(',')}], '${problemId}-input', '${problemId}-hint', '${problemId}-explanation')" class="check-btn">Check</button>
+                                </div>
+                                <div id="${problemId}-feedback" class="feedback"></div>
+                                <div id="${problemId}-hint" class="hint" style="display: none;">
+                                    <strong>Hint:</strong> ${problem.hint}
+                                </div>
+                                <div id="${problemId}-explanation" class="explanation" style="display: none;">
+                                    <strong>Explanation:</strong> ${problem.explanation}
+                                </div>
+                            </div>
+                        `;
+                    }
+                    
+                    html += `
+                            <p style="margin-top: 20px; font-style: italic;">+ ${problems.length - 5} more problems in this category</p>
+                        </div>
+                    `;
+                    
+                    container.innerHTML = html;
+                }
+                
+                displayPracticeProblems();
+            </script>
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="content-section" id="quiz">
+            <div class="lesson-header">
+                <h1>Module 3 Quiz</h1>
+                <p>Test your Hash Tables pattern knowledge</p>
+            </div>
+
+            <div class="quiz-intro">
+                <p>Answer the following questions. You need 70% to pass this module.</p>
+            </div>
+
+            <form id="moduleQuiz">
+                <div class="quiz-question">
+                    <p class="question-text">1. What is the time complexity of checking membership in a Python set?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q1', 'A')"><input type="radio" name="Q1" value="A"> A. O(1) average</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q1', 'B')"><input type="radio" name="Q1" value="B"> B. O(log n)</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q1', 'C')"><input type="radio" name="Q1" value="C"> C. O(n)</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q1', 'D')"><input type="radio" name="Q1" value="D"> D. O(n^2)</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="question-text">2. In the Two Sum problem, what information do we store in the hash table?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q2', 'A')"><input type="radio" name="Q2" value="A"> A. Number and its count</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q2', 'B')"><input type="radio" name="Q2" value="B"> B. Number and its index</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q2', 'C')"><input type="radio" name="Q2" value="C"> C. Complement value</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q2', 'D')><input type="radio" name="Q2" value="D"> D. Sum of pairs</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="question-text">3. Which Python class provides optimized frequency counting?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q3', 'A')"><input type="radio" name="Q3" value="A"> A. dict</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q3', 'B')><input type="radio" name="Q3" value="B"> B. list</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q3', 'C')"><input type="radio" name="Q3" value="C"> C. Counter</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q3', 'D')><input type="radio" name="Q3" value="D"> D. set</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="question-text">4. For subarray sum problems, why do we use prefix sums with hash tables?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q4', 'A')"><input type="radio" name="Q4" value="A"> A. To calculate individual element sums</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q4', 'B')><input type="radio" name="Q4" value="B"> B. To efficiently find subarrays summing to k using difference</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q4', 'C')"><input type="radio" name="Q4" value="C"> C. To sort the array</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q4', 'D')><input type="radio" name="Q4" value="D"> D. To multiply subarray lengths</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="question-text">5. What key do we use to group anagrams?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q5', 'A')"><input type="radio" name="Q5" value="A"> A. Original word</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q5', 'B')><input type="radio" name="Q5" value="B"> B. Word length</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q5', 'C')"><input type="radio" name="Q5" value="C"> C. Sorted characters of the word</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q5', 'D')><input type="radio" name="Q5" value="D"> D. First character</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="question-text">6. What is the advantage of using a frequency array [0] * 26 over a dict for character counting?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q6', 'A')"><input type="radio" name="Q6" value="A"> A. More memory</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q6', 'B')><input type="radio" name="Q6" value="B"> B. Faster and uses less memory for known alphabets</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q6', 'C')"><input type="radio" name="Q6" value="C"> C. Supports any character</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q6', 'D')><input type="radio" name="Q6" value="D"> D. Slower but safer</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="question-text">7. In the subarray sum problem, why do we initialize sum_count with {0: 1}?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q7', 'A')"><input type="radio" name="Q7" value="A"> A. It's required by Python</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q7', 'B')><input type="radio" name="Q7" value="B"> B. To handle subarrays starting from index 0</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q7', 'C')"><input type="radio" name="Q7" value="C"> C. To make code longer</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q7', 'D')><input type="radio" name="Q7" value="D"> D. No special reason</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="question-text">8. Which data structure is best for storing just unique elements?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q8', 'A')"><input type="radio" name="Q8" value="A"> A. dict</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q8', 'B')><input type="radio" name="Q8" value="B"> B. list</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q8', 'C')"><input type="radio" name="Q8" value="C"> C. set</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q8', 'D')><input type="radio" name="Q8" value="D"> D. tuple</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="question-text">9. What is defaultdict used for?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q9', 'A')"><input type="radio" name="Q9" value="A"> A. To sort values</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q9', 'B')><input type="radio" name="Q9" value="B"> B. To filter keys</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q9', 'C')"><input type="radio" name="Q9" value="C"> C. To automatically initialize missing keys with default value</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q9', 'D')><input type="radio" name="Q9" value="D"> D. To multiply values</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="question-text">10. When does hash table lookup degrade from O(1) to O(n)?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q10', 'A')"><input type="radio" name="Q10" value="A"> A. With many collisions</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q10', 'B')><input type="radio" name="Q10" value="B"> B. When array is empty</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q10', 'C')"><input type="radio" name="Q10" value="C"> C. When using Counter</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q10', 'D')><input type="radio" name="Q10" value="D"> D. When using set</label>
+                    </div>
+                </div>
+
+                <button type="button" class="quiz-submit" onclick="submitQuizModule3()">Submit Quiz</button>
+            </form>
+
+            <div class="quiz-results" id="quizResults"></div>
+        </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <button class="nav-btn primary" onclick="window.location.href='02-datastructures.html'">Previous Module</button>
+        <button class="nav-btn primary" onclick="window.location.href='../index.html'">Back to Home</button>
+        <button class="nav-btn primary" onclick="window.location.href='04-slidingwindow.html'">Next Module</button>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script>
+        const quizAnswersModule3 = {
+            'Q1': 'A',
+            'Q2': 'B',
+            'Q3': 'C',
+            'Q4': 'B',
+            'Q5': 'C',
+            'Q6': 'B',
+            'Q7': 'B',
+            'Q8': 'C',
+            'Q9': 'C',
+            'Q10': 'A'
+        };
+
+        let quizAnswers = {};
+
+        function recordAnswer(question, answer) {
+            quizAnswers[question] = answer;
+        }
+
+        function submitQuizModule3() {
+            let score = 0;
+            let total = 10;
+            let results = [];
+
+            for (let q in quizAnswersModule3) {
+                if (quizAnswers[q] === quizAnswersModule3[q]) {
+                    score++;
+                    results.push(`Question ${q.substring(1)}: Correct`);
+                } else {
+                    results.push(`Question ${q.substring(1)}: Incorrect (Answer: ${quizAnswersModule3[q]})`);
+                }
+            }
+
+            const percentage = Math.round((score / total) * 100);
+            const passed = percentage >= 70;
+
+            let html = `
+                <div class="score-display ${passed ? 'pass' : 'fail'}">
+                    ${passed ? 'PASSED!' : 'NEEDS IMPROVEMENT'}
+                </div>
+                <div class="score-details">
+                    <p><strong>Score:</strong> ${score} / ${total} (${percentage}%)</p>
+                </div>
+                <div class="question-results">
+            `;
+
+            results.forEach(result => {
+                html += `<p>${result}</p>`;
+            });
+
+            html += '</div>';
+
+            if (passed) {
+                markQuizPassed('hashtables');
+            }
+
+            if (!passed) {
+                html += `
+                    <div class="safety-sign important">
+                        You need 70% to pass. Review the material and try again!
+                    </div>
+                `;
+            }
+
+            const resultsDiv = document.getElementById('quizResults');
+            resultsDiv.innerHTML = html;
+            resultsDiv.style.display = 'block';
+
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

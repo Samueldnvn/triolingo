@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 6: Differential Equations - Calculus II</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+
+  <!-- MathJax Configuration -->
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    },
+    startup: {
+      typeset: false
+    }
+  };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+  <header>
+    <h1>Calculus II <span>Chapter 6</span></h1>
+    <p class="tagline">Introduction to Differential Equations</p>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <div class="sidebar-title">📖 Chapter 6 Lessons</div>
+      <ul class="chapter-nav">
+        <li><a href="../index.html">← Back to Home</a></li>
+        <li><a href="#chapter-intro">Chapter Introduction</a></li>
+        <li><a href="#lesson-39">Lesson 39: Intro to Differential Equations</a></li>
+        <li><a href="#lesson-40">Lesson 40: Slope Fields</a></li>
+        <li><a href="#lesson-41">Lesson 41: Separable Equations</a></li>
+        <li><a href="#lesson-42">Lesson 42: Linear First-Order Equations</a></li>
+        <li><a href="#lesson-43">Lesson 43: Population Models</a></li>
+        <li><a href="#lesson-44">Lesson 44: Mixing Problems</a></li>
+        <li><a href="#lesson-45">Lesson 45: Cooling & Heating</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <div class="breadcrumbs"><a href="../index.html">Home</a> > Chapter 6: Differential Equations</div>
+
+      <section id="chapter-intro">
+        <h2>Chapter 6: Introduction to Differential Equations</h2>
+
+        <div class="key-concepts">
+          <h3>📋 Chapter Overview</h3>
+          <p>Differential equations are equations that involve derivatives. They are the language of change - they describe how things evolve over time. From population growth to radioactive decay, from heat transfer to electrical circuits, differential equations are everywhere in science, engineering, and mathematics.</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>🎯 Learning Objectives</h3>
+          <ul>
+            <li>Understand what differential equations are and classify them</li>
+            <li>Interpret slope fields and use them to understand behavior</li>
+            <li>Solve separable differential equations</li>
+            <li>Solve linear first-order differential equations</li>
+            <li>Model and analyze population dynamics</li>
+            <li>Solve mixing problems</li>
+            <li>Apply Newton's Law of Cooling</li>
+          </ul>
+        </div>
+
+        <div class="applications">
+          <h3>🌍 Real-World Applications</h3>
+          <ul>
+            <li><strong>Biology:</strong> Population growth, spread of diseases</li>
+            <li><strong>Physics:</strong> Motion, cooling, radioactive decay</li>
+            <li><strong>Chemistry:</strong> Reaction rates, mixing solutions</li>
+            <li><strong>Economics:</strong> Compound interest, depreciation</li>
+            <li><strong>Engineering:</strong> Circuit analysis, heat transfer</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- LESSON 39: Introduction to Differential Equations -->
+      <section id="lesson-39" class="lesson">
+        <h1>Lesson 39: Introduction to Differential Equations</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>A differential equation is an equation that contains an unknown function and one or more of its derivatives. Solving a differential equation means finding the unknown function that satisfies the equation.</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 Definition</h3>
+          <div class="formula">
+            A differential equation (DE) has the form:
+            <br><br>
+            $$F(x, y, y', y'', ..., y^{(n)}) = 0$$
+            <br><br>
+            where y is the unknown function of x.
+          </div>
+
+          <h4>Terminology:</h4>
+          <ul>
+            <li><strong>Order:</strong> The highest derivative that appears (1st order has y', 2nd order has y'', etc.)</li>
+            <li><strong>Solution:</strong> A function y = f(x) that satisfies the DE</li>
+            <li><strong>General Solution:</strong> Contains arbitrary constants (family of solutions)</li>
+            <li><strong>Particular Solution:</strong> Specific values chosen for constants (using initial conditions)</li>
+            <li><strong>Initial Condition:</strong> A condition like y(x₀) = y₀ that helps find particular solution</li>
+          </ul>
+
+          <h3>📚 Classification</h3>
+
+          <h4>By Order:</h4>
+          <ul>
+            <li><strong>First-order:</strong> Contains only y', not higher derivatives</li>
+            <li><strong>Second-order:</strong> Contains y''</li>
+            <li><strong>n-th order:</strong> Contains y^(n)</li>
+          </ul>
+
+          <h4>By Linearity:</h4>
+          <ul>
+            <li><strong>Linear:</strong> y and its derivatives appear linearly (no powers, products, or transcendental functions of y)</li>
+            <li><strong>Nonlinear:</strong> y and/or its derivatives appear nonlinearly</li>
+          </ul>
+
+          <h4>Examples:</h4>
+          <div class="formula">
+            $y' = 2x$ (first-order, linear)
+            <br>
+            $y'' + y = 0$ (second-order, linear)
+            <br>
+            $(y')^2 + y = x$ (first-order, nonlinear - square on y')
+          </div>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example 1: Verify that y = e^x is a solution of y' = y</h4>
+
+          <div id="ch6-l1-ex1">
+            <div class="step" style="display: none;">Step 1: Given y = e^x, find y' = e^x (derivative of e^x is e^x)</div>
+            <div class="step" style="display: none;">Step 2: Check the DE: y' should equal y</div>
+            <div class="step" style="display: none;">Step 3: y' = e^x and y = e^x, so y' = y ✓</div>
+            <div class="step" style="display: none;">Step 4: Therefore y = e^x is a solution</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch6-l1-ex1')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div id="ch6-l39-practice"></div>
+        <div id="ch6-l39-quiz"></div>
+      </section>
+
+      <!-- LESSON 40: Slope Fields -->
+      <section id="lesson-40" class="lesson">
+        <h1>Lesson 40: Slope Fields</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>Even before solving a differential equation, we can visualize its solutions using a slope field (or direction field). A slope field shows the slope of solution curves at many points in the plane.</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 What is a Slope Field?</h3>
+          <p>For a first-order DE y' = f(x, y):</p>
+          <ol>
+            <li>At each point (x, y) in the plane, compute the slope m = f(x, y)</li>
+            <li>Draw a small line segment with that slope at (x, y)</li>
+            <li>Do this for many points across the plane</li>
+          </ol>
+
+          <h4>Key Properties:</h4>
+          <ul>
+            <li>Solution curves are tangent to the slope field at every point</li>
+            <li>The slope field reveals the behavior of all solutions</li>
+            <li>Two different solution curves never cross (if f is continuous)</li>
+          </ul>
+
+          <h3>📚 Interpreting Slope Fields</h3>
+
+          <ul>
+            <li><strong>Horizontal segments:</strong> y' = 0 at those points</li>
+            <li><strong>Vertical segments:</strong> Solution not defined (usually)</li>
+            <li><strong>Patterns:</strong> Look for symmetry, periodicity</li>
+            <li><strong>Equilibrium solutions:</strong> Where y' = 0 identically (horizontal lines)</li>
+          </ul>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example: Analyze slope field for y' = x</h4>
+
+          <div id="ch6-l2-ex1">
+            <div class="step" style="display: none;">Step 1: The slope depends only on x, not on y</div>
+            <div class="step" style="display: none;">Step 2: For x = 0: slope is 0 (horizontal lines)</div>
+            <div class="step" style="display: none;">Step 3: For x = 1: slope is 1 (positive diagonal segments)</div>
+            <div class="step" style="display: none;">Step 4: For x = -1: slope is -1 (negative diagonal segments)</div>
+            <div class="step" style="display: none;">Step 5: Slope is same for all y at each x value</div>
+            <div class="step" style="display: none;">Step 6: Solution (general): $\int dy = \int x dx$, so y = \frac{x^2}{2} + C$</div>
+            <div class="step" style="display: none;">Step 7: Family of parabolas - consistent with slope field!</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch6-l2-ex1')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div id="ch6-l40-practice"></div>
+        <div id="ch6-l40-quiz"></div>
+      </section>
+
+      <!-- LESSON 41: Separable Differential Equations -->
+      <section id="lesson-41" class="lesson">
+        <h1>Lesson 41: Separable Differential Equations</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>A separable differential equation is one where we can separate the variables x and y on opposite sides of the equation. These are the easiest type of DE to solve!</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 Form of Separable Equation</h3>
+          <div class="formula">
+            A first-order DE is separable if it can be written as:
+            <br><br>
+            $$\\frac{dy}{dx} = g(x)h(y)$$
+            <br>
+            or equivalently
+            <br>
+            $$N(y) \\frac{dy}{dx} = M(x)$$
+          </div>
+
+          <h3>📚 Solution Method</h3>
+          <ol>
+            <li>Rewrite as $\frac{dy}{dx} = \frac{M(x)}{N(y)}$ or similar form</li>
+            <li>Separate variables: $N(y) \, dy = M(x) \, dx$</li>
+            <li>Integrate both sides: $\int N(y) \, dy = \int M(x) \, dx$</li>
+            <li>Solve for y (if possible) to get general solution</li>
+            <li>Use initial condition to find particular solution</li>
+          </ol>
+
+          <h4>Important Notes:</h4>
+          <ul>
+            <li>Don't forget the +C on at least one side</li>
+            <li>Careful with absolute values when integrating</li>
+            <li>Check for equilibrium solutions (where h(y) = 0)</li>
+          </ul>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example 1: Solve y' = x/y with y(0) = 4</h4>
+
+          <div id="ch6-l3-ex1">
+            <div class="step" style="display: none;">Step 1: Rewrite as dy/dx = x/y</div>
+            <div class="step" style="display: none;">Step 2: Separate: y \, dy = x \, dx</div>
+            <div class="step" style="display: none;">Step 3: Integrate: $\int y \, dy = \int x \, dx$</div>
+            <div class="step" style="display: none;">Step 4: Solve: $\frac{y^2}{2} = \frac{x^2}{2} + C$</div>
+            <div class="step" style="display: none;">Step 5: Multiply by 2: $y^2 = x^2 + 2C$</div>
+            <div class="step" style="display: none;">Step 6: Use initial condition y(0)=4: $16 = 0 + 2C$, so $2C = 16$</div>
+            <div class="step" style="display: none;">Step 7: Solution: $y^2 = x^2 + 16$ or $y = \pm \sqrt{x^2 + 16}$</div>
+            <div class="step" style="display: none;">Step 8: Since y(0)=4 > 0, use positive: $y = \sqrt{x^2 + 16}$</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch6-l3-ex1')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div id="ch6-l41-practice"></div>
+        <div id="ch6-l41-quiz"></div>
+      </section>
+
+      <!-- LESSON 42: Linear First-Order Differential Equations -->
+      <section id="lesson-42" class="lesson">
+        <h1>Lesson 42: Linear First-Order Differential Equations</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>Linear first-order differential equations have a standard form and a reliable solution method using an "integrating factor." They're not all separable, but we can still solve them!</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 Standard Form</h3>
+          <div class="formula">
+            A linear first-order DE can be written as:
+            <br><br>
+            $$\\frac{dy}{dx} + P(x)y = Q(x)$$
+            <br><br>
+            where P(x) and Q(x) are functions of x only.
+          </div>
+
+          <h4>Key Features:</h4>
+          <ul>
+            <li>y and its derivative appear linearly (no powers or products)</li>
+            <li>Coefficients depend only on x</li>
+            <li>y' appears to the first power</li>
+          </ul>
+
+          <h3>📚 Solution Method: Integrating Factor</h3>
+          <ol>
+            <li>Write in standard form: $\frac{dy}{dx} + P(x)y = Q(x)$</li>
+            <li>Find integrating factor: $\mu(x) = e^{\int P(x) \, dx}$</li>
+            <li>Multiply both sides by $\mu(x)$</li>
+            <li>Left side becomes $(\mu \cdot y)'$ (verify this!)</li>
+            <li>Integrate both sides</li>
+            <li>Solve for y to get general solution</li>
+          </ol>
+
+          <h3>📚 Solution Formula</h3>
+          <div class="formula-highlight">
+            $$y = e^{-\int P(x) \, dx} \left[ \int e^{\int P(x) \, dx} Q(x) \, dx + C \right]$$
+          </div>
+
+          <p>This compact formula contains all the steps - use the process instead of memorizing!</p>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example: Solve y' + 2y = 4</h4>
+
+          <div id="ch6-l4-ex1">
+            <div class="step" style="display: none;">Step 1: Already in standard form with P(x) = 2, Q(x) = 4</div>
+            <div class="step" style="display: none;">Step 2: Find integrating factor: $\mu = e^{\int 2 \, dx} = e^{2x}$</div>
+            <div class="step" style="display: none;">Step 3: Multiply by integrating factor: $e^{2x}y' + 2e^{2x}y = 4e^{2x}$</div>
+            <div class="step" style="display: none;">Step 4: Recognize left side: $(e^{2x}y)' = 4e^{2x}$</div>
+            <div class="step" style="display: none;">Step 5: Integrate both sides: $e^{2x}y = \int 4e^{2x} \, dx$</div>
+            <div class="step" style="display: none;">Step 6: Solve: $e^{2x}y = 2e^{2x} + C$</div>
+            <div class="step" style="display: none;">Step 7: Divide by $e^{2x}$: $y = 2 + Ce^{-2x}$</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch6-l4-ex1')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div id="ch6-l42-practice"></div>
+        <div id="ch6-l42-quiz"></div>
+      </section>
+
+      <!-- LESSON 43: Population Models -->
+      <section id="lesson-43" class="lesson">
+        <h1>Lesson 43: Applications - Population Models</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>Differential equations naturally model how populations change over time. The simplest models assume the rate of change is proportional to the current population, but more realistic models account for limited resources.</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 Unrestricted Growth (Malthusian Model)</h3>
+
+          <div class="formula">
+            $$\\frac{dP}{dt} = kP$$
+          </div>
+
+          <p><strong>Where:</strong> P(t) = population at time t, k = growth constant</p>
+
+          <h4>Solution (Exponential Growth):</h4>
+          <div class="formula-highlight">
+            $$P(t) = P_0 e^{kt}$$
+            <br><br>
+            where $P_0$ is the initial population.
+          </div>
+
+          <p><strong>Interpretation:</strong> Population grows without bound (unrealistic in the long term!)</p>
+
+          <h3>📚 Logistic Growth (Limited Resources)</h3>
+
+          <div class="formula">
+            $$\\frac{dP}{dt} = kP\\left(1 - \\frac{P}{K}\\right)$$
+          </div>
+
+          <p><strong>Where:</strong></p>
+          <ul>
+            <li>P(t) = population</li>
+            <li>k = intrinsic growth rate</li>
+            <li>K = carrying capacity (maximum sustainable population)</li>
+          </ul>
+
+          <h4>Properties:</h4>
+          <ul>
+            <li>For P < K: population grows</li>
+            <li>For P > K: population decreases</li>
+            <li>P = K is an equilibrium (carrying capacity)</li>
+            <li>S-curve (sigmoidal) shape</li>
+          </ul>
+
+          <h4>Solution (when P₀ ≠ 0):</h4>
+          <div class="formula">
+            $$P(t) = \\frac{K}{1 + Ae^{-kt}}$$
+            <br><br>
+            where $A = \\frac{K - P_0}{P_0}$
+          </div>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example 1: Bacteria culture starts at 100 and doubles in 3 hours</h4>
+
+          <div id="ch6-l5-ex1">
+            <div class="step" style="display: none;">Step 1: Use exponential growth: P(t) = P₀ e^{kt}</div>
+            <div class="step" style="display: none;">Step 2: Given P₀ = 100, so P(t) = 100e^{kt}</div>
+            <div class="step" style="display: none;">Step 3: Use P(3) = 200: $200 = 100e^{3k}$</div>
+            <div class="step" style="display: none;">Step 4: Solve for k: $2 = e^{3k}$, so $3k = \ln 2$, $k = \frac{\ln 2}{3}$</div>
+            <div class="step" style="display: none;">Step 5: Solution: $P(t) = 100e^{(\\ln 2/3)t} = 100 \\cdot 2^{t/3}$</div>
+            <div class="step" style="display: none;">Step 6: Check: at t=3, P = 100 · 2^1 = 200 ✓</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch6-l5-ex1')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div id="ch6-l43-practice"></div>
+        <div id="ch6-l43-quiz"></div>
+      </section>
+
+      <!-- LESSON 44: Mixing Problems -->
+      <section id="lesson-44" class="lesson">
+        <h1>Lesson 44: Applications - Mixing Problems</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>Mixing problems involve tanks being filled and drained, containing a dissolved substance. As solution flows in and out, the concentration changes - leading to a differential equation.</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 General Setup</h3>
+
+          <p>For a tank of volume V(t) with x(t) amount of substance:</p>
+          <div class="formula">
+            $$\\frac{dx}{dt} = \\text{(rate in)} - \\text{(rate out)}$$
+            <br><br>
+            $\text{rate in} = (\text{flow rate in}) \\times (\text{concentration in})$
+            <br>
+            $\text{rate out} = (\text{flow rate out}) \\times (\text{concentration out})$
+          </div>
+
+          <p><strong>Concentration out:</strong> $\frac{x(t)}{V(t)}$ (amount divided by volume)</p>
+
+          <h3>📚 Key Observations</h3>
+
+          <ul>
+            <li>Rate in is usually constant (inlet has fixed concentration)</li>
+            <li>Rate out depends on current concentration</li>
+            <li>Volume may change if inflow ≠ outflow rate</li>
+            <li>DE is often linear (due to rate out term)</li>
+          </ul>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example: Tank has 100gal with 20lb salt. Fresh water flows in at 3gal/min, mixture out at 3gal/min</h4>
+
+          <div id="ch6-l6-ex1">
+            <div class="step" style="display: null;">Step 1: Let x(t) = amount of salt at time t (in lb)</div>
+            <div class="step" style="display: none;">Step 2: Volume V is constant: 100 gal (inflow = outflow = 3 gal/min)</div>
+            <div class="step" style="display: none;">Step 3: Rate in: 3 × 0 = 0 (fresh water, no salt)</div>
+            <div class="step" style="display: none;">Step 4: Rate out: 3 × (x/100) = 3x/100 = 0.03x</div>
+            <div class="step" style="display: none;">Step 5: DE: dx/dt = 0 - 0.03x = -0.03x</div>
+            <div class="step" style="display: none;">Step 6: This is separable: dx/x = -0.03 dt</div>
+            <div class="step" style="display: none;">Step 7: Integrate: $\ln|x| = -0.03t + C$</div>
+            <div class="step" style="display: null;">Step 8: Solve: $x = Ce^{-0.03t}$ (drop absolute, incorporate into C)</div>
+            <div class="step" style="display: null;">Step 9: Use x(0) = 20: $20 = Ce^0$, so $C = 20$</div>
+            <div class="step" style="display: null;">Step 10: Solution: $x(t) = 20e^{-0.03t}$ lb</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch6-l6-ex1')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div id="ch6-l44-practice"></div>
+        <div id="ch6-l44-quiz"></div>
+      </section>
+
+      <!-- LESSON 45: Cooling & Heating -->
+      <section id="lesson-45" class="lesson">
+        <h1>Lesson 45: Applications - Cooling & Heating</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>Newton's Law of Cooling states that the rate of change of temperature is proportional to the difference between the object's temperature and the surrounding temperature.</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 Newton's Law of Cooling/Heating</h3>
+          <div class="formula-highlight">
+            $$\\frac{dT}{dt} = k(T - T_s)$$
+          </div>
+
+          <p><strong>Where:</strong></p>
+          <ul>
+            <li>T(t) = temperature of the object at time t</li>
+            <li>T_s = surrounding (ambient) temperature</li>
+            <li>k = constant (negative for cooling, positive for heating)</li>
+          </ul>
+
+          <h4>Alternative Form:</h4>
+          <div class="formula">
+            $$\\frac{dT}{dt} = k(T - T_s) \implies T' - kT = -kT_s$$
+          </div>
+
+          <p>This is a linear first-order DE we can solve with integrating factor!</p>
+
+          <h3>📚 Solution Formula</h3>
+          <div class="formula">
+            $$T(t) = T_s + (T_0 - T_s)e^{-kt}$$
+            <br><br>
+            where T₀ = initial temperature at t = 0
+          </div>
+
+          <h4>Interpretation:</h4>
+          <ul>
+            <li>Temperature exponentially approaches T_s</li>
+            <li>The rate depends on temperature difference</li>
+            <li>Can solve for k given temperature at another time</li>
+          </ul>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example: Baked potato at 200°F in 70°F room. After 20min, temperature is 160°F</h4>
+
+          <div id="ch6-l7-ex1">
+            <div class="step" style="display: none;">Step 1: Newton's Law: dT/dt = k(T - 70)</div>
+            <div class="step" style="display: none;">Step 2: Solution formula: T(t) = 70 + (T₀ - 70)e^{-kt}</div>
+            <div class="step" style="display: none;">Step 3: Given T₀ = 200: T(t) = 70 + 130e^{-kt}</div>
+            <div class="step" style="display: none;">Step 4: Use T(20) = 160: $160 = 70 + 130e^{-20k}$</div>
+            <div class="step" style="display: none;">Step 5: Solve: $90 = 130e^{-20k}$, so $e^{-20k} = 90/130 = 9/13$</div>
+            <div class="step" style="display: none;">Step 6: Take ln: $-20k = \ln(9/13)$, so $k = -\frac{1}{20}\ln(9/13)$</div>
+            <div class="step" style="display: null;">Step 7: Temperature model: $T(t) = 70 + 130e^{-kt}$ where $k = -\frac{1}{20}\ln(9/13)$</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch6-l7-ex1')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div id="ch6-l45-practice"></div>
+        <div id="ch6-l45-quiz"></div>
+
+        <div class="chapter-summary">
+          <h2>📓 Chapter 6 Summary</h2>
+          <ul>
+            <li><strong>Differential Equations:</strong> Equations involving derivatives of unknown functions</li>
+            <li><strong>Classification:</strong> By order (highest derivative) and linearity</li>
+            <li><strong>Solution:</strong> Function or family of functions satisfying the DE</li>
+            <li><strong>General vs Particular:</strong> General has constants, particular satisfies initial conditions</li>
+            <li><strong>Slope Fields:</strong> Visualize solutions by showing slopes at grid points</li>
+            <li><strong>Separable DEs:</strong> Separate variables - g(y)dy = f(x)dx - then integrate</li>
+            <li><strong>Linear First-Order:</strong> y' + P(x)y = Q(x) - use integrating factor $e^{\int P dx}$</li>
+            <li><strong>Population Models:</strong> Unrestricted (exponential) and logistic growth</li>
+            <li><strong>Mixing Problems:</strong> dx/dt = rate in - rate out</li>
+            <li><strong>Newton's Cooling:</strong> dT/dt = k(T - T_s), approach ambient temperature</li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer>
+    <p>Chapter 6: Introduction to Differential Equations | Calculus II Complete Mastery Course</p>
+  </footer>
+
+  <script src="../assets/js/math.js"></script>
+  <script src="../assets/js/progress.js"></script>
+  <script src="../assets/js/quizzes.js"></script>
+  <script src="../assets/js/practice.js"></script>
+
+  <script>
+    // Force MathJax to render all math when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        if (window.MathJax && MathJax.typesetPromise) {
+          MathJax.typesetPromise().then(function() {
+            console.log('MathJax rendered successfully');
+          }).catch(function(err) {
+            console.log('MathJax error:', err);
+          });
+        }
+      }, 500);
+    });
+  </script>
+
+  <script>
+    function revealAllSteps(containerId) {
+      const container = document.getElementById(containerId);
+      const steps = container.querySelectorAll('.step');
+      steps.forEach(step => {
+        step.style.display = 'block';
+      });
+      renderMath(container);
+    }
+
+    // Initialize Practice Problems for Chapter 6
+    document.addEventListener('DOMContentLoaded', function() {
+      // Lesson 39 Practice
+      PracticeManager.init('ch6-l39', [
+        PracticeTemplates.multipleChoice('What is the order of y'' - y = 0?', ['First-order', 'Second-order', 'Third-order', 'Zero-order'], 1, 'Order = highest derivative = y''', 'beginner'),
+        PracticeTemplates.trueFalse('y = Ce^x is a particular solution of y\' = y.', false, 'It\'s a general solution (contains arbitrary constant)'),
+        PracticeTemplates.fillBlank('For dy/dx = f(x), integrating gives y = _____ + C', '∫f(x)dx or the antiderivative', 'Integrate both sides')
+      ]);
+
+      QuizManager.init('ch6-l39-quiz', [
+        QuizTemplates.multipleChoice('A first-order DE contains which derivative?', ["y''", "y'", "y'''", "y^(4)"], 1, "y' is first derivative"),
+        QuizTemplates.numerical("Verify: y = x² satisfies y' = ? (enter 2x)", '2', 'dy/dx = 2x', 0.01),
+        QuizTemplates.fillBlank("The differential equation y' = -y is ___ or ___", 'separable or linear', 'Both apply!')
+      ]);
+
+      // Lesson 41 Practice (Separable)
+      PracticeManager.init('ch6-l41', [
+        PracticeTemplates.multipleChoice('To solve a separable DE, what do you do first?', ['Integrate directly', 'Separate variables', 'Form a linear equation', 'Use integrating factor'], 1, 'Separation of variables', 'beginner'),
+        PracticeTemplates.numerical('For dy/dx = 2y, what is the general solution?', 'Ce^2x or Ce^{2x}', 'Separate and integrate: dy/y = 2dx → ln|y| = 2x + C → y = Ce^2x', 0.01, 'intermediate')
+      ]);
+
+      // Additional lessons would have practice problems here...
+
+      if (ProgressManager) {
+        ProgressManager.startLesson('ch6-l39');
+      }
+    });
+  </script>
+</body>
+</html>

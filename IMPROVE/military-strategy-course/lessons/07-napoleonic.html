@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Module VII: Napoleonic Warfare</title><link rel="stylesheet" href="../css/styles.css"></head>
+<body>
+    <div class="renaissance-header"><h1>MODULE VII: NAPOLEONIC WARFARE</h1></div>
+    <nav class="nav-container"><ul class="nav-menu"><li class="nav-item active" onclick="showSection('overview')">Overview</li><li class="nav-item" onclick="showSection('corps')">Corps d'Armee</li><li class="nav-item" onclick="showSection('campaigns')">Campaigns</li><li class="nav-item" onclick="showSection('tactics')">Grand Tactics</li><li class="nav-item" onclick="showSection('practice')">Practice</li><li class="nav-item" onclick="showSection('quiz')">Quiz</li></ul></nav>
+    <div class="progress-container"><div class="progress-title">MODULE VII PROGRESS</div><div class="progress-bar"><div class="progress-fill" id="moduleProgress" style="width:0%">0%</div></div></div>
+    <div class="container">
+        <div class="content-section active" id="overview">
+            <div class="lesson-header"><h1>Napoleonic Warfare</h1><p>The Apex of 19th-Century Military Achievement</p></div>
+            <div class="ornamental-divider"><span>Introduction</span></div>
+            <p class="content-text">Napoleon Bonaparte revolutionized warfare through innovative use of mass conscription, the corps d'armee system, and operational art—coordinating multiple corps for strategic concentration. The Grand Armee demonstrated unprecedented mobility, allowing Napoleon to outmaneuver opponents and achieve victory through superior positioning and timing. His campaigns—Austerlitz(1805), Jena-Auerstedt(1806), Wagram(1809), and the disastrous Russian invasion(1812)—illustrated both the potential and limits of Napoleonic warfare.</p>
+            <div class="parchment-section"><div class="parchment-content"><h3>WHAT YOU SHALL MASTER</h3><ul class="parchment-list"><li>The corps d'armee organization</li><li>Napoleonic operational art and maneuver</li><li>Grand battery and artillery concentration</li><li>Central position and strategic envelopment</li><li>Peninsular War and limitations</li><li>Waterloo and the French Wars' end</li></ul></div></div>
+        </div>
+        <div class="content-section" id="corps">
+            <h2 class="section-title">THE CORPS D'ARMEE</h2>
+            <div class="ornamental-divider"><span>Revolutionary Military Organization</span></div>
+            <p class="content-text">The French Revolutionary wars created huge armies through the levee en masse—mass conscription that mobilized entire male populations. Napoleon organized these huge armies into corps d'armee, each a self-contained formation combining infantry, cavalry, and artillery. Corps could operate independently for extended periods and then rapidly concentrate for battle. This allowed armies to march dispersed (multiple roads for speed and reduced foraging strain) yet "march separately, fight together" when concentrated.</p>
+        </div>
+        <div class="content-section" id="campaigns">
+            <h2 class="section-title">NAPOLEONIC CAMPAIGNS</h2>
+            <div class="ornamental-divider"><span>Major Campaigns and Battles</span></div>
+            <div class="example-box">
+                <div class="example-title">Campaign of Ulm-Austerlitz (1805)</div>
+                <p class="content-text">Ulm was strategic envelopment—Napoleon captured an entire Austrian army (60,000 men) without major battle through maneuver. Austerlitz followed as tactical masterpiece. Napoleon deliberately weakened his right flank to tempt Allied attack there, then struck the center and left with crushing force, nearly destroying the Allied army.</p>
+            </div>
+            <div class="example-box">
+                <div class="example-title">Campaign of 1812: Russia</div>
+                <p class="content-text">Napoleon invaded Russia with about 600,000 men. Russian army retreated, scorched earth denied forage, extended distances broke supply lines, and winter destroyed the Grand Armee. Less than 100,000 returned alive. This campaign demonstrated limits of logistic reach and the danger of overextension.</p>
+            </div>
+        </div>
+        <div class="content-section" id="tactics">
+            <h2 class="section-title">GRAND TACTICS AND MANEUVER</h2>
+            <div class="ornamental-divider"><span>Napoleonic Battlefield Methods</span></div>
+            <p class="content-text">Napoleon employed "central position"—placing his army between separated enemy forces, then defeating each in detail through rapid movement and concentration. He also used strategic envelopment, surrounding enemy armies to compel surrender or battlefield destruction. The "grand battery" massed artillery to blast holes in enemy lines for infantry exploitation. His tactics emphasized offense, surprise, and seizing the initiative.</p>
+        </div>
+        <div class="content-section" id="practice"><h2 class="section-title">PRACTICE</h2><div id="module7-problems"></div></div>
+        <div class="content-section" id="quiz"><h2 class="section-title">MODULE VII QUIZ</h2><div id="napoleonic-quiz"></div></div>
+        <div class="nav-buttons"><button class="nav-button prev-module-btn" onclick="window.location.href='06-linear-tactics.html'">← Previous Module</button><a href="../index.html" class="nav-button">Overview</a><a href="08-naval.html" class="nav-button next-module-btn">Next: Naval Warfare →</a></div>
+    </div>
+    <script src="../js/navigation.js"></script><script src="../js/problems.js"></script><script src="../js/quizzes.js"></script>
+    <script>let problemsCompleted=0,totalProblems=80;function checkProblem(pid,correct,alts,inputId){const input=document.getElementById(inputId).value.trim().toLowerCase(),feedback=document.getElementById(inputId+'-feedback');if((input.replace(/\s/g,'')===correct.toLowerCase().replace(/\s/g,''))||alts.some(a=>a.toLowerCase().replace(/\s/g,'')===input.replace(/\s/g,''))){feedback.className='feedback correct';feedback.textContent='Correct!';feedback.style.display='block';if(!courseProgress.problemsSolved.includes(pid)){courseProgress.problemsSolved.push(pid);problemsCompleted++;updateModuleProgress();}}else{feedback.className='feedback incorrect';feedback.textContent='Incorrect.';feedback.style.display='block';}}function updateModuleProgress(){const pct=Math.round((problemsCompleted/totalProblems)*100),pf=document.getElementById('moduleProgress');if(pf){pf.style.width=pct+'%';pf.textContent=pct+'%';}}document.addEventListener('DOMContentLoaded',()=>{loadProgress();updateModuleProgress();if(!courseProgress.lessonsCompleted.includes(7)){courseProgress.lessonsCompleted.push(7);saveProgress();}});</script>
+</body></html>

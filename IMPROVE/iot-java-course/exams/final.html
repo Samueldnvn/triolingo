@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Exam - IoT Development with Java</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="exam-header">
+        <h1>FINAL EXAM</h1>
+        <h2>IoT Development with Java - Comprehensive Assessment</h2>
+    </div>
+
+    <div class="container">
+        <div class="section-divider"></div>
+
+        <div class="exam-info">
+            <p><strong>Exam Instructions:</strong></p>
+            <ul class="info-list">
+                <li>This exam consists of 30 questions covering all 10 course modules</li>
+                <li>Questions include multiple-choice questions testing your knowledge</li>
+                <li>Passing score: 80% (24 out of 30 questions correct)</li>
+                <li>You may review course materials before taking the exam</li>
+                <li>The exam can be retaken if needed</li>
+            </ul>
+        </div>
+
+        <div class="attention-box important">
+            SCORE AT LEAST 24 OUT OF 30 QUESTIONS TO PASS THE COURSE AND EARN YOUR CERTIFICATE
+        </div>
+
+        <div class="practice-header">
+            <h1>ARE YOU READY?</h1>
+            <p>Review all modules before starting the final exam. Once you begin, ensure you have sufficient time to complete all questions.</p>
+        </div>
+
+        <div id="exam-container" class="quiz-container" style="display: none;">
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <button class="submit-btn" id="start-exam-btn" onclick="startFinalExam()">Start Final Exam</button>
+            <button class="submit-btn" id="submit-exam-btn" onclick="submitFinalExam()" style="display: none;">Submit Exam</button>
+        </div>
+
+        <div id="exam-result" class="exam-results" style="display: none;">
+            <h2>EXAM RESULTS</h2>
+            <div class="score-value" id="final-score">0/30</div>
+            <div id="grade-badge" class="grade-badge"></div>
+            <p id="score-message"></p>
+            <div id="review-section" style="margin-top: 30px; display: none;">
+                <h3>Question Review</h3>
+                <div id="detailed-review"></div>
+            </div>
+            <div style="margin-top: 30px;">
+                <a href="../index.html" class="nav-button">Return to Course Overview</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p class="footer-text">IOT DEVELOPMENT WITH JAVA - FINAL EXAMINATION</p>
+    </div>
+
+    <script src="js/navigation.js"></script>
+    <script src="js/quizzes.js"></script>
+    <script>
+        let finalExamAnswers = {};
+        
+        function startFinalExam() {
+            const container = document.getElementById('exam-container');
+            let html = '';
+            
+            finalExamQuestions.forEach((question, index) => {
+                html += `
+                    <div class="quiz-question">
+                        <p><strong>${index + 1}. ${question.question}</strong></p>
+                        <div class="quiz-options">
+                            ${question.options.map(opt => `
+                                <div class="quiz-option" onclick="selectFinalExamOption('${question.id}', '${opt.charAt(0)}', this)">
+                                    ${opt}
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+            document.getElementById('start-exam-btn').style.display = 'none';
+            document.getElementById('submit-exam-btn').style.display = 'inline-block';
+            container.style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        function selectFinalExamOption(questionId, option, element) {
+            finalExamAnswers[questionId] = option;
+            
+            element.parentElement.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+        
+        function submitFinalExam() {
+            let score = 0;
+            let reviewHtml = '';
+            const total = finalExamQuestions.length;
+            
+            finalExamQuestions.forEach((q, index) => {
+                const userAnswer = finalExamAnswers[q.id] || 'No Answer';
+                const correct = userAnswer === q.correct;
+                if (correct) score++;
+                
+                reviewHtml += `
+                    <div style="padding: 15px; margin: 10px 0; background: ${correct ? 'rgba(76, 175, 80, 0.1)' : 'rgba(244, 67, 54, 0.1)'}; border: 2px solid ${correct ? '#4CAF50' : '#F44336'}; border-radius: 8px;">
+                        <p><strong>${index + 1}. ${q.question}</strong></p>
+                        <p style="margin: 10px 0;">Your answer: ${userAnswer} | Correct answer: ${q.correct}</p>
+                        ${!correct ? `<p style="color: #F44336; margin-top: 5px;">Explanation: ${q.explanation}</p>` : `<p style="color: #4CAF50; margin-top: 5px;">Correct!</p>`}
+                    </div>
+                `;
+            });
+            
+            const percentage = (score / total) * 100;
+            const resultDiv = document.getElementById('exam-result');
+            const gradeBadge = document.getElementById('grade-badge');
+            
+            document.getElementById('final-score').textContent = `${score}/${total} (${percentage.toFixed(1)}%)`;
+            
+            // Determine grade
+            gradeBadge.className = 'grade-badge';
+            let grade, message;
+            if (percentage >= 90) {
+                grade = 'A'; gradeBadge.classList.add('grade-a');
+                message = 'Outstanding! You have mastered IoT development with Java!';
+            } else if (percentage >= 80) {
+                grade = 'B'; gradeBadge.classList.add('grade-b');
+                message = 'Excellent work! You have successfully completed the course!';
+            } else if (percentage >= 70) {
+                grade = 'C'; gradeBadge.classList.add('grade-c');
+                message = 'Good job! You have demonstrated understanding of IoT with Java.';
+            } else if (percentage >= 60) {
+                grade = 'D'; gradeBadge.classList.add('grade-d');
+                message = 'You passed, but consider reviewing the material for a stronger grasp.';
+            } else {
+                grade = 'F'; gradeBadge.classList.add('grade-f');
+                message = 'Please review the course materials and retake the exam.';
+            }
+            
+            gradeBadge.textContent = `Grade: ${grade}`;
+            document.getElementById('score-message').textContent = message;
+            
+            document.getElementById('detailed-review').innerHTML = reviewHtml;
+            document.getElementById('review-section').style.display = 'block';
+            document.getElementById('submit-exam-btn').style.display = 'none';
+            resultDiv.style.display = 'block';
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            loadProgress();
+        });
+    </script>
+</body>
+</html>

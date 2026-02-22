@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Module V: Renaissance Warfare</title><link rel="stylesheet" href="../css/styles.css"></head>
+<body>
+    <div class="renaissance-header"><h1>MODULE V: RENAISSANCE WARFARE</h1></div>
+    <nav class="nav-container"><ul class="nav-menu"><li class="nav-item active" onclick="showSection('overview')">Overview</li><li class="nav-item" onclick="showSection('pike')">Pike and Shot</li><li class="nav-item" onclick="showSection('machiavelli')">Machiavelli</li><li class="nav-item" onclick="showSection('thirty')">Thirty Years War</li><li class="nav-item" onclick="showSection('practice')">Practice</li><li class="nav-item" onclick="showSection('quiz')">Quiz</li></ul></nav>
+    <div class="progress-container"><div class="progress-title">MODULE V PROGRESS</div><div class="progress-bar"><div class="progress-fill" id="moduleProgress" style="width:0%">0%</div></div></div>
+    <div class="container">
+        <div class="content-section active" id="overview">
+            <div class="lesson-header"><h1>Renaissance Warfare</h1><p>Military Innovation in the Age of Discovery</p></div>
+            <div class="ornamental-divider"><span>Introduction</span></div>
+            <p class="content-text">Renaissance warfare (c. 14th-early 17th century) saw the institutionalization of gunpowder weapons, the professionalization of armies, and the development of sophisticated military theory. Armies grew larger and more expensive, states increasingly took direct control of military power, and naval warfare underwent profound changes. This era also witnessed the beginning of colonial and global warfare as European powers expanded overseas.</p>
+            <div class="parchment-section"><div class="parchment-content"><h3>WHAT YOU SHALL MASTER</h3><ul class="parchment-list"><li>Pike and shot tactics and pike-protection</li><li>Machiavelli's military writings</li><li>Dutch military reforms under Maurice of Nassau</li><li>Thirty Years War innovations</li><li>Swiss and German professional infantry</li><li>Evolution toward standing armies</li></ul></div></div>
+        </div>
+        <div class="content-section" id="pike">
+            <h2 class="section-title">PIKE AND SHOT TACTICS</h2>
+            <div class="ornamental-divider"><span>Combined Arms for Gunpowder Era</span></div>
+            <p class="content-text">Pike and shot formations built on the Spanish tercio but evolved more flexible arrangements. Pikemen formed the front to protect musketeers, while musketeers fired from behind or the flanks, providing firepower. By the early 17th century, many European armies moved toward shallower formations with better flexibility than the deep tercio.</p>
+            <div class="scroll-box"><div class="scroll-title">Swiss Pikemen</div><div class="scroll-text">Swiss pikemen formed deep columns and defeated cavalry at battles like Nancy (1477) and Marignano (1515). They demonstrated professional infantry's ability to dominate battlefields, though firearms gradually increased in importance.</div></div>
+        </div>
+        <div class="content-section" id="machiavelli">
+            <h2 class="section-title">MACHIAVELLI ON WAR</h2>
+            <div class="ornamental-divider"><span>Art of War (1521)</span></div>
+            <p class="content-text">Niccolo Machiavelli, famous for "The Prince," also wrote on military affairs. In "Art of War," Machiavelli argued that citizen armies were superior to mercenaries and that Florence should maintain a militia for its defense. He criticized reliance on condottieri (mercenary captains), whose loyalty was questionable. Machiavelli advocated citizen-soldiers motivated by patriotism and properly trained by the state.</p>
+        </div>
+        <div class="content-section" id="thirty">
+            <h2 class="section-title">THIRTY YEARS WAR (1618-1648)</h2>
+            <div class="ornamental-divider"><span>Religious War and Military Innovation</span></div>
+            <p class="content-text">The Thirty Years War was a devastating religious conflict involving most European powers. It demonstrated massed field artillery, continued evolution of pike and shot tactics, and the increasing size of armies. Gustavus Adolphus of Sweden contributed mobile light artillery and improved combined arms coordination. The war caused massive civilian casualties in central Europe and demonstrated how warfare could devastate society.</p>
+        </div>
+        <div class="content-section" id="practice"><h2 class="section-title">PRACTICE</h2><div id="module5-problems"></div></div>
+        <div class="content-section" id="quiz"><h2 class="section-title">MODULE V QUIZ</h2><div id="renaissance-quiz"></div></div>
+        <div class="nav-buttons"><button class="nav-button prev-module-btn" onclick="window.location.href='04-gunpowder.html'">← Previous Module</button><a href="../index.html" class="nav-button">Overview</a><a href="06-linear-tactics.html" class="nav-button next-module-btn">Next: Linear Tactics →</a></div>
+    </div>
+    <script src="../js/navigation.js"></script><script src="../js/problems.js"></script><script src="../js/quizzes.js"></script>
+    <script>let problemsCompleted=0,totalProblems=70;function checkProblem(pid,correct,alts,inputId){const input=document.getElementById(inputId).value.trim().toLowerCase(),feedback=document.getElementById(inputId+'-feedback');if((input.replace(/\s/g,'')===correct.toLowerCase().replace(/\s/g,''))||alts.some(a=>a.toLowerCase().replace(/\s/g,'')===input.replace(/\s/g,''))){feedback.className='feedback correct';feedback.textContent='Correct!';feedback.style.display='block';if(!courseProgress.problemsSolved.includes(pid)){courseProgress.problemsSolved.push(pid);problemsCompleted++;updateModuleProgress();}}else{feedback.className='feedback incorrect';feedback.textContent='Incorrect.';feedback.style.display='block';}}function updateModuleProgress(){const pct=Math.round((problemsCompleted/totalProblems)*100),pf=document.getElementById('moduleProgress');if(pf){pf.style.width=pct+'%';pf.textContent=pct+'%';}}document.addEventListener('DOMContentLoaded',()=>{loadProgress();updateModuleProgress();if(!courseProgress.lessonsCompleted.includes(5)){courseProgress.lessonsCompleted.push(5);saveProgress();}});</script>
+</body></html>

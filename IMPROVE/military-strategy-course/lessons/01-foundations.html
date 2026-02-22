@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module I: Foundations of Military Strategy - The Art of War</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Renaissance Header -->
+    <div class="renaissance-header">
+        <h1>MODULE I: FOUNDATIONS OF MILITARY STRATEGY</h1>
+        <h2>The Eternal Principles of Warfare</h2>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <ul class="nav-menu">
+            <li class="nav-item active" onclick="showSection('overview')">Overview</li>
+            <li class="nav-item" onclick="showSection('nature-war')">Nature of War</li>
+            <li class="nav-item" onclick="showSection('sun-tzu')">Sun Tzu</li>
+            <li class="nav-item" onclick="showSection('thucydides')">Thucydides</li>
+            <li class="nav-item" onclick="showSection('principles')">Strategic Principles</li>
+            <li class="nav-item" onclick="showSection('practice')">Practice Problems</li>
+            <li class="nav-item" onclick="showSection('quiz')">Module Quiz</li>
+        </ul>
+    </nav>
+
+    <!-- Progress for this module -->
+    <div class="progress-container">
+        <div class="progress-title">MODULE I PROGRESS</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="moduleProgress" style="width: 0%">0%</div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Overview Section -->
+        <div class="content-section active" id="overview">
+            <div class="lesson-header">
+                <h1>Foundations of Military Strategy</h1>
+                <p>The Classical Beginnings of Strategic Thought</p>
+            </div>
+
+            <div class="ornamental-divider"><span>Introduction</span></div>
+
+            <p class="content-text">
+                The study of military strategy begins not with the first battle, but with the first reflection on why battles are fought and how they should be waged. In this foundational module, we explore the ancient philosophical underpinnings that have governed warfare for thousands of years. Though weapons and technologies have changed dramatically since antiquity, the fundamental principles of strategy have remained remarkably constant.
+            </p>
+
+            <div class="parchment-section">
+                <div class="parchment-content">
+                    <h3>WHAT YOU SHALL MASTER IN THIS MODULE</h3>
+                    <p class="parchment-text">By the conclusion of your studies herein, you shall possess comprehensive understanding of:</p>
+                    <ul class="parchment-list">
+                        <li>The fundamental nature and purpose of warfare throughout human history</li>
+                        <li>Sun Tzu's essential teachings in The Art of War and their timeless applications</li>
+                        <li>Thucydides' analysis of the Peloponnesian War and strategic insight</li>
+                        <li>The enduring strategic principles that transcend any particular era or technology</li>
+                        <li>The relationship between politics, diplomacy, and military action</li>
+                        <li>The concept of the center of gravity and strategic objectives</li>
+                        <li>Why strategy matters more than tactics in the grand scheme of conflict</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Why Study Ancient Strategy?</h3>
+
+            <p class="content-text">
+                At first glance, one might question the relevance of studying military thought from two and a half millennia ago. What can chariots, phalanxes, and triremes teach us about modern warfare? The answer lies in the distinction between <span class="keyword">technique</span> and <span class="keyword">principle</span>. Techniques change with technology—how armies march, how they communicate, how they deliver force. Principles endure because they are based on human nature, psychology, and the fundamental dynamics of conflict.
+            </p>
+
+            <div class="example-box">
+                <div class="example-title">Technique vs. Principle</div>
+                <p class="content-text">
+                    <strong>Technique:</strong> A specific method for achieving a goal. For example, the use of the phalanx formation, the operation of a chariot, or the employment of gunpowder artillery. These are tied to their technologies and eras.
+                </p>
+                <p class="content-text" style="margin-top: 15px;">
+                    <strong>Principle:</strong> A fundamental truth that applies regardless of technology. For example, the importance of unity of command, the value of surprise, the need to secure flanks, or the advantage of interior lines. These transcend era and technology.
+                </p>
+            </div>
+
+            <p class="content-text">
+                Sun Tzu wrote in the fifth century BCE, yet his insights informed commanders from Napoleon to modern generals. The principles of concentration of force, economy of effort, and securing the objective are as true today as they were when warriors fought with bronze spears. This is because strategy is ultimately about human decision-making under conditions of uncertainty, friction, and limited resources—conditions that never truly change.
+            </p>
+
+            <h3 class="subsection-title">The Hierarchy of Conflict</h3>
+
+            <div class="important-box">
+                <div class="important-title">Three Levels of War</div>
+                <p class="content-text">
+                    Understanding the proper levels of conflict is essential to strategic thinking:
+                </p>
+                <ul style="list-style: none; padding: 0; margin-top: 20px;">
+                    <li style="margin-bottom: 15px; padding-left: 30px; position: relative;">
+                        <strong style="color: var(--deep-red); font-size: 1.1em;">STRATEGY:</strong>
+                        <span style="position: absolute; left: 0; color: var(--gold-leaf);">*</span>
+                        The overall plan for achieving political objectives through the use of military force. It concerns what wars to fight, why to fight them, and how to coordinate national resources toward victory.
+                    </li>
+                    <li style="margin-bottom: 15px; padding-left: 30px; position: relative;">
+                        <strong style="color: var(--deep-red); font-size: 1.1em;">OPERATIONS:</strong>
+                        <span style="position: absolute; left: 0; color: var(--gold-leaf);">**</span>
+                        The coordination of campaigns and battles to achieve strategic objectives. This is the level at which armies are moved into position, supply lines are established, and major offensives are planned.
+                    </li>
+                    <li style="margin-bottom: 15px; padding-left: 30px; position: relative;">
+                        <strong style="color: var(--deep-red); font-size: 1.1em;">TACTICS:</strong>
+                        <span style="position: absolute; left: 0; color: var(--gold-leaf);">***</span>
+                        The art and science of winning battles and engagements. Tactics concerns how to deploy forces in specific battles, how to maneuver on the field, and how to employ weapons and formations to defeat the enemy in direct combat.
+                    </li>
+                </ul>
+            </div>
+
+            <p class="content-text">
+                This course focuses primarily on strategy and operations—why and how forces are maneuvered and deployed on the grand scale—rather than the detailed tactics of individual combat. However, the two are deeply connected: good strategy dictates what tactics are needed, and tactical success or failure determines whether strategic objectives can be achieved.
+            </p>
+
+            <div class="scroll-box">
+                <div class="scroll-title">A Fundamental Truth</div>
+                <div class="scroll-text">
+                    "Great warriors succeed not through superior strength but through superior understanding of the nature of conflict itself."
+                </div>
+            </div>
+        </div>
+
+        <!-- Nature of War Section -->
+        <div class="content-section" id="nature-war">
+            <h2 class="section-title">THE NATURE AND PURPOSE OF WAR</h2>
+
+            <div class="ornamental-divider"><span>The Fundamental Questions</span></div>
+
+            <p class="content-text">
+                Before studying the methods of warfare, we must first understand its nature. What is war? Why do men and nations make war? What can war achieve, and what are its inherent limitations? These questions occupied the greatest minds of antiquity, and their answers form the bedrock of strategic thought.
+            </p>
+
+            <h3 class="subsection-title">What is War?</h3>
+
+            <p class="content-text">
+                At its most fundamental level, war is <strong>organized violence</strong> pursued for political ends. It is not merely fighting or killing—it is the deliberate application of force by one organized group against another to achieve specific objectives. The key elements are:
+            </p>
+
+            <div class="parchment-section">
+                <div class="parchment-content">
+                    <h3>THE ESSENTIAL ELEMENTS OF WAR</h3>
+                    <ul class="parchment-list">
+                        <li><strong>Organization:</strong> War requires structure, discipline, and coordinated effort. A mob is different from an army.</li>
+                        <li><strong>Violence:</strong> War involves the use of force to compel the enemy to one's will. This is what distinguishes war from diplomacy or economic competition.</li>
+                        <li><strong>Political Purpose:</strong> War is never fought for its own sake. It is always a means to achieve some political objective, whether defensive (protecting territory), offensive (conquering land), or more complex (influence, prestige, resources).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">The Purpose of War</h3>
+
+            <p class="content-text">
+                Understanding why wars are fought is essential to understanding how they should be waged. Different objectives require different strategies, different levels of commitment, and different methods of warfare.
+            </p>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Type of Objective</th>
+                        <th>Description</th>
+                        <th>Strategic Implications</th>
+                    </tr>
+                    <tr>
+                        <td>Existential Defense</td>
+                        <td>Protecting the very survival of the state or people</td>
+                        <td>Maximum effort, total war, no holds barred</td>
+                    </tr>
+                    <tr>
+                        <td>Territorial Defense</td>
+                        <td>Protecting specific borders or regions</td>
+                        <td>Focused defense, clear lines, strong positions</td>
+                    </tr>
+                    <tr>
+                        <td>Territorial Conquest</td>
+                        <td>Acquiring additional land or resources</td>
+                        <td>Offensive operations, securing objectives, occupation</td>
+                    </tr>
+                    <tr>
+                        <td>Punitive Expedition</td>
+                        <td>Punishing an enemy for previous aggression</td>
+                        <td>Limited objectives, demonstration of force, controlled escalation</td>
+                    </tr>
+                    <tr>
+                        <td>Preventive War</td>
+                        <td>Striking first to prevent a perceived future threat</td>
+                        <td>Offensive initiative, swift action, strategic surprise</td>
+                    </tr>
+                </table>
+            </div>
+
+            <p class="content-text">
+                The ancient strategists recognized that the nature of the objective determines the nature of the war. A war for survival requires a completely different approach than a war for limited aims. This principle holds true whether one fights with spears or with thermonuclear weapons.
+            </p>
+
+            <h3 class="subsection-title">The Character of War</h3>
+
+            <p class="content-text">
+                While the nature of war (organized violence for political ends) does not change, the <strong>character</strong> of war does change significantly over time. The character refers to how war is actually fought—the specific technologies, methods, social organizations, and constraints that shape conflict in any given era.
+            </p>
+
+            <div class="example-box">
+                <div class="example-title">Changing Character, Unchanging Nature</div>
+                <p class="content-text">
+                    <strong>Ancient War:</strong> Fought face-to-face with edged weapons. Limited range, immediate contact, personal valor mattered greatly. Logistics was simple compared to modern standards.
+                </p>
+                <p class="content-text" style="margin-top: 15px;">
+                    <strong>Napoleonic War:</strong> Fought with muskets, artillery, and cavalry. Ranges were still relatively short by modern standards but greater than ancient times. Mass armies required complex logistics.
+                </p>
+                <p class="content-text" style="margin-top: 15px;">
+                    <strong>Modern War:</strong> Fought at extreme ranges with precision weapons. Forces are specialized. Information warfare is as important as kinetic warfare.
+                </p>
+                <p class="content-text" style="margin-top: 15px;">
+                    <strong>What does NOT change:</strong> The need for clear objectives, the importance of morale, the role of leadership, the fog of war, the need to secure flanks and rear areas, the advantage of surprise.
+                </p>
+            </div>
+
+            <div class="important-box">
+                <div class="important-title">The Strategic Error of Fighting the Last War</div>
+                <p class="content-text">
+                    Military organizations throughout history have fallen into the trap of preparing for the previous war rather than the next one. At the start of World War I, cavalry charges were expected despite the machine gun. In World War II, the French built the Maginot Line based on World War I experience. Understanding character vs. nature prevents this error: prepare for future realities while learning from enduring principles.
+                </p>
+            </div>
+
+            <h3 class="subsection-title">The Paradoxes of War</h3>
+
+            <p class="content-text">
+                Strategic thinkers have long noted that war contains inherent paradoxes—opposing truths that must both be respected. These paradoxes illustrate why warfare is so complex and why simple formulas for victory rarely exist.
+            </p>
+
+            <div class="scroll-box">
+                <div class="scroll-title">The Paradox of War</div>
+                <div class="scroll-text">
+                    War is an instrument of policy, yet war also has its own logic that can drive policy. The commander must balance the political demands of leadership with the military demands of effective warfare.
+                </div>
+            </div>
+
+            <ul style="text-align: left; list-style: none; padding: 0; margin: 20px 0;">
+                <li style="margin: 20px 0; padding-left: 30px; position: relative;">
+                    <strong style="color: var(--deep-red);">The Paradox of Moral Strength:</strong>
+                    <span style="position: absolute; left: 0; color: var(--gold-leaf);">❦</span>
+                    War demands ruthlessness in execution, yet a just cause strengthens morale and legitimacy. An army fighting for a perceived just cause often demonstrates greater resilience than a mercenary force.
+                </li>
+                <li style="margin: 20px 0; padding-left: 30px; position: relative;">
+                    <strong style="color: var(--deep-red);">The Paradox of Risk:</strong>
+                    <span style="position: absolute; left: 0; color: var(--gold-leaf);">❦</span>
+                    Great victories often come from taking great risks, yet recklessness leads to disaster. The art lies in calculated risk—taking chances when the potential reward justifies the danger.
+                </li>
+                <li style="margin: 20px 0; padding-left: 30px; position: relative;">
+                    <strong style="color: var(--deep-red);">The Paradox of Knowledge:</strong>
+                    <span style="position: absolute; left: 0; color: var(--gold-leaf);">❦</span>
+                    Knowledge is power in war, yet the fog of war ensures perfect knowledge is never possible. The skilled commander acts decisively despite uncertainty.
+                </li>
+                <li style="margin: 20px 0; padding-left: 30px; position: relative;">
+                    <strong style="color: var(--deep-red);">The Paradox of Simplicity:</strong>
+                    <span style="position: absolute; left: 0; color: var(--gold-leaf);">❦</span>
+                    Simple plans tend to work better than complex ones, yet the realities of war are inherently complex. The challenge is reducing complexity to executable simplicity.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Sun Tzu Section -->
+        <div class="content-section" id="sun-tzu">
+            <h2 class="section-title">SUN TZU AND THE ART OF WAR</h2>
+
+            <div class="ornamental-divider"><span>The Ancient Chinese Master</span></div>
+
+            <p class="content-text">
+                Written around the fifth century BCE, <em>The Art of War</em> by Sun Tzu is the oldest and most influential treatise on military strategy ever written. Comprising thirteen chapters, it distills the wisdom of Chinese martial tradition into concise, often paradoxical precepts that have guided commanders for two and half millennia. Its influence extends far beyond warfare—it is studied in business schools, political science departments, and even by sports coaches seeking competitive advantage.
+            </p>
+
+            <h3 class="subsection-title">Historical Context</h3>
+
+            <p class="content-text">
+                Sun Tzu lived during the Spring and Autumn period of Chinese history, a time of intense conflict between the various states of ancient China. This era, which preceded the more chaotic Warring States period, saw constant warfare as various rulers sought to expand their territory and influence. It was in this crucible of conflict that Sun Tzu developed his strategic philosophy.
+            </p>
+
+            <p class="content-text">
+                Little is known with certainty about Sun Tzu's life. Tradition holds that he served as a general for King Helu of Wu, leading the armies of that relatively small state to victory over the more powerful state of Chu. The historicity of these campaigns is debated among scholars, but the strategic insights in <em>The Art of War</em> are unquestionably profound and have stood the test of time.
+            </p>
+
+            <h3 class="subsection-title">Core Concepts of The Art of War</h3>
+
+            <p class="content-text">
+                Sun Tzu's work covers the full spectrum of warfare—from grand strategy to detailed tactics. We examine here the most important concepts for understanding strategic maneuver and positioning.
+            </p>
+
+            <h4 class="subsection-title" style="font-size: 1.4em; margin: 25px 0 20px 0;">1. Winning Without Fighting</h4>
+
+            <p class="content-text">
+                Perhaps the most famous teaching of Sun Tzu is that the highest excellence in warfare is to subdue the enemy without fighting. This may seem paradoxical, but it reflects the understanding that war is costly and unpredictable. A victory that requires no actual combat is the safest and most economical kind of all.
+            </p>
+
+            <div class="scroll-box">
+                <div class="scroll-title">The Highest Excellence</div>
+                <div class="scroll-text">
+                    "The supreme art of war is to subdue the enemy without fighting."
+                </div>
+            </div>
+
+            <p class="content-text">
+                How can one win without fighting? Sun Tzu offers several methods: breaking enemy alliances so they cannot combine against you, attacking enemy strategy so their plans are disrupted, or creating conditions so unfavorable that the enemy surrenders without contest. The skilled commander achieves his objectives through positioning, psychology, and maneuver rather than through direct combat.
+            </p>
+
+            <h4 class="subsection-title" style="font-size: 1.4em; margin: 25px 0 20px 0;">2. Know Yourself and Your Enemy</h4>
+
+            <p class="content-text">
+                Sun Tzu emphasizes the importance of knowledge—both of one's own forces and of the enemy. This seems obvious, but commanders throughout history have failed due to overconfidence, ignorance of enemy capabilities, or misunderstanding of their own limitations.
+            </p>
+
+            <div class="scroll-box">
+                <div class="scroll-title">The Knowledge Maxim</div>
+                <div class="scroll-text">
+                    "Know the enemy and know yourself; in a hundred battles, you will never be in peril."
+                </div>
+            </div>
+
+            <p class="content-text">
+                Knowledge must be specific: the enemy's strength, their disposition, their leadership, their level of preparedness. It must be accurate: based on reliable intelligence rather than assumption. And it must be used: mere information is insufficient; the strategic commander must act on that knowledge.
+            </p>
+
+            <h4 class="subsection-title" style="font-size: 1.4em; margin: 25px 0 20px 0;">3. Calculations Before Battle</h4>
+
+            <p class="content-text">
+                Sun Tzu's first chapter is devoted to calculations—the systematic assessment of factors that determine whether victory is possible before the first battle is fought. Five constant factors are considered: moral law (will of the people), heaven (weather and seasons), earth (terrain), the commander (wisdom, sincerity, benevolence, courage, strictness), and method and discipline (organization and supply chains).
+            </p>
+
+            <div class="parchment-section">
+                <div class="parchment-content">
+                    <h3>THE FIVE CONSTANT FACTORS</h3>
+                    <ul class="parchment-list">
+                        <li><strong>The Moral Law:</strong> Causes the people to be in harmony with their ruler, so they will follow him regardless of danger.</li>
+                        <li><strong>Heaven:</strong> Signifies night and day, cold and heat, times and seasons—all environmental factors affecting warfare.</li>
+                        <li><strong>Earth:</strong> Comprises distances, great and small; danger and security; open ground and narrow passes; the chances of life and death.</li>
+                        <li><strong>The Commander:</strong> Stands for the virtues of wisdom, sincerity, benevolence, courage, and strictness.</li>
+                        <li><strong>Method and Discipline:</strong> The organization of the army, the proper gradation of rank, the maintenance of supply lines, and the control of military expenditure.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4 class="subsection-title" style="font-size: 1.4em; margin: 25px 0 20px 0;">4. The Importance of Deception</h4>
+
+            <p class="content-text">
+                War is inherently deceptive. The enemy should never know your true strength, your true intentions, or your true movements. Sun Tzu teaches that all warfare is based on deception—appearing weak when strong, appearing near when far, attacking where not expected.
+            </p>
+
+            <div class="scroll-box">
+                <div class="scroll-title">The Principle of Deception</div>
+                <div class="scroll-text">
+                    "All warfare is based on deception. When able, feign inability. When active, feign inactivity. When near, seem distant. When distant, seem near."
+                </div>
+            </div>
+
+            <p class="content-text">
+                    Deception serves multiple purposes: it misleads the enemy about your intentions, it causes them to prepare for attacks that will not come, it conserves your forces by not committing them until the decisive moment, and it creates uncertainty in enemy command decisions.
+            </p>
+
+            <h4 class="subsection-title" style="font-size: 1.4em; margin: 25px 0 20px 0;">5. Avoiding Prolonged Warfare</h4>
+
+            <p class="content-text">
+                Sun Tzu strongly warns against prolonged campaigns. Every day of fighting costs money, lives, and morale. Quick victory is preferable, even if it requires taking risks. The state that can mobilize quickly, strike decisively, and return the army to productive endeavors gains advantage over the state that becomes mired in endless conflict.
+            </p>
+
+            <div class="scroll-box">
+                <div class="scroll-title">The Danger of Lengthy Campaigns</div>
+                <div class="scroll-text">
+                    "There is no instance of a nation benefiting from prolonged warfare."
+                </div>
+            </div>
+
+            <p class="content-text">
+                This principle has modern implications: economic strength is a crucial component of military power. The side that can sustain conflict economically while degrading the enemy's economy gains a decisive advantage, even on the battlefield. The concept of "bleeding the enemy white"—exhausting their resources through prolonged conflict—strategies often prove counterproductive for the victor as well.
+            </p>
+
+            <h4 class="subsection-title" style="font-size: 1.4em; margin: 25px 0 20px 0;">6. Flexible Adaptation</h4>
+
+            <p class="content-text">
+                Situations change rapidly in war. The skilled commander adapts to circumstances rather than rigidly adhering to preconceived plans. Sun Tzu famously compares the commander to water: just as water has no constant shape and adapts to the ground it flows over, the army has no constant formation and adapts to the enemy to defeat them.
+            </p>
+
+            <div class="example-box">
+                <div class="example-title">Water Metaphor for Adaptation</div>
+                <p class="content-text">
+                    Water flows around obstacles rather than attempting to force its way through them directly. It accumulates force at the right moment and breaks through when conditions are favorable. It follows the path of least resistance while nonetheless moving toward its objective. The skilled commander does the same.
+                </p>
+            </div>
+
+            <h3 class="subsection-title">Application Through the Ages</h3>
+
+            <p class="content-text">
+                Napoleonic commanders studied Sun Tzu (often in translation). Twentieth-century generals kept copies at their bedside. Modern business schools teach his principles for corporate competition. The reason is clear: Sun Tzu describes not specific techniques tied to his era but fundamental principles of competitive strategy that apply whenever organized groups pursue conflicting objectives.
+            </p>
+
+            <div class="important-box">
+                <div class="important-title">Why Sun Tzu Endures</div>
+                <p class="content-text">
+                    The Art of War endures because it addresses the human and psychological dimensions of conflict rather than purely technical ones. While weapons change, human nature does not. Fear, uncertainty, the desire for advantage, the tendency to overextend—all these are constants of conflict. Sun Tzu provides wisdom for managing these eternal factors.
+                </p>
+            </div>
+        </div>
+
+        <!-- Thucydides Section -->
+        <div class="content-section" id="thucydides">
+            <h2 class="section-title">THUCYDIDES AND THE PELOPONNESIAN WAR</h2>
+
+            <div class="ornamental-divider"><span>The Greek Historian-Strategist</span></div>
+
+            <p class="content-text">
+                While Sun Tzu provided the philosophical foundation of strategy in the East, the Greek historian Thucydides offered a different but equally important contribution from the West. His <em>History of the Peloponnesian War</em>, written in the fifth century BCE, is not merely a chronicle of events but a profound analysis of why wars begin, how they are fought, and what they reveal about human nature and politics. Thucydides is often considered the father of scientific history because of his rigorous approach to evidence and his refusal to accept supernatural explanations for human events.
+            </p>
+
+            <h3 class="subsection-title">Historical Context</h3>
+
+            <p class="content-text">
+                The Peloponnesian War (431-404 BCE) was a devastating conflict between the Athenian Empire and the Spartan-led Peloponnesian League. Athens, a maritime democracy with imperial ambitions, faced off against Sparta, a land-based oligarchic military society that feared growing Athenian power. The war engulfed the entire Greek world, involved shifting alliances, and ultimately ended with the defeat of Athens and the temporary collapse of Athenian democracy.
+            </p>
+
+            <p class="content-text">
+                Thucydides himself was an Athenian general who participated in the early stages of the war before being exiled after failing to save an Athenian outpost. His exile gave him the time and perspective to write his history, and he traveled among both sides of the conflict, gathering firsthand accounts and observations.
+            </p>
+
+            <h3 class="subsection-title">Key Strategic Insights</h3>
+
+            <h4 class="subsection-title" style="font-size: 1.4em; margin: 25px 0 20px 0;">The Melian Dialogue: Power vs. Justice</h4>
+
+            <p class="content-text">
+                One of the most famous passages in Thucydides is the Melian Dialogue, a dramatized conversation between Athens and the neutral island state of Melos. The Athenians demand Melian submission and wealth; the Melians appeal to justice and right. The Athenians offer a brutally realist response: the strong do what they can, while the weak suffer what they must.
+            </p>
+
+            <div class="scroll-box">
+                <div class="scroll-title">The Realist Maxim</div>
+                <div class="scroll-text">
+                    "The strong do what they can and the weak suffer what they must."
+                </div>
+            </div>
+
+            <p class="content-text">
+                This passage has been debated for millennia. Does it represent Thucydides' own view, or is he illustrating the harsh logic of power politics? Regardless, the Melian Dialogue captures a fundamental strategic truth: in international affairs and warfare, power matters more than abstract notions of justice. Small states must navigate between great powers carefully, understanding that their survival depends on realistic calculations rather than appeals to principle.
+            </p>
+
+            <h4 class="subsection-title" style="font-size: 1.4em; margin: 25px 0 20px 0;">The Fear of Growing Power</h4>
+
+            <p class="content-text">
+                Thucydides analyzes the causes of war, concluding that the Peloponnesian War began because Spartan leaders feared growing Athenian power. This insight has become known as the "Thucydides Trap" in modern international relations theory—when a rising power challenges an established one, war often results from the established power's fear of being eclipsed.
+            </p>
+
+            <div class="important-box">
+                <div class="important-title">The Thucydides Trap</div>
+                <p class="content-text">
+                    Strategic planners must understand that wars often start not from any immediate grievance but from structural factors: the rise of new powers, the fear of established powers, shifting balances of influence. Managing these transitions requires strategic foresight and diplomatic skill—war is preventable when both sides understand their fears and find ways to accommodate changing realities.
+                </p>
+            </div>
+
+            <h4 class="subsection-title" style="font-size: 1.4em; margin: 25px 0 20px 0;">Factions and Civil Strife</h4>
+
+            <p class="content-text">
+                Thucydides provides a detailed analysis of the civil war that broke out in Corcyra, showing how factional conflict escalates and normal moral constraints break down. This analysis has relevance for counterinsurgency and understanding how societies fracture during wars. He observes that revolutionary situations bring out the worst in human nature as competing factions resort to increasingly extreme measures.
+            </p>
+
+            <p class="content-text">
+                    For strategic commanders, the lesson is clear: internal divisions in enemy societies can be exploited, but creating such divisions takes time and carries risks. Furthermore, occupying a fractured society is dangerous, as internal conflicts can engulf occupying forces.
+            </p>
+
+            <h4 class="subsection-title" style="font-size: 1.4em; margin: 25px 0 20px 0;">Pericles' Strategy</h4>
+
+            <p class="content-text">
+                Thucydides presents Athenian leader Pericles' strategy at the outbreak of war: avoid pitched battle with the superior Spartan army, use Athens' naval power to raid the Spartan coast, and rely on imported grain while holding behind the Long Walls that connected Athens to its port. This strategy was sound on paper—Athens could not win a land battle, so it should not fight one.
+            </p>
+
+            <div class="example-box">
+                <div class="example-title">The Periclean Strategy: Strengths and Weaknesses</div>
+                <p class="content-text">
+                    <strong>The Concept:</strong> Use Athens' strengths (naval power, wealth, walls) while minimizing the enemy's advantage (superior hoplite infantry). Raid coastal areas, drain Spartans economically, wait for attrition to work.
+                </p>
+                <p class="content-text" style="margin-top: 15px;">
+                    <strong>Why it Failed:</strong> The strategy required Athenian discipline over years, but Pericles died in 430 BCE. His successors were less cautious and made mistakes, including the disastrous Sicilian Expedition. A plague struck Athens, devastating the population. The strategy was never given time to work fully.
+                </p>
+                <p class="content-text" style="margin-top: 15px;">
+                    <strong>The Lesson:</strong> A strategy that is sound in theory may fail due to leadership changes, unforeseen disasters, loss of popular support, or impatience. Strategic plans must account for these realities.
+                </p>
+            </div>
+
+            <h3 class="subsection-title">Thucydides as a Source of Strategic Wisdom</h3>
+
+            <p class="content-text">
+                Thucydides' history is valuable not just for its insights but for its method. He carefully weighs evidence, questions motives, and presents multiple perspectives. Strategic thinkers should emulate this rigorous approach: question assumptions, seek accurate intelligence, and consider alternative viewpoints before committing to action.
+            </p>
+        </div>
+
+        <!-- Strategic Principles Section -->
+        <div class="content-section" id="principles">
+            <h2 class="section-title">ENDURING STRATEGIC PRINCIPLES</h2>
+
+            <div class="ornamental-divider"><span>The Timeless Laws of Warfare</span></div>
+
+            <p class="content-text">
+                Moving beyond individual thinkers, we now identify the strategic principles that have emerged across cultures and eras. These principles are not abstract theories but practical guidelines that have proven their value in countless conflicts. They form the vocabulary through which strategists communicate and the framework within which they must maneuver.
+            </p>
+
+            <h3 class="subsection-title">The Objective</h3>
+
+            <p class="content-text">
+                Every military action must serve a clear, achievable objective. Without an objective, armies wander aimlessly, resources are wasted, and opportunities are lost. The objective must be worth the cost of achieving it. Strategic leaders must constantly ask: What do we seek to accomplish? Is it achievable? Is it worth the likely price in blood and treasure?
+            </p>
+
+            <div class="scroll-box">
+                <div class="scroll-title">The Principle of the Objective</div>
+                <div class="scroll-text">
+                    Direct every military operation toward a clearly defined, decisive, and attainable objective.
+                </div>
+            </div>
+
+            <h3 class="subsection-title">The Offensive</h3>
+
+            <p class="content-text">
+                    Initiative and action determine the course of war. The offensive posture allows a commander to choose when and where to fight, to force the enemy to react, and to maintain psychological momentum. This does not mean that defensive operations are worthless—defensive operations can be part of an overall offensive strategy. But in war, the side that acts rather than reacts gains advantage.
+            </p>
+
+            <h3 class="subsection-title">Mass</h3>
+
+            <p class="content-text">
+                To succeed, forces must be concentrated at the decisive place and time. Spreading forces thinly across a wide front invites defeat in detail. The principle of mass demands identifying the point of decision and concentrating overwhelming force there. This does not necessarily mean numerical superiority—superior force can be achieved through better positioning, surprise, or tactical superiority.
+            </p>
+
+            <h3 class="subsection-title">Economy of Force</h3>
+
+            <p class="content-text">
+                This principle complements that of mass. It demands that any force not engaged in the decisive operation be used to create mass elsewhere, or to secure critical areas with minimal commitment. Economy of force means allocating no more forces to secondary tasks than absolutely necessary, so that maximum strength can be applied to main efforts.
+            </p>
+
+            <h3 class="subsection-title">Maneuver</h3>
+
+            <p class="content-text">
+                The art of war involves moving forces to advantageous positions before engaging the enemy. Maneuver allows a commander to seize favorable terrain, attack enemy weaknesses, and fight at times and places of one's choosing. It is through maneuver that weaker forces can defeat stronger ones—by attacking where the enemy is not, by threatening multiple objectives, by forcing the enemy into disadvantageous dispositions.
+            </p>
+
+            <h3 class="subsection-title">Unity of Command</h3>
+
+            <p class="content-text">
+                For any military operation to succeed, there must be a single commander with authority over all participating forces. Without unity of command, coordination suffers, confusion reigns, and opportunities are lost. The principle applies not only to battlefield commands but to strategic coordination between armies and navies, between allies, and between military and political leadership.
+            </p>
+
+            <h3 class="subsection-title">Security</h3>
+
+            <p class="content-text">
+                Security protects forces from surprise and reduces the effectiveness of enemy intelligence. It includes physical protection of troops and supply lines, operational security (preventing the enemy from learning intentions), and strategic security (ensuring rear areas are safe). However, excessive concern for security can paralyze action—the principle must be balanced with the need for initiative.
+            </p>
+
+            <h3 class="subsection-title">Surprise</h3>
+
+            <p class="content-text">
+                Strike the enemy at times, places, or in ways they do not expect. Surprise multiplies the effectiveness of forces and creates confusion in enemy command. It can be achieved through timing (attacking when not expected), location (attacking where not expected), or method (using unexpected tactics or weapons). Surprise is fleeting—the effect is greatest when followed immediately by decisive action.
+            </p>
+
+            <h3 class="subsection-title">Simplicity</h3>
+
+            <p class="content-text">
+                Simple plans work better than complex ones. Complex plans require perfect coordination and are prone to breaking down under the friction and uncertainty of war. Simple plans are easier to communicate, easier to execute, and more robust when things go wrong. The challenge for strategists is to reduce complex situations to simple, direct actions that subordinates can understand and implement.
+            </p>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Principle</th>
+                        <th>Core Requirement</th>
+                        <th>Common Violation</th>
+                    </tr>
+                    <tr>
+                        <td>The Objective</td>
+                        <td>Clear, achievable goal worth the cost</td>
+                        <td>Unclear purpose, mission creep</td>
+                    </tr>
+                    <tr>
+                        <td>The Offensive</td>
+                        <td>Seize and maintain initiative</td>
+                        <td>Overly defensive, reactive posture</td>
+                    </tr>
+                    <tr>
+                        <td>Mass</td>
+                        <td>Concentrate at decisive point</td>
+                        <td>Spreading forces too thin</td>
+                    </tr>
+                    <tr>
+                        <td>Economy of Force</td>
+                        <td>Minimal commitment to secondary tasks</td>
+                        <td>Overcommitment to trivial objectives</td>
+                    </tr>
+                    <tr>
+                        <td>Maneuver</td>
+                        <td>Positional advantage before engagement</td>
+                        <td>Accepting battle on enemy terms</td>
+                    </tr>
+                    <tr>
+                        <td>Unity of Command</td>
+                        <td>Single authority over operations</td>
+                        <td>Fragmented command, rivalries</td>
+                    </tr>
+                    <tr>
+                        <td>Security</td>
+                        <td>Protect forces from surprise</td>
+                        <td>Either careless or paralyzed</td>
+                    </tr>
+                    <tr>
+                        <td>Surprise</td>
+                        <td>Strike unexpectedly</td>
+                        <td>Predictable patterns and timing</td>
+                    </tr>
+                    <tr>
+                        <td>Simplicity</td>
+                        <td>Clean, direct plans</td>
+                        <td>Overly complex schemes</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3 class="subsection-title">The Center of Gravity</h3>
+
+            <p class="content-text">
+                A concept developed by Prussian theorist Carl von Clausewitz (though building on classical thought), the center of gravity represents the source of power that gives an enemy or friendly force its strength and freedom of action. It could be a capital city, a key industrial region, a charismatic leader, a strategic port, or the morale of the population. Strategic success requires identifying and attacking enemy centers of gravity while protecting one's own.
+            </p>
+
+            <div class="example-box">
+                <div class="example-title">Historical Centers of Gravity</div>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin: 15px 0;"><strong>Rome in the Second Punic War:</strong> The city itself and the Roman political system. Hannibal won battles but failed against Rome's center of gravity.</li>
+                    <li style="margin: 15px 0;"><strong>Britain in World War II:</strong> The Royal Navy's control of sea lanes and the island as a potential base for invasion of Europe.</li>
+                    <li style="margin: 15px 0;"><strong>The Confederacy in the American Civil War:</strong> Its armies and the will of its people to fight. The Union recognized this and targeted both.</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Principles in Practice</h3>
+
+            <p class="content-text">
+                    The principles are not rigid formulas that guarantee victory if followed. They are guidelines that point toward successful practice, but they must be applied with judgment and adapted to circumstances. Sometimes principles conflict—economy of force may require risking security, or simplicity may require accepting some loss of surprise. The art of strategy lies in balancing competing principles according to the requirements of each situation.
+            </p>
+
+            <div class="important-box">
+                <div class="important-title">Principles vs. Rules</div>
+                <p class="content-text">
+                    Principles are not rules that must always be followed without exception. A skilled commander knows when to deviate from principles—for example, sometimes defense is correct despite the principle of the offensive, or complexity is necessary to achieve surprise. What matters is understanding why each principle exists and whether deviation is justified by the specific situation.
+                </p>
+            </div>
+        </div>
+
+        <!-- Practice Problems Section -->
+        <div class="content-section" id="practice">
+            <h2 class="section-title">PRACTICE PROBLEMS</h2>
+
+            <div class="ornamental-divider"><span>Hone Your Understanding</span></div>
+
+            <p class="content-text">
+                These practice problems test your understanding of the strategic foundations covered in this module. Solve them to confirm your mastery before proceeding.
+            </p>
+
+            <!-- Problems will be generated by problems.js -->
+            <div id="module1-problems"></div>
+        </div>
+
+        <!-- Module Quiz Section -->
+        <div class="content-section" id="quiz">
+            <h2 class="section-title">MODULE I QUIZ</h2>
+
+            <div class="ornamental-divider"><span>Assessment of Knowledge</span></div>
+
+            <p class="content-text">
+                This quiz evaluates your comprehension of the foundational principles of military strategy presented in Module I. A passing score of 70% is required before proceeding to Module II.
+            </p>
+
+            <div class="quill-note important">
+                This quiz consists of 12 questions. Take your time and think carefully. You must achieve at least 70% to proceed.
+            </div>
+
+            <!-- Quiz will be generated by quizzes.js -->
+            <div id="foundations-quiz"></div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <button class="nav-button prev-module-btn" disabled>← Previous Module</button>
+            <a href="../index.html" class="nav-button">Return to Course Overview</a>
+            <a href="02-greek-roman.html" class="nav-button next-module-btn">Next Module: Greek and Roman Warfare →</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p class="footer-text">
+            The Art of War: Military Strategy Through the Napoleonic Era<br><br>
+            Module I: Foundations of Military Strategy<br>
+            Presented in the scholarly tradition of the Renaissance
+        </p>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script src="../js/problems.js"></script>
+    <script src="../js/quizzes.js"></script>
+    <script>
+        let problemsCompleted = 0;
+        const totalProblems = 50;
+        
+        function checkProblem(problemId, correct, alternatives, inputId) {
+            const input = document.getElementById(inputId).value.trim().toLowerCase();
+            const feedback = document.getElementById(inputId + '-feedback');
+            
+            let normalizedCorrect = correct.toLowerCase().replace(/\s/g, '');
+            let normalizedInput = input.replace(/\s/g, '');
+            
+            let isCorrect = normalizedInput === normalizedCorrect || 
+                           alternatives.some(alt => alt.toLowerCase().replace(/\s/g, '') === normalizedInput);
+            
+            if (isCorrect) {
+                feedback.className = 'feedback correct';
+                feedback.textContent = 'Correct!';
+                feedback.style.display = 'block';
+                
+                if (!courseProgress.problemsSolved.includes(problemId)) {
+                    courseProgress.problemsSolved.push(problemId);
+                    problemsCompleted++;
+                    updateModuleProgress();
+                }
+            } else {
+                const explanation = getProblemExplanation(problemId);
+                feedback.className = 'feedback incorrect';
+                feedback.textContent = `Incorrect. ${explanation}`;
+                feedback.style.display = 'block';
+            }
+        }
+        
+        function getProblemExplanation(problemId) {
+            for (let category in practiceProblems) {
+                for (let subcategory in practiceProblems[category]) {
+                    const problems = practiceProblems[category][subcategory];
+                    if (Array.isArray(problems)) {
+                        const problem = problems.find(p => p.id === problemId);
+                        if (problem) {
+                            return problem.explanation || `The correct answer is ${problem.answer}`;
+                        }
+                    }
+                }
+            }
+            return 'Review the material and try again.';
+        }
+        
+        function updateModuleProgress() {
+            const percentage = Math.round((problemsCompleted / totalProblems) * 100);
+            const progressFill = document.getElementById('moduleProgress');
+            if (progressFill) {
+                progressFill.style.width = percentage + '%';
+                progressFill.textContent = percentage + '%';
+            }
+        }
+        
+        function initModule() {
+            loadProgress();
+            updateModuleProgress();
+            
+            if (!courseProgress.lessonsCompleted.includes(1)) {
+                courseProgress.lessonsCompleted.push(1);
+                saveProgress();
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            initModule();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4.3.3: Gram-Schmidt - Linear Algebra</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="chapter-4">
+    <div class="main-wrapper">
+        <nav class="sidebar toc-green">
+            <div class="sidebar-header">
+                <div class="sidebar-title">Linear Algebra</div>
+            </div>
+            <div class="toc-chapter toc-green">
+                <div class="toc-chapter-title">Chapter 4: Advanced Topics</div>
+                <div class="toc-module">
+                    <div class="toc-module-title">Module 4.3: Orthogonality</div>
+                    <div class="toc-lessons">
+                        <div class="toc-lesson"><a href="4-3-1-inner-products.html">Lesson 4.3.1: Inner Products</a></div>
+                        <div class="toc-lesson"><a href="4-3-2-projections.html">Lesson 4.3.2: Projections</a></div>
+                        <div class="toc-lesson"><a href="4-3-3-gram-schmidt.html" class="active">Lesson 4.3.3: Gram-Schmidt</a></div>
+                        <div class="toc-lesson"><a href="4-3-4-practice-orthogonality.html">Lesson 4.3.4: Practice Problems</a></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="module-header">
+                    <h2>Lesson 4.3.3: Gram-Schmidt</h2>
+                    <p>Module 4.3: Orthogonality | Chapter 4: Advanced Topics</p>
+                </div>
+                
+                <div class="content-card">
+                    <div class="definition-box">
+                        <div class="definition-title">Gram-Schmidt Process</div>
+                        <p>The Gram-Schmidt process is an algorithm for converting any basis of an inner product space into an orthonormal basis (a basis where all vectors are orthogonal and have unit length). It works by iteratively subtracting projections.</p>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">The Algorithm</div>
+                    <p>Given a basis {v1, v2, ..., vn}, the Gram-Schmidt process produces an orthonormal basis {u1, u2, ..., un} as follows:</p>
+                    
+                    <div class="formula-box">
+                        <div class="formula">u_1 = v_1 / |v_1|</div>
+                    </div>
+                    
+                    <p>For each subsequent vector k = 2, 3, ..., n:</p>
+                    
+                    <div class="formula-box">
+                        <div class="formula">w_k = v_k - sum(v_k dot u_i * u_i, i=1 to k-1)</div>
+                        <div class="formula">u_k = w_k / |w_k|</div>
+                    </div>
+                    
+                    <div class="note-box">
+                        <div class="note-title">Key Idea</div>
+                        <p>At each step, we subtract all projections of v_k onto the previously formed orthonormal vectors. What remains is orthogonal to all previous vectors.</p>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="example-box">
+                        <div class="example-title">Example 1: 2D Gram-Schmidt</div>
+                        <p>Apply Gram-Schmidt to the basis {v1 = [1, 1], v2 = [1, 0]}.</p>
+                        
+                        <div class="example-content">
+                            <p><strong>Step 1:</strong> Create u1 (normalize v1)</p>
+                            
+                            <div class="formula-box">
+                                <div class="formula">|v1| = sqrt(1^2 + 1^2) = sqrt(2)</div>
+                                <div class="formula">u1 = [1/sqrt(2), 1/sqrt(2)]</div>
+                            </div>
+                            
+                            <p><strong>Step 2:</strong> Create w2 (remove projection onto u1)</p>
+                            
+                            <div class="formula-box">
+                                <div class="formula">v2 dot u1 = (1)(1/sqrt(2)) + (0)(1/sqrt(2)) = 1/sqrt(2)</div>
+                                <div class="formula">w2 = v2 - (v2 dot u1) u1 = [1, 0] - (1/sqrt(2))[1/sqrt(2), 1/sqrt(2)]</div>
+                                <div class="formula">w2 = [1, 0] - [1/2, 1/2] = [1/2, -1/2]</div>
+                            </div>
+                            
+                            <p><strong>Step 3:</strong> Normalize w2 to get u2</p>
+                            
+                            <div class="formula-box">
+                                <div class="formula">|w2| = sqrt((1/2)^2 + (-1/2)^2) = sqrt(1/4 + 1/4) = sqrt(1/2) = 1/sqrt(2)</div>
+                                <div class="formula">u2 = [1/2, -1/2] / (1/sqrt(2)) = [1/sqrt(2), -1/sqrt(2)]</div>
+                            </div>
+                            
+                            <p><strong>Result:</strong> Orthonormal basis = {[1/sqrt(2), 1/sqrt(2)], [1/sqrt(2), -1/sqrt(2)]}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="example-box">
+                        <div class="example-title">Example 2: 3D Gram-Schmidt</div>
+                        <p>Apply Gram-Schmidt to {v1 = [1, 0, 0], v2 = [1, 1, 0], v3 = [1, 1, 1]}.</p>
+                        
+                        <div class="example-content">
+                            <p><strong>u1:</strong> Normalize v1 = [1, 0, 0]. u1 = [1, 0, 0].</p>
+                            
+                            <p><strong>For v2:</strong></p>
+                            <div class="formula-box">
+                                <div class="formula">v2 dot u1 = 1</div>
+                                <div class="formula">w2 = [1, 1, 0] - 1*[1, 0, 0] = [0, 1, 0]</div>
+                                <div class="formula">u2 = [0, 1, 0]</div>
+                            </div>
+                            
+                            <p><strong>For v3:</strong></p>
+                            <div class="formula-box">
+                                <div class="formula">v3 dot u1 = 1, v3 dot u2 = 1</div>
+                                <div class="formula">w3 = [1, 1, 1] - 1*[1, 0, 0] - 1*[0, 1, 0] = [0, 0, 1]</div>
+                                <div class="formula">u3 = [0, 0, 1]</div>
+                            </div>
+                            
+                            <p>The vectors were already orthonormal!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Matrix Formulation</div>
+                    <p>The Gram-Schmidt process can be expressed using matrix factorization: A = QR.</p>
+                    
+                    <div class="important-box">
+                        <div class="important-title">QR Decomposition</div>
+                        <p>Given an m x n matrix A with linearly independent columns:</p>
+                        <ul>
+                            <li><strong>Q:</strong> m x n matrix with orthonormal columns (from Gram-Schmidt)</li>
+                            <li><strong>R:</strong> n x n upper triangular matrix</li>
+                        </ul>
+                        <p>The entries of R are: R_ii = |w_i| and R_ij = v_i dot u_j for i > j.</p>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Applications of Gram-Schmidt</div>
+                    
+                    <div class="important-box">
+                        <div class="important-title">Key Applications</div>
+                        <ul>
+                            <li><strong>Orthogonalization:</strong> Convert any basis to orthonormal</li>
+                            <li><strong>QR Factorization:</strong> Used in solving least squares problems</li>
+                            <li><strong>Computing Eigenvalues:</strong> The QR algorithm uses this repeatedly</li>
+                            <li><strong>Solving Linear Systems:</strong> When A = QR, solving Ax = b becomes easier</li>
+                            <li><strong>Numerical Stability:</strong> Numerical stability in algorithms</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="theorem-box">
+                        <div class="theorem-title">Properties</div>
+                        <ul>
+                            <li>If the original vectors are linearly dependent, wk = 0 at some step</li>
+                            <li>The span of {v1, ..., vk} = span of {u1, ..., uk} for all k</li>
+                            <li>The process works in any finite-dimensional inner product space</li>
+                            <li>Order of the original basis affects the resulting orthonormal basis</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="caution-box">
+                        <div class="caution-title">Numerical Considerations</div>
+                        <p>The classical Gram-Schmidt process can suffer from numerical instability due to rounding errors. In practice, modified Gram-Schmidt or Householder transformations are preferred for computational applications.</p>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="practice-section">
+                    <div class="practice-header">Practice Problems</div>
+                    
+                    <div class="practice-card">
+                        <div class="practice-question">Problem 1: Apply Gram-Schmidt to {v1 = [1, 1], v2 = [0, 1]}. Find u1 and u2.</div>
+                        <div class="practice-input">
+                            <label for="p1-input">Your answer for u1 (format: [a,b]):</label>
+                            <input type="text" id="p1-input" placeholder="Enter u1">
+                        </div>
+                        <div class="practice-input">
+                            <label for="p1b-input">Your answer for u2 (format: [a,b]):</label>
+                            <input type="text" id="p1b-input" placeholder="Enter u2">
+                        </div>
+                        <div class="practice-feedback" id="p1-input-feedback"></div>
+                        <div class="practice-feedback" id="p1b-input-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-card">
+                        <div class="practice-question">Problem 2: In Gram-Schmidt, what is w2 for v2 if v1 = [2, 0] and v2 = [1, 1]?</div>
+                        <div class="practice-input">
+                            <label for="p2-input">Your answer (format: [a,b]):</label>
+                            <input type="text" id="p2-input" placeholder="Enter w2">
+                        </div>
+                        <div class="practice-feedback" id="p2-input-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-card">
+                        <div class="practice-question">Problem 3: What is |w2| if v2 dot u1 = 3 and |v2| = 5?</div>
+                        <div class="practice-input">
+                            <label for="p3-input">Your answer:</label>
+                            <input type="text" id="p3-input" placeholder="Enter magnitude">
+                        </div>
+                        <div class="practice-feedback" id="p3-input-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-card">
+                        <div class="practice-question">Problem 4: If v1 = [1, 0, 0], v2 = [0, 2, 0], v3 = [0, 0, 3], what is u2 after Gram-Schmidt?</div>
+                        <div class="practice-input">
+                            <label for="p4-input">Your answer (format: [a,b,c]):</label>
+                            <input type="text" id="p4-input" placeholder="Enter u2">
+                        </div>
+                        <div class="practice-feedback" id="p4-input-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-card">
+                        <div class="practice-question">Problem 5: True or False: Gram-Schmidt changes the span of the vectors.</div>
+                        <div class="practice-options">
+                            <label><input type="radio" name="p5" value="true"> True</label><br>
+                            <label><input type="radio" name="p5" value="false"> False</label>
+                        </div>
+                        <div class="practice-feedback" id="p5-input-feedback"></div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="navigation-buttons">
+                    <a href="4-3-2-projections.html" class="nav-btn secondary">Previous Lesson</a>
+                    <a href="4-3-4-practice-orthogonality.html" class="nav-btn primary">Next Lesson: Practice Problems</a>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="practice-header">Module Progress</div>
+                    <div class="progress-container">
+                        <div class="progress-title">Module 4.3: Orthogonality</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="moduleProgress" style="width: 50%">50%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/navigation.js"></script>
+    <script>
+    function checkProblem(problemId, correct, alternatives, inputId) {
+        const input = document.getElementById(inputId).value.trim().toLowerCase();
+        const feedback = document.getElementById(inputId + '-feedback');
+        
+        const normalized = input.replace(/\s/g, '').replace(/,/g, ';');
+        const normalizedCorrect = correct.toLowerCase().replace(/\s/g, '').replace(/,/g, ';');
+        
+        let isCorrect = normalized === normalizedCorrect || 
+                       alternatives.some(alt => 
+                           alt.toLowerCase().replace(/\s/g, '').replace(/,/g, ';') === normalized
+                       );
+        
+        if (isCorrect) {
+            feedback.className = 'feedback correct';
+            feedback.textContent = 'Correct!';
+            feedback.style.display = 'block';
+            updateProgress();
+        } else {
+            feedback.className = 'feedback incorrect';
+            feedback.textContent = 'Try again!';
+            feedback.style.display = 'block';
+        }
+    }
+
+    function checkRadio(problemId, correctValue) {
+        const feedback = document.getElementById(problemId + '-input-feedback');
+        const selected = document.querySelector(`input[name="${problemId}"]:checked`);
+        
+        if (selected && selected.value === correctValue) {
+            feedback.className = 'feedback correct';
+            feedback.textContent = 'Correct!';
+            feedback.style.display = 'block';
+            updateProgress();
+        } else {
+            feedback.className = 'feedback incorrect';
+            feedback.textContent = selected ? 'Try again!' : 'Please select an option';
+            feedback.style.display = 'block';
+        }
+    }
+
+    function updateProgress() {
+        const completed = localStorage.getItem('linear-algebra-completed-4-3-3') === 'true';
+        if (!completed) {
+            localStorage.setItem('linear-algebra-completed-4-3-3', 'true');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        loadProgress();
+        
+        document.getElementById('p1-input').addEventListener('input', function() {
+            checkProblem('p1', '[1/sqrt(2),1/sqrt(2)]', 
+                ['[0.707,0.707]', '[sqrt(1/2),sqrt(1/2)]', '[[0.707,0.707]]'],
+                'p1-input');
+        });
+        
+        document.getElementById('p1b-input').addEventListener('input', function() {
+            checkProblem('p1b', '[-1/sqrt(2),1/sqrt(2)]', 
+                ['[-0.707,0.707]', '[-sqrt(1/2),sqrt(1/2)]', '[[-0.707,0.707]]'],
+                'p1b-input');
+        });
+        
+        document.getElementById('p2-input').addEventListener('input', function() {
+            checkProblem('p2', '[0,1]', 
+                ['[[0,1]]', '[0;1]', '[[0;1]]'],
+                'p2-input');
+        });
+        
+        document.getElementById('p3-input').addEventListener('input', function() {
+            checkProblem('p3', '4', 
+                ['4.0', '[4]'],
+                'p3-input');
+        });
+        
+        document.getElementById('p4-input').addEventListener('input', function() {
+            checkProblem('p4', '[0,1,0]', 
+                ['[[0,1,0]]', '[0;1;0]', '[[0;1;0]]'],
+                'p4-input');
+        });
+        
+        document.querySelectorAll('input[name="p5"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                checkRadio('p5', 'false');
+            });
+        });
+    });
+    </script>
+</body>
+</html>

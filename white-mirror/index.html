@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>White Mirror - AI Screen Controller</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    /* Left panel - Screen viewer */
+    .screen-panel {
+      flex: 2;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #e0e0e0;
+    }
+
+    .panel-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .status-indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ccc;
+      animation: pulse 2s infinite;
+    }
+
+    .status-indicator.active {
+      background: #4caf50;
+    }
+
+    .status-indicator.inactive {
+      background: #f44336;
+      animation: none;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .screen-viewer {
+      flex: 1;
+      background: #000;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    #screen-capture {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .screen-placeholder {
+      color: #666;
+      text-align: center;
+    }
+
+    /* Right panel - Chat channel */
+    .chat-panel {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    #chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 15px;
+      background: #f5f5f5;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .message {
+      margin-bottom: 15px;
+      padding: 10px 15px;
+      border-radius: 10px;
+      max-width: 90%;
+    }
+
+    .message.user {
+      background: #667eea;
+      color: white;
+      margin-left: auto;
+    }
+
+    .message.ai {
+      background: #e0e0e0;
+      color: #333;
+    }
+
+    .message.system {
+      background: #fff3cd;
+      color: #856404;
+      font-size: 12px;
+    }
+
+    .message-time {
+      font-size: 11px;
+      opacity: 0.7;
+      margin-top: 5px;
+    }
+
+    .chat-input {
+      display: flex;
+      gap: 10px;
+    }
+
+    #message-input {
+      flex: 1;
+      padding: 12px 15px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: border-color 0.3s;
+    }
+
+    #message-input:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+
+    /* Control panel */
+    .controls {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 2px solid #e0e0e0;
+    }
+
+    .control-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .control-label {
+      min-width: 120px;
+      font-weight: 600;
+      color: #555;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .btn-primary {
+      background: #667eea;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #5568d3;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-danger {
+      background: #f44336;
+      color: white;
+    }
+
+    .btn-danger:hover {
+      background: #da190b;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(244, 67, 54, 0.4);
+    }
+
+    .btn-success {
+      background: #4caf50;
+      color: white;
+    }
+
+    .btn-success:hover {
+      background: #43a047;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+    }
+
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    input[type="number"], input[type="text"], select {
+      padding: 8px 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: border-color 0.3s;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+
+    .analysis-info {
+      background: #e3f2fd;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 13px;
+      color: #1565c0;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Screen Panel -->
+    <div class="screen-panel">
+      <div class="panel-header">
+        <div class="panel-title">
+          <div class="status-indicator" id="status-indicator"></div>
+          Screen Viewer
+        </div>
+        <div>
+          <button class="btn btn-success" id="start-btn">▶ Start</button>
+          <button class="btn btn-danger" id="stop-btn" disabled>■ Stop</button>
+        </div>
+      </div>
+
+      <div class="screen-viewer">
+        <div class="screen-placeholder" id="screen-placeholder">
+          <p>Click "Start" to begin screen capture</p>
+          <p style="font-size: 12px; margin-top: 10px;">The AI will analyze and control your screen</p>
+        </div>
+        <img id="screen-capture" style="display: none;">
+      </div>
+
+      <div class="controls">
+        <div class="control-row">
+          <span class="control-label">Capture Rate:</span>
+          <input type="number" id="rate-input" value="2000" min="500" step="500">
+          <span>ms</span>
+          <button class="btn btn-primary" id="set-rate-btn">Set Rate</button>
+        </div>
+
+        <div class="control-row">
+          <span class="control-label">Ollama Model:</span>
+          <input type="text" id="model-input" value="llava" placeholder="llava, bakllava, etc">
+          <button class="btn btn-primary" id="set-model-btn">Set Model</button>
+        </div>
+
+        <div class="analysis-info" id="analysis-info">
+          <strong>Last Analysis:</strong> <span id="last-analysis">None</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Panel -->
+    <div class="chat-panel">
+      <div class="panel-header">
+        <div class="panel-title">💬 Command Channel</div>
+      </div>
+
+      <div id="chat-messages">
+        <div class="message system">
+          <p>Welcome to White Mirror!</p>
+          <p class="message-time">Use this chat to give commands to the AI agent controlling your screen.</p>
+        </div>
+      </div>
+
+      <div class="chat-input">
+        <input type="text" id="message-input" placeholder="Type a command or question...">
+        <button class="btn btn-primary" id="send-btn">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const { ipcRenderer } = require('electron');
+
+    let isRunning = false;
+    let captureRate = 2000;
+
+    // DOM elements
+    const statusIndicator = document.getElementById('status-indicator');
+    const startBtn = document.getElementById('start-btn');
+    const stopBtn = document.getElementById('stop-btn');
+    const screenCapture = document.getElementById('screen-capture');
+    const screenPlaceholder = document.getElementById('screen-placeholder');
+    const rateInput = document.getElementById('rate-input');
+    const modelInput = document.getElementById('model-input');
+    const lastAnalysis = document.getElementById('last-analysis');
+    const chatMessages = document.getElementById('chat-messages');
+    const messageInput = document.getElementById('message-input');
+    const sendBtn = document.getElementById('send-btn');
+
+    // Add message to chat
+    function addMessage(text, type = 'ai') {
+      const msgDiv = document.createElement('div');
+      msgDiv.className = `message ${type}`;
+      msgDiv.innerHTML = `
+        <p>${text}</p>
+        <p class="message-time">${new Date().toLocaleTimeString()}</p>
+      `;
+      chatMessages.appendChild(msgDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Start capture
+    startBtn.addEventListener('click', async () => {
+      try {
+        const result = await ipcRenderer.invoke('start-capture', parseInt(rateInput.value));
+        if (result.success) {
+          isRunning = true;
+          captureRate = result.rate;
+          statusIndicator.className = 'status-indicator active';
+          startBtn.disabled = true;
+          stopBtn.disabled = false;
+          addMessage(`Started screen capture at ${captureRate}ms interval`, 'system');
+        }
+      } catch (error) {
+        addMessage(`Error starting capture: ${error.message}`, 'system');
+      }
+    });
+
+    // Stop capture
+    stopBtn.addEventListener('click', async () => {
+      try {
+        const result = await ipcRenderer.invoke('stop-capture');
+        if (result.success) {
+          isRunning = false;
+          statusIndicator.className = 'status-indicator inactive';
+          startBtn.disabled = false;
+          stopBtn.disabled = true;
+          addMessage('Screen capture stopped', 'system');
+        }
+      } catch (error) {
+        addMessage(`Error stopping capture: ${error.message}`, 'system');
+      }
+    });
+
+    // Set capture rate
+    document.getElementById('set-rate-btn').addEventListener('click', async () => {
+      try {
+        const newRate = parseInt(rateInput.value);
+        const result = await ipcRenderer.invoke('set-rate', newRate);
+        if (result.success) {
+          captureRate = result.rate;
+          addMessage(`Capture rate set to ${captureRate}ms`, 'system');
+        }
+      } catch (error) {
+        addMessage(`Error setting rate: ${error.message}`, 'system');
+      }
+    });
+
+    // Set Ollama model
+    document.getElementById('set-model-btn').addEventListener('click', async () => {
+      try {
+        const model = modelInput.value.trim();
+        if (model) {
+          const result = await ipcRenderer.invoke('set-model', model);
+          if (result.success) {
+            addMessage(`Model set to ${result.model}`, 'system');
+          }
+        }
+      } catch (error) {
+        addMessage(`Error setting model: ${error.message}`, 'system');
+      }
+    });
+
+    // Send message
+    sendBtn.addEventListener('click', sendMessage);
+    messageInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') sendMessage();
+    });
+
+    async function sendMessage() {
+      const text = messageInput.value.trim();
+      if (!text) return;
+
+      addMessage(text, 'user');
+      messageInput.value = '';
+
+      // For now, echo back (in a full implementation, this would query Ollama)
+      setTimeout(() => {
+        addMessage(`Received command: "${text}" - AI will process this for screen control`, 'ai');
+        lastAnalysis.textContent = `Processing: "${text}"`;
+      }, 500);
+    }
+
+    // Receive analysis results
+    ipcRenderer.on('analysis-result', (event, data) => {
+      // Update screen capture
+      if (data.image) {
+        screenCapture.src = data.image;
+        screenCapture.style.display = 'block';
+        screenPlaceholder.style.display = 'none';
+      }
+
+      // Update analysis info
+      if (data.analysis && data.analysis.description) {
+        lastAnalysis.textContent = data.analysis.description;
+
+        // Add AI message to chat if there's a suggested action
+        if (data.analysis.suggested_action) {
+          addMessage(`${data.analysis.description}\n\nSuggested: ${data.analysis.suggested_action}`, 'ai');
+        }
+      }
+    });
+
+    // Handle errors
+    ipcRenderer.on('error', (event, error) => {
+      addMessage(`Error: ${error}`, 'system');
+    });
+  </script>
+</body>
+</html>

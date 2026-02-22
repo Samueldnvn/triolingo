@@ -1,0 +1,19 @@
+{
+  "name": "lobster",
+  "version": "0.1.0",
+  "description": "Desktop Ollama client with full UI configuration",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev"
+  },
+  "keywords": ["ollama", "ai", "chat", "desktop"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^29.0.0"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Redstone Computing Academy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <style>
+        .resources-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .resource-section {
+            background: var(--mc-black);
+            border: var(--mc-border);
+            padding: 40px;
+            margin-bottom: 40px;
+            position: relative;
+            box-shadow: 0 10px 0 rgba(0,0,0,0.4);
+        }
+        .resource-section::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            right: 4px;
+            bottom: 4px;
+            border: 3px solid var(--mc-emerald);
+            pointer-events: none;
+        }
+        .section-header {
+            border-bottom: 3px solid var(--mc-redstone);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .section-title {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.2rem;
+            color: var(--mc-gold);
+            margin-bottom: 15px;
+        }
+        .section-description {
+            color: var(--mc-light-text);
+            font-size: 1.3rem;
+            line-height: 1.8;
+        }
+        .reference-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .reference-table th {
+            background: var(--mc-wood);
+            color: var(--mc-gold);
+            padding: 15px;
+            text-align: left;
+            border: 2px solid var(--mc-black);
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.7rem;
+        }
+        .reference-table td {
+            background: var(--mc-stone);
+            padding: 12px;
+            border: 1px solid var(--mc-black);
+            color: var(--mc-light-text);
+            font-family: 'VT323', monospace;
+            font-size: 1.2rem;
+        }
+        .reference-table tr:hover {
+            background: rgba(255, 51, 0, 0.1);
+        }
+        .code-block {
+            background: var(--mc-obsidian);
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid var(--mc-redstone);
+            font-family: 'VT323', monospace;
+            font-size: 1.1rem;
+            color: var(--mc-light-text);
+            overflow-x: auto;
+        }
+        .reference-link {
+            display: block;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            background: var(--mc-stone);
+            border: 3px solid var(--mc-iron);
+            color: var(--mc-light-text);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.2s;
+        }
+        .reference-link:hover {
+            background: var(--mc-wood);
+            transform: translateX(5px);
+            border-color: var(--mc-gold);
+        }
+        .reference-link .external-icon {
+            color: var(--mc-emerald);
+            margin-left: 10px;
+        }
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        .resource-card {
+            background: var(--mc-obsidian);
+            border: 3px solid var(--mc-iron);
+            padding: 25px;
+            transition: all 0.3s;
+        }
+        .resource-card:hover {
+            border-color: var(--mc-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 0 rgba(0,0,0,0.3);
+        }
+        .resource-card h4 {
+            color: var(--mc-emerald);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        .resource-card p {
+            color: var(--mc-light-text);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .download-box {
+            background: linear-gradient(135deg, var(--mc-emerald) 0%, var(--mc-grass) 100%);
+            padding: 20px;
+            margin: 20px 0;
+            border: var(--mc-border-light);
+            text-align: center;
+        }
+        .download-box h4 {
+            color: var(--mc-black);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        .download-box p {
+            color: var(--mc-black);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        .tips-box {
+            background: var(--mc-diamond);
+            border: 3px solid var(--mc-black);
+            padding: 25px;
+            margin: 20px 0;
+        }
+        .tips-box h4 {
+            color: var(--mc-black);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        .tips-box ul li {
+            color: var(--mc-black);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="sky-background"></div>
+    <div class="clouds"></div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="redstone-icon"></span>
+                <h1>REDSTONE COMPUTING ACADEMY</h1>
+            </div>
+            <p class="subtitle">Additional Resources & References</p>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="modules.html" class="nav-link">Course Modules</a>
+            <a href="projects.html" class="nav-link">Projects</a>
+            <a href="resources.html" class="nav-link active">Resources</a>
+            <a href="quiz.html" class="nav-link">Quiz</a>
+        </nav>
+    </header>
+
+    <section class="resources-container">
+        <h2 class="section-title">📚 REFERENCE MATERIALS</h2>
+
+        <!-- Logic Gate Reference -->
+        <div class="resource-section">
+            <div class="section-header">
+                <h2 class="section-title">Logic Gate Quick Reference</h2>
+                <p class="section-description">Quick lookup for all logic gate truth tables and symbols. Essential reference while building.</p>
+            </div>
+
+            <table class="reference-table">
+                <thead>
+                    <tr>
+                        <th>Gate</th>
+                        <th>Inputs (A, B)</th>
+                        <th>Output</th>
+                        <th>Minecraft Delay</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>NOT</strong></td>
+                        <td>1 input</td>
+                        <td>Opposite of input</td>
+                        <td>1 tick</td>
+                        <td>Inverts the input signal</td>
+                    </tr>
+                    <tr>
+                        <td><strong>AND</strong></td>
+                        <td>0,0→0; 0,1→0; 1,0→0; 1,1→1</td>
+                        <td>1 only if both=1</td>
+                        <td>2 ticks</td>
+                        <td>Output HIGH only when all inputs are HIGH</td>
+                    </tr>
+                    <tr>
+                        <td><strong>OR</strong></td>
+                        <td>0,0→0; 0,1→1; 1,0→1; 1,1→1</td>
+                        <td>1 if any input=1</td>
+                        <td>0-1 ticks</td>
+                        <td>Output HIGH when at least one input is HIGH</td>
+                    </tr>
+                    <tr>
+                        <td><strong>NAND</strong></td>
+                        <td>0,0→1; 0,1→1; 1,0→1; 1,1→0</td>
+                        <td>NOT(AND)</td>
+                        <td>3 ticks</td>
+                        <td>NOT gate + AND gate. Universal gate!</td>
+                    </tr>
+                    <tr>
+                        <td><strong>NOR</strong></td>
+                        <td>0,0→1; 0,1→0; 1,0→0; 1,1→0</td>
+                        <td>NOT(OR)</td>
+                        <td>2-3 ticks</td>
+                        <td>NOT gate + OR gate. Also universal!</td>
+                    </tr>
+                    <tr>
+                        <td><strong>XOR</strong></td>
+                        <td>0,0→0; 0,1→1; 1,0→1; 1,1→0</td>
+                        <td>1 if inputs differ</td>
+                        <td>2 ticks</td>
+                        <td>Essential for addition</td>
+                    </tr>
+                    <tr>
+                        <td><strong>XNOR</strong></td>
+                        <td>0,0→1; 0,1→0; 1,0→0; 1,1→1</td>
+                        <td>NOT(XOR)</td>
+                        <td>3 ticks</td>
+                        <td>Equality checker</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="color: var(--mc-emerald); font-size: 1.3rem; margin-top: 30px;">Universal Gates</h3>
+            <p style="color: var(--mc-light-text); font-size: 1.2rem; margin: 15px 0;">Both NAND and NOR are <strong>universal gates</strong> - you can build ANY other logic gate using only NAND or only NOR gates. This is important for understanding computer architecture and circuit optimization.</p>
+        </div>
+
+        <!-- Binary Reference -->
+        <div class="resource-section">
+            <div class="section-header">
+                <h2 class="section-title">Binary & Number Systems</h2>
+                <p class="section-description">Conversions, arithmetic, and two's complement reference.</p>
+            </div>
+
+            <h3 style="color: var(--mc-emerald); font-size: 1.3rem; margin-top: 20px;">Decimal to Binary (0-15)</h3>
+            <table class="reference-table">
+                <thead>
+                    <tr>
+                        <th>Dec</th><th>Bin</th><th>Hex</th>
+                        <th>Dec</th><th>Bin</th><th>Hex</th>
+                        <th>Dec</th><th>Bin</th><th>Hex</th>
+                        <th>Dec</th><th>Bin</th><th>Hex</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0</td><td>0000</td><td>0</td>
+                        <td>4</td><td>0100</td><td>4</td>
+                        <td>8</td><td>1000</td><td>8</td>
+                        <td>12</td><td>1100</td><td>C</td>
+                    </tr>
+                    <tr>
+                        <td>1</td><td>0001</td><td>1</td>
+                        <td>5</td><td>0101</td><td>5</td>
+                        <td>9</td><td>1001</td><td>9</td>
+                        <td>13</td><td>1101</td><td>D</td>
+                    </tr>
+                    <tr>
+                        <td>2</td><td>0010</td><td>2</td>
+                        <td>6</td><td>0110</td><td>6</td>
+                        <td>10</td><td>1010</td><td>A</td>
+                        <td>14</td><td>1110</td><td>E</td>
+                    </tr>
+                    <tr>
+                        <td>3</td><td>0011</td><td>3</td>
+                        <td>7</td><td>0111</td><td>7</td>
+                        <td>11</td><td>1011</td><td>B</td>
+                        <td>15</td><td>1111</td><td>F</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="color: var(--mc-emerald); font-size: 1.3rem; margin-top: 30px;">Two's Complement Examples (4-bit)</h3>
+            <table class="reference-table">
+                <thead>
+                    <tr>
+                        <th>Decimal</th>
+                        <th>Two's Complement</th>
+                        <th>Binary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>+7</td><td>0111</td><td>Positive, same as binary</td></tr>
+                    <tr><td>+1</td><td>0001</td><td>Positive</td></tr>
+                    <tr><td>0</td><td>0000</td><td>Zero</td></tr>
+                    <tr><td>-1</td><td>1111</td><td>1111 (all 1s)</td></tr>
+                    <tr><td>-7</td><td>1001</td><td>Negative</td></tr>
+                    <tr><td>-8</td><td>1000</td><td>Most negative (range -8 to +7)</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="color: var(--mc-emerald); font-size: 1.3rem; margin-top: 30px;">Calculating Two's Complement</h3>
+            <div class="code-block">
+To convert +5 to -5 in 4-bit:
+
+Step 1: Write +5 in binary
+    0101
+
+Step 2: Invert all bits
+    1010
+
+Step 3: Add 1
+    1010
++   1
+-------
+    1011  ← This is -5
+
+To check: 8 + 0 + 2 + 1 = 11? No, MSB is negative
+    -(8-0+2+1) = -(8-3) = -5 ✓
+            </div>
+        </div>
+
+        <!-- ALU Opcode Reference -->
+        <div class="resource-section">
+            <div class="section-header">
+                <h2 class="section-title">ALU Opcode Reference</h2>
+                <p class="section-description">All opcodes for our 8-bit ALU with control signals.</p>
+            </div>
+
+            <table class="reference-table">
+                <thead>
+                    <tr>
+                        <th>Opcode</th>
+                        <th>Operation</th>
+                        <th>Control Signals</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>0000</td><td>ADD</td><td>ALU_ADD, REG_READ, REG_WRITE</td><td>A + B</td></tr>
+                    <tr><td>0001</td><td>SUB</td><td>ALU_SUB, REG_READ, REG_WRITE</td><td>A - B</td></tr>
+                    <tr><td>0010</td><td>INC</td><td>ALU_INC, REG_READ, REG_WRITE</td><td>A + 1</td></tr>
+                    <tr><td>0011</td><td>DEC</td><td>ALU_DEC, REG_READ, REG_WRITE</td><td>A - 1</td></tr>
+                    <tr><td>0100</td><td>AND</td><td>ALU_AND, REG_READ, REG_WRITE</td><td>A AND B</td></tr>
+                    <tr><td>0101</td><td>OR</td><td>ALU_OR, REG_READ, REG_WRITE</td><td>A OR B</td></tr>
+                    <tr><td>0110</td><td>XOR</td><td>ALU_XOR, REG_READ, REG_WRITE</td><td>A XOR B</td></tr>
+                    <tr><td>0111</td><td>NOT</td><td>ALU_NOT, REG_READ, REG_WRITE</td><td>NOT A</td></tr>
+                    <tr><td>1000</td><td>SHL</td><td>ALU_SHL, REG_READ, REG_WRITE</td><td>Shift Left (×2)</td></tr>
+                    <tr><td>1001</td><td>SHR</td><td>ALU_SHR, REG_READ, REG_WRITE</td><td>Shift Right (÷2)</td></tr>
+                    <tr><td>1010</td><td>MOV</td><td>REG_READ, REG_WRITE</td><td>Move A to B</td></tr>
+                    <tr><td>1011</td><td>CLEAR</td><td>REG_WRITE</td><td>Clear register</td></tr>
+                    <tr><td>1100</td><td>LDR</td><td>MEM_READ, REG_WRITE</td><td>Load from memory</td></tr>
+                    <tr><td>1101</td><td>STR</td><td>REG_READ, MEM_WRITE</td><td>Store to memory</td></tr>
+                    <tr><td>1110</td><td>OUT</td><td>REG_READ, DISPLAY_EN</td><td>Output to display</td></tr>
+                    <tr><td>1111</td><td>HALT</td><td>CLOCK_DISABLE</td><td>Stop execution</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="color: var(--mc-emerald); font-size: 1.3rem; margin-top: 30px;">Flag Conditions</h3>
+            <ul style="color: var(--mc-light-text); font-size: 1.2rem; margin: 15px 0; padding-left: 20px;">
+                <li><strong>Zero Flag (Z):</strong> Result == 0? OR all output bits, invert</li>
+                <li><strong>Carry Flag (C):</strong> Last adder's carry-out</li>
+                <li><strong>Overflow Flag (V):</strong> XOR of last two carry bits</li>
+                <li><strong>Sign Flag (S):</strong> Most significant bit (MSB)</li>
+            </ul>
+        </div>
+
+        <!-- Timing Reference -->
+        <div class="resource-section">
+            <div class="section-header">
+                <h2 class="section-title">Component Timing Reference</h2>
+                <p class="section-description">Expected delays for common components. Helps with debugging and performance optimization.</p>
+            </div>
+
+            <table class="reference-table">
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Typical Delay</th>
+                        <th>Factors Affecting Delay</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>NOT Gate (Torch)</td><td>1 tick</td><td>Fixed</td></tr>
+                    <tr><td>AND Gate</td><td>2 ticks</td><td>Design varies</td></tr>
+                    <tr><td>OR Gate</td><td>0-1 ticks</td><td>Distance to output</td></tr>
+                    <tr><td>XOR Gate</td><td>2-3 ticks</td><td>Compact vs standard</td></tr>
+                    <tr><td>Half Adder</td><td>2 ticks</td><td>XOR determines delay</td></tr>
+                    <tr><td>Full Adder</td><td>3-4 ticks</td><td>Cascaded halves vs direct</td></tr>
+                    <tr><td>8-bit Adder</td><td>~8-16 ticks</td><td>Ripple carry cascades</td></tr>
+                    <tr><td>MUX 2:1</td><td>3 ticks</td><td>Input levels</td></tr>
+                    <tr><td>MUX 4:1</td><td>6 ticks</td><td>Two-level structure</td></tr>
+                    <tr><td>Decoder 2:4</td><td>3 ticks</td><td>AND gate depth</td></tr>
+                    <tr><td>D Flip-Flop</td><td>1 tick (setup)</td><td>Clock edge capture</td></tr>
+                    <tr><td>ALU (8-bit, basic)</td><td>15-25 ticks</td><td>Worst case path</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- External Resources -->
+        <div class="resource-section">
+            <div class="section-header">
+                <h2 class="section-title">External Learning Resources</h2>
+                <p class="section-description">Additional videos, tutorials, and community resources for further learning.</p>
+            </div>
+
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h4>YouTube Channels</h4>
+                    <p>The Minecraft Redstone community has created amazing content. Watch these channels for inspiration and advanced techniques.</p>
+                    <a href="https://www.youtube.com/results?search_query=minecraft+redstone+computer" class="reference-link" target="_blank">
+                        Search "Minecraft Redstone Computer" <span class="external-icon">↗</span>
+                    </a>
+                    <a href="https://www.youtube.com/results?search_query=minecraft+logic+gates" class="reference-link" target="_blank">
+                        Search "Minecraft Logic Gates" <span class="external-icon">↗</span>
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <h4>Redstone Forums & Communities</h4>
+                    <p>Connect with other builders, share your designs, and get help debugging.</p>
+                    <a href="https://www.minecraftforum.net/forums/minecraft-discussion/redstone-discussion-and" class="reference-link" target="_blank">
+                        Minecraft Forum - Redstone Discussion <span class="external-icon">↗</span>
+                    </a>
+                    <a href="https://www.reddit.com/r/redstone/" class="reference-link" target="_blank">
+                        r/redstone on Reddit <span class="external-icon">↗</span>
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <h4>Computer Theory</h4>
+                    <p>Understand the underlying computer science concepts that make redstone computing work.</p>
+                    <a href="https://en.wikipedia.org/wiki/Digital_logic" class="reference-link" target="_blank">
+                        Digital Logic (Wikipedia) <span class="external-icon">↗</span>
+                    </a>
+                    <a href="https://en.wikipedia.org/wiki/Arithmetic_logic_unit" class="reference-link" target="_blank">
+                        Arithmetic Logic Unit <span class="external-icon">↗</span>
+                    </a>
+                    <a href="https://en.wikipedia.org/wiki/Computer_architecture" class="reference-link" target="_blank">
+                        Computer Architecture <span class="external-icon">↗</span>
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <h4>Schematic Tools</h4>
+                    <p>Third-party tools for planning and documenting your circuits.</p>
+                    <a href="https://minecraft.tools/redstone-circuit" class="reference-link" target="_blank">
+                        Minecraft Redstone Circuit Simulator <span class="external-icon">↗</span>
+                    </a>
+                    <a href="https://www.pinterest.com/search/pins/?q=minecraft+redstone+schematics" class="reference-link" target="_blank">
+                        Redstone Schematics on Pinterest <span class="external-icon">↗</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cheatsheet -->
+        <div class="resource-section">
+            <div class="section-header">
+                <h2 class="section-title">Quick Cheatsheet</h2>
+                <p class="section-description">Essential commands and formulas for quick reference.</p>
+            </div>
+
+            <h3 style="color: var(--mc-emerald); font-size: 1.3rem; margin-top: 20px;">Boolean Identities</h3>
+            <div class="code-block">
+Identity:
+  X OR 0 = X          X AND 0 = 0
+  X OR 1 = 1          X AND 1 = X
+  X OR X = X          X AND X = X
+  NOT(NOT X) = X
+
+Commutative:
+  X OR Y = Y OR X     X AND Y = Y AND X
+
+Associative:
+  (X OR Y) OR Z = X OR (Y OR Z)
+  (X AND Y) AND Z = X AND (Y AND Z)
+
+Distributive:
+  X AND (Y OR Z) = (X AND Y) OR (X AND Z)
+
+De Morgan's:
+  NOT(X AND Y) = NOT X OR NOT Y
+  NOT(X OR Y) = NOT X AND NOT Y
+            </div>
+
+            <h3 style="color: var(--mc-emerald); font-size: 1.3rem; margin-top: 30px;">Binary Arithmetic Rules</h3>
+            <div class="code-block">
+Addition:
+  0+0=0 (carry 0)
+  0+1=1 (carry 0)
+  1+0=1 (carry 0)
+  1+1=0 (carry 1)
+  1+1+1=1 (carry 1)
+
+Subtraction:
+  0-0=0
+  1-0=1
+  1-1=0
+  0-1=1 (borrow 1)
+
+Multiplication (shift-add):
+  Multiply by powers of 2 = shift left
+  Divide by powers of 2 = shift right
+            </div>
+
+            <h3 style="color: var(--mc-emerald); font-size: 1.3rem; margin-top: 30px;">Minecraft Redstone Tips</h3>
+            <div class="tips-box">
+                <ul>
+                    <li><strong>Signal Strength:</strong> 0 = OFF, 1-15 = ON. Treat any signal as binary 1.</li>
+                    <li><strong>Repeater Delay:</strong> 1-4 ticks. Controls timing and prevents signal decay.</li>
+                    <li><strong>Comparator:</strong> Has comparison mode (subtract front from side) and subtraction mode.</li>
+                    <li><strong>Compact Layout:</strong> Build in 3D! Use vertical space for signal routing.</li>
+                    <li><strong>Cable Management:</strong> Color-code using different block materials for clarity.</li>
+                    <li><strong>Debugging:</strong> Place lamps at key points to visualize signal flow.</li>
+                    <li><strong>Save Often:</strong> Redstone computers are complex - save after each milestone.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Print-Friendly Version -->
+        <div class="download-box">
+            <h4>📄 Print-Friendly Reference</h4>
+            <p>Save all reference materials as a printable PDF for offline access during building sessions.</p>
+            <a href="#" class="craft-button" onclick="window.print(); return false;">Print / Save as PDF</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Theory + Practice</h4>
+                <p>These resources complement the course materials. Use them for quick lookup and deeper understanding.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

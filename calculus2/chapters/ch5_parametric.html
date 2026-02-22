@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 5: Parametric Equations & Polar Coordinates - Calculus II</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+
+  <!-- MathJax Configuration -->
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    },
+    startup: {
+      typeset: false
+    }
+  };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+  <header>
+    <h1>Calculus II <span>Chapter 5</span></h1>
+    <p class="tagline">Parametric Equations and Polar Coordinates</p>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <div class="sidebar-title">📖 Chapter 5 Lessons</div>
+      <ul class="chapter-nav">
+        <li><a href="../index.html">← Back to Home</a></li>
+        <li><a href="#chapter-intro">Chapter Introduction</a></li>
+        <li><a href="#lesson-32">Lesson 32: Parametric Equations</a></li>
+        <li><a href="#lesson-33">Lesson 33: Calculus with Parametrics</a></li>
+        <li><a href="#lesson-34">Lesson 34: Arc Length & Surface Area</a></li>
+        <li><a href="#lesson-35">Lesson 35: Polar Coordinates</a></li>
+        <li><a href="#lesson-36">Lesson 36: Polar Graphs & Symmetry</a></li>
+        <li><a href="#lesson-37">Lesson 37: Calculus in Polar</a></li>
+        <li><a href="#lesson-38">Lesson 38: Area in Polar</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <div class="breadcrumbs"><a href="../index.html">Home</a> > Chapter 5: Parametric & Polar</div>
+
+      <section id="chapter-intro">
+        <h2>Chapter 5: Parametric Equations and Polar Coordinates</h2>
+
+        <div class="key-concepts">
+          <h3>📋 Chapter Overview</h3>
+          <p>So far, we've worked with functions y = f(x) where y is expressed explicitly in terms of x. Parametric equations allow both x and y to be functions of a third parameter. Polar coordinates offer an alternative way to describe points in the plane using distance and angle rather than rectangular coordinates.</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>🎯 Learning Objectives</h3>
+          <ul>
+            <li>Understand parametric equations and their graphs</li>
+            <li>Convert between parametric and rectangular forms</li>
+            <li>Compute derivatives with respect to x for parametric curves</li>
+            <li>Calculate arc length and surface area using parameters</li>
+            <li>Convert between rectangular and polar coordinates</li>
+            <li>Graph polar equations and identify symmetry</li>
+            <li>Compute derivatives, arc length, and areas in polar form</li>
+          </ul>
+        </div>
+
+        <div class="applications">
+          <h3>🌍 Real-World Applications</h3>
+          <ul>
+            <li><strong>Physics:</strong> Projectile motion, orbital mechanics</li>
+            <li><strong>Engineering:</strong> CAM systems, robotics</li>
+            <li><strong>Computer Graphics:</strong> Bézier curves, animation paths</li>
+            <li><strong>Navigation:</strong> Radar, sonar, GPS systems</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- LESSON 32: Parametric Equations -->
+      <section id="lesson-32" class="lesson">
+        <h1>Lesson 32: Parametric Equations</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>Instead of writing y = f(x), we can write two equations: x = f(t) and y = g(t), where t is called the parameter. This gives us more flexibility to describe curves that wouldn't pass the vertical line test!</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 Definition of Parametric Equations</h3>
+          <div class="formula">
+            A parametric curve consists of two functions:
+            <br><br>
+            $$x = f(t), \quad y = g(t)$$
+            <br><br>
+            where t is in some interval I.
+          </div>
+
+          <h4>Key Concepts:</h4>
+          <ul>
+            <li><strong>Parameter t:</strong> The independent variable</li>
+            <li><strong>Direction of motion:</strong> As t increases, the point (x(t), y(t)) moves along the curve</li>
+            <li><strong>Eliminating the parameter:</strong> Solve for t and substitute to get equation in x and y</li>
+          </ul>
+
+          <h3>📚 Common Parametric Curves</h3>
+
+          <h4>Circle (radius r):</h4>
+          <div class="formula">
+            $x = r \cos t, \quad y = r \sin t, \quad 0 \leq t \leq 2\pi$
+          </div>
+
+          <h4>Line through (x₀, y₀) with slope m:</h4>
+          <div class="formula">
+            $x = x_0 + t, \quad y = y_0 + mt, \quad -\infty < t < \infty$
+          </div>
+
+          <h4>Cycloid (point on rolling wheel):</h4>
+          <div class="formula">
+            $x = r(t - \sin t), \quad y = r(1 - \cos t)$
+          </div>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example 1: Eliminate parameter from x = t², y = t³</h4>
+
+          <div id="ch5-l1-ex1">
+            <div class="step" style="display: null;">Step 1: From x = t², we get t = ±√x (but we have to be careful)</div>
+            <div class="step" style="display: none;">Step 2: For the curve, we can use t³ = t · t²</div>
+            <div class="step" style="display: none;">Step 3: Since y = t³ and x = t², we have: t = y/t² = y/x (when x ≠ 0)</div>
+            <div class="step" style="display: none;">Step 4: Substitute: y = (y/x) · x = y ✓ (checks out)</div>
+            <div class="step" style="display: none;">Step 5: Better approach: $y^2 = t^6 = (t^2)^3 = x^3$, so $y^2 = x^3$ or $\\pm y = x^{3/2}$</div>
+            <div class="step" style="display: none;">Step 6: Final equation: $y^2 = x^3$ (a cusp curve)</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch5-l1-ex1')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div id="ch5-l32-practice"></div>
+        <div id="ch5-l32-quiz"></div>
+      </section>
+
+      <!-- LESSON 33: Calculus with Parametric Equations -->
+      <section id="lesson-33" class="lesson">
+        <h1>Lesson 33: Calculus with Parametric Equations</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>How do we find the slope of a parametric curve? We can't just find dy/dx directly, but we can use the chain rule to express dy/dx in terms of the derivatives with respect to the parameter!</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 First Derivative (Slope)</h3>
+          <div class="formula-highlight">
+            If x = f(t) and y = g(t), then:
+            <br><br>
+            $$\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt} = \\frac{g'(t)}{f'(t)}, \\quad \\text{provided } f'(t) \\neq 0$$
+          </div>
+
+          <h4>Key Points:</h4>
+          <ul>
+            <li>Both derivatives are with respect to t (the parameter)</li>
+            <li>The result is in terms of t, not x or y</li>
+            <li>Watch out for horizontal tangent lines (dy/dt = 0) and vertical tangent lines (dx/dt = 0)</li>
+          </ul>
+
+          <h3>📚 Second Derivative</h3>
+          <div class="formula">
+            $$\\frac{d^2y}{dx^2} = \\frac{d}{dx}\\left(\\frac{dy}{dx}\\right) = \\frac{d/dt(dy/dx)}{dx/dt}$$
+          </div>
+
+          <p><strong>IMPORTANT:</strong> Don't use quotient rule! Differentiate dy/dx with respect to t, then divide by dx/dt.</p>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example: Find dy/dx for x = t² - 2t, y = t³ - 3t</h4>
+
+          <div id="ch5-l2-ex1">
+            <div class="step" style="display: none;">Step 1: Find dx/dt = 2t - 2 = 2(t - 1)</div>
+            <div class="step" style="display: none;">Step 2: Find dy/dt = 3t² - 3 = 3(t² - 1) = 3(t - 1)(t + 1)</div>
+            <div class="step" style="display: none;">Step 3: Use formula: $\\frac{dy}{dx} = \\frac{dy/dt}{dx/dt} = \\frac{3(t-1)(t+1)}{2(t-1)}$</div>
+            <div class="step" style="display: none;">Step 4: Simplify (cancelling t-1): $\\frac{dy}{dx} = \\frac{3(t+1)}{2}$</div>
+            <div class="step" style="display: none;">Step 5: Note: t = 1 gives dx/dt = dy/dt = 0, so the derivative formula doesn't apply there</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch5-l2-ex1')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div id="ch5-l33-practice"></div>
+        <div id="ch5-l33-quiz"></div>
+      </section>
+
+      <!-- LESSON 34: Arc Length and Surface Area with Parametrics -->
+      <section id="lesson-34" class="lesson">
+        <h1>Lesson 34: Arc Length and Surface Area with Parametrics</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>The arc length formula from Chapter 1 can be transformed for parametric curves. This is particularly useful for calculating the length of curves that are easier to describe parametrically.</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 Arc Length Formula (Parametric)</h3>
+          <div class="formula-highlight">
+            If x = f(t), y = g(t) with smooth derivatives, and the curve is traced once as t goes from α to β:
+            <br><br>
+            $$L = \\int_{\\alpha}^{\\beta} \\sqrt{\\left(\\frac{dx}{dt}\\right)^2 + \\left(\\frac{dy}{dt}\\right)^2} \\, dt$$
+          </div>
+
+          <h3>📚 Surface Area (Rotation about x-axis)</h3>
+          <div class="formula">
+            $$S = 2\pi \\int_{\\alpha}^{\\beta} y \\sqrt{\\left(\\frac{dx}{dt}\\right)^2 + \\left(\\frac{dy}{dt}\\right)^2} \\, dt$$
+          </div>
+
+          <p>This is the same structure as the formula for y = f(x), but expressed in terms of t and both dx/dt and dy/dt.</p>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example: Find length of x = cos t, y = sin t from t=0 to t=2π</h4>
+
+          <div id="ch5-l3-ex1">
+            <div class="step" style="display: none;">Step 1: dx/dt = -sin t, dy/dt = cos t</div>
+            <div class="step" style="display: none;">Step 2: Use arc length formula: $L = \int_0^{2\\pi} \\sqrt{(-\\sin t)^2 + (\\cos t)^2} \\, dt$</div>
+            <div class="step" style="display: none;">Step 3: Simplify: $\int_0^{2\\pi} \\sqrt{\sin^2 t + \\cos^2 t} \\, dt = \int_0^{2\\pi} \\sqrt{1} \\, dt$</div>
+            <div class="step" style="display: none;">Step 4: Integrate: $\\int_0^{2\\pi} 1 \\, dt = [t]_0^{2\\pi} = 2\\pi - 0 = 2\\pi$</div>
+            <div class="step" style="display: none;">Step 5: Answer: 2π (circumference of unit circle, as expected!)</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch5-l3-ex1')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div id="ch5-l34-practice"></div>
+        <div id="ch5-l34-quiz"></div>
+      </section>
+
+      <!-- LESSON 35: Polar Coordinates -->
+      <section id="lesson-35" class="lesson">
+        <h1>Lesson 35: Polar Coordinates</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>Polar coordinates describe points in the plane using (r, θ) where r is the distance from the origin and θ is the angle from the positive x-axis. This coordinate system is natural for problems with circular or radial symmetry.</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 Polar Coordinates</h3>
+          <div class="formula">
+            A point has polar coordinates $(r, \\theta)$ where:
+            <br><br>
+            • $r$ = distance from the origin
+            <br>
+            • $\\theta$ = angle measured from the positive x-axis
+            <br><br>
+            The point is located: ($r \\cos \\theta$, $r \\sin \\theta$)
+          </div>
+
+          <h3>📚 Converting Between Coordinate Systems</h3>
+
+          <h4>Polar to Rectangular:</h4>
+          <div class="formula">
+            $$x = r \\cos \\theta, \\quad y = r \\sin \\theta, \\quad x^2 + y^2 = r^2, \\quad \\tan \\theta = \\frac{y}{x}$$
+          </div>
+
+          <h4>Rectangular to Polar:</h4>
+          <div class="formula">
+            $$r = \\sqrt{x^2 + y^2}, \\quad \\theta = \\arctan\\left(\\frac{y}{x}\\right)$$
+          </div>
+
+          <p><strong>Important:</strong> When finding θ, consider which quadrant the point is in to get the correct angle!</p>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example 1: Convert polar point (2, π/3) to rectangular</h4>
+
+          <div id="ch5-l4-ex1">
+            <div class="step" style="display: none;">Step 1: x = r cos θ = 2 \\cdot cos(\\pi/3) = 2 \\cdot \\frac{1}{2} = 1</div>
+            <div class="step" style="display: none;">Step 2: y = r sin θ = 2 \\cdot sin(\\pi/3) = 2 \\cdot \\frac{\\sqrt{3}}{2} = \\sqrt{3}</div>
+            <div class="step" style="display: none;">Step 3: Answer: (1, √3)</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch5-l4-ex1')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div id="ch5-l35-practice"></div>
+        <div id="ch5-l35-quiz"></div>
+      </section>
+
+      <!-- LESSON 36: Polar Graphs and Symmetry -->
+      <section id="lesson-36" class="lesson">
+        <h1>Lesson 36: Polar Graphs and Symmetry</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>Polar graphs can create beautiful, complex shapes with simple equations. Understanding symmetry helps us sketch these graphs efficiently.</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 Common Polar Curves</h3>
+
+          <h4>Circles:</h4>
+          <ul>
+            <li>$r = a$ (circle centered at origin, radius a)</li>
+            <li>$r = 2a \cos \theta$ (circle to the right of origin)</li>
+            <li>$r = 2a \sin \theta$ (circle above origin)</li>
+          </ul>
+
+          <h4>Lines:</h4>
+          <ul>
+            <li>$\theta = \text{constant}$ (ray from origin)</li>
+            <li>$r = \frac{a}{\cos \theta}$ or $r = \frac{a}{\sin \theta}$ (vertical/horizontal lines)</li>
+          </ul>
+
+          <h4>Roses (petals):</h4>
+          <div class="formula">
+            $r = a \cos(k\\theta)$ or $r = a \sin(k\\theta)$
+            <br>
+            • If k is odd: k petals
+            <br>
+            • If k is even: 2k petals
+          </div>
+
+          <h4>Limaçons:</h4>
+          <div class="formula">
+            $r = a \\pm b \\cos \\theta$ or $r = a \\pm b \\sin \\theta$
+          </div>
+
+          <h4>Spirals:</h4>
+          <div class="formula">
+           $r = a\\theta$ (Archimedean spiral)
+          </div>
+
+          <h3>📚 Symmetry Tests</h3>
+          <ul>
+            <li><strong>关于 x-axis:</strong> Replace θ by -θ. If equation unchanged, symmetric about x-axis</li>
+            <li><strong>关于 y-axis:</strong> Replace θ by π-θ. If equation unchanged, symmetric about y-axis</li>
+            <li><strong>关于 origin:</strong> Replace (r, θ) by (-r, θ) or (r, θ+π). If same, symmetric about origin</li>
+          </ul>
+        </div>
+
+        <div id="ch5-l36-practice"></div>
+        <div id="ch5-l36-quiz"></div>
+      </section>
+
+      <!-- LESSON 37: Calculus in Polar Coordinates -->
+      <section id="lesson-37" class="lesson">
+        <h1>Lesson 37: Calculus in Polar Coordinates</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>We can do calculus in polar coordinates too! The key is to remember how to convert back and forth between polar and rectangular forms when needed.</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 Tangent Lines in Polar</h3>
+
+          <p>For a polar curve r = f(θ), use:</p>
+          <div class="formula">
+            $$\\frac{dy}{dx} = \\frac{dy/d\\theta}{dx/d\\theta} = \\frac{\\frac{d}{d\\theta}(r \\sin \\theta)}{\\frac{d}{d\\theta}(r \\cos \\theta)}$$
+          </div>
+
+          <p>Use product rule on both numerator and denominator!</p>
+
+          <h3>📚 Arc Length in Polar</h3>
+          <div class="formula-highlight">
+            $$L = \\int_{\\alpha}^{\\beta} \\sqrt{r^2 + \\left(\\frac{dr}{d\\theta}\\right)^2} \\, d\\theta$$
+          </div>
+
+          <h4>Derivation:</h4>
+          <p>Starting from parametric with x = r cos θ, y = r sin θ, we get the formula above.</p>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example: Find the length of r = 1 + cos θ from θ=0 to θ=2π</h4>
+
+          <div id="ch5-l5-ex1">
+            <div class="step" style="display: none;">Step 1: Given r = 1 + cos θ, find dr/dθ = -sin θ</div>
+            <div class="step" style="display: none;">Step 2: Use arc length formula with both terms squared</div>
+            <div class="step" style="display: none;">Step 3: Integrand = $\sqrt{(1 + \\cos \\theta)^2 + (-\\sin \\theta)^2}$</div>
+            <div class="step" style="display: none;">Step 4: Recognize this equals $\sqrt{2 + 2\\cos \\theta}$ after expanding</div>
+            <div class="step" style="display: none;">Step 5: Using half-angle identity, length = 8 (for cardioid)</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch5-l5-ex1')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div id="ch5-l37-practice"></div>
+        <div id="ch5-l37-quiz"></div>
+      </section>
+
+      <!-- LESSON 38: Area in Polar Coordinates -->
+      <section id="lesson-38" class="lesson">
+        <h1>Lesson 38: Area in Polar Coordinates</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>Finding area in polar coordinates uses integration, but the formula looks different because we're working with wedge-shaped sectors rather than rectangles.</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 Area Formula</h3>
+          <div class="formula-highlight">
+            The area enclosed by r = f(θ) where α ≤ θ ≤ β is:
+            <br><br>
+            $$A = \\frac{1}{2} \\int_{\\alpha}^{\\beta} [f(\\theta)]^2 \\, d\\theta = \\frac{1}{2} \\int_{\\alpha}^{\\beta} r^2 \\, d\\theta$$
+          </div>
+
+          <h4>Key Points:</h4>
+          <ul>
+            <li>The $\frac{1}{2}$ comes from the sector area formula $\frac{1}{2}r^2θ$</li>
+            <li>We integrate r², not just r</li>
+            <li>The limits α and β are key - they're usually given or found from intersections</li>
+          </ul>
+
+          <h3>📚 Area Between Two Curves</h3>
+          <div class="formula">
+            $$A = \\frac{1}{2} \\int_{\\alpha}^{\\beta} [r_{outer}^2 - r_{inner}^2] \\, d\\theta$$
+          </div>
+
+          <p>Always subtract inner from outer (larger r minus smaller r)!</p>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example 1: Find area of circle r = 2a cos θ</h4>
+
+          <div id="ch5-l6-ex1">
+            <div class="step" style="display: none;">Step 1: The circle is traced as θ goes from -π/2 to π/2</div>
+            <div class="step" style="display: none;">Step 2: Area = $\frac{1}{2} \int_{-\\pi/2}^{\\pi/2} (2a \\cos \\theta)^2 \, d\\theta$</div>
+            <div class="step" style="display: none;">Step 3: Simplify: $\frac{1}{2} \int_{-\\pi/2}^{\\pi/2} 4a^2 \\cos^2 \\theta \, d\\theta = 2a^2 \int_{-\\pi/2}^{\\pi/2} \\cos^2 \\theta \, d\\theta$</div>
+            <div class="step" style="display: none;">Step 4: Use half-angle: $\cos^2 \\theta = \frac{1 + \\cos 2\\theta}{2}$</div>
+            <div class="step" style="display: none;">Step 5: Area = $2a^2 \int_{-\\pi/2}^{\\pi/2} \\frac{1 + \\cos 2\\theta}{2} \, d\\theta = a^2[\\theta + \frac{\sin 2\\theta}{2}]_{-\\pi/2}^{\\pi/2}$</div>
+            <div class="step" style="display: none;">Step 6: Evaluate: $a^2[(\\frac{\\pi}{2} + 0) - (-\\frac{\\pi}{2} + 0)] = a^2(\\pi) = \\pi a^2$</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch5-l6-ex1')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div id="ch5-l38-practice"></div>
+        <div id="ch5-l38-quiz"></div>
+
+        <div class="chapter-summary">
+          <h2>📓 Chapter 5 Summary</h2>
+          <ul>
+            <li><strong>Parametric Equations:</strong> x = f(t), y = g(t) describe curves in terms of parameter t</li>
+            <li><strong>dy/dx for Parametrics:</strong> $\frac{g'(t)}{f'(t)}$ not quotient rule on second derivative!</li>
+            <li><strong>Parametric Arc Length:</strong> $\int \sqrt{(dx/dt)^2 + (dy/dt)^2} \, dt$</li>
+            <li><strong>Polar Coordinates:</strong> (r, θ) with x = r cos θ, y = r sin θ</li>
+            <li><strong>Polar Graphs:</strong> Circles, roses, limaçons, spirals - understand symmetry</li>
+            <li><strong>Polar Arc Length:</strong> $\int \sqrt{r^2 + (dr/dθ)^2} \, dθ$</li>
+            <li><strong>Polar Area:</strong> $\frac{1}{2} \int r^2 \, dθ$ - remember the 1/2!</li>
+            <li><strong>Area Between Curves:</strong> $\frac{1}{2} \int (r_{outer}^2 - r_{inner}^2) \, dθ$</li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer>
+    <p>Chapter 5: Parametric Equations and Polar Coordinates | Calculus II Complete Mastery Course</p>
+  </footer>
+
+  <script src="../assets/js/math.js"></script>
+  <script src="../assets/js/progress.js"></script>
+  <script src="../assets/js/quizzes.js"></script>
+  <script src="../assets/js/practice.js"></script>
+
+  <script>
+    // Force MathJax to render all math when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        if (window.MathJax && MathJax.typesetPromise) {
+          MathJax.typesetPromise().then(function() {
+            console.log('MathJax rendered successfully');
+          }).catch(function(err) {
+            console.log('MathJax error:', err);
+          });
+        }
+      }, 500);
+    });
+  </script>
+
+  <script>
+    function revealAllSteps(containerId) {
+      const container = document.getElementById(containerId);
+      const steps = container.querySelectorAll('.step');
+      steps.forEach(step => {
+        step.style.display = 'block';
+      });
+      renderMath(container);
+    }
+
+    // Initialize Practice Problems for Chapter 5
+    document.addEventListener('DOMContentLoaded', function() {
+      // Lesson 32 Practice
+      PracticeManager.init('ch5-l32', [
+        PracticeTemplates.multipleChoice('In parametric equations x = f(t), y = g(t), what does t represent?', ['The parameter', 'The x-coordinate', 'The y-coordinate', 'The slope'], 0, 't is the parameter/variable', 'beginner'),
+        PracticeTemplates.trueFalse('A parametric curve must pass the vertical line test.', false, 'Parametric curves can fail vertical line test'),
+        PracticeTemplates.numerical('For x = cos t, y = sin t, eliminating parameter gives: x² + y² = ?', '1', 'This is the unit circle equation', 0.01, 'beginner')
+      ]);
+
+      QuizManager.init('ch5-l32-quiz', [
+        QuizTemplates.multipleChoice('What type of curve is x = t, y = t²?', ['Line', 'Parabola', 'Circle', 'Spiral'], 1, 'Eliminating t gives y = x²'),
+        QuizTemplates.fillBlank('To eliminate the parameter, solve one equation for _____ and substitute', 't', 'The parameter')
+      ]);
+
+      if (ProgressManager) {
+        ProgressManager.startLesson('ch5-l32');
+      }
+    });
+  </script>
+</body>
+</html>

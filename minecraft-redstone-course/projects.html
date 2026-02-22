@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Redstone Computing Academy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <style>
+        .projects-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .project-card {
+            background: var(--mc-black);
+            border: var(--mc-border);
+            padding: 40px;
+            margin-bottom: 40px;
+            position: relative;
+            box-shadow: 0 10px 0 rgba(0,0,0,0.4);
+        }
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            right: 4px;
+            bottom: 4px;
+            border: 3px solid var(--mc-emerald);
+            pointer-events: none;
+        }
+        .project-header {
+            border-bottom: 3px solid var(--mc-redstone);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .project-number {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.8rem;
+            color: var(--mc-emerald);
+            margin-bottom: 10px;
+        }
+        .project-title {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.2rem;
+            color: var(--mc-gold);
+            margin-bottom: 15px;
+        }
+        .project-difficulty {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .difficulty-easy { background: #2ecc71; color: #1D1D1D; }
+        .difficulty-medium { background: #f1c40f; color: #1D1D1D; }
+        .difficulty-hard { background: #e74c3c; color: white; }
+        .difficulty-epic { background: #9b59b6; color: white; }
+        .project-description {
+            color: var(--mc-light-text);
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        .project-objectives {
+            background: var(--mc-obsidian);
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--mc-diamond);
+        }
+        .project-objectives h4 {
+            color: var(--mc-diamond);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        .project-objectives ul {
+            list-style-type: '▸ ';
+            padding-left: 20px;
+            margin-left: 10px;
+        }
+        .project-objectives li {
+            color: var(--mc-light-text);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .project-box {
+            background: var(--mc-stone);
+            border: 3px solid var(--mc-iron);
+            padding: 25px;
+            margin: 25px 0;
+        }
+        .project-box h5 {
+            color: var(--mc-gold);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        .project-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .feature-item {
+            background: var(--mc-wood);
+            padding: 20px;
+            border: 2px solid var(--mc-black);
+        }
+        .feature-item strong {
+            color: var(--mc-gold);
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .feature-item span {
+            color: var(--mc-light-text);
+            font-size: 1.1rem;
+        }
+        .project-timeline {
+            margin: 30px 0;
+        }
+        .timeline-step {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: start;
+        }
+        .timeline-number {
+            width: 50px;
+            height: 50px;
+            background: var(--mc-redstone);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            margin-right: 20px;
+            border: 3px solid var(--mc-black);
+        }
+        .timeline-content {
+            color: var(--mc-light-text);
+            font-size: 1.2rem;
+            padding-top: 10px;
+        }
+        .timeline-content h5 {
+            color: var(--mc-emerald);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="sky-background"></div>
+    <div class="clouds"></div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="redstone-icon"></span>
+                <h1>REDSTONE COMPUTING ACADEMY</h1>
+            </div>
+            <p class="subtitle">Hands-On Projects</p>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="modules.html" class="nav-link">Course Modules</a>
+            <a href="projects.html" class="nav-link active">Projects</a>
+            <a href="resources.html" class="nav-link">Resources</a>
+            <a href="quiz.html" class="nav-link">Quiz</a>
+        </nav>
+    </header>
+
+    <section class="projects-container">
+        <h2 class="section-title">🔨 HANDS-ON PROJECTS</h2>
+        <p style="color: var(--mc-light-text); font-size: 1.4rem; text-align: center; margin-bottom: 40px;">Build your way from simple circuits to complete computers. Each project reinforces what you've learned with practical application.</p>
+
+        <!-- PROJECT 1 -->
+        <div class="project-card">
+            <div class="project-header">
+                <div class="project-number">BEGINNER PROJECT 1</div>
+                <h2 class="project-title">3-Bit Comparator</h2>
+                <span class="project-difficulty difficulty-easy">EASY</span>
+                <span class="module-duration" style="margin-left: 20px;">⏱️ 2-3 hours</span>
+            </div>
+
+            <p class="project-description">Build a circuit that compares two 3-bit binary numbers and outputs three signals: Equal (A=B), Greater Than (A>B), and Less Than (A&lt;B).</p>
+
+            <div class="project-objectives">
+                <h4>🎯 Learning Objectives</h4>
+                <ul>
+                    <li>Apply XOR gates for equality checking</li>
+                    <li>Use AND gates with priority for comparison</li>
+                    <li>Understand bit-by-bit comparison logic</li>
+                    <li>Practice compact circuit design</li>
+                    <li>Learn signal combination techniques</li>
+                </ul>
+            </div>
+
+            <div class="project-box">
+                <h5>Requirements</h5>
+                <ul>
+                    <li><strong>Input:</strong> Two 3-bit numbers (6 input total)</li>
+                    <li><strong>Output:</strong> 3 signals (EQ, GT, LT)</li>
+                    <li><strong>Behavior:</strong> One output active at a time based on comparison result</li>
+                </ul>
+            </div>
+
+            <div class="project-box">
+                <h5>Hints</h5>
+                <ul>
+                    <li>Use XNOR gates to check if each bit pair is equal</li>
+                    <li>AND all XNOR outputs to determine if A = B</li>
+                    <li>For A > B, check high-order bits first</li>
+                    <li>When bits are equal, check the next bit</li>
+                    <li>A &lt; B is the inverse of A > B (assuming equality check)</li>
+                </ul>
+            </div>
+
+            <div class="project-box">
+                <h5>Challenges</h5>
+                <ul>
+                    <li>Can you fit it in 5×5×5 blocks?</li>
+                    <li>Can you achieve 4 tick delay or less?</li>
+                    <li>Try building it vertically to save footprint</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PROJECT 2 -->
+        <div class="project-card">
+            <div class="project-header">
+                <div class="project-number">BEGINNER PROJECT 2</div>
+                <h2 class="project-title">4-Bit Binary Calculator</h2>
+                <span class="project-difficulty difficulty-easy">EASY</span>
+                <span class="module-duration" style="margin-left: 20px;">⏱️ 3-4 hours</span>
+            </div>
+
+            <p class="project-description">Create a calculator that adds two 4-bit binary numbers and displays the result.</p>
+
+            <div class="project-objectives">
+                <h4>🎯 Learning Objectives</h4>
+                <ul>
+                    <li>Build a ripple-carry adder from full adders</li>
+                    <li>Cascade multiple adder stages</li>
+                    <li>Handle carry propagation</li>
+                    <li>Connect inputs to circuit outputs</li>
+                    <li>Display binary results visually</li>
+                </ul>
+            </div>
+
+            <div class="project-box">
+                <h5>Requirements</h5>
+                <ul>
+                    <li><strong>Input:</strong> Two 4-bit numbers via buttons/switches</li>
+                    <li><strong>Circuit:</strong> 4-bit ripple-carry adder</li>
+                    <li><strong>Output:</strong> 5-bit result displayed (4 bits + 1 carry)</li>
+                </ul>
+            </div>
+
+            <div class="project-box">
+                <h5>Stages</h5>
+                <div class="project-timeline">
+                    <div class="timeline-step">
+                        <div class="timeline-number">1</div>
+                        <div class="timeline-content">
+                            <h5>Build Full Adder</h5>
+                            <p>Create a single full adder using two half adders or direct gates</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-number">2</div>
+                        <div class="timeline-content">
+                            <h5>Cascade 4 Full Adders</h5>
+                            <p>Connect carry-out of each to carry-in of next</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-number">3</div>
+                        <div class="timeline-content">
+                            <h5>Add Inputs and Outputs</h5>
+                            <p>Connect input switches and output lamps</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-number">4</div>
+                        <div class="timeline-content">
+                            <h5>Test All Combinations</h5>
+                            <p>Verify results from 0 + 0 to 15 + 15</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECT 3 -->
+        <div class="project-card">
+            <div class="project-header">
+                <div class="project-number">INTERMEDIATE PROJECT 3</div>
+                <h2 class="project-title">8-Bit ALU</h2>
+                <span class="project-difficulty difficulty-medium">MEDIUM</span>
+                <span class="module-duration" style="margin-left: 20px;">⏱️ 6-8 hours</span>
+            </div>
+
+            <p class="project-description">Build a complete 8-bit Arithmetic Logic Unit with multiple operations and flag outputs.</p>
+
+            <div class="project-objectives">
+                <h4>🎯 Learning Objectives</h4>
+                <ul>
+                    <li>Design parallel operation circuits</li>
+                    <li>Implement arithmetic and logic operations</li>
+                    <li>Create MUX-based output selection</li>
+                    <li>Generate control signals</li>
+                    <li>Build flag detection circuits</li>
+                </ul>
+            </div>
+
+            <div class="project-box">
+                <h5>Requirements</h5>
+                <ul>
+                    <li><strong>Inputs:</strong> Two 8-bit data values, 4-bit opcode</li>
+                    <li><strong>Operations:</strong> ADD, SUB, AND, OR, XOR, NOT (minimum 6)</li>
+                    <li><strong>Outputs:</strong> 8-bit result, 4 flags (Zero, Carry, Overflow, Sign)</li>
+                    <li><strong>Performance:</strong> Acceptable delay (don't worry about optimization)</li>
+                </ul>
+            </div>
+
+            <div class="project-features">
+                <div class="feature-item">
+                    <strong>ADD</strong>
+                    <span>A + B</span>
+                </div>
+                <div class="feature-item">
+                    <strong>SUB</strong>
+                    <span>A - B</span>
+                </div>
+                <div class="feature-item">
+                    <strong>AND</strong>
+                    <span>A AND B</span>
+                </div>
+                <div class="feature-item">
+                    <strong>OR</strong>
+                    <span>A OR B</span>
+                </div>
+                <div class="feature-item">
+                    <strong>XOR</strong>
+                    <span>A XOR B</span>
+                </div>
+                <div class="feature-item">
+                    <strong>NOT</strong>
+                    <span>NOT A</span>
+                </div>
+            </div>
+
+            <div class="project-box">
+                <h5>Building Strategy</h5>
+                <ul>
+                    <li>Build 8 adders in vertical column (carry cascades down)</li>
+                    <li>Build logic operations in horizontal rows (parallel)</li>
+                    <li>Use 16-1 MUX to select one of 16 operation results</li>
+                    <li>Add flag circuits at final output stage</li>
+                    <li>Compact layout: ~30 height, ~80 width</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PROJECT 4 -->
+        <div class="project-card">
+            <div class="project-header">
+                <div class="project-number">INTERMEDIATE PROJECT 4</div>
+                <h2 class="project-title">4-Bit Memory System</h2>
+                <span class="project-difficulty difficulty-medium">MEDIUM</span>
+                <span class="module-duration" style="margin-left: 20px;">⏱️ 5-7 hours</span>
+            </div>
+
+            <p class="project-description">Create a functional RAM and ROM memory system with address decoding.</p>
+
+            <div class="project-objectives">
+                <h4>🎯 Learning Objectives</h4>
+                <ul>
+                    <li>Understand address decoders</li>
+                    <li>Build flip-flop registers for RAM cells</li>
+                    <li>Implement ROM using torch placement</li>
+                    <li>Create read/write control logic</li>
+                    <li>Design shared data bus architecture</li>
+                </ul>
+            </div>
+
+            <div class="project-box">
+                <h5>Requirements</h5>
+                <ul>
+                    <li><strong>RAM:</strong> 16 locations × 4 bits (64 bits total)</li>
+                    <li><strong>ROM:</strong> 16 locations × 4 bits (programmable)</li>
+                    <li><strong>Address:</strong> 4-bit address bus</li>
+                    <li><strong>Control:</strong> Read/Write, Chip Enable signals</li>
+                </ul>
+            </div>
+
+            <div class="project-box">
+                <h5>Implementation</h5>
+                <ul>
+                    <li><strong>RAM:</strong> Use D flip-flops per bit cell, decoder selects word</li>
+                    <li><strong>ROM:</strong> Pre-set redstone torches, decoder activates row</li>
+                    <li><strong>Read:</strong> Selected location drives data bus</li>
+                    <li><strong>Write:</strong> Data bus drives into selected RAM location</li>
+                </ul>
+            </div>
+
+            <div class="project-box">
+                <h5>Testing</h5>
+                <ul>
+                    <li>Program a simple pattern into ROM</li>
+                    <li>Read and verify each location</li>
+                    <li>Write to RAM, read back to confirm</li>
+                    <li>Test random access - read/write any location quickly</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PROJECT 5 -->
+        <div class="project-card">
+            <div class="project-header">
+                <div class="project-number">ADVANCED PROJECT 5</div>
+                <h2 class="project-title">Control Unit with 8 Instructions</h2>
+                <span class="project-difficulty difficulty-hard">HARD</span>
+                <span class="module-duration" style="margin-left: 20px;">⏱️ 8-10 hours</span>
+            </div>
+
+            <p class="project-description">Build a complete control unit that executes instructions following the fetch-decode-execute cycle.</p>
+
+            <div class="project-objectives">
+                <h4>🎯 Learning Objectives</h4>
+                <ul>
+                    <li>Implement fetch-decode-execute cycle</li>
+                    <li>Design instruction decoder</li>
+                    <li>Create control signal generation</li>
+                    <li>Build program counter with increment/jump</li>
+                    <li>Synchronize all components with clock</li>
+                </ul>
+            </div>
+
+            <div class="project-box">
+                <h5>Required Instructions</h5>
+                <ul>
+                    <li><strong>NOP:</strong> No operation</li>
+                    <li><strong>MOV:</strong> Move register to register</li>
+                    <li><strong>ADD:</strong> Add registers</li>
+                    <li><strong>SUB:</strong> Subtract registers</li>
+                    <li><strong>AND:</strong> Bitwise AND</li>
+                    <li><strong>JMP:</strong> Unconditional jump</li>
+                    <li><strong>JZ:</strong> Jump if zero flag set</li>
+                    <li><strong>OUT:</strong> Output to display</li>
+                </ul>
+            </div>
+
+            <div class="project-box">
+                <h5>Cycle Implementation</h5>
+                <ul>
+                    <li><strong>Fetch:</strong> PC → Memory → Instruction Register</li>
+                    <li><strong>Decode:</strong> IR → Control Unit</li>
+                    <li><strong>Execute:</strong> Control signals trigger appropriate components</li>
+                    <li><strong>Repeat:</strong> PC increments for next instruction</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- FINAL PROJECT -->
+        <div class="project-card">
+            <div class="project-header">
+                <div class="project-number">⭐ FINAL PROJECT ⭐</div>
+                <h2 class="project-title">Complete 8-Bit Computer</h2>
+                <span class="project-difficulty difficulty-epic">EPIC</span>
+                <span class="module-duration" style="margin-left: 20px;">⏱️ 30-60 hours</span>
+            </div>
+
+            <p class="project-description">The masterpiece project. Build a fully functional 8-bit computer that runs programs. This is the culmination of everything you've learned.</p>
+
+            <div class="project-objectives">
+                <h4>🎯 Learning Objectives</h4>
+                <ul>
+                    <li>Integrate all computer components</li>
+                    <li>Design complete system architecture</li>
+                    <li>Debug complex multi-component systems</li>
+                    <li>Optimize performance and layout</li>
+                    <li>Create and run real programs</li>
+                </ul>
+            </div>
+
+            <div class="project-box">
+                <h5>Complete Requirements</h5>
+                <div class="project-features">
+                    <div class="feature-item">
+                        <strong>CPU</strong>
+                        <span>8-bit ALU, Control Unit, 4 GPRs</span>
+                    </div>
+                    <div class="feature-item">
+                        <strong>Memory</strong>
+                        <span>256 bytes ROM (program), 256 bytes RAM (data)</span>
+                    </div>
+                    <div class="feature-item">
+                        <strong>I/O</strong>
+                        <span>8-bit button input, 2-digit hex display</span>
+                    </div>
+                    <div class="feature-item">
+                        <strong>Instructions</strong>
+                        <span>Minimum 8 instructions, preferably 12+</span>
+                    </div>
+                    <div class="feature-item">
+                        <span>Clock</span>
+                        <span>Configurable speed, proper distribution</span>
+                    </div>
+                    <div class="feature-item">
+                        <strong>Buses</strong>
+                        <span>Data bus, Address bus, Control bus</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-box">
+                <h5>Required Test Programs</h5>
+                <ul>
+                    <li><strong>Test 1:</strong> Add two input numbers, display result</li>
+                    <li><strong>Test 2:</strong> Count from 0 to 255 in a loop</li>
+                    <li><strong>Test 3:</strong> Fibonacci sequence generator</li>
+                    <li><strong>Test 4:</strong> Sort a list of numbers (advanced)</li>
+                    <li><strong>Test 5:</strong> Guess the number game (if-else logic)</li>
+                </ul>
+            </div>
+
+            <div class="project-box">
+                <h5>Extra Credit Opportunities</h5>
+                <ul>
+                    <li>Expand to 16-bit architecture</li>
+                    <li>Add graphics display (pixel-based)</li>
+                    <li>Implement multiplication/division hardware</li>
+                    <li>Build a simple assembler or compiler</li>
+                    <li>Add interrupt handling</li>
+                    <li>Create a game or application</li>
+                    <li>Optimize for minimal tick delay</li>
+                    <li>Document and share your design</li>
+                </ul>
+            </div>
+
+            <div class="project-box">
+                <h5>Building Phases</h5>
+                <div class="project-timeline">
+                    <div class="timeline-step">
+                        <div class="timeline-number">1</div>
+                        <div class="timeline-content">
+                            <h5>CPU Core</h5>
+                            <p>Build ALU, registers, decoder. Test independently</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-number">2</div>
+                        <div class="timeline-content">
+                            <h5>Memory System</h5>
+                            <p>Build ROM and RAM. Connect to CPU</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-number">3</div>
+                        <div class="timeline-content">
+                            <h5>I/O Integration</h5>
+                            <p>Add input panel and display</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-number">4</div>
+                        <div class="timeline-content">
+                            <h5>System Testing</h5>
+                            <p>Run test programs, debug, optimize</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-number">5</div>
+                        <div class="timeline-content">
+                            <h5>Polish & Document</h5>
+                            <p>Finalize layout, document everything, celebrate!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="module-tips">
+                <h5>💡 Success Tips</h5>
+                <ul>
+                    <li>Test each component separately before integrating</li>
+                    <li>Plan cable management carefully - it will be a mess otherwise</li>
+                    <li>Document your circuit with screenshots notes</li>
+                    <li>Save schematic backups after major milestones</li>
+                    <li>Use slow clock speed initially for debugging</li>
+                    <li>Don't be afraid to redesign things - computers are complex!</li>
+                    <li>Most importantly: Have patience and have fun!</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Good Luck!</h4>
+                <p>These projects are challenging but incredibly rewarding. Take your time, ask questions, and most importantly - enjoy building!</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

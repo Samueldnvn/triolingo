@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Development with Java - Complete Course</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Course Header -->
+    <div class="course-header">
+        <h1>IOT DEVELOPMENT WITH JAVA</h1>
+        <h2>Complete Interactive Course - Master IoT Programming</h2>
+    </div>
+
+    <!-- Course Info -->
+    <div class="course-info">
+        COMPREHENSIVE IOT DEVELOPMENT COURSE WITH 500+ PRACTICE PROBLEMS AND HANDS-ON PROJECTS
+    </div>
+
+    <!-- Progress Overview -->
+    <div class="progress-container">
+        <div class="progress-title">YOUR OVERALL PROGRESS</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="overallProgressFill" style="width: 0%">0%</div>
+        </div>
+        <div class="progress-stats" id="progressStats">
+            <div class="stat">
+                <span class="stat-label">Lessons:</span>
+                <span class="stat-value" id="lessonsCompleted">0</span>/<span id="totalLessons">10</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Problems:</span>
+                <span class="stat-value" id="problemsSolved">0</span>/<span id="totalProblems">500</span>+
+            </div>
+            <div class="stat">
+                <span class="stat-label">Quizzes:</span>
+                <span class="stat-value" id="quizzesPassed">0</span>/<span id="totalQuizzes">10</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Course Overview -->
+        <div class="course-overview">
+            <h2 class="section-title">COURSE OVERVIEW</h2>
+            
+            <div class="info-section">
+                <div class="info-title">WHAT YOU WILL MASTER</div>
+                <p class="info-content">By completing this course, you will have comprehensive knowledge of:</p>
+                <ul class="info-list">
+                    <li>Fundamentals of Internet of Things (IoT) architecture and design</li>
+                    <li>Java programming for embedded systems and IoT devices</li>
+                    <li>Sensor programming and hardware interfacing with Java</li>
+                    <li>IoT communication protocols (MQTT, HTTP, CoAP, WebSockets)</li>
+                    <li>IoT development tools, frameworks, and simulators</li>
+                    <li>Networking connectivity (WiFi, Bluetooth, Zigbee, LoRaWAN)</li>
+                    <li>IoT data processing, storage, and cloud platforms</li>
+                    <li>Security best practices for IoT applications</li>
+                    <li>Building end-to-end IoT applications with Java</li>
+                    <li>Advanced topics including edge computing and machine learning</li>
+                </ul>
+            </div>
+
+            <div class="attention-box important">
+                500+ PRACTICE PROBLEMS • COMPREHENSIVE QUIZZES • REAL-WORLD PROJECTS • FINAL EXAM
+            </div>
+        </div>
+
+        <!-- Module Navigation -->
+        <div class="module-container">
+            <h2 class="section-title">COURSE MODULES</h2>
+            
+            <!-- Module 1 -->
+            <div class="module-card" onclick="window.location.href='lessons/01-introduction.html'">
+                <div class="module-header">
+                    <span class="module-number">01</span>
+                    <h3>Introduction to IoT</h3>
+                    <div class="module-status" id="module1-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>IoT definitions, history, and evolution</li>
+                        <li>IoT architecture and components</li>
+                        <li>Applications and use cases across industries</li>
+                        <li>IoT ecosystem overview</li>
+                        <li>50+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~3 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 2 -->
+            <div class="module-card" onclick="window.location.href='lessons/02-java-iot.html'">
+                <div class="module-header">
+                    <span class="module-number">02</span>
+                    <h3>Java for IoT</h3>
+                    <div class="module-status" id="module2-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Embedded Java and Java ME</li>
+                        <li>IoT Java libraries and frameworks</li>
+                        <li>Java on microcontrollers and single-board computers</li>
+                        <li>Memory management for constrained devices</li>
+                        <li>Eclipse Kura and other Java IoT platforms</li>
+                        <li>60+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~5 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 3 -->
+            <div class="module-card" onclick="window.location.href='lessons/03-hardware-sensors.html'">
+                <div class="module-header">
+                    <span class="module-number">03</span>
+                    <h3>IoT Hardware & Sensors</h3>
+                    <div class="module-status" id="module3-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Types of IoT hardware and devices</li>
+                        <li>Sensor fundamentals and categories</li>
+                        <li>Programming sensors with Java</li>
+                        <li>GPIO, I2C, SPI communication protocols</li>
+                        <li>Analog-to-digital conversion</li>
+                        <li>60+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~6 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 4 -->
+            <div class="module-card" onclick="window.location.href='lessons/04-protocols.html'">
+                <div class="module-header">
+                    <span class="module-number">04</span>
+                    <h3>IoT Communication Protocols</h3>
+                    <div class="module-status" id="module4-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>HTTP/REST for IoT communication</li>
+                        <li>MQTT protocol and pub/sub model</li>
+                        <li>CoAP for constrained devices</li>
+                        <li>WebSockets for real-time communication</li>
+                        <li>Protocol selection and comparison</li>
+                        <li>55+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~5 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 5 -->
+            <div class="module-card" onclick="window.location.href='lessons/05-development-tools.html'">
+                <div class="module-header">
+                    <span class="module-number">05</span>
+                    <h3>IoT Development Tools</h3>
+                    <div class="module-status" id="module5-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>IDEs for IoT Java development</li>
+                        <li>Build tools (Maven, Gradle)</li>
+                        <li>Debugging and testing tools</li>
+                        <li>IoT simulators and emulators</li>
+                        <li>Hardware-in-the-loop testing</li>
+                        <li>45+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~4 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 6 -->
+            <div class="module-card" onclick="window.location.href='lessons/06-connectivity.html'">
+                <div class="module-header">
+                    <span class="module-number">06</span>
+                    <h3>IoT Connectivity & Networking</h3>
+                    <div class="module-status" id="module6-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>WiFi networking for IoT</li>
+                        <li>Bluetooth Low Energy (BLE)</li>
+                        <li>Zigbee and mesh networks</li>
+                        <li>LoRaWAN and long-range communication</li>
+                        <li>Network protocols and security</li>
+                        <li>50+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~5 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 7 -->
+            <div class="module-card" onclick="window.location.href='lessons/07-data-processing.html'">
+                <div class="module-header">
+                    <span class="module-number">07</span>
+                    <h3>IoT Data Processing & Storage</h3>
+                    <div class="module-status" id="module7-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Introduction to IoT data management</li>
+                        <li>Time-series databases</li>
+                        <li>Cloud platforms (AWS IoT, Azure IoT)</li>
+                        <li>Data streaming and processing</li>
+                        <li>Edge computing concepts</li>
+                        <li>55+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~6 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 8 -->
+            <div class="module-card" onclick="window.location.href='lessons/08-security.html'">
+                <div class="module-header">
+                    <span class="module-number">08</span>
+                    <h3>IoT Security</h3>
+                    <div class="module-status" id="module8-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>IoT security fundamentals</li>
+                        <li>Authentication and authorization</li>
+                        <li>Encryption and secure communication</li>
+                        <li>Device security best practices</li>
+                        <li>Security testing and auditing</li>
+                        <li>50+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~5 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 9 -->
+            <div class="module-card" onclick="window.location.href='lessons/09-building-applications.html'">
+                <div class="module-header">
+                    <span class="module-number">09</span>
+                    <h3>Building IoT Applications</h3>
+                    <div class="module-status" id="module9-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>End-to-end IoT application design</li>
+                        <li>Complete IoT system development</li>
+                        <li>Integration patterns and best practices</li>
+                        <li>Real-world project development</li>
+                        <li>Deployment and monitoring</li>
+                        <li>60+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~7 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 10 -->
+            <div class="module-card" onclick="window.location.href='lessons/10-advanced-topics.html'">
+                <div class="module-header">
+                    <span class="module-number">10</span>
+                    <h3>Advanced Topics & Review</h3>
+                    <div class="module-status" id="module10-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Edge computing in depth</li>
+                        <li>Machine learning for IoT</li>
+                        <li>IoT case studies and industry examples</li>
+                        <li>Advanced IoT architectures</li>
+                        <li>Course review and final preparation</li>
+                        <li>60+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~5 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="quick-links">
+            <h2 class="section-title">QUICK LINKS</h2>
+            
+            <div class="quick-link-grid">
+                <a href="practice/sensors-problems.html" class="quick-link-card">
+                    <div class="quick-link-symbol">S</div>
+                    <div class="quick-link-title">Sensor Practice</div>
+                    <div class="quick-link-desc">75+ problems</div>
+                </a>
+                
+                <a href="practice/protocols-problems.html" class="quick-link-card">
+                    <div class="quick-link-symbol">P</div>
+                    <div class="quick-link-title">Protocol Practice</div>
+                    <div class="quick-link-desc">85+ problems</div>
+                </a>
+                
+                <a href="practice/data-problems.html" class="quick-link-card">
+                    <div class="quick-link-symbol">D</div>
+                    <div class="quick-link-title">Data Processing</div>
+                    <div class="quick-link-desc">95+ problems</div>
+                </a>
+                
+                <a href="practice/security-problems.html" class="quick-link-card">
+                    <div class="quick-link-symbol">SEC</div>
+                    <div class="quick-link-title">Security Practice</div>
+                    <div class="quick-link-desc">80+ problems</div>
+                </a>
+                
+                <a href="practice/applications-problems.html" class="quick-link-card">
+                    <div class="quick-link-symbol">A</div>
+                    <div class="quick-link-title">Application Dev</div>
+                    <div class="quick-link-desc">100+ problems</div>
+                </a>
+                
+                <a href="exams/final.html" class="quick-link-card">
+                    <div class="quick-link-symbol">F</div>
+                    <div class="quick-link-title">Final Exam</div>
+                    <div class="quick-link-desc">30 questions</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Study Guide -->
+        <div class="study-guide">
+            <h2 class="section-title">STUDY GUIDE & TIPS</h2>
+            
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>Complete Modules Sequentially</h4>
+                    <p>This course builds foundation first. Make sure you complete each module in order to understand the concepts fully.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>Practice Every Problem</h4>
+                    <p>Consistent practice is key. Try every practice problem, even if you think you understand the concept.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>Write Real Code</h4>
+                    <p>Don't just read the examples. Write actual Java code, run it, and experiment with real hardware when possible.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>Use Hardware Simulators</h4>
+                    <p>Virtualize hardware setup using simulators and emulators before working with physical devices.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>Focus on Security</h4>
+                    <p>IoT security is critical. Pay special attention to Module 8 and implement security best practices in all projects.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>Build Complete Projects</h4>
+                    <p>Apply your knowledge by building end-to-end IoT systems. Start simple and add complexity gradually.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p class="footer-text">
+            IOT DEVELOPMENT WITH JAVA - COMPLETE INTERACTIVE COURSE<br>
+            500+ Practice Problems • 10 Modules • Final Exam<br>
+            Master IoT Programming with Java
+        </p>
+    </div>
+
+    <script src="js/navigation.js"></script>
+    <script>
+        // Load saved progress
+        loadProgress();
+    </script>
+</body>
+</html>

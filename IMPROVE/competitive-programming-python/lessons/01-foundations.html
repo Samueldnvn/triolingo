@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1 - Foundations & Prerequisites | Competitive Programming with Python</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <!-- Course Header -->
+    <div class="course-header">
+        <h1>Module 1: Foundations & Prerequisites</h1>
+        <h2>Building the Competitive Programming Mindset</h2>
+    </div>
+
+    <!-- Navigation -->
+    <div class="page-nav">
+        <a href="../index.html" class="nav-btn">← Back to Modules</a>
+        <button class="nav-btn" onclick="window.print()">Print Lesson</button>
+        <a href="02-datastructures.html" class="nav-btn">Next Module →</a>
+    </div>
+
+    <!-- Progress Indicator -->
+    <div class="module-progress">
+        <div class="progress-label">Module Progress</div>
+        <div class="progress-bar-small">
+            <div class="progress-fill-small" id="moduleProgress" style="width: 0%">0%</div>
+        </div>
+        <div>
+            <span>Sections: <strong id="sectionsViewed">0</strong>/5</span>
+            <span>Problems: <strong id="problemsSolved">0</strong>/50</span>
+        </div>
+    </div>
+
+    <!-- Section Navigation -->
+    <nav class="section-nav">
+        <div class="nav-item active" onclick="showSection('section1')">1. Complexity Analysis</div>
+        <div class="nav-item" onclick="showSection('section2')">2. Python Optimization</div>
+        <div class="nav-item" onclick="showSection('section3')">3. Algorithm Design</div>
+        <div class="nav-item" onclick="showSection('section4')">4. Common Pitfalls</div>
+        <div class="nav-item" onclick="showSection('section5')">5. Module Quiz</div>
+    </nav>
+
+    <!-- Content Sections -->
+    <div class="content-container">
+        
+        <!-- Section 1: Complexity Analysis -->
+        <div id="section1" class="content-section active">
+            <h2>Big O and Complexity Analysis</h2>
+            
+            <div class="blueprint-section">
+                <div class="blueprint-title">LEARNING OBJECTIVES</div>
+                <p class="content-text">By the end of this section, you will be able to:</p>
+                <ul class="blueprint-list">
+                    <li>Understand Big O notation and what it represents</li>
+                    <li>Analyze time and space complexity of algorithms</li>
+                    <li>Compare algorithms and choose the optimal approach</li>
+                    <li>Recognize common complexity patterns</li>
+                </ul>
+            </div>
+
+            <div class="content-block">
+                <h3>What is Big O Notation?</h3>
+                <p class="content-text">Big O notation describes the <strong>upper bound</strong> of an algorithm's time or space complexity as a function of input size n. It answers the question: "How does the algorithm's performance scale as input grows?"</p>
+                
+                <p class="content-text">Key concepts:</p>
+                <ul class="content-list">
+                    <li><strong>Worst-case analysis:</strong> Big O describes the worst-case scenario</li>
+                    <li><strong>Asymptotic behavior:</strong> Focus on large n behavior, ignore constants</li>
+                    <li><strong>Upper bound:</strong> Guarantee it won't be worse than this</li>
+                </ul>
+
+                <div class="formula-box">
+                    <div class="formula-title">Common Time Complexities</div>
+                    <p><strong>O(1)</strong> - Constant time: Same operations regardless of input size</p>
+                    <p><strong>O(log n)</strong> - Logarithmic: Halves search space each step (binary search)</p>
+                    <p><strong>O(n)</strong> - Linear: Process each element once</p>
+                    <p><strong>O(n log n)</strong> - Linearithmic: Sorting, divide and conquer</p>
+                    <p><strong>O(n^2)</strong> - Quadratic: Nested loops</p>
+                    <p><strong>O(2^n)</strong> - Exponential: Brute force subsets</p>
+                </div>
+            </div>
+
+            <div class="content-block">
+                <h3>Analyzing Time Complexity</h3>
+                <p class="content-text">To analyze time complexity:</p>
+                
+                <p class="content-text"><strong>1. Count the dominant operations:</strong></p>
+                <pre class="code-block">for i in range(n):           # Runs n times
+    for j in range(n):       # Runs n times for each i
+        print(i, j)         # O(n) iterations * O(n) iterations = O(n^2)</pre>
+
+                <p class="content-text"><strong>2. Identify nested structures:</strong></p>
+                <pre class="code-block">for i in range(n):           # O(n)
+    print(i)               # O(1)
+# Total: O(n)
+
+for i in range(n):           # O(n)
+    for j in range(i):       # O(n/2) average
+        print(i, j)         # O(n * n/2) = O(n^2)</pre>
+
+                <p class="content-text"><strong>3. Recognize logarithmic patterns:</strong></p>
+                <pre class="code-block">while n > 1:              # Logarithmic
+    n = n // 2             # Each iteration halves n
+# Runs log2(n) times: O(log n)</pre>
+            </div>
+
+            <div class="content-block">
+                <h3>Space Complexity</h3>
+                <p class="content-text">Space complexity measures additional memory used:</p>
+                
+                <ul class="content-list">
+                    <li><strong>O(1)</strong> - Fixed number of variables</li>
+                    <li><strong>O(n)</strong> - Array proportional to input</li>
+                    <li><strong>O(n^2)</strong> - 2D matrix</li>
+                    <li><strong>O(log n)</strong> - Recursive call stack depth</li>
+                </ul>
+
+                <div class="safety-sign important">
+                    IMPORTANT: In competitive programming, both time AND space constraints matter.
+                </div>
+            </div>
+
+            <!-- Practice Problems -->
+            <div class="practice-section">
+                <h3>Practice Problems: Complexity Analysis</h3>
+                
+                <div class="problem-container">
+                    <div class="problem-block">
+                        <p class="problem-text">What is the time complexity of this code?</p>
+                        <pre class="code-block">for i in range(n):
+    for j in range(n):
+        if i == j:
+            print(j)</pre>
+                        <input type="text" id="F-1-input" placeholder="Your answer (e.g., O(n^2))" class="problem-input">
+                        <button onclick="checkAnswer('F-1', 'O(n^2)', ['O(n*n)', 'O(n²)'], 'F-1-input', 'F-1-hint', 'F-1-explanation')" class="check-btn">Check Answer</button>
+                        <p id="F-1-hint" class="hint" style="display:none">The if-statement doesn't change how many times we loop.</p>
+                        <p id="F-1-explanation" class="explanation" style="display:none">Correct! We still loop through all pairs (i, j), resulting in O(n^2) iterations regardless of the if condition.</p>
+                        <p id="F-1-input-feedback" class="feedback"></p>
+                    </div>
+                </div>
+
+                <div class="practice-section-footer">
+                    <button onclick="loadMoreProblems('foundations', 'complexity')" class="load-more-btn">Load More Problems</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Python Optimization -->
+        <div id="section2" class="content-section">
+            <h2>Python Optimization for Competitive Programming</h2>
+            
+            <div class="content-block">
+                <h3>Fast Input/Output</h3>
+                <p class="content-text">Default Python input/output can be slow. For large inputs (10^5+ elements), use fast I/O:</p>
+                
+                <pre class="code-block">import sys
+
+# Fast input reading
+def read_ints():
+    return list(map(int, sys.stdin.read().split()))
+
+# Or read line by line
+def lines():
+    return sys.stdin.read().splitlines()
+
+# Fast output
+def print_result(result):
+    sys.stdout.write('\n'.join(map(str, result)))</pre>
+            </div>
+
+            <div class="content-block">
+                <h3>Python Data Structure Optimization</h3>
+                <p class="content-text"><strong>Use appropriate data structures:</strong></p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Choosing the Right Structure</div>
+                    <p><strong>List vs Set:</strong> Set for O(1) membership tests (use "in"), List for indexed access</p>
+                    <p><strong>collections.deque:</strong> O(1) append/popleft for queue, List O(n) for pop(0)</p>
+                    <p><strong>defaultdict:</strong> Avoid key existence checks, auto-initialize</p>
+                </div>
+
+                <pre class="code-block">from collections import defaultdict, deque
+
+# defaultdict avoids get() calls
+counter = defaultdict(int)
+for x in arr:
+    counter[x] += 1  # No need to check if x exists
+
+# deque for queue operations
+queue = deque([1, 2, 3])
+queue.append(4)      # O(1)
+queue.popleft()     # O(1)</pre>
+            </div>
+
+            <div class="content-block">
+                <h3>List Comprehensions and Built-ins</h3>
+                <p class="content-text">Use Python's optimized constructs:</p>
+                
+                <pre class="code-block"># List comprehension - faster than loop with append
+squares = [x**2 for x in range(1000)]  # Faster
+
+# Built-in functions are optimized
+arr = [3, 1, 4, 1, 5]
+result = sorted(arr)       # O(n log n), optimized in Python (Timsort)
+min_val = min(arr)         # O(n), optimized
+max_val = max(arr)         # O(n), optimized
+total = sum(arr)           # O(n), optimized</pre>
+            </div>
+
+            <div class="content-block">
+                <h3>Common Performance Pitfalls</h3>
+                <ul class="content-list">
+                    <li><strong>Avoid repeated string concatenation:</strong> Use ''.join(list) instead of s += string</li>
+                    <li><strong>Use set for membership tests:</strong> "in" on list is O(n), on set is O(1)</li>
+                    <li><strong>Pre-allocate lists:</strong> Use [0] * n instead of list comprehension when all values same</li>
+                    <li><strong>Use enumerate for indexed iteration:</strong> More Pythonic than range(len(arr))</li>
+                </ul>
+
+                <div class="safety-sign warning">
+                    WARNING: String concatenation in loop is O(n^2). Use list and join for O(n).
+                </div>
+            </div>
+
+            <!-- Practice Problems -->
+            <div class="practice-section">
+                <h3>Practice Problems: Python Optimization</h3>
+                <p class="content-text">More practice problems loaded from problems.js</p>
+                <div class="practice-section-footer">
+                    <button onclick="loadMoreProblems('foundations', 'python')" class="load-more-btn">Load Problems</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Algorithm Design -->
+        <div id="section3" class="content-section">
+            <h2>Algorithm Design Principles</h2>
+            
+            <div class="content-block">
+                <h3>Understand the Problem</h3>
+                <p class="content-text">Before coding:</p>
+                <ul class="content-list">
+                    <li><strong>Read carefully:</strong> Identify input format, output requirements, constraints</li>
+                    <li><strong>Start small:</strong> Work through examples by hand</li>
+                    <li><strong>Identify pattern:</strong> Is it DP, greedy, graph, string, etc.? Recognize structure</li>
+                    <li><strong>Consider constraints:</strong> n = 10^5 suggests O(n log n), not O(n^2)</li>
+                </ul>
+            </div>
+
+            <div class="content-block">
+                <h3>Pattern Recognition</h3>
+                <p class="content-text">Common problem patterns:</p>
+                
+                <div class="formula-box">
+                    <div class="formula-title">Problem Categories</div>
+                    <p><strong>String:</strong> Palindromes, anagrams, searching, substring problems</p>
+                    <p><strong>Arrays:</strong> Two pointers, sliding window, hash tables, sorting</p>
+                    <p><strong>DP:</strong> Knapsack, LIS, LCS, coin change, path problems</p>
+                    <p><strong>Greedy:</strong> Scheduling, Huffman, MST, activity selection</p>
+                    <p><strong>Graph:</strong> BFS/DFS, shortest paths, MST, cycles, connectivity</p>
+                    <p><strong>Binary Search:</strong> Sorted arrays, binary search on answer</p>
+                </div>
+            </div>
+
+            <div class="content-block">
+                <h3>Step-by-Step Approach</h3>
+                <div class="content-text"><strong>1. Brute force:</strong> Simple but often O(n^2) or O(2^n)</div>
+                <div class="content-text"><strong>2. Identify optimization:</strong> Do we have redundant work? Can we use hash table?</div>
+                <div class="content-text"><strong>3. Apply appropriate pattern:</strong> Two pointers? DP? Greedy?</div>
+                <div class="content-text"><strong>4. Refine implementation:</strong> Optimize for Python, handle edge cases</div>
+                <div class="content-text"><strong>5. Test thoroughly:</strong> Test on examples, edge cases (empty, single, all same, extremes)</div>
+            </div>
+
+            <div class="content-block">
+                <h3>Edge Cases to Consider</h3>
+                <ul class="content-list">
+                    <li>Empty array/string</li>
+                    <li>Single element</li>
+                    <li>All elements same</li>
+                    <li>Already sorted / reverse sorted</li>
+                    <li>Maximum / minimum values at boundaries</li>
+                    <li>Integer overflow (use Python's unlimited int, but watch algorithms)</li>
+                </ul>
+            </div>
+
+            <div class="safety-sign warning">
+                REMEMBER: Always test your logic with examples before coding. Tracing through examples saves debugging time.
+            </div>
+        </div>
+
+        <!-- Section 4: Common Pitfalls -->
+        <div id="section4" class="content-section">
+            <h2>Common Pitfalls and Debugging</h2>
+            
+            <div class="content-block">
+                <h3>Frequent Mistakes</h3>
+                <ul class="content-list">
+                    <li><strong>Off-by-one errors:</strong> Using <= instead of <, or vice versa</li>
+                    <li><strong>Not handling edge cases:</strong> Empty input, single element</li>
+                    <li><strong>Wrong complexity:</strong> O(n^2) when O(n log n) is needed</li>
+                    <li><strong>Integer division in Python 3:</strong> Use // for integer division</li>
+                    <li><strong>Modifying list while iterating:</strong> Creates unexpected behavior</li>
+                    <li><strong>Using wrong data structure:</strong> List instead of set for membership</li>
+                    <li><strong>Not reading input format correctly:</strong> Wrong number of lines, missing whitespace handling</li>
+                    <li><strong>Not resetting variables in test cases:</strong> Global state persists</li>
+                </ul>
+            </div>
+
+            <div class="content-block">
+                <h3>Debugging Strategies</h3>
+                <p class="content-text"><strong>1. Print debugging:</strong> Print key variables at checkpoints</p>
+                <p class="content-text"><strong>2. Simplify input:</strong> Start with small test cases</p>
+                <p class="content-text"><strong>3. Verify complexity:</strong> Count operations manually</p>
+                <p class="content-text"><strong>4. Check invariants:</strong> What should always be true?</p>
+                <p class="content-text"><strong>5. Binary search boundaries:</strong> Off-by-one is common</p>
+                
+                <pre class="code-block"># Debugging example
+def solve(arr):
+    print(f"Input: {arr}")  # Debug
+    result = []
+    for i in range(len(arr)):
+        print(f"Processing i={i}, arr[i]={arr[i]}")  # Debug
+        # ... algorithm ...
+    print(f"Result: {result}")  # Debug
+    return result</pre>
+            </div>
+
+            <div class="safety-sign important">
+                DEBUGGING TIP: Use assert statements to check invariants: assert condition, message
+            </div>
+        </div>
+
+        <!-- Section 5: Module Quiz -->
+        <div id="section5" class="content-section">
+            <h2>Module 1 Quiz</h2>
+            
+            <div class="quiz-intro">
+                <p>Test your understanding of foundations and prerequisites. You need 70% or higher to pass.</p>
+                <p>This quiz covers: Complexity analysis, Python optimization, Algorithm design principles.</p>
+            </div>
+
+            <div id="quiz-container-foundations" class="quiz-container"></div>
+
+            <div id="quiz-results-foundations" class="quiz-results" style="display:none"></div>
+
+            <div class="quiz-actions">
+                <button onclick="loadQuiz('foundations')" class="quiz-btn">Load Quiz</button>
+                <button onclick="submitQuiz('foundations')" class="quiz-btn">Submit Quiz</button>
+                <button onclick="markLessonComplete('foundations')" class="quiz-btn complete-btn" style="display:none;">Mark Module Complete</button>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Complete Course: Competitive Programming with Python</p>
+        <p>Next: <a href="02-datastructures.html">Module 2 - Data Structures</a></p>
+    </footer>
+
+    <script src="../js/navigation.js"></script>
+    <script src="../js/problems.js"></script>
+    <script src="../js/quizzes.js"></script>
+    <script>
+        // Module-specific initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+            updateOverallProgress();
+        });
+        
+        let sectionsViewed = 0;
+        let currentSection = 1;
+        
+        function showSection(sectionId) {
+            // Update progress
+            sectionsViewed = Math.max(sectionsViewed, parseInt(sectionId.replace('section', '')));
+            document.getElementById('sectionsViewed').textContent = sectionsViewed;
+            document.getElementById('moduleProgress').style.width = (sectionsViewed / 5 * 100) + '%';
+            
+            // Call navigation function
+            showSection(sectionId);
+            currentSection = parseInt(sectionId.replace('section', ''));
+        }
+        
+        function loadMoreProblems(module, category) {
+            // Load 10 more practice problems dynamically
+            const container = document.querySelector('.practice-section');
+            const problems = practiceProblems[module][category];
+            const startIndex = 0; // This would track offset in real implementation
+            
+            let html = '';
+            for (let i = startIndex; i < startIndex + 5 && i < problems.length; i++) {
+                const p = problems[i];
+                html += `
+                    <div class="problem-container">
+                        <div class="problem-block">
+                            <p class="problem-title">Problem ${p.id}</p>
+                            <p class="problem-text">${p.question}</p>
+                            <input type="text" id="${p.id}-input" placeholder="Your answer" class="problem-input">
+                            <button onclick="checkAnswer('${p.id}', '${p.answer}', ${JSON.stringify(p.alternatives)}, '${p.id}-input', '${p.id}-hint', '${p.id}-explanation')" class="check-btn">Check Answer</button>
+                            <p id="${p.id}-hint" class="hint" style="display:none">${p.hint}</p>
+                            <p id="${p.id}-explanation" class="explanation" style="display:none">${p.explanation}</p>
+                            <p id="${p.id}-input-feedback" class="feedback"></p>
+                        </div>
+                    </div>
+                `;
+            }
+            container.insertAdjacentHTML('beforeend', html);
+        }
+        
+        function loadQuiz(module) {
+            const container = document.getElementById('quiz-container-' + module);
+            const questions = quizQuestions[module];
+            
+            let html = '';
+            questions.forEach((q, index) => {
+                html += `
+                    <div class="quiz-question">
+                        <p class="question-text"><strong>Question ${index + 1}:</strong> ${q.question}</p>
+                        <div class="quiz-options">
+                            ${q.options.map((opt, optIndex) => `
+                                <label class="quiz-option">
+                                    <input type="radio" name="question-${q.id}" value="${String.fromCharCode(65 + optIndex)}">
+                                    ${opt}
+                                </label>
+                            `).join('')}
+                        </div>
+                        <p class="quiz-explanation" style="display:none">${q.explanation}</p>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+        
+        function submitQuiz(module) {
+            const questions = quizQuestions[module];
+            const answers = {};
+            
+            questions.forEach(q => {
+                const selected = document.querySelector(`input[name="question-${q.id}"]:checked`);
+                if (selected) {
+                    answers[q.id] = selected.value;
+                }
+            });
+            
+            const quizManager = new QuizManager(module);
+            questions.forEach(q => {
+                quizManager.recordAnswer(q.id, answers[q.id]);
+            });
+            
+            const correctAnswers = {};
+            questions.forEach(q => {
+                correctAnswers[q.id] = q.correct;
+            });
+            
+            const results = quizManager.submitQuiz(correctAnswers);
+            const passed = displayQuizResults(results, 'quiz-results-' + module);
+            
+            document.getElementById('quiz-container-' + module).style.display = 'none';
+            document.querySelector('.quiz-actions button[onclick*="submitQuiz"]').style.display = 'none';
+            
+            if (passed) {
+                document.querySelector('.quiz-actions button[onclick*="markLessonComplete"]').style.display = 'inline-block';
+            }
+        }
+    </script>
+</body>
+</html>

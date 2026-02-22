@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Module 9: Graph Algorithms - Competitive Programming with Python</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="course-header"><h1>MODULE 9: GRAPH ALGORITHMS</h1><h2>Modeling Relationships and Connections</h2></div>
+    <nav class="nav-container"><ul class="nav-menu"><li class="nav-item active" onclick="showSection('overview')">Overview</li><li class="nav-item" onclick="showSection('bfs')">BFS/DFS</li><li class="nav-item" onclick="showSection('shortest')">Shortest Paths</li><li class="nav-item" onclick="showSection('tree')">Tree Algorithms</li><li class="nav-item" onclick="showSection('mst')">MST</li><li class="nav-item" onclick="showSection('practice')">Practice</li><li class="nav-item" onclick="showSection('quiz')">Quiz</li></ul></nav>
+    <div class="progress-container"><div class="progress-title">MODULE 9 PROGRESS</div><div class="progress-bar"><div class="progress-fill" id="moduleProgress" style="width:0%">0%</div></div></div>
+    <div class="container">
+        <div class="content-section active" id="overview">
+            <div class="lesson-header"><h1>Graph Algorithms Overview</h1><p>Traversing and analyzing graph structures</p></div>
+            <div class="blueprint-section"><div class="blueprint-content"><h3>WHAT YOU'LL LEARN</h3><ul class="blueprint-list"><li>BFS and DFS traversal</li><li>Shortest paths (Dijkstra, BFS for unweighted)</li><li>Topological sorting</li><li>Minimum Spanning Tree (Prim, Kruskal)</li><li>Union-Find data structure</li><li>Graph patterns</li></ul></div></div>
+            <h3 class="subsection-title">Graph Representations</h3><div class="code-block"><pre>
+# Adjacency list (RECOMMENDED - most space efficient for sparse)
+graph = {0: [1,2], 1: [0,2], 2: [0,1,3], 3: [2]}
+
+# Adjacency matrix (good for dense graphs)
+n = 4
+matrix = [[0]*n for _ in range(n)]
+matrix[0][1] = matrix[0][2] = 1
+# ... edges
+            </pre></div>
+        </div>
+        <div class="content-section" id="bfs">
+            <div class="lesson-header"><h1>BFS and DFS</h1></div><h3 class="subsection-title">BFS - Level Order Traversal</h3><div class="code-block"><pre>
+from collections import deque
+
+def bfs(graph, start):
+    visited = set([start])
+    queue = deque([start])
+    result = []
+    
+    while queue:
+        node = queue.popleft()
+        result.append(node)
+        for neighbor in graph.get(node, []):
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append(neighbor)
+    
+    return result
+
+# Finds shortest path in unweighted graphs
+            </pre></div>
+            <h3 class="subsection-title">DFS - Depth First Search</h3><div class="code-block"><pre>
+def dfs(graph, start, visited=None):
+    if visited is None:
+        visited = set()
+    
+    visited.add(start)
+    result = [start]
+    
+    for neighbor in graph.get(start, []):
+        if neighbor not in visited:
+            result.extend(dfs(graph, neighbor, visited))
+    
+    return result
+
+# Can be recursive or iterative using stack
+            </pre></div>
+        </div>
+        <div class="content-section" id="shortest">
+            <div class="lesson-header"><h1>Shortest Path Algorithms</h1></div>
+            <h3 class="subsection-title">Dijkstra's Algorithm</h3><div class="code-block"><pre>
+import heapq
+
+def dijkstra(graph, start):
+    """Shortest path from start to all nodes (weighted, non-negative)"""
+    distances = {node: float('inf') for node in graph}
+    distances[start] = 0
+    pq = [(0, start)]
+    visited = set()
+    
+    while pq:
+        dist, node = heapq.heappop(pq)
+        
+        if node in visited:
+            continue
+        visited.add(node)
+        
+        for neighbor, weight in graph.get(node, {}).items():
+            if neighbor not in visited:
+                new_dist = dist + weight
+                if new_dist < distances[neighbor]:
+                    distances[neighbor] = new_dist
+                    heapq.heappush(pq, (new_dist, neighbor))
+    
+    return distances
+
+# Time: O((V+E)log V) with priority queue
+            </pre></div>
+        </div>
+        <div class="content-section" id="tree">
+            <div class="lesson-header"><h1>Tree Algorithms</h1></div><h3 class="subsection-title">Is Graph a Tree?</h3><div class="code-block"><pre>
+def is_valid_tree(n, edges):
+    """N nodes connected with N-1 edges and no cycle = tree"""
+    if len(edges) != n - 1:
+        return False
+    
+    graph = {i: [] for i in range(n)}
+    for u, v in edges:
+        graph[u].append(v)
+        graph[v].append(u)
+    
+    visited = set()
+    
+    def dfs(node, parent):
+        visited.add(node)
+        for neighbor in graph[node]:
+            if neighbor != parent:
+                if neighbor in visited:
+                    return False
+                if not dfs(neighbor, node):
+                    return False
+        return True
+    
+    return dfs(0, -1) and len(visited) == n
+            </pre></div>
+        </div>
+        <div class="content-section" id="mst">
+            <div class="lesson-header"><h1>Minimum Spanning Tree</h1></div><h3 class="subsection-title">Kruskal's Algorithm with Union-Find</h3><div class="code-block"><pre>
+class UnionFind:
+    def __init__(self, n):
+        self.parent = list(range(n))
+        self.rank = [0] * n
+    
+    def find(self, x):
+        if self.parent[x] != x:
+            self.parent[x] = self.find(self.parent[x])
+        return self.parent[x]
+    
+    def union(self, x, y):
+        px, py = self.find(x), self.find(y)
+        if px == py:
+            return False
+        if self.rank[px] < self.rank[py]:
+            self.parent[px] = py
+        elif self.rank[px] > self.rank[py]:
+            self.parent[py] = px
+        else:
+            self.parent[py] = px
+            self.rank[px] += 1
+        return True
+
+def kruskal(n, edges):
+    """Minimum spanning tree weight"""
+    edges.sort(key=lambda x: x[2])
+    uf = UnionFind(n)
+    total = 0
+    count = 0
+    
+    for u, v, w in edges:
+        if uf.union(u, v):
+            total += w
+            count += 1
+            if count == n - 1:
+                break
+    
+    return total if count == n - 1 else None
+            </pre></div>
+        </div>
+        <div class="content-section" id="practice">
+            <div class="lesson-header"><h1>Practice Problems</h1></div><div id="practiceProblems"></div><script src="../js/problems.js"></script><script>
+                const c=document.getElementById('practiceProblems');
+                const p=practiceProblems.graphs.basics||[];
+                let html='<div class="practice-category"><h3 class="subsection-title">Graph Problems</h3>';
+                (p.slice(0,5)).forEach(px=>{
+                    const pid='GH-'+px.id;
+                    html+=`<div class="practice-problem" id="${pid}">
+                        <div class="problem-question"><p><strong>${px.id}:</strong> ${px.question}</p></div>
+                        <div class="problem-input"><input id="${pid}-input"><button onclick="checkAnswer('${pid}','${px.answer.replace(/'/g,"\\'")}',[${px.alternatives.map(a=>`'${a.replace(/'/g,"\\'")}'`).join(',')}],'${pid}-input','${pid}-hint','${pid}-explanation')">Check</button></div>
+                        <div id="${pid}-feedback" class="feedback"></div><div id="${pid}-hint" class="hint" style="display:none">${px.hint}</div></div>`;
+                });
+                c.innerHTML=html+'</div>';
+            </script>
+        </div>
+        <div class="content-section" id="quiz">
+            <div class="lesson-header"><h1>Module 9 Quiz</h1></div><form id="moduleQuiz">
+                <div class="quiz-question"><p>1. BFS data structure?</p><div class="quiz-options"><label onclick="r('Q1','A')"><input type="radio" name="Q1" value="A"> A. Stack</label><label onclick="r('Q1','B')><input type="radio" name="Q1" value="B"> B. Queue</label><label onclick="r('Q1','C')"><input type="radio" name="Q1" value="C"> C. Priority Queue</label></div></div>
+                <div class="quiz-question"><p>2. Dijkstra assumes non-negative weights?</p><div class="quiz-options"><label onclick="r('Q2','A')"><input type="radio" name="Q2" value="A"> A. Yes</label><label onclick="r('Q2','B')><input type="radio" name="Q2" value="B"> B. No</label><label onclick="r('Q2','C')"><input type="radio" name="Q2" value="C"> C. Sometimes</label></div></div>
+                <div class="quiz-question"><p>3. MST connects all vertices with?</p><div class="quiz-options"><label onclick="r('Q3','A')"><input type="radio" name="Q3" value="A"> A. Minimum edges</label><label onclick="r('Q3','B')><input type="radio" name="Q3" value="B"> B. Minimum total weight</label><label onclick="r('Q3','C')"><input type="radio" name="Q3" value="C"> C. Both</label></div></div>
+                <div class="quiz-question"><p>4. Union-Find operations?</p><div class="quiz-options"><label onclick="r('Q4','A')"><input type="radio" name="Q4" value="A"> A. Find, Union</label><label onclick="r('Q4','B')><input type="radio" name="Q4" value="B"> B. Add, Remove</label><label onclick="r('Q4','C')"><input type="radio" name="Q4" value="C"> C. Search, Insert</label></div></div>
+                <button type="button" class="quiz-submit" onclick="s9()">Submit Quiz</button>
+            </form><div class="quiz-results" id="quizResults"></div>
+        </div>
+    </div>
+    <div class="nav-buttons"><button onclick="window.location.href='08-greedy.html'">Previous</button><button onclick="window.location.href='../index.html'">Home</button><button onclick="window.location.href='10-advanced.html'">Next</button></div>
+    <script src="../js/navigation.js"></script><script>
+        const a9={'Q1':'B','Q2':'A','Q3':'B','Q4':'A'},q={};function r(x,y){q[x]=y;}function s9(){let s=0,t=4,r=[];for(let x in a9){if(q[x]===a9[x]){s++;r.push(`Q${x.substring(1)}: Correct`);}else{r.push(`Q${x.substring(1)}: Wrong`);}}const p=Math.round((s/t)*100);document.getElementById('quizResults').innerHTML=`<div class="score-display ${p>=70?'pass':'fail'}">${p>=70?'PASSED':'IMPROVE'}</div><p>Score: ${s}/${t} (${p}%)</p>`+r.map(z=>`<p>${z}</p>`).join('');if(p>=70)markQuizPassed('graphs');}</script>
+</body>
+</html>

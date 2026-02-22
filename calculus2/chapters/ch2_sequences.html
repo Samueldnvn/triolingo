@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 2: Sequences - Calculus II</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+
+  <!-- MathJax Configuration -->
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    },
+    startup: {
+      typeset: false
+    }
+  };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+  <header>
+    <h1>Calculus II <span>Chapter 2</span></h1>
+    <p class="tagline">Sequences and Infinite Series</p>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <div class="sidebar-title">📖 Chapter 2 Lessons</div>
+      <ul class="chapter-nav">
+        <li><a href="../index.html">← Back to Home</a></li>
+        <li><a href="#chapter-intro">Chapter Introduction</a></li>
+        <li><a href="#lesson-13">Lesson 13: Sequences & Limits</a></li>
+        <li><a href="#lesson-14">Lesson 14: Monotonic & Bounded Sequences</a></li>
+        <li><a href="#lesson-15">Lesson 15: Infinite Series Intro</a></li>
+        <li><a href="#lesson-16">Lesson 16: Geometric & Telescoping Series</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <div class="breadcrumbs"><a href="../index.html">Home</a> > Chapter 2: Sequences</div>
+
+      <!-- Chapter Introduction -->
+      <section id="chapter-intro">
+        <h2>Chapter 2: Sequences and Series</h2>
+
+        <div class="key-concepts">
+          <h3>📋 Chapter Overview</h3>
+          <p>This chapter introduces the fascinating world of sequences and series. Sequences are ordered lists of numbers, while series are sums of terms from sequences. Understanding these concepts is crucial for calculus applications in physics, engineering, and mathematics.</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>🎯 Learning Objectives</h3>
+          <ul>
+            <li>Understand what sequences are and find their limits</li>
+            <li>Identify monotonic and bounded sequences</li>
+            <li>Distinguish between sequences and series</li>
+            <li>Work with geometric and telescoping series</li>
+            <li>Apply theorems about convergence and divergence</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- LESSON 13: Sequences and Limit of a Sequence -->
+      <section id="lesson-13" class="lesson">
+        <h1>Lesson 13: Sequences and Limit of a Sequence</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>A sequence is a function whose domain is the set of natural numbers. Unlike functions whose domains are continuous intervals, sequences are defined at discrete points: n = 1, 2, 3, ...</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 Definition of a Sequence</h3>
+          <div class="formula">
+            A sequence $\{a_n\}$ is a list of numbers written in a definite order:
+            <br><br>
+            $a_1, a_2, a_3, a_4, ..., a_n, ...$
+          </div>
+
+          <p>Notation: $\{a_n\}_{n=1}^{\infty}$ or simply $\{a_n\}$</p>
+
+          <h4>Common Ways to Define Sequences:</h4>
+          <ol>
+            <li><strong>Explicit formula:</strong> $a_n = f(n)$ (e.g., $a_n = \frac{1}{n}$)</li>
+            <li><strong>Recursive definition:</strong> $a_1$ given, $a_{n+1} = f(a_n)$ (e.g., Fibonacci)</li>
+            <li><strong>Listing terms:</strong> $1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, ...$</li>
+          </ol>
+
+          <h3>📚 Limit of a Sequence</h3>
+          <div class="formula-highlight">
+            $$\lim_{n \to \infty} a_n = L$$
+          </div>
+          <p>We say the sequence converges to L if for every ε > 0, there exists N such that for all n > N, |aₙ - L| < ε.</p>
+
+          <p><strong>Intuitively:</strong> As n gets larger and larger, the terms aₙ get arbitrarily close to L.</p>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example 1: Find $\lim_{n \to \infty} \frac{n}{n+1}$</h4>
+
+          <div id="ch2-l1-ex1">
+            <div class="step" style="display: none;">Step 1: Divide numerator and denominator by the highest power of n</div>
+            <div class="step" style="display: none;">Step 2: $\\frac{n}{n+1} = \\frac{n/n}{(n+1)/n} = \\frac{1}{1 + 1/n}$</div>
+            <div class="step" style="display: none;">Step 3: As $n \\to \\infty$, $1/n \\to 0$</div>
+            <div class="step" style="display: none;">Step 4: $\\lim_{n \\to \\infty} \\frac{1}{1 + 0} = 1$</div>
+            <div class="step" style="display: none;">Answer: The sequence converges to 1</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch2-l1-ex1')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example 2: Find $\lim_{n \to \infty} \frac{(-1)^n}{n}$</h4>
+
+          <div id="ch2-l1-ex2">
+            <div class="step" style="display: none;">Step 1: Notice that $|\\frac{(-1)^n}{n}| = \\frac{1}{n}$</div>
+            <div class="step" style="display: none;">Step 2: As $n \\to \\infty$, $\\frac{1}{n} \\to 0$</div>
+            <div class="step" style="display: none;">Step 3: The terms oscillate between positive and negative, but get closer to 0</div>
+            <div class="step" style="display: none;">Step 4: Answer: The sequence converges to 0</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch2-l1-ex2')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div class="key-concepts">
+          <h4>🎯 Important Limit Results</h4>
+          <div class="formula">
+            $\lim_{n \to \infty} \frac{1}{n^p} = 0$ for any $p > 0$
+            <br><br>
+            $\lim_{n \to \infty} r^n = 0$ if $|r| < 1$ (but diverges otherwise)
+            <br><br>
+            $\lim_{n \to \infty} \sqrt[n]{a} = 1$ for any $a > 0$
+          </div>
+        </div>
+
+        <div id="ch2-l13-practice"></div>
+        <div id="ch2-l13-quiz"></div>
+      </section>
+
+      <!-- LESSON 14: Monotonic and Bounded Sequences -->
+      <section id="lesson-14" class="lesson">
+        <h1>Lesson 14: Monotonic and Bounded Sequences</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>Not all sequences have simple limits. Some sequences oscillate forever, some grow without bound, and some converge in interesting ways. Understanding monotonicity and boundedness helps us predict the behavior of sequences.</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 Monotonic Sequences</h3>
+
+          <h4>A sequence is:</h4>
+          <ul>
+            <li><strong>Increasing:</strong> $a_{n+1} > a_n$ for all $n$</li>
+            <li><strong>Decreasing:</strong> $a_{n+1} < a_n$ for all $n$</li>
+            <li><strong>Monotonic:</strong> Either increasing or decreasing</li>
+          </ul>
+
+          <h4>How to Test Monotonicity:</h4>
+          <ol>
+            <li><strong>Compare terms:</strong> Study the sign of $a_{n+1} - a_n$</li>
+            <li><strong>Ratio test:</strong> Compare $\frac{a_{n+1}}{a_n}$ to 1 (for positive sequences)</li>
+            <li><strong>Function approach:</strong> If $a_n = f(n)$, study $f'(x)$</li>
+          </ol>
+
+          <h3>📚 Bounded Sequences</h3>
+
+          <h4>A sequence is:</h4>
+          <ul>
+            <li><strong>Bounded above:</strong> There exists M such that $a_n \leq M$ for all $n$</li>
+            <li><strong>Bounded below:</strong> There exists m such that $a_n \geq m$ for all $n$</li>
+            <li><strong>Bounded:</strong> Both bounded above and below</li>
+          </ul>
+
+          <h3>📚 The Monotone Convergence Theorem</h3>
+          <div class="formula-highlight">
+            <strong>THEOREM:</strong> Every bounded, monotonic sequence is convergent.
+          </div>
+          <p>This is one of the most important results in calculus!</p>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example 1: Show that $\{a_n\} = \{1 - \frac{1}{n}\}$ is increasing and bounded</h4>
+
+          <div id="ch2-l2-ex1">
+            <div class="step" style="display: none;">Step 1: Monotonicity: $a_{n+1} - a_n = (1 - \\frac{1}{n+1}) - (1 - \\frac{1}{n}) = \\frac{1}{n} - \\frac{1}{n+1} > 0$</div>
+            <div class="step" style="display: none;">Step 2: Since $a_{n+1} - a_n > 0$, the sequence is increasing</div>
+            <div class="step" style="display: none;">Step 3: Bound below: $1 - \\frac{1}{n} > 0$ for all $n \\geq 1$ (because $\\frac{1}{n} < 1$)</div>
+            <div class="step" style="display: none;">Step 4: Bound above: $1 - \\frac{1}{n} \\leq 1$ for all $n$ (because $\\frac{1}{n} \\geq 0$)</div>
+            <div class="step" style="display: none;">Step 5: The sequence is bounded (0 < aₙ ≤ 1)</div>
+            <div class="step" style="display: none;">Step 6: By the Monotone Convergence Theorem, it converges (to 1)</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch2-l2-ex1')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div id="ch2-l14-practice"></div>
+        <div id="ch2-l14-quiz"></div>
+      </section>
+
+      <!-- LESSON 15: Infinite Series Introduction -->
+      <section id="lesson-15" class="lesson">
+        <h1>Lesson 15: Infinite Series Introduction</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>An infinite series is the sum of the terms of a sequence. While a sequence is an ordered list, a series is the sum of that list. This simple distinction has profound implications!</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 Definition of an Infinite Series</h3>
+          <div class="formula">
+            Given a sequence $\{a_n\}$, the infinite series is:
+            <br><br>
+            $$\\sum_{n=1}^{\\infty} a_n = a_1 + a_2 + a_3 + \\cdots + a_n + \\cdots$$
+          </div>
+
+          <h3>📚 Partial Sums</h3>
+          <p>The nth partial sum $S_n$ is the sum of the first n terms:</p>
+          <div class="formula">
+            $$S_n = a_1 + a_2 + \\cdots + a_n = \\sum_{i=1}^{n} a_i$$
+          </div>
+
+          <h3>📚 Convergence of a Series</h3>
+          <div class="formula-highlight">
+            A series $\\sum_{n=1}^{\\infty} a_n$ converges if the sequence of partial sums $\{S_n\}$ converges.
+            <br><br>
+            $\\sum_{n=1}^{\\infty} a_n = \\lim_{n \\to \\infty} S_n = L$
+          </div>
+
+          <p><strong>Important:</strong> convergence of a series is different from convergence of the sequence $\{a_n\}$!</p>
+
+          <h3>📚 The Divergence Test (IMPORTANT)</h3>
+          <div class="formula">
+            <strong>THEOREM:</strong> If $\\lim_{n \\to \\infty} a_n \\neq 0$, then $\\sum a_n$ diverges.
+            <br><br>
+            <strong>CONVERSE IS FALSE:</strong> If $\\lim_{n \\to \\infty} a_n = 0$, the series may either converge or diverge!
+          </div>
+        </div>
+
+        <div class="common-mistakes">
+          <h4>⚠️ Critical Warning</h4>
+          <p><strong>NEVER</strong> assume that because $\lim_{n \to \infty} a_n = 0$, the series must converge!</p>
+          <p>Example: The harmonic series $\sum_{n=1}^{\infty} \frac{1}{n}$ has $\lim_{n \to \infty} \frac{1}{n} = 0$, but the series <strong>DIVERGES</strong> to infinity!</p>
+        </div>
+
+        <div id="ch2-l15-practice"></div>
+        <div id="ch2-l15-quiz"></div>
+      </section>
+
+      <!-- LESSON 16: Geometric and Telescoping Series -->
+      <section id="lesson-16" class="lesson">
+        <h1>Lesson 16: Geometric and Telescoping Series</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>Geometric series and telescoping series are two special types of series where we can find explicit formulas for their sums. These serve as building blocks for understanding more complex series.</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 Geometric Series</h3>
+          <p>A geometric series has the form:</p>
+          <div class="formula">
+            $$\\sum_{n=0}^{\\infty} ar^n = a + ar + ar^2 + ar^3 + \\cdots$$
+          </div>
+
+          <h4>Convergence Condition:</h4>
+          <div class="formula-highlight">
+            A geometric series converges if and only if $|r| < 1$.
+          </div>
+
+          <h4>Sum Formula:</h4>
+          <div class="formula-highlight">
+            For $|r| < 1$:
+            $$\\sum_{n=0}^{\\infty} ar^n = \\frac{a}{1-r}$$
+          </div>
+
+          <h4>Partial Sum Formula:</h4>
+          <div class="formula">
+            $$S_n = \\sum_{k=0}^{n} ar^k = \\frac{a(1-r^{n+1})}{1-r}$$
+          </div>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example 1: Find the sum of $\sum_{n=0}^{\infty} \frac{3}{2^n}$</h4>
+
+          <div id="ch2-l3-ex1">
+            <div class="step" style="display: none;">Step 1: Rewrite: $\\frac{3}{2^n} = 3 \\cdot (\\frac{1}{2})^n$</div>
+            <div class="step" style="display: none;">Step 2: Identify: $a = 3$, $r = \\frac{1}{2}$</div>
+            <div class="step" style="display: none;">Step 3: Check convergence: $|r| = \\frac{1}{2} < 1$ ✓ (converges)</div>
+            <div class="step" style="display: none;">Step 4: Use sum formula: $S = \\frac{a}{1-r} = \\frac{3}{1-\\frac{1}{2}} = \\frac{3}{\\frac{1}{2}} = 6$</div>
+            <div class="step" style="display: none;">Answer: 6</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch2-l3-ex1')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 Telescoping Series</h3>
+          <p>A telescoping series is one where most terms cancel out when you write out the partial sums:</p>
+          <div class="formula">
+            $$(a_1 - a_2) + (a_2 - a_3) + (a_3 - a_4) + \\cdots$$
+          </div>
+          <p>Notice how the terms "telescope" - each negative cancels with the next positive!</p>
+
+          <h4>Strategy:</h4>
+          <ol>
+            <li>Use partial fractions (or algebraic manipulation)</li>
+            <li>Write out terms until you see the cancellation pattern</li>
+            <li>Find the limit of the partial sums</li>
+          </ol>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example 2: Find $\sum_{n=1}^{\infty} \frac{1}{n(n+1)}$</h4>
+
+          <div id="ch2-l3-ex2">
+            <div class="step" style="display: none;">Step 1: Use partial fractions: $\\frac{1}{n(n+1)} = \\frac{1}{n} - \\frac{1}{n+1}$</div>
+            <div class="step" style="display: none;">Step 2: Write out partial sum: $S_N = (1 - \\frac{1}{2}) + (\\frac{1}{2} - \\frac{1}{3}) + (\\frac{1}{3} - \\frac{1}{4}) + \\cdots + (\\frac{1}{N} - \\frac{1}{N+1})$</div>
+            <div class="step" style="display: none;">Step 3: After cancellation: $S_N = 1 - \\frac{1}{N+1}$</div>
+            <div class="step" style="display: none;">Step 4: Take limit: $\\lim_{N \\to \\infty} S_N = \\lim_{N \\to \\infty} (1 - \\frac{1}{N+1}) = 1 - 0 = 1$</div>
+            <div class="step" style="display: none;">Answer: The series converges to 1</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch2-l3-ex2')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div id="ch2-l16-practice"></div>
+        <div id="ch2-l16-quiz"></div>
+
+        <div class="chapter-summary">
+          <h2>📓 Chapter 2 Summary</h2>
+          <ul>
+            <li><strong>Sequences:</strong> Ordered lists $\\{a_n\\}$ that can be defined explicitly or recursively</li>
+            <li><strong>Sequence Limits:</strong> $\\lim_{n→∞} a_n = L$ if terms approach L</li>
+            <li><strong>Monotone Convergence Theorem:</strong> Bounded + monotonic = convergent</li>
+            <li><strong>Series:</strong> Sums $\\sum a_n$; converge if partial sums converge</li>
+            <li><strong>Divergence Test:</strong> If $\\lim a_n ≠ 0$, series diverges (but converse is false!)</li>
+            <li><strong>Geometric Series:</strong> $\\sum ar^n$ converges to $\\frac{a}{1-r}$ if $|r| < 1$</li>
+            <li><strong>Telescoping Series:</strong> Terms cancel out when expanded</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>Chapter 2: Sequences and Series | Calculus II Complete Mastery Course</p>
+  </footer>
+
+  <script src="../assets/js/math.js"></script>
+  <script src="../assets/js/progress.js"></script>
+  <script src="../assets/js/quizzes.js"></script>
+  <script src="../assets/js/practice.js"></script>
+
+  <script>
+    // Force MathJax to render all math when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        if (window.MathJax && MathJax.typesetPromise) {
+          MathJax.typesetPromise().then(function() {
+            console.log('MathJax rendered successfully');
+          }).catch(function(err) {
+            console.log('MathJax error:', err);
+          });
+        }
+      }, 500);
+    });
+  </script>
+
+  <script>
+    function revealAllSteps(containerId) {
+      const container = document.getElementById(containerId);
+      const steps = container.querySelectorAll('.step');
+      steps.forEach(step => {
+        step.style.display = 'block';
+      });
+      renderMath(container);
+    }
+
+    // Initialize Practice Problems for Chapter 2
+    document.addEventListener('DOMContentLoaded', function() {
+      // Lesson 13 Practice
+      PracticeManager.init('ch2-l13', [
+        PracticeTemplates.numerical('Find $\\lim_{n \\to \\infty} \\frac{2n+1}{3n-4}$', '2/3', 'Divide numerator and denominator by n', 0.01, 'beginner'),
+        PracticeTemplates.multipleChoice('Does the sequence $a_n = \\cos(n\\pi)$ converge?', ['Yes, to 0', 'Yes, to 1', 'No, it oscillates', 'Yes, to -1'], 2, 'The sequence alternates between 1 and -1', 'beginner'),
+        PracticeTemplates.fillBlank('If $\\lim_{n \\to \\infty} a_n = L$, then for large n, $a_n$ is close to _____', 'L', 'The limit value'),
+        PracticeTemplates.numerical('$\\lim_{n \\to \\infty} (1 + \\frac{1}{n})^n$ is a famous constant. What is it (approximately)?', '2.718', 'This is e, approximately 2.71828', 0.01, 'intermediate'),
+        PracticeTemplates.multipleChoice('What is $\\lim_{n \\to \\infty} \\frac{n!}{n^n}$?', ['$\\infty$', '0', '1', 'Undefined'], 1, 'Factorials grow slower than n^n', 'advanced')
+      ]);
+
+      // Lesson 13 Quiz
+      QuizManager.init('ch2-l13-quiz', [
+        QuizTemplates.multipleChoice('What is $\\lim_{n \\to \\infty} \\frac{n}{n+1}$?', ['0', '1', '\\infty', '1/2'], 1, 'Divide by n: 1/(1+1/n) → 1'),
+        QuizTemplates.fillBlank('A sequence $\\{a_n\\}$ converges to L if for every ε > 0, there exists _____ such that...', 'N', 'An index N depending on ε'),
+        QuizTemplates.trueFalse('If a sequence converges, its terms must eventually be bounded.', true, 'Convergent sequences are always bounded'),
+        QuizTemplates.multipleChoice('$\\lim_{n \\to \\infty} \\frac{(-1)^n}{2^n}$ equals what?', ['0', '1', '-1', 'Does not exist'], 0, 'Absolute value goes to 0, so sequence goes to 0'),
+        QuizTemplates.numerical('Find $\\lim_{n \\to \\infty} \\frac{\\sqrt{n+1} - \\sqrt{n}}{1}$ (hint: rationalize)', '0', 'Multiply by conjugate, simplify', 0.01)
+      ]);
+
+      // Lesson 14 Practice
+      PracticeManager.init('ch2-l14', [
+        PracticeTemplates.numerical('The sequence $a_n = n^2$ is increasing. Is it bounded above?', '0', 'No, it grows without bound', 0.01, 'beginner'),
+        PracticeTemplates.multipleChoice('If a sequence is bounded and monotonic, what can we conclude?', ['It converges', 'It diverges', 'Nothing', 'It equals 0'], 0, 'Monotone Convergence Theorem', 'beginner'),
+        PracticeTemplates.fillBlank('A sequence that always satisfies $a_{n+1} \\leq a_n$ is called _____', 'decreasing', 'Monotonic decreasing'),
+        PracticeTemplates.trueFalse('All convergent sequences are bounded.', true, 'This is a theorem'),
+        PracticeTemplates.multipleChoice("What can we say about $a_n = \\frac{(-1)^n}{n}$?", ["It's increasing and bounded", "It's decreasing and bounded", "It's not monotonic but bounded", "It diverges"], 2, "Oscillates in sign, but magnitude goes to 0", 'intermediate')
+      ]);
+
+      // Lesson 14 Quiz
+      QuizManager.init('ch2-l14-quiz', [
+        QuizTemplates.multipleChoice('The Monotone Convergence Theorem states that...', ['Bounded sequences converge', 'Monotonic sequences converge', 'Bounded, monotonic sequences converge', 'All sequences converge'], 2, 'Both conditions are needed'),
+        QuizTemplates.fillBlank('To test if a sequence is increasing, check if $a_{n+1} - a_n$ is _____ for all n', 'positive', 'Greater than 0'),
+        QuizTemplates.trueFalse('A sequence that is bounded above by M cannot have any term larger than M.', true, 'That\'s the definition'),
+        QuizTemplates.multipleChoice('Which sequence is monotonic?', ['$a_n = (-1)^n$', '$a_n = \\frac{1}{2^n}$', '$a_n = \\cos n$', '$a_n = \\sin n$'], 1, 'Always decreasing, never changes direction'),
+        QuizTemplates.numerical('The sequence $a_n = \\frac{n}{n+1}$ is bounded above by what value?', '1', 'Each term is less than 1, limit is 1', 0.01)
+      ]);
+
+      // Additional lessons practice/quiz would be initialized here...
+
+      if (ProgressManager) {
+        ProgressManager.startLesson('ch2-l13');
+      }
+    });
+  </script>
+</body>
+</html>

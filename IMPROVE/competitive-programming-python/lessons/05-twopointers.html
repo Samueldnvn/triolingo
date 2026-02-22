@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 5: Two Pointers Pattern - Competitive Programming with Python</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="course-header">
+        <h1>MODULE 5: TWO POINTERS PATTERN</h1>
+        <h2>Efficient Array/String Processing with Dual Pointers</h2>
+    </div>
+
+    <nav class="nav-container">
+        <ul class="nav-menu">
+            <li class="nav-item active" onclick="showSection('overview')">Overview</li>
+            <li class="nav-item" onclick="showSection('leftright')">Left-Right Pointers</li>
+            <li class="nav-item" onclick="showSection('slowfast')">Slow-Fast Pointers</li>
+            <li class="nav-item" onclick="showSection('advanced')">Advanced Techniques</li>
+            <li class="nav-item" onclick="showSection('practice')">Practice Problems</li>
+            <li class="nav-item" onclick="showSection('quiz')">Module Quiz</li>
+        </ul>
+    </nav>
+
+    <div class="progress-container">
+        <div class="progress-title">MODULE 5 PROGRESS</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="moduleProgress" style="width: 0%">0%</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content-section active" id="overview">
+            <div class="lesson-header">
+                <h1>Two Pointers Pattern</h1>
+                <p>Solving problems with two indices moving through data</p>
+            </div>
+
+            <div class="blueprint-section">
+                <div class="blueprint-content">
+                    <h3>WHAT YOU'LL LEARN</h3>
+                    <ul class="blueprint-list">
+                        <li>Left-Right pointers for sorted arrays</li>
+                        <li>Slow-Fast pointers (Floyd's algorithm)</li>
+                        <li>When to use two pointers vs other approaches</li>
+                        <li>Pattern recognition for two-pointer problems</li>
+                        <li>Merge-type problems</li>
+                        <li>Cycle detection in linked lists</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Understanding Two Pointers</h3>
+
+            <p class="content-text">
+                The two pointers technique uses two indices to traverse data simultaneously, often from opposite ends (left-right) or at different speeds (slow-fast). This technique can reduce O(n^2) solutions to O(n).
+            </p>
+
+            <h3 class="subsection-title">When to Use Two Pointers</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr><th>Scenario</th><th>Use Two Pointers?</th><th>Type</th></tr>
+                    <tr><td>Find pair in sorted array with given sum</td><td>YES</td><td>Left-Right</td></tr>
+                    <tr><td>Detect cycle in linked list</td><td>YES</td><td>Slow-Fast</td></tr>
+                        <tr><td>Merge two sorted arrays</td><td>YES</td><td>Merge</td></tr>
+                    <tr><td>Find middle of linked list</td><td>YES</td><td>Slow-Fast</td></tr>
+                    <tr><td>Palindrome check</td><td>YES</td><td>Left-Right</td></tr>
+                    <tr><td>Remove duplicates from sorted array</td><td>YES</td><td>Merge-style</td></tr>
+                </table>
+            </div>
+
+            <div class="safety-sign important">
+                KEY: Two pointers excel with sorted data or when comparing elements from different positions.
+            </div>
+        </div>
+
+        <div class="content-section" id="leftright">
+            <div class="lesson-header">
+                <h1>Left-Right Pointers</h1>
+                <p>Starting from ends and moving inward</p>
+            </div>
+
+            <h3 class="subsection-title">Two Sum II - Sorted Array</h3>
+
+            <div class="code-block">
+                <pre>
+def two_sum_sorted(numbers, target):
+    """Find two numbers that sum to target in sorted array"""
+    left, right = 0, len(numbers) - 1
+    
+    while left < right:
+        current_sum = numbers[left] + numbers[right]
+        
+        if current_sum == target:
+            return [left + 1, right + 1]  # 1-indexed
+        elif current_sum < target:
+            left += 1
+        else:
+            right -= 1
+    
+    return None
+
+# Example: [2,7,11,15], target 9 -> [1,2]
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Container With Most Water</h3>
+
+            <div class="code-block">
+                <pre>
+def max_area(height):
+    """Find maximum area between two lines"""
+    left, right = 0, len(height) - 1
+    max_area = 0
+    
+    while left < right:
+        area = (right - left) * min(height[left], height[right])
+        max_area = max(max_area, area)
+        
+        # Move shorter pointer inward
+        if height[left] < height[right]:
+            left += 1
+        else:
+            right -= 1
+    
+    return max_area
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Valid Palindrome</h3>
+
+            <div class="code-block">
+                <pre>
+def is_palindrome(s):
+    """Check if string is palindrome (ignoring non-alphanumeric)"""
+    left, right = 0, len(s) - 1
+    
+    while left < right:
+        # Skip non-alphanumeric
+        while left < right and not s[left].isalnum():
+            left += 1
+        while left < right and not s[right].isalnum():
+            right -= 1
+        
+        if s[left].lower() != s[right].lower():
+            return False
+        
+        left += 1
+        right -= 1
+    
+    return True
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Remove Duplicates from Sorted Array</h3>
+
+            <div class="code-block">
+                <pre>
+def remove_duplicates(nums):
+    """Remove duplicates in-place, return new length"""
+    if not nums:
+        return 0
+    
+    write_index = 1  # Position to write unique element
+    
+    for i in range(1, len(nums)):
+        if nums[i] != nums[write_index - 1]:
+            nums[write_index] = nums[i]
+            write_index += 1
+    
+    return write_index
+                </pre>
+            </div>
+        </div>
+
+        <div class="content-section" id="slowfast">
+            <div class="lesson-header">
+                <h1>Slow-Fast Pointers</h1>
+                <p>Floyd's Cycle Detection Algorithm</p>
+            </div>
+
+            <h3 class="subsection-title">Detect Cycle in Linked List</h3>
+
+            <div class="code-block">
+                <pre>
+def has_cycle(head):
+    """Detect if linked list has cycle using slow-fast pointers"""
+    if not head or not head.next:
+        return False
+    
+    slow = fast = head
+    
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+        
+        if slow == fast:
+            return True
+    
+    return False
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Find Middle of Linked List</h3>
+
+            <div class="code-block">
+                <pre>
+def find_middle(head):
+    """Find middle node (second middle for even length)"""
+    slow = fast = head
+    
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+    
+    return slow
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Find Cycle Start</h3>
+
+            <div class="code-block">
+                <pre>
+def find_cycle_start(head):
+    """Find starting node of cycle"""
+    # First, detect cycle
+    slow = fast = head
+    has_cycle = False
+    
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+        if slow == fast:
+            has_cycle = True
+            break
+    
+    if not has_cycle:
+        return None
+    
+    # Find start: reset one pointer to head, move both at same speed
+    slow = head
+    while slow != fast:
+        slow = slow.next
+        fast = fast.next
+    
+    return slow
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Happy Number</h3>
+
+            <div class="code-block">
+                <pre>
+def is_happy(n):
+    """Check if number is happy (sum of squares of digits eventually = 1)"""
+    slow = fast = n
+    
+    def get_next(num):
+        total = 0
+        while num > 0:
+            digit = num % 10
+            total += digit * digit
+            num //= 10
+        return total
+    
+    slow = get_next(slow)
+    fast = get_next(get_next(fast))
+    
+    while fast != 1 and slow != fast:
+        slow = get_next(slow)
+        fast = get_next(get_next(fast))
+    
+    return fast == 1
+                </pre>
+            </div>
+        </div>
+
+        <div class="content-section" id="advanced">
+            <div class="lesson-header">
+                <h1>Advanced Techniques</h1>
+                <p>Combining two pointers with other patterns</p>
+            </div>
+
+            <h3 class="subsection-title">3Sum (Sorted Approach)</h3>
+
+            <div class="code-block">
+                <pre>
+def three_sum(nums):
+    """Find all triplets summing to 0"""
+    nums.sort()
+    result = []
+    
+    for i in range(len(nums) - 2):
+        if i > 0 and nums[i] == nums[i - 1]:
+            continue  # Skip duplicates
+        
+        left, right = i + 1, len(nums) - 1
+        
+        while left < right:
+            total = nums[i] + nums[left] + nums[right]
+            
+            if total == 0:
+                result.append([nums[i], nums[left], nums[right]])
+                left += 1
+                right -= 1
+                
+                # Skip duplicates
+                while left < right and nums[left] == nums[left - 1]:
+                    left += 1
+                while left < right and nums[right] == nums[right + 1]:
+                    right -= 1
+            elif total < 0:
+                left += 1
+            else:
+                right -= 1
+    
+    return result
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Sort Colors (Dutch National Flag)</h3>
+
+            <div class="code-block">
+                <pre>
+def sort_colors(nums):
+    """Sort array of 0s, 1s, 2s in one pass"""
+    low, mid, high = 0, 0, len(nums) - 1
+    
+    while mid <= high:
+        if nums[mid] == 0:
+            nums[low], nums[mid] = nums[mid], nums[low]
+            low += 1
+            mid += 1
+        elif nums[mid] == 1:
+            mid += 1
+        else:  # nums[mid] == 2
+            nums[mid], nums[high] = nums[high], nums[mid]
+            high -= 1
+                </pre>
+            </div>
+
+            <div class="safety-sign important">
+                TIP: Slow-fast pointers are ideal for cycle detection and finding middle elements. Left-right pointers work best with sorted arrays or symmetric data.
+            </div>
+        </div>
+
+        <div class="content-section" id="practice">
+            <div class="lesson-header">
+                <h1>Practice Problems</h1>
+            </div>
+            <div id="practiceProblems"></div>
+            <script src="../js/problems.js"></script>
+            <script>
+                const container = document.getElementById('practiceProblems');
+                const problems = practiceProblems.twopointers.basic || [];
+                let html = '<div class="practice-category"><h3 class="subsection-title">Two Pointers Problems</h3>';
+                const displayProblems = problems.slice(0, 5);
+                for (const problem of displayProblems) {
+                    const problemId = 'TP-' + problem.id;
+                    html += `<div class="practice-problem" id="${problemId}">
+                        <div class="problem-question"><p><strong>${problem.id}:</strong> ${problem.question}</p></div>
+                        <div class="problem-input"><input type="text" id="${problemId}-input" placeholder="Answer">
+                        <button onclick="checkAnswer('${problemId}', '${problem.answer.replace(/'/g, "\\'")}', [${problem.alternatives.map(a => `'${a.replace(/'/g, "\\'")}'`).join(',')}], '${problemId}-input', '${problemId}-hint', '${problemId}-explanation')">Check</button></div>
+                        <div id="${problemId}-feedback" class="feedback"></div>
+                        <div id="${problemId}-hint" class="hint" style="display:none"><strong>Hint:</strong> ${problem.hint}</div></div>`;
+                }
+                html += '</div>';
+                container.innerHTML = html;
+            </script>
+        </div>
+
+        <div class="content-section" id="quiz">
+            <div class="lesson-header">
+                <h1>Module 5 Quiz</h1>
+            </div>
+            <form id="moduleQuiz">
+                <div class="quiz-question"><p>1. In two sum with sorted array, when sum < target, which pointer moves?</p>
+                    <div class="quiz-options">
+                    <label class="quiz-option" onclick="recordAnswer('Q1', 'A')"><input type="radio" name="Q1" value="A"> A. Left</label>
+                    <label class="quiz-option" onclick="recordAnswer('Q1', 'B')"><input type="radio" name="Q1" value="B"> B. Right</label>
+                    <label class="quiz-option" onclick="recordAnswer('Q1', 'C')"><input type="radio" name="Q1" value="C"> C. Both</label></div></div>
+                <div class="quiz-question"><p>2. In container with most water, which pointer moves?</p>
+                    <div class="quiz-options">
+                    <label class="quiz-option" onclick="recordAnswer('Q2', 'A')"><input type="radio" name="Q2" value="A"> A. Shorter height</label>
+                    <label class="quiz-option" onclick="recordAnswer('Q2', 'B')"><input type="radio" name="Q2" value="B"> B. Taller height</label>
+                    <label class="quiz-option" onclick="recordAnswer('Q2', 'C')"><input type="radio" name="Q2" value="C"> C. Left pointer</label></div></div>
+                <div class="quiz-question"><p>3. In Floyd's cycle detection, fast pointer moves how many steps?</p>
+                    <div class="quiz-options">
+                    <label class="quiz-option" onclick="recordAnswer('Q3', 'A')"><input type="radio" name="Q3" value="A"> A. 1</label>
+                    <label class="quiz-option" onclick="recordAnswer('Q3', 'B')"><input type="radio" name="Q3" value="B"> B. 2</label>
+                    <label class="quiz-option" onclick="recordAnswer('Q3', 'C')"><input type="radio" name="Q3" value="C"> C. 3</label></div></div>
+                <div class="quiz-question"><p>4. When slow and fast meet in cycle detection, what does it mean?</p>
+                    <div class="quiz-options">
+                    <label class="quiz-option" onclick="recordAnswer('Q4', 'A')"><input type="radio" name="Q4" value="A"> A. Cycle exists</label>
+                    <label class="quiz-option" onclick="recordAnswer('Q4', 'B')><input type="radio" name="Q4" value="B"> B. No cycle</label>
+                    <label class="quiz-option" onclick="recordAnswer('Q4', 'C')"><input type="radio" name="Q4" value="C"> C. At start</label></div></div>
+                <div class="quiz-question"><p>5. Find middle of linked list: where is slow when fast reaches end?</p>
+                    <div class="quiz-options">
+                    <label class="quiz-option" onclick="recordAnswer('Q5', 'A')"><input type="radio" name="Q5" value="A"> A. Beginning</label>
+                    <label class="quiz-option" onclick="recordAnswer('Q5', 'B')><input type="radio" name="Q5" value="B"> B. At middle</label>
+                    <label class="quiz-option" onclick="recordAnswer('Q5', 'C')"><input type="radio" name="Q5" value="C"> C. At end</label></div></div>
+                <div class="quiz-question"><p>6. Dutch National Flag problem uses how many pointers?</p>
+                    <div class="quiz-options">
+                    <label class="quiz-option" onclick="recordAnswer('Q6', 'A')"><input type="radio" name="Q6" value="A"> A. 2</label>
+                    <label class="quiz-option" onclick="recordAnswer('Q6', 'B')><input type="radio" name="Q6" value="B"> B. 3</label>
+                    <label class="quiz-option" onclick="recordAnswer('Q6', 'C')"><input type="radio" name="Q6" value="C"> C. 4</label></div></div>
+                <div class="quiz-question"><p>7. For palindrome check with two pointers, what's the stopping condition?</p>
+                    <div class="quiz-options">
+                    <label class="quiz-option" onclick="recordAnswer('Q7', 'A')"><input type="radio" name="Q7" value="A"> A. left > right</label>
+                    <label class="quiz-option" onclick="recordAnswer('Q7', 'B')><input type="radio" name="Q7" value="B"> B. left == right</label>
+                    <label class="quiz-option" onclick="recordAnswer('Q7', 'C')"><input type="radio" name="Q7" value="C"> C. left < right</label></div></div>
+                <div class="quiz-question"><p>8. Two pointers time complexity for sorted array problems?</p>
+                    <div class="quiz-options">
+                    <label class="quiz-option" onclick="recordAnswer('Q8', 'A')"><input type="radio" name="Q8" value="A"> A. O(n)</label>
+                    <label class="quiz-option" onclick="recordAnswer('Q8', 'B')><input type="radio" name="Q8" value="B"> B. O(n log n)</label>
+                    <label class="quiz-option" onclick="recordAnswer('Q8', 'C')"><input type="radio" name="Q8" value="C"> C. O(n^2)</label></div></div>
+                <div class="quiz-question"><p>9. In 3sum sorted approach, why sort first?</p>
+                    <div class="quiz-options">
+                    <label class="quiz-option" onclick="recordAnswer('Q9', 'A')"><input type="radio" name="Q9" value="A"> A. To use two pointers</label>
+                    <label class="quiz-option" onclick="recordAnswer('Q9', 'B')><input type="radio" name="Q9" value="B"> B. To remove duplicates</label>
+                    <label class="quiz-option" onclick="recordAnswer('Q9', 'C')"><input type="radio" name="Q9" value="C"> C. Both A and B</label></div></div>
+                <div class="quiz-question"><p>10. What's the space complexity of two-pointer approaches?</p>
+                    <div class="quiz-options">
+                    <label class="quiz-option" onclick="recordAnswer('Q10', 'A')"><input type="radio" name="Q10" value="A"> A. O(1)</label>
+                    <label class="quiz-option" onclick="recordAnswer('Q10', 'B')><input type="radio" name="Q10" value="B"> B. O(n)</label>
+                    <label class="quiz-option" onclick="recordAnswer('Q10', 'C')"><input type="radio" name="Q10" value="C"> C. O(log n)</label></div></div>
+                <button type="button" class="quiz-submit" onclick="submitQuizModule5()">Submit Quiz</button>
+            </form>
+            <div class="quiz-results" id="quizResults"></div>
+        </div>
+    </div>
+
+    <div class="nav-buttons">
+        <button class="nav-btn primary" onclick="window.location.href='04-slidingwindow.html'">Previous</button>
+        <button class="nav-btn primary" onclick="window.location.href='../index.html'">Home</button>
+        <button class="nav-btn primary" onclick="window.location.href='06-binarysearch.html'">Next</button>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script>
+        const quizAnswersModule5 = {'Q1':'A','Q2':'A','Q3':'B','Q4':'A','Q5':'B','Q6':'B','Q7':'A','Q8':'A','Q9':'C','Q10':'A'};
+        let quizAnswers = {};
+        function recordAnswer(q,a){quizAnswers[q]=a;}
+        function submitQuizModule5(){
+            let score=0,total=10,results=[];
+            for(let q in quizAnswersModule5){
+                if(quizAnswers[q]===quizAnswersModule5[q]){score++;results.push(`Q${q.substring(1)}: Correct`);}else{results.push(`Q${q.substring(1)}: Wrong`);}
+            }
+            const pct=Math.round((score/total)*100),passed=pct>=70;
+            let html=`<div class="score-display ${passed?'pass':'fail'}">${passed?'PASSED':'IMPROVE'}</div><div class="score-details"><p>Score: ${score}/${total} (${pct}%)</p></div>`;
+            results.forEach(r=>html+=`<p>${r}</p>`);
+            if(passed)markQuizPassed('twopointers');
+            document.getElementById('quizResults').innerHTML=html;document.getElementById('quizResults').style.display='block';
+        }
+    </script>
+</body>
+</html>

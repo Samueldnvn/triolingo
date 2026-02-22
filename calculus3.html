@@ -1,0 +1,2845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculus III Construction Zone - Master Multivariable Calculus</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-yellow: #FFD700;
+            --construction-yellow: #FFC107;
+            --safety-yellow: #FFEB3B;
+            --black: #1a1a1a;
+            --dark-gray: #2d2d2d;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+            --blueprint-blue: #0044CC;
+            --blueprint-line: #0066FF;
+            --success: #4CAF50;
+            --error: #F44336;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: var(--black);
+            color: var(--primary-yellow);
+            line-height: 1.6;
+        }
+
+        /* Construction Header */
+        .construction-header {
+            background: repeating-linear-gradient(
+                45deg,
+                var(--construction-yellow),
+                var(--construction-yellow) 10px,
+                var(--black) 10px,
+                var(--black) 20px
+            );
+            padding: 20px;
+            text-align: center;
+            border: 4px solid var(--white);
+        }
+
+        .construction-header h1 {
+            color: var(--black);
+            font-size: 2.5em;
+            text-shadow: 2px 2px 0 var(--white);
+            background: var(--primary-yellow);
+            padding: 15px;
+            display: inline-block;
+            border: 4px solid var(--black);
+            transform: rotate(-2deg);
+        }
+
+        /* Warning Banner */
+        .warning-banner {
+            background-color: var(--construction-yellow);
+            color: var(--black);
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            border-top: 4px solid var(--black);
+            border-bottom: 4px solid var(--black);
+            margin-bottom: 30px;
+        }
+
+        .construction-icon {
+            font-size: 2em;
+            margin: 0 10px;
+        }
+
+        /* Navigation */
+        .nav-container {
+            background: var(--dark-gray);
+            padding: 20px;
+            border-bottom: 4px solid var(--primary-yellow);
+        }
+
+        .nav-menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            list-style: none;
+        }
+
+        .nav-item {
+            background: var(--black);
+            color: var(--primary-yellow);
+            padding: 12px 20px;
+            border: 3px solid var(--primary-yellow);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .nav-item:hover {
+            background: var(--primary-yellow);
+            color: var(--black);
+            transform: scale(1.05);
+        }
+
+        .nav-item.active {
+            background: var(--primary-yellow);
+            color: var(--black);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        /* Blueprint Section */
+        .blueprint-section {
+            background-color: var(--blueprint-blue);
+            background-image: 
+                linear-gradient(var(--blueprint-line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--blueprint-line) 1px, transparent 1px);
+            background-size: 30px 30px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 4px solid var(--white);
+            position: relative;
+        }
+
+        .blueprint-section::before {
+            content: "BLUEPRINT";
+            color: var(--white);
+            font-size: 1.5em;
+            font-weight: bold;
+            background: var(--blueprint-blue);
+            padding: 10px 20px;
+            border: 2px solid var(--white);
+            position: absolute;
+            top: -20px;
+            left: 30px;
+            transform: rotate(-2deg);
+        }
+
+        .blueprint-content {
+            color: var(--white);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border: 2px solid var(--white);
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: var(--dark-gray);
+            padding: 30px;
+            margin: 20px 0;
+            border: 4px solid var(--primary-yellow);
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+            animation: slideIn 0.5s;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-title {
+            color: var(--primary-yellow);
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--primary-yellow);
+            padding-bottom: 10px;
+        }
+
+        .subsection-title {
+            color: var(--safety-yellow);
+            font-size: 1.5em;
+            margin: 25px 0 15px 0;
+            padding-left: 20px;
+            border-left: 5px solid var(--primary-yellow);
+        }
+
+        .content-text {
+            color: var(--light-gray);
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        /* Interactive Elements */
+        .interactive-box {
+            background: var(--black);
+            border: 3px solid var(--primary-yellow);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .interactive-title {
+            color: var(--primary-yellow);
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .interactive-title::before {
+            content: "🔧 ";
+            font-size: 1.2em;
+        }
+
+        /* Problem Sections */
+        .practice-problem {
+            background: var(--dark-gray);
+            border: 3px solid var(--safety-yellow);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .problem-question {
+            color: var(--primary-yellow);
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .problem-input {
+            width: 100%;
+            padding: 12px;
+            background: var(--black);
+            color: var(--primary-yellow);
+            border: 2px solid var(--primary-yellow);
+            font-family: 'Courier New', monospace;
+            font-size: 1em;
+            margin: 10px 0;
+        }
+
+        .problem-input:focus {
+            outline: none;
+            border-color: var(--safety-yellow);
+        }
+
+        .submit-btn {
+            background: var(--primary-yellow);
+            color: var(--black);
+            border: none;
+            padding: 12px 25px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: var(--safety-yellow);
+            transform: scale(1.05);
+        }
+
+        .feedback {
+            margin-top: 15px;
+            padding: 15px;
+            border: 2px solid;
+            display: none;
+        }
+
+        .feedback.correct {
+            background: rgba(76, 175, 80, 0.2);
+            border-color: var(--success);
+            color: var(--success);
+        }
+
+        .feedback.incorrect {
+            background: rgba(244, 67, 54, 0.2);
+            border-color: var(--error);
+            color: var(--error);
+        }
+
+        /* Quiz Sections */
+        .quiz-container {
+            background: var(--black);
+            border: 4px solid var(--construction-yellow);
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .quiz-title {
+            color: varconstruction-yellow);
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .quiz-question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: var(--dark-gray);
+            border: 2px solid var(--primary-yellow);
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .quiz-option {
+            padding: 12px;
+            background: var(--black);
+            border: 2px solid var(--primary-yellow);
+            color: var(--primary-yellow);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .quiz-option:hover {
+            background: var(--primary-yellow);
+            color: var(--black);
+        }
+
+        .quiz-option.selected {
+            background: var(--primary-yellow);
+            color: var(--black);
+        }
+
+        /* Canvas for diagrams */
+        .diagram-container {
+            background: var(--black);
+            border: 3px solid var(--primary-yellow);
+            padding: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .diagram-title {
+            color: var(--safety-yellow);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        canvas {
+            background: var(--dark-gray);
+            border: 2px solid var(--primary-yellow);
+            max-width: 100%;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            background: var(--dark-gray);
+            border: 3px solid var(--primary-yellow);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .progress-title {
+            color: var(--primary-yellow);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .progress-bar {
+            background: var(--black);
+            height: 30px;
+            border: 2px solid var(--primary-yellow);
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-yellow), var(--safety-yellow));
+            transition: width 0.5s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--black);
+            font-weight: bold;
+        }
+
+        /* Formula Box */
+        .formula-box {
+            background: var(--black);
+            border: 3px solid var(--safety-yellow);
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .formula-title {
+            color: var(--safety-yellow);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .formula {
+            color: var(--primary-yellow);
+            font-size: 1.3em;
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+        }
+
+        /* Example Box */
+        .example-box {
+            background: rgba(255, 235, 59, 0.1);
+            border: 3px solid var(--safety-yellow);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .example-title {
+            color: var(--safety-yellow);
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        /* Caution Box */
+        .caution-box {
+            background: rgba(255, 193, 7, 0.2);
+            border: 4px solid var(--construction-yellow);
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .caution-title {
+            color: var(--construction-yellow);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Table Styles */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .data-table th {
+            background: var(--primary-yellow);
+            color: var(--black);
+            padding: 12px;
+            border: 2px solid var(--black);
+            font-weight: bold;
+        }
+
+        .data-table td {
+            background: var(--dark-gray);
+            color: var(--light-gray);
+            padding: 12px;
+            border: 2px solid var(--primary-yellow);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-gray);
+            padding: 30px;
+            text-align: center;
+            border-top: 4px solid var(--primary-yellow);
+            margin-top: 50px;
+        }
+
+        .footer-text {
+            color: var(--primary-yellow);
+            font-size: 0.9em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .construction-header h1 {
+                font-size: 1.8em;
+            }
+            
+            .nav-item {
+                padding: 10px 15px;
+                font-size: 0.9em;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+        }
+
+        /* Construction Zone Tape */
+        .construction-tape {
+            height: 30px;
+            background: repeating-linear-gradient(
+                45deg,
+                var(--black),
+                var(--black) 10px,
+                var(--primary-yellow) 10px,
+                var(--primary-yellow) 20px
+            );
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--black);
+            font-weight: bold;
+            font-size: 1.2em;
+            letter-spacing: 5px;
+        }
+
+        /* Safety Signs */
+        .safety-sign {
+            background: var(--construction-yellow);
+            color: var(--black);
+            padding: 15px;
+            border: 4px solid var(--black);
+            text-align: center;
+            font-weight: bold;
+            margin: 20px 0;
+            transform: rotate(-1deg);
+        }
+
+        .safety-sign.important {
+            background: var(--error);
+            color: var(--white);
+        }
+
+        /* Tool Tip */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+            border-bottom: 2px dotted var(--primary-yellow);
+        }
+
+        .tooltip .tooltip-text {
+            visibility: hidden;
+            width: 250px;
+            background-color: var(--dark-gray);
+            color: var(--light-gray);
+            border: 2px solid var(--primary-yellow);
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Step indicator */
+        .step-indicator {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            background: var(--black);
+            border: 3px solid var(--primary-yellow);
+            color: var(--primary-yellow);
+            padding: 15px 25px;
+            text-align: center;
+            position: relative;
+            min-width: 150px;
+        }
+
+        .step.completed {
+            background: var(--primary-yellow);
+            color: var(--black);
+        }
+
+        .step.current {
+            background: var(--safety-yellow);
+            color: var(--black);
+            border-color: var(--white);
+        }
+
+        /* Animation for interactive elements */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .interactive-box:hover {
+            animation: pulse 0.5s infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Construction Header -->
+    <div class="construction-header">
+        <h1>🔧 CALCULUS III CONSTRUCTION ZONE 🔧</h1>
+    </div>
+
+    <!-- Warning Banner -->
+    <div class="warning-banner">
+        <span class="construction-icon">⚠️</span>
+        HARD HAT REQUIRED - LEARNING IN PROGRESS <span class="construction-icon">⚠️</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <ul class="nav-menu" id="navMenu">
+            <li class="nav-item active" onclick="showSection('introduction')">🏠 Introduction</li>
+            <li class="nav-item" onclick="showSection('vectors')">📐 Vectors & 3D Space</li>
+            <li class="nav-item" onclick="showSection('vector-functions')">🔄 Vector Functions</li>
+            <li class="nav-item" onclick="showSection('multivariable')">📊 Multivariable Functions</li>
+            <li class="nav-item" onclick="showSection('partial')">∂ Partial Derivatives</li>
+            <li class="nav-item" onclick="showSection('multiple')">∫ Multiple Integrals</li>
+            <li class="nav-item" onclick="showSection('vector-calc')">⃗ Vector Calculus</li>
+            <li class="nav-item" onclick="showSection('final-quiz')">🎯 Final Exam</li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-title">📊 YOUR CONSTRUCTION PROGRESS</div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 0%">0%</div>
+            </div>
+        </div>
+
+        <!-- Introduction Section -->
+        <div class="content-section active" id="introduction">
+            <h2 class="section-title">🏠 WELCOME TO THE CALCULUS III CONSTRUCTION ZONE</h2>
+            
+            <div class="safety-sign important">
+                🚧 CAUTION: ADVANCED MATHEMATICS UNDER CONSTRUCTION 🚧
+            </div>
+
+            <p class="content-text">
+                You're about to embark on building your understanding of <strong>Calculus III</strong> - 
+                the mathematics of <span class="tooltip">multivariable calculus<span class="tooltip-text">Calculus dealing with functions of multiple variables</span></span> 
+                and three-dimensional space.
+            </p>
+
+            <div class="blueprint-section">
+                <div class="blueprint-content">
+                    <h3>📋 CONSTRUCTION BLUEPRINT</h3>
+                    <p>By the end of this course, you will have mastered:</p>
+                    <ul style="text-align: left; color: var(--white); margin-top: 15px; padding-left: 30px;">
+                        <li>Vectors and their operations in 3D space</li>
+                        <li>Vector-valued functions and their applications</li>
+                        <li>Functions of several variables and their graphs</li>
+                        <li>Partial derivatives and gradients</li>
+                        <li>Multiple integrals (double, triple, and beyond)</li>
+                        <li>Vector calculus: line integrals, surface integrals</li>
+                        <li>Fundamental theorems: Green's, Stokes', and Divergence</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="construction-tape">🔨 TOOLS YOU'LL NEED 🔨</div>
+
+            <div class="interactive-box">
+                <div class="interactive-title">Prerequisites Check</div>
+                <p class="content-text">Before we start building, let's check your foundation!</p>
+                
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        1. What is the derivative of f(x) = x³?
+                    </div>
+                    <input type="text" class="problem-input" id="prereq1" placeholder="Enter your answer (e.g., 3x^2)">
+                    <button class="submit-btn" onclick="checkPrerequisite(1, '3x^2', ['3x^2', '3*x^2', '3 x^2'])">Check Answer</button>
+                    <div class="feedback" id="prereq1-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        2. What is ∫ cos(x) dx?
+                    </div>
+                    <input type="text" class="problem-input" id="prereq2" placeholder="Enter your answer (e.g., sin(x) + C)">
+                    <button class="submit-btn" onclick="checkPrerequisite(2, 'sin(x)+C', ['sin(x)+C', 'sin(x) + C', 'sin x + C'])">Check Answer</button>
+                    <div class="feedback" id="prereq2-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        3. Evaluate ∫₀² x dx
+                    </div>
+                    <input type="text" class="problem-input" id="prereq3" placeholder="Enter your answer (e.g., 2)">
+                    <button class="submit-btn" onclick="checkPrerequisite(3, '2', ['2', '2.0'])">Check Answer</button>
+                    <div class="feedback" id="prereq3-feedback"></div>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">💡 Why Study Calculus III?</div>
+                <p class="content-text">
+                    Calculus III is essential for:
+                </p>
+                <ul style="text-align: left; margin-top: 10px; padding-left: 20px;">
+                    <li>🔬 <strong>Physics:</strong> Motion in 3D space, electromagnetic fields</li>
+                    <li>🏗️ <strong>Engineering:</strong> Fluid dynamics, stress analysis</li>
+                    <li>📈 <strong>Economics:</strong> Multivariable optimization</li>
+                    <li>🎮 <strong>Computer Graphics:</strong> 3D rendering and animation</li>
+                    <li>📍 <strong>Meteorology:</strong> Weather prediction models</li>
+                </ul>
+            </div>
+
+            <p class="content-text" style="text-align: center; margin-top: 30px;">
+                <strong>Ready to start building? Click "Vectors & 3D Space" above!</strong>
+            </p>
+        </div>
+
+        <!-- Vectors Section -->
+        <div class="content-section" id="vectors">
+            <h2 class="section-title">📐 VECTORS & 3D SPACE</h2>
+
+            <div class="construction-tape">🔨 FOUNDATION WORK: VECTORS 🔨</div>
+
+            <p class="content-text">
+                Let's start by understanding <strong>vectors</strong> - quantities that have both 
+                <strong>magnitude</strong> and <strong>direction</strong>.
+            </p>
+
+            <h3 class="subsection-title">What is a Vector?</h3>
+
+            <div class="blueprint-section">
+                <div class="blueprint-content">
+                    <h3>📐 VECTOR DEFINITION</h3>
+                    <p>A vector <strong>v</strong> in 3D space can be written as:</p>
+                    <div class="formula-box" style="margin-top: 15px;">
+                        <div class="formula">v = 〈v₁, v₂, v₃〉 = v₁i + v₂j + v₃k</div>
+                    </div>
+                    <p style="margin-top: 15px;">Where:</p>
+                    <ul style="text-align: left; margin-top: 10px; padding-left: 30px;">
+                        <li><strong>i, j, k</strong> are unit vectors in the x, y, z directions</li>
+                        <li><strong>v₁, v₂, v₃</strong> are the components</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="diagram-container">
+                <div class="diagram-title">3D Coordinate System</div>
+                <canvas id="vector3d" width="500" height="400"></canvas>
+            </div>
+
+            <h3 class="subsection-title">Vector Operations</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">Vector Addition & Scalar Multiplication</div>
+                <p class="formula">
+                    If u = 〈u₁, u₂, u₃〉 and v = 〈v₁, v₂, v₃〉, then:
+                </p>
+                <p class="formula" style="margin-top: 15px;">
+                    u + v = 〈u₁+v₁, u₂+v₂, u₃+v₃〉
+                </p>
+                <p class="formula">
+                    cu = 〈cu₁, cu₂, cu₃〉 (where c is a scalar)
+                </p>
+            </div>
+
+            <div class="interactive-box">
+                <div class="interactive-title">🔧 Practice: Vector Operations</div>
+                
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        Given u = 〈2, 3, -1〉 and v = 〈4, -2, 5〉, find u + v
+                    </div>
+                    <input type="text" class="problem-input" id="vector1" placeholder="Enter your answer (e.g., <6,1,4>)">
+                    <button class="submit-btn" onclick="checkVectorProblem(1, '<6,1,4>', ['<6,1,4>', '(6,1,4)', '6,1,4'])">Check Answer</button>
+                    <div class="feedback" id="vector1-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        Given u = 〈2, 3, -1〉, find 3u
+                    </div>
+                    <input type="text" class="problem-input" id="vector2" placeholder="Enter your answer (e.g., <6,9,-3>)">
+                    <button class="submit-btn" onclick="checkVectorProblem(2, '<6,9,-3>', ['<6,9,-3>', '(6,9,-3)', '6,9,-3'])">Check Answer</button>
+                    <div class="feedback" id="vector2-feedback"></div>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Dot Product</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">The Dot Product</div>
+                <p class="formula">
+                    u · v = |u||v|cos(θ) = u₁v₁ + u₂v₂ + u₃v₃
+                </p>
+                <p style="margin-top: 15px; color: var(--safety-yellow);">Where θ is the angle between vectors</p>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">💡 Key Property: Dot Product and Orthogonality</div>
+                <p class="content-text">
+                    Two vectors are <strong>orthogonal</strong> (perpendicular) if and only if their dot product is zero.
+                </p>
+                <div class="formula-box" style="margin-top: 15px;">
+                    <div class="formula">u ⟂ v ⇔ u · v = 0</div>
+                </div>
+            </div>
+
+            <div class="interactive-box">
+                <div class="interactive-title">🔧 Practice: Dot Product</div>
+                
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        Find the dot product of u = 〈1, 2, 3〉 and v = 〈4, 5, 6〉
+                    </div>
+                    <input type="text" class="problem-input" id="dot1" placeholder="Enter your answer (e.g., 32)">
+                    <button class="submit-btn" onclick="checkDotProduct(1, 32, ['32', '32.0'])">Check Answer</button>
+                    <div class="feedback" id="dot1-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        Are u = 〈1, 0, 0〉 and v = 〈0, 5, 0〉 orthogonal?
+                    </div>
+                    <input type="text" class="problem-input" id="dot2" placeholder="Enter your answer (yes/no)">
+                    <button class="submit-btn" onclick="checkDotProduct(2, 'yes', ['yes', 'Yes', 'YES'])">Check Answer</button>
+                    <div class="feedback" id="dot2-feedback"></div>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Cross Product</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">The Cross Product</div>
+                <p class="formula">
+                    u × v = |u||v|sin(θ)n
+                </p>
+                <p style="margin-top: 15px;">
+                    The cross product gives a vector <strong>perpendicular</strong> to both u and v.
+                </p>
+            </div>
+
+            <div class="caution-box">
+                <div class="caution-title">⚠️ IMPORTANT: Cross Product Properties</div>
+                <ul style="text-align: left; margin-top: 10px; padding-left: 30px;">
+                    <li>u × v = -(v × u) (NOT commutative!)</li>
+                    <li>|u × v| = |u||v|sin(θ) gives the area of the parallelogram</li>
+                    <li>i × j = k, j × k = i, k × i = j</li>
+                </ul>
+            </div>
+
+            <div class="diagram-container">
+                <div class="diagram-title">Cross Product Visualization</div>
+                <canvas id="crossProduct" width="500" height="400"></canvas>
+            </div>
+
+            <div class="interactive-box">
+                <div class="interactive-title">🔧 Practice: Cross Product</div>
+                
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        Find i × j
+                    </div>
+                    <input type="text" class="problem-input" id="cross1" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkCrossProduct(1, 'k', ['k', '<0,0,1>', '(0,0,1)'])">Check Answer</button>
+                    <div class="feedback" id="cross1-feedback"></div>
+                </div>
+            </div>
+
+            <!-- Quiz for Vectors -->
+            <div class="quiz-container">
+                <div class="quiz-title">🎯 QUIZ: VECTORS & 3D SPACE</div>
+
+                <div class="quiz-question">
+                    <p style="color: var(--primary-yellow); font-weight: bold;">1. What is the magnitude of vector v = 〈3, 4, 0〉?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption(1, 'A')">A. 5</div>
+                        <div class="quiz-option" onclick="selectOption(1, 'B')">B. 7</div>
+                        <div class="quiz-option" onclick="selectOption(1, 'C')">C. 12</div>
+                        <div class="quiz-option" onclick="selectOption(1, 'D')">D. 25</div>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p style="color: var(--primary-yellow); font-weight: bold;">2. If u · v = 0 and u ≠ 0, v ≠ 0, what can you conclude?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption(2, 'A')">A. u and v are parallel</div>
+                        <div class="quiz-option" onclick="selectOption(2, 'B')">B. u and v are orthogonal</div>
+                        <div class="quiz-option" onclick="selectOption(2, 'C')">C. u and v are equal</div>
+                        <div class="quiz-option" onclick="selectOption(2, 'D')">D. Nothing specific</div>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p style="color: var(--primary-yellow); font-weight: bold;">3. What is the cross product i × i?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption(3, 'A')">A. i</div>
+                        <div class="quiz-option" onclick="selectOption(3, 'B')">B. j</div>
+                        <div class="quiz-option" onclick="selectOption(3, 'C')">C. k</div>
+                        <div class="quiz-option" onclick="selectOption(3, 'D')">D. 0 (zero vector)</div>
+                    </div>
+                </div>
+
+                <button class="submit-btn" style="width: 100%;" onclick="checkQuiz('vectors')">Submit Quiz</button>
+                <div class="feedback" id="vectors-quiz-feedback"></div>
+            </div>
+        </div>
+
+        <!-- Vector Functions Section -->
+        <div class="content-section" id="vector-functions">
+            <h2 class="section-title">🔄 VECTOR FUNCTIONS</h2>
+
+            <div class="construction-tape">🔨 BUILDING IN MOTION: VECTOR FUNCTIONS 🔨</div>
+
+            <p class="content-text">
+                A <strong>vector function</strong> maps real numbers to vectors. These are essential for 
+                describing motion in 3D space.
+            </p>
+
+            <h3 class="subsection-title">Definition & Notation</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">Vector Function</div>
+                <p class="formula">
+                    r(t) = 〈f(t), g(t), h(t)〉 = f(t)i + g(t)j + h(t)k
+                </p>
+            </div>
+
+            <div class="blueprint-section">
+                <div class="blueprint-content">
+                    <h3>📐 INTERPRETATION</h3>
+                    <p>The vector function r(t) represents:</p>
+                    <ul style="text-align: left; margin-top: 15px; padding-left: 30px;">
+                        <li>r(t) = position of a particle at time t</li>
+                        <li>The set of all points r(t) = <strong>space curve</strong></li>
+                        <li>r'(t) = velocity vector</li>
+                        <li>r''(t) = acceleration vector</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Differentiation of Vector Functions</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">Derivative of a Vector Function</div>
+                <p class="formula">
+                    r'(t) = 〈f'(t), g'(t), h'(t)〉
+                </p>
+                <p style="margin-top: 15px;">We differentiate each component separately!</p>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">💡 Example: Finding Velocity and Acceleration</div>
+                <p class="content-text">
+                    Given r(t) = 〈t², sin(t), eᵗ〉:
+                </p>
+                <div class="formula-box">
+                    <div class="formula">v(t) = r'(t) = 〈2t, cos(t), eᵗ〉</div>
+                    <div class="formula" style="margin-top: 10px;">a(t) = r''(t) = 〈2, -sin(t), eᵗ〉</div>
+                </div>
+            </div>
+
+            <div class="interactive-box">
+                <div class="interactive-title">🔧 Practice: Vector Function Derivatives</div>
+                
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        Find r'(t) for r(t) = 〈t³, 2t, cos(t)〉
+                    </div>
+                    <input type="text" class="problem-input" id="vf1" placeholder="Enter your answer (e.g., <3t^2,2,-sin(t)>)">
+                    <button class="submit-btn" onclick="checkVectorFunction(1, '<3t^2,2,-sin(t)>', ['<3t^2,2,-sin(t)>', '(3t^2,2,-sin(t))'])">Check Answer</button>
+                    <div class="feedback" id="vf1-feedback"></div>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Arc Length</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">Arc Length of a Space Curve</div>
+                <p class="formula">
+                    L = ∫[a,b] |r'(t)| dt = ∫[a,b] √(f'(t)² + g'(t)² + h'(t)²) dt
+                </p>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">💡 Example: Finding Arc Length</div>
+                <p class="content-text">
+                    Find the length of r(t) = 〈cos(t), sin(t), t〉 for 0 ≤ t ≤ 2π
+                </p>
+                <div class="formula-box">
+                    <div class="formula">r'(t) = 〈-sin(t), cos(t), 1〉</div>
+                    <div class="formula" style="margin-top: 10px;">|r'(t)| = √(sin²(t) + cos²(t) + 1) = √2</div>
+                    <div class="formula" style="margin-top: 10px;">L = ∫₀²π √2 dt = 2π√2</div>
+                </div>
+            </div>
+
+            <div class="diagram-container">
+                <div class="diagram-title">Helix: r(t) = 〈cos(t), sin(t), t〉</div>
+                <canvas id="helix" width="500" height="400"></canvas>
+            </div>
+
+            <h3 class="subsection-title">Curvature</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">Curvature</div>
+                <p class="formula">
+                    κ(t) = |r'(t) × r''(t)| / |r'(t)|³
+                </p>
+                <p style="margin-top: 15px;">Curvature measures how sharply a curve bends.</p>
+            </div>
+
+            <div class="caution-box">
+                <div class="caution-title">⚠️ Key Insight</div>
+                <ul style="text-align: left; margin-top: 10px; padding-left: 30px;">
+                    <li>Straight lines have κ = 0</li>
+                    <li>Circles have constant curvature κ = 1/radius</li>
+                    <li>Large curvature = sharp turn</li>
+                </ul>
+            </div>
+
+            <!-- Quiz for Vector Functions -->
+            <div class="quiz-container">
+                <div class="quiz-title">🎯 QUIZ: VECTOR FUNCTIONS</div>
+
+                <div class="quiz-question">
+                    <p style="color: var(--primary-yellow); font-weight: bold;">1. If r(t) represents position, what does r'(t) represent?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption(1, 'A')">A. Acceleration</div>
+                        <div class="quiz-option" onclick="selectOption(1, 'B')">B. Velocity</div>
+                        <div class="quiz-option" onclick="selectOption(1, 'C')">C. Speed</div>
+                        <div class="quiz-option" onclick="selectOption(1, 'D')">D. Displacement</div>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p style="color: var(--primary-yellow); font-weight: bold;">2. What is the speed of a particle at time t?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption(2, 'A')">A. r'(t)</div>
+                        <div class="quiz-option" onclick="selectOption(2, 'B')">B. |r'(t)|</div>
+                        <div class="quiz-option" onclick="selectOption(2, 'C')">C. r''(t)</div>
+                        <div class="quiz-option" onclick="selectOption(2, 'D')">D. ∫|r'(t)|dt</div>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p style="color: var(--primary-yellow); font-weight: bold;">3. What is the curvature of a straight line?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption(3, 'A')">A. 0</div>
+                        <div class="quiz-option" onclick="selectOption(3, 'B')">B. 1</div>
+                        <div class="quiz-option" onclick="selectOption(3, 'C')">C. ∞</div>
+                        <div class="quiz-option" onclick="selectOption(3, 'D')">D. Undefined</div>
+                    </div>
+                </div>
+
+                <button class="submit-btn" style="width: 100%;" onclick="checkQuiz('vector-functions')">Submit Quiz</button>
+                <div class="feedback" id="vector-functions-quiz-feedback"></div>
+            </div>
+        </div>
+
+        <!-- Multivariable Functions Section -->
+        <div class="content-section" id="multivariable">
+            <h2 class="section-title">📊 MULTIVARIABLE FUNCTIONS</h2>
+
+            <div class="construction-tape">🔨 BUILDING UP: FUNCTIONS OF SEVERAL VARIABLES 🔨</div>
+
+            <p class="content-text">
+                Now we're moving from curves to <strong>surfaces</strong>. Functions of multiple variables 
+                map from ℝⁿ to ℝ.
+            </p>
+
+            <h3 class="subsection-title">Functions of Two Variables</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">Function of Two Variables</div>
+                <p class="formula">
+                    z = f(x, y)
+                </p>
+                <p style="margin-top: 15px;">This represents a surface in 3D space!</p>
+            </div>
+
+            <div class="blueprint-section">
+                <div class="blueprint-content">
+                    <h3>📐 DOMAIN & RANGE</h3>
+                    <ul style="text-align: left; margin-top: 15px; padding-left: 30px;">
+                        <li><strong>Domain:</strong> All (x, y) where f(x, y) is defined</li>
+                        <li><strong>Range:</strong> All possible z = f(x, y) values</li>
+                        <li>Domain is a region in the xy-plane</li>
+                        <li>Graph is a surface in 3D space</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="diagram-container">
+                <div class="diagram-title">Surface: z = x² + y² (Paraboloid)</div>
+                <canvas id="surface1" width="500" height="400"></canvas>
+            </div>
+
+            <h3 class="subsection-title">Level Curves (Contour Maps)</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">Level Curves</div>
+                <p class="formula">
+                    Level curves: f(x, y) = k (for constant k)
+                </p>
+                <p style="margin-top: 15px;">These are 2D "slices" of the surface at height k.</p>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">💡 Example: Level Curves of Paraboloid</div>
+                <p class="content-text">
+                    For f(x, y) = x² + y²:
+                </p>
+                <ul style="text-align: left; margin-top: 10px; padding-left: 30px;">
+                    <li>k = 0: Point at origin</li>
+                    <li>k = 1: Circle x² + y² = 1 (radius 1)</li>
+                    <li>k = 4: Circle x² + y² = 4 (radius 2)</li>
+                    <li>k = 9: Circle x² + y² = 9 (radius 3)</li>
+                </ul>
+            </div>
+
+            <div class="diagram-container">
+                <div class="diagram-title">Level Curves (Contour Map)</div>
+                <canvas id="contour" width="500" height="400"></canvas>
+            </div>
+
+            <h3 class="subsection-title">Limits and Continuity</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">Limit in Two Variables</div>
+                <p class="formula">
+                    lim[(x,y)→(a,b)] f(x, y) = L
+                </p>
+            </div>
+
+            <div class="caution-box">
+                <div class="caution-title">⚠️ CRITICAL DIFFERENCE from Single Variable</div>
+                <p class="content-text">
+                    In 2D, you can approach a point from <strong>infinitely many directions</strong>.
+                    The limit must be the same from all paths!
+                </p>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">💡 Testing for Existence of Limits</div>
+                <p class="content-text">
+                    To show a limit <strong>doesn't exist</strong>: Find two different paths with different limit values.
+                </p>
+                <p class="content-text" style="margin-top: 10px;">
+                    Common paths to try:
+                </p>
+                <ul style="text-align: left; margin-top: 10px; padding-left: 30px;">
+                    <li>Along x-axis (y = 0)</li>
+                    <li>Along y-axis (x = 0)</li>
+                    <li>Along line y = x</li>
+                    <li>Along x = ky (any line through origin)</li>
+                </ul>
+            </div>
+
+            <div class="interactive-box">
+                <div class="interactive-title">🔧 Practice: Limits</div>
+                
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        Find lim[(x,y)→(0,0)] (x + y)
+                    </div>
+                    <input type="text" class="problem-input" id="limit1" placeholder="Enter your answer (e.g., 0)">
+                    <button class="submit-btn" onclick="checkLimit(1, '0', ['0', '0.0'])">Check Answer</button>
+                    <div class="feedback" id="limit1-feedback"></div>
+                </div>
+            </div>
+
+            <!-- Quiz for Multivariable Functions -->
+            <div class="quiz-container">
+                <div class="quiz-title">🎯 QUIZ: MULTIVARIABLE FUNCTIONS</div>
+
+                <div class="quiz-question">
+                    <p style="color: var(--primary-yellow); font-weight: bold;">1. What do level curves represent?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption(1, 'A')">A. Tangent lines to the surface</div>
+                        <div class="quiz-option" onclick="selectOption(1, 'B')">B. Cross-sections at constant z</div>
+                        <div class="quiz-option" onclick="selectOption(1, 'C')">C. The gradient of the function</div>
+                        <div class="quiz-option" onclick="selectOption(1, 'D')">D. The path of steepest ascent</div>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p style="color: var(--primary-yellow); font-weight: bold;">2. For a limit in 2D to exist, it must be:</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption(2, 'A')">A. The same from at least two paths</div>
+                        <div class="quiz-option" onclick="selectOption(2, 'B')">B. The same from all possible paths</div>
+                        <div class="quiz-option" onclick="selectOption(2, 'C')">C. Finite from one path</div>
+                        <div class="quiz-option" onclick="selectOption(2, 'D')">D. Equal to f(a, b)</div>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p style="color: var(--primary-yellow); font-weight: bold;">3. What is the graph of z = f(x, y)?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption(3, 'A')">A. A curve in 2D</div>
+                        <div class="quiz-option" onclick="selectOption(3, 'B')">B. A surface in 3D</div>
+                        <div class="quiz-option" onclick="selectOption(3, 'C')">C. A point in 3D</div>
+                        <div class="quiz-option" onclick="selectOption(3, 'D')">D. A volume in 4D</div>
+                    </div>
+                </div>
+
+                <button class="submit-btn" style="width: 100%;" onclick="checkQuiz('multivariable')">Submit Quiz</button>
+                <div class="feedback" id="multivariable-quiz-feedback"></div>
+            </div>
+        </div>
+
+        <!-- Partial Derivatives Section -->
+        <div class="content-section" id="partial">
+            <h2 class="section-title">∂ PARTIAL DERIVATIVES</h2>
+
+            <div class="construction-tape">🔨 FINE DETAIL WORK: PARTIAL DERIVATIVES 🔨</div>
+
+            <p class="content-text">
+                <strong>Partial derivatives</strong> extend differentiation to functions of multiple variables. 
+                We differentiate with respect to one variable while treating others as constants.
+            </p>
+
+            <h3 class="subsection-title">Definition</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">Partial Derivatives</div>
+                <p class="formula">
+                    ∂f/∂x = lim[h→0] [f(x+h, y) - f(x, y)]/h
+                </p>
+                <p class="formula" style="margin-top: 10px;">
+                    ∂f/∂y = lim[h→0] [f(x, y+h) - f(x, y)]/h
+                </p>
+            </div>
+
+            <div class="blueprint-section">
+                <div class="blueprint-content">
+                    <h3>📐 HOW TO COMPUTE</h3>
+                    <p>To find ∂f/∂x:</p>
+                    <ul style="text-align: left; margin-top: 15px; padding-left: 30px;">
+                        <li>Treat y as a <strong>constant</strong></li>
+                        <li>Differentiate with respect to x normally</li>
+                        <li>Use all the usual rules!</li>
+                    </ul>
+                    <p style="margin-top: 15px;">To find ∂f/∂y:</p>
+                    <ul style="text-align: left; margin-top: 10px; padding-left: 30px;">
+                        <li>Treat x as a <strong>constant</strong></li>
+                        <li>Differentiate with respect to y normally</li>
+                        <li>Use all the usual rules!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">💡 Example: Computing Partial Derivatives</div>
+                <p class="content-text">
+                    Find ∂f/∂x and ∂f/∂y for f(x, y) = x²y + 3xy² + 5
+                </p>
+                <div class="formula-box">
+                    <div class="formula">∂f/∂x: Treat y as constant → 2xy + 3y²</div>
+                    <div class="formula" style="margin-top: 10px;">∂f/∂y: Treat x as constant → x² + 6xy</div>
+                </div>
+            </div>
+
+            <div class="diagram-container">
+                <div class="diagram-title">Tangent Planes</div>
+                <canvas id="tangentPlane" width="500" height="400"></canvas>
+            </div>
+
+            <h3 class="subsection-title">Higher Order Partial Derivatives</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">Second Order Partial Derivatives</div>
+                <p class="formula">
+                    ∂²f/∂x² = fₓₓ, ∂²f/∂y² = f_yy
+                </p>
+                <p class="formula" style="margin-top: 10px;">
+                    ∂²f/∂x∂y = fₓy, ∂²f/∂y∂x = f_yₓ
+                </p>
+            </div>
+
+            <div class="caution-box">
+                <div class="caution-title">⚠️ CLAIRAUT'S THEOREM</div>
+                <p class="content-text">
+                    <strong>Clairaut's Theorem:</strong> If the mixed partial derivatives are continuous, 
+                    then fₓy = f_yₓ.
+                </p>
+                <p class="content-text" style="margin-top: 10px;">
+                    Order usually doesn't matter for mixed partials!
+                </p>
+            </div>
+
+            <h3 class="subsection-title">The Gradient</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">Gradient Vector</div>
+                <p class="formula">
+                    ∇f = 〈∂f/∂x, ∂f/∂y, ∂f/∂z〉
+                </p>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">💡 Key Properties of the Gradient</div>
+                <ul style="text-align: left; margin-top: 10px; padding-left: 30px;">
+                    <li>∇f points in the direction of <strong>steepest ascent</strong></li>
+                    <li>-∇f points in the direction of <strong>steepest descent</strong></li>
+                    <li>|∇f| gives the rate of steepest ascent</li>
+                    <li>∇f is <strong>perpendicular to level curves</strong></li>
+                </ul>
+            </div>
+
+            <div class="interactive-box">
+                <div class="interactive-title">🔧 Practice: Partial Derivatives</div>
+                
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        Find ∂f/∂x for f(x, y) = x³ + 2xy
+                    </div>
+                    <input type="text" class="problem-input" id="partial1" placeholder="Enter your answer (e.g., 3x^2+2y)">
+                    <button class="submit-btn" onclick="checkPartial(1, '3x^2+2y', ['3x^2+2y', '3x^2+2y', '3*x^2+2*y'])">Check Answer</button>
+                    <div class="feedback" id="partial1-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        Find ∂f/∂y for f(x, y) = x³ + 2xy
+                    </div>
+                    <input type="text" class="problem-input" id="partial2" placeholder="Enter your answer (e.g., 2x)">
+                    <button class="submit-btn" onclick="checkPartial(2, '2x', ['2x', '2*x'])">Check Answer</button>
+                    <div class="feedback" id="partial2-feedback"></div>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Directional Derivatives</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">Directional Derivative</div>
+                <p class="formula">
+                    Dᵤf = ∇f · u
+                </p>
+                <p style="margin-top: 15px;">Where u is a <strong>unit vector</strong> pointing in the direction of interest.</p>
+            </div>
+
+            <div class="diagram-container">
+                <div class="diagram-title">Gradient Field</div>
+                <canvas id="gradient" width="500" height="400"></canvas>
+            </div>
+
+            <!-- Quiz for Partial Derivatives -->
+            <div class="quiz-container">
+                <div class="quiz-title">🎯 QUIZ: PARTIAL DERIVATIVES</div>
+
+                <div class="quiz-question">
+                    <p style="color: var(--primary-yellow); font-weight: bold;">1. When finding ∂f/∂x, you treat which variable as constant?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption(1, 'A')">A. x</div>
+                        <div class="quiz-option" onclick="selectOption(1, 'B')">B. y</div>
+                        <div class="quiz-option" onclick="selectOption(1, 'C')">C. z</div>
+                        <div class="quiz-option" onclick="selectOption(1, 'D')">D. All variables</div>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p style="color: var(--primary-yellow); font-weight: bold;">2. In which direction does the gradient point?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption(2, 'A')">A. Steepest descent</div>
+                        <div class="quiz-option" onclick="selectOption(2, 'B')">B. Steepest ascent</div>
+                        <div class="quiz-option" onclick="selectOption(2, 'C')">C. Along level curves</div>
+                        <div class="quiz-option" onclick="selectOption(2, 'D')">D. Towards the origin</div>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p style="color: var(--primary-yellow); font-weight: bold;">3. What does Clairaut's Theorem state?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption(3, 'A')">A. fₓ = f_y</div>
+                        <div class="quiz-option" onclick="selectOption(3, 'B')">B. fₓy = f_yₓ (under certain conditions)</div>
+                        <div class="quiz-option" onclick="selectOption(3, 'C')">C. ∇f = 0 at extrema</div>
+                        <div class="quiz-option" onclick="selectOption(3, 'D')">D. All partials are zero at critical points</div>
+                    </div>
+                </div>
+
+                <button class="submit-btn" style="width: 100%;" onclick="checkQuiz('partial')">Submit Quiz</button>
+                <div class="feedback" id="partial-quiz-feedback"></div>
+            </div>
+        </div>
+
+        <!-- Multiple Integrals Section -->
+        <div class="content-section" id="multiple">
+            <h2 class="section-title">∫ MULTIPLE INTEGRALS</h2>
+
+            <div class="construction-tape">🔨 BUILDING VOLUME: MULTIPLE INTEGRALS 🔨</div>
+
+            <p class="content-text">
+                <strong>Multiple integrals</strong> let us integrate over regions in 2D, 3D, and beyond. 
+                They're used to find areas, volumes, masses, and more.
+            </p>
+
+            <h3 class="subsection-title">Double Integrals</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">Double Integral</div>
+                <p class="formula">
+                    ∬ᴿ f(x, y) dA
+                </p>
+            </div>
+
+            <div class="blueprint-section">
+                <div class="blueprint-content">
+                    <h3>📐 INTERPRETATION</h3>
+                    <ul style="text-align: left; margin-top: 15px; padding-left: 30px;">
+                        <li>If f(x, y) = 1: Gives the <strong>area</strong> of region R</li>
+                        <li>If f(x, y) > 0: Gives the <strong>volume</strong> under the surface</li>
+                        <li>If f(x, y) = density: Gives the <strong>mass</strong> of the region</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="formula-box">
+                <div class="formula-title">Fubini's Theorem (Iterated Integrals)</div>
+                <p class="formula">
+                    ∬ᴿ f(x, y) dA = ∫[a,b] ∫[g₁(x),g₂(x)] f(x, y) dy dx
+                </p>
+                <p class="formula" style="margin-top: 10px;">
+                    = ∫[c,d] ∫[h₁(y),h₂(y)] f(x, y) dx dy
+                </p>
+                <p style="margin-top: 15px;">Order of integration can be swapped!</p>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">💡 Example: Computing a Double Integral</div>
+                <p class="content-text">
+                    Evaluate ∬ᴿ (x + 2y) dA where R = [0, 2] × [0, 1]
+                </p>
+                <div class="formula-box">
+                    <div class="formula">∫₀² ∫₀¹ (x + 2y) dy dx = ∫₀² [xy + y²]ᵧ₌₀¹ dx</div>
+                    <div class="formula" style="margin-top: 10px;">= ∫₀² (x + 1) dx = [x²/2 + x]₀² = 2 + 2 = 4</div>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Triple Integrals</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">Triple Integral</div>
+                <p class="formula">
+                    ∭ᴱ f(x, y, z) dV
+                </p>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">💡 Applications of Triple Integrals</div>
+                <ul style="text-align: left; margin-top: 10px; padding-left: 30px;">
+                    <li><strong>Volume:</strong> ∭ᴱ 1 dV</li>
+                    <li><strong>Mass:</strong> ∭ᴱ ρ(x, y, z) dV (where ρ is density)</li>
+                    <li><strong>Average value:</strong> (1/volume) ∭ᴱ f dV</li>
+                    <li><strong>Center of mass:</strong> x̄ = (1/mass) ∭ᴱ xρ dV</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Change of Variables</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">Jacobian Determinant</div>
+                <p class="formula">
+                    dA = |J| du dv, where |J| = |∂(x, y)/∂(u, v)|
+                </p>
+                <p class="formula" style="margin-top: 10px;">
+                    |J| = |[∂x/∂u ∂x/∂v; ∂y/∂u ∂y/∂v]|
+                </p>
+            </div>
+
+            <div class="caution-box">
+                <div class="caution-title">⚠️ POPULAR COORDINATE SYSTEMS</div>
+                <ul style="text-align: left; margin-top: 10px; padding-left: 30px;">
+                    <li><strong>Polar coordinates:</strong> x = r cos(θ), y = r sin(θ), |J| = r</li>
+                    <li><strong>Cylindrical:</strong> x = r cos(θ), y = r sin(θ), z = z, |J| = r</li>
+                    <li><strong>Spherical:</strong> x = ρ sin(φ) cos(θ), y = ρ sin(φ) sin(θ), z = ρ cos(φ), |J| = ρ² sin(φ)</li>
+                </ul>
+            </div>
+
+            <div class="diagram-container">
+                <div class="diagram-title">Polar Coordinates</div>
+                <canvas id="polar" width="500" height="400"></canvas>
+            </div>
+
+            <div class="interactive-box">
+                <div class="interactive-title">🔧 Practice: Double Integrals</div>
+                
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        Evaluate ∫₀¹ ∫₀² x dx dy (integrate x first)
+                    </div>
+                    <input type="text" class="problem-input" id="double1" placeholder="Enter your answer (e.g., 2)">
+                    <button class="submit-btn" onclick="checkDoubleIntegral(1, '2', ['2', '2.0'])">Check Answer</button>
+                    <div class="feedback" id="double1-feedback"></div>
+                </div>
+            </div>
+
+            <!-- Quiz for Multiple Integrals -->
+            <div class="quiz-container">
+                <div class="quiz-title">🎯 QUIZ: MULTIPLE INTEGRALS</div>
+
+                <div class="quiz-question">
+                    <p style="color: var(--primary-yellow); font-weight: bold;">1. What does ∬ᴿ 1 dA represent?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption(1, 'A')">A. Volume under surface</div>
+                        <div class="quiz-option" onclick="selectOption(1, 'B')">B. Area of region R</div>
+                        <div class="quiz-option" onclick="selectOption(1, 'C')">C. Mass of region R</div>
+                        <div class="quiz-option" onclick="selectOption(1, 'D')">D. Average value</div>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p style="color: var(--primary-yellow); font-weight: bold;">2. What is the Jacobian for polar coordinates?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption(2, 'A')">A. 1</div>
+                        <div class="quiz-option" onclick="selectOption(2, 'B')">B. r</div>
+                        <div class="quiz-option" onclick="selectOption(2, 'C')">C. r²</div>
+                        <div class="quiz-option" onclick="selectOption(2, 'D')">D. sin(θ)</div>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p style="color: var(--primary-yellow); font-weight: bold;">3. When should you use spherical coordinates?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption(3, 'A')">A. For rectangular regions</div>
+                        <div class="quiz-option" onclick="selectOption(3, 'B')">B. For circular/spherical regions</div>
+                        <div class="quiz-option" onclick="selectOption(3, 'C')">C. Always</div>
+                        <div class="quiz-option" onclick="selectOption(3, 'D')">D. Never</div>
+                    </div>
+                </div>
+
+                <button class="submit-btn" style="width: 100%;" onclick="checkQuiz('multiple')">Submit Quiz</button>
+                <div class="feedback" id="multiple-quiz-feedback"></div>
+            </div>
+        </div>
+
+        <!-- Vector Calculus Section -->
+        <div class="content-section" id="vector-calc">
+            <h2 class="section-title">⃗ VECTOR CALCULUS</h2>
+
+            <div class="construction-tape">🔨 FINAL CONSTRUCTION: VECTOR CALCULUS 🔨</div>
+
+            <p class="content-text">
+                <strong>Vector calculus</strong> combines vector operations with integration. It's the 
+                foundation for electromagnetism, fluid dynamics, and more.
+            </p>
+
+            <h3 class="subsection-title">Line Integrals</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">Line Integral of Scalar Field</div>
+                <p class="formula">
+                    ∫ᶜ f(x, y, z) ds = ∫[a,b] f(r(t)) |r'(t)| dt
+                </p>
+                <p class="formula" style="margin-top: 10px;">
+                    Line Integral of Vector Field: ∫ᶜ F · dr = ∫[a,b] F(r(t)) · r'(t) dt
+                </p>
+            </div>
+
+            <div class="blueprint-section">
+                <div class="blueprint-content">
+                    <h3>📐 INTERPRETATION</h3>
+                    <ul style="text-align: left; margin-top: 15px; padding-left: 30px;">
+                        <li>Scalar: "Add up" values along the curve</li>
+                        <li>Vector: Work done by force field along path</li>
+                        <li>Depends on direction (orientation) of curve</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Fundamental Theorem for Line Integrals</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">FTLI (Conservative Fields)</div>
+                <p class="formula">
+                    ∫ᶜ ∇f · dr = f(r(b)) - f(r(a))
+                </p>
+                <p style="margin-top: 15px;">If F = ∇f (conservative), the integral depends only on endpoints!</p>
+            </div>
+
+            <h3 class="subsection-title">Green's Theorem</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">Green's Theorem (2D)</div>
+                <p class="formula">
+                    ∮ᶜ P dx + Q dy = ∬ᴿ (∂Q/∂x - ∂P/∂y) dA
+                </p>
+                <p style="margin-top: 15px;">Converts line integral around closed curve to double integral over region</p>
+            </div>
+
+            <h3 class="subsection-title">Stokes' Theorem</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">Stokes' Theorem (3D Surfaces)</div>
+                <p class="formula">
+                    ∮ᶜ F · dr = ∬ₛ curl F · dS
+                </p>
+                <p style="margin-top: 15px;">Relates line integral around boundary to surface integral of curl</p>
+            </div>
+
+            <h3 class="subsection-title">Divergence Theorem</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">Divergence Theorem (Gauss)</div>
+                <p class="formula">
+                    ∬ₛ F · dS = ∭ᴱ div F dV
+                </p>
+                <p style="margin-top: 15px;">Converts surface integral to volume integral</p>
+            </div>
+
+            <div class="caution-box">
+                <div class="caution-title">⚠️ KEY RELATIONSHIPS</div>
+                <ul style="text-align: left; margin-top: 10px; padding-left: 30px;">
+                    <li><strong>div (divergence):</strong> Measures "outflow" at a point, scalar</li>
+                    <li><strong>curl:</strong> Measures "rotation" at a point, vector</li>
+                    <li><strong>curl ∇f</strong> = 0 (gradient fields are irrotational)</li>
+                    <li><strong>div curl F</strong> = 0 (curl fields are incompressible)</li>
+                </ul>
+            </div>
+
+            <div class="diagram-container">
+                <div class="diagram-title">Vector Field Visualization</div>
+                <canvas id="vectorField" width="500" height="400"></canvas>
+            </div>
+
+            <!-- Quiz for Vector Calculus -->
+            <div class="quiz-container">
+                <div class="quiz-title">🎯 QUIZ: VECTOR CALCULUS</div>
+
+                <div class="quiz-question">
+                    <p style="color: var(--primary-yellow); font-weight: bold;">1. What does Green's Theorem relate?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption(1, 'A')">A. Surface to volume</div>
+                        <div class="quiz-option" onclick="selectOption(1, 'B')">B. Line to surface</div>
+                        <div class="quiz-option" onclick="selectOption(1, 'C')">C. Line to area (2D)</div>
+                        <div class="quiz-option" onclick="selectOption(1, 'D')">D. Two surfaces</div>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p style="color: var(--primary-yellow); font-weight: bold;">2. What is a conservative vector field?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption(2, 'A')">A. F = ∇f for some scalar f</div>
+                        <div class="quiz-option" onclick="selectOption(2, 'B')">B. Any vector field with zero curl</div>
+                        <div class="quiz-option" onclick="selectOption(2, 'C')">C. A field that conserves energy</div>
+                        <div class="quiz-option" onclick="selectOption(2, 'D')">D. All of the above</div>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p style="color: var(--primary-yellow); font-weight: bold;">3. What does the Divergence Theorem convert?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption(3, 'A')">A. Surface to volume</div>
+                        <div class="quiz-option" onclick="selectOption(3, 'B')">B. Line to surface</div>
+                        <div class="quiz-option" onclick="selectOption(3, 'C')">C. Line to area</div>
+                        <div class="quiz-option" onclick="selectOption(3, 'D')">D. Volume to surface</div>
+                    </div>
+                </div>
+
+                <button class="submit-btn" style="width: 100%;" onclick="checkQuiz('vector-calc')">Submit Quiz</button>
+                <div class="feedback" id="vector-calc-quiz-feedback"></div>
+            </div>
+        </div>
+
+        <!-- Final Exam Section -->
+        <div class="content-section" id="final-quiz">
+            <h2 class="section-title">🎯 FINAL EXAM: CALCULUS III MASTERY</h2>
+
+            <div class="safety-sign important">
+                🚧 FINAL INSPECTION: PROVE YOUR MASTERY 🚧
+            </div>
+
+            <p class="content-text">
+                This comprehensive exam covers all major topics. Answer correctly to earn your 
+                <strong>Calculus III Mastery Certificate</strong>!
+            </p>
+
+            <div class="quiz-container" id="final-exam">
+                <!-- Question 1 -->
+                <div class="quiz-question">
+                    <p style="color: var(--primary-yellow); font-weight: bold;">1. Find ∇f for f(x, y) = x²y + eˣy</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectFinalOption(1, 'A')">A. 〈2xy, x²〉</div>
+                        <div class="quiz-option" onclick="selectFinalOption(1, 'B')">B. 〈2xy + eˣ, x²〉</div>
+                        <div class="quiz-option" onclick="selectFinalOption(1, 'C')">C. 〈2xy + yeˣ, x² + eˣ〉</div>
+                        <div class="quiz-option" onclick="selectFinalOption(1, 'D')">D. 〈2xy + eˣy, x²〉</div>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="quiz-question">
+                    <p style="color: var(--primary-yellow); font-weight: bold;">2. What is |〈3, 4, 0〉|?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectFinalOption(2, 'A')">A. 5</div>
+                        <div class="quiz-option" onclick="selectFinalOption(2, 'B')">B. 7</div>
+                        <div class="quiz-option" onclick="selectFinalOption(2, 'C')">C. 25</div>
+                        <div class="quiz-option" onclick="selectFinalOption(2, 'D')">D. 12</div>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="quiz-question">
+                    <p style="color: var(--primary-yellow); font-weight: bold;">3. Evaluate ∫₀² ∫₀¹ (x + y) dy dx</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectFinalOption(3, 'A')">A. 2</div>
+                        <div class="quiz-option" onclick="selectFinalOption(3, 'B')">B. 3</div>
+                        <div class="quiz-option" onclick="selectFinalOption(3, 'C')">C. 4</div>
+                        <div class="quiz-option" onclick="selectFinalOption(3, 'D')">D. 5</div>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="quiz-question">
+                    <p style="color: var(--primary-yellow); font-weight: bold;">4. Which theorem relates a line integral to a surface integral?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectFinalOption(4, 'A')">A. Green's Theorem</div>
+                        <div class="quiz-option" onclick="selectFinalOption(4, 'B')">B. Stokes' Theorem</div>
+                        <div class="quiz-option" onclick="selectFinalOption(4, 'C')">C. Divergence Theorem</div>
+                        <div class="quiz-option" onclick="selectFinalOption(4, 'D')">D. Fubini's Theorem</div>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="quiz-question">
+                    <p style="color: var(--primary-yellow); font-weight: bold;">5. Find the arc length of r(t) = 〈t, t, t〉 from 0 to 3</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectFinalOption(5, 'A')">A. 3</div>
+                        <div class="quiz-option" onclick="selectFinalOption(5, 'B')">B. 3√3</div>
+                        <div class="quiz-option" onclick="selectFinalOption(5, 'C')">C. 9</div>
+                        <div class="quiz-option" onclick="selectFinalOption(5, 'D')">D. 3√2</div>
+                    </div>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="quiz-question">
+                    <p style="color: var(--primary-yellow); font-weight: bold;">6. What is i × j?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectFinalOption(6, 'A')">A. i</div>
+                        <div class="quiz-option" onclick="selectFinalOption(6, 'B')">B. j</div>
+                        <div class="quiz-option" onclick="selectFinalOption(6, 'C')">C. k</div>
+                        <div class="quiz-option" onclick="selectFinalOption(6, 'D')">D. 0</div>
+                    </div>
+                </div>
+
+                <!-- Question 7 -->
+                <div class="quiz-question">
+                    <p style="color: var(--primary-yellow); font-weight: bold;">7. Convert to polar: ∫₀¹ ∫₀√(1-x²) f(x, y) dy dx</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectFinalOption(7, 'A')">A. ∫₀^{π/2} ∫₀¹ f(r cosθ, r sinθ) dr dθ</div>
+                        <div class="quiz-option" onclick="selectFinalOption(7, 'B')">B. ∫₀^{π/2} ∫₀¹ f(r cosθ, r sinθ) r dr dθ</div>
+                        <div class="quiz-option" onclick="selectFinalOption(7, 'C')">C. ∫₀²π ∫₀¹ f(r cosθ, r sinθ) r dr dθ</div>
+                        <div class="quiz-option" onclick="selectFinalOption(7, 'D')">D. ∫₀^{π} ∫₀¹ f(r cosθ, r sinθ) r dr dθ</div>
+                    </div>
+                </div>
+
+                <!-- Question 8 -->
+                <div class="quiz-question">
+                    <p style="color: var(--primary-yellow); font-weight: bold;">8. If F is conservative, then:</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectFinalOption(8, 'A')">A. curl F ≠ 0</div>
+                        <div class="quiz-option" onclick="selectFinalOption(8, 'B')">B. curl F = 0</div>
+                        <div class="quiz-option" onclick="selectFinalOption(8, 'C')">C. div F = 0</div>
+                        <div class="quiz-option" onclick="selectFinalOption(8, 'D')">D. F = 0</div>
+                    </div>
+                </div>
+
+                <!-- Question 9 -->
+                <div class="quiz-question">
+                    <p style="color: var(--primary-yellow); font-weight: bold;">9. Find ∂/∂x of f(x, y) = ln(x² + y²)</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectFinalOption(9, 'A')">A. 2x/(x² + y²)</div>
+                        <div class="quiz-option" onclick="selectFinalOption(9, 'B')">B. 1/(x² + y²)</div>
+                        <div class="quiz-option" onclick="selectFinalOption(9, 'C')">C. 2x</div>
+                        <div class="quiz-option" onclick="selectFinalOption(9, 'D')">D. x/(x² + y²)</div>
+                    </div>
+                </div>
+
+                <!-- Question 10 -->
+                <div class="quiz-question">
+                    <p style="color: var(--primary-yellow); font-weight: bold;">10. The level curves of a function f(x, y) are:</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectFinalOption(10, 'A')">A. The gradient vectors</div>
+                        <div class="quiz-option" onclick="selectFinalOption(10, 'B')">B. Where f(x, y) = constant</div>
+                        <div class="quiz-option" onclick="selectFinalOption(10, 'C')">C. The x and y intercepts</div>
+                        <div class="quiz-option" onclick="selectFinalOption(10, 'D')">D. Lines of steepest ascent</div>
+                    </div>
+                </div>
+
+                <button class="submit-btn" style="width: 100%; font-size: 1.2em; padding: 15px;" onclick="checkFinalExam()">🏆 SUBMIT FINAL EXAM 🏆</button>
+                <div class="feedback" id="final-exam-feedback"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p class="footer-text">
+            🔧 CALCULUS III CONSTRUCTION ZONE 🔧<br>
+            Built for Learning | Interactive Education<br>
+            Keep Building! 🚧
+        </p>
+    </div>
+
+    <script>
+        // ============================================
+        // GLOBAL VARIABLES
+        // ============================================
+        let currentSection = 'introduction';
+        let progress = 0;
+        let quizAnswers = {};
+        let finalExamAnswers = {};
+        let sectionProgress = {
+            'introduction': 0,
+            'vectors': 0,
+            'vector-functions': 0,
+            'multivariable': 0,
+            'partial': 0,
+            'multiple': 0,
+            'vector-calc': 0
+        };
+
+        const sectionQuizAnswers = {
+            'vectors': { 1: 'A', 2: 'B', 3: 'D' },
+            'vector-functions': { 1: 'B', 2: 'B', 3: 'A' },
+            'multivariable': { 1: 'B', 2: 'B', 3: 'B' },
+            'partial': { 1: 'B', 2: 'B', 3: 'B' },
+            'multiple': { 1: 'B', 2: 'B', 3: 'B' },
+            'vector-calc': { 1: 'C', 2: 'A', 3: 'A' }
+        };
+
+        const finalExamCorrectAnswers = {
+            1: 'C',
+            2: 'A',
+            3: 'B',
+            4: 'B',
+            5: 'B',
+            6: 'C',
+            7: 'B',
+            8: 'B',
+            9: 'A',
+            10: 'B'
+        };
+
+        // ============================================
+        // NAVIGATION
+        // ============================================
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all nav items
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to clicked nav item
+            event.target.classList.add('active');
+            
+            currentSection = sectionId;
+            
+            // Draw diagrams for the section
+            setTimeout(() => drawSectionDiagrams(sectionId), 100);
+        }
+
+        // ============================================
+        // PROGRESS TRACKING
+        // ============================================
+        function updateProgress() {
+            const totalProgress = Object.values(sectionProgress).reduce((a, b) => a + b, 0);
+            const maxProgress = Object.keys(sectionProgress).length * 3;
+            progress = Math.round((totalProgress / maxProgress) * 100);
+            
+            const progressFill = document.getElementById('progressFill');
+            progressFill.style.width = progress + '%';
+            progressFill.textContent = progress + '%';
+        }
+
+        function markSectionComplete(sectionId) {
+            if (sectionProgress[sectionId] < 3) {
+                sectionProgress[sectionId] = 3;
+                updateProgress();
+            }
+        }
+
+        // ============================================
+        // PREREQUISITE CHECKING
+        // ============================================
+        function checkPrerequisite(num, correct, alternatives) {
+            const input = document.getElementById('prereq' + num).value.trim();
+            const feedback = document.getElementById('prereq' + num + '-feedback');
+            
+            let isCorrect = input === correct || alternatives.includes(input);
+            
+            if (isCorrect) {
+                feedback.className = 'feedback correct';
+                feedback.textContent = '✅ Correct! Great foundation!';
+                feedback.style.display = 'block';
+                if (sectionProgress['introduction'] < 1) {
+                    sectionProgress['introduction'] = 1;
+                    updateProgress();
+                }
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.textContent = '❌ Not quite. The correct answer is ' + correct;
+                feedback.style.display = 'block';
+            }
+        }
+
+        // ============================================
+        // VECTOR PROBLEMS
+        // ============================================
+        function checkVectorProblem(num, correct, alternatives) {
+            const input = document.getElementById('vector' + num).value.trim().toLowerCase();
+            const feedback = document.getElementById('vector' + num + '-feedback');
+            
+            let normalizedInput = input.replace(/\s/g, '').replace(/[()]/g, '<>').replace(/,/g, ',');
+            let normalizedCorrect = correct.toLowerCase().replace(/\s/g, '');
+            
+            let isCorrect = normalizedInput === normalizedCorrect || 
+                           alternatives.some(alt => alt.toLowerCase().replace(/\s/g, '') === normalizedInput);
+            
+            if (isCorrect) {
+                feedback.className = 'feedback correct';
+                feedback.textContent = '✅ Correct! Excellent vector work!';
+                feedback.style.display = 'block';
+                if (sectionProgress['vectors'] < 1) {
+                    sectionProgress['vectors'] = 1;
+                    updateProgress();
+                }
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.textContent = '❌ Not quite. The correct answer is ' + correct;
+                feedback.style.display = 'block';
+            }
+        }
+
+        // ============================================
+        // DOT PRODUCT CHECKING
+        // ============================================
+        function checkDotProduct(num, correct, alternatives) {
+            const input = document.getElementById('dot' + num).value.trim().toLowerCase();
+            const feedback = document.getElementById('dot' + num + '-feedback');
+            
+            let isCorrect = input === correct || alternatives.includes(input);
+            
+            if (isCorrect) {
+                feedback.className = 'feedback correct';
+                feedback.textContent = '✅ Correct! Good understanding of dot products!';
+                feedback.style.display = 'block';
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.textContent = '❌ Not quite. Remember: u · v = u₁v₁ + u₂v₂ + u₃v₃';
+                feedback.style.display = 'block';
+            }
+        }
+
+        // ============================================
+        // CROSS PRODUCT CHECKING
+        // ============================================
+        function checkCrossProduct(num, correct, alternatives) {
+            const input = document.getElementById('cross' + num).value.trim().toLowerCase();
+            const feedback = document.getElementById('cross' + num + '-feedback');
+            
+            let isCorrect = input === correct || alternatives.includes(input);
+            
+            if (isCorrect) {
+                feedback.className = 'feedback correct';
+                feedback.textContent = '✅ Correct! i × j = k - remember the right-hand rule!';
+                feedback.style.display = 'block';
+                if (sectionProgress['vectors'] < 2) {
+                    sectionProgress['vectors'] = 2;
+                    updateProgress();
+                }
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.textContent = '❌ Not quite. Use the right-hand rule: i × j = k';
+                feedback.style.display = 'block';
+            }
+        }
+
+        // ============================================
+        // VECTOR FUNCTION CHECKING
+        // ============================================
+        function checkVectorFunction(num, correct, alternatives) {
+            const input = document.getElementById('vf' + num).value.trim().toLowerCase().replace(/\s/g, '');
+            const feedback = document.getElementById('vf' + num + '-feedback');
+            
+            let normalizedCorrect = correct.toLowerCase().replace(/\s/g, '');
+            let isCorrect = input === normalizedCorrect || 
+                           alternatives.some(alt => alt.toLowerCase().replace(/\s/g, '') === input);
+            
+            if (isCorrect) {
+                feedback.className = 'feedback correct';
+                feedback.textContent = '✅ Correct! Great derivative work!';
+                feedback.style.display = 'block';
+                if (sectionProgress['vector-functions'] < 1) {
+                    sectionProgress['vector-functions'] = 1;
+                    updateProgress();
+                }
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.textContent = '❌ Not quite. Remember: Differentiate each component separately!';
+                feedback.style.display = 'block';
+            }
+        }
+
+        // ============================================
+        // LIMIT CHECKING
+        // ============================================
+        function checkLimit(num, correct, alternatives) {
+            const input = document.getElementById('limit' + num).value.trim().toLowerCase();
+            const feedback = document.getElementById('limit' + num + '-feedback');
+            
+            let isCorrect = input === correct || alternatives.includes(input);
+            
+            if (isCorrect) {
+                feedback.className = 'feedback correct';
+                feedback.textContent = '✅ Correct! As (x, y) → (0, 0), both x and y → 0!';
+                feedback.style.display = 'block';
+                if (sectionProgress['multivariable'] < 1) {
+                    sectionProgress['multivariable'] = 1;
+                    updateProgress();
+                }
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.textContent = '❌ Not quite. Try substituting x = 0 and y = 0';
+                feedback.style.display = 'block';
+            }
+        }
+
+        // ============================================
+        // PARTIAL DERIVATIVE CHECKING
+        // ============================================
+        function checkPartial(num, correct, alternatives) {
+            const input = document.getElementById('partial' + num).value.trim().toLowerCase().replace(/\s/g, '');
+            const feedback = document.getElementById('partial' + num + '-feedback');
+            
+            let normalizedCorrect = correct.toLowerCase().replace(/\s/g, '');
+            let isCorrect = input === normalizedCorrect || 
+                           alternatives.some(alt => alt.toLowerCase().replace(/\s/g, '') === input);
+            
+            if (isCorrect) {
+                feedback.className = 'feedback correct';
+                feedback.textContent = '✅ Correct! Remember: Treat the other variable as constant!';
+                feedback.style.display = 'block';
+                if (sectionProgress['partial'] < 1) {
+                    sectionProgress['partial'] = 1;
+                    updateProgress();
+                }
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.textContent = '❌ Not quite. Remember to treat the non-differentiated variable as constant!';
+                feedback.style.display = 'block';
+            }
+        }
+
+        // ============================================
+        // DOUBLE INTEGRAL CHECKING
+        // ============================================
+        function checkDoubleIntegral(num, correct, alternatives) {
+            const input = document.getElementById('double' + num).value.trim().toLowerCase();
+            const feedback = document.getElementById('double' + num + '-feedback');
+            
+            let isCorrect = input === correct || alternatives.includes(input);
+            
+            if (isCorrect) {
+                feedback.className = 'feedback correct';
+                feedback.textContent = '✅ Correct! Double integrals build up from single integrals!';
+                feedback.style.display = 'block';
+                if (sectionProgress['multiple'] < 1) {
+                    sectionProgress['multiple'] = 1;
+                    updateProgress();
+                }
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.textContent = '❌ Not quite. Integrate from the inside out: first x from 0 to 2, then y from 0 to 1';
+                feedback.style.display = 'block';
+            }
+        }
+
+        // ============================================
+        // QUIZ FUNCTIONALITY
+        // ============================================
+        function selectOption(questionNum, answer) {
+            // Clear previous selection
+            const question = event.target.closest('.quiz-question');
+            question.querySelectorAll('.quiz-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            // Select new option
+            event.target.classList.add('selected');
+            
+            // Store answer
+            const quizContainer = event.target.closest('.quiz-container');
+            if (quizContainer.id === 'final-exam') {
+                finalExamAnswers[questionNum] = answer;
+            } else {
+                const feedbackElement = quizContainer.querySelector('.feedback');
+                const feedbackId = feedbackElement.id;
+                const sectionName = feedbackId.replace('-quiz-feedback', '');
+                if (!quizAnswers[sectionName]) {
+                    quizAnswers[sectionName] = {};
+                }
+                quizAnswers[sectionName][questionNum] = answer;
+            }
+        }
+
+        function selectFinalOption(questionNum, answer) {
+            const question = event.target.closest('.quiz-question');
+            question.querySelectorAll('.quiz-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            event.target.classList.add('selected');
+            finalExamAnswers[questionNum] = answer;
+        }
+
+        function checkQuiz(sectionName) {
+            const feedback = document.getElementById(sectionName + '-quiz-feedback');
+            const correctAnswers = sectionQuizAnswers[sectionName];
+            const userAnswers = quizAnswers[sectionName] || {};
+            
+            let score = 0;
+            let total = Object.keys(correctAnswers).length;
+            let results = [];
+            
+            for (let q in correctAnswers) {
+                if (userAnswers[q] === correctAnswers[q]) {
+                    score++;
+                    results.push(`Q${q}: ✅ Correct`);
+                } else {
+                    results.push(`Q${q}: ❌ Incorrect (Answer: ${correctAnswers[q]})`);
+                }
+            }
+            
+            const percentage = Math.round((score / total) * 100);
+            
+            let message = `📊 Score: ${score}/${total} (${percentage}%)\n\n`;
+            message += results.join('\n');
+            
+            if (percentage >= 80) {
+                feedback.className = 'feedback correct';
+                message += '\n\n🎉 Excellent! You\'re ready to move forward!';
+                markSectionComplete(sectionName);
+            } else if (percentage >= 60) {
+                feedback.className = 'feedback correct';
+                message += '\n\n👍 Good work! Review the questions you missed.';
+                if (sectionProgress[sectionName] < 2) {
+                    sectionProgress[sectionName] = 2;
+                    updateProgress();
+                }
+            } else {
+                feedback.className = 'feedback incorrect';
+                message += '\n\n⚠️ Review the material and try again!';
+            }
+            
+            feedback.textContent = message;
+            feedback.style.display = 'block';
+            feedback.style.whiteSpace = 'pre-line';
+        }
+
+        function checkFinalExam() {
+            const feedback = document.getElementById('final-exam-feedback');
+            
+            let score = 0;
+            let total = Object.keys(finalExamCorrectAnswers).length;
+            let results = [];
+            
+            for (let q in finalExamCorrectAnswers) {
+                if (finalExamAnswers[q] === finalExamCorrectAnswers[q]) {
+                    score++;
+                    results.push(`Q${q}: ✅ Correct`);
+                } else {
+                    results.push(`Q${q}: ❌ Incorrect (Answer: ${finalExamCorrectAnswers[q]})`);
+                }
+            }
+            
+            const percentage = Math.round((score / total) * 100);
+            
+            let message = `🏆 FINAL EXAM RESULTS 🏆\n`;
+            message += `📊 Score: ${score}/${total} (${percentage}%)\n\n`;
+            message += results.join('\n');
+            
+            if (percentage >= 90) {
+                message += '\n\n🎊 CONGRATULATIONS! 🎊\n';
+                message += '🏅 YOU HAVE MASTERED CALCULUS III! 🏅\n';
+                message += '🔧 Congratulations, Master Builder! 🔧';
+                feedback.className = 'feedback correct';
+                markSectionComplete('vector-calc');
+                progress = 100;
+                updateProgress();
+            } else if (percentage >= 70) {
+                message += '\n\n✨ Great job! You\'ve demonstrated solid understanding!\n';
+                message += '👍 Keep practicing to achieve mastery!';
+                feedback.className = 'feedback correct';
+            } else {
+                message += '\n\n📚 Keep studying! Review each section and try again.\n';
+                message += '💪 You\'ve got this!';
+                feedback.className = 'feedback incorrect';
+            }
+            
+            feedback.textContent = message;
+            feedback.style.display = 'block';
+            feedback.style.whiteSpace = 'pre-line';
+        }
+
+        // ============================================
+        // CANVAS DRAWING FUNCTIONS
+        // ============================================
+        function drawSectionDiagrams(sectionId) {
+            switch(sectionId) {
+                case 'vectors':
+                    drawVector3D();
+                    drawCrossProduct();
+                    break;
+                case 'vector-functions':
+                    drawHelix();
+                    break;
+                case 'multivariable':
+                    drawSurface1();
+                    drawContour();
+                    break;
+                case 'partial':
+                    drawTangentPlane();
+                    drawGradient();
+                    break;
+                case 'multiple':
+                    drawPolar();
+                    break;
+                case 'vector-calc':
+                    drawVectorField();
+                    break;
+            }
+        }
+
+        function drawVector3D() {
+            const canvas = document.getElementById('vector3d');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            
+            // Clear
+            ctx.fillStyle = '#2d2d2d';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            
+            // Draw 3D axes
+            ctx.strokeStyle = '#FFD700';
+            ctx.lineWidth = 2;
+            
+            // X axis
+            ctx.beginPath();
+            ctx.moveTo(centerX - 150, centerY + 50);
+            ctx.lineTo(centerX + 150, centerY - 50);
+            ctx.stroke();
+            ctx.fillStyle = '#FFD700';
+            ctx.fillText('x', centerX + 160, centerY - 45);
+            
+            // Y axis
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY + 100);
+            ctx.lineTo(centerX, centerY - 100);
+            ctx.stroke();
+            ctx.fillText('y', centerX + 5, centerY - 110);
+            
+            // Z axis (diagonal)
+            ctx.beginPath();
+            ctx.moveTo(centerX - 80, centerY + 80);
+            ctx.lineTo(centerX + 80, centerY - 80);
+            ctx.stroke();
+            ctx.fillText('z', centerX + 90, centerY - 85);
+            
+            // Draw a vector
+            ctx.strokeStyle = '#FFC107';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY - 50);
+            ctx.lineTo(centerX + 60, centerY - 30);
+            ctx.lineTo(centerX + 55, centerY - 40);
+            ctx.strokeStyle = '#FFC107';
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            
+            // Arrowhead
+            ctx.beginPath();
+            ctx.moveTo(centerX + 60, centerY - 30);
+            ctx.lineTo(centerX + 50, centerY - 35);
+            ctx.moveTo(centerX + 60, centerY - 30);
+            ctx.lineTo(centerX + 55, centerY - 40);
+            ctx.stroke();
+            
+            ctx.fillStyle = '#FFC107';
+            ctx.fillText('v', centerX + 70, centerY - 25);
+            
+            // Label
+            ctx.fillStyle = '#FFEB3B';
+            ctx.font = '14px Courier New';
+            ctx.fillText('3D Coordinate System', 10, 25);
+        }
+
+        function drawCrossProduct() {
+            const canvas = document.getElementById('crossProduct');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            
+            ctx.fillStyle = '#2d2d2d';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            
+            // Draw axes
+            ctx.strokeStyle = '#FFD700';
+            ctx.lineWidth = 2;
+            
+            // X axis
+            ctx.beginPath();
+            ctx.moveTo(centerX - 180, centerY);
+            ctx.lineTo(centerX + 80, centerY);
+            ctx.stroke();
+            ctx.fillStyle = '#FFD700';
+            ctx.fillText('x', centerX + 90, centerY + 5);
+            
+            // Y axis
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY + 100);
+            ctx.lineTo(centerX, centerY - 100);
+            ctx.stroke();
+            ctx.fillText('y', centerX + 10, centerY - 110);
+            
+            // Z axis (pointing up)
+            ctx.beginPath();
+            ctx.moveTo(centerX - 50, centerY + 50);
+            ctx.lineTo(centerX + 50, centerY - 50);
+            ctx.stroke();
+            ctx.fillText('z', centerX + 60, centerY - 55);
+            
+            // Vector u (along x)
+            ctx.strokeStyle = '#4CAF50';
+            ctx.lineWidth = 4;
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.lineTo(centerX + 100, centerY);
+            ctx.stroke();
+            // Arrow
+            ctx.beginPath();
+            ctx.moveTo(centerX + 100, centerY);
+            ctx.lineTo(centerX + 90, centerY - 8);
+            ctx.moveTo(centerX + 100, centerY);
+            ctx.lineTo(centerX + 90, centerY + 8);
+            ctx.stroke();
+            ctx.fillStyle = '#4CAF50';
+            ctx.fillText('u', centerX + 110, centerY + 5);
+            
+            // Vector v (along y)
+            ctx.strokeStyle = '#2196F3';
+            ctx.lineWidth = 4;
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.lineTo(centerX - 50, centerY - 86);
+            ctx.stroke();
+            // Arrow
+            ctx.beginPath();
+            ctx.moveTo(centerX - 50, centerY - 86);
+            ctx.lineTo(centerX - 45, centerY - 73);
+            ctx.moveTo(centerX - 50, centerY - 86);
+            ctx.lineTo(centerX - 60, centerY - 80);
+            ctx.stroke();
+            ctx.fillStyle = '#2196F3';
+            ctx.fillText('v', centerX - 70, centerY - 90);
+            
+            // Cross product u × v (along z, up)
+            ctx.strokeStyle = '#FF5722';
+            ctx.lineWidth = 4;
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.lineTo(centerX - 30, centerY - 30);
+            ctx.stroke();
+            // Arrow
+            ctx.beginPath();
+            ctx.moveTo(centerX - 30, centerY - 30);
+            ctx.lineTo(centerX - 35, centerY - 20);
+            ctx.moveTo(centerX - 30, centerY - 30);
+            ctx.lineTo(centerX - 22, centerY - 25);
+            ctx.stroke();
+            ctx.fillStyle = '#FF5722';
+            ctx.fillText('u × v', centerX - 50, centerY - 40);
+            
+            ctx.fillStyle = '#FFEB3B';
+            ctx.font = '14px Courier New';
+            ctx.fillText('Cross Product: Perpendicular to both vectors', 10, 25);
+        }
+
+        function drawHelix() {
+            const canvas = document.getElementById('helix');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            
+            ctx.fillStyle = '#2d2d2d';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 1.5;
+            
+            // Draw axes
+            ctx.strokeStyle = '#FFD700';
+            ctx.lineWidth = 2;
+            
+            // Z axis (vertical)
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY + 100);
+            ctx.lineTo(centerX, centerY - 150);
+            ctx.stroke();
+            ctx.fillStyle = '#FFD700';
+            ctx.fillText('z', centerX + 10, centerY - 160);
+            
+            // Draw helix
+            ctx.strokeStyle = '#FFC107';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            
+            for (let t = 0; t <= 4 * Math.PI; t += 0.05) {
+                const x = centerX + 80 * Math.cos(t);
+                const y = centerY - 40 * t;
+                
+                if (t === 0) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+            }
+            ctx.stroke();
+            
+            // Draw projection circle at bottom
+            ctx.strokeStyle = '#4CAF50';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.ellipse(centerX, centerY, 80, 20, 0, 0, 2 * Math.PI);
+            ctx.stroke();
+            
+            ctx.fillStyle = '#FFEB3B';
+            ctx.font = '14px Courier New';
+            ctx.fillText('Helix: r(t) = 〈cos(t), sin(t), t〉', 10, 25);
+        }
+
+        function drawSurface1() {
+            const canvas = document.getElementById('surface1');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            
+            ctx.fillStyle = '#2d2d2d';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2 + 50;
+            
+            // Draw axes
+            ctx.strokeStyle = '#FFD700';
+            ctx.lineWidth = 2;
+            
+            // X axis
+            ctx.beginPath();
+            ctx.moveTo(centerX - 150, centerY + 50);
+            ctx.lineTo(centerX + 150, centerY - 50);
+            ctx.stroke();
+            ctx.fillStyle = '#FFD700';
+            ctx.fillText('x', centerX + 160, centerY - 45);
+            
+            // Y axis
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY + 100);
+            ctx.lineTo(centerX, centerY - 100);
+            ctx.stroke();
+            ctx.fillText('y', centerX + 10, centerY - 110);
+            
+            // Z axis
+            ctx.beginPath();
+            ctx.moveTo(centerX - 80, centerY + 80);
+            ctx.lineTo(centerX + 80, centerY - 80);
+            ctx.stroke();
+            ctx.fillText('z', centerX + 90, centerY - 85);
+            
+            // Draw paraboloid surface
+            ctx.strokeStyle = '#FFC107';
+            ctx.lineWidth = 2;
+            
+            // Draw ellipses to represent the surface
+            for (let z = 0; z <= 80; z += 15) {
+                const radius = Math.sqrt(z) * 20;
+                ctx.beginPath();
+                ctx.ellipse(
+                    centerX - z * 0.4,
+                    centerY - z * 0.6,
+                    radius * 0.8,
+                    radius * 0.3,
+                    0, 0, 2 * Math.PI
+                );
+                ctx.stroke();
+            }
+            
+            // Draw surface lines
+            for (let angle = 0; angle < 2 * Math.PI; angle += Math.PI / 4) {
+                ctx.beginPath();
+                for (let r = 0; r <= 4; r += 0.1) {
+                    const x = centerX + r * 20 * Math.cos(angle) * 0.8 - (r * r) * 0.4;
+                    const y = centerY - (r * r) * 0.6 + r * 20 * Math.sin(angle) * 0.3;
+                    if (r === 0) {
+                        ctx.moveTo(x, y);
+                    } else {
+                        ctx.lineTo(x, y);
+                    }
+                }
+                ctx.stroke();
+            }
+            
+            ctx.fillStyle = '#FFEB3B';
+            ctx.font = '14px Courier New';
+            ctx.fillText('Paraboloid: z = x² + y²', 10, 25);
+        }
+
+        function drawContour() {
+            const canvas = document.getElementById('contour');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            
+            ctx.fillStyle = '#2d2d2d';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            
+            // Draw axes
+            ctx.strokeStyle = '#FFD700';
+            ctx.lineWidth = 2;
+            
+            ctx.beginPath();
+            ctx.moveTo(centerX - 200, centerY);
+            ctx.lineTo(centerX + 200, centerY);
+            ctx.stroke();
+            ctx.fillStyle = '#FFD700';
+            ctx.fillText('x', centerX + 210, centerY + 5);
+            
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY - 180);
+            ctx.lineTo(centerX, centerY + 180);
+            ctx.stroke();
+            ctx.fillText('y', centerX + 10, centerY - 190);
+            
+            // Draw contour circles (level curves)
+            const levels = [1, 2, 3, 4];
+            const colors = ['#4CAF50', '#2196F3', '#FF9800', '#F44336'];
+            
+            levels.forEach((level, index) => {
+                const radius = level * 40;
+                ctx.strokeStyle = colors[index];
+                ctx.lineWidth = 2;
+                ctx.setLineDash([5, 5]);
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
+                ctx.stroke();
+                ctx.setLineDash([]);
+                
+                // Label
+                ctx.fillStyle = colors[index];
+                ctx.fillText(`k = ${level * level}`, centerX + radius + 5, centerY);
+            });
+            
+            ctx.fillStyle = '#FFEB3B';
+            ctx.font = '14px Courier New';
+            ctx.fillText('Level Curves: x² + y² = k', 10, 25);
+        }
+
+        function drawTangentPlane() {
+            const canvas = document.getElementById('tangentPlane');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            
+            ctx.fillStyle = '#2d2d2d';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2 + 30;
+            
+            // Draw axes
+            ctx.strokeStyle = '#FFD700';
+            ctx.lineWidth = 2;
+            
+            ctx.beginPath();
+            ctx.moveTo(centerX - 150, centerY + 50);
+            ctx.lineTo(centerX + 150, centerY - 50);
+            ctx.stroke();
+            ctx.fillStyle = '#FFD700';
+            ctx.fillText('x', centerX + 160, centerY - 45);
+            
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY + 100);
+            ctx.lineTo(centerX, centerY - 120);
+            ctx.stroke();
+            ctx.fillText('y', centerX + 10, centerY - 130);
+            
+            ctx.beginPath();
+            ctx.moveTo(centerX - 60, centerY + 60);
+            ctx.lineTo(centerX + 60, centerY - 60);
+            ctx.stroke();
+            ctx.fillText('z', centerX + 70, centerY - 65);
+            
+            // Draw surface (curve)
+            ctx.strokeStyle = '#4CAF50';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            for (let x = -80; x <= 80; x += 5) {
+                const z = x * x / 200;
+                const px = centerX + x;
+                const py = centerY - z;
+                if (x === -80) {
+                    ctx.moveTo(px, py);
+                } else {
+                    ctx.lineTo(px, py);
+                }
+            }
+            ctx.stroke();
+            
+            // Draw tangent plane
+            ctx.strokeStyle = '#FFC107';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(centerX - 80, centerY - 5);
+            ctx.lineTo(centerX + 80, centerY + 5);
+            ctx.stroke();
+            
+            // Draw point of tangency
+            ctx.fillStyle = '#FF5722';
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 5, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            ctx.fillStyle = '#FFEB3B';
+            ctx.font = '14px Courier New';
+            ctx.fillText('Tangent Plane at Point', 10, 25);
+        }
+
+        function drawGradient() {
+            const canvas = document.getElementById('gradient');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            
+            ctx.fillStyle = '#2d2d2d';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            
+            // Draw axes
+            ctx.strokeStyle = '#FFD700';
+            ctx.lineWidth = 1;
+            
+            ctx.beginPath();
+            ctx.moveTo(centerX - 220, centerY);
+            ctx.lineTo(centerX + 220, centerY);
+            ctx.stroke();
+            
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY - 180);
+            ctx.lineTo(centerX, centerY + 180);
+            ctx.stroke();
+            
+            // Draw gradient vectors for f(x, y) = x² + y² (radial field)
+            ctx.strokeStyle = '#FFC107';
+            ctx.lineWidth = 2;
+            
+            for (let x = -3; x <= 3; x++) {
+                for (let y = -3; y <= 3; y++) {
+                    if (x === 0 && y === 0) continue;
+                    
+                    const px = centerX + x * 60;
+                    const py = centerY - y * 50;
+                    
+                    // Gradient is (2x, 2y)
+                    const gx = 2 * x * 15;
+                    const gy = -2 * y * 12;
+                    
+                    ctx.beginPath();
+                    ctx.moveTo(px, py);
+                    ctx.lineTo(px + gx, py + gy);
+                    ctx.stroke();
+                    
+                    // Arrow
+                    const angle = Math.atan2(gy, gx);
+                    ctx.beginPath();
+                    ctx.moveTo(px + gx, py + gy);
+                    ctx.lineTo(px + gx - 8 * Math.cos(angle - 0.3), py + gy - 8 * Math.sin(angle - 0.3));
+                    ctx.moveTo(px + gx, py + gy);
+                    ctx.lineTo(px + gx - 8 * Math.cos(angle + 0.3), py + gy - 8 * Math.sin(angle + 0.3));
+                    ctx.stroke();
+                }
+            }
+            
+            ctx.fillStyle = '#FFEB3B';
+            ctx.font = '14px Courier New';
+            ctx.fillText('Gradient Field of z = x² + y²', 10, 25);
+            ctx.fillText('∇f = 〈2x, 2y〉 points outward from origin', 10, 45);
+        }
+
+        function drawPolar() {
+            const canvas = document.getElementById('polar');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            
+            ctx.fillStyle = '#2d2d2d';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            
+            // Draw polar grid
+            ctx.strokeStyle = '#FFD700';
+            ctx.lineWidth = 1;
+            
+            // Concentric circles
+            for (let r = 40; r <= 120; r += 40) {
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, r, 0, 2 * Math.PI);
+                ctx.stroke();
+            }
+            
+            // Radial lines
+            for (let angle = 0; angle < 2 * Math.PI; angle += Math.PI / 4) {
+                ctx.beginPath();
+                ctx.moveTo(centerX, centerY);
+                ctx.lineTo(
+                    centerX + 140 * Math.cos(angle),
+                    centerY - 140 * Math.sin(angle)
+                );
+                ctx.stroke();
+            }
+            
+            // Label axes
+            ctx.fillStyle = '#FFD700';
+            ctx.fillText('x', centerX + 150, centerY + 5);
+            ctx.fillText('y', centerX + 10, centerY - 150);
+            
+            // Show a point in polar coordinates
+            const r = 80;
+            const theta = Math.PI / 4;
+            const px = centerX + r * Math.cos(theta);
+            const py = centerY - r * Math.sin(theta);
+            
+            ctx.fillStyle = '#FF5722';
+            ctx.beginPath();
+            ctx.arc(px, py, 6, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Draw radius line
+            ctx.strokeStyle = '#FF5722';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.lineTo(px, py);
+            ctx.stroke();
+            
+            // Labels
+            ctx.fillStyle = '#FF5722';
+            ctx.fillText(`(r, θ) = (${r/40}, π/4)`, px + 10, py - 10);
+            
+            // Show angle
+            ctx.strokeStyle = '#FFC107';
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 30, 0, theta, true);
+            ctx.stroke();
+            
+            ctx.fillStyle = '#FFEB3B';
+            ctx.font = '14px Courier New';
+            ctx.fillText('Polar Coordinates', 10, 25);
+            ctx.fillText('x = r cos(θ), y = r sin(θ)', 10, 45);
+            ctx.fillText('dA = r dr dθ', 10, 65);
+        }
+
+        function drawVectorField() {
+            const canvas = document.getElementById('vectorField');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            
+            ctx.fillStyle = '#2d2d2d';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            
+            // Draw simple rotational field: F = 〈-y, x〉
+            ctx.strokeStyle = '#4CAF50';
+            ctx.lineWidth = 2;
+            
+            for (let x = -3; x <= 3; x++) {
+                for (let y = -3; y <= 3; y++) {
+                    const px = centerX + x * 60;
+                    const py = centerY - y * 50;
+                    
+                    // Vector components
+                    const fx = -y * 10;
+                    const fy = x * 10;
+                    
+                    ctx.beginPath();
+                    ctx.moveTo(px, py);
+                    ctx.lineTo(px + fx, py - fy);
+                    ctx.stroke();
+                    
+                    // Arrow
+                    const angle = Math.atan2(-fy, fx);
+                    ctx.beginPath();
+                    ctx.moveTo(px + fx, py - fy);
+                    ctx.lineTo(px + fx - 6 * Math.cos(angle - 0.3), py - fy + 6 * Math.sin(angle - 0.3));
+                    ctx.moveTo(px + fx, py - fy);
+                    ctx.lineTo(px + fx - 6 * Math.cos(angle + 0.3), py - fy + 6 * Math.sin(angle + 0.3));
+                    ctx.stroke();
+                }
+            }
+            
+            ctx.fillStyle = '#FFEB3B';
+            ctx.font = '14px Courier New';
+            ctx.fillText('Rotational Field: F = 〈-y, x〉', 10, 25);
+            ctx.fillText('curl F ≠ 0 (rotational)', 10, 45);
+        }
+
+        // ============================================
+        // INITIALIZATION
+        // ============================================
+        window.onload = function() {
+            drawSectionDiagrams('introduction');
+            updateProgress();
+        };
+
+        // Draw diagrams when page loads
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                drawVector3D();
+            }, 500);
+        });
+    </script>
+</body>
+</html>

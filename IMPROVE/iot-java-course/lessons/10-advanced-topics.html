@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 10: Advanced Topics & Review - IoT Java Development Course</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="course-header">
+        <h1>MODULE 10: ADVANCED TOPICS & COURSE REVIEW</h1>
+    <h2>Cutting-Edge IoT and Preparation for Final Exam</h2>
+    </div>
+
+    <nav class="nav-container">
+        <ul class="nav-menu">
+            <li class="nav-item active" onclick="showSection('overview')">Overview</li>
+            <li class="nav-item" onclick="showSection('edge')">Edge Intelligence</li>
+            <li class="nav-item" onclick="showSection('ml')">Machine Learning</li>
+            <li class="nav-item" onclick="showSection('digital-twins')">Digital Twins</li>
+            <li class="nav-item" onclick="showSection('future')">Future of IoT</li>
+            <li class="nav-item" onclick="showSection('review')">Course Review</li>
+            <li class="nav-item" onclick="showSection('practice')">Practice</li>
+            <li class="nav-item" onclick="showSection('quiz')">Quiz</li>
+        </ul>
+    </nav>
+
+    <div class="progress-container">
+        <div class="progress-title">MODULE 10 PROGRESS</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="moduleProgress" style="width: 0%">0%</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content-section active" id="overview">
+            <div class="lesson-header">
+                <h1>Advanced IoT Topics</h1>
+                <p>Exploring and Preparing for the Future of IoT</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                IoT is rapidly evolving with new technologies and applications emerging constantly. This module explores advanced topics including edge AI, digital twins, new low-power wide-area networks, and the future directions of IoT technology. We also review key concepts from the course in preparation for the final exam.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">ADVANCED TOPICS COVERED</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Edge Intelligence:</span> Running AI models directly on edge devices</li>
+                    <li><span class="keyword">Machine Learning for IoT:</span> Anomaly detection, predictive analytics</li>
+                    <li><span class="keyword">Digital Twins:</span> Virtual representations of physical systems</li>
+                    <li><span class="keyword">Emerging Networks:</span> 5G, 6G, satellite IoT, LPWAN</li>
+                    <li><span class="keyword">IoT at Scale:</span> Multi-million device deployments</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">IoT Trend Overview</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Trend</th>
+                        <th>Impact</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td>5G for IoT</td>
+                        <td>High bandwidth, low latency, massive device density</td>
+                        <td>Deploying</td>
+                    </tr>
+                    <tr>
+                        <td>AI at Edge</td>
+                        <td>Real-time inference without cloud dependence</td>
+                        <td>Emerging</td>
+                    </tr>
+                    <tr>
+                        <td>Edge-Cloud Continuum</td>
+                        <td>Seamless processing across edge and cloud</td>
+                        <td>Developing</td>
+                    </tr>
+                    <tr>
+                        <td>Digital Twins</td>
+                        <td>Simulation, optimization, predictive maintenance</td>
+                        <td>Emerging</td>
+                    </tr>
+                    <tr>
+                        <td>Standardization</td>
+                        <td>Matter, Thread, oneM2M interoperability</td>
+                        <td>Progressing</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="content-section" id="edge">
+            <div class="lesson-header">
+                <h1>Edge Intelligence</h1>
+                <p>Running AI at the Edge</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                Edge intelligence brings AI processing to devices at the network edge. This reduces latency, bandwidth usage, and enables operation without cloud connectivity. With hardware acceleration (NPUs, TPUs, GPUs) embedded in devices, even sensors can run sophisticated models.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">EDGE AI ADVANTAGES</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Latency:</span> Real-time inference (<10ms) vs cloud (100-1000ms)</li>
+                    <li><span class="keyword">Privacy:</span> Data stays on device, not transmitted</li>
+                    <li><span class="keyword">Bandwidth:</span> Transmit only insights, not raw data</li>
+                    <li><span class="keyword">Reliability:</span> Operate offline or with intermittent connectivity</li>
+                    <li><span class="keyword">Cost:</span> Lower cloud compute and data transfer costs</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Model Optimization for Edge Devices</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">EDGE AI MODEL TECHNIQUES</div>
+                <ul class="formula-list">
+                    <li><span class="keyword">Quantization:</span> Reduce precision (FP32 → FP16 → INT8) without significant accuracy loss</li>
+                    <li><span class="keyword">Pruning:</span> Remove unnecessary network weights, resulting in smaller models</li>
+                    <li><span class="keyword">Knowledge Distillation:</span> Train smaller model to mimic larger model</li>
+                    <li><span class="keyword">Neural Architecture Search:</span> Automatically find efficient model architectures</li>
+                    <li><span class="keyword">TensorFlow Lite:</span> Framework for deploying TensorFlow models on mobile/embedded</li>
+                    <li><span class="keyword">ONNX Runtime:</span> Cross-platform inference optimization</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Edge Inference with TensorFlow Lite Java</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">TENSORFLOW LITE EDGE CLASSIFICATION</div>
+                <pre class="code-block">
+import org.tensorflow.lite.Interpreter;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+
+public class EdgeClassifier {
+    private Interpreter tflite;
+    private ByteBuffer inputBuffer;
+    
+    public void loadModel(String modelPath) {
+        tflite = new Interpreter(loadModelFile(modelPath));
+        inputBuffer = ByteBuffer.allocateDirect(4 * 224 * 224 * 3);
+        inputBuffer.order(ByteOrder.nativeOrder());
+    }
+    
+    public float[] classify(Bitmap image) {
+        // Preprocess image to model input format
+        preprocessImage(image, inputBuffer);
+        
+        // Run inference
+        float[][] output = new float[1][1000]; // ImageNet classes
+        tflite.run(inputBuffer, output);
+        
+        return output[0]; // Class probabilities
+    }
+    
+    private void preprocessImage(Bitmap image, ByteBuffer buffer) {
+        // Resize to 224x224
+        Bitmap resized = Bitmap.createScaledBitmap(image, 224, 224, true);
+        
+        // Normalize pixel values to [-1, 1]
+        int[] pixels = new int[224 * 224];
+        resized.getPixels(pixels, 0, 224, 0, 0, 224, 224);
+        
+        int pixelIndex = 0;
+        for (int i = 0; i < 224 * 224; i++) {
+            int pixel = pixels[i];
+            buffer.putFloat(((pixel >> 16) & 0xFF) / 127.0f - 1.0f); // R
+            buffer.putFloat(((pixel >> 8) & 0xFF) / 127.0f - 1.0f);  // G
+            buffer.putFloat((pixel & 0xFF) / 127.0f - 1.0f);         // B
+        }
+    }
+}
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Edge AI Use Cases</h3>
+
+            <div class="example-box">
+                <div class="example-title">EXAMPLE APPLICATIONS: EDGE AI</div>
+                <ul class="example-list">
+                    <li><span class="keyword">Computer Vision:</span> Object detection in cameras (people, vehicles, defects)</li>
+                    <li><span class="keyword">Audio:</span> Keyword spotting, speech recognition, sound classification</li>
+                    <li><span class="keyword">Anomaly Detection:</span> Predictive maintenance (vibration, temperature)</li>
+                    <li><span class="keyword">Signal Processing:</span> Sensor classification, fault detection</li>
+                    <li><span class="keyword">Predictive Analytics:</span> Time-series forecasting at device level</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">EDGE AI CHALLENGES</div>
+                <ul class="warning-list">
+                    <li>Memory: Limited RAM/flash for storing models</li>
+                    <li>Compute: Limited CPU/NPU, may affect battery life</li>
+                    <li>Model Updates: Over-the-air updates require careful design</li>
+                    <li>Accuracy-Performance: Tradeoff between accuracy and model size</li>
+                    <li>Hardware Variation: Models must work across device generations</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section" id="ml">
+            <div class="lesson-header">
+                <h1>Machine Learning for IoT</h1>
+                <p>From Data Collection to Insights</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                IoT generates massive datasets ideal for machine learning. From predictive maintenance to smart automation, ML extracts value from sensor data. This section covers common ML applications in IoT and how to implement them with Java.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">COMMON IOT ML APPLICATIONS</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Predictive Maintenance:</span> Predict equipment failures before they occur</li>
+                    <li><span class="keyword">Anomaly Detection:</span> Identify unusual patterns in time-series data</li>
+                    <li><span class="keyword">Energy Optimization:</span> Predict and reduce energy consumption</li>
+                    <li><span class="keyword">Demand Forecasting:</span> Predict product/service demand</li>
+                    <li><span class="keyword">Smart Automation:</span> Learn usage patterns to optimize systems</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Predictive Maintenance with ML</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">PREDICTIVE MAINTENANCE WORKFLOW</div>
+                <ul class="formula-list">
+                    <li><span class="keyword">Data Collection:</span> Sensors collect vibration, temperature, current draw, acoustic</li>
+                    <li><span class="keyword">Feature Engineering:</span> Extract statistical and frequency-domain features</li>
+                    <li><span class="keyword">Model Training:</span> Train on historical data to predict remaining useful life (RUL)</li>
+                    <li><span class="keyword">Inference:</span> Deploy model to edge or cloud for real-time prediction</li>
+                    <li><span class="keyword">Action:</span> Schedule maintenance before failure</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Predictive Maintenance with Deeplearning4j</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">DEEPLEARNING4J PREDICTIVE MAINTENANCE MODEL</div>
+                <pre class="code-block">
+import org.deeplearning4j.nn.api.OptimizationAlgorithm;
+import org.deeplearning4j.nn.conf.*;
+import org.deeplearning4j.nn.conf.layers.*;
+import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
+import org.deeplearning4j.optimize.listeners.ScoreIterationListener;
+import org.nd4j.linalg.learning.config.Adam;
+
+public class PredictiveMaintenanceModel {
+    private MultiLayerNetwork network;
+    
+    public void buildModel() {
+        int inputSize = 50; // Features: vibration_mean, temp_mean, etc.
+        int outputSize = 1; // Remaining useful life (RUL) in hours
+        
+        MultiLayerConfiguration conf = new NeuralNetConfiguration.Builder()
+            .seed(123)
+            .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
+            .updater(new Adam(0.001))
+            .list()
+            .layer(0, new DenseLayer.Builder()
+                .nIn(inputSize)
+                .nOut(64)
+                .activation(Activation.RELU)
+                .build())
+            .layer(1, new DenseLayer.Builder()
+                .nIn(64)
+                .nOut(32)
+                .activation(Activation.RELU)
+                .build())
+            .layer(2, new LSTM.Builder()
+                .nIn(32)
+                .nOut(32)
+                .build())
+            .layer(3, new DenseLayer.Builder()
+                .nIn(32)
+                .nOut(16)
+                .activation(Activation.RELU)
+                .build())
+            .layer(4, new OutputLayer.Builder(LossFunctions.LossFunction.MSE)
+                .nIn(16)
+                .nOut(outputSize)
+                .activation(Activation.IDENTITY)
+                .build())
+            .build();
+            
+        network = new MultiLayerNetwork(conf);
+        network.init();
+        network.setListeners(new ScoreIterationListener(100));
+    }
+    
+    public void train(INDArray features, INDArray labels) {
+        network.fit(features, labels);
+    }
+    
+    public float predictRemainingUsefulLife(float[] features) {
+        INDArray input = Nd4j.create(features).reshape(1, features.length);
+        INDArray output = network.output(input, false);
+        return output.getFloat(0);
+    }
+}
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Anomaly Detection with Unsupervised Learning</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">ISOLATION FOREST ANOMALY DETECTION (WELA IMPLEMENTATION)</div>
+                <pre class="code-block">
+import smile.clustering.IsolationForest;
+import smile.data.DataFrame;
+import smile.data.Tuple;
+
+public class AnomalyDetector {
+    private IsolationForest model;
+    private DataFrame normalData;
+    
+    public void trainModel(DataFrame dataset) {
+        // Train isolation forest to identify anomalies
+        // Anomaly score: close to 1 = anomaly, close to 0 = normal
+        model = IsolationForest.fit(dataset, 100, 0.01);
+    }
+    
+    public boolean isAnomaly(Tuple instance) {
+        double anomalyScore = model.anomalyScore(instance);
+        // Threshold tunable based on precision/recall requirements
+        return anomalyScore > 0.6;
+    }
+    
+    public boolean isAnomaly(double[] features) {
+        double anomalyScore = model.anomalyScore(features);
+        return anomalyScore > 0.6;
+    }
+}
+
+// Integration with MQTT sensor stream
+public void onSensorData(SensorData data) {
+    double[] features = extractFeatures(data);
+    
+    if (anomalyDetector.isAnomaly(features)) {
+        Alert alert = new Alert(
+            PRIORITY.HIGH,
+            "SENSOR_ANOMALY",
+            "Anomaly detected for device " + data.getDeviceId(),
+            data.getDeviceId()
+        );
+        alertService.sendAlert(alert);
+    }
+}
+                </pre>
+            </div>
+        </div>
+
+        <div class="content-section" id="digital-twins">
+            <div class="lesson-header">
+                <h1>Digital Twins</h1>
+                <p>Virtual Replicas of Physical Systems</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                A digital twin is a virtual representation of a physical asset, system, or process. It uses real-time data to simulate behavior, predict performance, and enable "what-if" analysis. Digital twins are revolutionizing manufacturing, healthcare, urban planning, and more.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">DIGITAL TWIN COMPONENTS</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Physical Asset:</span> Real-world device, machine, or system</li>
+                    <li><span class="keyword">Data Layer:</span> Real-time sensor data, telemetry, historical logs</li>
+                    <li><span class="keyword">Model:</span> Mathematical/physical model describing behavior</li>
+                    <li><span class="keyword">Simulation:</span> Engine to run and predict outcomes</li>
+                    <li><span class="keyword">Visualization:</span> 3D models, dashboards, control interfaces</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Digital Twin Architecture</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">DIGITAL TWIN IMPLEMENTATION PATTERN</div>
+                <div class="diagram-container" style="text-align:center; padding: 20px; background: #222; color: #00FF00; font-family: monospace; font-size: 12px;">
+<pre>
+   +------------+
+   | Physical   |
+   |  Asset     |  (e.g., HVAC system)
+   +-----+------+
+         |
+         | Sensors (temp, airflow, energy)
+         v
+   +------------+      +------------+      +------------+
+   |  Data      | ---> |   Model    | ---> | Simulation |
+   |  Stream    |      |  (physics)|      |   Engine   |
+   +------------+      +-----+------+      +-----+------+
+         ^                     |                   |
+         |                     v                   v
+   +------------+      +------------+      +------------+
+   |  Digital   | <--- |  Predict   | <--- | What-If    |
+   |  Twin UI   |      |  ion       |      | Scenarios  |
+   +------------+      +------------+      +------------+
+         |
+         v
+   Operator actions, optimizations
+</pre>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Digital Twin Use Cases</h3>
+
+            <div class="example-box">
+                <div class="example-title">APPLICATIONS: DIGITAL TWINS</div>
+                <ul class="example-list">
+                    <li><span class="keyword">Manufacturing:</span> Predictive maintenance, production optimization, virtual commissioning</li>
+                    <li><span class="keyword">Healthcare:</span> Patient monitoring (ICU, surgical scenarios), drug simulation</li>
+                    <li><span class="keyword">Smart Cities:</span> Traffic flow optimization, energy management, disaster simulation</li>
+                    <li><span class="keyword">Automotive:</span> Vehicle simulation, driver behavior analysis, fleet optimization</li>
+                    <li><span class="keyword">Buildings:</span> HVAC optimization, space utilization, energy forecasting</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Simple Digital Twin Model Implementation</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">DIGITAL TWIN FRAMEWORK (JAVA)</div>
+                <pre class="code-block">
+public abstract class DigitalTwin&lt;T&gt; {
+    private String twinId;
+    private String physicalAssetId;
+    private Map&lt;String, Object&gt; state = new ConcurrentHashMap&lt;&gt;();
+    private List&lt;String&gt; subscribedTopics = new ArrayList&lt;&gt;();
+    
+    @Autowired
+    private MqttGateway mqttGateway;
+    
+    public void subscribeToPhysical(String topic) {
+        subscribedTopics.add(topic);
+        mqttGateway.subscribe(topic, this::onPhysicalUpdate);
+    }
+    
+    public void onPhysicalUpdate(String topic, T payload) {
+        // Update twin state with data from physical asset
+        updateState(payload);
+        
+        // Run simulation/prediction
+        T prediction = simulate();
+        
+        // Update subscribers
+        notifySubscribers(prediction);
+        
+        // Check for anomalies (state divergence from prediction)
+        if (isStateAnomalous()) {
+            triggerAlert();
+        }
+    }
+    
+    protected abstract void updateState(T payload);
+    protected abstract T simulate();
+    protected abstract boolean isStateAnomalous();
+    protected abstract void notifySubscribers(T prediction);
+}
+
+// Example: HVAC Digital Twin
+@Service
+public class HvacDigitalTwin extends DigitalTwin&lt;HvacReading&gt; {
+    
+    @Override
+    protected void updateState(HvacReading reading) {
+        state.put("temperature", reading.getTemperature());
+        state.put("humidity", reading.getHumidity());
+        state.put("airflow", reading.getAirflow());
+        state.put("energyConsumption", reading.getEnergyConsumption());
+        state.put("lastUpdate", System.currentTimeMillis());
+    }
+    
+    @Override
+    protected HvacReading simulate() {
+        // Physics-based HVAC model
+        double temp = (double) state.get("temperature");
+        double targetTemp = getTargetTemperature();
+        double airflow = (double) state.get("airflow");
+        
+        // Predict temperature change (simplified)
+        double delta = (targetTemp - temp) * 0.1;
+        double predictedTemp = temp + delta;
+        
+        HvacReading prediction = new HvacReading();
+        prediction.setDeviceId(physicalAssetId);
+        prediction.setTemperature(predictedTemp);
+        prediction.setTimestamp(System.currentTimeMillis() + 60000); // 1-min ahead
+        
+        return prediction;
+    }
+    
+    @Override
+    protected boolean isStateAnomalous() {
+        HvacReading prediction = simulate();
+        double actualTemp = (double) state.get("temperature");
+        double predictedTemp = prediction.getTemperature();
+        
+        // Flag if actual differs from prediction by >5°C
+        return Math.abs(actualTemp - predictedTemp) > 5.0;
+    }
+}
+                </pre>
+            </div>
+        </div>
+
+        <div class="content-section" id="future">
+            <div class="lesson-header">
+                <h1>The Future of IoT</h1>
+                <p>Emerging Trends and What's Next</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                IoT continues evolving rapidly. This section explores emerging technologies, standards, and applications that will shape the future of connected devices.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">EMERGING IOT STANDARDS</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Matter:</span> Unifying standard for smart home (threadover WiFi, Ethernet). Backed by Amazon, Apple, Google.</li>
+                    <li><span class="keyword">Thread:</span> Low-power mesh networking for home automation. IPv6-based, 6LoWPAN.</li>
+                    <li><span class="keyword">oneM2M:</span> Global standard for M2M/IOT service layer.</li>
+                    <li><span class="keyword">OPC UA:</span> Industrial IoT interoperability standard.</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">New Connectivity Technologies</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Technology</th>
+                        <th>Range</th>
+                        <th>Key Attributes</th>
+                        <th>Target Applications</th>
+                    </tr>
+                    <tr>
+                        <td>5G IoT (RedCap)</td>
+                        <td>Kilometers</td>
+                        <td>Low-cost modems, <10ms latency</td>
+                        <td>Industrial sensors, wearables</td>
+                    </tr>
+                    <tr>
+                        <td>NB-IoT</td>
+                        <td>Tens of km</td>
+                        <td>Deep indoor penetration, years of battery</td>
+                        <td>Metering, asset tracking</td>
+                    </tr>
+                    <tr>
+                        <td>Wi-Fi 7</td>
+                        <td>~100m</td>
+                        <td>46 Gbps, <5ms latency</td>
+                        <td>AR/VR, industrial automation</td>
+                    </tr>
+                    <tr>
+                        <td>Satellite IoT</td>
+                        <td>Global</td>
+                        <td>Distributed LEO constellations</td>
+                        <td>Rural/remote monitoring</td>
+                    </tr>
+                    <tr>
+                        <td>Wi-SUN</td>
+                        <td>Kilometers (mesh)</td>
+                        <td>IPv6 mesh, sub-GHz licensed-free</td>
+                        <td>Smart meters, city IoT</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3 class="subsection-title">IoT Integration with Emerging Technologies</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">SYNERGIES WITH OTHER TECH</div>
+                <ul class="formula-list">
+                    <li><span class="keyword">5G + IoT:</span> Massive IoT (massiveMIMO) for 1M devices/km², ultra-reliable low latency (URLLC) for mission-critical</li>
+                    <li><span class="keyword">AI + IoT (AIoT):</span> Autonomous decision-making at edge, predictive analytics</li>
+                    <li><span class="keyword">Blockchain + IoT:</span> Tamper-proof device identity, secure data sharing, micropayments for data</li>
+                    <li><span class="keyword">Quantum + IoT:</span> Quantum-resistant cryptography for long-lived devices</li>
+                    <li><span class="keyword">AR/VR + IoT:</span> Immersive interfaces for controlling IoT, visualizing digital twins</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">EXAMPLE: SATELLITE IOT FOR REMOTE ENVIRONMENTAL MONITORING</div>
+                <pre class="code-block">
+Scenario: 10,000 solar-powered environmental sensors in remote rainforest
+Network: Swarm or Starlink satellites for connectivity
+Benefits: No cellular towers needed, global coverage, low data rate sufficient
+
+Data flow:
+- Sensors collect: temperature, humidity, CO2 levels, solar array status
+- LoRaWAN to local gateway (short-range mesh if needed)
+- Gateway to satellite terminal (Iridium 9603, Swarm M138)
+- Satellite uploads small packets (10-100 bytes) hourly
+- Ground station receives data, forwards to cloud analytics
+- Cloud processes: climate models, anomaly detection (illegal logging alerts)
+- Researchers access via dashboard, receive alerts on smartphone devices
+
+Challenges:
+- Satellite time on cost: optimize by batching data, sending hourly vs continuous
+- Weather conditions affecting satellite visibility
+- Satellite ephemeris prediction for scheduled transmissions
+                </pre>
+            </div>
+        </div>
+
+        <div class="content-section" id="review">
+            <div class="lesson-header">
+                <h1>Course Review</h1>
+                <p>Preparing for the Final Exam</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <div class="attention-box important">
+                <div class="important-title">COURSE KEY TAKEAWAYS</div>
+                <ul class="important-list">
+                    <li><span class="keyword">IoT Fundamentals:</span> Architecture, components, connectivity (WiFi, BLE, Zigbee, LoRaWAN)</li>
+                    <li><span class="keyword">Java for IoT:</span> Java ME, Pi4J, Android Things, libraries (Kura, Pi4J, TinyB)</li>
+                    <li><span class="keyword">Hardware & Sensors:</span> GPIO, SPI, I2C, ADC, sensor programming</li>
+                    <li><span class="keyword">Protocols:</span> MQTT, HTTP/REST, CoAP, WebSockets, protocol selection</li>
+                    <li><span class="keyword">Development Tools:</span> IDEs, build tools, debugging, OTA updates</li>
+                    <li><span class="keyword">Connectivity:</span> WiFi, BLE, Zigbee, LoRaWAN, mobile/cellular networks</li>
+                    <li><span class="keyword">Data Processing:</span> Time-series databases, cloud IoT, stream processing, edge computing</li>
+                    <li><span class="keyword">Security:</span> Authentication (MTLS, certs, JWT), encryption, firmware integrity, best practices</li>
+                    <li><span class="keyword">Application Development:</span> Architecture, device shadows, REST APIs, WebSocket, integration, deployment</li>
+                    <li><span class="keyword">Advanced Topics:</span> Edge AI, ML for IoT, digital twins, future directions</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Exam Topics Distribution</h3>
+
+            <div class="info-section">
+                <div class="info-title">FINAL EXAM COVERAGE</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Modules 1-2 (20%):</span> IoT fundamentals, Java IoT basics</li>
+                    <li><span class="keyword">Modules 3-4 (15%):</span> Hardware & sensors, communication protocols</li>
+                    <li><span class="keyword">Modules 5-6 (15%):</span> Development tools, connectivity & networking</li>
+                    <li><span class="keyword">Modules 7-8 (20%):</span> Data processing, security</li>
+                    <li><span class="keyword">Module 9 (15%):</span> Building IoT applications</li>
+                    <li><span class="keyword">Module 10 (15%):</span> Advanced topics</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Practice Problems Review</h3>
+
+            <div class="warning-box">
+                <div class="warning-title">EXAM PREPARATION TIPS</div>
+                <ul class="warning-list">
+                    <li>Review all practice problems across all modules</li>
+                    <li>Focus on code examples—understand purpose, adapt to similar scenarios</li>
+                    <li>Know differences between protocols (MQTT vs HTTP vs CoAP, WiFi vs BLE vs Zigbee, etc.)</li>
+                    <li>Understand security best practices—why each is important</li>
+                    <li>Be comfortable with JSON data formats (device shadow, JWT, CayenneLPP, etc.)</li>
+                    <li>Review code snippets—know what they do, be ready to write similar</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section" id="practice">
+            <div class="lesson-header">
+                <h1>Practice Problems</h1>
+                <p>Final Review Practice</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <div class="practice-container" id="practiceProblems">
+                <div class="problem">
+                    <div class="problem-header">
+                        <span class="problem-id">10-1</span>
+                        <span class="problem-difficulty easy">Easy</span>
+                        <span class="problem-type">Definition</span>
+                    </div>
+                    <div class="problem-question">
+                        What does the term "digital twin" mean in IoT?
+                    </div>
+                    <div class="problem-answer">
+                        A virtual replica of a physical asset, system, or process that uses real-time data to simulate behavior and enable predictions
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                </div>
+                <div class="problem">
+                    <div class="problem-header">
+                        <span class="problem-id">10-2</span>
+                        <span class="problem-difficulty medium">Medium</span>
+                        <span class="problem-type">Concept</span>
+                    </div>
+                    <div class="problem-question">
+                        What is the primary benefit of running AI models at the edge vs in the cloud?
+                    </div>
+                    <div class="problem-answer">
+                Lower latency (real-time inference), reduced bandwidth requirements, privacy (data stays on device), and ability to operate offline
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                </div>
+                <div class="problem">
+                    <div class="problem-header">
+                        <span class="problem-id">10-3</span>
+                        <span class="problem-difficulty easy">Easy</span>
+                        <span class="problem-type">Concept</span>
+                    </div>
+                    <div class="problem-question">
+                True or False: TensorFlow Lite is used for running TensorFlow models on cloud servers.
+                    </div>
+                    <div class="problem-answer">
+                False - TensorFlow Lite is optimized for mobile and embedded devices (edge), not for cloud
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                </div>
+                <div class="problem">
+                    <div class="problem-header">
+                        <span class="problem-id">10-4</span>
+                        <span class="problem-difficulty medium">Medium</span>
+                        <span class="problem-type">Application</span>
+                    </div>
+                    <div class="problem-question">
+                An edge camera with a TensorFlow Lite model classifies objects. The model is 5MB and edge device has 2GB RAM and 8GB storage. Is this feasible? Why or why not?
+                    </div>
+                    <div class="problem-answer">
+                Yes, feasible. The model (5MB) easily fits in storage (8GB). Inference typically uses 10-100MB RAM - well within 2GB
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section" id="quiz">
+            <div class="lesson-header">
+                <h1>Module 10 Quiz</h1>
+                <p>Final Module Quiz</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <div class="quiz-container" id="quizContainer">
+                <!-- Quiz questions loaded from quizzes.js -->
+            </div>
+            <button class="submit-quiz" onclick="submitQuiz('10')">Submit Quiz</button>
+            <div class="quiz-result" id="quizResult"></div>
+        </div>
+
+        <!-- Final Exam Link -->
+        <div class="final-exam-section">
+            <h3 class="section-title">FINAL EXAM</h3>
+            <p class="content-text">Complete all 10 modules and quizzes before attempting the final exam.</p>
+            <button class="btn primary" onclick="startFinalExam()">Take Final Exam</button>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-buttons">
+            <button class="nav-btn prev" onclick="navigate('previous')">← Previous Module</button>
+            <button class="nav-btn next" onclick="navigate('next')">Review Complete</button>
+        </div>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script src="../js/problems.js"></script>
+    <script src="../js/quizzes.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPracticeProblems('advancedTopics');
+            loadQuiz('module10');
+            updateProgress();
+        });
+    </script>
+</body>
+</html>

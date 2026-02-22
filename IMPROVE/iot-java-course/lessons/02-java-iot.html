@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 2: Java for IoT - IoT Java Development Course</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="course-header">
+        <h1>MODULE 2: JAVA FOR IOT</h1>
+        <h2>Embedded Java Programming for IoT Devices</h2>
+    </div>
+
+    <nav class="nav-container">
+        <ul class="nav-menu">
+            <li class="nav-item active" onclick="showSection('overview')">Overview</li>
+            <li class="nav-item" onclick="showSection('embedded')">Embedded Java</li>
+            <li class="nav-item" onclick="showSection('hwinterface')">Hardware Interface</li>
+            <li class="nav-item" onclick="showSection('frameworks')">Frameworks</li>
+            <li class="nav-item" onclick="showSection('practice')">Practice</li>
+            <li class="nav-item" onclick="showSection('quiz')">Quiz</li>
+        </ul>
+    </nav>
+
+    <div class="progress-container">
+        <div class="progress-title">MODULE 2 PROGRESS</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="moduleProgress" style="width: 0%">0%</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content-section active" id="overview">
+            <div class="lesson-header">
+                <h1>Java Programming for the Internet of Things</h1>
+                <p>Leveraging Java Strengths for Embedded and IoT Development</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                Java offers significant advantages for IoT development, including platform independence, extensive libraries, strong tooling, and a large developer community. This module explores how to effectively use Java for embedded systems and IoT applications.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">WHY JAVA FOR IOT?</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Platform Independence:</span> Write once, run anywhere on any platform with a JVM</li>
+                    <li><span class="keyword">Mature Ecosystem:</span> Extensive libraries, frameworks, and tools available</li>
+                    <li><span class="keyword">Strong Typing:</span> Compile-time error checking improves reliability</li>
+                    <li><span class="keyword">Memory Management:</span> Automatic garbage collection simplifies development</li>
+                    <li><span class="keyword">Concurrency Support:</span> Built-in multi-threading capabilities</li>
+                    <li><span class="keyword">Large Community:</span> Vast resources and community support available</li>
+                    <li><span class="keyword">Enterprise Features:</span> Scalability, security, and proven in large deployments</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Java Platform for IoT</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Edition</th>
+                        <th>Characteristics</th>
+                        <th>Use Cases</th>
+                    </tr>
+                    <tr>
+                        <td>Java SE</td>
+                        <td>Full-featured, larger footprint</td>
+                        <td>Gateways, servers, applications</td>
+                    </tr>
+                    <tr>
+                        <td>Java ME</td>
+                        <td>Subset of SE, smaller footprint</td>
+                        <td>Embedded devices, microcontrollers</td>
+                    </tr>
+                    <tr>
+                        <td>Java Card</td>
+                        <td>Minimal, security-focused</td>
+                        <td>Smart cards, SIM cards</td>
+                    </tr>
+                    <tr>
+                        <td>Embedded Java</td>
+                        <td>Optimized for embedded systems</td>
+                        <td>ARM controllers, embedded Linux</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="attention-box">
+                WHILE TRADITIONAL EMBEDDED SYSTEMS OFTEN USE C/C++, JAVA IS INCREASINGLY ADOPTED FOR IOT DUE TO DEVELOPER PRODUCTIVITY AND MAINTAINABILITY
+            </div>
+        </div>
+
+        <div class="content-section" id="embedded">
+            <h2 class="section-title">EMBEDDED JAVA</h2>
+
+            <div class="section-divider"></div>
+
+            <h3 class="subsection-title">Java Micro Edition (Java ME)</h3>
+
+            <p class="content-text">
+                Java ME provides a runtime environment designed for resource-constrained devices like mobile phones, smart cards, and embedded systems. It offers a subset of Java SE features optimized for limited memory and processing power.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">KEY COMPONENTS</div>
+                <ul class="info-list">
+                    <li><span class="keyword">CDC (Connected Device Configuration):</span> For devices with 2-16 MB memory</li>
+                    <li><span class="keyword">CLDC (Connected Limited Device Configuration):</span> For devices with 160KB-512KB memory</li>
+                    <li><span class="keyword">Profiles:</span> Add APIs for specific device types (MIDP for mobile)</li>
+                    <li><span class="keyword">Optional Packages:</span> Extend functionality as needed</li>
+                </ul>
+            </div>
+
+            <div class="caution-box">
+                <div class="caution-title">JVM CONSIDERATIONS</div>
+                <p class="content-text">
+                    Implementing Java on microcontrollers presents challenges:
+                </p>
+                <ul class="info-list">
+                    <li><span class="keyword">Memory Overhead:</span> JVM requires megabytes of RAM, not kilobytes</li>
+                    <li><span class="keyword">Startup Time:</span> JVM initialization adds delay</li>
+                    <li><span class="keyword">Power Consumption:</span> Always-on JVM consumes power</li>
+                    <li><span class="keyword">Real-time Requirements:</span> Standard JVM lacks hard real-time guarantees</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Real-time Java</h3>
+
+            <p class="content-text">
+                Real-time Java provides extensions to the Java platform for deterministic timing and priority-based scheduling required in time-critical IoT applications.
+            </p>
+
+            <div class="code-block">
+                <span class="code-class">// Example: Real-time thread with priority</span><br><br>
+                <span class="code-keyword">import</span> javax.realtime.*;<br><br>
+                <span class="code-keyword">public class</span> SensorProcessor <span class="code-keyword">extends</span> RealtimeThread {<br>
+                &nbsp;&nbsp;<span class="code-keyword">public void</span> run() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">while</span> (<span class="code-keyword">true</span>) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment">// Time-critical sensor processing</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">try</span> {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;waitForNextPeriod();<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;processSensorData();<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <span class="code-keyword">catch</span> (Exception e) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.printStackTrace();<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;}<br>
+                }
+            </div>
+        </div>
+
+        <div class="content-section" id="hwinterface">
+            <h2 class="section-title">HARDWARE INTERFACING</h2>
+
+            <div class="section-divider"></div>
+
+            <h3 class="subsection-title">GPIO (General Purpose Input/Output)</h3>
+
+            <p class="content-text">
+                GPIO pins are the foundation of microcontroller I/O, allowing you to read digital inputs and control digital outputs. Java can interface with GPIO through various libraries.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">GPIO CONCEPTS</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Input Mode:</span> Pin reads HIGH or LOW voltage state</li>
+                    <li><span class="keyword">Output Mode:</span> Pin drives HIGH or LOW voltage</li>
+                    <li><span class="keyword">Pull-up/Pull-down:</span> Default state resistors prevent floating pins</li>
+                    <li><span class="keyword">PWM (Pulse Width Modulation):</span> Simulates analog output with digital pulses</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Communication Protocols</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Protocol</th>
+                        <th>Pins</th>
+                        <th>Speed</th>
+                        <th>Characteristics</th>
+                    </tr>
+                    <tr>
+                        <td>GPIO</td>
+                        <td>1</td>
+                        <td>N/A</td>
+                        <td>Basic digital I/O</td>
+                    </tr>
+                    <tr>
+                        <td>I2C</td>
+                        <td>2</td>
+                        <td>100-400 kHz</td>
+                        <td>Addressed, multi-device bus</td>
+                    </tr>
+                    <tr>
+                        <td>SPI</td>
+                        <td>4</td>
+                        <td>1-10+ MHz</td>
+                        <td>High-speed, full-duplex</td>
+                    </tr>
+                    <tr>
+                        <td>UART</td>
+                        <td>2</td>
+                        <td>9600-115200+ baud</td>
+                        <td>Point-to-point serial</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="code-block">
+                <span class="code-class">// Pi4J example: Blink an LED</span><br><br>
+                <span class="code-keyword">import</span> com.pi4j.io.gpio.*;<br><br>
+                <span class="code-keyword">public class</span> LedBlink {<br>
+                &nbsp;&nbsp;<span class="code-keyword">public static void</span> main(String[] args) <span class="code-keyword">throws</span> Exception {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;GpioController gpio = GpioFactory.getInstance();<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;GpioPinDigitalOutput pin = gpio<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.provisionDigitalOutputPin(RaspiPin.GPIO_01);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">while</span> (<span class="code-keyword">true</span>) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pin.high();<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Thread.sleep(1000);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pin.low();<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Thread.sleep(1000);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;}<br>
+                }
+            </div>
+        </div>
+
+        <div class="content-section" id="frameworks">
+            <h2 class="section-title">IOT FRAMEWORKS AND LIBRARIES</h2>
+
+            <div class="section-divider"></div>
+
+            <h3 class="subsection-title">Eclipse IoT Project</h3>
+
+            <p class="content-text">
+                The Eclipse IoT project provides open-source technologies for IoT development, building a comprehensive ecosystem for connected devices.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">KAPABLE ECLIPSE IOT PROJECTS</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Eclipse Kura:</span> OSGi-based gateway framework</li>
+                    <li><span class="keyword">Eclipse Paho:</span> MQTT client libraries</li>
+                    <li><span class="keyword">Eclipse Mosquitto:</span> MQTT broker</li>
+                    <li><span class="keyword">Eclipse Hono:</span> Cloud IoT connectivity platform</li>
+                    <li><span class="keyword">Eclipse Californium:</span> CoAP implementation</li>
+                    <li><span class="keyword">Eclipse Mita:</span> IoT programming language</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Spring Boot for IoT</h3>
+
+            <p class="content-text">
+                Spring Boot simplifies Java IoT application development with autoconfiguration, embedded servers, and extensive integration options.
+            </p>
+
+            <div class="code-block">
+                <span class="code-class">// Spring Boot REST endpoint for IoT data</span><br><br>
+                <span class="code-keyword">@RestController</span><br>
+                <span class="code-keyword">@RequestMapping</span>(<span class="code-string">"/api/sensor"</span>)<br>
+                <span class="code-keyword">public class</span> SensorController {<br>
+                &nbsp;&nbsp;<span class="code-keyword">private final</span> SensorService service;<br>
+                <br>
+                &nbsp;&nbsp;<span class="code-keyword">@Autowired</span><br>
+                &nbsp;&nbsp;<span class="code-keyword">public</span> SensorController(SensorService service) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">this</span>.service = service;<br>
+                &nbsp;&nbsp;}<br>
+                <br>
+                &nbsp;&nbsp;<span class="code-keyword">@PostMapping</span><br>
+                &nbsp;&nbsp;<span class="code-keyword">public</span> ResponseEntity&lt;?&gt; receiveData(<span class="code-keyword">@RequestBody</span> SensorData data) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;service.process(data);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> ResponseEntity.ok().build();<br>
+                &nbsp;&nbsp;}<br>
+                }
+            </div>
+        </div>
+
+        <div class="content-section" id="practice">
+            <h2 class="section-title">PRACTICE PROBLEMS</h2>
+
+            <div class="section-divider"></div>
+
+            <div class="info-section">
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 1:</strong> What is Java ME designed for?
+                    </div>
+                    <input type="text" class="problem-input" id="m2p-1" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkIoTProblem('2-1', 'embedded systems and mobile devices', ['resource-constrained devices', 'small devices'], 'm2p-1')">Check</button>
+                    <div class="feedback" id="m2p-1-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 2:</strong> How many wires does I2C use for communication?
+                    </div>
+                    <input type="text" class="problem-input" id="m2p-2" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkIoTProblem('2-3', '2', ['two'], 'm2p-2')">Check</button>
+                    <div class="feedback" id="m2p-2-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 3:</strong> What enables Java platform independence?
+                    </div>
+                    <input type="text" class="problem-input" id="m2p-3" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkIoTProblem('2-2', 'JVM', ['Java Virtual Machine'], 'm2p-3')">Check</button>
+                    <div class="feedback" id="m2p-3-feedback"></div>
+                </div>
+            </div>
+
+            <div class="attention-box">
+                COMPLETE ALL 60 PRACTICE PROBLEMS IN THE PROBLEM DATABASE FOR MODULE 2
+            </div>
+        </div>
+
+        <div class="content-section" id="quiz">
+            <h2 class="section-title">MODULE 2 QUIZ</h2>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                Test your knowledge of Java for IoT development.
+            </p>
+
+            <div class="attention-box important">
+                15 QUESTIONS • 70% PASSING SCORE
+            </div>
+
+            <div id="quiz-container" class="quiz-container"></div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="submit-btn" onclick="loadModule2Quiz()">Load Quiz</button>
+                <button class="submit-btn" onclick="submitModule2Quiz()" style="display: none;">Submit Quiz</button>
+            </div>
+
+            <div id="quiz-result" class="score-display" style="display: none;">
+                <h2>QUIZ RESULTS</h2>
+                <div class="score-value" id="score-value">0/15</div>
+                <p id="score-message"></p>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="01-introduction.html" class="nav-button">Previous Module</a>
+            <a href="../index.html" class="nav-button">Back to Course Overview</a>
+            <a href="03-hardware-sensors.html" class="nav-button">Next Module: Hardware & Sensors</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p class="footer-text">
+            IOT DEVELOPMENT WITH JAVA<br>
+            Module 2: Java for IoT<br>
+            60+ Practice Problems • 15 Quiz Questions
+        </p>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script src="../js/problems.js"></script>
+    <script src="../js/quizzes.js"></script>
+    <script>
+        let module2Answers = {};
+        
+        function loadModule2Quiz() {
+            const container = document.getElementById('quiz-container');
+            let html = '';
+            
+            quizQuestions.module2.forEach((question, index) => {
+                html += `
+                    <div class="quiz-question">
+                        <p><strong>Q${index + 1}:</strong> ${question.question}</p>
+                        <div class="quiz-options">
+                            ${question.options.map(opt => `
+                                <div class="quiz-option" onclick="selectModule2Option('${question.id}', '${opt.charAt(0)}', this)">
+                                    ${opt}
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+            document.querySelector('button[onclick="loadModule2Quiz()"]').style.display = 'none';
+            document.querySelector('button[onclick="submitModule2Quiz()"]').style.display = 'inline-block';
+        }
+        
+        function selectModule2Option(questionId, option, element) {
+            module2Answers[questionId] = option;
+            
+            element.parentElement.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+        
+        function submitModule2Quiz() {
+            let score = 0;
+            const total = quizQuestions.module2.length;
+            
+            quizQuestions.module2.forEach(q => {
+                if (module2Answers[q.id] === quizAnswers.module2[q.id]) {
+                    score++;
+                }
+            });
+            
+            const percentage = (score / total) * 100;
+            const resultDiv = document.getElementById('quiz-result');
+            document.getElementById('score-value').textContent = `${score}/${total} (${percentage}%)`;
+            
+            if (percentage >= 70) {
+                document.getElementById('score-message').textContent = 'Congratulations! You passed!';
+                if (typeof markQuizPassed === 'function') markQuizPassed(2);
+            } else {
+                document.getElementById('score-message').textContent = 'Score at least 70% to pass.';
+            }
+            
+            resultDiv.style.display = 'block';
+        }
+        
+        function checkIoTProblem(problemId, correct, alternatives, inputId) {
+            const input = document.getElementById(inputId).value.trim();
+            const feedback = document.getElementById(inputId + '-feedback');
+            const normalized = input.toLowerCase().replace(/\s+/g, '');
+            
+            const normalizedCorrect = correct.toLowerCase().replace(/\s+/g, '');
+            const matchesAlt = alternatives.some(alt => alt.toLowerCase().replace(/\s+/g, '') === normalized);
+            
+            if (normalized === normalizedCorrect || matchesAlt) {
+                feedback.className = 'feedback correct';
+                feedback.textContent = 'Correct!';
+                feedback.style.display = 'block';
+                if (typeof markProblemSolved === 'function') markProblemSolved(problemId);
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.textContent = 'Not correct. Review and try again.';
+                feedback.style.display = 'block';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            loadProgress();
+            markLessonComplete(2);
+        });
+    </script>
+</body>
+</html>

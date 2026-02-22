@@ -1,0 +1,129 @@
+# Images Manifest for French Revolution Video
+# Generated: 2026-02-15
+# Total images: 19 (one per audio segment for narrative flow)
+
+---
+
+## Images Created:
+
+1. image001.jpg (44 KB)
+   - Title: The French Revolution
+   - Description: Intro scene with French flag and theme
+   - Audio: intro.mp3
+
+2. image002.jpg (39 KB)
+   - Title: Financial Crisis 1788
+   - Description: Peasant suffering, social inequality
+   - Audio: part1_1.mp3
+
+3. image003.jpg (40 KB)
+   - Title: The Three Estates
+   - Description: Class structure of pre-revolutionary France
+   - Audio: part1_2.mp3
+
+4. image004.jpg (37 KB)
+   - Title: Unfair Taxes
+   - Description: Tax burden on Third Estate
+   - Audio: part1_2.mp3
+
+5. image005.jpg (40 KB)
+   - Title: Estates General 1789
+   - Description: Louis XVI calls the meeting
+   - Audio: part1_3.mp3
+
+6. image006.jpg (49 KB)
+   - Title: Third Estate Breaks Away
+   - Description: National Assembly forms
+   - Audio: part1_4.mp3
+
+7. image007.jpg (39 KB)
+   - Title: Tennis Court Oath
+   - Description: Revolutionary defiance
+   - Audio: part1_5.mp3
+
+8. image008.jpg (47 KB)
+   - Title: Storming the Bastille
+   - Description: July 14, 1789 uprising
+   - Audio: part2_1.mp3
+
+9. image009.jpg (36 KB)
+   - Title: Bastille Taken!
+   - Description: Victory and symbolism
+   - Audio: part2_2.mp3
+
+10. image010.jpg (34 KB)
+    - Title: Rights of Man
+    - Description: Declaration of rights
+    - Audio: part2_3.mp3
+
+11. image011.jpg (41 KB)
+    - Title: Equal Rights for All
+    - Description: Human rights established
+    - Audio: part2_3.mp3
+
+12. image012.jpg (39 KB)
+    - Title: Women's March
+    - Description: October 1789 march on Versailles
+    - Audio: part2_4.mp3
+
+13. image013.jpg (34 KB)
+    - Title: Louis XVI Executed
+    - Description: January 21, 1793 execution
+    - Audio: part2_5.mp3
+
+14. image014.jpg (38 KB)
+    - Title: Reign of Terror
+    - Description: 1793-1794 period
+    - Audio: part3_1.mp3
+
+15. image015.jpg (43 KB)
+    - Title: Guillotine's Shadow
+    - Description: Executions during Terror
+    - Audio: part3_2.mp3
+
+16. image016.jpg (36 KB)
+    - Title: Robespierre Falls
+    - Description: July 28, 1794
+    - Audio: part3_3.mp3
+
+17. image017.jpg (37 KB)
+    - Title: The Directory
+    - Description: 1795-1799 government
+    - Audio: part3_4.mp3
+
+18. image018.jpg (39 KB)
+    - Title: Napoleon Rises
+    - Description: November 1799 coup
+    - Audio: part3_5.mp3
+
+19. image019.jpg (28 KB)
+    - Title: Legacy of Revolution
+    - Description: Conclusion and lasting impact
+    - Audio: outro.mp3
+
+---
+
+## Image Specifications:
+- Resolution: 1280x720 (16:9 aspect ratio for video)
+- Format: JPEG, quality 85%
+- Style: Cartoonish with colored backgrounds
+- Design elements:
+  * French flag strip at top (blue, white, red)
+  * Title and subtitle centered
+  * Decorative accent color box
+  * Decorative dots/stars at bottom
+
+## Image-Audio Mapping:
+- Each image corresponds to one audio segment
+- Story flows chronologically through 19 scenes
+- Total runtime: ~10 minutes with 1620x720 (16:9 HD)
+- File format: JPEG
+- Total size: 764 KB
+- Design: Simple, colorful, text-based visuals
+- French Revolution theme with flag colors
+
+## Method:
+- Python script using PIL (Pillow) library
+- Generated programmatically based on script content
+- Each image includes title, subtitle, and French flag
+- Suitable for slideshow video format

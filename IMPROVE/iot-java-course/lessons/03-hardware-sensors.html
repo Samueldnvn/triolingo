@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 3: IoT Hardware & Sensors - IoT Java Development Course</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="course-header">
+        <h1>MODULE 3: IOT HARDWARE & SENSORS</h1>
+        <h2>Understanding and Programming IoT Devices</h2>
+    </div>
+    <nav class="nav-container">
+        <ul class="nav-menu">
+            <li class="nav-item active" onclick="showSection('overview')">Overview</li>
+            <li class="nav-item" onclick="showSection('sensors')">Sensors</li>
+            <li class="nav-item" onclick="showSection('programming')">Programming</li>
+            <li class="nav-item" onclick="showSection('adc')">Analog Conversion</li>
+            <li class="nav-item" onclick="showSection('practice')">Practice</li>
+            <li class="nav-item" onclick="showSection('quiz')">Quiz</li>
+        </ul>
+    </nav>
+    <div class="progress-container">
+        <div class="progress-title">MODULE 3 PROGRESS</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="moduleProgress" style="width: 0%">0%</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content-section active" id="overview">
+            <div class="lesson-header">
+                <h1>IoT Hardware Fundamentals</h1>
+                <p>Sensors, Microcontrollers, and Hardware Interface Programming</p>
+            </div>
+            <div class="section-divider"></div>
+            <p class="content-text">
+                This module covers the hardware foundation of IoT systems, including sensor types, microcontroller architectures, communication protocols, and programming techniques for interfacing Java with physical hardware.
+            </p>
+            <div class="info-section">
+                <div class="info-title">KEY HARDWARE COMPONENTS</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Microcontrollers:</span> Small computers on single integrated circuits</li>
+                    <li><span class="keyword">Single Board Computers:</span> Full computers like Raspberry Pi, BeagleBone</li>
+                    <li><span class="keyword">Sensors:</span> Devices that detect and measure physical phenomena</li>
+                    <li><span class="keyword">Actuators:</span> Devices that perform physical actions</li>
+                    <li><span class="keyword">Communication Modules:</span> WiFi, Bluetooth, and other network interfaces</li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-section" id="sensors">
+            <h2 class="section-title">SENSOR TYPES AND CHARACTERISTICS</h2>
+            <div class="section-divider"></div>
+            <h3 class="subsection-title">Digital vs Analog Sensors</h3>
+            <p class="content-text">
+                Sensors can be broadly classified as digital or analog, based on their output signal type:
+            </p>
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Aspect</th>
+                        <th>Digital Sensors</th>
+                        <th>Analog Sensors</th>
+                    </tr>
+                    <tr>
+                        <td>Output</td>
+                        <td>Discrete values (0/1 or multiple digital values)</td>
+                        <td>Continuous voltage level</td>
+                    </tr>
+                    <tr>
+                        <td>Interface</td>
+                        <td>Digital I/O, SPI, I2C</td>
+                        <td>ADC required</td>
+                    </tr>
+                    <tr>
+                        <td>Resolution</td>
+                        <td>Fixed by sensor design</td>
+                        <td>Depends on ADC resolution</td>
+                    </tr>
+                    <tr>
+                        <td>Noise Immunity</td>
+                        <td>High</td>
+                        <td>Lower, susceptible to noise</td>
+                    </tr>
+                    <tr>
+                        <td>Examples</td>
+                        <td>Digital temperature, motion sensors</td>
+                        <td>Thermistor, photoresistor</td>
+                    </tr>
+                </table>
+            </div>
+            <h3 class="subsection-title">Common Sensor Categories</h3>
+            <div class="info-section">
+                <div class="info-title">ENVIRONMENTAL SENSORS</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Temperature:</span> Measures thermal energy (DS18B20, DHT22, TMP36)</li>
+                    <li><span class="keyword">Humidity:</span> Measures moisture in air (DHT11/22, BME280)</li>
+                    <li><span class="keyword">Pressure:</span> Measures barometric pressure (BMP280, MPL3115)</li>
+                    <li><span class="keyword">Air Quality:</span> Detects gases and particles (MQ-135, PMS5003)</li>
+                </ul>
+            </div>
+            <div class="info-section">
+                <div class="info-title">MOTION AND POSITION SENSORS</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Accelerometer:</span> Measures acceleration force (MPU6050)</li>
+                    <li><span class="keyword">Gyroscope:</span> Measures angular velocity (MPU6050)</li>
+                    <li><span class="keyword">Magnetometer:</span> Measures magnetic field (HMC5883L)</li>
+                    <li><span class="keyword">PIR Motion:</span> Detects infrared motion (HC-SR501)</li>
+                    <li><span class="keyword">Ultrasonic:</span> Distance measurement (HC-SR04)</li>
+                </ul>
+            </div>
+            <div class="info-section">
+                <div class="info-title">LIGHT AND OPTICAL SENSORS</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Photoresistor:</span> Light-dependent resistor (LDR)</li>
+                    <li><span class="keyword">Photodiode:</span> Converts light to current</li>
+                    <li><span class="keyword">RGB Color:</span> Detects color values (TCS3200)</li>
+                    <li><span class="keyword">Light Intensity:</span> Measures lux (BH1750, TSL2561)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-section" id="programming">
+            <h2 class="section-title">SENSOR PROGRAMMING WITH JAVA</h2>
+            <div class="section-divider"></div>
+            <h3 class="subsection-title">Reading Digital Sensors</h3>
+            <p class="content-text">
+                Digital sensors provide discrete output values and can be read directly through GPIO or digital communication protocols.
+            </p>
+            <div class="code-block">
+                <span class="code-class">// Reading a digital temperature sensor (DS18B20 via Pi4J)</span><br><br>
+                <span class="code-keyword">import</span> com.pi4j.io.gpio.*;<br><br>
+                <span class="code-keyword">public class</span> DigitalSensorReader {<br>
+                &nbsp;&nbsp;<span class="code-keyword">private final</span> GpioPinDigitalInput pin;<br>
+                <br>
+                &nbsp;&nbsp;<span class="code-keyword">public</span> DigitalSensorReader() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;GpioController gpio = GpioFactory.getInstance();<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;pin = gpio.provisionDigitalInputPin(RaspiPin.GPIO_04);<br>
+                &nbsp;&nbsp;}<br>
+                <br>
+                &nbsp;&nbsp;<span class="code-keyword">public boolean</span> readState() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> pin.getState().isHigh();<br>
+                &nbsp;&nbsp;}<br>
+                }
+            </div>
+            <h3 class="subsection-title">Sensor Polling Pattern</h3>
+            <p class="content-text">
+                Most sensor applications use a polling pattern to periodically read sensor values.
+            </p>
+            <div class="code-block">
+                <span class="code-class">// Continuous sensor reading with interval</span><br><br>
+                <span class="code-keyword">public class</span> SensorPoller {<br>
+                &nbsp;&nbsp;<span class="code-keyword">private final</span> Sensor sensor;<br>
+                &nbsp;&nbsp;<span class="code-keyword">private final</span> long intervalMs;<br>
+                <br>
+                &nbsp;&nbsp;<span class="code-keyword">public void</span> start() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">new</span> Thread(() -> {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">while</span> (<span class="code-keyword">true</span>) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">try</span> {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SensorData data = sensor.read();<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;processData(data);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Thread.sleep(intervalMs);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <span class="code-keyword">catch</span> (InterruptedException e) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.printStackTrace();<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}).start();<br>
+                &nbsp;&nbsp;}<br>
+                }
+            </div>
+            <h3 class="subsection-title">Event-Driven Sensor Reading</h3>
+            <p class="content-text">
+                For digital sensors like motion detectors or buttons, event-driven programming is often more efficient than polling.
+            </p>
+            <div class="code-block">
+                <span class="code-class">// Event-driven sensor reading with Pi4J</span><br><br>
+                <span class="code-keyword">public class</span> EventSensorReader {<br>
+                &nbsp;&nbsp;<span class="code-keyword">public void</span> setupMotionDetector() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;GpioController gpio = GpioFactory.getInstance();<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;GpioPinDigitalInput pir = gpio<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.provisionDigitalInputPin(RaspiPin.GPIO_05, PinPullResistance.PULL_DOWN);<br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;pir.addListener((GpioPinListenerDigital) event -> {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (event.getState().isHigh()) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;handleMotionDetected();<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;});<br>
+                &nbsp;&nbsp;}<br>
+                }
+            </div>
+        </div>
+        <div class="content-section" id="adc">
+            <h2 class="section-title">ANALOG-TO-DIGITAL CONVERSION</h2>
+            <div class="section-divider"></div>
+            <h3 class="subsection-title">ADC Fundamentals</h3>
+            <p class="content-text">
+                Analog-to-Digital Converters (ADC) are essential for reading analog sensors that output continuous voltage levels. The ADC converts these continuous signals into discrete digital values.
+            </p>
+            <div class="formula-box">
+                <div class="formula-title">ADC Resolution and Digital Value</div>
+                <div class="formula">$$DigitalValue = \frac{Vin}{Vref} \times (2^n - 1)$$
+                <br>
+                Where:
+                <br>Vin = Input voltage
+                <br>Vref = Reference voltage
+                <br>n = Number of bits</div>
+            </div>
+            <div class="info-section">
+                <div class="info-title">ADC CHARACTERISTICS</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Resolution:</span> Number of bits determines precision (8-bit = 256 values, 10-bit = 1024, 12-bit = 4096)</li>
+                    <li><span class="keyword">Reference Voltage:</span> Maximum voltage that can be measured</li>
+                    <li><span class="keyword">Sampling Rate:</span> How many samples per second can be taken</li>
+                    <li><span class="keyword">Channels:</span> Number of analog inputs available</li>
+                </ul>
+            </div>
+            <h3 class="subsection-title">Reading Analog Sensors</h3>
+            <div class="code-block">
+                <span class="code-class">// Reading analog sensor with Raspberry Pi ADC (MCP3008 via SPI)</span><br><br>
+                <span class="code-keyword">public class</span> AnalogSensorReader {<br>
+                &nbsp;&nbsp;<span class="code-keyword">public double</span> readAnalog(int channel) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment">// SPI communication with MCP3008 ADC</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> rawValue = readMCP3008(channel);<br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">double</span> voltage = (rawValue / 1023.0) * 3.3;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> voltage;<br>
+                &nbsp;&nbsp;}<br>
+                }
+            </div>
+            <div class="attention-box">
+                RASPBERRY PI DOES NOT HAVE BUILTIN ADC, SO EXTERNAL CHIPS LIKE MCP3008 ARE REQUIRED FOR ANALOG SENSOR READING
+            </div>
+            <h3 class="subsection-title">Sensor Calibration</h3>
+            <p class="content-text">
+                Analog sensors require calibration to convert raw ADC values into meaningful physical units.
+            </p>
+            <div class="code-block">
+                <span class="code-class">// Calibrating a thermistor temperature sensor</span><br><br>
+                <span class="code-keyword">public class</span> ThermistorCalibrator {<br>
+                &nbsp;&nbsp;<span class="code-keyword">private double</span> R0 = 10000; <span class="code-comment">// Resistance at 25C</span><br>
+                &nbsp;&nbsp;<span class="code-keyword">private double</span> B = 3950; <span class="code-comment">// Beta coefficient</span><br>
+                <br>
+                &nbsp;&nbsp;<span class="code-keyword">public double</span> getTemperature(<span class="code-keyword">double</span> adcValue) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment">// Convert ADC to resistance</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">double</span> R = calculateResistance(adcValue);<br>
+                &br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment">// Steinhart-Hart equation for temperature</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">double</span> tempK = 1.0 / (<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1.0 / 298.15) + (1.0 / B) * Math.log(R / R0)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;);<br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> tempK - 273.15; <span class="code-comment">// Kelvin to Celsius</span><br>
+                &nbsp;&nbsp;}<br>
+                }
+            </div>
+        </div>
+        <div class="content-section" id="practice">
+            <h2 class="section-title">PRACTICE PROBLEMS</h2>
+            <div class="section-divider"></div>
+            <div class="info-section">
+                <div class="practice-problem">
+                    <div class="problem-question"><strong>Problem 1:</strong> What is the main difference between digital and analog sensors?</div>
+                    <input type="text" class="problem-input" id="m3p-1" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkIoTProblem('3-3', 'Digital outputs discrete values, analog outputs continuous voltage', [], 'm3p-1')">Check</button>
+                    <div class="feedback" id="m3p-1-feedback"></div>
+                </div>
+                <div class="practice-problem">
+                    <div class="problem-question"><strong>Problem 2:</strong> What does ADC stand for?</div>
+                    <input type="text" class="problem-input" id="m3p-2" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkIoTProblem('3-5', 'Analog-to-Digital Converter', [], 'm3p-2')">Check</button>
+                    <div class="feedback" id="m3p-2-feedback"></div>
+                </div>
+                <div class="practice-problem">
+                    <div class="problem-question"><strong>Problem 3:</strong> How many discrete values can a 10-bit ADC represent?</div>
+                    <input type="text" class="problem-input" id="m3p-3" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkIoTProblem('3-7', '1024', ['2^10'], 'm3p-3')">Check</button>
+                    <div class="feedback" id="m3p-3-feedback"></div>
+                </div>
+            </div>
+            <div class="attention-box">COMPLETE ALL 60 PRACTICE PROBLEMS FOR MODULE 3</div>
+        </div>
+        <div class="content-section" id="quiz">
+            <h2 class="section-title">MODULE 3 QUIZ</h2>
+            <div class="section-divider"></div>
+            <div id="quiz-container" class="quiz-container"></div>
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="submit-btn" onclick="loadModuleQuiz(3)">Load Quiz</button>
+                <button class="submit-btn" onclick="submitModuleQuiz(3)" style="display: none;">Submit Quiz</button>
+            </div>
+            <div id="quiz-result" class="score-display" style="display: none;">
+                <h2>QUIZ RESULTS</h2>
+                <div class="score-value" id="score-value">0/12</div>
+                <p id="score-message"></p>
+            </div>
+        </div>
+        <div class="nav-buttons">
+            <a href="02-java-iot.html" class="nav-button">Previous Module</a>
+            <a href="../index.html" class="nav-button">Back to Course Overview</a>
+            <a href="04-protocols.html" class="nav-button">Next Module: Communication Protocols</a>
+        </div>
+    </div>
+    <div class="footer">
+        <p class="footer-text">IOT DEVELOPMENT WITH JAVA • Module 3: Hardware & Sensors • 60+ Practice Problems</p>
+    </div>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/problems.js"></script>
+    <script src="../js/quizzes.js"></script>
+    <script>
+        let currentModuleAnswers = {};
+
+        function loadModuleQuiz(moduleNum) {
+            const container = document.getElementById('quiz-container');
+            const questions = quizQuestions['module' + moduleNum];
+            let html = '';
+            questions.forEach((question, index) => {
+                html += `<div class="quiz-question"><p><strong>Q${index+1}:</strong> ${question.question}</p><div class="quiz-options">${question.options.map(opt => `<div class="quiz-option" onclick="selectModuleOption('${question.id}', '${opt.charAt(0)}', this)">${opt}</div>`).join('')}</div></div>`;
+            });
+            container.innerHTML = html;
+            document.querySelector('button[onclick^="loadModuleQuiz"]').style.display = 'none';
+            document.querySelector('button[onclick^="submitModuleQuiz"]').style.display = 'inline-block';
+        }
+
+        function selectModuleOption(questionId, option, element) {
+            currentModuleAnswers[questionId] = option;
+            element.parentElement.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+
+        function submitModuleQuiz(moduleNum) {
+            const questions = quizQuestions['module' + moduleNum];
+            let score = 0;
+            questions.forEach(q => { if (currentModuleAnswers[q.id] === quizAnswers['module' + moduleNum][q.id]) score++; });
+            const percentage = (score / questions.length) * 100;
+            document.getElementById('score-value').textContent = `${score}/${questions.length} (${percentage}%)`;
+            document.getElementById('score-message').textContent = percentage >= 70 ? 'You passed!' : 'Score at least 70% to pass.';
+            if (percentage >= 70 && typeof markQuizPassed === 'function') markQuizPassed(moduleNum);
+            document.getElementById('quiz-result').style.display = 'block';
+        }
+
+        function checkIoTProblem(problemId, correct, alternatives, inputId) {
+            const input = document.getElementById(inputId).value.trim();
+            const feedback = document.getElementById(inputId + '-feedback');
+            const normalized = input.toLowerCase().replace(/\s+/g, '');
+            const normalizedCorrect = correct.toLowerCase().replace(/\s+/g, '');
+            const matchesAlt = alternatives.some(alt => alt.toLowerCase().replace(/\s+/g, '') === normalized);
+            if (normalized === normalizedCorrect || matchesAlt) {
+                feedback.className = 'feedback correct';
+                feedback.textContent = 'Correct!';
+                feedback.style.display = 'block';
+                if (typeof markProblemSolved === 'function') markProblemSolved(problemId);
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.textContent = 'Not correct. Review and try again.';
+                feedback.style.display = 'block';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => { loadProgress(); markLessonComplete(3); });
+    </script>
+</body>
+</html>

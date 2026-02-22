@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4.3.2: Projections - Linear Algebra</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="chapter-4">
+    <div class="main-wrapper">
+        <nav class="sidebar toc-green">
+            <div class="sidebar-header">
+                <div class="sidebar-title">Linear Algebra</div>
+            </div>
+            <div class="toc-chapter toc-green">
+                <div class="toc-chapter-title">Chapter 4: Advanced Topics</div>
+                <div class="toc-module">
+                    <div class="toc-module-title">Module 4.3: Orthogonality</div>
+                    <div class="toc-lessons">
+                        <div class="toc-lesson"><a href="4-3-1-inner-products.html">Lesson 4.3.1: Inner Products</a></div>
+                        <div class="toc-lesson"><a href="4-3-2-projections.html" class="active">Lesson 4.3.2: Projections</a></div>
+                        <div class="toc-lesson"><a href="4-3-3-gram-schmidt.html">Lesson 4.3.3: Gram-Schmidt</a></div>
+                        <div class="toc-lesson"><a href="4-3-4-practice-orthogonality.html">Lesson 4.3.4: Practice Problems</a></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="module-header">
+                    <h2>Lesson 4.3.2: Projections</h2>
+                    <p>Module 4.3: Orthogonality | Chapter 4: Advanced Topics</p>
+                </div>
+                
+                <div class="content-card">
+                    <div class="definition-box">
+                        <div class="definition-title">Orthogonal Projection</div>
+                        <p>The orthogonal projection of vector v onto vector w (where w is nonzero) is the component of v in the direction of w. It represents the "shadow" of v on w.</p>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Projection Formula</div>
+                    <p>The projection of v onto w is given by:</p>
+                    
+                    <div class="formula-box">
+                        <div class="formula">proj_w(v) = \frac{v \cdot w}{w \cdot w} w = \frac{v \cdot w}{|w|^2} w</div>
+                    </div>
+                    
+                    <p>Where v dot w is the dot product and |w| is the magnitude of w.</p>
+                    
+                    <div class="note-box">
+                        <div class="note-title">Key Insight</div>
+                        <p>The factor (v dot w) / (w dot w) is a scalar that determines how far along w the projection lands.</p>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="example-box">
+                        <div class="example-title">Example 1: Basic Projection</div>
+                        <p>Find the projection of v = [3, 4] onto w = [1, 0].</p>
+                        
+                        <div class="example-content">
+                            <p><strong>Step 1:</strong> Compute v dot w</p>
+                            
+                            <div class="formula-box">
+                                <div class="formula">v \cdot w = 3(1) + 4(0) = 3</div>
+                            </div>
+                            
+                            <p><strong>Step 2:</strong> Compute w dot w</p>
+                            
+                            <div class="formula-box">
+                                <div class="formula">w \cdot w = 1(1) + 0(0) = 1</div>
+                            </div>
+                            
+                            <p><strong>Step 3:</strong> Apply the formula</p>
+                            
+                            <div class="formula-box">
+                                <div class="formula">proj_w(v) = \frac{3}{1} [1, 0] = [3, 0]</div>
+                            </div>
+                            
+                            <p><strong>Interpretation:</strong> The projection of [3, 4] onto the x-axis is [3, 0], which makes geometric sense.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="example-box">
+                        <div class="example-title">Example 2: Non-Axis Projection</div>
+                        <p>Find the projection of v = [2, 3] onto w = [1, 2].</p>
+                        
+                        <div class="example-content">
+                            <p><strong>Step 1:</strong> Compute v dot w and w dot w</p>
+                            
+                            <div class="formula-box">
+                                <div class="formula">v \cdot w = 2(1) + 3(2) = 2 + 6 = 8</div>
+                                <div class="formula">w \cdot w = 1(1) + 2(2) = 1 + 4 = 5</div>
+                            </div>
+                            
+                            <p><strong>Step 2:</strong> Apply the formula</p>
+                            
+                            <div class="formula-box">
+                                <div class="formula">proj_w(v) = \frac{8}{5} [1, 2] = \left[\frac{8}{5}, \frac{16}{5}\right]</div>
+                            </div>
+                            
+                            <p><strong>Decimal form:</strong> [1.6, 3.2]</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Projection onto a Subspace</div>
+                    <p>To project a vector v onto a subspace W of R^n given by basis vectors {w1, w2, ..., wk}, we use the projection matrix formula:</p>
+                    
+                    <div class="formula-box">
+                        <div class="formula">P_W = A(A^T A)^{-1} A^T</div>
+                    </div>
+                    
+                    <p>Where A is the matrix whose columns are the basis vectors of W.</p>
+                    
+                    <div class="caution-box">
+                        <div class="caution-title">Important Note</div>
+                        <p>This formula assumes the basis vectors are linearly independent (forming a basis for W).</p>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Projection onto an Orthonormal Basis</div>
+                    <p>When the basis {u1, u2, ..., uk} is orthonormal, the formula simplifies:</p>
+                    
+                    <div class="formula-box">
+                        <div class="formula">proj_W(v) = (v \cdot u_1)u_1 + (v \cdot u_2)u_2 + ... + (v \cdot u_k)u_k</div>
+                    </div>
+                    
+                    <p>This is much easier to compute and is why orthonormal bases are preferred.</p>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Orthogonal Component</div>
+                    <p>The component of v orthogonal to w is:</p>
+                    
+                    <div class="formula-box">
+                        <div class="formula">v_\perp = v - proj_w(v)</div>
+                    </div>
+                    
+                    <p>This satisfies v = proj_w(v) + v_\perp, where proj_w(v) is parallel to w and v_\perp is orthogonal to w.</p>
+                    
+                    <div class="important-box">
+                        <div class="important-title">Pythagorean Theorem for Vectors</div>
+                        <p>The magnitude of v can be expressed as:</p>
+                        
+                        <div class="formula-box">
+                            <div class="formula">|v|^2 = |proj_w(v)|^2 + |v_\perp|^2</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="example-box">
+                        <div class="example-title">Example 3: Finding Both Components</div>
+                        <p>For v = [5, 2] and w = [1, 1], find proj_w(v) and the orthogonal component.</p>
+                        
+                        <div class="example-content">
+                            <p><strong>Step 1:</strong> Compute dot products</p>
+                            
+                            <div class="formula-box">
+                                <div class="formula">v \cdot w = 5(1) + 2(1) = 7</div>
+                                <div class="formula">w \cdot w = 1(1) + 1(1) = 2</div>
+                            </div>
+                            
+                            <p><strong>Step 2:</strong> Find projection</p>
+                            
+                            <div class="formula-box">
+                                <div class="formula">proj_w(v) = \frac{7}{2} [1, 1] = \left[\frac{7}{2}, \frac{7}{2}\right]</div>
+                            </div>
+                            
+                            <p><strong>Step 3:</strong> Find orthogonal component</p>
+                            
+                            <div class="formula-box">
+                                <div class="formula">v_\perp = v - proj_w(v) = [5, 2] - \left[\frac{7}{2}, \frac{7}{2}\right] = \left[\frac{3}{2}, -\frac{3}{2}\right]</div>
+                            </div>
+                            
+                            <p><strong>Verification:</strong> Check that v_\perp dot w = 0:</p>
+                            
+                            <div class="formula-box">
+                                <div class="formula">\left[\frac{3}{2}, -\frac{3}{2}\right] \cdot [1, 1] = \frac{3}{2} - \frac{3}{2} = 0</div>
+                            </div>
+                            
+                            <p style="margin-top: 10px; font-weight: 600;">The orthogonal component is indeed orthogonal to w!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="theorem-box">
+                        <div class="theorem-title">Properties of Projections</div>
+                        <ul>
+                            <li>proj_w(v) is always a scalar multiple of w</li>
+                            <li>proj_w(proj_w(v)) = proj_w(v) (projection is idempotent)</li>
+                            <li>The projection matrix P is symmetric: P^T = P</li>
+                            <li>The projection matrix is idempotent: P^2 = P</li>
+                            <li>proj_w(c v) = c proj_w(v) for any scalar c</li>
+                            <li>proj_w(v1 + v2) = proj_w(v1) + proj_w(v2)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="practice-section">
+                    <div class="practice-header">Practice Problems</div>
+                    
+                    <div class="practice-card">
+                        <div class="practice-question">Problem 1: Find the projection of v = [1, 2, 3] onto w = [0, 1, 0].</div>
+                        <div class="practice-input">
+                            <label for="p1-input">Your answer (format: [a,b,c]):</label>
+                            <input type="text" id="p1-input" placeholder="Enter vector">
+                        </div>
+                        <div class="practice-feedback" id="p1-input-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-card">
+                        <div class="practice-question">Problem 2: Find the projection of v = [4, 1] onto w = [1, 1].</div>
+                        <div class="practice-input">
+                            <label for="p2-input">Your answer (format: [a,b] in fraction form):</label>
+                            <input type="text" id="p2-input" placeholder="Enter vector">
+                        </div>
+                        <div class="practice-feedback" id="p2-input-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-card">
+                        <div class="practice-question">Problem 3: For v = [3, -1] and w = [2, 2], find the orthogonal component v_\perp.</div>
+                        <div class="practice-input">
+                            <label for="p3-input">Your answer (format: [a,b]):</label>
+                            <input type="text" id="p3-input" placeholder="Enter vector">
+                        </div>
+                        <div class="practice-feedback" id="p3-input-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-card">
+                        <div class="practice-question">Problem 4: Find |proj_w(v)| where v = [6, 8] and w = [1, 0].</div>
+                        <div class="practice-input">
+                            <label for="p4-input">Your answer:</label>
+                            <input type="text" id="p4-input" placeholder="Enter magnitude">
+                        </div>
+                        <div class="practice-feedback" id="p4-input-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-card">
+                        <div class="practice-question">Problem 5: What is the projection of v onto w when v is orthogonal to w?</div>
+                        <div class="practice-input">
+                            <label for="p5-input">Your answer:</label>
+                            <input type="text" id="p5-input" placeholder="Enter vector">
+                        </div>
+                        <div class="practice-feedback" id="p5-input-feedback"></div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="navigation-buttons">
+                    <a href="4-3-1-inner-products.html" class="nav-btn secondary">Previous Lesson</a>
+                    <a href="4-3-3-gram-schmidt.html" class="nav-btn primary">Next Lesson: Gram-Schmidt</a>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="practice-header">Module Progress</div>
+                    <div class="progress-container">
+                        <div class="progress-title">Module 4.3: Orthogonality</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="moduleProgress" style="width: 25%">25%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/navigation.js"></script>
+    <script>
+    function checkProblem(problemId, correct, alternatives, inputId) {
+        const input = document.getElementById(inputId).value.trim().toLowerCase();
+        const feedback = document.getElementById(inputId + '-feedback');
+        
+        const normalized = input.replace(/\s/g, '').replace(/,/g, ';');
+        const normalizedCorrect = correct.toLowerCase().replace(/\s/g, '').replace(/,/g, ';');
+        
+        let isCorrect = normalized === normalizedCorrect || 
+                       alternatives.some(alt => 
+                           alt.toLowerCase().replace(/\s/g, '').replace(/,/g, ';') === normalized
+                       );
+        
+        if (isCorrect) {
+            feedback.className = 'feedback correct';
+            feedback.textContent = 'Correct!';
+            feedback.style.display = 'block';
+            updateProgress();
+        } else {
+            feedback.className = 'feedback incorrect';
+            feedback.textContent = 'Try again!';
+            feedback.style.display = 'block';
+        }
+    }
+
+    function updateProgress() {
+        const completed = localStorage.getItem('linear-algebra-completed-4-3-2') === 'true';
+        if (!completed) {
+            localStorage.setItem('linear-algebra-completed-4-3-2', 'true');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        loadProgress();
+        
+        document.getElementById('p1-input').addEventListener('input', function() {
+            checkProblem('p1', '[0,2,0]', 
+                ['[[0,2,0]]', '[0;2;0]', '[[0;2;0]]'], 
+                'p1-input');
+        });
+        
+        document.getElementById('p2-input').addEventListener('input', function() {
+            checkProblem('p2', '[5/2,5/2]', 
+                ['[2.5,2.5]', '[[2.5,2.5]]', '[5/2;5/2]'],
+                'p2-input');
+        });
+        
+        document.getElementById('p3-input').addEventListener('input', function() {
+            checkProblem('p3', '[1,-3]', 
+                ['[[1,-3]]', '[1;-3]', '[[1;-3]]'],
+                'p3-input');
+        });
+        
+        document.getElementById('p4-input').addEventListener('input', function() {
+            checkProblem('p4', '6', 
+                ['[6]', '6.0'],
+                'p4-input');
+        });
+        
+        document.getElementById('p5-input').addEventListener('input', function() {
+            checkProblem('p5', '[0,0]', 
+                ['[[0,0]]', '[0;0]', '[[0;0]]', '0', 'zero', '[0]', '[0 0]'],
+                'p5-input');
+        });
+    });
+    </script>
+</body>
+</html>

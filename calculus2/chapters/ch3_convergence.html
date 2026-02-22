@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 3: Series Convergence Tests - Calculus II</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+
+  <!-- MathJax Configuration -->
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    },
+    startup: {
+      typeset: false
+    }
+  };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+  <header>
+    <h1>Calculus II <span>Chapter 3</span></h1>
+    <p class="tagline">Series Convergence Tests</p>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <div class="sidebar-title">📖 Chapter 3 Lessons</div>
+      <ul class="chapter-nav">
+        <li><a href="../index.html">← Back to Home</a></li>
+        <li><a href="#chapter-intro">Chapter Introduction</a></li>
+        <li><a href="#lesson-17">Lesson 17: The Divergence Test</a></li>
+        <li><a href="#lesson-18">Lesson 18: The Integral Test</a></li>
+        <li><a href="#lesson-19">Lesson 19: Comparison Tests</a></li>
+        <li><a href="#lesson-20">Lesson 20: Alternating Series Test</a></li>
+        <li><a href="#lesson-21">Lesson 21: Absolute & Conditional Convergence</a></li>
+        <li><a href="#lesson-22">Lesson 22: The Ratio Test</a></li>
+        <li><a href="#lesson-23">Lesson 23: The Root Test</a></li>
+        <li><a href="#lesson-24">Lesson 24: Choosing the Right Test</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <div class="breadcrumbs"><a href="../index.html">Home</a> > Chapter 3: Series Convergence Tests</div>
+
+      <section id="chapter-intro">
+        <h2>Chapter 3: Series Convergence Tests</h2>
+
+        <div class="key-concepts">
+          <h3>📋 Chapter Overview</h3>
+          <p>This chapter provides a toolkit of tests to determine whether an infinite series converges or diverges. Each test works best for certain types of series, and part of mastering this chapter is learning which test to apply in which situation.</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>🎯 Learning Objectives</h3>
+          <ul>
+            <li>Apply the Divergence Test (and understand its limitations)</li>
+            <li>Use the Integral Test for positive, decreasing functions</li>
+            <li>Compare series using Direct and Limit Comparison Tests</li>
+            <li>Test alternating series for convergence</li>
+            <li>Distinguish between absolute and conditional convergence</li>
+            <li>Apply the Ratio Test for series with factorials and exponentials</li>
+            <li>Use the Root Test for series with powers of n</li>
+            <li>Develop intuition for choosing the right test</li>
+          </ul>
+        </div>
+
+        <div class="applications">
+          <h3>🌍 Why This Matters</h3>
+          <ul>
+            <li><strong>Power Series:</strong> Determining radius and interval of convergence</li>
+            <li><strong>Approximation:</strong> Taylor series rely on convergence</li>
+            <li><strong>Differential Equations:</strong> Series solutions</li>
+            <li><strong>Signal Processing:</strong> Fourier series</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- LESSON 17: The Divergence Test -->
+      <section id="lesson-17" class="lesson">
+        <h1>Lesson 17: The Divergence Test</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>The Divergence Test (also called the nth-Term Test) is the simplest test we have. It can only tell us if a series diverges - it can never prove convergence!</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 The Divergence Test</h3>
+          <div class="formula-highlight">
+            <strong>THEOREM:</strong> If $\lim_{n \to \infty} a_n \neq 0$ or does not exist, then $\sum_{n=1}^{\infty} a_n$ diverges.
+          </div>
+
+          <div class="common-mistakes">
+            <h4>⚠️ CRITICAL WARNING</h4>
+            <p><strong>THE CONVERSE IS FALSE!</strong></p>
+            <p>If $\lim_{n \to \infty} a_n = 0$, the series MAY converge or MAY diverge.</p>
+            <p><strong>Example:</strong> $\sum_{n=1}^{\infty} \frac{1}{n}$ (harmonic series) has $\lim_{n \to \infty} \frac{1}{n} = 0$, but diverges!</p>
+          </div>
+
+          <h4>Summary of What the Test Does:</h4>
+          <ul>
+            <li>✅ Can prove: DIVERGENCE (if $\lim a_n \neq 0$)</li>
+            <li>❌ Cannot prove: CONVERGENCE (even if $\lim a_n = 0$)</li>
+          </ul>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example 1: Test $\sum_{n=1}^{\infty} \frac{n+1}{2n+1}$ for convergence</h4>
+
+          <div id="ch3-l1-ex1">
+            <div class="step" style="display: none;">Step 1: Apply Divergence Test: Find $\\lim_{n \\to \\infty} \\frac{n+1}{2n+1}$</div>
+            <div class="step" style="display: none;">Step 2: Divide by n: $\\lim_{n \\to \\infty} \\frac{1 + 1/n}{2 + 1/n} = \\frac{1}{2}$</div>
+            <div class="step" style="display: none;">Step 3: Since limit = $\\frac{1}{2} \\neq 0$, the series DIVERGES</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch3-l1-ex1')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div id="ch3-l17-practice"></div>
+        <div id="ch3-l17-quiz"></div>
+      </section>
+
+      <!-- LESSON 18: The Integral Test -->
+      <section id="lesson-18" class="lesson">
+        <h1>Lesson 18: The Integral Test</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>The Integral Test connects series and integrals! If we have a positive, decreasing function, the convergence of the series $\sum a_n$ is equivalent to the convergence of the integral $\int f(x) dx$.</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 The Integral Test</h3>
+          <div class="formula-highlight">
+            <strong>THEOREM:</strong> Let $f$ be a continuous, positive, decreasing function on $[1, \infty)$ and let $a_n = f(n)$.
+            <br><br>
+            Then $\sum_{n=1}^{\infty} a_n$ converges $\iff$ $\int_1^{\infty} f(x) \, dx$ converges.
+          </div>
+
+          <h4>Requirements:</h4>
+          <ol>
+            <li>$f(x)$ is <strong>positive</strong> for $x \geq 1$</li>
+            <li>$f(x)$ is <strong>continuous</strong> for $x \geq 1$</li>
+            <li>$f(x)$ is <strong>decreasing</strong> for $x \geq 1$</li>
+            <li>$a_n = f(n)$ (discrete terms match the function)</li>
+          </ol>
+
+          <h4>p-Series Test (Special Case):</h4>
+          <div class="formula">
+            $$\sum_{n=1}^{\infty} \frac{1}{n^p}$$
+            <br><br>
+            Converges if $p > 1$, diverges if $p \leq 1$
+          </div>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example: Test $\sum_{n=1}^{\infty} \frac{1}{n^2}$ for convergence</h4>
+
+          <div id="ch3-l2-ex1">
+            <div class="step" style="display: none;">Step 1: Let $f(x) = \\frac{1}{x^2}$, which is positive, continuous, and decreasing on $[1, \\infty)$</div>
+            <div class="step" style="display: none;">Step 2: Apply Integral Test: $\\int_1^{\\infty} \\frac{1}{x^2} \\, dx = \\lim_{t \\to \\infty} \\int_1^t x^{-2} \\, dx$</div>
+            <div class="step" style="display: none;">Step 3: Integrate: $\\lim_{t \\to \\infty} [-\\frac{1}{x}]_1^t = \\lim_{t \\to \\infty} (-\\frac{1}{t} + 1) = 1$</div>
+            <div class="step" style="display: none;">Step 4: The integral converges (to 1), so the series CONVERGES</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch3-l2-ex1')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div id="ch3-l18-practice"></div>
+        <div id="ch3-l18-quiz"></div>
+      </section>
+
+      <!-- LESSON 19: Comparison Tests -->
+      <section id="lesson-19" class="lesson">
+        <h1>Lesson 19: Comparison Tests</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>Comparison tests allow us to determine convergence by comparing to series we already know. They're powerful when we can relate a complex series to a simpler, known series.</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 Direct Comparison Test</h3>
+          <div class="formula">
+            Let $\sum a_n$ and $\sum b_n$ be series with positive terms.
+            <br><br>
+            <strong>If</strong> $0 < a_n \leq b_n$ for all $n$:
+            <br>
+            - If $\sum b_n$ converges, then $\sum a_n$ converges
+            <br>
+            - If $\sum a_n$ diverges, then $\sum b_n$ diverges
+          </div>
+
+          <h4>Key Idea:</h4>
+          <ul>
+            <li>Smaller convergent → smaller convergent (easy case)</li>
+            <li>Larger divergent → larger divergent (easy case)</li>
+          </ul>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 Limit Comparison Test</h3>
+          <div class="formula-highlight">
+            Let $\sum a_n$ and $\sum b_n$ be series with positive terms.
+            <br><br>
+            If $\\lim_{n \\to \\infty} \\frac{a_n}{b_n} = c$ where $0 < c < \\infty$:
+            <br><br>
+            Then $\sum a_n$ and $\sum b_n$ either both converge or both diverge.
+          </div>
+
+          <h4>Benefits of Limit Comparison:</h4>
+          <ul>
+            <li>Don't need one series to be always larger or smaller</li>
+            <li>Works with limit analysis, which we're good at!</li>
+          </ul>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example: Test $\sum_{n=1}^{\infty} \frac{1}{n^2 + 1}$ using Limit Comparison</h4>
+
+          <div id="ch3-l3-ex1">
+            <div class="step" style="display: none;">Step 1: Compare to $b_n = \\frac{1}{n^2}$ (p-series with p=2 > 1, converges)</div>
+            <div class="step" style="display: none;">Step 2: Compute limit: $\\lim_{n \\to \\infty} \\frac{1/(n^2+1)}{1/n^2} = \\lim_{n \\to \\infty} \\frac{n^2}{n^2+1}$</div>
+            <div class="step" style="display: none;">Step 3: Simplify: $\\lim_{n \\to \\infty} \\frac{1}{1 + 1/n^2} = 1$</div>
+            <div class="step" style="display: none;">Step 4: Since limit = 1 (positive and finite), both series behave the same</div>
+            <div class="step" style="display: none;">Step 5: Since $\sum \\frac{1}{n^2}$ converges, $\sum \\frac{1}{n^2+1}$ also CONVERGES</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch3-l3-ex1')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div id="ch3-l19-practice"></div>
+        <div id="ch3-l19-quiz"></div>
+      </section>
+
+      <!-- LESSON 20: Alternating Series Test -->
+      <section id="lesson-20" class="lesson">
+        <h1>Lesson 20: Alternating Series Test</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>An alternating series is one where signs alternate between positive and negative. The Alternating Series Test (or Leibniz Test) gives a simple criterion for convergence.</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 Alternating Series Form</h3>
+          <div class="formula">
+            $$\sum_{n=1}^{\infty} (-1)^{n-1} b_n = b_1 - b_2 + b_3 - b_4 + \cdots$$
+            <br>
+            or
+            <br>
+            $$\sum_{n=1}^{\infty} (-1)^n b_n = -b_1 + b_2 - b_3 + b_4 - \cdots$$
+            <br>
+            where $b_n > 0$
+          </div>
+
+          <h3>📚 Alternating Series Test (Leibniz Test)</h3>
+          <div class="formula-highlight">
+            <strong>THEOREM:</strong> If the alternating series $\sum (-1)^{n-1} b_n$ satisfies:
+            <br><br>
+            1. $b_{n+1} \leq b_n$ for all $n$ (decreasing)
+            <br>
+            2. $\lim_{n \to \infty} b_n = 0$
+            <br><br>
+            then the series converges.
+          </div>
+
+          <h4>Common Alternating Series:</h4>
+          <ul>
+            <li><strong>Alternating Harmonic:</strong> $\sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n}$ (converges!)</li>
+            <li><strong>Alternating p-series:</strong> $\sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n^p}$ (converges for all $p > 0$)</li>
+          </ul>
+        </div>
+
+        <div id="ch3-l20-practice"></div>
+        <div id="ch3-l20-quiz"></div>
+      </section>
+
+      <!-- LESSON 21: Absolute and Conditional Convergence -->
+      <section id="lesson-21" class="lesson">
+        <h1>Lesson 21: Absolute and Conditional Convergence</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>For series with both positive and negative terms, we have two types of convergence. Understanding the distinction is crucial for calculus applications.</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 Definitions</h3>
+
+          <h4>Absolute Convergence:</h4>
+          <div class="formula">
+            $\sum a_n$ <strong>converges absolutely</strong> if $\sum |a_n|$ converges.
+          </div>
+
+          <h4>Conditional Convergence:</h4>
+          <div class="formula">
+            $\sum a_n$ <strong>converges conditionally</strong> if $\sum a_n$ converges but $\sum |a_n|$ diverges.
+          </div>
+
+          <h3>📚 Important Theorem</h3>
+          <div class="formula-highlight">
+            <strong>THEOREM:</strong> If $\sum |a_n|$ converges, then $\sum a_n$ also converges.
+            <br><br>
+            <strong>In other words:</strong> Absolute convergence implies convergence.
+          </div>
+
+          <h4>Relationship:</h4>
+          <ul>
+            <li>Absolutely convergent → Convergent (always)</li>
+            <li>Convergent → May be absolute or conditional</li>
+          </ul>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example: Analyze $\sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n}$ (Alternating Harmonic Series)</h4>
+
+          <div id="ch3-l4-ex1">
+            <div class="step" style="display: none;">Step 1: Does it converge? Yes, by Alternating Series Test</div>
+            <div class="step" style="display: none;">Step 2: Check absolute convergence: $\sum |\\frac{(-1)^{n-1}}{n}| = \sum \\frac{1}{n}$</div>
+            <div class="step" style="display: none;">Step 3: This is the harmonic series, which DIVERGES (p=1)</div>
+            <div class="step" style="display: none;">Step 4: Conclusion: The series converges CONDITIONALLY (not absolutely)</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch3-l4-ex1')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div id="ch3-l21-practice"></div>
+        <div id="ch3-l21-quiz"></div>
+      </section>
+
+      <!-- LESSON 22: The Ratio Test -->
+      <section id="lesson-22" class="lesson">
+        <h1>Lesson 22: The Ratio Test</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>The Ratio Test is powerful for series involving factorials, exponentials, and powers. It works by examining how successive terms compare.</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 The Ratio Test</h3>
+          <div class="formula-highlight">
+            Let $L = \lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right|$.
+            <br><br>
+            <strong>Then:</strong>
+            <br>
+            - If $L < 1$: Series converges absolutely
+            <br>
+            - If $L > 1$ or $L = \infty$: Series diverges
+            <br>
+            - If $L = 1$: Test is inconclusive
+          </div>
+
+          <h4>When to Use It:</h4>
+          <ul>
+            <li>Series with factorials: $n!$, $(2n)!$, etc.</li>
+            <li>Series with exponentials: $2^n$, $3^n$, $e^n$, etc.</li>
+            <li>Series where $a_{n+1}$ is related to $a_n$</li>
+          </ul>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example: Test $\sum_{n=1}^{\infty} \frac{2^n}{n!}$ for convergence</h4>
+
+          <div id="ch3-l5-ex1">
+            <div class="step" style="display: none;">Step 1: Apply Ratio Test: $L = \\lim_{n \\to \\infty} \\left|\\frac{a_{n+1}}{a_n}\\right| = \\lim_{n \\to \\infty} \\frac{2^{n+1}/(n+1)!}{2^n/n!}$</div>
+            <div class="step" style="display: none;">Step 2: Simplify: $\\lim_{n \\to \\infty} \\frac{2^{n+1} \\cdot n!}{2^n \\cdot (n+1)!} = \\lim_{n \\to \\infty} \\frac{2}{n+1}$</div>
+            <div class="step" style="display: none;">Step 3: Compute limit: $\\lim_{n \\to \\infty} \\frac{2}{n+1} = 0$</div>
+            <div class="step" style="display: none;">Step 4: Since $L = 0 < 1$, the series CONVERGES ABSOLUTELY</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch3-l5-ex1')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div id="ch3-l22-practice"></div>
+        <div id="ch3-l22-quiz"></div>
+      </section>
+
+      <!-- LESSON 23: The Root Test -->
+      <section id="lesson-23" class="lesson">
+        <h1>Lesson 23: The Root Test</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>The Root Test is similar to the Ratio Test but uses nth roots instead. It's especially useful for series where terms are raised to the power of n.</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 The Root Test</h3>
+          <div class="formula-highlight">
+            Let $L = \lim_{n \to \infty} \sqrt[n]{|a_n|}$.
+            <br><br>
+            <strong>Then:</strong>
+            <br>
+            - If $L < 1$: Series converges absolutely
+            <br>
+            - If $L > 1$ or $L = \infty$: Series diverges
+            <br>
+            - If $L = 1$: Test is inconclusive
+          </div>
+
+          <h4>When to Use It:</h4>
+          <ul>
+            <li>Series of the form $\sum (f(n))^n$</li>
+            <li>Series where terms have n as an exponent</li>
+            <li>When simplifying nth roots is easier than ratio</li>
+          </ul>
+        </div>
+
+        <div class="example interactive">
+          <h4>🔢 Example: Test $\sum_{n=1}^{\infty} \left(\frac{n}{2n+1}\right)^n$ for convergence</h4>
+
+          <div id="ch3-l6-ex1">
+            <div class="step" style="display: none;">Step 1: Apply Root Test: $L = \\lim_{n \\to \\infty} \\sqrt[n]{\\left(\\frac{n}{2n+1}\\right)^n}$</div>
+            <div class="step" style="display: none;">Step 2: Simplify nth root: $\\lim_{n \\to \\infty} \\frac{n}{2n+1}$</div>
+            <div class="step" style="display: none;">Step 3: Divide by n: $\\lim_{n \\to \\infty} \\frac{1}{2 + 1/n} = \\frac{1}{2}$</div>
+            <div class="step" style="display: none;">Step 4: Since $L = \\frac{1}{2} < 1$, the series CONVERGES</div>
+          </div>
+
+          <div class="interactive-controls">
+            <button onclick="revealAllSteps('ch3-l6-ex1')" class="secondary">Show Solution</button>
+          </div>
+        </div>
+
+        <div id="ch3-l23-practice"></div>
+        <div id="ch3-l23-quiz"></div>
+      </section>
+
+      <!-- LESSON 24: Choosing the Right Test -->
+      <section id="lesson-24" class="lesson">
+        <h1>Lesson 24: Strategy Guide - Choosing the Right Test</h1>
+
+        <div class="lesson-intro">
+          <h3>📖 Introduction</h3>
+          <p>With so many convergence tests available, knowing which one to apply is a skill. This lesson provides a systematic approach to choosing the right test.</p>
+        </div>
+
+        <div class="key-concepts">
+          <h3>📚 Decision Tree</h3>
+
+          <h4>Step 1: Check the Divergence Test FIRST</h4>
+          <div class="formula">
+            If $\lim_{n \\to \\infty} a_n \\neq 0$, the series DIVERGES. Done!
+            <br>
+            If $\lim a_n = 0$, we need more tests.
+          </div>
+
+          <h4>Step 2: Identify the type of series</h4>
+          <ul>
+            <li><strong>Alternating series:</strong> Use Alternating Series Test</li>
+            <li><strong>Positive terms:</strong> Continue to Step 3</li>
+          </ul>
+
+          <h4>Step 3: Check for special forms</h4>
+          <ul>
+            <li><strong>p-series:</strong> $\sum \frac{1}{n^p}$ - use p-test</li>
+            <li><strong>Geometric:</strong> $\sum ar^n$ - use geometric series test</li>
+            <li><strong>Factorials/exponentials:</strong> Try Ratio Test</li>
+            <li><strong>n as exponent:</strong> Try Root Test</li>
+          </ul>
+
+          <h4>Step 4: If none of the above, try Comparison Tests</h4>
+          <ul>
+            <li><strong>Direct comparison:</strong> If you can establish inequality relationship</li>
+            <li><strong>Limit comparison:</strong> More flexible, use limit analysis</li>
+          </ul>
+
+          <h4>Step 5: Last resort</h4>
+          <ul>
+            <li><strong>Integral Test:</strong> If function is positive, continuous, decreasing</li>
+          </ul>
+        </div>
+
+        <div class="key-concepts">
+          <h4>🎯 Quick Reference</h4>
+
+          <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+            <tr style="background: rgba(255,107,53,0.1); border-bottom: 2px solid var(--orange);">
+              <th style="padding: 0.75rem; text-align: left; color: var(--orange);">Series Type</th>
+              <th style="padding: 0.75rem; text-align: left; color: var(--orange);">Best Test</th>
+              <th style="padding: 0.75rem; text-align: left; color: var(--orange);">Example</th>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <td style="padding: 0.5rem;">$\lim a_n \neq 0$</td>
+              <td style="padding: 0.5rem;">Divergence Test</td>
+              <td style="padding: 0.5rem;">$\sum n/(n+1)$</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <td style="padding: 0.5rem;">Alternating</td>
+              <td style="padding: 0.5rem;">Alternating Series Test</td>
+              <td style="padding: 0.5rem;">$\sum (-1)^n/n$</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <td style="padding: 0.5rem;">$\sum 1/n^p$</td>
+              <td style="padding: 0.5rem;">p-Test</td>
+              <td style="padding: 0.5rem;">$\sum 1/n^2$</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <td style="padding: 0.5rem;">Factorials, $2^n$, etc.</td>
+              <td style="padding: 0.5rem;">Ratio Test</td>
+              <td style="padding: 0.5rem;">$\sum 2^n/n!$</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <td style="padding: 0.5rem;">$(f(n))^n$</td>
+              <td style="padding: 0.5rem;">Root Test</td>
+              <td style="padding: 0.5rem;">$\sum (n/2n)^n$</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <td style="padding: 0.5rem;">Rational function</td>
+              <td style="padding: 0.5rem;">Limit Comparison</td>
+              <td style="padding: 0.5rem;">$\sum (n+1)/n^3$</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <td style="padding: 0.5rem;">Nice integral exists</td>
+              <td style="padding: 0.5rem;">Integral Test</td>
+              <td style="padding: 0.5rem;">$\sum 1/(n^2+1)$</td>
+            </tr>
+          </table>
+        </div>
+
+        <div id="ch3-l24-practice"></div>
+        <div id="ch3-l24-quiz"></div>
+
+        <div class="chapter-summary">
+          <h2>📓 Chapter 3 Summary</h2>
+          <ul>
+            <li><strong>Divergence Test:</strong> If $\lim a_n \neq 0$, diverges (but converse is false!)</li>
+            <li><strong>Integral Test:</strong> Connects series to integrals (for positive, continuous, decreasing)</li>
+            <li><strong>Comparison Tests:</strong> Compare to known series (direct and limit comparison)</li>
+            <li><strong>Alternating Series:</strong> Converges if decreasing and terms → 0</li>
+            <li><strong>Absolute vs Conditional:</strong> Absolute convergence requires $\sum |a_n|$ to converge</li>
+            <li><strong>Ratio Test:</strong> Best for factorials and exponentials</li>
+            <li><strong>Root Test:</strong> Best for $(f(n))^n$ forms</li>
+            <li><strong>Strategy:</strong> Use a systematic approach - always check Divergence Test first!</li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer>
+    <p>Chapter 3: Series Convergence Tests | Calculus II Complete Mastery Course</p>
+  </footer>
+
+  <script src="../assets/js/math.js"></script>
+  <script src="../assets/js/progress.js"></script>
+  <script src="../assets/js/quizzes.js"></script>
+  <script src="../assets/js/practice.js"></script>
+
+  <script>
+    // Force MathJax to render all math when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        if (window.MathJax && MathJax.typesetPromise) {
+          MathJax.typesetPromise().then(function() {
+            console.log('MathJax rendered successfully');
+          }).catch(function(err) {
+            console.log('MathJax error:', err);
+          });
+        }
+      }, 500);
+    });
+  </script>
+
+  <script>
+    function revealAllSteps(containerId) {
+      const container = document.getElementById(containerId);
+      const steps = container.querySelectorAll('.step');
+      steps.forEach(step => {
+        step.style.display = 'block';
+      });
+      renderMath(container);
+    }
+
+    // Initialize Practice Problems for Chapter 3
+    document.addEventListener('DOMContentLoaded', function() {
+      // Lesson 17 (Divergence Test) Practice
+      PracticeManager.init('ch3-l17', [
+        PracticeTemplates.multipleChoice('When does the Divergence Test prove a series converges?', ['When limit = 0', 'Never', 'When limit exists', 'Always'], 1, 'Divergence Test can only prove divergence', 'beginner'),
+        PracticeTemplates.trueFalse('If $\\lim_{n \\to \\infty} a_n = 0$, then $\sum a_n$ must converge.', false, 'Harmonic series counterexample'),
+        PracticeTemplates.numerical('Does $\sum_{n=1}^{\infty} \\frac{n}{2n+1}$ converge? Enter 0 for No, 1 for Yes', '0', 'Limit is 1/2 ≠ 0, so diverges', 0.01, 'beginner'),
+        PracticeTemplates.multipleChoice('$\sum_{n=1}^{\infty} \cos(n\\pi)$ converges or diverges?', ['Converges to 0', 'Converges to 1', 'Diverges', 'Converges to -1'], 2, 'Terms are -1, 1, -1, 1, ... limit doesn\'t exist', 'intermediate')
+      ]);
+
+      QuizManager.init('ch3-l17-quiz', [
+        QuizTemplates.multipleChoice('What does the Divergence Test actually test?', ['Whether series converges', 'Whether series diverges', 'The value of the sum', 'Both convergence and divergence'], 1, 'It can only prove divergence'),
+        QuizTemplates.fillBlank('The Divergence Test says: if $\lim_{n \\to \\infty} a_n \neq$ _____, then the series diverges', '0', 'Zero'),
+        QuizTemplates.trueFalse('The converse of the Divergence Test is true.', false, 'If lim = 0, series may still diverge'),
+        QuizTemplates.multipleChoice('$\sum_{n=1}^{\infty} (-1)^n$ converges or diverges?', ['Converges to 0', 'Diverges', 'Converges to 1', 'Oscillates'], 1, 'Terms don\'t approach 0'),
+        QuizTemplates.numerical('$\lim_{n \\to \\infty} \\frac{2^n}{3^n} = 0$, so $\sum \\frac{2^n}{3^n}$... (1=converges, 0=diverges)', '1', 'Wait - we need more tests! Geometric with r=2/3 < 1', 0.01)
+      ]);
+
+      // Additional lessons would have their practice problems here...
+
+      if (ProgressManager) {
+        ProgressManager.startLesson('ch3-l17');
+      }
+    });
+  </script>
+</body>
+</html>

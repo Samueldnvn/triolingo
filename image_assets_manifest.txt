@@ -1,0 +1,61 @@
+# Image Assets Manifest for Bill Gates MP4 Video
+
+## Date: 2026-02-15
+## Total Images: 38
+## Source: Reused from previous Bill Gates video project
+
+## Image List:
+
+1. image001.jpg - Bill Gates/early computer era
+2. image002.jpg - Bill Gates/early computer era
+3. image003.jpg - Bill Gates/early computer era
+4. image004.jpg - Bill Gates/early computer era
+5. image005.jpg - Bill Gates/early computer era
+6. image006.jpg - Bill Gates/early computer era
+7. image007.jpg - Bill Gates/early computer era
+8. image008.jpg - Bill Gates/early computer era
+9. image009.jpg - Bill Gates/early computer era
+10. image010.jpg - Bill Gates/early computer era
+11. image011.jpg - Microsoft products/era
+12. image012.jpg - Microsoft products/era
+13. image013.jpg - Microsoft products/era
+14. image014.jpg - Microsoft products/era
+15. image015.jpg - Microsoft products/era
+16. image016.jpg - Microsoft products/era
+17. image017.jpg - Microsoft products/era
+18. image018.jpg - Microsoft products/era
+19. image019.jpg - Microsoft products/era
+20. image020.jpg - Microsoft products/era
+21. image021.jpg - Microsoft products/era
+22. image022.jpg - Success/wealth era
+23. image023.jpg - Success/wealth era
+24. image024.jpg - Success/wealth era
+25. image025.jpg - Success/wealth era
+26. image026.jpg - Success/wealth era
+27. image027.jpg - Philanthropy era
+28. image028.jpg - Philanthropy era
+29. image029.jpg - Philanthropy era
+30. image030.jpg - Philanthropy era
+31. image031.jpg - Philanthropy era
+32. image032.jpg - Philanthropy era
+33. image033.jpg - Philanthropy era
+34. image034.jpg - Philanthropy era
+35. image035.jpg - Philanthropy era
+36. image036.jpg - Legacy/reflection
+37. image037.jpg - Legacy/reflection
+38. image038.jpg - Legacy/reflection
+
+## Image Reuse Strategy:
+- Total scenes: 47
+- Total images: 38
+- Images will be reused for multiple scenes
+- Focus on era-appropriate imagery (early era → Microsoft era → philanthropy era → legacy)
+
+## Storage:
+- Primary: /home/samueldnvn4/.openclaw/workspace/image_assets/
+- Working copy: /home/samueldnvn4/.openclaw/workspace/bill_gates_mp4_output/images/
+
+## Notes:
+- All images from previous Bill Gates project
+- Can be reused for future video projects
+- File sizes approximately 1.9-2.2 KB each

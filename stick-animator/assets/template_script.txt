@@ -1,0 +1,61 @@
+# Stick Figure Video Script Template
+
+# Video Title: [YOUR TITLE HERE]
+# Target Duration: 10 minutes (600 seconds)
+# Target Word Count: ~1500 words
+# Style: "Why It Sucks To Be" [or your style]
+# Generated: [DATE]
+
+[SCENE 1 - TRAGIC: Opening hook]
+Imagine you're born into [TOPIC TIME PERIOD/CONTEXT]. It seems impossible from our modern perspective, but back then life was [DESCRIPTION OF DIFFICULTY]. You work from dawn until dusk, [SPECIFIC HARDSHIP DETAILS], and [ADDITIONAL STRUGGLE].
+
+[SCENE 2 - TRAGIC: Establish baseline]
+Every day is the same struggle. [DAILY LIFE DETAILS]. There's no hope for improvement, no path to change, just [ONGOING SUFFERING]. You watch [PRIVILEGED GROUP] living lavishly while you [SUFFERING ACTIVITY].
+
+[SCENE 3 - TENSION: Build resentment]
+But then something interesting happens. [EVENT THAT CHANGES THINGS]. People start talking about [NEW IDEAS]. There's a feeling in the air that [HOPE FOR CHANGE]. You hear about [SPECIFIC EVENTS/IDEAS SPREADING].
+
+[SCENE 4 - TENSION: First confrontations]
+[GROUP] gathers at [LOCATION]. They demand [CHANGES WANTED]. The response is [REACTION FROM AUTHORITY]. Tension builds as [ESCALATION DETAILS]. The situation becomes [INTENSITY LEVEL].
+
+[SCENE 5 - REVOLUTION: Action begins]
+The breaking point arrives on [DATE]. [CONFRONTATION SCENE]. People [REVEOLUTIONARY ACTION]. This is the moment everything changes. The world will never be the same.
+
+[SCENE 6 - REVOLUTION: Momentum builds]
+News spreads quickly. [REACTION IN OTHER AREAS]. More people join [THE CAUSE]. The movement grows beyond anyone's expectations. [SPECIFIC EXPANSION]. There's no turning back now.
+
+[SCENE 7 - HOPE: Hopes rise]
+For the first time, people believe [HOPES FOR FUTURE]. They talk about [INSPIRATIONAL IDEALS]. The possibility of [POSITIVE OUTCOME]. It feels like [EMOTION] might finally come.
+
+[SCENE 8 - TENSION: Complications arise]
+But [COMPLICATION]. Not everyone agrees on [DEBATE POINT]. There are internal conflicts. Some want [POSITION A], others want [POSITION B]. The unity begins to fracture.
+
+[SCENE 9 - TERROR: Darkness descends]
+Violence escalates beyond control. [SPECIFIC VIOLENCE]. Fear spreads like [METAPHOR]. Anyone could be [THREAT]. The dream of [ORIGINAL HOPE] becomes nightmare.
+
+[SCENE 10 - TERROR: Worst moments]
+[KEY TERRIBLE MOMENT]. The cost of [REVOLUTIONARY GOAL] becomes clear. Innocent people suffer. The line between [GOOD GUYS] and [BAD GUYS] blurs beyond recognition.
+
+[SCENE 11 - TENSION: Turning point]
+Eventually, even [VIOLENT LEADER] faces [JUSTICE/RECKONING]. [KEY TURNING EVENT]. The madness reaches its peak and begins to subside. There's a collective exhalation.
+
+[SCENE 12 - HOPE: Recovery begins]
+Slowly, the terror subsides. [RECOVERY PROCESS]. People begin to [REBUILDING ACTIVITY]. There are scars, but there's also [POSITIVE OUTCOME]. The revolution has [ACCOMPLISHMENT].
+
+[SCENE 13 - HOPE: What changed]
+Looking back, it's amazing what [ACCOMPLISHED]. [SPECIFIC ACHIEVEMENTS]. The world is different now, but [COMPLEX REALITY]. Not everything is perfect, but [IMPROVEMENT].
+
+[SCENE 14 - REFLECTION: Legacy]
+[IMPORTANT LESSON]. [KEY TAKEAWAY]. History will remember [SIGNIFICANCE]. But most importantly, [HUMAN ASPECT]. Ordinary people did extraordinary things.
+
+[SCENE 15 - CONCLUSION: Final thoughts]
+So the next time you [CONNECTION TO TOPIC], remember [FINAL MESSAGE]. [TOPIC] changed the world, but [RELEVANCE TODAY]. The past teaches us about [TIMELESS LESSON].
+
+# END OF SCRIPT
+
+# NOTES FOR COMPLETION:
+- Replace all bracketed content with topic-specific details
+- Adjust scene count and duration as needed
+- Edit mood labels to match scene content
+- Maintain scene length: 40-100 words each for 3-8 second scenes
+- Total target: ~100-150 scenes for full 10-minute video

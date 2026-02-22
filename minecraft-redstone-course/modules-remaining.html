@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Modules Continued - Redstone Computing Academy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <style>
+        .module-content {
+            background: var(--mc-black);
+            border: var(--mc-border);
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 0 rgba(0,0,0,0.4);
+            position: relative;
+        }
+        .module-content::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            right: 4px;
+            bottom: 4px;
+            border: 3px solid var(--mc-emerald);
+            pointer-events: none;
+        }
+        .module-header { border-bottom: 3px solid var(--mc-redstone); padding-bottom: 30px; margin-bottom: 40px; }
+        .module-number { font-family: 'Press Start 2P', cursive; font-size: 0.9rem; color: var(--mc-emerald); margin-bottom: 10px; }
+        .module-title { font-family: 'Press Start 2P', cursive; font-size: 1.4rem; color: var(--mc-gold); margin-bottom: 20px; }
+        .module-description { color: var(--mc-light-text); font-size: 1.4rem; line-height: 1.8; }
+        .module-duration { display: inline-block; background: var(--mc-stone); color: var(--mc-light-text); padding: 8px 16px; margin-top: 15px; font-size: 1.1rem; }
+        .learning-objectives { margin: 30px 0; background: var(--mc-obsidian); padding: 25px; border-left: 4px solid var(--mc-diamond); }
+        .learning-objectives h4 { color: var(--mc-diamond); font-size: 1.3rem; margin-bottom: 15px; }
+        .learning-objectives ul { list-style-type: '▸ '; padding-left: 20px; margin-left: 10px; }
+        .learning-objectives li { color: var(--mc-light-text); font-size: 1.2rem; margin-bottom: 10px; }
+        .topic-header { font-family: 'Press Start 2P', cursive; font-size: 1rem; color: var(--mc-emerald); margin: 40px 0 20px; padding-bottom: 10px; border-bottom: 2px solid var(--mc-stone); }
+        .topic-content { color: var(--mc-light-text); font-size: 1.3rem; line-height: 1.8; }
+        .topic-content ul { margin: 15px 0; margin-left: 30px; }
+        .topic-content li { margin-bottom: 10px; }
+        .example-box { background: var(--mc-stone); border: 3px solid var(--mc-iron); padding: 25px; margin: 25px 0; }
+        .example-box h5 { color: var(--mc-gold); font-size: 1.2rem; margin-bottom: 15px; }
+        .table-container { overflow-x: auto; margin: 25px 0; }
+        .mc-table { width: 100%; border-collapse: collapse; background: var(--mc-stone); }
+        .mc-table th { background: var(--mc-wood); color: var(--mc-gold); padding: 15px; text-align: left; border: 2px solid var(--mc-black); font-family: 'Press Start 2P', cursive; font-size: 0.7rem; }
+        .mc-table td { padding: 12px; border: 1px solid var(--mc-black); color: var(--mc-light-text); font-family: 'VT323', monospace; font-size: 1.2rem; }
+        .module-tips { background: linear-gradient(135deg, var(--mc-emerald) 0%, var(--mc-grass) 100%); padding: 25px; margin: 30px 0; border: var(--mc-border-light); }
+        .module-tips h5 { color: var(--mc-black); font-size: 1.3rem; margin-bottom: 15px; }
+        .module-tips ul li { color: var(--mc-black); margin-bottom: 10px; font-weight: bold; }
+        .module-navigation { display: flex; justify-content: space-between; margin-top: 40px; padding-top: 30px; border-top: 3px solid var(--mc-stone); }
+        .nav-btn { padding: 15px 30px; background: var(--mc-wood); color: var(--mc-light-text); text-decoration: none; border: var(--mc-border-light); transition: all 0.2s; font-size: 1.1rem; }
+        .nav-btn:hover { background: var(--mc-stone); transform: translateY(-2px); }
+        pre { background: var(--mc- black); padding: 15px; overflow-x: auto; font-family: 'VT323', monospace; font-size: 1.1rem; border-left: 3px solid var(--mc-redstone); }
+        .module-container { max-width: 1400px; margin: 0 auto; padding: 40px 20px; }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="sky-background"></div>
+    <div class="clouds"></div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="redstone-icon"></span>
+                <h1>REDSTONE COMPUTING ACADEMY</h1>
+            </div>
+            <p class="subtitle">Advanced Course Modules</p>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="modules.html" class="nav-link">Course Modules</a>
+            <a href="projects.html" class="nav-link">Projects</a>
+            <a href="resources.html" class="nav-link">Resources</a>
+            <a href="quiz.html" class="nav-link">Quiz</a>
+        </nav>
+    </header>
+
+    <section class="module-container">
+        <h2 class="section-title">📚 CONTINUED COURSE MODULES</h2>
+        
+        <!-- MODULE 2 -->
+        <div id="module-2" class="module-content">
+            <div class="module-header">
+                <div class="module-number">MODULE 2</div>
+                <h2 class="module-title">ADVANCED CIRCUITRY</h2>
+                <p class="module-description">Move beyond basic gates into combinational logic. Build adders, multiplexers, and clocks - the foundation of digital systems.</p>
+                <span class="module-duration">⏱️ Estimated Time: 5-7 hours</span>
+            </div>
+
+            <div class="learning-objectives">
+                <h4>🎯 Learning Objectives</h4>
+                <ul>
+                    <li>Understand combinational vs sequential circuits</li>
+                    <li>Build half adders, full adders, and ripple-carry adders</li>
+                    <li>Create multiplexers and demultiplexers for data routing</li>
+                    <li>Design encoders and decoders for signal interpretation</li>
+                    <li>Generate reliable clock signals and timing circuits</li>
+                </ul>
+            </div>
+
+            <h3 class="topic-header">2.1 Combinational vs Sequential Circuits</h3>
+            <div class="topic-content">
+                <p><strong>Combinational Circuits:</strong> Output depends <em>only</em> on current inputs. No memory of previous states. Examples: adders, MUX, decoders.</p>
+                <p><strong>Sequential Circuits:</strong> Output depends on inputs AND previous state. Contains memory elements. Examples: flip-flops, counters, registers (covered in Module 5).</p>
+                <p>This module focuses on combinational circuits. They're immediate, predictable, and form the backbone of arithmetic and data flow operations.</p>
+            </div>
+
+            <h3 class="topic-header">2.2 Adders - The Heart of Computing</h3>
+            <div class="topic-content">
+                <p>Adders perform binary addition. Let's build them step by step, starting simple and then scaling up.</p>
+                
+                <h4>Half Adder</h4>
+                <p>Adds two 1-bit numbers (A and B). Produces a Sum bit and a Carry-out bit.</p>
+                <div class="table-container">
+                    <table class="mc-table">
+                        <thead><tr><th>A</th><th>B</th><th>Sum</th><th>Carry</th></tr></thead>
+                        <tbody>
+                            <tr><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                            <tr><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+                            <tr><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+                            <tr><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="example-box">
+                    <h5>Half Adder Construction</h5>
+                    <p><strong>Logic:</strong> Sum = A XOR B, Carry = A AND B</p>
+                    <ul>
+                        <li>Sum output uses one XOR gate (check if bits differ)</li>
+                        <li>Carry output uses one AND gate (both bits = 1)</li>
+                        <li><em>Delay: 2 ticks (XOR delay)</em></li>
+                    </ul>
+                </div>
+
+                <h4>Full Adder</h4>
+                <p>Adds three 1-bit numbers: A, B, and <em>Carry-In</em> (from previous adder). Produces Sum and Carry-out.</p>
+                <div class="example-box">
+                    <h5>Full Adder Construction Methods</h5>
+                    <p><strong>Method 1: Two Half Adders Cascaded</strong></p>
+                    <ul>
+                        <li>First half adder: Add A + B to get partial sum and carry</li>
+                        <li>Second half adder: Add partial sum + Carry-In</li>
+                        <li>Carry-out = OR of both half adder carries</li>
+                        <li><em>Delay: 4 ticks</em></li>
+                    </ul>
+                    <p><strong>Method 2: Direct Gate Network</strong></p>
+                    <ul>
+                        <li>Sum = A XOR B XOR Carry-In</li>
+                        <li>Carry-Out = (A AND B) OR (A AND Carry-In) OR (B AND Carry-In)</li>
+                        <li>More gates, but same delay and sometimes more compact</li>
+                    </ul>
+                </div>
+
+                <h4>Ripple-Carry Adder</h4>
+                <p>Cascades full adders to add multi-bit numbers. The carry "ripples" from least significant bit to most significant bit.</p>
+                <div class="example-box">
+                    <h5>4-Bit Ripple-Carry Adder</h5>
+                    <ul>
+                        <li>Cascade 4 full adders</li>
+                        <li>Each adder's Carry-Out → next adder's Carry-In</li>
+                        <li><em>Total delay: 4 ticks per adder × 4 adders = 16 ticks!</em></li>
+                        <li>This cascading delay is why we eventually use carry-lookahead adders</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="topic-header">2.3 Multiplexers (MUX)</h3>
+            <div class="topic-content">
+                <p>A multiplexer selects <strong>one of many inputs</strong> and routes it to a single output based on selector lines. Think of it as a digital switch.</p>
+                
+                <h4>2-to-1 Multiplexer</h4>
+                <p>Two data inputs (I0, I1), one selector (S), one output (Y).</p>
+                <div class="table-container">
+                    <table class="mc-table">
+                        <thead><tr><th>Selector (S)</th><th>Output (Y)</th></tr></thead>
+                        <tbody>
+                            <tr><td>0</td><td>I0</td></tr>
+                            <tr><td>1</td><td>I1</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="example-box">
+                    <h5>2-to-1 MUX Implementation</h5>
+                    <p><strong>Logic:</strong> Y = (NOT S AND I0) OR (S AND I1)</p>
+                    <ul>
+                        <li>Use inverter on selector for NOT S</li>
+                        <li>AND gates combine each input with appropriate selector</li>
+                        <li>OR gate selects the combined result</li>
+                        <li><em>Delay: 3 ticks</em></li>
+                    </ul>
+                </div>
+
+                <h4>4-to-1 Multiplexer</h4>
+                <p>Four data inputs, two selector lines (S1, S0), one output.</p>
+                <div class="table-container">
+                    <table class="mc-table">
+                        <thead><tr><th>S1</th><th>S0</th><th>Output</th></tr></thead>
+                        <tbody>
+                            <tr><td>0</td><td>0</td><td>I0</td></tr>
+                            <tr><td>0</td><td>1</td><td>I1</td></tr>
+                            <tr><td>1</td><td>0</td><td>I2</td></tr>
+                            <tr><td>1</td><td>1</td><td>I3</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="example-box">
+                    <h5>4-to-1 MUX Construction</h5>
+                    <p><strong>Method: Cascaded 2-to-1 MUX</strong></p>
+                    <ul>
+                        <li>First level: Two 2-to-1 MUX select between I0/I1 and I2/I3 using S0</li>
+                        <li>Second level: One 2-to-1 MUX selects between first-level outputs using S1</li>
+                        <li><em>Clean hierarchical design, easy to understand</em></li>
+                        <li><em>Delay: 6 ticks (3 per level)</em></li>
+                    </ul>
+                </div>
+
+                <div class="module-tips">
+                    <h5>💡 MUX Applications</h5>
+                    <ul>
+                        <li>ALU input selection (which operation to perform)</li>
+                        <li>Data bus routing (connecting components)</li>
+                        <li>Implementing Boolean functions by tying inputs to constants</li>
+                        <li>Building programmable logic arrays</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="topic-header">2.4 Demultiplexers (DEMUX)</h3>
+            <div class="topic-content">
+                <p>The opposite of MUX: takes <strong>one input</strong> and routes it to <strong>one of many outputs</strong> based on selector lines. Think of it as a signal distributor.</p>
+
+                <div class="example-box">
+                    <h5>1-to-4 Demultiplexer</h5>
+                    <p>One data input, two selectors, four outputs.</p>
+                    <p><strong>Logic:</strong> Use decoder to enable specific output</p>
+                    <ul>
+                        <li>2-to-4 decoder converts selector lines to four enable signals</li>
+                        <li>Each output = Input AND its enable signal</li>
+                        <li>Only selected output receives the input signal</li>
+                        <li><em>Useful for addressing memory or selecting devices</em></li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="topic-header">2.5 Decoders and Encoders</h3>
+            <div class="topic-content">
+                <p><strong>Decoder:</strong> Converts N input lines to 2^N output lines. Exactly ONE output is active based on input encoding.</p>
+                <p><strong>Encoder:</strong> Converts 2^N input lines to N output lines. Determines which input is active and outputs its code.</p>
+
+                <h4>2-to-4 Decoder</h4>
+                <div class="table-container">
+                    <table class="mc-table">
+                        <thead><tr><th>I1</th><th>I0</th><th>Y0</th><th>Y1</th><th>Y2</th><th>Y3</th></tr></thead>
+                        <tbody>
+                            <tr><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+                            <tr><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+                            <tr><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+                            <tr><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="example-box">
+                    <h5>Decoder Implementation</h5>
+                    <ul>
+                        <li>Each output is an AND gate checking for specific input combination</li>
+                        <li>Y0 = NOT I1 AND NOT I0</li>
+                        <li>Y1 = NOT I1 AND I0</li>
+                        <li>Y2 = I1 AND NOT I0</li>
+                        <li>Y3 = I1 AND I0</li>
+                        <li><em>Used in memory addressing, display drivers, instruction decoding</em></li>
+                    </ul>
+                </div>
+
+                <h4>4-to-2 Encoder</h4>
+                <div class="table-container">
+                    <table class="mc-table">
+                        <thead><tr><th>I3</th><th>I2</th><th>I1</th><th>I0</th><th>O1</th><th>O0</th></tr></thead>
+                        <tbody>
+                            <tr><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+                            <tr><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+                            <tr><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+                            <tr><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <h3 class="topic-header">2.6 Clock Generators and Timing</h3>
+            <div class="topic-content">
+                <p>Clocks provide periodic, regular pulses that synchronize circuit operation. Essential for sequential computers.</p>
+
+                <div class="example-box">
+                    <h5>Clock Generator Designs</h5>
+                    
+                    <p><strong>1. Classic Clock (Pulse Generator)</strong></p>
+                    <ul>
+                        <li>Empty block → repeater → empty block → repeater (cycle)</li>
+                        <li>Repeater delay determines clock period</li>
+                        <li>1-click repeater = 1 tick pulse every 4 ticks</li>
+                        <li><em>Standard, reliable, but slower</em></li>
+                    </ul>
+
+                    <p><strong>2. Hopper Clock (Compact)</strong></p>
+                    <ul>
+                        <li>Two hoppers facing each other, passing items</li>
+                        <li>Comparator detects hopper contents</li>
+                        <li>Period depends on item transfer speed</li>
+                        <li><em>Very compact and customizable</em></li>
+                    </ul>
+
+                    <p><strong>3. Observer Clock (Fast)</strong></p>
+                    <ul>
+                        <li>Two observers facing each other</li>
+                        <li>Observed blocks update (e.g., plants, flowing water)</li>
+                        <li>Can achieve 1 tick or faster periods</li>
+                        <li><em>Fastest but least predictable</em></li>
+                    </ul>
+
+                    <p><strong>4. Comparator Loop Clock (Variable)</strong></p>
+                    <ul>
+                        <li>Comparator in loop with container and comparator</li>
+                        <li>Adjustable period via item count in container</li>
+                        <li><em>Most flexible for timing adjustments</em></li>
+                    </ul>
+                </div>
+
+                <div class="module-tips">
+                    <h5>💡 Clock Design Tips</h5>
+                    <ul>
+                        <li>Always isolate your clock from circuit feedback</li>
+                        <li>Add emergency stop (redstone torch to break the loop)</li>
+                        <li>Use multiple clock speeds in one computer (fast clock for ALU, slow for display)</li>
+                        <li>Consider edge-triggered vs level-triggered circuits</li>
+                        <li>Remember: Minecraft ticks = 0.1 seconds real time</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="topic-header">2.7 Practical Project: 4-Bit Calculator</h3>
+            <div class="topic-content">
+                <p>Build a 4-bit calculator that can add two 4-bit numbers using a ripple-carry adder.</p>
+
+                <div class="example-box">
+                    <h5>Project Requirements</h5>
+                    <ul>
+                        <li><em>Input:</em> Two 4-bit numbers via buttons/switches</li>
+                        <li><em>Circuit:</em> 4-bit ripple-carry adder</li>
+                        <li><em>Output:</em> 5-bit result (4 bits sum + 1 bit carry) displayed</li>
+                    </ul>
+                    <h5>Challenge Extensions</h5>
+                    <ul>
+                        <li>Add subtraction mode (two's complement)</li>
+                        <li>Add mode selector bits for different operations</li>
+                        <li>Display result in decimal (requires decoder)</li>
+                        <li>Cable management - keep it clean!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="module-navigation">
+                <a href="modules.html" class="nav-btn">← Module 1</a>
+                <a href="#module-3" class="nav-btn">Next: Binary Systems →</a>
+            </div>
+        </div>
+
+        <!-- MODULE 3: BINARY SYSTEMS -->
+        <div id="module-3" class="module-content">
+            <div class="module-header">
+                <div class="module-number">MODULE 3</div>
+                <h2 class="module-title">BINARY SYSTEMS</h2>
+                <p class="module-description">Master the number system that computers use. Learn binary representation, arithmetic, and how to work with negative numbers.</p>
+                <span class="module-duration">⏱️ Estimated Time: 3-5 hours</span>
+            </div>
+
+            <div class="learning-objectives">
+                <h4>🎯 Learning Objectives</h4>
+                <ul>
+                    <li>Understand why computers use binary</li>
+                    <li>Convert decimal ↔ binary ↔ hexadecimal</li>
+                    <li>Perform binary addition, subtraction, multiplication, division</li>
+                    <li>Represent negative numbers using two's complement</li>
+                    <li>Work with signed and unsigned binary numbers</li>
+                    <li>Understand binary fractions and floating-point concepts</li>
+                </ul>
+            </div>
+
+            <h3 class="topic-header">3.1 Why Binary?</h3>
+            <div class="topic-content">
+                <p>Computers use binary because hardware devices are inherently <strong>two-state</strong>: ON/OFF, HIGH/LOW, 1/0. It's reliable, simple, and scales perfectly to complex operations.</p>
+                <p>In Minecraft redstone, this is natural: signal is either present (1-15) or absent (0). We treat any signal as "1" and no signal as "0".</p>
+
+                <div class="module-tips">
+                    <h5>💡 Binary vs Decimal</h5>
+                    <ul>
+                        <li><strong>Decimal (base-10):</strong> 0-9 digits, powers of 10</li>
+                        <li><strong>Binary (base-2):</strong> 0-1 digits, powers of 2</li>
+                        <li>Same value, different representation</li>
+                        <li>Example: 13 decimal = 8 + 4 + 1 = 1101 binary</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="topic-header">3.2 Binary Number System</h3>
+            <div class="topic-content">
+                <p>In binary, each position represents a power of 2. From right to left: 1, 2, 4, 8, 16, 32, 64, 128, etc.</p>
+
+                <h4>Reading Binary Numbers</h4>
+                <pre>
+Example: 1101 (4-bit)
+Position:  3  2  1  0
+Value:   2^3 2^2 2^1 2^0
+Weight:   8  4  2  1
+Bits:     1  1  0  1
+
+Sum = (1×8) + (1×4) + (0×2) + (1×1) = 13 (decimal)
+                </pre>
+
+                <h4>Binary place values for N bits</h4>
+                <ul>
+                    <li>4 bits: 0-15 (values)</li>
+                    <li>8 bits: 0-255</li>
+                    <li>16 bits: 0-65,535</li>
+                    <li>Our computer will use 8 bits = 1 byte</li>
+                </ul>
+            </div>
+
+            <h3 class="topic-header">3.3 Decimal to Binary Conversion</h3>
+            <div class="topic-content">
+                <p><strong>Method 1: Divide by 2, collect remainders</strong></p>
+                <pre>
+Convert 25 to binary:
+
+25 ÷ 2 = 12 remainder 1  (least significant bit)
+12 ÷ 2 =  6 remainder 0
+ 6 ÷ 2 =  3 remainder 0
+ 3 ÷ 2 =  1 remainder 1
+ 1 ÷ 2 =  0 remainder 1  (most significant bit)
+
+Result: 11001 (read remainders bottom to top)
+                </pre>
+
+                <p><strong>Method 2: Subtract powers of 2</strong></p>
+                <pre>
+Convert 25 to binary:
+
+Largest power of 2 ≤ 25 is 16 (2^4)
+  16  8  4  2  1   (powers)
+   1  ?  ?  ?  ?   (25-16=9, continue)
+
+  9-8=1, remaining 1
+  1-1=0, remaining 0
+
+Fill in missing powers with 0:
+
+  16  8  4  2  1
+   1  1  0  0  1
+
+Result: 11001
+                </pre>
+            </div>
+
+            <h3 class="topic-header">3.4 Binary Arithmetic</h3>
+            <div class="topic-content">
+                <h4>Binary Addition</h4>
+                <pre>
+  1011  (11 decimal)
++ 0101  (5  decimal)
+-------
+ 10000  (16 decimal)
+
+Carry: 111
+                </pre>
+                <ul>
+                    <li>Add bit by bit, right to left</li>
+                    <li>0+0=0, 1+0=1, 1+1=0 carry 1, 1+1+1=1 carry 1</li>
+                    <li>This is exactly what adder circuits do!</li>
+                </ul>
+
+                <h4>Binary Subtraction</h4>
+                <pre>
+  1010  (10 decimal)
+- 0110  (6  decimal)
+-------
+  0100  (4  decimal)
+
+Borrow: 01
+                </pre>
+                <ul>
+                    <li>Subtract bit by bit, right to left</li>
+                    <li>0-0=0, 1-0=1, 1-1=0, 0-1 needs borrow</li>
+                    <li>Hardware uses two's complement (makes subtraction = addition)</li>
+                </ul>
+
+                <h4>Binary Multiplication</h4>
+                <pre>
+   101  (5 decimal)
+×  011  (3 decimal)
+-------
+   101  (5×1)
+  101   (5×2, shifted)
++000    (5×0, shifted)
+-------
+  1111  (15 decimal)
+                </pre>
+                <ul>
+                    <li>Binary multiplication is just repeated addition and shifting</li>
+                    <li>"AND" each bit of multiplier, shift, and sum results</li>
+                    <li>This is how computers multiply!</li>
+                </ul>
+
+                <h4>Binary Division</h4>
+                <pre>
+Divide 1101 (13) by 10 (2):
+
+1101 | 10
+-10  |----
+----- |  110
+  01 | (6 decimal)
+- 00 |
+ -----|
+   010 |
+-   10 |
+  ----- |
+     0 (no remainder)
+
+Result: 110 (6), remainder 0
+                </pre>
+                <ul>
+                    <li>Long division in binary</li>
+                    <li>Successive subtraction and shifting</li>
+                    <li>Complex circuit but follows same principles</li>
+                </ul>
+            </div>
+
+            <h3 class="topic-header">3.5 Signed Numbers - Two's Complement</h3>
+            <div class="topic-content">
+                <p>How do computers represent negative numbers? The answer: <strong>two's complement</strong>.</p>
+
+                <h4>Two's Complement Rules</h4>
+                <p>To get two's complement of a number:</p>
+                <ol>
+                    <li>Write number in binary</li>
+                    <li>Invert all bits (NOT operation)</li>
+                    <li>Add 1</li>
+                </ol>
+
+                <div class="example-box">
+                    <h5>Example: Represent -5 in 4-bit two's complement</h5>
+                    <pre>
+Step 1: Write +5 in binary
+    0101
+
+Step 2: Invert all bits
+    1010
+
+Step 3: Add 1
+    1010
++   1
+-------
+    1011  ← This is -5 in two's complement!
+                    </pre>
+                </div>
+
+                <h4>Range of Signed Numbers</h4>
+                <ul>
+                    <li><strong>4-bit signed:</strong> -8 to +7</li>
+                    <li><strong>8-bit signed:</strong> -128 to +127</li>
+                    <li><strong>16-bit signed:</strong> -32,768 to +32,767</li>
+                    <li>Most significant bit is sign bit (1 = negative, 0 = positive)</li>
+                </ul>
+
+                <h4>Subtraction via Two's Complement</h4>
+                <pre>
+Calculate: 7 - 5 = 2
+
+Method: 7 + (-5)
+
+Write 7 in binary:        0111
+Write -5 in two's comp:   1011
+                                                        
+Add:                     0111
+                        +1011
+                        -----
+                       10010  (carry out, discard)
+
+Result: 0010 = 2 decimal ✓
+                </pre>
+
+                <div class="module-tips">
+                    <h5>💡 Why Two's Complement?</h5>
+                    <ul>
+                        <li>Subtraction becomes addition (same hardware!)</li>
+                        <li>Unique representation of zero (not +0 and -0)</li>
+                        <li>Overflow detection is simple</li>
+                        <li>Most significant bit automatically indicates sign</li>
+                        <li>Standard in all computers</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="topic-header">3.6 Hexadecimal Number System</h3>
+            <div class="topic-content">
+                <p>Hexadecimal (base-16) uses 0-9 and A-F. One hex digit = 4 bits. Makes binary more readable!</p>
+
+                <h4>Hex Digits</h4>
+                <div class="table-container">
+                    <table class="mc-table">
+                        <thead><tr><th>Decimal</th><th>Hex</th><th>Binary</th></tr></thead>
+                        <tbody>
+                            <tr><td>0</td><td>0</td><td>0000</td></tr>
+                            <tr><td>1</td><td>1</td><td>0001</td></tr>
+                            <tr><td>2</td><td>2</td><td>0010</td></tr>
+                            <tr><td>3</td><td>3</td><td>0011</td></tr>
+                            <tr><td>4</td><td>4</td><td>0100</td></tr>
+                            <tr><td>5</td><td>5</td><td>0101</td></tr>
+                            <tr><td>6</td><td>6</td><td>0110</td></tr>
+                            <tr><td>7</td><td>7</td><td>0111</td></tr>
+                            <tr><td>8</td><td>8</td><td>1000</td></tr>
+                            <tr><td>9</td><td>9</td><td>1001</td></tr>
+                            <tr><td>10</td><td>A</td><td>1010</td></tr>
+                            <tr><td>11</td><td>B</td><td>1011</td></tr>
+                            <tr><td>12</td><td>C</td><td>1100</td></tr>
+                            <tr><td>13</td><td>D</td><td>1101</td></tr>
+                            <tr><td>14</td><td>E</td><td>1110</td></tr>
+                            <tr><td>15</td><td>F</td><td>1111</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>Converting Binary ↔ Hex</h4>
+                <pre>
+Binary:  1011  1100  0110  1111
+           ↓     ↓     ↓     ↓
+Hex:     B     C     6     F
+
+1011110001101111 binary = B C 6 F hex
+                </pre>
+
+                <p>Our computer will display output in hex because it's compact and maps perfectly to binary!</p>
+            </div>
+
+            <h3 class="topic-header">3.7 Practical Project: Binary Calculator</h3>
+            <div class="topic-content">
+                <p>Create a conversion system that displays numbers in binary, hex, and decimal simultaneously.</p>
+
+                <div class="example-box">
+                    <h5>Project Requirements</h5>
+                    <ul>
+                        <li><em>Input:</em> 4-bit binary via buttons</li>
+                        <li><em>Display:</em> Show same number as decimal and hex</li>
+                        <li><em>Additional:</em> Show two's complement for signed representation</li>
+                    </ul>
+                    <h5>Implementation</h5>
+                    <ul>
+                        <li>Decimal: Use decoder + logic to drive lamps/numbers</li>
+                        <li>Hex: Direct mapping of 4-bit groups to 16 symbols</li>
+                        <li>Two's complement: Add sign bit indicator</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="module-navigation">
+                <a href="#module-2" class="nav-btn">← Module 2</a>
+                <a href="#module-4" class="nav-btn">Next: ALU Design →</a>
+            </div>
+        </div>
+
+        <!-- Due to token limits, I'll provide comprehensive summaries for remaining modules -->
+        
+        <!-- MODULE 4 SUMMARY -->
+        <div id="module-4" class="module-content">
+            <div class="module-header">
+                <div class="module-number">MODULE 4</div>
+                <h2 class="module-title">ALU DESIGN</h2>
+                <p class="module-description">Build an Arithmetic Logic Unit - the calculator heart of your computer. Perform math and bitwise operations.</p>
+                <span class="module-duration">⏱️ Estimated Time: 6-8 hours</span>
+            </div>
+
+            <div class="learning-objectives">
+                <h4>🎯 Learning Objectives</h4>
+                <ul>
+                    <li>Understand ALU architecture and control signals</li>
+                    <li>Build arithmetic operations: add, subtract, increment, decrement</li>
+                    <li>Implement bitwise operations: AND, OR, XOR, NOT, shift</li>
+                    <li>Create operation selector circuits</li>
+                    <li>Handle flags: zero, carry, overflow, sign</li>
+                    <li>Design compact, efficient ALU layouts</li>
+                </ul>
+            </div>
+
+            <h3 class="topic-header">4.1 What is an ALU?</h3>
+            <div class="topic-content">
+                <p>The Arithmetic Logic Unit performs <strong>arithmetic</strong> (add, subtract) and <strong>logic</strong> (AND, OR, XOR, etc.) operations on data. It's controlled by operation codes that specify which operation to perform.</p>
+                <p>Our ALU will be 8-bit with 16 different operations.</p>
+            </div>
+
+            <h3 class="topic-header">4.2 ALU Architecture</h3>
+            <div class="topic-content">
+                <p><strong>Inputs:</strong> Two 8-bit data values (A, B)</p>
+                <p><strong>Control:</strong> 4-bit operation code (allows 16 operations)</p>
+                <p><strong>Outputs:</strong> 8-bit result + 4 flag bits (zero, carry, overflow, sign)</p>
+                <p><strong>Internal:</strong> Parallel operating units selected by MUX</p>
+            </div>
+
+            <h3 class="topic-header">4.3 Arithmetic Operations</h3>
+            <div class="topic-content">
+                <h4>8-Bit Adder</h4>
+                <ul>
+                    <li>8 cascaded full adders</li>
+                    <li>Carry ripple from LSB to MSB</li>
+                    <li>Faster variants: carry-lookahead, carry-skip (advanced)</li>
+                </ul>
+
+                <h4>Subtraction</h4>
+                <ul>
+                    <li>Subtract = Add + Twos Complement of B</li>
+                    <li>Input B: XOR with carry-in (bitwise NOT when Cin=1)</li>
+                    <li>Set carry-in to 1 to add 1 complete two's complement</li>
+                    <li><em>Reuse adder hardware for subtraction - efficient!</em></li>
+                </ul>
+
+                <h4>Increment/Decrement</h4>
+                <ul>
+                    <li>Increment: Add A + 1</li>
+                    <li>Decrement: Add A + (-1)</li>
+                    <li>Special optimization: Only need propagate carry for one addition</li>
+                </ul>
+            </div>
+
+            <h3 class="topic-header">4.4 Bitwise Operations</h3>
+            <div class="topic-content">
+                <p>Bitwise operations operate on each bit independently. Very fast!</p>
+                
+                <h4>Operations</h4>
+                <ul>
+                    <li><strong>AND:</strong> Each bit = A AND B (bitwise)</li>
+                    <li><strong>OR:</strong> Each bit = A OR B (bitwise)</li>
+                    <li><strong>XOR:</strong> Each bit = A XOR B (bitwise)</li>
+                    <li><strong>NOT:</strong> Each bit = NOT A (bitwise, only needs one input)</li>
+                    <li><strong>Shifts:</strong> Left shift = multiply by 2, Right shift = divide by 2</li>
+                </ul>
+
+                <div class="example-box">
+                    <h5>Bitwise Operation Example</h5>
+                    <pre>
+A = 10110011
+B = 11001010
+
+A AND B = 10000010  (bit-by-bit AND)
+A OR  B = 11111011  (bit-by-bit OR)
+A XOR B = 01111001  (bit-by-bit XOR)
+NOT A   = 01001100  (bitwise NOT)
+
+A << 1  = 01100110  (left shift)
+A >> 1  = 01011001  (right shift)
+                    </pre>
+                </div>
+            </div>
+
+            <h3 class="topic-header">4.5 ALU Control and Selection</h3>
+            <div class="topic-content">
+                <p>Use 4-bit opcode to select operation:</p>
+                <div class="table-container">
+                    <table class="mc-table">
+                        <thead><tr><th>OpCode</th><th>Operation</th><th>Description</th></tr></thead>
+                        <tbody>
+                            <tr><td>0000</td><td>ADD</td><td>A + B</td></tr>
+                            <tr><td>0001</td><td>SUB</td><td>A - B</td></tr>
+                            <tr><td>0010</td><td>INC</td><td>A + 1</td></tr>
+                            <tr><td>0011</td><td>DEC</td><td>A - 1</td></tr>
+                            <tr><td>0100</td><td>AND</td><td>A AND B</td></tr>
+                            <tr><td>0101</td><td>OR</td><td>A OR B</td></tr>
+                            <tr><td>0110</td><td>XOR</td><td>A XOR B</td></tr>
+                            <tr><td>0111</td><td>NOT</td><td>NOT A</td></tr>
+                            <tr><td>1000</td><td>SHL</td><td>Shift Left</td></tr>
+                            <tr><td>1001</td><td>SHR</td><td>Shift Right</td></tr>
+                            <tr><td>1010</td><td>MOV</td><td>Pass A through</td></tr>
+                            <tr><td>1011</td><td>CLEAR</td><td>Output 0</td></tr>
+                            <tr><td>1100</td><td>NAND</td><td>A NAND B</td></tr>
+                            <tr><td>1101</td><td>NOR</td><td>A NOR B</td></tr>
+                            <tr><td>1110</td><td>RESERVED</td><td>Future expansion</td></tr>
+                            <tr><td>1111</td><td>RESERVED</td><td>Future expansion</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p><strong>Implementation:</strong> Use MUX to select one of 16 operation results based on opcode.</p>
+            </div>
+
+            <h3 class="topic-header">4.6 ALU Flags</h3>
+            <div class="topic-content">
+                <p>Flags provide conditional information about the result:</p>
+                
+                <ul>
+                    <li><strong>Zero Flag (Z):</strong> Result = 0? (OR all output bits together)</li>
+                    <li><strong>Carry Flag (C):</strong> Did addition overflow? (Last adder's carry-out)</li>
+                    <li><strong>Overflow Flag (V):</strong> Signed overflow? (XOR of last two carry bits)</li>
+                    <li><strong>Sign Flag (S):</strong> Result negative? (Most significant bit)</li>
+                </ul>
+
+                <p>These flags are crucial for conditional jumps and comparisons in programs!</p>
+            </div>
+
+            <h3 class="topic-header">4.7 ALU Circuit Layout</h3>
+            <div class="topic-content">
+                <div class="example-box">
+                    <h5>Optimized Layout Strategy</h5>
+                    <ul>
+                        <li>Layer 1: Bitwise operations (parallel, no carry propagation)</li>
+                        <li>Layer 2: Adder/Subtractor (vertical cascade for carry)</li>
+                        <li>Layer 3: Shift registers (rotate bits)</li>
+                        <li>Layer 4: MUX tree to select operation output</li>
+                        <li>Layer 5: Flag generation circuits</li>
+                    </ul>
+                    <p><em>Total height: ~30 blocks. Width: ~60 blocks. Compact!</em></p>
+                </div>
+            </div>
+
+            <h3 class="topic-header">4.8 Practical Project: 4-Bit ALU</h3>
+            <div class="topic-content">
+                <p>Build a fully functional 4-bit ALU with all operations.</p>
+
+                <div class="example-box">
+                    <h5>Project Requirements</h5>
+                    <ul>
+                        <li><em>Inputs:</em> Two 4-bit numbers, 4-bit opcode</li>
+                        <li><em>Outputs:</em> 4-bit result, 4 flags (Z C V S)</li>
+                        <li><em>Operations:</em> At least ADD, SUB, AND, OR, XOR, NOT</li>
+                    </ul>
+                    <h5>Challenge</h5>
+                    <ul>
+                        <li>Can you fit it in 20×20×10 blocks?</li>
+                        <li>Can you implement all 16 operations?</li>
+                        <li>Can you display flags clearly?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="module-navigation">
+                <a href="#module-3" class="nav-btn">← Module 3</a>
+                <a href="#module-5" class="nav-btn">Next: Memory →</a>
+            </div>
+        </div>
+
+        <!-- MODULE 5: MEMORY ARCHITECTURE -->
+        <div id="module-5" class="module-content">
+            <div class="module-header">
+                <div class="module-number">MODULE 5</div>
+                <h2 class="module-title">MEMORY ARCHITECTURE</h2>
+                <p class="module-description">Create circuits that remember. Build flip-flops, registers, RAM, and ROM to store and retrieve data.</p>
+                <span class="module-duration">⏱️ Estimated Time: 5-7 hours</span>
+            </div>
+
+            <div class="learning-objectives">
+                <h4>🎯 Learning Objectives</h4>
+                <ul>
+                    <li>Understand bistable circuits and memory fundamentals</li>
+                    <li>Build all 6 types of flip-flops and latches</li>
+                    <li>Create registers for holding values</li>
+                    <li>Design RAM (Random Access Memory) arrays</li>
+                    <li>Implement ROM (Read Only Memory) for fixed data</li>
+                    <li>Understand address decoding and memory expansion</li>
+                </ul>
+            </div>
+
+            <h3 class="topic-header">5.1 Introduction to Memory</h3>
+            <div class="topic-content">
+                <p>Sequential circuits have <strong>memory</strong> - they can store information between clock cycles. Memory is built from <strong>bistable</strong> elements that have two stable states they can maintain indefinitely.</p>
+            </div>
+
+            <h3 class="topic-header">5.2 RS Latch</h3>
+            <div class="topic-content">
+                <p>Simplest memory element. Set input (S) stores 1, Reset input (R) stores 0.</p>
+                
+                <div class="table-container">
+                    <table class="mc-table">
+                        <thead><tr><th>S</th><th>R</th><th>Q</th><th>Q'</th></tr></thead>
+                        <tbody>
+                            <tr><td>0</td><td>0</td><td>Memory</td><td>Memory</td></tr>
+                            <tr><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+                            <tr><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+                            <tr><td>1</td><td>1</td><td>Invalid</td><td>Invalid</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="example-box">
+                    <h5>RS Latch Implementation</h5>
+                    <ul>
+                        <li>Use two NOR gates connected in feedback loop</li>
+                        <li>Each gate's output feeds the other's input</li>
+                        <li>Feedback creates memory</li>
+                        <li><em>Level-sensitive, needs gate inputs to hold state</em></li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="topic-header">5.3 JK Flip-Flop</h3>
+            <div class="topic-content">
+                <p>Improves RS latch. J input = Set, K input = Reset. When both are 1, output <strong>toggle</strong>!</p>
+
+                <div class="table-container">
+                    <table class="mc-table">
+                        <thead><tr><th>J</th><th>K</th><th>Q(t+1)</th></tr></thead>
+                        <tbody>
+                            <tr><td>0</td><td>0</td><td>No Change</td></tr>
+                            <tr><td>0</td><td>1</td><td>0 (Reset)</td></tr>
+                            <tr><td>1</td><td>0</td><td>1 (Set)</td></tr>
+                            <tr><td>1</td><td>1</td><td>Toggle</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p><em>Great for counters and frequency dividers!</em></p>
+            </div>
+
+            <h3 class="topic-header">5.4 D Flip-Flop</h3>
+            <div class="topic-content">
+                <p>Data flip-flop. On clock edge, Q = D input. Simple and useful.</p>
+
+                <div class="table-container">
+                    <table class="mc-table">
+                        <thead><tr><th>D</th><th>Q(t+1)</th></tr></thead>
+                        <tbody>
+                            <tr><td>0</td><td>0</td></tr>
+                            <tr><td>1</td><td>1</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="example-box">
+                    <h5>D Flip-Flop Uses</h5>
+                    <ul>
+                        <li>Registers - store values</li>
+                        <li>Pipeline stages - pass data between stages</li>
+                        <li>Data sampling - capture input on clock</li>
+                        <li>Counters (with feedback)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="topic-header">5.5 T Flip-Flop</h3>
+            <div class="topic-content">
+                <p>Toggle flip-flop. On clock edge when T=1, output toggles. T=0, no change.</p>
+
+                <div class="table-container">
+                    <table class="mc-table">
+                        <thead><tr><th>T</th><th>Q(t+1)</th></tr></thead>
+                        <tbody>
+                            <tr><td>0</td><td>No Change</td></tr>
+                            <tr><td>1</td><td>Toggle</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p><em>Perfect for binary counters! Each T-FF toggles when lower bit goes 1→0.</em></p>
+            </div>
+
+            <h3 class="topic-header">5.6 Registers</h3>
+            <div class="topic-content">
+                <p>A register stores multi-bit values. Essentially an array of D flip-flops.</p>
+
+                <h4>8-Bit Register</h4>
+                <ul>
+                    <li>8 D flip-flops in parallel</li>
+                    <li>Same clock triggers all</li>
+                    <li>Store 8-bit values</li>
+                    <li>Can have write-enable control</li>
+                </ul>
+
+                <div class="example-box">
+                    <h5>Register with Write-Enable</h5>
+                    <ul>
+                        <li>Only update on clock when WE = 1</li>
+                        <li>When WE = 0, maintain value</li>
+                        <li>Use clock gating or D-FF enable</li>
+                        <li>Essential for selective memory writes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="topic-header">5.7 RAM Design</h3>
+            <div class="topic-content">
+                <p>RAM (Random Access Memory) provides random read/write to any location. Key concept: <strong>address decoding</strong>.</p>
+
+                <h4>Memory Organization</h4>
+                <ul>
+                    <li>8-bit address → 256 memory locations</li>
+                    <li>8-bit data width (our computer)</li>
+                    <li>Total memory: 256 bytes = 2,048 bits of storage</li>
+                </ul>
+
+                <h4>RAM Operations</h4>
+                <ul>
+                    <li><strong>Read:</strong> Address selects location, data appears at output</li>
+                    <li><strong>Write:</strong> Address selects location, data written to location</li>
+                    <li><strong>Control:</strong> Read/Write signal, Chip Enable</li>
+                </ul>
+
+                <div class="example-box">
+                    <h5>RAM Implementation Strategy</h5>
+                    <ul>
+                        <li>Decoder converts 8-bit address to 256 word-lines</li>
+                        <li>Each word-line activates one register</li>
+                        <li>Read: Selected register's data drives output</li>
+                        <li>Write: Input data driven into selected register</li>
+                        <li><em>In Minecraft, use redstone blocks for compact storage</em></li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="topic-header">5.8 ROM Design</h3>
+            <div class="topic-content">
+                <p>ROM (Read Only Memory) stores fixed data or programs. Cannot be modified during operation (except at design time).</p>
+
+                <h4>Flash ROM in Minecraft</h4>
+                <ul>
+                    <li>Preset redstone torches for data cells (1)</li>
+                    <li>No torch = 0</li>
+                    <li>Address decoder selects row</li>
+                    <li>Data from selected row appears at output</li>
+                    <li><em>To program: break/place torches during construction</em></li>
+                </ul>
+            </div>
+
+            <h3 class="topic-header">5.9 Practical Project: 4-Bit RAM</h3>
+            <div class="topic-content">
+                <p>Build a 4-bit RAM with 4 addresses (4×4 memory = 16 bits total).</p>
+
+                <div class="example-box">
+                    <h5>Project Requirements</h5>
+                    <ul>
+                        <li><em>Input:</em> 2-bit address, 4-bit data, Read/Write, WE</li>
+                        <li><em>Output:</em> 4-bit data bus</li>
+                        <li><em>Operations:</em> Read from any address, Write to any address</li>
+                    </ul>
+                    <h5>Challenge</h5>
+                    <ul>
+                        <li>Make it expandable to 8 addresses</li>
+                        <li>Add tri-state buffer for shared bus</li>
+                        <li>Clear the entire memory (reset function)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="module-navigation">
+                <a href="#module-4" class="nav-btn">← Module 4</a>
+                <a href="#module-6" class="nav-btn">Next: Control Unit →</a>
+            </div>
+        </div>
+
+        <!-- MODULE 6: CONTROL UNIT -->
+        <div id="module-6" class="module-content">
+            <div class="module-header">
+                <div class="module-number">MODULE 6</div>
+                <h2 class="module-title">CONTROL UNIT</h2>
+                <p class="module-description">The brain's conductor. Design instruction decoding, control logic, and the fetch-decode-execute cycle.</p>
+                <span class="module-duration">⏱️ Estimated Time: 6-8 hours</span>
+            </div>
+
+            <div class="learning-objectives">
+                <h4>🎯 Learning Objectives</h4>
+                <ul>
+                    <li>Understand computer instruction sets and opcodes</li>
+                    <li>Design instruction decoder circuits</li>
+                    <li>Implement control signal generation</li>
+                    <li>Build fetch-decode-execute cycle circuits</li>
+                    <li>Handle conditional jumps and flags</li>
+                    <li>Create micro-coded vs hardwired control</li>
+                </ul>
+            </div>
+
+            <h3 class="topic-header">6.1 Computer Instruction Set</h3>
+            <div class="topic-content">
+                <p>An instruction set defines all operations a computer can perform. We'll design a CISC-style instruction set with 16 instructions.</p>
+
+                <h4>Instruction Format</h4>
+                <ul>
+                    <li><strong>Opcode:</strong> 4 bits (defines operation)</li>
+                    <li><strong>Register A:</strong> 2 bits (source/destination)</li>
+                    <li><strong>Register B:</strong> 2 bits (source)</li>
+                    <li><em>Total: 8 bits (1 byte)</em></li>
+                </ul>
+
+                <h4>Our Instruction Set</h4>
+                <div class="table-container">
+                    <table class="mc-table">
+                        <thead><tr><th>Op</th><th>Instruction</th><th>Description</th></tr></thead>
+                        <tbody>
+                            <tr><td>0000</td><td>NOP</td><td>No operation</td></tr>
+                            <tr><td>0001</td><td>MOV</td><td>Move value between registers</td></tr>
+                            <tr><td>0010</td><td>ADD</td><td>Add registers</td></tr>
+                            <tr><td>0011</td><td>SUB</td><td>Subtract registers</td></tr>
+                            <tr><td>0100</td><td>AND</td><td>Bitwise AND</td></tr>
+                            <tr><td>0101</td><td>OR</td><td>Bitwise OR</td></tr>
+                            <tr><td>0110</td><td>XOR</td><td>Bitwise XOR</td></tr>
+                            <tr><td>0111</td><td>NOT</td><td>Bitwise NOT</td></tr>
+                            <tr><td>1000</td><td>LDR</td><td>Load from memory</td></tr>
+                            <tr><td>1001</td><td>STR</td><td>Store to memory</td></tr>
+                            <tr><td>1010</td><td>JMP</td><td>Jump to address</td></tr>
+                            <tr><td>1011</td><td>JZ</td><td>Jump if zero flag set</td></tr>
+                            <tr><td>1100</td><td>JNZ</td><td>Jump if zero flag not set</td></tr>
+                            <tr><td>1101</td><td>OUT</td><td>Output to display</td></tr>
+                            <tr><td>1110</td><td>IN</td><td>Input from external</td></tr>
+                            <tr><td>1111</td><td>HALT</td><td>Stop execution</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <h3 class="topic-header">6.2 Instruction Decoder</h3>
+            <div class="topic-content">
+                <p>Instruction decoder takes opcode and generates control signals for rest of computer.</p>
+
+                <div class="example-box">
+                    <h5>Decoder Architecture</h5>
+                    <ul>
+                        <li>4-bit opcode input</li>
+                        <li>4-to-16 decoder generates 16 signals (one per instruction)</li>
+                        <li>Each instruction's signals are pre-wired to appropriate components</li>
+                        <li>Example: ADD instruction triggers ALU to add, registers to read</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="topic-header">6.3 Fetch-Decode-Execute Cycle</h3>
+            <div class="topic-content">
+                <p>Every instruction goes through three phases:</p>
+
+                <h4>1. Fetch</h4>
+                <ul>
+                    <li>Program Counter (PC) points to instruction</li>
+                    <li>Memory at PC address outputs instruction</li>
+                    <li>Instruction loaded into Instruction Register (IR)</li>
+                    <li>PC incremented by 1</li>
+                </ul>
+
+                <h4>2. Decode</h4>
+                <ul>
+                    <li>IR output goes to instruction decoder</li>
+                    <li>Decoder identifies operation</li>
+                    <li>Control signals generated</li>
+                </ul>
+
+                <h4>3. Execute</h4>
+                <ul>
+                    <li>Control signals trigger appropriate components</li>
+                    <li>ALU performs arithmetic/logic</li>
+                    <li>Memory accessed if load/store</li>
+                    <li>Results stored or output</li>
+                    <li>Flags updated</li>
+                </ul>
+
+                <p>Then cycle repeats for next instruction!</p>
+            </div>
+
+            <h3 class="topic-header">6.4 Program Counter</h3>
+            <div class="topic-content">
+                <p>Program Counter holds address of next instruction. Special register with:</p>
+
+                <ul>
+                    <li><strong>Increment:</strong> Add 1 each fetch</li>
+                    <li><strong>Load:</strong> Set to jump target address</li>
+                    <li><strong>Conditional Load:</strong> Load only if flag condition met</li>
+                </ul>
+
+                <div class="example-box">
+                    <h5>PC Implementation</h5>
+                    <ul>
+                        <li>Output drives memory address decoder</li>
+                        <li>Input from jump target addresses</li>
+                        <li>MUX selects between increment PC vs jump address</li>
+                        <li>Controlled by fetch/decode/jump signals</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="topic-header">6.5 Conditional Jumps</h3>
+            <div class="topic-content">
+                <p>Conditional jumps allow programs to make decisions (if statements, loops).</p>
+
+                <h4>Implementation</h4>
+                <ul>
+                    <li>Check relevant flag (Zero, Carry, Sign, Overflow)</li>
+                    <li>If flag matches condition, enable PC load</li>
+                    <li>Jump target address provided in instruction or register</li>
+                </ul>
+
+                <div class="example-box">
+                    <h5>JZ (Jump if Zero) Logic</h5>
+                    <ul>
+                        <li>Zero Flag AND = 1 when instruction is JZ flag is set</li>
+                        <li>This signal enables PC load</li>
+                        <li>If flag = 0, PC loads from increment (normal execution)</li>
+                        <li><em>Essential for loops and if statements!</em></li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="topic-header">6.6 Practical Project: 8-Instruction Control Unit</h3>
+            <div class="topic-content">
+                <p>Build a control unit for at least 8 instructions.</p>
+
+                <div class="example-box">
+                    <h5>Project Requirements</h5>
+                    <ul>
+                        <li><em>Instructions:</em> NOP, MOV, ADD, SUB, JMP, JZ, OUT, HALT</li>
+                        <li><em>Components:</em> Decoder, PC, IR, control signal generator</li>
+                        <li><em>Cycle:</em> Implement fetch-decode-execute</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="module-navigation">
+                <a href="#module-5" class="nav-btn">← Module 5</a>
+                <a href="#module-7" class="nav-btn">Next: I/O Systems →</a>
+            </div>
+        </div>
+
+        <!-- MODULE 7: I/O SYSTEMS -->
+        <div id="module-7" class="module-content">
+            <div class="module-header">
+                <div class="module-number">MODULE 7</div>
+                <h2 class="module-title">I/O SYSTEMS</h2>
+                <p class="module-description">Connect your computer to the world. Build keyboards, displays, and communication systems.</p>
+                <span class="module-duration">⏱️ Estimated Time: 4-6 hours</span>
+            </div>
+
+            <div class="learning-objectives">
+                <h4>🎯 Learning Objectives</h4>
+                <ul>
+                    <li>Design button and lever input interfaces</li>
+                    <li>Create hex and decimal display systems</li>
+                    <li>Build alphanumeric displays (bonus)</li>
+                    <li>Implement data storage (item drop)</li>
+                    <li>Create communication channels</li>
+                    <li>Manage I/O address mapping</li>
+                </ul>
+            </div>
+
+            <h3 class="topic-header">7.1 Input Systems</h3>
+            <div class="topic-content">
+                <h4>Button Input</h4>
+                <ul>
+                    <li>Buttons provide momentary pulses</li>
+                    <li>Each button toggles a specific bit</li>
+                    <li>Debounce not needed in Minecraft (buttons are reliable)</li>
+                    <li>Use repeaters for signal extension</li>
+                </ul>
+
+                <h4>Lever/Torch Input</h4>
+                <ul>
+                    <li>Levers provide stable ON/OFF signals</li>
+                    <li>Good for setting mode bits or configuration</li>
+                    <li>Torch toggling for multi-bit input</li>
+                </ul>
+
+                <div class="example-box">
+                    <h5>8-Bit Input Panel</h5>
+                    <ul>
+                        <li>8 buttons arranged in row</li>
+                        <li>Each button sets/reset one D-FF</li>
+                        <li>8 D-FF outputs combine to form input register</li>
+                        <li>Read button latches entire input to data bus</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="topic-header">7.2 Output Displays</h3>
+            <div class="topic-content">
+                <h4>Hex Display (4-bit)</h4>
+                <ul>
+                    <li>16 redstone lamps arranged in 4×4 grid</li>
+                    <li>Decoder determines which lamp lights for each value (0-F)</li>
+                    <li>Or use 7-segment-style with 16 patterns</li>
+                </ul>
+
+                <h4>Decimal Display</h4>
+                <ul>
+                    <li>10 lamps for digits 0-9</li>
+                    <li>Simpler than hex (10 vs 16 patterns)</li>
+                    <li>Need BCD (Binary Coded Decimal) conversion circuit</li>
+                </ul>
+
+                <h4>8-Bit Hex Display</h4>
+                <ul>
+                    <li>Split into two hex digits (high nibble, low nibble)</li>
+                    <li>Two hex displays side by side</li>
+                    <li>Shows values 00 through FF (0-255)</li>
+                </ul>
+
+                <div class="example-box">
+                    <h5>Hex Digit Display Implementation</h5>
+                    <ul>
+                        <li>4-bit input → one hex digit</li>
+                        <li>16 lamps, each patterned to represent 0-F</li>
+                        <li>Decoder selects which lamp to illuminate</li>
+                        <li>Example: 5 could be lamp 5 (simple) or 5-segment pattern</li>
+                        <li><em>Simple approach: 1 lamp per hex digit value</em></li>
+                        <li><em>Fancy approach: 7-segment style with 16 decode patterns</em></li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="topic-header">7.3 Data Persistence</h3>
+            <div class="topic-content">
+                <p>Store data even when computer off or chunk unloads.</p>
+
+                <h4>Item-Based Storage</h4>
+                <ul>
+                    <li>Hoppers contain specific items = data value</li>
+                            <li>Item count = data value (1-64)</li>
+                            <li>Item type can distinguish multiple bytes</li>
+                            <li><em>Persists across saves but slow to access</em></li>
+                </ul>
+
+                <h4>Block State Storage</h4>
+                <ul>
+                    <li>Piston extension state = 1 bit</li>
+                    <li>Multiple pistons = multi-bit storage</li>
+                    <li><em>Instant access but complex wiring, persists only while loaded</em></li>
+                </ul>
+            </div>
+
+            <h3 class="topic-header">7.4 I/O Address Mapping</h3>
+            <div class="topic-content">
+                <p>Assign each I/O device an address range. I/O Controller decodes address.</p>
+
+                <div class="table-container">
+                    <table class="mc-table">
+                        <thead><tr><th>Address</th><th>Device</th><th>Description</th></tr></thead>
+                        <tbody>
+                            <tr><td>F0-FF</td><td>Input</td><td>8-bit keyboard</td></tr>
+                            <tr><td>E0-EF</td><td>Display</td><td>Hex output display</td></tr>
+                            <tr><td>D0-DF</td><td>Storage</td><td>Item-based persistent storage</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <h3 class="topic-header">7.5 Practical Project: I/O System</h3>
+            <div class="topic-content">
+                <p>Build input, output, and storage system.</p>
+
+                <div class="example-box">
+                    <h5>Project Requirements</h5>
+                    <ul>
+                        <li><em>Input:</em> 8-bit button panel</li>
+                        <li><em>Output:</em> 2-digit hex display</li>
+                        <li><em>Storage:</em> Optional item-based</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="module-navigation">
+                <a href="#module-6" class="nav-btn">← Module 6</a>
+                <a href="#module-8" class="nav-btn">Next: Full Computer →</a>
+            </div>
+        </div>
+
+        <!-- MODULE 8: FULL COMPUTER -->
+        <div id="module-8" class="module-content">
+            <div class="module-header">
+                <div class="module-number">MODULE 8</div>
+                <h2 class="module-title">FULL COMPUTER ARCHITECTURE</h2>
+                <p class="module-description">Integrate everything. Build a complete 8-bit computer from scratch with all components working together.</p>
+                <span class="module-duration">⏱️ Estimated Time: 12-20 hours</span>
+            </div>
+
+            <div class="learning-objectives">
+                <h4>🎯 Learning Objectives</h4>
+                <ul>
+                    <li>Integrate ALU, Memory, Control Unit, I/O</li>
+                    <li>Design complete data and control buses</li>
+                    <li>Implement fetch-decode-execute cycle</li>
+                    <li>Handle clock distribution and synchronization</li>
+                    <li>Debug and optimize full system</li>
+                    <li>Run test programs on your computer</li>
+                </ul>
+            </div>
+
+            <h3 class="topic-header">8.1 Computer Architecture Overview</h3>
+            <div class="topic-content">
+                <h4>Major Components</h4>
+                <ul>
+                    <li><strong>CPU:</strong> ALU + Control Unit + Registers</li>
+                    <li><strong>Memory:</strong> ROM (program) + RAM (data)</li>
+                    <li><strong>I/O:</strong> Input/Output systems</li>
+                    <li><strong>Buses:</strong> Data bus (8-bit), Address bus (8-bit), Control bus (multiple signals)</li>
+                </ul>
+
+                <h4>Architecture Diagram (Mental Model)</h4>
+                <pre>
+                    ┌─────────────────────────────┐
+                    │           PC                │
+                    └───────────┬─────────────────┘
+                                ▼
+                    ┌─────────────────────────────┐
+                    │         ROM/RAM             │───▶ Instruction Bus
+                    └───────────┬─────────────────┘
+                                ▼
+                    ┌─────────────────────────────┐
+                    │      Instruction Decoder     │───▶ Control Signals
+                    └───────────┬─────────────────┘
+                                ▼
+                    ┌─────────────────────────────┐
+                    │           ALU                │◀──▶ Data Bus
+                    └───────────┬─────────────────┘
+                                ▼
+                    ┌─────────────────────────────┐
+                    │        Registers            │
+                    └───────────┬─────────────────┘
+                                ▼
+                    ┌─────────────────────────────┐
+                    │    I/O (Input/Display)      │
+                    └─────────────────────────────┘
+                </pre>
+            </div>
+
+            <h3 class="topic-header">8.2 Bus Design</h3>
+            <div class="topic-content">
+                <p>Buses connect components. Need careful design.</p>
+
+                <h4>Data Bus (8-bit)</h4>
+                <ul>
+                    <li>Carries data between CPU, memory, I/O</li>
+                    <li>Tri-state buffers allow multiple sources</li>
+                    <li>Direction control for read vs write</li>
+                </ul>
+
+                <h4>Address Bus (8-bit)</h4>
+                <ul>
+                    <li>Carries memory/RAM address</li>
+                    <li>One-way (CPU → memory)</li>
+                    <li>Driven by PC or load/store address</li>
+                </ul>
+
+                <h4>Control Bus (multi-signal)</h4>
+                <ul>
+                    <li>Clock (synchronizes all components)</li>
+                    <li>Read/Write (memory operation type)</li>
+                    <li>Operation codes (ALU control)</li>
+                    <li>Flags (conditional jumps)</li>
+                </ul>
+            </div>
+
+            <h3 class="topic-header">8.3 Clock Distribution</h3>
+            <div class="topic-content">
+                <p>Single clock signal distributed to all sequential components.</p>
+
+                <ul>
+                    <li>CPU: Triggers fetch-decode-execute</li>
+                    <li>Memory: Triggers read/write latches</li>
+                    <li>Registers: Capture data on clock edge</li>
+                    <li>I/O: Sample input on clock edge</li>
+                </ul>
+
+                <p><em>Challenge: All components must see same clock simultaneously!</em></p>
+            </div>
+
+            <h3 class="topic-header">8.4 Integration Steps</h3>
+            <div class="topic-content">
+                <h4>Step 1: CPU Core</h4>
+                <ul>
+                    <li>Connect ALU, registers, decoder</li>
+                    <li>Test basic operations manually</li>
+                    <li>Verify all flags work</li>
+                </ul>
+
+                <h4>Step 2: Add Memory</h4>
+                <ul>
+                    <li>Connect ROM for program storage</li>
+                    <li>Connect RAM for data storage</li>
+                    <li>Implement address bus</li>
+                    <li>Test load/store instructions</li>
+                </ul>
+
+                <h4>Step 3: Add I/O</h4>
+                <ul>
+                    <li>Connect input panel</li>
+                    <li>Connect hex display</li>
+                    <li>Test IN/OUT instructions</li>
+                </ul>
+
+                <h4>Step 4: Full Integration</h4>
+                <ul>
+                    <li>Verify fetch-decode-execute cycle</li>
+                    <li>Run test programs</li>
+                    <li>Debug timing issues</li>
+                </ul>
+            </div>
+
+            <h3 class="topic-header">8.5 Debugging</h3>
+            <div class="topic-content">
+                <div class="module-tips">
+                    <h5>💡 Debug Techniques</h5>
+                    <ul>
+                        <li>Slow down clock to observe each step</li>
+                        <li>Add debug outputs at every stage</li>
+                        <li>Manually step through instructions</li>
+                        <li>Verify each component individually first</li>
+                        <li>Document expected vs actual behavior</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="topic-header">8.6 Test Programs</h3>
+            <div class="topic-content">
+                <div class="example-box">
+                    <h5>Test 1: Addition</h5>
+                    <pre>
+Load 5 into R0
+Load 7 into R1
+ADD R0, R1 → R2 (result = 12)
+OUT R2
+                    </pre>
+                </div>
+
+                <div class="example-box">
+                    <h5>Test 2: Loop</h5>
+                    <pre>
+Initialize R0 = 0
+Loop: ADD R0, 1 → R0
+      JNZ Loop (keep incrementing)
+                    </pre>
+                </div>
+
+                <div class="example-box">
+                    <h5>Test 3: Fibonacci</h5>
+                    <pre>
+Compute Fibonacci sequence using loops
+F(0)=0, F(1)=1, F(n)=F(n-1)+F(n-2)
+                    </pre>
+                </div>
+            </div>
+
+            <h3 class="topic-header">8.7 Practical Project: Complete 8-Bit Computer</h3>
+            <div class="topic-content">
+                <p>The final project - build everything!</p>
+
+                <div class="example-box">
+                    <h5>Requirements</h5>
+                    <ul>
+                        <li>8-bit ALU with 8+ operations</li>
+                        <li>256 bytes ROM (program)</li>
+                        <li>256 bytes RAM (data)</li>
+                        <li>4 general-purpose registers</li>
+                        <li>8-bit input panel</li>
+                        <li>2-digit hex display</li>
+                        <li>Run at least 3 programs successfully</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="module-navigation">
+                <a href="#module-7" class="nav-btn">← Module 7</a>
+                <a href="#module-9" class="nav-btn">Next: Advanced Topics →</a>
+            </div>
+        </div>
+
+        <!-- MODULE 9: ADVANCED TOPICS -->
+        <div id="module-9" class="module-content">
+            <div class="module-header">
+                <div class="module-number">MODULE 9</div>
+                <h2 class="module-title">ADVANCED TOPICS</h2>
+                <p class="module-description">Push beyond the basics. Pipelines, interrupts, caches, and graphics - for ambitious builders.</p>
+                <span class="module-duration">⏱️ Estimated Time: 8-12 hours</span>
+            </div>
+
+            <div class="learning-objectives">
+                <h4>🎯 Learning Objectives</h4>
+                <ul>
+                    <li>Understand pipelining and parallel execution</li>
+                    <li>Implement interrupt handling</li>
+                    <li>Design CPU cache hierarchy</li>
+                    <li>Create graphics and display systems</li>
+                    <li>Explore advanced architectures</li>
+                </ul>
+            </div>
+
+            <h3 class="topic-header">9.1 Pipelining</h3>
+            <div class="topic-content">
+                <p>Overlapping instruction execution for speed. While instruction 1 executes, instruction 2 is decoded, instruction 3 is fetched.</p>
+
+                <h4>3-Stage Pipeline</h4>
+                <ul>
+                    <li><strong>Stage 1:</strong> Fetch</li>
+                    <li><strong>Stage 2:</strong> Decode</li>
+                    <li><strong>Stage 3:</strong> Execute</li>
+                </ul>
+
+                <p><em>In Minecraft, pipelining is complex due to space constraints and signal delay. More theoretical for understanding real computers.</em></p>
+            </div>
+
+            <h3 class="topic-header">9.2 Interrupts</h3>
+            <div class="topic-content">
+                <p>Interrupts allow external events to pause execution and run interrupt handlers.</p>
+
+                <h4>Implementation</h4>
+                <ul>
+                    <li>Interrupt line signals CPU</li>
+                    <li>CPU completes current instruction</li>
+                    <li>Saves PC state</li>
+                    <li>Jumps to interrupt handler address</li>
+                    <li>Handler returns to original execution</li>
+                </ul>
+
+                <p><em>Useful for: timers, user input, external events</em></p>
+            </div>
+
+            <h3 class="topic-header">9.3 CPU Cache</h3>
+            <div class="topic-content">
+                <p>Small, fast memory that holds frequently accessed data. Reduces slow main memory accesses.</p>
+
+                <h4>Cache Levels</h4>
+                <ul>
+                    <li><strong>L1 Cache:</strong> Smallest, fastest, inside CPU</li>
+                    <li><strong>L2 Cache:</strong> Larger, slightly slower</li>
+                    <li><strong>Main Memory:</strong> RAM</li>
+                </ul>
+
+                <p><em>In Minecraft, cache is rarely practical due to space constraints. Understanding the concept is valuable.</em></p>
+            </div>
+
+            <h3 class="topic-header">9.4 Graphics Systems</h3>
+            <div class="topic-content">
+                <p>Create pixel displays and graphics controllers.</p>
+
+                <div class="example-box">
+                    <h5>16×16 Pixel Display Implementation</h5>
+                    <ul>
+                        <li>256 pixels (16×16 grid)</li>
+                        <li>Each pixel = redstone lamp</li>
+                        <li>Data in VRAM controls lamp states</li>
+                        <li>Video address generator scans VRAM</li>
+                        <li><em>Can display simple shapes, text pixel art</em></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="module-navigation">
+                <a href="#module-8" class="nav-btn">← Module 8</a>
+                <a href="#module-10" class="nav-btn">Next: Final Project →</a>
+            </div>
+        </div>
+
+        <!-- MODULE 10: FINAL PROJECT -->
+        <div id="module-10" class="module-content">
+            <div class="module-header">
+                <div class="module-number">MODULE 10</div>
+                <h2 class="module-title">FINAL PROJECT: COMPLETE COMPUTER</h2>
+                <p class="module-description">Build your own fully functional 8-bit computer from scratch. Apply everything you've learned.</p>
+                <span class="module-duration">⏱️ Estimated Time: 20-40 hours</span>
+            </div>
+
+            <div class="learning-objectives">
+                <h4>🎯 Final Project Goals</h4>
+                <ul>
+                    <li>Complete computer with all components</li>
+                    <li>Multiple test programs running</li>
+                    <li>Optimized layout and performance</li>
+                    <li>Well-documented design</li>
+                    <li>Optional: Additional features for extra credit</li>
+                </ul>
+            </div>
+
+            <h3 class="topic-header">10.1 Project Specification</h3>
+            <div class="topic-content">
+                <div class="example-box">
+                    <h5>Minimum Requirements</h5>
+                    <ul>
+                        <li><strong>CPU:</strong> 8-bit ALU, Control Unit, 4 GPRs</li>
+                        <li><strong>Memory:</strong> 256 bytes ROM, 256 bytes RAM</li>
+                        <li><strong>I/O:</strong> 8-bit input, 2-digit hex display</li>
+                        <li><strong>Instruction Set:</strong> 8+ instructions</li>
+                        <li><strong>Programs:</strong> Add, Loop, at least one complex program</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="topic-header">10.2 Suggested Test Programs</h3>
+            <div class="topic-content">
+                <h4>Level 1: Basic Arithmetic</h4>
+                <ul>
+                    <li>Add two input numbers</li>
+                    <li>Subtract and display absolute value</li>
+                    <li>Multiply by repeated addition</li>
+                </ul>
+
+                <h4>Level 2: Control Flow</h4>
+                <ul>
+                    <li>Counter (0 to 255)</li>
+                    <li>Find maximum of input values</li>
+                    <li>Fibonacci sequence generator</li>
+                </ul>
+
+                <h4>Level 3: Data Processing</h4>
+                <ul>
+                    <li>Sort a list of numbers</li>
+                    <li>Greatest common divisor calculator</li>
+                    <li>Prime number finder</li>
+                </ul>
+
+                <h4>Level 4: Games/Others</h4>
+                <ul>
+                    <li>Guess the number game</li>
+                    <li>Pattern generator</li>
+                    <li>Music sequencer (advanced I/O)</li>
+                </ul>
+            </div>
+
+            <h3 class="topic-header">10.3 Extra Credit Ideas</h3>
+            <div class="topic-content">
+                <div class="example-box">
+                    <h5>Advanced Features</h5>
+                    <ul>
+                        <li>Expand to 16-bit architecture</li>
+                        <li>Add multiplication/division instructions</li>
+                        <li>Implement interrupts</li>
+                        <li>Add graphics display</li>
+                        <li>Build a simple compiler</li>
+                        <li>Add floating-point support</li>
+                        <li>Create multiple memory banks</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="topic-header">10.4 Documentation</h3>
+            <div class="topic-content">
+                <p>Document your computer!</p>
+                <ul>
+                    <li>Architecture diagram</li>
+                    <li>Instruction set reference</li>
+                    <li>Circuit schematics</li>
+                    <li>Program listings with comments</li>
+                    <li>Performance measurements (ticks per operation)</li>
+                    <li>Lessons learned and improvements</li>
+                </ul>
+            </div>
+
+            <h3 class="topic-header">10.5 Tips for Success</h3>
+            <div class="topic-content">
+                <div class="module-tips">
+                    <h5>💡 Final Project Tips</h5>
+                    <ul>
+                        <li>Test each module independently before integration</li>
+                        <li>Plan cable management - messy wires = debugging nightmare</li>
+                        <li>Document as you go - don't wait until the end</li>
+                        <li>Save backups (schematics) after major milestones</li>
+                        <li>Join community groups for help and inspiration</li>
+                        <li>Remember computers are complex - persistence pays off</li>
+                        <li>Most importantly: HAVE FUN! It's Minecraft!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="module-navigation">
+                <a href="#module-9" class="nav-btn">← Module 9</a>
+                <a href="projects.html" class="nav-btn">Go to Project Details →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Course Complete!</h4>
+                <p>You now have everything needed to build your own Minecraft redstone computer. Good luck!</p>
+            </div>
+            <div class="footer-section">
+                <h4>Next Steps</h4>
+                <ul>
+                    <li><a href="projects.html">Project Details</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="quiz.html">Test Your Knowledge</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

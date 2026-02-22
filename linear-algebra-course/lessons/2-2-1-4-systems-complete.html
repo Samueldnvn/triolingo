@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2.2.1-4: Linear Systems Complete - Linear Algebra</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="chapter-2">
+    <div class="main-wrapper"><nav class="sidebar toc-orange"><div class="sidebar-header"><div class="sidebar-title">Linear Algebra</div></div><div class="toc-chapter toc-orange"><div class="toc-chapter-title">Chapter 2: Matrices & Systems</div><div class="toc-module"><div class="toc-module-title">Module 2.2: Linear Systems</div><div class="toc-lessons"><div class="toc-lesson"><a href="2-1-5-practice-matrices.html">Module 2.1 Quiz</a></div><div class="toc-lesson"><a href="2-2-1-4-systems-complete.html" class="active">Module 2.2: Linear Systems Complete</a></div><div class="toc-lesson"><a href="../3-1-1-2x2-determinants.html">Chapter 3: Determinants</a></div></div></div></div></nav>
+        <div class="content-wrapper"><div class="content-container">
+                <div class="module-header"><h2>Lesson 2.2: Linear Systems Complete</h2><p>Module 2.2 | Chapter 2</p></div>
+                <div class="content-card"><div class="note-box"><div class="flag">Module 2.2 Summary</div><div class="note-title">Linear Systems & Gaussian Elimination</div><p>This module covers solving systems of linear equations using matrices and row operations.</p></div></div>
+                <hr class="section-divider">
+                <div class="content-card"><div class="definition-box"><div class="flag">Definition</div><div class="definition-title">Linear System</div>A system can be written as $$Ax=b$$ where A is the coefficient matrix, x is unknowns, b is constants.</div>
+                <div class="definition-box"><div class="flag">Method</div><div class="definition-title">Gaussian Elimination</div>Use row operations to transform to row-echelon form</div>
+                <div class="definition-box"><div class="flag">Form</div><div class="definition-title">RREF</div>Reduced Row Echelon Form: leading 1s, zeros elsewhere in each pivot column</div></div>
+                <div class="example-box"><div class="flag">Example</div><div class="example-title">Solving a System</div><div class="note-box"><div class="flag">Problem</div><p>$$2x+3y=7, x-y=1$$</p><p>Matrix form: $$\begin{bmatrix}2 & 3 \\ 1 & -1\end{bmatrix}\begin{bmatrix}x \\ y\end{bmatrix}=\begin{bmatrix}7 \\ 1\end{bmatrix}$$</p></div></div>
+                <div class="practice-section"><div class="practice-header">Practice</div><div class="practice-problem"><div class="problem-number">Problem 1</div><div class="problem-question">Solve $$x+y=3, x-y=1$$ (Enter as "x=2,y=1")</div><input type="text" id="prob1" placeholder="Enter solution"><button onclick="checkProb1()" class="check-btn">Check</button><div class="feedback" id="prob1-fb"></div></div></div>
+                <hr class="section-divider"><div class="quiz-container"><div class="quiz-title">Module 2.2 Quiz</div><div class="quiz-question"><div class="quiz-question-text">Q1: RREF stands for:</div><div class="quiz-options"><div onclick="sel('Q1','A',this)" class="quiz-option">A. Real Form</div><div onclick="sel('Q1','B',this)" class="quiz-option">B. Right Echelon</div><div onclick="sel('Q1','C',this)" class="quiz-option">C. Reduced Row Echelon Form</div></div></div><div class="quiz-button" onclick="sub()">Submit</button></div><div class="quiz-container" id="res" style="display: none;" style="text-align: center;"></div>
+                <hr class="section-divider"><div class="nav-buttons"><a href="2-1-5-practice-matrices.html" class="nav-btn">Previous: Matrices Quiz</a><a href="../3-1-1-2x2-determinants.html" class="nav-btn primary">Next: Determinants</a></div></div></div></div>
+    <script src="../js/navigation.js"></script><script>const ans2_2={};function sel(q,a,e){ans2_2[q]=a; e.parentElement.querySelectorAll('.quiz-option').forEach(o=>o.classList.remove('selected')); e.classList.add('selected');}function sub(){const cor={'Q1':'C'};let s=0;for(let q in cor)if(ans2_2[q]===cor[q])s++;const pct=Math.round((s/1)*100);document.querySelectorAll('.quiz-container').forEach(c=>{if(c.id!=='res')c.style.display='none';});const res=document.getElementById('res');res.style.display='block';if(pct>=70){res.innerHTML=`<div class="note-box"><div class="flag">Passed!</div><h3>Module 2.2 Complete!</h3></div>`;markQuizPassed('2-2');}else{res.innerHTML=`<div class="caution-box"><div class="flag">Keep Studying</div><h3>${pct}% - Try Again</h3></div>`;}}function checkProb1(){const i=document.getElementById('prob1').value.trim().toLowerCase();const fb=document.getElementById('prob1-fb');if(i.includes('2')&&i.includes('1')){fb.className='feedback correct';fb.style.display='block';fb.innerHTML='Correct! x=2, y=1';}else{fb.className='feedback incorrect';fb.style.display='block';fb.textContent='Incorrect. Try again!';}}document.addEventListener('DOMContentLoaded',loadProgress);</script>
+</body>
+</html>

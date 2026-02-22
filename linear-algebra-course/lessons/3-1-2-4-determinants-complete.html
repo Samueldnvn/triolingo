@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3.1.2-4: Determinants Complete - Linear Algebra</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="chapter-3">
+    <div class="main-wrapper"><nav class="sidebar toc-yellow"><div class="sidebar-header"><div class="sidebar-title">Linear Algebra</div></div><div class="toc-chapter toc-yellow"><div class="toc-chapter-title">Chapter 3: Determinants</div><div class="toc-module"><div class="toc-module-title">Module 3.1: Determinants</div><div class="toc-lessons"><div class="toc-lesson"><a href="3-1-1-2x2-determinants.html">Lesson 3.1.1: 2x2</a></div><div class="toc-lesson"><a href="3-1-2-4-determinants-complete.html" class="active">Module 3.1 Complete</a></div><div class="toc-lesson"><a href="../4-1-1-eigenvalues-basics.html">Chapter 4: Advanced</a></div></div></div></div></nav>
+        <div class="content-wrapper"><div class="content-container">
+                <div class="module-header"><h2>Lesson 3.1: Determinants Complete</h2><p>Module 3.1 | Chapter 3</p></div>
+                <div class="content-card"><div class="important-box"><div class="flag">Module 3.1 Summary</div><div class="important-title">Determinants: 2x2 and 3x3</div><p>This module covers 2x2 determinants, 3x3 cofactor expansion, and key properties.</p></div></div>
+                <hr class="section-divider">
+                <div class="content-card"><div class="subsection-title">3x3 Determinants (Cofactor Expansion)</div><div class="definition-box"><div class="flag">Formula</div><div class="definition-title">3x3 Determinant</div><div class="formula-box"><div class="flag">Expansion</div><div class="formula">$$\det\begin{bmatrix} a & b & c \\ d & e & f \\ g & h & i \end{bmatrix} = a\begin{vmatrix}e & f \\ h & i\end{vmatrix} - b\begin{vmatrix}d & f \\ g & i\end{vmatrix} + c\begin{vmatrix}d & e \\ g & h\end{vmatrix}$$</div></div></div><div class="content-card"><div class="subsection-title">Properties</div><div class="note-box"><div class="flag">Properties</div><ul style="margin-left:25px;"><li>$$\det(AB) = \det(A)\det(B)$$</li><li>$$\det(A^T) = \det(A)$$</li><li>$$\det(kA) = k^n\det(A)$$ for nxx</li><li>$$\det(A) = 0$$ iff A is singular</li></ul></div></div>
+                <div class="quiz-container"><div class="quiz-title">Module 3.1 Quiz</div><div class="quiz-question"><div class="quiz-question-text">Q1: If $$\det(A)=0$$ and $$\det(B)=3$$, what is $$\det(AB)$$?</div><div class="quiz-options"><div onclick="s('Q1','A',this)" class="quiz-option">A. 0</div><div onclick="s('Q1','B',this)" class="quiz-option">B. 3</div><div onclick="s('Q1','C',this)" class="quiz-option">C. 1</div></div></div><div class="quiz-question"><div class="quiz-question-text">Q2: If A is 3x3 and $$\det(2A)=8\det(A)$$, then k= ?</div><div class="quiz-options"><div onclick="s('Q2','A',this)" class="quiz-option">A. 2</div><div onclick="s('Q2','B',this)" class="quiz-option">B. k^3</div><div onclick="s('Q2','C',this)" class="quiz-option">C. 8</div></div></div><button class="quiz-button" onclick="sub()">Submit</button></div><div class="quiz-container" id="res" style="display: none;"></div>
+                <hr class="section-divider"><div class="nav-buttons"><a href="3-1-1-2x2-determinants.html" class="nav-btn">Previous: 2x2</a><a href="../4-1-1-eigenvalues-basics.html" class="nav-btn primary">Next: Advanced Topics</a></div></div></div></div>
+    <script src="../js/navigation.js"></script><script>const a={};function s(q,ans,e){a[q]=ans;e.parentElement.querySelectorAll('.quiz-option').forEach(o=>o.classList.remove('selected'));e.classList.add('selected');}function sub(){const cor={'Q1':'A','Q2':'A'};let s=0;for(let q in cor)if(a[q]===cor[q])s++;const pct=Math.round((s/2)*100);document.querySelectorAll('.quiz-container').forEach(c=>{if(c.id!=='res')c.style.display='none';});const r=document.getElementById('res');r.style.display='block';if(pct>=70){r.innerHTML=`<div class="note-box"><div class="flag">Passed!</div><h3>Module 3.1 Complete!</h3></div>`;markQuizPassed('3-1');}else{r.innerHTML=`<div class="caution-box"><div class="flag">Keep Studying</div><h3>${pct}% - Try Again</h3></div>`;}}document.addEventListener('DOMContentLoaded',loadProgress);</script>
+</body>
+</html>

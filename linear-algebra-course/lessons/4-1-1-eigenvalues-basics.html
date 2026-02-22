@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4.1.1: Eigenvalues Basics - Linear Algebra</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="chapter-4">
+    <div class="main-wrapper">
+        <nav class="sidebar toc-green">
+            <div class="sidebar-header">
+                <div class="sidebar-title">Linear Algebra</div>
+            </div>
+            <div class="toc-chapter toc-green">
+                <div class="toc-chapter-title">Chapter 4: Advanced Topics</div>
+                <div class="toc-module">
+                    <div class="toc-module-title">Module 4.1: Eigenvalues</div>
+                    <div class="toc-lessons">
+                        <div class="toc-lesson"><a href="4-1-1-eigenvalues-basics.html" class="active">Lesson 4.1.1: Eigenvalues Basics</a></div>
+                        <div class="toc-lesson"><a href="4-1-2-eigenvectors.html">Lesson 4.1.2: Eigenvectors</a></div>
+                        <div class="toc-lesson"><a href="4-1-3-diagonalization.html">Lesson 4.1.3: Diagonalization</a></div>
+                        <div class="toc-lesson"><a href="4-1-4-practice-eigen.html">Lesson 4.1.4: Practice Problems</a></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="module-header">
+                    <h2>Lesson 4.1.1: Eigenvalues Basics</h2>
+                    <p>Module 4.1: Eigenvalues | Chapter 4: Advanced Topics</p>
+                </div>
+                
+                <div class="content-card">
+                    <div class="definition-box">
+                        <div class="definition-title">Eigenvalue</div>
+                        <p>A scalar lambda is an eigenvalue of matrix A if there exists a nonzero vector v (eigenvector) such that:</p>
+                    </div>
+                </div>
+                
+                <div class="formula-box">
+                    <div class="formula">Av = lambda v</div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Characteristic Equation</div>
+                    <p>To find eigenvalues, solve det(A - lambda I) = 0</p>
+                    
+                    <div class="example-box">
+                        <div class="example-title">Example</div>
+                        <p>Find eigenvalues of [[2, 1], [1, 2]]</p>
+                        <p>A - lambda I = [[2-lambda, 1], [1, 2-lambda]]</p>
+                        <p>det = (2-lambda)^2 - 1 = 0</p>
+                        <p>(2-lambda)^2 = 1, so 2-lambda = plus/minus 1</p>
+                        <p style="margin-top: 10px; font-weight: 600;">Eigenvalues: lambda = 1 and lambda = 3</p>
+                    </div>
+                </div>
+                
+                <div class="content-card">
+                    <div class="note-box">
+                        <div class="note-title">Diagonal Matrix Eigenvalues</div>
+                        <p>For diagonal matrix, eigenvalues are simply the diagonal entries!</p>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="practice-header">Practice Problems</div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 1</div>
+                        <div class="problem-question">What are the eigenvalues of [[3, 0], [0, 4]]?</div>
+                        <input type="text" class="problem-input" id="prob1" placeholder="Enter eigenvalues">
+                        <button class="check-btn" onclick="checkProblem(1)">Check Answer</button>
+                        <div class="feedback" id="prob1-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 2</div>
+                        <div class="problem-question">What are the eigenvalues of [[2, 0], [0, 5]]?</div>
+                        <input type="text" class="problem-input" id="prob2" placeholder="Enter eigenvalues">
+                        <button class="check-btn" onclick="checkProblem(2)">Check Answer</button>
+                        <div class="feedback" id="prob2-feedback"></div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="nav-buttons">
+                    <a href="3-1-4-practice-determinants.html" class="nav-btn">Previous: Determinants Practice</a>
+                    <a href="4-1-2-eigenvectors.html" class="nav-btn primary">Next: Eigenvectors</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/navigation.js"></script>
+    <script>
+        const problems_4_1_1 = {
+            1: { alternatives: ['3,4', '3 and 4', '3, 4'] },
+            2: { alternatives: ['2,5', '2 and 5', '2, 5'] }
+        };
+        
+        function checkProblem(num) {
+            const userInput = document.getElementById('prob' + num).value.trim();
+            const feedback = document.getElementById('prob' + num + '-feedback');
+            const alternatives = problems_4_1_1[num].alternatives;
+            
+            let isCorrect = alternatives.includes(userInput);
+            
+            if (isCorrect) {
+                feedback.className = 'feedback correct';
+                feedback.style.display = 'block';
+                feedback.textContent = 'Correct! Well done.';
+                markProblemSolved('4-1-1-' + num);
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.style.display = 'block';
+                feedback.textContent = 'Incorrect. Try again.';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+        });
+    </script>
+</body>
+</html>

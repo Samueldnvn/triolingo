@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module III: Medieval Warfare - The Art of War</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="renaissance-header">
+        <h1>MODULE III: MEDIEVAL WARFARE</h1>
+        <h2>Castles, Knights, and the Evolution of Military Systems</h2>
+    </div>
+    
+    <nav class="nav-container">
+        <ul class="nav-menu">
+            <li class="nav-item active" onclick="showSection('overview')">Overview</li>
+            <li class="nav-item" onclick="showSection('feudal')">Feudal Armies</li>
+            <li class="nav-item" onclick="showSection('castles')">Castles and Sieges</li>
+            <li class="nav-item" onclick="showSection('knights')">Knights and Cavalry</li>
+            <li class="nav-item" onclick="showSection('practice')">Practice Problems</li>
+            <li class="nav-item" onclick="showSection('quiz')">Module Quiz</li>
+        </ul>
+    </nav>
+    
+    <div class="progress-container">
+        <div class="progress-title">MODULE III PROGRESS</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="moduleProgress" style="width: 0%">0%</div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="content-section active" id="overview">
+            <div class="lesson-header">
+                <h1>Medieval Warfare</h1>
+                <p>The Age of Castles, Chivalry, and Emerging Professional Armies</p>
+            </div>
+            
+            <div class="ornamental-divider"><span>Introduction</span></div>
+            
+            <p class="content-text">
+                Medieval warfare (approximately 500-1500 CE) represents a transitional period between the ancient world and early modern military systems. Characterized by feudal military obligations, castle fortifications, and the dominance of armored cavalry, medieval warfare evolved significantly over its millennium-long span. By the late medieval period, professional infantry and gunpowder weapons began challenging the ascendancy of knights and castles, setting the stage for the military revolution of the early modern period.
+            </p>
+            
+            <div class="parchment-section">
+                <div class="parchment-content">
+                    <h3>WHAT YOU SHALL MASTER IN THIS MODULE</h3>
+                    <ul class="parchment-list">
+                        <li>Feudal military organization and obligations</li>
+                        <li>Castle design and defensive architecture</li>
+                        <li>Siege warfare methods and tactics</li>
+                        <li>The role and evolution of knights and heavy cavalry</li>
+                        <li>Rise of professional infantry formations</li>
+                        <li>The Crusades and religious motivation in warfare</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section" id="feudal">
+            <h2 class="section-title">FEUDAL MILITARY ORGANIZATION</h2>
+            
+            <div class="ornamental-divider"><span>The Land-Based Military System</span></div>
+            
+            <p class="content-text">
+                The feudal system was fundamentally a military arrangement. Kings granted land (fiefs) to nobles in exchange for military service. This service typically amounted to 40 days per year during the early medieval period, after which the noble could return home unless voluntary obligation extended. This system created armies dominated by a relatively small warrior aristocracy—the knights—who owed service as heavy cavalry.
+            </p>
+            
+            <h3 class="subsection-title">Advantages and Limitations of Feudal Forces</h3>
+            
+            <div class="example-box">
+                <div class="example-title">Feudal Military Characteristics</div>
+                <p class="content-text">
+                    <strong>Advantages:</strong> Created a loyal military class bound by personal obligations to lords. Knights were heavily armored and trained from childhood. The system required no direct payment from the king (in the form of salaries), making it economically simpler for medieval monarchs.
+                </p>
+                <p class="content-text" style="margin-top: 15px;">
+                    <strong>Limitations:</strong> Service was limited in duration (40 days typical). Feudal armies could not sustain long campaigns far from home. Raising large forces required summoning nobles, who in turn summoned their own vassals, making mobilization slow and coordination complex. Kings had limited direct command over individual knights beyond what their personal relationships and authority permitted.
+                </p>
+            </div>
+            
+            <h3 class="subsection-title">Evolution Paid Standing Forces</h3>
+            
+            <p class="content-text">
+                As medieval kingdoms grew more administratively sophisticated and wealthier, monarchs increasingly hired mercenaries and raised paid troops. These professional soldiers (often paid scutage—shield money—by nobles who preferred not to serve) provided kings with armies that could campaign year-round and whose loyalty was to the king rather than to intermediate lords. This development toward professionally-paid armies was gradual but significant.
+            </p>
+        </div>
+        
+        <div class="content-section" id="castles">
+            <h2 class="section-title">CASTLES AND SIEGE WARFARE</h2>
+            
+            <div class="ornamental-divider"><span>Fortification and Persistence</span></div>
+            
+            <p class="content-text">
+                Castles were central to medieval warfare. They provided bases for controlling territory, secure storage for wealth and supplies, and strongpoints from which to launch or resist attacks. Medieval warfare often focused less on decisive battles and more on controlling castles, which dictated control of the countryside. A castle could be held by a relatively small garrison against much larger forces, making them extremely cost-effective fortifications.
+            </p>
+            
+            <h3 class="subsection-title">Castle Design Evolution</h3>
+            
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Period</th>
+                        <th>Design Type</th>
+                        <th>Characteristics</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Early (11th-12th c.)</strong></td>
+                        <td>Motte and Bailey</td>
+                        <td>Earth mound (motte) with wooden tower, bailey courtyard, palisade</td>
+                    </tr>
+                    <tr>
+                        <td><strong>High Medieval (12th-13th c.)</strong></td>
+                        <td>Stone Castles</td>
+                        <td>Stone walls, towers, gatehouses, keeps, curtain walls</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Late Medieval (13th-15th c.)</strong></td>
+                        <td>Concentric Castles</td>
+                        <td>Multiple curtain walls, concentric rings of defense</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h3 class="subsection-title">Siege Methods</h3>
+            
+            <p class="content-text">
+                Siege warfare against castles took several approaches, each with advantages and trade-offs:
+            </p>
+            
+            <ul style="text-align: left; margin: 20px 0; padding-left: 40px;">
+                <li style="margin: 15px 0;"><strong>Blockade/Starvation:</strong> The most common and reliable method. Surround the castle, cut off food and water supplies, and wait for defenders to surrender. This could take months or longer but typically succeeded if maintained long enough.</li>
+                <li style="margin: 15px 0;"><strong>Direct Assault:</strong> Storming walls using siege towers, ladders, or artillery. High risk of casualties, but faster if successful. Used when urgency or other considerations made blockade impossible.</li>
+                <li style="margin: 15px 0;"><strong>Undermining:</strong> Digging tunnels beneath walls to collapse them. Required skilled miners and time but could bring down otherwise impregnable fortifications.</li>
+                <li style="margin: 15px 0;"><strong>Treachery:</strong> Getting defenders to open gates, often through bribery or internal supporters. Could succeed where military force would fail but required opportunity and planning.</li>
+            </ul>
+            
+            <div class="important-box">
+                <div class="important-title">The Defensive Advantage</div>
+                <p class="content-text">
+                    Throughout medieval warfare, fortification generally favored the defender. Roughly, a force needed 10:1 superiority to successfully assault a well-defended castle. This meant that medieval campaigns focused on taking castles more than seeking major field battles. Commanders avoided attacking strong castles unless necessary, preferring to bypass or blockade them.
+                </p>
+            </div>
+        </div>
+        
+        <div class="content-section" id="knights">
+            <h2 class="section-title">KNIGHTS, CAVALRY, AND INFANTRY EVOLUTION</h2>
+            
+            <div class="ornamental-divider"><span>The Changing Battlefields</span></div>
+            
+            <p class="content-text">
+                Throughout most of the medieval period, the armored knight on horseback was the dominant battlefield figure. Knights were heavily armored men-at-arms, protected by chainmail or later plate armor, who fought from horseback with lance and sword. The momentum of a cavalry charge combined with the protection of armor made cavalry nearly unstoppable in frontal attacks against infantry—or so it seemed for centuries.
+            </p>
+            
+            <h3 class="subsection-title">Knightly Equipment</h3>
+            
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Item</th>
+                        <th>Purpose</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Mail Armor</strong></td>
+                        <td>Interlocked metal rings protecting entire body</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Plate Armor (later)</strong></td>
+                        <td>Bolted metal plates over mail for superior protection</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Saddle</strong></td>
+                        <td>High cantles for rider security in combat</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lance</strong></td>
+                        <td>For delivering the initial charge impact</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sword</strong></td>
+                        <td>For melee combat after lance broken</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Warhorse</strong></td>
+                        <td>Large trained horse bred for battlefield use</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h3 class="subsection-title">Challenges to Cavalry Dominance</h3>
+            
+            <p class="content-text">
+                By the late medieval period, several developments challenged cavalry dominance:
+            </p>
+            
+            <div class="scroll-box">
+                <div class="scroll-title">The Changing Battlefield</div>
+                <div class="scroll-text">
+                    <strong>Missile Weapons:</strong> Longbows and crossbows could kill knights at range, penetrating armor at short distances. The English longbow could fire 10+ arrows per minute in volleys, devastating charging cavalry before impact.
+                    <br><br>
+                    <strong>Professional Infantry:</strong> Swiss pikemen and later German landsknechts formed deep pike formations that braced against cavalry charges. Pikes could stop charging knights before they contacted, with infantry then closing against dismounted knights.
+                    <br><br>
+                    <strong>Terrain:</strong> Skilled generals chose battlefield terrain unfavorable to cavalry—rough ground, obstacles that broke formations—neutralizing the cavalry advantage.
+                </div>
+            </div>
+            
+            <h3 class="subsection-title">Key Battles Demonstrating Infantry Power</h3>
+            
+            <div class="example-box">
+                <div class="example-title">Battle of Courtrai (1302)</div>
+                <p class="content-text">
+                    Flemish infantry defeated French knights in a battle known as the Battle of the Golden Spurs. This demonstrated that infantry could defeat heavy cavalry under favorable conditions, especially when supported by good terrain and defensive positions.
+                </p>
+            </div>
+            
+            <div class="example-box">
+                <div class="example-title">Battle of Bannockburn (1314)</div>
+                <p class="content-text">
+                    Scottish spearmen under Robert the Bruce defeated Edward II's English cavalry, showing that disciplined infantry with good ground and proper spearmanship could overcome mounted knights.
+                </p>
+            </div>
+            
+            <div class="example-box">
+                <div class="example-title">Battle of St. Jakob an der Birs (1444)</div>
+                <p class="content-text">
+                    Though the Swiss were ultimately defeated by a larger French force, their performance against superior numbers demonstrated the growing effectiveness of professional infantry formations.
+                </p>
+            </div>
+        </div>
+        
+        <div class="content-section" id="practice">
+            <h2 class="section-title">PRACTICE PROBLEMS</h2>
+            <div id="module3-problems"></div>
+        </div>
+        
+        <div class="content-section" id="quiz">
+            <h2 class="section-title">MODULE III QUIZ</h2>
+            <div id="medieval-quiz"></div>
+        </div>
+        
+        <div class="nav-buttons">
+            <button class="nav-button prev-module-btn" onclick="window.location.href='02-greek-roman.html'">← Previous Module</button>
+            <a href="../index.html" class="nav-button">Return to Course Overview</a>
+            <a href="04-gunpowder.html" class="nav-button next-module-btn">Next Module: The Gunpowder Revolution →</a>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p class="footer-text">Module III: Medieval Warfare | The Art of War Course</p>
+    </div>
+    
+    <script src="../js/navigation.js"></script>
+    <script src="../js/problems.js"></script>
+    <script src="../js/quizzes.js"></script>
+    <script>
+        // Module tracking logic (adapted for Module 3)
+        let problemsCompleted = 0;
+        const totalProblems = 60;
+        
+        function checkProblem(problemId, correct, alternatives, inputId) {
+            const input = document.getElementById(inputId).value.trim().toLowerCase();
+            const feedback = document.getElementById(inputId + '-feedback');
+            
+            let normalizedCorrect = correct.toLowerCase().replace(/\s/g, '');
+            let normalizedInput = input.replace(/\s/g, '');
+            
+            let isCorrect = normalizedInput === normalizedCorrect || 
+                           alternatives.some(alt => alt.toLowerCase().replace(/\s/g, '') === normalizedInput);
+            
+            if (isCorrect) {
+                feedback.className = 'feedback correct';
+                feedback.textContent = 'Correct!';
+                feedback.style.display = 'block';
+                if (!courseProgress.problemsSolved.includes(problemId)) {
+                    courseProgress.problemsSolved.push(problemId);
+                    problemsCompleted++;
+                    updateModuleProgress();
+                }
+            } else {
+                const explanation = getProblemExplanation(problemId);
+                feedback.className = 'feedback incorrect';
+                feedback.textContent = `Incorrect. ${explanation}`;
+                feedback.style.display = 'block';
+            }
+        }
+        
+        function getProblemExplanation(problemId) {
+            for (let category in practiceProblems) {
+                for (let subcategory in practiceProblems[category]) {
+                    const problems = practiceProblems[category][subcategory];
+                    if (Array.isArray(problems)) {
+                        const problem = problems.find(p => p.id === problemId);
+                        if (problem) return problem.explanation || `The correct answer is ${problem.answer}`;
+                    }
+                }
+            }
+            return 'Review the material and try again.';
+        }
+        
+        function updateModuleProgress() {
+            const percentage = Math.round((problemsCompleted / totalProblems) * 100);
+            const progressFill = document.getElementById('moduleProgress');
+            if (progressFill) {
+                progressFill.style.width = percentage + '%';
+                progressFill.textContent = percentage + '%';
+            }
+        }
+        
+        function initModule() {
+            loadProgress();
+            updateModuleProgress();
+            if (!courseProgress.lessonsCompleted.includes(3)) {
+                courseProgress.lessonsCompleted.push(3);
+                saveProgress();
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            initModule();
+        });
+    </script>
+</body>
+</html>

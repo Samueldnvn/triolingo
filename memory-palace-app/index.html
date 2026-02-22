@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Palace Practice</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-title">Memory Palace</div>
+                <div class="subtitle">Practice Application</div>
+            </div>
+
+            <nav class="nav-links">
+                <button class="nav-link active" data-section="practice" data-sound="click">
+                    <span class="nav-text">Practice</span>
+                </button>
+                <button class="nav-link" data-section="custom" data-sound="click">
+                    <span class="nav-text">Custom Sequences</span>
+                </button>
+                <button class="nav-link" data-section="history" data-sound="click">
+                    <span class="nav-text">History</span>
+                </button>
+                <button class="nav-link" data-section="settings" data-sound="click">
+                    <span class="nav-text">Settings</span>
+                </button>
+            </nav>
+
+            <div class="stats-box">
+                <div class="stats-title">Today's Stats</div>
+                <div class="stats-items">
+                    <div class="stat-item">
+                        <span class="stat-label">Attempts:</span>
+                        <span class="stat-value" id="todayAttempts">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Success:</span>
+                        <span class="stat-value" id="todaySuccess">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Best Streak:</span>
+                        <span class="stat-value" id="bestStreak">0</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Practice Section -->
+            <section id="practice-section" class="content-section active">
+                <div class="section-header">
+                    <h1 class="section-title">Practice Mode</h1>
+                    <p class="section-subtitle">Memorize sequences and test your recall</p>
+                </div>
+
+                <div class="card practice-card">
+                    <h3 class="card-title">Practice Area</h3>
+                    <div class="card-content">
+                        <div id="practiceArea" class="practice-area hidden">
+                            <div class="sequence-display" id="sequenceDisplay"></div>
+                            <div class="action-buttons">
+                                <button id="startRecallBtn" class="btn btn-primary btn-large" data-sound="pop">
+                                    Start Recall
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="recallArea" class="recall-area hidden">
+                            <div class="timer-display" id="timerDisplay">
+                                <span class="timer-label">Time:</span>
+                                <span class="timer-value" id="timerValue">00:00</span>
+                            </div>
+                            <p class="recall-instruction">Type the sequence you memorized:</p>
+                            <input type="text" id="recallInput" class="recall-input" placeholder="Enter sequence..." data-sound="type">
+                            <div class="action-buttons">
+                                <button id="submitRecallBtn" class="btn btn-success" data-sound="pop">
+                                    Submit
+                                </button>
+                                <button id="giveUpBtn" class="btn btn-danger" data-sound="pop">
+                                    Give Up
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="resultArea" class="result-area hidden">
+                            <div class="result-header" id="resultHeader"></div>
+                            <div class="digit-comparison" id="digitComparison"></div>
+                            <div class="result-details">
+                                <div class="result-row">
+                                    <span class="result-label">Original:</span>
+                                    <span class="result-value" id="originalSequence"></span>
+                                </div>
+                                <div class="result-row">
+                                    <span class="result-label">Your Answer:</span>
+                                    <span class="result-value" id="yourAnswer"></span>
+                                </div>
+                                <div class="result-row">
+                                    <span class="result-label">Correct Digits:</span>
+                                    <span class="result-value" id="correctDigits"></span>
+                                </div>
+                                <div class="result-row">
+                                    <span class="result-label">Time:</span>
+                                    <span class="result-value" id="resultTime"></span>
+                                </div>
+                            </div>
+                            <button id="newRoundBtn" class="btn btn-primary btn-large" data-sound="pop">
+                                New Round
+                            </button>
+                        </div>
+
+                        <div id="startArea" class="start-area">
+                            <button id="startPracticeBtn" class="btn btn-primary btn-large" data-sound="pop">
+                                Start Practice
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Custom Sequences Section -->
+            <section id="custom-section" class="content-section">
+                <div class="section-header">
+                    <h1 class="section-title">Custom Sequences</h1>
+                    <p class="section-subtitle">Create your own sequences to practice</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Add Custom Sequence</h3>
+                    <div class="card-content">
+                        <div class="form-group">
+                            <label class="form-label">Sequence Name</label>
+                            <input type="text" id="customName" class="text-input" placeholder="e.g., Syllables Practice" data-sound="type">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Characters Pool (comma separated)</label>
+                            <input type="text" id="customPool" class="text-input" placeholder="e.g., ka, ki, ku, ke, ko" data-sound="type">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Pool Description (optional)</label>
+                            <input type="text" id="customDesc" class="text-input" placeholder="e.g., Japanese Hiragana ka-row" data-sound="type">
+                        </div>
+                        <button id="addCustomBtn" class="btn btn-primary" data-sound="pop">
+                            Add Sequence
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Your Custom Sequences</h3>
+                    <div class="card-content">
+                        <div id="customSequencesList" class="sequences-list"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- History Section -->
+            <section id="history-section" class="content-section">
+                <div class="section-header">
+                    <h1 class="section-title">Practice History</h1>
+                    <p class="section-subtitle">Review your progress</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div id="historyList" class="history-list"></div>
+                        <button id="clearHistoryBtn" class="btn btn-danger" data-sound="pop">
+                            Clear History
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings-section" class="content-section">
+                <div class="section-header">
+                    <h1 class="section-title">Settings</h1>
+                    <p class="section-subtitle">Customize your experience</p>
+                </div>
+
+                <div class="settings-grid">
+                    <div class="card">
+                        <h3 class="card-title">Sound Effects</h3>
+                        <div class="card-content">
+                            <div class="form-group">
+                                <label class="form-label">ASMR Sounds</label>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="asmrEnabled" checked data-sound="pop">
+                                    <label for="asmrEnabled" class="toggle-label">
+                                        <span class="toggle-slider"></span>
+                                        <span class="toggle-text">Enabled</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Sound Type - Clicky</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="soundType" value="pop" checked data-sound="pop">
+                                        <span>Pop</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="soundType" value="click" data-sound="click">
+                                        <span>Click</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="soundType" value="soft" data-sound="soft">
+                                        <span>Soft</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="soundType" value="mechanical-click" data-sound="mechanical-click">
+                                        <span>Mechanical Click</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="soundType" value="wooden-click" data-sound="wooden-click">
+                                        <span>Wooden Click</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="soundType" value="pen-click" data-sound="pen-click">
+                                        <span>Pen Click</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="soundType" value="keyboard-key" data-sound="keyboard-key">
+                                        <span>Keyboard Key</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="soundType" value="light-switch" data-sound="light-switch">
+                                        <span>Light Switch</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Sound Type - Thoccy</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="soundType" value="soft-thud" data-sound="soft-thud">
+                                        <span>Soft Thud</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="soundType" value="deep-thud" data-sound="deep-thud">
+                                        <span>Deep Thud</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="soundType" value="tap-click" data-sound="tap-click">
+                                        <span>Tap Click</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="soundType" value="button-press" data-sound="button-press">
+                                        <span>Button Press</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="soundType" value="toggle-switch" data-sound="toggle-switch">
+                                        <span>Toggle Switch</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Volume</label>
+                                <input type="range" id="volumeSlider" min="0" max="100" value="70" data-sound="pop">
+                                <span class="volume-value" id="volumeValue">70%</span>
+                            </div>
+                            <button id="testSoundBtn" class="btn btn-secondary" data-sound="test">
+                                Test Sound
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Display</h3>
+                        <div class="card-content">
+                            <div class="form-group">
+                                <label class="form-label">Theme</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="theme" value="light" checked data-sound="click">
+                                        <span>Light</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="theme" value="dark" data-sound="click">
+                                        <span>Dark</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Sequence Display Size</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="fontSize" value="small" data-sound="click">
+                                        <span>Small</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="fontSize" value="medium" checked data-sound="click">
+                                        <span>Medium</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="fontSize" value="large" data-sound="click">
+                                        <span>Large</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Sequence Settings</h3>
+                        <div class="card-content">
+                            <div class="form-group">
+                                <label class="form-label">Sequence Length</label>
+                                <div class="number-control">
+                                    <button class="control-btn minus" data-sound="pop">−</button>
+                                    <input type="number" id="sequenceLength" class="number-input" value="8" min="2" max="50">
+                                    <button class="control-btn plus" data-sound="pop">+</button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Sequence Type</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="seqType" value="numbers" checked data-sound="click">
+                                        <span>Numbers (0-9)</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="seqType" value="letters" data-sound="click">
+                                        <span>Letters (A-Z)</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="seqType" value="mixed" data-sound="click">
+                                        <span>Mixed</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Timed Mode</label>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="timedMode" data-sound="pop">
+                                    <label for="timedMode" class="toggle-label">
+                                        <span class="toggle-slider"></span>
+                                        <span class="toggle-text">Disabled</span>
+                                    </label>
+                                </div>
+                                <div class="timed-options" id="timedOptions">
+                                    <label class="form-label">Time Limit (seconds)</label>
+                                    <div class="number-control">
+                                        <button class="control-btn minus" data-sound="pop">−</button>
+                                        <input type="number" id="timeLimit" class="number-input" value="30" min="5" max="300">
+                                        <button class="control-btn plus" data-sound="pop">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Data Management</h3>
+                    <div class="card-content">
+                        <button id="exportDataBtn" class="btn btn-secondary" data-sound="pop">
+                            Export Data
+                        </button>
+                        <button id="importDataBtn" class="btn btn-secondary" data-sound="pop">
+                            Import Data
+                        </button>
+                        <button id="resetAllBtn" class="btn btn-danger" data-sound="pop">
+                            Reset All Data
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal for Info -->
+    <div id="modal-overlay" class="modal-overlay hidden">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle"></h3>
+                <button class="modal-close" data-sound="pop">×</button>
+            </div>
+            <div class="modal-content" id="modalContent"></div>
+        </div>
+    </div>
+
+    <script src="sounds.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

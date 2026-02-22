@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Module 4-8: Complete - Calculus III</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="construction-header"><h1>🔧 MODULES 4-8: COMPLETE COURSE CONTENT 🔧</h1><h2>Multivariable Functions Through Final Exam</h2></div>
+    <div class="warning-banner"><span class="construction-icon">⚠️</span> COMPREHENSIVE TRAINING <span class="construction-icon">⚠️</span></div>
+
+    <nav class="nav-container"><ul class="nav-menu">
+        <li class="nav-item active" onclick="ss('m4')">4: Multivariable</li>
+        <li class="nav-item" onclick="ss('m5')">5: Partial Derivatives</li>
+        <li class="nav-item" onclick="ss('m6')">6: Multiple Integrals</li>
+        <li class="nav-item" onclick="ss('m7')">7: Vector Calculus</li>
+        <li class="nav-item" onclick="ss('m8')">8: Final Exam</li>
+    </ul></nav>
+
+    <div class="progress-container"><div class="progress-title">📊 OVERALL PROGRESS</div><div class="progress-bar"><div class="progress-fill" id="pr">0%</div></div></div>
+
+    <div class="container">
+        <!-- Module 4 -->
+        <div class="content-section active" id="m4">
+            <div class="lesson-header"><h1>Module 4: Functions of Several Variables</h1><p>Surfaces, Contours, and 2D Limits</p></div>
+            
+            <div class="definition-box">
+                <h4>Definition: z = f(x,y)</h4>
+                <div class="formula-display">$$z = f(x,y) = x^2 + y^2 - 2xy$$</div>
+            </div>
+
+            <h3 class="subsection-title">Common Surfaces</h3>
+            <div class="example-box">
+                <h4>Examples</h4>
+                <ul class="blueprint-list">
+                    <li>Paraboloid: $$z = x^2 + y^2$$ (bowl)</li>
+                    <li>Saddle: $$z = x^2 - y^2$$</li>
+                    <li>Hyperboloid: $$\frac{x^2}{a^2} + \frac{y^2}{b^2} - \frac{z^2}{c^2} = 1$$</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Level Curves (Contours)</h3>
+            <div class="definition-box"><h4>Level Sets: f(x,y) = k</h4>
+                <p class="content-text">For z = x² + y², level curves are circles: x² + y² = k</p>
+            </div>
+
+            <h3 class="subsection-title">2D Limits</h3>
+            <div class="safety-sign danger">🚨 LIMIT MUST EXIST FROM ALL DIRECTIONS!</div>
+            <div class="example-box">
+                <h4>Path-Dependent Limit</h4>
+                <p class="content-text">$$\lim_{(x,y)→(0,0)} \frac{xy}{x^2+y^2}$$</p>
+                <p class="content-text">Along y=0: limit=0<br>Along y=x: limit=½</p>
+                <p class="content-text">⟹ DNE</p>
+            </div>
+        </div>
+
+        <!-- Module 5 -->
+        <div class="content-section" id="m5">
+            <div class="lesson-header"><h1>Module 5: Partial Derivatives & Gradients</h1><p>Rates of Change in Multiple Directions</p></div>
+
+            <div class="definition-box">
+                <h4>First Partial Derivatives</h4>
+                <div class="formula-display">$$\frac{\partial f}{\partial x} = \lim_{h→0} \frac{f(x+h,y)-f(x,y)}{h}$$</div>
+            </div>
+
+            <div class="example-box">
+                <h4>Example: f(x,y) = x²y + xy³</h4>
+                <p class="content-text">fx = 2xy + y³ (treat y as constant)</p>
+                <p class="content-text">fy = x² + 3xy² (treat x as constant)</p>
+            </div>
+
+            <div class="theorem-box">
+                <h4>Clairaut's Theorem</h4>
+                <div class="formula-display">If continuous: $$\frac{∂²f}{∂x∂y} = \frac{∂²f}{∂y∂x}$$</div>
+            </div>
+
+            <h3 class="subsection-title">The Gradient Vector</h3>
+            <div class="definition-box">
+                <h4>∇f = ⟨fx, fy⟩</h4>
+                <p class="content-text">Points direction of steepest increase, |∇f| = rate</p>
+            </div>
+
+            <div class="definition-box">
+                <h4>Directional Derivative</h4>
+                <div class="formula-display">$$D_{\vec{u}}f = \nabla f \cdot \vec{u}$$</div>
+                <p class="content-text">where $$\vec{u}$$ is unit vector</p>
+            </div>
+
+            <h3 class="subsection-title">Practice</h3>
+            <div class="practice-section">
+                <div class="practice-problem">
+                    <div class="problem-title">Problem 1</div>
+                    <p class="content-text">Find fx for f = x²y + 3xy</p>
+                    <input type="text" id="p1" placeholder="Answer"><button class="check-btn" onclick="chk(1)">Check</button><div id="f1" class="feedback"></div>
+                </div>
+                <div class="practice-problem">
+                    <div class="problem-title">Problem 2</div>
+                    <p class="content-text">Find ∇f for f = x³ + y²</p>
+                    <input type="text" id="p2" placeholder="Answer"><button class="check-btn" onclick="chk(2)">Check</button><div id="f2" class="feedback"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Module 6 -->
+        <div class="content-section" id="m6">
+            <div class="lesson-header"><h1>Module 6: Multiple Integrals</h1><p>Volumes and Mass in Higher Dimensions</p></div>
+
+            <div class="definition-box">
+                <h4>Double Integral (Volume)</h4>
+                <div class="formula-display">$$\iint_R f(x,y) dA$$</div>
+            </div>
+
+            <div class="theorem-box">
+                <h4>Fubini's Theorem</h4>
+                <div class="formula-display">$$\iint_R f dA = \int_a^b \int_c^d f dy dx = \int_c^d \int_a^b f dx dy$$</div>
+            </div>
+
+            <div class="example-box">
+                <h4>Example: Volume Under z = 4 - x - y over [0,1]×[0,1]</h4>
+                <div class="formula-display">$$V = \int_0^1 \int_0^1 (4-x-y) dy dx = \int_0^1 (3.5-x) dx = 3$$</div>
+            </div>
+
+            <h3 class="subsection-title">Region Types</h3>
+            <div class="definition-box">
+                <h4>Type I: y from g₁(x) to g₂(x)</h4>
+                <div class="formula-display">$$\iint_D f dA = \int_A^B \int_{g₁(x)}^{g₂(x)} f dy dx$$</div>
+            </div>
+
+            <h3 class="subsection-title">Polar Coordinates</h3>
+            <div class="definition-box">
+                <h4>Jacobian: dx dy = r dr dθ</h4>
+                <div class="formula-display">$$\iint_D f(x,y) dx dy = \iint_{D^\*} f(r\cosθ,r\sinθ) r dr dθ$$</div>
+            </div>
+
+            <div class="example-box">
+                <h4>Example: Integral over circle radius a</h4>
+                <p class="content-text">$$\iint \sqrt{x^2+y^2} dA = \int_0^{2π} \int_0^a r·r dr dθ = \frac{2πa^3}{3}$$</p>
+            </div>
+
+            <h3 class="subsection-title">Triple Integrals</h3>
+            <div class="definition-box">
+                <h4>$$\iiint_E f dV$$</h4>
+                <p class="content-text">Computes mass (if f = density) or other 3D quantities</p>
+            </div>
+        </div>
+
+        <!-- Module 7 -->
+        <div class="content-section" id="m7">
+            <div class="lesson-header"><h1>Module 7: Vector Calculus</h1><p>Line Integrals, Surface Integrals, and Calculus Theorems</p></div>
+
+            <div class="construction-tape">🔨 ADVANCED THEORY 🔨</div>
+
+            <h3 class="subsection-title">Vector Fields</h3>
+            <div class="definition-box">
+                <h4>2D Field: $$\vec{F} = ⟨P(x,y), Q(x,y)⟩$$</h4>
+                <p class="content-text">Assigns vector to each point</p>
+            </div>
+
+            <h3 class="subsection-title">Line Integrals (Work)</h3>
+            <div class="definition-box">
+                <h4>$$\int_C \vec{F} · d\vec{r}$$</h4>
+                <div class="formula-display">$$\int_a^b \vec{F}(\vec{r}(t)) · \vec{r}'(t) dt$$</div>
+            </div>
+
+            <div class="example-box">
+                <h4>Example: Work along line path</h4>
+                <p class="content-text">$$\int_C ⟨y, x⟩ · d\vec{r}$$ from (0,0) to (2,0) to (2,3)</p>
+                <p class="content-text">Path 1: $$\int_0^2 ⟨0, t⟩ · ⟨1, 0⟩ dt = 0$$</p>
+                <p class="content-text">Path 2: $$\int_0^3 ⟨t, 2⟩ · ⟨0, 1⟩ dt = 6$$</p>
+                <p class="content-text">Total W = 0 + 6 = 6</p>
+            </div>
+
+            <h3 class="subsection-title">Conservative Fields</h3>
+            <div class="theorem-box">
+                <h4>Fundamental Theorem for Line Integrals</h4>
+                <div class="formula-display">If $$\vec{F} = \nabla f$$: $$\int_C \nabla f · d\vec{r} = f(\vec{r}(b)) - f(\vec{r}(a))$$</div>
+            </div>
+            <div class="interactive-box">
+                <div class="interactive-title">Path Independence</div>
+                <p class="content-text">Conservative fields' line integrals depend ONLY on endpoints!</p>
+            </div>
+
+            <div class="definition-box">
+                <h4>Test for Conservative (2D): Py = Qx</h4>
+            </div>
+
+            <h3 class="subsection-title">Curl and Divergence</h3>
+            <div class="definition-box">
+                <h4>Curl: $$\nabla × \vec{F} = ⟨R_y-Q_z, P_z-R_x, Q_x-P_y⟩$$</h4>
+                <p class="content-text">Measures rotation; zero for conservative</p>
+            </div>
+
+            <div class="definition-box">
+                <h4>Divergence: $$\nabla · \vec{F} = P_x + Q_y + R_z$$</h4>
+                <p class="content-text">Measures expansion/compression</p>
+            </div>
+
+            <h3 class="subsection-title">Surface Integrals (Flux)</h3>
+            <div class="definition-box">
+                <h4>$$\iint_S \vec{F} · d\vec{S} = \iint_D \vec{F} · (\vec{r}_u × \vec{r}_v) du dv$$</h4>
+            </div>
+
+            <h3 class="subsection-title">Big Theorems</h3>
+            <div class="theorem-box">
+                <h4>Stokes': $$\oint_C \vec{F} · d\vec{r} = \iint_S (\nabla × \vec{F}) · d\vec{S}$$</h4>
+                <p class="content-text">Line integral = surface integral of curl</p>
+            </div>
+
+            <div class="theorem-box">
+                <h4>Divergence (Gauss): $$\iint_S \vec{F} · d\vec{S} = \iiint_V (\nabla · \vec{F}) dV$$</h4>
+                <p class="content-text">Surface flux = volume integral of divergence</p>
+            </div>
+        </div>
+
+        <!-- Module 8 -->
+        <div class="content-section" id="m8">
+            <div class="lesson-header"><h1>Module 8: Final Exam</h1><p>Comprehensive Assessment</p></div>
+            
+            <div class="safety-sign important">
+                🎓 FINAL EXAM - 10 QUESTIONS - 70% TO PASS 🎓
+            </div>
+
+            <div class="quiz-container">
+                <h3>🎯 CALCULUS III FINAL EXAM</h3>
+                <p class="content-text">All modules covered:</p>
+
+                <div class="quiz-question"><div class="quiz-question-text">Q1: |⟨1,2,2⟩|</div><div class="quiz-options">
+                    <div onclick="s('Q1','A',this)">A. 3</div><div onclick="s('Q1','B',this)">B. 5</div><div onclick="s('Q1','C',this)">C. 7</div></div></div>
+
+                <div class="quiz-question"><div class="quiz-question-text">Q2: ∂/∂x (x²y + 3xy) = ?</div><div class="quiz-options">
+                    <div onclick="s('Q2','A',this)">A. 2xy + 3x</div><                    <div onclick="s('Q2','B',this)">B. 2xy + 3y</div>
+                    <div onclick="s('Q2','C',this)">C. x² + 3y</div></div></div>
+
+                <div class="quiz-question"><div class="quiz-question-text">Q3: Tangent of ⟨cos t, sin t, t⟩ at t=0:</div><div class="quiz-options">
+                    <div onclick="s('Q3','A',this)">A. ⟨1,0,1⟩</div>
+                    <div onclick="s('Q3','B',this)">B. ⟨0,1,1⟩</div>
+                    <div onclick="s('Q3','C',this)">C. ⟨-sin t,cos t,1⟩</div></div></div>
+
+                <div class="quiz-question"><div class="quiz-question-text">Q4: ∇f for f=x²+y² at (1,2):</div><div class="quiz-options">
+                    <div onclick="s('Q4','A',this)">A. ⟨2,4⟩</div>
+                    <div onclick="s('Q4','B',this)">B. ⟨1,2⟩</div>
+                    <div onclick="s('Q4','C',this)">C. ⟨2x,2y⟩</div></div></div>
+
+                <div class="quiz-question"><div class="quiz-question-text">Q5: In polar, dA = ?</div><div class="quiz-options">
+                    <div onclick="s('Q5','A',this)">A. r dr dθ</div>
+                    <div onclick="s('Q5','B',this)">B. dr dθ</div>
+                    <div onclick="s('Q5','C',this)">C. r² dr dθ</div></div></div>
+
+                <div class="quiz-question"><div class="quiz-question-text">Q6: Unit vector of ⟨3,4⟩:</div><div class="quiz-options">
+                    <div onclick="s('Q6','A',this)">A. ⟨3,4⟩</div>
+                    <div onclick="s('Q6','B',this)">B. ⟨3/5,4/5⟩</div>
+                    <div onclick="s('Q6','C',this)">C. ⟨0.6,0.8⟩</div></div></div>
+
+                <div class="quiz-question"><div class="quiz-question-text">Q7: If det = 0, matrix is:</div><div class="quiz-options">
+                    <div onclick="s('Q7','A',this)">A. Singular</div>
+                    <div onclick="s('Q7','B',this)">B. Nonsingular</div>
+                    <div onclick="s('Q7','C',this)">C. Orthogonal</div></div></div>
+
+                <div class="quiz-question"><div class="quiz-question-text">Q8: Flux through surface:</div><div class="quiz-options">
+                    <div onclick="s('Q8','A',this)">A. ∮C F·dr</div>
+                    <div onclick="s('Q8','B',this)">B. ∬S F·dS</div>
+                    <div onclick="s('Q8','C',this)">C. ∭V ∇·F dV</div></div></div>
+
+                <div class="quiz-question"><div class="quiz-question-text">Q9: Conservative work depends on:</div><div class="quiz-options">
+                    <div onclick="s('Q9','A',this)">A. Path only</div>
+                    <div onclick="s('Q9','B',this)">B. Endpoints only</div>
+                    <div onclick="s('Q9','C',this)">C. Both</div></div></div>
+
+                <div class="quiz-question"><div class="quiz-question-text">Q10: Divergence Theorem:</div><div class="quiz-options">
+                    <div onclick="s('Q10','A',this)">A. Stokes'</div>
+                    <div onclick="s('Q10','B',this)">B. Surface → Volume</div>
+                    <div onclick="s('Q10','C',this)">C. Line → Surface</div></div></div>
+
+                <button class="quiz-button" onclick="subFinal()">SUBMIT FINAL EXAM</button>
+            </div>
+            <div class="quiz-container" id="res" style="display:none;"></div>
+        </div>
+
+        <div class="nav-buttons"><a href="03-vector-functions.html" class="nav-btn">← MODULE 3</a><a href="../index.html" class="nav-btn primary">COURSE HOME →</a></div>
+    </div>
+
+    <script>const an={};function s(q,a,e){an[q]=a;e.parentElement.querySelectorAll('.quiz-option').forEach(o=>o.classList.remove('selected'));e.classList.add('selected');}const p={1:{alt:['2xy+3y'],fb:'✓'},2:{alt:['<3x^2,2y>','3x^2,2y'],fb:'✓'}};function chk(n){const i=document.getElementById('p'+n).value.trim().toLowerCase();const fb=document.getElementById('f'+n);if(p[n].alt.some(a=>i.includes(a))){fb.className='feedback correct';fb.textContent='✓ Correct!';}else{fb.className='feedback incorrect';fb.textContent='❌ Try again!';}}function subFinal(){const cor={'Q1':'A','Q2':'B','Q3':'B','Q4':'A','Q5':'A','Q6':'B','Q7':'A','Q8':'B','Q9':'B','Q10':'B'};let s=0;for(let q in cor)if(an[q]===cor[q])s++;const pct=Math.round((s/10)*100);document.querySelectorAll('.quiz-container').forEach(c=>{if(c.id!=='res')c.style.display='none';});document.getElementById('res').style.display='block';if(pct>=70){document.getElementById('res').innerHTML=`<div class="safety-sign important">🎉 CAL III COMPLETE! 🎉<br>Score: ${s}/10 (${pct}%)<br>You've mastered multivariable calculus!</div>`;up(100);}else{document.getElementById('res').innerHTML=`<div class="safety-sign danger">Score: ${s}/10 (${pct}%) - Keep studying!</div>`;}}function ss(id){document.querySelectorAll('.content-section').forEach(s=>s.classList.remove('active'));document.querySelectorAll('.nav-item').forEach(i=>i.classList.remove('active'));document.getElementById(id).classList.add('active');event.target.classList.add('active');}function up(p){document.getElementById('pr').textContent=p+'%';document.getElementById('pr').style.width=p+'%';}</script>
+</body>
+</html>

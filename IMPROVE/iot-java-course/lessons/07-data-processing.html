@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 7: IoT Data Processing & Storage - IoT Java Development Course</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="course-header">
+        <h1>MODULE 7: IOT DATA PROCESSING & STORAGE</h1>
+        <h2>Managing IoT Data at the Edge and Cloud</h2>
+    </div>
+
+    <nav class="nav-container">
+        <ul class="nav-menu">
+            <li class="nav-item active" onclick="showSection('overview')">Overview</li>
+            <li class="nav-item" onclick="showSection('timeseries')">Time-Series Databases</li>
+            <li class="nav-item" onclick="showSection('cloud')">Cloud Platforms</li>
+            <li class="nav-item" onclick="showSection('streaming')">Stream Processing</li>
+            <li class="nav-item" onclick="showSection('edge')">Edge Computing</li>
+            <li class="nav-item" onclick="showSection('practice')">Practice</li>
+            <li class="nav-item" onclick="showSection('quiz')">Quiz</li>
+        </ul>
+    </nav>
+
+    <div class="progress-container">
+        <div class="progress-title">MODULE 7 PROGRESS</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="moduleProgress" style="width: 0%">0%</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content-section active" id="overview">
+            <div class="lesson-header">
+                <h1>IoT Data Management Overview</h1>
+                <p>From Sensor to Insight: Handling IoT Data at Scale</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                IoT systems generate massive volumes of time-series data continuously. Effectively processing, storing, and analyzing this data is critical to extracting value. This module covers the data pipeline from devices through processing to storage and analytics.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">IOT DATA CHARACTERISTICS</div>
+                <ul class="info-list">
+                    <li><span class="keyword">High Velocity:</span> Continuous streams from thousands of devices</li>
+                    <li><span class="keyword">Time-Series:</span> Timestamped measurements over time</li>
+                    <li><span class="keyword">Volume:</span> Petabytes across deployments</li>
+                    <li><span class="keyword">Variety:</span> Structured, semi-structured, and unstructured data</li>
+                    <li><span class="keyword">Value Density:</span> Often sparse; anomalies carry value</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">IoT Data Architecture</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">TYPICAL IOT DATA PIPELINE</div>
+                <ul class="formula-list">
+                    <li><span class="keyword">Devices:</span> Sensors generate raw measurements</li>
+                    <li><span class="keyword">Gateways:</span> Aggregate, filter, initial processing</li>
+                    <li><span class="keyword">Ingestion:</span> MQTT brokers, message queues</li>
+                    <li><span class="keyword">Stream Processing:</span> Kafka, Flink, Spark Streaming</li>
+                    <li><span class="keyword">Time-Series DB:</span> InfluxDB, TimescaleDB, Prometheus</li>
+                    <li><span class="keyword">Data Lake:</span> S3, Azure Blob Storage for analytics</li>
+                    <li><span class="keyword">Analytics:</span> Dashboards, ML models, alerting</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">EXAMPLE: Data Flow for Smart Building</div>
+                <p class="example-content"><span class="keyword">Sensors (500 devices)</span> → <span class="keyword">MQTT Broker</span> → <span class="keyword">Kafka Stream Processor</span> → <span class="keyword">InfluxDB (real-time)</span> + <span class="keyword">S3 (archived)</span> → <span class="keyword">Grafana Dashboard</span> + <span class="keyword">Alerts</span></p>
+            </div>
+        </div>
+
+        <div class="content-section" id="timeseries">
+            <div class="lesson-header">
+                <h1>Time-Series Databases</h1>
+                <p>Optimized Storage for IoT Sensor Data</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                Time-series databases (TSDBs) are purpose-built for storing timestamped sequence data points. Traditional SQL databases struggle with IoT workloads due to ingestion rate and query pattern requirements. TSDBs provide: high write throughput, efficient time-based queries, automatic downsampling, and retention policies.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">POPULAR TIME-SERIES DATABASES</div>
+                <ul class="info-list">
+                    <li><span class="keyword">InfluxDB:</span> Purpose-built TSDB, Flux query language, high performance</li>
+                    <li><span class="keyword">TimescaleDB:</span> PostgreSQL extension, familiar SQL ecosystem</li>
+                    <li><span class="keyword">Prometheus:</span> Monitoring-focused, Pull-based metrics, alerting</li>
+                    <li><span class="keyword">OpenTSDB:</span> Hadoop-backed, scales to petabytes</li>
+                    <li><span class="keyword">QuestDB:</span> SQL-compatible, high throughput, PostgreSQL protocol</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">InfluxDB with Java</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">WRITING IOT DATA TO INFLUXDB</div>
+                <pre class="code-block">
+import influxdbclient.InfluxDBClient;
+import influxdbclient.WriteApi;
+import influxdbclient.domain.WritePrecision;
+
+public class IoTDataWriter {
+    private InfluxDBClient client;
+    private WriteApi writeApi;
+    
+    public void connect(String url, String token, String bucket, String org) {
+        client = InfluxDBClientFactory.create(url, token.toCharArray());
+        writeApi = client.getWriteApi();
+    }
+    
+    public void writeSensorReading(String deviceId, double temperature, double humidity) {
+        Point point = Point.measurement("sensor_reading")
+            .addTag("device_id", deviceId)
+            .addTag("type", "DHT22")
+            .addField("temperature", temperature)
+            .addField("humidity", humidity)
+            .time(System.currentTimeMillis(), WritePrecision.MS);
+            
+        writeApi.writePoint(bucket, org, point);
+    }
+    
+    public void close() {
+        client.close();
+    }
+}
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Querying Time-Series Data</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">FLUX QUERY ANALYSIS</div>
+                <pre class="code-block">
+// Flux query: Temperature aggregation by hour
+from(bucket: "iot_data")
+    |> range(start: -24h)
+    |> filter(fn: (r) => r._measurement == "sensor_reading")
+    |> filter(fn: (r) => r._field == "temperature")
+    |> aggregateWindow(
+        every: 1h,
+        fn: mean,
+        createEmpty: false
+    )
+    |> yield(name: "hourly_avg")
+
+// Flux query: Anomaly detection (values > 3σ from mean)
+from(bucket: "iot_data")
+    |> range(start: -7d)
+    |> filter(fn: (r) => r._measurement == "sensor_reading")
+    |> filter(fn: (r) => r._field == "temperature")
+    |> stddev() |> yield(name: "stddev")
+    |> mean() |> yield(name: "mean")
+                </pre>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">DOWNSAMPLING & RETENTION POLICIES</div>
+                <p class="warning-content">Raw IoT data grows rapidly. Implement downsampling (e.g., keep raw for 7 days, 5-minute averages for 90 days, hourly averages for 1 year, daily averages forever). Retention policies automatically delete old data to control storage costs.</p>
+            </div>
+        </div>
+
+        <div class="content-section" id="cloud">
+            <div class="lesson-header">
+                <h1>Cloud IoT Platforms</h1>
+                <p>Managed Services for IoT Data Management</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                Cloud providers offer managed IoT platforms that simplify device connection, data ingestion, processing, and storage. These services handle scaling, security, and maintenance so you can focus on building applications.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">CLOUD IOT PLATFORMS</div>
+                <ul class="info-list">
+                    <li><span class="keyword">AWS IoT Core:</span> MQTT broker, device registry, rules engine, device shadow</li>
+                    <li><span class="keyword">Azure IoT Hub:</span> Device twins, Azure Stream Analytics, Azure Digital Twins</li>
+                    <li><span class="keyword">Google Cloud IoT:</span> Cloud Pub/Sub integration, ML pipeline, BigQuery</li>
+                    <li><span class="keyword">IBM Watson IoT:</span> Advanced analytics, cognitive apps</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">AWS IoT Core with Java SDK</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">AWS IOT DEVICE SDK PUBLISH</div>
+                <pre class="code-block">
+import software.amazon.awssdk.iot.IotClient;
+import software.amazon.awssdk.services.iot.model.PublishRequest;
+import software.amazon.awssdk.crt.mqtt.MqttClient;
+import software.amazon.awssdk.crt.mqtt.MqttMessage;
+
+public class AWSIoTPublisher {
+    private MqttConnection connection;
+    
+    public void setupConnection(String endpoint, String certPath, String keyPath) {
+        MqttClient client = new MqttClient();
+        DirectMqttConnectionBuilder builder = DirectMqttConnectionBuilder.newMqttBuilder()
+            .withClientId("iot-device-001")
+            .withEndpoint(endpoint)
+            .withCertificates(certPath, keyPath)
+            .withPersistSubscriptions(false);
+            
+        connection = builder.build();
+        connection.connect();
+    }
+    
+    public void publishSensorData(String topic, byte[] payload) {
+        MqttMessage message = new MqttMessage(topic, payload);
+        message.setQos(MqttQoS.AT_LEAST_ONCE);
+        connection.publish(message);
+    }
+}
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Device Shadows (Twin) Concept</h3>
+
+            <div class="example-box">
+                <div class="example-title">EXAMPLE: DEVICE SHADOW STATE</div>
+                <pre class="code-block">
+{
+    "desired": {
+        "color": "red",
+        "brightness": 75,
+        "state": "on"
+    },
+    "reported": {
+        "color": "green",
+        "brightness": 50,
+        "state": "on"
+    },
+    "delta": {
+        "color": "red",
+        "brightness": 75
+    }
+}
+// Device reads 'delta' to know what changes to apply
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Azure IoT Hub Integration</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">AZURE IOT HUB JAVA CLIENT</div>
+                <pre class="code-block">
+import com.microsoft.azure.sdk.iot.device.DeviceClient;
+import com.microsoft.azure.sdk.iot.device.Message;
+
+public class AzureIoTDevice {
+    private DeviceClient client;
+    
+    public void connect(String connectionString) throws Exception {
+        client = new DeviceClient(connectionString, IotHubClientProtocol.MQTT);
+        client.open();
+    }
+    
+    public void sendTelemetry(Map&lt;String, Object&gt; telemetry) throws Exception {
+        ObjectMapper mapper = new ObjectMapper();
+        String json = mapper.writeValueAsString(telemetry);
+        Message message = new Message(json);
+        message.setContentType("application/json");
+        message.setContentEncoding("utf-8");
+        
+        client.sendEventAsync(message, new EventCallback(), null);
+    }
+}
+
+class EventCallback implements IotHubEventCallback {
+    public void execute(IotHubStatusCode status, Object context) {
+        if (status == IotHubStatusCode.OK) {
+            System.out.println("Message sent successfully");
+        }
+    }
+}
+                </pre>
+            </div>
+        </div>
+
+        <div class="content-section" id="streaming">
+            <div class="lesson-header">
+                <h1>Stream Processing</h1>
+                <p>Real-Time Data Processing with Kafka and Flink</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                Stream processing enables real-time analysis of continuous data flow. Unlike batch processing which processes data at fixed intervals, stream processing reacts to data as it arrives, enabling immediate alerts, aggregations, and transformations.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">STREAM PROCESSING CONCEPTS</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Event Time vs Processing Time:</span> When event occurred vs when processed</li>
+                    <li><span class="keyword">Windowing:</span> Grouping events by time (tumbling, sliding, session)</li>
+                    <li><span class="keyword">State Management:</span> Maintaining context across events (counters, averages)</li>
+                    <li><span class="keyword">Exactly-Once Semantics:</span> Processing each event exactly once</li>
+                    <li><span class="keyword">Watermarks:</span> Handling late-arriving data</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Kafka Streams with Java</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">KAFKA STREAMS: SENSOR AGGREGATION</div>
+                <pre class="code-block">
+import org.apache.kafka.streams.*;
+import org.apache.kafka.streams.kstream.*;
+
+public class SensorAggregationStreams {
+    public KafkaStreams createStream() {
+        Properties props = new Properties();
+        props.put(StreamsConfig.APPLICATION_ID_CONFIG, "iot-sensor-agg");
+        props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka:9092");
+        
+        StreamsBuilder builder = new StreamsBuilder();
+        
+        KStream&lt;String, SensorReading&gt; readings = builder.stream(
+            "sensor-readings",
+            Consumed.with(Serdes.String(), new SensorReadingSerde())
+        );
+        
+        // Windowed aggregation: 1-minute tumbling windows
+        KTable&lt;Windowed&lt;String&gt;, SensorStats&gt; stats = readings
+            .groupByKey()
+            .windowedBy(TimeWindows.of(Duration.ofMinutes(1)))
+            .aggregate(
+                SensorStats::new,
+                (key, reading, stats) -> stats.add(reading),
+                Materialized.with(Serdes.String(), new SensorStatsSerde())
+            );
+        
+        // Emit anomalies (temperature > threshold)
+        readings.filter((key, reading) -> reading.getTemperature() > 50)
+            .to("alerts");
+            
+        return new KafkaStreams(builder.build(), props);
+    }
+}
+
+class SensorReading {
+    private String deviceId;
+    private double temperature;
+    private double humidity;
+    private long timestamp;
+}
+
+class SensorStats {
+    private double avgTemp;
+    private double maxTemp;
+    private double minTemp;
+    private int count;
+}
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Apache Flink CEP for Pattern Detection</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">FLINK CEP: FAILURE PATTERN DETECTION</div>
+                <pre class="code-block">
+import org.apache.flink.cep.*;
+
+public class FailurePatternDetection {
+    public Pattern&lt;SensorEvent, ?&gt; getFailurePattern() {
+        return Pattern.&lt;SensorEvent&gt;begin("highTempStart")
+            .where(event -> event.getTemperature() > 60)
+            .next("highTempContinue")
+            .where(event -> event.getTemperature() > 60, Times.secondsOf(60))
+            .oneOrMore()
+            .greedy()
+            .until(event -> event.getTemperature() > 80);
+    }
+    
+    public void detectFailures(DataStream&lt;SensorEvent&gt; events) {
+        PatternStream&lt;SensorEvent&gt; pattern = CEP.pattern(
+            events.keyBy(SensorEvent::getDeviceId),
+            getFailurePattern()
+        );
+        
+        DataStream&lt;Alert&gt; alerts = pattern.select((patternMap) -> {
+            long duration = calculateDuration(patternMap);
+            return new Alert("CRITICAL", 
+                "Device overheating for " + duration + " seconds");
+        });
+        
+        alerts.addSink(new AlertSink());
+    }
+}
+                </pre>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">EXAMPLE: Window Types</div>
+                <ul class="example-list">
+                    <li><span class="keyword">Tumbling Window:</span> Fixed-size, non-overlapping (e.g., every 5 minutes)</li>
+                    <li><span class="keyword">Sliding Window:</span> Fixed-size with slide interval (e.g., 5-minute window every 1 minute)</li>
+                    <li><span class="keyword">Session Window:</span> Dynamic based on inactivity gap (e.g., user sessions)</li>
+                    <li><span class="keyword">Global Window:</span> All events (with triggers for processing)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section" id="edge">
+            <div class="lesson-header">
+                <h1>Edge Computing</h1>
+                <p>Processing Data Closer to Devices</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                Edge computing moves data processing from centralized clouds to locations closer to data sources. This reduces latency, bandwidth usage, and enables operation during connectivity outages. Edge processing ranges from lightweight filtering on gateways to full application hosting on edge servers.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">EDGE COMPUTING BENEFITS</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Reduced Latency:</span> Processing in milliseconds vs seconds</li>
+                    <li><span class="keyword">Bandwidth Savings:</span> Send only processed insights to cloud</li>
+                    <li><span class="keyword">Offline Operation:</span> Continue function during network outage</li>
+                    <li><span class="keyword">Privacy:</span> Keep sensitive data on-premises</li>
+                    <li><span class="keyword">Cost:</span> Reduce cloud compute and storage costs</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Edge Continuum</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">EDGE LAYERS</div>
+                <ul class="formula-list">
+                    <li><span class="keyword">Device Edge:</span> Sensors and actuators, minimal compute</li>
+                    <li><span class="keyword">Gateway Edge:</span> Protocol translation, aggregation, basic processing</li>
+                    <li><span class="keyword">Near Edge:</span> Factory/building servers, localized apps</li>
+                    <li><span class="keyword">Far Edge:</span> Regional data centers, CDN edge locations</li>
+                    <li><span class="keyword">Cloud:</span> Centralized processing, analytics, ML training</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Java Edge with Eclipse Kura</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">EDGE IOT APPLICATION WITH KURA</div>
+                <pre class="code-block">
+import org.eclipse.kura.KuraException;
+import org.eclipse.kura.cloud.CloudClient;
+import org.eclipse.kura.configuration.ConfigurableComponent;
+import org.eclipse.kura.position.Position;
+import org.eclipse.kura.timer.Timer;
+
+public class EdgeDataProcessor implements ConfigurableComponent {
+    private CloudClient cloudClient;
+    private Timer processingTimer;
+    private CircularBuffer&lt;SensorData&gt; buffer;
+    
+    @Activate
+    public void activate(Map&lt;String, Object&gt; properties) {
+        // Initialize edge processing
+        buffer = new CircularBuffer&lt;&gt;(1000);
+        processingTimer = new Timer(this::processBatch, 5000); // Every 5s
+        
+        System.out.println("Edge processor activated");
+    }
+    
+    @Deactivate
+    public void deactivate() {
+        processingTimer.disable();
+    }
+    
+    @SuppressWarnings("unchecked")
+    @Reference
+    public void setCloudClient(CloudClient cloudClient) {
+        this.cloudClient = cloudClient;
+    }
+    
+    public void onSensorData(SensorData data) {
+        // Filter noise at edge
+        if (isValidData(data)) {
+            buffer.add(data);
+            
+            // Immediate alert if critical
+            if (data.getTemperature() > 80) {
+                sendAlert("CRITICAL_TEMP", data);
+            }
+        }
+    }
+    
+    private void processBatch() {
+        // Aggregate buffered data
+        SensorAggregation agg = aggregate(buffer);
+        
+        // Send only aggregated result to cloud (90% bandwidth reduction)
+        cloudClient.publish(agg.toJson(), "sensor/aggregated", 
+            QoS.AT_LEAST_ONCE, true);
+            
+        buffer.clear();
+    }
+    
+    private SensorAggregation aggregate(CircularBuffer&lt;SensorData&gt; buffer) {
+        double min = Double.MAX_VALUE;
+        double max = Double.MIN_VALUE;
+        double sum = 0;
+        int count = 0;
+        
+        for (SensorData data : buffer) {
+            min = Math.min(min, data.getTemperature());
+            max = Math.max(max, data.getTemperature());
+            sum += data.getTemperature();
+            count++;
+        }
+        
+        return new SensorAggregation(
+            min, max, sum / count, count, System.currentTimeMillis()
+        );
+    }
+}
+                </pre>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">EXAMPLE: Edge vs Cloud Processing Split</div>
+                <p class="example-content"><span class="keyword">Edge Processing:</span> Real-time alerts, data filtering, deduplication, compression.</p>
+                <p class="example-content"><span class="keyword">Cloud Processing:</span> Historical analytics, ML model training, cross-site aggregation, reporting.</p>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">EDGE DEPLOYMENT CHALLENGES</div>
+                <ul class="warning-list">
+                    <li>Edge devices have limited CPU/memory and may be offline</li>
+                    <li>Deployment requires robust OTA (Over-The-Air) update system</li>
+                    <li>Edge and cloud codebases must sync when possible</li>
+                    <li>Monitoring at edge requires careful design for intermittent connectivity</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section" id="practice">
+            <div class="lesson-header">
+                <h1>Practice Problems</h1>
+                <p>Test Your Understanding of IoT Data Processing</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <div class="practice-container" id="practiceProblems">
+                <div class="problem">
+                    <div class="problem-header">
+                        <span class="problem-id">7-1</span>
+                        <span class="problem-difficulty easy">Easy</span>
+                        <span class="problem-type">Definition</span>
+                    </div>
+                    <div class="problem-question">
+                        What does TSDB stand for in the context of IoT?
+                    </div>
+                    <div class="problem-answer">
+                        Time-Series Database
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                </div>
+                <div class="problem">
+                    <div class="problem-header">
+                        <span class="problem-id">7-2</span>
+                        <span class="problem-difficulty medium">Medium</span>
+                        <span class="problem-type">Concept</span>
+                    </div>
+                    <div class="problem-question">
+                        Why are time-series databases better than traditional SQL databases for IoT sensor data?
+                    </div>
+                    <div class="problem-answer">
+                        TSDBs handle high write throughput for timestamped data, efficient time-based queries, automatic downsampling, and retention policies tailored for continuous measurement data
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                </div>
+                <div class="problem">
+                    <div class="problem-header">
+                        <span class="problem-id">7-3</span>
+                        <span class="problem-difficulty easy">Easy</span>
+                        <span class="problem-type">Concept</span>
+                    </div>
+                    <div class="problem-question">
+                        What is downsampling in the context of time-series IoT data?
+                    </div>
+                    <div class="problem-answer">
+                        Reducing data resolution over time (e.g., raw data for 7 days → 5-minute averages for 90 days → hourly averages for 1 year) to control storage costs while preserving trends
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                </div>
+                <div class="problem">
+                    <div class="problem-header">
+                        <span class="problem-id">7-4</span>
+                        <span class="problem-difficulty medium">Medium</span>
+                        <span class="problem-type">Application</span>
+                    </div>
+                    <div class="problem-question">
+                        A sensor generates temperature readings every 100ms for 24 hours. How many data points will be generated?
+                    </div>
+                    <div class="problem-answer">
+                        864,000 data points = (60 seconds/min * 60 min/hour * 24 hours) * (1 second reading / 0.1 second interval) = 864,000
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section" id="quiz">
+            <div class="lesson-header">
+                <h1>Module 7 Quiz</h1>
+                <p>Test Your Knowledge of IoT Data Processing</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <div class="quiz-container" id="quizContainer">
+                <!-- Quiz questions loaded from quizzes.js -->
+            </div>
+            <button class="submit-quiz" onclick="submitQuiz('7')">Submit Quiz</button>
+            <div class="quiz-result" id="quizResult"></div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-buttons">
+            <button class="nav-btn prev" onclick="navigate('previous')">← Previous Module</button>
+            <button class="nav-btn next" onclick="navigate('next')">Next Module →</button>
+        </div>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script src="../js/problems.js"></script>
+    <script src="../js/quizzes.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPracticeProblems('dataProcessing');
+            loadQuiz('module7');
+            updateProgress();
+        });
+    </script>
+</body>
+</html>

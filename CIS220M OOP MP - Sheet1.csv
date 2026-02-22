@@ -1,0 +1,219 @@
+,,,
+,,,
+,,,
+,Item,Location,Definition
+,"Twin sisters throw out their printers, because one prints out too many lines and the other no lines.",[MCC] sign at drive in,"System.out.println() prints to the console with a newline character, while System.out.print() does without."
+,Mario double-jumping so much that he is basically floating.,[MCC] concrete sculpture at drive in,"In Java, double is used to declare a float."
+,"A plumber getting an eel out of the sink, and ink is all over the place.",[MCC] corner of building at drive in,"In Java, += increments by the number that follows."
+,An intelligent snake speaking parseltongue to give a hint to Harry Potter.,[MCC] crosswalk at drive in,Integer.parseInt() converts a string to an integer.
+,Parents critiquing a college thesis about types of casts.,[MCC] picnic pavillion in front,(type) is how you cast types.
+,Cheap people using a piece string to pay for the value of conversion therapy.,[MCC] flag in the front,String.valueOf() is how you convert other types to strings.
+,A fool selling another fool a very sparse christmas tree.,[MCC] in front of the glass doors,Boolean.parseBoolean() converts to booleans.
+,"Two dubstep dancers dancing, but one has very sparse hair.",[MCC] in the entrance of the glass doors.,Double.parseDouble() converts a string to a double.
+,"A TSO officer testing her new scanner on her sister as she walks in, to which she gives her terrible input.",[MCC] at the library doors,Scanner sc = new Scanner(System.in); records what the user enters in the console and stores it in sc as an input stream.
+,,,"The initializer list method for creating an array is formatted as String[] = {""String""}; where String is the data type in the array."
+,,,The new method for creating an array is formatted as String[] = new String[5]; where 5 is the number of elements. All values are initialized as null.
+,,,The .length property of arrays stores the length of the array.
+,,,"A for each loop / enhanced for loop iterates through arrays, cannot modify arrays, and is formated as for(String i : arr) { }; where string is the type, i is the element, and arr is the array name."
+,,,ArrayLists are dynamic arrays that can be changes while the program is running. You import them with import java.util.ArrayList;. You initialize them with ArrayList<Integer> numbers = new ArrayList<Integer>();
+,,,"To get the size of an ArrayList, you use .size()."
+,,,"To add to an ArrayList, you use .add(). You can also specify the index with the first number of it."
+,,,"To remove from an index with an ArrayList, you can use .remove()."
+,,,"To get from an ArrayList, you use .get();"
+,,,"A 2D Array is an array inside of an array, and can be initialized with [][] instead of []."
+,,,"To reference a character within a string, use the .charAt() method."
+,,,"In Java, strings are immutable, but can be reassigned."
+,,,The .contains() method checks if a string contains a word or character.
+,,,The .substring() method slices a string at two indices.
+,,,The .trim() method removes subspace at the beginning and end of a string.
+,,,The .replace() method will replace a word with another within a string.
+,,,The .startsWith() method returns true if the string starts with the word.
+,,,The .indexOf() method returns the index of a word in a string.
+,,,The .toUppercase() and .toLowercase() convert a string to uppercase or lowercase.
+,,,The .concat() method is an alternative way to concatenate strings.
+,,,"Using ""new"" to create a string makes it an object that cant be compared with other strings. The .equals() method compares regardless of how strings were created."
+,,,The .compareTo() method returns a negative value if the string comes first in a dictionary.
+,,,"A buffer is a block of memory that stores data, and is used to interact with your program (fast) and with the disk (slow), because directly writing to the disk is very slow, doing one thing at a time."
+,,,"To use a buffer with the file writer, import java.io and use a buffer object with BufferedWriter writer = new BufferedWriter(new FileWriter(path));"
+,,,Use the .write() method to write and .close() method to close with a BufferedWriter object.
+,,,Use the .newLine() method to add a new line with a BufferedWriter object.
+,,,"Add true after the path to append to the file rather than overwrite, with BufferedWriter writer = new BufferedWriter(new FileWriter(path, true));"
+,,,I/O operations are considered “expensive” for computers
+,,,You can also use print and println with the PrintWriter object with BufferedWriter writer = new BufferedWriter(new PrintWriter(file));
+,,,You can use formatted strings with System.out.printf(); and %d specifies an integer while %s specifies a string.
+,,,"To read a file, use BufferedReader reader = new BufferedReader(new FileReader(path)); and use the .readLine() method to read lines."
+,,,The .ready() method of BufferedReader returns true if the file can still be read.
+,,,"Tokens are individual word substrings of the original string. To break up a string into tokens, use the .split("" "") method with what you want to split it by."
+,,,"The java.util package has the StringTokenizer class that breaks strings into tokens with StringTokenizer tokens = new StringTokenizer(line, "" "");"
+,,,"When writing and reading files, always catch the IOExceptions or else it won't work."
+,,,"To read a csv, use CSVReader reader = new CSVReader(new FileReader(path));. You need to import apache.commons, java.io, and opencsv."
+,,,"With the CSVWriter class, you use the .writeNext() method to write an array of strings to a line of a CSV."
+,,,"In the head of Java programs, 'public' determines where the method can be accessed, 'static' determines what can access the method, 'void' determines if their is a return value, and 'main()' is the name of the method."
+,,,"The main() class is what runs when you run the program, and all other methods are called from it to run."
+,,,"In-line documentation of methods and classes are standard in Java. They use @author for name, @version for version, @param for parameters taken, and @return for any values it returns. This is so javadoc can generate an HTML docs."
+,,,An exception occurs when an operation cannot be successfully completed because a rule is broken.
+,,,"Only static variables can be accessed by static methods, so you need to put static before the declaration when declaring a global variable for them."
+,,,"To declare a constant, as an unchangeable global variable, add the keyword final before its declaration."
+,,,The finally block in exception handling specifies code to execute regardless of any error or exception.
+,,,"To create a checked exception, extend Exception. To create an unchecked exception, extend RuntimeException."
+,,,The .getClass() method returns the class type.
+,,,Calling .getDeclaredMethods() on a class object returns a type method array of all the methods of the class.
+,,,Classes: a collection of data and the actions that can modify the data.  Classes were created to give users a mental model of how to think about data in a more concrete way. Classes act as the blueprint. They tell Java what data is collected and how it can be modified.
+,,,Objects are constructed according to the blueprint that is the class.
+,,,"Constructors are special method for classes, that assigns values to be associated with the objects. In Java they are written as function with the classes name, and written within the class definition, with all the value declarations within the curly braces."
+,,,The constructor can have attributes that the class will take during instantiation
+,,,"The static keyword when used in a class makes attributes class attributes, meaning they are the same for all objects, and modifiying them for one object does it for all."
+,,,"Shallow copies are copies of objects that share attributes with the original, while deep copies have new attributes."
+,,,"Static methods, methods that use static in their declaration, make changes to the whole class. They are called in the format Class.method(), and can be called without instantiating an object."
+,,,"Encapsulation is a concept in which related data and methods are grouped together, and in which access to data is restricted. Classes are an example of encapsulation. Encapsulation makes the individual data in classes public or private."
+,,,"The public keyword means that the constructors, methods, or attributes can be accessed by an instance of a class."
+,,,"The private keyword means that the constructor, attribute, or method can only be accessed by the class itself."
+,,,Encapsulation asks that all attributes be private.
+,,,"The constuctor in a class should be public, it is your way to interact with the private data."
+,,,
+,,,Use the extends keyword to create a subclass with all the attributes of the superclass.
+,,,super(params) is used in subclass constructors to pass their parameters to the superclass.
+,,,"The instaceof operator returns true if an object is an instance of the class, including all of its superclasses."
+,,,The substitution principle allows a subclass to be accepted when its superclass is needed.
+,,,@override lets the compiler know you are overriding a superclass method.
+,,,"Multiple Inheritance: when a class inherits from more than one superclass, but the superclasses must be the same type."
+,,,Polymorphism is where a single interface takes different forms. Often similar operations go by the same name.
+,,,"Overloading is when you make multiple method definitions the same name in a class, but different parameters. Java uses whichever one accepts the right parameters when the method is called. This can also be done with the constructor."
+,,,"Abstract classes are classes that can't be instantiated, and are defined by using the abstract keyword before. They serve as superclasses."
+,,,"Abstract classes can have abstract methods, which don't have a body and are required to be overrided by subclasses."
+,,,"Generics allow you to have a single class that works with many types. They use <T> after the class name definition, and T represents the generic type. They are also called with the <> instead of ()."
+,,,"Generic parameter notation is E for elements, K for key, N for number, T for type, and V for value."
+,,,"You can define generic methods, which don't need to be in generic classes. To do this, add the <T> before the return value in a method."
+,,,"Defining a generic class or method with <T, V> allows for two spots, one for a generic type and one for a generic value. You need to do this for multiple generic types, because it can't accept two Ts."
+,,,You can use extends after T to create a bounded generic that accepts only subclasses.
+,,,"Using a ? as the generic type is called a wildcard, and can be any type."
+,,,"When you compile files in the same folder, the classes can be accessed by all the files."
+,,,"Interfaces are like abstract classes, but they force the user to write code for all of their methods. This is why they use implements rather than extends."
+,,,Space complexity is calculated as fixed memory (variables that don't change) plus variable memory (variables that change) in an algorithm.
+,,,"The Divide and Conquer technique is where the problem is divided into smaller subproblems, until they are solveable, such as recursively dividing an array until they are size 2 and can be sorted. Divide and conquer is expressed in code as recursion."
+,,,"The reccurence relation is the equation that describes the relationship of values at different input sizes, to measure the efficiency of recursive algorithms."
+,,,The master theorem measures the time complexity in divide and conquer reursive algorithms and is expressed as T(n) = a*T(n/b)+f(n)
+,,,"Greedy algorithms build up a solution piece by piece, always choosing the next piece that offers the most immediate benefit or profit. This approach is mainly used to solve optimization problems."
+,,,"Dynamic programming is a technique for solving problems by breaking them down into smaller subproblems, storing the solutions to the subproblems for reuse. This is more efficient, since there are no repeat calculations."
+,,,"Memoization, or top-down approach, is an optimization technique used to speed up computer programs by storing the results of expensive function calls and returning the cached result when the same inputs occur again."
+,,,A naive recursive function is called “naive” because calculations are forgotten after each recursive call.
+,,,"Tabulation, or bottom-up approach, is a dynamic programming technique where you use 2D arrays to store reusable data in a table."
+,,,"Selection Sort: Starting with the first element in the list as the working element, move down the list to find the smallest number and  replace it with the working element. Repeat until sorted. It's time complexity is O(n^2) but space complexity is O(1)."
+,,,"Bubble Sort: Move up the list comparing each element with it's adjacent value, swaping them if they are in the wrong order. Repeat until the list is sorted. It's time complexity is O(n^2) but space complexity is O(1)."
+,,,"Insertion Sort: Start with the second element, and compare it with each element to the left until you find the right spot for it. Repeat this with each element up the list until you reach the end. The time complexity is O(n^2), best case being O(n), which adapts depending on how many elements are unsorted."
+,,,"Merge Sort: Recursively divide the list in halves until all sublists have 1 element, and compare each sublist until each has 2 elements, and then merge each sublist with one another until it is 1 list again. It's a divide-and-conquer algorithm with a time complexity of O(nlogn) and space complexity of O(n)."
+,,,"Quick Sort: Select an arbitrary pivot element, and go through each element around the pivot, comparing them to it and swapping them to the correct side. Recursively repeat this on the two subarrays on each side of the pivot. It is divide-and-conquer with a time complexity of O(n^2), best case O(nlogn)."
+,,,"Jump Search: Jump to the element that is the square root of the array size away and compare it to the target. If the jump was too far, do a linear search. Otherwise, repeat the jump with the square root of array size more than the last. It's time complexity ranges from O(sqrt(n)) to O(1), and space complexity is O(1)."
+,,,"abstract data types (ADT) are general abastract ways to describe data types, regardless of the programming language."
+,,,"List: a data structure where elements are stored sequenially. Operations include insertion, deletion, traversal, and searching."
+,,,"Array-based list insertions and deletions are generally O(n) which is slow, but lists have O(1) fast access to random elements."
+,,,"Linked-list insertions and deletions are O(1) which is fast, while random access to elements is O(n) slow."
+,,,"Java collections has a List type, which is instanciated as an ArrayList, with built in reverse, sublist, contains, removeIf, and indexOf methods."
+,,," Linked list: a linear data structure made up of nodes, where each node contains data and a reference (or link) to the next node in the list."
+,,,"In the context of a linked list, a pointer is simply a reference to another node. You can't manipulate memory addresses in Java like you can in C and C++. In a Linked List the last pointer is null."
+,,,"Liked lists have a head and a tail, and for traversal you can start at the head."
+,,,To add elements to a Linked List you first need to traverse to the end.
+,,,"Basic Linked List operations include traversal O(n), count nodes, insert at beginning O(1), insert at end O(n), delete from beginning O(1), delete from end O(n), and searching O(n)."
+,,,The space complexity for a linked list is O(n).
+,,,ArrayLists have O(1) fast insertions.
+,,,Arrays have O(1) fast searching when you know the index.
+,,,"Doubly Linked List: a list of nodes, where each node has two pointers. One references the next node in the list, while the other pointer references the previous node. This allows for bidirectional traversal."
+,,,"Basic Doubly Linked List operations include insert at beginning O(1), insert at end O(1), insert at position O(n), delete at beginning O(1), delete at end O(1), delete at position O(n) or O(1) with pointer, traversal O(n), and searching O(n)."
+,,,"Circular Linked List: a Linked List in which the last node points back to the first node, thereby forming a loop."
+,,,"Basic Circular Linked List operations include insert at begining O(1), insert at end O(1)/O(n), insert at position O(n), delete from beginning O(1), delete from end O(1), delete from position O(n), traversal O(n), and searching O(n)."
+,,,Stack: A data structure that you can only modify the top of. The order in which they are organized is LIFO.
+,,,"Basic Stack operations include push (adding), pop (deleting), isEmpty, isFull, and sometimes peek (look at first element). All of these are O(1)"
+,,,"If the Stack is full, you can throw an IllegalStateException."
+,,,Queue: A data structure that you can only add to the end and delete from the beginning. They are organized as FIFO.
+,,,"Basic Queue operations include enqueue (add to beginning), dequeue (remove from end), peek, isEmpty, isFull. All of these are O(1)."
+,,,"Array-based queues are more time and memory efficient, while Dynamic Array-based queues are more flexible."
+,,,"Priority Queue: Like any other queue/stack, but there is an added dimention of priority. They dequeue based on priority. They have the same basic operations as queues."
+,,,"Array-based priority queues have the time complexities: O(n) enqueue, O(n) dequeue, O(1) peek, O(1) isEmpty, O(1) size."
+,,,"Linked-list-based priority queues have the time compexities: O(n) enqueue, O(1) dequeue, O(1) peek, O(1) isEmpty, O(1) size."
+,,,Array-list-based priority queues have the same time complexity for operations as Linked-list based one. Both are better than array-based ones.
+,,,Amortized means an average time per operation over a sequence.
+,,,"Deque: A queue that allows adding and removing elements from both ends. Pronounced ""deck"", stands for double-ended queue. It can be implemented with a doubly-linked-list or an array."
+,,,"Deque operations include: addFront, addRear, removeFront, removeRear, peekFront, peekRear, isEmpty, and size. All are O(1) given there is no resizing needed. The  space complexity of deques are linear."
+,,,Tree: A non-linear data structure that emulates a tree structure with a set of linked nodes.
+,,,An edge is the link between two nodes.
+,,,Pre-order tree traversal: root to left to right
+,,,In-order tree traversal: left to root to right
+,,,Post-order tree traversal: left to right to root
+,,,Binary Tree: A tree that can have at most 2 children.
+,,,"Binary Search Tree: A tree in which for every node, the value of all the nodes in its left subtree is less than its own value, and the value of all the nodes in its right subtree is greater. It typically has no duplicates, and it's operations are O(h)."
+,,,"For a binary tree with n nodes, the minimum possible height or the minimum number of levels is log2(n-1)."
+,,,A balanced binary tree is one where the depth of the left and right subtrees of every node differ by at most one. Balanced trees are essential for maintaining O(logn) for core operations.
+,,,Full Binary Tree: Every node has exactly 0 or 2 children (not 1).
+,,,Perfect Binary Tree: A full binary tree where all leaf nodes are at the same level.
+,,,"Degenerate (or Pathological) Tree: A tree where each parent node has only one child, making its performance similar to a linked list."
+,,,DFS
+,,,Breadth-first Search: A tree search algorithm that traverses level by level and visits all the nodes at the current level from left to right before progressing to the next level.
+,,,DFS is O(n) and space complexity of O(h)
+,,,"DFS is used to effectively find a path between to nodes in a tree, identify all connected components or nodes reachable from a given node, and used in scenarios where we need to explore the solution space exhaustively, like solving puzzles or making decisions."
+,,,BFS is O(n) and space complexity of O(w)
+,,,"BFS is used for efficiently finding the shortest path in unweighted graphs or trees and for traversing a tree level by level, which is crucial for various applications, including balancing trees and visual representations, and is best suited for solutions close to the root."
+,,,"AVL Tree (Anderson-Velsky and Landis): A binary search tree that maintains its balance through rotations during insertions and deletions. They have a balance factor, that for every node, it's left child height minus right child height must be -1, 0, or 1. Their nodes store height as an attribute."
+,,,"AVL Trees have four rotations that restore the balance if the tree becomes unbalanced, and are also taken into account with insertion and deletion - LL Rotation: Left rotation around the unbalanced node
+RR Rotation: Right rotation around the unbalanced node
+LR Rotation: Left rotation followed by a right rotation
+RL Rotation: Right rotation followed by a left rotation"
+,,,The height of an AVL is O(logn).
+,,,"Insertion, deletion, and search for AVL Trees are all O(logn). Space complexity is O(n) for n nodes."
+,,,Red-Black Tree: A specialized binary search tree that uses node coloring and rotations. Root nodes and NIL (childless) leafs are always black. No two red nodes can occur consecutively. All paths from a node to its leaf descendants must contain the same number of black nodes.
+,,,"Red-Black Trees form the backbone of many high-performance in-memory databases, help manage the blocks of memory in operating systems, and are used in various container libraries due to their ability to maintain balance and provide consistent performance. "
+,,,"Red-Black Trees have two main rotations (after which recoloring is done) : Left Rotation: performed when a right child is red, and its child is also red, or during deletion when re-balancing is required.
+Right Rotation: applied when a left child is red, and its child is also red, or during deletion re-balancing."
+,,,All operations on a Red-Black Tree are O(logn). Space complexity is O(n).
+,,,"B-Tree: A balanced tree that an have more than 2 children unlike a BST, and kept in sorted order. A B-Tree of order m has internal nodes with at least m/2 children and non-leaf nodes with k children contains k-1 keys."
+,,,"B-Trees are widely used in databases and file systems due to their ability to efficiently handle large amounts of data. Their structure allows for minimal disk reads and writes, making them ideal for storage systems where data is not primarily kept in memory."
+,,,B-Trees have a time complexity of O(logn) for all operations. They have a space complexity of O(n).
+,,,"Heap: A specialized tree-based data structure that satisfies the heap property. In a max-heap, for any given node i other than the root, the value of i is less than or equal to the value of its parent. Conversely, in a min-heap, the value of i is greater than or equal to the value of its parent."
+,,,"For an array-based heap,  if the root element is at index 0, then for any given element at index i:
+The left child is at index 2 * i + 1
+The right child is at index 2 * i + 2
+The parent is at index (i - 1) / 2 (floored)"
+,,,The heapify operation transforms a binary tree into a heap.
+,,,"To insert into a array heap, you add the element to the end and compare it to it's parent's values to 'heapify up' the heap."
+,,,"To delete the root in a max heap, remove the root element and replace it with the least element, and heapify down."
+,,,"Heaps have O(logn) insertion and deletion, but O(n) searching. They also have O(n) space complexity."
+,,,Heaps are often used to implement priority queues.
+,,,Double-Ended Priority Queues (DEPQs): A data structure that allows efficient access and operations at both ends of the priority spectrum.
+,,,"Heap Sort: A sorting algorithm in which you turn the data into a heap and sorting it, and has O(n) building and O(logn) sorting time complexity. So it has consistent O(nlogn) time."
+,,,"Hashmap/Hash Table: An efficient data structure for storing key-value pairs, that hashes the key and value and stores them at that index. If you have the key, you can hash it and find the value at that index."
+,,,"Hashmaps have very fast operations. Insert, delete, and search are all O(1) time. "
+,,,"Linear probing/open addressing: the process of advancing linearly through the hash table looking for an open slot. After hashing and finding an already taken spot, you could use it to move all the hashes up until there is a free spot."
+,,,"Chaining: A solution to collisions in hashmaps in which every slot in the hashmap is a linked list, so you can add multiple values in one hashed index."
+,,,"Hashmap performance is influenced by the ratio of stored entries to buckets (the load factor), the hashing function, and the collision reduction strategies. "
+,,,"Quadratic Probing: Like linear probing, but uses a quadratic function on the hash index to calculate the probe sequence, to address clustering."
+,,,Rehashing: A collision reduction technique where you resize the hashmap and rehash values when the load factor reaches a certain threshold.
+,,,Double Hashing: A collision reduction technique that utilizes a second hash function to determine the probe sequence. It is a solution to secondary clustering.
+,,,"Primary Clustering: An issue that comes up when hashmap creates clusters of used slots around generated hash indices, which happens when you use linear probing."
+,,,"The function used in quadratic probing is typically of the form (c1 * i^2 + c2 * i) % table_size, where i is the i-th probe."
+,,,"Secondary Clustering: A less severe issue, where certain slots become more likely to be probed than others."
+,,,The LFU caching algorithm evicts the item with the lowest usage frequency when the cache reaches its capacity. This strategy is effective when the application benefits from retaining frequently accessed items over a longer period.
+,,,The LRU caching algorithm evicts the least recently accessed item when the cache reaches its capacity. This approach is beneficial in scenarios where the most recently used items are more likely to be accessed again.
+,,,"Graph: a set of items connected by links, that are known as vertices (singular: vertex) or nodes, and the links that connect them are called edges."
+,,,"Undirected Graph: A set of items connected by links. These items are known as vertices (singular: vertex) or nodes, and the links that connect them are called edges."
+,,,Directed Graph/Digraph: graph that features edges with a specific direction. Each edge points from one vertex to another. 
+,,,"Weighted Graph: A graph that assigns a weight, cost, or value to each edge. "
+,,,Cyclic Graphs: A graph that has at least one cycle. A cycle occurs when you can start at a vertex and return to it by traveling along a sequence of edges.
+,,,"Adjacency Matrix: A 2D array where each cell (i, j) indicates whether there is an edge from vertex i to vertex j. In this graph representation, the value in the cell can indicate the presence or absence of an edge, or in the case of weighted graphs, the weight of the edge."
+,,,Adjacency List: Represents a graph as a collection of lists (previous examples use Java’s Map interface). Each list describes the set of neighbors of a vertex in the graph. The index in the array represents a vertex and each element in its list represents the other vertices that form an edge with the vertex.
+,,,"For adjacency lists, the time complexity to add is O(1), to remove is O(E), to look up edges is O(V), and the space complexity is O(V+E)."
+,,,"For adjacency matrices, the time complexity to add or remove edges is O(1), edge lookup is O(1), and the space complexity is O(V^2)."
+,,,"DFS and BFS work for graph, in this case BFS searches the width of the first level before moving to the next level."
+,,,Time complexity for DFS and BFS is O(V+E).
+,,,"To merge graphs, create new edges that connect each vertex to it's corresponding vertex in the other graph."
+,,,"Disjoint Set (Union-Find): A method for cycle detection in graphs, that checks whether an edge creates a connection between two vertices that are already part of the same set, which indicates a cycle."
+,,,"Dijkstra's Algorithm: Finds the shortest path to all other nodes in a nonnegative weighted graph. It maintains a set of nodes whose shortest distance is know and one that isn't. It sets the start node to zero and all else to infinity, and proceeds to select the closest unvisited node, calculating the distance to each unvisited neighbor and updating if it is smaller. It does this until all have been visited."
+,,,Dijkstra's Algorithm has O(V^2) time complexity.
+,,,"Bellman Ford Algorthm: works by iteratively relaxing the edges of the graph. It repeatedly updates the distance to each vertex from the source vertex, based on the edge weights. The key idea is that after V - 1 iterations, where V is the number of vertices in the graph, the algorithm will have found the shortest paths to all vertices, unless there is a negative cycle."
+,,,Spanning Tree: A tree of an undirected graph is a tree that connects all the vertices together without any cycles and includes all the vertices of the graph. It has exactly V - 1 edges.
+,,,Minimum Spanning Tree (MST): A spanning tree with the minimum possible total edge weight.
+,,,Maximum Spanning Tree: A spanning tree with the maximum possible total edge weight.
+,,,Shortest Path Tree: A spanning tree where the path from the root to any other vertex is the shortest possible path in the graph.
+,,,"Kruskal's Algorithm: A spanning tree algorithm for minimum spaning trees that sorts all edges by ascending weight, picking the smallest edge and adding it if it doesn't create a cycle, and repeats until there are V - 1 edges."
+,,,"Prim's Algorithm: A minimum spanning tree algorithm that first makes a priority queue with all edges from the start vertex, sorted by their weights, extracts the minimum weight edge from the priority queue, if the edge connects to a vertex not already in the MST, add the vertex to the MST and add all its edges to the priority queue, if the edge connects to a vertex already in the MST, discard the edge, and does this until all vertices are included."
+,,,"Kruskal's Algorithm has O(ElogE) time, while Prim's algorithm has O(V^2) time."
+,,,"Set: A collection of distinct objects, called elements or members and contains no duplicates; it is an abstraction of the mathematical concept. In Java, there are HashSet, TreeSet, and LinkedHashSet as built-in classes."
+,,,"To turn a set into it's intersection with another set, use .retainAll() with the other set."

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Module 9 - Graph Algorithms</title><link rel="stylesheet" href="../css/styles.css"></head>
+<body>
+<div class="course-header"><h1>Module 9: Graph Algorithms</h1></div>
+<div class="page-nav"><a href="08-greedy.html">Prev</a><a href="10-advanced.html">Next</a></div>
+<nav class="section-nav"><div onclick="showSection('section1')">1. Graph Basics</div><div onclick="showSection('section2')">2. BFS & DFS</div><div onclick="showSection('section3')">3. Shortest Paths</div><div onclick="showSection('section4')">4. MST & Advanced</div><div onclick="showSection('section5')">5. Quiz</div></nav>
+<div class="content-container">
+<div id="section1" class="content-section active">
+    <h2>Graph Representations</h2>
+    <div class="content-block"><h3>Adjacency List</h3>
+    <p>Most common in competitive programming. O(V + E) space. Efficient for sparse graphs.</p>
+    <pre class="code-block">graph = {node: [neighbors]} or graph = [[] for _ in range(n)]</pre></div>
+    <div class="content-block"><h3>Adjacency Matrix</h3>
+    <p>O(V^2) space. O(1) edge check. Good for dense graphs or when need fast edge queries.</p></div>
+</div>
+<div id="section2" class="content-section">
+    <h2>BFS and DFS</h2>
+    <div class="content-block"><h3>BFS (Breadth-First Search)</h3>
+    <p>Queue-based, level-order. Shortest path in unweighted graphs. O(V + E).</p></div>
+    <div class="content-block"><h3>DFS (Depth-First Search)</h3>
+    <p>Stack or recursive. Explores deeply. Used for cycle detection, topological sort, connected components.</p></div>
+    <div class="content-block"><h3>Topological Sort</h3>
+    <p>Kahn: Remove zero-indegree vertices. DFS: Add after fully exploring (post-order). Only for DAGs.</p></div>
+</div>
+<div id="section3" class="content-section">
+    <h2>Shortest Path Algorithms</h2>
+    <div class="content-block"><h3>Dijkstra</h3>
+    <p>Single-source, non-negative weights. O((V + E) log V) with binary heap.</p></div>
+    <div class="content-block"><h3>Bellman-Ford</h3>
+    <p>Handles negative weights, detects negative cycles. O(V * E). Relax all edges V-1 times.</p></div>
+    <div class="content-block"><h3>Floyd-Warshall</h3>
+    <p>All-pairs shortest paths. O(V^3). Good for dense graphs or all pairs needed.</p></div>
+</div>
+<div id="section4" class="content-section">
+    <h2>MST and Advanced Topics</h2>
+    <div class="content-block"><h3>Minimum Spanning Tree</h3>
+    <p><strong>Prim:</strong> Grow from vertex, priority queue of edges. O((V + E) log V)</p>
+    <p><strong>Kruskal:</strong> Sort edges, Union-Find. O(E log E)</p></div>
+    <div class="content-block"><h3>Union-Find Disjoint Set Union</h3>
+    <p>Path compression + Union by rank makes operations nearly O(1) amortized.</p></div>
+</div>
+<div id="section5" class="content-section">
+    <h2>Module 9 Quiz</h2>
+    <div id="quiz-container-graphs"></div>
+    <div id="quiz-results-graphs" class="quiz-results" style="display:none"></div>
+    <button onclick="loadQuiz('graphs')">Load Quiz</button><button onclick="submitQuiz('graphs')">Submit</button>
+</div>
+</div>
+<script src="../js/navigation.js"></script><script src="../js/quizzes.js"></script>
+</body>
+</html>

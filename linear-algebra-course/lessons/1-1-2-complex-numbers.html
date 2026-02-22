@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1.1.2: Complex Numbers - Linear Algebra</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- MathJax for LaTeX rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="chapter-1">
+    <div class="main-wrapper">
+        <nav class="sidebar toc-pink">
+            <div class="sidebar-header">
+                <div class="sidebar-title">Linear Algebra</div>
+            </div>
+            <div class="toc-chapter toc-pink">
+                <div class="toc-chapter-title">Chapter 1: Foundations</div>
+                <div class="toc-module">
+                    <div class="toc-module-title">Module 1.1: Numbers & Notation</div>
+                    <div class="toc-lessons">
+                        <div class="toc-lesson"><a href="1-1-1-real-numbers.html">Lesson 1.1.1: Real Numbers</a></div>
+                        <div class="toc-lesson"><a href="1-1-2-complex-numbers.html" class="active">Lesson 1.1.2: Complex Numbers</a></div>
+                        <div class="toc-lesson"><a href="1-1-3-sets-notation.html">Lesson 1.1.3: Sets & Notation</a></div>
+                        <div class="toc-lesson"><a href="1-1-4-practice-numbers.html">Lesson 1.1.4: Practice Quiz</a></div>
+                    </div>
+                </div>
+                <div class="toc-module">
+                    <div class="toc-module-title">Module 1.2: Vectors</div>
+                    <div class="toc-lessons">
+                        <div class="toc-lesson"><a href="1-2-1-vector-basics.html">Lesson 1.2.1: Vector Basics</a></div>
+                        <div class="toc-lesson"><a href="1-2-2-vector-operations.html">Lesson 1.2.2: Vector Operations</a></div>
+                        <div class="toc-lesson"><a href="1-2-3-dot-product.html">Lesson 1.2.3: Dot Product</a></div>
+                        <div class="toc-lesson"><a href="1-2-4-vectors-3d.html">Lesson 1.2.4: Vectors in 3D</a></div>
+                        <div class="toc-lesson"><a href="1-2-5-practice-vectors.html">Lesson 1.2.5: Practice Quiz</a></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="module-header">
+                    <h2>Lesson 1.1.2: Complex Numbers</h2>
+                    <p>Module 1.1: Numbers & Notation | Chapter 1: Foundations</p>
+                </div>
+                
+                <div class="content-card">
+                    <div class="subsection-title">Introduction to Complex Numbers</div>
+                    <p>Welcome to the beautiful world of complex numbers! While real numbers cover everything on the number line, complex numbers expand our mathematical universe into two dimensions. They might seem "imaginary" at first, but they're incredibly real and powerful in fields like quantum mechanics, electrical engineering, and signal processing.</p>
+                    
+                    <p>In this lesson, we'll explore what complex numbers are, how to work with them, and why they matter. You'll learn about the mysterious imaginary unit $$i$$, complex number operations, and the concept of complex conjugates. Understanding complex numbers opens the door to advanced mathematics and physics!</p>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">What Are Complex Numbers?</div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Definition</div>
+                        <div class="definition-title">Complex Number</div>
+                        <p>A complex number has the form $$z = a + bi$$ where:</p>
+                        <ul style="margin: 15px 0 15px 30px; line-height: 2;">
+                            <li>$$a$$ is called the <strong>real part</strong> (denoted $$\text{Re}(z)$$)</li>
+                            <li>$$b$$ is called the <strong>imaginary part</strong> (denoted $$\text{Im}(z)$$)</li>
+                            <li>$$i$$ is the <strong>imaginary unit</strong>, where $$i^2 = -1$$ or $$i = \sqrt{-1}$$</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Definition</div>
+                        <div class="definition-title">Imaginary Unit</div>
+                        <p>The imaginary unit $$i$$ is defined as the square root of $$-1$$:</p>
+                        
+                        <div class="formula-box">
+                            <div class="flag">Formula</div>
+                            <div class="formula">$$i = \sqrt{-1}$$</div>
+                        </div>
+                        
+                        <p>This means $$i^2 = -1$$, $$i^3 = -i$$, and $$i^4 = 1$$</p>
+                    </div>
+                    
+                    <div class="example-box">
+                        <div class="flag">Example</div>
+                        <div class="example-title">Identifying Parts of Complex Numbers</div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 1</div>
+                            <p>For $$z = 3 + 4i$$:</p>
+                            <p>Real part $$\text{Re}(z) = 3$$</p>
+                            <p>Imaginary part $$\text{Im}(z) = 4$$</p>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 2</div>
+                            <p>For $$z = 5 - 2i$$:</p>
+                            <p>Real part $$\text{Re}(z) = 5$$</p>
+                            <p>Imaginary part $$\text{Im}(z) = -2$$ (negative!)</p>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 3</div>
+                            <p>For $$z = -7$$ (which equals $$-7 + 0i$$):</p>
+                            <p>Real part $$\text{Re}(z) = -7$$</p>
+                            <p>Imaginary part $$\text{Im}(z) = 0$$</p>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 4</div>
+                            <p>For $$z = 3i$$ (which equals $$0 + 3i$$):</p>
+                            <p>Real part $$\text{Re}(z) = 0$$</p>
+                            <p>Imaginary part $$\text{Im}(z) = 3$$</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Complex Number Operations</div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Operation 1</div>
+                        <div class="definition-title">Addition</div>
+                        <p>Add complex numbers by adding their real parts and imaginary parts separately:</p>
+                        
+                        <div class="formula-box">
+                            <div class="flag">Formula</div>
+                            <div class="formula">$$(a + bi) + (c + di) = (a + c) + (b + d)i$$</div>
+                        </div>
+                    </div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Operation 2</div>
+                        <div class="definition-title">Subtraction</div>
+                        <p>Subtract complex numbers similarly:</p>
+                        
+                        <div class="formula-box">
+                            <div class="flag">Formula</div>
+                            <div class="formula">$$(a + bi) - (c + di) = (a - c) + (b - d)i$$</div>
+                        </div>
+                    </div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Operation 3</div>
+                        <div class="definition-title">Multiplication</div>
+                        <p>Multiply like algebraic expressions, remembering that $$i^2 = -1$$:</p>
+                        
+                        <div class="formula-box">
+                            <div class="flag">Formula</div>
+                            <div class="formula">$$(a + bi)(c + di) = (ac - bd) + (ad + bc)i$$</div>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <div class="flag">Example</div>
+                        <div class="example-title">Complex Number Calculations</div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 1: Addition</div>
+                            <p>Calculate $$(3 + 2i) + (1 - 4i)$$</p>
+                            <p>Real parts: $$3 + 1 = 4$$</p>
+                            <p>Imaginary parts: $$2 + (-4) = -2$$</p>
+                            <div class="formula-box">
+                                <div class="flag">Result</div>
+                                <div class="formula">$$(3 + 2i) + (1 - 4i) = 4 - 2i$$</div>
+                            </div>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 2: Multiplication</div>
+                            <p>Calculate $$(2 + 3i)(1 - i)$$</p>
+                            <p>Method 1: Expand and simplify:</p>
+                            <p>$$(2 + 3i)(1 - i) = 2(1) + 2(-i) + 3i(1) + 3i(-i)$$</p>
+                            <p>$$= 2 - 2i + 3i - 3i^2$$</p>
+                            <p>$$= 2 + i - 3(-1)$$ (since $$i^2 = -1$$)</p>
+                            <p>$$= 2 + i + 3 = 5 + i$$</p>
+                            <div class="formula-box">
+                                <div class="flag">Result</div>
+                                <div class="formula">$$(2 + 3i)(1 - i) = 5 + i$$</div>
+                            </div>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 3: Powers of i</div>
+                            <p>Simplify $$i^{13}$$</p>
+                            <p>Since $$i^4 = 1$$, we find: $$13 = 4 \times 3 + 1$$</p>
+                            <p>$$i^{13} = i^{4 \times 3 + 1} = (i^4)^3 \cdot i^1 = 1^3 \cdot i = i$$</p>
+                            <div class="formula-box">
+                                <div class="flag">Result</div>
+                                <div class="formula">$$i^{13} = i$$</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Complex Conjugates</div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Definition</div>
+                        <div class="definition-title">Complex Conjugate</div>
+                        <p>The complex conjugate of $$z = a + bi$$, denoted by $$\overline{z}$$, is:</p>
+                        
+                        <div class="formula-box">
+                            <div class="flag">Formula</div>
+                            <div class="formula">$$\overline{z} = a - bi$$</div>
+                        </div>
+                        
+                        <p>You simply change the sign of the imaginary part!</p>
+                    </div>
+                    
+                    <div class="example-box">
+                        <div class="flag">Example</div>
+                        <div class="example-title">Finding Complex Conjugates</div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 1</div>
+                            <p>Find $$\overline{3 + 4i}$$</p>
+                            <p>$$\overline{3 + 4i} = 3 - 4i$$</p>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 2</div>
+                            <p>Find $$\overline{5 - 2i}$$</p>
+                            <p>$$\overline{5 - 2i} = 5 + 2i$$</p>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 3</div>
+                            <p>Show that a number times its conjugate is always real</p>
+                            <p>$$z \cdot \overline{z} = (a + bi)(a - bi) = a^2 - abi + abi - b^2i^2$$</p>
+                            <p>$$= a^2 - b^2(-1) = a^2 + b^2$$</p>
+                            <p style="margin-top: 10px; font-weight: 700;">The product is always real!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="important-box">
+                        <div class="flag">Important</div>
+                        <div class="important-title">Key Properties of Complex Conjugates</div>
+                        <ul style="margin: 15px 0 15px 30px; line-height: 2;">
+                            <li>$$\overline{\overline{z}} = z$$ - The conjugate of a conjugate gives you back the original</li>
+                            <li>$$\overline{z + w} = \overline{z} + \overline{w}$$ - Conjugate of sum equals sum of conjugates</li>
+                            <li>$$\overline{z \cdot w} = \overline{z} \cdot \overline{w}$$ - Conjugate of product equals product of conjugates</li>
+                            <li>$$z \cdot \overline{z} = |z|^2$$ - Product equals squared magnitude (always real)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Magnitude of Complex Numbers</div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Definition</div>
+                        <div class="definition-title">Magnitude (Modulus)</div>
+                        <p>The magnitude (or modulus) of a complex number $$z = a + bi$$, denoted by $$|z|$$, is:</p>
+                        
+                        <div class="formula-box">
+                            <div class="flag">Formula</div>
+                            <div class="formula">$$|z| = \sqrt{a^2 + b^2}$$</div>
+                        </div>
+                        
+                        <p>This represents the distance from the origin to the point $$(a, b)$$ in the complex plane.</p>
+                    </div>
+                    
+                    <div class="example-box">
+                        <div class="flag">Example</div>
+                        <div class="example-title">Calculating Magnitudes</div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 1</div>
+                            <p>Find $$|3 + 4i|$$</p>
+                            <p>$$|3 + 4i| = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5$$</p>
+                            <p style="margin-top: 10px; font-weight: 700;">The magnitude is 5.</p>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 2</div>
+                            <p>Find $$| -5 + 12i|$$</p>
+                            <p>$$| -5 + 12i| = \sqrt{(-5)^2 + 12^2} = \sqrt{25 + 144} = \sqrt{169} = 13$$</p>
+                            <p style="margin-top: 10px; font-weight: 700;">The magnitude is 13.</p>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 3</div>
+                            <p>Show that $$|3 - 4i| = |3 + 4i|$$</p>
+                            <p>$$|3 - 4i| = \sqrt{3^2 + (-4)^2} = \sqrt{9 + 16} = \sqrt{25} = 5$$</p>
+                            <p>$$|3 + 4i| = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5$$</p>
+                            <p style="margin-top: 10px; font-weight: 700;">Conjugates have the same magnitude!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="note-box">
+                        <div class="flag">Fact</div>
+                        <p>The complex plane is a 2D plane where the x-axis represents the real part and the y-axis represents the imaginary part. Each complex number corresponds to a point $$(a, b)$$ on this plane.</p>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Real Numbers as Subset of Complex Numbers</div>
+                    
+                    <div class="important-box">
+                        <div class="flag">Connection</div>
+                        <div class="important-title">Real Numbers Are Complex Too!</div>
+                        <p>Every real number can be written as a complex number with imaginary part zero. For example:</p>
+                        <ul style="margin: 15px 0 15px 30px; line-height: 2;">
+                            <li>$$7 = 7 + 0i$$</li>
+                            <li>$$-3 = -3 + 0i$$</li>
+                            <li>$$0 = 0 + 0i$$</li>
+                        </ul>
+                        <p>This means the real numbers $$\mathbb{R}$$ are a subset of the complex numbers $$\mathbb{C}$$.</p>
+                    </div>
+                    
+                    <div class="caution-box">
+                        <div class="flag">Warning</div>
+                        <div class="caution-title">Not All Complex Numbers Are Real</div>
+                        <p>However, many complex numbers like $$3 + 4i$$ or $$5i$$ are NOT real numbers. They truly live in the complex number system!</p>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Why Complex Numbers Matter</div>
+                    
+                    <div class="important-box">
+                        <div class="flag">Applications</div>
+                        <div class="important-title">Real-World Uses</div>
+                        <p>Complex numbers are essential in many fields:</p>
+                        <ul style="margin: 15px 0 15px 30px; line-height: 2;">
+                            <li><strong>Quantum Mechanics:</strong> Wave functions are complex-valued</li>
+                            <li><strong>Electrical Engineering:</strong> AC circuit analysis uses complex numbers</li>
+                            <li><strong>Signal Processing:</strong> Fourier transforms use complex exponentials</li>
+                            <li><strong>Control Theory:</strong> System stability analysis</li>
+                            <li><strong>Fluid Dynamics:</strong> Potential flow theory</li>
+                            <li><strong>Fractals:</strong> The famous Mandelbrot set is defined using complex numbers</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="practice-section">
+                    <div class="practice-header">Practice Problems</div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 1</div>
+                        <div class="problem-question">For $$z = 5 - 3i$$, what is the real part?</div>
+                        <input type="text" class="problem-input" id="prob1" placeholder="Enter the real part">
+                        <button class="check-btn" onclick="checkProblem(1)">Check Answer</button>
+                        <div class="feedback" id="prob1-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 2</div>
+                        <div class="problem-question">Calculate $$(2 + i) + (3 - 2i)$$</div>
+                        <input type="text" class="problem-input" id="prob2" placeholder="Enter as '5-i' or '5 - i'">
+                        <button class="check-btn" onclick="checkProblem(2)">Check Answer</button>
+                        <div class="feedback" id="prob2-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 3</div>
+                        <div class="problem-question">Find $$\overline{4 + 7i}$$ (the complex conjugate)</div>
+                        <input type="text" class="problem-input" id="prob3" placeholder="Enter the conjugate">
+                        <button class="check-btn" onclick="checkProblem(3)">Check Answer</button>
+                        <div class="feedback" id="prob3-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 4</div>
+                        <div class="problem-question">Calculate $$(1 + 2i)(3 - i)$$</div>
+                        <input type="text" class="problem-input" id="prob4" placeholder="Enter as '5+5i' or '5 + 5i'">
+                        <button class="check-btn" onclick="checkProblem(4)">Check Answer</button>
+                        <div class="feedback" id="prob4-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 5</div>
+                        <div class="problem-question">Find $$| -6 + 8i|$$ (the magnitude)</div>
+                        <input type="text" class="problem-input" id="prob5" placeholder="Enter the value">
+                        <button class="check-btn" onclick="checkProblem(5)">Check Answer</button>
+                        <div class="feedback" id="prob5-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 6</div>
+                        <div class="problem-question">Simplify $$i^{2024}$$</div>
+                        <input type="text" class="problem-input" id="prob6" placeholder="Enter the simplified value">
+                        <button class="check-btn" onclick="checkProblem(6)">Check Answer</button>
+                        <div class="feedback" id="prob6-feedback"></div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Summary</div>
+                    
+                    <div class="note-box">
+                        <div class="flag">Summary</div>
+                        <p>In this lesson, we covered:</p>
+                        <ul style="margin: 15px 0 15px 30px; line-height: 2;">
+                            <li>Definition of complex numbers: $$z = a + bi$$</li>
+                            <li>The imaginary unit $$i$$ where $$i^2 = -1$$</li>
+                            <li>Complex number operations: addition, subtraction, multiplication</li>
+                            <li>Complex conjugates and their properties</li>
+                            <li>Magnitude (modulus) of complex numbers</li>
+                            <li>Real numbers as a subset of complex numbers</li>
+                            <li>Applications in physics and engineering</li>
+                        </ul>
+                        <p style="margin-top: 15px;">Complex numbers extend mathematics beautifully into two dimensions. They're not just theoretical - they're practical tools that power modern science and technology!</p>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="nav-buttons">
+                    <a href="1-1-1-real-numbers.html" class="nav-btn">Previous: Real Numbers</a>
+                    <a href="1-1-3-sets-notation.html" class="nav-btn primary">Next: Sets & Notation</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/navigation.js"></script>
+    <script>
+        const problems_1_1_2 = {
+            1: { 
+                alternatives: ['5', 'Re(z) = 5', '5 is the real part'],
+                feedback: 'Correct! The real part of $z = 5 - 3i$ is 5.'
+            },
+            2: { 
+                alternatives: ['5-i', '5 - i', '5- i', '5 -i'],
+                feedback: 'Excellent! $(2 + i) + (3 - 2i) = 5 - i$'
+            },
+            3: { 
+                alternatives: ['4-7i', '4 - 7i', '4- 7i'],
+                feedback: 'Perfect! The conjugate of $4 + 7i$ is $4 - 7i$.'
+            },
+            4: { 
+                alternatives: ['5+5i', '5 + 5i', '5+ 5i', '5 +5i'],
+                feedback: 'Great work! $(1 + 2i)(3 - i) = 3 - i + 6i - 2i^2 = 5 + 5i$'
+            },
+            5: { 
+                alternatives: ['10', 'ten', '|-6+8i| = 10'],
+                feedback: 'Correct! $|-6 + 8i| = \\sqrt{36 + 64} = \\sqrt{100} = 10$'
+            },
+            6: { 
+                alternatives: ['1', 'i^2024 = 1', 'one'],
+                feedback: 'Excellent! Since $i^4 = 1$ and $2024 = 4 \\times 506$, we have $i^{2024} = 1$.'
+            }
+        };
+        
+        function checkProblem(num) {
+            const userInput = document.getElementById('prob' + num).value.trim();
+            const feedback = document.getElementById('prob' + num + '-feedback');
+            const problem = problems_1_1_2[num];
+            const alternatives = problem.alternatives;
+            
+            let isCorrect = alternatives.some(alt => 
+                alt.toLowerCase().replace(/\s/g, '') === userInput.toLowerCase().replace(/\s/g, '')
+            );
+            
+            if (isCorrect) {
+                feedback.className = 'feedback correct';
+                feedback.style.display = 'block';
+                feedback.innerHTML = problem.feedback || 'Correct! Well done.';
+                markProblemSolved('1-1-2-' + num);
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.style.display = 'block';
+                feedback.textContent = 'Incorrect. Try again. Remember the rules for complex numbers!';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+        });
+    </script>
+</body>
+</html>

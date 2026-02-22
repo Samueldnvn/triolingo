@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 5: Development Tools and Environment - IoT Java Development Course</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="course-header">
+        <h1>MODULE 5: DEVELOPMENT TOOLS AND ENVIRONMENT</h1>
+        <h2>Setting Up Your IoT Development Workspace</h2>
+    </div>
+
+    <nav class="nav-container">
+        <ul class="nav-menu">
+            <li class="nav-item active" onclick="showSection('overview')">Overview</li>
+            <li class="nav-item" onclick="showSection('ide')">IDE Setup</li>
+            <li class="nav-item" onclick="showSection('build')">Build Tools</li>
+            <li class="nav-item" onclick="showSection('debugging')">Debugging</li>
+            <li class="nav-item" onclick="showSection('testing')">Testing</li>
+            <li class="nav-item" onclick="showSection('practice')">Practice</li>
+            <li class="nav-item" onclick="showSection('quiz')">Quiz</li>
+        </ul>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-title">MODULE 5 PROGRESS</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="moduleProgress" style="width: 0%">0%</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content-section active" id="overview">
+            <div class="lesson-header">
+                <h1>IoT Development Environment Setup</h1>
+                <p>Tools, IDEs, and Best Practices for Efficient IoT Development</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                Developing IoT applications requires a specialized set of tools that bridge traditional software development with hardware programming. This module covers the essential tools and configurations needed to create a productive IoT development environment.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">WHY TOOL MATURITY IS CRITICAL</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Productivity:</span> Right tools reduce development time significantly</li>
+                    <li><span class="keyword">Quality:</span> Automated testing and debugging catch issues early</li>
+                    <li><span class="keyword">Collaboration:</span> Version control enables team development</li>
+                    <li><span class="keyword">Deployment:</span> Automation ensures reliable device updates</li>
+                    <li><span class="keyword">Maintenance:</span> Proper tooling makes long-term maintenance feasible</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">IoT Development Toolchain Overview</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Category</th>
+                        <th>Tools</th>
+                        <th>Purpose</th>
+                    </tr>
+                    <tr>
+                        <td>IDE</td>
+                        <td>Eclipse, IntelliJ IDEA, VS Code</td>
+                        <td>Code editing, debugging, project management</td>
+                    </tr>
+                    <tr>
+                        <td>Hardware Tools</td>
+                        <td>Arduino IDE, PlatformIO</td>
+                        <td>Flashing firmware, serial communication</td>
+                    </tr>
+                    <tr>
+                        <td>Build Tools</td>
+                        <td>Maven, Gradle</td>
+                        <td>Dependency management, compilation</td>
+                    </tr>
+                    <tr>
+                        <td>Testing</td>
+                        <td>JUnit, Mockito</td>
+                        <td>Unit and integration testing</td>
+                    </tr>
+                    <tr>
+                        <td>Version Control</td>
+                        <td>Git, GitHub, GitLab</td>
+                        <td>Source code management</td>
+                    </tr>
+                    <tr>
+                        <td>CI/CD</td>
+                        <td>Jenkins, GitHub Actions</td>
+                        <td>Automated build and deployment</td>
+                    </tr>
+                    <tr>
+                        <td>Monitoring</td>
+                        <td>JMX, Prometheus</td>
+                        <td>Application monitoring and debugging</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="attention-box">
+                A WELL-CONFIGURED DEVELOPMENT ENVIRONMENT CAN REDUCE DEVELOPMENT TIME BY 40-60% AND DRAMATICALLY IMPROVE CODE QUALITY
+            </div>
+
+            <h3 class="subsection-title">Hardware vs Software Development</h3>
+
+            <div class="example-box">
+                <div class="example-title">UNIQUE CHALLENGES IN IOT DEVOLOPMENT</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Physical Hardware:</span> Devices can be damaged, require physical access</li>
+                    <li><span class="keyword">Constrained Resources:</span> Limited memory, CPU, storage affect tooling</li>
+                    <li><span class="keyword">Remote Debugging:</span> Debugging code running on devices in the field</li>
+                    <li><span class="keyword">Deployment:</span> Over-the-air updates and firmware management</li>
+                    <li><span class="keyword">Cross-compilation:</span> Building for different target architectures</li>
+                    <li><span class="keyword">Sensor Integration:</span> Need to test with real hardware</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section" id="ide">
+            <h2 class="section-title">INTEGRATED DEVELOPMENT ENVIRONMENTS</h2>
+
+            <div class="section-divider"></div>
+
+            <h3 class="subsection-title">Eclipse IDE for IoT</h3>
+
+            <p class="content-text">
+                Eclipse is the most popular IDE for Java and offers excellent IoT support through various plugins. It's especially well-suited for embedded Java and Eclipse-based IoT frameworks.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">ECLIPSE FOR IOT SETUP</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Eclipse IDE for Enterprise Java:</span> Full-featured development</li>
+                    <li><span class="keyword">Eclipse Kura Plugin:</span> For Eclipse Kura IoT framework</li>
+                    <li><span class="keyword">M2Eclipse:</span> Maven integration for dependency management</li>
+                    <li><span class="keyword">Egit:</span> Git integration directly in the IDE</li>
+                    <li><span class="keyword">Embedded C/C++:</span> For hardware firmware development</li>
+                    <li><span class="keyword">Serial Port Monitor:</span> For device communication</li>
+                </ul>
+            </div>
+
+            <div class="code-block">
+                <span class="code-class">// Example: Eclipse project structure for IoT project</span><br><br>
+                <span class="code-keyword">project-root/</span><br>
+                ├─ src/<br>
+                │  ├─ main/<br>
+                │  │  ├─ java/          <span class="code-comment">// Java source code</span><br>
+                │  │  └─ resources/     <span class="code-comment">// Configuration files</span><br>
+                │  └─ test/<br>
+                │     └─ java/          <span class="code-comment">// Unit tests</span><br>
+                ├─ firmware/           <span class="code-comment">// C/C++ firmware for microcontrollers</span><br>
+                ├─ docs/               <span class="code-comment">// Documentation</span><br>
+                └─ pom.xml             <span class="code-comment">// Maven build configuration</span>
+            </div>
+
+            <h3 class="subsection-title">IntelliJ IDEA for IoT</h3>
+
+            <p class="content-text">
+                IntelliJ IDEA is a powerful, modern IDE with excellent Java support. While better known for enterprise development, it's increasingly popular for IoT projects.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">INTELLIJ IOT BENEFITS</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Smart Code Completion:</span> Predictive suggestions based on context</li>
+                    <li><span class="keyword">Built-in Maven/Gradle:</span> Seamless build tool integration</li>
+                    <li><span class="keyword">Powerful Debugger:</span> Advanced debugging capabilities</li>
+                    <li><span class="keyword">Remote Development:</span> Work on remote devices directly</li>
+                    <li><span class="keyword">Database Tools:</span> For data storage and analysis</li>
+                    <li><span class="keyword">Version Control:</span> Excellent Git, GitHub integration</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Visual Studio Code for IoT</h3>
+
+            <p class="content-text">
+                VS Code is a lightweight, extensible code editor that has become popular for IoT development due to its speed and extensive extension ecosystem.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">VS CODE IOT EXTENSIONS</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Java Extension Pack:</span> Full Java language support</li>
+                    <li><span class="keyword">Arduino:</span> Arduino development with IntelliSense</li>
+                    <li><span class="keyword">PlatformIO:</span> Advanced embedded development</li>
+                    <li><span class="keyword">Remote - SSH:</span> Edit code on remote devices</li>
+                    <li><span class="keyword">Docker:</span> Container development support</li>
+                    <li><span class="keyword">MQTT Explorer:</span> Test and debug MQTT connections</li>
+                </ul>
+            </div>
+
+            <div class="attention-box important">
+                RECOMMENDATION: START WITH ECLIPSE FOR JAVA IOT DUE TO EXTENSIVE PLUGINS AND COMMUNITY SUPPORT. CONSIDER INTELLIJ IF YOU PREFER A MORE MODERN UI.
+            </div>
+
+            <h3 class="subsection-title">Arduino and Hardware Tools</h3>
+
+            <p class="content-text">
+                For microcontroller-based projects, hardware-specific tools are essential for firmware development and flashing.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">HARDWARE DEVELOPMENT TOOLS</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Arduino IDE:</span> Simple environment for Arduino-based projects</li>
+                    <li><span class="keyword">PlatformIO:</span> Professional IDE for embedded development</li>
+                    <li><span class="keyword">avrdude:</span> Command-line tool for AVR chips</li>
+                    <li><span class="keyword">OpenOCD:</span> Open On-Chip Debugger</li>
+                    <li><span class="keyword">J-Link Tools:</span> Segger J-Link debugger tools</li>
+                    <li><span class="keyword">Serial Monitors:</span> Arduino Serial Monitor, CoolTerm</li>
+                </ul>
+            </div>
+
+            <div class="code-block">
+                <span class="code-class">// Example: PlatformIO configuration file</span><br><br>
+                <span class="code-comment">; platformio.ini</span><br>
+                <span class="code-comment">; For ESP32 development with Java backend</span><br><br>
+                <span class="code-keyword">[env:esp32dev]</span><br>
+                platform = espressif32<br>
+                board = esp32dev<br>
+                framework = arduino<br>
+                <br>
+                <span class="code-comment">; Monitor settings for serial communication</span><br>
+                monitor_speed = 115200<br>
+                monitor_filters = esp32_exception_decoder<br>
+                <br>
+                <span class="code-comment">; Library dependencies</span><br>
+                lib_deps =<br>
+                &nbsp;&nbsp;PubSubClient<br>
+                &nbsp;&nbsp;ArduinoJson
+            </div>
+        </div>
+
+        <div class="content-section" id="build">
+            <h2 class="section-title">BUILD TOOLS AND DEPENDENCY MANAGEMENT</h2>
+
+            <div class="section-divider"></div>
+
+            <h3 class="subsection-title">Maven for IoT Projects</h3>
+
+            <p class="content-text">
+                Maven is the most widely used build tool for Java projects. It handles compilation, dependency management, testing, and packaging in a standardized way.
+            </p>
+
+            <div class="code-block">
+                <span class="code-class">&lt;!-- pom.xml - Maven Project Object Model --&gt;</span><br><br>
+                <span class="code-keyword">&lt;project&gt;</span><br>
+                &nbsp;&nbsp;<span class="code-keyword">&lt;modelVersion&gt;</span>4.0.0<span class="code-keyword">&lt;/modelVersion&gt;</span><br>
+                &nbsp;&nbsp;<span class="code-keyword">&lt;groupId&gt;</span>com.iotcourse<span class="code-keyword">&lt;/groupId&gt;</span><br>
+                &nbsp;&nbsp;<span class="code-keyword">&lt;artifactId&gt;</span>smart-home<span class="code-keyword">&lt;/artifactId&gt;</span><br>
+                &nbsp;&nbsp;<span class="code-keyword">&lt;version&gt;</span>1.0.0<span class="code-keyword">&lt;/version&gt;</span><br>
+                <br>
+                &nbsp;&nbsp;<span class="code-keyword">&lt;properties&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">&lt;maven.compiler.source&gt;</span>11<span class="code-keyword">&lt;/maven.compiler.source&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">&lt;maven.compiler.target&gt;</span>11<span class="code-keyword">&lt;/maven.compiler.target&gt;</span><br>
+                &nbsp;&nbsp;<span class="code-keyword">&lt;/properties&gt;</span><br>
+                <br>
+                &nbsp;&nbsp;<span class="code-keyword">&lt;dependencies&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment">&lt;!-- Eclipse Kura for IoT gateway --&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">&lt;dependency&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">&lt;groupId&gt;</span>org.eclipse.kura<span class="code-keyword">&lt;/groupId&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">&lt;artifactId&gt;</span>org.eclipse.kura.core<span class="code-keyword">&lt;/artifactId&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">&lt;version&gt;</span>5.0.0<span class="code-keyword">&lt;/version&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">&lt;/dependency&gt;</span><br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment">&lt;!-- MQTT client for messaging --&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">&lt;dependency&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">&lt;groupId&gt;</span>org.eclipse.paho<span class="code-keyword">&lt;/groupId&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">&lt;artifactId&gt;</span>org.eclipse.paho.client.mqttv3<span class="code-keyword">&lt;/artifactId&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">&lt;version&gt;</span>1.2.5<span class="code-keyword">&lt;/version&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">&lt;/dependency&gt;</span><br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment">&lt;!-- JUnit for testing --&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">&lt;dependency&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">&lt;groupId&gt;</span>org.junit.jupiter<span class="code-keyword">&lt;/groupId&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">&lt;artifactId&gt;</span>junit-jupiter<span class="code-keyword">&lt;/artifactId&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">&lt;version&gt;</span>5.8.2<span class="code-keyword">&lt;/version&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">&lt;scope&gt;</span>test<span class="code-keyword">&lt;/scope&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">&lt;/dependency&gt;</span><br>
+                &nbsp;&nbsp;<span class="code-keyword">&lt;/dependencies&gt;</span><br>
+                <span class="code-keyword">&lt;/project&gt;</span>
+            </div>
+
+            <h3 class="subsection-title">Essential IoT Libraries</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Library</th>
+                        <th>Purpose</th>
+                        <th>Maven Coordinates</th>
+                    </tr>
+                    <tr>
+                        <td>Eclipse Paho MQTT</td>
+                        <td>MQTT client implementation</td>
+                        <td>org.eclipse.paho:client.mqttv3</td>
+                    </tr>
+                    <tr>
+                        <td>Pi4J</td>
+                        <td>Raspberry Pi GPIO control</td>
+                        <td>com.pi4j:pi4j-core</td>
+                    </tr>
+                    <tr>
+                        <td>JSerialComm</td>
+                        <td>Serial port communication</td>
+                        <td>com.fazecast:jSerialComm</td>
+                    </tr>
+                    <tr>
+                        <td>HiveMQ MQTT Client</td>
+                        <td>Alternative MQTT client</td>
+                        <td>com.hivemq:hivemq-mqtt-client</td>
+                    </tr>
+                    <tr>
+                        <td>Californium CoAP</td>
+                        <td>CoAP protocol implementation</td>
+                        <td>org.eclipse.californium:californium-core</td>
+                    </tr>
+                    <tr>
+                        <td>Netty</td>
+                        <td>Network communication framework</td>
+                        <td>io.netty:netty-all</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3 class="subsection-title">Gradle for IoT Projects</h3>
+
+            <p class="content-text">
+                Gradle is an alternative to Maven that offers more flexibility and better performance for large projects. It's particularly useful when you have complex build requirements.
+            </p>
+
+            <div class="code-block">
+                <span class="code-class">// build.gradle - Gradle build configuration</span><br><br>
+                plugins {<br>
+                &nbsp;&nbsp;id 'java'<br>
+                }<br>
+                <br>
+                repositories {<br>
+                &nbsp;&nbsp;mavenCentral()<br>
+                }<br>
+                <br>
+                dependencies {<br>
+                &nbsp;&nbsp;<span class="code-comment">// IoT dependencies</span><br>
+                &nbsp;&nbsp;implementation 'org.eclipse.kura:org.eclipse.kura.core:5.0.0'<br>
+                &nbsp;&nbsp;implementation 'org.eclipse.paho:client.mqttv3:1.2.5'<br>
+                &nbsp;&nbsp;implementation 'com.pi4j:pi4j-core:2.3.0'<br>
+                <br>
+                &nbsp;&nbsp;<span class="code-comment">// Testing</span><br>
+                &nbsp;&nbsp;testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'<br>
+                }<br>
+                <br>
+                test {<br>
+                &nbsp;&nbsp;useJUnitPlatform()<br>
+                }
+            </div>
+
+            <div class="attention-box">
+                FOR SIMPLE IOT PROJECTS, MAVEN IS PREFERRED DUE TO ITS SIMPLICITY AND WIDE ADOPTION. USE GRADLE IF YOU NEED ADVANCED BUILD CUSTOMIZATION OR BETTER PERFORMANCE.
+            </div>
+        </div>
+
+        <div class="content-section" id="debugging">
+            <h2 class="section-title">DEBUGGING IOT APPLICATIONS</h2>
+
+            <div class="section-divider"></div>
+
+            <h3 class="subsection-title">Remote Debugging</h3>
+
+            <p class="content-text">
+                IoT applications often run on remote devices or embedded systems. Remote debugging allows you to connect to and debug these devices from your development machine.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">JAVA REMOTE DEBUGGING SETUP</div>
+                <ul class="code-list">
+                    <li><span class="keyword">Start JVM with Debug Arguments:</span></li>
+                </ul>
+            </div>
+
+            <div class="code-block">
+                <span class="code-comment"># Command line with remote debugging enabled</span><br>
+                java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 \<br>
+                &nbsp;&nbsp;&nbsp;-jar iot-application.jar
+            </div>
+
+            <div class="info-section">
+                <div class="info-title">IN DEBUGGER:</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Eclipse:</span> Run → Debug Configurations → Remote Java Application</li>
+                    <li><span class="keyword">IntelliJ:</span> Run → Edit Configurations → Remote JVM Debug</li>
+                    <li><span class="keyword">VS Code:</span> Create launch.json with "attach" configuration</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">REMOTA DEBUGGING BEST PRACTICES</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Use suspend=n:</span> Don't pause application on startup</li>
+                    <li><span class="keyword">Limit exposed ports:</span> Only open debug port in development</li>
+                    <li><span class="keyword">Network security:</span> Use VPN or secure tunnel for production debugging</li>
+                    <li><span class="keyword">Conditional breakpoints:</span> Avoid stopping on every iteration</li>
+                    <li><span class="keyword">Log extensively:</span> Complement debugging with comprehensive logging</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Serial Port Debugging</h3>
+
+            <p class="content-text">
+                For microcontroller-based projects, serial communication is the primary debugging interface. Serial monitors allow you to view debug output and send commands to devices.
+            </p>
+
+            <div class="code-block">
+                <span class="code-keyword">import</span> java.io.*;<br>
+                <span class="code-keyword">import</span> com.fazecast.jSerialComm.*;<br>
+                <br>
+                <span class="code-keywordpublic class</span> SerialDebugger {<br>
+                &nbsp;&nbsp;<span class="code-keyword">public static void</span> main(String[] args) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;SerialPort port = SerialPort.getCommPorts()[0];<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;port.openPort();<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;port.setComPortTimeouts(SerialPort.TIMEOUT_READ_SEMI_BLOCKING, 0, 0);<br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment">// Read from serial port continuously</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">try</span> (InputStream in = port.getInputStream()) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">byte[]</span> buffer = <span class="code-keyword">new byte</span>[1024];<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">while</span> (<span class="code-keyword">true</span>) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">int</span> len = in.read(buffer);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (len > 0) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.print(<span class="code-keyword">new</span> String(buffer, 0, len));<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment">// ... handle exceptions ...</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;port.closePort();<br>
+                &nbsp;&nbsp;}<br>
+                }
+            </div>
+
+            <h3 class="subsection-title">Logging Frameworks</h3>
+
+            <p class="content-text">
+                Proper logging is essential for IoT systems where physical access to devices may be limited. Structured logging with different severity levels helps diagnose issues.
+            </p>
+
+            <div class="code-block">
+                <span class="code-keyword">import</span> org.slf4j.Logger;<br>
+                <span class="code-keyword">import</span> org.slf4j.LoggerFactory;<br>
+                <br>
+                <span class="code-keyword">public class</span> IoTDevice {<br>
+                &nbsp;&nbsp;<span class="code-keyword">private static final</span> Logger logger = LoggerFactory.getLogger(IoTDevice.<span class="code-keyword">class</span>);<br>
+                <br>
+                &nbsp;&nbsp;<span class="code-keyword">public void</span> processSensorData(<span class="code-keyword">double</span> value) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;logger.debug(<span class="code-string">"Processing sensor reading: {}"</span>, value);<br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">if</span> (value > THRESHOLD) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logger.warn(<span class="code-string">"Sensor value {} exceeds threshold {}"</span>, value, THRESHOLD);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment">// ... handle anomaly ...</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;logger.info(<span class="code-string">"Successfully processed sensor data"</span>);<br>
+                &nbsp;&nbsp;}<br>
+                }
+            </div>
+
+            <div class="info-section">
+                <div class="info-title">LOGGING LEVELS</div>
+                <ul class="info-list">
+                    <li><span class="keyword">TRACE:</span> Most detailed, for deep troubleshooting</li>
+                    <li><span class="keyword">DEBUG:</span> Development and diagnostic info</li>
+                    <li><span class="keyword">INFO:</span> General information about application state</li>
+                    <li><span class="keyword">WARN:</span> Potentially harmful situations</li>
+                    <li><span class="keyword">ERROR:</span> Error events that don't stop application</li>
+                    <li><span class="keyword">FATAL:</span> Severe errors requiring immediate attention</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section" id="testing">
+            <h2 class="section-title">TESTING IOT APPLICATIONS</h2>
+
+            <div class="section-divider"></div>
+
+            <h3 class="subsection-title">Unit Testing with JUnit</h3>
+
+            <p class="content-text">
+                Unit testing verifies individual components in isolation, ensuring they work correctly before integration. This is critical for IoT systems where fixing issues in the field is expensive.
+            </p>
+
+            <div class="code-block">
+                <span class="code-keyword">import</span> org.junit.jupiter.api.*;<br>
+                <span class="code-keyword">import static</span> org.junit.jupiter.api.Assertions.*;<br>
+                <br>
+                <span class="code-keyword">class</span> TemperatureProcessorTest {<br>
+                <br>
+                &nbsp;&nbsp;<span class="code-keyword">private</span> TemperatureProcessor processor;<br>
+                <br>
+                &nbsp;&nbsp;@BeforeEach<br>
+                &nbsp;&nbsp;<span class="code-keyword">void</span> setUp() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;processor = <span class="code-keyword">new</span> TemperatureProcessor();<br>
+                &nbsp;&nbsp;}<br>
+                <br>
+                &nbsp;&nbsp;@Test<br>
+                &nbsp;&nbsp;<span class="code-keyword">void</span> testValidTemperature() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">double</span> result = processor.fahrenheitToCelsius(32.0);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;assertEquals(0.0, result, 0.01);<br>
+                &nbsp;&nbsp;}<br>
+                <br>
+                &nbsp;&nbsp;@Test<br>
+                &nbsp;&nbsp;<span class="code-keyword">void</span> testInvalidTemperature() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;assertThrows(IllegalArgumentException.<span class="code-keyword">class</span>, () -> {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;processor.fahrenheitToCelsius(-500.0);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;});<br>
+                &nbsp;&nbsp;}<br>
+                <br>
+                &nbsp;&nbsp;@Test<br>
+                &nbsp;&nbsp;<span class="code-keyword">void</span> testSensorThreshold() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;processor.setThreshold(30.0);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;assertTrue(processor.isThresholdExceeded(35.0));<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;assertFalse(processor.isThresholdExceeded(25.0));<br>
+                &nbsp;&nbsp;}<br>
+                }
+            </div>
+
+            <h3 class="subsection-title">Mocking Hardware Dependencies</h3>
+
+            <p class="content-text">
+                Testing code that interacts with hardware requires mocking - creating simulated versions of hardware components.
+            </p>
+
+            <div class="code-block">
+                <span class="code-keyword">import</span> static</span> org.mockito.Mockito.*;<br>
+                <br>
+                <span class="code-keyword">class</span> HomeController {<br>
+                <br>
+                &nbsp;&nbsp;private Sensor sensor;<br>
+                <br>
+                &nbsp;&nbsp;@Test<br>
+                &nbsp;&nbsp;<span class="code-keyword">void</span> testTemperatureAlert() {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment">// Mock the sensor</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;TemperatureSensor mockSensor = mock(TemperatureSensor.<span class="code-keyword">class</span>);<br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment">// Define mock behavior</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;when(mockSensor.readTemperature()).thenReturn(40.0);<br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment">// Create controller with mock</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;TemperatureController controller = <span class="code-keyword">new</span> TemperatureController(mockSensor);<br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment">// Test the behavior</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;controller.monitorAndAlert();<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;verify(mockSensor).readTemperature();<br>
+                &nbsp;&nbsp;<span class="code-keyword">assertTrue</span>(controller.wasAlertSent());<br>
+                &nbsp;&nbsp;}<br>
+                }
+            </div>
+
+            <h3 class="subsection-title">Integration Testing</h3>
+
+            <p class="content-text">
+                Integration testing verifies that multiple components work together correctly. For IoT, this often involves testing communication protocols, hardware integration, and data pipelines.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">INTEGRATION TESTING STRATEGIES</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Local MQTT Broker:</span> Use Eclipse Mosquitto or HiveMQ for testing</li>
+                    <li><span class="keyword">Test Containers:</span> Docker containers for cloud services</li>
+                    <li><span class="keyword">Hardware-in-the-loop:</span> Test with actual hardware when possible</li>
+                    <li><span class="keyword">Simulation:</span> Mock sensors and actuators with software</li>
+                    <li><span class="keyword">End-to-end tests:</span> Test complete workflows from sensor to cloud</li>
+                </ul>
+            </div>
+
+            <div class="attention-box important">
+                TESTING IS CRITICAL FOR IOT SYSTEMS WHERE DEPLOYMENT AND MAINTENANCE COSTS ARE HIGH. AIM FOR AT LEAST 80% CODE COVERAGE FOR BUSINESS LOGIC.
+            </div>
+
+            <h3 class="subsection-title">Continuous Integration</h3>
+
+            <p class="content-text">
+                CI/CD pipelines automate testing and deployment, ensuring that changes are always validated before reaching production.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">CI/CD FOR IOT PROJECTS</div>
+                <ul class="info-list">
+                    <li><span class="keyword">GitHub Actions:</span> Free for public repositories</li>
+                    <li><span class="keyword">Jenkins:</span> Self-hosted, highly customizable</li>
+                    <li><span class="keyword">GitLab CI:</span> Integrated with GitLab</li>
+                    <li><span class="keyword">GitLab CI:</span> Google Cloud native</li>
+                </ul>
+            </div>
+
+            <div class="code-block">
+                <span class="code-class"># .github/workflows/test.yml - GitHub Actions example</span><br>
+                name: IoT Application Tests<br>
+                <br>
+                on:<br>
+                &nbsp;&nbsp;push:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;branches: [ main, develop ]<br>
+                <br>
+                jobs:<br>
+                &nbsp;&nbsp;test:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;runs-on: ubuntu-latest<br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;steps:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;- uses: actions/checkout@v2<br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;- name: Set up JDK 11<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;uses: actions/setup-java@v2<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;java-version: '11'<br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;- name: Run tests with Maven<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;run: mvn test<br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;- name: Build application<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;run: mvn package<br>
+            </div>
+        </div>
+
+        <div class="content-section" id="practice">
+            <h2 class="section-title">PRACTICE PROBLEMS</h2>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                Complete these practice problems to reinforce your understanding of IoT development tools and environment setup.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">CONCEPTUAL PROBLEMS</div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 1:</strong> What is the primary purpose of Maven in Java IoT projects?
+                    </div>
+                    <input type="text" class="problem-input" id="p-5-1" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkIoTProblem('5-1', 'Build tool and dependency management', ['dependency management', 'build automation'], 'p-5-1')">Check</button>
+                    <div class="feedback" id="p-5-1-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 2:</strong> Which JVM argument enables remote debugging on port 5005?
+                    </div>
+                    <input type="text" class="problem-input" id="p-5-2" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkIoTProblem('5-2', 'agentlib:jdwp=address=*:5005', ['jdwp', '*:5005'], 'p-5-2')">Check</button>
+                    <div class="feedback" id="p-5-2-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 3:</strong> Name one hardware debugging tool commonly used with Arduino.
+                    </div>
+                    <input type="text" class="problem-input" id="p-5-3" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkIoTProblem('5-3', 'Serial Monitor', ['serial monitor', 'platformio', 'avrdude'], 'p-5-3')">Check</button>
+                    <div class="feedback" id="p-5-3-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 4:</strong> What is the purpose of mocking in IoT unit testing?
+                    </div>
+                    <input type="text" class="problem-input" id="p-5-4" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkIoTProblem('5-4', 'Simulate hardware dependencies', ['simulate hardware', 'fake dependencies', 'mock hardware'], 'p-5-4')">Check</button>
+                    <div class="feedback" id="p-5-4-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 5:</strong> Which logging level should be used for severe errors requiring immediate attention?
+                    </div>
+                    <input type="text" class="problem-input" id="p-5-5" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkIoTProblem('5-5', 'FATAL', ['fatal'], 'p-5-5')">Check</button>
+                    <div class="feedback" id="p-5-5-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 6:</strong> What is PlatformIO used for in IoT development?
+                    </div>
+                    <input type="text" class="problem-input" id="p-5-6" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkIoTProblem('5-6', 'Embedded development environment', ['embedded development', 'firmware development', 'microcontroller programming'], 'p-5-6')">Check</button>
+                    <div class="feedback" id="p-5-6-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 7:</strong> Which library would you use for serial port communication in Java?
+                    </div>
+                    <input type="text" class="problem-input" id="p-5-7" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkIoTProblem('5-7', 'JSerialComm', ['jserialcomm', 'java serial communication'], 'p-5-7')">Check</button>
+                    <div class="feedback" id="p-5-7-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 8:</strong> What does JUnit do for IoT development?
+                    </div>
+                    <input type="text" class="problem-input" id="p-5-8" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkIoTProblem('5-8', 'Unit testing framework', ['testing framework', 'unit tests', 'java testing'], 'p-5-8')">Check</button>
+                    <div class="feedback" id="p-5-8-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 9:</strong> Why is continuous integration important for IoT projects?
+                    </div>
+                    <input type="text" class="problem-input" id="p-5-9" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkIoTProblem('5-9', 'Automated testing prevents costly field errors', ['automates testing', 'catches errors early', 'prevents deployment failures'], 'p-5-9')">Check</button>
+                    <div class="feedback" id="p-5-9-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 10:</strong> Which IDE has better built-in Arduino support: Eclipse or VS Code?
+                    </div>
+                    <input type="text" class="problem-input" id="p-5-10" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkIoTProblem('5-10', 'VS Code', ['vs code', 'visual studio code'], 'p-5-10')">Check</button>
+                    <div class="feedback" id="p-5-10-feedback"></div>
+                </div>
+            </div>
+
+            <div class="attention-box">
+                PROBLEMS 11-50 ARE AVAILABLE IN THE FULL PROBLEM DATABASE. COMPLETE ADDITIONAL PRACTICE TO MASTER THESE CONCEPTS.
+            </div>
+        </div>
+
+        <div class="content-section" id="quiz">
+            <h2 class="section-title">MODULE 5 QUIZ</h2>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                This quiz tests your understanding of IoT development tools, IDE setup, build systems, debugging, and testing.
+                Score at least 70% (7 of 10 questions correct) to proceed to the next module!
+            </p>
+
+            <div class="attention-box important">
+                10 QUESTIONS • 70% PASSING SCORE • NO TIME LIMIT
+            </div>
+
+            <div id="quiz-container" class="quiz-container">
+                <!-- Quiz questions loaded from quizzes.js -->
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="submit-btn" onclick="loadModule5Quiz()">Load Quiz</button>
+                <button class="submit-btn" onclick="submitModule5Quiz()" style="display: none;">Submit Quiz</button>
+            </div>
+
+            <div id="quiz-result" class="score-display" style="display: none;">
+                <h2>QUIZ RESULTS</h2>
+                <div class="score-value" id="score-value">0/10</div>
+                <p id="score-message"></p>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <a href="04-protocols.html" class="nav-button prev-module-btn">Previous Module: Protocols</a>
+            <a href="../index.html" class="nav-button">Back to Course Overview</a>
+            <a href="#" class="nav-button next-module-btn" disabled>Next Module: Coming Soon</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p class="footer-text">
+            IOT DEVELOPMENT WITH JAVA - COMPLETE INTERACTIVE COURSE<br>
+            Module 5: Development Tools and Environment<br>
+            50+ Practice Problems • 10 Quiz Questions
+        </p>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script src="../js/problems.js"></script>
+    <script src="../js/quizzes.js"></script>
+    <script>
+        let module5Answers = {};
+
+        function loadModule5Quiz() {
+            const container = document.getElementById('quiz-container');
+            let html = '';
+
+            // Module 5 quiz questions
+            const module5Questions = [
+                {
+                    id: 'q5-1',
+                    question: 'Which build tool is most commonly used for Java IoT projects?',
+                    options: ['A. NPM', 'B. Maven', 'C. Cargo', 'D. Pip'],
+                    correct: 'B',
+                    explanation: 'Maven is the standard build tool for Java projects, handling dependencies and automated builds.'
+                },
+                {
+                    id: 'q5-2',
+                    question: 'What JVM parameter enables remote debugging?',
+                    options: ['A. -Xdebug', 'B. -agentlib:jdwp', 'C. -Ddebug', 'D. --remote-debug'],
+                    correct: 'B',
+                    explanation: 'The -agentlib:jdwp parameter enables the Java Debug Wire Protocol for remote debugging.'
+                },
+                {
+                    id: 'q5-3',
+                    question: 'Which library is recommended for MQTT in Java?',
+                    options: ['A. Eclipse Paho', 'B. Apache Kafka', 'C. JavaMail', 'D. JavaFX'],
+                    correct: 'A',
+                    explanation: 'Eclipse Paho provides the most widely used MQTT client implementation for Java.'
+                },
+                {
+                    id: 'q5-4',
+                    question: 'What is the main advantage of using JSerialComm for IoT?',
+                    options: ['A. Database connectivity', 'B. Serial port communication', 'C. Network routing', 'D. GUI design'],
+                    correct: 'B',
+                    explanation: 'JSerialComm provides cross-platform serial port communication, essential for interfacing with hardware.'
+                },
+                {
+                    id: 'q5-5',
+                    question: 'Which logging framework is commonly used with SLF4J?',
+                    options: ['A. System.out.println', 'B. Logback', 'C. print()', 'D. fmt.Println'],
+                    correct: 'B',
+                    explanation: 'Logback is the default logging implementation used with SLF4J for production Java applications.'
+                },
+                {
+                    id: 'q5-6',
+                    question: 'What is used to simulate hardware in unit tests?',
+                    options: ['A. Real hardware', 'B. Mocking framework', 'C. Cloud services', 'D. Network protocol'],
+                    correct: 'B',
+                    explanation: 'Mocking frameworks like Mockito create simulated versions of hardware for testing without physical devices.'
+                },
+                {
+                    id: 'q5-7',
+                    question: 'Which IDE extension provides Arduino development support in VS Code?',
+                    options: ['A. Arduino Extension', 'B. Java Extension Pack', 'C. Remote SSH', 'D. Docker'],
+                    correct: 'A',
+                    explanation: 'The Arduino extension provides full IDE support for Arduino development within VS Code.'
+                },
+                {
+                    id: 'q5-8',
+                    question: 'What is the purpose of a continuous integration pipeline?',
+                    options: ['A. Manual testing', 'B. Automated build and test', 'C. Code storage', 'D. Documentation generation'],
+                    correct: 'B',
+                    explanation: 'CI pipelines automate building. testing, and validating code changes before deployment.'
+                },
+                {
+                    id: 'q5-9',
+                    question: 'Which tool helps manage firmware updates remotely on IoT devices?',
+                    options: ['A. Javadoc', 'B. OTA (Over-The-Air) update systems', 'C. Code editors', 'D. Print statements'],
+                    correct: 'B',
+                    explanation: 'OTA update systems enable remote firmware deployment and management of IoT devices.'
+                },
+                {
+                    id: 'q5-10',
+                    question: 'What is PlatformIO primarily used for?',
+                    options: ['A. Database management', 'B. Embedded development', 'C. Website development', 'D. Machine learning'],
+                    correct: 'B',
+                    explanation: 'PlatformIO is a professional embedded development environment supporting multiple platforms and frameworks.'
+                }
+            ];
+
+            module5Questions.forEach((question, index) => {
+                html += `
+                    <div class="quiz-question">
+                        <p><strong>Q${index + 1}:</strong> ${question.question}</p>
+                        <div class="quiz-options">
+                            ${question.options.map((opt, i) => `
+                                <div class="quiz-option" onclick="selectOption('${question.id}', '${opt.charAt(0)}', this)">
+                                    ${opt}
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+            window.module5QuestionsData = module5Questions; // Store for grading
+            document.querySelector('button[onclick="loadModule5Quiz()"]').style.display = 'none';
+            document.querySelector('button[onclick="submitModule5Quiz()"]').style.display = 'inline-block';
+        }
+
+        function selectOption(questionId, option, element) {
+            module5Answers[questionId] = option;
+
+            const options = element.parentElement.querySelectorAll('.quiz-option');
+            options.forEach(opt => opt.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+
+        function submitModule5Quiz() {
+            let score = 0;
+            const total = window.module5QuestionsData.length;
+
+            window.module5QuestionsData.forEach(q => {
+                if (module5Answers[q.id] === q.correct) {
+                    score++;
+                }
+            });
+
+            const percentage = (score / total) * 100;
+
+            const resultDiv = document.getElementById('quiz-result');
+            const scoreValue = document.getElementById('score-value');
+            const scoreMessage = document.getElementById('score-message');
+
+            resultDiv.style.display = 'block';
+            scoreValue.textContent = `${score}/${total} (${percentage}%)`;
+
+            if (percentage >= 70) {
+                scoreMessage.textContent = 'Congratulations! You passed the quiz!';
+                if (typeof markQuizPassed === 'function') {
+                    markQuizPassed(5);
+                }
+            } else {
+                scoreMessage.textContent = 'You need to score at least 70% to pass. Please review the material and try again.';
+            }
+        }
+
+        function checkIoTProblem(problemId, correct, alternatives, inputId) {
+            const input = document.getElementById(inputId).value.trim();
+            const feedback = document.getElementById(inputId + '-feedback');
+
+            const normalized = input.toLowerCase().replace(/\s+/g, '');
+            const normalizedCorrect = correct.toLowerCase().replace(/\s+/g, '');
+            const matchesAlt = alternatives.some(alt => alt.toLowerCase().replace(/\s+/g, '').includes(normalized) || normalized.includes(alt.toLowerCase().replace(/\s+/g, '')));
+
+            if (normalized === normalizedCorrect || matchesAlt) {
+                feedback.className = 'feedback correct';
+                feedback.textContent = 'Correct!';
+                feedback.style.display = 'block';
+
+                if (typeof markProblemSolved === 'function') {
+                    markProblemSolved(problemId);
+                }
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.textContent = 'Not correct. Review the material and try again.';
+                feedback.style.display = 'block';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+            markLessonComplete(5);
+        });
+    </script>
+</body>
+</html>

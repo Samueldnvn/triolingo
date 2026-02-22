@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity - Module 5: Anonymity & Privacy</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="light-theme">
+    <div class="main-wrapper">
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="page-header">
+                    <h1 class="page-title">MODULE 5</h1>
+                    <p class="page-subtitle">Anonymity & Privacy (Core Focus)</p>
+                </div>
+
+                <div class="content-card">
+                    <h2 class="module-header">Introduction</h2>
+                    <p style="margin-bottom: 16px;">
+                        This module provides comprehensive coverage of anonymity and privacy in the digital age. As surveillance capabilities have expanded dramatically, understanding how to maintain anonymity, protect privacy, and conduct operational security (OPSEC) has become essential knowledge. We cover tools, techniques, and operational practices for achieving true anonymity.
+                    </p>
+                </div>
+
+                <div class="alert-box critical">
+                    <div class="alert-label">Critical Warning</div>
+                    <div class="alert-content">
+                        Information in this module is for educational purposes. Using anonymity techniques to commit crimes or evade law enforcement is illegal. Maintain ethical boundaries and only apply these techniques for legitimate privacy protection purposes.
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 1: Understanding Surveillance -->
+                <div id="section-surveillance">
+                    <h2 class="section-header">The Surveillance Landscape</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        To anonymize yourself effectively, you must first understand the surveillance capabilities that exist. Modern surveillance is multi-layered and pervasive, tracking individuals across physical and digital spaces. Understanding adversaries and their capabilities is the foundation of effective anonymity.
+                    </p>
+
+                    <h3 class="subsection-header">Mass Surveillance Programs</h3>
+                    <p style="margin-bottom: 12px;">
+                        Mass surveillance programs collect data on entire populations. The most well-known include:
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>PRISM (USA):</strong> NSA collection of internet communications from major service providers (Google, Microsoft, Facebook, Apple, Yahoo, etc)</li>
+                        <li><strong>XKeyscore (USA):</strong> NSA system for searching internet traffic collected globally</li>
+                        <li><strong>Tempora (UK):</strong> GCHQ fiber tapping of transatlantic cables, collecting enormous internet traffic volumes</li>
+                        <li><strong>Musketeer (UK):</strong> GCHQ program targeting Belgian telecom运营商 Belgacom and SIM card encryption</li>
+                        <li><strong>Turmoil (USA):</strong> NSA program collecting internet traffic from fiber optic cables</li>
+                    </ul>
+
+                    <p style="margin-bottom: 12px;">
+                        These programs collect metadata (who you communicate with, when, how often), content of communications, browsing history, geolocation data, and more. The scope is unprecedented in human history.
+                    </p>
+
+                    <h3 class="subsection-header">The Five Eyes Alliance</h3>
+                    <p style="margin-bottom: 12px;">
+                        The Five Eyes is an intelligence alliance of five nations: United States, United Kingdom, Canada, Australia, and New Zealand. These countries collaborate on signals intelligence (SIGINT) and surveillance, sharing data, technologies, and capabilities.
+                    </p>
+
+                    <div class="definition-box">
+                        <div class="definition-label">Definition</div>
+                        <div class="definition-content">
+                        Five Eyes surveillance extends beyond the alliance. Other "Nine Eyes" nations include Denmark, France, the Netherlands, and Norway. "Fourteen Eyes" adds Germany, Belgium, Italy, Spain, and Sweden. These partnerships dramatically expand surveillance capabilities through international cooperation and data sharing agreements.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Corporate Surveillance</h3>
+                    <p style="margin-bottom: 12px;">
+                        Beyond government surveillance, corporations conduct extensive data collection:
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Google & Facebook:</strong> Track users across websites, apps, and services using tracking pixels, cookies, and fingerprinting</li>
+                        <li><strong>Mobile apps:</strong> Collect location history, contacts, microphone, camera, and sensor data</li>
+                        <li><strong>Internet Service Providers:</strong> Can see all unencrypted traffic, including DNS queries</li>
+                        <li><strong>Data brokers:</strong> Aggregate and sell personal data from multiple sources</li>
+                        <li><strong>Smart devices:</strong> Always-listening devices (Alexa, Google Home) record audio and collect data</li>
+                    </ul>
+
+                    <div class="note-box">
+                        <div class="note-label">Metadata Analysis</div>
+                        <div class="note-content">
+                        Metadata (data about data) is often more revealing than content. Patterns in metadata can reveal:
+                        - Who you know (communication graph)
+                        - Your routines and habits (location patterns)
+                        - Your interests and preferences (browsing history)
+                        - Physical movements (GPS, cell tower triangulation)
+                        - Social circles and affiliations
+                        Even when content is encrypted, metadata leaks enormous information.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Browser Fingerprinting</h3>
+                    <p style="margin-bottom: 12px;">
+                        Browser fingerprinting uniquely identifies browsers and devices without cookies or login states. Techniques include:
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Screen resolution and color depth</strong></li>
+                        <li><strong>Installed fonts and plugins</strong></li>
+                        <li><strong>Timezone and language settings</strong></li>
+                        <li><strong>Canvas WebGL rendering differences</strong></li>
+                        <li><strong>Audio context hardware signature</strong></li>
+                        <li><strong>User agent string and platform details</strong></li>
+                    </ul>
+
+                    <p style="margin-bottom: 12px;">
+                        Combined, these create a fingerprint so unique that it can identify you with high probability, even across incognito windows or private browsing.
+                    </p>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 2: Tor - The Onion Router -->
+                <div id="section-tor">
+                    <h2 class="section-header">Tor (The Onion Router)</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Tor is the most well-known tool for anonymous internet communication. Originally developed by the US Naval Research Laboratory and now operated by the non-profit Tor Project, Tor provides anonymity by routing traffic through multiple volunteer-operated nodes with layered encryption.
+                    </p>
+
+                    <h3 class="subsection-header">How Tor Works</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Tor implements onion routing with three key security properties:
+                    </p>
+
+                    <div class="definition-box">
+                        <div class="definition-label">Onion Routing Architecture</div>
+                        <div class="definition-content">
+                        1. <strong>Client Node:</strong> Your computer runs Tor client software.
+
+                        2. <strong>Entry Guard:</strong> First relay, sees your IP but not your destination.
+
+                        3. <strong>Middle Relay:</strong> Second relay, sees previous and next hop only, knows nothing about you or destination.
+
+                        4. <strong>Exit Node:</strong> Final relay, sees destination but not your IP.
+
+                        5. <strong>Destination:</strong> Receives communication from exit node.
+                        </div>
+                    </div>
+
+                    <p style="margin-bottom: 12px;">
+                        Each relay uses a different encryption key. The client creates layers of encryption, like an onion. Each relay removes one layer, knowing which relay to send the packet next but unable to read the layers beneath.
+                    </p>
+
+                    <div class="code-block">
+                        <code>User (Triple-Encrypted) → Entry (Removes Layer 1) → Middle (Removes Layer 2) → Exit (Removes Layer 3) → Destination</code>
+                    </div>
+
+                    <h3 class="subsection-header">Security Properties and Limitations</h3>
+                    <p style="margin-bottom: 12px;">
+                        Tor provides strong anonymity against passive surveillance and traffic analysis but has limitations:
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>No encryption by default to destination:</strong> Traffic between exit node and destination is unencrypted unless using HTTPS</li>
+                        <li><strong>Exit node compromise:</strong> Malicious exit nodes can monitor unencrypted traffic</li>
+                        <li><strong>Traffic analysis attacks:</strong> Sophisticated adversaries may correlate timing and volume analysis</li>
+                        <li><strong>Browser fingerprinting:</strong> Using Tor Browser with unique fingerprint defeats the purpose</li>
+                        <li><strong>Account correlation:</strong> Logging into personal accounts identifies you regardless of Tor</li>
+                    </ul>
+
+                    <div class="alert-box critical">
+                        <div class="alert-label">Critical: HTTPS is Still Required</div>
+                        <div class="alert-content">
+                        Tor anonymizes your IP but does not encrypt your communications with the destination. Always use HTTPS (TLS encryption) for all sensitive communications. Without HTTPS, the exit node can see everything: your data, passwords, and content.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Tor Best Practices</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Use Tor Browser:</strong> Modified Firefox with fingerprinting protections and defaults</li>
+                        <li><strong>Disable JavaScript:</strong> In Tor Browser's "Safest" security level to prevent fingerprinting</li>
+                        <li><strong>Never log into personal accounts:</strong> Using real accounts defeats anonymity</li>
+                        <li><strong>Download with caution:</strong> Files downloaded through Tor reveal your IP when opened in other applications</li>
+                        <li><strong>Use HTTPS-Only mode:</strong> Enforce HTTPS for all browsing</li>
+                        <li><strong>Bridge relays:</strong> Use bridges in censored regions or to hide Tor usage</li>
+                        <li><strong>New Identity:</strong> Use "New Identity" only when necessary, not as a rotation mechanism</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Hidden Services (.onion)</h3>
+                    <p style="margin-bottom: 12px;">
+                        Hidden services allow both sender and receiver to remain anonymous. Instead of connecting through an exit node to reach a public server, hidden services exist entirely within the Tor network. These sites use .onion addresses that are accessible only through Tor.
+                    </p>
+
+                    <div class="note-box">
+                        <div class="note-label">Note</div>
+                        <div class="note-content">
+                        Hidden services include both legitimate privacy services (secure drop boxes for whistleblowers, anonymized journalism platforms like SecureDrop) and illegal marketplaces. The technology itself is neutral - it provides privacy for anyone who needs it. Hidden services have improved with v3 .onion addresses, which provide better cryptography and resistance to enumeration attacks.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 3: VPNs (Virtual Private Networks) -->
+                <div id="section-vpn">
+                    <h2 class="section-header">Virtual Private Networks (VPNs)</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        VPNs create an encrypted tunnel between your device and a VPN server, hiding your IP address and encrypting your internet traffic. VPNs are widely used for privacy, security, and bypassing geographic restrictions, but they have important differences from Tor.
+                    </p>
+
+                    <h3 class="subsection-header">How VPNs Work</h3>
+
+                    <div class="definition-box">
+                        <div class="definition-label">VPN Architecture</div>
+                        <div class="definition-content">
+                        1. <strong>Client:</strong> Your device connects to VPN server instead of directly to websites.
+
+                        2. <strong>VPN Tunnel:</strong> Encrypted (typically AES-256) tunnel between client and server.
+
+                        3. <strong>VPN Server:</strong> Acts as your proxy, connecting to destinations on your behalf.
+
+                        4. <strong>Destination:</strong> Sees traffic coming from VPN server IP, not your IP.
+
+                        5. <strong>Response:</strong> Encrypted and sent back through the tunnel to you.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">VPN vs Tor Comparison</h3>
+
+                    <table style="width: 100%; border-collapse: collapse; margin: 16px 0;">
+                        <tr style="border-bottom: 1px solid var(--border-light);">
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">Aspect</th>
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">VPN</th>
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">Tor</th>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">Speed</td>
+                            <td style="padding: 12px;">Fast (single hop)</td>
+                            <td style="padding: 12px;">Slow (multiple hops)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">Anonymity</td>
+                            <td style="padding: 12px;">Single point of trust (provider)</td>
+                            <td style="padding: 12px;">No single point of trust (distributed)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">Encryption</td>
+                            <td style="padding: 12px;">Between client and server</td>
+                            <td style="padding: 12px;">Layered encryption</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">Provider Visibility</td>
+                            <td style="padding: 12px;">Can see all activity</td>
+                            <td style="padding: 12px;">Only sees routing, not content</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px;">Use Case</td>
+                            <td style="padding: 12px;">Everyday privacy, bypassing geo-blocks</td>
+                            <td style="padding: 12px;">Strong anonymity, whistleblowing, journalism</td>
+                        </tr>
+                    </table>
+
+                    <div class="alert-box">
+                        <div class="alert-label">Important</div>
+                        <div class="alert-content">
+                        VPNs protect from ISP and local network surveillance but trust the VPN provider not to log or sell your data. Choose reputable VPNs with no-logging policies, jurisdictions outside Fourteen Eyes, and public transparency audits. Free VPNs often monetize by selling user data - avoid them.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">VPN Limitations</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Single point of trust:</strong> VPN provider sees your entire activity</li>
+                        <li><strong>Logging:</strong> Many VPNs keep logs despite no-logging claims</li>
+                        <li><strong>Payment correlation:</strong> Using credit card or PayPal identifies you</li>
+                        <li><strong>Browser fingerprinting:</strong> VPN does not prevent tracking across sessions</li>
+                        <li><strong>Account correlation:</strong> Logging into personal accounts defeats anonymity</li>
+                        <li><strong>Malware:</strong> Compromised device bypasses VPN protection</li>
+                    </ul>
+
+                    <h3 class="subsection-header">VPN Best Practices</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Anonymous payment:</strong> Pay with cryptocurrency or cash gift cards</li>
+                        <li><strong>Dedicated email:</strong> Use anonymous email for registration</li>
+                        <li><strong>No personal info:</strong> Never use real name or identifying information</li>
+                        <li><strong>Verify no-logs:</strong> Look for third-party audits and transparency reports</li>
+                        <li><strong>Check jurisdiction:</strong> Choose providers outside Fourteen Eyes countries</li>
+                        <li><strong>DNS leak protection:</strong> Ensure VPN handles DNS requests</li>
+                        <li><strong>IPv6 leak protection:</strong> Disable or ensure VPN handles IPv6</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 4: Operational Security (OPSEC) -->
+                <div id="section-opsec">
+                    <h2 class="section-header">Operational Security (OPSEC)</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Operational Security (OPSEC) is the process of identifying, controlling, and protecting evidence that could be gathered by adversaries to compromise operations. OPSEC is critical for anonymity—even the best tools leak information if used incorrectly.
+                    </p>
+
+                    <div class="definition-box">
+                        <div class="definition-label">OPSEC Process (NSA Definition)</div>
+                        <div class="definition-content">
+                        1. <strong>Identification of Critical Information:</strong> What needs to be protected?
+
+                        2. <strong>Threat Analysis:</strong> Who is the adversary and what are their capabilities?
+
+                        3. <strong>Vulnerability Analysis:</strong> How could adversaries find the critical information?
+
+                        4. <strong>Risk Assessment:</strong> What is the risk if information is discovered?
+
+                        5. <strong>Application of Countermeasures:</strong> What actions reduce the risk?
+
+                        6. <strong>Assessment:</strong> How effective are the countermeasures?
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">OPSEC Principles</h3>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">1. Compartmentalization</h4>
+                        <p style="margin-bottom: 8px;">
+                        Divide information and resources such that compromise of one does not compromise others. Use different identities, devices, and locations for different activities. Fail to compartmentalize and one compromise cascades.
+                        </p>
+
+                        <h4 style="margin-bottom: 12px;">2. Consistency</h4>
+                        <p style="margin-bottom: 8px;">
+                        Maintain your identities, patterns, and behaviors consistently. Inconsistencies are suspicious and can compromise anonymity. Create detailed backstories and personas when needed, and live them.
+                        </p>
+
+                        <h4 style="margin-bottom: 12px;">3. Information Control</h4>
+                        <p style="margin-bottom: 8px;">
+                        Limit sharing to only those who need to know. Every additional person who knows about your activities increases exposure. Use end-to-end encryption and secure channels for sensitive communications.
+                        </p>
+
+                        <h4 style="margin-bottom: 12px;">4. Time and Location Separation</h4>
+                        <p style="margin-bottom: 8px;">
+                        Separate anonymous activities by time and location from your real identity. Do not check personal accounts while using anonymous identities. Use different locations or VPN nodes when possible.
+                        </p>
+
+                        <h4 style="margin-bottom: 12px;">5. Pattern Disruption</h4>
+                        <p style="margin-bottom: 8px;">
+                        Vary your patterns and avoid routines. Surveillance analyzes patterns to identify and track individuals. Randomize times, locations, routes, and methods when possible to make pattern analysis more difficult.
+                        </p>
+                    </div>
+
+                    <h3 class="subsection-header">Common OPSEC Failures</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Identity linking:</strong> Logging into personal accounts while using anonymous tools</li>
+                        <li><strong>Time overlap:</strong> Switching between identities too quickly, establishing correlation</li>
+                        <li><strong>Consistent typos:</strong> Making the same typing or spelling errors across identities</li>
+                        <li><strong>Payment trails:</strong> Identifying payments (Venmo, PayPal, credit cards)</li>
+                        <li><strong>Physical correlation:</strong> Being photographed or seen at locations associated with anonymous activities</li>
+                        <li><strong>Device cross-contamination:</strong> Using same device for real and anonymous identities</li>
+                        <li><strong>Social media cross-referencing:</strong> Connecting accounts through shared contacts or content</li>
+                        <li><strong>Reveal through language:</strong> Using phrases, references, or knowledge unique to your real identity</li>
+                    </ul>
+
+                    <div class="alert-box critical">
+                        <div class="alert-label">Critical Warning</div>
+                        <div class="alert-content">
+                        The most sophisticated adversaries can correlate seemingly unrelated information to identify you. Even small pieces of information, when combined, can create a comprehensive profile. Assume any information you produce can eventually be correlated and tied back to you. Exercise extreme caution.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 5: Digital Footprint Management -->
+                <div id="section-footprint">
+                    <h2 class="section-header">Managing Your Digital Footprint</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Your digital footprint is the data trail you leave online across websites, services, devices, and over time. Managing and minimizing this footprint is essential for privacy and anonymity. Every action online creates some record.
+                    </p>
+
+                    <h3 class="subsection-header">Types of Digital Footprints</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Active footprint:</strong> Data you intentionally share (social media posts, emails, comments)</li>
+                        <li><strong>Passive footprint:</strong> Data collected about you without your knowledge (tracking cookies, browsing history, location data)</li>
+                        <li><strong>Historical footprint:</strong> Old data that persists even after you try to remove it (archives, caches, screenshots)</li>
+                        <li><strong>Inferred footprint:</strong> Profiles and analysis built from your behavior and connections</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Minimizing Your Footprint</h3>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">1. Delete and Deactivate Old Accounts</h4>
+                        <p style="margin-bottom: 8px;">
+                        Request deletion of unused social media, email, and service accounts. Data you provided years ago may still exist in databases, backups, and data broker records. Account deletion requests often take time - be persistent.
+                        </p>
+
+                        <h4 style="margin-bottom: 12px;">2. Opt Out of Data Brokers</h4>
+                        <p style="margin-bottom: 8px;">
+                        Submit opt-out requests to data brokers (e.g., Acxiom, Oracle, Equifax, Google, Facebook, PeopleFinder). These companies aggregate and sell personal information. Many require individual requests, though some automated opt-out services exist.
+                        </p>
+
+                        <h4 style="margin-bottom: 12px;">3. Use Privacy-Respecting Search Engines</h4>
+                        <p style="margin-bottom: 8px;">
+                        Replace Google with privacy-focused search engines:
+                        - DuckDuckGo: No tracking, no personalized results
+                        - Startpage: Google results through privacy proxy
+                        - Brave Search: Private search engine
+                        - Mojeek: UK-based independent search engine
+                        </p>
+
+                        <h4 style="margin-bottom: 12px;">4. Use Privacy-Respecting Email</h4>
+                        <p style="margin-bottom: 8px;">
+                        Privacy-focused email providers offer end-to-end encryption and minimal logging:
+                        - ProtonMail: Encrypted email based in Switzerland
+                        - Tutanota: Encrypted email based in Germany
+                        - Mailfence: Encrypted email, contacts, calendar based in Belgium
+                        - Disroot: Community-run federated email service
+                        </p>
+
+                        <h4 style="margin-bottom: 12px;">5. Browser and Plugin Privacy</h4>
+                        <p style="margin-bottom: 8px;">
+                        Install privacy extensions:
+                        - uBlock Origin: Ad and tracker blocking
+                        - Privacy Badger: Block invisible trackers
+                        - HTTPS Everywhere: Enforce encryption (automatic in modern browsers)
+                        - Decentraleyes: Load common resources from local cache
+                        - Cookie AutoDelete: Remove trackers after browsing
+                        - CanvasBlocker: Block canvas fingerprinting
+                        </p>
+                    </div>
+
+                    <h3 class="subsection-header">Metadata Removal</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Digital files contain hidden metadata that reveals information:
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Photos:</strong> EXIF data includes GPS coordinates, camera model, date/time, and sometimes your name</li>
+                        <li><strong>Documents:</strong> Author names, revision history, editing software, and timestamps</li>
+                        <li><strong>PDFs:</strong> Metadata, hidden text layers, embedded scripts</li>
+                        <li><strong>Email:</strong> Headers reveal servers, routing, and client software</li>
+                    </ul>
+
+                    <div class="example-box">
+                        <div class="example-label">Example: Metadata Removal Tools</div>
+                        <div class="example-content">
+                        <strong>Photos:</strong> ExifTool, ImageMagick, or built-in tools in Windows/Mac/Linux
+
+                        <strong>Documents:</strong> Document metadata properties, sanitize tools for PDFs, version control cleaning
+
+                        <strong>Screenshots:</strong> Always take clean screenshots without unnecessary personal information visible
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Navigation -->
+                <div class="nav-buttons">
+                    <a href="04-cryptography.html" class="nav-btn">Previous: Cryptography</a>
+                    <a href="06-web-security.html" class="nav-btn primary">Next: Web Application Security</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => loadProgress());
+    </script>
+</body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difficulty-Based Practice - The Art of War</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="renaissance-header">
+        <h1>DIFFICULTY-BASED PRACTICE</h1>
+        <h2>Challenge Yourself at Your Skill Level</h2>
+    </div>
+
+    <div class="container">
+        <div class="lesson-header">
+            <h1>Practice by Difficulty</h1>
+            <p>Select a difficulty level to focus your practice on problems that match your current understanding, or challenge yourself with harder questions.</p>
+        </div>
+
+        <div class="ornamental-divider"><span>Select Difficulty Level</span></div>
+
+        <div class="parchment-section">
+            <div class="parchment-content">
+                <h3>DIFFICULTY LEVELS</h3>
+                <p class="parchment-text">Practice problems are categorized by difficulty to help you build mastery progressively.</p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px;">
+                    <div style="border: 2px solid var(--forest-green); border-radius: 10px; padding: 25px; background: linear-gradient(135deg, rgba(76, 175, 80, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%);">
+                        <h3 style="color: var(--forest-green); font-size: 1.4em; margin-bottom: 15px;">Easy</h3>
+                        <p style="color: var(--parchment-text); margin-bottom: 20px;">Basic definitions, straightforward questions, and fundamental concepts. Ideal for new learners or review.</p>
+                        <ul style="color: var(--parchment-text); text-align: left; margin-bottom: 20px;">
+                            <li style="margin: 8px 0;">Simple definitions</li>
+                            <li style="margin: 8px 0;">Direct quotes identification</li>
+                            <li style="margin: 8px 0;">Basic fact recall</li>
+                            <li style="margin: 8px 0;">Fundamental principles</li>
+                        </ul>
+                        <button class="nav-button" onclick="loadDifficulty('easy')" style="width: 100%; border-color: var(--forest-green);">Start Easy Practice</button>
+                    </div>
+
+                    <div style="border: 2px solid var(--gold-leaf); border-radius: 10px; padding: 25px; background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%);">
+                        <h3 style="color: var(--gold-leaf); font-size: 1.4em; margin-bottom: 15px;">Medium</h3>
+                        <p style="color: var(--parchment-text); margin-bottom: 20px;">Conceptual understanding, application of principles, and connecting ideas across topics.</p>
+                        <ul style="color: var(--parchment-text); text-align: left; margin-bottom: 20px;">
+                            <li style="margin: 8px 0;">Concept application</li>
+                            <li style="margin: 8px 0;">Strategic analysis</li>
+                            <li style="margin: 8px 0;">Comparisons and contrasts</li>
+                            <li style="margin: 8px 0;">Historical significance</li>
+                        </ul>
+                        <button class="nav-button" onclick="loadDifficulty('medium')" style="width: 100%; border-color: var(--gold-leaf);">Start Medium Practice</button>
+                    </div>
+
+                    <div style="border: 2px solid var(--deep-red); border-radius: 10px; padding: 25px; background: linear-gradient(135deg, rgba(183, 28, 28, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%);">
+                        <h3 style="color: var(--deep-red); font-size: 1.4em; margin-bottom: 15px;">Hard</h3>
+                        <p style="color: var(--parchment-text); margin-bottom: 20px;">Advanced analysis, synthesis of multiple concepts, and nuanced historical understanding.</p>
+                        <ul style="color: var(--parchment-text); text-align: left; margin-bottom: 20px;">
+                            <li style="margin: 8px 0;">Complex strategic analysis</li>
+                            <li style="margin: 8px 0;">Multi-step reasoning</li>
+                            <li style="margin: 8px 0;">Nuanced historical context</li>
+                            <li style="margin: 8px 0;">Causal relationships</li>
+                        </ul>
+                        <button class="nav-button" onclick="loadDifficulty('hard')" style="width: 100%; border-color: var(--deep-red);">Start Hard Practice</button>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; text-align: center;">
+                    <button class="nav-button" onclick="loadDifficulty('all')" style="min-width: 300px; border-color: var(--leather-brown);">
+                        Mixed Difficulty (All Levels)
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="practice-area" style="display: none; margin-top: 40px;">
+            <div class="ornamental-divider"><span>Practice Problems</span></div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin: 20px 0;">
+                <h3 id="difficulty-title" style="color: var(--deep-red);">Selected Difficulty</h3>
+                <div style="text-align: right;">
+                    <span style="margin-right: 20px; color: var(--leather-brown);">Correct: <span id="correct-count" style="color: var(--forest-green); font-weight: bold;">0</span> / <span id="total-count">0</span></span>
+                    <button class="nav-button" onclick="loadAnotherSet()" style="padding: 10px 20px;">Load More Problems</button>
+                </div>
+            </div>
+
+            <div id="problems-container"></div>
+        </div>
+
+        <div id="difficulty-stats" style="margin-top: 40px; padding: 25px; border: 1px solid var(--leather-brown); border-radius: 10px; background: rgba(255, 255, 255, 0.05);">
+            <h3 style="color: var(--gold-leaf); text-align: center; margin-bottom: 20px;">Difficulty Statistics</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5em; font-weight: bold; color: var(--forest-green);" id="easy-count">0</div>
+                    <div style="color: var(--parchment-text);">Easy Problems</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5em; font-weight: bold; color: var(--gold-leaf);" id="medium-count">0</div>
+                    <div style="color: var(--parchment-text);">Medium Problems</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5em; font-weight: bold; color: var(--deep-red);" id="hard-count">0</div>
+                    <div style="color: var(--parchment-text);">Hard Problems</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-buttons" style="margin-top: 40px;">
+            <a href="../index.html" class="nav-button">Return to Course Overview</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p class="footer-text">
+            Difficulty-Based Practice | The Art of War Course<br>
+            Progressive Challenge for Skill Development
+        </p>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script src="../js/problems.js"></script>
+    <script>
+        let currentDifficulty = '';
+        let correctCount = 0;
+        let totalShown = 0;
+        let problemsShown = [];
+
+        const difficultyNames = {
+            'easy': 'Easy Level - Building Foundations',
+            'medium': 'Medium Level - Developing Understanding',
+            'hard': 'Hard Level - Advanced Mastery',
+            'all': 'Mixed Difficulty - Comprehensive Challenge'
+        };
+
+        function getAllProblems() {
+            let allProblems = [];
+            for (const category in practiceProblems) {
+                for (const subcategory in practiceProblems[category]) {
+                    allProblems = allProblems.concat(practiceProblems[category][subcategory]);
+                }
+            }
+            return allProblems;
+        }
+
+        function getProblemsByDifficulty(difficulty) {
+            const allProblems = getAllProblems();
+            if (difficulty === 'all') {
+                return allProblems;
+            }
+            return allProblems.filter(problem => problem.difficulty === difficulty);
+        }
+
+        function updateDifficultyStats() {
+            const allProblems = getAllProblems();
+            const easyCount = allProblems.filter(p => p.difficulty === 'easy').length;
+            const mediumCount = allProblems.filter(p => p.difficulty === 'medium').length;
+            const hardCount = allProblems.filter(p => p.difficulty === 'hard').length;
+
+            document.getElementById('easy-count').textContent = easyCount;
+            document.getElementById('medium-count').textContent = mediumCount;
+            document.getElementById('hard-count').textContent = hardCount;
+        }
+
+        function loadDifficulty(difficulty) {
+            currentDifficulty = difficulty;
+            correctCount = 0;
+            totalShown = 0;
+            problemsShown = [];
+
+            document.getElementById('practice-area').style.display = 'block';
+            document.getElementById('difficulty-title').textContent = difficultyNames[difficulty];
+            document.getElementById('correct-count').textContent = '0';
+            document.getElementById('total-count').textContent = '0';
+
+            loadProblems();
+        }
+
+        function shuffleArray(array) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        function loadProblems() {
+            const container = document.getElementById('problems-container');
+            container.innerHTML = '';
+
+            const allProblems = getProblemsByDifficulty(currentDifficulty);
+
+            if (allProblems.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: var(--leather-brown);">No problems available for this difficulty level.</p>';
+                return;
+            }
+
+            const filteredProblems = allProblems.filter(p => !problemsShown.includes(p.id));
+            const problemsToShow = filteredProblems.length >= 5
+                ? shuffleArray(filteredProblems).slice(0, 5)
+                : shuffleArray(filteredProblems);
+
+            if (problemsToShow.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: var(--forest-green);">Excellent work! You have practiced all problems at this difficulty level.</p>';
+                return;
+            }
+
+            problemsToShow.forEach(problem => {
+                problemsShown.push(problem.id);
+                totalShown++;
+
+                const problemDiv = document.createElement('div');
+                problemDiv.className = 'practice-problem';
+                problemDiv.setAttribute('data-id', problem.id);
+
+                let difficultyClass = 'medium';
+                if (problem.difficulty === 'easy') difficultyClass = 'easy';
+                if (problem.difficulty === 'hard') difficultyClass = 'hard';
+
+                problemDiv.innerHTML = `
+                    <div class="problem-header">
+                        <span class="problem-difficulty difficulty-${difficultyClass}">${problem.difficulty.toUpperCase()}</span>
+                        <span class="problem-type">${problem.type}</span>
+                        ${problem.id ? `<span class="problem-id">${problem.id}</span>` : ''}
+                    </div>
+                    <div class="problem-question">${problem.question}</div>
+                    <div class="question-hint" onclick="toggleHint('${problem.id}')" style="cursor: pointer; margin: 10px 0; color: var(--gold-leaf); font-style: italic;">
+                        Show Hint
+                    </div>
+                    <div id="hint-${problem.id}" class="hint-box" style="display: none; margin: 10px 0; padding: 10px; background: rgba(139, 90, 43, 0.1); border-left: 3px solid var(--gold-leaf);">
+                        <strong>Hint:</strong> ${problem.hint}
+                    </div>
+                    <div class="problem-input">
+                        <input type="text" id="input-${problem.id}" placeholder="Enter your answer..." style="width: 100%; padding: 10px; font-size: 14px; border: 1px solid var(--leather-brown); background: rgba(255, 255, 255, 0.9);">
+                        <button class="nav-button" onclick="checkAnswer('${problem.id}')" style="margin-top: 10px;">Check Answer</button>
+                    </div>
+                    <div id="feedback-${problem.id}" class="feedback" style="display: none; margin-top: 10px; padding: 10px;"></div>
+                `;
+
+                container.appendChild(problemDiv);
+            });
+
+            document.getElementById('total-count').textContent = totalShown;
+        }
+
+        function toggleHint(problemId) {
+            const hint = document.getElementById('hint-' + problemId);
+            hint.style.display = hint.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function checkAnswer(problemId) {
+            const problem = findProblem(problemId);
+            if (!problem) return;
+
+            const input = document.getElementById('input-' + problemId);
+            const feedback = document.getElementById('feedback-' + problemId);
+            const userAnswer = input.value.trim().toLowerCase().replace(/\s+/g, '');
+            const correctAnswer = problem.answer.toLowerCase().replace(/\s+/g, '');
+
+            let isCorrect = userAnswer === correctAnswer;
+
+            if (!isCorrect && problem.alternatives && problem.alternatives.length > 0) {
+                isCorrect = problem.alternatives.some(alt =>
+                    alt.toLowerCase().replace(/\s+/g, '') === userAnswer
+                );
+            }
+
+            feedback.style.display = 'block';
+
+            if (isCorrect) {
+                feedback.className = 'feedback correct';
+                feedback.innerHTML = `
+                    <div style="color: var(--forest-green); font-weight: bold; margin-bottom: 5px;">Correct!</div>
+                    <div>${problem.explanation}</div>
+                `;
+                if (!feedback.getAttribute('data-credited')) {
+                    correctCount++;
+                    feedback.setAttribute('data-credited', 'true');
+                    document.getElementById('correct-count').textContent = correctCount;
+                }
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.innerHTML = `
+                    <div style="color: var(--deep-red); font-weight: bold; margin-bottom: 5px;">Incorrect</div>
+                    <div>Correct answer: ${problem.answer}</div>
+                    <div style="margin-top: 10px;">${problem.explanation}</div>
+                `;
+            }
+        }
+
+        function findProblem(problemId) {
+            for (const category in practiceProblems) {
+                for (const subcategory in practiceProblems[category]) {
+                    const problem = practiceProblems[category][subcategory].find(p => p.id === problemId);
+                    if (problem) return problem;
+                }
+            }
+            return null;
+        }
+
+        function loadAnotherSet() {
+            loadProblems();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDifficultyStats();
+        });
+    </script>
+
+    <style>
+        .practice-problem {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--leather-brown);
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .problem-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .problem-difficulty {
+            padding: 5px 15px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .difficulty-easy {
+            background: var(--forest-green);
+            color: #fff;
+        }
+
+        .difficulty-medium {
+            background: var(--gold-leaf);
+            color: #000;
+        }
+
+        .difficulty-hard {
+            background: var(--deep-red);
+            color: #fff;
+        }
+
+        .problem-type {
+            color: var(--leather-brown);
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        .problem-id {
+            color: var(--parchment-text);
+            font-size: 0.9em;
+            opacity: 0.7;
+        }
+
+        .problem-question {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin: 15px 0;
+            color: var(--parchment-text);
+        }
+
+        .question-hint:hover {
+            text-decoration: underline;
+        }
+
+        .feedback {
+            border-radius: 5px;
+        }
+
+        .feedback.correct {
+            background: rgba(76, 175, 80, 0.2);
+            border: 1px solid var(--forest-green);
+        }
+
+        .feedback.incorrect {
+            background: rgba(183, 28, 28, 0.2);
+            border: 1px solid var(--deep-red);
+        }
+
+        .hint-box {
+            border-radius: 3px;
+            color: var(--parchment-text);
+        }
+    </style>
+</body>
+</html>

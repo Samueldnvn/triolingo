@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1.1.1: Real Numbers - Linear Algebra</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- MathJax for LaTeX rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="chapter-1">
+    <div class="main-wrapper">
+        <nav class="sidebar toc-pink">
+            <div class="sidebar-header">
+                <div class="sidebar-title">Linear Algebra</div>
+            </div>
+            <div class="toc-chapter toc-pink">
+                <div class="toc-chapter-title">Chapter 1: Foundations</div>
+                <div class="toc-module">
+                    <div class="toc-module-title">Module 1.1: Numbers & Notation</div>
+                    <div class="toc-lessons">
+                        <div class="toc-lesson"><a href="1-1-1-real-numbers.html" class="active">Lesson 1.1.1: Real Numbers</a></div>
+                        <div class="toc-lesson"><a href="1-1-2-complex-numbers.html">Lesson 1.1.2: Complex Numbers</a></div>
+                        <div class="toc-lesson"><a href="1-1-3-sets-notation.html">Lesson 1.1.3: Sets & Notation</a></div>
+                        <div class="toc-lesson"><a href="1-1-4-practice-numbers.html">Lesson 1.1.4: Practice Quiz</a></div>
+                    </div>
+                </div>
+                <div class="toc-module">
+                    <div class="toc-module-title">Module 1.2: Vectors</div>
+                    <div class="toc-lessons">
+                        <div class="toc-lesson"><a href="1-2-1-vector-basics.html">Lesson 1.2.1: Vector Basics</a></div>
+                        <div class="toc-lesson"><a href="1-2-2-vector-operations.html">Lesson 1.2.2: Vector Operations</a></div>
+                        <div class="toc-lesson"><a href="1-2-3-dot-product.html">Lesson 1.2.3: Dot Product</a></div>
+                        <div class="toc-lesson"><a href="1-2-4-vectors-3d.html">Lesson 1.2.4: Vectors in 3D</a></div>
+                        <div class="toc-lesson"><a href="1-2-5-practice-vectors.html">Lesson 1.2.5: Practice Quiz</a></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="module-header">
+                    <h2>Lesson 1.1.1: Real Numbers</h2>
+                    <p>Module 1.1: Numbers & Notation | Chapter 1: Foundations</p>
+                </div>
+                
+                <div class="content-card">
+                    <div class="subsection-title">Introduction to Real Numbers</div>
+                    <p>Real numbers are the foundation of mathematics. They include all the numbers we can find on the number line - from negative infinity to positive infinity, including all the fractions and decimals in between. Understanding real numbers is absolutely essential for linear algebra, as vectors and matrices are built entirely from real numbers.</p>
+                    
+                    <p>In this lesson, we'll explore the different types of real numbers, their properties, absolute value, and how they behave in mathematical operations. By the end, you'll have a solid foundation for working with more complex mathematical structures.</p>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Types of Real Numbers</div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Definition</div>
+                        <div class="definition-title">Real Numbers</div>
+                        <p>The set of all real numbers, denoted by $$\mathbb{R}$$, includes all numbers that can be represented on the number line. This includes:</p>
+                        <ul style="margin: 15px 0 15px 30px; line-height: 2;">
+                            <li><strong>Natural numbers:</strong> $$\mathbb{N} = \{1, 2, 3, 4, ...\}$$ - Counting numbers starting from 1</li>
+                            <li><strong>Whole numbers:</strong> $$\mathbb{W} = \{0, 1, 2, 3, ...\}$$ - Natural numbers plus zero</li>
+                            <li><strong>Integers:</strong> $$\mathbb{Z} = \{..., -3, -2, -1, 0, 1, 2, 3, ...\}$$ - All whole numbers and their negatives</li>
+                            <li><strong>Rational numbers:</strong> $$\mathbb{Q}$$ - Numbers that can be written as fractions $$\frac{a}{b}$$ where $$a, b \in \mathbb{Z}$$ and $$b \neq 0$$</li>
+                            <li><strong>Irrational numbers:</strong> Numbers that cannot be written as fractions, like $$\pi$$, $$e$$, and $$\sqrt{2}$$</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example-box">
+                        <div class="flag">Example</div>
+                        <div class="example-title">Classifying Numbers</div>
+                        <p>Let's classify $$3, \frac{5}{2}, -7, 0, \pi$$:</p>
+                        <ul style="margin: 15px 0 15px 30px; line-height: 2;">
+                            <li>$$3$$ is a natural number, whole number, integer, and rational number</li>
+                            <li>$$\frac{5}{2} = 2.5$$ is a rational number (not an integer)</li>
+                            <li>$$-7$$ is an integer and rational number</li>
+                            <li>$$0$$ is a whole number, integer, and rational number</li>
+                            <li>$$\pi \approx 3.14159...$$ is an irrational number (the decimal never repeats)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Absolute Value</div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Definition</div>
+                        <div class="definition-title">Absolute Value</div>
+                        <p>The absolute value of a real number $$x$$, denoted by $$|x|$$, is the distance from $$x$$ to 0 on the number line. It's always non-negative.</p>
+                        
+                        <div class="formula-box">
+                            <div class="flag">Formula</div>
+                            <div class="formula">$$|x| = \begin{cases} x & \text{if } x \geq 0 \\ -x & \text{if } x < 0 \end{cases}$$</div>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <div class="flag">Example</div>
+                        <div class="example-title">Calculating Absolute Values</div>
+                        <p>Let's compute several absolute values step by step:</p>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 1</div>
+                            <p>$$|7| = 7$$ (already non-negative)</p>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 2</div>
+                            <p>$$|-7| = -(-7) = 7$$ (negative becomes positive)</p>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 3</div>
+                            <p>$$|0| = 0$$ (zero is a special case)</p>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 4</div>
+                            <p>$$|\frac{-5}{2}| = \frac{5}{2} = 2.5$$ (fractions work the same)</p>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 5</div>
+                            <p>$$|-\pi| = \pi \approx 3.14159...$$ (irrational numbers too!)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Properties of Real Numbers</div>
+                    
+                    <div class="theorem-box">
+                        <div class="flag">Theorem</div>
+                        <div class="theorem-title">Absolute Value Properties</div>
+                        <p>For any real numbers $$a, b$$:</p>
+                        <ul style="margin: 15px 0 15px 30px; line-height: 2;">
+                            <li><strong>Non-negativity:</strong> $$|a| \geq 0$$ and $$|a| = 0$$ only when $$a = 0$$</li>
+                            <li><strong>Multiplicativity:</strong> $$|ab| = |a| \cdot |b|$$</li>
+                            <li><strong>Triangle inequality:</strong> $$|a + b| \leq |a| + |b|$$</li>
+                            <li><strong>Reverse triangle inequality:</strong> $$|a - b| \geq ||a| - |b||$$</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example-box">
+                        <div class="flag">Example</div>
+                        <div class="example-title">Applying Properties</div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 1: Multiplicativity</div>
+                            <p>Find $$|3 \cdot (-5)|$$:</p>
+                            <p>Method 1: $$|3 \cdot (-5)| = |-15| = 15$$</p>
+                            <p>Method 2: $$|3| \cdot |-5| = 3 \cdot 5 = 15$$</p>
+                            <p style="margin-top: 10px; font-weight: 700;">Both methods give us 15 ✓</p>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 2: Triangle Inequality</div>
+                            <p>Verify that $$|3 + (-4)| \leq |3| + |-4|$$</p>
+                            <p>$$|3 + (-4)| = |-1| = 1$$</p>
+                            <p>$$|3| + |-4| = 3 + 4 = 7$$</p>
+                            <p style="margin-top: 10px; font-weight: 700;">Since $$1 \leq 7$$, the inequality holds! ✓</p>
+                        </div>
+                    </div>
+                    
+                    <div class="important-box">
+                        <div class="flag">Important</div>
+                        <div class="important-title">Key Insight</div>
+                        <p>The triangle inequality is fundamental in linear algebra! It states that the distance directly from point $$a$$ to point $$b$$ is always less than or equal to going from $$a$$ to 0, then from 0 to $$b$$. This intuitively makes sense - the straight path is always shorter or equal to any detour.</p>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Ordering and Comparison</div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Definition</div>
+                        <div class="definition-title">Ordering Properties</div>
+                        <p>Real numbers have a natural order. We compare using symbols:</p>
+                        <ul style="margin: 15px 0 15px 30px; line-height: 2;">
+                            <li>$$a < b$$ means $$a$$ is less than $$b$$</li>
+                            <li>$$a > b$$ means $$a$$ is greater than $$b$$</li>
+                            <li>$$a \leq b$$ means $$a$$ is less than or equal to $$b$$</li>
+                            <li>$$a \geq b$$ means $$a$$ is greater than or equal to $$b$$</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example-box">
+                        <div class="flag">Example</div>
+                        <div class="example-title">Comparing Numbers and Using Absolute Value</div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 1</div>
+                            <p>Find the distance between $$3$$ and $$-7$$ on the number line:</p>
+                            <p>This is $$|3 - (-7)| = |3 + 7| = |10| = 10$$</p>
+                            <p style="margin-top: 10px; font-weight: 700;">The distance is 10 units.</p>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 2</div>
+                            <p>Which is closer to $$0$$: $$\frac{7}{3}$$ or $$-\frac{5}{2}$$?</p>
+                            <p>$$|\frac{7}{3}| = \frac{7}{3} \approx 2.33...$$</p>
+                            <p>$$|-\frac{5}{2}| = \frac{5}{2} = 2.5$$</p>
+                            <p style="margin-top: 10px; font-weight: 700;">Since $$2.33... < 2.5$$, $$\frac{7}{3}$$ is closer to 0.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Real Numbers in Linear Algebra</div>
+                    
+                    <div class="important-box">
+                        <div class="flag">Foundation</div>
+                        <div class="important-title">Why This Matters</div>
+                        <p>Real numbers are the building blocks of everything in linear algebra:</p>
+                        <ul style="margin: 15px 0 15px 30px; line-height: 2;">
+                            <li><strong>Vectors:</strong> Each vector is a collection of real numbers</li>
+                            <li><strong>Matrices:</strong> Each matrix entry is a real number</li>
+                            <li><strong>Dot products:</strong> Compute real number results from vector operations</li>
+                            <li><strong>Determinants:</strong> Give real numbers as matrix properties</li>
+                            <li><strong>Eigenvalues:</strong> Real number special values of matrices</li>
+                        </ul>
+                        <p>Mastering real number operations now will make everything else much easier!</p>
+                    </div>
+                    
+                    <div class="caution-box">
+                        <div class="flag">Caution</div>
+                        <div class="caution-title">Warning</div>
+                        <p>Remember that while we'll focus on real numbers in this course, advanced linear algebra also uses complex numbers. The properties and operations you learn here extend to complex numbers as well!</p>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="practice-section">
+                    <div class="practice-header">Practice Problems</div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 1</div>
+                        <div class="problem-question">Calculate $$|\frac{-12}{5}|$$</div>
+                        <input type="text" class="problem-input" id="prob1" placeholder="Enter your answer as a decimal or fraction">
+                        <button class="check-btn" onclick="checkProblem(1)">Check Answer</button>
+                        <div class="feedback" id="prob1-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 2</div>
+                        <div class="problem-question">What is the distance between $$8$$ and $$-3$$ on the number line?</div>
+                        <input type="text" class="problem-input" id="prob2" placeholder="Calculate |8 - (-3)|">
+                        <button class="check-btn" onclick="checkProblem(2)">Check Answer</button>
+                        <div class="feedback" id="prob2-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 3</div>
+                        <div class="problem-question">Find $$|5 \cdot (-2) \cdot 3|$$</div>
+                        <input type="text" class="problem-input" id="prob3" placeholder="Enter the result">
+                        <button class="check-btn" onclick="checkProblem(3)">Check Answer</button>
+                        <div class="feedback" id="prob3-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 4</div>
+                        <div class="problem-question">Which is larger: $$|\pi - 4|$$ or $$|e - 3|$$? (Hint: $$\pi \approx 3.14$$, $$e \approx 2.72$$)</div>
+                        <input type="text" class="problem-input" id="prob4" placeholder="Enter 'pi' or 'e'">
+                        <button class="check-btn" onclick="checkProblem(4)">Check Answer</button>
+                        <div class="feedback" id="prob4-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 5</div>
+                        <div class="problem-question">Find all real numbers $$x$$ such that $$|x| = 5$$</div>
+                        <input type="text" class="problem-input" id="prob5" placeholder="List all solutions">
+                        <button class="check-btn" onclick="checkProblem(5)">Check Answer</button>
+                        <div class="feedback" id="prob5-feedback"></div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Summary</div>
+                    
+                    <div class="note-box">
+                        <div class="flag">Summary</div>
+                        <p>In this lesson, we covered:</p>
+                        <ul style="margin: 15px 0 15px 30px; line-height: 2;">
+                            <li>The different types of real numbers: natural, whole, integers, rational, and irrational</li>
+                            <li>Absolute value definition and calculation</li>
+                            <li>Key properties: non-negativity, multiplicativity, triangle inequality</li>
+                            <li>Ordering and comparing real numbers</li>
+                            <li>Real numbers as the foundation of all linear algebra concepts</li>
+                        </ul>
+                        <p style="margin-top: 15px;">These fundamentals will serve you well as we progress to vectors, matrices, and beyond!</p>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="nav-buttons">
+                    <a href="../index.html" class="nav-btn">Back to Home</a>
+                    <a href="1-1-2-complex-numbers.html" class="nav-btn primary">Next: Complex Numbers</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/navigation.js"></script>
+    <script>
+        const problems_1_1_1 = {
+            1: { 
+                alternatives: ['12/5', '2.4', '2,4', '12 divided by 5'],
+                feedback: 'Correct! $|\\frac{-12}{5}| = \\frac{12}{5} = 2.4$'
+            },
+            2: { 
+                alternatives: ['11', '|8 - (-3)| = 11', '|8+3| = 11', 'eleven'],
+                feedback: 'Excellent! The distance is $|8 - (-3)| = |11| = 11$'
+            },
+            3: { 
+                alternatives: ['30', '-30', '|-30|', 'thirty'],
+                feedback: 'Great work! $5 \\cdot (-2) \\cdot 3 = -30$, and $|-30| = 30$'
+            },
+            4: { 
+                alternatives: ['pi', 'π', 'pi option', 'pi is larger', '|π-4|'],
+                feedback: 'Correct! $|\\pi - 4| \\approx 0.86$ and $|e - 3| \\approx 0.28$, so $|\\pi - 4|$ is larger'
+            },
+            5: { 
+                alternatives: ['5 and -5', '5, -5', '5, -5', '-5, 5', '5 -5', '-5 5'],
+                feedback: 'Perfect! Both $x = 5$ and $x = -5$ satisfy $|x| = 5$'
+            }
+        };
+        
+        function checkProblem(num) {
+            const userInput = document.getElementById('prob' + num).value.trim().toLowerCase();
+            const feedback = document.getElementById('prob' + num + '-feedback');
+            const problem = problems_1_1_1[num];
+            const alternatives = problem.alternatives;
+            
+            let isCorrect = alternatives.some(alt => 
+                alt.toLowerCase().replace(/\s/g, '') === userInput.replace(/\s/g, '')
+            );
+            
+            if (isCorrect) {
+                feedback.className = 'feedback correct';
+                feedback.style.display = 'block';
+                feedback.innerHTML = problem.feedback || 'Correct! Well done.';
+                markProblemSolved('1-1-1-' + num);
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.style.display = 'block';
+                feedback.textContent = 'Incorrect. Try again. Remember to read the formula carefully!';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+        });
+    </script>
+</body>
+</html>

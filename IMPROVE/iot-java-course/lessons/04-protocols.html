@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 4: IoT Communication Protocols - IoT Java Development Course</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="course-header">
+        <h1>MODULE 4: IOT COMMUNICATION PROTOCOLS</h1>
+        <h2>Connecting the IoT World</h2>
+    </div>
+    <nav class="nav-container">
+        <ul class="nav-menu">
+            <li class="nav-item active" onclick="showSection('overview')">Overview</li>
+            <li class="nav-item" onclick="showSection('http')">HTTP/REST</li>
+            <li class="nav-item" onclick="showSection('mqtt')">MQTT</li>
+            <li class="nav-item" onclick="showSection('coap')">CoAP</li>
+            <li class="nav-item" onclick="showSection('websockets')">WebSockets</li>
+            <li class="nav-item" onclick="showSection('comparison')">Comparison</li>
+            <li class="nav-item" onclick="showSection('practice')">Practice</li>
+            <li class="nav-item" onclick="showSection('quiz')">Quiz</li>
+        </ul>
+    </nav>
+    <div class="progress-container">
+        <div class="progress-title">MODULE 4 PROGRESS</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="moduleProgress" style="width: 0%">0%</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content-section active" id="overview">
+            <div class="lesson-header">
+                <h1>Communication Protocols</h1>
+                <p>The Glue That Connects IoT Devices</p>
+            </div>
+            <div class="section-divider"></div>
+            <p class="content-text">
+                IoT devices need to communicate with each other, with cloud services, and with user applications. Communication protocols define how this data is structured, transmitted, and received. Choosing the right protocol is critical for IoT application success.
+            </p>
+            <div class="info-section">
+                <div class="info-title">KEY PROTOCOLS COVERED</div>
+                <ul class="info-list">
+                    <li><span class="keyword">HTTP/REST:</span> Ubiquitous, easy to use, but sometimes heavyweight for IoT</li>
+                    <li><span class="keyword">MQTT:</span> Lightweight publish/subscribe, ideal for constrained devices</li>
+                    <li><span class="keyword">CoAP:</span> Designed for constrained nodes and networks (UDP-based)</li>
+                    <li><span class="keyword">WebSockets:</span> Real-time bidirectional communication</li>
+                </ul>
+            </div>
+            <div class="attention-box important">
+                PROTOCOL SELECTION GUIDE:<br>
+                • Use HTTP for API-based IoT and when web infrastructure is available<br>
+                • Use MQTT for IoT sensor networks with many devices<br>
+                • Use CoAP for heavily constrained devices with unreliable networks<br>
+                • Use WebSockets for real-time dashboards and user interfaces
+            </div>
+        </div>
+
+        <div class="content-section" id="http">
+            <h2 class="section-title">HTTP/REST FOR IOT</h2>
+            <div class="section-divider"></div>
+
+            <h3 class="subsection-title">What is HTTP?</h3>
+            <p class="content-text">
+                HTTP (Hypertext Transfer Protocol) is the foundation of the World Wide Web. It's a request-response protocol where clients send requests to servers and receive responses. REST (Representational State Transfer) is an architectural style that uses HTTP for creating APIs.
+            </p>
+
+            <h3 class="subsection-title">HTTP Methods in IoT</h3>
+            <div class="code-block">
+                <pre>
+// POST - Send sensor data to server
+POST /api/sensors/temperature HTTP/1.1
+Host: iot.example.com
+Content-Type: application/json
+
+{
+    "deviceId": "sensor-001",
+    "temperature": 23.5,
+    "timestamp": "2026-02-18T21:52:00Z"
+}
+
+// GET - Retrieve device status
+GET /api/devices/sensor-001 HTTP/1.1
+Host: iot.example.com
+
+// PUT - Update device configuration
+PUT /api/devices/sensor-001/config HTTP/1.1
+Host: iot.example.com
+Content-Type: application/json
+
+{
+    "samplingRate": 5000,
+    "enabled": true
+}
+
+// DELETE - Remove device registration
+DELETE /api/devices/sensor-001 HTTP/1.1
+Host: iot.example.com
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Java HTTP Client Example</h3>
+            <div class="code-block">
+                <pre>
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.time.Duration;
+import java.util.concurrent.Executors;
+
+// Simple IoT device sending temperature data
+public class IotHttpClient {
+
+    private static final String API_ENDPOINT = "https://iot.example.com/api/sensors/temperature";
+    private static final String DEVICE_ID = "sensor-001";
+    private static final HttpClient client = HttpClient.newBuilder()
+        .version(HttpClient.Version.HTTP_2)
+        .connectTimeout(Duration.ofSeconds(10))
+        .executor(Executors.newSingleThreadExecutor())
+        .build();
+
+    public static void sendTemperature(double temperature) throws Exception {
+        // Create JSON payload
+        String jsonBody = String.format(
+            "{\"deviceId\":\"%s\",\"temperature\":%.2f,\"timestamp\":\"%s\"}",
+            DEVICE_ID,
+            temperature,
+            java.time.Instant.now().toString()
+        );
+
+        // Build HTTP request
+        HttpRequest request = HttpRequest.newBuilder()
+            .uri(URI.create(API_ENDPOINT))
+            .header("Content-Type", "application/json")
+            .header("Authorization", "Bearer YOUR_API_KEY")
+            .POST(HttpRequest.BodyPublishers.ofString(jsonBody))
+            .timeout(Duration.ofSeconds(5))
+            .build();
+
+        // Send request and get response
+        HttpResponse<String> response = client.send(
+            request,
+            HttpResponse.BodyHandlers.ofString()
+        );
+
+        System.out.println("Status: " + response.statusCode());
+        System.out.println("Response: " + response.body());
+    }
+
+    public static void main(String[] args) {
+        try {
+            // Simulate reading temperature
+            double temperature = readTemperatureSensor();
+            sendTemperature(temperature);
+        } catch (Exception e) {
+            System.err.println("Error sending data: " + e.getMessage());
+        }
+    }
+
+    private static double readTemperatureSensor() {
+        // Simulated sensor reading
+        return 22.5 + (Math.random() * 5);
+    }
+}
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Pros and Cons of HTTP for IoT</h3>
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Pros</th>
+                        <th>Cons</th>
+                    </tr>
+                    <tr>
+                        <td>Ubiquitous - runs everywhere</td>
+                        <td>Overhead from headers and text format</td>
+                    </tr>
+                    <tr>
+                        <td>Easy to debug and test</td>
+                        <td>Not optimal for frequent small messages</td>
+                    </tr>
+                    <tr>
+                        <td>TLS/SSL security built-in</td>
+                        <td>Stateless - requires connection for each request</td>
+                    </tr>
+                    <tr>
+                        <td>RESTful API is well-understood</td>
+                        <td>Battery drain on constrained devices</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="content-section" id="mqtt">
+            <h2 class="section-title">MQTT - MESSAGE QUEUING TELEMETRY TRANSPORT</h2>
+            <div class="section-divider"></div>
+
+            <h3 class="subsection-title">What is MQTT?</h3>
+            <p class="content-text">
+                MQTT is a lightweight, publish/subscribe messaging protocol designed for IoT and small sensors with high-latency or unreliable networks. It uses a broker to manage message distribution between clients.
+            </p>
+
+            <h3 class="subsection-title">MQTT Architecture</h3>
+            <div class="info-section">
+                <div class="info-title">KEY CONCEPTS</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Broker:</span> Central server that receives and routes messages (e.g., Mosquitto, HiveMQ)</li>
+                    <li><span class="keyword">Publisher:</span> Device that sends messages to topics</li>
+                    <li><span class="keyword">Subscriber:</span> Client that receives messages from topics</li>
+                    <li><span class="keyword">Topic:</span> Hierarchical string that defines message category (e.g., "sensors/livingroom/temperature")</li>
+                    <li><span class="keyword">QoS Levels:</span> Quality of Service levels (0: fire and forget, 1: at least once, 2: exactly once)</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">MQTT Message Flow</h3>
+            <div class="code-block">
+                <pre>
+Topic Structure (hierarchical):
+sensors/livingroom/temperature
+sensors/livingroom/humidity
+sensors/kitchen/temperature
+actuators/livingroom/light
+actuators/livingroom/fan
+
+Publisher (Sensor Device):
+Subscribe: Not needed (only publishes)
+Publish: sensors/livingroom/temperature → "23.5"
+
+Subscriber (Cloud Service):
+Subscribe: sensors/#
+Publish: actuators/livingroom/fan → "ON" (to control fan)
+
+Subscriber (Mobile App):
+Subscribe: sensors/livingroom/#
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Java MQTT Client Example</h3>
+            <div class="code-block">
+                <pre>
+import org.eclipse.paho.client.mqttv3.*;
+import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
+
+// IoT device publishing sensor data via MQTT
+public class IotMqttPublisher {
+
+    private static final String BROKER_URL = "tcp://broker.hivemq.com:1883";
+    private static final String CLIENT_ID = "sensor-temperature-001";
+    private static final String TOPIC = "sensors/room1/temperature";
+    private static final int QOS = 1; // At least once
+    private static final int INTERVAL_MS = 5000; // Send every 5 seconds
+
+    private MqttClient client;
+
+    public void connect() throws MqttException {
+        // Create MQTT client
+        client = new MqttClient(BROKER_URL, CLIENT_ID, new MemoryPersistence());
+
+        // Configure connection options
+        MqttConnectOptions options = new MqttConnectOptions();
+        options.setCleanSession(true);
+        options.setConnectionTimeout(30);
+        options.setKeepAliveInterval(60);
+        options.setAutomaticReconnect(true);
+
+        // Connect to broker
+        System.out.println("Connecting to MQTT broker...");
+        client.connect(options);
+        System.out.println("Connected!");
+
+        // Set callback for connection_lost
+        client.setCallback(new MqttCallback() {
+            @Override
+            public void connectionLost(Throwable cause) {
+                System.err.println("Connection lost: " + cause.getMessage());
+            }
+
+            @Override
+            public void messageArrived(String topic, MqttMessage message) {
+                // Publishers don't typically receive messages, but can
+                System.out.println("Received message on " + topic);
+            }
+
+            @Override
+            public void deliveryComplete(IMqttDeliveryToken token) {
+                try {
+                    System.out.println("Message delivered: " + token.getMessageId());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    public void publishTemperature(double temperature) throws MqttException {
+        String payload = String.format("{\"temp\":%.2f,\"ts\":\"%s\"}",
+            temperature,
+            java.time.Instant.now().toString()
+        );
+
+        MqttMessage message = new MqttMessage(payload.getBytes());
+        message.setQos(QOS);
+        message.setRetained(false);
+
+        client.publish(TOPIC, message);
+        System.out.println("Published to " + TOPIC + ": " + payload);
+    }
+
+    public void disconnect() throws MqttException {
+        if (client.isConnected()) {
+            client.disconnect();
+            client.close();
+            System.out.println("Disconnected");
+        }
+    }
+
+    public static void main(String[] args) {
+        IotMqttPublisher publisher = new IotMqttPublisher();
+        try {
+            publisher.connect();
+
+            // Publish temperature every 5 seconds
+            while (true) {
+                double temp = 20.0 + (Math.random() * 10);
+                publisher.publishTemperature(temp);
+                Thread.sleep(INTERVAL_MS);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                publisher.disconnect();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">MQTT Subscriber Example</h3>
+            <div class="code-block">
+                <pre>
+import org.eclipse.paho.client.mqttv3.*;
+
+// Service that listens to sensor data
+public class IotMqttSubscriber {
+
+    private static final String BROKER_URL = "tcp://broker.hivemq.com:1883";
+    private static final String CLIENT_ID = "subscriber-service-001";
+    private static final String TOPIC = "sensors/#"; // All sensors
+    private static final int QOS = 1;
+
+    private MqttClient client;
+
+    public void connectAndSubscribe() throws MqttException {
+        client = new MqttClient(BROKER_URL, CLIENT_ID, new MemoryPersistence());
+
+        MqttConnectOptions options = new MqttConnectOptions();
+        options.setCleanSession(true);
+        options.setConnectionTimeout(30);
+
+        client.connect(options);
+
+        // Subscribe to topics
+        client.subscribe(TOPIC, QOS);
+        System.out.println("Subscribed to: " + TOPIC);
+
+        // Set callback to handle incoming messages
+        client.setCallback(new MqttCallback() {
+            @Override
+            public void connectionLost(Throwable cause) {
+                System.err.println("Connection lost");
+            }
+
+            @Override
+            public void messageArrived(String topic, MqttMessage message) {
+                String payload = new String(message.getPayload());
+                System.out.println("Topic: " + topic);
+                System.out.println("Message: " + payload);
+
+                // Process sensor data
+                if (topic.contains("temperature")) {
+                    processTemperatureData(payload);
+                }
+            }
+
+            @Override
+            public void deliveryComplete(IMqttDeliveryToken token) {
+                // Not applicable for subscribers
+            }
+        });
+    }
+
+    private void processTemperatureData(String json) {
+        // Parse and store in database, trigger alerts, etc.
+        System.out.println("Processing temperature data: " + json);
+    }
+
+    public static void main(String[] args) {
+        IotMqttSubscriber subscriber = new IotMqttSubscriber();
+        try {
+            subscriber.connectAndSubscribe();
+
+            // Keep running
+            Thread.sleep(Long.MAX_VALUE);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+                </pre>
+            </div>
+
+            <div class="attention-box important">
+                MQTT IS IDEAL FOR IoT BECAUSE:<br>
+                • Very small header overhead (2 bytes minimum)<br>
+                • Efficient for constrained devices<br>
+                • Supports real-time communication<br>
+                • One-to-many message distribution<br>
+                • Works over unreliable networks<br>
+                • Three QoS levels for reliability
+            </div>
+        </div>
+
+        <div class="content-section" id="coap">
+            <h2 class="section-title">COAP - CONSTRAINED APPLICATION PROTOCOL</h2>
+            <div class="section-divider"></div>
+
+            <h3 class="subsection-title">What is CoAP?</h3>
+            <p class="content-text">
+                CoAP (Constrained Application Protocol) is a specialized web transfer protocol for use with constrained nodes and networks in the IoT. It uses UDP instead of TCP, making it ideal for low-power, lossy networks.
+            </p>
+
+            <h3 class="subsection-title">CoAP vs HTTP Comparison</h3>
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Feature</th>
+                        <th>HTTP</th>
+                        <th>CoAP</th>
+                    </tr>
+                    <tr>
+                        <td>Transport</td>
+                        <td>TCP (reliable)</td>
+                        <td>UDP (lightweight)</td>
+                    </tr>
+                    <tr>
+                        <td>Header Size</td>
+                        <td>~800+ bytes</td>
+                        <td>~4 bytes (minimum)</td>
+                    </tr>
+                    <tr>
+                        <td>Methods</td>
+                        <td>GET, POST, PUT, DELETE, etc.</td>
+                        <td>GET, POST, PUT, DELETE</td>
+                    </tr>
+                    <tr>
+                        <td>Reliability</td>
+                        <td>Guaranteed by TCP</td>
+                        <td>Optional confirmable messages</td>
+                    </tr>
+                    <tr>
+                        <td>Security</td>
+                        <td>TLS/SSL</td>
+                        <td>DTLS (Datagram TLS)</td>
+                    </tr>
+                    <tr>
+                        <td>Multicast</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3 class="subsection-title">CoAP Message Types</h3>
+            <div class="info-section">
+                <div class="info-title">MESSAGE TYPES</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Confirmable (CON):</span> Requires acknowledgment from receiver (like TCP)</li>
+                    <li><span class="keyword">Non-confirmable (NON):</span> Fire-and-forget, no acknowledgment</li>
+                    <li><span class="keyword">Acknowledgment (ACK):</span> Response to confirmable message</li>
+                    <li><span class="keyword">Reset (RST):</span> Indicates message error or rejection</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">CoAP Resource URIs</h3>
+            <div class="code-block">
+                <pre>
+Similar to HTTP but designed for constrained devices:
+
+coap://192.168.1.100/sensors/temperature
+coap://[fe80::1]/actuators/led
+coap://sensor.local/light/brightness
+
+Example Requests:
+- GET /sensors/temperature - Read temperature
+- POST /actuators/led - Change LED state
+- PUT /config/sampling - Update configuration
+- DELETE /sensors/temp/log - Clear log
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Java CoAP Client (using Californium)</h3>
+            <div class="code-block">
+                <pre>
+import org.eclipse.californium.core.*;
+import org.eclipse.californium.core.coap.*;
+import org.eclipse.californium.core.coap.CoAP.ResponseCode;
+
+// IoT device sending data via CoAP
+public class IotCoapClient {
+
+    private static final String SERVER_URI = "coap://192.168.1.100:5683";
+
+    public void sendTemperature(double temp) {
+        // Create CoAP client
+        CoapClient client = new CoapClient(SERVER_URI + "/sensors/temperature");
+
+        // Create payload
+        String payload = String.format("{\"temp\":%.2f}", temp);
+
+        // Send POST request (NON-confirmable for efficiency)
+        CoapResponse response = client.post(
+            payload,
+            MediaTypeRegistry.APPLICATION_JSON,
+            CoAP.Type.NON  // Non-confirmable
+        );
+
+        if (response != null) {
+            System.out.println("Response Code: " + response.getCode());
+            System.out.println("Response: " + response.getResponseText());
+        } else {
+            System.out.println("No response received (NON-confirmable)");
+        }
+
+        client.shutdown();
+    }
+
+    public void getConfiguration() {
+        CoapClient client = new CoapClient(SERVER_URI + "/config");
+
+        CoapResponse response = client.get();
+
+        if (response != null && response.isSuccess()) {
+            System.out.println("Config: " + response.getResponseText());
+        }
+
+        client.shutdown();
+    }
+}
+                </pre>
+            </div>
+
+            <div class="attention-box important">
+                USE COAP WHEN:<br>
+                • Device has very limited RAM/CPU<br>
+                • Network is unreliable with high packet loss<br>
+                • Battery power is extremely constrained<br>
+                • Multicast communication is needed (e.g., turn off all lights)<br>
+                • Very low message overhead is critical
+            </div>
+        </div>
+
+        <div class="content-section" id="websockets">
+            <h2 class="section-title">WEBSOCKETS FOR REAL-TIME IOT</h2>
+            <div class="section-divider"></div>
+
+            <h3 class="subsection-title">What are WebSockets?</h3>
+            <p class="content-text">
+                WebSockets provide full-duplex, bidirectional communication over a single TCP connection. Once established, both client and server can send messages at any time without the overhead of HTTP request-response cycles.
+            </p>
+
+            <h3 class="subsection-title">When to Use WebSockets in IoT</h3>
+            <div class="info-section">
+                <div class="info-title">IDEAL USE CASES</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Real-time dashboards:</span> Display live sensor data to users</li>
+                    <li><span class="keyword">Remote control:</span> Instant feedback when controlling IoT devices</li>
+                    <li><span class="keyword">Live monitoring:</span> Stream video or audio from IoT cameras</li>
+                    <li><span class="keyword">Collaborative IoT:</span> Multiple users viewing the same data</li>
+                    <li><span class="keyword">Instant alerts:</span> Push alerts to users immediately</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">WebSocket vs HTTP Polling</h3>
+            <div class="code-block">
+                <pre>
+HTTP Polling (Inefficient):
+Client: GET /data ← (every second)
+Server: {"temp": 23.5}
+Client: GET /data ← (every second)
+Server: {"temp": 23.7}
+Client: GET /data ← (every second)
+Server: {"temp": 23.6}
+... lots of HTTP overhead, even if data hasn't changed
+
+WebSocket (Efficient):
+Client: WebSocket Upgrade Request
+Server: WebSocket Connection Established ✨
+
+Server: {"temp": 23.5} ← (only when data changes)
+Server: {"temp": 23.7} ← (only when data changes)
+Server: {"temp": 23.6} ← (only when data changes)
+... instant, bidirectional, low overhead
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Java WebSocket Client</h3>
+            <div class="code-block">
+                <pre>
+import javax.websocket.*;
+import java.net.URI;
+
+// WebSocket client for real-time IoT data
+@ClientEndpoint
+public class IotWebSocketClient {
+
+    private Session session;
+    private WebSocketContainer container;
+
+    public void connect(String serverUri) throws Exception {
+        container = ContainerProvider.getWebSocketContainer();
+        URI uri = URI.create(serverUri);
+
+        session = container.connectToServer(this, uri);
+        System.out.println("Connected to WebSocket server");
+    }
+
+    @OnMessage
+    public void onMessage(String message) {
+        System.out.println("Received: " + message);
+
+        // Parse and handle IoT data
+        if (message.contains("temperature")) {
+            updateTemperatureDisplay(message);
+        } else if (message.contains("alert")) {
+            handleAlert(message);
+        }
+    }
+
+    @OnOpen
+    public void onOpen(Session session) {
+        System.out.println("WebSocket session opened");
+        this.session = session;
+
+        // Subscribe to specific topics
+        sendMessage("{\"topic\":\"subscribe\", \"channels\":[\"sensors\",\"alerts\"]}");
+    }
+
+    @OnClose
+    public void onClose(Session session, CloseReason reason) {
+        System.out.println("WebSocket closed: " + reason);
+    }
+
+    @OnError
+    public void onError(Session session, Throwable error) {
+        System.err.println("WebSocket error: " + error.getMessage());
+    }
+
+    public void sendMessage(String message) {
+        if (session != null && session.isOpen()) {
+            session.getAsyncRemote().sendText(message);
+        }
+    }
+
+    public void sendCommand(String deviceId, String command) {
+        String json = String.format(
+            "{\"deviceId\":\"%s\",\"command\":\"%s\",\"ts\":\"%s\"}",
+            deviceId,
+            command,
+            java.time.Instant.now().toString()
+        );
+        sendMessage(json);
+    }
+
+    public void disconnect() throws Exception {
+        if (session != null && session.isOpen()) {
+            session.close();
+        }
+    }
+
+    private void updateTemperatureDisplay(String message) {
+        // Update UI with new temperature
+    }
+
+    private void handleAlert(String message) {
+        // Handle alert - show notification, etc.
+    }
+
+    public static void main(String[] args) {
+        IotWebSocketClient client = new IotWebSocketClient();
+        try {
+            client.connect("ws://iot-dashboard.example.com:8080/iot");
+
+            // Send occasional commands
+            while (true) {
+                // Example: turn on fan when temperature is high
+                client.sendCommand("actuator-001", "status");
+                Thread.sleep(10000);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                client.disconnect();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+                </pre>
+            </div>
+
+            <div class="attention-box important">
+                WEBSOCKETS ARE PERFECT FOR:<br>
+                • Real-time dashboards and monitoring<br>
+                • Instant device control with feedback<br>
+                • Live streaming of sensor data<br>
+                • Mobile applications with push updates<br>
+                • Not ideal: Deeply embedded constrained devices
+            </div>
+        </div>
+
+        <div class="content-section" id="comparison">
+            <h2 class="section-title">PROTOCOL COMPARISON & SELECTION</h2>
+            <div class="section-divider"></div>
+
+            <h3 class="subsection-title">Decision Matrix</h3>
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>Best Protocol</th>
+                        <th>Why</th>
+                    </tr>
+                    <tr>
+                        <td>Sensor data to cloud API</td>
+                        <td>HTTP or MQTT</td>
+                        <td>HTTP for simplicity, MQTT for scale</td>
+                    </tr>
+                    <tr>
+                        <td>1000+ sensors to single gateway</td>
+                        <td>MQTT</td>
+                        <td>Publish/subscribe scales well</td>
+                    </tr>
+                    <tr>
+                        <td>Limited battery, unreliable network</td>
+                        <td>CoAP</td>
+                        <td>UDP-based, minimal overhead</td>
+                    </tr>
+                    <tr>
+                        <td>Real-time dashboard for users</td>
+                        <td>WebSockets</td>
+                        <td>Instant bidirectional updates</td>
+                    </tr>
+                    <tr>
+                        <td>Mobile app controlling lights</td>
+                        <td>MQTT or WebSockets</td>
+                        <td>MQTT for IoT, WS for web apps</td>
+                    </tr>
+                    <tr>
+                        <td>Industrial PLC communication</td>
+                        <td>HTTP or MQTT</td>
+                        <td>Depends on existing infrastructure</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3 class="subsection-title">Performance Characteristics</h3>
+            <div class="info-section">
+                <div class="info-title">BANDWIDTH OVERHEAD</div>
+                <ul class="info-list">
+                    <li><span class="keyword">CoAP:</span> ~4-20 bytes per message (smallest)</li>
+                    <li><span class="keyword">MQTT:</span> ~2-20 bytes header + topic</li>
+                    <li><span class="keyword">HTTP:</span> ~500+ bytes per request/response</li>
+                    <li><span class="keyword">WebSockets:</span> ~2-14 bytes after connection</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <div class="info-title">LATENCY</div>
+                <ul class="info-list">
+                    <li><span class="keyword">CoAP:</span> 1-5 ms (single packet)</li>
+                    <li><span class="keyword">MQTT:</span> 5-50 ms (depends on QoS)</li>
+                    <li><span class="keyword">HTTP:</span> 50-500 ms (TCP handshake included)</li>
+                    <li><span class="keyword">WebSockets:</span> 1-5 ms (after connection)</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <div class="info-title">POWER CONSUMPTION</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Most Efficient:</span> CoAP (UDP, small packets)</li>
+                    <li><span class="keyword">Very Efficient:</span> MQTT (lightweight)</li>
+                    <li><span class="keyword">Moderate:</span> WebSockets (persistent connection)</li>
+                    <li><span class="keyword">Less Efficient:</span> HTTP (Frequent handshakes)</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Protocol Selection Flowchart</h3>
+            <div class="code-block">
+                <pre>
+Start
+  ↓
+Is device extremely constrained (low RAM/CPU)?
+  ↓ Yes → Use CoAP
+  ↓ No
+Need real-time dashboard or user interface?
+  ↓ Yes → Use WebSockets
+  ↓ No
+Have many devices (100+)? Need publish/subscribe?
+  ↓ Yes → Use MQTT
+  ↓ No
+Is web API integration required?
+  ↓ Yes → Use HTTP
+  ↓ No
+Are there existing web services infrastructure?
+  ↓ Yes → Use HTTP
+  ↓ No → Consider MQTT for flexibility
+
+In practice, many systems use MULTIPLE protocols:
+- Sensors → MQTT → Gateway → HTTP → Cloud API
+- Mobile apps → WebSockets ⇒ Dashboard
+- Ultra-low power beacons → CoAP → Collector
+                </pre>
+            </div>
+
+            <div class="attention-box important">
+                PRACTICAL IOT ARCHITECTURE:<br>
+                Most real-world IoT systems use a hybrid approach:<br>
+                1. Edge devices use MQTT or CoAP<br>
+                2. Gateway/translates to HTTP/REST for cloud APIs<br>
+                3. Web clients use WebSockets for real-time updates<br>
+                Each protocol serves its purpose in the system!
+            </div>
+        </div>
+
+        <div class="content-section" id="practice">
+            <h2 class="section-title">PRACTICE PROBLEMS</h2>
+            <div class="section-divider"></div>
+
+            <div id="practice-container">
+                <!-- Problems will be loaded from problems.js -->
+            </div>
+
+            <button class="practice-check-btn" onclick="checkProblems()">Check Answers</button>
+        </div>
+
+        <div class="content-section" id="quiz">
+            <h2 class="section-title">MODULE 4 QUIZ</h2>
+            <div class="section-divider"></div>
+
+            <div id="quiz-container">
+                <!-- Quiz questions will be loaded from quizzes.js -->
+            </div>
+
+            <button class="quiz-submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+            <div id="quiz-result"></div>
+        </div>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script>
+        // Load practice problems for Module 4
+        const moduleProblems = practiceProblems.protocols || [];
+        renderPracticeProblems(document.getElementById('practice-container'), moduleProblems);
+
+        // Load quiz for Module 4
+        const moduleQuiz = quizQuestions.protocols || [];
+        renderQuizQuestions(document.getElementById('quiz-container'), moduleQuiz);
+    </script>
+</body>
+</html>

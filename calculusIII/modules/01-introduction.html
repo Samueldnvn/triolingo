@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1: Introduction & Prerequisites - Calculus III</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <!-- Construction Header -->
+    <div class="construction-header">
+        <h1>🔧 MODULE 1: INTRODUCTION & PREREQUISITES 🔧</h1>
+        <h2>Building Your Foundation for Multivariable Calculus</h2>
+    </div>
+
+    <!-- Warning Banner -->
+    <div class="warning-banner">
+        <span class="construction-icon">⚠️</span>
+        HARD HAT REQUIRED - COMPREHENSIVE TRAINING UNDER CONSTRUCTION <span class="construction-icon">⚠️</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <ul class="nav-menu">
+            <li class="nav-item active" onclick="showSection('overview')">📖 Overview</li>
+            <li class="nav-item" onclick="showSection('calculus-review')">📐 Calculus Review</li>
+            <li class="nav-item" onclick="showSection('limits')">∞ Limits in 2D</li>
+            <li class="nav-item" onclick="showSection('practice')">🔧 Practice Problems</li>
+            <li class="nav-item" onclick="showSection('quiz')">🎯 Module Quiz</li>
+        </ul>
+    </nav>
+
+    <!-- Progress -->
+    <div class="progress-container">
+        <div class="progress-title">📊 MODULE 1 PROGRESS</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="moduleProgress">0%</div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Overview Section -->
+        <div class="content-section active" id="overview">
+            <div class="lesson-header">
+                <h1>Welcome to Calculus III!</h1>
+                <p>Multivariable Calculus and the World of 3D Space</p>
+            </div>
+
+            <div class="construction-tape">🔨 GETTING STARTED 🔨</div>
+
+            <p class="content-text">
+                Congratulations on embarking on your journey to master <strong>Calculus III</strong>! This course will take you from the familiar territory of single-variable calculus to the rich and complex world of <strong>multivariable calculus</strong>, where functions depend on multiple variables and we work in three-dimensional space.
+            </p>
+
+            <div class="blueprint-section">
+                <div class="blueprint-content">
+                    <h3>📋 WHAT YOU'LL LEARN IN THIS MODULE</h3>
+                    <ul class="blueprint-list">
+                        <li>Review essential single-variable calculus concepts</li>
+                        <li>Introduction to thinking in 3D space</li>
+                        <li>Understanding limits in multiple dimensions</li>
+                        <li>The fundamental differences between 1D and 2D/3D calculus</li>
+                        <li>Preparing your mind for vectors and vector calculus</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">What Makes Calculus III Different?</h3>
+
+            <p class="content-text">
+                The key difference between single-variable calculus (Calculus I & II) and multivariable calculus (Calculus III) is the <span class="highlight">number of dimensions</span> we work in. Here's what changes:
+            </p>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Concept</th>
+                        <th>Single-Variable (1D)</th>
+                        <th>Multivariable (2D/3D)</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Function</strong></td>
+                        <td><code>y = f(x)</code></td>
+                        <td><code>z = f(x,y)</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Graph</strong></td>
+                        <td>Curve in 2D plane</td>
+                        <td>Surface in 3D space</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Derivative</strong></td>
+                        <td>Slope of tangent line</td>
+                        <td>Slope of tangent plane (multiple directions!)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Integral</strong></td>
+                        <td>Area under curve</td>
+                        <td>Volume under surface</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Limit</strong></td>
+                        <td>Approach from left/right</td>
+                        <td>Approach from ANY direction in space!</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="safety-sign important">
+                🛠️ 500+ PRACTICE PROBLEMS • COMPREHENSIVE EXAMS • INTERACTIVE DIAGRAMS 🛠️
+            </div>
+        </div>
+
+        <!-- Calculus Review Section -->
+        <div class="content-section" id="calculus-review">
+            <div class="lesson-header">
+                <h1>Calculus Review: Essential Foundation</h1>
+                <p>Mastering the Tools You'll Need</p>
+            </div>
+
+            <h3 class="subsection-title">Derivatives: The Foundation of Change</h3>
+
+            <div class="definition-box">
+                <h4>Definition: The Derivative</h4>
+                <p class="content-text">The derivative measures the instantaneous rate of change of a function at a point. Geometrically, it's the slope of the tangent line to the curve.</p>
+            </div>
+
+            <div class="formula-display">
+                $$f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$$
+            </div>
+
+            <div class="example-box">
+                <h4>Power Rule (Essential!)</h4>
+                <div class="formula-display">
+                    $$\frac{d}{dx}[x^n] = nx^{n-1}$$
+                </div>
+                <p class="content-text">Example: $$\frac{d}{dx}[x^3] = 3x^2$$ and $$\frac{d}{dx}[x^{-2}] = -2x^{-3} = -\frac{2}{x^3}$$</p>
+            </div>
+
+            <div class="example-box">
+                <h4>Chain Rule (Critical for Calc III!)</h4>
+                <div class="formula-display">
+                    $$\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)$$
+                </div>
+                <p class="content-text">Example: $$\frac{d}{dx}[\sin(x^2)] = \cos(x^2) \cdot 2x = 2x\cos(x^2)$$</p>
+                <p class="content-text"><em>This rule will be EVERYWHERE in partial derivatives!</em></p>
+            </div>
+
+            <h3 class="subsection-title">Integrals: Accumulation and Area</h3>
+
+            <div class="definition-box">
+                <h4>Definition: The Definite Integral</h4>
+                <p class="content-text">The definite integral represents the signed area under a curve between two points.</p>
+            </div>
+
+            <div class="formula-display">
+                $$\int_a^b f(x) dx = \lim_{n \to \infty} \sum_{i=1}^n f(x_i^*) \Delta x$$
+            </div>
+
+            <div class="example-box">
+                <h4>Integration by Parts</h4>
+                <div class="formula-display">
+                    $$\int u dv = uv - \int v du$$
+                </div>
+                <p class="content-text">Example: $$\int x e^x dx = x e^x - \int e^x dx = x e^x - e^x + C = (x-1)e^x + C$$</p>
+            </div>
+
+            <h3 class="subsection-title">The Fundamental Theorem of Calculus</h3>
+
+            <div class="interactive-box">
+                <div class="interactive-title">Bridging Derivatives and Integrals</div>
+                <p class="content-text">
+                    This theorem connects the two main concepts of calculus and is absolutely crucial. It states:
+                </p>
+                <div class="formula-display">
+                    $$\int_a^b f(x) dx = F(b) - F(a)$$
+                </div>
+                <p class="content-text">where F is any antiderivative of f (meaning F' = f).</p>
+            </div>
+
+            <div class="safety-sign warning">
+                ⚠️ CRITICAL: Ensure you're comfortable with these concepts before proceeding. Review as needed!
+            </div>
+        </div>
+
+        <!-- Limits in 2D Section -->
+        <div class="content-section" id="limits">
+            <div class="lesson-header">
+                <h1>Limits in Multiple Dimensions</h1>
+                <p>The Fundamental Difference</p>
+            </div>
+
+            <div class="construction-tape">🔨 NEW TERRITORY AHEAD 🔨</div>
+
+            <p class="content-text">
+                Limits become MUCH more interesting (and challenging) in multiple dimensions. In single-variable calculus, a limit exists if the function approaches the same value from BOTH the left AND the right.
+            </p>
+
+            <div class="safety-sign danger">
+                🚨 IN 2D/3D: The limit must exist from EVERY possible direction!
+            </div>
+
+            <h3 class="subsection-title">The 2D Limit Definition</h3>
+
+            <div class="definition-box">
+                <h4>Definition: Multivariable Limit</h4>
+                <div class="formula-display">
+                    $$\lim_{(x,y) \to (a,b)} f(x,y) = L$$
+                </div>
+                <p class="content-text">
+                    This means that for ANY path approaching (a,b), the function values approach L. This includes straight lines, curves, approaching from above, below, diagonally - EVERYTHING!
+                </p>
+            </div>
+
+            <div class="example-box">
+                <h4>Example: Simple Limit</h4>
+                <p class="content-text">Find $$\lim_{(x,y) \to (1,2)} (3x + 4y)$$</p>
+                <p class="content-text"><strong>Solution:</strong> Since this is a polynomial (continuous everywhere), we just substitute:</p>
+                <div class="formula-display">
+                    $$3(1) + 4(2) = 3 + 8 = 11$$
+                </div>
+                <p class="content-text">The limit is 11 from ANY direction!</p>
+            </div>
+
+            <div class="example-box">
+                <h4>Example: Path-Dependent Limit</h4>
+                <p class="content-text">Find $$\lim_{(x,y) \to (0,0)} \frac{xy}{x^2 + y^2}$$</p>
+                <p class="content-text"><strong>Path 1: Along y = 0 (x-axis)</strong></p>
+                <div class="formula-display">
+                    $$\frac{x(0)}{x^2 + 0} = \frac{0}{x^2} = 0$$
+                </div>
+                <p class="content-text"><strong>Path 2: Along y = x (diagonal)</strong></p>
+                <div class="formula-display">
+                    $$\frac{x(x)}{x^2 + x^2} = \frac{x^2}{2x^2} = \frac{1}{2}$$
+                </div>
+                <div class="safety-sign danger">
+                    ❌ LIMIT DOES NOT EXIST - Different paths give different values!
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Continuity in 2D</h3>
+
+            <div class="definition-box">
+                <h4>Definition: Continuity at (a,b)</h4>
+                <div class="formula-display">
+                    $$\lim_{(x,y) \to (a,b)} f(x,y) = f(a,b)$$
+                </div>
+                <p class="content-text">
+                    A function is continuous at a point if: (1) the limit exists, (2) the function is defined there, and (3) they're equal.
+                </p>
+            </div>
+
+            <div class="blueprint-section">
+                <div class="blueprint-content">
+                    <h3>📋 KEY TAKEAWAYS</h3>
+                    <ul class="blueprint-list">
+                        <li>Polynomials, sin, cos, exp are continuous EVERYWHERE</li>
+                        <li>Rational functions are continuous WHEREVER the denominator ≠ 0</li>
+                        <li>Composition of continuous functions is continuous</li>
+                        <li>ALWAYS check path-dependency for suspicious limits!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Practice Section -->
+        <div class="content-section" id="practice">
+            <div class="lesson-header">
+                <h1>Practice Problems</h1>
+                <p>Test Your Foundation</p>
+            </div>
+
+            <div class="practice-section">
+                <h3>🔧 PRACTICE EXERCISES</h3>
+
+                <div class="practice-problem">
+                    <div class="problem-title">Problem 1: Chain Rule</div>
+                    <p class="content-text">Find $$\frac{d}{dx} [\sin(x^2)]$$ using the chain rule.</p>
+                    <input type="text" class="problem-input" id="prob1" placeholder="Enter your answer">
+                    <button class="check-btn" onclick="checkProblem(1)">Check Answer</button>
+                    <div class="feedback" id="prob1-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-title">Problem 2: Integration by Parts</div>
+                    <p class="content-text">Find $$\int x e^x dx$$ using integration by parts.</p>
+                    <input type="text" class="problem-input" id="prob2" placeholder="Enter your answer">
+                    <button class="check-btn" onclick="checkProblem(2)">Check Answer</button>
+                    <div class="feedback" id="prob2-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-title">Problem 3: 2D Limit</div>
+                    <p class="content-text">Find $$\lim_{(x,y) \to (1,2)} (3x + 4y)$$</p>
+                    <input type="text" class="problem-input" id="prob3" placeholder="Enter limit value">
+                    <button class="check-btn" onclick="checkProblem(3)">Check Answer</button>
+                    <div class="feedback" id="prob3-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-title">Problem 4: Path-Dependent Limit</div>
+                    <p class="content-text">What's the limit of $$\frac{xy}{x^2+y^2}$$ as (x,y)→(0,0)?</p>
+                    <input type="text" class="problem-input" id="prob4" placeholder="DNE or value">
+                    <button class="check-btn" onclick="checkProblem(4)">Check Answer</button>
+                    <div class="feedback" id="prob4-feedback"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="content-section" id="quiz">
+            <div class="lesson-header">
+                <h1>Module 1 Quiz</h1>
+                <p>Test Your Understanding</p>
+            </div>
+
+            <div class="quiz-container">
+                <h3>🎯 COMPREHENSIVE ASSESSMENT</h3>
+                <p class="content-text">Score 70% or higher to proceed to Module 2!</p>
+
+                <div class="quiz-question">
+                    <div class="quiz-question-text">Question 1: What does multivariable calculus primarily deal with?</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption('Q1', 'A', this)">A. Functions of a single variable</div>
+                        <div class="quiz-option" onclick="selectOption('Q1', 'B', this)">B. Functions of multiple variables</div>
+                        <div class="quiz-option" onclick="selectOption('Q1', 'C', this)">C. Only derivatives</div>
+                        <div class="quiz-option" onclick="selectOption('Q1', 'D', this)">D. Only integrals</div>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <div class="quiz-question-text">Question 2: Chain rule result: $$\frac{d}{dx}[\sin(x^2)]$$</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption('Q2', 'A', this)">A. $$\cos(x^2)$$</div>
+                        <div class="quiz-option" onclick="selectOption('Q2', 'B', this)">B. $$2x\cos(x^2)$$</div>
+                        <div class="quiz-option" onclick="selectOption('Q2', 'C', this)">C. $$x\cos(x)$$</div>
+                        <div class="quiz-option" onclick="selectOption('Q2', 'D', this)">D. $$\sin(2x)$$</div>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <div class="quiz-question-text">Question 3: In 2D, limits must exist from:</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption('Q3', 'A', this)">A. Just left and right</div>
+                        <div class="quiz-option" onclick="selectOption('Q3', 'B', this)">B. Two diagonal directions</div>
+                        <div class="quiz-option" onclick="selectOption('Q3', 'C', this)">C. EVERY possible direction</div>
+                        <div class="quiz-option" onclick="selectOption('Q3', 'D', this)">D. Only x and y axes</div>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <div class="quiz-question-text">Question 4: What's $$\lim_{(x,y) \to (1,2)} (3x + 4y)$$?</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectOption('Q4', 'A', this)">A. 10</div>
+                        <div class="quiz-option" onclick="selectOption('Q4', 'B', this)">B. 11</div>
+                        <div class="quiz-option" onclick="selectOption('Q4', 'C', this)">C. 12</div>
+                        <div class="quiz-option" onclick="selectOption('Q4', 'D', this)">D. DNE</div>
+                    </div>
+                </div>
+
+                <button class="quiz-button" onclick="submitQuiz()">SUBMIT QUIZ</button>
+            </div>
+
+            <div class="quiz-container" id="quiz-results" style="display: none;"></div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <a href="../index.html" class="nav-btn">← BACK TO COURSE HOME</a>
+            <a href="02-vectors-3d.html" class="nav-btn primary">NEXT MODULE: VECTORS IN 3D →</a>
+        </div>
+    </div>
+
+    <script>
+        // Navigation
+        function showSection(sectionId) {
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Quiz functionality
+        let quizAnswers = {};
+
+        function selectOption(questionId, answer, element) {
+            quizAnswers[questionId] = answer;
+            const parent = element.parentElement;
+            parent.querySelectorAll('.quiz-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            element.classList.add('selected');
+        }
+
+        function submitQuiz() {
+            const correctAnswers = {
+                'Q1': 'B',
+                'Q2': 'B',
+                'Q3': 'C',
+                'Q4': 'B'
+            };
+
+            let score = 0;
+            let total = Object.keys(correctAnswers).length;
+
+            for (let q in correctAnswers) {
+                if (quizAnswers[q] === correctAnswers[q]) {
+                    score++;
+                }
+            }
+
+            const percentage = Math.round((score / total) * 100);
+
+            // Hide quiz, show results
+            document.querySelector('.quiz-container:not([style])').style.display = 'none';
+            const resultsDiv = document.getElementById('quiz-results');
+            resultsDiv.style.display = 'block';
+
+            if (percentage >= 70) {
+                resultsDiv.innerHTML = `
+                    <div class="safety-sign important" style="background: var(--success); color: black;">
+                        🎉 MODULE 1 COMPLETE! 🎉<br>
+                        Score: ${score}/${total} (${percentage}%)<br>
+                        You're ready for Module 2!
+                    </div>
+                `;
+                updateProgress(100);
+            } else {
+                resultsDiv.innerHTML = `
+                    <div class="safety-sign danger">
+                        ❌ KEEP STUDYING ❌<br>
+                        Score: ${score}/${total} (${percentage}%)<br>
+                        Review the material and try again!
+                    </div>
+                `;
+            }
+        }
+
+        // Practice problems
+        const problemAnswers = {
+            1: { alternatives: ['2xcos(x^2)', '2x*cos(x^2)', '2xcos^2'], feedback: 'Correct! Chain rule: cos(x²) × 2x' },
+            2: { alternatives: ['(x-1)e^x', '(x-1)e^x+C', 'xe^x - e^x'], feedback: 'Correct! (x-1)e^x + C' },
+            3: { alternatives: ['11', '3+8'], feedback: 'Correct! 3(1) + 4(2) = 11' },
+            4: { alternatives: ['DNE', 'dne', 'does not exist', 'none'], feedback: 'Correct! Path-dependent - doesn\'t exist' }
+        };
+
+        function checkProblem(num) {
+            const input = document.getElementById('prob' + num).value.trim().toLowerCase();
+            const feedback = document.getElementById('prob' + num + '-feedback');
+            const answer = problemAnswers[num];
+
+            const isCorrect = answer.alternatives.some(alt => {
+                return input.replace(/\s+/g, '').includes(alt.replace(/\s+/g, ''));
+            });
+
+            if (isCorrect) {
+                feedback.className = 'feedback correct';
+                feedback.innerHTML = answer.feedback;
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.textContent = 'Incorrect. Try again!';
+            }
+        }
+
+        function updateProgress(percent) {
+            document.getElementById('moduleProgress').textContent = percent + '%';
+            document.getElementById('moduleProgress').style.width = percent + '%';
+        }
+    </script>
+</body>
+</html>

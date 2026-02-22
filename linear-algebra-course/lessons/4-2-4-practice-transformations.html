@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4.2.4: Practice Problems - Linear Algebra</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="chapter-4">
+    <div class="main-wrapper">
+        <nav class="sidebar toc-green">
+            <div class="sidebar-header">
+                <div class="sidebar-title">Linear Algebra</div>
+            </div>
+            <div class="toc-chapter toc-green">
+                <div class="toc-chapter-title">Chapter 4: Advanced Topics</div>
+                <div class="toc-module">
+                    <div class="toc-module-title">Module 4.2: Linear Transformations</div>
+                    <div class="toc-lessons">
+                        <div class="toc-lesson"><a href="4-2-1-linear-maps.html">Lesson 4.2.1: Linear Maps</a></div>
+                        <div class="toc-lesson"><a href="4-2-2-kernel-range.html">Lesson 4.2.2: Kernel &amp; Range</a></div>
+                        <div class="toc-lesson"><a href="4-2-3-matrix-representation.html">Lesson 4.2.3: Matrix Representation</a></div>
+                        <div class="toc-lesson"><a href="4-2-4-practice-transformations.html" class="active">Lesson 4.2.4: Practice Problems</a></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="module-header">
+                    <h2>Lesson 4.2.4: Practice Problems</h2>
+                    <p>Module 4.2: Linear Transformations | Chapter 4: Advanced Topics</p>
+                </div>
+                
+                <div class="content-card">
+                    <div class="practice-header">Module Quiz: Linear Transformations</div>
+                    <p>Test your understanding of linear transformations, kernel, range, and matrix representations. This quiz covers all concepts from Module 4.2.</p>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Linear Transformation Properties</div>
+                    
+                    <div class="practice-card">
+                        <div class="practice-question">Question 1: Which of the following is always true for a linear transformation T?</div>
+                        <div class="practice-options">
+                            <label><input type="radio" name="q1" value="A"> T(0) = 0</label><br>
+                            <label><input type="radio" name="q1" value="B"> T(x + y) = T(x)T(y)</label><br>
+                            <label><input type="radio" name="q1" value="C"> T(cx) = c/T(x)</label><br>
+                            <label><input type="radio" name="q1" value="D"> T(x + y) = T(x) + T(y) + 1</label>
+                        </div>
+                        <div class="practice-explanation" id="q1-explanation" style="display:none;">
+                            <strong>Answer: A</strong><br>
+                            A linear transformation must satisfy T(0) = 0. This follows from linearity: T(0) = T(0+0) = T(0) + T(0), which implies T(0) = 0.
+                        </div>
+                        <button class="submit-btn" onclick="revealAnswer('q1')">Show Answer</button>
+                    </div>
+                    
+                    <hr class="section-divider">
+                    
+                    <div class="practice-card">
+                        <div class="practice-question">Question 2: If T: R^3 -> R^2 and T([1,0,0]) = [2,1], T([0,1,0]) = [0,3], T([0,0,1]) = [1,1], what is T([2,1,-1])?</div>
+                        <div class="practice-input">
+                            <label for="q2-input">Your answer (format: [a,b]):</label>
+                            <input type="text" id="q2-input" placeholder="Enter vector">
+                        </div>
+                        <div class="practice-feedback" id="q2-input-feedback"></div>
+                        <div class="practice-explanation" id="q2-explanation" style="display:none;">
+                            <strong>Answer: [5,2]</strong><br>
+                            First, find the matrix A = [[2,0,1], [1,3,1]]. Then T([2,1,-1]) = A*[2,1,-1] = [5,2].
+                        </div>
+                        <button class="submit-btn" onclick="revealAnswer('q2')">Show Answer</button>
+                    </div>
+                    
+                    <hr class="section-divider">
+                    
+                    <div class="practice-card">
+                        <div class="practice-question">Question 3: The kernel of a linear transformation T: V -> W consists of:</div>
+                        <div class="practice-options">
+                            <label><input type="radio" name="q3" value="A"> All vectors in V that map to W</label><br>
+                            <label><input type="radio" name="q3" value="B"> All vectors in W that have pre-images in V</label><br>
+                            <label><input type="radio" name="q3" value="C"> All vectors in V that map to the zero vector in W</label><br>
+                            <label><input type="radio" name="q3" value="D"> Nonzero vectors only in V</label>
+                        </div>
+                        <div class="practice-explanation" id="q3-explanation" style="display:none;">
+                            <strong>Answer: C</strong><br>
+                            The kernel of T is the set of all vectors v in the domain V such that T(v) = 0 in the codomain W.
+                        </div>
+                        <button class="submit-btn" onclick="revealAnswer('q3')">Show Answer</button>
+                    </div>
+                    
+                    <hr class="section-divider">
+                    
+                    <div class="practice-card">
+                        <div class="practice-question">Question 4: If T: R^3 -> R^3 has matrix A = [[1,2,3], [0,1,1], [0,0,1]], what is the dimension of ker(T)?</div>
+                        <div class="practice-options">
+                            <label><input type="radio" name="q4" value="A"> 0</label><br>
+                            <label><input type="radio" name="q4" value="B"> 1</label><br>
+                            <label><input type="radio" name="q4" value="C"> 2</label><br>
+                            <label><input type="radio" name="q4" value="D"> 3</label>
+                        </div>
+                        <div class="practice-explanation" id="q4-explanation" style="display:none;">
+                            <strong>Answer: A</strong><br>
+                            The matrix A is upper-triangular with all diagonal entries equal to 1, so det(A) = 1. This means A is invertible, so the only solution to Ax = 0 is x = 0. Thus, ker(T) = {0} with dimension 0.
+                        </div>
+                        <button class="submit-btn" onclick="revealAnswer('q4')">Show Answer</button>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Matrix Representations</div>
+                    
+                    <div class="practice-card">
+                        <div class="practice-question">Question 5: Find the standard matrix for a 90-degree clockwise rotation in R^2.</div>
+                        <div class="practice-input">
+                            <label for="q5-input">Your answer (format: [a,b; c,d]):</label>
+                            <input type="text" id="q5-input" placeholder="Enter matrix">
+                        </div>
+                        <div class="practice-feedback" id="q5-input-feedback"></div>
+                        <div class="practice-explanation" id="q5-explanation" style="display:none;">
+                            <strong>Answer: [[0,1], [-1,0]]</strong><br>
+                            Applying the 90-degree clockwise rotation to e1 = (1,0) gives (0,-1). Applying it to e2 = (0,1) gives (1,0). These form the columns.
+                        </div>
+                        <button class="submit-btn" onclick="revealAnswer('q5')">Show Answer</button>
+                    </div>
+                    
+                    <hr class="section-divider">
+                    
+                    <div class="practice-card">
+                        <div class="practice-question">Question 6: If T(x) = Ax where A = [[1,-1], [2,3]], find the matrix for T^2 (i.e., T(T(x))).</div>
+                        <div class="practice-input">
+                            <label for="q6-input">Your answer (format: [a,b; c,d]):</label>
+                            <input type="text" id="q6-input" placeholder="Enter matrix">
+                        </div>
+                        <div class="practice-feedback" id="q6-input-feedback"></div>
+                        <div class="practice-explanation" id="q6-explanation" style="display:none;">
+                            <strong>Answer: [[-1,-4], [8,7]]</strong><br>
+                            The matrix for T^2 is A^2 = [[1,-1], [2,3]] * [[1,-1], [2,3]] = [[-1,-4], [8,7]].
+                        </div>
+                        <button class="submit-btn" onclick="revealAnswer('q6')">Show Answer</button>
+                    </div>
+                    
+                    <hr class="section-divider">
+                    
+                    <div class="practice-card">
+                        <div class="practice-question">Question 7: What is the rank of the transformation T: R^3 -> R^2 with matrix A = [[1,2,1], [2,4,2]]?</div>
+                        <div class="practice-options">
+                            <label><input type="radio" name="q7" value="A"> 0</label><br>
+                            <label><input type="radio" name="q7" value="B"> 1</label><br>
+                            <label><input type="radio" name="q7" value="C"> 2</label><br>
+                            <label><input type="radio" name="q7" value="D"> 3</label>
+                        </div>
+                        <div class="practice-explanation" id="q7-explanation" style="display:none;">
+                            <strong>Answer: B</strong><br>
+                            Row 2 is 2 times Row 1, so the row-rank is 1. This equals the column-rank, so rank(T) = 1. By the rank-nullity theorem, nullity = 3 - 1 = 2.
+                        </div>
+                        <button class="submit-btn" onclick="revealAnswer('q7')">Show Answer</button>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Advanced Problems</div>
+                    
+                    <div class="practice-card">
+                        <div class="practice-question">Question 8: If T: P_2 -> P_2 is defined by T(p(x)) = p'(x) (derivative), find the matrix of T with respect to basis {1, x, x^2}.</div>
+                        <div class="practice-input">
+                            <label for="q8-input">Your answer (format: [a,b,c; d,e,f; g,h,i]):</label>
+                            <input type="text" id="q8-input" placeholder="Enter 3x3 matrix">
+                        </div>
+                        <div class="practice-feedback" id="q8-input-feedback"></div>
+                        <div class="practice-explanation" id="q8-explanation" style="display:none;">
+                            <strong>Answer: [[0,1,0], [0,0,2], [0,0,0]]</strong><br>
+                            T(1) = 0 = 0*1 + 0*x + 0*x^2, T(x) = 1 = 1*1 + 0*x + 0*x^2, T(x^2) = 2x = 0*1 + 2*x + 0*x^2.
+                        </div>
+                        <button class="submit-btn" onclick="revealAnswer('q8')">Show Answer</button>
+                    </div>
+                    
+                    <hr class="section-divider">
+                    
+                    <div class="practice-card">
+                        <div class="practice-question">Question 9: Which of the following transformations is NOT linear?</div>
+                        <div class="practice-options">
+                            <label><input type="radio" name="q9" value="A"> T(x,y) = (x+y, 2x-3y)</label><br>
+                            <label><input type="radio" name="q9" value="B"> T(x,y) = (x+1, y+1)</label><br>
+                            <label><input type="radio" name="q9" value="C"> T(x,y) = (0, 0)</label><br>
+                            <label><input type="radio" name="q9" value="D"> T(x,y) = (2x, -y)</label>
+                        </div>
+                        <div class="practice-explanation" id="q9-explanation" style="display:none;">
+                            <strong>Answer: B</strong><br>
+                            T(x,y) = (x+1, y+1) is not linear because T(0,0) = (1,1) ≠ (0,0), which violates a required property of linear transformations.
+                        </div>
+                        <button class="submit-btn" onclick="revealAnswer('q9')">Show Answer</button>
+                    </div>
+                    
+                    <hr class="section-divider">
+                    
+                    <div class="practice-card">
+                        <div class="practice-question">Question 10: If T: R^2 -> R^2 has standard matrix A, what is the matrix for the transformation that reflects across the line y = 2x?</div>
+                        <div class="practice-input">
+                            <label for="q10-input">Your answer (format: [a,b; c,d] in terms of numbers):</label>
+                            <input type="text" id="q10-input" placeholder="Enter matrix">
+                        </div>
+                        <div class="practice-feedback" id="q10-input-feedback"></div>
+                        <div class="practice-explanation" id="q10-explanation" style="display:none;">
+                            <strong>Answer: [[-0.6,0.8], [0.8,0.6]]</strong><br>
+                            For reflection across line y = mx, the matrix is (1/(1+m^2)) * [[1-m^2, 2m], [2m, m^2-1]]. For m=2: [[-3/5, 4/5], [4/5, 3/5]].
+                        </div>
+                        <button class="submit-btn" onclick="revealAnswer('q10')">Show Answer</button>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="quiz-container">
+                    <div class="quiz-header">Module 4.2 Quiz Summary</div>
+                    <p>Answer 7 out of 10 questions correctly to pass this module.</p>
+                    <div class="score-display" id="scoreDisplay">Questions Answered: 0/10</div>
+                    <button class="submit-btn" onclick="showScore()">Calculate Score</button>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="navigation-buttons">
+                    <a href="4-2-3-matrix-representation.html" class="nav-btn secondary">Previous Lesson</a>
+                    <a href="4-3-1-inner-products.html" class="nav-btn primary">Next Lesson: Inner Products</a>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="practice-header">Module Progress</div>
+                    <div class="progress-container">
+                        <div class="progress-title">Module 4.2: Linear Transformations</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="moduleProgress" style="width: 0%">0%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/navigation.js"></script>
+    <script>
+    let correctAnswers = {};
+    
+    function checkProblem(problemId, correct, alternatives, inputId) {
+        const input = document.getElementById(inputId).value.trim().toLowerCase();
+        const feedback = document.getElementById(inputId + '-feedback');
+        
+        const normalized = input.replace(/\s/g, '').replace(/,/g, ';');
+        const normalizedCorrect = correct.toLowerCase().replace(/\s/g, '').replace(/,/g, ';');
+        
+        let isCorrect = normalized === normalizedCorrect || 
+                       alternatives.some(alt => 
+                           alt.toLowerCase().replace(/\s/g, '').replace(/,/g, ';') === normalized
+                       );
+        
+        if (isCorrect) {
+            feedback.className = 'feedback correct';
+            feedback.textContent = 'Correct!';
+            feedback.style.display = 'block';
+            correctAnswers[problemId] = true;
+            updateScoreDisplay();
+        } else {
+            feedback.className = 'feedback incorrect';
+            feedback.textContent = 'Try again!';
+            feedback.style.display = 'block';
+            correctAnswers[problemId] = false;
+        }
+    }
+
+    function revealAnswer(id) {
+        const explanation = document.getElementById(id + '-explanation');
+        explanation.style.display = explanation.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function updateScoreDisplay() {
+        const total = Object.keys(correctAnswers).length;
+        const correct = Object.values(correctAnswers).filter(v => v).length;
+        document.getElementById('scoreDisplay').textContent = `Score: ${correct}/${total}`;
+    }
+
+    function showScore() {
+        const total = Object.keys(correctAnswers).length;
+        const correct = Object.values(correctAnswers).filter(v => v).length;
+        const percentage = total > 0 ? Math.round((correct / total) * 100) : 0;
+        document.getElementById('scoreDisplay').textContent = `Score: ${correct}/${total} (${percentage}%)`;
+        
+        if (percentage >= 70) {
+            alert('Congratulations! You passed the module!');
+            updateProgress();
+        } else {
+            alert('Keep practicing! You need 70% to pass.');
+        }
+    }
+
+    function updateProgress() {
+        localStorage.setItem('linear-algebra-completed-4-2-4', 'true');
+        updateProgressBars();
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        loadProgress();
+        localStorage.setItem('linear-algebra-current-lesson', '4-2-4');
+        
+        document.getElementById('q2-input').addEventListener('input', function() {
+            checkProblem('q2', '[5,2]', ['[[5,2]]', '[[ 5, 2]]'], 'q2-input');
+        });
+        
+        document.getElementById('q5-input').addEventListener('input', function() {
+            checkProblem('q5', '[0,1;-1,0]', 
+                ['[[0,1],[-1,0]]', '[0,1;-1, 0]', '[[0,1],[-1, 0]]'],
+                'q5-input');
+        });
+        
+        document.getElementById('q6-input').addEventListener('input', function() {
+            checkProblem('q6', '[-1,-4;8,7]', 
+                ['[[-1,-4],[8,7]]', '[[-1,-4],[ 8, 7]]', '[-1,-4; 8, 7]'],
+                'q6-input');
+        });
+        
+        document.getElementById('q8-input').addEventListener('input', function() {
+            checkProblem('q8', '[0,1,0;0,0,2;0,0,0]', 
+                ['[[0,1,0],[0,0,2],[0,0,0]]'],
+                'q8-input');
+        });
+        
+        document.getElementById('q10-input').addEventListener('input', function() {
+            checkProblem('q10', '[-0.6,0.8;0.8,0.6]', 
+                ['[[-0.6,0.8],[0.8,0.6]]', '[-3/5,4/5;4/5,3/5]', '[[-3/5,4/5],[4/5,3/5]]'],
+                'q10-input');
+        });
+    });
+    </script>
+</body>
+</html>

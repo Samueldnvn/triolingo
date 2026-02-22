@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1.2.1: Vector Basics - Linear Algebra</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="chapter-1">
+    <div class="main-wrapper">
+        <nav class="sidebar toc-pink">
+            <div class="sidebar-header"><div class="sidebar-title">Linear Algebra</div></div>
+            <div class="toc-chapter toc-pink">
+                <div class="toc-chapter-title">Chapter 1: Foundations</div>
+                <div class="toc-module">
+                    <div class="toc-module-title">Module 1.2: Vectors</div>
+                    <div class="toc-lessons">
+                        <div class="toc-lesson"><a href="1-2-1-vector-basics.html" class="active">Lesson 1.2.1: Vector Basics</a></div>
+                        <div class="toc-lesson"><a href="1-2-2-vector-operations.html">Lesson 1.2.2: Vector Operations</a></div>
+                        <div class="toc-lesson"><a href="1-2-3-dot-product.html">Lesson 1.2.3: Dot Product</a></div>
+                        <div class="toc-lesson"><a href="1-2-4-vectors-3d.html">Lesson 1.2.4: Vectors in 3D</a></div>
+                        <div class="toc-lesson"><a href="1-2-5-practice-vectors.html">Lesson 1.2.5: Practice Quiz</a></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="module-header"><h2>Lesson 1.2.1: Vector Basics</h2><p>Module 1.2: Vectors | Chapter 1: Foundations</p></div>
+                <div class="content-card"><div class="subsection-title">Introduction to Vectors</div><p>Vectors are the building blocks of linear algebra. While scalars are single numbers, vectors have both magnitude and direction, representing quantities in multi-dimensional space. They're used everywhere - physics (force, velocity), computer graphics (3D modeling), machine learning (data vectors), and more.</p><p>In this lesson, we'll learn what vectors are, how to represent them in coordinate form, and understand their geometric interpretation. Mastering vectors is essential for everything that follows in linear algebra!</p></div>
+                <hr class="section-divider">
+                <div class="content-card"><div class="subsection-title">What is a Vector?</div><div class="definition-box"><div class="flag">Definition</div><div class="definition-title">Vector</div><p>A vector is an ordered collection of numbers called components. In $$\mathbb{R}^2$$ (2D), a vector has 2 components; in $$\mathbb{R}^3$$ (3D), it has 3 components; and more generally, in $$\mathbb{R}^n$$, it has n components.</p><div class="formula-box"><div class="flag">Notation</div><div class="formula">$$\vec{v} = \langle v_1, v_2 \rangle$$ or $$\vec{v} = \begin{bmatrix} v_1 \\ v_2 \end{bmatrix}$$</div></div></div><div class="example-box"><div class="flag">Example</div><div class="example-title">Vector Representations</div><div class="note-box"><div class="flag">Example 1</div><p>$$\vec{v} = \langle 3, 4 \rangle$$ - vector with components 3 and 4</p></div><div class="note-box"><div class="flag">Example 2</div><p>$$\vec{w} = \begin{bmatrix} -2 \\ 5 \end{bmatrix}$$ - same vector in column form</p></div><div class="note-box"><div class="flag">Example 3</div><p>$$\vec{u} = \langle 0, 0 \rangle = \vec{0}$$ - the zero vector</p></div></div></div>
+                <hr class="section-divider">
+                <div class="content-card"><div class="subsection-title">Geometric Interpretation</div><div class="note-box"><div class="flag">Geometry</div><p>In 2D, a vector $$\langle a, b \rangle$$ represents an arrow starting at the origin $$(0, 0)$$ and ending at the point $$(a, b)$$. The length of the arrow is the magnitude, and the direction points from the origin to $$(a, b)$$.</p></div><div class="example-box"><div class="flag">Example</div><div class="example-title">Geometric Vectors</div><div class="note-box"><div class="flag">Example 1</div><p>$$\langle 1, 0 \rangle$$ - points right along x-axis</p></div><div class="note-box"><div class="flag">Example 2</div><p>$$\langle 0, 1 \rangle$$ - points up along y-axis</p></div><div class="note-box"><div class="flag">Example 3</div><p>$$\langle 2, 2 \rangle$$ - points diagonally, 45 degrees</p></div></div></div>
+                <hr class="section-divider">
+                <div class="practice-section"><div class="practice-header">Practice Problems</div><div class="practice-problem"><div class="problem-number">Problem 1</div><div class="problem-question">What are the components of $$\langle 7, 3 \rangle$$?</div><input type="text" class="problem-input" id="prob1" placeholder="Enter components"><button class="check-btn" onclick="checkProblem(1)">Check</button><div class="feedback" id="prob1-feedback"></div></div><div class="practice-problem"><div class="problem-number">Problem 2</div><div class="problem-question">Write $$\vec{v} = \langle -2, 5 \rangle$$ in column form</div><input type="text" class="problem-input" id="prob2" placeholder="Enter matrix notation"><button class="check-btn" onclick="checkProblem(2)">Check</button><div class="feedback" id="prob2-feedback"></div></div><div class="practice-problem"><div class="problem-number">Problem 3</div><div class="problem-question">What is the zero vector?</div><input type="text" class="problem-input" id="prob3" placeholder="Enter vector"><button class="check-btn" onclick="checkProblem(3)">Check</button><div class="feedback" id="prob3-feedback"></div></div></div>
+                <hr class="section-divider">
+                <div class="nav-buttons"><a href="1-1-4-practice-numbers.html" class="nav-btn">Previous: Practice Quiz</a><a href="1-2-2-vector-operations.html" class="nav-btn primary">Next: Vector Operations</a></div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/navigation.js"></script><script>const problems_1_2_1 = {1: {alternatives: ['7,3','7 and 3','7, 3'], feedback: 'Correct! Components are 7 and 3.'}, 2: {alternatives: ['[-2,5]','[[-2],[5]]','column -2 5'], feedback: 'Column form: $\begin{bmatrix}-2 \\\\ 5 \end{bmatrix}$'}, 3: {alternatives: ['0,0','<0,0>','zero vector'], feedback: 'The zero vector is $\langle 0, 0 \rangle$'}};function checkProblem(num){const userInput = document.getElementById('prob'+num).value.trim().toLowerCase();const feedback = document.getElementById('prob'+num+'-feedback');const alternatives = problems_1_2_1[num].alternatives;const isCorrect = alternatives.some(alt => alt.replace(/\s/g,'')===userInput.replace(/\s/g,''));if(isCorrect){feedback.className='feedback correct';feedback.style.display='block';feedback.innerHTML = problems_1_2_1[num].feedback;markProblemSolved('1-2-1-'+num);}else{feedback.className='feedback incorrect';feedback.style.display='block';feedback.textContent='Incorrect. Try again!';}}document.addEventListener('DOMContentLoaded',loadProgress);</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Module 5 - Two Pointers</title><link rel="stylesheet" href="../css/styles.css"></head>
+<body>
+<div class="course-header"><h1>Module 5: Two Pointers Pattern</h1></div>
+<div class="page-nav"><a href="04-slidingwindow.html">Prev</a><a href="06-binarysearch.html">Next</a></div>
+<nav class="section-nav"><div onclick="showSection('section1')">1. Left-Right Pointers</div><div onclick="showSection('section2')">2. Slow-Fast Pointers</div><div onclick="showSection('section3')">3. Quiz</div></nav>
+<div class="content-container">
+<div id="section1" class="content-section active">
+    <h2>Left-Right Pointers</h2>
+    <div class="content-block"><h3>Two Sum in Sorted Array</h3>
+    <p>Left at 0, right at end. Compare arr[left] + arr[right] vs target. Adjust pointers accordingly.</p></div>
+    <div class="content-block"><h3>Container With Most Water</h3>
+    <p>Area = width * min(height[left], height[right]). Move pointer with smaller height inward.</p></div>
+    <div class="content-block"><h3>Valid Palindrome</h3>
+    <p>Compare s[left] and s[right], move inward. Skip non-alnum.</p></div>
+</div>
+<div id="section2" class="content-section">
+    <h2>Slow-Fast Pointers (Floyds)</h2>
+    <div class="content-block"><h3>Cycle Detection</h3>
+    <p>Slow moves 1, fast moves 2. If they ever meet, cycle exists.</p></div>
+    <div class="content-block"><h3>Find Middle of Linked List</h3>
+    <p>When fast reaches end, slow is at middle.</p></div>
+    <div class="content-block"><h3>Find Start of Cycle</h3>
+    <p>After meeting, reset slow to start. Move both at 1x. They meet at cycle start.</p></div>
+</div>
+<div id="section3" class="content-section">
+    <h2>Module 5 Quiz</h2>
+    <div id="quiz-container-twopointers"></div>
+    <div id="quiz-results-twopointers" class="quiz-results" style="display:none"></div>
+    <button onclick="loadQuiz('twopointers')">Load Quiz</button><button onclick="submitQuiz('twopointers')">Submit</button>
+</div>
+</div>
+<script src="../js/navigation.js"></script><script src="../js/quizzes.js"></script>
+</body>
+</html>

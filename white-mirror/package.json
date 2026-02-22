@@ -1,0 +1,38 @@
+{
+  "name": "white-mirror",
+  "version": "0.1.0",
+  "description": "AI agent that controls the computer through a vision model taking in the screen",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "install": "bash install.sh",
+    "test-robotjs": "node -e \"const robot = require('robotjs'); console.log('robotjs OK'); robot.moveMouse(100, 100);\""
+  },
+  "keywords": [
+    "ai",
+    "vision",
+    "automation",
+    "screen-capture",
+    "computer-vision",
+    "autonomous-agent",
+    "ollama"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "devDependencies": {
+    "electron": "^28.0.0"
+  },
+  "dependencies": {
+    "@electron/remote": "^2.1.2",
+    "robotjs": "^0.6.0",
+    "screenshot-desktop": "^1.15.0"
+  }
+}

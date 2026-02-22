@@ -1,0 +1,166 @@
+# Founder & Team Skill Evolution (2020 → 2025)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                         SKILL TRAJECTORIES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+                     2020 (Pre-AI Wave)
+           ─────────────────────────────────
+           ▲        ▲        ▲        ▲
+           │        │        │        │
+    HIGH   │        │        │   ★★★  │
+           │        │        │  CODE  │
+           │   ★★★  │        │ SKILLS │
+           │ PROD   │        │        │
+           │ VISION │        │        │
+    MED    │        │   ★★★  │        │
+           │        │  TECHN  │        │
+           │        │  STACK  │        │
+           │        │ KNOW   │        │
+    LOW    │        │        │        │
+           └────────┴────────┴────────┘
+                   SKILL CATEGORIES
+
+                    TRADITIONAL FOCUS:
+                    • Coding and engineering
+                    • Architecture
+                    • Technical depth
+                    ❌ AI awareness (minimal)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                              │
+                              ▼
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+                     2023 (LLM Emergence)
+           ─────────────────────────────────
+           ▲        ▲        ▲        ▲
+           │        │        │        │
+    HIGH   │        │   ★★★  │        │
+           │        │  PROMPT │        │
+           │        │  ENG.   │        │
+           │   ★★★  │        │   ★★★  │
+           │ PROD   │        │  AI API │
+           │ VISION │        │ INTEG. │
+    MED    │   ★★★  │   ★★★  │        │
+           │ TECHN  │  DATA  │        │
+           │ STACK  │ STRAT. │   ★★   │
+           │ KNOW   │        │ CODE   │
+    LOW    │        │        │ SKILLS │
+           └────────┴────────┴────────┘
+                   SKILL CATEGORIES
+
+                    EMERGING PRIORITIES:
+                    • Prompt engineering
+                    • AI API integration
+                    • Data strategy
+                    • Code skills still valuable but
+                      shifting toward orchestration
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                              │
+                              ▼
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+                     2025 (AI/Auonomous Era)
+           ─────────────────────────────────
+           ▲        ▲        ▲        ▲
+           │        │        │        │
+    HIGH   │   ★★★  │   ★★★  │        │
+           │ AI     │ PROD   │        │
+           │ ECON   │ VISION │   ★★★  │
+           │        │        │ AGENT  │
+           │        │        │ ORCH. │
+    MED    │   ★★★  │   ★★   │   ★★   │
+           │ DATA   │ PROMPT │ AI API │
+           │ MOATS  │ ENG    │ INTEG. │
+           │        │        │        │
+    LOW    │   ★★   │   ★★   │   ★★   │
+           │ CODE   │ TECHN  │ SYSTEM │
+           │ SKILLS │ STACK  │ ARCH   │
+           └────────┴────────┴────────┘
+                   SKILL CATEGORIES
+
+                    NEW CRITICAL SKILLS:
+                    • AI economics and cost optimization
+                    • Agent orchestration and multi-AI systems
+                    • Data moat building and leverage
+                    • Product vision for AI-native experiences
+                    • Prompt engineering (maturing discipline)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+                    DETAILED SKILL SHIFTS
+                    ━━━━━━━━━━━━━━━━━━━
+
+INCREASING IMPORTANCE:
+─────────────────────────────────────────────────────────────
+• AI Product Intuition          ▲▲▲▲▲  Understanding AI's realistic
+                                         capabilities and limitations
+
+• Prompt Engineering            ▲▲▲▲   Crafting effective AI interactions
+                                         and system instructions
+
+• Agent Orchestration           ▲▲▲▲   Coordinating multiple AI systems
+                                         and optimizing workflows
+
+• AI Economics                  ▲▲▲▲   Understanding costs, tradeoffs,
+                                         and monetization models
+
+• Data Strategy & Moats         ▲▲▲▲   Collecting, protecting, and
+                                         leveraging proprietary data
+
+• AI Ethics & Responsibility    ▲▲▲    Navigating bias, privacy, and
+                                         societal impact considerations
+
+DECREASING BUT STILL VALUABLE:
+─────────────────────────────────────────────────────────────
+• Traditional Coding Skills     ▲      Still important, but less
+                                         differentiating, shifting to
+                                         orchestration and review
+
+• Systems Architecture          ▲↑     Evolving—combining AI with
+                                         traditional components, AI
+                                         infrastructure considerations
+
+• Basic Technical Literacy      ▲      Now table stakes, assumed
+                                         baseline for tech founders
+
+STABLE & CRITICAL (AI AUGMENTED):
+─────────────────────────────────────────────────────────────
+• Product Vision                ▲▲▲▲▲  Now includes AI-native
+                                         product thinking
+
+• Go-to-Market                  ▲▲▲▲   AI creates new GTM channels
+                                         and strategies
+
+• Team Building                 ▲▲▲▲   Requires AI literacy across
+                                         roles, not just AI specialists
+
+• User Understanding            ▲▲▲▲   AI changes user expectations
+                                         and behaviors
+
+• Capital Efficiency            ▲▲▲    AI can reduce costs but also
+                                         introduces operational expenses
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+                    FINDING SUCCESS IN 2025+
+                    ━━━━━━━━━━━━━━━━━━━━━━━━
+
+The most successful founders and teams:
+
+1. Combine deep product instinct with AI fluency
+2. Think in outcomes, not features (AI handles the rest)
+3. Build beyond AI capabilities into workflows and trust
+4. Develop data strategies that create lasting advantages
+5. Maintain learning agility—AI capabilities evolve quarterly
+6. Balance technical leverage (using AI tools) with
+   understanding (knowing what's happening under the hood)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+INSIGHT: Technical execution is becoming commoditized.
+Differentiation comes from product insight, domain
+expertise, data advantage, distribution, and understanding
+how to apply AI effectively to real problems.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

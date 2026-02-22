@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1.1.3: Sets & Notation - Linear Algebra</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- MathJax for LaTeX rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="chapter-1">
+    <div class="main-wrapper">
+        <nav class="sidebar toc-pink">
+            <div class="sidebar-header">
+                <div class="sidebar-title">Linear Algebra</div>
+            </div>
+            <div class="toc-chapter toc-pink">
+                <div class="toc-chapter-title">Chapter 1: Foundations</div>
+                <div class="toc-module">
+                    <div class="toc-module-title">Module 1.1: Numbers & Notation</div>
+                    <div class="toc-lessons">
+                        <div class="toc-lesson"><a href="1-1-1-real-numbers.html">Lesson 1.1.1: Real Numbers</a></div>
+                        <div class="toc-lesson"><a href="1-1-2-complex-numbers.html">Lesson 1.1.2: Complex Numbers</a></div>
+                        <div class="toc-lesson"><a href="1-1-3-sets-notation.html" class="active">Lesson 1.1.3: Sets & Notation</a></div>
+                        <div class="toc-lesson"><a href="1-1-4-practice-numbers.html">Lesson 1.1.4: Practice Quiz</a></div>
+                    </div>
+                </div>
+                <div class="toc-module">
+                    <div class="toc-module-title">Module 1.2: Vectors</div>
+                    <div class="toc-lessons">
+                        <div class="toc-lesson"><a href="1-2-1-vector-basics.html">Lesson 1.2.1: Vector Basics</a></div>
+                        <div class="toc-lesson"><a href="1-2-2-vector-operations.html">Lesson 1.2.2: Vector Operations</a></div>
+                        <div class="toc-lesson"><a href="1-2-3-dot-product.html">Lesson 1.2.3: Dot Product</a></div>
+                        <div class="toc-lesson"><a href="1-2-4-vectors-3d.html">Lesson 1.2.4: Vectors in 3D</a></div>
+                        <div class="toc-lesson"><a href="1-2-5-practice-vectors.html">Lesson 1.2.5: Practice Quiz</a></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="module-header">
+                    <h2>Lesson 1.1.3: Sets & Notation</h2>
+                    <p>Module 1.1: Numbers & Notation | Chapter 1: Foundations</p>
+                </div>
+                
+                <div class="content-card">
+                    <div class="subsection-title">Introduction to Sets</div>
+                    <p>A set is a fundamental concept in mathematics - a collection of distinct objects, called elements or members. Understanding sets is crucial for linear algebra, where we'll work with sets of vectors, sets of matrices, and mathematical spaces. The precision and clarity of set notation will serve you throughout your mathematical journey.</p>
+                    
+                    <p>In this lesson, we'll learn how to describe sets, use mathematical notation, perform set operations, and understand important set relationships. These concepts form the language of advanced mathematics!</p>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">What is a Set?</div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Definition</div>
+                        <div class="definition-title">Set</div>
+                        <p>A set is a well-defined collection of distinct objects called elements. Sets are usually denoted by capital letters like $$A, B, C, \dots$$</p>
+                    </div>
+                    
+                    <div class="example-box">
+                        <div class="flag">Example</div>
+                        <div class="example-title">Describing Sets</div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 1</div>
+                            <p>$$A = \{1, 2, 3, 4, 5\}$$ - the set containing the numbers 1, 2, 3, 4, and 5</p>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 2</div>
+                            <p>$$B = \{\text{apple}, \text{banana}, \text{orange}\}$$ - a set of fruits</p>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 3</div>
+                            <p>$$C = \{x : x \text{ is a positive integer}\}$$ - the set of all positive integers (described using set-builder notation)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="important-box">
+                        <div class="flag">Important</div>
+                        <div class="important-title">Key Facts About Sets</div>
+                        <ul style="margin: 15px 0 15px 30px; line-height: 2;">
+                            <li><strong>Elements are unique:</strong> A set doesn't contain duplicates</li>
+                            <li><strong>Order doesn't matter:</strong> $$\{1, 2, 3\} = \{3, 2, 1\}$$</li>
+                            <li><strong>Empty set:</strong> $$\emptyset$$ or $$\{\}$$ is a set with no elements</li>
+                            <li><strong>Set membership:</strong> $$x \in A$$ means "$$x$$ is an element of set $$A$$"</li>
+                            <li><strong>Not in set:</strong> $$x \notin A$$ means "$$x$$ is NOT an element of set $$A$$"</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Set Notation</div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Notation 1</div>
+                        <div class="definition-title">Roster Method</div>
+                        <p>List all elements inside curly braces, separated by commas:</p>
+                        
+                        <div class="formula-box">
+                            <div class="flag">Example</div>
+                            <div class="formula">$$A = \{2, 4, 6, 8, 10\}$$</div>
+                        </div>
+                    </div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Notation 2</div>
+                        <div class="definition-title">Set-Builder Notation</div>
+                        <p>Describe the property that all elements must satisfy:</p>
+                        
+                        <div class="formula-box">
+                            <div class="flag">Pattern</div>
+                            <div class="formula">$$\{x : P(x)\}$$ or $$\{x \mid P(x)\}$$</div>
+                        </div>
+                        
+                        <p>Read as: "the set of all $$x$$ such that property $$P(x)$$ is true"</p>
+                    </div>
+                    
+                    <div class="example-box">
+                        <div class="flag">Example</div>
+                        <div class="example-title">Set-Builder Notation Examples</div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 1</div>
+                            <p>$$\{x : x > 0\}$$ The set of all positive numbers</p>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 2</div>
+                            <p>$$\{n : n \text{ is an even integer}\}$$ The set of all even integers</p>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 3</div>
+                            <p>$$\{x^2 : x \in \mathbb{Z}\}$$ All perfect squares of integers</p>
+                            <p>This equals: $$\{0, 1, 4, 9, 16, 25, \dots\}$$</p>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 4</div>
+                            <p>$$\{2n : n \in \mathbb{N}\}$$ All even natural numbers</p>
+                            <p>This equals: $$\{2, 4, 6, 8, 10, \dots\}$$</p>
+                        </div>
+                    </div>
+                    
+                    <div class="theorem-box">
+                        <div class="flag">Famous Number Sets</div>
+                        <div class="theorem-title">Standard Notation</div>
+                        <ul style="margin: 15px 0 15px 30px; line-height: 2;">
+                            <li>$$\mathbb{N} = \{1, 2, 3, \dots\}$$ Natural numbers</li>
+                            <li>$$\mathbb{W} = \{0, 1, 2, \dots\}$$ Whole numbers</li>
+                            <li>$$\mathbb{Z} = \{\dots, -2, -1, 0, 1, 2, \dots\}$$ Integers</li>
+                            <li>$$\mathbb{Q} = \{\frac{a}{b} : a, b \in \mathbb{Z}, b \neq 0\}$$ Rational numbers</li>
+                            <li>$$\mathbb{R}$$ Real numbers</li>
+                            <li>$$\mathbb{C}$$ Complex numbers</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Set Relationships</div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Relationship 1</div>
+                        <div class="definition-title">Subset</div>
+                        <p>$$A \subseteq B$$ means "$$A$$ is a subset of $$B$$" - every element of $$A$$ is also in $$B$$</p>
+                        
+                        <div class="formula-box">
+                            <div class="flag">Formal</div>
+                            <div class="formula">$$A \subseteq B \iff \forall x, x \in A \implies x \in B$$</div>
+                        </div>
+                    </div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Relationship 2</div>
+                        <div class="definition-title">Proper Subset</div>
+                        <p>$$A \subset B$$ means "$$A$$ is a proper subset of $$B$$" - $$A \subseteq B$$ but $$A \neq B$$</p>
+                    </div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Relationship 3</div>
+                        <div class="definition-title">Equal Sets</div>
+                        <p>$$A = B$$ means "$$A$$ equals $$B$$" - both contain exactly the same elements</p>
+                        
+                        <div class="formula-box">
+                            <div class="flag">Formal</div>
+                            <div class="formula">$$A = B \iff A \subseteq B \text{ AND } B \subseteq A$$</div>
+                        </div>
+                    </div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Relationship 4</div>
+                        <div class="definition-title">Disjoint Sets</div>
+                        <p>$$A$$ and $$B$$ are disjoint if they have no common elements</p>
+                        
+                        <div class="formula-box">
+                            <div class="flag">Formal</div>
+                            <div class="formula">$$A \cap B = \emptyset$$</div>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <div class="flag">Example</div>
+                        <div class="example-title">Set Relationship Examples</div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 1</div>
+                            <p>Let $$A = \{1, 2, 3\}$$ and $$B = \{1, 2, 3, 4, 5\}$$</p>
+                            <p>$$A \subseteq B$$ ✓ (A is a subset of B)</p>
+                            <p>$$A \subset B$$ ✓ (A is a PROPER subset of B)</p>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 2</div>
+                            <p>Let $$C = \{2, 3\}$$</p>
+                            <p>$$C \subseteq A$$ ✓</p>
+                            <p>$$C \subseteq B$$ ✓</p>
+                            <p>$$\mathbb{N} \subseteq \mathbb{Z} \subseteq \mathbb{Q} \subseteq \mathbb{R}$$</p>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 3: Disjoint</div>
+                            <p>Let $$D = \{1, 3, 5\}$$ and $$E = \{2, 4, 6\}$$</p>
+                            <p>$$D \cap E = \emptyset$$, so D and E are disjoint</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Set Operations</div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Operation 1</div>
+                        <div class="definition-title">Union</div>
+                        <p>$$A \cup B = \{x : x \in A \text{ OR } x \in B\}$$ - all elements in A, B, or both</p>
+                        
+                        <div class="formula-box">
+                            <div class="flag">Example</div>
+                            <div class="formula">$$\{1, 2\} \cup \{2, 3, 4\} = \{1, 2, 3, 4\}$$</div>
+                        </div>
+                    </div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Operation 2</div>
+                        <div class="definition-title">Intersection</div>
+                        <p>$$A \cap B = \{x : x \in A \text{ AND } x \in B\}$$ - elements common to both A and B</p>
+                        
+                        <div class="formula-box">
+                            <div class="flag">Example</div>
+                            <div class="formula">$$\{1, 2, 3, 4\} \cap \{3, 4, 5, 6\} = \{3, 4\}$$</div>
+                        </div>
+                    </div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Operation 3</div>
+                        <div class="definition-title">Difference</div>
+                        <p>$$A \setminus B = \{x : x \in A \text{ AND } x \notin B\}$$ - elements in A but NOT in B</p>
+                        
+                        <div class="formula-box">
+                            <div class="flag">Example</div>
+                            <div class="formula">$$\{1, 2, 3, 4, 5\} \setminus \{3, 4\} = \{1, 2, 5\}$$</div>
+                        </div>
+                    </div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Operation 4</div>
+                        <div class="definition-title">Complement</div>
+                        <p>$$A^c = U \setminus A$$ where $$U$$ is the universal set - all elements NOT in A</p>
+                        
+                        <div class="formula-box">
+                            <div class="flag">Example</div>
+                            <div class="formula">If $$U = \{1, 2, 3, 4, 5\}$$ and $$A = \{2, 4\}$$, then $$A^c = \{1, 3, 5\}$$</div>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <div class="flag">Example</div>
+                        <div class="example-title">Combining Set Operations</div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Problem</div>
+                            <p>Let $$A = \{1, 2, 3, 4, 5\}$$, $$B = \{3, 4, 5, 6, 7\}$$, $$C = \{5, 6, 7, 8, 9\}$$</p>
+                            
+                            <div class="note-box">
+                                <div class="flag">a) $$A \cup B$$</div>
+                                <p>$$\{1, 2, 3, 4, 5, 6, 7\}$$</p>
+                            </div>
+                            
+                            <div class="note-box">
+                                <div class="flag">b) $$A \cap B$$</div>
+                                <p>$$\{3, 4, 5\}$$</p>
+                            </div>
+                            
+                            <div class="note-box">
+                                <div class="flag">c) $$(A \cup B) \cap C$$</div>
+                                <p>First find $$A \cup B = \{1, 2, 3, 4, 5, 6, 7\}$$</p>
+                                <p>Then find intersection with C: $$\{5, 6, 7\}$$</p>
+                            </div>
+                            
+                            <div class="note-box">
+                                <div class="flag">d) $$A \setminus C$$</div>
+                                <p>$$\{1, 2, 3, 4\}$$</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="important-box">
+                        <div class="flag">Important Properties</div>
+                        <div class="important-title">De Morgan's Laws for Sets</div>
+                        <ul style="margin: 15px 0 15px 30px; line-height: 2;">
+                            <li>$$(A \cup B)^c = A^c \cap B^c$$ - Complement of union</li>
+                            <li>$$(A \cap B)^c = A^c \cup B^c$$ - Complement of intersection</li>
+                        </ul>
+                        <p>These laws show how complements interact with unions and intersections!</p>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Set Cardinality</div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Definition</div>
+                        <div class="definition-title">Cardinality</div>
+                        <p>The cardinality of a set, denoted by $$|A|$$, is the number of elements in the set.</p>
+                    </div>
+                    
+                    <div class="example-box">
+                        <div class="flag">Example</div>
+                        <div class="example-title">Cardinality Examples</div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 1</div>
+                            <p>$$|\{1, 2, 3, 4, 5\}| = 5$$</p>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 2</div>
+                            <p>$$|\{\text{a, b, c, d}\}| = 4$$</p>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 3</div>
+                            <p>$$|\emptyset| = 0$$ (empty set has 0 elements)</p>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 4: Infinite Sets</div>
+                            <p>$$|\mathbb{N}| = |\mathbb{Z}| = |\mathbb{Q}| = \infty$$ (countably infinite)</p>
+                            <p>$$|\mathbb{R}| = \infty$$ (uncountably infinite, "larger" than integers!)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="note-box">
+                        <div class="flag">Formula</div>
+                        <div class="note-title">Cardinality of Union</div>
+                        <p>For finite sets:</p>
+                        <p>$$|A \cup B| = |A| + |B| - |A \cap B|$$</p>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="practice-section">
+                    <div class="practice-header">Practice Problems</div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 1</div>
+                        <div class="problem-question">Write the set $$A = \{3, 6, 9, 12, 15\}$$ using set-builder notation</div>
+                        <input type="text" class="problem-input" id="prob1" placeholder="Describe the pattern">
+                        <button class="check-btn" onclick="checkProblem(1)">Check Answer</button>
+                        <div class="feedback" id="prob1-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 2</div>
+                        <div class="problem-question">Is $$\mathbb{N} \subseteq \mathbb{Z}$$? (yes/no)</div>
+                        <input type="text" class="problem-input" id="prob2" placeholder="Enter yes or no">
+                        <button class="check-btn" onclick="checkProblem(2)">Check Answer</button>
+                        <div class="feedback" id="prob2-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 3</div>
+                        <div class="problem-question">Find $$\{1, 2, 3\} \cup \{3, 4, 5\}$$</div>
+                        <input type="text" class="problem-input" id="prob3" placeholder="Enter as '{1,2,3,4,5}'">
+                        <button class="check-btn" onclick="checkProblem(3)">Check Answer</button>
+                        <div class="feedback" id="prob3-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 4</div>
+                        <div class="problem-question">Find $$\{1, 2, 3, 4, 5\} \cap \{3, 4, 5, 6, 7\}$$</div>
+                        <input type="text" class="problem-input" id="prob4" placeholder="Enter as '{3,4,5}'">
+                        <button class="check-btn" onclick="checkProblem(4)">Check Answer</button>
+                        <div class="feedback" id="prob4-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 5</div>
+                        <div class="problem-question">What is $$|\{2, 4, 6, 8, 10\}|$$?</div>
+                        <input type="text" class="problem-input" id="prob5" placeholder="Enter the cardinality">
+                        <button class="check-btn" onclick="checkProblem(5)">Check Answer</button>
+                        <div class="feedback" id="prob5-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 6</div>
+                        <div class="problem-question">Let $$U = \{1, 2, 3, 4, 5, 6, 7\}$$, $$A = \{2, 4, 6\}$$. Find $$A^c$$</div>
+                        <input type="text" class="problem-input" id="prob6" placeholder="Enter as '{1,3,5,7}'">
+                        <button class="check-btn" onclick="checkProblem(6)">Check Answer</button>
+                        <div class="feedback" id="prob6-feedback"></div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Summary</div>
+                    
+                    <div class="note-box">
+                        <div class="flag">Summary</div>
+                        <p>In this lesson, we covered:</p>
+                        <ul style="margin: 15px 0 15px 30px; line-height: 2;">
+                            <li>Definition of sets and set notation</li>
+                            <li>Roster method and set-builder notation</li>
+                            <li>Standard number sets: $$\mathbb{N}, \mathbb{Z}, \mathbb{Q}, \mathbb{R}, \mathbb{C}$$</li>
+                            <li>Set relationships: subsets, proper subsets, equality, disjoint sets</li>
+                            <li>Set operations: union, intersection, difference, complement</li>
+                            <li>Cardinality and counting elements</li>
+                            <li>De Morgan's Laws for sets</li>
+                        </ul>
+                        <p style="margin-top: 15px;">Sets and set notation are the foundation of precise mathematical language. You'll use these concepts constantly when working with vectors, matrices, and mathematical spaces!</p>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="nav-buttons">
+                    <a href="1-1-2-complex-numbers.html" class="nav-btn">Previous: Complex Numbers</a>
+                    <a href="1-1-4-practice-numbers.html" class="nav-btn primary">Next: Practice Quiz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/navigation.js"></script>
+    <script>
+        const problems_1_1_3 = {
+            1: { 
+                alternatives: ['{3n : n in N, n<=5}', '{3n: n is natural', '{3n where n=1..5}', 'multiples of 3'],
+                feedback: 'Excellent! Multiple ways to write this include {3n : n ∈ N, n ≤ 5}'
+            },
+            2: { 
+                alternatives: ['yes', 'Yes', 'YES'],
+                feedback: 'Correct! Every natural number is an integer, so ℕ ⊆ ℤ.'
+            },
+            3: { 
+                alternatives: ['{1,2,3,4,5}', '{1, 2, 3, 4, 5}', '1,2,3,4,5'],
+                feedback: 'Great work! The union contains all elements from both sets.'
+            },
+            4: { 
+                alternatives: ['{3,4,5}', '{3, 4, 5}', '3,4,5'],
+                feedback: 'Perfect! The intersection contains elements common to both sets.'
+            },
+            5: { 
+                alternatives: ['5', 'five', '|A| = 5'],
+                feedback: 'Correct! The set has 5 elements, so |A| = 5.'
+            },
+            6: { 
+                alternatives: ['{1,3,5,7}', '{1, 3, 5, 7}', '1,3,5,7'],
+                feedback: 'Excellent! The complement of {2, 4, 6} in U is {1, 3, 5, 7}.'
+            }
+        };
+        
+        function checkProblem(num) {
+            const userInput = document.getElementById('prob' + num).value.trim();
+            const feedback = document.getElementById('prob' + num + '-feedback');
+            const problem = problems_1_1_3[num];
+            const alternatives = problem.alternatives;
+            
+            let isCorrect = alternatives.some(alt => 
+                alt.toLowerCase().replace(/\s/g, '') === userInput.toLowerCase().replace(/\s/g, '')
+            );
+            
+            if (isCorrect) {
+                feedback.className = 'feedback correct';
+                feedback.style.display = 'block';
+                feedback.innerHTML = problem.feedback || 'Correct! Well done.';
+                markProblemSolved('1-1-3-' + num);
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.style.display = 'block';
+                feedback.textContent = 'Incorrect. Try again. Remember set notation rules!';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+        });
+    </script>
+</body>
+</html>

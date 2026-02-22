@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1.1.4: Module 1.1 Practice - Linear Algebra</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- MathJax for LaTeX rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="chapter-1">
+    <div class="main-wrapper">
+        <nav class="sidebar toc-pink">
+            <div class="sidebar-header">
+                <div class="sidebar-title">Linear Algebra</div>
+            </div>
+            <div class="toc-chapter toc-pink">
+                <div class="toc-chapter-title">Chapter 1: Foundations</div>
+                <div class="toc-module">
+                    <div class="toc-module-title">Module 1.1: Numbers & Notation</div>
+                    <div class="toc-lessons">
+                        <div class="toc-lesson"><a href="1-1-1-real-numbers.html">Lesson 1.1.1: Real Numbers</a></div>
+                        <div class="toc-lesson"><a href="1-1-2-complex-numbers.html">Lesson 1.1.2: Complex Numbers</a></div>
+                        <div class="toc-lesson"><a href="1-1-3-sets-notation.html">Lesson 1.1.3: Sets & Notation</a></div>
+                        <div class="toc-lesson"><a href="1-1-4-practice-numbers.html" class="active">Lesson 1.1.4: Module 1.1 Practice</a></div>
+                    </div>
+                </div>
+                <div class="toc-module">
+                    <div class="toc-module-title">Module 1.2: Vectors</div>
+                    <div class="toc-lessons">
+                        <div class="toc-lesson"><a href="1-2-1-vector-basics.html">Lesson 1.2.1: Vector Basics</a></div>
+                        <div class="toc-lesson"><a href="1-2-2-vector-operations.html">Lesson 1.2.2: Vector Operations</a></div>
+                        <div class="toc-lesson"><a href="1-2-3-dot-product.html">Lesson 1.2.3: Dot Product</a></div>
+                        <div class="toc-lesson"><a href="1-2-4-vectors-3d.html">Lesson 1.2.4: Vectors in 3D</a></div>
+                        <div class="toc-lesson"><a href="1-2-5-practice-vectors.html">Lesson 1.2.5: Practice Quiz</a></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="module-header">
+                    <h2>Lesson 1.1.4: Module 1.1 Practice Quiz</h2>
+                    <p>Module 1.1: Numbers & Notation | Chapter 1: Foundations</p>
+                </div>
+                
+                <div class="content-card">
+                    <div class="important-box">
+                        <div class="flag">Welcome</div>
+                        <div class="important-title">Module 1.1 Assessment</div>
+                        <p>Excellent work completing Module 1.1! This quiz will test your understanding of real numbers, complex numbers, absolute value, sets, and mathematical notation. Take your time choosing your answers - knowledge comes from practice!</p>
+                    </div>
+                    
+                    <div class="note-box">
+                        <div class="flag">Instructions</div>
+                        <ul style="margin: 15px 0 15px 30px; line-height: 2;">
+                            <li>This quiz contains 5 questions</li>
+                            <li>You must score at least <strong>70% (4/5)</strong> to pass</li>
+                            <li>Select one answer for each question</li>
+                            <li>Good luck - you've got this!</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Part I: Real Numbers & Absolute Value</div>
+                </div>
+                
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 1: Calculate $$|-\frac{15}{4}|$$</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectOption('Q1', 'A', this)">A. $$-\frac{15}{4}$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q1', 'B', this)">B. $$\frac{15}{4}$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q1', 'C', this)">C. $$-15$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q1', 'D', this)">D. $$0$$</div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 2: Find the distance between $$10$$ and $$-4$$ on the number line</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectOption('Q2', 'A', this)">A. $$6$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q2', 'B', this)">B. $$10$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q2', 'C', this)">C. $$14$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q2', 'D', this)">D. $$-6$$</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Part II: Complex Numbers</div>
+                </div>
+                
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 3: Evaluate $$i^6$$</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectOption('Q3', 'A', this)">A. $$i$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q3', 'B', this)">B. $$-1$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q3', 'C', this)">C. $$-i$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q3', 'D', this)">D. $$1$$</div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 4: What is the complex conjugate of $$3 + 5i$$?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectOption('Q4', 'A', this)">A. $$3 - i$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q4', 'B', this)">B. $$-3 + 5i$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q4', 'C', this)">C. $$3 - 5i$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q4', 'D', this)">D. $$-3 - 5i$$</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Part III: Sets & Notation</div>
+                </div>
+                
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 5: Find $$\{1, 2, 3\} \cup \{3, 4, 5\}$$</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectOption('Q5', 'A', this)">A. $$\{3\}$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q5', 'B', this)">B. $$\{1, 2, 4, 5\}$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q5', 'C', this)">C. $$\{1, 2, 3, 4, 5\}$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q5', 'D', this)">D. $$\{1, 2, 3, 4, 5, 6\}$$</div>
+                        </div>
+                    </div>
+                    
+                    <button class="quiz-button" onclick="submitModule1_1()">Submit Quiz</button>
+                </div>
+                
+                <div class="quiz-container" id="quiz-results" style="display: none;">
+                    <div id="quiz-feedback" style="text-align: center;"></div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="note-box">
+                        <div class="flag">Tips</div>
+                        <p>Review the material if you're unsure!</p>
+                        <ul style="margin: 15px 0 15px 30px; line-height: 2;">
+                            <li>$$|x|$$ is always non-negative</li>
+                            <li>$$i^2 = -1, i^4 = 1$$</li>
+                            <li>Conjugate flips the sign of the imaginary part</li>
+                            <li>Union contains all elements from both sets</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="nav-buttons">
+                    <a href="1-1-3-sets-notation.html" class="nav-btn">Previous: Sets & Notation</a>
+                    <a href="1-2-1-vector-basics.html" class="nav-btn primary">Next: Vector Basics</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/navigation.js"></script>
+    <script>
+        let quizAnswers_1_1_4 = {};
+        
+        function selectOption(questionId, answer, element) {
+            quizAnswers_1_1_4[questionId] = answer;
+            const parent = element.parentElement;
+            parent.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+        
+        function submitModule1_1() {
+            const correctAnswers = {'Q1': 'B', 'Q2': 'C', 'Q3': 'B', 'Q4': 'C', 'Q5': 'C'};
+            let score = 0;
+            let total = Object.keys(correctAnswers).length;
+            
+            for (let q in correctAnswers) {
+                if (quizAnswers_1_1_4[q] === correctAnswers[q]) {
+                    score++;
+                }
+            }
+            
+            const percentage = Math.round((score / total) * 100);
+            
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('quiz-results').style.display = 'block';
+            
+            const feedbackEl = document.getElementById('quiz-feedback');
+            let feedbackHTML = `<div style="font-size: 1.8em; font-weight: 700; margin-bottom: 20px;">
+                Score: ${score}/${total} (${percentage}%)
+            </div>`;
+            
+            if (percentage >= 70) {
+                feedbackHTML += `
+                    <div class="note-box" style="margin-bottom: 20px;">
+                        <div class="flag">Congratulations!</div>
+                        <div style="font-size: 1.3em; font-weight: 700; color: var(--green-accent); margin: 15px 0;">
+                            You passed Module 1.1!
+                        </div>
+                        <p>You've demonstrated excellent understanding of real numbers, complex numbers, and set notation. These foundational concepts will serve you well as we explore vectors and matrices!</p>
+                    </div>
+                    <div class="important-box">
+                        <div class="flag">Progress</div>
+                        <p>Module 1.1 complete! Ready for Module 1.2: Vectors</p>
+                    </div>
+                `;
+                markQuizPassed('1-1');
+            } else {
+                feedbackHTML += `
+                    <div class="caution-box" style="margin-bottom: 20px;">
+                        <div class="flag">Keep Practicing!</div>
+                        <div style="font-size: 1.3em; font-weight: 700; color: var(--orange-accent); margin: 15px 0;">
+                            Score: ${score}/${total} (${percentage}%)
+                        </div>
+                        <p>You haven't reached the 70% threshold yet. Review the lessons and try again!</p>
+                    </div>
+                    <div class="note-box">
+                        <div class="flag">What to Review</div>
+                        <ul style="margin: 15px 0 15px 30px; line-height: 2;">
+                            ${score < 1 ? '<li>Practice absolute value calculations</li>' : ''}
+                            ${score < 2 ? '<li>Review complex number operations</li>' : ''}
+                            ${score < 4 ? '<li>Study set operations and notation</li>' : ''}
+                        </ul>
+                    </div>
+                `;
+            }
+            
+            feedbackEl.innerHTML = feedbackHTML;
+            
+            // Hide all quiz containers except results
+            document.querySelectorAll('.quiz-container').forEach(container => {
+                if (container.id !== 'quiz-results') {
+                    container.style.display = 'none';
+                }
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+        });
+    </script>
+</body>
+</html>

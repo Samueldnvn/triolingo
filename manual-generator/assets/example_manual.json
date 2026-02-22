@@ -1,0 +1,133 @@
+{
+  "title": "Assembling a Simple Shelf",
+  "sections": [
+    {
+      "number": "1",
+      "title": "Preparation",
+      "content": [
+        {
+          "type": "text",
+          "text": "Before you begin, ensure you have all necessary components and sufficient workspace."
+        }
+      ],
+      "subsections": [
+        {
+          "number": "1",
+          "title": "Required Tools",
+          "content": [
+            {
+              "type": "text",
+              "text": "Gather the following tools before starting assembly:"
+            },
+            {
+              "type": "step",
+              "number": "1",
+              "text": "Phillips screwdriver #2"
+            },
+            {
+              "type": "step",
+              "number": "2",
+              "text": "Hammer"
+            },
+            {
+              "type": "step",
+              "number": "3",
+              "text": "Measuring tape"
+            }
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Components Check",
+          "content": [
+            {
+              "type": "tip",
+              "tip_type": "tip",
+              "title": "Important",
+              "text": "Verify all parts are present using the included parts list. Missing parts should be reported immediately."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "2",
+      "title": "Assembly Process",
+      "content": [
+        {
+          "type": "text",
+          "text": "Follow these steps in sequence to assemble your shelf."
+        }
+      ],
+      "subsections": [
+        {
+          "number": "1",
+          "title": "Base Assembly",
+          "content": [
+            {
+              "type": "step",
+              "number": "1",
+              "text": "Attach side panels to the bottom shelf using the provided screws."
+            },
+            {
+              "type": "step",
+              "number": "2",
+              "text": "Insert dowel pins into the pre-drilled holes on both side panels."
+            },
+            {
+              "type": "tip",
+              "tip_type": "warning",
+              "title": "Caution",
+              "text": "Do not overtighten screws. This may damage the wood or strip the threads."
+            }
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Shelve Installation",
+          "content": [
+            {
+              "type": "step",
+              "number": "1",
+              "text": "Position the shelf supports at the desired height."
+            },
+            {
+              "type": "step",
+              "number": "2",
+              "text": "Slide the middle shelf into position."
+            },
+            {
+              "type": "tip",
+              "tip_type": "info",
+              "title": "Key Point",
+              "text": "For better stability, ensure the shelf is perfectly level before tightening all screws."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "3",
+      "title": "Final Steps",
+      "content": [],
+      "subsections": [
+        {
+          "number": "1",
+          "title": "Inspection",
+          "content": [
+            {
+              "type": "step",
+              "number": "1",
+              "text": "Check all connections are secure."
+            },
+            {
+              "type": "step",
+              "number": "2",
+              "text": "Test stability by applying gentle pressure."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

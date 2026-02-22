@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 4: IoT Communication Protocols</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="course-header">
+        <h1>MODULE 4: IOT COMMUNICATION PROTOCOLS</h1>
+        <h2>HTTP, MQTT, CoAP, and WebSockets</h2>
+    </div>
+    <nav class="nav-container">
+        <ul class="nav-menu">
+            <li class="nav-item active" onclick="showSection('protocols')">Protocols</li>
+            <li class="nav-item" onclick="showSection('mqtt')">MQTT</li>
+            <li class="nav-item" onclick="showSection('coap')">CoAP</li>
+            <li class="nav-item" onclick="showSection('websocket')">WebSockets</li>
+            <li class="nav-item" onclick="showSection('practice')">Practice</li>
+            <li class="nav-item" onclick="showSection('quiz')">Quiz</li>
+        </ul>
+    </nav>
+    <div class="progress-container">
+        <div class="progress-title">MODULE 4 PROGRESS</div>
+        <div class="progress-bar"><div class="progress-fill" id="moduleProgress" style="width: 0%">0%</div></div>
+    </div>
+    <div class="container">
+        <div class="content-section active" id="protocols">
+            <div class="lesson-header"><h1>IoT Communication Protocols</h1><p>Enabling Device-to-Device and Device-to-Cloud Communication</p></div>
+            <div class="section-divider"></div>
+            <p class="content-text">Communication protocols are the foundation of IoT connectivity, determining how devices exchange data efficiently and reliably.</p>
+            <div class="info-section">
+                <div class="info-title">KEY FACTORS IN PROTOCOL SELECTION</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Bandwidth:</span> How much network capacity is available</li>
+                    <li><span class="keyword">Latency:</span> Required response time</li>
+                    <li><span class="keyword">Power Consumption:</span> Battery life requirements</li>
+                    <li><span class="keyword">Reliability:</span> Guaranteed vs. best-effort delivery</li>
+                    <li><span class="keyword">Scalability:</span> Number of devices supported</li>
+                    <li><span class="keyword">Security:</span> Encryption and authentication capabilities</li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-section" id="mqtt">
+            <h2 class="section-title">MQTT (MESSAGE QUEUING TELEMETRY TRANSPORT)</h2>
+            <p class="content-text">MQTT is a lightweight publish/subscribe messaging protocol designed for IoT devices with limited bandwidth and power.</p>
+            <div class="info-section">
+                <div class="info-title">MQTT CHARACTERISTICS</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Architecture:</span> Publish/subscribe with broker mediation</li>
+                    <li><span class="keyword">Transport:</span> Runs over TCP/IP</li>
+                    <li><span class="keyword">QoS Levels:</span> 0 (at most once), 1 (at least once), 2 (exactly once)</li>
+                    <li><span class="keyword">Message Size:</span> Very small header (2 bytes minimum)</li>
+                    <li><span class="keyword">Topics:</span> Hierarchical addressing (e.g., home/livingroom/temperature)</li>
+                </ul>
+            </div>
+            <div class="code-block">
+                <span class="code-class">// Java MQTT client example with Eclipse Paho</span><br><br>
+                <span class="code-keyword">import</span> org.eclipse.paho.client.mqttv3.*;<br><br>
+                <span class="code-keyword">public class</span> MqttPublisher {<br>
+                &nbsp;&nbsp;<span class="code-keyword">public static void</span> main(String[] args) <span class="code-keyword">throws</span> Exception {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;String broker = <span class="code-string">"tcp://broker.hivemq.com:1883"</span>;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;String clientId = <span class="code-string">"JavaClient"</span>;<br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;MqttClient client = <span class="code-keyword">new</span> MqttClient(broker, clientId);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;MqttConnectOptions connOpts = <span class="code-keyword">new</span> MqttConnectOptions();<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;connOpts.setCleanSession(<span class="code-keyword">true</span>);<br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;client.connect(connOpts);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;MqttMessage message = <span class="code-keyword">new</span> MqttMessage(<span class="code-string">"Hello IoT"</span>.getBytes());<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;client.publish(<span class="code-string">"sensor/temperature"</span>, message);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;client.disconnect();<br>
+                &nbsp;&nbsp;}<br>
+                }
+            </div>
+            <div class="attention-box">MQTT IS THE DE FACTO STANDARD FOR IOT MESSAGING DUE TO ITS LIGHTWEIGHT NATURE AND EFFICIENCY</div>
+        </div>
+        <div class="content-section" id="coap">
+            <h2 class="section-title">COAP (CONSTRAINED APPLICATION PROTOCOL)</h2>
+            <p class="content-text">CoAP is designed for constrained devices and networks, using UDP instead of TCP for lower overhead.</p>
+            <div class="info-section">
+                <div class="info-title">COAP VS HTTP</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Transport:</span> Uses UDP (fast, unreliable) vs. TCP (slower, reliable)</li>
+                    <li><span class="keyword">Request Model:</span> GET, POST, PUT, DELETE similar to HTTP</li>
+                    <li><span class="keyword">Message Size:</span> Optimized for small packets (4-byte header)</li>
+                    <li><span class="keyword">Multicast:</span> Native support for broadcasting messages</li>
+                    <li><span class="keyword">Discoverability:</span> Resource discovery via multicast</li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-section" id="websocket">
+            <h2 class="section-title">WEBSOCKETS</h2>
+            <p class="content-text">WebSockets provide full-duplex communication over a single TCP connection, ideal for real-time IoT applications.</p>
+            <div class="info-section">
+                <div class="info-title">WEBSOCKET ADVANTAGES</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Real-time:</span> Instant bidirectional communication</li>
+                    <li><span class="keyword">Efficient:</span> Single connection, minimal overhead</li>
+                    <li><span class="keyword">Browser Support:</span> Native in modern web browsers</li>
+                    <li><span class="keyword">Low Latency:</span> Immediate message delivery</li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-section" id="practice">
+            <h2 class="section-title">PRACTICE PROBLEMS</h2>
+            <div class="section-divider"></div>
+            <div class="info-section">
+                <div class="practice-problem">
+                    <div class="problem-question"><strong>Problem 1:</strong> What protocol is best for constrained IoT devices with limited bandwidth?</div>
+                    <input type="text" class="problem-input" id="m4p-1" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkIoTProblem('4-1', 'MQTT', [], 'm4p-1')">Check</button>
+                    <div class="feedback" id="m4p-1-feedback"></div>
+                </div>
+                <div class="practice-problem">
+                    <div class="problem-question"><strong>Problem 2:</strong> What is the main difference between CoAP and HTTP?</div>
+                    <input type="text" class="problem-input" id="m4p-2" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkIoTProblem('4-9', 'CoAP uses UDP, HTTP uses TCP', [], 'm4p-2')">Check</button>
+                    <div class="feedback" id="m4p-2-feedback"></div>
+                </div>
+                <div class="practice-problem">
+                    <div class="problem-question"><strong>Problem 3:</strong> What are the three MQTT QoS levels?</div>
+                    <input type="text" class="problem-input" id="m4p-3" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkIoTProblem('4-3', '0, 1, and 2 (at most once, at least once, exactly once)', [], 'm4p-3')">Check</button>
+                    <div class="feedback" id="m4p-3-feedback"></div>
+                </div>
+            </div>
+            <div class="attention-box">COMPLETE ALL 55 PRACTICE PROBLEMS FOR MODULE 4</div>
+        </div>
+        <div class="content-section" id="quiz">
+            <h2 class="section-title">MODULE 4 QUIZ</h2>
+            <div class="section-divider"></div>
+            <div id="quiz-container" class="quiz-container"></div>
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="submit-btn" onclick="loadModuleQuiz(4)">Load Quiz</button>
+                <button class="submit-btn" onclick="submitModuleQuiz(4)" style="display: none;">Submit Quiz</button>
+            </div>
+            <div id="quiz-result" class="score-display" style="display: none;">
+                <h2>QUIZ RESULTS</h2>
+                <div class="score-value" id="score-value">0/10</div>
+                <p id="score-message"></p>
+            </div>
+        </div>
+        <div class="nav-buttons">
+            <a href="03-hardware-sensors.html" class="nav-button">Previous Module</a>
+            <a href="../index.html" class="nav-button">Back to Course Overview</a>
+            <a href="05-development-tools.html" class="nav-button">Next Module: Development Tools</a>
+        </div>
+    </div>
+    <div class="footer"><p class="footer-text">IOT DEVELOPMENT WITH JAVA • Module 4: Communication Protocols • 55+ Practice Problems</p></div>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/problems.js"></script>
+    <script src="../js/quizzes.js"></script>
+    <script>let currentModuleAnswers = {};function loadModuleQuiz(n){const e=document.getElementById("quiz-container"),t=quizQuestions["module"+n];let n="";t.forEach((e,t)=>{n+=`<div class="quiz-question"><p><strong>Q${t+1}:</strong> ${e.question}</p><div class="quiz-options">${e.options.map(e=>`<div class="quiz-option" onclick="selectModuleOption('${e.id}','${e.charAt(0)}',this)">${e}</div>`).join("")}</div></div>`});e.innerHTML=n,document.querySelector('button[onclick^="loadModuleQuiz"]').style.display="none",document.querySelector('button[onclick^="submitModuleQuiz"]').style.display="inline-block"}function selectModuleOption(e,t,n){currentModuleAnswers[e]=t,n.parentElement.querySelectorAll(".quiz-option").forEach(e=>e.classList.remove("selected")),n.classList.add("selected")}function submitModuleQuiz(e){const t=quizQuestions["module"+e],n=t.filter(e=>currentModuleAnswers[e.id]===quizAnswers["module"+e][e.id]).length,r=100*n/t.length;document.getElementById("score-value").textContent=`${n}/${t.length} (${r.toFixed(1)}%)`,document.getElementById("score-message").textContent=r>=70?"You passed!":"Score at least 70% to pass.",r>=70&&"function"==typeof markQuizPassed&&markQuizPassed(e),document.getElementById("quiz-result").style.display="block"}function checkIoTProblem(e,t,n,r){const a=document.getElementById(r),o=document.getElementById(r+"-feedback"),s=a.value.trim().toLowerCase().replace(/\s+/g,""),i=t.toLowerCase().replace(/\s+/g,""),c=n.some(e=>e.toLowerCase().replace(/\s+/g,"")===s);s===i||c?(o.className="feedback correct",o.textContent="Correct!",o.style.display="block","function"==typeof markProblemSolved&&markProblemSolved(e)):(o.className="feedback incorrect",o.textContent="Not correct. Review and try again.",o.style.display="block")}document.addEventListener("DOMContentLoaded",()=>{loadProgress(),markLessonComplete(4)});</script>
+</body>
+</html>

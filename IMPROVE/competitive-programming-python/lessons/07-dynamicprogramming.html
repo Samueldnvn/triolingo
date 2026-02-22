@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 7: Dynamic Programming - Competitive Programming with Python</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="course-header"><h1>MODULE 7: DYNAMIC PROGRAMMING</h1><h2>Breaking Down Complex Problems into Simpler Subproblems</h2></div>
+    <nav class="nav-container">
+        <ul class="nav-menu">
+            <li class="nav-item active" onclick="showSection('overview')">Overview</li>
+            <li class="nav-item" onclick="showSection('basics')">DP Basics</li>
+            <li class="nav-item" onclick="showSection('1d')">1D DP</li>
+            <li class="nav-item" onclick="showSection('2d')">2D DP</li>
+            <li class="nav-item" onclick="showSection('optimization')">Optimization</li>
+            <li class="nav-item" onclick="showSection('practice')">Practice</li>
+            <li class="nav-item" onclick="showSection('quiz')">Quiz</li>
+        </ul>
+    </nav>
+    <div class="progress-container"><div class="progress-title">MODULE 7 PROGRESS</div><div class="progress-bar"><div class="progress-fill" id="moduleProgress" style="width:0%">0%</div></div></div>
+    <div class="container">
+        <div class="content-section active" id="overview">
+            <div class="lesson-header"><h1>Dynamic Programming Overview</h1><p>Solving optimization problems with overlapping subproblems</p></div>
+            <div class="blueprint-section"><div class="blueprint-content"><h3>WHAT YOU'LL LEARN</h3><ul class="blueprint-list"><li>Memoization vs Tabulation</li><li>1D DP problems</li><li>2D DP (LCS, Edit Distance, Knapsack)</li><li>DP state design</li><li>Space optimization techniques</li></ul></div></div>
+            <h3 class="subsection-title">What is DP?</h3><p class="content-text">Dynamic Programming solves problems by breaking them into overlapping subproblems. Each subproblem is solved once and cached for reuse. Optimal substructure: optimal solution to problem contains optimal solutions to subproblems. Overlapping subproblems: same subproblems solved multiple times.</p>
+            <div class="safety-sign important">KEY: If a problem can be broken into smaller subproblems that repeat, consider DP.</div>
+        </div>
+        <div class="content-section" id="basics">
+            <div class="lesson-header"><h1>DP Fundamentals</h1></div>
+            <h3 class="subsection-title">Fibonacci - Classic Example</h3><div class="code-block"><pre>
+# Recursion: O(2^n)
+def fib(n):
+    if n <= 1: return n
+    return fib(n-1) + fib(n-2)
+
+# Memoization: O(n) time, O(n) space
+def fib_memo(n, memo={}):
+    if n in memo: return memo[n]
+    if n <= 1: return n
+    memo[n] = fib_memo(n-1, memo) + fib_memo(n-2, memo)
+    return memo[n]
+
+# Tabulation: O(n) time, O(n) space
+def fib_tab(n):
+    if n <= 1: return n
+    dp = [0] * (n+1)
+    dp[1] = 1
+    for i in range(2, n+1):
+        dp[i] = dp[i-1] + dp[i-2]
+    return dp[n]
+
+# Space optimized: O(n) time, O(1) space
+def fib_opt(n):
+    if n <= 1: return n
+    prev, curr = 0, 1
+    for _ in range(2, n+1):
+        prev, curr = curr, prev + curr
+    return curr
+            </pre></div>
+        </div>
+        <div class="content-section" id="1d">
+            <div class="lesson-header"><h1>1D DP Problems</h1></div>
+            <h3 class="subsection-title">Climbing Stairs</h3><div class="code-block"><pre>
+def climb_stairs(n):
+    """Number of ways to climb n stairs (1 or 2 steps)"""
+    if n <= 2: return n
+    prev, curr = 1, 2
+    for _ in range(3, n+1):
+        prev, curr = curr, prev + curr
+    return curr
+
+# Equivalent to Fibonacci: ways(n) = ways(n-1) + ways(n-2)
+# ways(3) = ways(2) + ways(1) = 2 + 1 = 3
+# ways(4) = ways(3) + ways(2) = 3 + 2 = 5
+            </pre></div>
+            <h3 class="subsection-title">House Robber</h3><div class="code-block"><pre>
+def rob(nums):
+    """Maximum sum without robbing adjacent houses"""
+    if not nums: return 0
+    if len(nums) == 1: return nums[0]
+    
+    dp = [0] * len(nums)
+    dp[0] = nums[0]
+    dp[1] = max(nums[0], nums[1])
+    
+    for i in range(2, len(nums)):
+        dp[i] = max(dp[i-1], dp[i-2] + nums[i])
+    
+    return dp[-1]
+
+# Space optimized
+def rob_opt(nums):
+    prev, curr = 0, 0
+    for num in nums:
+        prev, curr = curr, max(curr, prev + num)
+    return curr
+            </pre></div>
+            <h3 class="subsection-title">Coin Change</h3><div class="code-block"><pre>
+def coin_change(coins, amount):
+    """Minimum coins to make amount"""
+    dp = [float('inf')] * (amount + 1)
+    dp[0] = 0
+    
+    for coin in coins:
+        for i in range(coin, amount + 1):
+            dp[i] = min(dp[i], dp[i - coin] + 1)
+    
+    return dp[amount] if dp[amount] != float('inf') else -1
+
+# Example: coins = [1,2,5], amount = 11
+# dp[11] = 3 (5 + 5 + 1)
+            </pre></div>
+        </div>
+        <div class="content-section" id="2d">
+            <div class="lesson-header"><h1>2D DP Problems</h1></div>
+            <h3 class="subsection-title">Longest Common Subsequence</h3><div class="code-block"><pre>
+def lcs(text1, text2):
+    """Length of longest common subsequence"""
+    m, n = len(text1), len(text2)
+    dp = [[0] * (n+1) for _ in range(m+1)]
+    
+    for i in range(1, m+1):
+        for j in range(1, n+1):
+            if text1[i-1] == text2[j-1]:
+                dp[i][j] = dp[i-1][j-1] + 1
+            else:
+                dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+    
+    return dp[m][n]
+
+# Example: "abcde", "ace" -> 3 ("ace")
+            </pre></div>
+            <h3 class="subsection-title">Edit Distance</h3><div class="code-block"><pre>
+def min_distance(word1, word2):
+    """Minimum operations to convert word1 to word2"""
+    m, n = len(word1), len(word2)
+    dp = [[0] * (n+1) for _ in range(m+1)]
+    
+    for i in range(m+1):
+        dp[i][0] = i
+    for j in range(n+1):
+        dp[0][j] = j
+    
+    for i in range(1, m+1):
+        for j in range(1, n+1):
+            if word1[i-1] == word2[j-1]:
+                dp[i][j] = dp[i-1][j-1]
+            else:
+                dp[i][j] = min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]) + 1
+    
+    return dp[m][n]
+
+# Operations: insert, delete, replace
+            </pre></div>
+            <h3 class="subsection-title">0/1 Knapsack</h3><div class="code-block"><pre>
+def knapsack(weights, values, capacity):
+    """Maximum value with given capacity"""
+    n = len(weights)
+    dp = [[0] * (capacity+1) for _ in range(n+1)]
+    
+    for i in range(1, n+1):
+        for w in range(capacity+1):
+            if weights[i-1] <= w:
+                dp[i][w] = max(dp[i-1][w], dp[i-1][w-weights[i-1]] + values[i-1])
+            else:
+                dp[i][w] = dp[i-1][w]
+    
+    return dp[n][capacity]
+
+# dp[i][w] = max value using first i items with capacity w
+            </pre></div>
+        </div>
+        <div class="content-section" id="optimization">
+            <div class="lesson-header"><h1>DP Optimization</h1></div>
+            <h3 class="subsection-title">Space Optimization</h3><div class="code-block"><pre>
+# Original: O(n*m) space
+def longest_common_subsequence(text1, text2):
+    m, n = len(text1), len(text2)
+    dp = [[0]*(n+1) for _ in range(m+1)]
+    for i in range(1, m+1):
+        for j in range(1, n+1):
+            if text1[i-1]==text2[j-1]:
+                dp[i][j]=dp[i-1][j-1]+1
+            else:
+                dp[i][j]=max(dp[i-1][j],dp[i][j-1])
+    return dp[m][n]
+
+# Optimized: O(min(n,m)) space
+def lcs_optimized(text1, text2):
+    if len(text1)<len(text2):
+        text1, text2 = text2, text1
+    previous=[0]*(len(text2)+1)
+    for c1 in text1:
+        current=[0]*(len(text2)+1)
+        for j,c2 in enumerate(text2,1):
+            if c1==c2:
+                current[j]=previous[j-1]+1
+            else:
+                current[j]=max(previous[j],current[j-1])
+        previous=current
+    return previous[-1]
+            </pre></div>
+        </div>
+        <div class="content-section" id="practice">
+            <div class="lesson-header"><h1>Practice Problems</h1></div><div id="practiceProblems"></div>
+            <script src="../js/problems.js"></script><script>
+                const c=document.getElementById('practiceProblems');
+                const p=practiceProblems.dynamicprogramming.basics||[];
+                let html='<div class="practice-category"><h3 class="subsection-title">DP Problems</h3>';
+                (p.slice(0,5)).forEach(px=>{
+                    const pid='DP-'+px.id;
+                    html+=`<div class="practice-problem" id="${pid}">
+                        <div class="problem-question"><p><strong>${px.id}:</strong> ${px.question}</p></div>
+                        <div class="problem-input"><input id="${pid}-input"><button onclick="checkAnswer('${pid}','${px.answer.replace(/'/g,"\\'")}',[${px.alternatives.map(a=>`'${a.replace(/'/g,"\\'")}'`).join(',')}],'${pid}-input','${pid}-hint','${pid}-explanation')">Check</button></div>
+                        <div id="${pid}-feedback" class="feedback"></div><div id="${pid}-hint" class="hint" style="display:none">${px.hint}</div></div>`;
+                });
+                c.innerHTML=html+'</div>';
+            </script>
+        </div>
+        <div class="content-section" id="quiz">
+            <div class="lesson-header"><h1>Module 7 Quiz</h1></div><form id="moduleQuiz">
+                <div class="quiz-question"><p>1. Memoization vs tabulation?</p><div class="quiz-options"><label onclick="rec('Q1','A')"><input type="radio" name="Q1" value="A"> A. Top-down vs bottom-up</label><label onclick="rec('Q1','B')><input type="radio" name="Q1" value="B"> B. Both same</label><label onclick="rec('Q1','C')"><input type="radio" name="Q1" value="C"> C. Recursion vs iteration</label></div></div>
+                <div class="quiz-question"><p>2. Fibonacci time with memoization?</p><div class="quiz-options"><label onclick="rec('Q2','A')"><input type="radio" name="Q2" value="A"> A. O(2^n)</label><label onclick="rec('Q2','B')><input type="radio" name="Q2" value="B"> B. O(n)</label><label onclick="rec('Q2','C')"><input type="radio" name="Q2" value="C"> C. O(log n)</label></div></div>
+                <div class="quiz-question"><p>3. Key DP property?</p><div class="quiz-options"><label onclick="rec('Q3','A')"><input type="radio" name="Q3" value="A"> A. Overlapping subproblems</label><label onclick="rec('Q3','B')><input type="radio" name="Q3" value="B"> B. Greedy choice</label><label onclick="rec('Q3','C')"><input type="radio" name="Q3" value="C"> C. Sorting</label></div></div>
+                <div class="quiz-question"><p>4. LCS uses which dimensions?</p><div class="quiz-options"><label onclick="rec('Q4','A')"><input type="radio" name="Q4" value="A"> A. 2D</label><label onclick="rec('Q4','B')><input type="radio" name="Q4" value="B"> B. 1D</label><label onclick="rec('Q4','C')"><input type="radio" name="Q4" value="C"> C. 3D</label></div></div>
+                <div class="quiz-question"><p>5. Space optimization saves _?</p><div class="quiz-options"><label onclick="rec('Q5','A')"><input type="radio" name="Q5" value="A"> A. Time</label><label onclick="rec('Q5','B')><input type="radio" name="Q5" value="B"> B. Memory</label><label onclick="rec('Q5','C')"><input type="radio" name="Q5" value="C"> C. Both</label></div></div>
+                <button type="button" class="quiz-submit" onclick="sub7()">Submit Quiz</button>
+            </form><div class="quiz-results" id="quizResults"></div>
+        </div>
+    </div>
+    <div class="nav-buttons"><button onclick="window.location.href='06-binarysearch.html'">Previous</button><button onclick="window.location.href='../index.html'">Home</button><button onclick="window.location.href='08-greedy.html'">Next</button></div>
+    <script src="../js/navigation.js"></script><script>
+        const ans7={'Q1':'A','Q2':'B','Q3':'A','Q4':'A','Q5':'B'},qa={};function rec(q,a){qa[q]=a;}
+        function sub7(){
+            let s=0,t=5,r=[];for(let q in ans7){if(qa[q]===ans7[q]){s++;r.push(`Q${q.substring(1)}: Correct`);}else{r.push(`Q${q.substring(1)}: Wrong`);}}
+            const p=Math.round((s/t)*100);document.getElementById('quizResults').innerHTML=`<div class="score-display ${p>=70?'pass':'fail'}">${p>=70?'PASSED':'IMPROVE'}</div><p>Score: ${s}/${t} (${p}%)</p>`+r.map(x=>`<p>${x}</p>`).join('');if(p>=70)markQuizPassed('dynamicprogramming');
+        }
+    </script>
+</body>
+</html>

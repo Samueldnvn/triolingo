@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4.2.2-4.2.4: Transformations Overview - Linear Algebra</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="chapter-4">
+    <div class="main-wrapper">
+        <nav class="sidebar toc-green">
+            <div class="sidebar-header">
+                <div class="sidebar-title">Linear Algebra</div>
+            </div>
+            <div class="toc-chapter toc-green">
+                <div class="toc-chapter-title">Chapter 4: Advanced Topics</div>
+                <div class="toc-module">
+                    <div class="toc-module-title">Module 4.2: Linear Transformations</div>
+                    <div class="toc-lessons">
+                        <div class="toc-lesson"><a href="4-2-1-linear-maps.html">Lesson 4.2.1: Linear Maps</a></div>
+                        <div class="toc-lesson"><a href="4-2-2-kernel-range.html" class="active">Lesson 4.2.2-4.2.4: Kernel, Range &amp; Practice</a></div>
+                    </div>
+                </div>
+                <div class="toc-module">
+                    <div class="toc-module-title">Module 4.3: Orthogonality</div>
+                    <div class="toc-lessons">
+                        <div class="toc-lesson"><a href="4-3-1-inner-products.html" class="active">Lesson 4.3.1-4.3.4: Orthogonality Complete</a></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="module-header">
+                    <h2>Lesson 4.2: Linear Transformations - Complete</h2>
+                    <p>Module 4.2 &amp; 4.3 | Chapter 4: Advanced Topics</p>
+                </div>
+                
+                <div class="content-card">
+                    <div class="subsection-title">Kernel (Null Space)</div>
+                    <p>Kernel(T) = {v in domain : T(v) = 0}</p>
+                    <p>The set of all inputs that map to zero.</p>
+                </div>
+                
+                <div class="content-card">
+                    <div class="subsection-title">Range (Image)</div>
+                    <p>Range(T) = {T(v) : v in domain}</p>
+                    <p>The set of all possible outputs.</p>
+                </div>
+                
+                <div class="content-card">
+                    <div class="subsection-title">Inner Products</div>
+                    <p>Inner product satisfies: positive definite, symmetric, linear</p>
+                    <p>Dot product is a common inner product.</p>
+                </div>
+                
+                <div class="content-card">
+                    <div class="subsection-title">Projection</div>
+                    <p>Projection of v onto unit vector u: proj_u(v) = (v . u)u</p>
+                </div>
+                
+                <div class="content-card">
+                    <div class="subsection-title">Gram-Schmidt Process</div>
+                    <p>Converts linearly independent vectors into orthonormal basis.</p>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="quiz-title">Module 4.2 and 4.3 Quiz</div>
+                    <p style="text-align: center; margin-bottom: 20px; color: var(--text-medium);">Test your knowledge. Score 70% to pass.</p>
+                </div>
+                
+                <div class="quiz-container" id="quiz">
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 1: Kernel(T) is the set of vectors mapping to:</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectOption('Q1', 'A', this)">A. Zero</div>
+                            <div class="quiz-option" onclick="selectOption('Q1', 'B', this)">B. One</div>
+                            <div class="quiz-option" onclick="selectOption('Q1', 'C', this)">C. Identity</div>
+                            <div class="quiz-option" onclick="selectOption('Q1', 'D', this)">D. Undefined</div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 2: Two orthogonal vectors have dot product of:</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectOption('Q2', 'A', this)">A. 1</div>
+                            <div class="quiz-option" onclick="selectOption('Q2', 'B', this)">B. -1</div>
+                            <div class="quiz-option" onclick="selectOption('Q2', 'C', this)">C. 0</div>
+                            <div class="quiz-option" onclick="selectOption('Q2', 'D', this)">D. Undefined</div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 3: Range(T) is:</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectOption('Q3', 'A', this)">A. The inputs mapping to zero</div>
+                            <div class="quiz-option" onclick="selectOption('Q3', 'B', this)">B. All possible outputs</div>
+                            <div class="quiz-option" onclick="selectOption('Q3', 'C', this)">C. The domain</div>
+                            <div class="quiz-option" onclick="selectOption('Q3', 'D', this)">D. The codomain</div>
+                        </div>
+                    </div>
+                    
+                    <button class="quiz-button" onclick="submitModules4_2_4_3()">Submit Quiz</button>
+                </div>
+                
+                <div class="quiz-container" id="quiz-results" style="display: none;">
+                    <div id="quiz-feedback" style="text-align: center;"></div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="nav-buttons">
+                    <a href="4-2-1-linear-maps.html" class="nav-btn">Previous: Linear Maps</a>
+                    <a href="5-1-1-svd-applications.html" class="nav-btn primary">Next: SVD &amp; Applications</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/navigation.js"></script>
+    <script>
+        let quizAnswers_4_2_4_3 = {};
+        
+        function selectOption(questionId, answer, element) {
+            quizAnswers_4_2_4_3[questionId] = answer;
+            const parent = element.parentElement;
+            parent.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+        
+        function submitModules4_2_4_3() {
+            const correctAnswers = {'Q1': 'A', 'Q2': 'C', 'Q3': 'B'};
+            let score = 0;
+            let total = Object.keys(correctAnswers).length;
+            
+            for (let q in correctAnswers) {
+                if (quizAnswers_4_2_4_3[q] === correctAnswers[q]) {
+                    score++;
+                }
+            }
+            
+            const percentage = Math.round((score / total) * 100);
+            
+            document.getElementById('quiz').style.display = 'none';
+            document.getElementById('quiz-results').style.display = 'block';
+            
+            const feedbackEl = document.getElementById('quiz-feedback');
+            let feedbackHTML = `<div style="font-size: 1.5em; font-weight: 700; margin-bottom: 20px; color: ${percentage >= 70 ? 'var(--green-accent)' : 'var(--orange-accent)'};">
+                Score: ${score}/${total} (${percentage}%)
+            </div>`;
+            
+            if (percentage >= 70) {
+                feedbackHTML += `<div style="font-weight: 700; color: var(--green-accent); padding: 15px; background: #E8F5E9; border-radius: 10px;">
+                    Excellent! You passed Modules 4.2 and 4.3.
+                </div>`;
+                markQuizPassed('4-2');
+                markQuizPassed('4-3');
+            } else {
+                feedbackHTML += `<div style="font-weight: 700; color: var(--orange-accent); padding: 15px; background: #FFF3E0; border-radius: 10px;">
+                    Keep practicing! Review the material and try again.
+                </div>`;
+            }
+            
+            feedbackEl.innerHTML = feedbackHTML;
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+        });
+    </script>
+</body>
+</html>

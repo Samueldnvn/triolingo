@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4.3: Orthogonality Complete - Linear Algebra</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="chapter-4">
+    <div class="main-wrapper">
+        <nav class="sidebar toc-green">
+            <div class="sidebar-header">
+                <div class="sidebar-title">Linear Algebra</div>
+            </div>
+            <div class="toc-chapter toc-green">
+                <div class="toc-chapter-title">Chapter 4: Advanced Topics</div>
+                <div class="toc-module">
+                    <div class="toc-module-title">Module 4.3: Orthogonality</div>
+                    <div class="toc-lessons">
+                        <div class="toc-lesson"><a href="4-3-1-inner-products.html" class="active">Lesson 4.3: Orthogonality Complete</a></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="module-header">
+                    <h2>Lesson 4.3: Orthogonality Complete</h2>
+                    <p>Module 4.3: Orthogonality | Chapter 4: Advanced Topics</p>
+                </div>
+                
+                <div class="content-card">
+                    <div class="subsection-title">Inner Product</div>
+                    <p>An inner product is a generalization of the dot product. It satisfies:</p>
+                    <ul style="margin: 10px 0 10px 25px;">
+                        <li>Positive definiteness</li>
+                        <li>Symmetry</li>
+                        <li>Linearity</li>
+                    </ul>
+                </div>
+                
+                <div class="content-card">
+                    <div class="subsection-title">Orthogonal Vectors</div>
+                    <p>Two vectors v and w are orthogonal if their inner product is zero.</p>
+                    
+                    <div class="example-box">
+                        <div class="example-title">Example</div>
+                        <p>Is [1, 0] orthogonal to [0, 1]?</p>
+                        <p>[1, 0] . [0, 1] = 1*0 + 0*1 = 0</p>
+                        <p style="margin-top: 10px; font-weight: 600;">Yes, they are orthogonal!</p>
+                    </div>
+                </div>
+                
+                <div class="content-card">
+                    <div class="subsection-title">Projection</div>
+                    
+                    <div class="formula-box">
+                        <div class="formula">proj_w(v) = ((v . w) / (w . w)) * w</div>
+                    </div>
+                    
+                    <p>Projects vector v onto vector w.</p>
+                </div>
+                
+                <div class="content-card">
+                    <div class="subsection-title">Unit Vector</div>
+                    <p>A vector u is a unit vector if |u| = 1</p>
+                    <p>Unit vector in direction of v is u = v / |v|</p>
+                </div>
+                
+                <div class="content-card">
+                    <div class="note-box">
+                        <div class="note-title">Gram-Schmidt Process</div>
+                        <p>Creates orthonormal basis from any basis:</p>
+                        <ol style="margin: 10px 0 10px 25px;">
+                            <li>Set u1 = v1 / |v1|</li>
+                            <li>For each subsequent vector, subtract projection onto previous basis vectors, then normalize</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="practice-header">Practice Problems</div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 1</div>
+                        <div class="problem-question">Find the unit vector in direction of [3, 4]</div>
+                        <input type="text" class="problem-input" id="prob1" placeholder="Enter unit vector">
+                        <button class="check-btn" onclick="checkProblem(1)">Check Answer</button>
+                        <div class="feedback" id="prob1-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 2</div>
+                        <div class="problem-question">Is [1, 1] a unit vector? (yes/no)</div>
+                        <input type="text" class="problem-input" id="prob2" placeholder="Enter yes or no">
+                        <button class="check-btn" onclick="checkProblem(2)">Check Answer</button>
+                        <div class="feedback" id="prob2-feedback"></div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="nav-buttons">
+                    <a href="4-2-2-kernel-range.html" class="nav-btn">Previous: Transformations</a>
+                    <a href="5-1-1-svd-applications.html" class="nav-btn primary">Next: SVD &amp; Applications</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/navigation.js"></script>
+    <script>
+        const problems_4_3 = {
+            1: { alternatives: ['[3/5,4/5]', '<3/5,4/5>', '(0.6,0.8)', '[0.6,0.8]'] },
+            2: { alternatives: ['no', 'No', 'NO'] }
+        };
+        
+        function checkProblem(num) {
+            const userInput = document.getElementById('prob' + num).value.trim();
+            const feedback = document.getElementById('prob' + num + '-feedback');
+            const alternatives = problems_4_3[num].alternatives;
+            
+            let isCorrect = alternatives.some(alt => 
+                alt.toLowerCase().replace(/\s/g, '') === userInput.toLowerCase().replace(/\s/g, '')
+            );
+            
+            if (isCorrect) {
+                feedback.className = 'feedback correct';
+                feedback.style.display = 'block';
+                feedback.textContent = 'Correct! Well done.';
+                markProblemSolved('4-3-' + num);
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.style.display = 'block';
+                feedback.textContent = 'Incorrect. Try again.';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+        });
+    </script>
+</body>
+</html>

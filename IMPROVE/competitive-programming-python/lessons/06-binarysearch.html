@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 6: Binary Search Pattern - Competitive Programming with Python</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="course-header">
+        <h1>MODULE 6: BINARY SEARCH PATTERN</h1>
+        <h2>Efficient Search in Sorted Data Structures</h2>
+    </div>
+
+    <nav class="nav-container">
+        <ul class="nav-menu">
+            <li class="nav-item active" onclick="showSection('overview')">Overview</li>
+            <li class="nav-item" onclick="showSection('standard')">Standard Binary Search</li>
+            <li class="nav-item" onclick="showSection('rotated')">Rotated Arrays</li>
+            <li class="nav-item" onclick="showSection('advanced')">Advanced Applications</li>
+            <li class="nav-item" onclick="showSection('practice')">Practice Problems</li>
+            <li class="nav-item" onclick="showSection('quiz')">Module Quiz</li>
+        </ul>
+    </nav>
+
+    <div class="progress-container">
+        <div class="progress-title">MODULE 6 PROGRESS</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="moduleProgress" style="width: 0%">0%</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content-section active" id="overview">
+            <div class="lesson-header">
+                <h1>Binary Search Pattern</h1>
+                <p>O(log n) search in sorted arrays and beyond</p>
+            </div>
+
+            <div class="blueprint-section">
+                <div class="blueprint-content">
+                    <h3>WHAT YOU'LL LEARN</h3>
+                    <ul class="blueprint-list">
+                        <li>Standard binary search algorithm</li>
+                        <li>Binary search on rotated sorted arrays</li>
+                        <li>Binary search on answers (minimize-maximize problems)</li>
+                        <li>Search in 2D matrices</li>
+                        <li>Lower/upper bound implementations</li>
+                        <li>Bisect module usage in Python</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">What is Binary Search?</h3>
+
+            <p class="content-text">
+                Binary search is a divide-and-conquer algorithm that finds the position of a target value within a sorted array. It compares the target to the middle element and eliminates half the remaining search space each iteration, achieving O(log n) time complexity.
+            </p>
+
+            <h3 class="subsection-title">Time Complexity</h3>
+
+            <div class="code-block">
+                <pre>
+For array of size n:
+Binary search: O(log n) comparisons
+Linear search: O(n) comparisons
+
+Example:
+n = 1,000,000
+Binary search: ~20 comparisons
+Linear search: ~500,000 comparisons (average)
+                </pre>
+            </div>
+
+            <div class="safety-sign important">
+                PREREQUISITE: Binary search requires sorted data in ascending or descending order.
+            </div>
+        </div>
+
+        <div class="content-section" id="standard">
+            <div class="lesson-header">
+                <h1>Standard Binary Search</h1>
+                <p>The fundamental algorithm</p>
+            </div>
+
+            <h3 class="subsection-title">Iterative Implementation</h3>
+
+            <div class="code-block">
+                <pre>
+def binary_search(nums, target):
+    """Return index of target or -1 if not found"""
+    left, right = 0, len(nums) - 1
+    
+    while left <= right:
+        mid = left + (right - left) // 2
+        
+        if nums[mid] == target:
+            return mid
+        elif nums[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    
+    return -1
+
+# Recursive version
+def binary_search_recursive(nums, target, left=0, right=None):
+    if right is None:
+        right = len(nums) - 1
+    
+    if left > right:
+        return -1
+    
+    mid = left + (right - left) // 2
+    
+    if nums[mid] == target:
+        return mid
+    elif nums[mid] < target:
+        return binary_search_recursive(nums, target, mid + 1, right)
+    else:
+        return binary_search_recursive(nums, target, left, mid - 1)
+
+# Example
+nums = [1, 3, 5, 7, 9, 11, 13]
+print(binary_search(nums, 7))  # 3
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">First/Last Occurrence</h3>
+
+            <div class="code-block">
+                <pre>
+def find_first(nums, target):
+    """Find first occurrence of target"""
+    left, right = 0, len(nums) - 1
+    result = -1
+    
+    while left <= right:
+        mid = left + (right - left) // 2
+        
+        if nums[mid] == target:
+            result = mid
+            right = mid - 1  # Search left half
+        elif nums[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    
+    return result
+
+def find_last(nums, target):
+    """Find last occurrence of target"""
+    left, right = 0, len(nums) - 1
+    result = -1
+    
+    while left <= right:
+        mid = left + (right - left) // 2
+        
+        if nums[mid] == target:
+            result = mid
+            left = mid + 1  # Search right half
+        elif nums[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    
+    return result
+
+# Example
+nums = [1, 2, 2, 2, 3, 4]
+print(find_first(nums, 2))  # 1
+print(find_last(nums, 2))   # 3
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Using Python's bisect Module</h3>
+
+            <div class="code-block">
+                <pre>
+import bisect
+
+nums = [1, 3, 5, 7, 9]
+
+# bisect_left: insertion point to maintain sorted order (leftmost)
+pos = bisect.bisect_left(nums, 5)  # 2
+
+# bisect_right: insertion point to maintain sorted order (rightmost)
+pos = bisect.bisect_right(nums, 5)  # 3
+
+# bisect: same as bisect_right
+pos = bisect.bisect(nums, 5)  # 3
+
+# insort: insert while maintaining order
+bisect.insort(nums, 6)  # [1, 3, 5, 6, 7, 9]
+
+# Check if exists
+idx = bisect.bisect_left(nums, 5)
+exists = idx < len(nums) and nums[idx] == 5
+                </pre>
+            </div>
+        </div>
+
+        <div class="content-section" id="rotated">
+            <div class="lesson-header">
+                <h1>Search in Rotated Arrays</h1>
+                <p>Binary search on rotated sorted arrays</p>
+            </div>
+
+            <h3 class="subsection-title">Search in Rotated Sorted Array</h3>
+
+            <div class="code-block">
+                <pre>
+def search_rotated(nums, target):
+    """Search in rotated sorted array"""
+    left, right = 0, len(nums) - 1
+    
+    while left <= right:
+        mid = left + (right - left) // 2
+        
+        if nums[mid] == target:
+            return mid
+        
+        # Determine which half is sorted
+        if nums[left] <= nums[mid]:
+            # Left half is sorted
+            if nums[left] <= target < nums[mid]:
+                right = mid - 1
+            else:
+                left = mid + 1
+        else:
+            # Right half is sorted
+            if nums[mid] < target <= nums[right]:
+                left = mid + 1
+            else:
+                right = mid - 1
+    
+    return -1
+
+# Example: [4,5,6,7,0,1,2], target 0 -> 4
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Find Minimum in Rotated Array</h3>
+
+            <div class="code-block">
+                <pre>
+def find_min_rotated(nums):
+    """Find minimum element in rotated sorted array"""
+    left, right = 0, len(nums) - 1
+    
+    while left < right:
+        mid = left + (right - left) // 2
+        
+        if nums[mid] > nums[right]:
+            # Min is in right half
+            left = mid + 1
+        else:
+            # Min is in left half (including mid)
+            right = mid
+    
+    return nums[left]
+
+# Example: [4,5,6,7,0,1,2] -> 0
+                </pre>
+            </div>
+        </div>
+
+        <div class="content-section" id="advanced">
+            <div class="lesson-header">
+                <h1>Advanced Applications</h1>
+                <p>Binary search beyond simple search</p>
+            </div>
+
+            <h3 class="subsection-title">Search in 2D Matrix</h3>
+
+            <div class="code-block">
+                <pre>
+def search_2d_matrix(matrix, target):
+    """
+    Search in 2D matrix where each row is sorted left to right,
+    each column sorted top to bottom
+    """
+    if not matrix or not matrix[0]:
+        return False
+    
+    m, n = len(matrix), len(matrix[0])
+    row, col = 0, n - 1  # Start from top-right
+    
+    while row < m and col >= 0:
+        if matrix[row][col] == target:
+            return True
+        elif matrix[row][col] < target:
+            row += 1  # Move down
+        else:
+            col -= 1  # Move left
+    
+    return False
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Binary Search on Answer</h3>
+
+            <div class="code-block">
+                <pre>
+def sqrt_binary_search(x):
+    """Find integer sqrt using binary search on answer"""
+    if x < 2:
+        return x
+    
+    left, right = 1, x // 2
+    
+    while left <= right:
+        mid = left + (right - left) // 2
+        sqrt = mid * mid
+        
+        if sqrt == x:
+            return mid
+        elif sqrt < x:
+            left = mid + 1
+        else:
+            right = mid - 1
+    
+    return right
+
+# Example: sqrt_binary_search(16) -> 4
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Minimum Capacity to Ship Within D Days</h3>
+
+            <div class="code-block">
+                <pre>
+def ship_within_days(weights, days):
+    """Binary search on capacity"""
+    left, right = max(weights), sum(weights)
+    
+    def can_ship(capacity):
+        days_needed = 1
+        current = 0
+        for weight in weights:
+            if current + weight > capacity:
+                days_needed += 1
+                current = weight
+            else:
+                current += weight
+        return days_needed <= days
+    
+    while left < right:
+        mid = left + (right - left) // 2
+        if can_ship(mid):
+            right = mid
+        else:
+            left = mid + 1
+    
+    return left
+                </pre>
+            </div>
+
+            <div class="safety-sign important">
+                PATTERN: Binary search on answer works when the search space has a monotonic property where YES answers are contiguous.
+            </div>
+        </div>
+
+        <div class="content-section" id="practice">
+            <div class="lesson-header"><h1>Practice Problems</h1></div>
+            <div id="practiceProblems"></div>
+            <script src="../js/problems.js"></script>
+            <script>
+                const container=document.getElementById('practiceProblems');
+                const problems=practiceProblems.binarysearch.basic || [];
+                let html='<div class="practice-category"><h3 class="subsection-title">Binary Search Problems</h3>';
+                const display=problems.slice(0,5);
+                for(const p of display){
+                    const pid='BS-'+p.id;
+                    html+=`<div class="practice-problem" id="${pid}">
+                        <div class="problem-question"><p><strong>${p.id}:</strong> ${p.question}</p></div>
+                        <div class="problem-input"><input type="text" id="${pid}-input" placeholder="Answer">
+                        <button onclick="checkAnswer('${pid}','${p.answer.replace(/'/g,"\\'")}',[${p.alternatives.map(a=>`'${a.replace(/'/g,"\\'")}'`).join(',')}],'${pid}-input','${pid}-hint','${pid}-explanation')">Check</button></div>
+                        <div id="${pid}-feedback" class="feedback"></div>
+                        <div id="${pid}-hint" class="hint" style="display:none"><strong>Hint:</strong> ${p.hint}</div></div>`;
+                }
+                html+='</div>';
+                container.innerHTML=html;
+            </script>
+        </div>
+
+        <div class="content-section" id="quiz">
+            <div class="lesson-header"><h1>Module 6 Quiz</h1></div>
+            <form id="moduleQuiz">
+                <div class="quiz-question"><p>1. Time complexity of binary search?</p>
+                    <div class="quiz-options">
+                    <label onclick="recordAnswer('Q1','A')"><input type="radio" name="Q1" value="A"> A. O(1)</label>
+                    <label onclick="recordAnswer('Q1','B')"><input type="radio" name="Q1" value="B"> B. O(log n)</label>
+                    <label onclick="recordAnswer('Q1','C')"><input type="radio" name="Q1" value="C"> C. O(n)</label></div></div>
+                <div class="quiz-question"><p>2. What condition ends binary search?</p>
+                    <div class="quiz-options">
+                    <label onclick="recordAnswer('Q2','A')"><input type="radio" name="Q2" value="A"> A. left > right</label>
+                    <label onclick="recordAnswer('Q2','B')><input type="radio" name="Q2" value="B"> B. left == right</label>
+                    <label onclick="recordAnswer('Q2','C')"><input type="radio" name="Q2" value="C"> C. mid == target</label></div></div>
+                <div class="quiz-question"><p>3. Why use left + (right-left)//2 instead of (left+right)//2?</p>
+                    <div class="quiz-options">
+                    <label onclick="recordAnswer('Q3','A')"><input type="radio" name="Q3" value="A"> A. Prevents overflow</label>
+                    <label onclick="recordAnswer('Q3','B')><input type="radio" name="Q3" value="B"> B. Faster</label>
+                    <label onclick="recordAnswer('Q3','C')"><input type="radio" name="Q3" value="C"> C. Both</label></div></div>
+                <div class="quiz-question"><p>4. bisect_left returns what for existing element?</p>
+                    <div class="quiz-options">
+                    <label onclick="recordAnswer('Q4','A')"><input type="radio" name="Q4" value="A"> A. First occurrence</label>
+                    <label onclick="recordAnswer('Q4','B')><input type="radio" name="Q4" value="B"> B. Last occurrence</label>
+                    <label onclick="recordAnswer('Q4','C')"><input type="radio" name="Q4" value="C"> C. Next position</label></div></div>
+                <div class="quiz-question"><p>5. In rotated array search, we determine what?</p>
+                    <div class="quiz-options">
+                    <label onclick="recordAnswer('Q5','A')"><input type="radio" name="Q5" value="A"> A. Which half is sorted</label>
+                    <label onclick="recordAnswer('Q5','B')><input type="radio" name="Q5" value="B"> B. Rotation count</label>
+                    <label onclick="recordAnswer('Q5','C')"><input type="radio" name="Q5" value="C"> C. Both</label></div></div>
+                <div class="quiz-question"><p>6. Binary search on answer works when property is?</p>
+                    <div class="quiz-options">
+                    <label onclick="recordAnswer('Q6','A')"><input type="radio" name="Q6" value="A"> A. Sorted</label>
+                    <label onclick="recordAnswer('Q6','B')><input type="radio" name="Q6" value="B"> B. Monotonic</label>
+                    <label onclick="recordAnswer('Q6','C')"><input type="radio" name="Q6" value="C"> C. Unique</label></div></div>
+                <div class="quiz-question"><p>7. Iterative vs recursive binary search space?</p>
+                    <div class="quiz-options">
+                    <label onclick="recordAnswer('Q7','A')"><input type="radio" name="Q7" value="A"> A. Iterative better</label>
+                    <label onclick="recordAnswer('Q7','B')><input type="radio" name="Q7" value="B"> B. Recursive better</label>
+                    <label onclick="recordAnswer('Q7','C')"><input type="radio" name="Q7" value="C"> C. Same</label></div></div>
+                <button type="button" class="quiz-submit" onclick="submitQuizModule6()">Submit Quiz</button>
+            </form>
+            <div class="quiz-results" id="quizResults"></div>
+        </div>
+    </div>
+
+    <div class="nav-buttons">
+        <button onclick="window.location.href='05-twopointers.html'">Previous</button>
+        <button onclick="window.location.href='../index.html'">Home</button>
+        <button onclick="window.location.href='07-dynamicprogramming.html'">Next</button>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script>
+        const ans6={'Q1':'B','Q2':'A','Q3':'A','Q4':'A','Q5':'A','Q6':'B','Q7':'A'};
+        let qa={};
+        function rec(q,a){qa[q]=a;}
+        function submitQuizModule6(){
+            let s=0,t=7,r=[];
+            for(let q in ans6){if(qa[q]===ans6[q]){s++;r.push(`Q${q.substring(1)}: Correct`);}else{r.push(`Q${q.substring(1)}: Wrong`);}}
+            const p=Math.round((s/t)*100),pass=p>=70;
+            document.getElementById('quizResults').innerHTML=`<div class="score-display ${pass?'pass':'fail'}">${pass?'PASSED':'IMPROVE'}</div><p>Score: ${s}/${t} (${p}%)</p>`+r.map(x=>`<p>${x}</p>`).join('');
+            if(pass)markQuizPassed('binarysearch');
+        }
+    </script>
+</body>
+</html>

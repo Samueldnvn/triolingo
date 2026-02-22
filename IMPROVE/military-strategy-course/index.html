@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Art of War - Military Strategy Through the Napoleonic Era</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Renaissance Header -->
+    <div class="renaissance-header">
+        <h1>THE ART OF WAR</h1>
+        <h2>Military Strategy & Maneuvering from Ancient Times Through the Napoleonic Era</h2>
+        <div class="da-vinci-decoration">~ Study of the Noble Art of Combat ~</div>
+    </div>
+
+    <!-- Ornamental Banner -->
+    <div class="ornamental-banner">
+        <span class="flourish-left"></span>
+        <span class="banner-text">Comprehensive Course on the Classic Principles of Warfare</span>
+        <span class="flourish-right"></span>
+    </div>
+
+    <!-- Progress Overview -->
+    <div class="progress-container">
+        <div class="progress-title">YOUR SCHOLARLY PROGRESS</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="overallProgressFill" style="width: 0%">0%</div>
+        </div>
+        <div class="progress-stats" id="progressStats">
+            <div class="stat">
+                <span class="stat-label">Modules:</span>
+                <span class="stat-value" id="lessonsCompleted">0</span>/<span id="totalLessons">8</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Problems:</span>
+                <span class="stat-value" id="problemsSolved">0</span>/<span id="totalProblems">450</span>+
+            </div>
+            <div class="stat">
+                <span class="stat-label">Quizzes:</span>
+                <span class="stat-value" id="quizzesPassed">0</span>/<span id="totalQuizzes">8</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Course Overview -->
+        <div class="course-overview">
+            <h2 class="section-title">COURSE SYLLABUS</h2>
+            
+            <div class="parchment-section">
+                <div class="parchment-content">
+                    <h3>INTELLECTUAL OBJECTIVES</h3>
+                    <p class="parchment-text">By the conclusion of this scholarly endeavor, you shall possess comprehensive knowledge of:</p>
+                    <ul class="parchment-list">
+                        <li>The fundamental principles of strategy laid down by Sun Tzu and ancient masters</li>
+                        <li>Greek and Roman battle formations and their tactical applications</li>
+                        <li>Medieval warfare including castle tactics and knightly warfare</li>
+                        <li>The revolutionary impact of gunpowder on military organization</li>
+                        <li>Renaissance innovations in fortification and siege warfare</li>
+                        <li>The evolution of linear tactics in the Age of Reason</li>
+                        <li>Napoleonic warfare and the corps d'armee system</li>
+                        <li>Naval strategy from triremes to ships of the line</li>
+                        <li>The timeless principles that govern all successful military operations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="quill-note important">
+                NOTE: This course contains over 450 practice problems and comprehensive assessments to ensure mastery of the subject matter.
+            </div>
+        </div>
+
+        <!-- Module Navigation -->
+        <div class="module-container">
+            <h2 class="section-title">COURSE MODULES</h2>
+            
+            <!-- Module 1 -->
+            <div class="module-card" onclick="window.location.href='lessons/01-foundations.html'">
+                <div class="module-header">
+                    <span class="module-number">I</span>
+                    <h3>Foundations of Military Strategy</h3>
+                    <div class="module-status" id="module1-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>The nature and purpose of warfare</li>
+                        <li>Sun Tzu and The Art of War</li>
+                        <li>Thucydides on strategy</li>
+                        <li>Fundamental strategic principles</li>
+                        <li>The elements of power</li>
+                        <li>50+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~3 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 2 -->
+            <div class="module-card" onclick="window.location.href='lessons/02-greek-roman.html'">
+                <div class="module-header">
+                    <span class="module-number">II</span>
+                    <h3>Greek and Roman Warfare</h3>
+                    <div class="module-status" id="module2-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>The phalanx formation</li>
+                        <li>Hoplite warfare and tactics</li>
+                        <li>The Roman legion and manipular system</li>
+                        <li>Siegecraft and engineering</li>
+                        <li>Famous battles and commanders</li>
+                        <li>70+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~5 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 3 -->
+            <div class="module-card" onclick="window.location.href='lessons/03-medieval.html'">
+                <div class="module-header">
+                    <span class="module-number">III</span>
+                    <h3>Medieval Warfare</h3>
+                    <div class="module-status" id="module3-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Feudal military organization</li>
+                        <li>Castles and fortifications</li>
+                        <li>Siege warfare tactics</li>
+                        <li>Knights and heavy cavalry</li>
+                        <li>Infantry evolution</li>
+                        <li>The rise of professional armies</li>
+                        <li>60+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~6 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 4 -->
+            <div class="module-card" onclick="window.location.href='lessons/04-gunpowder.html'">
+                <div class="module-header">
+                    <span class="module-number">IV</span>
+                    <h3>The Gunpowder Revolution</h3>
+                    <div class="module-status" id="module4-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Early firearms and cannons</li>
+                        <li>Impact on fortifications</li>
+                        <li>Transition from medieval to modern</li>
+                        <li>Italian Wars tactics</li>
+                        <li>Spanish tercio formation</li>
+                        <li>60+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~5 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 5 -->
+            <div class="module-card" onclick="window.location.href='lessons/05-renaissance.html'">
+                <div class="module-header">
+                    <span class="module-number">V</span>
+                    <h3>Renaissance Warfare</h3>
+                    <div class="module-status" id="module5-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Machiavelli on military affairs</li>
+                        <li>Pike and shot tactics</li>
+                        <li>Trace italienne fortifications</li>
+                        <li>Siege of Malta and Lepanto</li>
+                        <li>Thirty Years War innovations</li>
+                        <li>Seventeenth century developments</li>
+                        <li>70+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~7 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 6 -->
+            <div class="module-card" onclick="window.location.href='lessons/06-linear-tactics.html'">
+                <div class="module-header">
+                    <span class="module-number">VI</span>
+                    <h3>The Age of Reason and Linear Tactics</h3>
+                    <div class="module-status" id="module6-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Eighteenth century warfare</li>
+                        <li>Linear battle formations</li>
+                        <li>The War of Austrian Succession</li>
+                        <li>Seven Years War innovations</li>
+                        <li>Frederick the Great's tactics</li>
+                        <li>American Revolutionary War</li>
+                        <li>50+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~5 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 7 -->
+            <div class="module-card" onclick="window.location.href='lessons/07-napoleonic.html'">
+                <div class="module-header">
+                    <span class="module-number">VII</span>
+                    <h3>Napoleonic Warfare</h3>
+                    <div class="module-status" id="module7-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>The French Revolution's military impact</li>
+                        <li>Napoleonic corps d'armee system</li>
+                        <li>Grand tactics and maneuver</li>
+                        <li>Logistics and administration</li>
+                        <li>Campaigns of Austerlitz, Jena, Russia</li>
+                        <li>Waterloo and the fall</li>
+                        <li>80+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~9 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 8 -->
+            <div class="module-card" onclick="window.location.href='lessons/08-naval.html'">
+                <div class="module-header">
+                    <span class="module-number">VIII</span>
+                    <h3>Naval Warfare and Final Synthesis</h3>
+                    <div class="module-status" id="module8-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Ancient naval warfare</li>
+                        <li>Medieval galley tactics</li>
+                        <li>Age of sail and line of battle</li>
+                        <li>Nelsonian tactics</li>
+                        <li>Comprehensive strategic synthesis</li>
+                        <li>Enduring principles of war</li>
+                        <li>60+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~7 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Practice Area -->
+        <div class="module-card practice-area-card" onclick="window.location.href='practice/index.html'" style="margin-top: 30px; background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(139, 90, 43, 0.1) 100%); border-color: var(--gold-leaf);">
+            <div class="module-header">
+                <span class="module-number" style="background: var(--gold-leaf); color: #000;">PR</span>
+                <h3 style="color: var(--gold-leaf);">PRACTICE AREA</h3>
+            </div>
+            <div class="module-content">
+                <p class="final-description" style="color: var(--parchment-text);">
+                    Interactive practice problems to reinforce your understanding. Practice by module or challenge yourself with difficulty-based problems.
+                </p>
+                <ul style="color: var(--parchment-text);">
+                    <li>Module-specific review practice</li>
+                    <li>Easy, Medium, Hard difficulty levels</li>
+                    <li>490+ practice problems from all modules</li>
+                    <li>Hints and explanations for every problem</li>
+                </ul>
+            </div>
+            <div class="module-footer">
+                <span class="module-time" style="color: var(--gold-leaf);">Unlimited Practice</span>
+                <span class="module-arrow" style="color: var(--gold-leaf);">→</span>
+            </div>
+        </div>
+
+        <!-- Final Exam -->
+        <div class="module-card final-exam-card" onclick="window.location.href='exams/final.html'">
+            <div class="module-header">
+                <span class="module-number final">EX</span>
+                <h3>COMPREHENSIVE FINAL EXAMINATION</h3>
+                <div class="module-status" id="final-status"></div>
+            </div>
+            <div class="module-content">
+                <p class="final-description">
+                    This comprehensive examination covers all eight modules and tests your complete understanding of military strategy from ancient times through the Napoleonic era.
+                </p>
+                <ul>
+                    <li>25 comprehensive questions</li>
+                    <li>120 minutes duration</li>
+                    <li>Requires mastery of all modules</li>
+                    <li>Pass threshold: 70%</li>
+                </ul>
+            </div>
+            <div class="module-footer">
+                <span class="module-time">~2 hours</span>
+                <span class="module-arrow">→</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Study Guide -->
+    <div class="study-guide">
+        <h2 class="section-title">SCHOLARLY GUIDANCE</h2>
+        
+        <div class="tips-grid">
+            <div class="tip-card">
+                <h4>Study in Sequence</h4>
+                <p>Each module builds upon the foundations laid in previous sections. Do not skip ahead.</p>
+            </div>
+            
+            <div class="tip-card">
+                <h4>Engage with Problems</h4>
+                <p>The practice problems are essential for internalizing strategic principles.</p>
+            </div>
+            
+            <div class="tip-card">
+                <h4>Read Primary Sources</h4>
+                <p>When possible, read the actual words of the strategists and commanders studied.</p>
+            </div>
+            
+            <div class="tip-card">
+                <h4>Visualize Battles</h4>
+                <p>Draw maps and diagrams of major battles to understand movement and positioning.</p>
+            </div>
+            
+            <div class="tip-card">
+                <h4>Compare Eras</h4>
+                <p>Notice how strategic principles persist even as technology changes.</p>
+            </div>
+            
+            <div class="tip-card">
+                <h4>Think Critically</h4>
+                <p>Consider why certain tactics succeeded or failed in their historical context.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p class="footer-text">
+            The Art of War: Military Strategy Through the Napoleonic Era<br><br>
+            A comprehensive course on the classical principles of warfare<br>
+            Presented in the scholarly tradition of the Renaissance<br>
+            Anno Domini MMXXVI
+        </p>
+    </div>
+
+    <script src="js/navigation.js"></script>
+    <script>
+        // Load saved progress
+        loadProgress();
+    </script>
+</body>
+</html>

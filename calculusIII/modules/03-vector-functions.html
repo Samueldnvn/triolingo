@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 3: Vector Functions - Calculus III</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="construction-header"><h1>🔧 MODULE 3: VECTOR FUNCTIONS & MOTION 🔧</h1><h2>Understanding Motion in Three Dimensions</h2></div>
+    <div class="warning-banner"><span class="construction-icon">⚠️</span> ANIMATION ZONE - OBJECTS IN MOTION <span class="construction-icon">⚠️</span></div>
+
+    <nav class="nav-container"><ul class="nav-menu">
+        <li class="nav-item active" onclick="ss('vf')">📐 Vector-Valued Functions</li>
+        <li class="nav-item" onclick="ss('deriv')">⚡ Derivatives & Integrals</li>
+        <li class="nav-item" onclick="ss('arc')">📏 Arc Length</li>
+        <li class="nav-item" onclick="ss('curve')">🌀 Curvature</li>
+        <li class="nav-item" onclick="ss('quiz')">🎯 Quiz</li>
+    </ul></nav>
+
+    <div class="progress-container"><div class="progress-title">📊 PROGRESS</div><div class="progress-bar"><div class="progress-fill" id="pr">0%</div></div></div>
+
+    <div class="container">
+        <div class="content-section active" id="vf">
+            <div class="lesson-header"><h1>Vector-Valued Functions</h1><p>Functions That Output Vectors</p></div>
+            <div class="construction-tape">🔨 NEW FUNCTION TYPE 🔨</div>
+            
+            <p class="content-text">Vector functions input a scalar and output a vector. They describe curves in space!</p>
+
+            <div class="definition-box">
+                <h4>Definition: Vector Function</h4>
+                <div class="formula-display">$$\vec{r}(t) = \langle f(t), g(t), h(t) \rangle = f(t)\vec{i} + g(t)\vec{j} + h(t)\vec{k}$$</div>
+                <p class="content-text">Each component is a regular scalar function of t</p>
+            </div>
+
+            <div class="example-box">
+                <h4>Example: Helix</h4>
+                <div class="formula-display">$$\vec{r}(t) = \langle \cos t, \sin t, t \rangle$$</div>
+                <p class="content-text">As t increases, this traces a spiral (helix) going up the z-axis</p>
+            </div>
+
+            <h3 class="subsection-title">Domain of Vector Functions</h3>
+            <div class="definition-box">
+                <h4>Definition: Domain</h4>
+                <p class="content-text">The domain is the intersection of domains of all component functions</p>
+            </div>
+            <div class="example-box">
+                <h4>Example</h4>
+                <p class="content-text">$$\vec{r}(t) = \langle \sqrt{t}, \frac{1}{t-2}, \ln(t+1) \rangle$$</p>
+                <p class="content-text">Domain: t ≥ 0 AND t ≠ 2 AND t > -1 → t ≥ 0, t ≠ 2</p>
+            </div>
+        </div>
+
+        <div class="content-section" id="deriv">
+            <div class="lesson-header"><h1>Derivatives & Integrals</h1><p>Velocity, Acceleration, and Displacement</p></div>
+
+            <h3 class="subsection-title">Derivative of Vector Function</h3>
+
+            <div class="definition-box">
+                <h4>Definition: Vector Derivative</h4>
+                <div class="formula-display">$$\vec{r}'(t) = \frac{d\vec{r}}{dt} = \langle f'(t), g'(t), h'(t) \rangle$$</div>
+            </div>
+
+            <div class="interactive-box">
+                <div class="interactive-title">Physical Interpretation</div>
+                <ul class="blueprint-list">
+                    <li><strong>$$\vec{r}(t)$$</strong> = Position vector</li>
+                    <li><strong>$$\vec{v}(t) = \vec{r}'(t)$$</strong> = Velocity vector (tangent to path)</li>
+                    <li><strong>$$\vec{a}(t) = \vec{v}'(t) = \vec{r}''(t)$$</strong> = Acceleration vector</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h4>Example: Projectile Motion</h4>
+                <p class="content-text">Position: $$\vec{r}(t) = \langle v_{0x}t, v_{0y}t - \tfrac{1}{2}gt^2 \rangle$$</p>
+                <p class="content-text">Velocity: $$\vec{v}(t) = \langle v_{0x}, v_{0y} - gt \rangle$$</p>
+                <p class="content-text">Acceleration: $$\vec{a}(t) = \langle 0, -g \rangle$$ (constant downward!)</p>
+            </div>
+
+            <h3 class="subsection-title">Integral of Vector Function</h3>
+
+            <div class="definition-box">
+                <h4>Definition: Vector Integral</h4>
+                <div class="formula-display">$$\int \vec{r}(t) dt = \langle \int f(t) dt, \int g(t) dt, \int h(t) dt \rangle + \vec{C}$$</div>
+            </div>
+
+            <div class="example-box">
+                <h4>Example</h4>
+                <p class="content-text">$$\int \langle 2t, 3t^2, e^t \rangle dt = \langle t^2+C_1, t^3+C_2, e^t+C_3 \rangle$$</p>
+            </div>
+
+            <div class="safety-sign important">
+                🛠️ EACH COMPONENT GETS ITS OWN CONSTANT OF INTEGRATION!
+            </div>
+        </div>
+
+        <div class="content-section" id="arc">
+            <div class="lesson-header"><h1>Arc Length</h1><p>Measuring the Length of Curves</p></div>
+
+            <div class="definition-box">
+                <h4>Definition: Arc Length</h4>
+                <div class="formula-display">$$L = \int_a^b |\vec{r}'(t)| dt$$</div>
+                <p class="content-text">where $$|\vec{r}'(t)| = \sqrt{(f')^2 + (g')^2 + (h')^2}$$ is speed</p>
+            </div>
+
+            <div class="example-box">
+                <h4>Example: Line Segment</h4>
+                <p class="content-text">Position: $$\vec{r}(t) = \langle t, 2t, 3t \rangle$$ for 0 ≤ t ≤ 1</p>
+                <p class="content-text">Velocity: $$\vec{r}'(t) = \langle 1, 2, 3 \rangle$$</p>
+                <p class="content-text">Speed: $$|\vec{r}'(t)| = \sqrt{1+4+9} = \sqrt{14}$$ (constant!)</p>
+                <div class="formula-display">$$L = \int_0^1 \sqrt{14} dt = \sqrt{14}$$</div>
+            </div>
+
+            <div class="blueprint-section">
+                <div class="blueprint-content">
+                    <h3>📋 ARC LENGTH FORMULA APPLIES TO:</h3>
+                    <ul class="blueprint-list">
+                        <li>2D curves in the plane</li>
+                        <li>3D curves in space</li>
+                        <li>Any parametrized curve!</li>
+                        <li>For 2D function y = f(x): $$L = \int_a^b \sqrt{1 + [f'(x)]^2} dx$$</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section" id="curve">
+            <div class="lesson-header"><h1>Curvature</h1><p>Measuring How Fast a Curve Turns</p></div>
+
+            <div class="construction-tape">🔨 ADVANCED CONCEPT 🔨</div>
+
+            <div class="definition-box">
+                <h4>Definition: Curvature κ</h4>
+                <div class="formula-display">$$\kappa = \frac{|\vec{T}'(t)|}{|\vec{r}'(t)|} = \frac{|\vec{r}'(t) \times \vec{r}''(t)|}{|\vec{r}'(t)|^3}$$</div>
+                <p class="content-text">Units: inverse length (1/m)</p>
+            </div>
+
+            <div class="definition-box">
+                <h4>Unit Tangent Vector</h4>
+                <div class="formula-display">$$\vec{T}(t) = \frac{\vec{r}'(t)}{|\vec{r}'(t)|}$$</div>
+                <p class="content-text">Points in direction of motion, has magnitude 1</p>
+            </div>
+
+            <div class="example-box">
+                <h4>Example: Circle of radius R</h4>
+                <p class="content-text">Position: $$\vec{r}(t) = \langle R\cos t, R\sin t, 0 \rangle$$</p>
+                <div class="formula-display">$$\kappa = \frac{1}{R}$$</div>
+                <p class="content-text">Smaller radius = tighter curve = higher curvature!</p>
+            </div>
+
+            <div class="safety-sign important">
+                🛠️ LINE HAS ZERO CURVATURE: κ = 0 STRAIGHT LINES NEVER BEND!
+            </div>
+        </div>
+
+        <div class="content-section" id="quiz">
+            <div class="lesson-header"><h1>Module 3 Quiz</h1><p>Assessment</p></div>
+            <div class="quiz-container"><h3>🎯 QUIZ</h3>
+                <div class="quiz-question"><div class="quiz-question-text">Q1: Velocity is _____ of position:</div><div class="quiz-options"><div onclick="s('Q1','A',this)">A. Integral</div><div onclick="s('Q1','B',this)">B. Derivative</div><div onclick="s('Q1','C',this)">C. Second derivative</div></div></div>
+                <div class="quiz-question"><div class="quiz-question-text">Q2: Arc length uses _____ of velocity:</div><div class="quiz-options"><div onclick="s('Q2','A',this)">A. Vector</div><div onclick="s('Q2','B',this)">B. Magnitude</div><div onclick="s('Q2','C',this)">C. Direction</div></div></div>
+                <div class="quiz-question"><div class="quiz-question-text">Q3: Line curvature is:</div><div class="quiz-options"><div onclick="s('Q3','A',this)">A. 1</div><div onclick="s('Q3','B',this)">B. ∞</div><div onclick="s('Q3','C',this)">C. 0</div></div></div>
+                <button class="quiz-button" onclick="sub()">SUBMIT</button></div>
+            <div class="quiz-container" id="res" style="display:none;"></div>
+        </div>
+
+        <div class="nav-buttons"><a href="02-vectors-3d.html" class="nav-btn">← PREV MODULE</a><a href="04-08-complete.html" class="nav-btn primary">MODULES 4-8 COMPLETE →</a></div>
+    </div>
+
+    <script>const an={};function s(q,a,e){an[q]=a;e.parentElement.querySelectorAll('.quiz-option').forEach(o=>o.classList.remove('selected'));e.classList.add('selected');}function sub(){const cor={'Q1':'B','Q2':'B','Q3':'C'};let s=0;for(let q in cor)if(an[q]===cor[q])s++;const pct=Math.round((s/3)*100);document.querySelectorAll('.quiz-container').forEach(c=>{if(c.id!=='res')c.style.display='none';});document.getElementById('res').style.display='block';if(pct>=70){document.getElementById('res').innerHTML=`<div class="safety-sign important">🎉 PASSED! ${s}/3</div>`;up(100);}else{document.getElementById('res').innerHTML=`<div class="safety-sign danger">❌ ${s}/3</div>`;}}function ss(id){document.querySelectorAll('.content-section').forEach(s=>s.classList.remove('active'));document.querySelectorAll('.nav-item').forEach(i=>i.classList.remove('active'));document.getElementById(id).classList.add('active');event.target.classList.add('active');}function up(p){document.getElementById('pr').textContent=p+'%';document.getElementById('pr').style.width=p+'%';}</script>
+</body>
+</html>

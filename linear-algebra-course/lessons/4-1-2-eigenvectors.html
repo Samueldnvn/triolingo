@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4.1.2: Eigenvectors - Linear Algebra</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="chapter-4">
+    <div class="main-wrapper">
+        <nav class="sidebar toc-green">
+            <div class="sidebar-header">
+                <div class="sidebar-title">Linear Algebra</div>
+            </div>
+            <div class="toc-chapter toc-green">
+                <div class="toc-chapter-title">Chapter 4: Advanced Topics</div>
+                <div class="toc-module">
+                    <div class="toc-module-title">Module 4.1: Eigenvalues</div>
+                    <div class="toc-lessons">
+                        <div class="toc-lesson"><a href="4-1-1-eigenvalues-basics.html">Lesson 4.1.1: Eigenvalues Basics</a></div>
+                        <div class="toc-lesson"><a href="4-1-2-eigenvectors.html" class="active">Lesson 4.1.2: Eigenvectors</a></div>
+                        <div class="toc-lesson"><a href="4-1-3-diagonalization.html">Lesson 4.1.3: Diagonalization</a></div>
+                        <div class="toc-lesson"><a href="4-1-4-practice-eigen.html">Lesson 4.1.4: Practice Problems</a></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="module-header">
+                    <h2>Lesson 4.1.2: Eigenvectors</h2>
+                    <p>Module 4.1: Eigenvalues | Chapter 4: Advanced Topics</p>
+                </div>
+                
+                <div class="content-card">
+                    <div class="definition-box">
+                        <div class="definition-title">Eigenvector</div>
+                        <p>A nonzero vector v is an eigenvector of matrix A with eigenvalue lambda if:</p>
+                    </div>
+                </div>
+                
+                <div class="formula-box">
+                    <div class="formula">Av = lambda v</div>
+                    <div class="formula">Or: (A - lambda I)v = 0</div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="example-box">
+                        <div class="example-title">Example</div>
+                        <p>Find eigenvector of [[2, 1], [1, 2]] for eigenvalue lambda = 3</p>
+                        <p>A - 3I = [[-1, 1], [1, -1]]</p>
+                        <p>[[-1, 1], [1, -1]] [x, y] = [0, 0]</p>
+                        <p>-x + y = 0, so y = x</p>
+                        <p style="margin-top: 10px; font-weight: 600;">Eigenvectors: any nonzero multiple of [1, 1]</p>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="practice-header">Practice Problems</div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 1</div>
+                        <div class="problem-question">Find eigenvector of [[3, 0], [0, 4]] for lambda = 3</div>
+                        <input type="text" class="problem-input" id="prob1" placeholder="Enter eigenvector">
+                        <button class="check-btn" onclick="checkProblem(1)">Check Answer</button>
+                        <div class="feedback" id="prob1-feedback"></div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="nav-buttons">
+                    <a href="4-1-1-eigenvalues-basics.html" class="nav-btn">Previous: Eigenvalues Basics</a>
+                    <a href="4-1-3-diagonalization.html" class="nav-btn primary">Next: Diagonalization</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/navigation.js"></script>
+    <script>
+        const problems_4_1_2 = {
+            1: { alternatives: ['[1,0]', '<1,0>', '(1,0)', '<1, 0>'] }
+        };
+        
+        function checkProblem(num) {
+            const userInput = document.getElementById('prob' + num).value.trim();
+            const feedback = document.getElementById('prob' + num + '-feedback');
+            const alternatives = problems_4_1_2[num].alternatives;
+            
+            let isCorrect = alternatives.some(alt => 
+                alt.toLowerCase().replace(/\s/g, '') === userInput.toLowerCase().replace(/\s/g, '')
+            );
+            
+            if (isCorrect) {
+                feedback.className = 'feedback correct';
+                feedback.style.display = 'block';
+                feedback.textContent = 'Correct! Well done.';
+                markProblemSolved('4-1-2-' + num);
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.style.display = 'block';
+                feedback.textContent = 'Incorrect. Try again.';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+        });
+    </script>
+</body>
+</html>

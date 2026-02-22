@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 8: IoT Security - IoT Java Development Course</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="course-header">
+        <h1>MODULE 8: IOT SECURITY</h1>
+    <h2>Securing Devices, Data, and Networks</h2>
+    </div>
+
+    <nav class="nav-container">
+        <ul class="nav-menu">
+            <li class="nav-item active" onclick="showSection('overview')">Overview</li>
+            <li class="nav-item" onclick="showSection('authentication')">Authentication</li>
+            <li class="nav-item" onclick="showSection('encryption')">Encryption</li>
+            <li class="nav-item" onclick="showSection('best-practices')">Best Practices</li>
+            <li class="nav-item" onclick="showSection('testing')">Security Testing</li>
+            <li class="nav-item" onclick="showSection('practice')">Practice</li>
+            <li class="nav-item" onclick="showSection('quiz')">Quiz</li>
+        </ul>
+    </nav>
+
+    <div class="progress-container">
+        <div class="progress-title">MODULE 8 PROGRESS</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="moduleProgress" style="width: 0%">0%</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content-section active" id="overview">
+            <div class="lesson-header">
+                <h1>IoT Security Fundamentals</h1>
+                <p>Protecting the Internet of Things from Attacks</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                IoT security is critical yet often overlooked due to devices' limited resources, physical accessibility, and scale. A single compromised device can serve as a foothold for attacking entire networks. This module covers fundamental security principles and practical implementation strategies for IoT systems.
+            </p>
+
+            <div class="attention-box critical">
+                <div class="critical-title">WHY IOT SECURITY MATTERS</div>
+                <ul class="critical-list">
+                    <li><span class="keyword">Scale:</span> Attackers can weaponize millions of devices (Mirai botnet)</li>
+                    <li><span class="keyword">Physical Access:</span> Devices often deployed in public locations</li>
+                    <li><span class="keyword">Limited Update:</span> Hard patching = long vulnerabilities</li>
+                    <li><span class="keyword">Privacy:</span> Cameras, microphones can invade homes</li>
+                    <li><span class="keyword">Safety:</span> Compromised medical devices, autonomous vehicles can cause harm</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">CIA Triad for IoT</h3>
+
+            <div class="info-section">
+                <div class="info-title">SECURITY PRINCIPLES</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Confidentiality:</span> Prevent unauthorized data access</li>
+                    <li><span class="keyword">Integrity:</span> Ensure data not tampered with or corrupted</li>
+                    <li><span class="keyword">Availability:</span> Ensure systems remain operational</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">OWASP IoT Top Ten Vulnerabilities</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Vulnerability</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Weak/Default Passwords</td>
+                        <td>Hardcoded credentials, admin/admin default</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Insecure Network Services</td>
+                        <td>Open ports, unencrypted communication</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Insecure Ecosystem Interfaces</td>
+                        <td>Web/mobile/cloud APIs lack authn/authz</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Lack of Update Mechanism</td>
+                        <td>Cannot patch vulnerabilities</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Insecure Data Transfer/Storage</td>
+                        <td>Unencrypted data at rest/transit</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Inadequate Privacy Protection</td>
+                        <td>Excessive data collection, weak policies</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Uninsecure Default Settings</td>
+                        <td>Insecure factory default configurations</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Lack of Physical Hardening</td>
+                        <td>Easy to access ports/reset buttons</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Insecure Cloud/Mobile Interface</td>
+                        <td>Weak authentication on web/mobile portals</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Insecure Firmware</td>
+                        <td>Unencrypted firmware, no integrity checks</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-title">THREAT MODEL</div>
+                <p class="warning-content">Assume devices will be attacked. Design for compromise: limit blast radius, detect intrusions, enable quick recovery. Security is a process, not a product.</p>
+            </div>
+        </div>
+
+        <div class="content-section" id="authentication">
+            <div class="lesson-header">
+                <h1>Authentication & Authorization</h1>
+                <p>Verifying Device Identity and Permissions</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                Authentication verifies identity (who are you?) while authorization determines permissions (what can you do?). IoT devices need both: mutual TLS for secure connections, device certificates for proof of identity, and access control for services.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">AUTHENTICATION METHODS</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Pre-Shared Keys (PSK):</span> Simple, but key distribution is hard at scale</li>
+                    <li><span class="keyword">X.509 Certificates:</span> Industry standard, supports certificate chains</li>
+                    <li><span class="keyword">OAuth 2.0:</span> Token-based delegation, good for web/mobile</li>
+                    <li><span class="keyword">JWT (JSON Web Tokens):</span> Self-contained, stateless, IoT-friendly</li>
+                    <li><span class="keyword">Biometrics:</span> For user-device interaction (fingerprint, facial)</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Device Authentication with Certificates</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">MUTUAL TLS WITH JAVA</div>
+                <pre class="code-block">
+import javax.net.ssl.*;
+import java.security.KeyStore;
+import java.io.FileInputStream;
+
+public class MutualTLSClient {
+    public SSLContext createMutualTLSContext() throws Exception {
+        // Load device certificate and key
+        KeyStore deviceKeystore = KeyStore.getInstance("PKCS12");
+        deviceKeystore.load(new FileInputStream("device.p12"), "devicePass".toCharArray());
+        
+        KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
+        kmf.init(deviceKeystore, "devicePass".toCharArray());
+        
+        // Load CA certificate for server validation
+        KeyStore trustStore = KeyStore.getInstance("PKCS12");
+        trustStore.load(new FileInputStream("ca.p12"), "caPass".toCharArray());
+        
+        TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+        tmf.init(trustStore);
+        
+        // Create SSL context
+        SSLContext sslContext = SSLContext.getInstance("TLSv1.3");
+        sslContext.init(kmf.getKeyManagers(), tmf.getTrustManagers(), new java.security.SecureRandom());
+        
+        return sslContext;
+    }
+    
+    public void connectWithMTLS(String hostname, int port) throws Exception {
+        SSLContext sslContext = createMutualTLSContext();
+        SSLSocketFactory factory = sslContext.getSocketFactory();
+        
+        SSLSocket socket = (SSLSocket) factory.createSocket(hostname, port);
+        socket.startHandshake();
+        
+        System.out.println("Mutual TLS handshake completed");
+        System.out.println("Server certificate validated via CA");
+    }
+}
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">JWT for IoT Device Authentication</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">JWT TOKEN GENERATION</div>
+                <pre class="code-block">
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import java.security.KeyPair;
+import java.util.Date;
+
+public class JWTAuthenticator {
+    private KeyPair keyPair;
+    
+    public String generateDeviceToken(String deviceId, int ttlHours) {
+        Date now = new Date();
+        Date expiration = new Date(now.getTime() + ttlHours * 3600 * 1000);
+        
+        return Jwts.builder()
+            .setSubject(deviceId)
+            .setIssuedAt(now)
+            .setExpiration(expiration)
+            .claim("deviceType", "sensor")
+            .claim("capabilities", new String[]{"read", "write"})
+            .signWith(keyPair.getPrivate(), SignatureAlgorithm.ES256)
+            .compact();
+    }
+    
+    public boolean validateToken(String token) {
+        try {
+            Jwts.parserBuilder()
+                .setSigningKey(keyPair.getPublic())
+                .build()
+                .parseClaimsJws(token);
+            return true;
+        } catch (Exception e) {
+            System.err.println("Token validation failed: " + e.getMessage());
+            return false;
+        }
+    }
+}
+                </pre>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">EXAMPLE: JWT Structure</div>
+                <pre class="code-block">
+Header (Base64):
+{"alg":"ES256","typ":"JWT"}
+
+Payload (Base64):
+{
+  "sub": "device-001",
+  "iat": 1708300000,
+  "exp": 1708386400,
+  "deviceType": "sensor",
+  "capabilities": ["read", "write"]
+}
+
+Signature:
+HMACSHA256(
+  base64UrlEncode(header) + "." + base64UrlEncode(payload),
+  secret
+)
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Authorization with OAuth 2.0</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">OAUTH 2.0 CLIENT CREDENTIALS FLOW</div>
+                <pre class="code-block">
+import org.apache.oltu.oauth2.client.*;
+import org.apache.oltu.oauth2.common.message.types.*;
+
+public class OAuthClientCredentials {
+    public String getAccessToken() throws Exception {
+        OAuthClientRequest request = OAuthClientRequest
+            .tokenLocation("https://auth.example.com/oauth/token")
+            .setGrantType(GrantType.CLIENT_CREDENTIALS)
+            .setClientId("device-client-id")
+            .setClientSecret("device-secret")
+            .setScope("iot:read iot:write")
+            .buildBodyMessage();
+            
+        OAuthClient client = new OAuthClient(new URLConnectionClient());
+        OAuthAccessTokenResponse response = 
+            client.accessToken(request, OAuth.HttpMethod.POST);
+            
+        return response.getAccessToken();
+    }
+    
+    public void callAPIWithToken(String apiUrl, String accessToken) throws Exception {
+        HttpGet request = new HttpGet(apiUrl);
+        request.setHeader("Authorization", "Bearer " + accessToken);
+        
+        CloseableHttpResponse response = httpClient.execute(request);
+        // Process response
+    }
+}
+                </pre>
+            </div>
+        </div>
+
+        <div class="content-section" id="encryption">
+            <div class="lesson-header">
+                <h1>Encryption & Secure Communication</h1>
+                <p>Protecting Data at Rest and in Transit</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                Encryption transforms data into unreadable ciphertext that can only be decrypted with the correct key. IoT systems must encrypt data in transit (network communications) and at rest (flash storage, databases). Key management is as important as encryption itself.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">ENCRYPTION ALGORITHMS</div>
+                <ul class="info-list">
+                    <li><span class="keyword">AES-256-GCM:</span> Symmetric, authenticated encryption. Industry standard for data at rest and TLS 1.3.</li>
+                    <li><span class="keyword">ChaCha20-Poly1305:</span> Symmetric, fast, authenticated. Good for mobile/IoT.</li>
+                    <li><span class="keyword">ECDH (P-256, X25519):</span> Key exchange. Establishes shared secret without transmitting it.</li>
+                    <li><span class="keyword">RSA-2048/4096:</span> Asymmetric. Key exchange, digital signatures, certificates.</li>
+                    <li><span class="keyword">Ed25519:</span> Modern, fast digital signatures.</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">AES Encryption with Java</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">AES-256-GCM ENCRYPTION/DECRYPTION</div>
+                <pre class="code-block">
+import javax.crypto.*;
+import javax.crypto.spec.*;
+import java.security.SecureRandom;
+import java.util.Base64;
+
+public class AESCrypto {
+    private static final int GCM_TAG_LENGTH = 128;
+    private static final int IV_LENGTH = 12;
+    private static final int KEY_LENGTH = 32; // 256 bits
+    
+    public byte[] generateKey() {
+        byte[] key = new byte[KEY_LENGTH];
+        new SecureRandom().nextBytes(key);
+        return key;
+    }
+    
+    public byte[] encrypt(byte[] plaintext, byte[] key) throws Exception {
+        // Generate IV
+        byte[] iv = new byte[IV_LENGTH];
+        new SecureRandom().nextBytes(iv);
+        
+        // Configure cipher
+        Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
+        SecretKeySpec keySpec = new SecretKeySpec(key, "AES");
+        GCMParameterSpec gcmSpec = new GCMParameterSpec(GCM_TAG_LENGTH, iv);
+        cipher.init(Cipher.ENCRYPT_MODE, keySpec, gcmSpec);
+        
+        // Encrypt
+        byte[] ciphertext = cipher.doFinal(plaintext);
+        
+        // Return IV + ciphertext (IV required for decryption)
+        byte[] result = new byte[IV_LENGTH + ciphertext.length];
+        System.arraycopy(iv, 0, result, 0, IV_LENGTH);
+        System.arraycopy(ciphertext, 0, result, IV_LENGTH, ciphertext.length);
+        
+        return result;
+    }
+    
+    public byte[] decrypt(byte[] encryptedData, byte[] key) throws Exception {
+        // Extract IV and ciphertext
+        byte[] iv = new byte[IV_LENGTH];
+        byte[] ciphertext = new byte[encryptedData.length - IV_LENGTH];
+        System.arraycopy(encryptedData, 0, iv, 0, IV_LENGTH);
+        System.arraycopy(encryptedData, IV_LENGTH, ciphertext, 0, ciphertext.length);
+        
+        // Configure cipher for decryption
+        Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
+        SecretKeySpec keySpec = new SecretKeySpec(key, "AES");
+        GCMParameterSpec gcmSpec = new GCMParameterSpec(GCM_TAG_LENGTH, iv);
+        cipher.init(Cipher.DECRYPT_MODE, keySpec, gcmSpec);
+        
+        // Decrypt and verify authentication tag
+        return cipher.doFinal(ciphertext);
+    }
+}
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Key Management</h3>
+
+            <div class="warning-box">
+                <div class="warning-title">KEY MANAGEMENT PRINCIPLES</div>
+                <ul class="warning-list">
+                    <li><span class="keyword">Never hardcode keys in source code or config files</span></li>
+                    <li>Use hardware security modules (HSM) when available</li>
+                    <li>Rotate keys regularly without device re-provisioning</li>
+                    <li>Never transmit keys on plaintext channels</li>
+                    <li>Encrypt keys at rest with device-unique keys</li>
+                </ul>
+            </div>
+
+            <div class="formula-box">
+                <div class="formula-title">SECURE KEY STORAGE WITH ANDROID KEYSTORE</div>
+                <pre class="code-block">
+import android.security.keystore.*;
+
+public class SecureKeyStorage {
+    private static final String KEY_ALIAS = "iot_device_key";
+    
+    public void generateKey() throws Exception {
+        KeyPairGenerator kpg = KeyPairGenerator.getInstance(
+            KeyProperties.KEY_ALGORITHM_EC, "AndroidKeyStore"
+        );
+        
+        KeyGenParameterSpec spec = new KeyGenParameterSpec.Builder(
+            KEY_ALIAS,
+            KeyProperties.PURPOSE_SIGN | KeyProperties.PURPOSE_VERIFY
+        )
+        .setDigests(KeyProperties.DIGEST_SHA256)
+        .setSignatureAlgorithms(KeyProperties.SIGNATURE_ECDSA_SHA256)
+        .setUserAuthenticationRequired(false)
+        .build();
+        
+        kpg.initialize(spec);
+        kpg.generateKeyPair();
+    }
+    
+    public byte[] signData(byte[] data) throws Exception {
+        KeyStore ks = KeyStore.getInstance("AndroidKeyStore");
+        ks.load(null);
+        PrivateKey privateKey = (PrivateKey) ks.getKey(KEY_ALIAS, null);
+        
+        Signature signature = Signature.getInstance("SHA256withECDSA");
+        signature.initSign(privateKey);
+        signature.update(data);
+        
+        return signature.sign();
+    }
+}
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Secure Boot and Firmware Integrity</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">FIRMWARE SIGNATURE VERIFICATION</div>
+                <pre class="code-block">
+import java.security.Signature;
+import java.security.spec.X509EncodedKeySpec;
+import java.security.KeyFactory;
+
+public class FirmwareValidator {
+    private PublicKey manufacturerKey;
+    
+    public boolean validateFirmware(byte[] firmware, byte[] signature) 
+            throws Exception {
+        // Load manufacturer public key
+        X509EncodedKeySpec spec = new X509EncodedKeySpec(manufacturerKeyBytes);
+        manufacturerKey = KeyFactory.getInstance("EC").generatePublic(spec);
+        
+        // Verify signature
+        Signature sig = Signature.getInstance("SHA256withECDSA");
+        sig.initVerify(manufacturerKey);
+        sig.update(firmware);
+        
+        return sig.verify(signature);
+    }
+    
+    // In bootloader firmware
+    public void applyUpdate(byte[] firmware, byte[] signature) {
+        if (validateFirmware(firmware, signature)) {
+            // Write to flash
+            writeToFlash(firmware);
+            System.out.println("Firmware signature valid, update applied");
+        } else {
+            System.err.println("Firmware signature invalid, update rejected");
+            System.err.println("This could be malicious firmware");
+            // Do not apply update
+        }
+    }
+}
+                </pre>
+            </div>
+        </div>
+
+        <div class="content-section" id="best-practices">
+            <div class="lesson-header">
+                <h1>IoT Security Best Practices</h1>
+                <p>Guidelines for Building Secure IoT Systems</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <div class="attention-box important">
+                <div class="important-title">DEVICE HARDENING</div>
+                <ul class="important-list">
+                    <li><span class="keyword">Default Credentials:</span> Never ship with admin/admin or factory passwords</li>
+                    <li><span class="keyword">Change on First Boot:</span> Force users to set unique credentials</li>
+                    <li><span class="keyword">Disable Unused Interfaces:</span> Close unused ports (telnet, SSH debug)</li>
+                    <li><span class="keyword">Secure Boot:</span> Only signed firmware runs</li>
+                    <li><span class="keyword">JTAG Disable:</span> Disable hardware debugging interfaces in production</li>
+                    <li><span class="keyword">Physical Tamper Detection:</span> Detect and log/sanitize on physical intrusion</li>
+                </ul>
+            </div>
+
+            <div class="attention-box important">
+                <div class="important-title">NETWORK SECURITY</div>
+                <ul class="important-list">
+                    <li><span class="keyword">Always Encrypt:</span> TLS 1.3 for all communications</li>
+                    <li><span class="keyword">Certificate Pinning:</span> Prevent MITM attacks via certificate validation</li>
+                    <li><span class="keyword">Firewall Rules:</span> Only allow necessary ports and protocols</li>
+                    <li><span class="keyword">Network Segmentation:</span> Separate IoT network from corporate network</li>
+                    <li><span class="keyword">VPN for Remote Access:</span> Never expose device management directly to internet</li>
+                </ul>
+            </div>
+
+            <div class="attention-box important">
+                <div class="important-title">FIRMWARE UPDATES</div>
+                <ul class="important-list">
+                    <li><span class="keyword">Signed Updates:</span> Only apply cryptographically signed firmware</li>
+                    <li><span class="keyword">Rollback Protection:</span> Prevent downgrade attacks</li>
+                    <li><span class="keyword">Staged Rollout:</span> Test updates on subset before full deployment</li>
+                    <li><span class="keyword">Verification:</span> Verify integrity before and after update</li>
+                    <li><span class="keyword">Safe Mode:</span> Recovery mode if update fails</li>
+                </ul>
+            </div>
+
+            <div class="attention-box important">
+                <div class="important-title">DATA PROTECTION</div>
+                <ul class="important-list">
+                    <li><span class="keyword">Encrypt at Rest:</span> AES encryption for flash storage</li>
+                    <li><span class="keyword">Encrypt in Transit:</span> TLS, DTLS, or application-level encryption</li>
+                    <li><span class="keyword">Data Minimization:</span> Only collect necessary data</li>
+                    <li><span class="keyword">Anonymization:</span> Strip personally identifiable information where possible</li>
+                    <li><span class="keyword">Secure Deletion:</span> Securely erase data when decommissioning devices</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">EXAMPLE: Firmware Update Security Flow</div>
+                <pre class="code-block">
+1. Device receives update package (firmware + signature)
+2. Verify signature using manufacturer public key
+   └─ Invalid: Reject update, log incident
+3. Verify version > current version (rollback protection)
+   └─ Older: Reject update
+4. Calculate hash of package, compare to manifest
+   └─ Hash mismatch: Reject update
+5. Write to non-active partition (dual-bank flash)
+6. Update boot flag to new partition
+7. Reboot
+8. Bootloader verifies signature again
+9. System runs from new partition
+10. Keep old partition for N rollback attempts
+                </pre>
+            </div>
+        </div>
+
+        <div class="content-section" id="testing">
+            <div class="lesson-header">
+                <h1>Security Testing</h1>
+                <p>Testing and Auditing IoT Systems</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <p class="content-text">
+                Security cannot be assumed—it must be tested. Penetration testing, static analysis, and runtime monitoring help identify vulnerabilities before attackers do. Test throughout the development lifecycle, not just before release.
+            </p>
+
+            <div class="info-section">
+                <div class="info-title">SECURITY TESTING TYPES</div>
+                <ul class="info-list">
+                    <li><span class="keyword">Static Analysis:</span> Code scanners check for vulnerabilities (e.g., hardcoded secrets)</li>
+                    <li><span class="keyword">Dynamic Analysis:</span> Test running application for runtime vulnerabilities</li>
+                    <li><span class="keyword">Penetration Testing:</span> Simulated attacks to find exploitable weaknesses</li>
+                    <li><span class="keyword">Fuzz Testing:</span> Send malformed input to crash/fault devices</li>
+                    <li><span class="keyword">Network Security Assessment:</span> Scan for open ports, weak encryption</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Static Code Analysis with SpotBugs</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">INTEGRATING STATIC ANALYSIS INTO BUILD</div>
+                <pre class="code-block">
+// Maven pom.xml configuration
+&lt;plugin&gt;
+    &lt;groupId&gt;com.github.spotbugs&lt;/groupId&gt;
+    &lt;artifactId&gt;spotbugs-maven-plugin&lt;/artifactId&gt;
+    &lt;version&gt;4.7.3&lt;/version&gt;
+    &lt;configuration&gt;
+        &lt;effort&gt;Max&lt;/effort&gt;
+        &lt;threshold&gt;Low&lt;/threshold&gt;
+        &lt;includeFilterFile&gt;spotbugs-security-filter.xml&lt;/includeFilterFile&gt;
+    &lt;/configuration&gt;
+&lt;/plugin&gt;
+
+// Custom security rules to look for:
+// - Hardcoded passwords/keys
+// - SQL injection risk
+// - Command injection risk
+// - Weak random number generation
+// - Cryptographic misuses
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Monitoring and Intrusion Detection</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">SIMPLE ANOMALY DETECTION</div>
+                <pre class="code-block">
+public class IoTSecurityMonitor {
+    private Map&lt;String, DeviceProfile&gt; profiles = new ConcurrentHashMap&lt;&gt;();
+    
+    public void reportMetrics(String deviceId, DeviceMetrics metrics) {
+        DeviceProfile profile = profiles.computeIfAbsent(
+            deviceId, k -> new DeviceProfile()
+        );
+        
+        // Check for anomalies
+        if (profile.isAnomaly(metrics)) {
+            Alert alert = new Alert(
+                "SUSPICIOUS ACTIVITY",
+                "Anomaly detected for device " + deviceId,
+                AlertSeverity.HIGH
+            );
+            alertManager.sendAlert(alert);
+        }
+        
+        profile.record(metrics);
+    }
+}
+
+class DeviceProfile {
+    private double avgDataRate;
+    private double stdDevDataRate;
+    private Queue&lt;DeviceMetrics&gt; history = new LinkedList&lt;&gt;();
+    
+    public boolean isAnomaly(DeviceMetrics metrics) {
+        double currentRate = metrics.getDataRate();
+        double zScore = (currentRate - avgDataRate) / stdDevDataRate;
+        
+        // Flag if > 3 standard deviations from mean
+        return Math.abs(zScore) > 3;
+    }
+}
+                </pre>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">EXAMPLE: Security Checklist Before Deployment</div>
+                <ul class="example-list">
+                    <li>✓ No hardcoded credentials in firmware</li>
+                    <li>✓ All communications use TLS 1.3 with valid certificates</li>
+                    <li>✓ Firmware update mechanism uses signed updates</li>
+                    <li>✓ Device has unique credentials (factory-installed certificate)</li>
+                    <li>✓ Disabled debug interfaces in production images</li>
+                    <li>✓ Physical tamper detection (if applicable)</li>
+                    <li>✓ Firmware passes static/dynamic security analysis</li>
+                    <li>✓ Security audit completed by third party</li>
+                    <li>✓ Incident response plan documented</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section" id="practice">
+            <div class="lesson-header">
+                <h1>Practice Problems</h1>
+                <p>Test Your Understanding of IoT Security</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <div class="practice-container" id="practiceProblems">
+                <div class="problem">
+                    <div class="problem-header">
+                        <span class="problem-id">8-1</span>
+                        <span class="problem-difficulty easy">Easy</span>
+                        <span class="problem-type">Definition</span>
+                    </div>
+                    <div class="problem-question">
+                        What does JWT stand for in the context of IoT authentication?
+                    </div>
+                    <div class="problem-answer">
+                        JSON Web Token
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                </div>
+                <div class="problem">
+                    <div class="problem-header">
+                        <span class="problem-id">8-2</span>
+                        <span class="problem-difficulty medium">Medium</span>
+                        <span class="problem-type">Concept</span>
+                    </div>
+                    <div class="problem-question">
+                        What is the difference between authentication and authorization?
+                    </div>
+                    <div class="problem-answer">
+                        Authentication verifies identity (who are you?) while authorization determines permissions (what can you do?)
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                </div>
+                <div class="problem">
+                    <div class="problem-header">
+                        <span class="problem-id">8-3</span>
+                        <span class="problem-difficulty easy">Easy</span>
+                        <span class="problem-type">Concept</span>
+                    </div>
+                    <div class="problem-question">
+                        True or False: Hardcoding API keys in firmware is a secure practice.
+                    </div>
+                    <div class="problem-answer">
+                        False - Hardcoded keys can be extracted from firmware. Use secure key storage and device-specific keys.
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                </div>
+                <div class="problem">
+                    <div class="problem-header">
+                        <span class="problem-id">8-4</span>
+                        <span class="problem-difficulty medium">Medium</span>
+                        <span class="problem-type">Application</span>
+                    </div>
+                    <div class="problem-question">
+                        A smart lock receives firmware updates over the internet. What security measures should be implemented to prevent malicious firmware?
+                    </div>
+                    <div class="problem-answer">
+                        Use digitally signed firmware (cryptographically signed by manufacturer); verify signature before applying; implement rollback protection (don't allow downgrade); use secure HTTPS for download; apply updates to non-active partition
+                    </div>
+                    <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section" id="quiz">
+            <div class="lesson-header">
+                <h1>Module 8 Quiz</h1>
+                <p>Test Your Knowledge of IoT Security</p>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <div class="quiz-container" id="quizContainer">
+                <!-- Quiz questions loaded from quizzes.js -->
+            </div>
+            <button class="submit-quiz" onclick="submitQuiz('8')">Submit Quiz</button>
+            <div class="quiz-result" id="quizResult"></div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-buttons">
+            <button class="nav-btn prev" onclick="navigate('previous')">← Previous Module</button>
+            <button class="nav-btn next" onclick="navigate('next')">Next Module →</button>
+        </div>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script src="../js/problems.js"></script>
+    <script src="../js/quizzes.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPracticeProblems('security');
+            loadQuiz('module8');
+            updateProgress();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculus III Construction Zone - Complete Course</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Construction Header -->
+    <div class="construction-header">
+        <h1>🔧 CALCULUS III CONSTRUCTION ZONE 🔧</h1>
+        <h2>Complete Interactive Course - Master Multivariable Calculus</h2>
+    </div>
+
+    <!-- Warning Banner -->
+    <div class="warning-banner">
+        <span class="construction-icon">⚠️</span>
+        HARD HAT REQUIRED - COMPREHENSIVE LEARNING UNDER CONSTRUCTION <span class="construction-icon">⚠️</span>
+    </div>
+
+    <!-- Progress Overview -->
+    <div class="progress-container">
+        <div class="progress-title">📊 YOUR OVERALL PROGRESS</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="overallProgressFill" style="width: 0%">0%</div>
+        </div>
+        <div class="progress-stats" id="progressStats">
+            <div class="stat">
+                <span class="stat-label">Lessons:</span>
+                <span class="stat-value" id="lessonsCompleted">0</span>/<span id="totalLessons">8</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Problems:</span>
+                <span class="stat-value" id="problemsSolved">0</span>/<span id="totalProblems">500</span>+
+            </div>
+            <div class="stat">
+                <span class="stat-label">Quizzes:</span>
+                <span class="stat-value" id="quizzesPassed">0</span>/<span id="totalQuizzes">8</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Course Overview -->
+        <div class="course-overview">
+            <h2 class="section-title">🏗️ COURSE BLUEPRINT</h2>
+            
+            <div class="blueprint-section">
+                <div class="blueprint-content">
+                    <h3>📋 WHAT YOU'LL MASTER</h3>
+                    <p class="blueprint-text">By completing this course, you will have comprehensive knowledge of:</p>
+                    <ul class="blueprint-list">
+                        <li>✅ Vectors and their operations in 3D space</li>
+                        <li>✅ Vector-valued functions and motion in space</li>
+                        <li>✅ Functions of several variables and their properties</li>
+                        <li>✅ Partial derivatives and gradient vectors</li>
+                        <li>✅ Directional derivatives and tangent planes</li>
+                        <li>✅ Multiple integrals (double, triple, and beyond)</li>
+                        <li>✅ Change of variables and Jacobians</li>
+                        <li>✅ Vector calculus: line and surface integrals</li>
+                        <li>✅ Fundamental theorems: Green's, Stokes', Divergence</li>
+                        <li>✅ Applications to physics, engineering, and more</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="safety-sign important">
+                🚧 500+ PRACTICE PROBLEMS • COMPREHENSIVE EXAMS • INTERACTIVE DIAGRAMS 🚧
+            </div>
+        </div>
+
+        <!-- Module Navigation -->
+        <div class="module-container">
+            <h2 class="section-title">📚 Course Modules</h2>
+            
+            <!-- Module 1 -->
+            <div class="module-card" onclick="window.location.href='lessons/01-introduction.html'">
+                <div class="module-header">
+                    <span class="module-number">01</span>
+                    <h3>Introduction & Prerequisites</h3>
+                    <div class="module-status" id="module1-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Course overview and expectations</li>
+                        <li>Review of single-variable calculus</li>
+                        <li>Introduction to 3D thinking</li>
+                        <li>50+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~2 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 2 -->
+            <div class="module-card" onclick="window.location.href='lessons/02-vectors-3d.html'">
+                <div class="module-header">
+                    <span class="module-number">02</span>
+                    <h3>Vectors & 3D Space</h3>
+                    <div class="module-status" id="module2-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Vector operations and properties</li>
+                        <li>Dot and cross products</li>
+                        <li>Lines and planes in 3D</li>
+                        <li>Vector spaces and bases</li>
+                        <li>80+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~4 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 3 -->
+            <div class="module-card" onclick="window.location.href='lessons/03-vector-functions.html'">
+                <div class="module-header">
+                    <span class="module-number">03</span>
+                    <h3>Vector Functions</h3>
+                    <div class="module-status" id="module3-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Vector-valued functions</li>
+                        <li>Derivatives and integrals</li>
+                        <li>Arc length and curvature</li>
+                        <li>Motion in space</li>
+                        <li>70+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~5 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 4 -->
+            <div class="module-card" onclick="window.location.href='lessons/04-multivariable-functions.html'">
+                <div class="module-header">
+                    <span class="module-number">04</span>
+                    <h3>Multivariable Functions</h3>
+                    <div class="module-status" id="module4-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Functions of several variables</li>
+                        <li>Limits and continuity</li>
+                        <li>Partial derivatives</li>
+                        <li>Tangent planes and linear approximation</li>
+                        <li>Level curves and surfaces</li>
+                        <li>90+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~6 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 5 -->
+            <div class="module-card" onclick="window.location.href='lessons/05-derivatives.html'">
+                <div class="module-header">
+                    <span class="module-number">05</span>
+                    <h3>Partial Derivatives & Gradients</h3>
+                    <div class="module-status" id="module5-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Higher-order partial derivatives</li>
+                        <li>Gradient vectors</li>
+                        <li>Directional derivatives</li>
+                        <li>Tangent planes and normal lines</li>
+                        <li>Extrema and optimization</li>
+                        <li>Lagrange multipliers</li>
+                        <li>100+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~8 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 6 -->
+            <div class="module-card" onclick="window.location.href='lessons/06-multiple-integrals.html'">
+                <div class="module-header">
+                    <span class="module-number">06</span>
+                    <h3>Multiple Integrals</h3>
+                    <div class="module-status" id="module6-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Double integrals over rectangles</li>
+                        <li>Double integrals over general regions</li>
+                        <li>Double integrals in polar coordinates</li>
+                        <li>Applications of double integrals</li>
+                        <li>Triple integrals</li>
+                        <li>Triple integrals in cylindrical coordinates</li>
+                        <li>Triple integrals in spherical coordinates</li>
+                        <li>Change of variables</li>
+                        <li>120+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~10 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 7 -->
+            <div class="module-card" onclick="window.location.href='lessons/07-vector-calculus.html'">
+                <div class="module-header">
+                    <span class="module-number">07</span>
+                    <h3>Vector Calculus</h3>
+                    <div class="module-status" id="module7-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Vector fields</li>
+                        <li>Line integrals (scalar functions)</li>
+                        <li>Line integrals (vector fields)</li>
+                        <li>Fundamental theorem for line integrals</li>
+                        <li>Conservative vector fields</li>
+                        <li>Green's theorem</li>
+                        <li>Curl and divergence</li>
+                        <li>Surface integrals</li>
+                        <li>Stokes' theorem</li>
+                        <li>Divergence theorem</li>
+                        <li>130+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~12 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 8 -->
+            <div class="module-card" onclick="window.location.href='lessons/08-applications.html'">
+                <div class="module-header">
+                    <span class="module-number">08</span>
+                    <h3>Applications & Advanced Topics</h3>
+                    <div class="module-status" id="module8-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Applications in physics</li>
+                        <li>Applications in engineering</li>
+                        <li>Applications in economics</li>
+                        <li>Gradient descent and optimization</li>
+                        <li>Coordinate transformations</li>
+                        <li>Constrained optimization</li>
+                        <li>Advanced problems and proofs</li>
+                        <li>Review and synthesis</li>
+                        <li>100+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~8 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="quick-links">
+            <h2 class="section-title">🔗 Quick Links</h2>
+            
+            <div class="quick-link-grid">
+                <a href="practice/vectors-problems.html" class="quick-link-card">
+                    <div class="quick-link-icon">📊</div>
+                    <div class="quick-link-title">Vector Practice</div>
+                    <div class="quick-link-desc">100+ problems</div>
+                </a>
+                
+                <a href="practice/derivatives-problems.html" class="quick-link-card">
+                    <div class="quick-link-icon">∂</div>
+                    <div class="quick-link-title">Derivative Practice</div>
+                    <div class="quick-link-desc">100+ problems</div>
+                </a>
+                
+                <a href="practice/integrals-problems.html" class="quick-link-card">
+                    <div class="quick-link-icon">∫</div>
+                    <div class="quick-link-title">Integral Practice</div>
+                    <div class="quick-link-desc">150+ problems</div>
+                </a>
+                
+                <a href="practice/vector-calc-problems.html" class="quick-link-card">
+                    <div class="quick-link-icon">⃗</div>
+                    <div class="quick-link-title">Vector Calc Practice</div>
+                    <div class="quick-link-desc">100+ problems</div>
+                </a>
+                
+                <a href="exams/midterm.html" class="quick-link-card">
+                    <div class="quick-link-icon">📝</div>
+                    <div class="quick-link-title">Midterm Exam</div>
+                    <div class="quick-link-desc">Assessment</div>
+                </a>
+                
+                <a href="exams/final.html" class="quick-link-card">
+                    <div class="quick-link-icon">🏆</div>
+                    <div class="quick-link-title">Final Exam</div>
+                    <div class="quick-link-desc">Comprehensive</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Study Guide -->
+        <div class="study-guide">
+            <h2 class="section-title">📖 Study Guide & Tips</h2>
+            
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>🎯 Start with Prerequisites</h4>
+                    <p>Make sure you're comfortable with single-variable calculus before diving in.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>📐 Visualize Everything</h4>
+                    <p>Calculus III is highly visual. Use the diagrams to build intuition.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>✍️ Practice Daily</h4>
+                    <p>Consistent practice is key. Aim for 20-30 problems per day.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>🔄 Review Regularly</h4>
+                    <p>Each section builds on the previous ones. Review material weekly.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>💡 Focus on Understanding</h4>
+                    <p>Don't just memorize formulas. Understand WHY they work.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>🤝 Ask for Help</h4>
+                    <p>Stuck? Review previous examples, or take a break and come back.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p class="footer-text">
+            🔧 CALCULUS III CONSTRUCTION ZONE 🔧<br>
+            Complete Interactive Course • 500+ Practice Problems • Comprehensive Coverage<br>
+            Keep Building! 🚧
+        </p>
+    </div>
+
+    <script src="js/navigation.js"></script>
+    <script>
+        // Load saved progress
+        loadProgress();
+    </script>
+</body>
+</html>

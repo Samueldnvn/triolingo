@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Examination - The Art of War</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="renaissance-header">
+        <h1>COMPREHENSIVE FINAL EXAMINATION</h1>
+        <h2>The Art of War - Military Strategy Through the Napoleonic Era</h2>
+    </div>
+    
+    <div class="exam-header">
+        <h1>FINAL EXAMINATION</h1>
+        <p class="exam-info">
+            This comprehensive examination covers all eight modules of the course.
+            You must demonstrate mastery of the strategic principles, historical events,
+            and tactical developments from ancient times through the Napoleonic era.
+        </p>
+        <div style="margin: 20px 0;">
+            <p class="exam-info"><strong>Questions:</strong> 25</p>
+            <p class="exam-info"><strong>Time Limit:</strong> 120 minutes (2 hours)</p>
+            <p class="exam-info"><strong>Passing Score:</strong> 70% (18 correct)</p>
+            <p class="exam-info"><strong>Mastery Level:</strong> 90% (23 correct)</p>
+        </div>
+    </div>
+    
+    <div id="exam-timer-display" class="exam-timer">
+        120:00
+    </div>
+    
+    <div class="container">
+        <div id="final-exam-container"></div>
+        
+        <div class="nav-buttons">
+            <a href="../lessons/08-naval.html" class="nav-button">← Return to Module VIII</a>
+            <a href="../index.html" class="nav-button">Return to Course Overview</a>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p class="footer-text">
+            Final Examination | The Art of War Course<br>
+            Comprehensive Assessment of Military Strategy Mastery
+        </p>
+    </div>
+    
+    <script src="../js/navigation.js"></script>
+    <script src="../js/quizzes.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Render final exam
+            const container = document.getElementById('final-exam-container');
+            const questions = finalExamQuestions;
+            
+            let examHTML = '<div class="quiz-container">';
+            examHTML += '<div class="quiz-title">COMPREHENSIVE FINAL EXAMINATION</div>';
+            
+            questions.forEach((q, index) => {
+                examHTML += '<div class="quiz-question">';
+                examHTML += '<p>' + (index + 1) + '. ' + q.question + '</p>';
+                examHTML += '<div class="quiz-options">';
+                
+                q.options.forEach(option => {
+                    examHTML += '<div class="quiz-option" onclick="selectAnswer(\'F' + (index + 1) + '\', \'' + option.charAt(0) + '\', this)">' + option + '</div>';
+                });
+                
+                examHTML += '</div></div>';
+            });
+            
+            examHTML += '<button class="submit-btn" style="width:100%;margin-top:30px;" onclick="submitFinalExam()">Submit Final Examination</button>';
+            examHTML += '</div>';
+            
+            container.innerHTML = examHTML;
+            
+            // Start timer
+            let timeRemaining = 120 * 60; // 120 minutes in seconds
+            
+            const timerEl = document.getElementById('exam-timer-display');
+            
+            const timerInterval = setInterval(() => {
+                timeRemaining--;
+                
+                const minutes = Math.floor(timeRemaining / 60);
+                const seconds = timeRemaining % 60;
+                timerEl.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                
+                if (timeRemaining <= 0) {
+                    clearInterval(timerInterval);
+                    submitFinalExam();
+                }
+            }, 1000);
+            
+            // Save timer interval for cleanup
+            window.examTimerInterval = timerInterval;
+        });
+        
+        const examAnswers = {};
+        
+        function selectAnswer(questionNum, answer, element) {
+            examAnswers[questionNum] = answer;
+            
+            // Remove selected class from all options for this question
+            const questionOptions = element.parentElement.querySelectorAll('.quiz-option');
+            questionOptions.forEach(opt => opt.classList.remove('selected'));
+            
+            // Add selected class to clicked option
+            element.classList.add('selected');
+        }
+        
+        function submitFinalExam() {
+            // Clear timer
+            if (window.examTimerInterval) {
+                clearInterval(window.examTimerInterval);
+            }
+            
+            // Calculate score
+            let score = 0;
+            let correctAnswers = {};
+            
+            finalExamQuestions.forEach((q, index) => {
+                const questionId = 'F' + (index + 1);
+                correctAnswers[questionId] = q.correct;
+                if (examAnswers[questionId] === q.correct) {
+                    score++;
+                }
+            });
+            
+            const percentage = Math.round((score / finalExamQuestions.length) * 100);
+            
+            // Generate results
+            let resultsHTML = '<div class="exam-results">';
+            resultsHTML += '<h2 style="color:' + (percentage >= 70 ? 'var(--forest-green)' : 'var(--deep-red)') + '">';
+            resultsHTML += 'FINAL EXAMINATION RESULTS</h2>';
+            resultsHTML += '<div style="font-size:3em;font-weight:bold;margin:20px 0;">';
+            resultsHTML += score + '/' + finalExamQuestions.length + ' (' + percentage + '%)</div>';
+            
+            if (percentage >= 90) {
+                resultsHTML += '<div class="grade-badge grade-a">MASTERY ACHIEVED</div>';
+                resultsHTML += '<p>Distinguished comprehension of military strategy from ancient through Napoleonic era.</p>';
+            } else if (percentage >= 70) {
+                resultsHTML += '<div class="grade-badge grade-b">PASSED - COMPETENT</div>';
+                resultsHTML += '<p>Demonstrated understanding of core strategic principles and historical developments.</p>';
+            } else {
+                resultsHTML += '<div class="grade-badge grade-f">BELOW PASSING THRESHOLD</div>';
+                resultsHTML += '<p>Additional study recommended. Review all modules and retake the final examination.</p>';
+            }
+            
+            resultsHTML += '<div style="margin-top:30px;text-align:left;">';
+            resultsHTML += '<h3 style="margin-bottom:20px;">Question-by-Question Results:</h3>';
+            resultsHTML += '<ul style="list-style:none;padding-left:0;">';
+            
+            finalExamQuestions.forEach((q, index) => {
+                const questionId = 'F' + (index + 1);
+                const isCorrect = examAnswers[questionId] === q.correct;
+                resultsHTML += '<li style="margin:15px 0;padding:15px;';
+                resultsHTML += 'background:' + (isCorrect ? 'var(--success-light)' : 'var(--error-light) + ';border-left:4px solid ' + (isCorrect ? 'var(--success)' : 'var(--error)'));
+                resultsHTML += ';">';
+                resultsHTML += '<strong>' + (index + 1) + '. ' + (isCorrect ? '✓ Correct' : '✗ Incorrect') + '</strong>';
+                if (!isCorrect) {
+                    resultsHTML += '<br><em>Correct Answer: ' + q.correct + '</em>';
+                }
+                resultsHTML += '</li>';
+            });
+            
+            resultsHTML += '</ul></div></div>';
+            
+            document.getElementById('final-exam-container').innerHTML = resultsHTML;
+            document.getElementById('exam-timer-display').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

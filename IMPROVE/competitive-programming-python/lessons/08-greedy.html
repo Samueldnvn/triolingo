@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 8: Greedy Algorithms - Competitive Programming with Python</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="course-header"><h1>MODULE 8: GREEDY ALGORITHMS</h1><h2>Making Locally Optimal Choices</h2></div>
+    <nav class="nav-container"><ul class="nav-menu"><li class="nav-item active" onclick="showSection('overview')">Overview</li><li class="nav-item" onclick="showSection('basics')">Greedy Basics</li><li class="nav-item" onclick="showSection('problems')">Common Problems</li><li class="nav-item" onclick="showSection('practice')">Practice</li><li class="nav-item" onclick="showSection('quiz')">Quiz</li></ul></nav>
+    <div class="progress-container"><div class="progress-title">MODULE 8 PROGRESS</div><div class="progress-bar"><div class="progress-fill" id="moduleProgress" style="width:0%">0%</div></div></div>
+    <div class="container">
+        <div class="content-section active" id="overview">
+            <div class="lesson-header"><h1>Greedy Algorithms Overview</h1><p>Make optimal local choices hoping for global optimum</p></div>
+            <div class="blueprint-section"><div class="blueprint-content"><h3>WHAT YOU'LL LEARN</h3><ul class="blueprint-list"><li>Activity selection</li><li>Huffman coding</li><li>Interval scheduling</li><li>MST problems (Prim, Kruskal)</li><li>Shortest path (Dijkstra)</li><li>When greedy works vs DP</li></ul></div></div>
+            <h3 class="subsection-title">Greedy vs DP</h3><p class="content-text">Greedy: make locally optimal choice, hope for global optimum. Fast but doesn't always work. DP: explores all possibilities, guarantee optimal solution. Slower but always correct. Key question: does greedy choice property hold?</p>
+        </div>
+        <div class="content-section" id="basics">
+            <div class="lesson-header"><h1>Greedy Fundamentals</h1></div>
+            <h3 class="subsection-title">Activity Selection</h3><div class="code-block"><pre>
+def activity_selection(start, finish):
+    """Select max non-overlapping activities"""
+    activities = sorted(zip(start, finish), key=lambda x: x[1])
+    count = 0
+    end_time = float('-inf')
+    
+    for s, f in activities:
+        if s >= end_time:
+            count += 1
+            end_time = f
+    
+    return count
+
+# Sort by finish time, select if starts after previous ends
+# This is optimal: proof by exchange argument
+            </pre></div>
+            <h3 class="subsection-title">Jump Game</h3><div class="code-block"><pre>
+def can_jump(nums):
+    """Check if can reach last index"""
+    max_reach = 0
+    for i, num in enumerate(nums):
+        if i > max_reach:
+            return False
+        max_reach = max(max_reach, i + num)
+    return True
+
+# Greedy: track furthest we can reach
+            </pre></div>
+            <h3 class="subsection-title">Minimum Number of Arrows to Burst Balloons</h3><div class="code-block"><pre>
+def find_min_arrow_shots(points):
+    """Arrows needed to burst all balloons"""
+    if not points: return 0
+    
+    # Sort by end coordinate
+    points.sort(key=lambda x: x[1])
+    
+    arrows = 1
+    end = points[0][1]
+    
+    for start, finish in points[1:]:
+        if start > end:
+            arrows += 1
+            end = finish
+    
+    return arrows
+            </pre></div>
+        </div>
+        <div class="content-section" id="problems">
+            <div class="lesson-header"><h1>Common Greedy Problems</h1></div><h3 class="subsection-title">Assign Cookies</h3><div class="code-block"><pre>
+def find_content_children(g, s):
+    """Max number of content children"""
+    g.sort()  # Children greed factor
+    s.sort()  # Cookie sizes
+    
+    child_i = cookie_j = 0
+    while child_i < len(g) and cookie_j < len(s):
+        if s[cookie_j] >= g[child_i]:
+            child_i += 1
+        cookie_j += 1
+    
+    return child_i
+            </pre></div>
+            <h3 class="subsection-title">Partition Labels</h3><div class="code-block"><pre>
+def partition_labels(s):
+    """Partition string into minimum parts"""
+    last = {c: i for i, c in enumerate(s)}
+    result = []
+    start = end = 0
+    
+    for i, c in enumerate(s):
+        end = max(end, last[c])
+        if i == end:
+            result.append(end - start + 1)
+            start = i + 1
+    
+    return result
+            </pre></div>
+            <div class="safety-sign important">GREEDY PROPERTY: Optimal solution can be constructed by making optimal local choices. Proof by exchange argument usually needed.</div>
+        </div>
+        <div class="content-section" id="practice">
+            <div class="lesson-header"><h1>Practice Problems</h1></div><div id="practiceProblems"></div><script src="../js/problems.js"></script><script>
+                const c=document.getElementById('practiceProblems');
+                const p=practiceProblems.greedy.basics||[];
+                let html='<div class="practice-category"><h3 class="subsection-title">Greedy Problems</h3>';
+                (p.slice(0,5)).forEach(px=>{
+                    const pid='GR-'+px.id;
+                    html+=`<div class="practice-problem" id="${pid}">
+                        <div class="problem-question"><p><strong>${px.id}:</strong> ${px.question}</p></div>
+                        <div class="problem-input"><input id="${pid}-input"><button onclick="checkAnswer('${pid}','${px.answer.replace(/'/g,"\\'")}',[${px.alternatives.map(a=>`'${a.replace(/'/g,"\\'")}'`).join(',')}],'${pid}-input','${pid}-hint','${pid}-explanation')">Check</button></div>
+                        <div id="${pid}-feedback" class="feedback"></div><div id="${pid}-hint" class="hint" style="display:none">${px.hint}</div></div>`;
+                });
+                c.innerHTML=html+'</div>';
+            </script>
+        </div>
+        <div class="content-section" id="quiz">
+            <div class="lesson-header"><h1>Module 8 Quiz</h1></div><form id="moduleQuiz">
+                <div class="quiz-question"><p>1. Greedy always produces optimal result?</p><div class="quiz-options"><label onclick="r('Q1','A')"><input type="radio" name="Q1" value="A"> A. Yes</label><label onclick="r('Q1','B')><input type="radio" name="Q1" value="B"> B. No</label><label onclick="r('Q1','C')"><input type="radio" name="Q1" value="C"> C. Sometimes</label></div></div>
+                <div class="quiz-question"><p>2. Activity selection sorting criteria?</p><div class="quiz-options"><label onclick="r('Q2','A')"><input type="radio" name="Q2" value="A"> A. Start time</label><label onclick="r('Q2','B')><input type="radio" name="Q2" value="B"> B. End time</label><label onclick="r('Q2','C')"><input type="radio" name="Q2" value="C"> C. Duration</label></div></div>
+                <div class="quiz-question"><p>3. Greedy vs DP time?</p><div class="quiz-options"><label onclick="r('Q3','A')"><input type="radio" name="Q3" value="A"> A. Greedy faster</label><label onclick="r('Q3','B')><input type="radio" name="Q3" value="B"> B. DP faster</label><label onclick="r('Q3','C')"><input type="radio" name="Q3" value="C"> C. Same</label></div></div>
+                <button type="button" class="quiz-submit" onclick="s8()">Submit Quiz</button>
+            </form><div class="quiz-results" id="quizResults"></div>
+        </div>
+    </div>
+    <div class="nav-buttons"><button onclick="window.location.href='07-dynamicprogramming.html'">Previous</button><button onclick="window.location.href='../index.html'">Home</button><button onclick="window.location.href='09-graphs.html'">Next</button></div>
+    <script src="../js/navigation.js"></script><script>
+        const a8={'Q1':'B','Q2':'B','Q3':'A'},q={};function r(x,y){q[x]=y;}function s8(){let s=0,t=3,r=[];for(let x in a8){if(q[x]===a8[x]){s++;r.push(`Q${x.substring(1)}: Correct`);}else{r.push(`Q${x.substring(1)}: Wrong`);}}const p=Math.round((s/t)*100);document.getElementById('quizResults').innerHTML=`<div class="score-display ${p>=70?'pass':'fail'}">${p>=70?'PASSED':'IMPROVE'}</div><p>Score: ${s}/${t} (${p}%)</p>`+r.map(z=>`<p>${z}</p>`).join('');if(p>=70)markQuizPassed('greedy');}</script>
+</body>
+</html>

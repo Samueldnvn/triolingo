@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Module 10 - Advanced Topics</title><link rel="stylesheet" href="../css/styles.css"></head>
+<body>
+<div class="course-header"><h1>Module 10: Advanced Topics & Review</h1></div>
+<div class="page-nav"><a href="09-graphs.html">Prev</a><a href="../index.html">Home</a></div>
+<nav class="section-nav">
+    <div onclick="showSection('section1')">1. Advanced DS</div>
+    <div onclick="showSection('section2')">2. String Algorithms</div>
+    <div onclick="showSection('section3')">3. Backtracking</div>
+    <div onclick="showSection('section4')">4. Problem Solving</div>
+    <div onclick="showSection('section5')">5. Final Exam</div>
+</nav>
+<div class="content-container">
+<div id="section1" class="content-section active">
+    <h2>Advanced Data Structures</h2>
+    <div class="content-block"><h3>Segment Tree</h3>
+    <p>Range queries + point updates in O(log n). O(4n) space. Use for range min/max/sum queries with updates.</p></div>
+    <div class="content-block"><h3>Fenwick Tree (Binary Indexed Tree)</h3>
+    <p>Prefix sum queries + point updates in O(log n). Simpler than segment tree, often faster.</p></div>
+    <div class="content-block"><h3>Trie</h3>
+    <p>Prefix tree for strings. O(L) operations where L = word length. Used for prefix matching, autocomplete.</p></div>
+</div>
+<div id="section2" class="content-section">
+    <h2>String Algorithms</h2>
+    <div class="content-block"><h3>KMP (Knuth-Morris-Pratt)</h3>
+    <p>Pattern matching. Preprocess LPS array. O(n + m) time. No backtracking.</p></div>
+    <div class="content-block"><h3>Rabin-Karp</h3>
+    <p>Pattern matching using hash. Rolling hash. Good for multiple patterns or finding all occurrences.</p></div>
+    <div class="content-block"><h3>Rolling Hash</h3>
+    <p>Efficiently compute hash of substring. Remove old character contribution, add new. O(1) update.</p></div>
+</div>
+<div id="section3" class="content-section">
+    <h2>Backtracking</h2>
+    <div class="content-block"><h3>Technique</h3>
+    <p>Explore all possibilities recursively. Prune branches that can't lead to solution. Used for combinatorial problems.</p></div>
+    <div class="content-block"><h3>Applications</h3>
+    <p>N-Queens, Sudoku, generating permutations/subsets, combination sum problems.</p></div>
+</div>
+<div id="section4" class="content-section">
+    <h2>Advanced Problem Solving</h2>
+    <div class="content-block"><h3>Bitmask DP</h3>
+    <p>State includes subset as bitmask (bits = elements included/selected). Used for TSP, assignment, subset DP.</p></div>
+    <div class="content-block"><h3>Monotonic Stack</h3>
+    <p>Maintain order. Used for next greater/lesser elements, daily temperatures, histogram problems.</p></div>
+    <div class="content-block"><h3>Meet in the Middle</h3>
+    <p>For n ~ 30-50 when 2^n too large. Split in half, generate 2^(n/2) possibilities, combine results.</p></div>
+</div>
+<div id="section5" class="content-section">
+    <h2>Final Exam</h2>
+    <div class="quiz-intro"><p>Comprehensive exam covering all 10 modules. 20 questions. 90%+ for mastery.</p></div>
+    <div id="quiz-container-final"></div>
+    <div id="quiz-results-final" class="quiz-results" style="display:none"></div>
+    <div class="quiz-actions">
+        <button onclick="loadQuiz('final')">Load Final Exam</button>
+        <button onclick="submitQuiz('final')">Submit Exam</button>
+        <button onclick="markLessonComplete('advanced')" class="quiz-btn complete-btn" style="display:none;">Mark Course Complete</button>
+    </div>
+</div>
+</div>
+<footer>
+    <p>Congratulations on completing the Competitive Programming with Python course!</p>
+    <p><a href="../index.html">Return to Course Home</a></p>
+</footer>
+<script src="../js/navigation.js"></script><script src="../js/quizzes.js"></script>
+</body>
+</html>

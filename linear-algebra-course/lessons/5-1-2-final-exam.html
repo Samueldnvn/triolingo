@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Exam - Linear Algebra Course</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- MathJax for LaTeX rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="chapter-5">
+    <div class="main-wrapper">
+        <nav class="sidebar toc-blue">
+            <div class="sidebar-header">
+                <div class="sidebar-title">Linear Algebra</div>
+            </div>
+            <div class="toc-chapter toc-blue">
+                <div class="toc-chapter-title">Chapter 5: Applications</div>
+                <div class="toc-module">
+                    <div class="toc-module-title">Module 5.1: Applications</div>
+                    <div class="toc-lessons">
+                        <div class="toc-lesson"><a href="5-1-1-svd-applications.html">Lesson 5.1.1: SVD & Applications</a></div>
+                        <div class="toc-lesson"><a href="5-1-2-final-exam.html" class="active">Final Exam</a></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="module-header">
+                    <h2>Final Examination</h2>
+                    <p>Comprehensive Assessment | Linear Algebra Course</p>
+                </div>
+                
+                <div class="content-card">
+                    <div class="important-box">
+                        <div class="flag">Welcome</div>
+                        <div class="important-title">Congratulations!</div>
+                        <p>You've made it to the final examination! This comprehensive assessment tests your understanding of all the material covered throughout the Linear Algebra course. From real numbers and vectors to matrices and eigenvalues, this exam covers everything you've learned.</p>
+                    </div>
+                    
+                    <div class="note-box">
+                        <div class="flag">Instructions</div>
+                        <ul style="margin: 15px 0 15px 30px; line-height: 2;">
+                            <li>This exam contains 15 questions covering all five chapters</li>
+                            <li>You must score at least <strong>70%</strong> to pass the course</li>
+                            <li>Take your time - there's no time limit</li>
+                            <li>Review your answers before submitting</li>
+                            <li>Good luck! You've worked hard to get here.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Part I: Foundations (Chapter 1)</div>
+                    <p>Test your understanding of real numbers, vectors, and basic operations.</p>
+                </div>
+                
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 1: Calculate the absolute value: $$|\frac{-17}{3}|$$</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectOption('Q1', 'A', this)">A. $$-\frac{17}{3}$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q1', 'B', this)">B. $$\frac{17}{3}$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q1', 'C', this)">C. $$\frac{-3}{17}$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q1', 'D', this)">D. $$0$$</div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 2: Find the dot product: $$\langle 2, 3 \rangle \cdot \langle -1, 4 \rangle$$</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectOption('Q2', 'A', this)">A. $$10$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q2', 'B', this)">B. $$-2$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q2', 'C', this)">C. $$11$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q2', 'D', this)">D. $$-10$$</div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 3: What is the magnitude of $$\vec{v} = \langle 3, 4 \rangle$$?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectOption('Q3', 'A', this)">A. $$7$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q3', 'B', this)">B. $$5$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q3', 'C', this)">C. $$\sqrt{7}$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q3', 'D', this)">D. $$1$$</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Part II: Matrices & Systems (Chapter 2)</div>
+                    <p>Show your mastery of matrices, matrix operations, and linear systems.</p>
+                </div>
+                
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 4: Calculate $$\det\left(\begin{bmatrix} 2 & 3 \\ 1 & 4 \end{bmatrix}\right)$$</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectOption('Q4', 'A', this)">A. $$5$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q4', 'B', this)">B. $$6$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q4', 'C', this)">C. $$7$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q4', 'D', this)">D. $$11$$</div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 5: If $$A$$ is a $$3 \times 2$$ matrix, what is the size of $$A^T$$?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectOption('Q5', 'A', this)">A. $$3 \times 2$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q5', 'B', this)">B. $$2 \times 3$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q5', 'C', this)">C. $$2 \times 2$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q5', 'D', this)">D. $$3 \times 3$$</div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 6: What is the inverse of $$I_2$$ (the 2x2 identity matrix)?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectOption('Q6', 'A', this)">A. It doesn't exist</div>
+                            <div class="quiz-option" onclick="selectOption('Q6', 'B', this)">B. $$\begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q6', 'C', this)">C. $$\begin{bmatrix} -1 & 0 \\ 0 & -1 \end{bmatrix}$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q6', 'D', this)">D. $$\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$$</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Part III: Determinants (Chapter 3)</div>
+                    <p>Demonstrate your understanding of determinants and their properties.</p>
+                </div>
+                
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 7: If $$\det(A) = 0$$, what can you conclude about matrix $$A$$?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectOption('Q7', 'A', this)">A. It has an inverse</div>
+                            <div class="quiz-option" onclick="selectOption('Q7', 'B', this)">B. It is singular</div>
+                            <div class="quiz-option" onclick="selectOption('Q7', 'C', this)">C. It is diagonal</div>
+                            <div class="quiz-option" onclick="selectOption('Q7', 'D', this)">D. It is symmetric</div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 8: What is $$\det(2A)$$ if $$A$$ is a $$3 \times 3$$ matrix and $$\det(A) = 3$$?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectOption('Q8', 'A', this)">A. $$6$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q8', 'B', this)">B. $$9$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q8', 'C', this)">C. $$24$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q8', 'D', this)">D. $$27$$</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Part IV: Advanced Topics (Chapter 4)</div>
+                    <p>Test your knowledge of eigenvalues, eigenvectors, and orthogonality.</p>
+                </div>
+                
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 9: For diagonal matrix $$D = \begin{bmatrix} 2 & 0 & 0 \\ 0 & 5 & 0 \\ 0 & 0 & 3 \end{bmatrix}$$, what are the eigenvalues?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectOption('Q9', 'A', this)">A. $$2, 0, 0$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q9', 'B', this)">B. $$2, 5, 3$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q9', 'C', this)">C. $$1, 1, 1$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q9', 'D', this)">D. $$0, 0, 0$$</div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 10: If $$\vec{v} \cdot \vec{w} = 0$$, what can you say about vectors $$\vec{v}$$ and $$\vec{w}$$?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectOption('Q10', 'A', this)">A. They are parallel</div>
+                            <div class="quiz-option" onclick="selectOption('Q10', 'B', this)">B. They are orthogonal</div>
+                            <div class="quiz-option" onclick="selectOption('Q10', 'C', this)">C. They are equal</div>
+                            <div class="quiz-option" onclick="selectOption('Q10', 'D', this)">D. One is zero</div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 11: What is the relationship between a matrix's eigenvalues and its determinant?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectOption('Q11', 'A', this)">A. They are equal</div>
+                            <div class="quiz-option" onclick="selectOption('Q11', 'B', this)">B. There's no relationship</div>
+                            <div class="quiz-option" onclick="selectOption('Q11', 'C', this)">C. The determinant equals the product of eigenvalues</div>
+                            <div class="quiz-option" onclick="selectOption('Q11', 'D', this)">D. The determinant equals the sum of eigenvalues</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Part V: Applications (Chapter 5)</div>
+                    <p>Explore real-world applications and advanced concepts.</p>
+                </div>
+                
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 12: In SVD $$A = U\Sigma V^T$$, what does the $$\Sigma$$ matrix contain?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectOption('Q12', 'A', this)">A. Orthogonal matrices</div>
+                            <div class="quiz-option" onclick="selectOption('Q12', 'B', this)">B. Singular values on the diagonal</div>
+                            <div class="quiz-option" onclick="selectOption('Q12', 'C', this)">C. Identity matrix</div>
+                            <div class="quiz-option" onclick="selectOption('Q12', 'D', this)">D. Zero matrix</div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 13: Which field does NOT typically use linear algebra?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectOption('Q13', 'A', this)">A. Computer graphics</div>
+                            <div class="quiz-option" onclick="selectOption('Q13', 'B', this)">B. Quantum mechanics</div>
+                            <div class="quiz-option" onclick="selectOption('Q13', 'C', this)">C. Ancient history</div>
+                            <div class="quiz-option" onclick="selectOption('Q13', 'D', this)">D. Machine learning</div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 14: What is a primary use of PCA (Principal Component Analysis)?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectOption('Q14', 'A', this)">A. Factorizing matrices</div>
+                            <div class="quiz-option" onclick="selectOption('Q14', 'B', this)">B. Dimensionality reduction</div>
+                            <div class="quiz-option" onclick="selectOption('Q14', 'C', this)">C. Solving linear systems</div>
+                            <div class="quiz-option" onclick="selectOption('Q14', 'D', this)">D. Computing eigenvalues</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Final Challenge</div>
+                    <p>One last comprehensive question!</p>
+                </div>
+                
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 15: If $$\lambda$$ is an eigenvalue of matrix $$A$$ with eigenvector $$\vec{v}$$, which equation holds true?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectOption('Q15', 'A', this)">A. $$A\vec{v} = \lambda\vec{v}$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q15', 'B', this)">B. $$\lambda A\vec{v} = \vec{v}$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q15', 'C', this)">C. $$A\lambda = \vec{v}$$</div>
+                            <div class="quiz-option" onclick="selectOption('Q15', 'D', this)">D. $$A + \vec{v} = \lambda$$</div>
+                        </div>
+                    </div>
+                    
+                    <button class="quiz-button" onclick="submitFinalExam()">Submit Final Exam</button>
+                </div>
+                
+                <div class="quiz-container" id="quiz-results" style="display: none;">
+                    <div id="quiz-feedback" style="text-align: center;"></div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="note-box">
+                        <div class="flag">Good Luck!</div>
+                        <p>Remember to review your answers. You've learned so much throughout this course - from the basics of real numbers to advanced concepts like eigenvalues and SVD. Take your time, think through each question carefully, and trust your knowledge!</p>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="nav-buttons">
+                    <a href="5-1-1-svd-applications.html" class="nav-btn">Previous: SVD & Applications</a>
+                    <a href="../index.html" class="nav-btn primary">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/navigation.js"></script>
+    <script>
+        let quizAnswers_final = {};
+        
+        function selectOption(questionId, answer, element) {
+            quizAnswers_final[questionId] = answer;
+            const parent = element.parentElement;
+            parent.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+        
+        function submitFinalExam() {
+            const correctAnswers = {
+                'Q1': 'B', 'Q2': 'A', 'Q3': 'B', 'Q4': 'A', 'Q5': 'B',
+                'Q6': 'D', 'Q7': 'B', 'Q8': 'C', 'Q9': 'B', 'Q10': 'B',
+                'Q11': 'C', 'Q12': 'B', 'Q13': 'C', 'Q14': 'B', 'Q15': 'A'
+            };
+            let score = 0;
+            let total = Object.keys(correctAnswers).length;
+            
+            for (let q in correctAnswers) {
+                if (quizAnswers_final[q] === correctAnswers[q]) {
+                    score++;
+                }
+            }
+            
+            const percentage = Math.round((score / total) * 100);
+            
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('quiz-results').style.display = 'block';
+            
+            const feedbackEl = document.getElementById('quiz-feedback');
+            let feedbackHTML = `<div style="font-size: 2em; font-weight: 700; margin-bottom: 25px;">
+                Final Score: ${score}/${total} (${percentage}%)
+            </div>`;
+            
+            if (percentage >= 70) {
+                feedbackHTML += `
+                    <div class="note-box" style="margin-bottom: 20px;">
+                        <div class="flag">Congratulations!</div>
+                        <div style="font-size: 1.3em; font-weight: 700; color: var(--green-accent); margin: 15px 0;">
+                            You passed the Linear Algebra course!
+                        </div>
+                        <p>You've demonstrated excellent understanding of all the major concepts in linear algebra. From real numbers and vectors to matrices, determinants, eigenvalues, and real-world applications - you've mastered it all!</p>
+                    </div>
+                    <div class="important-box">
+                        <div class="flag">Certificate</div>
+                        <p>You have successfully completed the comprehensive Linear Algebra course. You now have a solid foundation for advanced mathematics, computer science, physics, engineering, and data science.</p>
+                        <p style="margin-top: 15px;"><strong>Keep exploring!</strong> Linear algebra is the gateway to countless exciting fields of study.</p>
+                    </div>
+                `;
+                markQuizPassed('final');
+            } else {
+                feedbackHTML += `
+                    <div class="caution-box" style="margin-bottom: 20px;">
+                        <div class="flag">Keep Studying!</div>
+                        <div style="font-size: 1.3em; font-weight: 700; color: var(--orange-accent); margin: 15px 0;">
+                            Score: ${score}/${total} (${percentage}%)
+                        </div>
+                        <p>You haven't reached the 70% threshold yet, but don't worry! Review the course material, practice with the additional problems, and try again.</p>
+                    </div>
+                    <div class="note-box">
+                        <div class="flag">Next Steps</div>
+                        <ul style="margin: 15px 0 15px 30px; line-height: 2;">
+                            <li>Review lessons from chapters where you missed questions</li>
+                            <li>Practice with more problems in each module</li>
+                            <li>Focus on understanding the concepts, not just memorizing</li>
+                            <li>Take the module quizzes again for practice</li>
+                        </ul>
+                        <p style="margin-top: 15px;">You can do it! Linear algebra takes time and practice to master.</p>
+                    </div>
+                `;
+            }
+            
+            feedbackEl.innerHTML = feedbackHTML;
+            
+            // Hide all quiz containers
+            document.querySelectorAll('.quiz-container').forEach(container => {
+                if (container.id !== 'quiz-results') {
+                    container.style.display = 'none';
+                }
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,470 @@
+{
+  "title": "Sliding Window Algorithm - Complete Guide",
+  "sections": [
+    {
+      "number": "1",
+      "title": "Introduction",
+      "content": [
+        {
+          "type": "text",
+          "text": "The sliding window technique is an algorithmic approach used to efficiently solve problems involving arrays or strings by maintaining a window of elements that can be resized as it moves through the data."
+        },
+        {
+          "type": "tip",
+          "tip_type": "info",
+          "title": "Key Point",
+          "text": "Sliding window reduces time complexity from O(n²) or higher to O(n) by avoiding redundant calculations and processing each element at most twice."
+        }
+      ],
+      "subsections": [
+        {
+          "number": "1",
+          "title": "When to Use Sliding Window",
+          "content": [
+            {
+              "type": "text",
+              "text": "Use sliding window when you need to find or compute something related to a subarray or substring, such as:"
+            },
+            {
+              "type": "step",
+              "number": "1",
+              "text": "Finding maximum/minimum sum of subarray of length k"
+            },
+            {
+              "type": "step",
+              "number": "2",
+              "text": "Finding longest substring with certain properties"
+            },
+            {
+              "type": "step",
+              "number": "3",
+              "text": "Counting occurrences of specific patterns"
+            },
+            {
+              "type": "step",
+              "number": "4",
+              "text": "Finding subarrays that meet specific criteria"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "2",
+      "title": "Fixed Size Sliding Window",
+      "content": [
+        {
+          "type": "text",
+          "text": "In fixed size sliding window, the window maintains a constant size as it slides through the array. This is the simpler and more common variant."
+        }
+      ],
+      "subsections": [
+        {
+          "number": "1",
+          "title": "How It Works",
+          "content": [
+            {
+              "type": "step",
+              "number": "1",
+              "text": "Initialize the window with the first k elements"
+            },
+            {
+              "type": "step",
+              "number": "2",
+              "text": "Compute the initial result (sum, count, etc.) for this window"
+            },
+            {
+              "type": "step",
+              "number": "3",
+              "text": "Slide the window by adding the next element and removing the element that falls out"
+            },
+            {
+              "type": "step",
+              "number": "4",
+              "text": "Update the result efficiently without recalculating everything"
+            },
+            {
+              "type": "step",
+              "number": "5",
+              "text": "Repeat until the window reaches the end"
+            }
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Example: Maximum Sum Subarray",
+          "content": [
+            {
+              "type": "text",
+              "text": "Find the maximum sum of any subarray of size k in array [2, 1, 5, 1, 3, 2] with k=3:"
+            },
+            {
+              "type": "step",
+              "number": "1",
+              "text": "Initial window: [2,1,5] → sum = 8, max = 8"
+            },
+            {
+              "type": "step",
+              "number": "2",
+              "text": "Slide: [1,5,1] → sum = 8 - 2 + 1 = 7, max = 8"
+            },
+            {
+              "type": "step",
+              "number": "3",
+              "text": "Slide: [5,1,3] → sum = 7 - 1 + 3 = 9, max = 9"
+            },
+            {
+              "type": "step",
+              "number": "4",
+              "text": "Slide: [1,3,2] → sum = 9 - 5 + 2 = 6, max = 9"
+            },
+            {
+              "type": "text",
+              "text": "Result: Maximum sum is 9"
+            }
+          ]
+        },
+        {
+          "number": "3",
+          "title": "Code Implementation",
+          "content": [
+            {
+              "type": "text",
+              "text": "Python implementation for maximum sum of subarray of size k:"
+            },
+            {
+              "type": "tip",
+              "tip_type": "tip",
+              "title": "Code Pattern",
+              "text": "Always check edge cases like k > array length or empty arrays before implementing sliding window logic."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "3",
+      "title": "Variable Size Sliding Window",
+      "content": [
+        {
+          "type": "text",
+          "text": "Variable size sliding window dynamically adjusts its size based on conditions. This is more complex and versatile, commonly used for problems with constraints like 'longest substring with at most k distinct characters'."
+        }
+      ],
+      "subsections": [
+        {
+          "number": "1",
+          "title": "Two Pointers Pattern",
+          "content": [
+            {
+              "type": "text",
+              "text": "Variable size windows typically use two pointers (left and right) to define window boundaries:"
+            },
+            {
+              "type": "step",
+              "number": "1",
+              "text": "Initialize left = 0, right = 0, and any auxiliary data structures"
+            },
+            {
+              "type": "step",
+              "number": "2",
+              "text": "Expand window by moving right pointer, adding elements to current window"
+            },
+            {
+              "type": "step",
+              "number": "3",
+              "text": "When condition is violated, shrink window by moving left pointer"
+            },
+            {
+              "type": "step",
+              "number": "4",
+              "text": "Update the answer as you slide the window"
+            }
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Example: Longest Substring Without Repeating Characters",
+          "content": [
+            {
+              "type": "text",
+              "text": "Find the longest substring without repeating characters in 'abcabcbb':"
+            },
+            {
+              "type": "step",
+              "number": "1",
+              "text": "Start: left=0, right=0, window='a', length=1"
+            },
+            {
+              "type": "step",
+              "number": "2",
+              "text": "Expand: window='ab', then 'abc', length=3"
+            },
+            {
+              "type": "step",
+              "number": "3",
+              "text": "Hit 'a' again: shrink left to skip first 'a', window='bca'"
+            },
+            {
+              "type": "step",
+              "number": "4",
+              "text": "Continue: window='cab', then 'abc', length=3"
+            },
+            {
+              "type": "step",
+              "number": "5",
+              "text": "Result: Longest length is 3 ('abc')"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "4",
+      "title": "Common Patterns and Variations",
+      "content": [],
+      "subsections": [
+        {
+          "number": "1",
+          "title": "Fixed Window Patterns",
+          "content": [
+            {
+              "type": "text",
+              "text": "Sum/Product of subarrays of size k"
+            },
+            {
+              "type": "text",
+              "text": "Count distinct elements in every window"
+            },
+            {
+              "type": "text",
+              "text": "Maximum/minimum in each window"
+            },
+            {
+              "type": "text",
+              "text": "Anagrams within strings"
+            }
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Variable Window Patterns",
+          "content": [
+            {
+              "type": "text",
+              "text": "Longest substring with at most k distinct characters"
+            },
+            {
+              "type": "text",
+              "text": "Minimum window substring containing all characters"
+            },
+            {
+              "type": "text",
+              "text": "Smallest subarray with sum at least k"
+            },
+            {
+              "type": "text",
+              "text": "Substring with all repeating characters"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "5",
+      "title": "Data Structures Support",
+      "content": [
+        {
+          "type": "tip",
+          "tip_type": "info",
+          "title": "Important Facts",
+          "text": "Choose appropriate data structures to optimize window operations. The right structure can simplify code and improve performance."
+        }
+      ],
+      "subsections": [
+        {
+          "number": "1",
+          "title": "Common Data Structures",
+          "content": [
+            {
+              "type": "text",
+              "text": "For fixed windows: Simple variables (sum, count, max, min)"
+            },
+            {
+              "type": "text",
+              "text": "For character counts: Hash maps/dictionaries"
+            },
+            {
+              "type": "text",
+              "text": "For order statistics: Monotonic queues, heaps"
+            },
+            {
+              "type": "text",
+              "text": "For set operations: Hash sets (for uniqueness)"
+            }
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Time Complexity",
+          "content": [
+            {
+              "type": "text",
+              "text": "With proper data structures, sliding window achieves O(n) time complexity:"
+            },
+            {
+              "type": "step",
+              "number": "1",
+              "text": "Each element enters the window exactly once (right pointer)"
+            },
+            {
+              "type": "step",
+              "number": "2",
+              "text": "Each element leaves the window exactly once (left pointer)"
+            },
+            {
+              "type": "step",
+              "number": "3",
+              "text": "Data structure operations are O(1) or O(log k) amortized"
+            },
+            {
+              "type": "text",
+              "text": "Total: O(n) or O(n log k) depending on auxiliary structure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "6",
+      "title": "Edge Cases and Pitfalls",
+      "content": [
+        {
+          "type": "tip",
+          "tip_type": "warning",
+          "title": "Critical",
+          "text": "Always handle edge cases before implementing the main algorithm. Many bugs in sliding window problems come from unhandled boundary conditions."
+        }
+      ],
+      "subsections": [
+        {
+          "number": "1",
+          "title": "Common Edge Cases",
+          "content": [
+            {
+              "type": "step",
+              "number": "1",
+              "text": "Array or string is empty"
+            },
+            {
+              "type": "step",
+              "number": "2",
+              "text": "Window size k exceeds array length"
+            },
+            {
+              "type": "step",
+              "number": "3",
+              "text": "All elements are identical"
+            },
+            {
+              "type": "step",
+              "number": "4",
+              "text": "No valid window exists"
+            },
+            {
+              "type": "step",
+              "number": "5",
+              "text": "Single element array or string"
+            }
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Common Mistakes",
+          "content": [
+            {
+              "type": "text",
+              "text": "Forgetting to remove elements when shrinking the window"
+            },
+            {
+              "type": "text",
+              "text": "Incorrectly updating auxiliary data structures"
+            },
+            {
+              "type": "text",
+              "text": "Using O(n²) or O(nlogn) operations inside the loop"
+            },
+            {
+              "type": "text",
+              "text": "Off-by-one errors in pointer movement"
+            },
+            {
+              "type": "text",
+              "text": "Not initializing variables properly"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": "7",
+      "title": "Practice Problem Framework",
+      "content": [
+        {
+          "type": "text",
+          "text": "When encountering a new sliding window problem, follow this approach:"
+        }
+      ],
+      "subsections": [
+        {
+          "number": "1",
+          "title": "Analysis Steps",
+          "content": [
+            {
+              "type": "step",
+              "number": "1",
+              "text": "Identify if it's a fixed or variable size window problem"
+            },
+            {
+              "type": "step",
+              "number": "2",
+              "text": "Determine what needs to be tracked (sum, count, characters)"
+            },
+            {
+              "type": "step",
+              "number": "3",
+              "text": "Choose appropriate data structure for tracking"
+            },
+            {
+              "type": "step",
+              "number": "4",
+              "text": "Define the condition for valid windows"
+            },
+            {
+              "type": "step",
+              "number": "5",
+              "text": "Handle edge cases upfront"
+            },
+            {
+              "type": "step",
+              "number": "6",
+              "text": "Implement and test with small examples"
+            }
+          ]
+        },
+        {
+          "number": "2",
+          "title": "Debugging Tips",
+          "content": [
+            {
+              "type": "tip",
+              "tip_type": "tip",
+              "title": "Debugging Strategy",
+              "text": "Add print statements to track window boundaries (left, right positions) and the current window contents. This visualizes the sliding behavior and helps catch logic errors."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

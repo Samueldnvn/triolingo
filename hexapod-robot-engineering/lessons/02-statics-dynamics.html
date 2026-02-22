@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 2: Statics & Dynamics</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/problems.js"></script>
+    <script src="../js/quizzes.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>MODULE 2: STATICS & DYNAMICS</h1>
+            <p class="subtitle">Forces, Torques, Newton-Euler Equations, Rotational Dynamics</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+            <div class="progress-text">0% Complete</div>
+        </div>
+
+        <section class="content-section" id="overview">
+            <h2>Module Overview</h2>
+            <p>Statics and dynamics form the foundation of mechanical analysis for hexapod robots. Statics deals with bodies at rest and forces in equilibrium, while dynamics analyzes motion under applied forces. Understanding both is essential for design, control, and stability analysis of hexapod robots in various configurations and terrains.</p>
+
+            <div class="org-box">
+                <h3>Learning Objectives</h3>
+                <ul>
+                    <li>Calculate forces, moments, and equilibrium conditions</li>
+                    <li>Apply Newton's laws to linear and rotational motion</li>
+                    <li>Compute center of mass and moment of inertia</li>
+                    <li>Analyze static stability for hexapod configurations</li>
+                    <li>Apply Newton-Euler equations to robot dynamics</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section" id="statics">
+            <h2>Section 2.1: Forces and Statics</h2>
+
+            <div class="definition-box">
+                <span class="definition-term">Force:</span>
+                <p>A force \(\vec{F}\) with magnitude and direction. Measured in Newtons (N). Forces can be contact forces (friction, normal) or body forces (gravity, magnetic).</p>
+            </div>
+
+            <div class="definition-box">
+                <span class="definition-term">Resultant Force:</span>
+                <div class="math-display">$$\vec{F}_{net} = \sum_i \vec{F}_i$$</div>
+                <p>The vector sum of all forces acting on a body.</p>
+            </div>
+
+            <div class="important-box">
+                <h3>Equilibrium Conditions (Statics)</h3>
+                <div class="math-display">$$\sum \vec{F} = \vec{0}, \quad \sum \vec{\tau} = \vec{0}$$</div>
+                <p>For a body in static equilibrium, net force and net torque are zero.</p>
+            </div>
+
+            <div class="example-box">
+                <h3>Example: Hexapod in Static Equilibrium</h3>
+                <p>A 60 kg hexapod with 6 legs in contact with ground. Assuming equal weight distribution, each leg supports:</p>
+                <p>Normal force on each leg: \(N = 60/6 = 10 \text{ N}\) (vertical upward)</p>
+                <p>Sum of vertical forces: \(6 \times 10 \text{ N up} = 60 \text{ N}\), which balances gravity 60 N down.</p>
+            </div>
+        </section>
+
+        <section class="content-section" id="moments">
+            <h2>Section 2.2: Moments and Torque</h2>
+
+            <div class="definition-box">
+                <span class="definition-term">Moment of Force (Torque):</span>
+                <p>The moment of force \(\vec{F}\) about point O, applied at position \(\vec{r}\):</p>
+                <div class="math-display">$$\vec{\tau} = \vec{r} \times \vec{F}$$</div>
+                <p>Magnitude: \(|\vec{\tau}| = rF\sin(\theta)\), where \(\theta\) is the angle between \(\vec{r}\) and \(\vec{F}\).</p>
+                <p>Direction: Perpendicular to both \(\vec{r}\) and \(\vec{F}\); follows right-hand rule.</p>
+            </div>
+
+            <div class="definition-box">
+                <span class="definition-term">Center of Mass (COM):</span>
+                <p>For a system of discrete particles or continuous body, COM is the point where the entire mass can be considered concentrated for translational motion. For hexapod robots, the COM shifts as legs move, affecting stability.</p>
+            </div>
+
+            <div class="example-box">
+                <h3>Example: Torque on Hexapod Hip</h3>
+                <p>A force of 50 N acts at the end of a 0.3 m lever arm at a \(60^\circ\) angle. The torque is:</p>
+                <div class="math-display">$$\tau = rF\sin(\theta) = (0.3 \text{ m})(50 \text{ N})\sin(60^\circ) \approx 13 \text{ Nm}$$</div>
+            </div>
+        </section>
+
+        <section class="content-section" id="dynamics">
+            <h2>Section 2.3: Dynamics - Newton's Laws</h2>
+
+            <div class="important-box">
+                <h3>Newton's Second Law (Linear)</h3>
+                <div class="math-display">$$\sum \vec{F} = m\vec{a}$$</div>
+                <p>Net force equals mass times acceleration. Also written as: \(\sum \vec{F} = \frac{d\vec{p}}{dt}\), where \(\vec{p} = m\vec{v}\) is momentum.</p>
+            </div>
+
+            <div class="important-box">
+                <h3>Newton's Second Law (Rotational)</h3>
+                <div class="math-display">$$\sum \vec{\tau} = \vec{I}\vec{\alpha}$$</div>
+                <p>Net torque equals moment of inertia times angular acceleration. The rotational analog of \(\vec{F} = m\vec{a}\).</p>
+            </div>
+
+            <div class="important-box">
+                <h3>Newton's Third Law</h3>
+                <p>For every action (force), there is an equal and opposite reaction (force).</p>
+                <div class="math-display">$$\vec{F}_{AB} = -\vec{F}_{BA}$$</div>
+            </div>
+        </section>
+
+        <section class="content-section" id="momentum-inertia">
+            <h2>Section 2.4: Momentum and Inertia</h2>
+
+            <div class="definition-box">
+                <span class="definition-term">Moment of Inertia (I):</span>
+                <p>Resistance to rotational acceleration. For discrete objects: \(I = \sum_i m_i r_i^2\). For continuous bodies: \(I = \int r^2 dm\).</p>
+                <p>Where \(r\) is perpendicular distance from axis of rotation. For discrete particles: \(I = \sum m_i r_i^2\).</p>
+            </div>
+
+            <div class="definition-box">
+                <span class="definition-term">Common Moments of Inertia:</span>
+                <ul>
+                    <li><strong>Thin rod about center:</strong> \(I = \frac{1}{12}mL^2\)</li>
+                    <li><strong>Thin rod about end:</strong> \(I = \frac{1}{3}mL^2\)</li>
+                    <li><strong>Solid cylinder (radius R) about central axis:</strong> \(I = \frac{1}{2}mR^2\)</li>
+                    <li><strong>Hollow cylinder (inner radius \(R_1\), outer \(R_2\)):</strong> \(I = \frac{1}{2}m(R_1^2 + R_2^2)\)</li>
+                    <li><strong>Solid sphere (radius R):</strong> \(I = \frac{2}{5}mR^2\)</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h3>Example: Hexapod Leg Moment of Inertia</h3>
+                <p>Leg mass \(m = 0.5 \text{ kg}\), length \(L = 0.4 \text{ m}\). About hip (rotation at one end):</p>
+                <div class="math-display">$$I = \frac{1}{3}mL^2 = \frac{1}{3}(0.5)(0.4)^2 = \frac{1}{3}(0.5)(0.16) \approx 0.027 \text{ kg} \cdot \text{m}^2$$</div>
+            </div>
+        </section>
+
+        <section class="quiz-section">
+            <h2>Module Quiz</h2>
+            <p>Answer all questions and click "Submit" when complete. You need 70% to pass.</p>
+
+            <div id="quiz-container"></div>
+            <button class="submit" onclick="module2Quiz()">Submit Quiz</button>
+            <div id="quiz-results"></div>
+        </section>
+
+        <div class="nav-buttons">
+            <button class="secondary" onclick="navigateTo('01-foundations.html')">Previous Module</button>
+            <button onclick="navigateTo('03-electricity-magnetism.html')">Next Module: Electricity & Magnetism</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Hexapod Robot Engineering Course - Module 2</p>
+    </footer>
+
+    <script>
+        function module2Quiz() {
+            const correctAnswers = {
+                'M2-Q1': 'B',
+                'M2-Q2': 'B',
+                'M2-Q3': 'C',
+                'M2-Q4': 'B',
+                'M2-Q5': 'B',
+                'M2-Q6': 'B',
+                'M2-Q7': 'B',
+                'M2-Q8': 'C',
+                'M2-Q9': 'B',
+                'M2-Q10': 'B'
+            };
+            const result = submitQuiz('02', correctAnswers);
+            if (result.percentage >= 70) {
+                markModuleComplete('02');
+            }
+        }
+        window.addEventListener('load', function() {
+            const container = document.getElementById('quiz-container');
+            quizQuestions.module2.forEach((q, index) => {
+                let optionsHtml = '';
+                q.options.forEach(opt => {
+                    optionsHtml += `<label><input type="radio" name="${q.id}" value="${opt.substring(0,1)}"> ${opt}</label>`;
+                });
+                const html = `<div class="quiz-question"><div class="question-text">${q.question}</div><div class="options">${optionsHtml}</div><div id="explanation-${q.id}" class="explanation">${q.explanation}</div></div>`;
+                container.innerHTML += html;
+            });
+            updateProgressBar();
+        });
+    </script>
+</body>
+</html>

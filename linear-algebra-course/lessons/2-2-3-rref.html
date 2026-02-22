@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2.2.3: RREF - Linear Algebra</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="chapter-2">
+    <div class="main-wrapper">
+        <nav class="sidebar toc-orange">
+            <div class="sidebar-header">
+                <div class="sidebar-title">Linear Algebra</div>
+            </div>
+            <div class="toc-chapter toc-orange">
+                <div class="toc-chapter-title">Chapter 2: Matrices &amp; Systems</div>
+                <div class="toc-module">
+                    <div class="toc-module-title">Module 2.2: Linear Systems</div>
+                    <div class="toc-lessons">
+                        <div class="toc-lesson"><a href="2-2-2-gaussian-elimination.html">Lesson 2.2.2: Gaussian Elimination</a></div>
+                        <div class="toc-lesson"><a href="2-2-3-rref.html" class="active">Lesson 2.2.3: RREF</a></div>
+                        <div class="toc-lesson"><a href="2-2-4-practice-systems.html">Lesson 2.2.4: Practice Problems</a></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="module-header">
+                    <h2>Lesson 2.2.3: Reduced Row Echelon Form (RREF)</h2>
+                    <p>Module 2.2: Linear Systems | Chapter 2: Matrices &amp; Systems</p>
+                </div>
+                
+                <div class="content-card">
+                    <div class="definition-box">
+                        <div class="definition-title">RREF</div>
+                        <p>RREF (Reduced Row Echelon Form) is a canonical form where:</p>
+                        <ul style="margin: 10px 0 10px 25px;">
+                            <li>Leading entry in each nonzero row is 1</li>
+                            <li>Each leading 1 is to the right of the one above</li>
+                            <li>Leading 1 is the only nonzero entry in its column</li>
+                            <li>Rows of zeros are at the bottom</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="example-box">
+                        <div class="example-title">RREF Example</div>
+                        <p>[[2, 4|8], [3, 6|12]]</p>
+                        <p>R1 -> R1/2: [[1, 2|4], [3, 6|12]]</p>
+                        <p>R2 -> R2 - 3R1: [[1, 2|4], [0, 0|0]]</p>
+                        <p style="margin-top: 10px; font-weight: 600;">RREF: [[1, 2|4], [0, 0|0]]</p>
+                        <p>Interpretation: x + 2y = 4. Infinite solutions: x = 4 - 2t, y = t (free variable)</p>
+                    </div>
+                </div>
+                
+                <div class="content-card">
+                    <div class="practice-header">Practice Problems</div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 1</div>
+                        <div class="problem-question">What is the RREF of [[2, 0], [0, 3]]?</div>
+                        <input type="text" class="problem-input" id="prob1" placeholder="Enter [[a,b],[c,d]]">
+                        <button class="check-btn" onclick="checkProblem(1)">Check Answer</button>
+                        <div class="feedback" id="prob1-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 2</div>
+                        <div class="problem-question">Is [[1, 0, 0], [0, 1, 0], [0, 0, 1]] in RREF? (yes/no)</div>
+                        <input type="text" class="problem-input" id="prob2" placeholder="Enter yes or no">
+                        <button class="check-btn" onclick="checkProblem(2)">Check Answer</button>
+                        <div class="feedback" id="prob2-feedback"></div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="nav-buttons">
+                    <a href="2-2-2-gaussian-elimination.html" class="nav-btn">Previous: Gaussian Elimination</a>
+                    <a href="2-2-4-practice-systems.html" class="nav-btn primary">Next: Practice Systems</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/navigation.js"></script>
+    <script>
+        const problems_2_2_3 = {
+            1: { alternatives: ['[[1,0],[0,1]]', '[[1, 0], [0, 1]]', 'I'] },
+            2: { alternatives: ['yes', 'Yes', 'YES'] }
+        };
+        
+        function checkProblem(num) {
+            const userInput = document.getElementById('prob' + num).value.trim();
+            const feedback = document.getElementById('prob' + num + '-feedback');
+            const alternatives = problems_2_2_3[num].alternatives;
+            
+            let isCorrect = alternatives.some(alt => 
+                alt.toLowerCase().replace(/\s/g, '') === userInput.toLowerCase().replace(/\s/g, '')
+            );
+            
+            if (isCorrect) {
+                feedback.className = 'feedback correct';
+                feedback.style.display = 'block';
+                feedback.textContent = 'Correct! Well done.';
+                markProblemSolved('2-2-3-' + num);
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.style.display = 'block';
+                feedback.textContent = 'Incorrect. Try again.';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+        });
+    </script>
+</body>
+</html>

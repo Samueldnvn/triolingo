@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competitive Programming with Python - Complete Course</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <!-- Course Header -->
+    <div class="course-header">
+        <h1>Competitive Programming with Python</h1>
+        <h2>From Beginner to Expert - Master LeetCode and Programming Challenges</h2>
+    </div>
+
+    <!-- Progress Overview -->
+    <div class="progress-container">
+        <div class="progress-title">YOUR OVERALL PROGRESS</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="overallProgressFill" style="width: 0%">0%</div>
+        </div>
+        <div class="progress-stats" id="progressStats">
+            <div class="stat">
+                <span class="stat-label">Lessons:</span>
+                <span class="stat-value" id="lessonsCompleted">0</span>/<span id="totalLessons">10</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Problems:</span>
+                <span class="stat-value" id="problemsSolved">0</span>/<span id="totalProblems">500</span>+
+            </div>
+            <div class="stat">
+                <span class="stat-label">Quizzes:</span>
+                <span class="stat-value" id="quizzesPassed">0</span>/<span id="totalQuizzes">10</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Course Overview -->
+        <div class="course-overview">
+            <h2 class="section-title">COURSE OVERVIEW</h2>
+
+            <div class="blueprint-section">
+                <div class="blueprint-content">
+                    <h3>WHAT YOU'LL MASTER</h3>
+                    <p class="content-text">By completing this course, you will have comprehensive knowledge of:</p>
+                    <ul class="blueprint-list">
+                        <li>All essential data structures (arrays, lists, stacks, queues, trees, graphs, hash tables)</li>
+                        <li>Every major algorithmic pattern asked on LeetCode</li>
+                        <li>Sliding window, two pointers, binary search techniques</li>
+                        <li>Dynamic programming from basic to expert level</li>
+                        <li>Greedy algorithms and when to use them</li>
+                        <li>Graph algorithms (DFS, BFS, Dijkstra, Floyd-Warshall, Union-Find, etc.)</li>
+                        <li>Tree algorithms and advanced data structures</li>
+                        <li>Advanced techniques (segment trees, Fenwick trees, bitmask DP)</li>
+                        <li>500+ practice problems with solutions</li>
+                        <li>Python-specific optimizations for competitive programming</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="safety-sign important">
+                PREREQUISITES: Basic Python knowledge (variables, loops, functions, lists). No competitive programming experience required.
+            </div>
+        </div>
+
+        <!-- Module Navigation -->
+        <div id="moduleContainer">
+            <h2 class="section-title">COURSE MODULES</h2>
+
+            <!-- Module 1: Foundations -->
+            <div class="module-card" onclick="window.location.href='lessons/01-foundations.html'">
+                <div class="module-header">
+                    <span class="module-number">01</span>
+                    <h3>Foundations & Prerequisites</h3>
+                    <div class="module-status" id="module1-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Competitive programming mindset and approach</li>
+                        <li>Time and space complexity analysis (Big O)</li>
+                        <li>Algorithm design principles</li>
+                        <li>Python input/output optimization techniques</li>
+                        <li>Common pitfalls and debugging strategies</li>
+                        <li>50+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~2 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 2: Data Structures -->
+            <div class="module-card" onclick="window.location.href='lessons/02-datastructures.html'">
+                <div class="module-header">
+                    <span class="module-number">02</span>
+                    <h3>Data Structures</h3>
+                    <div class="module-status" id="module2-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Arrays and String manipulation</li>
+                        <li>Linked Lists and Stacks</li>
+                        <li>Queues and Deques</li>
+                        <li>Hash Sets and Hash Maps</li>
+                        <li>Trees (Binary, BST, AVL)</li>
+                        <li>Graph representations</li>
+                        <li>60+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~4 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 3: Hash Tables -->
+            <div class="module-card" onclick="window.location.href='lessons/03-hashtables.html'">
+                <div class="module-header">
+                    <span class="module-number">03</span>
+                    <h3>Hash Tables Pattern</h3>
+                    <div class="module-status" id="module3-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Hash tables fundamentals and collision resolution</li>
+                        <li>Pattern recognition: when to use hash tables</li>
+                        <li>Two Sum, Group Anagrams, Subarray Sum problems</li>
+                        <li>Counting frequencies and finding duplicates</li>
+                        <li>Python dict operations and optimizations</li>
+                        <li>50+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~3 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 4: Sliding Window -->
+            <div class="module-card" onclick="window.location.href='lessons/04-slidingwindow.html'">
+                <div class="module-header">
+                    <span class="module-number">04</span>
+                    <h3>Sliding Window Pattern</h3>
+                    <div class="module-status" id="module4-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Fixed-size and variable-size sliding windows</li>
+                        <li>Templates for different sliding window types</li>
+                        <li>Maximum/Minimum subarrays</li>
+                        <li>Longest substring with constraints</li>
+                        <li>Permutations in string problems</li>
+                        <li>50+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~3 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 5: Two Pointers -->
+            <div class="module-card" onclick="window.location.href='lessons/05-twopointers.html'">
+                <div class="module-header">
+                    <span class="module-number">05</span>
+                    <h3>Two Pointers Pattern</h3>
+                    <div class="module-status" id="module5-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Two-pointer technique fundamentals</li>
+                        <li>Left-right pointers for sorted arrays</li>
+                        <li>Fast-slow pointers (Floyd's cycle detection)</li>
+                        <li>Merge type problems</li>
+                        <li>Valid palindrome and container problems</li>
+                        <li>50+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~3 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 6: Binary Search -->
+            <div class="module-card" onclick="window.location.href='lessons/06-binarysearch.html'">
+                <div class="module-header">
+                    <span class="module-number">06</span>
+                    <h3>Binary Search Pattern</h3>
+                    <div class="module-status" id="module6-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Standard binary search template</li>
+                        <li>Binary search on answers</li>
+                        <li>Binary search in rotated sorted arrays</li>
+                        <li>Search in 2D matrices</li>
+                        <li>Minimize-Maximize and Maximize-Minimize patterns</li>
+                        <li>50+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~4 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 7: Dynamic Programming -->
+            <div class="module-card" onclick="window.location.href='lessons/07-dynamicprogramming.html'">
+                <div class="module-header">
+                    <span class="module-number">07</span>
+                    <h3>Dynamic Programming</h3>
+                    <div class="module-status" id="module7-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>DP fundamentals: memoization and tabulation</li>
+                        <li>1D DP problems (Fibonacci, climbing stairs)</li>
+                        <li>2D DP (longest common subsequence, edit distance)</li>
+                        <li>Knapsack problems (0/1, unbounded)</li>
+                        <li>Partition and subset problems</li>
+                        <li>DP with bitmasks</li>
+                        <li>70+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~6 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 8: Greedy Algorithms -->
+            <div class="module-card" onclick="window.location.href='lessons/08-greedy.html'">
+                <div class="module-header">
+                    <span class="module-number">08</span>
+                    <h3>Greedy Algorithms</h3>
+                    <div class="module-status" id="module8-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Greedy algorithm design principles</li>
+                        <li>Activity selection and scheduling</li>
+                        <li>Huffman coding and data compression</li>
+                        <li>Kruskal's and Prim's MST algorithms</li>
+                        <li>Dijkstra's shortest path</li>
+                        <li>Interval problems and meeting rooms</li>
+                        <li>50+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~4 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 9: Graph Algorithms -->
+            <div class="module-card" onclick="window.location.href='lessons/09-graphs.html'">
+                <div class="module-header">
+                    <span class="module-number">09</span>
+                    <h3>Graph Algorithms</h3>
+                    <div class="module-status" id="module9-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Graph representations and traversal (DFS, BFS)</li>
+                        <li>Shortest path algorithms (Dijkstra, Bellman-Ford, Floyd-Warshall)</li>
+                        <li>Minimum Spanning Tree (Kruskal, Prim)</li>
+                        <li>Topological sorting and cycle detection</li>
+                        <li>Union-Find (Disjoint Set Union)</li>
+                        <li>Bipartite graphs and coloring</li>
+                        <li>Maximum flow and bipartite matching (introduction)</li>
+                        <li>60+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~5 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Module 10: Advanced Topics -->
+            <div class="module-card" onclick="window.location.href='lessons/10-advanced.html'">
+                <div class="module-header">
+                    <span class="module-number">10</span>
+                    <h3>Advanced Topics & Final Review</h3>
+                    <div class="module-status" id="module10-status"></div>
+                </div>
+                <div class="module-content">
+                    <ul>
+                        <li>Segment Trees and Fenwick Trees</li>
+                        <li>Trie data structure</li>
+                        <li>Advanced string algorithms (KMP, Rabin-Karp)</li>
+                        <li>Backtracking and recursion patterns</li>
+                        <li>Advanced DP (bitmask, digit DP, tree DP)</li>
+                        <li>Problem-solving strategies and tips</li>
+                        <li>Final comprehensive exam</li>
+                        <li>50+ practice problems</li>
+                    </ul>
+                </div>
+                <div class="module-footer">
+                    <span class="module-time">~6 hours</span>
+                    <span class="module-arrow">→</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/navigation.js"></script>
+</body>
+</html>

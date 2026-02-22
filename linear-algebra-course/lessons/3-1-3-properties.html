@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3.1.3: Properties - Linear Algebra</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="chapter-3">
+    <div class="main-wrapper">
+        <nav class="sidebar toc-yellow">
+            <div class="sidebar-header">
+                <div class="sidebar-title">Linear Algebra</div>
+            </div>
+            <div class="toc-chapter toc-yellow">
+                <div class="toc-chapter-title">Chapter 3: Determinants</div>
+                <div class="toc-module">
+                    <div class="toc-module-title">Module 3.1: Determinants</div>
+                    <div class="toc-lessons">
+                        <div class="toc-lesson"><a href="3-1-2-3x3-determinants.html">Lesson 3.1.2: 3x3 Determinants</a></div>
+                        <div class="toc-lesson"><a href="3-1-3-properties.html" class="active">Lesson 3.1.3: Properties</a></div>
+                        <div class="toc-lesson"><a href="3-1-4-practice-determinants.html">Lesson 3.1.4: Practice Problems</a></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="module-header">
+                    <h2>Lesson 3.1.3: Determinant Properties</h2>
+                    <p>Module 3.1: Determinants | Chapter 3: Determinants</p>
+                </div>
+                
+                <div class="content-card">
+                    <div class="subsection-title">Key Properties</div>
+                    
+                    <div class="note-box">
+                        <div class="note-title">1. Multiplicative Property</div>
+                        <p>det(AB) = det(A) * det(B)</p>
+                    </div>
+                    
+                    <div class="note-box">
+                        <div class="note-title">2. Determinant of Transpose</div>
+                        <p>det(A^T) = det(A)</p>
+                    </div>
+                    
+                    <div class="note-box">
+                        <div class="note-title">3. Scalar Multiple</div>
+                        <p>det(kA) = k^n * det(A) where n is matrix dimension</p>
+                    </div>
+                    
+                    <div class="note-box">
+                        <div class="note-title">4. Determinant of Inverse</div>
+                        <p>det(A^(-1)) = 1/det(A)</p>
+                    </div>
+                    
+                    <div class="note-box">
+                        <div class="note-title">5. Triangular Matrix</div>
+                        <p>For triangular matrix, det = product of diagonal entries</p>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="example-box">
+                        <div class="example-title">Example</div>
+                        <p>If det(A) = 2 and det(B) = 3, find det(AB)</p>
+                        <p style="margin-top: 10px; font-weight: 600;">det(AB) = det(A) * det(B) = 2 * 3 = 6</p>
+                    </div>
+                </div>
+                
+                <div class="content-card">
+                    <div class="practice-header">Practice Problems</div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 1</div>
+                        <div class="problem-question">If det(A) = 4, what is det(A^(-1))?</div>
+                        <input type="text" class="problem-input" id="prob1" placeholder="Enter value">
+                        <button class="check-btn" onclick="checkProblem(1)">Check Answer</button>
+                        <div class="feedback" id="prob1-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 2</div>
+                        <div class="problem-question">If det(A) = 2 and det(B) = 5, find det(AB)</div>
+                        <input type="text" class="problem-input" id="prob2" placeholder="Enter value">
+                        <button class="check-btn" onclick="checkProblem(2)">Check Answer</button>
+                        <div class="feedback" id="prob2-feedback"></div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="nav-buttons">
+                    <a href="3-1-2-3x3-determinants.html" class="nav-btn">Previous: 3x3 Determinants</a>
+                    <a href="3-1-4-practice-determinants.html" class="nav-btn primary">Next: Practice Determinants</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/navigation.js"></script>
+    <script>
+        const problems_3_1_3 = {
+            1: { 
+                answer: '0.25',
+                alternatives: ['0.25', '1/4', '0.25.0']
+            },
+            2: { 
+                answer: '10',
+                alternatives: ['10', '10.0']
+            }
+        };
+        
+        function checkProblem(num) {
+            const userInput = document.getElementById('prob' + num).value.trim();
+            const feedback = document.getElementById('prob' + num + '-feedback');
+            const alternatives = problems_3_1_3[num].alternatives;
+            
+            let isCorrect = alternatives.includes(userInput);
+            
+            if (isCorrect) {
+                feedback.className = 'feedback correct';
+                feedback.style.display = 'block';
+                feedback.textContent = 'Correct! Well done.';
+                markProblemSolved('3-1-3-' + num);
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.style.display = 'block';
+                feedback.textContent = 'Incorrect. Try again.';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+        });
+    </script>
+</body>
+</html>

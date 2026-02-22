@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Module 6 - Binary Search</title><link rel="stylesheet" href="../css/styles.css"></head>
+<body>
+<div class="course-header"><h1>Module 6: Binary Search Pattern</h1></div>
+<div class="page-nav"><a href="05-twopointers.html">Prev</a><a href="07-dynamicprogramming.html">Next</a></div>
+<nav class="section-nav"><div onclick="showSection('section1')">1. Standard Binary Search</div><div onclick="showSection('section2')">2. Binary Search on Answer</div><div onclick="showSection('section3')">3. Quiz</div></nav>
+<div class="content-container">
+<div id="section1" class="content-section active">
+    <h2>Standard Binary Search</h2>
+    <div class="content-block"><h3>Algorithm</h3>
+    <p>while left <= right: mid = left + (right-left)//2. Check arr[mid] vs target. Adjust left/right.</p>
+    <p><strong>Key:</strong> Use left + (right-left)//2 to avoid overflow.</p></div>
+    <div class="content-block"><h3>First/Last Occurrence</h3>
+    <p>Don't return immediately on found. Keep searching half for first occurrence (move right), last (move left).</p></div>
+    <div class="content-block"><h3>Rotated Array</h3>
+    <p>One half is always sorted. Check if target in sorted half, search there. Else search other half.</p></div>
+</div>
+<div id="section2" class="content-section">
+    <h2>Binary Search on Answer</h2>
+    <div class="content-block"><h3>Search Decision Space, Not Array</h3>
+    <p>Find minimal/maximal value satisfying predicate. Define range [low, high]. Test mid with predicate function.</p></div>
+    <div class="content-block"><h3>Examples</h3>
+    <ul><li>Minimum capacity ship packages</li><li>Split array largest sum</li><li>Minimum time to eat bananas</li></ul></div>
+</div>
+<div id="section3" class="content-section">
+    <h2>Module 6 Quiz</h2>
+    <div id="quiz-container-binarysearch"></div>
+    <div id="quiz-results-binarysearch" class="quiz-results" style="display:none"></div>
+    <button onclick="loadQuiz('binarysearch')">Load Quiz</button><button onclick="submitQuiz('binarysearch')">Submit</button>
+</div>
+</div>
+<script src="../js/navigation.js"></script><script src="../js/quizzes.js"></script>
+</body>
+</html>

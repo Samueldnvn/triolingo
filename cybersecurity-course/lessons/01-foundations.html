@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity - Module 1: Foundations & Fundamentals</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="light-theme">
+    <div class="main-wrapper">
+        <!-- Sidebar will be loaded separately -->
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="page-header">
+                    <h1 class="page-title">MODULE 1</h1>
+                    <p class="page-subtitle">Foundations & Fundamentals</p>
+                </div>
+
+                <div class="content-card">
+                    <h2 class="module-header">Introduction</h2>
+                    <p style="margin-bottom: 16px;">
+                        This module introduces the fundamental concepts and principles of cybersecurity. Understanding these foundations is essential before exploring more advanced topics. We cover the CIA triad, threat landscape, risk management, and basic security principles that form the bedrock of all cybersecurity work.
+                    </p>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 1: The CIA Triad -->
+                <div id="section-cia">
+                    <h2 class="section-header">The CIA Triad</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        The CIA triad is a foundational model in cybersecurity that shapes how we think about and design security measures. It consists of three core principles: Confidentiality, Integrity, and Availability. These principles are often in tension with each other, requiring security professionals to make informed trade-offs.
+                    </p>
+
+                    <div class="definition-box">
+                        <div class="definition-label">Definition</div>
+                        <div class="definition-content">
+                            The CIA triad is the three fundamental principles of information security: Confidentiality, Integrity, and Availability. These principles guide security professionals in designing systems to protect assets against potential threats.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Confidentiality</h3>
+                    <p style="margin-bottom: 12px;">
+                        Confidentiality ensures that information is only accessible to authorized parties. It prevents unauthorized individuals, entities, or processes from accessing sensitive information. Confidentiality is implemented through access controls, encryption, authentication, and proper data classification.
+                    </p>
+
+                    <div class="example-box">
+                        <div class="example-label">Example: Data Classification</div>
+                        <div class="example-content">
+                            A military organization classifies documents as Top Secret, Secret, or Unclassified. Only personnel with appropriate security clearances can access documents at their clearance level, ensuring confidentiality of sensitive information.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Integrity</h3>
+                    <p style="margin-bottom: 12px;">
+                        Integrity ensures that information is accurate, complete, and trustworthy throughout its lifecycle. It prevents unauthorized modification, deletion, or addition of data. Integrity is maintained through hashing, digital signatures, version control, and proper access controls that prevent unauthorized modification.
+                    </p>
+
+                    <div class="example-box">
+                        <div class="example-label">Example: Hash Verification</div>
+                        <div class="example-content">
+                            When downloading software, a file hash (such as SHA-256) is provided. After downloading, you compute the hash of the downloaded file. If the hashes match, the file has maintained integrity; any difference indicates tampering or corruption.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Availability</h3>
+                    <p style="margin-bottom: 12px;">
+                        Availability ensures that information and systems are accessible when needed by authorized users. It protects against denial of service attacks and system failures. Availability is maintained through redundancy, load balancing, backups, disaster recovery plans, and DDoS protection measures.
+                    </p>
+
+                    <div class="example-box">
+                        <div class="example-label">Example: Load Balancing</div>
+                        <div class="example-content">
+                        A popular website uses load balancing across multiple servers. If one server fails or is overloaded, traffic automatically redirects to other servers, ensuring the website remains available to users.
+                        </div>
+                    </div>
+
+                    <div class="note-box">
+                        <div class="note-label">Note</div>
+                        <div class="note-content">
+                            While CIA is the classic triad, additional principles are often considered: Non-repudiation (proof of actions), Authenticity (verifying identity), and Privacy (protecting personal information). These expand on the core CIA principles.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 2: Threats and Vulnerabilities -->
+                <div id="section-threats">
+                    <h2 class="section-header">Threats, Vulnerabilities, and Risk</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        To effectively secure systems, you must understand the concepts of threats, vulnerabilities, and risk, and how they relate to each other. These concepts form the foundation for risk assessment, vulnerability management, and all decision-making in cybersecurity.
+                    </p>
+
+                    <h3 class="subsection-header">Threats</h3>
+                    <p style="margin-bottom: 12px;">
+                        A threat is any potential danger that could exploit a vulnerability to cause harm. Threats can be adversarial (hackers, criminals, nation-states), accidental (human error, natural disasters), or structural (aging hardware, software bugs). Threats represent the "who" or "what" that could cause damage.
+                    </p>
+
+                    <div class="definition-box">
+                        <div class="definition-label">Definition</div>
+                        <div class="definition-content">
+                        Threat actors range from script kiddies using automated tools, to organized crime syndicates motivated by financial gain, to nation-state actors conducting espionage or cyber warfare. Understanding threat actor motivations and capabilities is essential for effective defense.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Vulnerabilities</h3>
+                    <p style="margin-bottom: 12px;">
+                        A vulnerability is a weakness or flaw in a system that could be exploited by a threat. Vulnerabilities exist at all layers: network misconfigurations, software bugs, lack of encryption, weak passwords, and physical security gaps. Vulnerabilities are the "how" threats can cause harm.
+                    </p>
+
+                    <div class="alert-box critical">
+                        <div class="alert-label">Critical</div>
+                        <div class="alert-content">
+                            Unpatched vulnerabilities are among the most common ways attackers compromise systems. Attackers actively scan for known vulnerabilities, and failing to patch promptly is essentially leaving doors open for them. The window between vulnerability disclosure and patch deployment is when attacks spike.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Risk</h3>
+                    <p style="margin-bottom: 12px;">
+                        Risk is the potential for loss or damage when a threat exploits a vulnerability. Risk is typically calculated as: Risk = Threat × Vulnerability × Impact (or Risk = Likelihood × Impact). Understanding risk is crucial for prioritizing security investments and making informed decisions.
+                    </p>
+
+                    <div class="example-box">
+                        <div class="example-label">Example: Risk Comparison</div>
+                        <div class="example-content">
+                        Consider two vulnerabilities: A critical database flaw that 10,000 attackers can exploit (High Threat, High Vulnerability, High Impact = High Risk), and a minor UI bug rarely encountered by attackers. The database flaw should be prioritized for remediation despite being more complex to fix.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Risk Management Strategies</h3>
+
+                    <div class="note-box">
+                        <div class="note-label">Risk Management Approaches</div>
+                        <div class="note-content">
+                            <strong>Avoidance:</strong> Eliminate activities that create risk. Example: Not storing sensitive data avoids the risk of it being compromised.
+
+                            <strong>Mitigation:</strong> Reduce likelihood or impact. Example: Installing a firewall reduces the likelihood of successful attacks, and backups reduce impact of data loss.
+
+                            <strong>Transfer:</strong> Shift risk to another party. Example: Buying cyber insurance transfers financial risk to the insurance company.
+
+                            <strong>Acceptance:</strong> Acknowledge and live with the risk. Example: For low-impact, low-likelihood risks, the cost of mitigation may exceed the cost of acceptance.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 3: Malware Overview -->
+                <div id="section-malware">
+                    <h2 class="section-header">Malware: Malicious Software</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Malware (malicious software) is software designed with malicious intent to damage, disrupt, or gain unauthorized access to systems. Understanding different malware types, their behavior, and how to defend against them is essential for any cybersecurity professional.
+                    </p>
+
+                    <h3 class="subsection-header">Viruses</h3>
+                    <p style="margin-bottom: 12px;">
+                        Viruses are malware that attach themselves to legitimate programs and files. When an infected file is executed, the virus runs and may infect other files. Viruses require user action to spread (opening infected files, executing programs) and are often delivered through email attachments or downloads.
+                    </p>
+
+                    <div class="alert-box">
+                        <div class="alert-label">Warning</div>
+                        <div class="alert-content">
+                        Viruses can cause widespread damage by infecting executable files, documents (macro viruses), and boot sectors. Modern antivirus solutions use signature-based and behavior-based detection to identify viruses.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Worms</h3>
+                    <p style="margin-bottom: 12px;">
+                        Worms are self-replicating malware that spread across networks without user action. Unlike viruses, worms do not require a host file and can propagate automatically through vulnerabilities, network shares, or email. Worms spread rapidly and can infect thousands of systems in minutes.
+                    </p>
+
+                    <div class="note-box">
+                        <div class="note-label">Historical Example</div>
+                        <div class="note-content">
+                        The 1988 Morris worm was one of the first widespread computer worms, infecting approximately 10% of all computers connected to the internet at the time. It spread through vulnerabilities in sendmail, finger, and rsh/rexec services.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Trojans</h3>
+                    <p style="margin-bottom: 12px;">
+                        Trojan horses are malware disguised as legitimate software. Unlike viruses and worms, trojans do not self-replicate. They trick users into executing them, often by appearing as useful programs, game cracks, or legitimate software updates. Once executed, they deliver their malicious payload.
+                    </p>
+
+                    <div class="example-box">
+                        <div class="example-label">Example: Fake Antivirus</div>
+                        <div class="example-content">
+                        A common trojan masquerades as antivirus software. It warns users of (fake) infections and demands payment to remove them. In reality, the trojan may install additional malware or steal banking credentials.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Ransomware</h3>
+                    <p style="margin-bottom: 12px;">
+                        Ransomware encrypts victim files and demands payment (typically cryptocurrency) for the decryption key. Modern ransomware often includes additional tactics: stealing data for double extortion (threatening to publish if payment is not made), deleting backups, and spreading across networks.
+                    </p>
+
+                    <div class="alert-box critical">
+                        <div class="alert-label">Critical Warning</div>
+                        <div class="alert-content">
+                        Never pay ransomware demands. There is no guarantee the attackers will provide decryption, and paying funds further criminal activity. Recovery should focus on restoring from backups (backups should be offline or immutable to prevent ransomware from encrypting them).
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Spyware and Keyloggers</h3>
+                    <p style="margin-bottom: 12px;">
+                        Spyware secretly monitors user activity, capturing keystrokes (keyloggers), browsing history, passwords, screenshots, and more. This data is collected for identity theft, espionage, or surveillance. Spyware often runs silently, undetected by users.
+                    </p>
+
+                    <h3 class="subsection-header">Rootkits</h3>
+                    <p style="margin-bottom: 12px;">
+                        Rootkits are sophisticated malware that provide attackers with persistent privileged access while hiding their presence. Rootkits can modify the operating system kernel, intercept system calls, and hide themselves from antivirus and system tools. Detection is extremely difficult.
+                    </p>
+
+                    <div class="note-box">
+                        <div class="note-label">Detection Challenge</div>
+                        <div class="note-content">
+                        Rootkit detection often requires booting from known-clean media and using specialized tools that can examine the system from outside the potentially compromised operating system. Behavioral analysis and anomaly detection are key to identifying rootkit activity.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 4: Attack Vectors -->
+                <div id="section-attack-vectors">
+                    <h2 class="section-header">Common Attack Vectors</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Attack vectors are the paths or means attackers use to compromise systems. Understanding attack vectors is essential for implementing effective defenses. Modern attacks often combine multiple vectors in sophisticated campaigns. We cover the most prevalent attack vectors and how to defend against them.
+                    </p>
+
+                    <h3 class="subsection-header">Phishing</h3>
+                    <p style="margin-bottom: 12px;">
+                        Phishing attacks use fraudulent communications appearing to come from legitimate organizations to trick victims into revealing sensitive information or installing malware. Phishing is the most common attack vector because it targets the human element, often bypassing technical controls.
+                    </p>
+
+                    <h4 class="section-header" style="font-size: 1.1em; margin-top: 20px;">Spear Phishing and Whaling</h4>
+                    <p style="margin-bottom: 12px;">
+                        Spear phishing targets specific individuals or organizations using personalized information gathered from social media, company websites, or data breaches. Whaling specifically targets high-profile executives ("big fish") with highly personalized attacks impersonating vendors, executives, or business partners.
+                    </p>
+
+                    <div class="example-box">
+                        <div class="example-label">Example: Business Email Compromise (BEC)</div>
+                        <div class="example-content">
+                        A sophisticated BEC scam targets a CFO, sending an email appearing to be from the CEO requesting an urgent wire transfer. The email includes accurate internal details, uses the CEO's style, and creates urgency, making the scam highly convincing.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">SQL Injection</h3>
+                    <p style="margin-bottom: 12px;">
+                        SQL injection involves inserting malicious SQL code into input fields or query parameters that manipulate database queries. Poor input validation and direct concatenation of user input into SQL queries enable these attacks. SQLi can read, modify, or delete database data, bypass authentication, and execute commands.
+                    </p>
+
+                    <div class="code-block">
+                        <code>SELECT * FROM users WHERE username = '<span style="color: var(--error);">' OR '1'='1</span>' AND password = '<span style="color: var(--error);">' OR '1'='1</span>'</code>
+                    </div>
+
+                    <p style="margin: 12px 0; color: var(--text-gray);">
+                    The injected condition '1'='1' always evaluates to true, bypassing authentication and logging in as the first user found.
+                    </p>
+
+                    <div class="note-box">
+                        <div class="note-label">Defense</div>
+                        <div class="note-content">
+                        Use parameterized queries (prepared statements), input validation, stored procedures, and principle of least privilege for database accounts. Never trust input from users - always validate and sanitize.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Cross-Site Scripting (XSS)</h3>
+                    <p style="margin-bottom: 12px;">
+                        XSS attacks inject malicious scripts into web pages that execute in the browsers of users who view those pages. The scripts run with the privileges of the viewing website's origin, allowing attackers to steal cookies, session data, or perform actions on behalf of victims.
+                    </p>
+
+                    <div class="alert-box">
+                        <div class="alert-label">Warning</div>
+                        <div class="alert-content">
+                        Stealing session cookies through XSS allows attackers to hijack user sessions, bypassing authentication. Scripts can also mine cryptocurrency in victim browsers, redirect to malware sites, or modify page content (defacement).
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Man-in-the-Middle (MITM) Attacks</h3>
+                    <p style="margin-bottom: 12px;">
+                        MITM attacks position attackers between two communicating parties, allowing interception, modification, or injection of messages. Common scenarios include unsecured public Wi-Fi, compromised routers, or DNS poisoning. TLS/SSL encryption prevents content inspection but does not prevent all MITM attacks.
+                    </p>
+
+                    <h3 class="subsection-header">Denial of Service (DoS) and Distributed Denial of Service (DDoS)</h3>
+                    <p style="margin-bottom: 12px;">
+                        DoS attacks overwhelm systems with traffic or resource demands, making them unavailable to legitimate users. DDoS uses multiple compromised systems (botnet) to create distributed attack traffic, making prevention more difficult and amplifying attack volumes.
+                    </p>
+
+                    <div class="code-block">
+                        <code>Attacker → Botnet (thousands of compromised devices) → Target Server</code>
+                    </div>
+
+                    <div class="note-box">
+                        <div class="note-label">Defense</div>
+                        <div class="note-content">
+                        DDoS defense includes traffic filtering, rate limiting, load balancing, DDoS protection services (Cloudflare, Akamai), and deploying systems with capacity to absorb attacks. Network segmentation can also limit blast radius.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Practice Problems -->
+                <div class="practice-section" id="practice">
+                    <div class="practice-header">Practice Problems</div>
+
+                    <!-- Problems will be loaded from JavaScript -->
+                    <div id="problems-container">
+                        <!-- Problems loaded dynamically -->
+                    </div>
+
+                    <button class="check-btn" onclick="loadModuleProblems('foundations', 'ciaTriad', 'problems-container')">
+                        Load CIA Triad Problems
+                    </button>
+                    <div style="margin: 10px 0;"></div>
+                    <button class="check-btn" onclick="loadModuleProblems('foundations', 'threatsAttacks', 'problems-container')">
+                        Load Threats & Attacks Problems
+                    </button>
+                    <div style="margin: 10px 0;"></div>
+                    <button class="check-btn" onclick="loadModuleProblems('foundations', 'attackVectors', 'problems-container')">
+                        Load Attack Vectors Problems
+                    </button>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Module Quiz -->
+                <div class="quiz-container" id="quiz">
+                    <div class="quiz-title">Module 1 Quiz</div>
+
+                    <div id="quiz-area">
+                        <!-- Quiz questions loaded from JavaScript -->
+                    </div>
+
+                    <button class="quiz-submit" id="quizSubmit" onclick="submitModuleQuiz('foundations')">Submit Quiz</button>
+
+                    <div class="quiz-results" id="quizResults">
+                        <div class="quiz-score" id="quizScore">Score: 0/0</div>
+                        <div class="quiz-message" id="quizMessage"></div>
+                    </div>
+
+                    <button class="check-btn" onclick="loadModuleQuiz('foundations')">Load Quiz Questions</button>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Navigation -->
+                <div class="nav-buttons">
+                    <a href="../index.html" class="nav-btn">Back to Home</a>
+                    <a href="02-network-security.html" class="nav-btn primary">Next Module: Network Security</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script src="../js/problems.js"></script>
+    <script src="../js/quizzes.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+
+            function checkProblem(problemId, correct, alternatives, inputId) {
+                const input = document.getElementById(inputId).value.trim().toLowerCase();
+                const feedback = document.getElementById(inputId + '-feedback');
+
+                const normalized = input.replace(/\s/g, '');
+                const normalizedCorrect = correct.toLowerCase().replace(/\s/g, '');
+
+                let isCorrect = normalized === normalizedCorrect ||
+                               alternatives.some(alt =>
+                                   alt.toLowerCase().replace(/\s/g, '') === normalized
+                               );
+
+                if (isCorrect) {
+                    feedback.className = 'feedback correct';
+                    feedback.textContent = 'Correct!';
+                } else {
+                    feedback.className = 'feedback incorrect';
+                    feedback.textContent = 'Try again!';
+                }
+                feedback.style.display = 'block';
+            }
+
+            window.checkProblem = checkProblem;
+
+            function toggleHint(hintId) {
+                const hint = document.getElementById(hintId);
+                if (hint.style.display === 'block') {
+                    hint.style.display = 'none';
+                } else {
+                    hint.style.display = 'block';
+                }
+            }
+
+            window.toggleHint = toggleHint;
+
+            function loadModuleProblems(module, category, containerId) {
+                const container = document.getElementById(containerId);
+                const problems = practiceProblems[module][category];
+
+                if (!problems || problems.length === 0) {
+                    container.innerHTML = '<p style="color: var(--error);">No problems available for this category.</p>';
+                    return;
+                }
+
+                let html = '';
+
+                problems.forEach(problem => {
+                    html += `
+                        <div class="practice-problem">
+                            <div class="problem-number">Problem ${problem.id}</div>
+                            <div class="problem-question" style="margin-bottom: 12px;">${problem.question}</div>
+                            <input type="text" class="problem-input" id="${problem.id}-input" placeholder="Your answer...">
+                            <button class="check-btn" style="margin-top: 10px;" onclick="checkProblem('${problem.id}', '${problem.answer.replace(/'/g, "\\'")}', ['${problem.alternatives.join("','")}'], '${problem.id}-input')">Check</button>
+                            <div id="${problem.id}-feedback" class="feedback"></div>
+                            <button class="hint-toggle" onclick="toggleHint('${problem.id}-hint')">Show Hint</button>
+                            <div class="hint" id="${problem.id}-hint">
+                                <div class="hint-content">${problem.hint}</div>
+                            </div>
+                            <div class="hint hidden" id="${problem.id}-explanation">
+                                <div class="hint-content" style="color: var(--text-white); margin-top: 8px;"><strong>Explanation:</strong> ${problem.explanation}</div>
+                            </div>
+                            <button class="hint-toggle" onclick="toggleHint('${problem.id}-explanation')" style="margin-top: 4px;">Show Explanation</button>
+                        </div>
+                    `;
+                });
+
+                container.innerHTML = html;
+            }
+
+            window.loadModuleProblems = loadModuleProblems;
+
+            function loadModuleQuiz(module) {
+                const area = document.getElementById('quiz-area');
+                const questions = quizQuestions[module];
+
+                if (!questions || questions.length === 0) {
+                    area.innerHTML = '<p style="color: var(--error);">No quiz available for this module.</p>';
+                    return;
+                }
+
+                let html = '';
+
+                questions.forEach((question, index) => {
+                    html += `
+                        <div class="quiz-question" id="${question.id}">
+                            <div class="quiz-question-text"><strong>Q${index + 1}.</strong> ${question.question}</div>
+                            <div class="quiz-options">
+                                ${question.options.map((opt, i) => `
+                                    <div class="quiz-option" onclick="selectOption('${question.id}', '${opt.charAt(0)}')">${opt}</div>
+                                `).join('')}
+                            </div>
+                            <div class="feedback" id="${question.id}-feedback"></div>
+                        </div>
+                    `;
+                });
+
+                area.innerHTML = html;
+
+                window.selectOption = function(questionId, option) {
+                    const elements = document.querySelectorAll(`#${questionId} .quiz-option`);
+                    elements.forEach(el => el.classList.remove('selected'));
+                    event.target.classList.add('selected');
+                };
+            }
+
+            window.loadModuleQuiz = loadModuleQuiz;
+
+            function submitModuleQuiz(module) {
+                const questions = quizQuestions[module];
+                let score = 0;
+
+                quizAnswers = {};
+
+                questions.forEach(question => {
+                    const selected = document.querySelector(`#${question.id} .quiz-option.selected`);
+                    const feedback = document.getElementById(`${question.id}-feedback`);
+
+                    if (selected) {
+                        const answer = selected.textContent.charAt(0);
+                        quizAnswers[question.id] = answer;
+
+                        if (answer === question.correct) {
+                            score++;
+                            feedback.className = 'feedback correct';
+                            feedback.textContent = 'Correct! ' + question.explanation;
+                        } else {
+                            feedback.className = 'feedback incorrect';
+                            feedback.textContent = 'Incorrect. Correct answer: ' + question.correct + '. ' + question.explanation;
+                        }
+                    } else {
+                        feedback.className = 'feedback incorrect';
+                        feedback.textContent = 'Not answered. Correct answer: ' + question.correct + '. ' + question.explanation;
+                    }
+                });
+
+                const percentage = Math.round((score / questions.length) * 100);
+                document.getElementById('quizScore').textContent = `Score: ${score}/${questions.length} (${percentage}%)`;
+                document.getElementById('quizMessage').textContent = percentage >= 70 ? 'Passed!' : 'Failed. Study and retry.';
+                document.getElementById('quizResults').style.display = 'block';
+            }
+
+            window.submitModuleQuiz = submitModuleQuiz;
+        });
+    </script>
+</body>
+</html>

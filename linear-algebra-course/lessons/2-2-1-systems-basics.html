@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2.2.1: Systems of Equations - Linear Algebra</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="chapter-2">
+    <div class="main-wrapper">
+        <nav class="sidebar toc-orange">
+            <div class="sidebar-header">
+                <div class="sidebar-title">Linear Algebra</div>
+            </div>
+            <div class="toc-chapter toc-orange">
+                <div class="toc-chapter-title">Chapter 2: Matrices &amp; Systems</div>
+                <div class="toc-module">
+                    <div class="toc-module-title">Module 2.2: Linear Systems</div>
+                    <div class="toc-lessons">
+                        <div class="toc-lesson"><a href="2-2-1-systems-basics.html" class="active">Lesson 2.2.1: Systems of Equations</a></div>
+                        <div class="toc-lesson"><a href="2-2-2-gaussian-elimination.html">Lesson 2.2.2: Gaussian Elimination</a></div>
+                        <div class="toc-lesson"><a href="2-2-3-rref.html">Lesson 2.2.3: RREF</a></div>
+                        <div class="toc-lesson"><a href="2-2-4-practice-systems.html">Lesson 2.2.4: Practice Problems</a></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="module-header">
+                    <h2>Lesson 2.2.1: Systems of Equations</h2>
+                    <p>Module 2.2: Linear Systems | Chapter 2: Matrices &amp; Systems</p>
+                </div>
+                
+                <div class="content-card">
+                    <div class="definition-box">
+                        <div class="definition-title">Linear System</div>
+                        <p>A system of linear equations is a collection of one or more linear equations involving the same set of variables.</p>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Example System</div>
+                    <div class="example-box">
+                        <div class="example-title">System Example</div>
+                        <p>x + y = 3</p>
+                        <p>x - y = 1</p>
+                        <p style="margin-top: 10px; font-weight: 600;">Adding: 2x = 4, so x = 2. Then y = 3 - x = 1. Solution: (2, 1)</p>
+                    </div>
+                </div>
+                
+                <div class="content-card">
+                    <div class="subsection-title">Matrix Form</div>
+                    <p>A linear system Ax = b can be written in augmented matrix form [A|b]</p>
+                    
+                    <div class="example-box">
+                        <div class="example-title">Example</div>
+                        <p>System: x + y = 3, 2x + 3y = 7</p>
+                        <p>Matrix form: [[1, 1|3], [2, 3|7]]</p>
+                    </div>
+                </div>
+                
+                <div class="content-card">
+                    <div class="practice-header">Practice Problems</div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 1</div>
+                        <div class="problem-question">Solve: x + y = 5, x - y = 1</div>
+                        <input type="text" class="problem-input" id="prob1" placeholder="Enter (x, y)">
+                        <button class="check-btn" onclick="checkProblem(1)">Check Answer</button>
+                        <div class="feedback" id="prob1-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 2</div>
+                        <div class="problem-question">Solve: 2x = 8</div>
+                        <input type="text" class="problem-input" id="prob2" placeholder="Enter x">
+                        <button class="check-btn" onclick="checkProblem(2)">Check Answer</button>
+                        <div class="feedback" id="prob2-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 3</div>
+                        <div class="problem-question">Solve: x + 2y = 8, x = 2</div>
+                        <input type="text" class="problem-input" id="prob3" placeholder="Enter (x, y)">
+                        <button class="check-btn" onclick="checkProblem(3)">Check Answer</button>
+                        <div class="feedback" id="prob3-feedback"></div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="nav-buttons">
+                    <a href="2-1-5-practice-matrices.html" class="nav-btn">Previous: Matrices Practice</a>
+                    <a href="2-2-2-gaussian-elimination.html" class="nav-btn primary">Next: Gaussian Elimination</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/navigation.js"></script>
+    <script>
+        const problems_2_2_1 = {
+            1: { alternatives: ['(3,2)', '(3, 2)', 'x=3,y=2'] },
+            2: { 
+                answer: '4',
+                alternatives: ['4', '4.0']
+            },
+            3: { alternatives: ['(2,3)', '(2, 3)', 'x=2,y=3'] }
+        };
+        
+        function checkProblem(num) {
+            const userInput = document.getElementById('prob' + num).value.trim();
+            const feedback = document.getElementById('prob' + num + '-feedback');
+            const alternatives = problems_2_2_1[num].alternatives;
+            
+            let isCorrect = alternatives.some(alt => 
+                alt.toLowerCase().replace(/\s/g, '') === userInput.toLowerCase().replace(/\s/g, '')
+            );
+            
+            if (isCorrect) {
+                feedback.className = 'feedback correct';
+                feedback.style.display = 'block';
+                feedback.textContent = 'Correct! Well done.';
+                markProblemSolved('2-2-1-' + num);
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.style.display = 'block';
+                feedback.textContent = 'Incorrect. Try again.';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+        });
+    </script>
+</body>
+</html>

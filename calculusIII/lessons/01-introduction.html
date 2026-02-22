@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1: Introduction & Prerequisites - Calculus III</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Construction Header -->
+    <div class="construction-header">
+        <h1>🔧 MODULE 1: INTRODUCTION & PREREQUISITES 🔧</h1>
+        <h2>Building Your Foundation</h2>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <ul class="nav-menu">
+            <li class="nav-item active" onclick="showSection('overview')">📖 Overview</li>
+            <li class="nav-item" onclick="showSection('calculus-review')">📐 Calculus Review</li>
+            <li class="nav-item" onclick="showSection('limits')">∞ Limits in 2D</li>
+            <li class="nav-item" onclick="showSection('practice')">🔧 Practice Problems</li>
+            <li class="nav-item" onclick="showSection('quiz')">🎯 Module Quiz</li>
+        </ul>
+    </nav>
+
+    <!-- Progress for this module -->
+    <div class="progress-container">
+        <div class="progress-title">📊 MODULE 1 PROGRESS</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="moduleProgress" style="width: 0%">0%</div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Overview Section -->
+        <div class="content-section active" id="overview">
+            <div class="lesson-header">
+                <h1>Welcome to Calculus III!</h1>
+                <p>Multivariable Calculus and 3D Space</p>
+            </div>
+
+            <div class="construction-tape">🔨 GETTING STARTED 🔨</div>
+
+            <p class="content-text">
+                Congratulations on embarking on your journey to master <strong>Calculus III</strong>! 
+                This course will take you from single-variable calculus to the rich world of 
+                <span class="keyword">multivariable calculus</span>, where functions depend on 
+                multiple variables and we work in three-dimensional space.
+            </p>
+
+            <div class="blueprint-section">
+                <div class="blueprint-content">
+                    <h3>📋 WHAT YOU'LL LEARN IN THIS MODULE</h3>
+                    <ul class="blueprint-list">
+                        <li>Review of essential single-variable calculus concepts</li>
+                        <li>Introduction to thinking in 3D space</li>
+                        <li>Understanding limits in multiple dimensions</li>
+                        <li>The fundamental difference between 1D and 2D/3D calculus</li>
+                        <li>Preparing for vectors and vector calculus</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">What Makes Calculus III Different?</h3>
+
+            <p class="content-text">
+                The key difference between single-variable (Calculus I & II) and multivariable 
+                calculus (Calculus III) is the <span class="highlight">number of dimensions</span> 
+                we work in. Here's what changes:
+            </p>
+
+            <div class="example-box">
+                <div class="example-title">💡 Key Differences: 1D vs 2D/3D</div>
+                <div class="data-table">
+                    <table>
+                        <tr>
+                            <th>Concept</th>
+                            <th>Single-Variable (1D)</th>
+                            <th>Multivariable (2D/3D)</th>
+                        </tr>
+                        <tr>
+                            <td>Functions</td>
+                            <td>y = f(x)</td>
+                            <td>z = f(x, y) or multivariable</td>
+                        </tr>
+                        <tr>
+                            <td>Graphs</td>
+                            <td>Curves in 2D plane</td>
+                            <td>Surfaces in 3D space</td>
+                        </tr>
+                        <tr>
+                            <td>Derivatives</td>
+                            <td>f'(x) (single value)</td>
+                            <td>Multiple partial derivatives (∂f/∂x, ∂f/∂y, etc.)</td>
+                        </tr>
+                        <tr>
+                            <td>Limits</td>
+                            <td>Two directions (left, right)</td>
+                            <td>Infinitely many paths to a point</td>
+                        </tr>
+                        <tr>
+                            <td>Integrals</td>
+                            <td>Area under curve</td>
+                            <td>Volume under surface (double/triple integrals)</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Why Study Calculus III?</h3>
+
+            <p class="content-text">
+                Multivariable calculus is not just an abstract mathematical exercise—it's the 
+                foundation for countless real-world applications:
+            </p>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>🔬 Physics</h4>
+                    <p>Electromagnetic fields, fluid dynamics, quantum mechanics, general relativity</p>
+                </div>
+                <div class="tip-card">
+                    <h4>🏗️ Engineering</h4>
+                    <p>Stress analysis, heat transfer, structural optimization, electrical circuits</p>
+                </div>
+                <div class="tip-card">
+                    <h4>📈 Economics & Finance</h4>
+                    <p>Multivariate optimization, portfolio theory, econometrics</p>
+                </div>
+                <div class="tip-card">
+                    <h4>🎮 Computer Graphics</h4>
+                    <p>3D rendering, animation, physics engines, game development</p>
+                </div>
+                <div class="tip-card">
+                    <h4>📍 Meteorology</h4>
+                    <p>Weather prediction, climate modeling, fluid flow</p>
+                </div>
+                <div class="tip-card">
+                    <h4>🧬 Biology & Medicine</h4>
+                    <p>Population modeling, epidemiology, medical imaging</p>
+                </div>
+            </div>
+
+            <div class="safety-sign important">
+                🚧 PREREQUISITE CHECK: Before proceeding, ensure you're comfortable with basic derivatives, integrals, and limits from Calculus I & II 🚧
+            </div>
+        </div>
+
+        <!-- Calculus Review Section -->
+        <div class="content-section" id="calculus-review">
+            <h2 class="section-title">📐 ESSENTIAL CALCULUS REVIEW</h2>
+
+            <div class="construction-tape">🔨 FOUNDATION CHECK 🔨</div>
+
+            <p class="content-text">
+                Before we dive into multivariable calculus, let's quickly review the key concepts 
+                from single-variable calculus that we'll build upon.
+            </p>
+
+            <h3 class="subsection-title">1. Derivatives</h3>
+
+            <div class="blueprint-section">
+                <div class="blueprint-content">
+                    <h3>📐 DERIVATIVE DEFINITION</h3>
+                    <div class="formula-box" style="margin-top: 15px;">
+                        <div class="formula">f'(x) = lim[h→0] [f(x+h) - f(x)]/h</div>
+                    </div>
+                    <p style="margin-top: 15px;">The derivative represents the <strong>instantaneous rate of change</strong> or the slope of the tangent line.</p>
+                </div>
+            </div>
+
+            <h4 class="subsection-title" style="font-size: 1.3em; margin-top: 20px;">Common Derivatives to Know:</h4>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Function f(x)</th>
+                        <th>Derivative f'(x)</th>
+                        <th>Notes</th>
+                    </tr>
+                    <tr>
+                        <td>xⁿ</td>
+                        <td>nxⁿ⁻¹</td>
+                        <td>Power rule</td>
+                    </tr>
+                    <tr>
+                        <td>eˣ</td>
+                        <td>eˣ</td>
+                        <td>Derivative is itself</td>
+                    </tr>
+                    <tr>
+                        <td>ln(x)</td>
+                        <td>1/x</td>
+                        <td>For x > 0</td>
+                    </tr>
+                    <tr>
+                        <td>sin(x)</td>
+                        <td>cos(x)</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>cos(x)</td>
+                        <td>-sin(x)</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>tan(x)</td>
+                        <td>sec²(x)</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+
+            <h4 class="subsection-title" style="font-size: 1.3em; margin: 20px 0 15px 0;">Differentiation Rules:</h4>
+
+            <div class="formula-box">
+                <div class="formula-title">Product Rule</div>
+                <div class="formula">(fg)' = f'g + fg'</div>
+            </div>
+
+            <div class="formula-box">
+                <div class="formula-title">Quotient Rule</div>
+                <div class="formula">(f/g)' = (f'g - fg')/g²</div>
+            </div>
+
+            <div class="formula-box">
+                <div class="formula-title">Chain Rule</div>
+                <div class="formula">(f∘g)'(x) = f'(g(x)) · g'(x)</div>
+            </div>
+
+            <div class="interactive-box">
+                <div class="interactive-title">🔧 Quick Derivative Practice</div>
+                
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        Practice: Find the derivative of f(x) = x³sin(x)
+                    </div>
+                    <input type="text" class="problem-input" id="deriv1" placeholder="Enter your answer (e.g., 3x²sin(x)+x³cos(x))">
+                    <button class="submit-btn" onclick="checkDerivative()">Check Answer</button>
+                    <div class="feedback" id="deriv1-feedback"></div>
+                </div>
+            </div>
+
+            <hr style="border-color: var(--primary-yellow); margin: 40px 0;">
+
+            <h3 class="subsection-title">2. Integrals</h3>
+
+            <div class="blueprint-section">
+                <div class="blueprint-content">
+                    <h3>📐 INTEGRAL DEFINITION</h3>
+                    <div class="formula-box" style="margin-top: 15px;">
+                        <div class="formula">∫f(x) dx = F(x) + C</div>
+                    </div>
+                    <p style="margin-top: 15px;">The integral represents the <strong>antiderivative</strong> and can represent area under a curve.</p>
+                </div>
+            </div>
+
+            <h4 class="subsection-title" style="font-size: 1.3em; margin-top: 20px;">Common Integrals to Know:</h4>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Function f(x)</th>
+                        <th>Integral ∫f(x) dx</th>
+                        <th>Notes</th>
+                    </tr>
+                    <tr>
+                        <td>xⁿ (n ≠ -1)</td>
+                        <td>xⁿ⁺¹/(n+1) + C</td>
+                        <td>Power rule for integration</td>
+                    </tr>
+                    <tr>
+                        <td>1/x</td>
+                        <td>ln|x| + C</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>eˣ</td>
+                        <td>eˣ + C</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>sin(x)</td>
+                        <td>-cos(x) + C</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>cos(x)</td>
+                        <td>sin(x) + C</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>sec²(x)</td>
+                        <td>tan(x) + C</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="formula-box">
+                <div class="formula-title">Fundamental Theorem of Calculus</div>
+                <div class="formula">∫ₐᵇ f(x) dx = F(b) - F(a)</div>
+                <p style="margin-top: 15px;">where F is any antiderivative of f (F' = f)</p>
+            </div>
+
+            <h4 class="subsection-title" style="font-size: 1.3em; margin: 20px 0 15px 0;">Integration Techniques:</h4>
+
+            <div class="example-box">
+                <div class="example-title">💡 u-Substitution (Reverse Chain Rule)</div>
+                <p>∫f(g(x))g'(x) dx = ∫f(u) du where u = g(x)</p>
+                <div class="formula-box" style="margin-top: 15px;">
+                    <div class="formula">Example: ∫2x·cos(x²) dx, let u = x², du = 2x dx<br>
+                    = ∫cos(u) du = sin(u) + C = sin(x²) + C</div>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">💡 Integration by Parts</div>
+                <div class="formula-box">
+                    <div class="formula">∫u dv = uv - ∫v du</div>
+                </div>
+                <p class="content-text" style="margin-top: 15px;">
+                    <strong>LIATE Rule</strong> for choosing u:<br>
+                    L - Logarithmic functions<br>
+                    I - Inverse trigonometric functions<br>
+                    A - Algebraic functions<br>
+                    T - Trigonometric functions<br>
+                    E - Exponential functions
+                </p>
+            </div>
+
+            <div class="interactive-box">
+                <div class="interactive-title">🔧 Quick Integral Practice</div>
+                
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        Practice: Evaluate ∫₀² x² dx
+                    </div>
+                    <input type="text" class="problem-input" id="int1" placeholder="Enter your answer (e.g., 8/3)">
+                    <button class="submit-btn" onclick="checkIntegral()">Check Answer</button>
+                    <div class="feedback" id="int1-feedback"></div>
+                </div>
+            </div>
+
+            <hr style="border-color: var(--primary-yellow); margin: 40px 0;">
+
+            <h3 class="subsection-title">3. Limits</h3>
+
+            <div class="blueprint-section">
+                <div class="blueprint-content">
+                    <h3>📐 LIMIT DEFINITION</h3>
+                    <div class="formula-box" style="margin-top: 15px;">
+                        <div class="formula">lim[x→a] f(x) = L</div>
+                    </div>
+                    <p style="margin-top: 15px;">As x approaches a, f(x) approaches L. For the limit to exist, the left-hand and right-hand limits must be equal.</p>
+                </div>
+            </div>
+
+            <h4 class="subsection-title" style="font-size: 1.3em; margin-top: 20px;">Important Limit Properties:</h4>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Property</th>
+                        <th>Statement</th>
+                    </tr>
+                    <tr>
+                        <td>Existence</td>
+                        <td>lim[x→a] f(x) exists iff lim[x→a⁺] f(x) = lim[x→a⁻] f(x)</td>
+                    </tr>
+                    <tr>
+                        <td>Sum/Difference</td>
+                        <td>lim(f ± g) = lim(f) ± lim(g)</td>
+                    </tr>
+                    <tr>
+                        <td>Product</td>
+                        <td>lim(fg) = lim(f) · lim(g)</td>
+                    </tr>
+                    <tr>
+                        <td>Quotient</td>
+                        <td>lim(f/g) = lim(f)/lim(g) if lim(g) ≠ 0</td>
+                    </tr>
+                    <tr>
+                        <td>Constant Multiple</td>
+                        <td>lim(cf) = c · lim(f)</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h4 class="subsection-title" style="font-size: 1.3em; margin: 20px 0 15px 0;">Special Limits:</h4>
+
+            <div class="formula-box">
+                <div class="formula-title">Two Important Limits</div>
+                <div class="formula">lim[x→0] sin(x)/x = 1</div>
+                <div class="formula" style="margin-top: 10px;">lim[x→∞] (1 + 1/n)ⁿ = e</div>
+            </div>
+        </div>
+
+        <!-- Limits in 2D Section -->
+        <div class="content-section" id="limits">
+            <h2 class="section-title">∞ LIMITS IN TWO DIMENSIONS</h2>
+
+            <div class="construction-tape">🔨 BRIDGE TO MULTIVARIABLE 🔨</div>
+
+            <p class="content-text">
+                This is where Calculus III begins to differ fundamentally from single-variable calculus. 
+                Understanding limits in 2D is crucial because everything builds on this foundation.
+            </p>
+
+            <h3 class="subsection-title">The Key Difference</h3>
+
+            <div class="caution-box">
+                <div class="caution-title">⚠️ CRITICAL INSIGHT</div>
+                <p class="content-text">
+                    In <strong>single-variable calculus</strong>, when taking a limit as x → a, you only need 
+                    to check <strong>two paths</strong>:
+                </p>
+                <ul style="text-align: left; margin: 15px 0 15px 30px;">
+                    <li>Approaching from the left: x → a⁻</li>
+                    <li>Approaching from the right: x → a⁺</li>
+                </ul>
+                <p class="content-text">
+                    In <strong>multivariable calculus</strong>, when taking a limit as (x,y) → (a,b), there are 
+                    <span class="keyword">infinitely many paths</span>! The limit must be the same along 
+                    <strong>every possible path</strong> to the point.
+                </p>
+            </div>
+
+            <h3 class="subsection-title">Definition of a Limit in 2D</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">Limit Definition (2D)</div>
+                <div class="formula">lim[(x,y)→(a,b)] f(x, y) = L</div>
+            </div>
+
+            <p class="content-text" style="text-align: center; margin: 20px 0;">
+                For every ε > 0, there exists δ > 0 such that:<br>
+                if 0 < √((x-a)² + (y-b)²) < δ, then |f(x, y) - L| < ε
+            </p>
+
+            <div class="example-box">
+                <div class="example-title">💡 Intuitive Understanding</div>
+                <p class="content-text">
+                    The limit as (x,y) → (a,b) is L if f(x, y) gets arbitrarily close to L as (x, y) 
+                    approaches (a, b) from <strong>any direction</strong>.
+                </p>
+            </div>
+
+            <h3 class="subsection-title">Proving a Limit Does NOT Exist</h3>
+
+            <p class="content-text">
+                To show that a limit <strong>does not exist</strong>, you only need to find <strong>two different 
+                paths</strong> that give different limit values. If even two paths disagree, the overall 
+                limit cannot exist.
+            </p>
+
+            <div class="interactive-box">
+                <div class="interactive-title">🔧 Common Paths to Test</div>
+                
+                <p class="content-text">When testing limits as (x,y) → (0,0), these are the first paths to try:</p>
+                
+                <ul style="text-align: left; margin: 15px 0;">
+                    <li><strong>Along x-axis:</strong> Set y = 0, take limit as x → 0</li>
+                    <li><strong>Along y-axis:</strong> Set x = 0, take limit as y → 0</li>
+                    <li><strong>Along line y = x:</strong> Set y = x, take limit as x → 0</li>
+                    <li><strong>Along line y = kx:</strong> Set y = kx, take limit as x → 0 (any constant k)</li>
+                    <li><strong>Along parabola:</strong> Set y = x², take limit as x → 0</li>
+                    <li><strong>Along curves:</strong> Any curve passing through (0,0)</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">💡 Example: Limit Does Not Exist</div>
+                <p class="content-text">
+                    Does lim[(x,y)→(0,0)] (x² - y²)/(x² + y²) exist?
+                </p>
+                <div class="formula-box" style="margin: 15px 0;">
+                    <div class="formula" style="font-size: 1.1em;">
+                        <strong>Path 1: y = 0 (x-axis)</strong><br>
+                        (x² - 0)/(x² + 0) = x²/x² = 1 → limit = 1<br><br>
+                        <strong>Path 2: x = 0 (y-axis)</strong><br>
+                        (0 - y²)/(0 + y²) = -y²/y² = -1 → limit = -1<br><br>
+                        <strong>Conclusion:</strong> Since 1 ≠ -1, the limit DOES NOT EXIST!
+                    </div>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">💡 Example: Limit Exists</div>
+                <p class="content-text">
+                    Does lim[(x,y)→(0,0)] (x + y) exist?
+                </p>
+                <div class="formula-box" style="margin: 15px 0;">
+                    <div class="formula" style="font-size: 1.1em;">
+                        <strong>Path 1: y = 0</strong><br>
+                        x + 0 = x → limit = 0<br><br>
+                        <strong>Path 2: x = 0</strong><br>
+                        0 + y = y → limit = 0<br><br>
+                        <strong>Path 3: y = x</strong><br>
+                        x + x = 2x → limit = 0<br><br>
+                        <strong>Path 4: y = kx</strong><br>
+                        x + kx = (1+k)x → limit = 0<br><br>
+                        <strong>All paths give 0, so the limit exists and equals 0!
+                    </div>
+                </div>
+            </div>
+
+            <div class="caution-box">
+                <div class="caution-title">⚠️ IMPORTANT WARNING</div>
+                <p class="content-text">
+                    <strong>Even if several paths give the same limit, you CANNOT conclude the limit exists!</strong>
+                    There are infinitely many other paths. To PROVE a limit exists, you must rigorously 
+                    show it's the same for ALL paths (typically using the ε-δ definition or squeeze theorem).
+                </p>
+            </div>
+
+            <h3 class="subsection-title">Continuity in 2D</h3>
+
+            <div class="formula-box">
+                <div class="formula-title">Continuity Definition</div>
+                <p class="formula">
+                    f is continuous at (a, b) if:
+                </p>
+                <p class="formula" style="margin-top: 10px;">
+                    lim[(x,y)→(a,b)] f(x, y) = f(a, b)
+                </p>
+            </div>
+
+            <p class="content-text">
+                This means three conditions must be met:<br>
+                1. f(a, b) is defined<br>
+                2. The limit exists<br>
+                3. The limit equals the function value
+            </p>
+        </div>
+
+        <!-- Practice Problems Section -->
+        <div class="content-section" id="practice">
+            <h2 class="section-title">🔧 PRACTICE PROBLEMS</h2>
+
+            <div class="construction-tape">🔨 BUILD YOUR SKILLS 🔨</div>
+
+            <p class="content-text">
+                Complete these practice problems to solidify your understanding. Track your progress 
+                as you work through them!
+            </p>
+
+            <!-- Prerequisites Practice -->
+            <h3 class="subsection-title">Prerequisite Review Problems</h3>
+            
+            <div class="problem-set">
+                <div class="problem-set-title">Derivatives (10 problems)</div>
+                
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 1:</strong> Find the derivative of f(x) = x⁵
+                    </div>
+                    <input type="text" class="problem-input" id="p-1" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkProblem('1-1', '5x^4', ['5*x^4', '5x⁴'], 'p-1')">Check</button>
+                    <div class="feedback" id="p-1-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 2:</strong> Find the derivative of f(x) = sin(x)
+                    </div>
+                    <input type="text" class="problem-input" id="p-2" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkProblem('1-2', 'cos(x)', [], 'p-2')">Check</button>
+                    <div class="feedback" id="p-2-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 3:</strong> Find the derivative of f(x) = eˣ
+                    </div>
+                    <input type="text" class="problem-input" id="p-3" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkProblem('1-3', 'e^x', ['exp(x)'], 'p-3')">Check</button>
+                    <div class="feedback" id="p-3-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 4:</strong> Find the derivative of f(x) = x²ln(x)
+                    </div>
+                    <input type="text" class="problem-input" id="p-4" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkProblem('1-4', '2x*ln(x)+x', ['2x ln x + x'], 'p-4')">Check</button>
+                    <div class="feedback" id="p-4-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 5:</strong> Find the derivative of f(x) = (2x + 1)³
+                    </div>
+                    <input type="text" class="problem-input" id="p-5" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkProblem('1-12', '6(2x+1)^2', ['6(2x+1)²'], 'p-5')">Check</button>
+                    <div class="feedback" id="p-5-feedback"></div>
+                </div>
+            </div>
+
+            <div class="problem-set">
+                <div class="problem-set-title">Integrals (5 problems)</div>
+                
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 6:</strong> Evaluate ∫ 2x dx
+                    </div>
+                    <input type="text" class="problem-input" id="p-6" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkProblem('1-5', 'x^2+C', ['x²+C'], 'p-6')">Check</button>
+                    <div class="feedback" id="p-6-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 7:</strong> Evaluate ∫ cos(x) dx
+                    </div>
+                    <input type="text" class="problem-input" id="p-7" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkProblem('1-6', 'sin(x)+C', [], 'p-7')">Check</button>
+                    <div class="feedback" id="p-7-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 8:</strong> Evaluate ∫₀³ x² dx
+                    </div>
+                    <input type="text" class="problem-input" id="p-8" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkProblem('1-7', '9', ['9.0'], 'p-8')">Check</button>
+                    <div class="feedback" id="p-8-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 9:</strong> Evaluate ∫₀^π sin(x) dx
+                    </div>
+                    <input type="text" class="problem-input" id="p-9" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkProblem('1-8', '2', ['2.0'], 'p-9')">Check</button>
+                    <div class="feedback" id="p-9-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 10:</strong> Evaluate ∫ x·eˣ dx
+                    </div>
+                    <input type="text" class="problem-input" id="p-10" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkProblem('1-20', 'x*e^x-e^x+C', ['(x-1)e^x+C'], 'p-10')">Check</button>
+                    <div class="feedback" id="p-10-feedback"></div>
+                </div>
+            </div>
+
+            <div class="problem-set">
+                <div class="problem-set-title">Limits (5 problems)</div>
+                
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 11:</strong> Find lim[x→0] (2x + 5)
+                    </div>
+                    <input type="text" class="problem-input" id="p-11" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkProblem('1-9', '5', ['5.0'], 'p-11')">Check</button>
+                    <div class="feedback" id="p-11-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 12:</strong> Find lim[x→∞] (3x² + 2x)/(x² + 1)
+                    </div>
+                    <input type="text" class="problem-input" id="p-12" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkProblem('1-11', '3', ['3.0'], 'p-12')">Check</button>
+                    <div class="feedback" id="p-12-feedback"></div>
+                </div>
+            </div>
+
+            <!-- 2D Limits Practice -->
+            <h3 class="subsection-title">2D Limits Problems</h3>
+            
+            <div class="problem-set">
+                <div class="problem-set-title">Conceptual Questions (5 problems)</div>
+                
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 13:</strong> In Calculus III, when approaching a point in 2D, how many paths must you check?
+                    </div>
+                    <input type="text" class="problem-input" id="p-13" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkProblem('1-21', 'Infinite', ['infinitely many', 'all possible paths'], 'p-13')">Check</button>
+                    <div class="feedback" id="p-13-feedback"></div>
+                </div>
+
+                <div class="practice-problem">
+                    <div class="problem-question">
+                        <strong>Problem 14:</strong> What is a way to prove a limit does NOT exist?
+                    </div>
+                    <input type="text" class="problem-input" id="p-14" placeholder="Enter your answer">
+                    <button class="submit-btn" onclick="checkProblem('1-23', 'Find different limits along different paths', ['Show different paths give different limits'], 'p-14')">Check</button>
+                    <div class="feedback" id="p-14-feedback"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Module Quiz Section -->
+        <div class="content-section" id="quiz">
+            <h2 class="section-title">🎯 MODULE 1 QUIZ</h2>
+
+            <div class="construction-tape">🔨 TEST YOUR KNOWLEDGE 🔨</div>
+
+            <p class="content-text">
+                This quiz tests your understanding of the prerequisites and introduction to multivariable limits.
+                Score at least 70% to proceed to the next module!
+            </p>
+
+            <div class="safety-sign important">
+                ⏱️ TIME LIMIT: 30 MINUTES • 5 QUESTIONS • PASSING SCORE: 70% ⏱️
+            </div>
+
+            <!-- Quiz will be auto-generated by quizzes.js -->
+            <div id="introduction-quiz"></div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <button class="nav-button prev-module-btn" disabled>← Previous Module</button>
+            <a href="../index.html" class="nav-button">🏠 Back to Course Overview</a>
+            <a href="02-vectors-3d.html" class="nav-button next-module-btn">Next Module: Vectors & 3D Space →</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p class="footer-text">
+            🔧 CALCULUS III CONSTRUCTION ZONE 🔧<br>
+            Module 1: Introduction & Prerequisites<br>
+            Keep Building! 🚧
+        </p>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script src="../js/problems.js"></script>
+    <script src="../js/quizzes.js"></script>
+    <script>
+        // ============================================
+        // MODULE-SPECIFIC FUNCTIONS
+        // ============================================
+        
+        let problemsCompleted = 0;
+        const totalProblems = 14;
+        
+        // Check problem answer
+        function checkProblem(problemId, correct, alternatives, inputId) {
+            const input = document.getElementById(inputId).value.trim().toLowerCase();
+            const feedback = document.getElementById(inputId + '-feedback');
+            
+            let normalizedCorrect = correct.toLowerCase().replace(/\s/g, '');
+            let normalizedInput = input.replace(/\s/g, '');
+            
+            let isCorrect = normalizedInput === normalizedCorrect || 
+                           alternatives.some(alt => alt.toLowerCase().replace(/\s/g, '') === normalizedInput);
+            
+            if (isCorrect) {
+                feedback.className = 'feedback correct';
+                feedback.textContent = '✅ Correct!';
+                feedback.style.display = 'block';
+                
+                // Mark problem as solved if not already
+                if (!courseProgress.problemsSolved.includes(problemId)) {
+                    courseProgress.problemsSolved.push(problemId);
+                    problemsCompleted++;
+                    updateModuleProgress();
+                }
+            } else {
+                // Get explanation from problems database
+                const explanation = getProblemExplanation(problemId);
+                feedback.className = 'feedback incorrect';
+                feedback.textContent = `❌ Not quite. ${explanation}`;
+                feedback.style.display = 'block';
+            }
+        }
+        
+        // Get problem explanation
+        function getProblemExplanation(problemId) {
+            // Search through all problem sets
+            for (let category in practiceProblems) {
+                for (let subcategory in practiceProblems[category]) {
+                    const problems = practiceProblems[category][subcategory];
+                    if (Array.isArray(problems)) {
+                        const problem = problems.find(p => p.id === problemId);
+                        if (problem) {
+                            return problem.explanation || `The correct answer is ${problem.answer}`;
+                        }
+                    }
+                }
+            }
+            return 'Check your work and try again.';
+        }
+        
+        // Update module progress
+        function updateModuleProgress() {
+            const percentage = Math.round((problemsCompleted / totalProblems) * 100);
+            const progressFill = document.getElementById('moduleProgress');
+            if (progressFill) {
+                progressFill.style.width = percentage + '%';
+                progressFill.textContent = percentage + '%';
+            }
+        }
+        
+        // Quick practice checks
+        function checkDerivative() {
+            checkProblem('1-18', '3x^2*sin(x)+x^3*cos(x)', ['3x²sin(x) + x³cos(x)'], 'deriv1');
+        }
+        
+        function checkIntegral() {
+            checkProblem('1-7', '9', ['9.0'], 'int1');
+        }
+        
+        // Initialize module
+        function initModule() {
+            loadProgress();
+            updateModuleProgress();
+            
+            // Mark module as started
+            if (!courseProgress.lessonsCompleted.includes(1)) {
+                courseProgress.lessonsCompleted.push(1);
+                saveProgress();
+            }
+        }
+        
+        // Start timer for quiz when quiz section is shown
+        document.addEventListener('DOMContentLoaded', function() {
+            initModule();
+        });
+    </script>
+</body>
+</html>

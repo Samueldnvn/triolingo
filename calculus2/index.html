@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculus II - Complete Mastery Course</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- MathJax Configuration -->
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    },
+    startup: {
+      typeset: false
+    }
+  };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+  <header>
+    <h1>Calculus II <span>Complete Mastery Course</span></h1>
+    <p class="tagline">Master integration, series, parametric equations, polar coordinates, and differential equations</p>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <div class="sidebar-title">📚 Course Navigation</div>
+      <ul class="chapter-nav">
+        <li>
+          <a href="#" class="active" onclick="loadHome(); return false;">
+            <span class="progress-indicator" id="nav-home"></span> Home
+          </a>
+        </li>
+        <li>
+          <a href="chapters/ch1_integration.html">
+            <span class="progress-indicator" id="nav-ch1"></span> Chapter 1: Integration
+          </a>
+        </li>
+        <li>
+          <a href="chapters/ch2_sequences.html">
+            <span class="progress-indicator" id="nav-ch2"></span> Chapter 2: Sequences
+          </a>
+        </li>
+        <li>
+          <a href="chapters/ch3_convergence.html">
+            <span class="progress-indicator" id="nav-ch3"></span> Chapter 3: Convergence Tests
+          </a>
+        </li>
+        <li>
+          <a href="chapters/ch4_power_series.html">
+            <span class="progress-indicator" id="nav-ch4"></span> Chapter 4: Power Series
+          </a>
+        </li>
+        <li>
+          <a href="chapters/ch5_parametric.html">
+            <span class="progress-indicator" id="nav-ch5"></span> Chapter 5: Parametric & Polar
+          </a>
+        </li>
+        <li>
+          <a href="chapters/ch6_differential_equations.html">
+            <span class="progress-indicator" id="nav-ch6"></span> Chapter 6: Differential Equations
+          </a>
+        </li>
+        <li>
+          <a href="#" onclick="loadAssessment(); return false;">
+            <span class="progress-indicator" id="nav-assessment"></span> Final Assessment
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-title" style="margin-top: 2rem;">🔍 Quick Search</div>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search topics (e.g., 'ratio test')..." onkeyup="searchCourse()">
+      </div>
+
+      <div class="sidebar-title" style="margin-top: 2rem;">⚙️ Options</div>
+      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+        <button onclick="resetProgress()">Reset All Progress</button>
+        <button onclick="showAbout()" class="secondary">About This Course</button>
+      </div>
+    </aside>
+
+    <main class="main-content" id="mainContent">
+      <!-- Content loaded dynamically -->
+    </main>
+  </div>
+
+  <footer>
+    <p>Calculus II Complete Mastery Course | Built with ❤️ for students everywhere</p>
+  </footer>
+
+  <!-- JavaScript Libraries -->
+  <script src="assets/js/math.js"></script>
+  <script src="assets/js/progress.js"></script>
+  <script src="assets/js/quizzes.js"></script>
+  <script src="assets/js/practice.js"></script>
+
+  <script>
+    // Force MathJax to render all math when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        if (window.MathJax && MathJax.typesetPromise) {
+          MathJax.typesetPromise().then(function() {
+            console.log('MathJax rendered successfully');
+          }).catch(function(err) {
+            console.log('MathJax error:', err);
+          });
+        }
+      }, 500);
+    });
+  </script>
+
+  <script>
+    // Home page content
+    const homeContent = `
+      <div class="breadcrumbs">Home</div>
+
+      <section id="dashboard">
+        <h2>📊 Your Progress Dashboard</h2>
+        <div class="progress-dashboard">
+          <div class="progress-card">
+            <h3>Overall Completion</h3>
+            <div class="value" id="overall-completion">0%</div>
+            <div class="label">Lessons Completed</div>
+          </div>
+          <div class="progress-card">
+            <h3>Mastery Level</h3>
+            <div class="value" id="mastery-level">0%</div>
+            <div class="label">Lessons Mastered</div>
+          </div>
+          <div class="progress-card">
+            <h3>Quiz Average</h3>
+            <div class="value" id="quiz-average">0%</div>
+            <div class="label">Across All Quizzes</div>
+          </div>
+          <div class="progress-card">
+            <h3>Practice Average</h3>
+            <div class="value" id="practice-average">0%</div>
+            <div class="label">Practice Problems</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="welcome">
+        <h2>Welcome to Calculus II! 🎓</h2>
+        <p>This comprehensive course covers everything you need to master Calculus II, building on your Calculus I foundation to unlock powerful mathematical tools used in engineering, physics, economics, and beyond.</p>
+
+        <div class="key-concepts">
+          <h3>📋 What You'll Learn:</h3>
+          <ul>
+            <li><strong>Advanced Integration:</strong> Master integration by parts, trig substitution, partial fractions, and more</li>
+            <li><strong>Sequences & Series:</strong> Understand infinite series and convergence tests</li>
+            <li><strong>Power Series:</strong> Taylor and Maclaurin series for function approximation</li>
+            <li><strong>Parametric & Polar:</strong> Alternative coordinate systems with calculus applications</li>
+            <li><strong>Differential Equations:</strong> Introduction to solving and modeling real-world problems</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="curriculum">
+        <h2>📚 Course Curriculum</h2>
+
+        <div class="chapter-preview">
+          <h3>Chapter 1: Advanced Integration Techniques <span style="color: var(--gray-medium);">(12 Lessons)</span></h3>
+          <p>Master sophisticated integration methods including substitution, integration by parts, trig integrals, trig substitution, partial fractions, and applications.</p>
+          <a href="chapters/ch1_integration.html" class="btn">Start Chapter 1 →</a>
+        </div>
+
+        <div class="chapter-preview">
+          <h3>Chapter 2: Sequences <span style="color: var(--gray-medium);">(4 Lessons)</span></h3>
+          <p>Learn about sequences, limits, monotonic and bounded sequences, and introductory infinite series concepts.</p>
+          <a href="chapters/ch2_sequences.html" class="btn">Start Chapter 2 →</a>
+        </div>
+
+        <div class="chapter-preview">
+          <h3>Chapter 3: Series Convergence Tests <span style="color: var(--gray-medium);">(8 Lessons)</span></h3>
+          <p>Master the convergence tests: Divergence Test, Integral Test, Comparison Tests, Alternating Series Test, Ratio Test, and Root Test.</p>
+          <a href="chapters/ch3_convergence.html" class="btn">Start Chapter 3 →</a>
+        </div>
+
+        <div class="chapter-preview">
+          <h3>Chapter 4: Power Series <span style="color: var(--gray-medium);">(7 Lessons)</span></h3>
+          <p>Explore power series, radius and interval of convergence, Taylor/Maclaurin series, and applications in function approximation.</p>
+          <a href="chapters/ch4_power_series.html" class="btn">Start Chapter 4 →</a>
+        </div>
+
+        <div class="chapter-preview">
+          <h3>Chapter 5: Parametric Equations & Polar Coordinates <span style="color: var(--gray-medium);">(7 Lessons)</span></h3>
+          <p>Work with parametric equations, calculus in parametric form, polar coordinates, and calculus in polar coordinates.</p>
+          <a href="chapters/ch5_parametric.html" class="btn">Start Chapter 5 →</a>
+        </div>
+
+        <div class="chapter-preview">
+          <h3>Chapter 6: Differential Equations (Introduction) <span style="color: var(--gray-medium);">(7 Lessons)</span></h3>
+          <p>Introduction to differential equations, slope fields, separable equations, linear first-order equations, and applications.</p>
+          <a href="chapters/ch6_differential_equations.html" class="btn">Start Chapter 6 →</a>
+        </div>
+      </section>
+
+      <section id="features">
+        <h2>✨ Course Features</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+          <div class="feature">
+            <h3>📝 Interactive Lessons</h3>
+            <p>Step-by-step explanations with interactive examples and reveal buttons.</p>
+          </div>
+          <div class="feature">
+            <h3>🧪 Practice Problems</h3>
+            <p>Hundreds of practice problems with instant feedback and detailed solutions.</p>
+          </div>
+          <div class="feature">
+            <h3>📊 Quizzes</h3>
+            <p>Per-lesson and chapter quizzes to test your understanding.</p>
+          </div>
+          <div class="feature">
+            <h3>📈 Progress Tracking</h3>
+            <p>Save your progress automatically and pick up where you left off.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="tips">
+        <h2>💡 Success Tips</h2>
+        <ul>
+          <li><strong>Work through lessons in order:</strong> Each concept builds on the previous ones.</li>
+          <li><strong>Don't skip practice:</strong> Actually solve the problems - understanding comes from doing.</li>
+          <li><strong>Use the solutions wisely:</strong> Try to solve on your own first, then check your work.</li>
+          <li><strong>Review mistakes:</strong> Learn from incorrect answers - they're valuable feedback.</li>
+          <li><strong>Take your time:</strong> This is comprehensive material. Rushing leads to gaps in understanding.</li>
+          <li><strong>Practice daily:</strong> Even 30 minutes of consistent practice beats occasional marathon sessions.</li>
+        </ul>
+      </section>
+
+      <section id="prerequisites">
+        <h2>🎯 Prerequisites</h2>
+        <p>Before starting this course, you should be comfortable with:</p>
+        <ul>
+          <li>Calculus I: Limits, derivatives, basic integration</li>
+          <li>Algebra: Factoring, solving equations, simplifying expressions</li>
+          <li>Trigonometry: All trig functions, identities, unit circle</li>
+          <li>Exponentials & Logarithms: Properties, graphs, and applications</li>
+        </ul>
+      </section>
+    `;
+
+    // Load home page
+    function loadHome() {
+      document.getElementById('mainContent').innerHTML = homeContent;
+      updateNavigation();
+      updateDashboard();
+      renderMath();
+    }
+
+    // Update navigation indicators
+    function updateNavigation() {
+      if (ProgressManager) {
+        const data = ProgressManager.getAll();
+        if (data) {
+          // Update chapter indicators
+          for (let i = 1; i <= 6; i++) {
+            const navId = \`nav-ch\${i}\`;
+            const navEl = document.getElementById(navId);
+            if (navEl) {
+              // Check if any lesson in chapter is started
+              const chapterLessons = Object.keys(data.lessons).filter(k => k.startsWith('ch' + i));
+              if (chapterLessons.some(l => data.lessons[l].mastered)) {
+                navEl.className = 'progress-indicator mastered';
+              } else if (chapterLessons.some(l => data.lessons[l].completed)) {
+                navEl.className = 'progress-indicator completed';
+              } else if (chapterLessons.some(l => data.lessons[l].status === 'inprogress')) {
+                navEl.innerHTML = '⏳';
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Update dashboard stats
+    function updateDashboard() {
+      if (ProgressManager) {
+        const report = ProgressManager.getProgressReport();
+
+        if (report) {
+          document.getElementById('overall-completion').textContent = report.overall.completion + '%';
+          document.getElementById('mastery-level').textContent = report.overall.mastery + '%';
+          document.getElementById('quiz-average').textContent = report.overall.quizAverage + '%';
+          document.getElementById('practice-average').textContent = report.overall.practiceAverage + '%';
+        }
+      }
+    }
+
+    // Search functionality
+    function searchCourse() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      if (query.length < 2) return;
+
+      // Simple search - check if query matches lesson content
+      // In production, this would be more sophisticated
+      const topics = {
+        'integration': 'chapters/ch1_integration.html',
+        'integration by parts': 'chapters/ch1_integration.html#lesson-2',
+        'substitution': 'chapters/ch1_integration.html#lesson-1',
+        'trig': 'chapters/ch1_integration.html#lesson-3',
+        'sequence': 'chapters/ch2_sequences.html',
+        'geometric series': 'chapters/ch2_sequences.html#lesson-4',
+        'convergence': 'chapters/ch3_convergence.html',
+        'ratio test': 'chapters/ch3_convergence.html#lesson-6',
+        'power series': 'chapters/ch4_power_series.html',
+        'taylor': 'chapters/ch4_power_series.html#lesson-4',
+        'parametric': 'chapters/ch5_parametric.html',
+        'polar': 'chapters/ch5_parametric.html',
+        'differential equation': 'chapters/ch6_differential_equations.html'
+      };
+
+      // Show search results modal or redirect
+      alert('Search feature: Navigate to relevant chapter and use Ctrl+F to find topics.');
+    }
+
+    // Reset progress
+    function resetProgress() {
+      if (ProgressManager) {
+        ProgressManager.resetAll();
+      }
+    }
+
+    // Show about dialog
+    function showAbout() {
+      const aboutContent = \`
+        <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(26, 54, 93, 0.95); z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 2rem;">
+          <div style="background: var(--blueprint-blue-light); padding: 2rem; border-radius: 12px; max-width: 600px; border: 2px solid var(--orange);">
+            <h2 style="color: var(--orange);">About This Course</h2>
+            <p>This comprehensive Calculus II course was designed to provide students with a complete, interactive learning experience covering all major topics in Calculus II.</p>
+            <h3>👨‍🏫 Course Features</h3>
+            <ul>
+              <li>45+ comprehensive lessons</li>
+              <li>200+ practice problems</li>
+              <li>150+ quiz questions</li>
+              <li>Progress tracking with localStorage</li>
+              <li>Beautiful mathematical notation with MathJax</li>
+              <li>Blueprint-inspired design</li>
+            </ul>
+            <h3>⏱️ Estimated Time</h3>
+            <p>40-60 hours of study to complete the entire course.</p>
+            <button onclick="this.closest('div').parentElement.remove()">Close</button>
+          </div>
+        </div>
+      \`;
+      document.body.insertAdjacentHTML('beforeend', aboutContent);
+    }
+
+    // Final Assessment
+    function loadAssessment() {
+      alert('Final Assessment coming soon! Complete all chapters first.');
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      loadHome();
+    });
+  </script>
+
+  <style>
+    .chapter-preview {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid var(--orange);
+    }
+
+    .chapter-preview h3 {
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .chapter-preview a {
+      color: var(--orange);
+      font-weight: bold;
+    }
+
+    .feature {
+      background: rgba(255, 107, 53, 0.05);
+      border: 1px solid var(--orange);
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+
+    .feature h3 {
+      color: var(--orange);
+      margin-bottom: 0.5rem;
+    }
+
+    .btn {
+      background: var(--orange);
+      color: var(--white);
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: var(--orange-light);
+      transform: translateY(-2px);
+    }
+  </style>
+</body>
+</html>

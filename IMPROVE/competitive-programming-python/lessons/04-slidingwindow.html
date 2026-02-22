@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 4: Sliding Window Pattern - Competitive Programming with Python</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <!-- Course Header -->
+    <div class="course-header">
+        <h1>MODULE 4: SLIDING WINDOW PATTERN</h1>
+        <h2>Efficient Array/String Subsequence Problems</h2>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <ul class="nav-menu">
+            <li class="nav-item active" onclick="showSection('overview')">Overview</li>
+            <li class="nav-item" onclick="showSection('fixed')">Fixed-Size Window</li>
+            <li class="nav-item" onclick="showSection('variable')">Variable-Size Window</li>
+            <li class="nav-item" onclick="showSection('templates')">Window Templates</li>
+            <li class="nav-item" onclick="showSection('problems')">Common Problems</li>
+            <li class="nav-item" onclick="showSection('optimization')">Optimizations</li>
+            <li class="nav-item" onclick="showSection('practice')">Practice Problems</li>
+            <li class="nav-item" onclick="showSection('quiz')">Module Quiz</li>
+        </ul>
+    </nav>
+
+    <!-- Progress -->
+    <div class="progress-container">
+        <div class="progress-title">MODULE 4 PROGRESS</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="moduleProgress" style="width: 0%">0%</div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+        <!-- Overview -->
+        <div class="content-section active" id="overview">
+            <div class="lesson-header">
+                <h1>Sliding Window Pattern</h1>
+                <p>Process subarrays/strings efficiently using a window approach</p>
+            </div>
+
+            <div class="blueprint-section">
+                <div class="blueprint-content">
+                    <h3>WHAT YOU'LL LEARN</h3>
+                    <ul class="blueprint-list">
+                        <li>Fixed-size sliding window for constant width subproblems</li>
+                        <li>Variable-size sliding window for adaptive width subproblems</li>
+                        <li>Template patterns for both window types</li>
+                        <li>Maximum/minimum subarray problems</li>
+                        <li>Longest substring with constraints</li>
+                        <li>Subarray/product problems</li>
+                        <li>When to use sliding window vs other approaches</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Understanding the Sliding Window</h3>
+
+            <p class="content-text">
+                The sliding window technique is a method for processing subarrays or substrings efficiently. Instead of recomputing everything for each position, you "slide" a window across the data, adjusting the window incrementally as you move. This typically reduces complexity from O(n^2) or O(n*k) to O(n).
+            </p>
+
+            <div class="example-box">
+                <div class="example-title">CORE IDEA</div>
+                <p class="content-text">
+                    For a window of size k covering indices [left, right]:<br>
+                    - Move right forward one step: window becomes [left+1, right+1]<br>
+                    - Remove element at left, add element at right+1<br>
+                    - This update is O(1) instead of O(k) for recomputing
+                </p>
+            </div>
+
+            <h3 class="subsection-title">When to Use Sliding Window</h3>
+
+            <div class="data-table">
+                <table>
+                    <tr>
+                        <th>Pattern</th>
+                        <th>Use Sliding Window?</th>
+                        <th>Alternative</th>
+                    </tr>
+                    <tr>
+                        <td>Find subarray of fixed size k with max sum</td>
+                        <td>YES</td>
+                        <td>Variations: prefix sum</td>
+                    </tr>
+                    <tr>
+                        <td>Find longest substring with only k distinct chars</td>
+                        <td>YES (variable)</td>
+                        <td>Binary search + hash</td>
+                    </tr>
+                    <tr>
+                        <td>Find subarrays with sum EXACTLY K</td>
+                        <td>NO</td>
+                        <td>Hash table + prefix sum</td>
+                    </tr>
+                    <tr>
+                        <td>Contains elements with constraints</td>
+                        <td>YES (variable)</td>
+                        <td>Two pointers</td>
+                    </tr>
+                    <tr>
+                        <td>Need to backtrack to previous positions</td>
+                        <td>NO</td>
+                        <td>Backtracking/DFS</td>
+                    </tr>
+                    <tr>
+                        <td>Maximum sum of ANY subarray (no size constraint)</td>
+                        <td>NO</td>
+                        <td>Kadane's algorithm</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3 class="subsection-title">Time Complexity Analysis</h3>
+
+            <p class="content-text">
+                Sliding window achieves O(n) complexity because each element is processed at most twice: once when the window expands and once when it contracts. This is the hallmark of two-pointer techniques.
+            </p>
+
+            <div class="safety-sign important">
+                KEY INSIGHT: The power of sliding window comes from incremental updates. You never recompute from scratch - you adjust based on what's leaving and entering the window.
+            </div>
+        </div>
+
+        <!-- Fixed-Size Window -->
+        <div class="content-section" id="fixed">
+            <div class="lesson-header">
+                <h1>Fixed-Size Sliding Window</h1>
+                <p>Windows with constant width k</p>
+            </div>
+
+            <h3 class="subsection-title">Understanding Fixed-Size Windows</h3>
+
+            <p class="content-text">
+                Fixed-size windows maintain a constant width k as they slide through the array or string. They're useful when you need to analyze or compute something about all subarrays/strings of a specific length.
+            </p>
+
+            <h3 class="subsection-title">Template 1: Sum/Aggregation</h3>
+
+            <div class="code-block">
+                <pre>
+def fixed_window_sum(arr, k):
+    """
+    Find sum of each window of size k
+    Time: O(n), Space: O(1) (excluding output)
+    """
+    n = len(arr)
+    if n < k:
+        return None
+    
+    # Compute sum of first window
+    window_sum = sum(arr[:k])
+    result = [window_sum]
+    
+    # Slide window, adding new element, removing old
+    for i in range(k, n):
+        window_sum = window_sum - arr[i - k] + arr[i]
+        result.append(window_sum)
+    
+    return result
+
+
+# Example
+arr = [2, 1, 5, 1, 3, 2]
+k = 3
+print(fixed_window_sum(arr, k))
+# [8, 7, 9, 6]
+# Windows: [2,1,5]=8, [1,5,1]=7, [5,1,3]=9, [1,3,2]=6
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Classic Fixed-Size Problems</h3>
+
+            <h4 class="subsection-title">1. Maximum Sum Subarray of Size K</h4>
+
+            <div class="code-block">
+                <pre>
+def max_sum_subarray(arr, k):
+    """
+    Find maximum sum of any subarray of size k
+    Time: O(n), Space: O(1)
+    """
+    n = len(arr)
+    if n < k:
+        return None
+    
+    # First window
+    window_sum = sum(arr[:k])
+    max_sum = window_sum
+    
+    # Slide window
+    for i in range(k, n):
+        window_sum = window_sum - arr[i - k] + arr[i]
+        max_sum = max(max_sum, window_sum)
+    
+    return max_sum
+
+
+# With indices
+def max_sum_subarray_with_indices(arr, k):
+    """
+    Return max sum and the start index
+    """
+    n = len(arr)
+    if n < k:
+        return None, None
+    
+    window_sum = sum(arr[:k])
+    max_sum = window_sum
+    max_start = 0
+    
+    for i in range(k, n):
+        window_sum = window_sum - arr[i - k] + arr[i]
+        if window_sum > max_sum:
+            max_sum = window_sum
+            max_start = i - k + 1
+    
+    return max_sum, max_start
+
+# Example
+arr = [2, 1, 5, 1, 3, 2]
+k = 3
+print(max_sum_subarray(arr, k))  # 9
+print(max_sum_subarray_with_indices(arr, k))  # (9, 2)
+# Subarray [5, 1, 3] starting at index 2
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">2. Average of All Subarrays of Size K</h4>
+
+            <div class="code-block">
+                <pre>
+def average_of_subarrays(arr, k):
+    """
+    Return list of averages for each window of size k
+    Time: O(n), Space: O(n) for result
+    """
+    n = len(arr)
+    result = []
+    window_sum = 0.0
+    window_start = 0
+    
+    for window_end in range(n):
+        window_sum += arr[window_end]
+        
+        # Window is size k
+        if window_end >= k - 1:
+            result.append(window_sum / k)
+            window_sum -= arr[window_start]
+            window_start += 1
+    
+    return result
+
+# Example
+arr = [1, 3, 2, 6, -1, 4, 1, 8, 2]
+k = 5
+print(average_of_subarrays(arr, k))
+# [2.2, 2.8, 2.4, 3.6, 2.8]
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">3. Maximum of All Subarrays of Size K</h4>
+
+            <div class="code-block">
+                <pre>
+from collections import deque
+
+def max_of_subarrays(arr, k):
+    """
+    Find maximum in each subarray of size k
+    Uses deque to maintain candidates in descending order
+    Time: O(n), Space: O(k)
+    """
+    n = len(arr)
+    if n < k:
+        return []
+    
+    deque_idx = deque()  # Stores indices, values in descending order
+    result = []
+    
+    for i in range(n):
+        # Remove indices not in window
+        while deque_idx and deque_idx[0] <= i - k:
+            deque_idx.popleft()
+        
+        # Remove smaller elements from back
+        while deque_idx and arr[deque_idx[-1]] < arr[i]:
+            deque_idx.pop()
+        
+        deque_idx.append(i)
+        
+        # Window is full, add to result
+        if i >= k - 1:
+            result.append(arr[deque_idx[0]])
+    
+    return result
+
+# Example
+arr = [1, 3, -1, -3, 5, 3, 6, 7]
+k = 3
+print(max_of_subarrays(arr, k))
+# [3, 3, 5, 5, 6, 7]
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">4. Count Distinct Elements in Each Window</h4>
+
+            <div class="code-block">
+                <pre>
+from collections import defaultdict
+
+def count_distinct_in_windows(arr, k):
+    """
+    Count distinct elements in each window of size k
+    Time: O(n), Space: O(k)
+    """
+    n = len(arr)
+    if n < k:
+        return []
+    
+    freq_map = defaultdict(int)
+    distinct_count = 0
+    result = []
+    
+    # First window
+    for i in range(k):
+        if freq_map[arr[i]] == 0:
+            distinct_count += 1
+        freq_map[arr[i]] += 1
+    result.append(distinct_count)
+    
+    # Slide window
+    for i in range(k, n):
+        # Remove element leaving window
+        element_out = arr[i - k]
+        freq_map[element_out] -= 1
+        if freq_map[element_out] == 0:
+            distinct_count -= 1
+        
+        # Add element entering window
+        element_in = arr[i]
+        if freq_map[element_in] == 0:
+            distinct_count += 1
+        freq_map[element_in] += 1
+        
+        result.append(distinct_count)
+    
+    return result
+
+# Example
+arr = [1, 2, 1, 3, 4, 2, 3]
+k = 4
+print(count_distinct_in_windows(arr, k))
+# [3, 4, 4, 3]
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">5. Anagrams in String (Fixed Window)</h4>
+
+            <div class="code-block">
+                <pre>
+from collections import Counter
+
+def find_anagrams(s, p):
+    """
+    Find all start indices of p's anagrams in s
+    Uses sliding window with character counts
+    Time: O(n), Space: O(1) - fixed alphabet
+    """
+    n, m = len(s), len(p)
+    if n < m:
+        return []
+    
+    result = []
+    p_count = Counter(p)
+    window_count = Counter(s[:m])
+    
+    if window_count == p_count:
+        result.append(0)
+    
+    # Slide window
+    for i in range(m, n):
+        # Add new character
+        window_count[s[i]] += 1
+        
+        # Remove old character
+        char_out = s[i - m]
+        window_count[char_out] -= 1
+        if window_count[char_out] == 0:
+            del window_count[char_out]
+        
+        # Check match
+        if window_count == p_count:
+            result.append(i - m + 1)
+    
+    return result
+
+# Example
+s = "cbaebabacd"
+p = "abc"
+print(find_anagrams(s, p))  # [0, 6]
+# Substrings: "cba" at 0, "bac" at 6
+                </pre>
+            </div>
+
+            <div class="safety-sign important">
+                TIP: For fixed-size windows, compute the first window, then update incrementally. The update formula is always: new_value = old_value - element_leaving + element_entering
+            </div>
+        </div>
+
+        <!-- Variable-Size Window -->
+        <div class="content-section" id="variable">
+            <div class="lesson-header">
+                <h1>Variable-Size Sliding Window</h1>
+                <p>Windows that grow and shrink based on constraints</p>
+            </div>
+
+            <h3 class="subsection-title">Understanding Variable-Size Windows</h3>
+
+            <p class="content-text">
+                Variable-size windows adjust their width dynamically based on problem constraints. The window grows as long as the constraint is satisfied and shrinks when violated. Common for problems like "longest substring with at most K distinct characters."
+            </p>
+
+            <h3 class="subsection-title">Template 2: Expand Until Constraint, Shrink When Violated</h3>
+
+            <div class="code-block">
+                <pre>
+def variable_window_template(arr, constraint_func):
+    """
+    Generic template for variable-size window
+    constraint_func(window): bool - returns True if constraint met
+    """
+    left = 0
+    result = []
+    
+    for right in range(len(arr)):
+        # Expand window from right
+        right_expand(right)
+        
+        # Shrink from left while constraint violated
+        while left <= right and not constraint_func(window):
+            left_shrink(left)
+            left += 1
+        
+        # Window now satisfies constraint, process result
+        update_result()
+    
+    return result
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Classic Variable-Size Problems</h3>
+
+            <h4 class="subsection-title">1. Longest Substring with At Most K Distinct Characters</h4>
+
+            <div class="code-block">
+                <pre>
+def longest_substring_k_distinct(s, k):
+    """
+    Find longest substring with at most K distinct characters
+    Time: O(n), Space: O(k)
+    """
+    n = len(s)
+    if k == 0 or n == 0:
+        return 0
+    
+    left = 0
+    char_freq = {}
+    max_length = 0
+    
+    for right in range(n):
+        # Add character to window
+        char_freq[s[right]] = char_freq.get(s[right], 0) + 1
+        
+        # Shrink window if more than K distinct chars
+        while len(char_freq) > k:
+            left_char = s[left]
+            char_freq[left_char] -= 1
+            if char_freq[left_char] == 0:
+                del char_freq[left_char]
+            left += 1
+        
+        # Update max length
+        max_length = max(max_length, right - left + 1)
+    
+    return max_length
+
+# Example
+s = "araaci"
+k = 2
+print(longest_substring_k_distinct(s, k))  # 4
+# Longest: "araa"
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">2. Longest Substring Without Repeating Characters</h4>
+
+            <div class="code-block">
+                <pre>
+def length_of_longest_substring(s):
+    """
+    Find longest substring without repeating characters
+    Time: O(n), Space: O(min(n, charset))
+    """
+    char_index = {}  # character -> last index seen
+    left = 0
+    max_length = 0
+    
+    for right, char in enumerate(s):
+        # If character seen and is in current window
+        if char in char_index and char_index[char] >= left:
+            left = char_index[char] + 1
+        
+        char_index[char] = right
+        max_length = max(max_length, right - left + 1)
+    
+    return max_length
+
+# Example
+print(length_of_longest_substring("abcabcbb"))  # 3 ("abc")
+print(length_of_longest_substring("bbbbb"))     # 1 ("b")
+print(length_of_longest_substring("pwwkew"))    # 3 ("wke")
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">3. Longest Substring with Same Letters After Replacement</h4>
+
+            <div class="code-block">
+                <pre>
+def character_replacement(s, k):
+    """
+    Longest substring with same letters after at most K replacements
+    Time: O(n), Space: O(1) - 26 letters only
+    """
+    n = len(s)
+    char_count = [0] * 26
+    max_count = 0
+    max_length = 0
+    window_start = 0
+    
+    for window_end in range(n):
+        idx = ord(s[window_end]) - ord('A')
+        char_count[idx] += 1
+        max_count = max(max_count, char_count[idx])
+        
+        # Shrink window if more than K replacements needed
+        while (window_end - window_start + 1) - max_count > k:
+            left_idx = ord(s[window_start]) - ord('A')
+            char_count[left_idx] -= 1
+            window_start += 1
+        
+        max_length = max(max_length, window_end - window_start + 1)
+    
+    return max_length
+
+# Example
+s = "ABAB"
+k = 2
+print(character_replacement(s, k))  # 4
+# Replace 2 As to 2 Bs or 2 Bs to 2 As
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">4. Longest Subarray with Ones After Replacement</h4>
+
+            <div class="code-block">
+                <pre>
+def longest_ones(arr, k):
+    """
+    Longest subarray containing only 1s after flipping at most K 0s
+    Time: O(n), Space: O(1)
+    """
+    left = 0
+    max_length = 0
+    zero_count = 0
+    
+    for right in range(len(arr)):
+        if arr[right] == 0:
+            zero_count += 1
+        
+        # Shrink window if more than K zeros
+        while zero_count > k:
+            if arr[left] == 0:
+                zero_count -= 1
+            left += 1
+        
+        max_length = max(max_length, right - left + 1)
+    
+    return max_length
+
+# Example
+arr = [0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1]
+k = 2
+print(longest_ones(arr, k))  # 6
+                </pre>
+            </div>
+
+            <h4 class="subsection-title">5. Permutation in String</h4>
+
+            <div class="code-block">
+                <pre>
+def check_inclusion(s1, s2):
+    """
+    Check if s2 contains a permutation of s1
+    Time: O(n + m), Space: O(1)
+    """
+    n, m = len(s1), len(s2)
+    if n > m:
+        return False
+    
+    s1_count = [0] * 26
+    s2_count = [0] * 26
+    
+    # Initialize first window
+    for i in range(n):
+        s1_count[ord(s1[i]) - ord('a')] += 1
+        s2_count[ord(s2[i]) - ord('a')] += 1
+    
+    matches = 0
+    for i in range(26):
+        if s1_count[i] == s2_count[i]:
+            matches += 1
+    
+    # Slide window
+    left = 0
+    for right in range(n, m):
+        if matches == 26:
+            return True
+        
+        # Add new character
+        idx = ord(s2[right]) - ord('a')
+        if s2_count[idx] == s1_count[idx]:
+            matches -= 1
+        s2_count[idx] += 1
+        if s2_count[idx] == s1_count[idx]:
+            matches += 1
+        
+        # Remove old character
+        idx = ord(s2[left]) - ord('a')
+        if s2_count[idx] == s1_count[idx]:
+            matches -= 1
+        s2_count[idx] -= 1
+        if s2_count[idx] == s1_count[idx]:
+            matches += 1
+        
+        left += 1
+    
+    return matches == 26
+
+# Example
+s1 = "ab"
+s2 = "eidbaooo"
+print(check_inclusion(s1, s2))  # True
+                </pre>
+            </div>
+
+            <div class="safety-sign important">
+                PATTERN RECOGNITION: Variable-size windows always involve:<br>
+1. Expanding the window (moving right pointer)<br>
+2. Check if constraint is violated<br>
+3. If violated, shrink from left<br>
+4. Update answer after each adjustment
+            </div>
+        </div>
+
+        <!-- Templates -->
+        <div class="content-section" id="templates">
+            <div class="lesson-header">
+                <h1>Window Templates</h1>
+                <p>Reusable patterns for common scenarios</p>
+            </div>
+
+            <h3 class="subsection-title">Template 1: Fixed Size - Maximum/Minimum</h3>
+
+            <div class="code-block">
+                <pre>
+def fixed_window_max_min(arr, k):
+    """
+    Find max/min in each window of fixed size k
+    """
+    n = len(arr)
+    if n < k:
+        return None
+    
+    # Initialize
+    current = compute_function(arr[:k])
+    result = [current]
+    
+    # Slide window
+    for i in range(k, n):
+        # Update: remove left, add right
+        current = update_function(current, arr[i-k], arr[i])
+        result.append(current)
+    
+    return result
+
+# Example: maximum
+def fixed_window_max(arr, k):
+    result = []
+    from collections import deque
+    dq = deque()
+    
+    for i, num in enumerate(arr):
+        # Remove out-of-window elements
+        while dq and dq[0] <= i - k:
+            dq.popleft()
+        
+        # Maintain decreasing order
+        while dq and arr[dq[-1]] < num:
+            dq.pop()
+        
+        dq.append(i)
+        
+        if i >= k - 1:
+            result.append(arr[dq[0]])
+    
+    return result
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Template 2: At Most K Constraint</h3>
+
+            <div class="code-block">
+                <pre>
+def at_most_k_template(arr, k):
+    """
+    Handle "at most K" constraint problems
+    """
+    left = 0
+    result = []
+    additional_data = {}  # Track window state
+    
+    for right in range(len(arr)):
+        # Add right element to window
+        additional_data[arr[right]] = additional_data.get(arr[right], 0) + 1
+        
+        # While constraint violated (more than K)
+        while violates_constraint(additional_data, k):
+            # Remove left element
+            additional_data[arr[left]] -= 1
+            if additional_data[arr[left]] == 0:
+                del additional_data[arr[left]]
+            left += 1
+        
+        # Window now valid, update result
+        result.append(calculate_metric(left, right))
+    
+    return result
+
+# Example: longest substring with at most K distinct
+def longest_substring_at_most_k_distinct(s, k):
+    left = 0
+    char_freq = {}
+    max_len = 0
+    
+    for right, char in enumerate(s):
+        char_freq[char] = char_freq.get(char, 0) + 1
+        
+        while len(char_freq) > k:
+            char_freq[s[left]] -= 1
+            if char_freq[s[left]] == 0:
+                del char_freq[s[left]]
+            left += 1
+        
+        max_len = max(max_len, right - left + 1)
+    
+    return max_len
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Template 3: Exactly K Constraint</h3>
+
+            <div class="code-block">
+                <pre>
+def exactly_k_template(arr, k):
+    """
+    "Exactly K" = "At most K" - "At most K-1"
+    Useful for counting subarrays/strings
+    """
+    return at_most_k(arr, k) - at_most_k(arr, k - 1)
+
+def at_most_k_distinct(arr, k):
+    """Helper: count subarrays with at most K distinct"""
+    count = 0
+    left = 0
+    freq = {}
+    
+    for right, num in enumerate(arr):
+        freq[num] = freq.get(num, 0) + 1
+        
+        while len(freq) > k:
+            freq[arr[left]] -= 1
+            if freq[arr[left]] == 0:
+                del freq[arr[left]]
+            left += 1
+        
+        count += right - left + 1
+    
+    return count
+
+def count_subarrays_with_exactly_k_distinct(arr, k):
+    return at_most_k_distinct(arr, k) - at_most_k_distinct(arr, k - 1)
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">Template 4: Find Minimum/Maximum Window</h3>
+
+            <div class="code-block">
+                <pre>
+def find_max_window_template(arr, constraint_func):
+    """
+    Find maximum window satisfying constraint
+    Returns (window_start, window_end, window_length)
+    """
+    left = 0
+    max_length = 0
+    result = (0, 0, 0)
+    
+    for right in range(len(arr)):
+        # Update window state with arr[right]
+        
+        # Shrink while constraint violated
+        while left <= right and not constraint_func(window):
+            # Update window state removing arr[left]
+            left += 1
+        
+        # Window valid, check if maximum
+        if constraint_func(window):
+            if right - left + 1 > max_length:
+                max_length = right - left + 1
+                result = (left, right, max_length)
+    
+    return result
+
+# Example: longest valid parentheses substring
+def longest_valid_parentheses(s):
+    left = 0
+    max_len = 0
+    stack = [-1]
+    
+    for i, char in enumerate(s):
+        if char == '(':
+            stack.append(i)
+        else:
+            stack.pop()
+            if not stack:
+                stack.append(i)
+            else:
+                max_len = max(max_len, i - stack[-1])
+    
+    return max_len
+                </pre>
+            </div>
+
+            <div class="safety-sign important">
+                TIP: Memorize these templates! They cover 80% of sliding window problems. The variations are in how you track window state and check constraints.
+            </div>
+        </div>
+
+        <!-- Common Problems -->
+        <div class="content-section" id="problems">
+            <div class="lesson-header">
+                <h1>Common Problems</h1>
+                <p>Frequently encountered sliding window scenarios</p>
+            </div>
+
+            <h3 class="subsection-title">1. Minimum Window Substring</h3>
+
+            <div class="code-block">
+                <pre>
+def min_window(s, t):
+    """
+    Find minimum window in s containing all characters of t
+    Time: O(n + m), Space: O(k) where k = distinct chars in t
+    """
+    from collections import Counter
+    
+    if not s or not t or len(t) > len(s):
+        return ""
+    
+    t_count = Counter(t)
+    required = len(t_count)
+    
+    left = 0
+    formed = 0
+    window_counts = {}
+    
+    result = (float('inf'), None, None)  # (length, left, right)
+    
+    for right, char in enumerate(s):
+        window_counts[char] = window_counts.get(char, 0) + 1
+        
+        if char in t_count and window_counts[char] == t_count[char]:
+            formed += 1
+        
+        # Try to shrink window from left
+        while left <= right and formed == required:
+            char = s[left]
+            
+            # Update最小窗口
+            if right - left + 1 < result[0]:
+                result = (right - left + 1, left, right)
+            
+            # Remove left character
+            window_counts[char] -= 1
+            if char in t_count and window_counts[char] < t_count[char]:
+                formed -= 1
+            
+            left += 1
+    
+    return "" if result[0] == float('inf') else s[result[1]:result[2]+1]
+
+# Example
+s = "ADOBECODEBANC"
+t = "ABC"
+print(min_window(s, t))  # "BANC"
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">2. Minimum Size Subarray Sum</h3>
+
+            <div class="code-block">
+                <pre>
+def min_subarray_sum(nums, target):
+    """
+    Find minimal length subarray with sum >= target
+    Time: O(n), Space: O(1)
+    """
+    n = len(nums)
+    min_length = float('inf')
+    window_sum = 0
+    left = 0
+    
+    for right in range(n):
+        window_sum += nums[right]
+        
+        # Shrink window while sum >= target
+        while window_sum >= target:
+            min_length = min(min_length, right - left + 1)
+            window_sum -= nums[left]
+            left += 1
+    
+    return 0 if min_length == float('inf') else min_length
+
+# Example
+nums = [2, 3, 1, 2, 4, 3]
+target = 7
+print(min_subarray_sum(nums, target))  # 2
+# Subarray [4, 3]
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">3. Fruit Into Baskets</h3>
+
+            <div class="code-block">
+                <pre>
+def total_fruit(tree):
+    """
+    Longest contiguous subarray with at most 2 distinct elements
+    Same as "longest substring with at most 2 distinct chars"
+    Time: O(n), Space: O(1)
+    """
+    left = 0
+    fruit_count = {}
+    max_fruits = 0
+    
+    for right, fruit in enumerate(tree):
+        fruit_count[fruit] = fruit_count.get(fruit, 0) + 1
+        
+        while len(fruit_count) > 2:
+            fruit_count[tree[left]] -= 1
+            if fruit_count[tree[left]] == 0:
+                del fruit_count[tree[left]]
+            left += 1
+        
+        max_fruits = max(max_fruits, right - left + 1)
+    
+    return max_fruits
+
+# Example
+tree = [1, 2, 1]
+print(total_fruit(tree))  # 3
+
+tree = [0, 1, 2, 2]
+print(total_fruit(tree))  # 3
+
+tree = [1, 2, 3, 2, 2]
+print(total_fruit(tree))  # 4
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">4. String Concatenation</h3>
+
+            <div class="code-block">
+                <pre>
+def find_all_substrings(s, words):
+    """
+    Find all starting indices of substrings that are concatenation of words
+    Words all have same length
+    Time: O(n * m * k) where n = len(s), m = words count, k = word length
+    """
+    if not s or not words:
+        return []
+    
+    word_length = len(words[0])
+    total_length = word_length * len(words)
+    result = []
+    word_count = {}
+    
+    for word in words:
+        word_count[word] = word_count.get(word, 0) + 1
+    
+    # Try each starting position
+    for i in range(len(s) - total_length + 1):
+        seen = {}
+        j = 0
+        
+        # Check each word in the window
+        while j < len(words):
+            start = i + j * word_length
+            word = s[start:start + word_length]
+            
+            if word not in word_count:
+                break
+            
+            seen[word] = seen.get(word, 0) + 1
+            
+            if seen[word] > word_count[word]:
+                break
+            
+            j += 1
+        
+        if j == len(words):
+            result.append(i)
+    
+    return result
+
+# Example
+s = "wordgoodgoodgoodbestword"
+words = ["word","good","best","word"]
+print(find_all_substrings(s, words))  # []
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">5. Repeated DNA Sequences</h3>
+
+            <div class="code-block">
+                <pre>
+def find_repeated_dna_sequences(s):
+    """
+    Find all 10-letter sequences occurring more than once
+    Time: O(n), Space: O(n)
+    """
+    seen = {}
+    repeated = []
+    
+    for i in range(len(s) - 9):
+        sequence = s[i:i+10]
+        
+        if sequence in seen:
+            seen[sequence] += 1
+            if seen[sequence] == 2:
+                repeated.append(sequence)
+        else:
+            seen[sequence] = 1
+    
+    return repeated
+
+# Example
+s = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"
+print(find_repeated_dna_sequences(s))
+# ["AAAAACCCCC", "CCCCCAAAAA"]
+                </pre>
+            </div>
+
+            <div class="safety-sign important">
+                RECOGNITION PATTERN: Sliding window is ideal when you need to:<br>
+1. Find a subarray/substring satisfying some condition<br>
+2. The condition can be maintained with incremental updates<br>
+3. You're looking for maximum/minimum or all valid windows
+            </div>
+        </div>
+
+        <!-- Optimization -->
+        <div class="content-section" id="optimization">
+            <div class="lesson-header">
+                <h1>Optimization Techniques</h1>
+                <p>Performance tuning for sliding window solutions</p>
+            </div>
+
+            <h3 class="subsection-title">1. Choose Data Structures Wisely</h3>
+
+            <div class="code-block">
+                <pre>
+# For tracking distinct items in window
+# Slow: Check entire window each time
+while violates_constraint_by_scanning(window):
+    ...
+
+# Fast: Track with hash map
+while len(visited) > k:
+    ...
+
+# For maximum/minimum in window
+# Slow: Recompute each time
+max_val = max(window[left:right+1])
+
+# Fast: Use deque or heap
+while dq and arr[dq[-1]] < arr[i]:
+    dq.pop()
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">2. Avoid Unnecessary Operations</h3>
+
+            <div class="code-block">
+                <pre>
+# Slow: Update metric after every slide
+for i in range(k, n):
+    slide_window()
+    metric = compute_metric(window)  # O(k) each time
+
+# Fast: Update metric incrementally
+metric = compute_metric(first_window)  # O(k) once
+for i in range(k, n):
+    metric = metric - arr[i-k] + arr[i]  # O(1) each time
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">3. Early Termination</h3>
+
+            <div class="code-block">
+                <pre>
+def find_minimum_window_early(s, t):
+    """
+    Stop early if we find the shortest possible window
+    """
+    if len(s) < len(t):
+        return ""
+    
+    # If we find window of size len(t), it's optimal
+    # We can return immediately
+    ...
+                </pre>
+            </div>
+
+            <h3 class="subsection-title">4. Space Optimization</h3>
+
+            <div class="code-block">
+                <pre>
+# For character frequency with small alphabet
+# Use array instead of hash map
+freq = [0] * 26  # For lowercase letters
+idx = ord(char) - ord('a')
+freq[idx] += 1
+
+# Instead of
+freq = {}
+freq[char] = freq.get(char, 0) + 1
+                </pre>
+            </div>
+
+            <div class="safety-sign important">
+                PERFORMANCE: Good sliding window solutions have:<br>
+1. O(n) time complexity (each element visited at most twice)<br>
+2. O(k) or O(1) space where k is alphabet size or window size<br>
+3. No nested loops for the same purpose<br>
+4. Incremental updates, not recomputation
+            </div>
+        </div>
+
+        <!-- Practice -->
+        <div class="content-section" id="practice">
+            <div class="lesson-header">
+                <h1>Practice Problems</h1>
+                <p>Apply sliding window techniques</p>
+            </div>
+
+            <div id="practiceProblems"></div>
+
+            <script src="../js/problems.js"></script>
+            <script>
+                function displayPracticeProblems() {
+                    const container = document.getElementById('practiceProblems');
+                    const fixedProblems = practiceProblems.slidingwindow.fixed || [];
+                    const variableProblems = practiceProblems.slidingwindow.variable || [];
+                    
+                    html = '<div class="practice-category"><h3 class="subsection-title">Fixed-Size Window</h3>';
+                    
+                    const displayFixed = fixedProblems.slice(0, 3);
+                    for (const problem of displayFixed) {
+                        const problemId = 'SW-F-' + problem.id;
+                        html += `
+                            <div class="practice-problem" id="${problemId}">
+                                <div class="problem-question">
+                                    <p><strong>Problem ${problem.id}:</strong> ${problem.question}</p>
+                                    <div class="problem-meta">
+                                        <span class="difficulty-${problem.difficulty}">${problem.difficulty}</span>
+                                    </div>
+                                </div>
+                                <div class="problem-input">
+                                    <input type="text" id="${problemId}-input" placeholder="Your answer...">
+                                    <button onclick="checkAnswer('${problemId}', '${problem.answer.replace(/'/g, "\\'")}', [${problem.alternatives.map(a => `'${a.replace(/'/g, "\\'")}'`).join(',')}], '${problemId}-input', '${problemId}-hint', '${problemId}-explanation')" class="check-btn">Check</button>
+                                </div>
+                                <div id="${problemId}-feedback" class="feedback"></div>
+                                <div id="${problemId}-hint" class="hint" style="display: none;">
+                                    <strong>Hint:</strong> ${problem.hint}
+                                </div>
+                                <div id="${problemId}-explanation" class="explanation" style="display: none;">
+                                    <strong>Explanation:</strong> ${problem.explanation}
+                                </div>
+                            </div>
+                        `;
+                    }
+                    
+                    html += '<h3 class="subsection-title">Variable-Size Window</h3>';
+                    
+                    const displayVariable = variableProblems.slice(0, 3);
+                    for (const problem of displayVariable) {
+                        const problemId = 'SW-V-' + problem.id;
+                        html += `
+                            <div class="practice-problem" id="${problemId}">
+                                <div class="problem-question">
+                                    <p><strong>Problem ${problem.id}:</strong> ${problem.question}</p>
+                                    <div class="problem-meta">
+                                        <span class="difficulty-${problem.difficulty}">${problem.difficulty}</span>
+                                    </div>
+                                </div>
+                                <div class="problem-input">
+                                    <input type="text" id="${problemId}-input" placeholder="Your answer...">
+                                    <button onclick="checkAnswer('${problemId}', '${problem.answer.replace(/'/g, "\\'")}', [${problem.alternatives.map(a => `'${a.replace(/'/g, "\\'")}'`).join(',')}], '${problemId}-input', '${problemId}-hint', '${problemId}-explanation')" class="check-btn">Check</button>
+                                </div>
+                                <div id="${problemId}-feedback" class="feedback"></div>
+                                <div id="${problemId}-hint" class="hint" style="display: none;">
+                                    <strong>Hint:</strong> ${problem.hint}
+                                </div>
+                                <div id="${problemId}-explanation" class="explanation" style="display: none;">
+                                    <strong>Explanation:</strong> ${problem.explanation}
+                                </div>
+                            </div>
+                        `;
+                    }
+                    
+                    html += '</div>';
+                    container.innerHTML = html;
+                }
+                
+                displayPracticeProblems();
+            </script>
+        </div>
+
+        <!-- Quiz -->
+        <div class="content-section" id="quiz">
+            <div class="lesson-header">
+                <h1>Module 4 Quiz</h1>
+                <p>Test sliding window knowledge</p>
+            </div>
+
+            <form id="moduleQuiz">
+                <div class="quiz-question">
+                    <p class="question-text">1. What is the time complexity of a sliding window solution?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q1', 'A')"><input type="radio" name="Q1" value="A"> A. O(n^2)</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q1', 'B')"><input type="radio" name="Q1" value="B"> B. O(n log n)</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q1', 'C')"><input type="radio" name="Q1" value="C"> C. O(n)</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q1', 'D')><input type="radio" name="Q1" value="D"> D. O(1)</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="question-text">2. In fixed-size sliding window, how do you update the window sum efficiently?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q2', 'A')"><input type="radio" name="Q2" value="A"> A. Recompute from scratch</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q2', 'B')><input type="radio" name="Q2" value="B"> B. Subtract element leaving, add element entering</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q2', 'C')"><input type="radio" name="Q2" value="C"> C. Add all elements in new window</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q2', 'D')><input type="radio" name="Q2" value="D"> D. Use binary search</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="question-text">3. When does a variable-size window shrink?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q3', 'A')"><input type="radio" name="Q3" value="A"> A. Always</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q3', 'B')><input type="radio" name="Q3" value="B"> B. When constraint is violated</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q3', 'C')"><input type="radio" name="Q3" value="C"> C. When window size > n/2</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q3', 'D')><input type="radio" name="Q3" value="D"> D. Never</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="question-text">4. Which data structure is ideal for tracking distinct elements in a window?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q4', 'A')"><input type="radio" name="Q4" value="A"> A. List</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q4', 'B')><input type="radio" name="Q4" value="B"> B. Stack</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q4', 'C')"><input type="radio" name="Q4" value="C"> C. Hash map (for frequencies)</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q4', 'D')><input type="radio" name="Q4" value="D"> D. Queue</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="question-text">5. For "longest substring with at most K distinct characters", what do you track?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q5', 'A')"><input type="radio" name="Q5" value="A"> A. Just the window boundaries</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q5', 'B')><input type="radio" name="Q5" value="B"> B. Character frequencies in the window</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q5', 'C')"><input type="radio" name="Q5" value="C"> C. Total sum</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q5', 'D')><input type="radio" name="Q5" value="D"> D. Number of vowels</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="question-text">6. What is the main advantage of sliding window over brute force?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q6', 'A')"><input type="radio" name="Q6" value="A"> A. Uses less memory</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q6', 'B')><input type="radio" name="Q6" value="B"> B. Simpler code</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q6', 'C')"><input type="radio" name="Q6" value="C"> C. Avoids O(n^2) by incremental updates</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q6', 'D')><input type="radio" name="Q6" value="D"> D. None of the above</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="question-text">7. In "minimum window substring", what is the worst-case time complexity?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q7', 'A')"><input type="radio" name="Q7" value="A"> A. O(n*m)</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q7', 'B')><input type="radio" name="Q7" value="B"> B. O(n + m)</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q7', 'C')"><input type="radio" name="Q7" value="C"> C. O(n^2)</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q7', 'D')><input type="radio" name="Q7" value="D"> D. O(log n)</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="question-text">8. How many times does each element get processed in a sliding window?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q8', 'A')"><input type="radio" name="Q8" value="A"> A. Once</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q8', 'B')><input type="radio" name="Q8" value="B"> B. At most twice (when added and removed)</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q8', 'C')"><input type="radio" name="Q8" value="C"> C. n times</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q8', 'D')><input type="radio" name="Q8" value="D"> D. k times</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="question-text">9. For fixed-size window problems, when is binary search a valid alternative?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q9', 'A')"><input type="radio" name="Q9" value="A"> A. Always</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q9', 'B')><input type="radio" name="Q9" value="B"> B. When we need monotonic answer (like max subarray)</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q9', 'C')"><input type="radio" name="Q9" value="C"> C. Never, sliding window is always better</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q9', 'D')><input type="radio" name="Q9" value="D"> D. When array is unsorted</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <p class="question-text">10. What is a common mistake when implementing variable-size windows?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" onclick="recordAnswer('Q10', 'A')"><input type="radio" name="Q10" value="A"> A. Not shrinking the window enough</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q10', 'B')><input type="radio" name="Q10" value="B"> B. Forgetting to increment left after shrinking</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q10', 'C')"><input type="radio" name="Q10" value="C"> C. Both A and B</label>
+                        <label class="quiz-option" onclick="recordAnswer('Q10', 'D')><input type="radio" name="Q10" value="D"> D. Neither</label>
+                    </div>
+                </div>
+
+                <button type="button" class="quiz-submit" onclick="submitQuizModule4()">Submit Quiz</button>
+            </form>
+
+            <div class="quiz-results" id="quizResults"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-buttons">
+        <button class="nav-btn primary" onclick="window.location.href='03-hashtables.html'">Previous Module</button>
+        <button class="nav-btn primary" onclick="window.location.href='../index.html'">Back to Home</button>
+        <button class="nav-btn primary" onclick="window.location.href='05-twopointers.html'">Next Module</button>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script>
+        const quizAnswersModule4 = {
+            'Q1': 'C', 'Q2': 'B', 'Q3': 'B', 'Q4': 'C', 'Q5': 'B',
+            'Q6': 'C', 'Q7': 'B', 'Q8': 'B', 'Q9': 'B', 'Q10': 'C'
+        };
+
+        let quizAnswers = {};
+
+        function recordAnswer(question, answer) {
+            quizAnswers[question] = answer;
+        }
+
+        function submitQuizModule4() {
+            let score = 0;
+            let total = 10;
+            let results = [];
+
+            for (let q in quizAnswersModule4) {
+                if (quizAnswers[q] === quizAnswersModule4[q]) {
+                    score++;
+                    results.push(`Question ${q.substring(1)}: Correct`);
+                } else {
+                    results.push(`Question ${q.substring(1)}: Incorrect (Answer: ${quizAnswersModule4[q]})`);
+                }
+            }
+
+            const percentage = Math.round((score / total) * 100);
+            const passed = percentage >= 70;
+
+            let html = `
+                <div class="score-display ${passed ? 'pass' : 'fail'}">
+                    ${passed ? 'PASSED!' : 'NEEDS IMPROVEMENT'}
+                </div>
+                <div class="score-details">
+                    <p><strong>Score:</strong> ${score} / ${total} (${percentage}%)</p>
+                </div>
+                <div class="question-results">
+            `;
+
+            results.forEach(result => {
+                html += `<p>${result}</p>`;
+            });
+
+            html += '</div>';
+
+            if (passed) {
+                markQuizPassed('slidingwindow');
+            }
+
+            if (!passed) {
+                html += `
+                    <div class="safety-sign important">
+                        You need 70% to pass. Review the material and try again!
+                    </div>
+                `;
+            }
+
+            const resultsDiv = document.getElementById('quizResults');
+            resultsDiv.innerHTML = html;
+            resultsDiv.style.display = 'block';
+
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

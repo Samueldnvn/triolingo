@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Redstone Computing Academy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <style>
+        .quiz-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .quiz-header h2 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.4rem;
+            color: var(--mc-gold);
+            margin-bottom: 15px;
+        }
+        .quiz-header p {
+            color: var(--mc-light-text);
+            font-size: 1.3rem;
+        }
+        .quiz-section {
+            background: var(--mc-black);
+            border: var(--mc-border);
+            padding: 40px;
+            margin-bottom: 40px;
+            position: relative;
+            box-shadow: 0 10px 0 rgba(0,0,0,0.4);
+        }
+        .quiz-section::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            right: 4px;
+            bottom: 4px;
+            border: 3px solid var(--mc-emerald);
+            pointer-events: none;
+        }
+        .section-title-custom {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.1rem;
+            color: var(--mc-emerald);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--mc-redstone);
+        }
+        .question {
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid var(--mc-stone);
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-number {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.7rem;
+            color: var(--mc-diamond);
+            margin-bottom: 10px;
+        }
+        .question-text {
+            color: var(--mc-light-text);
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .option {
+            margin-bottom: 12px;
+            padding: 15px 20px;
+            background: var(--mc-stone);
+            border: 3px solid var(--mc-iron);
+            cursor: pointer;
+            transition: all 0.2s;
+            color: var(--mc-light-text);
+            font-size: 1.2rem;
+            position: relative;
+        }
+        .option:hover {
+            background: var(--mc-wood);
+            transform: translateX(3px);
+        }
+        .option.selected {
+            border-color: var(--mc-redstone);
+            background: var(--mc-netherrack);
+        }
+        .option.correct {
+            border-color: var(--mc-emerald);
+            background: rgba(23, 221, 23, 0.2);
+        }
+        .option.incorrect {
+            border-color: var(--mc-redstone);
+            background: rgba(231, 76, 60, 0.2);
+        }
+        .option input {
+            display: none;
+        }
+        .option span {
+            display: flex;
+            align-items: center;
+        }
+        .option::before {
+            content: '○';
+            margin-right: 15px;
+            font-size: 1.3rem;
+        }
+        .option.selected::before {
+            content: '●';
+        }
+        .quiz-results {
+            background: var(--mc-obsidian);
+            padding: 30px;
+            margin-top: 30px;
+            border: 3px solid var(--mc-gold);
+            display: none;
+        }
+        .quiz-results h3 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1rem;
+            color: var(--mc-gold);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .score-display {
+            font-size: 2rem;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .score-percentage {
+            font-family: 'Press Start 2P', cursive;
+            color: var(--mc-emerald);
+        }
+        .score-fraction {
+            color: var(--mc-light-text);
+        }
+        .explanation {
+            padding: 15px;
+            margin-top: 15px;
+            background: var(--mc-stone);
+            border-left: 4px solid var(--mc-gold);
+            font-size: 1.1rem;
+            color: var(--mc-light-text);
+            line-height: 1.6;
+            display: none;
+        }
+        .explanation.show {
+            display: block;
+            animation: fadeIn 0.3s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .submit-section {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 3px solid var(--mc-stone);
+        }
+        .retake-btn {
+            padding: 15px 30px;
+            background: var(--mc-wood);
+            border: var(--mc-border-light);
+            color: var(--mc-light-text);
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .retake-btn:hover {
+            background: var(--mc-stone);
+            transform: translateY(-2px);
+        }
+        @media (max-width: 768px) {
+            .quiz-section {
+                padding: 25px;
+            }
+            .question-text, .option {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="sky-background"></div>
+    <div class="clouds"></div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="redstone-icon"></span>
+                <h1>REDSTONE COMPUTING ACADEMY</h1>
+            </div>
+            <p class="subtitle">Test Your Knowledge</p>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="modules.html" class="nav-link">Course Modules</a>
+            <a href="projects.html" class="nav-link">Projects</a>
+            <a href="resources.html" class="nav-link">Resources</a>
+            <a href="quiz.html" class="nav-link active">Quiz</a>
+        </nav>
+    </header>
+
+    <section class="quiz-container">
+        <div class="quiz-header">
+            <h2>🧠 COURSE KNOWLEDGE QUIZ</h2>
+            <p>Test your understanding of redstone computing concepts. Choose the best answer for each question.</p>
+        </div>
+
+        <!-- Module 1: Logic Gates Quiz -->
+        <div class="quiz-section">
+            <h2 class="section-title-custom">MODULE 1: LOGIC GATES</h2>
+
+            <div class="question" data-correct="1">
+                <div class="question-number">QUESTION 1</div>
+                <div class="question-text">Which gate has output HIGH only when both inputs are HIGH?</div>
+                <ul class="options">
+                    <li class="option"><span>OR Gate</span></li>
+                    <li class="option"><span>AND Gate</span></li>
+                    <li class="option"><span>XOR Gate</span></li>
+                    <li class="option"><span>NAND Gate</span></li>
+                </ul>
+                <div class="explanation">
+                    <strong>Correct Answer: AND Gate</strong><br>
+                    The AND gate outputs HIGH (1) only when both inputs are HIGH. The truth table shows: 0,0→0; 0,1→0; 1,0→0; 1,1→1.
+                </div>
+            </div>
+
+            <div class="question" data-correct="3">
+                <div class="question-number">QUESTION 2</div>
+                <div class="question-text">Which gate outputs HIGH when inputs are DIFFERENT?</div>
+                <ul class="options">
+                    <li class="option"><span>OR Gate</span></li>
+                    <li class="option"><span>NAND Gate</span></li>
+                    <li class="option"><span>XNOR Gate</span></li>
+                    <li class="option"><span>XOR Gate</span></li>
+                </ul>
+                <div class="explanation">
+                    <strong>Correct Answer: XOR Gate</strong><br>
+                    XOR (Exclusive OR) outputs 1 when inputs differ. Truth table: 0,0→0; 0,1→1; 1,0→1; 1,1→0.
+                </div>
+            </div>
+
+            <div class="question" data-correct="0">
+                <div class="question-number">QUESTION 3</div>
+                <div class="question-text">What is the output of an inverter when the input is ON?</div>
+                <ul class="options">
+                    <li class="option"><span>OFF</span></li>
+                    <li class="option"><span>ON</span></li>
+                    <li class="option"><span>Depends on input strength</span></li>
+                    <li class="option"><span>Both ON and OFF</span></li>
+                </ul>
+                <div class="explanation">
+                    <strong>Correct Answer: OFF</strong><br>
+                    An inverter (NOT gate) outputs the opposite of the input. When input is ON (1), output is OFF (0).
+                </div>
+            </div>
+
+            <div class="question" data-correct="2">
+                <div class="question-number">QUESTION 4</div>
+                <div class="question-text">Which gates are considered "universal" gates?</div>
+                <ul class="options">
+                    <li class="option"><span>AND and OR</span></li>
+                    <li class="option"><span>XOR and XNOR</span></li>
+                    <li class="option"><span>NAND and NOR</span></li>
+                    <li class="option"><span>NOT and NAND</span></li>
+                </ul>
+                <div class="explanation">
+                    <strong>Correct Answer: NAND and NOR</strong><br>
+                    Both NAND and NOR gates are universal - you can build ANY other logic gate using only NAND gates or only NOR gates.
+                </div>
+            </div>
+
+            <div class="question" data-correct="1">
+                <div class="question-number">QUESTION 5</div>
+                <div class="question-text">What does De Morgan's Law state?</div>
+                <ul class="options">
+                    <li class="option"><span>NOT(A AND B) = NOT A AND NOT B</span></li>
+                    <li class="option"><span>NOT(A AND B) = NOT A OR NOT B</span></li>
+                    <li class="option"><span>A AND B = B AND A</span></li>
+                    <li class="option"><span>A OR B = A AND B</span></li>
+                </ul>
+                <div class="explanation">
+                    <strong>Correct Answer: NOT(A AND B) = NOT A OR NOT B</strong><br>
+                    De Morgan's Laws help transform circuits. This law shows you can replace an AND gate followed by a NOT with NOR gates.
+                </div>
+            </div>
+        </div>
+
+        <!-- Module 2: Circuitry Quiz -->
+        <div class="quiz-section">
+            <h2 class="section-title-custom">MODULE 2: ADVANCED CIRCUITRY</h2>
+
+            <div class="question" data-correct="2">
+                <div class="question-number">QUESTION 6</div>
+                <div class="question-text">What does a half adder produce?</div>
+                <ul class="options">
+                    <li class="option"><span>Only a sum output</span></li>
+                    <li class="option"><span>Only a carry output</span></li>
+                    <li class="option"><span>Sum and Carry outputs</span></li>
+                    <li class="option"><span>Neither sum nor carry</span></li>
+                </ul>
+                <div class="explanation">
+                    <strong>Correct Answer: Sum and Carry outputs</strong><br>
+                    A half adder produces two outputs: Sum (using XOR) and Carry (using AND). It adds two 1-bit numbers.
+                </div>
+            </div>
+
+            <div class="question" data-correct="1">
+                <div class="question-number">QUESTION 7</div>
+                <div class="question-text">How many full adders are needed for a 4-bit adder?</div>
+                <ul class="options">
+                    <li class="option"><span>2</span></li>
+                    <li class="option"><span>4</span></li>
+                    <li class="option"><span>8</span></li>
+                    <li class="option"><span>1</span></li>
+                </ul>
+                <div class="explanation">
+                    <strong>Correct Answer: 4</strong><br>
+                    A 4-bit adder needs 4 full adders. Each full adder handles one bit position. Carry ripples from LSB to MSB.
+                </div>
+            </div>
+
+            <div class="question" data-correct="0">
+                <div class="question-number">QUESTION 8</div>
+                <div class="question-text">What does a Multiplexer (MUX) do?</div>
+                <ul class="options">
+                    <li class="option"><span>Selects one of many inputs to output</span></li>
+                    <li class="option"><span>Routes one input to many outputs</span></li>
+                    <li class="option"><span>Signals when an address is valid</span></li>
+                    <li class="option"><span>Stores data values</span></li>
+                </ul>
+                <div class="explanation">
+                    <strong>Correct Answer: Selects one of many inputs to output</strong><br>
+                    A multiplexer acts like a digital switch. Selector lines determine which input appears at the output.
+                </div>
+            </div>
+
+            <div class="question" data-correct="3">
+                <div class="question-number">QUESTION 9</div>
+                <div class="question-text">Which decoder converts selector lines to enable signals?</div>
+                <ul class="options">
+                    <li class="option"><span>4-to-1 MUX</span></li>
+                    <li class="option"><span>1-to-4 DEMUX</span></li>
+                    <li class="option"><span>Half Adder</span></li>
+                    <li class="option"><span>2-to-4 Decoder</span></li>
+                </ul>
+                <div class="explanation">
+                    <strong>Correct Answer: 2-to-4 Decoder</strong><br>
+                    A decoder converts binary input to one-hot output. 2 inputs → 4 outputs (2² = 4). Used in address decoding.
+                </div>
+            </div>
+        </div>
+
+        <!-- Module 3: Binary Quiz -->
+        <div class="quiz-section">
+            <h2 class="section-title-custom">MODULE 3: BINARY SYSTEMS</h2>
+
+            <div class="question" data-correct="1">
+                <div class="question-number">QUESTION 10</div>
+                <div class="question-text">What is decimal 13 in binary?</div>
+                <ul class="options">
+                    <li class="option"><span>1100</span></li>
+                    <li class="option"><span>1101</span></li>
+                    <li class="option"><span>1110</span></li>
+                    <li class="option"><span>1001</span></li>
+                </ul>
+                <div class="explanation">
+                    <strong>Correct Answer: 1101</strong><br>
+                    13 = 8 + 4 + 1 = 1101 in binary (8 + 4 + 0 + 1 = 13).
+                </div>
+            </div>
+
+            <div class="question" data-correct="2">
+                <div class="question-number">QUESTION 11</div>
+                <div class="question-text">What is binary 1010 in decimal?</div>
+                <ul class="options">
+                    <li class="option"><span>6</span></li>
+                    <li class="option"><span>8</span></li>
+                    <li class="option"><span>10</span></li>
+                    <li class="option"><span>12</span></li>
+                </ul>
+                <div class="explanation">
+                    <strong>Correct Answer: 10</strong><br>
+                    1010 = 1×8 + 0×4 + 1×2 + 0×1 = 8 + 2 = 10.
+                </div>
+            </div>
+
+            <div class="question" data-correct="0">
+                <div class="question-number">QUESTION 12</div>
+                <div class="question-text">How is -5 represented in 4-bit two's complement?</div>
+                <ul class="options">
+                    <li class="option"><span>1011</span></li>
+                    <li class="option"><span>1101</span></li>
+                    <li class="option"><span>0101</span></li>
+                    <li class="option"><span>1111</span></li>
+                </ul>
+                <div class="explanation">
+                    <strong>Correct Answer: 1011</strong><br>
+                    +5 = 0101. Invert: 1010. Add 1: 1011. Range: -8 to +7.
+                </div>
+            </div>
+
+            <div class="question" data-correct="3">
+                <div class="question-number">QUESTION 13</div>
+                <div class="question-text">What does "1111" represent in hexadecimal?</div>
+                <ul class="options">
+                    <li class="option"><span>15 decimal</span></li>
+                    <li class="option"><span>0xE</span></li>
+                    <li class="option"><span>8 decimal</span></li>
+                    <li class="option"><span>0xF</span></li>
+                </ul>
+                <div class="explanation">
+                    <strong>Correct Answer: 0xF</strong><br>
+                    In hex: 0-F represent values 0-15. 1111 (binary) = 15 (decimal) = F (hex).
+                </div>
+            </div>
+        </div>
+
+        <!-- Module 4-5: ALU & Memory Quiz -->
+        <div class="quiz-section">
+            <h2 class="section-title-custom">MODULES 4-5: ALU & MEMORY</h2>
+
+            <div class="question" data-correct="2">
+                <div class="question-number">QUESTION 14</div>
+                <div class="question-text">What does the Carry Flag indicate?</div>
+                <ul class="options">
+                    <li class="option"><span>Result is zero</span></li>
+                    <li class="option"><span>Result is negative</span></li>
+                    <li class="option"><span>Addition overflowed</span></li>
+                    <li class="option"><span>Result is positive</span></li>
+                </ul>
+                <div class="explanation">
+                    <strong>Correct Answer: Addition overflowed</strong><br>
+                    The Carry Flag is set when adder overflow occurs (last carry-out = 1).
+                </div>
+            </div>
+
+            <div class="question" data-correct="0">
+                <div class="question-number">QUESTION 15</div>
+                <div class="question-text">Which type of flip-flop toggles its output when triggered?</div>
+                <ul class="options">
+                    <li class="option"><span>T Flip-Flop</span></li>
+                    <li class="option"><span>D Flip-Flop</span></li>
+                    <li class="option"><span>JK Flip-Flop</span></li>
+                    <li class="option"><span>RS Flip-Flop</span></li>
+                </ul>
+                <div class="explanation">
+                    <strong>Correct Answer: T Flip-Flop</strong><br>
+                    T Flip-Flop (Toggle) changes its output state (0↔1) when triggered.
+                </div>
+            </div>
+
+            <div class="question" data-correct="1">
+                <div class="question-number">QUESTION 16</div>
+                <div class="question-text">What is the primary difference between RAM and ROM?</div>
+                <ul class="options">
+                    <li class="option"><span>RAM is faster</span></li>
+                    <li class="option"><span>RAM is writable, ROM is read-only</span></li>
+                    <li class="option"><span>ROM stores more data</span></li>
+                    <li class="option"><span>There is no difference</span></li>
+                </ul>
+                <div class="explanation">
+                    <strong>Correct Answer: RAM is writable, ROM is read-only</strong><br>
+                    RAM allows reading AND writing. ROM can only be read (programmed during construction).
+                </div>
+            </div>
+
+            <div class="question" data-correct="3">
+                <div class="question-number">QUESTION 17</div>
+                <div class="question-text">What does a D Flip-Flop do?</div>
+                <ul class="options">
+                    <li class="option"><span>Toggles output on clock</span></li>
+                    <li class="option"><span>Stores Set/Reset state</span></li>
+                    <li class="option"><span>Perform addition</span></li>
+                    <li class="option"><span>Captures input on clock edge</span></li>
+                </ul>
+                <div class="explanation">
+                    <strong>Correct Answer: Captures input on clock edge</strong><br>
+                    D Flip-Flop samples the D input on clock edge and stores it in Q. Standard for registers.
+                </div>
+            </div>
+        </div>
+
+        <!-- Module 6-8: Control & Computer Quiz -->
+        <div class="quiz-section">
+            <h2 class="section-title-custom">MODULES 6-8: CONTROL & COMPUTER</h2>
+
+            <div class="question" data-correct="1">
+                <div class="question-number">QUESTION 18</div>
+                <div class="question-text">What is the fetch-decode-execute cycle?</div>
+                <ul class="options">
+                    <li class="option"><span>Add, subtract, multiply</span></li>
+                    <li class="option"><span>Fetch instruction, decode it, execute it</span></li>
+                    <li class="option"><span>Read memory, write memory, halt</span></li>
+                    <li class="option"><span>Load data, process data, output data</span></li>
+                </ul>
+                <div class="explanation">
+                    <strong>Correct Answer: Fetch instruction, decode it, execute it</strong><br>
+                    Every instruction goes through: 1) Fetch from memory, 2) Decode to identify operation, 3) Execute operation.
+                </div>
+            </div>
+
+            <div class="question" data-correct="2">
+                <div class="question-number">QUESTION 19</div>
+                <div class="question-text">What does the Program Counter do?</div>
+                <ul class="options">
+                    <li class="option"><span>Performs arithmetic</span></li>
+                    <li class="option"><span>Stores data values</span></li>
+                    <li class="option"><span>Holds address of next instruction</span></li>
+                    <li class="option"><span>Controls I/O devices</span></li>
+                </ul>
+                <div class="explanation">
+                    <strong>Correct Answer: Holds address of next instruction</strong><br>
+                    PC points to memory location of next instruction. Increments normally; jumps on branch instructions.
+                </div>
+            </div>
+
+            <div class="question" data-correct="0">
+                <div class="question-number">QUESTION 20</div>
+                <div class="question-text">What connects all components in a computer?</div>
+                <ul class="options">
+                    <li class="option"><span>Buses</span></li>
+                    <li class="option"><span>Flip-flops</span></li>
+                    <li class="option"><span>Muxes</span></li>
+                    <li class="option"><span>Decoders</span></li>
+                </ul>
+                <div class="explanation">
+                    <strong>Correct Answer: Buses</strong><br>
+                    Buses (Data, Address, Control) carry information between all major components (CPU, memory, I/O).
+                </div>
+            </div>
+        </div>
+
+        <div class="submit-section">
+            <button class="craft-button large" onclick="submitQuiz()">Submit Quiz</button>
+        </div>
+
+        <!-- Results Section -->
+        <div class="quiz-results" id="quiz-results">
+            <h3>📊 QUIZ RESULTS</h3>
+            <div class="score-display">
+                <span class="score-percentage" id="score-percentage">0%</span>
+                <br>
+                <span class="score-fraction" id="score-fraction">0 / 20</span>
+            </div>
+            <div id="score-message"></div>
+            <button class="retake-btn" onclick="retakeQuiz()">Retake Quiz</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Test Yourself</h4>
+                <p>This quiz covers the entire course. Review modules for areas you missed.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let totalQuestions = 20;
+        let answeredCount = 0;
+
+        function selectOption(questionIndex, optionIndex) {
+            const question = document.querySelectorAll('.question')[questionIndex];
+            const options = question.querySelectorAll('.option');
+            const explanation = question.querySelector('.explanation');
+
+            // Remove previous selections
+            options.forEach(opt => opt.classList.remove('selected'));
+
+            // Select this option
+            options[optionIndex].classList.add('selected');
+
+            // Store the answer
+            question.dataset.selected = optionIndex;
+        }
+
+        function submitQuiz() {
+            scoredCorrect = 0;
+            const questions = document.querySelectorAll('.question');
+            totalQuestions = questions.length;
+            answeredCount = 0;
+
+            // Calculate score and show explanations
+            questions.forEach((question, index) => {
+                const selected = question.dataset.selected;
+                const correct = question.dataset.correct;
+                const options = question.querySelectorAll('.option');
+                const explanation = question.querySelector('.explanation');
+
+                answeredCount++;
+
+                if (selected !== undefined) {
+                    if (parseInt(selected) === parseInt(correct)) {
+                        scoredCorrect++;
+                        options[parseInt(selected)].classList.add('correct');
+                    } else {
+                        options[parseInt(selected)].classList.add('incorrect');
+                        options[parseInt(correct)].classList.add('correct');
+                    }
+                } else {
+                    options[parseInt(correct)].classList.add('correct');
+                }
+
+                explanation.classList.add('show');
+            });
+
+            // Calculate percentage
+            const percentage = Math.round((scoredCorrect / totalQuestions) * 100);
+
+            // Display results
+            const resultsDiv = document.getElementById('quiz-results');
+            const percentageDisplay = document.getElementById('score-percentage');
+            const fractionDisplay = document.getElementById('score-fraction');
+            const messageDiv = document.getElementById('score-message');
+
+            percentageDisplay.textContent = percentage + '%';
+            fractionDisplay.textContent = scoredCorrect + ' / ' + totalQuestions;
+
+            // Generate message
+            let message = '';
+            if (percentage === 100) {
+                message = '🏆 Perfect! You are a redstone computing master!';
+            } else if (percentage >= 80) {
+                message = '🌟 Excellent! Very strong understanding!';
+            } else if (percentage >= 60) {
+                message = '👍 Good job! Review the modules you missed.';
+            } else if (percentage >= 40) {
+                message = '📚 Keep studying! Review the course materials.';
+            } else {
+                message = '💪 Don\'t give up! Read through all modules carefully.';
+            }
+
+            messageDiv.textContent = message;
+            resultsDiv.style.display = 'block';
+
+            // Scroll to results
+            resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            // Disable submit button
+            const submitButton = document.querySelector('.submit-section .craft-button');
+            submitButton.disabled = true;
+            submitButton.style.opacity = '0.5';
+            submitButton.style.cursor = 'not-allowed';
+            submitButton.textContent = 'Quiz Submitted';
+        }
+
+        function retakeQuiz() {
+            // Reset all questions
+            const questions = document.querySelectorAll('.question');
+            questions.forEach(question => {
+                // Reset selected state
+                delete question.dataset.selected;
+
+                // Remove all class styles
+                const options = question.querySelectorAll('.option');
+                options.forEach(opt => {
+                    opt.classList.remove('selected', 'correct', 'incorrect');
+                });
+
+                // Hide explanation
+                const explanation = question.querySelector('.explanation');
+                explanation.classList.remove('show');
+            });
+
+            // Hide results
+            const resultsDiv = document.getElementById('quiz-results');
+            resultsDiv.style.display = 'none';
+
+            // Re-enable submit button
+            const submitButton = document.querySelector('.submit-section .craft-button');
+            submitButton.disabled = false;
+            submitButton.style.opacity = '1';
+            submitButton.style.cursor = 'pointer';
+            submitButton.textContent = 'Submit Quiz';
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Attach event listeners to options
+        document.querySelectorAll('.question').forEach((question, questionIndex) => {
+            const options = question.querySelectorAll('.option');
+            options.forEach((option, optionIndex) => {
+                option.addEventListener('click', () => {
+                    selectOption(questionIndex, optionIndex);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

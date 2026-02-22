@@ -1,0 +1,100 @@
+# Image Descriptions for French Revolution Video
+# Total images needed: ~25-30 (1-2 per audio chunk)
+# Style: Cartoonish, simplified but expressive, colorful
+
+---
+
+## INTRO (1 image needed)
+Image 1: "French flag background with cartoon timeline showing angry peasants, noble in fancy clothes, exploding revolution scene"
+
+---
+
+## PART 1 - THE SPARK (5-6 images)
+For part1_1 (Financial crisis & inequality, start of Estates General):
+Image 2: "Cartoon peasant with torn clothes holding empty bread basket, tears, with fancy noble laughing nearby counting money"
+
+Image 3: "Three separate cartoon figures representing estates: bishop in robe, noble with crown, working peasant with tools - labeled clearly"
+
+For part1_2 (Three Estates structure, unfair taxes):
+Image 4: "Scale illustration - 98 peasants on one side labeled Third Estate carrying huge rock labeled 'All Taxes', 2 figures on other side labeled 'No Taxes'"
+
+For part1_3 (King Louis XVI calls Estates General):
+Image 5: "Cartoon palace Versailles with delegates arriving, Louis XVI looking worried and Marie Antoinette with expensive dress"
+
+For part1_4 (Voting system rigged, Third Estate breaks away):
+Image 6: "Voting scene - two aristocrats laughing while peasant looks angry, then peasant breaking away with raised fist"
+
+For part1_5 (Tennis Court Oath):
+Image 7: "Cartoon figures on tennis court raising hands in oath, with angry king watching from window with thunderclouds"
+
+---
+
+## PART 2 - THE FIRE (5-6 images)
+For part2_1 (Storming of the Bastille):
+Image 8: "Cartoon mob of angry stick figures storming fortress labeled 'BASTILLE', with one on wall holding pitchfork and torch"
+
+Image 9: "Explosion scene at Bastille with cartoon debris, angry crowd cheering, smoke and flames in red and orange"
+
+For part2_2 (Governor killed, symbolic victory):
+Image 10: "Cartoon guillotine silhouette in background with revolutionaries celebrating, French flag raised"
+
+For part2_3 (Declaration of Rights of Man):
+Image 11: "Cartoon scroll with 'Rights of Man' text, surrounded by stick figures representing equality - all same size holding hands"
+
+For part2_4 (Women's March on Versailles):
+Image 12: "Cartoon women walking in line with baskets and pitchforks, angry expressions, marching toward palace in distance"
+
+For part2_5 (Louis XVI execution):
+Image 13: "Cartoon guillotine with Louis XVI figure, crowd watching, somber mood with dark colors, French flag nearby"
+
+---
+
+## PART 3 - THE TERROR AND ITS END (5-6 images)
+For part3_1 (Committee of Public Safety, Robespierre):
+Image 14: "Cartoon Robespierre with serious face pointing at list of names, representing Committee, serious expression"
+
+For part3_2 (Reign of Terror):
+Image 15: "Cartoon guillotine multiple times in background, with worried people hiding, Robespierre standing tall with 'Virtue' label"
+
+For part3_3 (Fall of Robespierre):
+Image 16: "Cartoon Robespierre being led to guillotine, crowd cheering, irony symbol (same fate as Louis XVI)"
+
+For part3_4 (The Directory):
+Image 17: "Five corrupt cartoon politicians with money bags sitting around table, looking ineffective, people outside with protest signs"
+
+For part3_5 (Rise of Napoleon):
+Image 18: "Cartoon Napoleon with hat on horse, army behind him, pointing forward, dramatic lighting with sunrise"
+
+---
+
+## OUTRO (1 image)
+Image 19: "French flag, voting booth, diverse cartoon citizens raising hands in celebration, text 'Liberty, Equality, Fraternity'"
+
+---
+
+## SUMMARY:
+Total images planned: 19 images (one per audio segment for narrative flow)
+
+## Image Style Guidelines:
+- Use simple stick-figure or flat style cartoon characters
+- Bold, bright colors (red, white, blue for French theme)
+- Clear labels and text that can be read quickly
+- Emotional expressions should be exaggerated and clear
+- Backgrounds should be simple to maintain focus on main subjects
+- Avoid complex details that require zooming in to see
+
+## File Naming Convention:
+- image001.jpg through image019.jpg
+- Sequential order matching audio segments
+
+## For Alternative Option (if creating images):
+- Can also search for: "French Revolution cartoon illustrations"
+- "Bastille storming cartoon"
+- "Robespierre cartoon drawing"
+- "Napoleon cartoon illustration"
+- "French Revolution simple drawings"
+
+## Note: If more images are desired:
+- Can add 1-2 more images per segment by breaking down complex scenes
+- Example: Split Storming of Bastille into 2 images (approach and victory)
+- Example: Split Reign of Terror into 2 images (committee meeting and execution scene)

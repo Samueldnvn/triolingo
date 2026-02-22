@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2.1.1: Matrix Basics - Linear Algebra</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- MathJax for LaTeX rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="chapter-2">
+    <div class="main-wrapper">
+        <nav class="sidebar toc-orange">
+            <div class="sidebar-header">
+                <div class="sidebar-title">Linear Algebra</div>
+            </div>
+            <div class="toc-chapter toc-orange">
+                <div class="toc-chapter-title">Chapter 2: Matrices & Systems</div>
+                <div class="toc-module">
+                    <div class="toc-module-title">Module 2.1: Matrices</div>
+                    <div class="toc-lessons">
+                        <div class="toc-lesson"><a href="2-1-1-matrix-basics.html" class="active">Lesson 2.1.1: Matrix Basics</a></div>
+                        <div class="toc-lesson"><a href="2-1-2-matrix-operations.html">Lesson 2.1.2: Matrix Operations</a></div>
+                        <div class="toc-lesson"><a href="2-1-3-matrix-multiplication.html">Lesson 2.1.3: Matrix Multiplication</a></div>
+                        <div class="toc-lesson"><a href="2-1-4-matrix-inverses.html">Lesson 2.1.4: Matrix Inverses</a></div>
+                        <div class="toc-lesson"><a href="2-1-5-practice-matrices.html">Lesson 2.1.5: Practice Quiz</a></div>
+                    </div>
+                </div>
+                <div class="toc-module">
+                    <div class="toc-module-title">Module 2.2: Linear Systems</div>
+                    <div class="toc-lessons">
+                        <div class="toc-lesson"><a href="2-2-1-systems-basics.html">Lesson 2.2.1: Systems Basics</a></div>
+                        <div class="toc-lesson"><a href="2-2-2-gaussian-elimination.html">Lesson 2.2.2: Gaussian Elimination</a></div>
+                        <div class="toc-lesson"><a href="2-2-3-rref.html">Lesson 2.2.3: RREF</a></div>
+                        <div class="toc-lesson"><a href="2-2-4-practice-systems.html">Lesson 2.2.4: Practice Quiz</a></div>
+                    </div>
+                </div>
+                <div class="toc-module">
+                    <div class="toc-module-title">Module 2.3: Determinants</div>
+                    <div class="toc-lessons">
+                        <div class="toc-lesson"><a href="../3-1-1-2x2-determinants.html" class="active">Lesson 2.3.1: 2x2 Determinants</a></div>
+                        <div class="toc-lesson"><a href="../3-1-2-3x3-determinants.html">Lesson 2.3.2: 3x3 Determinants</a></div>
+                        <div class="toc-lesson"><a href="../3-1-3-properties.html">Lesson 2.3.3: Properties</a></div>
+                        <div class="toc-lesson"><a href="../3-1-4-practice-determinants.html">Lesson 2.3.4: Practice Quiz</a></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="module-header">
+                    <h2>Lesson 2.1.1: Matrix Basics</h2>
+                    <p>Module 2.1: Matrices | Chapter 2: Matrices & Systems</p>
+                </div>
+                
+                <div class="content-card">
+                    <div class="subsection-title">Introduction to Matrices</div>
+                    <p>Welcome to the world of matrices! Matrices are rectangular arrays of numbers arranged in rows and columns. They are one of the most powerful tools in mathematics, used everywhere from computer graphics to quantum mechanics, from economics to machine learning.</p>
+                    
+                    <p>In this lesson, we'll learn what matrices are, how to represent them, special types of matrices, and fundamental operations. Matrices will be your best friend in linear algebra, so let's get started on building a solid foundation!</p>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">What is a Matrix?</div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Definition</div>
+                        <div class="definition-title">Matrix</div>
+                        <p>A matrix is a rectangular array of numbers, symbols, or expressions arranged in rows and columns. A matrix with $$m$$ rows and $$n$$ columns has order $$m \times n$$ (read as "m by n").</p>
+                        
+                        <div class="formula-box">
+                            <div class="flag">General Form</div>
+                            <div class="formula">$$A = \begin{bmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{bmatrix}$$</div>
+                        </div>
+                        
+                        <p>where $$a_{ij}$$ denotes the element in row $$i$$ and column $$j$$.</p>
+                    </div>
+                    
+                    <div class="example-box">
+                        <div class="flag">Example</div>
+                        <div class="example-title">Reading Matrix Elements</div>
+                        <p>Consider the matrix:</p>
+                        
+                        <div class="formula-box">
+                            <div class="flag">Matrix A</div>
+                            <div class="formula">$$A = \begin{bmatrix} 3 & 7 & 2 \\ 1 & 4 & 9 \\ 8 & 5 & 6 \end{bmatrix}$$</div>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Identification</div>
+                            <ul style="margin: 15px 0 15px 30px; line-height: 2;">
+                                <li><strong>Order:</strong> This is a $$3 \times 3$$ matrix (3 rows, 3 columns)</li>
+                                <li><strong>Element $$a_{11}$$:</strong> $$3$$ (first row, first column)</li>
+                                <li><strong>Element $$a_{23}$$:</strong> $$9$$ (second row, third column)</li>
+                                <li><strong>Element $$a_{31}$$:</strong> $$8$$ (third row, first column)</li>
+                                <li><strong>Element $$a_{32}$$:</strong> $$5$$ (third row, second column)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Special Types of Matrices</div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Type 1</div>
+                        <div class="definition-title">Square Matrix</div>
+                        <p>A square matrix has the same number of rows and columns ($$m = n$$). These matrices have special properties and are extremely important in linear algebra.</p>
+                        
+                        <div class="formula-box">
+                            <div class="flag">Example</div>
+                            <div class="formula">$$\begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}$$ is a $$2 \times 2$$ square matrix</div>
+                        </div>
+                    </div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Type 2</div>
+                        <div class="definition-title">Zero Matrix</div>
+                        <p>The zero matrix, denoted by $$0$$ or $$\mathbf{0}$$, has all elements equal to zero. It acts like the number 0 in regular arithmetic.</p>
+                        
+                        <div class="formula-box">
+                            <div class="flag">Example</div>
+                            <div class="formula">$$\mathbf{0} = \begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}$$ (a $$3 \times 3$$ zero matrix)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Type 3</div>
+                        <div class="definition-title">Identity Matrix</div>
+                        <p>The identity matrix, denoted by $$I$$ or $$\mathbf{I}$$, is a square matrix with 1s on the main diagonal (from top-left to bottom-right) and 0s elsewhere. It acts like the number 1 in regular arithmetic - when you multiply any matrix by the identity, you get the same matrix back!</p>
+                        
+                        <div class="formula-box">
+                            <div class="flag">2x2 Identity</div>
+                            <div class="formula">$$I_2 = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$$</div>
+                        </div>
+                        
+                        <div class="formula-box">
+                            <div class="flag">3x3 Identity</div>
+                            <div class="formula">$$I_3 = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$$</div>
+                        </div>
+                        
+                        <div class="formula-box">
+                            <div class="flag">4x4 Identity</div>
+                            <div class="formula">$$I_4 = \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}$$</div>
+                        </div>
+                    </div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Type 4</div>
+                        <div class="definition-title">Diagonal Matrix</div>
+                        <p>A diagonal matrix has nonzero elements only on the main diagonal (all off-diagonal elements are zero). Identity matrices are a special case of diagonal matrices.</p>
+                        
+                        <div class="formula-box">
+                            <div class="flag">Example</div>
+                            <div class="formula">$$D = \begin{bmatrix} 3 & 0 & 0 \\ 0 & 7 & 0 \\ 0 & 0 & 2 \end{bmatrix}$$ is a diagonal matrix</div>
+                        </div>
+                    </div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Type 5</div>
+                        <div class="definition-title">Symmetric Matrix</div>
+                        <p>A symmetric matrix is a square matrix where $$a_{ij} = a_{ji}$$ for all $$i, j$$. In other words, the matrix equals its own transpose ($$A = A^T$$). Symmetric matrices "mirror" across the main diagonal.</p>
+                        
+                        <div class="formula-box">
+                            <div class="flag">Example</div>
+                            <div class="formula">$$\begin{bmatrix} 1 & 5 & 3 \\ 5 & 2 & 8 \\ 3 & 8 & 6 \end{bmatrix}$$ is symmetric</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Matrix Transpose</div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Definition</div>
+                        <div class="definition-title">Matrix Transpose</div>
+                        <p>The transpose of a matrix $$A$$, denoted by $$A^T$$, is formed by swapping rows and columns. The element at position $$(i, j)$$ in the original matrix moves to position $$(j, i)$$ in the transposed matrix.</p>
+                        
+                        <div class="formula-box">
+                            <div class="flag">If $$A = [a_{ij}]$$</div>
+                            <div class="formula">$$A^T = [a_{ji}]$$</div>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <div class="flag">Example</div>
+                        <div class="example-title">Computing Transposes</div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 1: 2x3 Matrix</div>
+                            <p>Find the transpose of:</p>
+                            <div class="formula-box">
+                                <div class="flag">Original</div>
+                                <div class="formula">$$A = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix}$$</div>
+                            </div>
+                            <div class="formula-box">
+                                <div class="flag">Transposed</div>
+                                <div class="formula">$$A^T = \begin{bmatrix} 1 & 4 \\ 2 & 5 \\ 3 & 6 \end{bmatrix}$$</div>
+                            </div>
+                            <p style="margin-top: 10px; font-weight: 700;">A $$2 \times 3$$ matrix becomes a $$3 \times 2$$ matrix when transposed.</p>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 2: 3x3 Matrix</div>
+                            <p>Find the transpose of:</p>
+                            <div class="formula-box">
+                                <div class="flag">Original</div>
+                                <div class="formula">$$B = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{bmatrix}$$</div>
+                            </div>
+                            <div class="formula-box">
+                                <div class="flag">Transposed</div>
+                                <div class="formula">$$B^T = \begin{bmatrix} 1 & 4 & 7 \\ 2 & 5 & 8 \\ 3 & 6 & 9 \end{bmatrix}$$</div>
+                            </div>
+                            <p style="margin-top: 10px; font-weight: 700;">A square matrix stays square when transposed, but elements are reflected across the diagonal.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="important-box">
+                        <div class="flag">Important</div>
+                        <div class="important-title">Key Properties of Transpose</div>
+                        <ul style="margin: 15px 0 15px 30px; line-height: 2;">
+                            <li>$$(A^T)^T = A$$ - Transposing twice gives you back the original matrix</li>
+                            <li>$$(A + B)^T = A^T + B^T$$ - Transpose of sum equals sum of transposes</li>
+                            <li>$$(AB)^T = B^T A^T$$ (note the reversal!) - Transpose of product</li>
+                            <li>If $$A$$ is symmetric, then $$A = A^T$$</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Matrix Addition and Scalar Multiplication</div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Definition</div>
+                        <div class="definition-title">Matrix Addition</div>
+                        <p>Two matrices of the same size can be added by adding their corresponding elements. If $$A = [a_{ij}]$$ and $$B = [b_{ij}]$$ are both $$m \times n$$ matrices, then:</p>
+                        
+                        <div class="formula-box">
+                            <div class="flag">Formula</div>
+                            <div class="formula">$$A + B = [a_{ij} + b_{ij}]$$</div>
+                        </div>
+                    </div>
+                    
+                    <div class="definition-box">
+                        <div class="flag">Definition</div>
+                        <div class="definition-title">Scalar Multiplication</div>
+                        <p>Any matrix can be multiplied by a scalar (a single number) by multiplying each element by that scalar. If $$c$$ is a scalar and $$A = [a_{ij}]$$ is a matrix, then:</p>
+                        
+                        <div class="formula-box">
+                            <div class="flag">Formula</div>
+                            <div class="formula">$$cA = [c \cdot a_{ij}]$$</div>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <div class="flag">Example</div>
+                        <div class="example-title">Matrix Operations</div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 1: Addition</div>
+                            <p>Find $$A + B$$ where:</p>
+                            <div class="formula-box">
+                                <div class="flag">Matrix A</div>
+                                <div class="formula">$$A = \begin{bmatrix} 1 & 3 \\ 2 & 4 \end{bmatrix}$$</div>
+                            </div>
+                            <div class="formula-box">
+                                <div class="flag">Matrix B</div>
+                                <div class="formula">$$B = \begin{bmatrix} 5 & 7 \\ 6 & 8 \end{bmatrix}$$</div>
+                            </div>
+                            <div class="formula-box">
+                                <div class="flag">Sum</div>
+                                <div class="formula">$$A + B = \begin{bmatrix} 1+5 & 3+7 \\ 2+6 & 4+8 \end{bmatrix} = \begin{bmatrix} 6 & 10 \\ 8 & 12 \end{bmatrix}$$</div>
+                            </div>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 2: Scalar Multiplication</div>
+                            <p>Find $$3A$$ where:</p>
+                            <div class="formula-box">
+                                <div class="flag">Original</div>
+                                <div class="formula">$$A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}$$</div>
+                            </div>
+                            <div class="formula-box">
+                                <div class="flag">Result</div>
+                                <div class="formula">$$3A = \begin{bmatrix} 3\cdot1 & 3\cdot2 \\ 3\cdot3 & 3\cdot4 \end{bmatrix} = \begin{bmatrix} 3 & 6 \\ 9 & 12 \end{bmatrix}$$</div>
+                            </div>
+                        </div>
+                        
+                        <div class="note-box">
+                            <div class="flag">Example 3: Combined Operations</div>
+                            <p>Find $$2A + 3B$$ where:</p>
+                            <div class="formula-box">
+                                <div class="flag">Matrix A</div>
+                                <div class="formula">$$A = \begin{bmatrix} 1 & 0 \\ 2 & -1 \end{bmatrix}$$</div>
+                            </div>
+                            <div class="formula-box">
+                                <div class="flag">Matrix B</div>
+                                <div class="formula">$$B = \begin{bmatrix} 0 & 1 \\ -1 & 2 \end{bmatrix}$$</div>
+                            </div>
+                            <div class="formula-box">
+                                <div class="flag">Step 1: Multiply</div>
+                                <div class="formula">$$2A = \begin{bmatrix} 2 & 0 \\ 4 & -2 \end{bmatrix}, \quad 3B = \begin{bmatrix} 0 & 3 \\ -3 & 6 \end{bmatrix}$$</div>
+                            </div>
+                            <div class="formula-box">
+                                <div class="flag">Step 2: Add</div>
+                                <div class="formula">$$2A + 3B = \begin{bmatrix} 2+0 & 0+3 \\ 4-3 & -2+6 \end{bmatrix} = \begin{bmatrix} 2 & 3 \\ 1 & 4 \end{bmatrix}$$</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="caution-box">
+                        <div class="flag">Caution</div>
+                        <div class="caution-title">Warning</div>
+                        <p>Matrices must be the same size to be added! You cannot add a $$2 \times 2$$ matrix to a $$2 \times 3$$ matrix - it's like trying to add apples and oranges. The operations are undefined.</p>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Why Matrices Matter</div>
+                    
+                    <div class="important-box">
+                        <div class="flag">Applications</div>
+                        <div class="important-title">Real-World Uses</div>
+                        <p>Matrices are everywhere in modern science and engineering:</p>
+                        <ul style="margin: 15px 0 15px 30px; line-height: 2;">
+                            <li><strong>Computer Graphics:</strong> Transformations, rotations, and scaling images</li>
+                            <li><strong>Machine Learning:</strong> Neural networks use matrices for weights and activations</li>
+                            <li><strong>Physics:</strong> Quantum mechanics and stress tensors</li>
+                            <li><strong>Economics:</strong> Input-output models and game theory</li>
+                            <li><strong>Cryptography:</strong> Matrix-based encryption methods</li>
+                            <li><strong>Engineering:</strong> Control systems and structural analysis</li>
+                            <li><strong>Data Science:</strong> Covariance matrices, correlation matrices, PCA</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="note-box">
+                        <div class="flag">Success Tip</div>
+                        <p>The operations you're learning now (addition, scalar multiplication, transpose) are the building blocks for more complex operations like matrix multiplication and finding inverses. Master these fundamentals well, and everything else will fall into place!</p>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="practice-section">
+                    <div class="practice-header">Practice Problems</div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 1</div>
+                        <div class="problem-question">Given $$A = \begin{bmatrix} 2 & 5 \\ 1 & 3 \end{bmatrix}$$, find $$a_{12}$$</div>
+                        <input type="text" class="problem-input" id="prob1" placeholder="Enter the element value">
+                        <button class="check-btn" onclick="checkProblem(1)">Check Answer</button>
+                        <div class="feedback" id="prob1-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 2</div>
+                        <div class="problem-question">Find $$A^T$$ where $$A = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix}$$. What is the size of $$A^T$$?</div>
+                        <input type="text" class="problem-input" id="prob2" placeholder="Enter dimensions like '3x2'">
+                        <button class="check-btn" onclick="checkProblem(2)">Check Answer</button>
+                        <div class="feedback" id="prob2-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 3</div>
+                        <div class="problem-question">If $$A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}$$ and $$B = \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix}$$, find $$A + B$$</div>
+                        <input type="text" class="problem-input" id="prob3" placeholder="Enter the result matrix as '6,8,10,12'">
+                        <button class="check-btn" onclick="checkProblem(3)">Check Answer</button>
+                        <div class="feedback" id="prob3-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 4</div>
+                        <div class="problem-question">Find $$3A$$ where $$A = \begin{bmatrix} 1 & 0 \\ -1 & 2 \end{bmatrix}$$</div>
+                        <input type="text" class="problem-input" id="prob4" placeholder="Enter the result as '3,0,-3,6'">
+                        <button class="check-btn" onclick="checkProblem(4)">Check Answer</button>
+                        <div class="feedback" id="prob4-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 5</div>
+                        <div class="problem-question">Is the matrix $$\begin{bmatrix} 1 & 2 & 3 \\ 2 & 5 & 6 \\ 3 & 6 & 9 \end{bmatrix}$$ symmetric? (yes/no)</div>
+                        <input type="text" class="problem-input" id="prob5" placeholder="Enter yes or no">
+                        <button class="check-btn" onclick="checkProblem(5)">Check Answer</button>
+                        <div class="feedback" id="prob5-feedback"></div>
+                    </div>
+                    
+                    <div class="practice-problem">
+                        <div class="problem-number">Problem 6</div>
+                        <div class="problem-question">Write down the $$2 \times 2$$ identity matrix</div>
+                        <input type="text" class="problem-input" id="prob6" placeholder="Enter as '1,0,0,1'">
+                        <button class="check-btn" onclick="checkProblem(6)">Check Answer</button>
+                        <div class="feedback" id="prob6-feedback"></div>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="content-card">
+                    <div class="subsection-title">Summary</div>
+                    
+                    <div class="note-box">
+                        <div class="flag">Summary</div>
+                        <p>In this lesson, we covered:</p>
+                        <ul style="margin: 15px 0 15px 30px; line-height: 2;">
+                            <li>Definition and representation of matrices</li>
+                            <li>Special matrix types: square, zero, identity, diagonal, symmetric</li>
+                            <li>Matrix transpose operation and properties</li>
+                            <li>Matrix addition and scalar multiplication</li>
+                            <li>Real-world applications of matrices</li>
+                        </ul>
+                        <p style="margin-top: 15px;">These fundamental operations are essential for everything that follows. In the next lesson, we'll tackle matrix multiplication - an operation that's more complex but incredibly powerful!</p>
+                    </div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="nav-buttons">
+                    <a href="1-2-5-practice-vectors.html" class="nav-btn">Previous: Vectors Practice</a>
+                    <a href="2-1-2-matrix-operations.html" class="nav-btn primary">Next: Matrix Operations</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/navigation.js"></script>
+    <script>
+        const problems_2_1_1 = {
+            1: { 
+                alternatives: ['5', 'a12 = 5', 'five'],
+                feedback: 'Correct! $a_{12} = 5$ is the element in row 1, column 2.'
+            },
+            2: { 
+                alternatives: ['3x2', '3 by 2', '3 by 2 matrix', '3x2 matrix'],
+                feedback: 'Excellent! A $2 \\times 3$ matrix becomes a $3 \\times 2$ matrix when transposed.'
+            },
+            3: { 
+                alternatives: ['6,8,10,12', '6 8 10 12', '6 8\n10 12'],
+                feedback: 'Great work! $A + B = \\begin{bmatrix} 6 & 8 \\\\ 10 & 12 \\end{bmatrix}$'
+            },
+            4: { 
+                alternatives: ['3,0,-3,6', '3 0 -3 6', '3 0\n-3 6'],
+                feedback: 'Perfect! $3A = \\begin{bmatrix} 3 & 0 \\\\ -3 & 6 \\end{bmatrix}$'
+            },
+            5: { 
+                alternatives: ['yes', 'Yes', 'YES', 'it is symmetric'],
+                feedback: 'Correct! This matrix equals its transpose, so it is symmetric.'
+            },
+            6: { 
+                alternatives: ['1,0,0,1', '1 0 0 1', '1 0\n0 1', 'identity matrix'],
+                feedback: 'Excellent! The $2 \\times 2$ identity matrix is $\\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix}$'
+            }
+        };
+        
+        function checkProblem(num) {
+            const userInput = document.getElementById('prob' + num).value.trim().toLowerCase();
+            const feedback = document.getElementById('prob' + num + '-feedback');
+            const problem = problems_2_1_1[num];
+            const alternatives = problem.alternatives;
+            
+            let isCorrect = alternatives.some(alt => 
+                alt.toLowerCase().replace(/\s/g, '') === userInput.replace(/\s/g, '')
+            );
+            
+            if (isCorrect) {
+                feedback.className = 'feedback correct';
+                feedback.style.display = 'block';
+                feedback.innerHTML = problem.feedback || 'Correct! Well done.';
+                markProblemSolved('2-1-1-' + num);
+            } else {
+                feedback.className = 'feedback incorrect';
+                feedback.style.display = 'block';
+                feedback.textContent = 'Incorrect. Try again. Remember matrix notation!';
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+        });
+    </script>
+</body>
+</html>

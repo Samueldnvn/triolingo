@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Module VI: Linear Tactics</title><link rel="stylesheet" href="../css/styles.css"></head>
+<body>
+    <div class="renaissance-header"><h1>MODULE VI: THE AGE OF REASON AND LINEAR TACTICS</h1></div>
+    <nav class="nav-container"><ul class="nav-menu"><li class="nav-item active" onclick="showSection('overview')">Overview</li><li class="nav-item" onclick="showSection('linear')">Linear Formations</li><li class="nav-item" onclick="showSection('frederick')">Frederick the Great</li><li class="nav-item" onclick="showSection('seven')">Seven Years War</li><li class="nav-item" onclick="showSection('practice')">Practice</li><li class="nav-item" onclick="showSection('quiz')">Quiz</li></ul></nav>
+    <div class="progress-container"><div class="progress-title">MODULE VI PROGRESS</div><div class="progress-bar"><div class="progress-fill" id="moduleProgress" style="width:0%">0%</div></div></div>
+    <div class="container">
+        <div class="content-section active" id="overview">
+            <div class="lesson-header"><h1>The Age of Reason and Linear Tactics</h1><p>18th-Century Warfare and Limited Wars</p></div>
+            <div class="ornamental-divider"><span>Introduction</span></div>
+            <p class="content-text">Eighteenth-century warfare was characterized by linear formations of infantry firing disciplined volleys, careful maneuver, limited war objectives, and the professionalization of armies. Wars were fought for specific territorial or dynastic objectives rather than total annihilation. Frederick the Great's Prussia pioneered new military methods that made Prussia a major power.</p>
+            <div class="parchment-section"><div class="parchment-content"><h3>WHAT YOU SHALL MASTER</h3><ul class="parchment-list"><li>Linear formation tactics and firepower</li><li>Frederick the Great's oblique order</li><li>War of Austrian Succession</li><li>Seven Years War tactics</li><li>American Revolutionary War irregular tactics</li><li>Limited war objectives and maneuver</li></ul></div></div>
+        </div>
+        <div class="content-section" id="linear">
+            <h2 class="section-title">LINEAR FORMATIONS</h2>
+            <div class="ornamental-divider"><span>Two-Rank and Three-Rank Systems</span></div>
+            <p class="content-text">By the 18th century, the phalanx and deep columns were obsolete. Infantry deployed in lines two or three ranks deep, maximizing controlled firepower. The first rank fired, then stepped back to reload while second rank fired, creating continuous rolling volleys. This delivered devastating fire that could shatter attacking formations.</p>
+            <div class="important-box"><div class="important-title">Firepower as the Deciding Factor</div><p class="content-text">Unlike earlier eras where shock (physical collision of masses) was decisive, firearms made firepower decisive. The side that could deliver more accurate and sustained volleys typically prevailed. This changed battlefield dynamics significantly.</p></div>
+        </div>
+        <div class="content-section" id="frederick">
+            <h2 class="section-title">FREDERICK THE GREAT</h2>
+            <div class="ornamental-divider"><span>Prussian Military Innovator</span></div>
+            <p class="content-text">Frederick II of Prussia (1740-1786) developed innovative tactics that allowed Prussia to defeat larger opponents. His key contribution was the "oblique order"—attacking an enemy flank with concentrated forces while refusing (holding back) his opposite flank. This allowed Frederick's numerically inferior armies to defeat larger enemies at a decisive point while avoiding engagement where weak.</p>
+            <div class="scroll-box"><div class="scroll-title">Battle of Rossbach (1757)</div><div class="scroll-text">Frederick defeated a combined French and Austrian army twice his size through rapid movement, seizing the initiative, and attacking from an unexpected position. This battle demonstrated Prussian skill in maneuver and surprise.</div></div>
+        </div>
+        <div class="content-section" id="seven">
+            <h2 class="section-title">SEVEN YEARS WAR (1756-1763)</h2>
+            <div class="ornamental-divider"><span>First Global Conflict</span></div>
+            <p class="content-text">The Seven Years War was fought in Europe, North America, India, and at sea—a global conflict. Frederick's Prussia faced nearly all of Europe but survived through battlefield brilliance and the failure of enemies to coordinate effectively. In North America, British and American colonial forces captured French territories. The war established Prussia as a major power and Britain as a naval power while setting conditions for the American Revolution.</p>
+        </div>
+        <div class="content-section" id="practice"><h2 class="section-title">PRACTICE</h2><div id="module6-problems"></div></div>
+        <div class="content-section" id="quiz"><h2 class="section-title">MODULE VI QUIZ</h2><div id="linearTactics-quiz"></div></div>
+        <div class="nav-buttons"><button class="nav-button prev-module-btn" onclick="window.location.href='05-renaissance.html'">← Previous Module</button><a href="../index.html" class="nav-button">Overview</a><a href="07-napoleonic.html" class="nav-button next-module-btn">Next: Napoleonic Warfare →</a></div>
+    </div>
+    <script src="../js/navigation.js"></script><script src="../js/problems.js"></script><script src="../js/quizzes.js"></script>
+    <script>let problemsCompleted=0,totalProblems=50;function checkProblem(pid,correct,alts,inputId){const input=document.getElementById(inputId).value.trim().toLowerCase(),feedback=document.getElementById(inputId+'-feedback');if((input.replace(/\s/g,'')===correct.toLowerCase().replace(/\s/g,''))||alts.some(a=>a.toLowerCase().replace(/\s/g,'')===input.replace(/\s/g,''))){feedback.className='feedback correct';feedback.textContent='Correct!';feedback.style.display='block';if(!courseProgress.problemsSolved.includes(pid)){courseProgress.problemsSolved.push(pid);problemsCompleted++;updateModuleProgress();}}else{feedback.className='feedback incorrect';feedback.textContent='Incorrect.';feedback.style.display='block';}}function updateModuleProgress(){const pct=Math.round((problemsCompleted/totalProblems)*100),pf=document.getElementById('moduleProgress');if(pf){pf.style.width=pct+'%';pf.textContent=pct+'%';}}document.addEventListener('DOMContentLoaded',()=>{loadProgress();updateModuleProgress();if(!courseProgress.lessonsCompleted.includes(6)){courseProgress.lessonsCompleted.push(6);saveProgress();}});</script>
+</body></html>

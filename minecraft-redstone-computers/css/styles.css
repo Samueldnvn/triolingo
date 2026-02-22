@@ -1,0 +1,557 @@
+/* Minecraft Redstone Computers - themed stylesheet */
+
+:root {
+    --primary-color: #C8562E;        /* Netherrack orange */
+    --secondary-color: #8B4513;      /* Wood brown */
+    --accent-color: #5C8D26;         /* Grass green */
+    --redstone-active: #FF0000;      /* Redstone active */
+    --redstone-inactive: #7F0000;    /* Redstone inactive */
+    --gold-color: #FFD700;           /* Gold/ore look */
+    --cobble-dark: #6D6D6D;          /* Cobblestone dark */
+    --cobble-medium: #9E9E9E;        /* Cobblestone medium */
+    --dirt-dark: #5D4037;            /* Dirt dark */
+    --dirt-light: #795548;           /* Dirt light */
+    --obsidian-dark: #1A1A1A;        /* Obsidian dark */
+    --obsidian-medium: #2D2D2D;      /* Obsidian medium */
+    --text-light: #FAFAFA;           /* Almost white */
+    --text-medium: #BDBDBD;          /* Light gray */
+    --success: #43A047;              /* Grass green success */
+    --error: #E53935;                /* Redstone red error */
+    --warning: #FF8F00;              /* Gold warning */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: linear-gradient(180deg, var(--obsidian-dark) 0%, var(--obsidian-medium) 100%);
+    color: var(--text-light);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Pixelated border effect */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: repeating-linear-gradient(90deg,
+        var(--redstone-active) 0px, var(--redstone-active) 8px,
+        var(--redstone-inactive) 8px, var(--redstone-inactive) 16px
+    );
+    z-index: 1000;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background: var(--cobble-medium);
+    border: 4px solid var(--cobble-dark);
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 0 var(--cobble-dark);
+    position: relative;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 2px solid rgba(0,0,0,0.3);
+    pointer-events: none;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: var(--gold-color);
+    text-shadow: 3px 3px 0 var(--obsidian-dark);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+h1::first-letter {
+    font-size: 1.2em;
+    color: var(--primary-color);
+}
+
+.subtitle {
+    color: var(--text-medium);
+    font-size: 1.2em;
+}
+
+/* Navigation */
+nav {
+    background: var(--dirt-light);
+    border: 3px solid var(--dirt-dark);
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 0 var(--dirt-dark);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+nav li {
+    flex: 1;
+    min-width: 150px;
+}
+
+nav button {
+    width: 100%;
+    padding: 15px 20px;
+    background: var(--cobble-medium);
+    color: var(--text-light);
+    border: 3px solid var(--cobble-dark);
+    font-family: 'Courier New', monospace;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.1s;
+    box-shadow: 0 4px 0 var(--cobble-dark);
+    position: relative;
+}
+
+nav button:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 var(--cobble-dark);
+}
+
+nav button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 var(--cobble-dark);
+}
+
+nav button.active {
+    background: var(--accent-color);
+    color: var(--obsidian-dark);
+    font-weight: bold;
+}
+
+/* Progress Bar */
+.progress-container {
+    background: var(--obsidian-dark);
+    border: 3px solid var(--cobble-dark);
+    padding: 15px;
+    margin-bottom: 30px;
+}
+
+.progress-bar {
+    height: 25px;
+    background: var(--cobble-dark);
+    border: 2px solid var(--obsidian-dark);
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg,
+        var(--redstone-inactive) 0%,
+        var(--redstone-active) 50%,
+        var(--redstone-inactive) 100%
+    );
+    transition: width 0.3s;
+    background-size: 20px 100%;
+}
+
+.progress-text {
+    text-align: center;
+    margin-top: 10px;
+    color: var(--text-medium);
+}
+
+/* Main Content */
+main {
+    background: var(--obsidian-medium);
+    border: 4px solid var(--cobble-dark);
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 0 var(--obsidian-dark);
+}
+
+.module {
+    display: none;
+}
+
+.module.active {
+    display: block;
+}
+
+/* Headings */
+h2 {
+    font-size: 2em;
+    color: var(--gold-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--redstone-active);
+    text-shadow: 2px 2px 0 var(--obsidian-dark);
+}
+
+h3 {
+    font-size: 1.5em;
+    color: var(--accent-color);
+    margin: 30px 0 15px 0;
+}
+
+h4 {
+    font-size: 1.3em;
+    color: var(--primary-color);
+    margin: 20px 0 10px 0;
+}
+
+/* Content Sections */
+.content-section {
+    margin-bottom: 40px;
+}
+
+.introduction {
+    background: var(--dirt-light);
+    border: 3px solid var(--dirt-dark);
+    padding: 20px;
+    margin-bottom: 30px;
+    border-left-width: 10px;
+}
+
+.learning-objectives {
+    background: var(--accent-color);
+    color: var(--obsidian-dark);
+    padding: 20px;
+    margin: 20px 0;
+    border: 3px solid var(--obsidian-dark);
+}
+
+.learning-objectives h4 {
+    color: var(--obsidian-dark);
+    margin-top: 0;
+}
+
+.learning-objectives ul {
+    margin-left: 20px;
+}
+
+.learning-objectives li {
+    margin: 10px 0;
+}
+
+/* Minecraft-style boxes */
+.example-box {
+    background: var(--dirt-light);
+    border: 4px solid var(--gold-color);
+    padding: 25px;
+    margin: 25px 0;
+    position: relative;
+}
+
+.example-box::before {
+    content: 'EXAMPLE';
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    background: var(--gold-color);
+    color: var(--obsidian-dark);
+    padding: 5px 15px;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.schematic-box {
+    background: var(--cobble-medium);
+    border: 4px solid var(--cobble-dark);
+    padding: 25px;
+    margin: 25px 0;
+    position: relative;
+}
+
+.schematic-box::before {
+    content: 'SCHEMATIC';
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    background: var(--cobble-medium);
+    border: 2px solid var(--cobble-dark);
+    padding: 5px 15px;
+    font-weight: bold;
+    font-size: 0.9em;
+    color: var(--text-light);
+}
+
+.concept-box {
+    background: linear-gradient(135deg, var(--obsidian-dark) 0%, var(--obsidian-medium) 100%);
+    border: 3px solid var(--accent-color);
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.warning-box {
+    background: #FFE0B2;
+    color: var(--obsidian-dark);
+    border: 4px solid var(--warning);
+    padding: 20px;
+    margin: 20px 0;
+    border-left-width: 10px;
+}
+
+/* Practice problems */
+.practice-section {
+    background: var(--cobble-medium);
+    border: 4px solid var(--cobble-dark);
+    padding: 30px;
+    margin-top: 40px;
+}
+
+.practice-section h3 {
+    color: var(--gold-color);
+}
+
+.problem {
+    background: var(--obsidian-dark);
+    border: 2px solid var(--cobble-dark);
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.problem-number {
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.problem-text {
+    margin-bottom: 15px;
+}
+
+.problem input[type="text"] {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px;
+    background: var(--cobble-medium);
+    border: 3px solid var(--cobble-dark);
+    color: var(--text-light);
+    font-family: 'Courier New', monospace;
+    font-size: 1em;
+}
+
+.problem button {
+    background: var(--accent-color);
+    color: var(--obsidian-dark);
+    border: 3px solid var(--obsidian-dark);
+    padding: 12px 25px;
+    font-family: 'Courier New', monospace;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 4px 0 var(--obsidian-dark);
+    transition: all 0.1s;
+}
+
+.problem button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 var(--obsidian-dark);
+}
+
+.problem button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 var(--obsidian-dark);
+}
+
+.hint-button {
+    background: var(--warning) !important;
+    color: var(--obsidian-dark) !important;
+}
+
+.feedback {
+    padding: 15px;
+    margin-top: 15px;
+    display: none;
+}
+
+.feedback.correct {
+    background: var(--success);
+    color: white;
+    display: block;
+    border: 3px solid var(--obsidian-dark);
+}
+
+.feedback.incorrect {
+    background: var(--error);
+    color: white;
+    display: block;
+    border: 3px solid var(--obsidian-dark);
+}
+
+/* Quiz Section */
+.quiz-section {
+    background: var(--primary-color);
+    border: 4px solid var(--dirt-dark);
+    padding: 30px;
+    margin-top: 40px;
+}
+
+.quiz-section h3 {
+    color: var(--text-light);
+}
+
+.question {
+    background: white;
+    color: var(--obsidian-dark);
+    padding: 20px;
+    margin: 20px 0;
+    border: 3px solid var(--obsidian-dark);
+}
+
+.question-text {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.options label {
+    display: block;
+    padding: 10px;
+    margin: 8px 0;
+    background: var(--cobble-medium);
+    cursor: pointer;
+    border: 2px solid var(--cobble-dark);
+    transition: background 0.2s;
+}
+
+.options label:hover {
+    background: var(--accent-color);
+    color: var(--obsidian-dark);
+}
+
+.submit-quiz {
+    background: var(--accent-color);
+    color: var(--obsidian-dark);
+    border: 3px solid var(--obsidian-dark);
+    padding: 15px 30px;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 4px 0 var(--obsidian-dark);
+}
+
+.quiz-results {
+    background: var(--success);
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border: 3px solid var(--obsidian-dark);
+    display: none;
+}
+
+.quiz-results.failed {
+    background: var(--error);
+}
+
+/* Lists */
+ul {
+    margin: 15px 0;
+    padding-left: 25px;
+}
+
+li {
+    margin: 10px 0;
+}
+
+ul li::marker {
+    color: var(--gold-color);
+}
+
+/* Code/Technical text */
+code {
+    background: var(--obsidian-dark);
+    padding: 3px 8px;
+    border: 1px solid var(--cobble-dark);
+    font-family: 'Courier New', monospace;
+}
+
+pre {
+    background: var(--obsidian-dark);
+    border: 3px solid var(--cobble-dark);
+    padding: 20px;
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    border: none;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+}
+
+th, td {
+    border: 3px solid var(--cobble-dark);
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background: var(--dirt-light);
+    color: var(--gold-color);
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* MathJax override */
+mjx-container {
+    color: var(--text-light) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        width: 100%;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .example-box,
+    .schematic-box,
+    .concept-box {
+        padding: 15px;
+    }
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2.2.4: Module 2.2 Practice - Linear Algebra</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="chapter-2">
+    <div class="main-wrapper">
+        <nav class="sidebar toc-orange">
+            <div class="sidebar-header">
+                <div class="sidebar-title">Linear Algebra</div>
+            </div>
+            <div class="toc-chapter toc-orange">
+                <div class="toc-chapter-title">Chapter 2: Matrices &amp; Systems</div>
+                <div class="toc-module">
+                    <div class="toc-module-title">Module 2.2: Linear Systems</div>
+                    <div class="toc-lessons">
+                        <div class="toc-lesson"><a href="2-2-3-rref.html">Lesson 2.2.3: RREF</a></div>
+                        <div class="toc-lesson"><a href="2-2-4-practice-systems.html" class="active">Lesson 2.2.4: Module 2.2 Practice</a></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="module-header">
+                    <h2>Lesson 2.2.4: Module 2.2 Practice</h2>
+                    <p>Module 2.2: Linear Systems | Chapter 2: Matrices &amp; Systems</p>
+                </div>
+                
+                <div class="content-card">
+                    <div class="quiz-title">Module 2.2 Quiz</div>
+                    <p style="text-align: center; margin-bottom: 20px; color: var(--text-medium);">Test your knowledge of linear systems. Score 70% to pass.</p>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="quiz-container" id="quiz">
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 1: Solve x + y = 5, x - y = 1</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectOption('Q1', 'A', this)">A. (3, 2)</div>
+                            <div class="quiz-option" onclick="selectOption('Q1', 'B', this)">B. (2, 3)</div>
+                            <div class="quiz-option" onclick="selectOption('Q1', 'C', this)">C. (1, 4)</div>
+                            <div class="quiz-option" onclick="selectOption('Q1', 'D', this)">D. (4, 1)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 2: Elementary row operation: multiply row 2 by 3</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectOption('Q2', 'A', this)">A. 3R2 -> R2</div>
+                            <div class="quiz-option" onclick="selectOption('Q2', 'B', this)">B. R2 -> 3R2</div>
+                            <div class="quiz-option" onclick="selectOption('Q2', 'C', this)">C. R2 + 3R1 -> R2</div>
+                            <div class="quiz-option" onclick="selectOption('Q2', 'D', this)">D. R1 -> R2</div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 3: Identity matrix is in RREF</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectOption('Q3', 'A', this)">A. True</div>
+                            <div class="quiz-option" onclick="selectOption('Q3', 'B', this)">B. False</div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <div class="quiz-question-text">Question 4: How many solutions if RREF is [[1, 0|1], [0, 0|0]]?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectOption('Q4', 'A', this)">A. No solutions</div>
+                            <div class="quiz-option" onclick="selectOption('Q4', 'B', this)">B. One solution</div>
+                            <div class="quiz-option" onclick="selectOption('Q4', 'C', this)">C. Infinite solutions</div>
+                            <div class="quiz-option" onclick="selectOption('Q4', 'D', this)">D. Two solutions</div>
+                        </div>
+                    </div>
+                    
+                    <button class="quiz-button" onclick="submitModule2_2()">Submit Quiz</button>
+                </div>
+                
+                <div class="quiz-container" id="quiz-results" style="display: none;">
+                    <div id="quiz-feedback" style="text-align: center;"></div>
+                </div>
+                
+                <hr class="section-divider">
+                
+                <div class="nav-buttons">
+                    <a href="2-2-3-rref.html" class="nav-btn">Previous: RREF</a>
+                    <a href="3-1-1-2x2-determinants.html" class="nav-btn primary">Next: 2x2 Determinants</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/navigation.js"></script>
+    <script>
+        let quizAnswers_2_2_4 = {};
+        
+        function selectOption(questionId, answer, element) {
+            quizAnswers_2_2_4[questionId] = answer;
+            const parent = element.parentElement;
+            parent.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+        
+        function submitModule2_2() {
+            const correctAnswers = {'Q1': 'A', 'Q2': 'A', 'Q3': 'A', 'Q4': 'C'};
+            let score = 0;
+            let total = Object.keys(correctAnswers).length;
+            
+            for (let q in correctAnswers) {
+                if (quizAnswers_2_2_4[q] === correctAnswers[q]) {
+                    score++;
+                }
+            }
+            
+            const percentage = Math.round((score / total) * 100);
+            
+            document.getElementById('quiz').style.display = 'none';
+            document.getElementById('quiz-results').style.display = 'block';
+            
+            const feedbackEl = document.getElementById('quiz-feedback');
+            let feedbackHTML = `<div style="font-size: 1.5em; font-weight: 700; margin-bottom: 20px; color: ${percentage >= 70 ? 'var(--green-accent)' : 'var(--orange-accent)'};">
+                Score: ${score}/${total} (${percentage}%)
+            </div>`;
+            
+            if (percentage >= 70) {
+                feedbackHTML += `<div style="font-weight: 700; color: var(--green-accent); padding: 15px; background: #E8F5E9; border-radius: 10px;">
+                    Excellent! You passed Module 2.2.
+                </div>`;
+                markQuizPassed('2-2');
+            } else {
+                feedbackHTML += `<div style="font-weight: 700; color: var(--orange-accent); padding: 15px; background: #FFF3E0; border-radius: 10px;">
+                    Keep practicing! Review the material and try again.
+                </div>`;
+            }
+            
+            feedbackEl.innerHTML = feedbackHTML;
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+        });
+    </script>
+</body>
+</html>

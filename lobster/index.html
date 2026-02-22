@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lobster - Ollama Desktop Client</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-section">
+                <h1><span class="lobster-icon">🦞</span> Lobster</h1>
+                <p class="tagline">Desktop Ollama Client</p>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="sidebar-section">
+                <button class="btn primary new-chat-btn" onclick="startNewChat()">+ New Chat</button>
+            </div>
+
+            <!-- Chat History -->
+            <div class="sidebar-section chats-list-section">
+                <h3>Chats</h3>
+                <div id="chat-list" class="chat-list"></div>
+            </div>
+
+            <!-- Configuration Panel -->
+            <div class="sidebar-section config-section">
+                <button class="btn config-toggle-btn" onclick="toggleConfigPanel()">
+                    ⚙️ Settings
+                </button>
+                <div id="config-panel" class="config-panel hidden">
+                    <div class="config-group">
+                        <label for="ollama-url">Ollama Server URL</label>
+                        <input type="text" id="ollama-url" value="http://localhost:11434" placeholder="http://localhost:11434">
+                        <input type="text" id="ollama-port" value="11434" placeholder="11434" class="port-input">
+                        <button class="btn" onclick="testConnection()">Test Connection</button>
+                        <span id="connection-status" class="connection-status"></span>
+                    </div>
+
+                    <div class="config-group">
+                        <label for="model-select">Model</label>
+                        <select id="model-select">
+                            <option value="" disabled selected>Loading...</option>
+                        </select>
+                        <button class="btn" onclick="refreshModels()">Refresh Models</button>
+                    </div>
+
+                    <div class="config-group">
+                        <label>Available Models</label>
+                        <div id="models-list" class="models-list"></div>
+                    </div>
+
+                    <div class="config-group">
+                        <label>Temperature</label>
+                        <input type="range" id="temperature" min="0" max="2" step="0.1" value="0.7">
+                        <span id="temperature-value">0.7</span>
+                    </div>
+
+                    <div class="config-group">
+                        <label>Max Tokens</label>
+                        <input type="number" id="max-tokens" value="2048" min="100" max="32768">
+                    </div>
+
+                    <button class="btn save-config-btn" onclick="saveConfig()">Save Configuration</button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-area">
+            <div class="chat-header">
+                <h2 id="chat-title">New Chat</h2>
+                <button class="btn" onclick="exportChat()">Export Chat</button>
+                <button class="btn delete-btn" onclick="deleteCurrentChat()">Delete Chat</button>
+            </div>
+
+            <div id="messages-container" class="messages-container"></div>
+
+            <div class="message-input-area">
+                <textarea
+                    id="user-input"
+                    placeholder="Type your message here..."
+                    rows="1"
+                    onkeydown="handleKeyDown(event)"
+                ></textarea>
+                <button class="btn send-btn" onclick="sendMessage()">Send</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>

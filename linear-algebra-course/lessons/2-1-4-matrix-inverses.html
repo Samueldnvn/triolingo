@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2.1.4: Matrix Inverses - Linear Algebra</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="chapter-2">
+    <div class="main-wrapper"><nav class="sidebar toc-orange"><div class="sidebar-header"><div class="sidebar-title">Linear Algebra</div></div><div class="toc-chapter toc-orange"><div class="toc-chapter-title">Chapter 2: Matrices & Systems</div><div class="toc-module"><div class="toc-module-title">Module 2.1: Matrices</div><div class="toc-lessons"><div class="toc-lesson"><a href="2-1-3-matrix-multiplication.html">Lesson 2.1.3: Matrix Multiplication</a></div><div class="toc-lesson"><a href="2-1-4-matrix-inverses.html" class="active">Lesson 2.1.4: Matrix Inverses</a></div><div class="toc-lesson"><a href="2-1-5-practice-matrices.html">Lesson 2.1.5: Practice Quiz</a></div></div></div></div></nav>
+        <div class="content-wrapper"><div class="content-container">
+                <div class="module-header"><h2>Lesson 2.1.4: Matrix Inverses</h2><p>Module 2.1: Matrices | Chapter 2: Matrices & Systems</p></div>
+                <div class="content-card"><div class="subsection-title">Inverse Matrices</div><div class="note-box"><div class="flag">Overview</div><p>The inverse of matrix A, denoted $$A^{-1}$$, satisfies $$AA^{-1} = A^{-1}A = I$$. Not all matrices have inverses!</p></div></div>
+                <hr class="section-divider">
+                <div class="content-card"><div class="definition-box"><div class="flag">Definition</div><div class="definition-title">2x2 Matrix Inverse</div><div class="formula-box"><div class="flag">Formula</div><div class="formula">If $$A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$$, then $$A^{-1} = \frac{1}{ad-bc} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}$$ (if $$ad-bc \neq 0$$)</div></div></div><div class="example-box"><div class="flag">Example</div><div class="example-title">Finding Inverses</div><div class="note-box"><div class="flag">Example 1</div><p>$$A = \begin{bmatrix} 2 & 1 \\ 3 & 4 \end{bmatrix}$$, then $$ad-bc = 5$$, $$A^{-1} = \frac{1}{5}\begin{bmatrix} 4 & -1 \\ -3 & 2 \end{bmatrix} = \begin{bmatrix} 0.8 & -0.2 \\ -0.6 & 0.4 \end{bmatrix}$$</p></div><div class="note-box"><div class="flag">Example 2</div><p>$$A = \begin{bmatrix} 1 & 2 \\ 3 & 6 \end{bmatrix}$$, then $$ad-bc = 0$$, so no inverse exists!</p></div></div>
+                <div class="practice-section"><div class="practice-header">Practice Problems</div><div class="practice-problem"><div class="problem-number">Problem 1</div><div class="problem-question">Does $$\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}$$ have an inverse? (yes/no)</div><input type="text" class="problem-input" id="prob1" placeholder="Enter yes or no"><button class="check-btn" onclick="checkProblem(1)">Check</button><div class="feedback" id="prob1-feedback"></div></div></div>
+                <hr class="section-divider"><div class="nav-buttons"><a href="2-1-3-matrix-multiplication.html" class="nav-btn">Previous: Multiplication</a><a href="2-1-5-practice-matrices.html" class="nav-btn primary">Next: Practice Quiz</a></div></div></div></div>
+    <script src="../js/navigation.js"></script><script>const problems_2_1_4 = {1: {alternatives: ['yes','Yes','YES'], feedback: 'Correct! The identity matrix is its own inverse.'}};function checkProblem(num){const userInput = document.getElementById('prob'+num).value.trim().toLowerCase();const feedback = document.getElementById('prob'+num+'-feedback');const alternatives = problems_2_1_4[num].alternatives;const isCorrect = alternatives.includes(userInput);if(isCorrect){feedback.className='feedback correct';feedback.style.display='block';feedback.innerHTML = problems_2_1_4[num].feedback;markProblemSolved('2-1-4-'+num);}else{feedback.className='feedback incorrect';feedback.style.display='block';feedback.textContent='Incorrect. Try again!';}}document.addEventListener('DOMContentLoaded',loadProgress);</script>
+</body>
+</html>
