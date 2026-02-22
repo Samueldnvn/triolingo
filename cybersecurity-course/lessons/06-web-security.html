@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity - Module 6: Web Application Security</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="light-theme">
+    <div class="main-wrapper">
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="page-header">
+                    <h1 class="page-title">MODULE 6</h1>
+                    <p class="page-subtitle">Web Application Security</p>
+                </div>
+
+                <div class="content-card">
+                    <h2 class="module-header">Introduction</h2>
+                    <p style="margin-bottom: 16px;">
+                        Web applications face unique security challenges due to their exposure to the internet and complexity. Understanding common vulnerabilities, secure coding practices, and defense mechanisms is essential for protecting web applications from compromise. The OWASP Top 10 provides a comprehensive framework for understanding the most critical web application security risks.
+                    </p>
+                </div>
+
+                <div class="alert-box critical">
+                    <div class="alert-label">Critical: Validate All Input</div>
+                    <div class="alert-content">
+                    The most important web security principle: Never trust user input. Validate, sanitize, and encode all data from untrusted sources (HTTP requests, cookies, headers, etc.). Almost every web vulnerability exploits unvalidated or improperly handled user input.
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 1: OWASP Top 10 Overview -->
+                <div id="section-owasp">
+                    <h2 class="section-header">OWASP Top 10:2021</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        OWASP (Open Web Application Security Project) maintains the OWASP Top 10, a standard awareness document representing the most critical web application security risks. Updated regularly to reflect evolving threats.
+                    </p>
+
+                    <table style="width: 100%; border-collapse: collapse; margin: 16px 0;">
+                        <tr style="border-bottom: 1px solid var(--border-light);">
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">Rank</th>
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">Category</th>
+                            <th style="text-align: left; padding: 12px; color: var(--text-white);">Description</th>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">A01</td>
+                            <td style="padding: 12px;">Broken Access Control</td>
+                            <td style="padding: 12px;">Improper restrictions on authenticated users, IDOR, privilege escalation</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">A02</td>
+                            <td style="padding: 12px;">Cryptographic Failures</td>
+                            <td style="padding: 12px;">Sensitive data exposure, weak encryption, cleartext transmission</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">A03</td>
+                            <td style="padding: 12px;">Injection</td>
+                            <td style="padding: 12px;">SQL injection, NoSQL injection, command injection, LDAP injection</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">A04</td>
+                            <td style="padding: 12px;">Insecure Design</td>
+                            <td style="padding: 12px;">Flawed architecture, missing security controls, business logic errors</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">A05</td>
+                            <td style="padding: 12px;">Security Misconfiguration</td>
+                            <td style="padding: 12px;">Default accounts, unnecessary features, verbose error messages</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">A06</td>
+                            <td style="padding: 12px;">Vulnerable Components</td>
+                            <td style="padding: 12px;">Outdated libraries, known vulnerabilities, supply chain attacks</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">A07</td>
+                            <td style="padding: 12px;">Broken Authentication</td>
+                            <td style="padding: 12px;">Credential stuffing, session fixation, weak passwords</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">A08</td>
+                            <td style="padding: 12px;">Software and Data Integrity Failures</td>
+                            <td style="padding: 12px;">Integrity verification issues, insecure deserialization, CI/CD pipeline attacks</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border-dark);">
+                            <td style="padding: 12px;">A09</td>
+                            <td style="padding: 12px;">SSRF</td>
+                            <td style="padding: 12px;">Server-Side Request Forgery - server makes arbitrary requests</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px;">A10</td>
+                            <td style="padding: 12px;">XXE</td>
+                            <td style="padding: 12px;">XML External Entities - malicious XML parsing</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 2: SQL Injection -->
+                <div id="section-sqli">
+                    <h2 class="section-header">SQL Injection (SQLi)</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        SQL injection occurs when attacker-supplied data modifies database query structure. SQLi is one of the most common and dangerous web vulnerabilities, allowing attackers to read, modify, or delete database data, bypass authentication, or execute operating system commands.
+                    </p>
+
+                    <h3 class="subsection-header">How SQL Injection Works</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        When input is concatenated directly into SQL query string, attacker can manipulate query structure:
+                    </p>
+
+                    <div class="example-box">
+                        <div class="example-label">Vulnerable Code (PHP)</div>
+                        <div class="example-content">
+                        <code>
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+// VULNERABLE: Direct concatenation
+$query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+$result = mysqli_query($conn, $query);
+                        </code>
+
+                        <strong>Normal login:</strong>
+                        <br>username: alice, password: password123
+                        <br>Query: <code>SELECT * FROM users WHERE username = 'alice' AND password = 'password123'</code>
+                        <br>Result: Returns alice's row if password correct
+
+                        <strong>Attacker input:</strong>
+                        <br>username: <strong>' OR '1'='1</strong>
+                        <br>password: (anything)
+                        <br>Query: <code>SELECT * FROM users WHERE username = '' OR '1'='1' AND password = '...'</code>
+                        <br>Result: Bypasses authentication ('1'='1' always true, ignores actual username)
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Types of SQL Injection</h3>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Union-Based SQL Injection</h4>
+                        <p style="margin-bottom: 8px;">Attacker injects UNION statement to combine results from injected query with original query:</p>
+
+                        <div class="code-block">
+                            <code>SELECT * FROM products WHERE category = 'foo' UNION SELECT username, password FROM users --'</code>
+                        </div>
+
+                        <p style="margin-bottom: 8px;">Attacker can enumerate database structure and extract sensitive data by matching column counts.</p>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Boolean-Based Blind SQL Injection</h4>
+                        <p style="margin-bottom: 8px;">Attacker exploits application behavior to deduce information:</p>
+
+                        <div class="code-block">
+                            <code>SELECT * FROM users WHERE username = 'admin' AND 1=1 --'  // True
+
+SELECT * FROM users WHERE username = 'admin' AND 1=2 --'  // False</code>
+                        </div>
+
+                        <p style="margin-bottom: 8px;">Attacker observes response differences (success/failure, page changes) to extract data one bit at a time.</p>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Error-Based SQL Injection</h4>
+                        <p style="margin-bottom: 8px;">Attacker triggers database errors to reveal information about database structure:</p>
+
+                        <div class="code-block">
+                            <code>' AND 1=CONVERT(int, (SELECT TOP 1 table_name FROM information_schema.tables)) --'</code>
+                        </div>
+
+                        <p style="margin-bottom: 8px;">Database error message may contain table name, revealing schema information.</p>
+                    </div>
+
+                    <h3 class="subsection-header">SQL Injection Prevention</h3>
+
+                    <div class="alert-box">
+                        <div class="alert-label">Primary Prevention: Parameterized Queries</div>
+                        <div class="alert-content">
+                        Use parameterized queries (prepared statements) - database treats parameters as data, not executable code:
+                        <code>
+// SECURE: Parameterized query (Python/Psycopg2)
+cursor.execute(
+    "SELECT * FROM users WHERE username = %s AND password = %s",
+    (username, password)
+)
+
+// SECURE: Parameterized query (PHP/PDO)
+$stmt = $pdo->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
+$stmt->execute([$username, $password]);
+                        </code>
+
+                        Parameterized queries completely prevent SQL injection when used correctly.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Additional SQLi Defenses</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>ORM (Object-Relational Mapping):</strong> Use frameworks that handle SQL generation and parameterization automatically (e.g., Django ORM, Sequelize)</li>
+                        <li><strong>Input validation:</strong> Validate input format, type, and length before processing (but never rely on validation alone - always use parameterized queries)</li>
+                        <li><strong>Least privilege database accounts:</strong> Application should not use admin-level database account (no DROP TABLE, no schema modifications)</li>
+                        <li><strong>Stored procedures:</strong> Well-designed stored procedures can help, but must be carefully implemented to avoid SQLi within procedures themselves</li>
+                        <li><strong>Web Application Firewall (WAF):</strong> Can block known SQLi patterns, but WAFs can be bypassed (defense in depth, not primary defense)</li>
+                    </ul>
+
+                    <div class="note-box">
+                        <div class="note-label">Common SQLi Myths</div>
+                        <div class="note-content">
+                        <strong>Myth:</strong> "I escape quotes, so I'm safe"
+                        <br><strong>Reality:</strong> Quote escaping is error-prone and may not account for encoding or database-specific escaping. Use parameterized queries.
+
+                        <strong>Myth:</strong> "I validate input, so SQL injection impossible"
+                        <br><strong>Reality:</strong> Input validation alone insufficient. Always use parameterized queries regardless of validation.
+
+                        <strong>Myth:</strong> "I use stored procedures, so I'm immune"
+                        <br><strong>Reality:</strong> Stored procedures vulnerable if they concatenate input internally. Parameterized stored procedures required.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 3: Cross-Site Scripting (XSS) -->
+                <div id="section-xss">
+                    <h2 class="section-header">Cross-Site Scripting (XSS)</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        XSS occurs when attacker-supplied data is reflected or stored in web pages and executed by victim browsers. XSS allows attackers to steal session cookies, modify page content, redirect users, or execute arbitrary JavaScript in victim's browser context.
+                    </p>
+
+                    <h3 class="subsection-header">XSS Types</h3>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Stored XSS (Persistent XSS)</h4>
+                        <p style="margin-bottom: 8px;">Malicious script stored on server and executed when victims access affected page:</p>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Example:</strong> Attacker posts comment containing JavaScript on forum</li>
+                            <li><strong>Vulnerable site:</strong> Displays comments unsanitized to all visitors</li>
+                            <li><strong>Effect:</strong> All visitors who view comment execute JavaScript in their browser</li>
+                            <li><strong>Severity:</strong> High - affects many users silently</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Reflected XSS</h4>
+                        <p style="margin-bottom: 8px;">Malicious script reflected back to victim without storage:</p>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Example:</strong> Search parameter displayed unsanitized: <code>search?q=&lt;script&gt;evil()&lt;/script&gt;</code></li>
+                            <li><strong>Vulnerable site:</strong> Returns page showing "Search for: &lt;script&gt;evil()&lt;/script&gt;"</li>
+                            <li><strong>Attack:</strong> Attacker sends phishing link: <code>https://site.com/search?q=&lt;script&gt;evil()&lt;/script&gt;</code></li>
+                            <li><strong>Effect:</strong> Victims who click link execute script</li>
+                            <li><strong>Severity:</strong> Medium - requires victim interaction (clicking link)</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">DOM-Based XSS</h4>
+                        <p style="margin-bottom: 8px;">Vulnerability in client-side JavaScript (data flow entirely in browser):</p>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Example:</strong> URL hash processed and inserted into DOM via <code>innerHTML</code></li>
+                            <li><strong>URL:</strong> <code>https://site.com/#&lt;script&gt;evil()&lt;/script&gt;</code></li>
+                            <li><strong>Vulnerable code:</strong> <code>document.getElementById('output').innerHTML = location.hash</code></li>
+                            <li><strong>Effect:</strong> Script executes without server involvement</li>
+                            <li><strong>Severity:</strong> Medium to High - bypasses some server-side filters</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="subsection-header">XSS Attacks</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        XSS enables attackers to perform many attacks within victim's browser context:
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Session hijacking:</strong> Steal authentication cookies and impersonate victim</li>
+                        <li><strong>Keylogging:</strong> Capture keystrokes and transmit to attacker server</li>
+                        <li><strong>Phishing modifications:</strong> Modify page content to create convincing phishing site</li>
+                        <li><strong>Redirection:</strong> Redirect victim to malicious site</li>
+                        <li><strong>CSRF payload delivery:</strong> Use XSS to perform CSRF attacks (see later section)</li>
+                        <li><strong>DOM manipulation:</strong> Modify page behavior, insert malicious forms</li>
+                    </ul>
+
+                    <h3 class="subsection-header">XSS Prevention</h3>
+
+                    <div class="alert-box">
+                        <div class="alert-label">Primary Prevention: Output Encoding</div>
+                        <div class="alert-content">
+                        Always encode data before outputting into HTML context. Use appropriate encoding for context:
+                        <code>
+// HTML entity encoding (for content)
+&lt; &amp; &gt;
+
+// HTML attribute encoding (for attributes)
+&lt; &amp; &gt; &quot; &#39;
+
+// JavaScript encoding (for scripts)
+\x3C\u003C ...
+
+// URL encoding (for URLs)
+%3C ...
+                        </code>
+
+                        Use framework templating engines with automatic encoding (e.g., Jinja2, React JSX, Vue templates)
+                        </div>
+                    </div>
+
+                    <div class="code-block">
+                        <code>// SECURE: Framework with auto-encoding (Jinja2/Python)
+template = render_template('page.html', user_input=request.form['data'])
+
+// SECURE: React (auto-sXSS protection)
+const Component = ({ data }) => &lt;div&gt;{data}&lt;/div&gt;
+
+// MANUAL: HTML entity encoding (if framework unavailable)
+function encodeHTML(str) {
+    return str.replace(/&/g, '&amp;')
+              .replace(/&lt;/g, '&lt;')
+              .replace(/&gt;/g, '&gt;')
+              .replace(/"/g, '&quot;')
+              .replace(/'/g, '&#39;');
+}</code>
+                    </div>
+
+                    <h3 class="subsection-header">Content Security Policy (CSP)</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        CSP is HTTP header that restricts sources of scripts, styles, images, and other resources. CSP prevents XSS by disallowing inline scripts and restricting script sources.
+                    </p>
+
+                    <div class="code-block">
+                        <code># Content-Security-Policy header example
+Content-Security-Policy:
+    default-src 'self';
+    script-src 'self' https://trusted.cdn.com;
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' data:;
+    object-src 'none';
+    frame-ancestors 'none';</code>
+                    </div>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>script-src:</strong> Restricts script sources (disallows inline scripts by default)</li>
+                        <li><strong>default-src 'none';:</strong> Disallows loading resources from anywhere unless explicitly allowed</li>
+                        <li><strong>frame-ancestors 'none';:</strong> Prevents clickjacking</li>
+                        <li><strong>object-src 'none';:</strong> Disallows plugins (Flash, Java)</li>
+                    </ul>
+
+                    <div class="alert-box">
+                        <div class="alert-label">CSP Report-Only Mode</div>
+                        <div class="alert-content">
+                        Before enforcing CSP, use report-only mode to observe violations without blocking:
+                        <code>Content-Security-Policy-Report-Only: default-src 'self'; ...</code>
+
+                        Monitor CSP violation reports to understand site dependencies before enforcing strict policy.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">XSS Cookies Defense</h3>
+
+                    <div class="code-block">
+                        <code>// Secure cookie flags
+Set-Cookie: sessionid=abc123; HttpOnly; Secure; SameSite=Strict</code>
+                    </div>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>HttpOnly:</strong> Cookie not accessible via JavaScript, preventing session theft via XSS</li>
+                        <li><strong>Secure:</strong> Cookie transmitted only over HTTPS, not HTTP</li>
+                        <li><strong>SameSite=Strict / SameSite=Lax:</strong> CSRF protection (see next section)</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 4: Cross-Site Request Forgery (CSRF) -->
+                <div id="section-csrf">
+                    <h2 class="section-header">Cross-Site Request Forgery (CSRF)</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        CSRF tricks victim's browser into performing unwanted actions on site where victim is authenticated. Attacker doesn't need victim's credentials - victim's browser automatically sends authentication cookies with requests.
+                    </p>
+
+                    <h3 class="subsection-header">How CSRF Works</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        When user logs into site, site sets authentication cookie. While logged in, browser sends cookie with every request to that site automatically.
+                    </p>
+
+                    <div class="example-box">
+                        <div class="example-label">CSRF Attack Example</div>
+                        <div class="example-content">
+                        Victim is logged into <strong>bank.com</strong> (authentication cookie set)
+
+                        Attacker creates malicious site: <code>evil.com/attack.html</code>
+
+                        <code>&lt;body onload=&quot;document.forms[0].submit()&quot;&gt;
+&lt;form action=&quot;https://bank.com/transfer&quot; method=&quot;POST&quot;&gt;
+    &lt;input name=&quot;to&quot; value=&quot;attacker_account&quot;&gt;
+    &lt;input name=&quot;amount&quot; value=&quot;10000&quot;&gt;
+&lt;/form&gt;</code>
+
+                        Victim visits evil.com. Browser:
+                        1. Automatically submits form to bank.com
+                        2. Includes victim's authentication cookie (sent automatically)
+                        3. Bank processes transfer, believing request from authenticated victim
+                        4. Money transferred to attacker account
+
+                        Victim did not intend this action - browser simply followed attacker's instructions.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">CSRF Prevention</h3>
+
+                    <div class="alert-box">
+                        <div class="alert-label">Primary Prevention: CSRF Tokens</div>
+                        <div class="alert-content">
+                        Anti-CSRF tokens are random, unpredictable tokens embedded in forms (and validated on submission):
+
+                        <strong>Flow:</strong>
+                        1. Server generates random token, stores in session
+
+                        2. Server embeds token in HTML forms (or state-changing requests)
+
+                        3. Client submits form with token
+
+                        4. Server validates token matches session token
+
+                        5. If valid, request processed; if invalid or missing, rejected
+
+                        <strong>Why it works:</strong> Attacker cannot guess or read token (same-origin policy prevents cross-site JavaScript from reading token), so attacker cannot construct valid request.
+                        </div>
+                    </div>
+
+                    <div class="code-block">
+                        <code>// Server-side (Python/Flask example)
+from flask_wtf.csrf import CSRFProtect
+csrf = CSRFProtect(app)
+
+# Template (auto-injects CSRF token)
+&lt;form method=&quot;POST&quot;&gt;
+    &lt;input type=&quot;hidden&quot; name=&quot;csrf_token&quot; value=&quot;{{ csrf_token() }}&quot;&gt;
+    &lt;!-- other form fields --&gt;
+&lt;/form&gt;</code>
+                    </div>
+
+                    <h3 class="subsection-header">SameSite Cookie Attribute</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        SameSite attribute controls whether cookies sent with cross-site requests.
+                    </p>
+
+                    <div class="definition-box">
+                        <div class="definition-label">SameSite Values</div>
+                        <div class="definition-content">
+                        <strong>SameSite=Strict:</strong> Cookie sent only for same-site requests (first-party site)
+
+                        <strong>SameSite=Lax:</strong> Cookie sent for same-site requests and safe cross-site requests (top-level navigation, GET requests)
+
+                        <strong>SameSite=None:</strong> Cookie sent for all requests (must be combined with Secure attribute for HTTPS)
+                        </div>
+                    </div>
+
+                    <div class="code-block">
+                        <code>// Recommended default: SameSite=Lax
+Set-Cookie: sessionid=abc123; HttpOnly; Secure; SameSite=Lax
+
+// For scenarios requiring cross-site login, SameSite=None
+Set-Cookie: sessionid=abc123; HttpOnly; Secure; SameSite=None</code>
+                    </div>
+
+                    <div class="note-box">
+                        <div class="note-label">CSRF Defense in Depth</div>
+                        <div class="note-content">
+                        Combine CSRF defenses:
+
+                        1. CSRF tokens for state-changing requests
+
+                        2. SameSite=Lax cookies (blocks most CSRF, allows legitimate navigation)
+
+                        3. Verify HTTP Origin and Referer headers where possible
+
+                        4. Requiring double-submit cookie (less common, but additional layer)
+
+                        5. Custom HTTP headers (X-Requested-With: XMLHttpRequest)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 5: Broken Authentication -->
+                <div id="section-authentication">
+                    <h2 class="section-header">Authentication and Session Management</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Broken authentication allows attackers to compromise user accounts, impersonate legitimate users, or bypass authentication completely. Strong authentication and secure session management are critical.
+                    </p>
+
+                    <h3 class="subsection-header">Password Storage</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Passwords must never be stored in plaintext or using fast hashes. Always use password hashing algorithms.
+                    </p>
+
+                    <div class="code-block">
+                        <code>// SECURE: Argon2id (recommended)
+import argon2
+
+hasher = argon2.PasswordHasher(time_cost=2, memory_cost=102400, parallelism=8)
+hash = hasher.hash("user_password")
+
+hasher.verify(hash, "user_password")
+
+// SECURE: bcrypt (widely supported)
+import bcrypt
+
+salt = bcrypt.gensalt()
+hash = bcrypt.hashpw("user_password".encode(), salt)
+
+bcrypt.checkpw("user_password".encode(), hash)
+
+// SECURE: PBKDF2 (when Argon2/bcrypt unavailable)
+import hashlib, os, binascii
+
+def password_hash(password):
+    salt = os.urandom(32)
+    key = hashlib.pbkdf2_hmac('sha256', password.encode(), salt, 100000)
+    return binascii.hexlify(salt + key).decode()
+
+def password_verify(password, stored):
+    salt = binascii.unhexlify(stored[:64])
+    key = binascii.unhexlify(stored[64:])
+    candidate = hashlib.pbkdf2_hmac('sha256', password.encode(), salt, 100000)
+    return key == candidate</code>
+                    </div>
+
+                    <div class="alert-box critical">
+                        <div class="alert-label">Critical: Never Use Plaintext or Fast Hashes</div>
+                        <div class="alert-content">
+                        Do NOT store passwords:
+                        - In plaintext
+                        - Using MD5, SHA-1, SHA-256 (too fast - attacker can hash billions per second on GPU)
+                        - Without salt (rainbow tables enable mass cracking)
+
+                        Always use Argon2id, bcrypt, or PBKDF2 (prefer Argon2id).
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Multi-Factor Authentication (MFA)</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        MFA requires multiple authentication factors, dramatically reducing account compromise risk.
+                    </p>
+
+                    <div class="definition-box">
+                        <div class="definition-label">Authentication Factors</div>
+                        <div class="definition-content">
+                        <strong>Something you know:</strong> Password, PIN, security questions
+
+                        <strong>Something you have:</strong> Smartphone, hardware token, smart card
+
+                        <strong>Something you are:</strong> Biometrics (fingerprint, face recognition)
+
+                        <strong>Example:</strong> Password (something you know) + TOTP code from authenticator app (something you have) = 2FA
+                        </div>
+                    </div>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>TOTP (Time-based One-Time Password):</strong> Google Authenticator, Authy - codes change every 30 seconds based on shared secret</li>
+                        <li><strong>SMS-based codes:</strong> Less secure (SMS interception possible), but better than no MFA</li>
+                        <li><strong>Hardware tokens:</strong> YubiKey, hardware security keys - strongest MFA</li>
+                        <li><strong>Push notifications:</strong> Duo, Microsoft Authenticator - user approves login attempt</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Session Management</h3>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Secure Session Management Practices</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Regenerate session ID after login:</strong> Prevent session fixation attacks</li>
+                            <li><strong>Set appropriate session expiration:</strong> Shorter inactivity timeout, maximum lifetime</li>
+                            <li><strong>Secure session cookies:</strong> HttpOnly, Secure, SameSite (see XSS section)</li>
+                            <li><strong>Destroy session on logout:</strong> Invalidate server-side session and session cookie</li>
+                            <li><strong>Bind session to additional attributes:</strong> IP address, user-agent (detect session hijacking)</li>
+                            <li><strong>Concurrent session limits:</strong> Limit number of simultaneous sessions per user</li>
+                        </ul>
+                    </div>
+
+                    <div class="code-block">
+                        <code>// Flask session example (server-side secure sessions)
+from flask import Flask, session
+app = Flask(__name__)
+app.secret_key = 'strong_random_secret_key'
+
+@app.route('/login')
+def login():
+    session.clear()  # Clear any existing session before login
+    # ... verify credentials
+    session['user_id'] = user.id
+    session.regenerate()  # Regenerate session ID
+
+@app.route('/logout')
+def logout():
+    session.clear()  # Destroy session</code>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 6: Security Misconfiguration -->
+                <div id="section-misconfig">
+                    <h2 class="section-header">Security Misconfiguration</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Security misconfiguration is the most common vulnerability category, encompassing default configurations, unnecessary features enabled, outdated software, and excessive information disclosure.
+                    </p>
+
+                    <h3 class="subsection-header">Common Security Misconfigurations</h3>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">1. Default Credentials</h4>
+                        <p style="margin-bottom: 8px;">Default admin accounts with default passwords (admin/admin, root/toor, scott/tiger)</p>
+                        <p style="margin-bottom: 8px;"><strong>Prevention:</strong> Change all default credentials during initial setup. Remove default accounts.</p>
+
+                        <h4 style="margin-bottom: 12px;">2. Verbose Error Messages</h4>
+                        <p style="margin-bottom: 8px;">Error messages revealing stack traces, database errors, file paths</p>
+                        <p style="margin-bottom: 8px;"><strong>Example:</strong> "Error: Table 'users' doesn't exist" reveals database schema</p>
+                        <p style="margin-bottom: 8px;"><strong>Prevention:</strong> Display generic error messages to users, log detailed errors server-side</p>
+
+                        <h4 style="margin-bottom: 12px;">3. Directory Listing Enabled</h4>
+                        <p style="margin-bottom: 8px;">Web server automatically lists directory contents when index file missing</p>
+                        <p style="margin-bottom: 8px;"><strong>Prevention:</strong> Disable directory listing globally, ensure all directories have index files</p>
+
+                        <h4 style="margin-bottom: 12px;">4. Unnecessary Features Enabled</h4>
+                        <p style="margin-bottom: 8px;">Debug mode, test endpoints, unused ports, demonstration pages</p>
+                        <p style="margin-bottom: 8px;"><strong>Prevention:</strong> Disable debug mode in production, remove test endpoints, firewall unused ports</p>
+
+                        <h4 style="margin-bottom: 12px;">5. Exposed Sensitive Files</h4>
+                        <p style="margin-bottom: 8px;">.git directory, .env files, backup files, configuration with secrets</p>
+                        <p style="margin-bottom: 8px;"><strong>Prevention:</strong> Block access to sensitive files, ensure .htaccess or web.config prevents access</p>
+
+                        <h4 style="margin-bottom: 12px;">6. HTTP Headers Misconfigured</h4>
+                        <p style="margin-bottom: 8px;">Missing security headers, CORS overly permissive</p>
+                        <p style="margin-bottom: 8px;"><strong>Prevention:</strong> Implement proper security headers</p>
+                    </div>
+
+                    <h3 class="subsection-header">Security Headers</h3>
+
+                    <div class="code-block">
+                        <code># Essential security headers
+Content-Security-Policy: default-src 'self'; script-src 'self'
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 1; mode=block
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Referrer-Policy: strict-origin-when-cross-origin
+Permissions-Policy: geolocation=(), microphone=(), camera=()</code>
+                    </div>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>X-Frame-Options:</strong> Prevents clickjacking (DENY or SAMEORIGIN)</li>
+                        <li><strong>HSTS:</strong> Forces HTTPS connections, prevents downgrade attacks</li>
+                        <li><strong>X-Content-Type-Options:</strong> Prevents MIME-sniffing</li>
+                        <li><strong>Permissions-Policy:</strong> Disables sensitive browser features (geolocation, camera)</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Server Configuration Hardening</h3>
+
+                    <div class="code-block">
+                        <code># Nginx security configuration
+server {
+    listen 443 ssl http2;
+    server_name example.com;
+
+    # SSL configuration
+    ssl_certificate /path/to/cert.pem;
+    ssl_certificate_key /path/to/key.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+
+    # Security headers
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-XSS-Protection "1; mode=block" always;
+
+    # Disable server tokens (hide nginx version)
+    server_tokens off;
+
+    # Disable directory listing
+    autoindex off;
+
+    # Block access to sensitive files
+    location ~ /\. {
+        deny all;
+    }
+}</code>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 7: Server-Side Request Forgery (SSRF) -->
+                <div id="section-ssrf">
+                    <h2 class="section-header">Server-Side Request Forgery (SSRF)</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        SSRF occurs when application fetches remote resource without validating URL, allowing attacker to force server to make requests to arbitrary destinations. SSRF can access internal services, scan internal networks, or read sensitive data.
+                    </p>
+
+                    <h3 class="subsection-header">SSRF Examples</h3>
+
+                    <div class="example-box">
+                        <div class="example-label">SSRF via Webhook URL</div>
+                        <div class="example-content">
+                        Application allows users to specify webhook URL for notifications.
+
+                        <strong>Vulnerable code:</strong>
+                        <code>url = request.POST['webhook_url']
+requests.get(url)</code>
+
+                        <strong>Normal usage:</strong> <code>https://user.example.com/webhook</code> (legitimate external URL)
+
+                        <strong>Attacker input:</strong> <code>http://localhost:8080/admin/delete_user</code> (internal admin endpoint)
+
+                        Server makes HTTP request to <strong>localhost:8080/admin/delete_user</code>, which may be internal admin API. Attacker bypasses firewall because request originates from trusted server.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">SSRF Attacks</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Internal port scanning:</strong> <code>http://localhost:80</code>, <code>http://localhost:8080</code>, <code>http://localhost:3306</code></li>
+                        <li><strong>Access internal services:</strong> <code>http://10.0.0.1/admin</code>, <code>http://192.168.1.1/config</code></li>
+                        <li><strong>File access:</strong> <code>file:///etc/passwd</code> (if protocol whitelist not strict)</li>
+                        <li><strong>Cloud metadata access:</strong> <code>http://169.254.169.254/latest/meta-data/</code> (AWS cloud metadata)</li>
+                    </ul>
+
+                    <h3 class="subsection-header">SSRF Prevention</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>URL whitelisting:</strong> Allow only specific domains or IP ranges</li>
+                        <li><strong>Network segmentation:</strong> Run application in network zone with restricted outbound access</li>
+                        <li><strong>Validate hostnames:</strong> DNS rebinding protection, resolve hostname and validate before request</li>
+                        <li><strong>Disable dangerous schemas:</strong> Block <code>file://</code>, <code>gopher://</code>, <code>dict://</code> and non-HTTP protocols</li>
+                        <li><strong>Use safe libraries:</strong> Configure HTTP libraries to disallow redirects to internal addresses</li>
+                    </ul>
+
+                    <div class="code-block">
+                        <code># SSRF prevention example (Python)
+import urllib.parse
+import ipaddress
+
+ALLOWED_DOMAINS = ['api.example.com']
+
+def is_valid_url(url):
+    parsed = urllib.parse.urlparse(url)
+
+    # Protocol whitelist
+    if parsed.scheme not in ['http', 'https']:
+        return False
+
+    # Domain whitelist
+    hostname = parsed.hostname
+    if hostname not in ALLOWED_DOMAINS:
+        return False
+
+    # DNS resolution validation (prevent private IPs via DNS rebinding)
+    try:
+        ip = ipaddress.ip_address(socket.gethostbyname(hostname))
+        if ip.is_private or ip.is_loopback:
+            return False
+    except:
+        return False
+
+    return True
+
+# Usage
+if is_valid_url(user_supplied_url):
+    requests.get(user_supplied_url)
+else:
+    raise ValueError("Invalid URL")</code>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 8: Secure Development Practices -->
+                <div id="section-secure-dev">
+                    <h2 class="section-header">Secure Development Lifecycle</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Secure development integrates security throughout software lifecycle, from design to deployment. Shift-left security reduces cost and impact of vulnerabilities.
+                    </p>
+
+                    <h3 class="subsection-header">Secure Coding Practices</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Never trust user input:</strong> Validate, sanitize, encode all input</li>
+                        <li><strong>Principle of least privilege:</strong> Applications run with minimal privileges</li>
+                        <li><strong>Defense in depth:</strong> Multiple layers of security (not relying on single control)</li>
+                        <li><strong>Fail securely:</strong> When code fails, fail closed (secure by default)</li>
+                        <li><strong>Use secure libraries:</strong> Libraries maintained for security, actively patched</li>
+                        <li><strong>Keep dependencies updated:</strong> Regularly address known vulnerabilities</li>
+                        <li><strong>Minimal attack surface:</strong> Disable unused features, expose minimal endpoints</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Security Testing</h3>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Static Application Security Testing (SAST)</h4>
+                        <p style="margin-bottom: 8px;">Analyze source code for vulnerabilities without executing:</p>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li>Tools: SonarQube, Checkmarx, Semgrep, Bandit (Python), ESLint with security plugins</li>
+                            <li>Detects: SQL injection patterns, XSS vulnerabilities, insecure dependencies</li>
+                            <li>Benefits: Early detection, integrates with CI/CD</li>
+                            <li>Limitations: False positives, cannot catch all vulnerabilities</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Dynamic Application Security Testing (DAST)</h4>
+                        <p style="margin-bottom: 8px;">Analyze running application for vulnerabilities:</p>
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li>Tools: OWASP ZAP, Burp Suite, Nessus, Nikto</li>
+                            <li>Detects: SQL injection, XSS, misconfiguration, outdated libraries</li>
+                            <li>Benefits: Tests actual deployed application, finds runtime issues</li>
+                            <li>Limitations: Requires deployed application, may miss business logic flaws</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Dependency Scanning</h4>
+                        <p style="margin-bottom: 8px;">Check dependencies for known vulnerabilities:</p>
+
+                        <div class="code-block">
+                            <code># JavaScript (npm)
+npm audit
+
+# Python (pip)
+pip-audit
+
+# Python (safety)
+safety check
+
+# Ruby (bundler)
+bundle audit
+
+# Java (Maven)
+mvn dependency-check:check</code>
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Security Review Checklist</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Input validation:</strong> All user input validated and sanitized</li>
+                        <li><strong>Output encoding:</strong> All output properly escaped for context (HTML, JavaScript, URL)</li>
+                        <li><strong>SQL queries:</strong> Parameterized queries only (no concatenation)</li>
+                        <li><strong>Authentication:</strong> Strong passwords, MFA, secure session management</li>
+                        <li><strong>Authorization:</strong> Every request validates user has permission for action</li>
+                        <li><strong>HTTP headers:</strong> Security headers properly configured (CSP, HSTS, X-Frame-Options)</li>
+                        <li><strong>TLS/SSL:</strong> HTTPS only, strong ciphers, valid certificates</li>
+                        <li><strong>Error handling:</strong> Generic errors to users, detailed errors logged securely</li>
+                        <li><strong>Logging:</strong> Security-relevant events logged (login attempts, failures, changes)</li>
+                        <li><strong>Dependencies:</strong> Updated, no known vulnerabilities</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Navigation -->
+                <div class="nav-buttons">
+                    <a href="05-anonymity-privacy.html" class="nav-btn">Previous: Anonymity & Privacy</a>
+                    <a href="07-social-engineering.html" class="nav-btn primary">Next: Social Engineering</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => loadProgress());
+    </script>
+</body>
+</html>
