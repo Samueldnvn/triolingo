@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity - Module 12: Hardware and Physical Anonymity</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="light-theme">
+    <div class="main-wrapper">
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="page-header">
+                    <h1 class="page-title">MODULE 12</h1>
+                    <p class="page-subtitle">Hardware and Physical Anonymity</p>
+                </div>
+
+                <div class="content-card">
+                    <h2 class="module-header">Introduction</h2>
+                    <p style="margin-bottom: 16px;">
+                        Hardware and physical anonymity techniques address vulnerabilities at the device and physical layer. Software anonymity is insufficient if hardware leaks information or physical observation compromises operations. This module covers hardware security, physical isolation techniques, hardware acquisition, secure destruction, and physical counter-surveillance.
+                    </p>
+                </div>
+
+                <div class="alert-box critical">
+                    <div class="alert-label">Critical Warning</div>
+                    <div class="alert-content">
+                    Hardware and physical anonymity require specialized knowledge and equipment. Hardware hacking, modifying devices, or bypassing security controls may be illegal in some jurisdictions. Physical surveillance detection and evasion must comply with applicable laws. These techniques described for educational purposes and privacy protection. Responsible use requires legal compliance and ethical awareness. Hardware modifications can damage devices and void warranties.
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 1: Hardware Security Modules -->
+                <div id="section-hsm">
+                    <h2 class="section-header">Hardware Security Modules (HSMs)</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Hardware Security Modules are dedicated cryptographic processors that securely generate, store, and process cryptographic keys. HSMs provide hardware isolation for sensitive operations, protecting keys from extraction even if host system compromised.
+                    </p>
+
+                    <h3 class="subsection-header">HSM Functions</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Key generation:</strong> Generate cryptographic keys within hardware (higher entropy quality)</li>
+                        <li><strong>Key storage:</strong> Store private keys in tamper-resistant hardware (keys never leave HSM in the clear)</li>
+                        <li><strong>Cryptographic operations:</strong> Perform signing, encryption, decryption within hardware (keys never exposed)</li>
+                        <li><strong>Random number generation:</strong> Hardware TRNG provides high-quality randomness</li>
+                        <li><strong>Key lifecycle management:</strong> Rotate, archive, and destroy keys securely</li>
+                    </ul>
+
+                    <h3 class="subsection-header">HSM Deployment Options</h3>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Network-Attached HSM</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Deployment:</strong> HSM on network, multiple applications connect</li>
+                            <li><strong>Use cases:</strong> EnterprisePKI, certificate authorities, signing services</li>
+                            <li><strong>Benefits:</strong> Centralized key management, multiple applications share HSM resources</li>
+                            <li><strong>Security:</strong> Physical access controls, network access controls</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">PCIe/Card-Based HSM</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Deployment:</strong> HSM card or PCIe card in server</li>
+                            <li><strong>Use cases:</strong> Database encryption, application-specific key storage</li>
+                            <li><strong>Benefits:</strong> Direct high-speed access, no network latency</li>
+                            <li><strong>Security:</strong> Physical server access controls required</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">USB/Token-Based HSM</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Deployment:</strong> USB HSM or hardware security token</li>
+                            <li><strong>Use cases:</strong> Code signing, two-factor authentication, personal key storage</li>
+                            <li><strong>Benefits:</strong> Portable, can be physically disconnected when not in use</li>
+                            <li><strong>Examples:</strong> YubiKey PKCS#11, Nitrokey HSM</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="subsection-header">HSM Security Properties</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Tamper resistance:</strong> Hardware detects physical intrusion and zeroizes (erases) keys</li>
+                        <li><strong>Tamper evidence:</strong> Physical tampering leaves visible evidence (scratch on case, broken seal)</li>
+                        <li><strong>Secure boot:</strong> HSM firmware signed, prevents malicious firmware installation</li>
+                        <li><strong>Hardware random number generator:</strong> True randomness from physical processes, not pseudo-random algorithms</li>
+                        <li><strong>Side-channel protection:</strong> Constant-time operations, power analysis resistance</li>
+                    </ul>
+
+                    <div class="alert-box">
+                        <div class="alert-label">HSM Limitations</div>
+                        <div class="alert-content">
+                        HSMs protect keys but do not eliminate all risks. If host system compromised, attacker may be able to use keys via HSM API (though cannot extract keys). Compromised CA certificates still generate valid signatures. Hardware exploits exist (e.g., differential power analysis on hardware). HSMs provide significant protection but not absolute security.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 2: Trusted Platform Module -->
+                <div id="section-tpm">
+                    <h2 class="section-header">Trusted Platform Module (TPM)</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        The Trusted Platform Module is international standard for secure cryptoprocessor integrated into computers. TPM provides hardware-based security functions for secure boot, key storage, and platform attestation.
+                    </p>
+
+                    <h3 class="subsection-header">TPM Capabilities</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Secure key storage:</strong> Store keys in hardware (keys bound to specific TPM)</li>
+                        <li><strong>Platform configuration registers (PCRs):</strong> Store cryptographic measurements of system state (firmware, boot loader, OS)</li>
+                        <li><strong>Attestation:</strong> Prove system integrity to remote party by signing PCR values</li>
+                        <li><strong>Sealed storage:</strong> Encrypt data with key that only unlocks if PCRs match expected state</li>
+                        <li><strong>Random number generation:</strong> Hardware TRNG</li>
+                    </ul>
+
+                    <h3 class="subsection-header">PCR (Platform Configuration Register)</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        PCRs store cryptographic measurements of system components loaded during boot.
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Measurement process:</strong> Firmware measures boot loader, boot loader measures OS, OS measures applications</li>
+                        <li><strong>PCR extension:</strong> New measurements extend (hash with previous value) PCR - PCR0 = hash(PCR0 + new_measurement)</li>
+                        <li><strong>Integrity proof:</strong> PCR state proven by signing with TPM key (attestation identity key)</li>
+                        <li><strong>Sealed data unlock:</strong> Data sealed with PCR state only decrypts if PCR state identical when sealed</li>
+                    </ul>
+
+                    <div class="code-block">
+                        <code># PCR extension process (simplified):
+
+# Initial PCR state: PCR0 = 0
+
+# Boot measurement: Measure firmware
+PCR0 = extend(PCR0, measurement_firmware)
+# PCR0 = hash(0 + measurement_firmware)
+
+# Boot measure: Measure boot loader
+PCR0 = extend(PCR0, measurement_bootloader)
+# PCR0 = hash(PCR0 + measurement_bootloader)
+
+# Boot measure: Measure OS kernel
+PCR0 = extend(PCR0, measurement_kernel)
+# PCR0 = hash(PCR0 + measurement_kernel)
+
+# Each measurement changes PCR irreversibly
+# If any component changes (compromised), PCR state differs
+
+# Attestation:
+TPM attests to PCR0 state by signing with attestation key
+Remote verifier checks if PCR0 matches expected values
+
+# Sealed storage:
+data_sealed = encrypt_with_TPM(private_key, PCR0)
+# Only decrypts if current PCR0 matches PCR0 when sealed
+# Prevents data access if system compromised (different PCR state)
+data = decrypt_with_TPM(data_sealed)</code>
+                    </div>
+
+                    <h3 class="subsection-header">TPM Use Cases</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Secure boot:</strong> System only boots if firmware, boot loader, OS measurements match trusted values</li>
+                        <li><strong>BitLocker drive encryption:</strong> Windows uses TPM to protect BitLocker keys (encrypted disk only on trusted system)</li>
+                        <li><strong>SSH/PGP key storage:</strong> Store cryptographic keys in TPM (keys bound to hardware)</li>
+                        <li><strong>Remote attestation:</strong> Prove system integrity to remote server (e.g., corporate VPN only connects to trusted client)</li>
+                        <li><strong>Hardware-bound credentials:</strong> Smart card or certificate bound to TPM (cannot be used on other hardware)</li>
+                    </ul>
+
+                    <div class="note-box">
+                        <div class="note-label">TPM Versions</div>
+                        <div class="note-content">
+                        <strong>TPM 1.2:</strong> Earlier version, widely deployed but limited algorithms (RSA-based, SHA-1)
+
+                        <strong>TPM 2.0:</strong> Current standard, supports ECC algorithms, SHA-256, flexible authorization models, HMAC encryption
+
+                        <strong>Deployment:</strong> TPM 2.0 now standard in enterprise laptops, though some older systems still have TPM 1.2
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 3: Secure Enclaves -->
+                <div id="section-enclaves">
+                    <h2 class="section-header">Secure Enclaves and Trusted Execution</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Secure enclaves provide hardware-isolated execution environments where code and data remain encrypted in memory, visible only within enclave. Enclaves protect secrets from cloud provider, operating system, or hypervisor compromise.
+                    </p>
+
+                    <h3 class="subsection-header">Intel SGX (Software Guard Extensions)</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Enclaves:</strong> Application-defined protected memory regions</li>
+                        <li><strong>Encryption:</strong> Enclave code and data encrypted in CPU cache, decrypted only when executed by CPU</li>
+                        <li><strong>Isolation:</strong> OS and hypervisor cannot read enclave memory (even with kernel privileges)</li>
+                        <li><strong>Attestation:</strong> Remote attestation proves enclave authenticity (attest enclave identity)</li>
+                        <li><strong>Use cases:</strong> Privacy-preserving computation on cloud, key management, financial services, healthcare data</li>
+                    </ul>
+
+                    <h3 class="subsection-header">AMD SEV (Secure Encrypted Virtualization)</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>VM encryption:</strong> Entire VM memory encrypted with key only guest VM knows</li>
+                        <li><strong>Hypervisor isolation:</strong> Hypervisor cannot read guest VM memory (even with hardware access)</li>
+                        <li><strong>Launch attestation:</strong> VM can verify it launched on legitimate SEV hardware</li>
+                        <li><strong>Use cases:</strong> Cloud VM security (provider cannot read customer VM data), multi-tenant cloud isolation</li>
+                    </ul>
+
+                    <h3 class="subsection-header">ARM TrustZone</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Secure world vs normal world:</strong> CPU partitions into two worlds with hardware isolation</li>
+                        <li><strong>Secure world:</strong> Trusted applications (payment, key storage, secure boot) run with elevated privileges</li>
+                        <li><strong>Normal world:</strong> Regular OS and applications run with restricted access to secure world</li>
+                        <li><strong>Use cases:</strong> Mobile device security (Android TrustZone for payments, TEE for banking), IoT security</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Secure Enclave Limitations</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Side-channel attacks:</strong> SGX vulnerable to side-channel attacks (Rowhammer, speculative execution). Intel has mitigations but vulnerabilities continue to be discovered.</li>
+                        <li><strong>Hardware limitations:</strong> Limited enclave memory size (SGX EPC limited), may require paging which reduces security</li>
+                        <li><strong>Spectre/Meltdown class attacks:</strong> Speculative execution attacks affect enclaves (cache timing, branch prediction)</li>
+                        <li><strong>Software bugs:</strong> If enclave code has vulnerabilities (e.g., buffer overflow), attacker may escape enclave isolation</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 4: Physical Isolation -->
+                <div id="section-isolation">
+                    <h2 class="section-header">Physical Isolation Techniques</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Physical isolation prevents hardware or network compromise by physically separating sensitive systems from internet or public networks. Physical isolation provides strong protection against remote attacks.
+                    </p>
+
+                    <h3 class="subsection-header">Air-Gapping</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Air-gapped systems are physically isolated from unsecured networks (no internet, no WiFi, no Bluetooth).
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Protection:</strong> Strong protection against remote malware, ransomware nation-state hacking targeting internet-connected systems</li>
+                        <li><strong>Use cases:</strong> SCADA/ICS (industrial control systems), classified government systems, critical infrastructure, payment card processing (PCI DSS), development environments for sensitive code</li>
+                        <li><strong>Physical security:</strong> Require physical access controls (access cards, surveillance, guards)</li>
+                    </ul>
+
+                    <div class="alert-box critical">
+                        <div class="alert-label">Critical: Air-Gap is Not Perfect Defense</div>
+                        <div class="alert-content">
+                        Air-gap reduces but does not eliminate risk. Attack vectors to air-gapped systems include:
+                        - Insider threats (authorized or unauthorized physical access)
+                        - Social engineering (tricking authorized users)
+                        - USB drives (connecting infected USB to air-gapped system)
+                        - Supply chain compromise (hardware/software delivered with malware)
+                        - Side-channel attacks (TEMPEST, electromagnetic emissions)
+                        Nation-state actors (Stuxnet) have demonstrated capability to breach air-gapped systems.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">TEMPEST Protection</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        TEMPEST refers to side-channel emissions from electronic equipment that can be intercepted and reconstructed.
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Emissions types:</strong> Electromagnetic, acoustic, power line, RF radiation</li>
+                        <li><strong>Captured data:</strong> Display emissions (screen content), keyboard keystrokes (acoustic/EM), network traffic (RF)</li>
+                        <li><strong>TEMPEST shielding:</strong> Shielded rooms (Faraday cages), shielded cables, filtered power</li>
+                        <li><strong>High protection locations:</strong> Classified government facilities, military installations</li>
+                    </ul>
+
+                    <div class="code-block">
+                        <code># TEMPEST protection measures:
+
+# Electromagnetic shielding:
+- Shielded enclosures (Faraday cages) block RF emissions
+- Grounded shielded cables (reduce EM radiation)
+- Shielded connectors and filters on all I/O
+
+# Acoustic shielding:
+- Soundproofed rooms to prevent keystroke acoustic eavesdropping
+- Acoustic dampening on keyboards
+
+# Power filtering:
+- Power line filters prevent data leakage via power lines
+
+# Location:
+- Isolate sensitive equipment from potential eavesdroppers
+- Distance reduces signal intercept radius
+
+# Emissions monitoring:
+- Monitor for unusual electromagnetic signatures
+- Detect potential eavesdropping equipment</code>
+                    </div>
+
+                    <h3 class="subsection-header">Faraday Cages</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Function:</strong> Conductive enclosure that blocks external electromagnetic fields (RF shielding)</li>
+                        <li><strong>Applications:</strong> Shielding rooms for TEMPEST protection, portable Faraday bags for mobile devices (block cellular, WiFi, GPS, Bluetooth)</li>
+                        <li><strong>FARADAY bags:</strong> Commercially available bags with conductive material to block all wireless signals</li>
+                        <li><strong>Use case:</strong> Secure storage of mobile devices, prevent tracking via cellular/WiFi/GPS</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 5: Hardware Acquisition -->
+                <div id="section-acquisition">
+                    <h2 class="section-header">Hardware Acquisition for Anonymity</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Hardware acquisition for anonymity focuses on purchasing equipment without linking identity to hardware. Techniques include cash purchases, used hardware, and hardware without manufacturer registration.
+                    </p>
+
+                    <h3 class="subsection-header">Cash Purchases</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Cash in person:</strong> Purchase electronic equipment (laptops, phones, routers) with cash in person</li>
+                        <li><strong>Benefits:</strong> No payment record links purchaser to hardware (credit card, bank transfer create records)</li>
+                        <li><strong>Registration:</strong> Avoid registering products with manufacturer or creating accounts</li>
+                        <li><strong>Surveillance risks:</strong> In-store cameras may record face and purchase. Parking lot cameras record vehicle. Avoid stores with extensive surveillance.</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Used Hardware</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Secondary market purchases:</strong> Buy used equipment from individuals (Craigslist, Facebook Marketplace, pawn shops)</li>
+                        <li><strong>Benefits:</strong> Original purchaser identity not linked to buyer, harder for authorities to trace</li>
+                        <li><strong>Risks:</strong> Previously compromised (malware, hardware implants), stolen (ownership disputes), hardware warranty issues</li>
+                        <li><strong>Countermeasures:</strong> Physical inspection, firmware flashing, complete disk wipe before use</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Hardware Implants</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Hardware implants:</strong> Additional hardware component or modified hardware (implanted by agencies or skilled adversaries)</li>
+                        <li><strong>Capabilities:</strong> Intercept network traffic, modify firmware, provide remote access, keystroke logging</li>
+                        <li><strong>High-risk hardware:</strong> Used equipment from unknown sources, equipment shipped internationally, equipment seized then returned (law enforcement may implant)</li>
+                        <li><strong>Countermeasures:</strong> Visual inspection of hardware internals, use equipment from trusted sources, flash firmware from legitimate sources, monitor for suspicious behavior</li>
+                    </ul>
+
+                    <div class="alert-box critical">
+                        <div class="alert-label">Critical: Hardware Implants</div>
+                        <div class="alert-content">
+                        Nation-state adversaries have demonstrated hardware implant capability (e.g., Bloomberg report on Super Micro supply chain implant). Sophisticated implants may be extremely difficult to detect without specialized equipment. Used equipment from adversarial nation-state sources poses higher risk. Assume high-value targets may face hardware implants.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 6: Secure Hardware Destruction -->
+                <div id="section-destruction">
+                    <h2 class="section-header">Secure Hardware Disposition and Destruction</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Secure hardware disposal prevents data recovery from disposed equipment. Simple deletion or formatting is insufficient. Physical destruction or cryptographic wiping is required for secure disposal.
+                    </p>
+
+                    <h3 class="subsection-header">Data Persistence</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Storage media persistence:</strong> Hard drives, SSDs, USB drives retain data even after deletion or formatting</li>
+                        <li><strong>File deletion:</strong> Deleting file removes reference, data remains on disk until overwritten</li>
+                        <li><strong>Quick formatting:</strong> File system reinitialized, underlying data remains recoverable</li>
+                        <li><strong>Data recovery:</strong> Software tools (forensics) and hardware techniques (cleaned rooms) can recover data years after deletion</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Data Erasure Options</h3>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Cryptographic Wiping (Preferred for SSDs)</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Process:</strong> If disk encrypted (BitLocker, LUKS), encrypt and discard decryption key</li>
+                            <li><strong>Effectiveness:</strong> Cryptographically secure - data unrecoverable without key</li>
+                            <li><strong>Requirements:</strong> Disk encrypted from start, key discarded</li>
+                            <li><strong>Benefit:</strong> Fast (seconds) vs physical wiping (hours)</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Disk Wiping Software</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Process:</strong> Overwrite all sectors with random data or patterns (e.g., DoD 5220.22-M standard)
+                            <li><strong>Standards:</strong> DoD (Department of Defense) 5220.22-M (3-pass), NIST SP 800-88 (single pass sufficient for modern drives)</li>
+                            <li><strong>Effectiveness:</strong> Effective for mechanical hard drives (HDDs)</li>
+                            <li><strong>Limitation:</strong> SSD wear-leveling may leave data intact (SSD controllers remap sectors silently)</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Physical Destruction</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Shredding:</strong> Mechanical shredding destroys platters or flash chips</li>
+                            <li><strong>Degaussing:</strong> Powerful magnetic field destroys magnetic media (HDDs only, SSDs unaffected)</li>
+                            <li><strong>Drilling:</strong> Drilling through platters physically destroys data surface</li>
+                            <li><strong>Incineration:</strong> Burning destroys media completely</li>
+                            <li><strong>Effectiveness:</strong> Most secure method, data unrecoverable</li>
+                        </ul>
+                    </div>
+
+                    <div class="code-block">
+                        <code># Secure wiping with cryptographic destruction (LUKS):
+
+# If disk encrypted with LUKS:
+# 1. Verify disk encrypted (cryptsetup isLuks /dev/sdx)
+# 2. Discard LUKS header and key:
+cryptsetup erase /dev/sdx
+# This destroys volume header and key master key
+# Data remains encrypted but cryptographically inaccessible
+
+# Alternative with LUKS header backup:
+cryptsetup luksDump /dev/sdx | salt
+# Document salt for verification
+cryptsetup erase /dev/sdx
+# Disk now cryptographically wiped
+
+# NIST 800-88 R2 recommends cryptographic erase as acceptable:
+# "Cryptographic erase uses cryptographic sanitization (encrypt and discard key)"
+# Cryptographic erase meets Clear level sanitization requirement
+
+# For highest security (defense against key recovery):
+# Physical destruction preferred (shred, incinerate)</code>
+                    </div>
+
+                    <h3 class="subsection-header">NIST SP 800-88 Guidance</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        NIST Special Publication 800-88 provides guidance for media sanitization.
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Clear:</strong> Apply data overwrite or cryptographic erase (suitable for reuse within organization)</li>
+                        <li><strong>Purge:</strong> Apply advanced techniques (ATA Secure Erase, firmware-level wipe) for reuse in controlled environments</li>
+                        <li><strong>Destroy:</strong> Physical destruction, incineration, shredding (suitable for disposal outside organization)</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 7: Mobile Device Security -->
+                <div id="section-mobile">
+                    <h2 class="section-header">Mobile Device Anonymity</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Mobile devices inherently leak location and identity through cellular networks, WiFi, and Bluetooth. Anonymity with mobile devices requires significant operational security.
+                    </p>
+
+                    <h3 class="subsection-header">Cellular Tracking</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Cell tower triangulation:</strong> Cellular provider determines approximate location based on towers with signal</li>
+                        <li><strong>GPS:</strong> Many phones include GPS for improved location accuracy</li>
+                        <li><strong>IMSI/IMEI:</strong> SIM card identifier (IMSI) and device identifier (IMEI) unique to phone and SIM</li>
+                        <li><strong>Provider records:</strong> Cellular providers maintain detailed logs of subscriber activity (location, call records, metadata)</li>
+                    </ul>
+
+                    <h3 class="subsection-header">WiFi Tracking</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>MAC address tracking:</strong> WiFi adapter MAC address unique to device. Retail stores, malls, airports track MAC addresses to monitor foot traffic.</li>
+                        <li><strong>WiFi scanning:</strong> Phones constantly scan for WiFi networks even when not connected. Captured WiFi SSIDs reveal location history.</li>
+                        <li><strong>MAC randomization:</strong> Modern iOS and Android randomize WiFi MAC addresses to prevent persistent WiFi tracking</li>
+                        <li><strong>Limitations:</strong> MAC randomization does not prevent cellular tracking (phone still locatable via cellular network)</li>
+                    </ul>
+
+                    <div class="alert-box">
+                        <div class="alert-label">MAC Randomization Limitations</div>
+                        <div class="alert-content">
+                        WiFi MAC randomization provides privacy against WiFi-based tracking but does not protect against cellular tracking or GPS. Retail tracking becomes harder but not impossible (Bluetooth beacons, facial recognition, gait analysis). Mobile devices inherently leak location via cellular network unless completely disconnected (airplane mode).
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Burner Phones</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Purchase:</strong> Prepaid phone purchased with cash (no payment record)</li>
+                        <li><strong>Registration:</strong> Some jurisdictions require SIM registration with ID, undermining anonymity</li>
+                        <li><strong>Usage patterns:</strong> Using burner phone at same locations as personal phone correlates identities (location/time correlation)</li>
+                        <li><strong>IMEI correlation:</strong> Even with new SIM, device IMEI identifies unique hardware. Use disposable device or burner device only.</li>
+                        <li><strong>Operational security:</strong> Use burner device only at times and locations separate from personal device</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Mobile Device Countermeasures</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Airplane mode:</strong> Disables cellular, WiFi, Bluetooth - prevents tracking via wireless signals</li>
+                        <li><strong>Faraday bag:</strong> Conductive bag blocks all wireless signals (phone cannot transmit or receive)</li>
+                        <li><strong>Disable location services:</strong> Turn off GPS, WiFi, Bluetooth location services</li>
+                        <li><strong>MAC randomization:</strong> Enable WiFi MAC randomization (iOS, modern Android)</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 8: Physical Surveillance -->
+                <div id="section-surveillance">
+                    <h2 class="section-header">Physical Surveillance Detection and Evasion</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Physical surveillance includes cameras, listening devices, tracking devices, and human surveillance. Detecting and evading physical surveillance is tradecraft for high-risk anonymity scenarios.
+                    </p>
+
+                    <h3 class="subsection-header">Surveillance Detection</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Tailing detection:</strong> Walk through crowded areas, make sudden turns, cross streets, use reflections (windows, mirrors) to observe followers</li>
+                        <li><strong>Reversal:</strong> Walk one direction, suddenly reverse (if physical surveillance, observers will turn with you - if not following, continues straight)</li>
+                        <li><strong>Surveillance teams:</strong> Sophisticated surveillance uses multiple observers with handoffs, making detection harder</li>
+                        <li><strong>Pattern changes:</strong> Vary routes, times, and transportation methods (walk, drive, public transit)</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Tracking Devices</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>GPS trackers:</strong> Magnetic GPS trackers attached to vehicles (common in law enforcement and private investigation)</li>
+                        <li><strong>Bluetooth trackers:</strong> Tile, AirTag used for tracking (Apple, Tile have anti-stalking features)</li>
+                        <li><strong>Detection:</strong> Manual physical inspection of vehicles, GPS jamming detectors, smartphone apps detect certain trackers</li>
+                        <li><strong>Evasion:</strong> Check vehicles regularly, use public transportation, vary vehicles</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Listening Devices</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Audio bugs:</strong> Microphones hidden in rooms, vehicles, or objects (listen conversations)</li>
+                        <li><strong>RF detectors:</strong> Scanners detect RF emissions from transmitting devices</li>
+                        <li><strong>Non-linear junction detectors (NLJD):</strong> Detects electronic components (bugs) even when not transmitting (expensive professional equipment)</li>
+                        <li><strong>Sweeps:</strong> Regular TSCM (Technical Surveillance Counter-Measures) sweeps detect listening devices</li>
+                    </ul>
+
+                    <div class="alert-box critical">
+                        <div class="alert-label">Critical: Physical Surveillance</div>
+                        <div class="alert-content">
+                        Physical surveillance detection is advanced tradecraft requiring training and experience. Law enforcement and intelligence agencies have sophisticated surveillance capabilities (multiple observers, coordination, technical support). Detection not guaranteed. Evasion difficult without operational security training. Physical surveillance indicates high-level targeting (law enforcement, intelligence, private investigators).
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 9: Secure Communications Hardware -->
+                <div id="section-comm-hardware">
+                    <h2 class="section-header">Secure Communications Hardware</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Secure communications hardware provides enhanced protection for voice and messaging communications through hardware-based encryption and isolation.
+                    </p>
+
+                    <h3 class="subsection-header">Secure Handsets</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>BlackBerry Enterprise Mobility:</strong> Hardware-encrypted communications, secure element for keys</li>
+                        <li><strong>Silent Circle:</strong> Secure phones with hardware-based encryption (Blackphone)</li>
+                        <li><strong>Katim:</strong> Secure Android handset with hardware encryption keys</li>
+                        <li><strong>Use case:</strong> High-security environments (government, military, enterprise)</li>
+                    </ul>
+
+                    <h3 class="subsection-header>Hardware Security Tokens</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>YubiKey:</strong> USB token supporting U2F, FIDO2, OpenPGP, PIV for secure authentication and key storage</li>
+                        <li><strong>Nitrokey:</strong> Open-source hardware token for OpenPGP, S/MIME, OTP</li>
+                        <li><strong>Trezor/Ledger:</strong> Hardware wallets for cryptocurrency (store private keys in hardware)</li>
+                        <li><strong>Use case:</strong> Two-factor authentication, SSH key storage, PGP key storage, cryptocurrency key storage</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Secure Routers</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Purism Librem:</strong> Hardware kill switches for WiFi, Bluetooth, camera, microphone</li>
+                        <li><strong>Tails-supporting routers:</strong> Routers configured for Tor access (Anonabox)</li>
+                        <li><strong>PFSense/OPNsense:</strong> Open-source router OSes with strong firewall and VPN support</li>
+                        <li><strong>Use case:</strong> Hardware-level privacy controls, network isolation, secure routing</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 10: Hardware Anonymity Limitations -->
+                <div id="section-hardware-limitations">
+                    <h2 class="section-header">Limitations and Considerations</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Hardware anonymity techniques provide strong protection but are not perfect. Hardware vulnerabilities, supply chain risks, and determination of adversaries limit practical anonymity.
+                    </p>
+
+                    <h3 class="subsection-header">Hardware Vulnerabilities</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Spectre/Meltdown:</strong> Speculative execution side-channel vulnerabilities found in virtually all modern CPUs (Intel, AMD, ARM)</li>
+                        <li><strong>Rowhammer:</strong> DRAM bit flip attacks via repeated access to memory rows (affects ECC RAM)</li>
+                        <li><strong>Plundervolt:** Intel voltage manipulation attack affects SGX enclaves</li>
+                        <li><strong>Foreshadow:** Intel L1 terminal fault, affects SGX</li>
+                        <li><strong>Implication:** Hardware isolation not perfect; side-channel vulnerabilities allow data leakage even with enclaves</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Supply Chain Risks</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Hardware implants:</strong> Sophisticated implants at manufacturing stage (nation-state actors with access to supply chain)</li>
+                        <li><strong>Compromised firmware:** Malicious firmware pre-installed (e.g., compromised BIOS/UEFI)</li>
+                        <li><strong>Detection difficulty:** Hardware implants extremely difficult to detect without specialized equipment</li>
+                        <li><strong>Defense:** Use hardware from trusted sources, verify hardware hashes if available, physical inspection</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Adversary Capabilities</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Nation-state threat actors:</strong> Have sophisticated hardware analysis capabilities (cleaned rooms, electron microscopes)</li>
+                        <li><strong>Physical access:</strong> With physical access, adversaries can extract data via DMA attacks, cold boot attacks, or hardware implants</li>
+                        <li><strong>TEMPEST capabilities:</strong> Sophisticated adversaries can intercept electromagnetic emissions from devices</li>
+                        <li><strong>Reality:** Against determined nation-state adversaries with physical access, hardware isolation eventually insufficient</li>
+                    </ul>
+
+                    <div class="alert-box critical">
+                        <div class="alert-label">Critical: Hardware Anonymity Realism</div>
+                        <div class="alert-content">
+                        Hardware isolation and security provide strong protection but cannot guarantee anonymity against all adversaries. Nation-state actors have demonstrated hardware implant and side-channel attack capabilities. Hardware security raises the bar, increases difficulty, but does not provide absolute protection. Use hardware security in conjunction with operational security, cryptographic anonymity, and behavioral anonymity techniques.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Navigation -->
+                <div class="nav-buttons">
+                    <a href="11-cryptographic-anonymity.html" class="nav-btn">Previous: Cryptographic Anonymity</a>
+                    <a href="13-advanced-opsec.html" class="nav-btn primary">Next: Advanced OPSEC & Counter-Intelligence</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => loadProgress());
+    </script>
+</body>
+</html>
