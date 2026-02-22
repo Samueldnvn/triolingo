@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity - Module 9: Advanced Anonymity</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="light-theme">
+    <div class="main-wrapper">
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="page-header">
+                    <h1 class="page-title">MODULE 9</h1>
+                    <p class="page-subtitle">Advanced Anonymity</p>
+                </div>
+
+                <div class="content-card">
+                    <h2 class="module-header">Introduction</h2>
+                    <p style="margin-bottom: 16px;">
+                        Building on basic anonymity tools, advanced anonymity techniques provide stronger protection against sophisticated adversaries. Advanced adversary capabilities include traffic analysis, correlation attacks, and browser fingerprinting. This module covers hardened systems, advanced operational security practices, and specialized tools for maintaining anonymity against capable opponents.
+                    </p>
+                </div>
+
+                <div class="alert-box critical">
+                    <div class="alert-label">Critical Warning</div>
+                    <div class="alert-content">
+                    Advanced anonymity techniques described in this module are for educational purposes and privacy protection. These techniques can also be used maliciously. Responsible use requires ethical boundaries, legal compliance, and awareness that determined adversaries with sufficient resources may eventually overcome any anonymity system. No anonymity solution provides absolute protection against all adversaries, particularly nation-states with access to global surveillance infrastructure.
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 1: Deep Web and Dark Web -->
+                <div id="section-darkweb">
+                    <h2 class="section-header">Deep Web and Dark Web</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        The deep web encompasses all internet content not indexed by search engines. The dark web is a subset of the deep web intentionally hidden and requiring special software or authorization to access.
+                    </p>
+
+                    <h3 class="subsection-header">Surface, Deep, and Dark Web Distinction</h3>
+
+                    <div class="definition-box">
+                        <div class="definition-label">Web Layers</div>
+                        <div class="definition-content">
+                        <strong>Surface Web (Clear Web):</strong> Content indexed by search engines (Google, Bing). Publicly accessible.
+
+                        <strong>Deep Web:</strong> Content not indexed by search engines. Includes:
+                        - Private databases (library catalogs, medical records)
+                        - Behind paywalls (news articles, academic journals)
+                        - Private accounts (banking portals, webmail)
+                        - Internal corporate intranets
+                        Most of the web is deep web by volume, not dark.
+
+                        <strong>Dark Web:</strong> Subset of deep web that is:
+                        - Intentionally hidden
+                        - Requires anonymity software (Tor, I2P)
+                        - Typically hosts both legal and illegal content
+                        .onion addresses (Tor) and .i2p (Invisible Internet Protocol) sites
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Tor Hidden Services v3 (.onion v3)</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Tor hidden services provide server anonymity. Both client and server remain anonymous - server does not know client's IP, client does not know server's IP.
+                    </p>
+
+                    <div class="code-block">
+                        <code># v3 .onion addresses (56 random characters)
+# Example: x5x7yz...5wz2.onion (v3 address length)
+# vs v2 addresses (16 characters)
+
+# v3 advantages:
+# - Improved cryptography (ed25519 instead of RSA)
+# - Better resistance to enumeration attacks
+# - No need for directory authority for address discovery
+# - Longer addresses = more difficult to brute force</code>
+                    </div>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>How it works:</strong> Hidden services advertise via hidden service descriptor stored in distributed hash table (DHT) within Tor network</li>
+                        <li><strong>Access method:</strong> Must use Tor Browser or Tor proxy to access (.onion addresses only resolve through Tor)</li>
+                        <li><strong>Anonymity properties:</strong> Server IP never revealed, client IP never revealed, Tor relays see only next hop</li>
+                        <li><strong>Uses:</strong> Secure drop boxes for whistleblowers (SecureDrop, GlobaLeaks), anonymous publishing, anonymous marketplaces</li>
+                    </ul>
+
+                    <div class="alert-box">
+                        <div class="alert-label">Important Context</div>
+                        <div class="alert-content">
+                        .onion sites include both legitimate privacy services (whistleblowing, anonymity tools, privacy-focused communication) and illegal markets. The technology is neutral - it encrypts and anonymizes. User intentions and content vary. Many legitimate services use .onion addresses for enhanced privacy and security.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">I2P (Invisible Internet Project)</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        I2P is anonymous overlay network similar to Tor but designed for different threat model and use cases.
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Peer-to-peer:</strong> Unlike Tor (relay-based), I2P is fully peer-to-peer with distributed infrastructure</li>
+                        <li><strong>Garlic routing:</strong> Multiple endpoints encrypted together ("garlic") for improved anonymity</li>
+                        <li><strong>Tunnels:</strong> Unidirectional tunnels (separate inbound and outbound tunnels)</li>
+                        <li><strong>Eepsites:</strong> .i2p websites (analogous to .onion hidden services)</li>
+                        <li><strong>Use cases:</strong> File sharing, anonymous email, BitTorrent, I2P-based applications</li>
+                    </ul>
+
+                    <div class="note-box">
+                        <div class="note-label">Tor vs I2P Comparison</div>
+                        <div class="note-content">
+                        <strong>Tor:</strong> Optimized for web browsing, larger relay network, better for accessing regular internet anonymously, more user-friendly, hidden services (.onion)
+
+                        <strong>I2P:</strong> Optimized for P2P applications, fully decentralized, better for anonymous file sharing and BitTorrent, eepsites (.i2p), smaller user base
+
+                        <strong>Use both:</strong> They serve different purposes; I2P for P2P, Tor for web browsing and hidden services
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 2: Advanced Tor Techniques -->
+                <div id="section-advanced-tor">
+                    <h2 class="section-header">Advanced Tor Configuration and Hardening</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Advanced Tor configuration improves anonymity beyond default settings, providing stronger protection against sophisticated adversaries.
+                    </p>
+
+                    <h3 class="subsection-header">Tor Bridges</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Bridges are unpublished Tor relays that are not publicly listed. Bridges are used when ISP or firewall blocks connections to Tor directory authorities or public relays.
+                    </p>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Bridge Types</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Plist bridges:</strong> Publicly distributed on Tor website (can be blocked by censorship)</li>
+                            <li><strong>Private bridges:</strong> Distributed privately by email or HTTPS (more resistant to blocking)</li>
+                            <li><strong>Obfs4 bridges:</strong> Transport obfuscation that disguises Tor traffic as regular HTTPS (resists fingerprinting)</li>
+                            <li><strong>Meek bridges:</strong> Routes Tor traffic through CDN fronts (like Google App Engine) to blend with regular traffic</li>
+                        </ul>
+                    </div>
+
+                    <div class="code-block">
+                        <code># Tor Browser: Configure bridges
+Tor Browser → Preferences → Tor Network → Use a Bridge
+
+# obfs4 bridge example (most common)
+obfs4 173.255.231.12:443 D7AF0A9912A48E90ED451F0C2D2742E8C9A1C0AF cert=I6yN2vO+mLKE2O2p1lL7E7v8Qq8ZKj0nKtKpKtKpKtKpKpKtKpKtKpKtKpK iat-mode=0
+
+# meek bridge example (highly obfuscated)
+meek 0.0.2.0:2 MEek 8A4F8C2E8B12F9D8A8C8F8D8E8C8F8D8E8C8F8D8E8C8F8D8E8C8F8D url=https://meek.amazonaws.com/ front=cdn.sstatic.net</code>
+                    </div>
+
+                    <h3 class="subsection-header">Torrc Configuration Hardening</h3>
+
+                    <div class="code-block">
+                        <code># /etc/tor/torrc (Linux) or Tor Browser torrc
+# Advanced hardening configurations
+
+# Use Entry Guards (long-term guards for first hop)
+UseEntryGuards 1
+NumEntryGuards 3
+
+# Guard lifetime limits (useful if concerned about compromised entry guards)
+Guardlifetime 90 days
+
+# Disable IPv6 (if not needed - reduces fingerprinting surface)
+IPv6Exit no
+
+# DNS and SOCKS proxy (for system-wide use)
+DNSPort 5353
+SocksPort 9050
+
+# Disable exit nodes (use as client only - hidden services only)
+ExitRelay 0
+
+# Contact info for relay (if operating relay)
+ContactInfo admin@example.com
+
+# Bandwidth limits (if operating relay)
+RelayBandwidthRate 1 MB
+RelayBandwidthBurst 2 MB</code>
+                    </div>
+
+                    <h3 class="subsection-header">Tor Browser Security Slider</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Tor Browser security slider adjusts between safety and usability.
+                    </p>
+
+                    <div class="definition-box">
+                        <div class="definition-label">Security Slider Levels</div>
+                        <div class="definition-content">
+                        <strong>Safest:</strong> JavaScript disabled entirely. Many websites will not work. Maximum protection against browser fingerprinting and exploits.
+
+                        <strong>Safer (recommended):</strong> JavaScript disabled on non-HTTPS sites and specific dangerous contexts. Good balance of security and usability for most users.
+
+                        <strong>Standard:</strong> JavaScript enabled but with Tor Browser hardening. Default setting used by most users.
+
+                        <strong>JavaScript trade-off:</strong> Enabling JavaScript (Standard) increases fingerprinting and exploit risk. Disabling JavaScript (Safest) breaks many websites. Safer disables JavaScript on HTTP sites (which cannot use TLS inspection anyway).
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">New Identity Misconception</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Clicking "New Identity" in Tor Browser changes Tor circuits (relays).
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>What it does:</strong> Requests new circuit with different relays</li>
+                        <li><strong>What it doesn't do:</strong> Does not clear cookies, browser state, or session data</li>
+                        <li><strong>When to use:</strong> If website blocks based on circuit IP or relays problematic</li>
+                        <li><strong>When not to use:</strong> Not for regularly "rotating" identity - this creates correlation opportunities</li>
+                    </ul>
+
+                    <div class="alert-box critical">
+                        <div class="alert-label">Critical: New Identity Does Not Clear Cookies</div>
+                        <div class="alert-content">
+                        "New Identity" only changes Tor relays. To clear cookies, close all Tor Browser windows. New Identity used incorrectly creates correlation pattern visible across multiple circuits. Use New Identity only when necessary to overcome blocking issues.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 3: Tails OS -->
+                <div id="section-tails">
+                    <h2 class="section-header">Tails (The Amnesic Incognito Live System)</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Tails is privacy-focused live operating system that runs from USB stick or DVD. Tails routes all traffic through Tor, uses encrypted persistent storage (optional), and leaves no traces on the host system.
+                    </p>
+
+                    <h3 class="subsection-header">Tails Architecture</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Live OS:</strong> Runs entirely from USB or DVD, no installation required</li>
+                        <li><strong>Amnesic:</strong> All data in RAM; when Tails shuts down, RAM data lost (unless persisted to encrypted drive)</li>
+                        <li><strong>Tor routing:</strong> All internet traffic routed through Tor by default (applications use Tor system proxy)</li>
+                        <li><strong>Live USB with persistence:</strong> Optional encrypted persistent storage for bookmarks, passwords, OpenPGP keys</li>
+                        <li><strong>Host system isolation:</strong> Tails does not access host hard drives by default</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Tails Features</h3>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Default Applications (Anonymized)</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Tor Browser:</strong> Web browsing</li>
+                            <li><strong>Thunderbird with TorBirdy:</strong> Email via Tor (use with encrypted email providers like ProtonMail)</li>
+                            <li><strong>Pidgin with OTR:</strong> Instant messaging with OTR encryption</li>
+                            <li><strong>KeePassXC:</strong> Password manager</li>
+                            <li><strong>Electrum Bitcoin Wallet:</strong> Bitcoin wallet with Tor routing</li>
+                            <li><strong>VLC Media Player:</strong> Media playback</li>
+                            <li><strong>OnionShare:</strong> File sharing via Tor</li>
+                            <li><strong>Liferea:</strong> RSS/Atom feed reader</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Security Features</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>AppArmor profiles:</strong> SELinux/AppArmor confinement restricts application privileges</li>
+                            <li><strong>No swap to disk:</strong> Prevents data from being written to disk except encrypted persistence</li>
+                            <li><strong>Network isolation:</strong> Applications routed through Tor by default; no direct network access</li>
+                            <li><strong>Packages from Debian:</strong> Only vetted Debian packages included</li>
+                            <li><strong>No persistence by default:</strong> Prevents inadvertent data leakage across sessions</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="subsection-header">Tails USB Installation</h3>
+
+                    <div class="code-block">
+                        <code># Installation prerequisites:
+# 1. Download Tails ISO from official tails.boum.org site
+# 2. Download Balena Etcher or Rufus
+# 3. Have two USB sticks (one for intermediary, one for final bootable Tails)
+
+# Installation process (on Linux/macOS/Windows):
+# 1. Flash Tails ISO to USB stick using Etcher
+# 2. Boot from USB (BIOS/UEFI setting required to boot from USB)
+# 3. Configure Tails (language, keyboard persistence setup)
+# 4. Create persistent storage (encrypted with LUKS)
+# 5. Reboot to encrypted persistent storage</code>
+                    </div>
+
+                    <h3 class="subsection-header">Tails Persistence</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Tails optional persistent storage allows saving data across sessions.
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Encrypted:</strong> Uses LUKS encryption (AES-256-XTS)</li>
+                        <li><strong>Password protected:</strong> Requires passphrase to access persistence</li>
+                        <li><strong>Optional features:</strong> Can store browser bookmarks, passwords, OpenPGP keys, SSH keys, network configurations</li>
+                        <li><strong>Security trade-off:</strong> Persistence creates data that could compromise anonymity if passphrase compromised or storage seized</li>
+                    </ul>
+
+                    <div class="alert-box critical">
+                        <div class="alert-label">Critical: Encryption Weakness on Storage</div>
+                        <div class="alert-content">
+                        Tails persistence is encrypted, but encrypted data with weak passphrase or seized with passphrase is not protected. Strong passphrase requirements (minimum 20 characters, mixed case, numbers, symbols) essential. If persistence contains identifying information, adversary with access can link multiple Tails sessions.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Tails Use Cases</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Secure browsing:</strong> Using public computers or shared devices</li>
+                        <li><strong>Whistleblowing:</strong> Secure drop submissions, anonymous communication</li>
+                        <li><strong>Journalism:</strong> Protecting sources and communications</li>
+                        <li><strong>Activism:</strong> Anonymous research, communication, organizing</li>
+                        <li><strong>Privacy:</strong> Browsing without tracking, avoiding corporate surveillance</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 4: Qubes OS -->
+                <div id="section-qubes">
+                    <h2 class="section-header">Qubes OS Security Model</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Qubes OS implements security by compartmentalization, using virtual machines to isolate different activities. Unlike Tails (live OS focused on anonymity), Qubes is permanent OS designed for security.
+                    </p>
+
+                    <h3 class="subsection-header">Qubes Architecture</h3>
+
+                    <div class="definition-box">
+                        <div class="definition-label">Xen Hypervisor-Based Compartmentalization</div>
+                        <div class="definition-content">
+                        <strong>Dom0:</strong> Only runs administrative code. Never connects to network. Trusted component.
+
+                        <strong>AppVMs:</strong> Isolated virtual machines for different activities (work, personal, banking, web browsing, Tor). Each VM has its own:
+
+                        - File system
+                        - Network stack (isolated or routed through proxy)
+                        - Clipboard (shared but controlled)
+                        - Applications (Linux distributions: Fedora, Debian)
+
+                        <strong>TemplateVMs:</strong> Base VMs for creating AppVMs. AppVMs based on TemplateVM share the same file system but are otherwise isolated.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Default Qubes AppVMs</h3>
+
+                    <div class="code-block">
+                        <code>fedora-xx (TemplateVM): Fedora-based template for AppVMs
+debian-xx (TemplateVM): Debian-based template for AppVMs
+
+sys-firewall: Firewall VM; handles routing for AppVMs
+sys-net: Network VM; handles all network traffic to/from AppVMs
+
+vault: AppVM for sensitive data (passwords, keys)
+work: AppVM for work
+personal: AppVM for personal activities
+untrusted: AppVM for untrusted downloads, scanning
+
+whonix-ws (Whonix Gateway): Tor proxy VM
+whonix-gw (Whonix Workstation): Workstation behind Whonix Gateway</code>
+                    </div>
+
+                    <h3 class="subsection-header">Qubes Security Guarantees</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Hypervisor isolation:</strong> Xen hypervisor enforces isolation; vulnerable application in one VM cannot escape to DOM0</li>
+                        <li><strong>Network isolation:</strong> Compromised VM cannot directly access network; routed through firewall VM</li>
+                        <li><strong>File system isolation:</strong> VMs cannot directly access each other's file systems</li>
+                        <li><strong>Template updates:</strong> Update templates, then restart AppVMs for automatic updates</li>
+                        <li><strong>Snapshots:</strong> Backup VM states and restore if compromised</li>
+                    </ul>
+
+                    <div class="note-box">
+                        <div class="note-label">Qubes vs Tails Comparison</div>
+                        <div class="note-content">
+                        <strong>Tails:</strong> Live OS, amnesic, simple to use, no installation, anonymity-focused, single-user
+
+                        <strong>Qubes:</strong> Permanent OS, requires installation, complex to learn, security-by-compartmentalization, multi-user possible (multiple identities as separate VMs)
+
+                        <strong>Use both:</strong> Tails for anonymity and privacy, Qubes for security and compartmentalization. They serve different purposes.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 5: Cryptocurrency Privacy -->
+                <div id="section-crypto">
+                    <h2 class="section-header">Cryptocurrency and Privacy</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Bitcoin and most cryptocurrencies have public transaction ledgers visible to anyone, but privacy coins offer enhanced transaction privacy.
+                    </p>
+
+                    <h3 class="subsection-header">Bitcoin Privacy Limitations</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Public ledger:</strong> All Bitcoin transactions recorded on blockchain visible to anyone</li>
+                        <li><strong>Pseudonymous:</strong> Addresses not directly linked to identity but can be correlated</li>
+                        <li><strong>Address reuse:</strong> Reusing addresses links multiple transactions to same user</li>
+                        <li><strong>Exchanges:</strong> KYC verification on exchanges links identity to addresses</li>
+                        <li><strong>Graph analysis:</strong> Sophisticated analysis can link transactions across addresses</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Privacy Coins</h3>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Monero (XMR)</h4>
+
+                        <p style="margin-bottom: 8px;">Monero is most widely adopted privacy-focused cryptocurrency:</p>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Ring signatures:</strong> Transaction signers obfuscated among group of decoy signers</li>
+                            <li><strong>Stealth addresses:</strong> Recipient's wallet generates unique one-time addresses for each transaction</li>
+                            <li><strong>Confidential transactions:</strong> Transaction amounts hidden (RingCT)</li>
+                            <li><strong>Fungibility:</strong> All Monero coins indistinguishable from each other</li>
+                            <li><strong>Analysis resistance:</strong> Significantly harder to trace than Bitcoin, though not completely immune to advanced analysis</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Other Privacy Coins</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Zcash (ZEC):</strong> Zero-knowledge proofs (zk-SNARKs) hide sender, recipient, and amounts</li>
+                            <li><strong>Zcoin (XZC):</strong> Uses zero-knowledge proofs (Sigma) for transaction privacy</li>
+                            <li><strong>Dash:</strong> PrivateSend (CoinJoin mixing) option for optional privacy</li>
+                            <li><strong>MimbleWimble-based:</strong> Grin, Beam protocol using confidential transactions</li>
+                        </ul>
+                    </div>
+
+                    <div class="alert-box">
+                        <div class="alert-label">Important: Cryptocurrency Not True Anonymous</div>
+                        <div class="alert-content">
+                        Even privacy coins are not perfectly anonymous. Sophisticated analysis, chain analysis companies, and surveillance may reveal transactions. KYC at exchanges, poor operational security, chain analysis linking past exposures can compromise privacy. Treat anonymity as "more private" not "completely anonymous."
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 6: Secure Email and Communication -->
+                <div id="section-secure-email">
+                    <h2 class="section-header">Secure Email and Communication</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Secure email protects message content from surveillance. End-to-end encryption ensures only sender and recipient can read messages, not email providers or network eavesdroppers.
+                    </p>
+
+                    <h3 class="subsection-header">PGP/GPG Email Encryption</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        OpenPGP (Pretty Good Privacy/GNU Privacy Guard) provides end-to-end email encryption and digital signatures.
+                    </p>
+
+                    <div class="code-block">
+                        <code># Generate GPG key (Ed25519 recommended)
+gpg --full-generate-key
+
+# Key type: (1) RSA and RSA (legacy)
+# Key type: (9) ECC and ECC (recommended modern choice)
+
+# List public keys
+gpg --list-keys
+
+# List private keys
+gpg --list-secret-keys
+
+# Export public key (distribute to contacts)
+gpg --armor --export alice@example.com > alice_pubkey.gpg
+
+# Import public key (from others)
+gpg --import bob_pubkey.gpg
+
+# Encrypt file or message
+gpg --encrypt --armor -r bob@example.com document.txt
+
+# Decrypt
+gpg --decrypt document.txt.gpg > document.txt
+
+# Sign message (authentication, non-repudiation)
+gpg --armor --clearsign message.txt
+
+# Verify signed message
+gpg --verify message.txt.asc</code>
+                    </div>
+
+                    <p style="margin-bottom: 12px;">
+                        <strong>Key management:</strong>
+                    </p>
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Public key:</strong> Send public key to contacts securely (verify fingerprint in person if possible)</li>
+                        <li><strong>Private key:</strong> Never share private key. Protect with strong passphrase.</li>
+                        <li><strong>Key revocation:</strong> Generate revocation certificate before use (in case key compromised)</li>
+                        <li><strong>Key expiration:</strong> Set expiration date; keys can be renewed</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Privacy-Focused Email Providers</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>ProtonMail:</strong> End-to-end encrypted email (Switzerland-based, automatic encryption to other ProtonMail users, optional PGP for non-ProtonMail users)</li>
+                        <li><strong>Tutanota:</strong> End-to-end encrypted email (Germany-based, all data encrypted, automatic encryption to other Tutanota users)</li>
+                        <li><strong>Mailfence:</strong> End-to-end encrypted email (Belgium-based, supports PGP)</li>
+                        <li><strong>Disroot:</strong> Community-run federated email service (supports encryption)</li>
+                    </ul>
+
+                    <div class="alert-box">
+                        <div class="alert-label">Email Encryption Limitations</div>
+                        <div class="alert-content">
+                        Email encryption protects message content but not metadata (who emailed whom, when, email subject). Encrypted emails still generate metadata. For metadata anonymity, use messaging systems designed for both content and metadata anonymity (Signal) rather than email.
+                        </div>
+                    </div>
+
+                    <h3 class="subsection-header">Signal</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>End-to-end encrypted:</strong> Signal protocol double-ratchet algorithm provides forward secrecy and message authenticity</li>
+                        <li><strong>Metadata privacy:</strong> Server does not have access to message content or contact list (though some metadata visible to Signal: who is a user, when messages sent)</li>
+                        <li><strong>Group messages:</strong> End-to-end encrypted group chats</li>
+                        <li><strong>Voice and video calls:</strong> Encrypted calls</li>
+                        <li><strong>Verified safety numbers:</strong> Verify contact identity by comparing safety numbers (out-of-band verification recommended)</li>
+                    </ul>
+
+                    <div class="note-box">
+                        <div class="note-label">Signal vs Email Encryption</div>
+                        <div class="note-content">
+                        <strong>Signal:</strong> Modern, easy to use, metadata privacy (partial), end-to-end encrypted, mobile-first, no email address required
+
+                        <strong>PgP email:</strong> Legacy, complex to use, no metadata privacy (who-communicated-with-whom visible), requires key management, requires email provider
+
+                        <strong>Recommendation:</strong> Use Signal for real-time communication. Use PGP email only when Signal unavailable or email is required.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 7: Counter-Surveillance -->
+                <div id="section-countersurveillance">
+                    <h2 class="section-header">Counter-Surveillance Techniques</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Counter-surveillance techniques reduce visibility to surveillance and tracking. Physical, digital, and behavioral countermeasures complement anonymity tools.
+                    </p>
+
+                    <h3 class="subsection-header">Physical Counter-Surveillance</h3>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Personal Device Security</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Mobile phone:</strong> Smartphone constantly transmits location (cell tower triangulation, GPS, WiFi scanning)</li>
+                            <li><strong>Minimize tracking:</strong> Airplane mode when not in use, use VPN, limit app permissions</li>
+                            <li><strong>FARADAY Bags:</strong> RF-shielding bags block wireless signals (phone in bag cannot transmit or receive)</li>
+                            <li><strong>Burner phones:</strong> Prepaid phones purchased with cash, linked only to anonymous identity (SIM card registration may require ID in some jurisdictions)</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h4 style="margin-bottom: 12px;">Facial Recognition Countermeasures</h4>
+
+                        <ul style="margin: 16px 0; padding-left: 24px;">
+                            <li><strong>Privacy visors:</strong> Infrared LEDs in glasses disrupt facial recognition systems without blocking normal vision</li>
+                            <li><strong>Face paint or masks:</strong> Disrupts facial structure recognition</li>
+                            <li><strong>Hairstyle and makeup:</strong> Can reduce accuracy in some systems (though increasingly less effective as systems improve)</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="subsection-header">Digital Counter-Surveillance</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Digital hygiene:</strong> Clear cookies, cache, and browsing data regularly</li>
+                        <li><strong>Browser isolation:</strong> Separate anonymous browser from regular browser (profiles, virtual machines)</li>
+                        <li><strong>DNS over HTTPS:</strong> Use DoH to prevent DNS queries from being observed</li>
+                        <li><strong>DNS over TLS:</strong> Similar to DoH using TLS for DNS queries</li>
+                        <li><strong>HTTPS everywhere:</strong> Use browser extension to enforce HTTPS</li>
+                        <li><strong>Tracker blocking:</strong> uBlock Origin blocks web trackers</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Behavioral Countermeasures</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Pattern disruption:</strong> Vary times, locations, and methods to prevent pattern analysis</li>
+                        <li><strong>Compartmentalization:</strong> Separate identities by time (use anonymizing tools at times, personal accounts at other times)</li>
+                        <li><strong>Identity separation:</strong> Separate devices, accounts, and identities for different activities</li>
+                        <li><strong>Operational security:</strong> Consistent personas, no cross-identity references</li>
+                    </ul>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 8: Operational Security (Advanced) -->
+                <div id="section-advanced-opsec">
+                    <h2 class="section-header">Advanced Operational Security</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        Advanced OPSEC reduces correlatability and maintains separation between identities and activities.
+                    </p>
+
+                    <h3 class="subsection-header">Correlation Attack Mitigation</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Sophisticated adversaries correlate identity across multiple vectors. Mitigation requires minimizing correlation opportunities:
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Time separation:</strong> Don't switch between identities too quickly (creates time correlation)</li>
+                        <li><strong>Location separation:</strong> Use different VPN nodes or physical locations for different identities</li>
+                        <li><strong>Pattern separation:</strong> Vary browsing patterns, typing style, interests across identities</li>
+                        <li><strong>Device separation:</strong> Separate devices for separate identities if possible</li>
+                        <li><strong>Crypto wallet separation:</strong> Separate wallets for separate identities (avoid linking transactions)</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Persona Consistency</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Maintain consistent personas to reduce suspicion and correlation:
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Develop backstory:</strong> Create complete persona history (job, background, interests)</li>
+                        <li><strong>Consistent communication:</strong> Maintain communication style, vocabulary, interests over time</li>
+                        <li><strong>Document persona:</strong> Record persona details to avoid inconsistencies across communications</li>
+                        <li><strong>Evolve naturally:</strong> Let persona evolve over time naturally (people grow and change)</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Operational Security Failures</h3>
+
+                    <div class="alert-box critical">
+                        <div class="alert-label">Common Advanced OPSEC Failures</div>
+                        <div class="alert-content">
+                        <strong>Cross-site correlation:</strong> Logging into anonymous identity from same IP or device as personal identity
+
+                        <strong>Real-name references:</strong> Referring to real name, location, or personal details from anonymous identity
+
+                        <strong>Consistent language errors:</strong> Making same typing or spelling errors across all identities (linguistic fingerprinting)
+
+                        <strong>Payment correlation:</strong> Using same payment method (credit card, PayPal) for different identities
+
+                        <strong>Social media cross-referencing:</strong> Same contacts or photos across different accounts
+
+                        <strong>Time-of-day activity:</strong> Consistent activity at same times with same timezone (suggests physical location)
+
+                        <strong>Technical fingerprint:</strong> Same browser fingerprint, screen resolution, or configuration across identities
+                        </div>
+                    </div>
+
+                    <div class="alert-box">
+                        <div class="alert-label">Advanced Adversary Capabilities</div>
+                        <div class="alert-content">
+                        Nation-state adversaries with global surveillance infrastructure may correlate:
+                        - Traffic analysis across multiple networks
+
+                        - Correlate encrypted traffic patterns with timing and volume
+
+                        - Use global metadata collection to link identities
+
+                        - Employ sophisticated correlation algorithms and AI
+
+                        - Have access to browser fingerprinting databases
+
+                        - Perform network-level correlation across different providers
+
+                        Assume determined adversaries may eventually correlate identities regardless of techniques used.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Section 9: Limitations and Risks -->
+                <div id="section-limitations">
+                    <h2 class="section-header">Limitations and Risks</h2>
+
+                    <p style="margin-bottom: 16px;">
+                        No anonymity solution provides perfect protection. Understanding limitations is crucial for realistic threat modeling.
+                    </p>
+
+                    <h3 class="subsection-header">Zero-Day Vulnerabilities</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Browser exploits:</strong> Sophisticated adversaries may use zero-day browser exploits to deanonymize Tor users</li>
+                        <li><strong>Tor vulnerabilities:</strong> Potential for Tor relay compromise or protocol vulnerabilities</li>
+                        <li><strong>De-anonymization attacks:</strong> Traffic analysis, correlation attacks, browser fingerprinting</li>
+                    </ul>
+
+                    <h3 class="subsection-header">User Error</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Identity leakage:</strong> Accidentally revealing real identity (personal references, shared passwords)</li>
+                        <li><strong>Configuration errors:</strong> Misconfiguring anonymity tools (e.g., logging into personal accounts while using anonymizing tools)</li>
+                        <li><strong>Logging:</strong> Using Tor for anonymity but using other software that logs (e.g., using same web browser for both)</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Legal Risks</h3>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Anonymous speech laws:</strong> Some jurisdictions restrict anonymous speech or require identification</li>
+                        <li><strong>Anonymous online behavior may still be illegal:</strong> Anonymity doesn't legalize illegal activities</li>
+                        <li><strong>Tor exit node monitoring:</strong> Law enforcement monitors exit node traffic for illegal content</li>
+                    </ul>
+
+                    <h3 class="subsection-header">Risk Assessment</h3>
+
+                    <p style="margin-bottom: 12px;">
+                        Apply anonymity tools based on threat model:
+                    </p>
+
+                    <ul style="margin: 16px 0; padding-left: 24px;">
+                        <li><strong>Low threat (privacy from corporation tracking):</strong> Tor Browser, privacy-focused browser ( Brave, Firefox with anti-tracking), VPN</li>
+                        <li><strong>Medium threat (government surveillance):</strong> Tor, Tails, compartmentalized identities, privacy-focused services</li>
+                        <li><strong>High threat (nation-state targeting):</strong> Tails, Qubes, multiple anonymity layers, operational security, compartmentalization, assume eventual compromise</li>
+                    </ul>
+
+                    <div class="alert-box critical">
+                        <div class="alert-label">Critical: No Perfect Anonymity</div>
+                        <div class="alert-content">
+                        No anonymity tool or technique provides absolute protection against all adversaries, particularly nation-states. Assume sophisticated adversaries with sufficient resources and global access may eventually correlate identities. Anonymity increases difficulty and cost, not impossibility of identification. Responsible use requires legal compliance and ethical considerations.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <!-- Navigation -->
+                <div class="nav-buttons">
+                    <a href="08-incident-response.html" class="nav-btn">Previous: Incident Response & Forensics</a>
+                    <a href="10-defensive-strategies.html" class="nav-btn primary">Next: Defensive Strategies</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/navigation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => loadProgress());
+    </script>
+</body>
+</html>
