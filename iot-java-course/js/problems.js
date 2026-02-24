@@ -1995,15 +1995,522 @@ const practiceProblems = {
         explanation: 'Development tools and IDEs streamline IoT application development'
     }))},
     
-    connectivity: { basics: Array.from({length: 50}, (_, i) => ({
-        id: `6-${i + 1}`,
-        type: 'concept',
-        difficulty: i % 3 === 0 ? 'easy' : i % 3 === 1 ? 'medium' : 'hard',
-        question: `Connectivity question ${i + 1}`,
-        answer: 'Connectivity Answer',
-        hint: 'Review networking and connectivity options',
-        explanation: 'IoT devices connect through various networking technologies depending on use case'
-    }))},
+    connectivity: {
+        wifi: [
+            {
+                id: '6-1',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What does WiFi stand for?',
+                answer: 'Wireless Fidelity',
+                alternatives: [],
+                hint: 'Think about wireless networking',
+                explanation: 'WiFi (Wireless Fidelity) is a family of wireless network protocols based on IEEE 802.11 standards for local area networking.'
+            },
+            {
+                id: '6-2',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'Which IEEE standard defines WiFi?',
+                answer: '802.11',
+                alternatives: [],
+                hint: 'IEEE networking standards',
+                explanation: 'IEEE 802.11 is the family of standards that define WiFi protocols for wireless local area networks.'
+            },
+            {
+                id: '6-3',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is the maximum theoretical speed of WiFi 6?',
+                answer: '9.6 Gbps',
+                alternatives: ['9600 Mbps', '9600 Megabits per second'],
+                hint: 'Latest WiFi generation speed',
+                explanation: 'WiFi 6 (802.11ax) has a maximum theoretical speed of 9.6 Gbps, significantly faster than previous generations.'
+            },
+            {
+                id: '6-4',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What WiFi band is used for long-range transmission?',
+                answer: '2.4 GHz',
+                alternatives: [],
+                hint: 'Lower frequency travels further',
+                explanation: 'The 2.4 GHz band provides longer range and better wall penetration compared to 5 GHz, at the cost of lower maximum speeds.'
+            },
+            {
+                id: '6-5',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is WPA3?',
+                answer: 'WiFi Protected Access 3 security protocol',
+                alternatives: ['WiFi security standard'],
+                hint: 'Latest WiFi security',
+                explanation: 'WPA3 (WiFi Protected Access 3) is the latest WiFi security protocol providing improved authentication and encryption over WPA2.'
+            },
+            {
+                id: '6-6',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'Which WiFi band would you use for high-bandwidth video streaming?',
+                answer: '5 GHz',
+                alternatives: [],
+                hint: 'Higher frequency, higher bandwidth',
+                explanation: '5 GHz WiFi provides higher bandwidth and less interference, making it ideal for high-bandwidth applications like video streaming.'
+            },
+            {
+                id: '6-7',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'What WiFi standard is most common in battery-powered IoT devices?',
+                answer: 'WiFi 4 (802.11n) or newer',
+                alternatives: ['802.11n', 'WiFi 4', '802.11ac', 'WiFi 5'],
+                hint: 'Consider power efficiency',
+                explanation: 'WiFi 4 (802.11n) and newer standards offer power-saving features important for battery-powered IoT devices.'
+            },
+            {
+                id: '6-8',
+                type: 'application',
+                difficulty: 'hard',
+                question: 'How many simultaneous devices can WiFi 6 typically support?',
+                answer: 'Hundreds of devices',
+                alternatives: ['100+ devices', 'many devices'],
+                hint: 'Think about IoT scalability',
+                explanation: 'WiFi 6 introduces improvements like OFDMA that support hundreds of simultaneous devices, crucial for dense IoT deployments.'
+            },
+            {
+                id: '6-9',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is WiFi Direct?',
+                answer: 'Direct device-to-device wireless connection',
+                alternatives: ['peer-to-peer WiFi', 'device-to-device networking'],
+                hint: 'No access point required',
+                explanation: 'WiFi Direct enables devices to connect directly without a wireless access point, useful for ad-hoc IoT networks.'
+            },
+            {
+                id: '6-10',
+                type: 'application',
+                difficulty: 'hard',
+                question: 'What is the typical range of WiFi 2.4 GHz in indoor environments?',
+                answer: '100-150 feet (30-45 meters)',
+                alternatives: ['30-45 meters', '100-150 ft'],
+                hint: 'Standard indoor WiFi range',
+                explanation: 'WiFi 2.4 GHz typically achieves 100-150 feet range indoors, though this varies based on obstacles and interference.'
+            }
+        ],
+
+        bluetooth: [
+            {
+                id: '6-11',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What is BLE?',
+                answer: 'Bluetooth Low Energy',
+                alternatives: [],
+                hint: 'Energy-efficient Bluetooth',
+                explanation: 'BLE (Bluetooth Low Energy) is a power-efficient variant of Bluetooth designed for IoT devices and battery operation.'
+            },
+            {
+                id: '6-12',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What is the typical range of Classic Bluetooth?',
+                answer: '100 meters',
+                alternatives: ['100 m'],
+                hint: 'Longer than BLE',
+                explanation: 'Classic Bluetooth has a range of about 100 meters, while BLE typically has 30-100 meter range depending on the device class.'
+            },
+            {
+                id: '6-13',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What BLE version introduced Mesh Networking?',
+                answer: 'BLE 5.0',
+                alternatives: ['Bluetooth 5'],
+                hint: 'Fifth generation BLE',
+                explanation: 'BLE 5.0 introduced mesh networking capabilities, allowing BLE devices to form multi-hop networks extending coverage range.'
+            },
+            {
+                id: '6-14',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is the data rate of BLE compared to Classic Bluetooth?',
+                answer: 'Lower than Classic Bluetooth',
+                alternatives: ['reduced speed for power efficiency'],
+                hint: 'Trade-off for power',
+                explanation: 'BLE has lower data rates (up to 2 Mbps) than Classic Bluetooth (up to 3 Mbps) but consumes significantly less power.'
+            },
+            {
+                id: '6-15',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is the main advantage of BLE for IoT?',
+                answer: 'Extremely low power consumption',
+                alternatives: ['battery efficiency', 'energy saving'],
+                hint: 'Battery life is critical',
+                explanation: 'BLE primary advantage is extremely low power consumption, allowing IoT devices to run for years on small batteries.'
+            },
+            {
+                id: '6-16',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'Which Bluetooth type would you use for a fitness tracker?',
+                answer: 'BLE',
+                alternatives: ['Bluetooth Low Energy'],
+                hint: 'Think about battery life',
+                explanation: 'Fitness trackers use BLE because it provides the connectivity needed while maximizing battery life for months of operation.'
+            },
+            {
+                id: '6-17',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'What is GATT in BLE?',
+                answer: 'Generic Attribute Profile',
+                alternatives: [],
+                hint: 'Data organization in BLE',
+                explanation: 'GATT (Generic Attribute Profile) defines how data is organized and accessed in BLE, using services, characteristics, and descriptors.'
+            },
+            {
+                id: '6-18',
+                type: 'application',
+                difficulty: 'hard',
+                question: 'What is BLE advertising?',
+                answer: 'Broadcasting device presence and services',
+                alternatives: ['service discovery broadcast', 'beacon mode'],
+                hint: 'How devices discover each other',
+                explanation: 'BLE advertising periodically broadcasts packets announcing device presence, services, and capabilities for nearby devices to discover.'
+            },
+            {
+                id: '6-19',
+                type: 'application',
+                difficulty: 'hard',
+                question: 'How many simultaneous connections can BLE typically handle?',
+                answer: 'Multiple connections (varies by hardware)',
+                alternatives: ['depends on the device'],
+                hint: 'Not unlimited',
+                explanation: 'BLE can handle multiple simultaneous connections, but the exact number varies by hardware implementation and resource constraints.'
+            },
+            {
+                id: '6-20',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is the broadcast interval in BLE?',
+                answer: '20ms to 10 seconds (configurable)',
+                alternatives: ['20 milliseconds to 10 seconds', 'configurable timing'],
+                hint: 'Trade-off between discovery and power',
+                explanation: 'BLE broadcast interval is configurable from 20ms to 10 seconds, trading off between discovery speed and power consumption.'
+            }
+        ],
+
+        zigbee: [
+            {
+                id: '6-21',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What is Zigbee primarily designed for?',
+                answer: 'Low-power wireless sensor networks',
+                alternatives: ['IoT mesh networking', 'home automation'],
+                hint: 'Think about home automation',
+                explanation: 'Zigbee is designed for low-power, low-data-rate applications in wireless sensor networks and home automation.'
+            },
+            {
+                id: '6-22',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What type of network topology does Zigbee use?',
+                answer: 'Mesh network',
+                alternatives: [],
+                hint: 'Multi-hop network',
+                explanation: 'Zigbee uses mesh network topology where devices communicate through intermediate nodes, extending range and providing redundancy.'
+            },
+            {
+                id: '6-23',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What frequency does Zigbee operate on?',
+                answer: '2.4 GHz',
+                alternatives: [],
+                hint: 'Same as WiFi',
+                explanation: 'Zigbee operates on the 2.4 GHz ISM band globally, sharing this frequency with WiFi and Bluetooth but with different protocols.'
+            },
+            {
+                id: '6-24',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is Zigbee coordinator?',
+                answer: 'Central hub that forms and manages the network',
+                alternatives: ['network controller', 'root node'],
+                hint: 'Central device in Zigbee network',
+                explanation: 'The Zigbee coordinator is the central device that forms, manages, and bridges the Zigbee network to other networks.'
+            },
+            {
+                id: '6-25',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What device type in Zigbee can route traffic for other devices?',
+                answer: 'Zigbee Router',
+                alternatives: [],
+                hint: 'Relays messages in mesh',
+                explanation: 'Zigbee Routers route traffic through the mesh network, extending range and providing multiple paths for communication redundancy.'
+            },
+            {
+                id: '6-26',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'What is the range of a single Zigbee hop?',
+                answer: '10-100 meters',
+                alternatives: ['10 to 100 meters', '30-300 feet'],
+                hint: 'Individual hop distance',
+                explanation: 'Each Zigbee hop typically covers 10-100 meters, but mesh networking extends total network range significantly through multiple hops.'
+            },
+            {
+                id: '6-27',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'What is the data rate of Zigbee?',
+                answer: '250 kbps',
+                alternatives: ['250 kilobits per second'],
+                hint: 'Low data rate',
+                explanation: 'Zigbee has a data rate of 250 kbps, sufficient for sensor data and control messages but not for high-bandwidth applications.'
+            },
+            {
+                id: '6-28',
+                type: 'application',
+                difficulty: 'hard',
+                question: 'How many devices can a Zigbee network support?',
+                answer: '65,000+ devices',
+                alternatives: ['over 65,000', '65000'],
+                hint: 'Very scalable',
+                explanation: 'Zigbee networks can theoretically support over 65,000 devices, making it highly scalable for large deployments.'
+            },
+            {
+                id: '6-29',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What makes Zigbee self-healing?',
+                answer: 'Multiple routes through mesh network',
+                alternatives: ['redundant paths', 'alternative routes'],
+                hint: 'Mesh provides alternative routes',
+                explanation: 'Zigbee mesh networks provide multiple paths between devices. If one path fails, devices automatically find alternative routes.'
+            },
+            {
+                id: '6-30',
+                type: 'application',
+                difficulty: 'hard',
+                question: 'What is Zigbee end device?',
+                answer: 'Leaf node that does not route traffic',
+                alternatives: ['endpoint device', 'no routing capability'],
+                hint: 'Lowest power consumption',
+                explanation: 'Zigbee end devices communicate only with their parent router/coordinator and do not route traffic for others, minimizing power consumption.'
+            }
+        ],
+
+        lorawan: [
+            {
+                id: '6-31',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What does LoRaWAN stand for?',
+                answer: 'Long Range Wide Area Network',
+                alternatives: [],
+                hint: 'Think about long-range connection',
+                explanation: 'LoRaWAN (Long Range Wide Area Network) is a low-power wide area network protocol designed for long-range IoT communications.'
+            },
+            {
+                id: '6-32',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What is the typical range of LoRaWAN?',
+                answer: '2-15 km (urban), up to 50 km (rural)',
+                alternatives: ['kilometers', 'long range'],
+                hint: 'Very long range',
+                explanation: 'LoRaWAN achieves 2-15 km range in urban areas and up to 50 km in rural areas, much longer than WiFi or Bluetooth.'
+            },
+            {
+                id: '6-33',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What modulation does LoRa use?',
+                answer: 'Chirp Spread Spectrum (CSS)',
+                alternatives: [],
+                hint: 'Spread spectrum technique',
+                explanation: 'LoRa uses Chirp Spread Spectrum modulation, providing excellent resistance to interference and long-range communication.'
+            },
+            {
+                id: '6-34',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is the data rate of LoRaWAN?',
+                answer: '0.3 kbps to 50 kbps',
+                alternatives: ['very low data rate'],
+                hint: 'Trade-off for range',
+                explanation: 'LoRaWAN data rates range from 0.3 to 50 kbps, trading bandwidth for range and power efficiency suitable for small sensor data.'
+            },
+            {
+                id: '6-35',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is star topology in LoRaWAN?',
+                answer: 'Devices connect directly to gateways',
+                alternatives: ['direct to gateway', 'no mesh'],
+                hint: 'Not a mesh network',
+                explanation: 'LoRaWAN uses star topology where devices communicate directly with gateways, unlike mesh networks like Zigbee.'
+            },
+            {
+                id: '6-36',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'What would be the best use case for LoRaWAN?',
+                answer: 'Agricultural sensor monitoring over large areas',
+                alternatives: ['smart farming', 'remote environmental monitoring'],
+                hint: 'Think about large area, low bandwidth',
+                explanation: 'LoRaWAN is ideal for agricultural monitoring, smart cities, and environmental sensing where devices are spread over large areas.'
+            },
+            {
+                id: '6-37',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'How long can LoRaWAN battery life last?',
+                answer: '2-10 years',
+                alternatives: ['years on battery'],
+                hint: 'Very power efficient',
+                explanation: 'LoRaWAN devices can operate for 2-10 years on small batteries due to extremely low power consumption and efficient communication.'
+            },
+            {
+                id: '6-38',
+                type: 'application',
+                difficulty: 'hard',
+                question: 'What is adaptive data rate (ADR) in LoRaWAN?',
+                answer: 'Optimizes data rate based on signal quality',
+                alternatives: ['dynamic data rate adjustment'],
+                hint: 'Network optimization',
+                explanation: 'ADR optimizes device data rates based on signal quality, maximizing battery life and network capacity.'
+            },
+            {
+                id: '6-39',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is LoRaWAN duty cycle?',
+                answer: 'Maximum transmission time percentage',
+                alternatives: ['transmission limit', 'airtime restriction'],
+                hint: 'Fair access regulation',
+                explanation: 'LoRaWAN duty cycle limits transmission time percentage (e.g., 1%), preventing devices from continuously transmitting and ensuring fair access.'
+            },
+            {
+                id: '6-40',
+                type: 'application',
+                difficulty: 'hard',
+                question: 'What is the bidirectional capability of LoRaWAN?',
+                answer: 'Supports downlink messages to devices',
+                alternatives: ['two-way communication', 'can send to devices'],
+                hint: 'Communication is not just one-way',
+                explanation: 'LoRaWAN supports bidirectional communication, allowing the network to send messages and commands down to devices.'
+            }
+        ],
+
+        networkSelection: [
+            {
+                id: '6-41',
+                type: 'application',
+                difficulty: 'easy',
+                question: 'Which technology for short-range, high-bandwidth indoor devices?',
+                answer: 'WiFi',
+                alternatives: [],
+                hint: 'High data rate, indoor',
+                explanation: 'WiFi provides high bandwidth (100+ Mbps) for indoor devices like cameras, smart displays, and appliances that need fast data transfer.'
+            },
+            {
+                id: '6-42',
+                type: 'application',
+                difficulty: 'easy',
+                question: 'Which technology for battery-powered wearable devices?',
+                answer: 'BLE',
+                alternatives: ['Bluetooth Low Energy'],
+                hint: 'Long battery life needed',
+                explanation: 'BLE minimal power consumption suits wearables, smart watches, and health monitors that need months of battery life.'
+            },
+            {
+                id: '6-43',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'Which technology for home automation with many devices?',
+                answer: 'Zigbee',
+                alternatives: [],
+                hint: 'Mesh network, many devices',
+                explanation: 'Zigbee mesh networking handles hundreds of home automation devices with self-healing and multi-hop capabilities.'
+            },
+            {
+                id: '6-44',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'Which technology for agricultural sensors over kilometers?',
+                answer: 'LoRaWAN',
+                alternatives: [],
+                hint: 'Very long range needed',
+                explanation: 'LoRaWAN long-range (up to 50 km rural) suits agricultural monitoring, asset tracking, and environmental sensing across large areas.'
+            },
+            {
+                id: '6-45',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is network segmentation in IoT security?',
+                answer: 'Separating IoT devices on isolated networks',
+                alternatives: ['isolating device traffic'],
+                hint: 'Security through isolation',
+                explanation: 'Network segmentation isolates IoT devices on separate VLANs or subnets, limiting compromise impact and improving security.'
+            },
+            {
+                id: '6-46',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'Why use a VPN for remote IoT device access?',
+                answer: 'Encrypted secure tunnel',
+                alternatives: ['secure remote connection'],
+                hint: 'Secure remote management',
+                explanation: 'VPNs provide encrypted tunnels for secure remote access to IoT devices, preventing unauthorized interception.'
+            },
+            {
+                id: '6-47',
+                type: 'application',
+                difficulty: 'hard',
+                question: 'Which factor most affects connectivity choice for battery devices?',
+                answer: 'Power consumption',
+                alternatives: ['energy efficiency'],
+                hint: 'Battery life is critical',
+                explanation: 'Power consumption is the primary factor for battery-powered IoT devices; technologies like BLE and LoRaWAN prioritize energy efficiency.'
+            },
+            {
+                id: '6-48',
+                type: 'application',
+                difficulty: 'hard',
+                question: 'What is multi-radio IoT gateway?',
+                answer: 'Gateway supporting multiple wireless protocols',
+                alternatives: ['device with WiFi, BLE, Zigbee, LoRa'],
+                hint: 'Bridging different networks',
+                explanation: 'Multi-radio gateways support multiple wireless protocols (WiFi, BLE, Zigbee, LoRaWAN), bridging devices between different networks.'
+            },
+            {
+                id: '6-49',
+                type: 'application',
+                difficulty: 'hard',
+                question: 'Which protocol best supports mobile IoT devices?',
+                answer: 'WiFi or Cellular',
+                alternatives: ['network with roaming support'],
+                hint: 'Hand-off between access points',
+                explanation: 'WiFi and cellular networks support roaming and hand-off between access points/cells, essential for mobile IoT applications.'
+            },
+            {
+                id: '6-50',
+                type: 'application',
+                difficulty: 'hard',
+                question: 'What is coexistence management in IoT connectivity?',
+                answer: 'Handling interference between same-band protocols',
+                alternatives: ['managing 2.4 GHz interference'],
+                hint: 'WiFi, BLE, Zigbee all use 2.4 GHz',
+                explanation: 'Coexistence management handles interference between protocols sharing the same frequency band (2.4 GHz), optimizing performance.'
+            }
+        ]
+    }
     
     dataProcessing: { basics: Array.from({length: 55}, (_, i) => ({
         id: `7-${i + 1}`,
