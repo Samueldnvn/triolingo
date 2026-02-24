@@ -1415,17 +1415,575 @@ const practiceProblems = {
         }))
     },
     
-    // Adding placeholder structures for remaining modules to complete all 500+ problems
-    // Each will be expanded similarly when space permits
-    protocols: { basics: Array.from({length: 30}, (_, i) => ({
-        id: `4-${i + 1}`,
-        type: 'concept',
-        difficulty: i % 3 === 0 ? 'easy' : i % 3 === 1 ? 'medium' : 'hard',
-        question: `IoT protocol question ${i + 1}`,
-        answer: 'Protocol Answer',
-        hint: 'Review IoT communication protocols',
-        explanation: 'Understanding communication protocols is essential for IoT development'
-    }))},
+    // ==========================================
+    // MODULE 4: COMMUNICATION PROTOCOLS (55 problems)
+    // ==========================================
+    protocols: {
+        mqttBasics: [
+            {
+                id: '4-1',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What does MQTT stand for?',
+                answer: 'Message Queuing Telemetry Transport',
+                alternatives: [],
+                hint: 'Think about a lightweight messaging protocol',
+                explanation: 'MQTT (Message Queuing Telemetry Transport) is a lightweight publish/subscribe messaging protocol designed for IoT devices with limited bandwidth.'
+            },
+            {
+                id: '4-2',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What is the architecture of MQTT?',
+                answer: 'Publish/subscribe with broker',
+                alternatives: ['publisher-subscriber-broker', 'broker-based pub/sub'],
+                hint: 'Think about how MQTT messages are distributed',
+                explanation: 'MQTT uses a publish/subscribe architecture where devices (publishers) send messages and other devices (subscribers) receive them through a central broker.'
+            },
+            {
+                id: '4-3',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What transport protocol does MQTT use?',
+                answer: 'TCP',
+                alternatives: [],
+                hint: 'Think about reliable transport',
+                explanation: 'MQTT runs over TCP (Transmission Control Protocol), which provides reliable, ordered, and error-checked delivery of messages.'
+            },
+            {
+                id: '4-4',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is the minimum header size of an MQTT message?',
+                answer: '2 bytes',
+                alternatives: [],
+                hint: 'Think about minimal overhead',
+                explanation: 'MQTT has a very small fixed header of 2 bytes, making it extremely efficient for constrained IoT devices with limited bandwidth.'
+            },
+            {
+                id: '4-5',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'How do MQTT clients receive messages?',
+                answer: 'Subscribe to topics',
+                alternatives: ['topic subscription'],
+                hint: 'Think about the subscription model',
+                explanation: 'MQTT clients subscribe to specific topics to receive messages. They will only receive messages published to topics they are subscribed to.'
+            },
+            {
+                id: '4-6',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is an MQTT broker?',
+                answer: 'Server that mediates messages between clients',
+                alternatives: ['message路由器', 'central message server'],
+                hint: 'Think about the central coordination point',
+                explanation: 'An MQTT broker is a server that receives messages from publishers and forwards them to the appropriate subscribers based on topic subscriptions.'
+            },
+            {
+                id: '4-7',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What is a topic in MQTT?',
+                answer: 'Hierarchical address for message routing',
+                alternatives: ['message channel', 'subscription path'],
+                hint: 'Think about how messages are organized',
+                explanation: 'MQTT topics are hierarchical strings (like "home/livingroom/temperature") used to organize and route messages between publishers and subscribers.'
+            },
+            {
+                id: '4-8',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What character separates levels in MQTT topic hierarchy?',
+                answer: '/',
+                alternatives: ['forward slash'],
+                hint: 'Think about file path delimiters',
+                explanation: 'The forward slash (/) is used as a delimiter in MQTT topics, creating a hierarchical structure similar to file paths.'
+            },
+            {
+                id: '4-9',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What wildcards can be used in MQTT topic subscriptions?',
+                answer: '+' and '#',
+                alternatives: ['single-level + and multi-level #'],
+                hint: 'Think about matching patterns',
+                explanation: '+ matches a single topic level, while # matches multiple levels at the end of a topic. For example, sensor/+ matches sensor/temperature but not sensor/room/temperature.'
+            },
+            {
+                id: '4-10',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'True or False: MQTT clients must know about each other to communicate.',
+                answer: 'False',
+                alternatives: [],
+                hint: 'Think about decoupling',
+                explanation: 'False. MQTT clients are completely decoupled through the broker. Publishers and subscribers don need to know about each other, only the broker.'
+            },
+            {
+                id: '4-11',
+                type: 'code',
+                difficulty: 'medium',
+                question: 'How do you create an MQTT client in Eclipse Paho?',
+                answer: 'new MqttClient(broker, clientId)',
+                alternatives: ['MqttClient instance'],
+                hint: 'Think about MqttClient constructor',
+                explanation: 'MqttClient client = new MqttClient(brokerUrl, clientId) creates an MQTT client in Eclipse Paho with the broker URL and unique client ID.'
+            },
+            {
+                id: '4-12',
+                type: 'code',
+                difficulty: 'medium',
+                question: 'What method connects an MQTT client to the broker?',
+                answer: 'connect()',
+                alternatives: [],
+                hint: 'Think about establishing connection',
+                explanation: 'The connect() method establishes a connection to the MQTT broker. You can optionally pass MqttConnectOptions for configuration.'
+            },
+            {
+                id: '4-13',
+                type: 'code',
+                difficulty: 'medium',
+                question: 'How do you publish a message in MQTT?',
+                answer: 'client.publish(topic, message)',
+                alternatives: ['publish method'],
+                hint: 'Think about publishing method',
+                explanation: 'client.publish(topic, new MqttMessage(payload)) publishes a message to a specific topic on the MQTT broker.'
+            },
+            {
+                id: '4-14',
+                type: 'code',
+                difficulty: 'medium',
+                question: 'How do you set MQTT clean session?',
+                answer: 'connOpts.setCleanSession(true)',
+                alternatives: ['setCleanSession'],
+                hint: 'MqttConnectOptions method',
+                explanation: 'connOpts.setCleanSession(true) in MqttConnectOptions tells the broker not to persist session state between connections.'
+            }
+        ],
+
+        mqttAdvanced: [
+            {
+                id: '4-15',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What are the three MQTT QoS levels?',
+                answer: '0, 1, and 2',
+                alternatives: ['at most once, at least once, exactly once'],
+                hint: 'Three levels of delivery guarantees',
+                explanation: 'MQTT QoS levels: 0 (at most once, fire and forget), 1 (at least once, guaranteed delivery), 2 (exactly once, exactly one delivery).'
+            },
+            {
+                id: '4-16',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What does QoS 0 guarantee in MQTT?',
+                answer: 'Fire and forget - no guarantee',
+                alternatives: ['at most once'],
+                hint: 'No delivery guarantee',
+                explanation: 'QoS 0 provides "at most once" delivery. Messages are sent once and not acknowledged. There is no guarantee of delivery.'
+            },
+            {
+                id: '4-17',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What does QoS 1 guarantee in MQTT?',
+                answer: 'At least once delivery',
+                alternatives: [],
+                hint: 'Guaranteed delivery, possible duplicates',
+                explanation: 'QoS 1 guarantees "at least once" delivery. The broker acknowledges messages. Duplicate messages may occur if acknowledgments are lost.'
+            },
+            {
+                id: '4-18',
+                type: 'concept',
+                difficulty: 'hard',
+                question: 'What does QoS 2 guarantee in MQTT?',
+                answer: 'Exactly once delivery',
+                alternatives: [],
+                hint: 'No duplicates, no missed messages',
+                explanation: 'QoS 2 guarantees "exactly once" delivery with a four-step handshake. It prevents both message loss and duplicates but has higher overhead.'
+            },
+            {
+                id: '4-19',
+                type: 'application',
+                difficulty: 'easy',
+                question: 'Which QoS level would you use for frequent, non-critical sensor readings?',
+                answer: 'QoS 0',
+                alternatives: [],
+                hint: 'Think about accepting occasional loss',
+                explanation: 'QoS 0 is appropriate for frequent sensor data where occasional loss is acceptable (e.g., temperature readings every second).'
+            },
+            {
+                id: '4-20',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'Which QoS level is best for critical commands that must be delivered?',
+                answer: 'QoS 1 or 2',
+                alternatives: ['at least once or exactly once'],
+                hint: 'Think about guaranteed delivery',
+                explanation: 'QoS 1 or 2 for critical commands like "turn off furnace" where message loss is unacceptable. QoS 1 is simpler; use QoS 2 if duplicates are problematic.'
+            },
+            {
+                id: '4-21',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is retained message in MQTT?',
+                answer: 'Message saved for new subscribers',
+                alternatives: ['persistent message at broker'],
+                hint: 'Think about new subscribers getting last value',
+                explanation: 'A retained message is stored on the broker and immediately sent to new subscribers, providing the last known state of a topic.'
+            },
+            {
+                id: '4-22',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is Last Will and Testament (LWT) in MQTT?',
+                answer: 'Message sent when client disconnects abnormally',
+                alternatives: ['disconnection notification'],
+                hint: 'Think about detecting offline devices',
+                explanation: 'LWT allows clients to specify a message that the broker will publish if the client disconnects abnormally, useful for monitoring device status.'
+            },
+            {
+                id: '4-23',
+                type: 'code',
+                difficulty: 'hard',
+                question: 'How do you set a retained message in Eclipse Paho?',
+                answer: 'message.setRetained(true)',
+                alternatives: [],
+                hint: 'MqttMessage property',
+                explanation: 'message.setRetained(true) marks an MQTT message as retained, so the broker stores it for new subscribers.'
+            },
+            {
+                id: '4-24',
+                type: 'code',
+                difficulty: 'hard',
+                question: 'How do you configure Last Will in MqttConnectOptions?',
+                answer: 'connOpts.setWill(topic, message, qos, retained)',
+                alternatives: ['setWill method'],
+                hint: 'MqttConnectOptions method for LWT',
+                explanation: 'connOpts.setWill(topic, new MqttMessage(payload), qos, retained) sets the Last Will and Testament message to send on abnormal disconnect.'
+            },
+            {
+                id: '4-25',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'Which MQTT QoS level has the highest overhead?',
+                answer: 'QoS 2',
+                alternatives: [],
+                hint: 'Think about message flow complexity',
+                explanation: 'QoS 2 has the highest overhead due to the four-step handshake ensuring exactly-once delivery without duplicates.'
+            },
+            {
+                id: '4-26',
+                type: 'concept',
+                difficulty: 'hard',
+                question: 'What is the MQTT CONNECT packet used for?',
+                answer: 'Initiate connection to broker',
+                alternatives: ['建立连接'],
+                hint: 'First packet in MQTT handshake',
+                explanation: 'The CONNECT packet is the first packet sent by the client to initiate a connection with the MQTT broker.'
+            },
+            {
+                id: '4-27',
+                type: 'concept',
+                difficulty: 'hard',
+                question: 'What does keep-alive in MQTT do?',
+                answer: 'Maintain connection detection',
+                alternatives: ['heartbeat mechanism'],
+                hint: 'Think about connection monitoring',
+                explanation: 'Keep-alive is a timer that the client uses to maintain the connection. If no messages sent within the keep-alive period, the client sends a PINGREQ.'
+            },
+            {
+                id: '4-28',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'Which MQTT topic pattern matches "sensor/room1/temperature" and "sensor/room2/temperature"?',
+                answer: 'sensor/+/temperature',
+                alternatives: ['sensor/+/temperature'],
+                hint: 'Use single-level wildcard',
+                explanation: 'sensor/+/temperature uses the + wildcard to match any single level, matching both topic examples.'
+            },
+            {
+                id: '4-29',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'Which MQTT topic pattern matches all topics under "home/"?',
+                answer: 'home/#',
+                alternatives: [],
+                hint: 'Use multi-level wildcard',
+                explanation: 'home/# uses the # wildcard to match all topics at any level under home (e.g., home/livingroom, home/livingroom/temp).'
+            },
+            {
+                id: '4-30',
+                type: 'code',
+                difficulty: 'hard',
+                question: 'How do you set QoS level when publishing?',
+                answer: 'message.setQos(qosLevel)',
+                alternatives: [],
+                hint: 'MqttMessage property',
+                explanation: 'message.setQos(1) sets the QoS level for an MQTT message before publishing to the broker.'
+            }
+        ],
+
+        coap: [
+            {
+                id: '4-31',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What does CoAP stand for?',
+                answer: 'Constrained Application Protocol',
+                alternatives: [],
+                hint: 'Think about protocols for constrained devices',
+                explanation: 'CoAP (Constrained Application Protocol) is a specialized web transfer protocol for use with constrained nodes and networks in IoT.'
+            },
+            {
+                id: '4-32',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What transport protocol does CoAP use?',
+                answer: 'UDP',
+                alternatives: [],
+                hint: 'Think about unreliable but fast transport',
+                explanation: 'CoAP uses UDP (User Datagram Protocol) rather than TCP, reducing overhead and providing faster but unreliable delivery.'
+            },
+            {
+                id: '4-33',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is the standard CoAP header size?',
+                answer: '4 bytes',
+                alternatives: [],
+                hint: 'Smaller than MQTT header',
+                explanation: 'CoAP has a very compact 4-byte fixed header, making it even more lightweight than MQTT for constrained networks.'
+            },
+            {
+                id: '4-34',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What request methods does CoAP support?',
+                answer: 'GET, POST, PUT, DELETE',
+                alternatives: [],
+                hint: 'Similar to HTTP methods',
+                explanation: 'CoAP supports the same methods as HTTP: GET (retrieve), POST (process), PUT (update), and DELETE (remove).'
+            },
+            {
+                id: '4-35',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is the main advantage of CoAP over HTTP?',
+                answer: 'Lower overhead using UDP',
+                alternatives: ['lightweight protocol'],
+                hint: 'Think about efficiency',
+                explanation: 'CoAP has much lower overhead than HTTP because it uses UDP with a compact binary format instead of TCP with text.'
+            },
+            {
+                id: '4-36',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'Does CoAP support multicast?',
+                answer: 'Yes, natively',
+                alternatives: [],
+                hint: 'Think about broadcasting to multiple devices',
+                explanation: 'CoAP has native multicast support based on UDP, allowing a single request to be sent to multiple devices simultaneously.'
+            },
+            {
+                id: '4-37',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is resource discovery in CoAP?',
+                answer: 'Finding available resources via multicast',
+                alternatives: ['.well-known/core discovery'],
+                hint: 'Discovering what devices can do',
+                explanation: 'CoAP supports resource discovery where devices can announce their available endpoints via multicast to /.well-known/core.'
+            },
+            {
+                id: '4-38',
+                type: 'concept',
+                difficulty: 'hard',
+                question: 'How does CoAP handle reliability over UDP?',
+                answer: 'Confirmable messages with ACK',
+                alternatives: ['CON/ACK mechanism'],
+                hint: 'CoAP has its own reliability layer',
+                explanation: 'CoAP defines confirmable (CON) messages that require acknowledgment and non-confirmable (NON) messages, providing reliability over UDP.'
+            },
+            {
+                id: '4-39',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'Which protocol would you use for low-power sensors in a crowded RF environment?',
+                answer: 'CoAP',
+                alternatives: [],
+                hint: 'Think about lightweight and multicast',
+                explanation: 'CoAP is ideal for low-power sensors in crowded environments due to its small packets and multicast capabilities for efficient discovery.'
+            },
+            {
+                id: '4-40',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'When is HTTP better than CoAP?',
+                answer: 'When TCP reliability is needed',
+                alternatives: ['reliable transmission required'],
+                hint: 'Think about guaranteed delivery',
+                explanation: 'Use HTTP when you need guaranteed, reliable delivery via TCP, or when working with existing web infrastructure.'
+            }
+        ],
+
+        websockets: [
+            {
+                id: '4-41',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What type of communication do WebSockets provide?',
+                answer: 'Full-duplex bidirectional',
+                alternatives: ['two-way real-time'],
+                hint: 'Both directions simultaneously',
+                explanation: 'WebSockets provide full-duplex, bidirectional communication allowing both client and server to send messages simultaneously over one connection.'
+            },
+            {
+                id: '4-42',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'How many TCP connections does WebSocket use?',
+                answer: 'One',
+                alternatives: ['single persistent connection'],
+                hint: 'Connection efficiency',
+                explanation: 'WebSockets use a single persistent TCP connection, unlike HTTP which opens new connections for requests.'
+            },
+            {
+                id: '4-43',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'How does WebSocket connection start?',
+                answer: 'HTTP upgrade request',
+                alternatives: ['HTTP handshake then upgrade'],
+                hint: 'Begins with standard HTTP, then upgrades',
+                explanation: 'WebSocket connections start as standard HTTP requests with an Upgrade header, then upgrade to WebSocket protocol.'
+            },
+            {
+                id: '4-44',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is a key advantage of WebSockets for IoT?',
+                answer: 'Low latency real-time updates',
+                alternatives: ['instant message delivery'],
+                hint: 'Think about real-time dashboards',
+                explanation: 'WebSockets enable low-latency, real-time communication ideal for IoT dashboards that need instant updates from connected devices.'
+            },
+            {
+                id: '4-45',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'Do modern web browsers support WebSockets natively?',
+                answer: 'Yes',
+                alternatives: [],
+                hint: 'Think about browser capabilities',
+                explanation: 'All modern web browsers support WebSockets natively, making them ideal for web-based IoT monitoring interfaces.'
+            },
+            {
+                id: '4-46',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'Which protocol is best for a real-time IoT dashboard accessed via web browser?',
+                answer: 'WebSockets',
+                alternatives: [],
+                hint: 'Think about browser support and real-time',
+                explanation: 'WebSockets are ideal for browser-based dashboards because they provide native browser support and real-time bidirectional communication.'
+            },
+            {
+                id: '4-47',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'Which is more efficient: WebSocket MQTT over WebSockets?',
+                answer: 'Native WebSocket for custom protocols',
+                alternatives: ['depends on use case'],
+                hint: 'Think about protocol overhead',
+                explanation: 'For direct device communication, native MQTT is more efficient. MQTT over WebSockets adds WebSocket overhead but enables browser access.'
+            },
+            {
+                id: '4-48',
+                type: 'concept',
+                difficulty: 'hard',
+                question: 'What is WebSocket frame structure?',
+                answer: 'Header with opcode and payload',
+                alternatives: ['binary frame format'],
+                hint: 'Binary protocol with opcodes',
+                explanation: 'WebSocket frames include a header with opcode (text, binary, close, ping/pong) and optional payload data.'
+            },
+            {
+                id: '4-49',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'How do WebSockets handle connection errors?',
+                answer: 'Close frame with status code',
+                alternatives: ['graceful closure'],
+                hint: 'Think about connection termination',
+                explanation: 'WebSocket connections can be closed gracefully with a close frame containing a status code and optional reason.'
+            },
+            {
+                id: '4-50',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'When would you choose MQTT over WebSockets?',
+                answer: 'Device-to-device direct messaging',
+                alternatives: ['constrained environments'],
+                hint: 'Think about device constraints',
+                explanation: 'Use MQTT directly (TCP) for device-to-device communication in constrained environments. Use MQTT over WebSockets only for browser-based applications.'
+            }
+        ],
+
+        protocolSelection: [
+            {
+                id: '4-51',
+                type: 'application',
+                difficulty: 'easy',
+                question: 'Which factor is MOST important for battery-powered IoT sensors?',
+                answer: 'Power consumption',
+                alternatives: ['energy efficiency'],
+                hint: 'Think about battery life',
+                explanation: 'Power consumption is critical for battery-powered devices. Protocols with small packets and efficient communication like MQTT and CoAP are preferred.'
+            },
+            {
+                id: '4-52',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'Which protocol for industrial automation with required guaranteed delivery?',
+                answer: 'MQTT with QoS 1 or 2',
+                alternatives: ['reliable delivery'],
+                hint: 'Think about critical messages',
+                explanation: 'MQTT with QoS 1 or 2 provides guaranteed delivery critical for industrial automation commands.'
+            },
+            {
+                id: '4-53',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'Which protocol for discovering multiple constrained sensors simultaneously?',
+                answer: 'CoAP with multicast',
+                alternatives: [],
+                hint: 'Think about broadcasting discovery',
+                explanation: 'CoAP native multicast support is ideal for simultaneously discovering and configuring multiple constrained sensors.'
+            },
+            {
+                id: '4-54',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'Which protocol for a smartphone app controlling home devices?',
+                answer: 'MQTT over WebSockets',
+                alternatives: ['HTTP/REST or MQTT WS'],
+                hint: 'Think about mobile/web connectivity',
+                explanation: 'MQTT over WebSockets or standard HTTP/REST APIs work well for smartphone apps, with WebSockets providing real-time updates.'
+            },
+            {
+                id: '4-55',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What does latency measure in IoT protocols?',
+                answer: 'Delay between sending and receiving',
+                alternatives: ['response time'],
+                hint: 'Think about timing',
+                explanation: 'Latency is the time delay between a message being sent and received. Low latency is critical for real-time control applications.'
+            }
+        ]
+    },
     
     developmentTools: { basics: Array.from({length: 25}, (_, i) => ({
         id: `5-${i + 1}`,
