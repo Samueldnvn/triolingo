@@ -629,6 +629,149 @@ const practiceProblems = {
                 alternatives: ['output to standard output'],
                 hint: 'Think about standard output',
                 explanation: 'System.out.println prints text to the standard output (console) and adds a newline character at the end.'
+            },
+            {
+                id: '2-10a',
+                type: 'code',
+                difficulty: 'medium',
+                question: 'How do you create an instance of a class in Java?',
+                answer: 'new ClassName()',
+                alternatives: ['new ClassName()', 'new ClassName'],
+                hint: 'Think about instantiation keyword',
+                explanation: 'Classes are instantiated using the "new" keyword: "MyClass obj = new MyClass();"'
+            },
+            {
+                id: '2-10b',
+                type: 'code',
+                difficulty: 'medium',
+                question: 'What keyword is used for class inheritance in Java?',
+                answer: 'extends',
+                alternatives: [],
+                hint: 'Think about extending functionality',
+                explanation: 'The "extends" keyword is used for inheritance: "public class Child extends Parent"'
+            },
+            {
+                id: '2-10c',
+                type: 'code',
+                difficulty: 'hard',
+                question: 'What annotation is used for real Java threads?',
+                answer: '@Override',
+                alternatives: [],
+                hint: 'Method overriding annotation',
+                explanation: '@Override annotation indicates that a method is intended to override a method in a superclass, commonly used with run() in threads.'
+            },
+            {
+                id: '2-10d',
+                type: 'code',
+                difficulty: 'medium',
+                question: 'How do you implement an interface in Java?',
+                answer: 'implements InterfaceName',
+                alternatives: ['implements'],
+                hint: 'Think about the implements keyword',
+                explanation: 'Interfaces are implemented using the "implements" keyword: "public class MyClass implements MyInterface"'
+            }
+        ],
+        
+        hardwareInterfaces: [
+            {
+                id: '2-20',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What does GPIO stand for?',
+                answer: 'General Purpose Input/Output',
+                alternatives: [],
+                hint: 'Think about basic digital pins',
+                explanation: 'GPIO (General Purpose Input/Output) pins are digital interfaces that can be configured as input or output for basic digital communication.'
+            },
+            {
+                id: '2-21',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'How many pins does I2C use?',
+                answer: '2',
+                alternatives: ['two'],
+                hint: 'SDA and SCL',
+                explanation: 'I2C uses two wires: SDA (Serial Data) for data transmission and SCL (Serial Clock) for synchronization.'
+            },
+            {
+                id: '2-22',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'How many pins does SPI use?',
+                answer: '4',
+                alternatives: ['four'],
+                hint: 'MOSI, MISO, SCK, CS',
+                explanation: 'SPI typically uses 4 pins: MOSI (Master Out Slave In), MISO (Master In Slave Out), SCK (Serial Clock), and CS (Chip Select).'
+            },
+            {
+                id: '2-23',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is the difference between I2C and SPI?',
+                answer: 'I2C is addressable and slower, SPI is faster and point-to-point',
+                alternatives: ['I2C multi-device, SPI point-to-point', 'speed and addressing differences'],
+                hint: 'Think about device addressing and speed',
+                explanation: 'I2C supports multiple devices on the same bus using addresses but is slower. SPI is faster but typically point-to-point with dedicated chip select lines.'
+            },
+            {
+                id: '2-24',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What does UART stand for?',
+                answer: 'Universal Asynchronous Receiver-Transmitter',
+                alternatives: [],
+                hint: 'Serial communication standard',
+                explanation: 'UART (Universal Asynchronous Receiver-Transmitter) is a hardware device for asynchronous serial communication, commonly used for serial ports.'
+            },
+            {
+                id: '2-25',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What baud rate indicates in UART communication?',
+                answer: 'Speed of data transmission',
+                alternatives: ['bits per second', 'communication speed'],
+                hint: 'Think about transmission speed',
+                explanation: 'Baud rate indicates the speed of data transmission measured in bits per second. Common values include 9600, 115200, etc.'
+            },
+            {
+                id: '2-26',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'Which protocol is best for reading multiple temperature sensors on one bus?',
+                answer: 'I2C',
+                alternatives: [],
+                hint: 'Think about multi-device support',
+                explanation: 'I2C is ideal for reading multiple sensors on one bus because it supports addressing, allowing multiple devices to share the same two wires.'
+            },
+            {
+                id: '2-27',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'Which protocol would you use for high-speed sensor data?',
+                answer: 'SPI',
+                alternatives: [],
+                hint: 'Think about fastest protocol',
+                explanation: 'SPI is the fastest among common IoT protocols with full-duplex communication, making it ideal for high-speed sensor data.'
+            },
+            {
+                id: '2-28',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'What would you use for a GPS module connection?',
+                answer: 'UART',
+                alternatives: [],
+                hint: 'GPS commonly uses serial communication',
+                explanation: 'GPS modules commonly use UART for serial communication, sending NMEA sentences to the microcontroller.'
+            },
+            {
+                id: '2-29',
+                type: 'application',
+                difficulty: 'hard',
+                question: 'How would you control 8 LEDs with minimal pins?',
+                answer: 'Use shift register and I2C or SPI',
+                alternatives: ['LED driver chip', 'port expander', 'multiplexing'],
+                hint: 'Think about expanding I/O',
+                explanation: 'Use an LED driver or shift register connected via I2C/SPI to control many LEDs with minimal GPIO pins, or use multiplexing techniques.'
             }
         ],
         
@@ -693,6 +836,87 @@ const practiceProblems = {
                 hint: 'Think about digital I/O abstraction',
                 explanation: 'W10-DIO is a Java library providing a high-level API for digital input/output operations on various hardware platforms.'
             },
+            {
+                id: '2-17',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What is Spring Boot in IoT?',
+                answer: 'Application framework for microservices',
+                alternatives: ['Java framework for REST APIs', 'simplified Java development'],
+                hint: 'Think about building REST services',
+                explanation: 'Spring Boot simplifies building production-ready IoT applications, particularly REST APIs for device communication and data management.'
+            },
+            {
+                id: '2-18',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is the main advantage of using Eclipse Kura?',
+                answer: 'Modular OSGi-based architecture',
+                alternatives: ['hot deployment of services', 'plugin system'],
+                hint: 'Think about modularity and OSGi',
+                explanation: 'Eclipse Kura provides a modular OSGi-based architecture that allows hot deployment and management of services on IoT gateways.'
+            },
+            {
+                id: '2-19',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What does MQTT stand for?',
+                answer: 'Message Queuing Telemetry Transport',
+                alternatives: [],
+                hint: 'Lightweight messaging protocol',
+                explanation: 'MQTT (Message Queuing Telemetry Transport) is a lightweight publish/subscribe messaging protocol designed for IoT and low-bandwidth networks.'
+            },
+            {
+                id: '2-19a',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'In MQTT, what is a topic?',
+                answer: 'Hierarchical string for message routing',
+                alternatives: ['message channel', 'subscription path'],
+                hint: 'Think about message organization',
+                explanation: 'MQTT topics are hierarchical strings (like "home/livingroom/temperature") used to route messages between publishers and subscribers.'
+            },
+            {
+                id: '2-19b',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'What QoS level guarantees at-least-once delivery in MQTT?',
+                answer: 'QoS 1',
+                alternatives: [],
+                hint: 'Three QoS levels: 0, 1, 2',
+                explanation: 'MQTT QoS 1 guarantees at-least-once delivery. QoS 0 is at-most-once (fire and forget), and QoS 2 guarantees exactly-once delivery.'
+            },
+            {
+                id: '2-19c',
+                type: 'application',
+                difficulty: 'easy',
+                question: 'Is MQTT suitable for unreliable networks?',
+                answer: 'Yes',
+                alternatives: [],
+                hint: 'Think about lightweight protocol design',
+                explanation: 'MQTT is designed for unreliable networks with low bandwidth, making it ideal for IoT scenarios with intermittent connectivity.'
+            },
+            {
+                id: '2-19d',
+                type: 'code',
+                difficulty: 'hard',
+                question: 'In Pi4J, what method is used to set a GPIO pin high?',
+                answer: 'pin.high()',
+                alternatives: ['pin.state HIGH', 'pin.setValue(true)'],
+                hint: 'Pi4J digital output control',
+                explanation: 'In Pi4J, use pin.high() or pin.setState(PinState.HIGH) to set a GPIO pin to output logic high.'
+            },
+            {
+                id: '2-19e',
+                type: 'code',
+                difficulty: 'hard',
+                question: 'How do you provision a digital output pin in Pi4J?',
+                answer: 'gpio.provisionDigitalOutputPin()',
+                alternatives: ['provisionDigitalOutputPin'],
+                hint: 'Setting up GPIO for output',
+                explanation: 'In Pi4J, use gpio.provisionDigitalOutputPin(RaspiPin.GPIO_XX) to configure and initialize a GPIO pin for digital output.'
+            }
+        ],
             {
                 id: '2-17',
                 type: 'code',
