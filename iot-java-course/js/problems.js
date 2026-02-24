@@ -3593,15 +3593,619 @@ const practiceProblems = {
         ]
     },
     
-    applications: { basics: Array.from({length: 60}, (_, i) => ({
-        id: `9-${i + 1}`,
-        type: 'application',
-        difficulty: i % 3 === 0 ? 'easy' : i % 3 === 1 ? 'medium' : 'hard',
-        question: `Application question ${i + 1}`,
-        answer: 'Application Answer',
-        hint: 'Review end-to-end application development',
-        explanation: 'Building complete IoT applications requires integration of all components'
-    }))},
+    applications: {
+        architecture: [
+            {
+                id: '9-1',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What are the four main layers of IoT application architecture?',
+                answer: 'Device, Edge, Cloud, Application',
+                alternatives: ['Device Layer, Edge Layer, Cloud Layer, Application Layer'],
+                hint: 'Think about the flow from physical devices to user interface',
+                explanation: 'The four layers are: Device Layer (sensors, microcontrollers), Edge Layer (gateways, local processing), Cloud Layer (storage, processing, APIs), and Application Layer (user interfaces, dashboards).'
+            },
+            {
+                id: '9-2',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What is the role of the Device Layer in IoT architecture?',
+                answer: 'Collect data from sensors and control actuators',
+                alternatives: ['data collection and device control'],
+                hint: 'The physical hardware layer',
+                explanation: 'The Device Layer contains sensors, microcontrollers, and actuators that collect physical data, process it locally, and control physical actions.'
+            },
+            {
+                id: '9-3',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What is the primary function of the Edge Layer?',
+                answer: 'Local processing and gateway functionality',
+                alternatives: ['data aggregation and protocol translation'],
+                hint: 'Processing closer to devices',
+                explanation: 'The Edge Layer provides local data processing, protocol translation, data aggregation, and acts as a gateway between devices and the cloud.'
+            },
+            {
+                id: '9-4',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What services does the Cloud Layer provide?',
+                answer: 'Data storage, processing, and APIs',
+                alternatives: ['scalable backend services'],
+                hint: 'Think about cloud capabilities',
+                explanation: 'The Cloud Layer provides centralized data storage, scalable processing, business logic, REST APIs, and platform services for IoT applications.'
+            },
+            {
+                id: '9-5',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What does the Application Layer deliver to users?',
+                answer: 'User interfaces and dashboards',
+                alternatives: ['end-user experience'],
+                hint: 'What users interact with',
+                explanation: 'The Application Layer provides web dashboards, mobile apps, APIs for third-party integration, and automation logic that deliver value to end users.'
+            },
+            {
+                id: '9-6',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'Why use Spring Cloud for IoT backend?',
+                answer: 'Microservices architecture support',
+                alternatives: ['scalable distributed systems'],
+                hint: 'Think about distributed systems',
+                explanation: 'Spring Cloud provides tools for building microservices-based IoT backends with service discovery, configuration management, and distributed tracing.'
+            },
+            {
+                id: '9-7',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is the role of a Message Broker in IoT architecture?',
+                answer: 'Route messages between devices and applications',
+                alternatives: ['message routing and distribution'],
+                hint: 'Think about message distribution',
+                explanation: 'A message broker (like MQTT broker) routes messages between devices, edge gateways, and cloud applications, enabling pub/sub communication patterns.'
+            },
+            {
+                id: '9-8',
+                type: 'code',
+                difficulty: 'medium',
+                question: 'In the IoTPipeline example, what is the purpose of the validator.isValid(data) check?',
+                answer: 'Validate sensor data before processing',
+                alternatives: ['data quality check'],
+                hint: 'Check the conditional before saving',
+                explanation: 'The validator validates incoming sensor data for correctness and quality before processing and storing, preventing bad data from corrupting the system.'
+            },
+            {
+                id: '9-9',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'Which Java technology connects device code to GPIO pins?',
+                answer: 'Pi4J',
+                alternatives: [],
+                hint: 'Java library for Raspberry Pi',
+                explanation: 'Pi4J provides Java API access to Raspberry Pi GPIO pins, enabling Java programs to control sensors and actuators directly.'
+            },
+            {
+                id: '9-10',
+                type: 'application',
+                difficulty: 'hard',
+                question: 'How do you ensure reliable message delivery from devices to cloud?',
+                answer: 'Use MQTT with QoS 1 or 2',
+                alternatives: ['guaranteed delivery levels'],
+                hint: 'MQTT quality of service',
+                explanation: 'MQTT QoS 1 (at-least-once) or QoS 2 (exactly-once) ensures reliable message delivery. QoS 1 is commonly used for IoT with automatic retries.'
+            },
+            {
+                id: '9-11',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is a device gateway in IoT architecture?',
+                answer: 'Bridge between devices and cloud platform',
+                alternatives: ['protocol converter and aggregator'],
+                hint: 'Intermediary between edge and cloud',
+                explanation: 'A device gateway handles protocol translation, data aggregation, security, and acts as a bridge between local IoT devices and cloud platforms.'
+            },
+            {
+                id: '9-12',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'You have 100 Bluetooth sensors and 50 WiFi sensors. How would you architect connectivity?',
+                answer: 'Use a multi-radio gateway supporting both protocols',
+                alternatives: ['gateway with dual radios'],
+                hint: 'Different protocols need different radios',
+                explanation: 'A multi-radio gateway with Bluetooth and WiFi radios can aggregate data from both sensor types and bridge them to the cloud via MQTT.'
+            },
+            {
+                id: '9-13',
+                type: 'concept',
+                difficulty: 'hard',
+                question: 'What is the benefit of edge caching in IoT architecture?',
+                answer: 'Fast access to frequently used data without cloud queries',
+                alternatives: ['reduce cloud latency and bandwidth'],
+                hint: 'Data available locally',
+                explanation: 'Edge caching stores frequently accessed data locally at the edge, providing fast access and reducing bandwidth to the cloud.'
+            },
+            {
+                id: '9-14',
+                type: 'application',
+                difficulty: 'hard',
+                question: 'How do you handle offline IoT devices in architecture?',
+                answer: 'Device shadows store last known state, sync when online',
+                alternatives: ['store-and-forward with device shadow'],
+                hint: 'Keep state while device is offline',
+                explanation: 'Device shadows (digital twins) in the cloud store device state. When offline, apps read the shadow; when online, the device syncs state.'
+            },
+            {
+                id: '9-15',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is a microservices architecture for IoT?',
+                answer: 'Decoupled services for different concerns',
+                alternatives: ['independent scalable services'],
+                hint: 'Think about separating functionality',
+                explanation: 'Microservices architecture separates IoT functionality into independent services (data ingestion, analytics, user management), enabling independent scaling and deployment.'
+            }
+        ],
+
+        developmentWorkflow: [
+            {
+                id: '9-16',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What is the first phase of IoT application development?',
+                answer: 'Requirements',
+                alternatives: ['defining objectives and constraints'],
+                hint: 'Before writing any code',
+                explanation: 'Requirements define project objectives, technical constraints, success criteria, and scope. This is the foundation for all subsequent development phases.'
+            },
+            {
+                id: '9-17',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What happens during the Design phase?',
+                answer: 'Architecture and component selection',
+                alternatives: ['system design and technology choices'],
+                hint: 'Planning how everything fits together',
+                explanation: 'Design phase creates system architecture, selects technologies and protocols, designs data models, and plans component interfaces.'
+            },
+            {
+                id: '9-18',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What does the Implementation phase include?',
+                answer: 'Device code, backend services, and frontend',
+                alternatives: ['coding all components'],
+                hint: 'Writing the actual code',
+                explanation: 'Implementation involves coding device firmware, backend APIs/services, databases, and frontend interfaces based on the design.'
+            },
+            {
+                id: '9-19',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is hardware-in-the-loop testing?',
+                answer: 'Testing with real sensors and devices',
+                alternatives: ['real hardware integration testing'],
+                hint: 'Beyond software simulation',
+                explanation: 'Hardware-in-the-loop testing integrates real hardware (sensors, actuators) with the software system, validating end-to-end functionality with actual devices.'
+            },
+            {
+                id: '9-20',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is device provisioning?',
+                answer: 'Registering and configuring devices for deployment',
+                alternatives: ['device setup and enrollment'],
+                hint: 'Preparing devices for use',
+                explanation: 'Device provisioning registers devices with the cloud platform, installs credentials (certificates), configures settings, and deploys initial firmware.'
+            },
+            {
+                id: '9-21',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is the role of the Monitoring phase?',
+                answer: 'Logging, metrics, and alerting',
+                alternatives: ['observe system health and performance'],
+                hint: 'Watching the running system',
+                explanation: 'Monitoring collects logs, metrics (CPU, memory, message rates), and sets up alerting to detect and respond to issues proactively.'
+            },
+            {
+                id: '9-22',
+                type: 'code',
+                difficulty: 'medium',
+                question: 'In the Spring Boot controller, what does service.authenticate(id) check?',
+                answer: 'Validates device authentication credentials',
+                alternatives: ['verifies device identity'],
+                hint: 'Security check before processing data',
+                explanation: 'service.authenticate(id) validates the device identity (certificates, tokens) before accepting data, preventing unauthorized access.'
+            },
+            {
+                id: '9-23',
+                type: 'concept',
+                difficulty: 'hard',
+                question: 'Why is the Maintenance phase critical for IoT?',
+                answer: 'Long-term support for years of operation',
+                alternatives: ['IoT devices run for 10+ years'],
+                hint: 'Think about device lifespan',
+                explanation: 'IoT applications often run for 10-20 years, requiring ongoing maintenance, updates, bug fixes, security patches, and feature enhancements.'
+            },
+            {
+                id: '9-24',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'You are building an IoT application. What should be documented first?',
+                answer: 'Requirements and success criteria',
+                alternatives: ['project objectives'],
+                hint: 'Foundation of the project',
+                explanation: 'Requirements should be documented first to define what you are building, constraints, success criteria, and scope before any design or implementation.'
+            },
+            {
+                id: '9-25',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'How do you test an IoT application without real devices?',
+                answer: 'Use hardware simulators and mock devices',
+                alternatives: ['device simulation'],
+                hint: 'Simulate device behavior',
+                explanation: 'Hardware simulators, mock services, and simulators emulate device behavior, allowing testing of backend and frontend components before actual hardware integration.'
+            },
+            {
+                id: '9-26',
+                type: 'concept',
+                difficulty: 'hard',
+                question: 'What is unit testing in IoT applications?',
+                answer: 'Testing individual components in isolation',
+                alternatives: ['isolated component testing'],
+                hint: 'Testing one piece at a time',
+                explanation: 'Unit testing verifies individual functions, classes, or components in isolation using mocks, ensuring each piece works correctly before integration.'
+            },
+            {
+                id: '9-27',
+                type: 'concept',
+                difficulty: 'hard',
+                question: 'What is integration testing in IoT?',
+                answer: 'Testing interactions between components',
+                alternatives: ['component interaction testing'],
+                hint: 'Testing how parts work together',
+                explanation: 'Integration testing verifies that different components (device, gateway, backend, database) work correctly together, passing data and handling errors properly.'
+            },
+            {
+                id: '9-28',
+                type: 'application',
+                difficulty: 'hard',
+                question: 'Your IoT app needs to handle 1000 devices. How do you design for scalability?',
+                answer: 'Horizontal scaling with load balancers and message queues',
+                alternatives: ['distributed architecture with auto-scaling'],
+                hint: 'Supporting growth in devices',
+                explanation: 'Design with horizontal scaling: stateless services, load balancers, message queues (Kafka), and auto-scaling cloud resources to handle increasing device counts.'
+            },
+            {
+                id: '9-29',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is continuous integration/continuous deployment (CI/CD) for IoT?',
+                answer: 'Automated testing and deployment pipeline',
+                alternatives: ['automated build-test-deploy workflow'],
+                hint: 'Automating the software delivery',
+                explanation: 'CI/CD automates building, testing, and deploying IoT software, enabling frequent updates with confidence that changes work correctly.'
+            },
+            {
+                id: '9-30',
+                type: 'application',
+                difficulty: 'hard',
+                question: 'How do you rollback a failed OTA firmware update?',
+                answer: 'Enable anti-rollback and keep previous firmware version',
+                alternatives: ['fallback to known-good version'],
+                hint: 'Reverting to working firmware',
+                explanation: 'Anti-rollback mechanism prevents installing older vulnerable firmware, but for rollback, enable automatic rollback to last known-good version if boot fails.'
+            }
+        ],
+
+        deployment: [
+            {
+                id: '9-31',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What AWS service is for deploying web applications?',
+                answer: 'Elastic Beanstalk',
+                alternatives: [],
+                hint: 'PaaS service from AWS',
+                explanation: 'AWS Elastic Beanstalk is a Platform-as-a-Service that simplifies deploying and scaling web applications without managing servers.'
+            },
+            {
+                id: '9-32',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What is AWS Lambda?',
+                answer: 'Serverless compute service',
+                alternatives: ['function-as-a-service'],
+                hint: 'Run code without managing servers',
+                explanation: 'AWS Lambda runs code in response to events (like IoT messages) without provisioning or managing servers, paying only for compute time.'
+            },
+            {
+                id: '9-33',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is Azure App Service?',
+                answer: 'Managed web app hosting platform',
+                alternatives: ['PaaS for web apps'],
+                hint: 'Azure equivalent of Elastic Beanstalk',
+                explanation: 'Azure App Service is a managed platform for building, deploying, and scaling web apps and APIs without managing infrastructure.'
+            },
+            {
+                id: '9-34',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is Azure Functions?',
+                answer: 'Serverless event-driven compute',
+                alternatives: ['FaaS on Azure'],
+                hint: 'Run code on events',
+                explanation: 'Azure Functions is a serverless compute service that runs code in response to events like IoT telemetry, HTTP requests, or timers.'
+            },
+            {
+                id: '9-35',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What benefit does containerization provide for IoT deployment?',
+                answer: 'Consistent runtime across environments',
+                alternatives: ['portability and consistency'],
+                hint: 'Docker containers',
+                explanation: 'Containers (Docker) package applications with dependencies, ensuring consistent behavior from development to production across any infrastructure.'
+            },
+            {
+                id: '9-36',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is Kubernetes for IoT cloud deployment?',
+                answer: 'Container orchestration platform',
+                alternatives: ['manage containers at scale'],
+                hint: 'Managing many containers',
+                explanation: 'Kubernetes automates deployment, scaling, and management of containerized applications, ideal for complex IoT backends with many services.'
+            },
+            {
+                id: '9-37',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is bulk device provisioning?',
+                answer: 'Registering multiple devices at once',
+                alternatives: ['batch device enrollment'],
+                hint: 'Provision many devices simultaneously',
+                explanation: 'Bulk provisioning registers many devices at once using CSV files, APIs, or automated enrollment systems, saving time for large deployments.'
+            },
+            {
+                id: '9-38',
+                type: 'concept',
+                difficulty: 'hard',
+                question: 'What is just-in-time provisioning?',
+                answer: 'Device registers itself on first connection',
+                alternatives: ['self-registration on first boot'],
+                hint: 'Device enrolls when it starts',
+                explanation: 'Just-in-time provisioning allows devices to register themselves automatically when they first connect, using embedded certificates or tokens.'
+            },
+            {
+                id: '9-39',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'You need to deploy 5000 sensors across multiple sites. What provisioning method?',
+                answer: 'Bulk provisioning with CSV/API and automation',
+                alternatives: ['batch device registration'],
+                hint: 'Large-scale device deployment',
+                explanation: 'Bulk provisioning using CSV files or APIs to register all 5000 devices, combined with automated firmware installation and configuration management.'
+            },
+            {
+                id: '9-40',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'How do you deliver firmware updates to deployed devices?',
+                answer: 'OTA (Over-The-Air) updates',
+                alternatives: ['remote wireless updates'],
+                hint: 'Updating devices remotely',
+                explanation: 'OTA updates deliver new firmware versions wirelessly to devices, enabling remote updates without physical access to each device.'
+            },
+            {
+                id: '9-41',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is centralized logging in IoT deployment?',
+                answer: 'Collect logs from all components in one place',
+                alternatives: ['aggregated log management'],
+                hint: 'All logs in one system',
+                explanation: 'Centralized logging collects logs from devices, gateways, and cloud services in one system (ELK, CloudWatch) for unified monitoring and debugging.'
+            },
+            {
+                id: '9-42',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What are metrics in IoT monitoring?',
+                answer: 'Numerical measurements of system performance',
+                alternatives: ['performance indicators'],
+                hint: 'Things you can count and graph',
+                explanation: 'Metrics are numerical measurements like CPU usage, memory, message rate, device connectivity, and latency that indicate system health and performance.'
+            },
+            {
+                id: '9-43',
+                type: 'concept',
+                difficulty: 'hard',
+                question: 'What is distributed tracing in IoT?',
+                answer: 'Track requests across multiple services',
+                alternatives: ['end-to-end request tracking'],
+                hint: 'Following a request through the system',
+                explanation: 'Distributed tracing (Zipkin, Jaeger) tracks a request as it flows through multiple services, useful for debugging latency issues in complex IoT backends.'
+            },
+            {
+                id: '9-44',
+                type: 'application',
+                difficulty: 'hard',
+                question: 'How do you detect an IoT device that stopped sending data?',
+                answer: 'Monitor heartbeat/last seen timestamp and alert',
+                alternatives: ['heartbeat monitoring'],
+                hint: 'Know when device goes silent',
+                explanation: 'Track each device last-seen timestamp. If a device heartbeat is missed for a configured period (e.g., 5 minutes), trigger an alert for investigation.'
+            },
+            {
+                id: '9-45',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is alerting in IoT monitoring?',
+                answer: 'Notify operators of issues automatically',
+                alternatives: ['automated issue notification'],
+                hint: 'Proactive problem detection',
+                explanation: 'Alerting automatically notifies operators via PagerDuty, Slack, email when metrics exceed thresholds, enabling quick response to issues.'
+            }
+        ],
+
+        integration: [
+            {
+                id: '9-46',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What does end-to-end integration in IoT mean?',
+                answer: 'All components work together from device to user',
+                alternatives: ['complete system integration'],
+                hint: 'From sensor to dashboard',
+                explanation: 'End-to-end integration ensures data flows correctly from devices through all layers (edge, cloud, application) to deliver value to the end user.'
+            },
+            {
+                id: '9-47',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'A temperature sensor reads 25°C, but dashboard shows 250°C. What is likely wrong?',
+                answer: 'Unit mismatch or data type conversion error',
+                alternatives: ['scaling or unit problem'],
+                hint: 'Check data format',
+                explanation: ' Likely a unit conversion issue (Celsius to Fahrenheit without proper conversion) or data type problem (integer overflow) causing incorrect display.'
+            },
+            {
+                id: '9-48',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'How do you integrate security across all IoT layers?',
+                answer: 'TLS for communication, certificates for auth, encrypted storage',
+                alternatives: ['defense in depth'],
+                hint: 'Security at every layer',
+                explanation: 'Apply security at each layer: TLS for communication, certificate-based authentication, encrypted storage, network segmentation, secure boot.'
+            },
+            {
+                id: '9-49',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is error handling in IoT integration?',
+                answer: 'Gracefully handle and recover from failures',
+                alternatives: ['fault tolerance'],
+                hint: 'What happens when things go wrong',
+                explanation: 'Error handling detects failures (network disconnections, invalid data), logs them, and implements recovery (retry, fallback, alerting) to maintain system reliability.'
+            },
+            {
+                id: '9-50',
+                type: 'application',
+                difficulties: 'hard',
+                question: 'Gateway loses connection to cloud. How do you prevent data loss?',
+                answer: 'Store data locally and sync when connection restored',
+                alternatives: ['store-and-forward buffering'],
+                hint: 'Local storage as backup',
+                explanation: 'Gateway buffers data in local storage during cloud disconnection and uploads it when connection is restored, preventing data loss from network outages.'
+            },
+            {
+                id: '9-51',
+                type: 'concept',
+                difficulty: 'hard',
+                question: 'What is the Principle of Least Privilege in IoT security?',
+                answer: 'Each component has minimum necessary access',
+                alternatives: ['minimal access permissions'],
+                hint: 'Security best practice',
+                explanation: 'Grant each device, service, and user only the minimum permissions necessary to function. This limits the impact of compromised components.'
+            },
+            {
+                id: '9-52',
+                type: 'application',
+                difficulty: 'hard',
+                question: 'How do you ensure data consistency across devices and cloud?',
+                answer: 'Versioned data with timestamps and conflict resolution',
+                alternatives: ['data synchronization strategy'],
+                hint: 'Handling divergent states',
+                explanation: 'Use versioned data with timestamps, implement conflict resolution rules (latest-wins, application-specific), and keep device shadows for state synchronization.'
+            },
+            {
+                id: '9-53',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is API design for IoT applications?',
+                answer: 'RESTful endpoints for device and data access',
+                alternatives: ['web API architecture'],
+                hint: 'How external programs interact',
+                explanation: 'Design RESTful APIs (/devices, /data, /status) with HTTP methods (GET, POST, PUT) for external applications to interact with IoT data and control devices.'
+            },
+            {
+                id: '9-54',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'How do you integrate third-party services (weather, maps) with IoT?',
+                answer: 'REST API calls or webhooks from backend',
+                alternatives: ['HTTP integration'],
+                hint: 'External data sources',
+                explanation: 'Backend services call third-party REST APIs (weather services, mapping) to enrich IoT data, or receive data via webhooks for event-driven integration.'
+            },
+            {
+                id: '9-55',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is data visualization in IoT applications?',
+                answer: 'Present data in charts, graphs, and dashboards',
+                alternatives: ['visual data presentation'],
+                hint: 'Making data understandable',
+                explanation: 'Data visualization uses charts, graphs, maps, and gauges in dashboards to present IoT data in intuitive ways for human understanding and decision-making.'
+            },
+            {
+                id: '9-56',
+                type: 'application',
+                difficulty: 'hard',
+                question: 'Your IoT system has latency spikes during peak hours. How to diagnose?',
+                answer: 'Distributed tracing and metrics analysis',
+                alternatives: ['performance profiling'],
+                hint: 'Find the bottleneck',
+                explanation: 'Use distributed tracing to track request paths through services combined with metrics (CPU, queue lengths) to identify bottlenecks causing latency spikes.'
+            },
+            {
+                id: '9-57',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is load testing for IoT applications?',
+                answer: 'Simulate realistic device traffic to test capacity',
+                alternatives: ['performance testing under load'],
+                hint: 'Testing with realistic traffic',
+                explanation: 'Load testing simulates realistic IoT device traffic (thousands of sensors sending data) to verify the system scales and performs under expected load.'
+            },
+            {
+                id: '9-58',
+                type: 'application',
+                difficulty: 'hard',
+                question: 'How do you ensure backward compatibility when adding new device features?',
+                answer: 'API versioning and ignore unknown fields',
+                alternatives: ['support old and new formats'],
+                hint: 'Old devices keep working',
+                explanation: 'Use API versioning (v1, v2) and design parsers to ignore unknown fields. Old devices continue working while new devices use enhanced features.'
+            },
+            {
+                id: '9-59',
+                type: 'concept',
+                difficulty: 'hard',
+                question: 'What is graceful degradation in IoT systems?',
+                answer: 'Continue reduced functionality during failures',
+                alternatives: ['partial operation under stress'],
+                hint: 'Work even when things break',
+                explanation: 'Graceful degradation allows the system to continue operating with reduced functionality when some components fail, rather than a total system shutdown.'
+            },
+            {
+                id: '9-60',
+                type: 'application',
+                difficulty: 'hard',
+                question: 'You have completed development. What is the deployment checklist?',
+                answer: 'Security audit, load testing, monitoring setup, backup plan, rollback procedure',
+                alternatives: ['production readiness checklist'],
+                hint: 'Before going live',
+                explanation: 'Production deployment checklist: security audit completed, load testing passed, monitoring and alerting configured, database backups tested, rollback procedure validated, documentation updated.'
+            }
+        ]
+    },
     
     advancedTopics: { basics: Array.from({length: 60}, (_, i) => ({
         id: `10-${i + 1}`,
