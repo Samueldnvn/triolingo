@@ -2015,15 +2015,522 @@ const practiceProblems = {
         explanation: 'IoT generates massive data requiring efficient processing strategies'
     }))},
     
-    security: { basics: Array.from({length: 50}, (_, i) => ({
-        id: `8-${i + 1}`,
-        type: 'concept',
-        difficulty: i % 3 === 0 ? 'easy' : i % 3 === 1 ? 'medium' : 'hard',
-        question: `Security question ${i + 1}`,
-        answer: 'Security Answer',
-        hint: 'Review IoT security principles',
-        explanation: 'Security is critical in IoT to prevent unauthorized access and data breaches'
-    }))},
+    security: {
+        authentication: [
+            {
+                id: '8-1',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What is the most secure authentication method for IoT devices?',
+                answer: 'Certificates (X.509)',
+                alternatives: ['digital certificates', 'certificate-based authentication'],
+                hint: 'Think about public key infrastructure',
+                explanation: 'X.509 certificates provide the strongest authentication with public/private key pairs, ensuring device identity cannot be forged.'
+            },
+            {
+                id: '8-2',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What is the primary weakness of default credentials?',
+                answer: 'They are widely known and exploitable',
+                alternatives: ['admin/password is public', 'easily guessable'],
+                hint: 'Think about common device passwords',
+                explanation: 'Default credentials like "admin/password" are publicly known and allow immediate unauthorized access if not changed.'
+            },
+            {
+                id: '8-3',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is pre-shared key (PSK) authentication?',
+                answer: 'Shared secret key between devices',
+                alternatives: ['symmetric key authentication', 'common secret'],
+                hint: 'Both parties know the same key',
+                explanation: 'PSK authentication uses a secret key shared between devices before deployment, simpler than certificates but less scalable.'
+            },
+            {
+                id: '8-4',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What does JWT (JSON Web Token) provide?',
+                answer: 'Stateless authentication token',
+                alternatives: ['bearer token for auth', 'signed tokens'],
+                hint: 'Used in web APIs and applications',
+                explanation: 'JWT is a compact, URL-safe token format for transmitting claims between parties, commonly used for application-level authentication.'
+            },
+            {
+                id: '8-5',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is OAuth in IoT?',
+                answer: 'Authorization framework for delegated access',
+                alternatives: ['third-party authorization', 'grant-based access'],
+                hint: 'Think about giving limited access to apps',
+                explanation: 'OAuth allows applications to obtain limited access to devices or services without exposing user credentials.'
+            },
+            {
+                id: '8-6',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'When should you use certificate-based over PSK?',
+                answer: 'Large-scale deployments with many devices',
+                alternatives: ['multiple devices needing separate identities'],
+                hint: 'Think about device identity requirements',
+                explanation: 'Certificates allow unique identity per device, making them suitable for large deployments where PSK management would be impractical.'
+            },
+            {
+                id: '8-7',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'What challenge exists when authenticating millions of IoT devices?',
+                answer: 'Scalable identity management',
+                alternatives: ['managing device credentials at scale'],
+                hint: 'Think about device provisioning',
+                explanation: 'Authenticating millions of devices requires scalable certificate management, automated provisioning, and efficient verification.'
+            },
+            {
+                id: '8-8',
+                type: 'concept',
+                difficulty: 'hard',
+                question: 'What is mutual authentication (mTLS)?',
+                answer: 'Both client and server authenticate each other',
+                alternatives: ['bidirectional TLS', 'two-way certificate auth'],
+                hint: 'Both parties prove identity',
+                explanation: 'mTLS requires both client and server to present certificates, ensuring both parties are legitimate, preventing man-in-the-middle attacks.'
+            },
+            {
+                id: '8-9',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is a certificate authority (CA)?',
+                answer: 'Entity that issues and validates certificates',
+                alternatives: ['trusted third-party for certs'],
+                hint: 'Signs digital certificates',
+                explanation: 'A CA is a trusted organization that issues digital certificates and validates certificate chains, establishing trust in public key infrastructure.'
+            },
+            {
+                id: '8-10',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is certificate revocation?',
+                answer: 'Invalidating a certificate before expiration',
+                alternatives: ['cancelling certificate validity', 'revoked cert list'],
+                hint: 'What happens when a certificate is compromised?',
+                explanation: 'Certificate revocation (via CRL or OCSP) marks a certificate as invalid before its expiration date, critical when a device is compromised.'
+            }
+        ],
+        
+        encryption: [
+            {
+                id: '8-11',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What does TLS stand for?',
+                answer: 'Transport Layer Security',
+                alternatives: [],
+                hint: 'Successor to SSL',
+                explanation: 'TLS (Transport Layer Security) is a cryptographic protocol providing secure communication over networks, ensuring encryption and authentication.'
+            },
+            {
+                id: '8-12',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What port is used for secure MQTT (MQTT over TLS)?',
+                answer: '8883',
+                alternatives: [],
+                hint: 'Standard MQTT is port 1883',
+                explanation: 'MQTT over TLS uses port 8883 by convention, while unencrypted MQTT uses port 1883.'
+            },
+            {
+                id: '8-13',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is DTLS?',
+                answer: 'Datagram Transport Layer Security',
+                alternatives: ['TLS for UDP'],
+                hint: 'Think about UDP security',
+                explanation: 'DTLS provides TLS-like security for UDP-based protocols, securing datagram communication where TLS (TCP) cannot be used.'
+            },
+            {
+                id: '8-14',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is AES encryption?',
+                answer: 'Symmetric encryption standard',
+                alternatives: ['Advanced Encryption Standard'],
+                hint: 'Most common encryption algorithm',
+                explanation: 'AES (Advanced Encryption Standard) is a symmetric encryption algorithm widely used for encrypting data in IoT applications.'
+            },
+            {
+                id: '8-15',
+                type: 'code',
+                difficulty: 'hard',
+                question: 'What cipher mode provides authenticated encryption?',
+                answer: 'AES-GCM',
+                alternatives: ['Galois/Counter Mode'],
+                hint: 'Provides encryption and integrity',
+                explanation: 'AES-GCM (Galois/Counter Mode) provides both encryption and authentication, preventing tampering and securing data integrity.'
+            },
+            {
+                id: '8-16',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is end-to-end encryption?',
+                answer: 'Data encrypted from source to destination',
+                alternatives: ['application-level encryption'],
+                hint: 'Only endpoints can decrypt',
+                explanation: 'End-to-end encryption encrypts data at the source and decrypts only at the destination, preventing intermediaries from accessing plaintext.'
+            },
+            {
+                id: '8-17',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'Why use MQTT over TLS vs plain MQTT?',
+                answer: 'Secures message transmission',
+                alternatives: ['encrypts MQTT messages'],
+                hint: 'Think about eavesdropping',
+                explanation: 'MQTT over TLS encrypts all MQTT messages, preventing eavesdropping or tampering of communication between devices and broker.'
+            },
+            {
+                id: '8-18',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is the SSL/TLS handshake?',
+                answer: 'Protocol negotiation and key exchange',
+                alternatives: ['connection establishment'],
+                hint: 'First step in secure communication',
+                explanation: 'The SSL/TLS handshake negotiates encryption algorithms, exchanges keys, and authenticates parties before any application data is transferred.'
+            },
+            {
+                id: '8-19',
+                type: 'code',
+                difficulty: 'hard',
+                question: 'How do you initialize a Cipher for encryption in Java?',
+                answer: 'cipher.init(Cipher.ENCRYPT_MODE, key, iv)',
+                alternatives: ['init with encrypt mode'],
+                hint: 'Cipher class initialization',
+                explanation: 'cipher.init(Cipher.ENCRYPT_MODE, key, ivSpec) initializes the Cipher in encryption mode with a key and optional initialization vector.'
+            },
+            {
+                id: '8-20',
+                type: 'concept',
+                difficulty: 'hard',
+                question: 'What is perfect forward secrecy?',
+                answer: 'Compromised keys do not decrypt past sessions',
+                alternatives: ['PFS property'],
+                hint: 'Previous sessions remain secure',
+                explanation: 'Perfect forward secrecy ensures that compromising a long-term key does not allow decrypting past sessions, each using unique session keys.'
+            }
+        ],
+        
+        deviceSecurity: [
+            {
+                id: '8-21',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What is secure boot?',
+                answer: 'Verifying firmware integrity at startup',
+                alternatives: ['authenticating firmware'],
+                hint: 'Checking firmware before execution',
+                explanation: 'Secure boot verifies digital signatures on firmware during startup, ensuring only authorized, unmodified firmware executes.'
+            },
+            {
+                id: '8-22',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What is an OTA update?',
+                answer: 'Over-the-air firmware update',
+                alternatives: ['remote wireless update'],
+                hint: 'Updating devices remotely',
+                explanation: 'OTA (Over-The-Air) updates allow devices to receive firmware and software updates wirelessly without physical access.'
+            },
+            {
+                id: '8-23',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'Why sign OTA updates?',
+                answer: 'Verify authenticity and integrity',
+                alternatives: ['prevent malicious firmware'],
+                hint: 'Prevent tampered updates',
+                explanation: 'Digitally signing OTA updates ensures firmware is authentic and unmodified, preventing malicious code injection during updates.'
+            },
+            {
+                id: '8-24',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is a physical attack on IoT?',
+                answer: 'Direct physical access to device',
+                alternatives: ['hardware-based attack'],
+                hint: 'Someone physically touches the device',
+                explanation: 'Physical attacks include accessing device ports, JTAG interfaces, or extracting data directly from memory chips.'
+            },
+            {
+                id: '8-25',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'Why disable unused ports on IoT devices?',
+                answer: 'Reduce attack surface',
+                alternatives: ['prevent unauthorized access'],
+                hint: 'Less ways to enter the system',
+                explanation: 'Disabling unused ports (USB, GPIO, serial) reduces potential attack vectors an attacker could use to access or compromise the device.'
+            },
+            {
+                id: '8-26',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'What should happen on first device setup?',
+                answer: 'Force credential change',
+                alternatives: ['mandatory password setup'],
+                hint: 'Prevent default credential use',
+                explanation: 'Devices should require users to change default credentials on first setup, enforcing strong passwords or certificate enrollment.'
+            },
+            {
+                id: '8-27',
+                type: 'concept',
+                difficulty: 'hard',
+                question: 'What is a hardware security module (HSM)?',
+                answer: 'Dedicated hardware for cryptographic operations',
+                alternatives: ['secure key storage device'],
+                hint: 'Physically protects keys',
+                explanation: 'An HSM is a specialized hardware device that performs cryptographic operations and securely stores keys, resistant to physical extraction.'
+            },
+            {
+                id: '8-28',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is firmware tampering?',
+                answer: 'Unauthorized modification of device firmware',
+                alternatives: ['malicious firmware injection'],
+                hint: 'Changing software on the device',
+                explanation: 'Firmware tampering involves unauthorized modification of device firmware to inject malware, create backdoors, or alter device behavior.'
+            },
+            {
+                id: '8-29',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'How do you prevent rollback attacks?',
+                answer: 'Version checking and anti-rollback mechanism',
+                alternatives: ['minimum version enforcement'],
+                hint: 'Prevent reinstalling old vulnerable firmware',
+                explanation: 'Anti-rollback mechanisms prevent attackers from reinstalling older, vulnerable firmware versions with known security flaws.'
+            },
+            {
+                id: '8-30',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is JTAG security?',
+                answer: 'Disabling or locking debug interfaces',
+                alternatives: ['debug port protection'],
+                hint: 'Prevent hardware debugging access',
+                explanation: 'JTAG interfaces used for debugging should be disabled or locked in production to prevent attackers from accessing device internals.'
+            }
+        ],
+        
+        networkSecurity: [
+            {
+                id: '8-31',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What is a VLAN in IoT?',
+                answer: 'Virtual Local Area Network for segmentation',
+                alternatives: ['network isolation'],
+                hint: 'Separate devices into groups',
+                explanation: 'VLANs isolate IoT devices on separate network segments, limiting lateral movement if one device is compromised.'
+            },
+            {
+                id: '8-32',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is the purpose of a firewall in IoT?',
+                answer: 'Control network traffic flow',
+                alternatives: ['filter network packets'],
+                hint: 'Block unwanted connections',
+                explanation: 'Firewalls inspect and filter network traffic, blocking unauthorized access and restricting communication to necessary ports and protocols.'
+            },
+            {
+                id: '8-33',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is a DDoS attack?',
+                answer: 'Distributed Denial of Service',
+                alternatives: ['overwhelming a service with traffic'],
+                hint: 'Many devices attacking one target',
+                explanation: 'DDoS attacks use compromised IoT devices (botnets) to flood a target with traffic, overwhelming it and causing service disruption.'
+            },
+            {
+                id: '8-34',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'How should IoT devices be networked?',
+                answer: 'Separate from critical production systems',
+                alternatives: ['isolate IoT network'],
+                hint: 'Do not mix with trusted networks',
+                explanation: 'IoT devices should be on isolated network segments (VLANs) separate from critical systems to contain potential breaches.'
+            },
+            {
+                id: '8-35',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is network segmentation?',
+                answer: 'Dividing network into isolated segments',
+                alternatives: ['VLAN-based separation'],
+                hint: 'Create network zones',
+                explanation: 'Network segmentation divides a network into isolated segments, limiting an attacker ability to move laterally between systems.'
+            },
+            {
+                id: '8-36',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is intrusion detection in IoT?',
+                answer: 'Monitoring for malicious behavior',
+                alternatives: ['detecting security breaches'],
+                hint: 'Identifying attacks in progress',
+                explanation: 'Intrusion detection systems monitor network and device behavior, identifying and alerting on suspicious activities or attacks.'
+            },
+            {
+                id: '8-37',
+                type: 'application',
+                difficulty: 'hard',
+                question: 'How do you secure local device-to-device communication?',
+                answer: 'IPsec or application-layer encryption',
+                alternatives: ['encrypt local traffic'],
+                hint: 'Communication on the same network',
+                explanation: 'Even local communication should be encrypted using IPsec or application-layer encryption to prevent eavesdropping on local networks.'
+            },
+            {
+                id: '8-38',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is a VPN for IoT?',
+                answer: 'Virtual Private Network for secure remote access',
+                alternatives: ['encrypted tunnel'],
+                hint: 'Remote secure connection',
+                explanation: 'VPNs create encrypted tunnels for remote device access, securing communication over untrusted networks like the internet.'
+            },
+            {
+                id: '8-39',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is port scanning?',
+                answer: 'Probing for open network ports',
+                alternatives: ['discovering available services'],
+                hint: 'Attackers use to find vulnerabilities',
+                explanation: 'Port scanning discovers which network ports are open on devices, helping attackers identify potential vulnerabilities to exploit.'
+            },
+            {
+                id: '8-40',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'What ports should be open on an IoT device?',
+                answer: 'Only necessary for the device function',
+                alternatives: ['minimum required ports'],
+                hint: 'Principle of least privilege',
+                explanation: 'Only ports required for the device legitimate operation should be open, all others should be closed to reduce attack surface.'
+            }
+        ],
+        
+        keyManagement: [
+            {
+                id: '8-41',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What is key rotation?',
+                answer: 'Periodically changing encryption keys',
+                alternatives: ['updating cryptographic keys'],
+                hint: 'Regularly update keys',
+                explanation: 'Key rotation replaces old keys with new ones at regular intervals, limiting the impact if a key is compromised.'
+            },
+            {
+                id: '8-42',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'Where should private keys be stored?',
+                answer: 'Secure storage like HSM or secure element',
+                alternatives: ['hardware-protected storage'],
+                hint: 'Not in plain text',
+                explanation: 'Private keys should be stored in secure hardware (HSM, secure element) or trusted execution environments, never in plain text.'
+            },
+            {
+                id: '8-43',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is a key derivation function (KDF)?',
+                answer: 'Generating keys from passwords or secrets',
+                alternatives: ['key generation from input'],
+                hint: 'Create secrets from other secrets',
+                explanation: 'KDFs like PBKDF2, Argon2, or scrypt securely generate cryptographic keys from passwords or other secret inputs.'
+            },
+            {
+                id: '8-44',
+                type: 'concept',
+                difficulty: 'hard',
+                question: 'What is key escrow?',
+                answer: 'Secure third-party key storage',
+                alternatives: ['backup key storage'],
+                hint: 'Recovering keys if lost',
+                explanation: 'Key escrow stores copies of keys with a trusted third party, enabling key recovery if the original is lost or inaccessible.'
+            },
+            {
+                id: '8-45',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'How often should keys be rotated?',
+                answer: 'Every 30-90 days for production systems',
+                alternatives: ['regular interval rotation'],
+                hint: 'Depends on security requirements',
+                explanation: 'Key rotation frequency depends on security policy, but 30-90 days is common for production systems, more frequent for highly sensitive data.'
+            },
+            {
+                id: '8-46',
+                type: 'code',
+                difficulty: 'hard',
+                question: 'How do you generate a random key in Java?',
+                answer: 'KeyGenerator.getInstance("AES").generateKey()',
+                alternatives: ['SecureRandom-based generation'],
+                hint: 'Crypto-standard key generation',
+                explanation: 'KeyGenerator provides cryptographically secure random key generation: KeyGenerator.getInstance("AES").generateKey()'
+            },
+            {
+                id: '8-47',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is a secure element?',
+                answer: 'Hardware chip protecting keys and operations',
+                alternatives: ['secure key storage chip'],
+                hint: 'Physical key protection',
+                explanation: 'Secure elements are specialized hardware chips that securely store keys and perform cryptographic operations, resistant to extraction.'
+            },
+            {
+                id: '8-48',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is session key vs master key?',
+                answer: 'Session: temporary, Master: long-term',
+                alternatives: ['ephemeral vs permanent keys'],
+                hint: 'Think about key lifetime',
+                explanation: 'Session keys are temporary for specific connections (good for forward secrecy), master keys are long-term for signing or device identity.'
+            },
+            {
+                id: '8-49',
+                type: 'application',
+                difficulty: 'hard',
+                question: 'How do you securely distribute keys to devices?',
+                answer: 'Secure provisioning with encrypted channels',
+                alternatives: ['certificate-based key exchange'],
+                hint: 'Keys in transit must be encrypted',
+                explanation: 'Keys must be distributed during manufacturing or provisioning over encrypted channels, using secure enrollment protocols or PKI.'
+            },
+            {
+                id: '8-50',
+                type: 'concept',
+                difficulty: 'hard',
+                question: 'What is zero-knowledge proof in authentication?',
+                answer: 'Prove knowledge without revealing it',
+                alternatives: ['authentication without sharing secrets'],
+                hint: 'Prove you know password without sending it',
+                explanation: 'Zero-knowledge proofs allow proving knowledge of a secret without revealing the secret itself, preventing interception during authentication.'
+            }
+        ]
+    },
     
     applications: { basics: Array.from({length: 60}, (_, i) => ({
         id: `9-${i + 1}`,
@@ -2088,7 +2595,8 @@ expandModule('protocols', 55);
 expandModule('developmentTools', 45);
 expandModule('connectivity', 50);
 expandModule('dataProcessing', 55);
-expandModule('security', 50);
+// Module 8 (security) now has complete 50 problems - no expansion needed
+// expandModule('security', 50);
 expandModule('applications', 60);
 expandModule('advancedTopics', 60);
 
