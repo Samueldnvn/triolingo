@@ -2512,15 +2512,569 @@ const practiceProblems = {
         ]
     }
     
-    dataProcessing: { basics: Array.from({length: 55}, (_, i) => ({
-        id: `7-${i + 1}`,
-        type: 'concept',
-        difficulty: i % 3 === 0 ? 'easy' : i % 3 === 1 ? 'medium' : 'hard',
-        question: `Data processing question ${i + 1}`,
-        answer: 'Data Answer',
-        hint: 'Review data processing and storage',
-        explanation: 'IoT generates massive data requiring efficient processing strategies'
-    }))},
+    dataProcessing: {
+        timeSeries: [
+            {
+                id: '7-1',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What is a time-series database?',
+                answer: 'Database optimized for timestamped data',
+                alternatives: ['time-stamped data storage', 'chronological data database'],
+                hint: 'Think about storing data with timestamps',
+                explanation: 'A time-series database (TSDB) is optimized for storing and querying time-stamped data, making it ideal for IoT sensor readings.'
+            },
+            {
+                id: '7-2',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'Which of the following is a popular time-series database?',
+                answer: 'InfluxDB',
+                alternatives: ['Influx DB', 'Influx'],
+                hint: 'Starts with "Influx"',
+                explanation: 'InfluxDB is a popular open-source time-series database designed for high-performance storage and querying of time-stamped data.'
+            },
+            {
+                id: '7-3',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What specializes in time-ordered writes?',
+                answer: 'Time-series database',
+                alternatives: ['TSDB', 'chronological database'],
+                hint: 'Optimized for appending data in timestamp order',
+                explanation: 'Time-series databases are optimized for time-ordered writes, appending data sequentially timestamp by timestamp.'
+            },
+            {
+                id: '7-4',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is the main write pattern difference between traditional and time-series databases?',
+                answer: 'Traditional uses random writes, time-series uses appends',
+                alternatives: ['time-series appends data chronologically'],
+                hint: 'Think about how data is added',
+                explanation: 'Traditional databases handle random reads/writes scattered across storage. Time-series databases append data in chronological order, which is more efficient for IoT streams.'
+            },
+            {
+                id: '7-5',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What query pattern are time-series databases optimized for?',
+                answer: 'Aggregate over time ranges',
+                alternatives: ['time-range aggregation', 'historical analysis'],
+                hint: 'Think about querying data over periods',
+                explanation: 'Time-series databases are optimized for queries that aggregate data over time ranges, like "average temperature in the last hour".'
+            },
+            {
+                id: '7-6',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is InfluxDB known for in terms of query language?',
+                answer: 'SQL-like query language',
+                alternatives: ['InfluxQL is SQL-like', 'similar to SQL'],
+                hint: 'Familiar if you know SQL',
+                explanation: 'InfluxDB provides InfluxQL, a SQL-like query language making it accessible to developers with SQL experience.'
+            },
+            {
+                id: '7-7',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is TimescaleDB?',
+                answer: 'PostgreSQL extension for time-series',
+                alternatives: ['PostgreSQL time-series extension', 'PG extension'],
+                hint: 'Built on top of PostgreSQL',
+                explanation: 'TimescaleDB is a PostgreSQL extension that adds time-series capabilities to regular PostgreSQL, providing full SQL support.'
+            },
+            {
+                id: '7-8',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'Which time-series database is designed for monitoring and alerting?',
+                answer: 'Prometheus',
+                alternatives: [],
+                hint: 'Commonly used in Kubernetes monitoring',
+                explanation: 'Prometheus is a time-series database and monitoring system designed for collecting metrics and triggering alerts.'
+            },
+            {
+                id: '7-9',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is AWS Timestream?',
+                answer: 'Serverless time-series database',
+                alternatives: ['AWS managed time-series DB', 'serverless TSDB'],
+                hint: 'Managed by AWS',
+                explanation: 'Amazon Timestream is a serverless time-series database that automatically scales and integrates with AWS services.'
+            },
+            {
+                id: '7-10',
+                type: 'concept',
+                difficulty: 'hard',
+                question: 'What is downsampling in time-series databases?',
+                answer: 'Reducing data resolution over time',
+                alternatives: ['lowering precision for old data', 'aggregating historical data'],
+                hint: 'Think about reducing storage for old data',
+                explanation: 'Downsampling reduces data resolution for old data by aggregating multiple points (e.g., from "per-second" to "per-hour averages"), saving storage while preserving trends.'
+            },
+            {
+                id: '7-11',
+                type: 'concept',
+                difficulty: 'hard',
+                question: 'What are rollups in time-series databases?',
+                answer: 'Pre-computed aggregate data',
+                alternatives: ['aggregated summaries', 'pre-calculated metrics'],
+                hint: 'Speeding up queries for aggregated data',
+                explanation: 'Rollups are pre-computed aggregate data (like hourly averages) stored separately to speed up queries without recalculating.'
+            },
+            {
+                id: '7-12',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'You need to store 10,000 sensor readings per second. Which database type is best?',
+                answer: 'Time-series database',
+                alternatives: ['TSDB', 'InfluxDB/TimescaleDB'],
+                hint: 'High write rate, timestamped data',
+                explanation: 'A time-series database is optimized for this high write rate of timestamped data. Traditional databases would struggle with the write pattern.'
+            }
+        ],
+
+        cloudPlatforms: [
+            {
+                id: '7-13',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What is AWS IoT Core?',
+                answer: 'Managed IoT platform from AWS',
+                alternatives: ['AWS IoT service', 'Amazon IoT'],
+                hint: 'Cloud service for IoT',
+                explanation: 'AWS IoT Core is a managed cloud service that enables connected devices to easily and securely interact with cloud applications.'
+            },
+            {
+                id: '7-14',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What protocol does AWS IoT Core primarily use for messaging?',
+                answer: 'MQTT',
+                alternatives: ['Message Queuing Telemetry Transport'],
+                hint: 'Lightweight IoT protocol',
+                explanation: 'AWS IoT Core primarily uses MQTT for messaging, providing a lightweight publish/subscribe model for devices.'
+            },
+            {
+                id: '7-15',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is a device registry in AWS IoT Core?',
+                answer: 'Central place to manage device identities',
+                alternatives: ['device identity management', 'device catalog'],
+                hint: 'Where devices are registered and tracked',
+                explanation: 'The device registry is a central place to register and manage IoT device identities, authentication, and metadata.'
+            },
+            {
+                id: '7-16',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is a device shadow in AWS IoT?',
+                answer: 'Virtual representation of device state',
+                alternatives: ['digital twin', 'JSON state document'],
+                hint: 'Cloud representation of a physical device',
+                explanation: 'A device shadow is a JSON document representing the current and desired state of a device, allowing cloud applications to interact even when offline.'
+            },
+            {
+                id: '7-17',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What does the AWS IoT Rules Engine do?',
+                answer: 'Routes messages to other AWS services',
+                alternatives: ['message routing', 'data pipeline'],
+                hint: 'Connects IoT data to AWS services',
+                explanation: 'The Rules Engine routes incoming IoT messages to other AWS services like Lambda, S3, or DynamoDB for processing or storage.'
+            },
+            {
+                id: '7-18',
+                type: 'code',
+                difficulty: 'hard',
+                question: 'In the AWS IoT SDK, which method publishes a message?',
+                answer: 'publish()',
+                alternatives: ['client.publish()'],
+                hint: 'Think about "publishing" data',
+                explanation: 'The publish() method in the AWS IoT SDK sends a message to an MQTT topic on the IoT message broker.'
+            },
+            {
+                id: '7-19',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is Azure IoT Hub?',
+                answer: 'Azure managed IoT platform',
+                alternatives: ['Microsoft IoT service'],
+                hint: 'Equivalent to AWS IoT Core',
+                explanation: 'Azure IoT Hub is a managed service from Microsoft that acts as a central message hub for bi-directional communication between IoT devices and Azure.'
+            },
+            {
+                id: '7-20',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is Azure Stream Analytics?',
+                answer: 'Real-time data processing service',
+                alternatives: ['streaming analytics service'],
+                hint: 'Processing data as it arrives',
+                explanation: 'Azure Stream Analytics provides real-time analytics on streaming data from IoT devices and other sources.'
+            },
+            {
+                id: '7-21',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is a device twin in Azure IoT Hub?',
+                answer: 'Digital representation of device state',
+                alternatives: ['device state document', 'similar to AWS device shadow'],
+                hint: 'Azure version of device shadow',
+                explanation: 'A device twin is a JSON document that stores device state information including reported state, desired state, and tags.'
+            },
+            {
+                id: '7-22',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What protocols does Azure IoT Hub support?',
+                answer: 'MQTT, HTTPS, AMQP',
+                alternatives: ['MQTT, HTTPS, AMQPS'],
+                hint: 'Three main IoT communication protocols',
+                explanation: 'Azure IoT Hub supports MQTT, HTTPS, and AMQP protocols for device communication.'
+            }
+        ],
+
+        edgeComputing: [
+            {
+                id: '7-23',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What is edge computing?',
+                answer: 'Processing data closer to the source',
+                alternatives: ['local data processing', 'processing near devices'],
+                hint: 'Where does processing happen?',
+                explanation: 'Edge computing processes data near where it is generated (at the "edge" of the network), reducing latency and bandwidth usage.'
+            },
+            {
+                id: '7-24',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is the primary benefit of edge computing for IoT?',
+                answer: 'Low latency',
+                alternatives: ['reduced delay', 'faster response'],
+                hint: 'Reduces time to respond',
+                explanation: 'The primary benefit of edge computing is low latency, enabling real-time decision-making without round-trips to the cloud.'
+            },
+            {
+                id: '7-25',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'How does edge computing optimize bandwidth?',
+                answer: 'Filters data before sending to cloud',
+                alternatives: ['reduce data transmission', 'aggregate locally'],
+                hint: 'Send less data to the cloud',
+                explanation: 'Edge computing filters and aggregates data locally, sending only relevant or summarized data to the cloud, reducing bandwidth costs.'
+            },
+            {
+                id: '7-26',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is edge caching?',
+                answer: 'Storing frequently accessed data locally',
+                alternatives: ['local data storage', 'edge storage'],
+                hint: 'Data available without cloud access',
+                explanation: 'Edge caching stores frequently accessed data locally at the edge, providing fast access without querying cloud services.'
+            },
+            {
+                id: '7-27',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is edge model inference?',
+                answer: 'Running ML models at the edge',
+                alternatives: ['local ML prediction', 'edge AI'],
+                hint: 'ML predictions without cloud',
+                explanation: 'Edge model inference runs machine learning models locally on edge devices or gateways for real-time predictions without cloud requests.'
+            },
+            {
+                id: '7-28',
+                type: 'concept',
+                difficulty: 'hard',
+                question: 'What is the primary challenge of edge computing?',
+                answer: 'Limited computational resources',
+                alternatives: ['resource constraints', 'less powerful than cloud'],
+                hint: 'Edge devices have limitations',
+                explanation: 'Edge devices typically have limited CPU, memory, and storage compared to cloud servers, making complex processing challenging.'
+            },
+            {
+                id: '7-29',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What enables IoT devices to operate offline with edge computing?',
+                answer: 'Local processing and storage',
+                alternatives: ['edge data capabilities', 'independent operation'],
+                hint: 'No cloud connection needed',
+                explanation: 'Edge computing with local processing and storage enables IoT devices to function during network outages, syncing to the cloud when reconnected.'
+            },
+            {
+                id: '7-30',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is edge data compression?',
+                answer: 'Reducing data size before transmission',
+                alternatives: ['compress before sending to cloud'],
+                hint: 'Make data smaller',
+                explanation: 'Edge data compression reduces the size of data before transmitting to the cloud, saving bandwidth and transmission time.'
+            },
+            {
+                id: '7-31',
+                type: 'code',
+                difficulty: 'medium',
+                question: 'In the edge preprocessing example, what happens to invalid or insignificant data?',
+                answer: 'Filtered out, not sent to cloud',
+                alternatives: ['only valid and significant data is uploaded'],
+                hint: 'Check the if-statement condition',
+                explanation: 'The EdgeProcessor filters out invalid or insignificant data and only uploads data that is both valid() and isSignificant().'
+            },
+            {
+                id: '7-32',
+                type: 'application',
+                difficulty: 'hard',
+                question: 'You have a safety-critical IoT system controlling industrial equipment. Should you process primarily at the edge or cloud?',
+                answer: 'Edge computing',
+                alternatives: ['local processing for safety'],
+                hint: 'Think about response time and reliability',
+                explanation: 'For safety-critical systems, edge computing is essential because it guarantees low-latency response and continues working even if cloud connection fails.'
+            }
+        ],
+
+        dataProcessing: [
+            {
+                id: '7-33',
+                type: 'concept',
+                difficulty: 'easy',
+                question: 'What are the V\'s of big data in IoT?',
+                answer: 'Volume, Velocity, Variety, Veracity, Value',
+                alternatives: ['5 Vs of big data'],
+                hint: 'All start with V',
+                explanation: 'The 5 Vs of big data in IoT are: Volume (massive amounts), Velocity (high speed), Variety (different formats), Veracity (data quality), Value (actionable insights).'
+            },
+            {
+                id: '7-34',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'Which V refers to the high-speed continuous streams of IoT data?',
+                answer: 'Velocity',
+                alternatives: [],
+                hint: 'Speed of data generation',
+                explanation: 'Velocity refers to the high speed at which IoT data is generated and needs to be processed in continuous streams.'
+            },
+            {
+                id: '7-35',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is real-time data processing?',
+                answer: 'Processing data as it arrives',
+                alternatives: ['immediate processing'],
+                hint: 'No delays or batching',
+                explanation: 'Real-time data processing handles data immediately as it arrives, enabling low-latency responses critical for many IoT applications.'
+            },
+            {
+                id: '7-36',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is batch data processing?',
+                answer: 'Processing collected data in groups',
+                alternatives: ['accumulated data processing'],
+                hint: 'Process data together after collection',
+                explanation: 'Batch processing collects data over time and processes it in groups, which is efficient for analysis but has higher latency than real-time processing.'
+            },
+            {
+                id: '7-37',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'For a predictive maintenance system analyzing equipment vibrations over months, should you use real-time or batch processing?',
+                answer: 'Batch processing',
+                alternatives: ['historical analysis uses batch'],
+                hint: 'Analyzing historical patterns',
+                explanation: 'For analyzing long-term patterns and trends over months, batch processing is more appropriate as it doesn\'t need immediate responses.'
+            },
+            {
+                id: '7-38',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'For an autonomous vehicle detecting obstacles, should you use real-time or batch processing?',
+                answer: 'Real-time processing',
+                alternatives: ['immediate obstacle detection'],
+                hint: 'Need instant response',
+                explanation: 'Autonomous vehicles require real-time processing to detect and respond to obstacles instantly for safety.'
+            },
+            {
+                id: '7-39',
+                type: 'concept',
+                difficulty: 'hard',
+                question: 'What is stream processing in IoT?',
+                answer: 'Continuous processing of data streams',
+                alternatives: ['processing unbounded data'],
+                hint: 'Like a river of data',
+                explanation: 'Stream processing continuously processes unbounded data streams in motion, handling data as it flows without waiting for complete batches.'
+            },
+            {
+                id: '7-40',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is data validation in IoT?',
+                answer: 'Checking data quality and accuracy',
+                alternatives: ['verifying data correctness'],
+                hint: 'Ensuring data is correct',
+                explanation: 'Data validation checks incoming IoT data for quality, accuracy, and consistency before processing or storage.'
+            },
+            {
+                id: '7-41',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is an outlier in IoT data?',
+                answer: 'Data point significantly different from others',
+                alternatives: ['anomalous data point'],
+                hint: 'Unusual or unexpected value',
+                explanation: 'An outlier is a data point that deviates significantly from the expected pattern or range, potentially indicating errors or interesting events.'
+            },
+            {
+                id: '7-42',
+                type: 'concept',
+                difficulty: 'hard',
+                question: 'Why handle outliers carefully in IoT data?',
+                answer: 'Could be errors OR important events',
+                alternatives: ['outliers may be significant'],
+                hint: 'Not all outliers are mistakes',
+                explanation: 'Outliers could be sensor errors (to be removed) or significant events like equipment failure or security breaches (to be investigated).'
+            },
+            {
+                id: '7-43',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is data aggregation in IoT?',
+                answer: 'Combining multiple data points',
+                alternatives: ['summarizing data points'],
+                hint: 'Combining and summing',
+                explanation: 'Data aggregation combines multiple data points into summary statistics like averages, maximums, or totals to reduce data volume while preserving insights.'
+            },
+            {
+                id: '7-44',
+                type: 'application',
+                difficulty: 'medium',
+                question: 'You have 100 temperature sensors reporting every second. How would you aggregate this data?',
+                answer: 'Calculate average temperature across all sensors',
+                alternatives: ['average, max, min, or other aggregate'],
+                hint: 'Combine readings from all sensors',
+                explanation: 'Aggregation would combine the 100 readings into summary values: average temperature, maximum, minimum, or other statistical measures.'
+            },
+            {
+                id: '7-45',
+                type: 'concept',
+                difficulty: 'hard',
+                question: 'What is fog computing in IoT?',
+                answer: 'Computing layer between edge and cloud',
+                alternatives: ['intermediate computing layer'],
+                hint: 'Like actual fog between ground and sky',
+                explanation: 'Fog computing is an intermediate layer between edge devices and the cloud, providing more processing power than edge devices while keeping some proximity to devices.'
+            },
+            {
+                id: '7-46',
+                type: 'application',
+                difficulty: 'hard',
+                question: 'How does fog computing differ from edge computing?',
+                answer: 'Fog has more resources, farther from devices',
+                alternatives: ['fog is more powerful than edge'],
+                hint: 'Think about location and capabilities',
+                explanation: 'Fog computing happens on local servers or gateways with more resources than edge devices, but not as close to the data source as edge computing.'
+            },
+            {
+                id: '7-47',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is data retention in IoT?',
+                answer: 'How long to keep stored data',
+                alternatives: ['data storage duration'],
+                hint: 'How long do you keep data?',
+                explanation: 'Data retention policies define how long IoT data should be stored, balancing business needs with storage costs and privacy regulations.'
+            },
+            {
+                id: '7-48',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is data archiving in IoT?',
+                answer: 'Moving old data to long-term, low-cost storage',
+                alternatives: ['cold storage for old data'],
+                hint: 'Cheaper storage for rarely accessed data',
+                explanation: 'Data archiving moves older, rarely accessed data to low-cost long-term storage, keeping it available while reducing active storage costs.'
+            },
+            {
+                id: '7-49',
+                type: 'concept',
+                difficulty: 'hard',
+                question: 'What is hot storage vs cold storage in IoT?',
+                answer: 'Hot = fast/expensive, Cold = slow/cheap',
+                alternatives: ['hot for immediate access, cold for long-term'],
+                hint: 'Think about temperature metaphor',
+                explanation: 'Hot storage provides fast access for recent data (like SSDs or in-memory). Cold storage is slower but cheaper for archiving old data (like tape or cloud archive).'
+            },
+            {
+                id: '7-50',
+                type: 'application',
+                difficulty: 'hard',
+                question: 'Your system needs 90 days of data available for quick queries and 5 years for compliance. What storage strategy?',
+                answer: 'Hot storage for 90 days, cold archive for 5 years',
+                alternatives: ['hot storage tier + long-term archive'],
+                hint: 'Different needs for different timeframes',
+                explanation: 'Keep the last 90 days in hot storage for fast querying, then archive older data to cold storage for 5-year compliance retention.'
+            },
+            {
+                id: '7-51',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is data partitioning in time-series databases?',
+                answer: 'Dividing data by time ranges',
+                alternatives: ['splitting data by time periods'],
+                hint: 'Separate data by time',
+                explanation: 'Data partitioning divides time-series data into chunks by time ranges (e.g., one partition per month), improving query performance and making data management easier.'
+            },
+            {
+                id: '7-52',
+                type: 'concept',
+                difficulty: 'medium',
+                question: 'What is time-series compression?',
+                answer: 'Reducing storage using patterns in timestamped data',
+                alternatives: ['compression optimized for time-stamped data'],
+                hint: 'Time-stamped data has special patterns',
+                explanation: 'Time-series compression exploits patterns like regular timestamps and similar consecutive values to reduce storage needs significantly.'
+            },
+            {
+                id: '7-53',
+                type: 'concept',
+                difficulty: 'hard',
+                question: 'Why are regular timestamps beneficial for compression?',
+                answer: 'Can be stored more efficiently with deltas',
+                alternatives: ['timestamp delta encoding'],
+                hint: 'No need to store full timestamp each time',
+                explanation: 'With regular timestamps (e.g., every second), you can store just the first full timestamp and then small differences (deltas) instead of repeating full timestamps.'
+            },
+            {
+                id: '7-54',
+                type: 'concept',
+                difficulty: 'hard',
+                question: 'What is the trade-off between data resolution and storage?',
+                answer: 'Higher resolution = more storage but better detail',
+                alternatives: ['precision vs storage cost'],
+                hint: 'More detail means more data',
+                explanation: 'Higher data resolution (more frequent readings) provides better detail but consumes significantly more storage. The right balance depends on use case requirements.'
+            },
+            {
+                id: '7-55',
+                type: 'application',
+                difficulty: 'hard',
+                question: 'A temperature sensor reading every second produces 100KB/day. If you only need hourly averages, how much storage?',
+                answer: 'Approximately 2.8KB/day (100KB / 3600 readings * 24 hours)',
+                alternatives: ['much less - roughly 3KB/day'],
+                hint: 'Calculate: 100KB per day / readings per day',
+                explanation: '100KB/day ÷ 86,400 readings/day × 24 averages = ~0.028KB per reading × 24 = ~0.67KB. Accounting for metadata overhead, ≈2-3KB/day.'
+            }
+        ]
+    },
     
     security: {
         authentication: [
