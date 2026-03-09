@@ -522,20 +522,69 @@ function renderProgressView() {
 
 // Settings view
 function renderSettings() {
+  // Get all themes and fonts from themeManager
+  const themes = typeof themeManager !== 'undefined' ? themeManager.getThemeNames() : [];
+  const fonts = typeof themeManager !== 'undefined' ? themeManager.getFontNames() : [];
+  const currentTheme = typeof themeManager !== 'undefined' ? themeManager.currentTheme : 'white';
+  const currentFont = typeof themeManager !== 'undefined' ? themeManager.currentFont : 'default';
+
+  const themeCards = themes.map(theme => {
+    const themeData = typeof themeManager !== 'undefined' ? themeManager.getTheme(theme.id) : null;
+    const accentColor = themeData ? themeData.colors['--accent'] : '#58cc02';
+    const bgColor = themeData ? themeData.colors['--bg-primary'] : '#ffffff';
+
+    return `
+      <div class="theme-card ${theme.id === currentTheme ? 'active' : ''}" onclick="changeTheme('${theme.id}');"
+           style="--theme-accent: ${accentColor}; --theme-bg: ${bgColor};">
+        <div class="theme-preview" style="background: ${bgColor}; border: 2px solid ${accentColor};">
+        </div>
+        <div class="theme-card-content">
+          <h4>${theme.name}</h4>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  const fontCards = fonts.map(font => `
+    <div class="font-card ${font.id === currentFont ? 'active' : ''}" onclick="changeFont('${font.id}');">
+      <h3 style="font-family: ${font.id === 'default' ? 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' : `"${font.name}"`}">${font.name}</h3>
+    </div>
+  `).join('');
+
   return `
     <div class="settings-view">
       <h2>Settings</h2>
+
+      <!-- Sound Section -->
       <div class="settings-section">
         <h3>Sound</h3>
-        <button class="btn ${settings.soundEnabled ? 'btn-primary' : 'btn-secondary'}" onclick="toggleSound(); renderView('settings');">
-          Sound: ${settings.soundEnabled ? 'ON' : 'OFF'}
-        </button>
+        <div class="sound-options">
+          <button class="btn btn-compact ${settings.soundEnabled ? 'btn-primary' : 'btn-secondary'}" onclick="toggleSound(); renderView('settings');">
+            Sound: ${settings.soundEnabled ? 'ON' : 'OFF'}
+          </button>
+          <button class="btn btn-compact ${settings.ttsEnabled ? 'btn-primary' : 'btn-secondary'}" onclick="toggleTTS(); renderView('settings');">
+            TTS: ${settings.ttsEnabled ? 'ON' : 'OFF'}
+          </button>
+          <button class="btn btn-compact ${settings.ttsAutoPlay ? 'btn-primary' : 'btn-secondary'}" onclick="toggleTTSAutoPlay(); renderView('settings');">
+            TTS Auto-Play: ${settings.ttsAutoPlay ? 'ON' : 'OFF'}
+          </button>
+        </div>
       </div>
+
+      <!-- Themes Section -->
       <div class="settings-section">
-        <h3>Text-to-Speech</h3>
-        <button class="btn ${settings.ttsEnabled ? 'btn-primary' : 'btn-secondary'}" onclick="toggleTTS(); renderView('settings');">
-          TTS: ${settings.ttsEnabled ? 'ON' : 'OFF'}
-        </button>
+        <h3>Themes</h3>
+        <div class="theme-grid">
+          ${themeCards}
+        </div>
+      </div>
+
+      <!-- Fonts Section -->
+      <div class="settings-section">
+        <h3>Fonts</h3>
+        <div class="font-grid">
+          ${fontCards}
+        </div>
       </div>
     </div>
   `;
@@ -761,6 +810,21 @@ function toggleTTS() {
   saveSettings();
 }
 
+function changeTheme(themeName) {
+  if (typeof themeManager !== 'undefined') {
+    themeManager.setTheme(themeName);
+  }
+  renderView('settings');
+}
+
+function changeFont(fontId) {
+  if (typeof themeManager !== 'undefined') {
+    themeManager.applyFont(fontId);
+    themeManager.saveFont(fontId);
+  }
+  renderView('settings');
+}
+
 function toggleTTSAutoPlay() {
   settings.ttsAutoPlay = !settings.ttsAutoPlay;
   saveSettings();
@@ -779,11 +843,6 @@ function changeSoundPack(pack) {
   if (typeof soundManager !== 'undefined') {
     soundManager.setPack(pack);
   }
-  saveSettings();
-}
-
-function changeFont(fontId) {
-  settings.font = fontId;
   saveSettings();
 }
 
