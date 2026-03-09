@@ -204,6 +204,8 @@ let masteredQuestions = new Set();
 let questionPool = [];
 let currentQuestionAutoPlayed = false;
 let currentView = 'dashboard';
+let currentConversation = null;
+let conversationMessages = [];
 let settings = {
   soundEnabled: true,
   ttsEnabled: false,
@@ -326,6 +328,10 @@ function renderView(viewName) {
     case 'conversations':
       container.innerHTML = renderConversations();
       break;
+    case 'conversation-chat':
+      container.innerHTML = renderConversationChat();
+      setupChatInput();
+      break;
     case 'progress':
       container.innerHTML = renderProgressView();
       break;
@@ -375,11 +381,23 @@ function renderDashboard() {
     console.warn('No units in course!');
     return `
       <div class="dashboard">
-        <div class="course-header">
-          <h2>${course.flag} ${course.name}</h2>
-          <div class="stats">
-            <span class="xp-badge">🏆 ${progress.xp} XP</span>
-            <span class="streak-badge">🔥 ${progress.streak} Day Streak</span>
+        <div class="progress-card">
+          <div class="progress-stats">
+            <div class="progress-stat">
+              <span class="progress-icon">🏆</span>
+              <span class="progress-value">${progress.xp}</span>
+              <span class="progress-label">XP</span>
+            </div>
+            <div class="progress-stat">
+              <span class="progress-icon">🔥</span>
+              <span class="progress-value">${progress.streak}</span>
+              <span class="progress-label">Day Streak</span>
+            </div>
+            <div class="progress-stat">
+              <span class="progress-icon">📚</span>
+              <span class="progress-value">${progress.completedLessons ? progress.completedLessons.length : 0}</span>
+              <span class="progress-label">Lessons</span>
+            </div>
           </div>
         </div>
         <div class="units-container">
@@ -394,11 +412,23 @@ function renderDashboard() {
 
   return `
     <div class="dashboard">
-      <div class="course-header">
-        <h2>${course.flag} ${course.name}</h2>
-        <div class="stats">
-          <span class="xp-badge">🏆 ${progress.xp} XP</span>
-          <span class="streak-badge">🔥 ${progress.streak} Day Streak</span>
+      <div class="progress-card">
+        <div class="progress-stats">
+          <div class="progress-stat">
+            <span class="progress-icon">🏆</span>
+            <span class="progress-value">${progress.xp}</span>
+            <span class="progress-label">XP</span>
+          </div>
+          <div class="progress-stat">
+            <span class="progress-icon">🔥</span>
+            <span class="progress-value">${progress.streak}</span>
+            <span class="progress-label">Day Streak</span>
+          </div>
+          <div class="progress-stat">
+            <span class="progress-icon">📚</span>
+            <span class="progress-value">${progress.completedLessons ? progress.completedLessons.length : 0}</span>
+            <span class="progress-label">Lessons</span>
+          </div>
         </div>
       </div>
       <div class="units-container">
@@ -488,12 +518,155 @@ function renderLearn() {
 
 // Conversations view
 function renderConversations() {
+  const courseSelect = document.getElementById('courseSelect');
+  const courseId = courseSelect ? courseSelect.value : 'french';
+
+  const conversations = typeof ConversationLessons !== 'undefined' && ConversationLessons[courseId]
+    ? ConversationLessons[courseId]
+    : [];
+
+  if (conversations.length === 0) {
+    return `
+      <div class="conversations-view">
+        <h2>Conversation Practice</h2>
+        <p>No conversation lessons available for this course yet.</p>
+      </div>
+    `;
+  }
+
+  const cards = conversations.map(conv => `
+    <div class="conversation-card ${conv.difficulty}" onclick="startConversation('${conv.id}');">
+      <div class="conversation-icon">${conv.icon}</div>
+      <div class="conversation-info">
+        <h3>${conv.title}</h3>
+        <p>${conv.description}</p>
+        <div class="conversation-meta">
+          <span class="difficulty-badge ${conv.difficulty}">${conv.difficulty}</span>
+          <span class="time-badge">⏱️ ${conv.estimatedTime} min</span>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
   return `
     <div class="conversations-view">
-      <h2>Conversations</h2>
-      <p>Practice conversational skills.</p>
+      <h2>Conversation Practice</h2>
+      <p>Practice real-world conversations with AI roleplay scenarios.</p>
+      <div class="conversations-grid">
+        ${cards}
+      </div>
     </div>
   `;
+}
+
+function startConversation(conversationId) {
+  const courseSelect = document.getElementById('courseSelect');
+  const courseId = courseSelect ? courseSelect.value : 'french';
+
+  const conversations = typeof ConversationLessons !== 'undefined' && ConversationLessons[courseId]
+    ? ConversationLessons[courseId]
+    : [];
+
+  const conversation = conversations.find(c => c.id === conversationId);
+
+  if (!conversation) {
+    console.error('Conversation not found:', conversationId);
+    return;
+  }
+
+  currentConversation = conversation;
+  conversationMessages = [];
+  renderView('conversation-chat');
+}
+
+function renderConversationChat() {
+  if (!currentConversation) {
+    renderView('conversations');
+    return '';
+  }
+
+  const messagesHtml = conversationMessages.map(msg => `
+    <div class="chat-message ${msg.role}">
+      <div class="message-avatar">${msg.role === 'user' ? '👤' : '🤖'}</div>
+      <div class="message-content">
+        <div class="message-text">${msg.text}</div>
+      </div>
+    </div>
+  `).join('');
+
+  return `
+    <div class="conversation-chat-view">
+      <div class="chat-header">
+        <button class="btn btn-secondary back-btn" onclick="renderView('conversations');">← Back</button>
+        <div class="chat-title">
+          <span class="chat-icon">${currentConversation.icon}</span>
+          <h2>${currentConversation.title}</h2>
+        </div>
+        <span class="chat-difficulty ${currentConversation.difficulty}">${currentConversation.difficulty}</span>
+      </div>
+      <div class="chat-scenario">
+        <strong>Scenario:</strong> ${currentConversation.scenario}
+        <div class="chat-topics">
+          <span class="topic-label">Topics:</span>
+          ${currentConversation.topics.map(t => `<span class="topic-tag">${t}</span>`).join('')}
+        </div>
+      </div>
+      <div class="chat-messages">
+        ${messagesHtml}
+      </div>
+      <div class="chat-input-area">
+        <div class="chat-input-wrapper">
+          <input type="text" class="chat-input" id="chatInput" placeholder="Type your message..." />
+          <button class="btn btn-primary send-btn" onclick="sendChatMessage();">Send</button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function sendChatMessage() {
+  const input = document.getElementById('chatInput');
+  const message = input.value.trim();
+
+  if (!message) return;
+
+  conversationMessages.push({
+    role: 'user',
+    text: message
+  });
+
+  input.value = '';
+  renderView('conversation-chat');
+
+  setTimeout(() => {
+    const responses = [
+      "That's great! Let's continue practicing.",
+      "Good choice of words! Try adding more detail.",
+      "Excellent! You're doing well.",
+      "Remember to use the vocabulary you learned.",
+      "Let's practice that again with a slightly different scenario."
+    ];
+
+    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+
+    conversationMessages.push({
+      role: 'assistant',
+      text: randomResponse
+    });
+
+    renderView('conversation-chat');
+  }, 1000);
+}
+
+function setupChatInput() {
+  const input = document.getElementById('chatInput');
+  if (input) {
+    input.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        sendChatMessage();
+      }
+    });
+  }
 }
 
 // Progress view

@@ -1,0 +1,184 @@
+/* Dashboard Styles */
+
+.dashboard {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Progress Card */
+.progress-card {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.progress-stats {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.progress-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 100px;
+}
+
+.progress-icon {
+  font-size: 2em;
+}
+
+.progress-value {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.progress-label {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Units Container */
+.units-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Unit Styles */
+.unit {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.unit:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.unit-header {
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.unit-header h3 {
+  margin: 0 0 8px 0;
+  color: var(--text-primary);
+  font-size: 1.4em;
+}
+
+.unit-header p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+/* Lessons Grid */
+.lessons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+/* Lesson Cards */
+.lesson-card {
+  background: var(--bg-primary);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lesson-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.lesson-card.locked {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.lesson-card.completed {
+  border-color: var(--accent);
+  background: var(--accent-light, rgba(88, 204, 2, 0.05));
+}
+
+.lesson-icon {
+  font-size: 1.8em;
+  flex-shrink: 0;
+}
+
+.lesson-info {
+  flex: 1;
+}
+
+.lesson-info h4 {
+  margin: 0 0 4px 0;
+  color: var(--text-primary);
+  font-size: 1em;
+}
+
+.xp-badge {
+  background: var(--accent);
+  color: var(--accent-text, #ffffff);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 15px;
+  }
+
+  .progress-card {
+    padding: 15px;
+  }
+
+  .progress-stat {
+    min-width: 80px;
+  }
+
+  .progress-icon {
+    font-size: 1.6em;
+  }
+
+  .progress-value {
+    font-size: 1.3em;
+  }
+
+  .units-container {
+    gap: 30px;
+  }
+
+  .unit {
+    padding: 18px;
+  }
+
+  .lessons-grid {
+    grid-template-columns: 1fr;
+  }
+}
