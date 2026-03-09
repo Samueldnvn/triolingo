@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <pattern id="ikea-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+      <!-- IKEA blue background -->
+      <rect width="100" height="100" fill="#0058a3"/>
+
+      <!-- Yellow lines - IKEA's signature look -->
+      <line x1="0" y1="50" x2="100" y2="50" stroke="#ffda00" stroke-width="2" opacity="0.3"/>
+      <line x1="50" y1="0" x2="50" y2="100" stroke="#ffda00" stroke-width="2" opacity="0.3"/>
+
+      <!-- Small yellow squares in corners -->
+      <rect x="10" y="10" width="10" height="10" fill="#ffda00" opacity="0.2"/>
+      <rect x="80" y="10" width="10" height="10" fill="#ffda00" opacity="0.2"/>
+      <rect x="10" y="80" width="10" height="10" fill="#ffda00" opacity="0.2"/>
+      <rect x="80" y="80" width="10" height="10" fill="#ffda00" opacity="0.2"/>
+    </pattern>
+
+    <linearGradient id="ikea-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0058a3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#003d6f;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Main background with gradient -->
+  <rect width="1920" height="1080" fill="url(#ikea-gradient)"/>
+
+  <!-- Pattern overlay -->
+  <rect width="1920" height="1080" fill="url(#ikea-pattern)" opacity="0.4"/>
+
+  <!-- Diagonal yellow stripes -->
+  <g opacity="0.1">
+    <line x1="0" y1="200" x2="1920" y2="200" stroke="#ffda00" stroke-width="150"/>
+    <line x1="0" y1="500" x2="1920" y2="500" stroke="#ffda00" stroke-width="100"/>
+    <line x1="0" y1="750" x2="1920" y2="750" stroke="#ffda00" stroke-width="150"/>
+  </g>
+
+  <!-- IKEA-style furniture silhouettes in background -->
+  <g opacity="0.05" fill="#ffffff">
+    <!-- Simple chair silhouette -->
+    <path d="M100 800 L100 700 L150 700 L150 800 L120 800 L120 720 L130 720 L130 800 Z" />
+    <!-- Simple table silhouette -->
+    <rect x="300" y="600" width="200" height="20" />
+    <rect x="320" y="620" width="10" height="180" />
+    <rect x="470" y="620" width="10" height="180" />
+    <!-- Bookshelf silhouette -->
+    <rect x="600" y="500" width="150" height="300" />
+    <rect x="600" y="550" width="150" height="10" />
+    <rect x="600" y="650" width="150" height="10" />
+    <rect x="600" y="750" width="150" height="10" />
+  </g>
+
+  <!-- Small yellow dots scattered -->
+  <circle cx="200" cy="300" r="5" fill="#ffda00" opacity="0.4"/>
+  <circle cx="500" cy="400" r="8" fill="#ffda00" opacity="0.3"/>
+  <circle cx="800" cy="250" r="6" fill="#ffda00" opacity="0.4"/>
+  <circle cx="1100" cy="350" r="7" fill="#ffda00" opacity="0.3"/>
+  <circle cx="1400" cy="300" r="5" fill="#ffda00" opacity="0.4"/>
+  <circle cx="1700" cy="400" r="9" fill="#ffda00" opacity="0.3"/>
+</svg>

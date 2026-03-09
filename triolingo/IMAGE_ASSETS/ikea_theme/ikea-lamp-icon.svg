@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!-- Simple IKEA-style lamp icon -->
+  <path d="M32 10 L32 5" stroke="#ffda00" stroke-width="3" stroke-linecap="round"/>
+  <ellipse cx="32" cy="30" rx="18" ry="15" fill="#0058a3" stroke="#ffda00" stroke-width="2"/>
+  <rect x="30" y="45" width="4" height="15" fill="#ffda00"/>
+  <ellipse cx="32" cy="30" rx="8" ry="6" fill="#ffda00" opacity="0.6"/>
+</svg>

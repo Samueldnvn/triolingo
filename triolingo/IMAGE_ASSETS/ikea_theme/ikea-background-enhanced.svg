@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="ikea-blue-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0058a3;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#004a8a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#003d6f;stop-opacity:1" />
+    </linearGradient>
+
+    <pattern id="ikea-grid" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+      <rect width="80" height="80" fill="#0058a3"/>
+      <line x1="0" y1="40" x2="80" y2="40" stroke="#ffda00" stroke-width="2" opacity="0.15"/>
+      <line x1="40" y1="0" x2="40" y2="80" stroke="#ffda00" stroke-width="2" opacity="0.15"/>
+      <circle cx="20" cy="20" r="3" fill="#ffda00" opacity="0.2"/>
+      <circle cx="60" cy="60" r="3" fill="#ffda00" opacity="0.2"/>
+    </pattern>
+
+    <pattern id="ikea-stripes" x="0" y="0" width="60" height="20" patternUnits="userSpaceOnUse">
+      <rect width="60" height="20" fill="#0058a3"/>
+      <rect x="0" y="8" width="60" height="4" fill="#ffda00" opacity="0.25"/>
+    </pattern>
+  </defs>
+
+  <!-- Main background gradient -->
+  <rect width="1920" height="1080" fill="url(#ikea-blue-gradient)"/>
+
+  <!-- Grid pattern overlay -->
+  <rect width="1920" height="1080" fill="url(#ikea-grid)" opacity="0.6"/>
+
+  <!-- Diagonal stripe areas -->
+  <g opacity="0.3">
+    <rect x="0" y="0" width="1920" height="120" fill="url(#ikea-stripes)"/>
+    <rect x="0" y="480" width="1920" height="80" fill="url(#ikea-stripes)"/>
+    <rect x="0" y="880" width="1920" height="120" fill="url(#ikea-stripes)"/>
+  </g>
+
+  <!-- Large yellow circles (IKEA decorative elements) -->
+  <g opacity="0.08">
+    <circle cx="200" cy="300" r="150" fill="#ffda00"/>
+    <circle cx="1600" cy="400" r="180" fill="#ffda00"/>
+    <circle cx="400" cy="750" r="120" fill="#ffda00"/>
+    <circle cx="1400" cy="850" r="160" fill="#ffda00"/>
+  </g>
+
+  <!-- Simple furniture silhouettes in background -->
+  <g opacity="0.04" fill="#ffffff">
+    <!-- Chair -->
+    <path d="M150 600 L150 500 L200 500 L200 600 L170 600 L170 520 L180 520 L180 600 Z"/>
+    <rect x="155" y="600" width="5" height="100"/>
+    <rect x="190" y="600" width="5" height="100"/>
+
+    <!-- Table -->
+    <rect x="300" y="550" width="250" height="15"/>
+    <rect x="325" y="565" width="8" height="150"/>
+    <rect x="515" y="565" width="8" height="150"/>
+
+    <!-- Bookshelf -->
+    <rect x="650" y="400" width="180" height="350"/>
+    <rect x="650" y="470" width="180" height="8"/>
+    <rect x="650" y="580" width="180" height="8"/>
+    <rect x="650" y="690" width="180" height="8"/>
+
+    <!-- Lamp -->
+    <path d="M950 350 L950 300 L970 300 L970 350 Z" fill="#ffda00"/>
+    <path d="M930 380 L950 350 L970 350 L990 380 Z"/>
+    <rect x="958" y="380" width="4" height="120"/>
+
+    <!-- Cabinet -->
+    <rect x="1100" y="450" width="200" height="280"/>
+    <rect x="1100" y="590" width="200" height="8"/>
+    <rect x="1198" y="450" width="4" height="280"/>
+
+    <!-- Sofa -->
+    <rect x="1400" y="550" width="300" height="100"/>
+    <rect x="1400" y="500" width="30" height="50"/>
+    <rect x="1670" y="500" width="30" height="50"/>
+    <rect x="1400" y="450" width="300" height="50"/>
+  </g>
+
+  <!-- Small decorative squares -->
+  <g opacity="0.1">
+    <rect x="100" y="150" width="30" height="30" fill="#ffda00"/>
+    <rect x="1800" y="200" width="25" height="25" fill="#ffda00"/>
+    <rect x="150" y="900" width="35" height="35" fill="#ffda00"/>
+    <rect x="1750" y="850" width="28" height="28" fill="#ffda00"/>
+  </g>
+
+  <!-- Small dots -->
+  <g opacity="0.15" fill="#ffda00">
+    <circle cx="500" cy="200" r="6"/>
+    <circle cx="1200" cy="250" r="5"/>
+    <circle cx="800" cy="150" r="7"/>
+    <circle cx="600" cy="100" r="4"/>
+    <circle cx="1400" cy="180" r="6"/>
+    <circle cx="950" cy="950" r="8"/>
+    <circle cx="1700" cy="700" r="5"/>
+  </g>
+
+  <!-- Official IKEA logo in corner -->
+  <image href="ikea-logo-official.svg" x="1700" y="40" width="180" height="72" opacity="0.3"/>
+</svg>

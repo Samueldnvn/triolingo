@@ -1,0 +1,16 @@
+{
+  "name": "triolingo",
+  "version": "1.0.0",
+  "description": "A Duolingo clone desktop app for learning skills",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev"
+  },
+  "keywords": ["education", "learning", "duolingo-clone"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.0.0"
+  }
+}
