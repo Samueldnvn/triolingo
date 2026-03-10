@@ -179,6 +179,66 @@ Use LaTeX for all math expressions. TRIOlingO is configured to render both inlin
 
 For technical lessons, create diagrams using Matplotlib or download from web.
 
+### Critical Rule: Diagram Variety
+
+**DO NOT reuse diagrams across lessons.** Each lesson should have its own unique diagrams that are specifically designed for that lesson's content.
+
+**Why variety matters:**
+- Each diagram illustrates a specific concept for its lesson
+- Reusing diagrams creates confusion about which concepts they represent
+- Unique diagrams enhance learning by providing fresh visualizations
+- Professional courses don't recycle generic visualizations
+
+**Best practices:**
+- Create 2-4 diagrams per lesson (more for complex topics)
+- Each diagram should be unique to its lesson
+- Use different distributions, examples, and visual approaches
+- Reference the correct diagram file in each lesson
+
+**Example of good diagram variety:**
+
+| Lesson | Diagrams (unique to lesson) |
+|--------|----------------------------|
+| Discrete Variables | discrete-vs-continuous-examples.png<br>discrete-variable-types.png<br>discrete-countable-explanation.png |
+| Continuous Variables | continuous-uncountable.png<br>continuous-variable-types.png<br>continuous-point-vs-interval.png |
+| PMF | pmf-die-roll.png<br>pmf-poisson-comparison.png<br>pmf-binomial-comparison.png |
+| PDF | pdf-exponential.png<br>pdf-uniform.png<br>pdf-area-under-curve.png |
+| CDF | cdf-distributions-comparison.png<br>cdf-properties.png<br>cdf-quantile-function.png |
+
+### Diagram Creation Strategies
+
+When creating diagrams for a new lesson, consider these approaches:
+
+**1. Illustrate key concepts directly**
+- PMF lesson: Show PMF for different distributions (die roll, Poisson, Binomial)
+- PDF lesson: Show PDF for exponential, uniform, normal with area highlighting
+- CDF lesson: Show CDF properties (monotonic, limits, bounds)
+
+**2. Use different examples for each lesson**
+- Lesson 1: Website visitors, dice rolls, children counts
+- Lesson 2: Height, temperature, response time, stock price
+- Lesson 3: λ=2 vs λ=5 Poisson comparison
+- Lesson 4: λ=0.5, 1.0, 2.0 exponential comparison
+
+**3. Vary visualization types**
+- Bar charts (for discrete distributions)
+- Line plots (for continuous functions)
+- Multi-panel comparisons (side-by-side or grid layouts)
+- Step functions (for discrete CDF)
+- Smooth curves (for continuous PDF/CDF)
+- Area highlighting (for probability as area under curve)
+
+**4. Include mathematical notation**
+- Add formulas directly in diagrams
+- Use consistent notation with lesson text
+- Label axes clearly
+- Include value labels on important points
+
+**5. Reference diagrams strategically**
+- Include in lesson text when introducing concepts
+- Reference in questions that ask about diagram content
+- Ensure diagram filenames are descriptive and unique
+
 ### Matplotlib Diagrams
 
 Create elegant, colored diagrams:
@@ -205,9 +265,10 @@ plt.close()
 
 **Guidelines:**
 - Save to `triolingo/diagrams/` directory
-- Use descriptive filenames
+- Use descriptive, lesson-specific filenames
 - 150 DPI or higher
 - Professional styling (grid, labels, colors)
+- Include LaTeX math formulas in diagrams when relevant
 - Reference in questions: `diagrams/lesson-name-diagram1.png`
 
 ### Diagram References in Questions
@@ -220,6 +281,7 @@ When a question references a diagram (e.g., "Looking at `diagrams/conditional-tr
 - Use backticks around the path: `` `diagrams/prob-die-distribution.png` ``
 - This works in both `lessonText` and `question` fields
 - The diagram will appear inline with the text
+- **Always reference the correct, lesson-specific diagram**
 
 **Example question:**
 ```json
@@ -232,6 +294,48 @@ When a question references a diagram (e.g., "Looking at `diagrams/conditional-tr
   "explanation": "P(B|A) is shown on the branch from A to B in the tree diagram",
   "xp": 3
 }
+```
+
+## Diagram Verification Checklist
+
+After creating a lesson with diagrams, verify:
+
+✅ **Diagram uniqueness**
+- [ ] Each diagram is specific to this lesson (not reused)
+- [ ] Diagram filenames include lesson context (e.g., `pmf-` not `rv-`)
+- [ ] No duplicate diagram files across different lessons
+
+✅ **Diagram quality**
+- [ ] High resolution (150 DPI or higher)
+- [ ] Professional styling (grid, labels, colors)
+- [ ] Clear, readable text and labels
+- [ ] Appropriate size and aspect ratio
+
+✅ **Diagram content**
+- [ ] Illustrates the exact concepts taught in this lesson
+- [ ] Includes relevant mathematical notation
+- [ ] Uses consistent notation with lesson text
+- [ ] Has clear axes labels and titles
+
+✅ **Diagram references**
+- [ ] Diagram appears in lesson text where concepts are introduced
+- [ ] Questions reference the correct diagram file
+- [ ] All diagram files actually exist in `diagrams/` directory
+- [ ] Diagram filenames in content match actual files
+
+✅ **No diagram reuse**
+- [ ] No diagram appears in multiple lessons
+- [ ] Each lesson has its own set of diagrams
+- [ ] Old generic diagrams removed (e.g., `rv-*.png`)
+
+**Verification command:**
+```bash
+# List all diagrams
+ls -1 diagrams/*.png | sort
+
+# Check for reuse (should have unique prefixes per lesson)
+ls -1 diagrams/*.png | cut -d'-' -f1 | sort | uniq -c
+# Each prefix should appear only once
 ```
 
 ## Lesson Flow
@@ -260,16 +364,20 @@ TRIOlingO lessons use a two-phase flow:
 
 1. **Understand the lesson topic** - What concepts need to be taught?
 2. **Write detailed lesson text** (`lessonText`) - Comprehensive explanation with examples, LaTeX math, diagrams
-3. **Plan question flow** - Start simple, build complexity
-4. **Create questions one by one** - Hand-craft each question
+3. **Plan diagram strategy** - Identify 2-4 unique diagrams needed for this lesson's specific concepts
+4. **Create diagrams** - Generate lesson-specific Matplotlib diagrams (no reuse from other lessons)
+   - Use lesson-specific filenames (e.g., `pmf-die-roll.png`, not `rv-discrete.png`)
+   - Include relevant mathematical notation
+   - Ensure diagrams illustrate the exact concepts taught in this lesson
+5. **Plan question flow** - Start simple, build complexity
+6. **Create questions one by one** - Hand-craft each question
    - Type-in questions for most (50-70%)
    - Mix in some multiple-choice (20-30%)
    - Add code questions for programming topics (15-20%)
-   - Reference diagrams inline in question text when needed
+   - Reference this lesson's specific diagrams inline in question text
    - Always provide detailed explanations
-5. **Generate diagrams** - Create Matplotlib diagrams or download from web
-6. **Add to lessons.json** - Update the JSON storage
-7. **Test** - Verify lesson content displays, questions work, feedback shows, diagrams render
+7. **Add to lessons.json** - Update the JSON storage with correct diagram references
+8. **Test** - Verify lesson content displays, questions work, feedback shows, diagrams render correctly
 
 ## Question Distribution per Lesson
 
@@ -294,13 +402,14 @@ TRIOlingO lessons use a two-phase flow:
 ❌ **Don't** remove or modify lesson placeholders in app.js
 ❌ **Don't** use aiAllTopics.js directly - always update lessons.json
 ❌ **Don't** forget to rebuild aiAllTopics.js after updating lessons.json
+❌ **Don't reuse diagrams across lessons** - Each lesson needs unique diagrams
 
 ✅ **Do** write each question by hand
 ✅ **Do** include comprehensive lesson text first
 ✅ **Do** focus on type-in questions
 ✅ **Do** provide detailed explanations
 ✅ **Do** use LaTeX for math (both $ and $$ delimiters work)
-✅ **Do** create diagrams for technical topics
+✅ **Do** create unique diagrams for each lesson (2-4 diagrams per lesson)
 ✅ **Do** reference diagrams in both lesson content and questions
 ✅ **Do** store in lessons.json
 ✅ **Do** rebuild aiAllTopics.js after updating lessons.json
