@@ -107,9 +107,246 @@ const courses = {
   },
   calculus: {
     id: 'calculus',
-    name: 'Calculus 1-3',
-    flag: '📐',
-    units: []
+    name: 'Calculus',
+    flag: '∫',
+    units: [
+      {
+        id: 1,
+        title: 'Limits',
+        description: 'Introduction to Limits and Continuity',
+        lessons: [
+          {
+            id: '1-1',
+            title: 'Understanding Limits',
+            xp: 85,
+            type: 'lesson',
+            questions: [
+              {id: 'calc_u1_l1_q1', type: 'typing', question: 'What is the value of lim(x→2) x²?', correctAnswer: ['4'], xp: 5},
+              {id: 'calc_u1_l1_q2', type: 'typing', question: 'What does a limit describe?', correctAnswer: ['The value a function approaches as x approaches a certain value'], xp: 4},
+              {id: 'calc_u1_l1_q3', type: 'typing', question: 'What is lim(x→3) (2x + 1)?', correctAnswer: ['7'], xp: 4},
+              {id: 'calc_u1_l1_q4', type: 'typing', question: 'If f(x) = x + 1, what is lim(x→2) f(x)?', correctAnswer: ['3'], xp: 4},
+              {id: 'calc_u1_l1_q5', type: 'typing', question: 'What is lim(x→0) sin(x)/x?', correctAnswer: ['1'], xp: 5},
+              {id: 'calc_u1_l1_q6', type: 'multiple-choice', question: 'What does lim(x→∞) 1/x approach?', options: ['0', '1', '∞', 'Undefined'], correct: 0, xp: 3},
+              {id: 'calc_u1_l1_q7', type: 'typing', question: 'What is lim(x→1) (x² - 1)/(x - 1)?', correctAnswer: ['2'], xp: 5},
+              {id: 'calc_u1_l1_q8', type: 'multiple-choice', question: 'A limit exists if the left and right limits are:', options: ['Different', 'The same', 'Both infinite', 'Both zero'], correct: 1, xp: 3},
+              {id: 'calc_u1_l1_q9', type: 'typing', question: 'What is lim(x→∞) (1/x²)?', correctAnswer: ['0'], xp: 4},
+              {id: 'calc_u1_l1_q10', type: 'multiple-choice', question: 'The limit as x approaches a from the right is called:', options: ['Left-hand limit', 'Right-hand limit', 'Two-sided limit', 'Infinite limit'], correct: 1, xp: 3},
+              {id: 'calc_u1_l1_q11', type: 'typing', question: 'What is lim(x→2) (x³ - 8)/(x - 2)?', correctAnswer: ['12'], xp: 5},
+              {id: 'calc_u1_l1_q12', type: 'multiple-choice', question: 'If lim(x→a) f(x) = f(a), then f is:', options: ['Discontinuous', 'Continuous', 'Differentiable', 'Undefined'], correct: 1, xp: 3},
+              {id: 'calc_u1_l1_q13', type: 'typing', question: 'What is lim(x→0) cos(x)?', correctAnswer: ['1'], xp: 4},
+              {id: 'calc_u1_l1_q14', type: 'multiple-choice', question: 'Which limit does NOT exist?', options: ['lim(x→0) x²', 'lim(x→0) 1/|x|', 'lim(x→2) 3x', 'lim(x→1) x + 1'], correct: 1, xp: 3},
+              {id: 'calc_u1_l1_q15', type: 'typing', question: 'What is lim(x→∞) (2 + 3/x)?', correctAnswer: ['2'], xp: 4},
+              {id: 'calc_u1_l1_q16', type: 'multiple-choice', question: 'A function is continuous at a point if:', options: ['It has a hole', 'Left and right limits equal the function value', 'Only right limit exists', 'The function is undefined'], correct: 1, xp: 3},
+              {id: 'calc_u1_l1_q17', type: 'typing', question: 'What is lim(x→0) (sin(x))/?', correctAnswer: ['1'], xp: 5},
+              {id: 'calc_u1_l1_q18', type: 'multiple-choice', question: 'The squeeze theorem helps find:', options: ['Derivatives', 'Limits', 'Integrals', 'Areas'], correct: 1, xp: 3}
+            ]
+          },
+          {
+            id: '1-2',
+            title: 'Calculating Limits',
+            xp: 88,
+            type: 'lesson',
+            questions: [
+              {id: 'calc_u1_l2_q1', type: 'typing', question: 'What is lim(x→4) (x² - 16)/(x - 4)?', correctAnswer: ['8'], xp: 5},
+              {id: 'calc_u1_l2_q2', type: 'typing', question: 'To evaluate lim(x→a) f(x)/g(x) when both approach 0, use:', correctAnswer: ['Factoring or rationalization'], xp: 4},
+              {id: 'calc_u1_l2_q3', type: 'typing', question: 'What is lim(x→∞) (3x² + 2x)/(x² + 1)?', correctAnswer: ['3'], xp: 5},
+              {id: 'calc_u1_l2_q4', type: 'multiple-choice', question: 'For limits at infinity of rational functions, compare:', options: ['Numerators only', 'Denominators only', 'Highest powers', 'Constants'], correct: 2, xp: 3},
+              {id: 'calc_u1_l2_q5', type: 'typing', question: 'What is lim(x→0) (1 - cos(x))/x²?', correctAnswer: ['1/2', '0.5'], xp: 5},
+              {id: 'calc_u1_l2_q6', type: 'multiple-choice', question: 'The limit lim(x→0) sin(ax)/x equals:', options: ['0', '1', 'a', '1/a'], correct: 2, xp: 3},
+              {id: 'calc_u1_l2_q7', type: 'typing', question: 'What is lim(x→3) (x² - 9)/(x - 3)?', correctAnswer: ['6'], xp: 4},
+              {id: 'calc_u1_l2_q8', type: 'multiple-choice', question: 'If the degree of numerator < degree of denominator at infinity, the limit is:', options: ['∞', '0', '1', 'Undefined'], correct: 1, xp: 3},
+              {id: 'calc_u1_l2_q9', type: 'typing', question: 'What is lim(x→∞) √(x² + 1) - x?', correctAnswer: ['0'], xp: 5},
+              {id: 'calc_u1_l2_q10', type: 'multiple-choice', question: 'L\'Hôpital\'s Rule applies to:', options: ['0/0 or ∞/∞', '1/1', '0×∞', '∞ - ∞'], correct: 0, xp: 3},
+              {id: 'calc_u1_l2_q11', type: 'typing', question: 'What is lim(x→2) (x³ - 8)/(x² - 4)?', correctAnswer: ['3'], xp: 5},
+              {id: 'calc_u1_l2_q12', type: 'multiple-choice', question: 'To find lim(x→∞) (√(x+1) - √x), multiply by:', options: ['x', '√x', 'Conjugate', '1/x'], correct: 2, xp: 3},
+              {id: 'calc_u1_l2_q13', type: 'typing', question: 'What is lim(x→0) (e^x - 1)/x?', correctAnswer: ['1'], xp: 4},
+              {id: 'calc_u1_l2_q14', type: 'multiple-choice', question: 'A removable discontinuity is also called a:', options: ['Jump', 'Hole', 'Vertical asymptote', 'Infinite'], correct: 1, xp: 3},
+              {id: 'calc_u1_l2_q15', type: 'typing', question: 'What is lim(x→∞) (ln(x)/x)?', correctAnswer: ['0'], xp: 5},
+              {id: 'calc_u1_l2_q16', type: 'multiple-choice', question: 'The limit lim(x→∞) (1 + 1/x)^x equals:', options: ['0', '1', 'e', '∞'], correct: 2, xp: 3},
+              {id: 'calc_u1_l2_q17', type: 'typing', question: 'What is lim(x→π/2) tan(x)?', correctAnswer: ['undefined', '∞'], xp: 4},
+              {id: 'calc_u1_l2_q18', type: 'multiple-choice', question: 'For vertical asymptotes, find where denominator is:', options: ['1', '0', '∞', 'Undefined'], correct: 1, xp: 3}
+            ]
+          }
+        ]
+      },
+      {
+        id: 2,
+        title: 'Derivatives',
+        description: 'Introduction to Derivatives',
+        lessons: [
+          {
+            id: '2-1',
+            title: 'Introduction to Derivatives',
+            xp: 88,
+            type: 'lesson',
+            questions: [
+              {id: 'calc_u2_l1_q1', type: 'typing', question: 'What is the derivative of f(x) = x²?', correctAnswer: ['2x'], xp: 5},
+              {id: 'calc_u2_l1_q2', type: 'typing', question: 'The derivative measures the rate of change of a function with respect to:', correctAnswer: ['x', 'its variable', 'the independent variable'], xp: 4},
+              {id: 'calc_u2_l1_q3', type: 'typing', question: 'What is d/dx (x³)?', correctAnswer: ['3x²'], xp: 5},
+              {id: 'calc_u2_l1_q4', type: 'multiple-choice', question: 'Geometrically, the derivative at a point is the slope of:', options: ['Secant line', 'Tangent line', 'Normal line', 'Chord'], correct: 1, xp: 3},
+              {id: 'calc_u2_l1_q5', type: 'typing', question: 'What is f\'(x) if f(x) = 5?', correctAnswer: ['0'], xp: 4},
+              {id: 'calc_u2_l1_q6', type: 'multiple-choice', question: 'The derivative of a sum is the sum of the:', options: ['Integrals', 'Derivatives', 'Products', 'Quotients'], correct: 1, xp: 3},
+              {id: 'calc_u2_l1_q7', type: 'typing', question: 'What is d/dx (x^n)?', correctAnswer: ['nx^(n-1)'], xp: 5},
+              {id: 'calc_u2_l1_q8', type: 'multiple-choice', question: 'Which notation represents the derivative?', options: ['∫', '∂', 'f\' or d/dx', 'Δ'], correct: 2, xp: 3},
+              {id: 'calc_u2_l1_q9', type: 'typing', question: 'What is the derivative of sin(x)?', correctAnswer: ['cos(x)'], xp: 4},
+              {id: 'calc_u2_l1_q10', type: 'multiple-choice', question: 'If a function is constant, its derivative is:', options: ['1', '0', '∞', 'Undefined'], correct: 1, xp: 3},
+              {id: 'calc_u2_l1_q11', type: 'typing', question: 'What is d/dx (e^x)?', correctAnswer: ['e^x'], xp: 5},
+              {id: 'calc_u2_l1_q12', type: 'multiple-choice', question: 'The power rule applies to:', options: ['Exponential functions', 'Polynomials', 'Trigonometric functions', 'Logarithmic functions'], correct: 1, xp: 3},
+              {id: 'calc_u2_l1_q13', type: 'typing', question: 'What is the derivative of ln(x)?', correctAnswer: ['1/x'], xp: 4},
+              {id: 'calc_u2_l1_q14', type: 'multiple-choice', question: 'A differentiable function is always:', options: ['Discontinuous', 'Continuous', 'Constant', 'Linear'], correct: 1, xp: 3},
+              {id: 'calc_u2_l1_q15', type: 'typing', question: 'What is d/dx (cos(x))?', correctAnswer: ['-sin(x)'], xp: 5},
+              {id: 'calc_u2_l1_q16', type: 'multiple-choice', question: 'The derivative gives the:', options: ['Area under curve', 'Instantaneous rate of change', 'Average rate of change', 'Accumulated value'], correct: 1, xp: 3},
+              {id: 'calc_u2_l1_q17', type: 'typing', question: 'What is f\'(x) if f(x) = 3x² + 2x?', correctAnswer: ['6x + 2'], xp: 4},
+              {id: 'calc_u2_l1_q18', type: 'multiple-choice', question: 'Which is NOT a differentiation rule?', options: ['Power rule', 'Product rule', 'Quotient rule', 'Integration rule'], correct: 3, xp: 3}
+            ]
+          },
+          {
+            id: '2-2',
+            title: 'Power Rule Practice',
+            xp: 88,
+            type: 'lesson',
+            questions: [
+              {id: 'calc_u2_l2_q1', type: 'typing', question: 'What is d/dx (x^5)?', correctAnswer: ['5x^4'], xp: 5},
+              {id: 'calc_u2_l2_q2', type: 'typing', question: 'The power rule: d/dx (x^n) =', correctAnswer: ['nx^(n-1)'], xp: 4},
+              {id: 'calc_u2_l2_q3', type: 'typing', question: 'What is d/dx (x^-2)?', correctAnswer: ['-2x^-3', '-2/x^3'], xp: 5},
+              {id: 'calc_u2_l2_q4', type: 'multiple-choice', question: 'What is d/dx (x^(1/2))?', options: ['x^(-1/2)', '(1/2)x^(-1/2)', '2x^(1/2)', '0'], correct: 1, xp: 3},
+              {id: 'calc_u2_l2_q5', type: 'typing', question: 'What is d/dx (x^10)?', correctAnswer: ['10x^9'], xp: 4},
+              {id: 'calc_u2_l2_q6', type: 'multiple-choice', question: 'The derivative of x^0 is:', options: ['x', '1', '0', 'undefined'], correct: 2, xp: 3},
+              {id: 'calc_u2_l2_q7', type: 'typing', question: 'What is d/dx (x^3/3)?', correctAnswer: ['x^2'], xp: 5},
+              {id: 'calc_u2_l2_q8', type: 'multiple-choice', question: 'What is d/dx (√x)?', options: ['1/√x', '1/(2√x)', '2√x', '√x/2'], correct: 1, xp: 3},
+              {id: 'calc_u2_l2_q9', type: 'typing', question: 'What is d/dx (1/x)?', correctAnswer: ['-1/x^2', '-x^-2'], xp: 4},
+              {id: 'calc_u2_l2_q10', type: 'multiple-choice', question: 'For d/dx (ax^n), the coefficient a:', options: ['Disappears', 'Multiplies by n', 'Becomes 1', 'Divides by n'], correct: 1, xp: 3},
+              {id: 'calc_u2_l2_q11', type: 'typing', question: 'What is d/dx (x^0.5)?', correctAnswer: ['0.5x^(-0.5)', '1/(2√x)'], xp: 5},
+              {id: 'calc_u2_l2_q12', type: 'multiple-choice', question: 'The power rule applies to any real number:', options: ['n > 0 only', 'n < 0 only', 'n ≠ 0', 'any real n'], correct: 3, xp: 3},
+              {id: 'calc_u2_l2_q13', type: 'typing', question: 'What is d/dx (x^4/4)?', correctAnswer: ['x^3'], xp: 4},
+              {id: 'calc_u2_l2_q14', type: 'multiple-choice', question: 'What is d/dx (x^-1)?', options: ['-1/x', '-x^-2', '1/x^2', '0'], correct: 1, xp: 3},
+              {id: 'calc_u2_l2_q15', type: 'typing', question: 'What is d/dx (2x^3)?', correctAnswer: ['6x^2'], xp: 5},
+              {id: 'calc_u2_l2_q16', type: 'multiple-choice', question: 'When applying the power rule to (cx)^n:', options: ['Ignore c', 'c becomes cn', 'Apply to c and x separately', 'c is the derivative'], correct: 2, xp: 3},
+              {id: 'calc_u2_l2_q17', type: 'typing', question: 'What is d/dx (x^(2/3))?', correctAnswer: ['(2/3)x^(-1/3)', '2/(3x^(1/3))'], xp: 4},
+              {id: 'calc_u2_l2_q18', type: 'multiple-choice', question: 'The derivative of x^n decreases the power by:', options: ['0', '1', 'n', 'n-1'], correct: 1, xp: 3}
+            ]
+          }
+        ]
+      },
+      {
+        id: 3,
+        title: 'Integration',
+        description: 'Introduction to Integration',
+        lessons: [
+          {
+            id: '3-1',
+            title: 'Introduction to Integration',
+            xp: 88,
+            type: 'lesson',
+            questions: [
+              {id: 'calc_u3_l1_q1', type: 'typing', question: 'What is ∫ x dx?', correctAnswer: ['x^2/2 + C', '(1/2)x^2 + C'], xp: 5},
+              {id: 'calc_u3_l1_q2', type: 'typing', question: 'Integration is the reverse process of:', correctAnswer: ['differentiation', 'derivatives'], xp: 4},
+              {id: 'calc_u3_l1_q3', type: 'typing', question: 'What is ∫ 2x dx?', correctAnswer: ['x^2 + C'], xp: 5},
+              {id: 'calc_u3_l1_q4', type: 'multiple-choice', question: 'The constant C is needed because:', options: ['Derivatives of constants are zero', 'Integration adds C', 'C makes it look better', 'C is arbitrary'], correct: 0, xp: 3},
+              {id: 'calc_u3_l1_q5', type: 'typing', question: 'What is ∫ x^n dx (for n ≠ -1)?', correctAnswer: ['x^(n+1)/(n+1) + C'], xp: 5},
+              {id: 'calc_u3_l1_q6', type: 'multiple-choice', question: 'What is ∫ 3 dx?', options: ['3x', '3x + C', '3', '3/C'], correct: 1, xp: 3},
+              {id: 'calc_u3_l1_q7', type: 'typing', question: 'What is ∫ (x + 1) dx?', correctAnswer: ['x^2/2 + x + C'], xp: 4},
+              {id: 'calc_u3_l1_q8', type: 'multiple-choice', question: '∫ sin(x) dx equals:', options: ['cos(x) + C', '-cos(x) + C', 'sin(x) + C', '-sin(x) + C'], correct: 1, xp: 3},
+              {id: 'calc_u3_l1_q9', type: 'typing', question: 'What is ∫ e^x dx?', correctAnswer: ['e^x + C'], xp: 5},
+              {id: 'calc_u3_l1_q10', type: 'multiple-choice', question: 'The integral of a sum is the sum of the:', options: ['Products', 'Integrals', 'Derivatives', 'Limits'], correct: 1, xp: 3},
+              {id: 'calc_u3_l1_q11', type: 'typing', question: 'What is ∫ 1/x dx?', correctAnswer: ['ln|x| + C', 'ln(x) + C'], xp: 4},
+              {id: 'calc_u3_l1_q12', type: 'multiple-choice', question: 'Geometrically, ∫ from a to b f(x)dx represents:', options: ['Slope at a point', 'Area under curve', 'Length of curve', 'Volume'], correct: 1, xp: 3},
+              {id: 'calc_u3_l1_q13', type: 'typing', question: 'What is ∫ cos(x) dx?', correctAnswer: ['sin(x) + C'], xp: 5},
+              {id: 'calc_u3_l1_q14', type: 'multiple-choice', question: 'A definite integral has:', options: ['No limits', 'Specific bounds', 'Only C', 'No C'], correct: 1, xp: 3},
+              {id: 'calc_u3_l1_q15', type: 'typing', question: 'What is ∫ from 0 to 2 x dx?', correctAnswer: ['2'], xp: 4},
+              {id: 'calc_u3_l1_q16', type: 'multiple-choice', question: 'The Fundamental Theorem of Calculus connects:', options: ['Limits and derivatives', 'Derivatives and integrals', 'Areas and volumes', 'Slopes and tangents'], correct: 1, xp: 3},
+              {id: 'calc_u3_l1_q17', type: 'typing', question: 'What is d/dx ∫ f(x) dx?', correctAnswer: ['f(x)'], xp: 5},
+              {id: 'calc_u3_l1_q18', type: 'multiple-choice', question: 'For ∫ k·f(x) dx, k is:', options: ['Divided', 'Multiplied out', 'Ignored', 'Integrated separately'], correct: 1, xp: 3}
+            ]
+          },
+          {
+            id: '3-2',
+            title: 'Definite Integrals',
+            xp: 88,
+            type: 'lesson',
+            questions: [
+              {id: 'calc_u3_l2_q1', type: 'typing', question: 'What is ∫ from 0 to 1 2x dx?', correctAnswer: ['1'], xp: 5},
+              {id: 'calc_u3_l2_q2', type: 'typing', question: 'A definite integral evaluates to a:', correctAnswer: ['number', 'constant', 'value'], xp: 4},
+              {id: 'calc_u3_l2_q3', type: 'typing', question: 'What is ∫ from 1 to 3 x dx?', correctAnswer: ['4'], xp: 5},
+              {id: 'calc_u3_l2_q4', type: 'multiple-choice', question: 'If a > b, then ∫ from a to a f(x)dx equals:', options: ['1', '0', '∞', 'Undefined'], correct: 1, xp: 3},
+              {id: 'calc_u3_l2_q5', type: 'typing', question: 'What is ∫ from 0 to π sin(x) dx?', correctAnswer: ['2'], xp: 4},
+              {id: 'calc_u3_l2_q6', type: 'multiple-choice', question: '∫ from a to b f(x)dx + ∫ from b to c f(x)dx =', options: ['0', '∫ from a to c f(x)dx', '∫ from b to a f(x)dx', 'f(c) - f(a)'], correct: 1, xp: 3},
+              {id: 'calc_u3_l2_q7', type: 'typing', question: 'What is ∫ from 0 to 2 x² dx?', correctAnswer: ['8/3', '2.67'], xp: 5},
+              {id: 'calc_u3_l2_q8', type: 'multiple-choice', question: 'By the FTC, ∫ from a to b f(x)dx =', options: ['f(b) - f(a)', 'F(b) - F(a)', 'f\'(b) - f\'(a)', 'f(a) - f(b)'], correct: 1, xp: 3},
+              {id: 'calc_u3_l2_q9', type: 'typing', question: 'What is ∫ from -1 to 1 x³ dx?', correctAnswer: ['0'], xp: 4},
+              {id: 'calc_u3_l2_q10', type: 'multiple-choice', question: 'The area under f(x) from a to b where f(x) < 0 is:', options: ['Positive', 'Negative', 'Zero', 'Undefined'], correct: 1, xp: 3},
+              {id: 'calc_u3_l2_q11', type: 'typing', question: 'What is ∫ from 0 to 1 e^x dx?', correctAnswer: ['e - 1', '1.718'], xp: 5},
+              {id: 'calc_u3_l2_q12', type: 'multiple-choice', question: 'If you reverse limits, the integral:', options: ['Doubles', 'Changes sign', 'Stays same', 'Becomes zero'], correct: 1, xp: 3},
+              {id: 'calc_u3_l2_q13', type: 'typing', question: 'What is ∫ from 0 to π/2 cos(x) dx?', correctAnswer: ['1'], xp: 4},
+              {id: 'calc_u3_l2_q14', type: 'multiple-choice', question: 'The definite integral of an odd function from -a to a is:', options: ['2a', 'a²', '0', '2∫ from 0 to a'], correct: 2, xp: 3},
+              {id: 'calc_u3_l2_q15', type: 'typing', question: 'What is ∫ from 1 to 2 1/x dx?', correctAnswer: ['ln(2)', '0.693'], xp: 5},
+              {id: 'calc_u3_l2_q16', type: 'multiple-choice', question: 'Net area accounts for:', options: ['Only positive area', 'Only negative area', 'Positive minus negative', 'Total absolute area'], correct: 2, xp: 3},
+              {id: 'calc_u3_l2_q17', type: 'typing', question: 'What is ∫ from 0 to 1 (x + x²) dx?', correctAnswer: ['5/6', '0.833'], xp: 4},
+              {id: 'calc_u3_l2_q18', type: 'multiple-choice', question: 'The average value of f on [a,b] is:', options: ['(f(a)+f(b))/2', '∫ from a to b f(x)dx/(b-a)', 'f((a+b)/2)', 'f\'(c)'], correct: 1, xp: 3}
+            ]
+          }
+        ]
+      },
+      {
+        id: 4,
+        title: 'Applications',
+        description: 'Applications of Calculus',
+        lessons: [
+          {
+            id: '4-1',
+            title: 'Rates of Change',
+            xp: 88,
+            type: 'lesson',
+            questions: [
+              {id: 'calc_u4_l1_q1', type: 'typing', question: 'If position s(t) = t², velocity v(t) =', correctAnswer: ['2t'], xp: 5},
+              {id: 'calc_u4_l1_q2', type: 'typing', question: 'Velocity is the derivative of:', correctAnswer: ['position', 'displacement'], xp: 4},
+              {id: 'calc_u4_l1_q3', type: 'typing', question: 'If v(t) = 3t + 2, acceleration a(t) =', correctAnswer: ['3'], xp: 5},
+              {id: 'calc_u4_l1_q4', type: 'multiple-choice', question: 'Acceleration is the derivative of:', options: ['Position', 'Velocity', 'Jerk', 'Speed'], correct: 1, xp: 3},
+              {id: 'calc_u4_l1_q5', type: 'typing', question: 'If s(t) = 5t, what is the average velocity from t=0 to t=2?', correctAnswer: ['5'], xp: 4},
+              {id: 'calc_u4_l1_q6', type: 'multiple-choice', question: 'Instantaneous velocity at t = a is:', options: ['s(a)', 's\'(a)', 's(a+1)', 's\'(a+1)'], correct: 1, xp: 3},
+              {id: 'calc_u4_l1_q7', type: 'typing', question: 'If s(t) = t³ + t, find v(t).', correctAnswer: ['3t² + 1'], xp: 5},
+              {id: 'calc_u4_l1_q8', type: 'multiple-choice', question: 'Speed is the absolute value of:', options: ['Position', 'Velocity', 'Acceleration', 'Distance'], correct: 1, xp: 3},
+              {id: 'calc_u4_l1_q9', type: 'typing', question: 'If a ball falls with s(t) = -16t², what is v(t)?', correctAnswer: ['-32t'], xp: 4},
+              {id: 'calc_u4_l1_q10', type: 'multiple-choice', question: 'Related rates problems involve:', options: ['Single variable', 'Multiple variables changing together', 'Constants only', 'No time'], correct: 1, xp: 3},
+              {id: 'calc_u4_l1_q11', type: 'typing', question: 'If radius r(t) = 2t, dr/dt =', correctAnswer: ['2'], xp: 5},
+              {id: 'calc_u4_l1_q12', type: 'multiple-choice', question: 'For A = πr², dA/dt =', options: ['π(dr/dt)', '2πr(dr/dt)', '2πr', 'πr²(dr/dt)'], correct: 1, xp: 3},
+              {id: 'calc_u4_l1_q13', type: 'typing', question: 'If water level h(t) = t, dh/dt =', correctAnswer: ['1'], xp: 4},
+              {id: 'calc_u4_l1_q14', type: 'multiple-choice', question: 'Displacement from a to b equals:', options: ['s(b) - s(a)', 'v(b) - v(a)', '∫ from a to b v(t)dt', 'Both A and C'], correct: 3, xp: 3},
+              {id: 'calc_u4_l1_q15', type: 'typing', question: 'If V(t) = 100 + 5t, rate of change =', correctAnswer: ['5'], xp: 5},
+              {id: 'calc_u4_l1_q16', type: 'multiple-choice', question: 'In related rates, differentiate with respect to:', options: ['x', 'y', 't', 'r'], correct: 2, xp: 3},
+              {id: 'calc_u4_l1_q17', type: 'typing', question: 'If x(t) = t² and y(t) = t³, find dy/dx.', correctAnswer: ['(3t)/(2)', '(3t²)/(2t)'], xp: 4},
+              {id: 'calc_u4_l1_q18', type: 'multiple-choice', question: 'The chain rule for related rates says:', options: ['dy/dx = dy/dt', 'dy/dt = (dy/dx)(dx/dt)', 'dy/dx = dx/dt', 'dy/dt = dy/dx'], correct: 1, xp: 3}
+            ]
+          },
+          {
+            id: '4-2',
+            title: 'Optimization Problems',
+            xp: 88,
+            type: 'lesson',
+            questions: [
+              {id: 'calc_u4_l2_q1', type: 'typing', question: 'To find a maximum, set derivative equal to:', correctAnswer: ['0'], xp: 5},
+              {id: 'calc_u4_l2_q2', type: 'typing', question: 'A critical point occurs where f\'(x) =', correctAnswer: ['0', 'undefined'], xp: 4},
+              {id: 'calc_u4_l2_q3', type: 'typing', question: 'If f\'(x) changes from + to -, f has a:', correctAnswer: ['maximum', 'local maximum'], xp: 5},
+              {id: 'calc_u4_l2_q4', type: 'multiple-choice', question: 'For a minimum, the second derivative is:', options: ['Positive', 'Negative', 'Zero', 'Undefined'], correct: 0, xp: 3},
+              {id: 'calc_u4_l2_q5', type: 'typing', question: 'Find the maximum of f(x) = -x² + 4x.', correctAnswer: ['x = 2', 'at x=2'], xp: 4},
+              {id: 'calc_u4_l2_q6', type: 'multiple-choice', question: 'The absolute maximum on [a,b] is at:', options: ['Always interior', 'Critical points or endpoints', 'Only endpoints', 'Always at x=0'], correct: 1, xp: 3},
+              {id: 'calc_u4_l2_q7', type: 'typing', question: 'If f\'(x) = 2x - 4, where is f minimized?', correctAnswer: ['x = 2', 'at x=2'], xp: 5},
+              {id: 'calc_u4_l2_q8', type: 'multiple-choice', question: 'f\'\'(a) < 0 means f has a:', options: ['Minimum at a', 'Maximum at a', 'Inflection at a', 'Saddle at a'], correct: 1, xp: 3},
+              {id: 'calc_u4_l2_q9', type: 'typing', question: 'Maximize area of rectangle with perimeter 20.', correctAnswer: ['5x5', 'square 5 by 5'], xp: 4},
+              {id: 'calc_u4_l2_q10', type: 'multiple-choice', question: 'For optimization, first:', options: ['Set f\' = 0', 'Write objective function', 'Find endpoints', 'Check second derivative'], correct: 1, xp: 3},
+              {id: 'calc_u4_l2_q11', type: 'typing', question: 'Minimize f(x) = x² - 6x + 10.', correctAnswer: ['x = 3', 'at x=3', 'value 1'], xp: 5},
+              {id: 'calc_u4_l2_q12', type: 'multiple-choice', question: 'Second derivative test uses:', options: ['f\' at critical points', 'f\'\' at critical points', 'Both f\' and f\'\'', 'Neither'], correct: 1, xp: 3},
+              {id: 'calc_u4_l2_q13', type: 'typing', question: 'A function with f\'\' = 2 is:', options: ['Concave down', 'Concave up', 'Linear', 'Constant'], xp: 4},
+              {id: 'calc_u4_l2_q14', type: 'multiple-choice', question: 'An inflection point occurs where f\'\' changes sign at:', options: ['Maximum', 'Minimum', 'Critical point', 'Zero'], correct: 3, xp: 3},
+              {id: 'calc_u4_l2_q15', type: 'typing', question: 'Maximize product of two numbers summing to 10.', correctAnswer: ['5 and 5', '25', 'each 5'], xp: 5},
+              {id: 'calc_u4_l2_q16', type: 'multiple-choice', question: 'To maximize revenue R(p) with demand D(p):', options: ['Maximize D(p)', 'Maximize p·D(p)', 'Minimize p', 'Maximize derivative'], correct: 1, xp: 3},
+              {id: 'calc_u4_l2_q17', type: 'typing', question: 'If f\' = 3x² - 12, critical points at:', correctAnswer: ['x = -2, 2', '-2 and 2'], xp: 4},
+              {id: 'calc_u4_l2_q18', type: 'multiple-choice', question: 'Global extrema on closed intervals require checking:', options: ['Only critical points', 'Only endpoints', 'Critical points AND endpoints', 'Neither'], correct: 2, xp: 3}
+            ]
+          }
+        ]
+      }
+    ]
   },
   linearAlgebra: {
     id: 'linearAlgebra',
