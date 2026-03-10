@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Icon Test</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background: #f5f5f5; }
+        .icon-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 20px; }
+        .icon-card { background: white; padding: 15px; border-radius: 8px; text-align: center; }
+        .icon-card img { max-width: 80px; max-height: 80px; display: block; margin: 10px auto; }
+        .icon-card .label { font-size: 12px; color: #666; }
+        .icon-card .name { font-size: 14px; font-weight: bold; margin-top: 5px; }
+        .error { color: red; }
+        .success { color: green; }
+    </style>
+</head>
+<body>
+    <h1>External Icons Test</h1>
+    <div id="output"></div>
+
+    <h2>All Icons:</h2>
+    <div class="icon-grid" id="icon-grid"></div>
+
+    <script src="calculusIconsExternal.js"></script>
+    <script>
+        const output = document.getElementById('output');
+        const grid = document.getElementById('icon-grid');
+
+        // Test all icons
+        const icons = [
+            { name: 'limit', path: 'calculus_icons/limit.png' },
+            { name: 'derivative', path: 'calculus_icons/derivative.svg' },
+            { name: 'integral', path: 'calculus_icons/integral.png' },
+            { name: 'riemannSum', path: 'calculus_icons/riemann_sum.png' },
+            { name: 'riemannSumPolar', path: 'calculus_icons/riemann_sum_polar.svg' },
+            { name: 'areaUnderCurve', path: 'calculus_icons/signed_area.png' },
+            { name: 'nabla', path: 'calculus_icons/nabla.svg' },
+            { name: 'dotProduct', path: 'calculus_icons/dot_product.svg' },
+            { name: 'crossProduct', path: 'calculus_icons/cross_product.png' }
+        ];
+
+        let loaded = 0;
+        let errors = 0;
+
+        icons.forEach(icon => {
+            const card = document.createElement('div');
+            card.className = 'icon-card';
+
+            const img = document.createElement('img');
+            img.src = icon.path;
+            img.alt = icon.name;
+            img.onload = () => {
+                loaded++;
+            };
+            img.onerror = () => {
+                errors++;
+                img.style.display = 'none';
+                const errorText = document.createElement('span');
+                errorText.className = 'error';
+                errorText.textContent = '❌ Error loading';
+                card.appendChild(errorText);
+            };
+
+            const label = document.createElement('div');
+            label.className = 'label';
+            label.textContent = icon.path;
+
+            const name = document.createElement('div');
+            name.className = 'name';
+            name.textContent = icon.name;
+
+            card.appendChild(img);
+            card.appendChild(name);
+            card.appendChild(label);
+            grid.appendChild(card);
+        });
+
+        // Wait for all images to load
+        setTimeout(() => {
+            output.innerHTML = `
+                <h2>Results:</h2>
+                <p class="success">✅ Loaded: ${loaded} icons</p>
+                <p class="error">❌ Errors: ${errors} icons</p>
+                <p><strong>Icon mappings:</strong> ${Object.keys(CalculusExternalIconMap).length} lessons</p>
+            `;
+        }, 2000);
+    </script>
+</body>
+</html>

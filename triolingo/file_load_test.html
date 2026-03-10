@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Triolingo - File Load Test</title>
+  <style>
+    body {
+      font-family: monospace;
+      padding: 20px;
+      background: #1a1a2e;
+      color: #eee;
+    }
+    .test-result {
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .pass { background: #1b5e20; color: #a5d6a7; }
+    .fail { background: #b71c1c; color: #ef9a9a; }
+    .info { background: #0d47a1; color: #90caf9; }
+  </style>
+</head>
+<body>
+  <h1>🔧 Triolingo File Load Test</h1>
+  <div id="results"></div>
+
+  <script>
+    function log(message, type = 'info') {
+      const div = document.createElement('div');
+      div.className = 'test-result ' + type;
+      div.textContent = message;
+      document.getElementById('results').appendChild(div);
+      console.log(message);
+    }
+
+    log('🚀 Starting file load test...', 'info');
+
+    // Test Linear Algebra
+    log('Testing Linear Algebra files...', 'info');
+
+    const laScript1 = document.createElement('script');
+    laScript1.src = 'linearAlgebraVocab.js';
+    laScript1.onload = () => {
+      log('✅ linearAlgebraVocab.js loaded', 'pass');
+      const laScript2 = document.createElement('script');
+      laScript2.src = 'linearAlgebraIcons.js';
+      laScript2.onload = () => {
+        log('✅ linearAlgebraIcons.js loaded', 'pass');
+        const laScript3 = document.createElement('script');
+        laScript3.src = 'linearAlgebraGenerators.js';
+        laScript3.onload = () => {
+          log('✅ linearAlgebraGenerators.js loaded', 'pass');
+          const laScript4 = document.createElement('script');
+          laScript4.src = 'questions/linearAlgebraUnit1-VectorSpaces.js';
+          laScript4.onload = () => {
+            log('✅ linearAlgebraUnit1-VectorSpaces.js loaded', 'pass');
+            if (window.linearAlgebraUnit1) {
+              log('✅ linearAlgebraUnit1 exists: ' + linearAlgebraUnit1.unitName, 'pass');
+            } else {
+              log('❌ linearAlgebraUnit1 NOT defined', 'fail');
+            }
+            const laScript5 = document.createElement('script');
+            laScript5.src = 'linearAlgebraCourse.js';
+            laScript5.onload = () => {
+              log('✅ linearAlgebraCourse.js loaded', 'pass');
+              if (window.linearAlgebraCourse) {
+                log('✅ linearAlgebraCourse exists: ' + linearAlgebraCourse.courseName, 'pass');
+              } else {
+                log('❌ linearAlgebraCourse NOT defined', 'fail');
+              }
+            };
+            laScript5.onerror = () => log('❌ linearAlgebraCourse.js failed', 'fail');
+            document.head.appendChild(laScript5);
+          };
+          laScript4.onerror = () => log('❌ linearAlgebraUnit1-VectorSpaces.js failed', 'fail');
+          document.head.appendChild(laScript4);
+        };
+        laScript3.onerror = () => log('❌ linearAlgebraGenerators.js failed', 'fail');
+        document.head.appendChild(laScript3);
+      };
+      laScript2.onerror = () => log('❌ linearAlgebraIcons.js failed', 'fail');
+      document.head.appendChild(laScript2);
+    };
+    laScript1.onerror = () => log('❌ linearAlgebraVocab.js failed', 'fail');
+    document.head.appendChild(laScript1);
+  </script>
+</body>
+</html>

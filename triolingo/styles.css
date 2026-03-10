@@ -505,6 +505,126 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
   text-align: center;
 }
 
+/* Lesson Content Styles */
+.lesson-content {
+  background: var(--bg-primary);
+  margin-bottom: var(--space-xl);
+}
+
+.lesson-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.lesson-text-content {
+  background: var(--bg-secondary);
+  padding: var(--space-xl);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--border-color);
+  margin-bottom: var(--space-xl);
+  line-height: 1.7;
+}
+
+.lesson-text-content h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: var(--space-lg) 0 var(--space-md) 0;
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.lesson-text-content h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: var(--space-lg) 0 var(--space-sm) 0;
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.lesson-text-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: var(--space-md) 0 var(--space-sm) 0;
+}
+
+.lesson-text-content p {
+  font-size: 16px;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+}
+
+.lesson-text-content strong {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.lesson-text-content em {
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+.lesson-text-content code {
+  font-family: 'Courier New', monospace;
+  background: var(--bg-hover);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: var(--accent);
+}
+
+.lesson-text-content pre {
+  background: var(--bg-hover);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  overflow-x: auto;
+  margin: var(--space-md) 0;
+}
+
+.lesson-text-content pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.lesson-text-content ul {
+  margin: var(--space-sm) 0 var(--space-md) var(--space-lg);
+  padding-left: var(--space-md);
+}
+
+.lesson-text-content li {
+  font-size: 16px;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+  line-height: 1.6;
+}
+
+.lesson-diagram {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--border-color);
+  margin: var(--space-md) 0;
+  background: var(--bg-primary);
+}
+
+.lesson-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-lg);
+  border-top: 2px solid var(--border-color);
+}
+
 /* Question Styles */
 .question-container {
   background: var(--bg-secondary);
@@ -522,6 +642,13 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
 }
 
 .options-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* Vertical layout for multiple choice options */
+.options-vertical {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
@@ -565,6 +692,88 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
 
 .option-btn:disabled {
   cursor: default;
+}
+
+/* Answer Feedback Styles */
+.answer-feedback {
+  margin-top: var(--space-lg);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  border: 2px solid;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.answer-feedback.correct {
+  background: rgba(76, 175, 80, 0.1);
+  border-color: var(--success);
+}
+
+.answer-feedback.incorrect {
+  background: rgba(244, 67, 54, 0.1);
+  border-color: var(--error);
+}
+
+.feedback-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.feedback-content {
+  flex: 1;
+}
+
+.feedback-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+.answer-feedback.correct .feedback-content h3 {
+  color: var(--success);
+}
+
+.answer-feedback.incorrect .feedback-content h3 {
+  color: var(--error);
+}
+
+.correct-answer {
+  font-size: 16px;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.explanation {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Typing Input Styles */
+.typing-input {
+  width: 100%;
+  padding: var(--space-md);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-primary);
+  font-size: 16px;
+  color: var(--text-primary);
+  transition: border-color 0.2s ease;
+}
+
+.typing-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* Lesson Controls */
+.lesson-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-lg);
+  border-top: 2px solid var(--border-color);
 }
 
 /* Lesson Footer */

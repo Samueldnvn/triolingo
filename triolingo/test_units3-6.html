@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Units 3-6 Test</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; max-width: 1200px; margin: 0 auto; }
+    h1 { color: #7e22ce; }
+    h2 { color: #581c87; margin-top: 30px; }
+    .success { color: #16a34a; }
+    .error { color: #dc2626; }
+    .unit-card { border: 2px solid #7e22ce; padding: 20px; margin: 20px 0; border-radius: 8px; }
+    .lesson-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 10px; }
+    .lesson-item { background: #f3e8ff; padding: 10px; border-radius: 4px; }
+    .question-count { background: #9333ea; color: white; padding: 2px 8px; border-radius: 10px; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <h1>🧪 Units 3-6 Database Test</h1>
+  <div id="results"></div>
+
+  <script src="questions/calculusUnit1.js"></script>
+  <script src="questions/calculusUnit2.js"></script>
+  <script src="questions/calculusUnit3.js"></script>
+  <script src="questions/calculusUnits4-6.js"></script>
+  <script src="calculusPlaceholderLessons.js"></script>
+  <script src="calculusLessonLoader.js"></script>
+
+  <script>
+    const results = document.getElementById('results');
+    let html = '';
+
+    // Test each database
+    const units = [
+      { name: 'Unit 1', db: 'CalculusUnit1Database', lessons: 6 },
+      { name: 'Unit 2', db: 'CalculusUnit2Database', lessons: 6 },
+      { name: 'Unit 3', db: 'CalculusUnit3Database', lessons: 6 },
+      { name: 'Unit 4', db: 'CalculusUnit4Database', lessons: 5 },
+      { name: 'Unit 5', db: 'CalculusUnit5Database', lessons: 5 },
+      { name: 'Unit 6', db: 'CalculusUnit6Database', lessons: 6 }
+    ];
+
+    let totalQuestions = 0;
+    let typingQuestions = 0;
+
+    units.forEach(unit => {
+      const db = window[unit.db];
+      html += `<div class="unit-card">`;
+      html += `<h2>${unit.name}: ${db ? '✅' : '❌'}</h2>`;
+
+      if (db) {
+        const lessonCount = Object.keys(db.lessons).length;
+        const expected = unit.lessons;
+
+        if (lessonCount === expected) {
+          html += `<p class="success">✅ ${lessonCount} lessons (expected ${expected})</p>`;
+        } else {
+          html += `<p class="error">❌ ${lessonCount} lessons (expected ${expected})</p>`;
+        }
+
+        html += `<div class="lesson-list">`;
+        Object.values(db.lessons).forEach(lesson => {
+          const qCount = lesson.questions.length;
+          totalQuestions += qCount;
+
+          const typingCount = lesson.questions.filter(q => q.type === 'typing').length;
+          const typingPercent = Math.round((typingCount / qCount) * 100);
+          typingQuestions += typingCount;
+
+          html += `<div class="lesson-item">`;
+          html += `<strong>${lesson.title}</strong><br>`;
+          html += `<span class="question-count">${qCount} questions</span> `;
+          html += `<span style="color: #7e22ce">${typingPercent}% typing</span>`;
+          html += `</div>`;
+        });
+        html += `</div>`;
+      } else {
+        html += `<p class="error">❌ Database not loaded</p>`;
+      }
+
+      html += `</div>`;
+    });
+
+    // Test lesson loader
+    html += `<div class="unit-card">`;
+    html += `<h2>Lesson Loader Test</h2>`;
+
+    if (window.CalculusLessonLoader) {
+      html += `<p class="success">✅ CalculusLessonLoader loaded</p>`;
+
+      const unit3Lessons = window.CalculusLessonLoader.getAllUnit3Lessons();
+      const unit4Lessons = window.CalculusLessonLoader.getAllUnit4Lessons();
+      const unit5Lessons = window.CalculusLessonLoader.getAllUnit5Lessons();
+      const unit6Lessons = window.CalculusLessonLoader.getAllUnit6Lessons();
+
+      html += `<h3>Loader Results:</h3>`;
+      html += `<p>Unit 3: ${unit3Lessons.length} lessons ${unit3Lessons.length === 6 ? '✅' : '❌'}</p>`;
+      html += `<p>Unit 4: ${unit4Lessons.length} lessons ${unit4Lessons.length === 5 ? '✅' : '❌'}</p>`;
+      html += `<p>Unit 5: ${unit5Lessons.length} lessons ${unit5Lessons.length === 5 ? '✅' : '❌'}</p>`;
+      html += `<p>Unit 6: ${unit6Lessons.length} lessons ${unit6Lessons.length === 6 ? '✅' : '❌'}</p>`;
+
+      if (unit3Lessons.length > 0) {
+        html += `<h3>Sample Unit 3 Lesson:</h3>`;
+        html += `<pre>${JSON.stringify({
+          id: unit3Lessons[0].id,
+          title: unit3Lessons[0].title,
+          questions: unit3Lessons[0].questions.length,
+          firstQuestion: unit3Lessons[0].questions[0]
+        }, null, 2)}</pre>`;
+      }
+    } else {
+      html += `<p class="error">❌ CalculusLessonLoader not loaded</p>`;
+    }
+    html += `</div>`;
+
+    // Summary
+    html += `<div class="unit-card" style="background: linear-gradient(135deg, #7e22ce, #a855f7); color: white;">`;
+    html += `<h2 style="color: white">📊 Summary</h2>`;
+    html += `<p><strong>Total Questions:</strong> ${totalQuestions}</p>`;
+    html += `<p><strong>Typing Questions:</strong> ${typingQuestions} (${Math.round((typingQuestions / totalQuestions) * 100)}%)</p>`;
+    html += `<p><strong>Multiple Choice:</strong> ${totalQuestions - typingQuestions} (${Math.round(((totalQuestions - typingQuestions) / totalQuestions) * 100)}%)</p>`;
+    html += `</div>`;
+
+    results.innerHTML = html;
+  </script>
+</body>
+</html>

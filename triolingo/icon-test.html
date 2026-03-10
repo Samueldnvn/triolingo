@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Icon Test</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .test-icon { display: inline-block; width: 48px; height: 48px; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Triolingo Icon Test</h1>
+    <div id="output"></div>
+
+    <script src="calculusVocab.js"></script>
+    <script src="calculusIcons.js"></script>
+    <script src="calculusIconsExternal.js"></script>
+    <script>
+        const output = document.getElementById('output');
+
+        output.innerHTML += '<h2>Icon Map Status:</h2>';
+        output.innerHTML += '<p>CalculusIconMap exists: ' + (typeof CalculusIconMap !== 'undefined' ? '<span class="success">✅</span>' : '<span class="error">❌</span>') + '</p>';
+
+        if (typeof CalculusIconMap !== 'undefined') {
+            output.innerHTML += '<p>Icon map entries: ' + Object.keys(CalculusIconMap).length + '</p>';
+            output.innerHTML += '<p>Sample keys: ' + Object.keys(CalculusIconMap).slice(0, 5).join(', ') + '</p>';
+
+            output.innerHTML += '<h2>Test Icons:</h2>';
+            const tests = ['limits1', 'derivBasics1', 'intBasics1'];
+            tests.forEach(key => {
+                const icon = CalculusIconMap[key];
+                if (icon) {
+                    const isDataUri = icon.startsWith('data:');
+                    const isFile = icon.endsWith('.png') || icon.endsWith('.svg');
+                    if (isDataUri) {
+                        output.innerHTML += '<p>' + key + ': <img src="' + icon + '" class="test-icon" alt="icon"/> <span class="success">Custom SVG</span></p>';
+                    } else if (isFile) {
+                        output.innerHTML += '<p>' + key + ': <img src="' + icon + '" class="test-icon" alt="icon" onerror="this.nextElementSibling.innerText=\'ERROR\'"/> <span>External file</span></p>';
+                    }
+                } else {
+                    output.innerHTML += '<p>' + key + ': <span class="error">❌ Not found</span></p>';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

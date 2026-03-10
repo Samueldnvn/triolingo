@@ -579,6 +579,14 @@ function renderView(viewName) {
     case 'lesson':
       container.innerHTML = renderLesson();
       setupLessonListeners();
+      // Typeset MathJax after rendering lesson content
+      if (window.MathJax && window.MathJax.typesetPromise) {
+        window.MathJax.typesetPromise().then(() => {
+          console.log('MathJax typeset complete');
+        }).catch((err) => {
+          console.error('MathJax typeset error:', err);
+        });
+      }
       break;
     case 'conversation-chat':
       break;
@@ -1005,84 +1013,108 @@ function setupSettingsListeners() {
 }
 
 // Lesson view
+let lessonPhase = 'content'; // 'content' or 'questions'
+let currentAnswerFeedback = null; // Store answer feedback
+
 function renderLesson() {
   if (!currentLesson) {
     return '<p>No lesson loaded</p>';
   }
 
-  const question = currentLesson.questions[currentQuestionIndex];
+  // Show lesson content first, then questions
+  if (lessonPhase === 'content') {
+    return renderLessonContent();
+  } else {
+    const question = currentLesson.questions[currentQuestionIndex];
+    return `
+      <div class="lesson-view">
+        <div class="lesson-progress">
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: ${((currentQuestionIndex + 1) / currentLesson.questions.length) * 100}%"></div>
+          </div>
+          <p>${currentQuestionIndex + 1} / ${currentLesson.questions.length}</p>
+        </div>
+        <div class="question-container">
+          ${renderQuestion(question)}
+          ${currentAnswerFeedback ? renderAnswerFeedback(question) : ''}
+        </div>
+        <div class="lesson-controls">
+          <button class="btn btn-secondary quit-btn" onclick="quitLesson()">Quit</button>
+          <button class="btn btn-primary continue-btn" onclick="submitAnswer()">
+            ${currentAnswerFeedback ? 'Next Question' : 'Submit Answer'}
+          </button>
+        </div>
+      </div>
+    `;
+  }
+}
+
+function renderAnswerFeedback(question) {
+  const isCorrect = currentAnswerFeedback.correct;
+  const feedback = currentAnswerFeedback.feedback;
 
   return `
-    <div class="lesson-view">
-      <div class="lesson-progress">
-        <div class="progress-bar">
-          <div class="progress-fill" style="width: ${((currentQuestionIndex + 1) / currentLesson.questions.length) * 100}%"></div>
-        </div>
-        <p>${currentQuestionIndex + 1} / ${currentLesson.questions.length}</p>
-      </div>
-      <div class="question-container">
-        ${renderQuestion(question)}
-      </div>
-      <div class="lesson-controls">
-        <button class="btn btn-secondary quit-btn" onclick="quitLesson()">Quit</button>
-        <button class="btn btn-primary continue-btn" onclick="continueLesson()">Continue</button>
+    <div class="answer-feedback ${isCorrect ? 'correct' : 'incorrect'}">
+      <div class="feedback-icon">${isCorrect ? '✅' : '❌'}</div>
+      <div class="feedback-content">
+        <h3>${isCorrect ? 'Correct!' : 'Incorrect'}</h3>
+        ${!isCorrect && question.type === 'multiple-choice' ? `
+          <p class="correct-answer"><strong>Correct answer:</strong> ${question.options[question.correct]}</p>
+        ` : ''}
+        ${!isCorrect && question.explanation ? `<p class="explanation"><strong>Explanation:</strong> ${question.explanation}</p>` : ''}
+        ${isCorrect && question.explanation ? `<p class="explanation"><strong>Great job!</strong> ${question.explanation}</p>` : ''}
       </div>
     </div>
   `;
 }
 
-function renderQuestion(question) {
+function submitAnswer() {
+  if (!currentLesson) {
+    console.error('No lesson in progress');
+    return;
+  }
+
+  // If we already showed feedback, move to next question
+  if (currentAnswerFeedback) {
+    currentQuestionIndex++;
+    selectedAnswer = null;
+    currentAnswerFeedback = null;
+
+    if (currentQuestionIndex >= currentLesson.questions.length) {
+      completeLesson();
+    } else {
+      renderView('lesson');
+    }
+    return;
+  }
+
+  // Otherwise, check the answer
+  const question = currentLesson.questions[currentQuestionIndex];
+  let isCorrect = false;
+  let feedback = '';
+
   switch (question.type) {
     case 'multiple-choice':
-      return renderMultipleChoiceQuestion(question);
-    case 'fill-blank':
-      return renderFillBlankQuestion(question);
+      isCorrect = selectedAnswer === question.correct;
+      feedback = isCorrect ? 'Correct answer!' : `Incorrect. The correct answer is: ${question.options[question.correct]}`;
+      break;
     case 'typing':
-      return renderTypingQuestion(question);
-    default:
-      return `<p>Unknown question type: ${question.type}</p>`;
+      const typingInput = document.querySelector('.typing-input');
+      const userAnswer = typingInput ? typingInput.value.trim().toLowerCase() : '';
+      const correctAnswers = question.correctAnswer.map(a => a.toLowerCase());
+      isCorrect = correctAnswers.includes(userAnswer);
+      feedback = isCorrect ? 'Correct answer!' : `Incorrect. Acceptable answers: ${question.correctAnswer.join(', ')}`;
+      break;
+    case 'fill-blank':
+      // For fill-in-blank, we need to check the filled value
+      // This would need to be implemented based on how fill-blank questions work
+      isCorrect = true; // Placeholder
+      feedback = 'Answer submitted';
+      break;
   }
-}
 
-function renderMultipleChoiceQuestion(question) {
-  return `
-    <div class="multiple-choice-question">
-      <p class="question-text">${question.question}</p>
-      <div class="options-grid">
-        ${question.options.map((opt, i) => `
-          <button class="option-btn ${selectedAnswer === i ? 'selected' : ''}"
-                  onclick="selectAnswer(${i})">
-            ${opt}
-          </button>
-        `).join('')}
-      </div>
-    </div>
-  `;
-}
-
-function renderFillBlankQuestion(question) {
-  return `
-    <div class="fill-blank-question">
-      <p class="question-text">${question.question}</p>
-    </div>
-  `;
-}
-
-function renderTypingQuestion(question) {
-  return `
-    <div class="typing-question">
-      <p class="question-text">${question.question}</p>
-      <input type="text" class="typing-input" placeholder="Type your answer...">
-    </div>
-  `;
-}
-
-function setupLessonListeners() {
-  const typingInput = document.querySelector('.typing-input');
-  if (typingInput) {
-    typingInput.addEventListener('input', handleTypingInput);
-    typingInput.addEventListener('keydown', handleTypingEnter);
-  }
+  currentAnswerFeedback = { correct: isCorrect, feedback };
+  renderView('lesson');
 }
 
 // =====================================================================
@@ -1090,7 +1122,10 @@ function setupLessonListeners() {
 // =====================================================================
 function selectAnswer(index) {
   selectedAnswer = index;
-  renderView('lesson');
+  // Don't re-render entire view, just update the selection
+  document.querySelectorAll('.option-btn').forEach((btn, i) => {
+    btn.classList.toggle('selected', i === index);
+  });
 }
 
 function handleTypingInput() {
@@ -1099,7 +1134,7 @@ function handleTypingInput() {
 
 function handleTypingEnter(event) {
   if (event.key === 'Enter') {
-    continueLesson();
+    submitAnswer();
   }
 }
 
@@ -1116,31 +1151,23 @@ function startLesson(lessonId) {
   for (const unit of course.units) {
     const lesson = unit.lessons.find(l => l.id == lessonId);
     if (lesson) {
+      // CRITICAL: Don't start lessons without content
+      if (!lessonHasContent(lesson)) {
+        console.error('Lesson has no content:', lessonId);
+        alert('This lesson does not have content yet. Please try a different lesson.');
+        return;
+      }
       currentLesson = lesson;
+      lessonPhase = 'content'; // Start with lesson content
       currentQuestionIndex = 0;
       selectedAnswer = null;
+      currentAnswerFeedback = null;
       renderView('lesson');
       return;
     }
   }
 
   console.error('Lesson not found:', lessonId);
-}
-
-function continueLesson() {
-  if (!currentLesson) {
-    console.error('No lesson in progress');
-    return;
-  }
-
-  currentQuestionIndex++;
-  selectedAnswer = null;
-
-  if (currentQuestionIndex >= currentLesson.questions.length) {
-    completeLesson();
-  } else {
-    renderView('lesson');
-  }
 }
 
 function completeLesson() {
@@ -1167,6 +1194,159 @@ function quitLesson() {
 }
 
 // =====================================================================
+// MARKDOWN RENDERING
+// =====================================================================
+function renderMarkdownContent(text) {
+  // Store LaTeX equations to preserve them
+  const equations = [];
+  let html = text;
+
+  // Store display math ($$...$$)
+  html = html.replace(/\$\$([\s\S]*?)\$\$/g, (match, eq) => {
+    equations.push({ type: 'display', equation: eq });
+    return `__MATHJAX_DISPLAY_${equations.length - 1}__`;
+  });
+
+  // Store inline math ($...$)
+  html = html.replace(/\$([^$\n]+?)\$/g, (match, eq) => {
+    equations.push({ type: 'inline', equation: eq });
+    return `__MATHJAX_INLINE_${equations.length - 1}__`;
+  });
+
+  // Headers
+  html = html.replace(/^### (.*)$/gm, '<h3>$1</h3>');
+  html = html.replace(/^## (.*)$/gm, '<h2>$1</h2>');
+  html = html.replace(/^# (.*)$/gm, '<h1>$1</h1>');
+
+  // Bold and italic
+  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+
+  // Lists
+  html = html.replace(/^- (.*)$/gm, '<li>$1</li>');
+  html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
+  html = html.replace(/<\/ul>\n<ul>/g, '\n');
+
+  // Code blocks
+  html = html.replace(/```(\w+)?\n([\s\S]*?)```/g, '<pre><code>$2</code></pre>');
+
+  // Diagram references - MUST come before inline code!
+  html = html.replace(/`diagrams\/([^`]+)\.png`/g, '<img src="diagrams/$1.png" class="lesson-diagram" alt="$1 diagram">');
+
+  // Inline code - handles remaining backticks after diagrams
+  html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+
+  // Restore LaTeX equations
+  html = html.replace(/__MATHJAX_DISPLAY_(\d+)__/g, (match, index) => {
+    return `$$${equations[index].equation}$$`;
+  });
+  html = html.replace(/__MATHJAX_INLINE_(\d+)__/g, (match, index) => {
+    return `$${equations[index].equation}$`;
+  });
+
+  // Paragraphs
+  html = html.split('\n\n').map(p => {
+    if (!p.trim()) return '';
+    if (p.startsWith('<')) return p;
+    return `<p>${p.trim()}</p>`;
+  }).join('\n');
+
+  return html;
+}
+
+function renderLessonContent() {
+  const lessonText = currentLesson.lessonText || '';
+  const hasContent = lessonText && lessonText.length > 10;
+
+  return `
+    <div class="lesson-view">
+      <div class="lesson-content">
+        <h2 class="lesson-title">${currentLesson.title}</h2>
+        ${hasContent ? `
+          <div class="lesson-text-content">
+            ${renderMarkdownContent(lessonText)}
+          </div>
+        ` : '<p>No lesson content available</p>'}
+      </div>
+      <div class="lesson-controls">
+        <button class="btn btn-secondary quit-btn" onclick="quitLesson()">Quit</button>
+        <button class="btn btn-primary continue-btn" onclick="startQuestions()">Start Practice</button>
+      </div>
+    </div>
+  `;
+}
+
+function startQuestions() {
+  lessonPhase = 'questions';
+  currentQuestionIndex = 0;
+  selectedAnswer = null;
+  currentAnswerFeedback = null;
+  renderView('lesson');
+}
+
+function renderQuestion(question) {
+  switch (question.type) {
+    case 'multiple-choice':
+      return renderMultipleChoiceQuestion(question);
+    case 'fill-blank':
+      return renderFillBlankQuestion(question);
+    case 'typing':
+      return renderTypingQuestion(question);
+    default:
+      return `<p>Unknown question type: ${question.type}</p>`;
+  }
+}
+
+function renderMultipleChoiceQuestion(question) {
+  const renderedQuestion = renderMarkdownContent(question.question);
+  return `
+    <div class="multiple-choice-question">
+      <p class="question-text">${renderedQuestion}</p>
+      <div class="options-vertical">
+        ${question.options.map((opt, i) => `
+          <button class="option-btn ${selectedAnswer === i ? 'selected' : ''}"
+                  onclick="selectAnswer(${i})">
+            ${opt}
+          </button>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+function renderFillBlankQuestion(question) {
+  const renderedQuestion = renderMarkdownContent(question.question);
+  return `
+    <div class="fill-blank-question">
+      <p class="question-text">${renderedQuestion}</p>
+    </div>
+  `;
+}
+
+function renderTypingQuestion(question) {
+  const renderedQuestion = renderMarkdownContent(question.question);
+  return `
+    <div class="typing-question">
+      <p class="question-text">${renderedQuestion}</p>
+      <input type="text" class="typing-input" placeholder="Type your answer...">
+    </div>
+  `;
+}
+
+function setupLessonListeners() {
+  const typingInput = document.querySelector('.typing-input');
+  if (typingInput) {
+    typingInput.addEventListener('input', handleTypingInput);
+    typingInput.addEventListener('keydown', handleTypingEnter);
+  }
+}
+
+function continueLesson() {
+  // This is now handled by submitAnswer()
+  submitAnswer();
+}
+
+// =====================================================================
 // UTILITY FUNCTIONS
 // =====================================================================
 function isLessonCompleted(courseId, lessonId) {
@@ -1174,34 +1354,35 @@ function isLessonCompleted(courseId, lessonId) {
   return progress.completedLessons?.includes(key) || false;
 }
 
+function lessonHasContent(lesson) {
+  // A lesson has content if it has questions
+  return lesson.questions && lesson.questions.length > 0;
+}
+
 function isLessonLocked(courseId, lessonId) {
-  if (lessonId === 1) return false;
   if (courseId === 'calculus') return false;
 
   const course = courses[courseId];
-  let currentUnit = null;
-  let currentUnitIndex = 0;
+  let currentLesson = null;
 
-  for (let i = 0; i < course.units.length; i++) {
-    const unit = course.units[i];
-    const hasLesson = unit.lessons.some(l => l.id == lessonId);
-    if (hasLesson) {
-      currentUnit = unit;
-      currentUnitIndex = i;
+  // Find the lesson
+  for (const unit of course.units) {
+    const lesson = unit.lessons.find(l => l.id == lessonId);
+    if (lesson) {
+      currentLesson = lesson;
       break;
     }
   }
 
-  if (!currentUnit) return true;
+  if (!currentLesson) return true;
 
-  if (currentUnitIndex === 0) {
-    return !isLessonCompleted(courseId, parseInt(lessonId) - 1);
+  // CRITICAL: Lessons without content (empty placeholders) are ALWAYS locked
+  // Lessons WITH content are ALWAYS unlocked (clickable)
+  if (!lessonHasContent(currentLesson)) {
+    return true;
   }
 
-  const previousUnit = course.units[currentUnitIndex - 1];
-  const lastLessonOfPrevUnit = previousUnit.lessons[previousUnit.lessons.length - 1];
-
-  return !isLessonCompleted(courseId, lastLessonOfPrevUnit.id);
+  return false;
 }
 
 function toggleSound() {

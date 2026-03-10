@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unit Load Test 4</title>
+</head>
+<body>
+    <h1>Unit Load Test 4</h1>
+    <div id="output"></div>
+
+    <script>
+        const output = document.getElementById('output');
+
+        function log(msg, isError = false) {
+            const div = document.createElement('div');
+            div.style.color = isError ? 'red' : 'green';
+            div.textContent = msg;
+            output.appendChild(div);
+            console.log(msg);
+        }
+
+        log('Starting test...');
+
+        // Add error listener to catch any errors in loaded scripts
+        window.addEventListener('error', function(e) {
+            log('❌ Global error caught: ' + e.message, true);
+            log('   File: ' + e.filename);
+            log('   Line: ' + e.lineno);
+        });
+
+        // Test: Load the file with explicit error handling
+        const fileScript = document.createElement('script');
+        fileScript.src = 'questions/linearAlgebraUnit1-VectorSpaces.js?t=' + Date.now();
+
+        fileScript.addEventListener('load', function() {
+            log('✅ Script load event fired');
+
+            setTimeout(function() {
+                log('Checking for linearAlgebraUnit1...');
+
+                if (window.linearAlgebraUnit1) {
+                    log('✅ linearAlgebraUnit1 exists: ' + linearAlgebraUnit1.unitName);
+                } else {
+                    log('❌ linearAlgebraUnit1 does NOT exist', true);
+                }
+
+                // List all unit-related properties in window
+                log('Window properties containing "linear":');
+                for (let prop in window) {
+                    if (prop.includes('linear')) {
+                        log('   ' + prop + ': ' + typeof window[prop]);
+                    }
+                }
+            }, 500);
+        });
+
+        fileScript.addEventListener('error', function(e) {
+            log('❌ Script error event: ' + JSON.stringify(e), true);
+        });
+
+        document.head.appendChild(fileScript);
+
+        log('Script tag appended, waiting for load...');
+    </script>
+</body>
+</html>

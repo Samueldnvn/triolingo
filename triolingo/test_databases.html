@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculus Database Test</title>
+</head>
+<body>
+  <h1>Calculus Database Test</h1>
+  <div id="results"></div>
+
+  <script src="questions/calculusUnit1.js"></script>
+  <script src="questions/calculusUnit2.js"></script>
+  <script src="calculusPlaceholderLessons.js"></script>
+  <script src="calculusLessonLoader.js"></script>
+
+  <script>
+    const results = document.getElementById('results');
+    let html = '<h2>Test Results</h2>';
+
+    // Test Unit 1
+    html += '<h3>Unit 1 Database</h3>';
+    if (window.CalculusUnit1Database) {
+      html += '<p>✅ CalculusUnit1Database loaded</p>';
+      html += '<p>Lessons: ' + Object.keys(window.CalculusUnit1Database.lessons).length + '</p>';
+      html += '<pre>' + JSON.stringify(Object.keys(window.CalculusUnit1Database.lessons), null, 2) + '</pre>';
+    } else {
+      html += '<p>❌ CalculusUnit1Database NOT loaded</p>';
+    }
+
+    // Test Unit 2
+    html += '<h3>Unit 2 Database</h3>';
+    if (window.CalculusUnit2Database) {
+      html += '<p>✅ CalculusUnit2Database loaded</p>';
+      html += '<p>Lessons: ' + Object.keys(window.CalculusUnit2Database.lessons).length + '</p>';
+      html += '<pre>' + JSON.stringify(Object.keys(window.CalculusUnit2Database.lessons), null, 2) + '</pre>';
+
+      // Show first lesson details
+      const firstLesson = window.CalculusUnit2Database.lessons['u2_l1'];
+      if (firstLesson) {
+        html += '<h4>First Lesson (u2_l1):</h4>';
+        html += '<p>Title: ' + firstLesson.title + '</p>';
+        html += '<p>Questions: ' + firstLesson.questions.length + '</p>';
+        html += '<p>XP: ' + firstLesson.xp + '</p>';
+        html += '<p>First question type: ' + firstLesson.questions[0].type + '</p>';
+        html += '<p>First question: ' + firstLesson.questions[0].question + '</p>';
+      }
+    } else {
+      html += '<p>❌ CalculusUnit2Database NOT loaded</p>';
+    }
+
+    // Test Lesson Loader
+    html += '<h3>Lesson Loader</h3>';
+    if (window.CalculusLessonLoader) {
+      html += '<p>✅ CalculusLessonLoader loaded</p>';
+
+      const unit1Lessons = window.CalculusLessonLoader.getAllUnit1Lessons();
+      html += '<p>Unit 1 lessons: ' + unit1Lessons.length + '</p>';
+
+      const unit2Lessons = window.CalculusLessonLoader.getAllUnit2Lessons();
+      html += '<p>Unit 2 lessons: ' + unit2Lessons.length + '</p>';
+
+      if (unit2Lessons.length > 0) {
+        html += '<h4>First Unit 2 Lesson:</h4>';
+        html += '<pre>' + JSON.stringify({
+          id: unit2Lessons[0].id,
+          title: unit2Lessons[0].title,
+          questions: unit2Lessons[0].questions.length,
+          firstQuestionType: unit2Lessons[0].questions[0].type
+        }, null, 2) + '</pre>';
+      }
+    } else {
+      html += '<p>❌ CalculusLessonLoader NOT loaded</p>';
+    }
+
+    results.innerHTML = html;
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unit Load Test</title>
+</head>
+<body>
+    <h1>Unit Load Test</h1>
+    <div id="output"></div>
+
+    <script>
+        const output = document.getElementById('output');
+
+        function log(msg, isError = false) {
+            const div = document.createElement('div');
+            div.style.color = isError ? 'red' : 'green';
+            div.textContent = msg;
+            output.appendChild(div);
+            console.log(msg);
+        }
+
+        log('Starting unit load test...');
+
+        // Test 1: Load unit1 file
+        const script1 = document.createElement('script');
+        script1.src = 'questions/linearAlgebraUnit1-VectorSpaces.js?t=' + Date.now();
+        script1.onload = function() {
+            log('✅ Script loaded successfully!');
+            setTimeout(function() {
+                if (window.linearAlgebraUnit1) {
+                    log('✅ linearAlgebraUnit1 is defined: ' + linearAlgebraUnit1.unitName);
+                } else {
+                    log('❌ linearAlgebraUnit1 is NOT defined!', true);
+                }
+
+                // Check what's in window
+                log('Window object has linearAlgebraUnit1: ' + ('linearAlgebraUnit1' in window));
+                log('window.linearAlgebraUnit1 type: ' + typeof window.linearAlgebraUnit1);
+            }, 100);
+        };
+        script1.onerror = function() {
+            log('❌ Script failed to load!', true);
+        };
+        document.head.appendChild(script1);
+    </script>
+</body>
+</html>

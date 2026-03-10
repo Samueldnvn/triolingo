@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minimal Test</title>
+    <style>body { font-family: sans-serif; padding: 20px; }</style>
+</head>
+<body>
+    <h1>Minimal Loading Test</h1>
+    <div id="output"></div>
+
+    <script>
+        const log = (msg, err = false) => {
+            const color = err ? 'red' : 'green';
+            const div = document.createElement('div');
+            div.style.color = color;
+            div.textContent = msg;
+            document.getElementById('output').appendChild(div);
+            console.log(msg);
+        };
+
+        window.onerror = (msg, url, line, col, error) => {
+            log(`ERROR: ${msg} at ${url}:${line}:${col}`, true);
+            return false;
+        };
+
+        log('✅ Basic JS loaded');
+    </script>
+
+    <script src="themeManager.js"></script>
+    <script>
+        if (typeof themeManager !== 'undefined') {
+            log('✅ themeManager loaded');
+        } else {
+            log('❌ themeManager NOT loaded', true);
+        }
+    </script>
+
+    <script src="soundManager.js"></script>
+    <script>
+        if (typeof soundManager !== 'undefined') {
+            log('✅ soundManager loaded');
+        } else {
+            log('❌ soundManager NOT loaded', true);
+        }
+    </script>
+
+    <script src="spanishVocab.js"></script>
+    <script>
+        if (typeof spanishVocab !== 'undefined') {
+            log('✅ spanishVocab loaded');
+        } else {
+            log('❌ spanishVocab NOT loaded', true);
+        }
+    </script>
+
+    <script src="lessonGenerators.js"></script>
+    <script>
+        if (typeof LessonTemplate !== 'undefined') {
+            log('✅ LessonTemplate loaded');
+        } else {
+            log('❌ LessonTemplate NOT loaded', true);
+        }
+    </script>
+
+    <script src="calculusVocab.js"></script>
+    <script>
+        if (typeof calculusVocab !== 'undefined') {
+            log('✅ calculusVocab loaded');
+        } else {
+            log('❌ calculusVocab NOT loaded', true);
+        }
+    </script>
+
+    <script src="calculusIcons.js"></script>
+    <script>
+        if (typeof CalculusIconMap !== 'undefined') {
+            log('✅ CalculusIconMap loaded (' + Object.keys(CalculusIconMap).length + ' mappings)');
+        } else {
+            log('❌ CalculusIconMap NOT loaded', true);
+        }
+    </script>
+
+    <script src="calculusIconsExternal.js"></script>
+    <script>
+        if (typeof CalculusExternalIconMap !== 'undefined') {
+            log('✅ CalculusExternalIconMap loaded (' + Object.keys(CalculusExternalIconMap).length + ' mappings)');
+        } else {
+            log('❌ CalculusExternalIconMap NOT loaded', true);
+        }
+    </script>
+
+    <script src="calculusGenerators_comprehensive.js"></script>
+    <script>
+        if (typeof CalculusPlaceholderLessons !== 'undefined') {
+            log('✅ CalculusPlaceholderLessons loaded');
+            try {
+                const lesson = CalculusPlaceholderLessons.limits1();
+                log('✅ Lesson generated: ' + lesson.title);
+            } catch (e) {
+                log('❌ Lesson generation failed: ' + e.message, true);
+            }
+        } else {
+            log('❌ CalculusPlaceholderLessons NOT loaded', true);
+        }
+    </script>
+
+    <script src="ttsManager.js"></script>
+    <script>
+        if (typeof ttsManager !== 'undefined') {
+            log('✅ ttsManager loaded');
+        } else {
+            log('❌ ttsManager NOT loaded', true);
+        }
+    </script>
+
+    <script src="app.js"></script>
+    <script>
+        if (typeof courses !== 'undefined') {
+            log('✅ app.js loaded (courses defined)');
+            log('  Available courses: ' + Object.keys(courses).join(', '));
+        } else {
+            log('❌ app.js NOT loaded (no courses)', true);
+        }
+
+        if (typeof init !== 'undefined') {
+            log('✅ init() function exists');
+        } else {
+            log('❌ init() function NOT found', true);
+        }
+    </script>
+</body>
+</html>

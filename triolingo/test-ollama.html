@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Ollama CORS</title>
+</head>
+<body>
+    <h1>Test Ollama CORS Connection</h1>
+    <div id="status">Connecting...</div>
+    <div id="result"></div>
+
+    <script>
+        async function testOllama() {
+            const status = document.getElementById('status');
+            const result = document.getElementById('result');
+
+            try {
+                status.textContent = 'Testing connection to Ollama...';
+
+                // Test basic connection
+                const response = await fetch('http://localhost:11434/api/tags', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    status.textContent = '✅ Connected!';
+                    result.innerHTML = `
+                        <h2>Available Models:</h2>
+                        <ul>
+                            ${data.models.map(m => `<li>${m.name}</li>`).join('')}
+                        </ul>
+
+                        <h2>Response Headers:</h2>
+                        <pre>${[...response.headers.entries()].map(([k,v]) => `${k}: ${v}`).join('\n')}</pre>
+                    `;
+                } else {
+                    status.textContent = '❌ Connection failed: ' + response.status;
+                    result.textContent = await response.text();
+                }
+            } catch (error) {
+                status.textContent = '❌ Error: ' + error.message;
+                result.innerHTML = `
+                    <h2>Error Details:</h2>
+                    <p>${error.message}</p>
+                    <p><strong>Possible causes:</strong></p>
+                    <ul>
+                        <li>Ollama not running</li>
+                        <li>CORS not enabled (run: sudo systemctl restart ollama)</li>
+                        <li>Wrong port (check: netstat -an | grep 11434)</li>
+                    </ul>
+                    <h2>Try in browser console:</h2>
+                    <code>fetch('http://localhost:11434/api/tags').then(r => r.json()).then(console.log)</code>
+                `;
+            }
+        }
+
+        testOllama();
+    </script>
+</body>
+</html>

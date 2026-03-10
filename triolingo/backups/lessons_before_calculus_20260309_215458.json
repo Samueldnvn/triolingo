@@ -1,0 +1,2095 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-03-09",
+  "description": "TRIOlingO Manual Lesson Store - Edit lessons by hand",
+  "courses": {
+    "french": {
+      "id": "french",
+      "name": "French",
+      "flag": "\ud83c\uddeb\ud83c\uddf7",
+      "units": [
+        {
+          "id": 1,
+          "title": "Basics",
+          "description": "Learn essential French words and phrases",
+          "lessons": [
+            {
+              "id": "1-1",
+              "title": "Greetings",
+              "xp": 15,
+              "type": "lesson",
+              "questions": [
+                {
+                  "id": "french-1-1-1",
+                  "type": "multiple-choice",
+                  "question": "What does \"Bonjour\" mean?",
+                  "options": [
+                    "Hello",
+                    "Goodbye",
+                    "Thank you",
+                    "Please"
+                  ],
+                  "correct": 0,
+                  "xp": 2
+                },
+                {
+                  "id": "french-1-1-2",
+                  "type": "multiple-choice",
+                  "question": "What does \"Au revoir\" mean?",
+                  "options": [
+                    "Hello",
+                    "Goodbye",
+                    "Thank you",
+                    "Please"
+                  ],
+                  "correct": 1,
+                  "xp": 2
+                },
+                {
+                  "id": "french-1-1-3",
+                  "type": "multiple-choice",
+                  "question": "What does \"Merci\" mean?",
+                  "options": [
+                    "Hello",
+                    "Goodbye",
+                    "Thank you",
+                    "Please"
+                  ],
+                  "correct": 2,
+                  "xp": 2
+                },
+                {
+                  "id": "french-1-1-4",
+                  "type": "multiple-choice",
+                  "question": "What does \"S'il vous pla\u00eet\" mean?",
+                  "options": [
+                    "Hello",
+                    "Goodbye",
+                    "Thank you",
+                    "Please"
+                  ],
+                  "correct": 3,
+                  "xp": 2
+                }
+              ]
+            },
+            {
+              "id": "1-2",
+              "title": "Numbers 1-10",
+              "xp": 15,
+              "type": "lesson",
+              "questions": [
+                {
+                  "id": "french-1-2-1",
+                  "type": "multiple-choice",
+                  "question": "What is \"un\" in English?",
+                  "options": [
+                    "one",
+                    "two",
+                    "three",
+                    "four"
+                  ],
+                  "correct": 0,
+                  "xp": 2
+                },
+                {
+                  "id": "french-1-2-2",
+                  "type": "multiple-choice",
+                  "question": "What is \"deux\" in English?",
+                  "options": [
+                    "one",
+                    "two",
+                    "three",
+                    "four"
+                  ],
+                  "correct": 1,
+                  "xp": 2
+                },
+                {
+                  "id": "french-1-2-3",
+                  "type": "multiple-choice",
+                  "question": "What is \"trois\" in English?",
+                  "options": [
+                    "one",
+                    "two",
+                    "three",
+                    "four"
+                  ],
+                  "correct": 2,
+                  "xp": 2
+                },
+                {
+                  "id": "french-1-2-4",
+                  "type": "multiple-choice",
+                  "question": "What is \"dix\" in English?",
+                  "options": [
+                    "eight",
+                    "nine",
+                    "ten",
+                    "eleven"
+                  ],
+                  "correct": 2,
+                  "xp": 2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "spanish": {
+      "id": "spanish",
+      "name": "Spanish",
+      "flag": "\ud83c\uddea\ud83c\uddf8",
+      "units": [
+        {
+          "id": 1,
+          "title": "Basics",
+          "description": "Learn essential Spanish words and phrases",
+          "lessons": [
+            {
+              "id": "1-1",
+              "title": "Greetings",
+              "xp": 15,
+              "type": "lesson",
+              "questions": [
+                {
+                  "id": "spanish-1-1-1",
+                  "type": "multiple-choice",
+                  "question": "What does \"Hola\" mean?",
+                  "options": [
+                    "Hello",
+                    "Goodbye",
+                    "Thank you",
+                    "Please"
+                  ],
+                  "correct": 0,
+                  "xp": 2
+                },
+                {
+                  "id": "spanish-1-1-2",
+                  "type": "multiple-choice",
+                  "question": "What does \"Adi\u00f3s\" mean?",
+                  "options": [
+                    "Hello",
+                    "Goodbye",
+                    "Thank you",
+                    "Please"
+                  ],
+                  "correct": 1,
+                  "xp": 2
+                },
+                {
+                  "id": "spanish-1-1-3",
+                  "type": "multiple-choice",
+                  "question": "What does \"Gracias\" mean?",
+                  "options": [
+                    "Hello",
+                    "Goodbye",
+                    "Thank you",
+                    "Please"
+                  ],
+                  "correct": 2,
+                  "xp": 2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "linearAlgebra": {
+      "id": "linearAlgebra",
+      "name": "Linear Algebra",
+      "flag": "\ud83d\udcd0",
+      "units": [
+        {
+          "id": 1,
+          "title": "Basics",
+          "description": "Introduction to Linear Algebra",
+          "lessons": [
+            {
+              "id": "1-1",
+              "title": "Vectors",
+              "xp": 20,
+              "type": "lesson",
+              "questions": [
+                {
+                  "id": "la-1-1-1",
+                  "type": "typing",
+                  "question": "What is a vector?",
+                  "correctAnswer": [
+                    "A quantity with magnitude and direction"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "la-1-1-2",
+                  "type": "multiple-choice",
+                  "question": "Which of the following is a vector?",
+                  "options": [
+                    "5 meters",
+                    "5 meters north",
+                    "5 kg",
+                    "5 seconds"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "cpp": {
+      "id": "cpp",
+      "name": "C++",
+      "flag": "\u26a1",
+      "units": [
+        {
+          "id": 1,
+          "title": "Basics",
+          "description": "Introduction to C++",
+          "lessons": [
+            {
+              "id": "1-1",
+              "title": "Hello World",
+              "xp": 20,
+              "type": "lesson",
+              "questions": [
+                {
+                  "id": "cpp-1-1-1",
+                  "type": "code",
+                  "question": "Write a Hello World program in C++",
+                  "codeTemplate": "// Write your code here\n\nint main() {\n    \n    return 0;\n}",
+                  "expectedOutput": "Hello, World!",
+                  "xp": 10
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "ai": {
+      "id": "ai",
+      "name": "Artificial Intelligence",
+      "flag": "\ud83e\udd16",
+      "units": [
+        {
+          "id": 1,
+          "title": "Introduction",
+          "description": "Introduction to AI",
+          "lessons": [
+            {
+              "id": "1-1",
+              "title": "What is AI?",
+              "xp": 20,
+              "type": "lesson",
+              "questions": [
+                {
+                  "id": "ai-1-1-1",
+                  "type": "multiple-choice",
+                  "question": "What does AI stand for?",
+                  "options": [
+                    "Artificial Intelligence",
+                    "Automated Intelligence",
+                    "Advanced Integration",
+                    "Algorithmic Interaction"
+                  ],
+                  "correct": 0,
+                  "xp": 3
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "hexapod": {
+      "id": "hexapod",
+      "name": "Hexapod Engineering",
+      "flag": "\ud83e\udd97",
+      "units": [
+        {
+          "id": 1,
+          "title": "Introduction",
+          "description": "Introduction to Hexapod Robots",
+          "lessons": [
+            {
+              "id": "1-1",
+              "title": "What is a Hexapod?",
+              "xp": 20,
+              "type": "lesson",
+              "questions": [
+                {
+                  "id": "hex-1-1-1",
+                  "type": "multiple-choice",
+                  "question": "How many legs does a hexapod robot have?",
+                  "options": [
+                    "4",
+                    "6",
+                    "8",
+                    "12"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "calculus": {
+      "id": "calculus",
+      "name": "Calculus",
+      "flag": "\u222b",
+      "units": [
+        {
+          "id": 1,
+          "title": "Limits",
+          "description": "Introduction to Limits and Continuity",
+          "lessons": [
+            {
+              "id": "1-1",
+              "title": "Understanding Limits",
+              "xp": 75,
+              "type": "lesson",
+              "questions": [
+                {
+                  "id": "calc_u1_l1_q1",
+                  "type": "multiple-choice",
+                  "question": "What is the value of lim(x\u21922) x\u00b2?",
+                  "options": [
+                    "3",
+                    "4",
+                    "5",
+                    "6"
+                  ],
+                  "correct": 1,
+                  "xp": 4,
+                  "image": "calc_u1_l1_q1.png"
+                },
+                {
+                  "id": "calc_u1_l1_q2",
+                  "type": "typing",
+                  "question": "Evaluate: lim(x\u21920) x = ?",
+                  "correctAnswer": [
+                    "0",
+                    "zero"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u1_l1_q3",
+                  "type": "multiple-choice",
+                  "question": "What is lim(x\u21923) 2x?",
+                  "options": [
+                    "5",
+                    "6",
+                    "7",
+                    "8"
+                  ],
+                  "correct": 1,
+                  "xp": 4,
+                  "image": "calc_u1_l1_q3.png"
+                },
+                {
+                  "id": "calc_u1_l1_q4",
+                  "type": "typing",
+                  "question": "Evaluate: lim(x\u21921) x\u00b3 = ?",
+                  "correctAnswer": [
+                    "1",
+                    "one"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u1_l1_q5",
+                  "type": "multiple-choice",
+                  "question": "What does a limit represent?",
+                  "options": [
+                    "The value at a point",
+                    "The value approaching a point",
+                    "The derivative",
+                    "The area under curve"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u1_l1_q6",
+                  "type": "typing",
+                  "question": "Using the diagram, what is lim(x\u21920) (x+3)?",
+                  "correctAnswer": [
+                    "3"
+                  ],
+                  "xp": 5,
+                  "image": "calc_u1_l1_q6.png"
+                },
+                {
+                  "id": "calc_u1_l1_q7",
+                  "type": "multiple-choice",
+                  "question": "If lim(x\u2192a) f(x) = L, what happens as x gets closer to a?",
+                  "options": [
+                    "f(x) gets farther from L",
+                    "f(x) gets closer to L",
+                    "f(x) stays constant",
+                    "f(x) goes to infinity"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u1_l1_q8",
+                  "type": "typing",
+                  "question": "Evaluate: lim(x\u21925) (x - 2) = ?",
+                  "correctAnswer": [
+                    "3"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u1_l1_q9",
+                  "type": "multiple-choice",
+                  "question": "What is approximately lim(x\u21921) sin(x)?",
+                  "options": [
+                    "0.5",
+                    "0.84",
+                    "1",
+                    "0"
+                  ],
+                  "correct": 1,
+                  "xp": 4,
+                  "image": "calc_u1_l1_q9.png"
+                },
+                {
+                  "id": "calc_u1_l1_q10",
+                  "type": "typing",
+                  "question": "Evaluate: lim(x\u21924) (2x + 1) = ?",
+                  "correctAnswer": [
+                    "9"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u1_l1_q11",
+                  "type": "multiple-choice",
+                  "question": "What is lim(x\u21922) (x\u00b2 + x)?",
+                  "options": [
+                    "4",
+                    "6",
+                    "8",
+                    "10"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u1_l1_q12",
+                  "type": "typing",
+                  "question": "Evaluate: lim(x\u21920) cos(x) = ?",
+                  "correctAnswer": [
+                    "1",
+                    "one"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u1_l1_q13",
+                  "type": "multiple-choice",
+                  "question": "Which notation represents a limit?",
+                  "options": [
+                    "f'(x)",
+                    "\u222bf(x)dx",
+                    "lim(x\u2192a)f(x)",
+                    "f(x)"
+                  ],
+                  "correct": 2,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u1_l1_q14",
+                  "type": "typing",
+                  "question": "What is lim(x\u2192-1) x\u00b3?",
+                  "correctAnswer": [
+                    "-1",
+                    "negative one"
+                  ],
+                  "xp": 5,
+                  "image": "calc_u1_l1_q14.png"
+                },
+                {
+                  "id": "calc_u1_l1_q15",
+                  "type": "multiple-choice",
+                  "question": "If lim(x\u2192a) f(x) exists, what must be true?",
+                  "options": [
+                    "f(a) must exist",
+                    "f(a) must equal the limit",
+                    "Left and right limits must be equal",
+                    "The function must be continuous"
+                  ],
+                  "correct": 2,
+                  "xp": 4
+                },
+                {
+                  "id": "calc_u1_l1_q16",
+                  "type": "typing",
+                  "question": "Evaluate: lim(x\u219210) (x/2) = ?",
+                  "correctAnswer": [
+                    "5"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u1_l1_q17",
+                  "type": "multiple-choice",
+                  "question": "What is lim(x\u21920) (3x + 5)?",
+                  "options": [
+                    "3",
+                    "5",
+                    "8",
+                    "15"
+                  ],
+                  "correct": 2,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u1_l1_q18",
+                  "type": "typing",
+                  "question": "Evaluate: lim(x\u21923) (x\u00b2 - 4) = ?",
+                  "correctAnswer": [
+                    "5"
+                  ],
+                  "xp": 5
+                }
+              ]
+            },
+            {
+              "id": "1-2",
+              "title": "Calculating Limits",
+              "xp": 80,
+              "type": "lesson",
+              "questions": [
+                {
+                  "id": "calc_u1_l2_q1",
+                  "type": "typing",
+                  "question": "Calculate: lim(x\u21924) x\u00b2 = ?",
+                  "correctAnswer": [
+                    "16"
+                  ],
+                  "xp": 5,
+                  "image": "calc_u1_l2_q1.png"
+                },
+                {
+                  "id": "calc_u1_l2_q2",
+                  "type": "multiple-choice",
+                  "question": "What is lim(x\u21923) (2x + 1)?",
+                  "options": [
+                    "6",
+                    "7",
+                    "8",
+                    "9"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u1_l2_q3",
+                  "type": "typing",
+                  "question": "Evaluate: lim(x\u21925) (x - 3) = ?",
+                  "correctAnswer": [
+                    "2"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u1_l2_q4",
+                  "type": "multiple-choice",
+                  "question": "What is lim(x\u21922) x\u00b3?",
+                  "options": [
+                    "6",
+                    "8",
+                    "10",
+                    "12"
+                  ],
+                  "correct": 1,
+                  "xp": 4,
+                  "image": "calc_u1_l2_q4.png"
+                },
+                {
+                  "id": "calc_u1_l2_q5",
+                  "type": "typing",
+                  "question": "Calculate: lim(x\u21920) (5x + 2) = ?",
+                  "correctAnswer": [
+                    "2"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u1_l2_q6",
+                  "type": "multiple-choice",
+                  "question": "What is lim(x\u21921) (x\u00b2 + 2x)?",
+                  "options": [
+                    "1",
+                    "2",
+                    "3",
+                    "4"
+                  ],
+                  "correct": 2,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u1_l2_q7",
+                  "type": "typing",
+                  "question": "What is lim(x\u21920) cos(x)?",
+                  "correctAnswer": [
+                    "1"
+                  ],
+                  "xp": 5,
+                  "image": "calc_u1_l2_q7.png"
+                },
+                {
+                  "id": "calc_u1_l2_q8",
+                  "type": "multiple-choice",
+                  "question": "Evaluate: lim(x\u21922) (3x - 1)",
+                  "options": [
+                    "4",
+                    "5",
+                    "6",
+                    "7"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u1_l2_q9",
+                  "type": "typing",
+                  "question": "Calculate: lim(x\u21926) (x/3) = ?",
+                  "correctAnswer": [
+                    "2"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u1_l2_q10",
+                  "type": "multiple-choice",
+                  "question": "What is approximately lim(x\u21921) sin(x)?",
+                  "options": [
+                    "0.5",
+                    "0.84",
+                    "0.95",
+                    "1"
+                  ],
+                  "correct": 1,
+                  "xp": 4,
+                  "image": "calc_u1_l2_q10.png"
+                },
+                {
+                  "id": "calc_u1_l2_q11",
+                  "type": "typing",
+                  "question": "Evaluate: lim(x\u21920) (x + 10) = ?",
+                  "correctAnswer": [
+                    "10"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u1_l2_q12",
+                  "type": "multiple-choice",
+                  "question": "What is lim(x\u21923) (x\u00b2 - 2)?",
+                  "options": [
+                    "5",
+                    "6",
+                    "7",
+                    "8"
+                  ],
+                  "correct": 2,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u1_l2_q13",
+                  "type": "typing",
+                  "question": "Calculate: lim(x\u21924) (x + x) = ?",
+                  "correctAnswer": [
+                    "8"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u1_l2_q14",
+                  "type": "multiple-choice",
+                  "question": "What is lim(x\u21922) (x + 3)?",
+                  "options": [
+                    "4",
+                    "5",
+                    "6",
+                    "7"
+                  ],
+                  "correct": 1,
+                  "xp": 4,
+                  "image": "calc_u1_l2_q14.png"
+                },
+                {
+                  "id": "calc_u1_l2_q15",
+                  "type": "typing",
+                  "question": "Evaluate: lim(x\u21925) (2x - 3) = ?",
+                  "correctAnswer": [
+                    "7"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u1_l2_q16",
+                  "type": "multiple-choice",
+                  "question": "What is lim(x\u21921) (3x + 2)?",
+                  "options": [
+                    "3",
+                    "4",
+                    "5",
+                    "6"
+                  ],
+                  "correct": 2,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u1_l2_q17",
+                  "type": "typing",
+                  "question": "Calculate: lim(x\u21928) (x/4) = ?",
+                  "correctAnswer": [
+                    "2"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u1_l2_q18",
+                  "type": "multiple-choice",
+                  "question": "What is lim(x\u21920) (4x + 1)?",
+                  "options": [
+                    "0",
+                    "1",
+                    "4",
+                    "5"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Derivatives",
+          "description": "Introduction to Derivatives",
+          "lessons": [
+            {
+              "id": "2-1",
+              "title": "Introduction to Derivatives",
+              "xp": 75,
+              "type": "lesson",
+              "questions": [
+                {
+                  "id": "calc_u2_l1_q1",
+                  "type": "multiple-choice",
+                  "question": "What does the derivative represent?",
+                  "options": [
+                    "The area under a curve",
+                    "The instantaneous rate of change",
+                    "The limit of a function",
+                    "The integral"
+                  ],
+                  "correct": 1,
+                  "xp": 4,
+                  "image": "calc_u2_l1_q1.png"
+                },
+                {
+                  "id": "calc_u2_l1_q2",
+                  "type": "typing",
+                  "question": "The derivative of f(x) = x\u00b2 is:",
+                  "correctAnswer": [
+                    "2x"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u2_l1_q3",
+                  "type": "multiple-choice",
+                  "question": "What is the notation for derivative?",
+                  "options": [
+                    "\u222bf(x)",
+                    "f'(x)",
+                    "limf(x)",
+                    "\u0394f(x)"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u2_l1_q4",
+                  "type": "typing",
+                  "question": "What is the derivative of f(x) = x\u00b3?",
+                  "correctAnswer": [
+                    "3x^2",
+                    "3x\u00b2"
+                  ],
+                  "xp": 5,
+                  "image": "calc_u2_l1_q4.png"
+                },
+                {
+                  "id": "calc_u2_l1_q5",
+                  "type": "multiple-choice",
+                  "question": "Geometrically, the derivative is the:",
+                  "options": [
+                    "Slope of the tangent line",
+                    "Area under curve",
+                    "Y-intercept",
+                    "X-intercept"
+                  ],
+                  "correct": 0,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u2_l1_q6",
+                  "type": "typing",
+                  "question": "If f(x) = 3x, what is f'(x)?",
+                  "correctAnswer": [
+                    "3"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u2_l1_q7",
+                  "type": "multiple-choice",
+                  "question": "The derivative measures:",
+                  "options": [
+                    "Total change",
+                    "Average rate of change",
+                    "Instantaneous rate of change",
+                    "Maximum value"
+                  ],
+                  "correct": 2,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u2_l1_q8",
+                  "type": "typing",
+                  "question": "What is the derivative of f(x) = x?",
+                  "correctAnswer": [
+                    "1"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u2_l1_q9",
+                  "type": "multiple-choice",
+                  "question": "What is the derivative of sin(x)?",
+                  "options": [
+                    "sin(x)",
+                    "cos(x)",
+                    "-sin(x)",
+                    "-cos(x)"
+                  ],
+                  "correct": 1,
+                  "xp": 4,
+                  "image": "calc_u2_l1_q9.png"
+                },
+                {
+                  "id": "calc_u2_l1_q10",
+                  "type": "typing",
+                  "question": "If f(x) = 5, what is f'(x)?",
+                  "correctAnswer": [
+                    "0"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u2_l1_q11",
+                  "type": "multiple-choice",
+                  "question": "What does f'(a) tell us about the function at x=a?",
+                  "options": [
+                    "The value of f(a)",
+                    "The slope at x=a",
+                    "The area up to a",
+                    "The limit at a"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u2_l1_q12",
+                  "type": "typing",
+                  "question": "What is the derivative of cos(x)?",
+                  "correctAnswer": [
+                    "-sin(x)",
+                    "-sinx"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u2_l1_q13",
+                  "type": "multiple-choice",
+                  "question": "If a function has derivative f'(x) = 0 everywhere, it is:",
+                  "options": [
+                    "Linear",
+                    "Constant",
+                    "Quadratic",
+                    "Exponential"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u2_l1_q14",
+                  "type": "typing",
+                  "question": "What is the derivative of f(x) = 4x?",
+                  "correctAnswer": [
+                    "4"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u2_l1_q15",
+                  "type": "multiple-choice",
+                  "question": "The power rule states that d/dx(x^n) =:",
+                  "options": [
+                    "x^(n-1)",
+                    "nx^(n-1)",
+                    "nx^n",
+                    "x^n"
+                  ],
+                  "correct": 1,
+                  "xp": 4
+                },
+                {
+                  "id": "calc_u2_l1_q16",
+                  "type": "typing",
+                  "question": "Apply power rule: d/dx(x^4) = ?",
+                  "correctAnswer": [
+                    "4x^3",
+                    "4x\u00b3"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u2_l1_q17",
+                  "type": "multiple-choice",
+                  "question": "If f'(x) > 0, the function is:",
+                  "options": [
+                    "Decreasing",
+                    "Increasing",
+                    "Constant",
+                    "At a maximum"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u2_l1_q18",
+                  "type": "typing",
+                  "question": "What is the derivative of f(x) = 2x\u00b2?",
+                  "correctAnswer": [
+                    "4x"
+                  ],
+                  "xp": 5
+                }
+              ]
+            },
+            {
+              "id": "2-2",
+              "title": "Power Rule Practice",
+              "xp": 80,
+              "type": "lesson",
+              "questions": [
+                {
+                  "id": "calc_u2_l2_q1",
+                  "type": "typing",
+                  "question": "Find f'(x) for f(x) = x\u00b2",
+                  "correctAnswer": [
+                    "2x"
+                  ],
+                  "xp": 5,
+                  "image": "calc_u2_l2_q1.png"
+                },
+                {
+                  "id": "calc_u2_l2_q2",
+                  "type": "multiple-choice",
+                  "question": "What is d/dx(x^5)?",
+                  "options": [
+                    "x^4",
+                    "5x^4",
+                    "5x^5",
+                    "4x^5"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u2_l2_q3",
+                  "type": "typing",
+                  "question": "Find the derivative: d/dx(x^7) = ?",
+                  "correctAnswer": [
+                    "7x^6",
+                    "7x\u2076"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u2_l2_q4",
+                  "type": "multiple-choice",
+                  "question": "What is f'(x) if f(x) = x\u00b3?",
+                  "options": [
+                    "3x",
+                    "3x^2",
+                    "x^2",
+                    "3x^3"
+                  ],
+                  "correct": 1,
+                  "xp": 4,
+                  "image": "calc_u2_l2_q4.png"
+                },
+                {
+                  "id": "calc_u2_l2_q5",
+                  "type": "typing",
+                  "question": "Apply power rule: d/dx(x^10) = ?",
+                  "correctAnswer": [
+                    "10x^9",
+                    "10x\u2079"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u2_l2_q6",
+                  "type": "multiple-choice",
+                  "question": "What is d/dx(x^4)?",
+                  "options": [
+                    "4x^3",
+                    "4x^4",
+                    "3x^3",
+                    "x^3"
+                  ],
+                  "correct": 0,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u2_l2_q7",
+                  "type": "typing",
+                  "question": "Find derivative: d/dx(x^6) = ?",
+                  "correctAnswer": [
+                    "6x^5",
+                    "6x\u2075"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u2_l2_q8",
+                  "type": "multiple-choice",
+                  "question": "What is the slope of f(x) = x\u00b2 at x = 3?",
+                  "options": [
+                    "3",
+                    "6",
+                    "9",
+                    "12"
+                  ],
+                  "correct": 1,
+                  "xp": 4,
+                  "image": "calc_u2_l2_q8.png"
+                },
+                {
+                  "id": "calc_u2_l2_q9",
+                  "type": "typing",
+                  "question": "Evaluate f'(2) for f(x) = x\u00b3",
+                  "correctAnswer": [
+                    "12"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u2_l2_q10",
+                  "type": "multiple-choice",
+                  "question": "What is d/dx(x^8)?",
+                  "options": [
+                    "8x^7",
+                    "8x^8",
+                    "7x^7",
+                    "x^7"
+                  ],
+                  "correct": 0,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u2_l2_q11",
+                  "type": "typing",
+                  "question": "Find f'(x) for f(x) = x^9",
+                  "correctAnswer": [
+                    "9x^8",
+                    "9x\u2078"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u2_l2_q12",
+                  "type": "multiple-choice",
+                  "question": "At what x-value does f(x) = x\u00b3 have slope 3?",
+                  "options": [
+                    "0",
+                    "1",
+                    "2",
+                    "3"
+                  ],
+                  "correct": 1,
+                  "xp": 4,
+                  "image": "calc_u2_l2_q12.png"
+                },
+                {
+                  "id": "calc_u2_l2_q13",
+                  "type": "typing",
+                  "question": "What is d/dx(x^11)?",
+                  "correctAnswer": [
+                    "11x^10",
+                    "11x\u00b9\u2070"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u2_l2_q14",
+                  "type": "multiple-choice",
+                  "question": "If f(x) = x^2, what is f'(4)?",
+                  "options": [
+                    "4",
+                    "8",
+                    "16",
+                    "32"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u2_l2_q15",
+                  "type": "typing",
+                  "question": "Find the derivative: d/dx(x^12) = ?",
+                  "correctAnswer": [
+                    "12x^11",
+                    "12x\u00b9\u00b9"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u2_l2_q16",
+                  "type": "multiple-choice",
+                  "question": "What is d/dx(x^3) at x = 2?",
+                  "options": [
+                    "6",
+                    "8",
+                    "12",
+                    "16"
+                  ],
+                  "correct": 2,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u2_l2_q17",
+                  "type": "typing",
+                  "question": "Evaluate: d/dx(x^5) at x = 1",
+                  "correctAnswer": [
+                    "5"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u2_l2_q18",
+                  "type": "multiple-choice",
+                  "question": "Where does f(x) = x\u00b2 have a horizontal tangent?",
+                  "options": [
+                    "x = 0",
+                    "x = 1",
+                    "x = -1",
+                    "Nowhere"
+                  ],
+                  "correct": 0,
+                  "xp": 4,
+                  "image": "calc_u2_l2_q18.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Integration",
+          "description": "Introduction to Integration",
+          "lessons": [
+            {
+              "id": "3-1",
+              "title": "Introduction to Integration",
+              "xp": 75,
+              "type": "lesson",
+              "questions": [
+                {
+                  "id": "calc_u3_l1_q1",
+                  "type": "multiple-choice",
+                  "question": "What does \u222bf(x)dx represent?",
+                  "options": [
+                    "The derivative of f",
+                    "The area under the curve",
+                    "The limit of f",
+                    "The slope"
+                  ],
+                  "correct": 1,
+                  "xp": 4,
+                  "image": "calc_u3_l1_q1.png"
+                },
+                {
+                  "id": "calc_u3_l1_q2",
+                  "type": "typing",
+                  "question": "What is \u222bx dx?",
+                  "correctAnswer": [
+                    "x\u00b2/2 + C",
+                    "x^2/2 + C",
+                    "x squared over 2 plus C"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u3_l1_q3",
+                  "type": "multiple-choice",
+                  "question": "The symbol \u222b is called the:",
+                  "options": [
+                    "Limit symbol",
+                    "Integral symbol",
+                    "Derivative symbol",
+                    "Delta symbol"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u3_l1_q4",
+                  "type": "typing",
+                  "question": "What is \u222bx\u00b2 dx?",
+                  "correctAnswer": [
+                    "x\u00b3/3 + C",
+                    "x^3/3 + C",
+                    "x cubed over 3 plus C"
+                  ],
+                  "xp": 5,
+                  "image": "calc_u3_l1_q4.png"
+                },
+                {
+                  "id": "calc_u3_l1_q5",
+                  "type": "multiple-choice",
+                  "question": "What does the 'C' represent in \u222bf(x)dx = F(x) + C?",
+                  "options": [
+                    "Constant of integration",
+                    "Coefficient",
+                    "Calculus",
+                    "Coordinate"
+                  ],
+                  "correct": 0,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u3_l1_q6",
+                  "type": "typing",
+                  "question": "What is \u222b2x dx?",
+                  "correctAnswer": [
+                    "x\u00b2 + C",
+                    "x^2 + C"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u3_l1_q7",
+                  "type": "multiple-choice",
+                  "question": "What is \u222bsin(x) dx?",
+                  "options": [
+                    "sin(x) + C",
+                    "cos(x) + C",
+                    "-cos(x) + C",
+                    "-sin(x) + C"
+                  ],
+                  "correct": 2,
+                  "xp": 4,
+                  "image": "calc_u3_l1_q7.png"
+                },
+                {
+                  "id": "calc_u3_l1_q8",
+                  "type": "typing",
+                  "question": "What is \u222bcos(x) dx?",
+                  "correctAnswer": [
+                    "sin(x) + C"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u3_l1_q9",
+                  "type": "multiple-choice",
+                  "question": "Integration is the reverse operation of:",
+                  "options": [
+                    "Addition",
+                    "Differentiation",
+                    "Multiplication",
+                    "Division"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u3_l1_q10",
+                  "type": "typing",
+                  "question": "What is \u222b3x dx?",
+                  "correctAnswer": [
+                    "1.5x\u00b2 + C",
+                    "1.5x^2 + C",
+                    "3/2 x squared plus C"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u3_l1_q11",
+                  "type": "multiple-choice",
+                  "question": "What is \u222b\u2080\u00b3 2x dx?",
+                  "options": [
+                    "6",
+                    "9",
+                    "12",
+                    "18"
+                  ],
+                  "correct": 1,
+                  "xp": 4,
+                  "image": "calc_u3_l1_q11.png"
+                },
+                {
+                  "id": "calc_u3_l1_q12",
+                  "type": "typing",
+                  "question": "What is \u222b5 dx?",
+                  "correctAnswer": [
+                    "5x + C"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u3_l1_q13",
+                  "type": "multiple-choice",
+                  "question": "The Fundamental Theorem of Calculus connects:",
+                  "options": [
+                    "Limits and derivatives",
+                    "Derivatives and integrals",
+                    "Integrals and areas",
+                    "Functions and graphs"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u3_l1_q14",
+                  "type": "typing",
+                  "question": "What is \u222bx\u00b3 dx?",
+                  "correctAnswer": [
+                    "x\u2074/4 + C",
+                    "x^4/4 + C"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u3_l1_q15",
+                  "type": "multiple-choice",
+                  "question": "What is \u222b\u2081\u2074 x dx?",
+                  "options": [
+                    "6",
+                    "7.5",
+                    "8",
+                    "10"
+                  ],
+                  "correct": 1,
+                  "xp": 4,
+                  "image": "calc_u3_l1_q15.png"
+                },
+                {
+                  "id": "calc_u3_l1_q16",
+                  "type": "typing",
+                  "question": "What is \u222b4x dx?",
+                  "correctAnswer": [
+                    "2x\u00b2 + C",
+                    "2x^2 + C"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u3_l1_q17",
+                  "type": "multiple-choice",
+                  "question": "A definite integral has:",
+                  "options": [
+                    "Infinite limits",
+                    "Specific limits",
+                    "No limits",
+                    "Variable limits"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u3_l1_q18",
+                  "type": "typing",
+                  "question": "What is \u222be^x dx?",
+                  "correctAnswer": [
+                    "e^x + C",
+                    "e\u02e3 + C"
+                  ],
+                  "xp": 5
+                }
+              ]
+            },
+            {
+              "id": "3-2",
+              "title": "Definite Integrals",
+              "xp": 80,
+              "type": "lesson",
+              "questions": [
+                {
+                  "id": "calc_u3_l2_q1",
+                  "type": "typing",
+                  "question": "Evaluate: \u222b\u2080\u00b3 x dx = ?",
+                  "correctAnswer": [
+                    "4.5",
+                    "9/2"
+                  ],
+                  "xp": 5,
+                  "image": "calc_u3_l2_q1.png"
+                },
+                {
+                  "id": "calc_u3_l2_q2",
+                  "type": "multiple-choice",
+                  "question": "What is \u222b\u2080\u00b9 2x dx?",
+                  "options": [
+                    "0",
+                    "1",
+                    "2",
+                    "4"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u3_l2_q3",
+                  "type": "typing",
+                  "question": "Calculate: \u222b\u2080\u00b2 x dx = ?",
+                  "correctAnswer": [
+                    "2"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u3_l2_q4",
+                  "type": "multiple-choice",
+                  "question": "What is \u222b\u2080\u00b2 x\u00b2 dx?",
+                  "options": [
+                    "4/3",
+                    "8/3",
+                    "4",
+                    "8"
+                  ],
+                  "correct": 1,
+                  "xp": 4,
+                  "image": "calc_u3_l2_q4.png"
+                },
+                {
+                  "id": "calc_u3_l2_q5",
+                  "type": "typing",
+                  "question": "Evaluate: \u222b\u2080\u00b9 x\u00b2 dx = ?",
+                  "correctAnswer": [
+                    "1/3"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u3_l2_q6",
+                  "type": "multiple-choice",
+                  "question": "What is \u222b\u2080\u00b3 3 dx?",
+                  "options": [
+                    "3",
+                    "6",
+                    "9",
+                    "12"
+                  ],
+                  "correct": 2,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u3_l2_q7",
+                  "type": "typing",
+                  "question": "Calculate: \u222b\u2081\u00b3 2x dx = ?",
+                  "correctAnswer": [
+                    "8"
+                  ],
+                  "xp": 5,
+                  "image": "calc_u3_l2_q7.png"
+                },
+                {
+                  "id": "calc_u3_l2_q8",
+                  "type": "multiple-choice",
+                  "question": "What is \u222b\u2080\u00b9 (x + 1) dx?",
+                  "options": [
+                    "1",
+                    "1.5",
+                    "2",
+                    "2.5"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u3_l2_q9",
+                  "type": "typing",
+                  "question": "Evaluate: \u222b\u2080\u00b2 3x dx = ?",
+                  "correctAnswer": [
+                    "6"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u3_l2_q10",
+                  "type": "multiple-choice",
+                  "question": "What is \u222b\u2080\u2075 x dx?",
+                  "options": [
+                    "10",
+                    "12.5",
+                    "15",
+                    "25"
+                  ],
+                  "correct": 1,
+                  "xp": 4,
+                  "image": "calc_u3_l2_q10.png"
+                },
+                {
+                  "id": "calc_u3_l2_q11",
+                  "type": "typing",
+                  "question": "Calculate: \u222b\u2081\u00b2 2x dx = ?",
+                  "correctAnswer": [
+                    "3"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u3_l2_q12",
+                  "type": "multiple-choice",
+                  "question": "What is \u222b\u2080\u00b3 (2x + 1) dx?",
+                  "options": [
+                    "9",
+                    "12",
+                    "15",
+                    "18"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u3_l2_q13",
+                  "type": "typing",
+                  "question": "Evaluate: \u222b\u2080\u2074 x dx = ?",
+                  "correctAnswer": [
+                    "8"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u3_l2_q14",
+                  "type": "multiple-choice",
+                  "question": "What is \u222b\u2080\u00b2 3x dx?",
+                  "options": [
+                    "3",
+                    "6",
+                    "9",
+                    "12"
+                  ],
+                  "correct": 1,
+                  "xp": 4,
+                  "image": "calc_u3_l2_q14.png"
+                },
+                {
+                  "id": "calc_u3_l2_q15",
+                  "type": "typing",
+                  "question": "Calculate: \u222b\u2080\u00b9 (x + 2) dx = ?",
+                  "correctAnswer": [
+                    "2.5",
+                    "5/2"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u3_l2_q16",
+                  "type": "multiple-choice",
+                  "question": "What is \u222b\u2081\u00b3 (x) dx?",
+                  "options": [
+                    "3",
+                    "4",
+                    "5",
+                    "6"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u3_l2_q17",
+                  "type": "typing",
+                  "question": "Evaluate: \u222b\u2080\u00b2 (x + x) dx = ?",
+                  "correctAnswer": [
+                    "4"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u3_l2_q18",
+                  "type": "multiple-choice",
+                  "question": "What is \u222b\u2082\u2074 x dx?",
+                  "options": [
+                    "4",
+                    "6",
+                    "8",
+                    "10"
+                  ],
+                  "correct": 1,
+                  "xp": 4,
+                  "image": "calc_u3_l2_q18.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Applications",
+          "description": "Applications of Calculus",
+          "lessons": [
+            {
+              "id": "4-1",
+              "title": "Rates of Change",
+              "xp": 75,
+              "type": "lesson",
+              "questions": [
+                {
+                  "id": "calc_u4_l1_q1",
+                  "type": "multiple-choice",
+                  "question": "If position s(t) = t\u00b2, what is the velocity v(t)?",
+                  "options": [
+                    "t",
+                    "2t",
+                    "t\u00b2",
+                    "2t\u00b2"
+                  ],
+                  "correct": 1,
+                  "xp": 4,
+                  "image": "calc_u4_l1_q1.png"
+                },
+                {
+                  "id": "calc_u4_l1_q2",
+                  "type": "typing",
+                  "question": "If s(t) = 3t, what is the velocity?",
+                  "correctAnswer": [
+                    "3"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u4_l1_q3",
+                  "type": "multiple-choice",
+                  "question": "Velocity is the derivative of:",
+                  "options": [
+                    "Acceleration",
+                    "Position",
+                    "Time",
+                    "Speed"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u4_l1_q4",
+                  "type": "typing",
+                  "question": "If s(t) = 2t + 1, what is v(t)?",
+                  "correctAnswer": [
+                    "2"
+                  ],
+                  "xp": 5,
+                  "image": "calc_u4_l1_q4.png"
+                },
+                {
+                  "id": "calc_u4_l1_q5",
+                  "type": "multiple-choice",
+                  "question": "Acceleration is the derivative of:",
+                  "options": [
+                    "Velocity",
+                    "Position",
+                    "Time",
+                    "Distance"
+                  ],
+                  "correct": 0,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u4_l1_q6",
+                  "type": "typing",
+                  "question": "If v(t) = 4t, what is the acceleration a(t)?",
+                  "correctAnswer": [
+                    "4"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u4_l1_q7",
+                  "type": "multiple-choice",
+                  "question": "For s(t) = t\u00b2, what is the velocity at t = 2?",
+                  "options": [
+                    "2",
+                    "4",
+                    "6",
+                    "8"
+                  ],
+                  "correct": 1,
+                  "xp": 4,
+                  "image": "calc_u4_l1_q7.png"
+                },
+                {
+                  "id": "calc_u4_l1_q8",
+                  "type": "typing",
+                  "question": "If s(t) = 5t, what is the instantaneous velocity at t = 3?",
+                  "correctAnswer": [
+                    "5"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u4_l1_q9",
+                  "type": "multiple-choice",
+                  "question": "The average rate of change of f(x) from a to b is:",
+                  "options": [
+                    "f(b) - f(a)",
+                    "(f(b)-f(a))/(b-a)",
+                    "f'(a)",
+                    "f'(b)"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u4_l1_q10",
+                  "type": "typing",
+                  "question": "If s(t) = t\u00b2 + t, what is v(t)?",
+                  "correctAnswer": [
+                    "2t + 1"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u4_l1_q11",
+                  "type": "multiple-choice",
+                  "question": "What is the instantaneous rate of change at a point?",
+                  "options": [
+                    "The slope of the secant line",
+                    "The slope of the tangent line",
+                    "The area under curve",
+                    "The value at that point"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u4_l1_q12",
+                  "type": "typing",
+                  "question": "If s(t) = 2t, what is the velocity at t = 2?",
+                  "correctAnswer": [
+                    "2"
+                  ],
+                  "xp": 5,
+                  "image": "calc_u4_l1_q12.png"
+                },
+                {
+                  "id": "calc_u4_l1_q13",
+                  "type": "multiple-choice",
+                  "question": "If v(t) = 3t\u00b2, what is a(t)?",
+                  "options": [
+                    "3t",
+                    "6t",
+                    "3t\u00b2",
+                    "6t\u00b2"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u4_l1_q14",
+                  "type": "typing",
+                  "question": "What is the velocity if s(t) = t\u00b3?",
+                  "correctAnswer": [
+                    "3t\u00b2",
+                    "3t^2"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u4_l1_q15",
+                  "type": "multiple-choice",
+                  "question": "If an object is at rest, its velocity is:",
+                  "options": [
+                    "Positive",
+                    "Negative",
+                    "Zero",
+                    "Undefined"
+                  ],
+                  "correct": 2,
+                  "xp": 4,
+                  "image": "calc_u4_l1_q15.png"
+                },
+                {
+                  "id": "calc_u4_l1_q16",
+                  "type": "typing",
+                  "question": "If s(t) = 4t + 2, what is v(t)?",
+                  "correctAnswer": [
+                    "4"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u4_l1_q17",
+                  "type": "multiple-choice",
+                  "question": "What does a negative velocity indicate?",
+                  "options": [
+                    "Moving forward",
+                    "Moving backward",
+                    "At rest",
+                    "Accelerating"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u4_l1_q18",
+                  "type": "typing",
+                  "question": "If v(t) = -5, what is a(t)?",
+                  "correctAnswer": [
+                    "0"
+                  ],
+                  "xp": 5
+                }
+              ]
+            },
+            {
+              "id": "4-2",
+              "title": "Optimization Problems",
+              "xp": 80,
+              "type": "lesson",
+              "questions": [
+                {
+                  "id": "calc_u4_l2_q1",
+                  "type": "multiple-choice",
+                  "question": "To find the maximum or minimum of a function, we set:",
+                  "options": [
+                    "f(x) = 0",
+                    "f'(x) = 0",
+                    "f''(x) = 0",
+                    "f(x) = 1"
+                  ],
+                  "correct": 1,
+                  "xp": 4,
+                  "image": "calc_u4_l2_q1.png"
+                },
+                {
+                  "id": "calc_u4_l2_q2",
+                  "type": "typing",
+                  "question": "For f(x) = -x\u00b2 + 4x, what x-value gives the maximum?",
+                  "correctAnswer": [
+                    "2"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u4_l2_q3",
+                  "type": "multiple-choice",
+                  "question": "If f''(x) > 0 at a critical point, the function has a:",
+                  "options": [
+                    "Maximum",
+                    "Minimum",
+                    "Inflection point",
+                    "Undefined"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u4_l2_q4",
+                  "type": "typing",
+                  "question": "For f(x) = x\u00b2 - 6x + 10, what x-value gives the minimum?",
+                  "correctAnswer": [
+                    "3"
+                  ],
+                  "xp": 5,
+                  "image": "calc_u4_l2_q4.png"
+                },
+                {
+                  "id": "calc_u4_l2_q5",
+                  "type": "multiple-choice",
+                  "question": "A critical point occurs where:",
+                  "options": [
+                    "f(x) = 0",
+                    "f'(x) = 0",
+                    "f''(x) = 0",
+                    "f(x) = 1"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u4_l2_q6",
+                  "type": "typing",
+                  "question": "Find the x that minimizes f(x) = x\u00b2 - 4x + 7",
+                  "correctAnswer": [
+                    "2"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u4_l2_q7",
+                  "type": "multiple-choice",
+                  "question": "For f(x) = -x\u00b2 + 8x, what is the maximum value?",
+                  "options": [
+                    "8",
+                    "12",
+                    "16",
+                    "32"
+                  ],
+                  "correct": 2,
+                  "xp": 4,
+                  "image": "calc_u4_l2_q7.png"
+                },
+                {
+                  "id": "calc_u4_l2_q8",
+                  "type": "typing",
+                  "question": "What x maximizes f(x) = -x\u00b2 + 6x?",
+                  "correctAnswer": [
+                    "3"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u4_l2_q9",
+                  "type": "multiple-choice",
+                  "question": "The Second Derivative Test uses:",
+                  "options": [
+                    "f(x)",
+                    "f'(x)",
+                    "f''(x)",
+                    "\u222bf(x)"
+                  ],
+                  "correct": 2,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u4_l2_q10",
+                  "type": "typing",
+                  "question": "For f(x) = x\u00b2 - 2x + 5, find the x that minimizes f",
+                  "correctAnswer": [
+                    "1"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u4_l2_q11",
+                  "type": "multiple-choice",
+                  "question": "If f'(x) = 0 and f''(x) < 0, we have a:",
+                  "options": [
+                    "Maximum",
+                    "Minimum",
+                    "Inflection point",
+                    "No conclusion"
+                  ],
+                  "correct": 0,
+                  "xp": 4,
+                  "image": "calc_u4_l2_q11.png"
+                },
+                {
+                  "id": "calc_u4_l2_q12",
+                  "type": "typing",
+                  "question": "Find the x that maximizes f(x) = -2x\u00b2 + 12x",
+                  "correctAnswer": [
+                    "3"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u4_l2_q13",
+                  "type": "multiple-choice",
+                  "question": "To optimize, we first find where:",
+                  "options": [
+                    "f(x) = 0",
+                    "f'(x) = 0",
+                    "f''(x) = 0",
+                    "All of the above"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u4_l2_q14",
+                  "type": "typing",
+                  "question": "For f(x) = x\u00b2 - 5x + 10, find the minimizing x",
+                  "correctAnswer": [
+                    "2.5"
+                  ],
+                  "xp": 5,
+                  "image": "calc_u4_l2_q14.png"
+                },
+                {
+                  "id": "calc_u4_l2_q15",
+                  "type": "multiple-choice",
+                  "question": "An optimization problem asks us to find:",
+                  "options": [
+                    "The derivative",
+                    "The best or worst value",
+                    "The integral",
+                    "The limit"
+                  ],
+                  "correct": 1,
+                  "xp": 3
+                },
+                {
+                  "id": "calc_u4_l2_q16",
+                  "type": "typing",
+                  "question": "What x maximizes f(x) = -3x\u00b2 + 18x?",
+                  "correctAnswer": [
+                    "3"
+                  ],
+                  "xp": 5
+                },
+                {
+                  "id": "calc_u4_l2_q17",
+                  "type": "multiple-choice",
+                  "question": "For f(x) = -x\u00b2 + 14x, what is the maximizing x?",
+                  "options": [
+                    "5",
+                    "6",
+                    "7",
+                    "8"
+                  ],
+                  "correct": 2,
+                  "xp": 4,
+                  "image": "calc_u4_l2_q17.png"
+                },
+                {
+                  "id": "calc_u4_l2_q18",
+                  "type": "typing",
+                  "question": "If f(x) = 2x\u00b2 - 8x + 10, find the minimum value",
+                  "correctAnswer": [
+                    "2"
+                  ],
+                  "xp": 5
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

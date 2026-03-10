@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Step-by-Step Debug Test</title>
+</head>
+<body>
+  <h1>Step-by-Step Debug Test</h1>
+  <div id="output" style="font-family: monospace; white-space: pre-wrap;"></div>
+  
+  <script>
+    const output = document.getElementById('output');
+    
+    function log(msg, isError = false) {
+      output.innerHTML += (isError ? '❌ ERROR: ' : '✅ ') + msg + '\n';
+      output.scrollTop = output.scrollHeight;
+      if (isError) console.error(msg);
+      else console.log(msg);
+    }
+    
+    async function loadAndTest(step, scriptName, testFn) {
+      try {
+        log(`Step ${step}: Loading ${scriptName}...`);
+        const response = await fetch(scriptName);
+        if (!response.ok) throw new Error(`Failed to fetch ${scriptName}`);
+        const code = await response.text();
+        log(`   File size: ${code.length} bytes`);
+        
+        log(`   Executing ${scriptName}...`);
+        eval(code);
+        
+        if (testFn) {
+          await testFn();
+        }
+        
+        log(`✅ ${scriptName} loaded successfully`);
+        return true;
+      } catch (error) {
+        log(`❌ ${scriptName}: ${error.message}`, true);
+        if (error.stack) {
+          log(`   Stack: ${error.stack.split('\n').slice(0, 3).join('\n   ')}`, true);
+        }
+        return false;
+      }
+    }
+    
+    async function runTests() {
+      log('Starting debug test...\n');
+      
+      // Load files in order
+      const success1 = await loadAndTest(1, 'themeManager.js');
+      if (!success1) { log('\n⚠️ Stopping due to error'); return; }
+      
+      const success2 = await loadAndTest(2, 'soundManager.js');
+      if (!success2) { log('\n⚠️ Stopping due to error'); return; }
+      
+      const success3 = await loadAndTest(3, 'spanishVocab.js');
+      if (!success3) { log('\n⚠️ Stopping due to error'); return; }
+      
+      const success4 = await loadAndTest(4, 'lessonGenerators.js');
+      if (!success4) { log('\n⚠️ Stopping due to error'); return; }
+      
+      const success5 = await loadAndTest(5, 'calculusVocab.js',
+        () => {
+          if (typeof CalculusConcepts === 'undefined') {
+            throw new Error('CalculusConcepts is undefined');
+          }
+          log('   ✓ CalculusConcepts available');
+        }
+      );
+      if (!success5) { log('\n⚠️ Stopping due to error'); return; }
+      
+      const success6 = await loadAndTest(6, 'calculusGenerators_expanded.js',
+        async () => {
+          if (typeof CalculusQuestionGenerator === 'undefined') {
+            throw new Error('CalculusQuestionGenerator is undefined');
+          }
+          log('   ✓ CalculusQuestionGenerator available');
+          
+          if (typeof CalculusLessonsExpanded === 'undefined') {
+            throw new Error('CalculusLessonsExpanded is undefined');
+          }
+          log('   ✓ CalculusLessonsExpanded available');
+          
+          log('   Testing lesson generation...');
+          const lesson = CalculusLessonsExpanded.unit1Limits(1);
+          log(`   ✓ Lesson generated: ${lesson.id}`);
+          log(`   ✓ Questions: ${lesson.questions.length}`);
+          log(`   ✓ Title: ${lesson.title}`);
+        }
+      );
+      if (!success6) { log('\n⚠️ Stopping due to error'); return; }
+      
+      const success7 = await loadAndTest(7, 'ttsManager.js',
+        () => {
+          if (typeof ttsManager === 'undefined') {
+            throw new Error('ttsManager is undefined');
+          }
+          log('   ✓ ttsManager available');
+        }
+      );
+      if (!success7) { log('\n⚠️ Stopping due to error'); return; }
+      
+      const success8 = await loadAndTest(8, 'app.js', async () => {
+        if (typeof courses === 'undefined') {
+          throw new Error('courses is undefined');
+        }
+        log('   ✓ courses available');
+        log(`   ✓ Total courses: ${Object.keys(courses).length}`);
+        
+        if (courses.calculus) {
+          log(`   ✓ Calculus course: ${courses.calculus.units.length} units`);
+          courses.calculus.units.forEach((unit, i) => {
+            log(`   ✓ Unit ${i+1}: ${unit.lessons.length} lessons`);
+          });
+        } else {
+          log('   ⚠️ Calculus course not found');
+        }
+      });
+      
+      if (success8) {
+        log('\n✅✅✅ ALL TESTS PASSED! ✅✅✅');
+        log('\nThe app should load correctly now.');
+      } else {
+        log('\n⚠️ Stopping due to error');
+      }
+    }
+    
+    runTests().catch(error => {
+      log(`❌ Fatal error: ${error.message}`, true);
+      log(`   Stack: ${error.stack}`, true);
+    });
+  </script>
+</body>
+</html>

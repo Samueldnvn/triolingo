@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Triolingo Debug</title>
+</head>
+<body>
+    <h1>Triolingo Debug Page</h1>
+    <div id="output"></div>
+
+    <script src="calculusVocab.js"></script>
+    <script src="calculusIcons.js"></script>
+    <script src="calculusIconsExternal.js"></script>
+    <script src="calculusGenerators_comprehensive.js"></script>
+    <script>
+        const output = document.getElementById('output');
+
+        output.innerHTML += '<h2>Loading Status:</h2>';
+        output.innerHTML += '<ul>';
+
+        // Check if vocab loaded
+        if (typeof CalculusVocab !== 'undefined') {
+            output.innerHTML += '<li>✅ CalculusVocab loaded</li>';
+        } else {
+            output.innerHTML += '<li>❌ CalculusVocab NOT loaded</li>';
+        }
+
+        // Check if icons loaded
+        if (typeof CalculusIcons !== 'undefined') {
+            output.innerHTML += '<li>✅ CalculusIcons loaded (' + Object.keys(CalculusIcons).length + ' icons)</li>';
+        } else {
+            output.innerHTML += '<li>❌ CalculusIcons NOT loaded</li>';
+        }
+
+        // Check if icon map loaded
+        if (typeof CalculusIconMap !== 'undefined') {
+            output.innerHTML += '<li>✅ CalculusIconMap loaded (' + Object.keys(CalculusIconMap).length + ' mappings)</li>';
+        } else {
+            output.innerHTML += '<li>❌ CalculusIconMap NOT loaded</li>';
+        }
+
+        // Check if external icons loaded
+        if (typeof CalculusExternalIcons !== 'undefined') {
+            output.innerHTML += '<li>✅ CalculusExternalIcons loaded</li>';
+        } else {
+            output.innerHTML += '<li>❌ CalculusExternalIcons NOT loaded</li>';
+        }
+
+        // Check if external icon map loaded
+        if (typeof CalculusExternalIconMap !== 'undefined') {
+            output.innerHTML += '<li>✅ CalculusExternalIconMap loaded (' + Object.keys(CalculusExternalIconMap).length + ' mappings)</li>';
+        } else {
+            output.innerHTML += '<li>❌ CalculusExternalIconMap NOT loaded</li>';
+        }
+
+        // Check if lesson generators loaded
+        if (typeof CalculusPlaceholderLessons !== 'undefined') {
+            output.innerHTML += '<li>✅ CalculusPlaceholderLessons loaded</li>';
+        } else {
+            output.innerHTML += '<li>❌ CalculusPlaceholderLessons NOT loaded</li>';
+        }
+
+        output.innerHTML += '</ul>';
+
+        // Test lesson generation
+        if (typeof CalculusPlaceholderLessons !== 'undefined') {
+            output.innerHTML += '<h2>Test Lesson:</h2>';
+            try {
+                const lesson = CalculusPlaceholderLessons.limits1();
+                output.innerHTML += '<ul>';
+                output.innerHTML += '<li>ID: ' + lesson.id + '</li>';
+                output.innerHTML += '<li>Title: ' + lesson.title + '</li>';
+                output.innerHTML += '<li>Icon: ' + lesson.icon.substring(0, 50) + '...</li>';
+                output.innerHTML += '</ul>';
+            } catch (e) {
+                output.innerHTML += '<p>❌ Error generating lesson: ' + e.message + '</p>';
+            }
+        }
+    </script>
+</body>
+</html>

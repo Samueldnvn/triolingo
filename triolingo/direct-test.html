@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Direct Test</title>
+</head>
+<body>
+    <h1>Direct Test</h1>
+    <pre id="output"></pre>
+
+    <script src="calculusGenerators_comprehensive.js"></script>
+    <script>
+        const output = document.getElementById('output');
+
+        output.textContent += 'typeof CalculusPlaceholderLessons: ' + typeof CalculusPlaceholderLessons + '\n';
+        output.textContent += 'typeof window.CalculusPlaceholderLessons: ' + typeof window.CalculusPlaceholderLessons + '\n';
+        output.textContent += 'typeof CalculusIconMap: ' + typeof CalculusIconMap + '\n';
+        output.textContent += 'typeof window.CalculusIconMap: ' + typeof window.CalculusIconMap + '\n';
+
+        if (typeof CalculusPlaceholderLessons !== 'undefined') {
+            output.textContent += '\n✅ CalculusPlaceholderLessons exists\n';
+            try {
+                const lesson = CalculusPlaceholderLessons.limits1();
+                output.textContent += 'Lesson ID: ' + lesson.id + '\n';
+                output.textContent += 'Lesson Title: ' + lesson.title + '\n';
+            } catch (e) {
+                output.textContent += '❌ Error generating lesson: ' + e.message + '\n';
+            }
+        } else {
+            output.textContent += '\n❌ CalculusPlaceholderLessons is undefined!\n';
+        }
+    </script>
+</body>
+</html>

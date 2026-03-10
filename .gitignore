@@ -1,0 +1,43 @@
+# Git Ignore for OpenClaw Workspace
+
+# Dependencies
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# OS Files
+.DS_Store
+.Dumbs.db
+*.swp
+*.swo
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Temporary files
+*.tmp
+*.bak
+*.orig
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+
+# Logs
+*.log
+
+# Session data
+*.db
+*.sqlite
+*.session
+
+# Large files (triolingo specific)
+triolingo/node_modules/
+triolingo/*.log
+triolingo/package-lock.json

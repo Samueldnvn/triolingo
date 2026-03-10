@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unit Load Test 3</title>
+</head>
+<body>
+    <h1>Unit Load Test 3</h1>
+    <div id="output"></div>
+
+    <script>
+        const output = document.getElementById('output');
+
+        function log(msg, isError = false) {
+            const div = document.createElement('div');
+            div.style.color = isError ? 'red' : 'green';
+            div.textContent = msg;
+            output.appendChild(div);
+            console.log(msg);
+        }
+
+        log('Starting test...');
+
+        // Test 1: Can we define a const variable at all?
+        try {
+            const testVar = { name: "test" };
+            log('✅ Test 1: const variables work: ' + testVar.name);
+        } catch (e) {
+            log('❌ Test 1 failed: ' + e.message, true);
+        }
+
+        // Test 2: Load a simple inline script with const
+        const inlineScript = document.createElement('script');
+        inlineScript.textContent = `
+            console.log('Inline script executing...');
+            const inlineVar = { unitName: 'Inline Test' };
+            console.log('inlineVar created:', inlineVar);
+        `;
+        document.head.appendChild(inlineScript);
+
+        setTimeout(function() {
+            if (window.inlineVar) {
+                log('✅ Test 2: Inline const variable created: ' + inlineVar.unitName);
+            } else {
+                log('❌ Test 2: Inline const variable NOT created!', true);
+            }
+
+            // Test 3: Load the actual file
+            const fileScript = document.createElement('script');
+            fileScript.src = 'questions/linearAlgebraUnit1-VectorSpaces.js?t=' + Date.now();
+            fileScript.onload = function() {
+                log('✅ Test 3: File script loaded');
+
+                setTimeout(function() {
+                    if (window.linearAlgebraUnit1) {
+                        log('✅ Test 3: linearAlgebraUnit1 created: ' + linearAlgebraUnit1.unitName);
+                    } else {
+                        log('❌ Test 3: linearAlgebraUnit1 NOT created!', true);
+                        log('Type of linearAlgebraUnit1: ' + typeof window.linearAlgebraUnit1);
+                    }
+                }, 200);
+            };
+            fileScript.onerror = function(e) {
+                log('❌ Test 3: File script failed to load: ' + JSON.stringify(e), true);
+            };
+            document.head.appendChild(fileScript);
+        }, 100);
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Test</title>
+</head>
+<body>
+    <h1>Triolingo Simple Test</h1>
+    <div id="output"></div>
+
+    <script>
+        const output = document.getElementById('output');
+        output.innerHTML += '<p>✅ Basic JS working</p>';
+        output.innerHTML += '<p>✅ DOM ready</p>';
+    </script>
+
+    <script src="themeManager.js"></script>
+    <script>
+        if (typeof themeManager !== 'undefined') {
+            output.innerHTML += '<p>✅ themeManager loaded</p>';
+        } else {
+            output.innerHTML += '<p>❌ themeManager NOT loaded</p>';
+        }
+    </script>
+
+    <script src="soundManager.js"></script>
+    <script>
+        if (typeof soundManager !== 'undefined') {
+            output.innerHTML += '<p>✅ soundManager loaded</p>';
+        } else {
+            output.innerHTML += '<p>❌ soundManager NOT loaded</p>';
+        }
+    </script>
+
+    <script src="spanishVocab.js"></script>
+    <script>
+        if (typeof courses !== 'undefined') {
+            output.innerHTML += '<p>✅ spanishVocab loaded (' + Object.keys(courses).length + ' courses)</p>';
+        } else {
+            output.innerHTML += '<p>❌ spanishVocab NOT loaded</p>';
+        }
+    </script>
+
+    <script src="lessonGenerators.js"></script>
+    <script>
+        if (typeof LessonGenerator !== 'undefined') {
+            output.innerHTML += '<p>✅ lessonGenerators loaded</p>';
+        } else {
+            output.innerHTML += '<p>❌ lessonGenerators NOT loaded</p>';
+        }
+    </script>
+
+    <script src="calculusVocab.js"></script>
+    <script>
+        if (typeof CalculusVocab !== 'undefined') {
+            output.innerHTML += '<p>✅ calculusVocab loaded</p>';
+        } else {
+            output.innerHTML += '<p>❌ calculusVocab NOT loaded</p>';
+        }
+    </script>
+
+    <script src="calculusIcons.js"></script>
+    <script>
+        if (typeof CalculusIconMap !== 'undefined') {
+            output.innerHTML += '<p>✅ CalculusIconMap loaded (' + Object.keys(CalculusIconMap).length + ' mappings)</p>';
+        } else {
+            output.innerHTML += '<p>❌ CalculusIconMap NOT loaded</p>';
+        }
+    </script>
+
+    <script src="calculusIconsExternal.js"></script>
+    <script>
+        if (typeof CalculusExternalIconMap !== 'undefined') {
+            output.innerHTML += '<p>✅ CalculusExternalIconMap loaded (' + Object.keys(CalculusExternalIconMap).length + ' mappings)</p>';
+        } else {
+            output.innerHTML += '<p>❌ CalculusExternalIconMap NOT loaded</p>';
+        }
+    </script>
+
+    <script src="calculusGenerators_comprehensive.js"></script>
+    <script>
+        if (typeof CalculusPlaceholderLessons !== 'undefined') {
+            output.innerHTML += '<p>✅ CalculusPlaceholderLessons loaded</p>';
+            try {
+                const lesson = CalculusPlaceholderLessons.limits1();
+                output.innerHTML += '<p>✅ Lesson generated: ' + lesson.title + '</p>';
+            } catch (e) {
+                output.innerHTML += '<p>❌ Lesson generation failed: ' + e.message + '</p>';
+            }
+        } else {
+            output.innerHTML += '<p>❌ CalculusPlaceholderLessons NOT loaded</p>';
+        }
+    </script>
+
+    <script src="ttsManager.js"></script>
+    <script>
+        if (typeof ttsManager !== 'undefined') {
+            output.innerHTML += '<p>✅ ttsManager loaded</p>';
+        } else {
+            output.innerHTML += '<p>❌ ttsManager NOT loaded</p>';
+        }
+    </script>
+
+    <script src="app.js"></script>
+    <script>
+        if (typeof renderView !== 'undefined') {
+            output.innerHTML += '<p>✅ app.js loaded (renderView exists)</p>';
+        } else {
+            output.innerHTML += '<p>❌ app.js NOT loaded (no renderView)</p>';
+        }
+    </script>
+</body>
+</html>

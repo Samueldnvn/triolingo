@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Triolingo Debug Test</title>
+  <style>
+    body {
+      font-family: monospace;
+      padding: 20px;
+      background: #1a1a2e;
+      color: #eee;
+    }
+    .test-section {
+      margin: 20px 0;
+      padding: 15px;
+      background: #16213e;
+      border-radius: 8px;
+    }
+    .test-title {
+      color: #e94560;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+    .result {
+      margin: 5px 0;
+      padding: 8px;
+      border-radius: 4px;
+    }
+    .pass {
+      background: #1b5e20;
+      color: #a5d6a7;
+    }
+    .fail {
+      background: #b71c1c;
+      color: #ef9a9a;
+    }
+    .warn {
+      background: #f57f17;
+      color: #fff59d;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔧 Triolingo Debug Test</h1>
+
+  <div class="test-section">
+    <div class="test-title">Script Loading Check</div>
+    <div id="script-results"></div>
+  </div>
+
+  <div class="test-section">
+    <div class="test-title">Variable Check</div>
+    <div id="variable-results"></div>
+  </div>
+
+  <div class="test-section">
+    <div class="test-title">Course Data Check</div>
+    <div id="course-results"></div>
+  </div>
+
+  <!-- Load all scripts in the same order as index.html -->
+  <script>
+    function addResult(containerId, message, type) {
+      const container = document.getElementById(containerId);
+      const result = document.createElement('div');
+      result.className = `result ${type}`;
+      result.textContent = message;
+      container.appendChild(result);
+    }
+  </script>
+
+  <!-- Linear Algebra -->
+  <script src="linearAlgebraVocab.js" onerror="addResult('script-results', '❌ linearAlgebraVocab.js failed to load', 'fail')"></script>
+  <script>
+    if (window.linearAlgebraVocab) addResult('script-results', '✅ linearAlgebraVocab loaded', 'pass');
+    else addResult('script-results', '⚠️ linearAlgebraVocab not defined', 'warn');
+  </script>
+
+  <script src="linearAlgebraIcons.js" onerror="addResult('script-results', '❌ linearAlgebraIcons.js failed to load', 'fail')"></script>
+  <script>
+    if (window.linearAlgebraIcons) addResult('script-results', '✅ linearAlgebraIcons loaded', 'pass');
+    else addResult('script-results', '⚠️ linearAlgebraIcons not defined', 'warn');
+  </script>
+
+  <script src="linearAlgebraGenerators.js" onerror="addResult('script-results', '❌ linearAlgebraGenerators.js failed to load', 'fail')"></script>
+  <script>
+    if (window.generateLinearAlgebraLesson) addResult('script-results', '✅ linearAlgebraGenerators loaded', 'pass');
+    else addResult('script-results', '⚠️ generateLinearAlgebraLesson not defined', 'warn');
+  </script>
+
+  <script src="questions/linearAlgebraUnit1-VectorSpaces.js" onerror="addResult('script-results', '❌ linearAlgebraUnit1 failed to load', 'fail')"></script>
+  <script>
+    if (window.linearAlgebraUnit1) addResult('script-results', '✅ linearAlgebraUnit1 loaded', 'pass');
+    else addResult('script-results', '⚠️ linearAlgebraUnit1 not defined', 'warn');
+  </script>
+
+  <script src="linearAlgebraCourse.js" onerror="addResult('script-results', '❌ linearAlgebraCourse.js failed to load', 'fail')"></script>
+  <script>
+    if (window.linearAlgebraCourse) addResult('script-results', '✅ linearAlgebraCourse loaded', 'pass');
+    else addResult('script-results', '❌ linearAlgebraCourse not defined', 'fail');
+
+    // Check units array
+    if (window.linearAlgebraCourse && window.linearAlgebraCourse.units) {
+      addResult('course-results', `✅ linearAlgebraCourse has ${window.linearAlgebraCourse.units.length} units`, 'pass');
+      window.linearAlgebraCourse.units.forEach((unit, i) => {
+        if (unit && unit.unitName) {
+          addResult('course-results', `  Unit ${i+1}: ${unit.unitName}`, 'pass');
+        } else {
+          addResult('course-results', `  Unit ${i+1}: Invalid or undefined`, 'fail');
+        }
+      });
+    }
+  </script>
+
+  <!-- AI -->
+  <script src="questions/aiUnitsAll.js" onerror="addResult('script-results', '❌ aiUnitsAll.js failed to load', 'fail')"></script>
+  <script>
+    if (window.aiUnit1) addResult('script-results', '✅ aiUnitsAll loaded (aiUnit1 defined)', 'pass');
+    else addResult('script-results', '⚠️ aiUnitsAll loaded but aiUnit1 not defined', 'warn');
+  </script>
+
+  <script src="aiCourse.js" onerror="addResult('script-results', '❌ aiCourse.js failed to load', 'fail')"></script>
+  <script>
+    if (window.aiCourse) addResult('script-results', '✅ aiCourse loaded', 'pass');
+    else addResult('script-results', '❌ aiCourse not defined', 'fail');
+
+    // Check units array
+    if (window.aiCourse && window.aiCourse.units) {
+      addResult('course-results', `✅ aiCourse has ${window.aiCourse.units.length} units`, 'pass');
+      window.aiCourse.units.forEach((unit, i) => {
+        if (unit && unit.unitName) {
+          addResult('course-results', `  Unit ${i+1}: ${unit.unitName}`, 'pass');
+        } else {
+          addResult('course-results', `  Unit ${i+1}: Invalid or undefined`, 'fail');
+        }
+      });
+    }
+  </script>
+
+  <!-- C++ -->
+  <script src="questions/cppUnit1-Environment.js" onerror="addResult('script-results', '❌ cppUnit1 failed to load', 'fail')"></script>
+  <script>
+    if (window.cppUnit1) addResult('script-results', '✅ cppUnit1 loaded', 'pass');
+    else addResult('script-results', '⚠️ cppUnit1 not defined', 'warn');
+  </script>
+
+  <script src="cppCourse.js" onerror="addResult('script-results', '❌ cppCourse.js failed to load', 'fail')"></script>
+  <script>
+    if (window.cppCourse) addResult('script-results', '✅ cppCourse loaded', 'pass');
+    else addResult('script-results', '❌ cppCourse not defined', 'fail');
+
+    // Check units array
+    if (window.cppCourse && window.cppCourse.units) {
+      addResult('course-results', `✅ cppCourse has ${window.cppCourse.units.length} units`, 'pass');
+      window.cppCourse.units.forEach((unit, i) => {
+        if (unit && unit.unitName) {
+          addResult('course-results', `  Unit ${i+1}: ${unit.unitName}`, 'pass');
+        } else {
+          addResult('course-results', `  Unit ${i+1}: Invalid or undefined`, 'fail');
+        }
+      });
+    }
+  </script>
+
+  <!-- Hexapod -->
+  <script src="questions/hexapodUnits1-5.js" onerror="addResult('script-results', '❌ hexapodUnits1-5 failed to load', 'fail')"></script>
+  <script>
+    if (window.hexapodUnit1) addResult('script-results', '✅ hexapodUnit1 loaded', 'pass');
+    else addResult('script-results', '⚠️ hexapodUnit1 not defined', 'warn');
+  </script>
+
+  <script src="hexapodCourse.js" onerror="addResult('script-results', '❌ hexapodCourse.js failed to load', 'fail')"></script>
+  <script>
+    if (window.hexapodCourse) addResult('script-results', '✅ hexapodCourse loaded', 'pass');
+    else addResult('script-results', '❌ hexapodCourse not defined', 'fail');
+
+    // Check units array
+    if (window.hexapodCourse && window.hexapodCourse.units) {
+      addResult('course-results', `✅ hexapodCourse has ${window.hexapodCourse.units.length} units`, 'pass');
+      window.hexapodCourse.units.forEach((unit, i) => {
+        if (unit && unit.unitName) {
+          addResult('course-results', `  Unit ${i+1}: ${unit.unitName}`, 'pass');
+        } else {
+          addResult('course-results', `  Unit ${i+1}: Invalid or undefined`, 'fail');
+        }
+      });
+    }
+  </script>
+
+  <div class="test-section">
+    <div class="test-title">Variable Existence Check (Final)</div>
+    <div id="variable-results"></div>
+  </div>
+
+  <script>
+    // Final check of all variables
+    const variables = [
+      'linearAlgebraCourse',
+      'aiCourse',
+      'cppCourse',
+      'hexapodCourse',
+      'linearAlgebraVocab',
+      'linearAlgebraIcons',
+      'generateLinearAlgebraLesson',
+      'linearAlgebraUnit1',
+      'aiUnit1',
+      'cppUnit1',
+      'hexapodUnit1'
+    ];
+
+    variables.forEach(variable => {
+      if (window[variable] !== undefined) {
+        addResult('variable-results', `✅ ${variable} exists (type: ${typeof window[variable]})`, 'pass');
+      } else {
+        addResult('variable-results', `❌ ${variable} is undefined`, 'fail');
+      }
+    });
+
+    // Summary
+    const passCount = document.querySelectorAll('.pass').length;
+    const failCount = document.querySelectorAll('.fail').length;
+    const warnCount = document.querySelectorAll('.warn').length;
+
+    addResult('variable-results', `\n📊 Summary: ${passCount} passed, ${warnCount} warnings, ${failCount} failed`, passCount > failCount ? 'pass' : 'fail');
+  </script>
+</body>
+</html>

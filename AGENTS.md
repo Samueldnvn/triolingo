@@ -210,3 +210,27 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
+
+## 🚨 Critical Rules for Triolingo
+
+### NEVER REMOVE PLACEHOLDER LESSONS
+
+When working on Triolingo lessons:
+
+✅ **DO:**
+- Add content to existing placeholder lessons
+- Update lessonText, questions, explanations
+- Enhance existing structure
+- Keep ALL placeholder units and lessons intact
+
+❌ **NEVER:**
+- Delete placeholder units
+- Remove placeholder lessons
+- Replace the skeleton structure
+- Clear out lessons array
+
+**Why:** Placeholder lessons serve as the course skeleton and roadmap. Users need to see the complete journey. Deleting them breaks the course structure and causes user frustration.
+
+**Verification:** Before committing any lesson changes, ensure all units are still present and no lessons have been deleted. Only content should be ADDED, never removed from the skeleton.
+
+**Reference:** `/home/samueldnvn4/.openclaw/workspace/triolingo/CRITICAL_RULES.md` for full details.

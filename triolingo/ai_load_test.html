@@ -1,0 +1,99 @@
+// Open this file in your browser to test AI course loading
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Course Load Test</title>
+  <style>
+    body {
+      font-family: monospace;
+      padding: 20px;
+      background: #1a1a2e;
+      color: #eee;
+    }
+    .log-entry {
+      margin: 5px 0;
+      padding: 8px;
+      border-radius: 4px;
+    }
+    .success { background: #1b5e20; color: #a5d6a7; }
+    .error { background: #b71c1c; color: #ef9a9a; }
+    .info { background: #0d47a1; color: #90caf9; }
+    .warning { background: #f57f17; color: #fff59d; }
+  </style>
+</head>
+<body>
+  <h1>🔧 AI Course Load Test</h1>
+  <div id="log"></div>
+
+  <!-- Load scripts in correct order -->
+  <script>
+    function log(msg, type = 'info') {
+      const div = document.createElement('div');
+      div.className = 'log-entry ' + type;
+      div.textContent = msg;
+      document.getElementById('log').appendChild(div);
+      console.log(msg);
+    }
+
+    log('🚀 Starting AI course load test...', 'info');
+
+    // Step 1: Load aiUnitsAll.js
+    log('Step 1: Loading aiUnitsAll.js...', 'info');
+    const script1 = document.createElement('script');
+    script1.src = 'questions/aiUnitsAll.js';
+    script1.onload = function() {
+      log('✅ aiUnitsAll.js loaded successfully!', 'success');
+
+      // Check for aiUnit1
+      if (window.aiUnit1) {
+        log('✅ aiUnit1 found: ' + aiUnit1.unitName, 'success');
+        log('   Unit ID: ' + aiUnit1.unitId, 'info');
+        log('   Subunits: ' + aiUnit1.subunits.length, 'info');
+      } else {
+        log('❌ aiUnit1 NOT found!', 'error');
+      }
+
+      // Step 2: Load aiCourse.js
+      log('Step 2: Loading aiCourse.js...', 'info');
+      const script2 = document.createElement('script');
+      script2.src = 'aiCourse.js';
+      script2.onload = function() {
+        log('✅ aiCourse.js loaded successfully!', 'success');
+
+        // Check for aiCourse
+        if (window.aiCourse) {
+          log('✅ aiCourse found!', 'success');
+          log('   Course ID: ' + aiCourse.courseId, 'info');
+          log('   Course Name: ' + aiCourse.courseName, 'info');
+          log('   Units: ' + aiCourse.units.length, 'info');
+
+          // Check first unit
+          if (aiCourse.units.length > 0 && aiCourse.units[0]) {
+            log('   First unit: ' + aiCourse.units[0].unitName, 'info');
+            if (aiCourse.units[0].subunits && aiCourse.units[0].subunits.length > 0) {
+              log('   First unit has ' + aiCourse.units[0].subunits.length + ' subunits', 'info');
+              if (aiCourse.units[0].subunits[0].lessons && aiCourse.units[0].subunits[0].lessons.length > 0) {
+                log('   First subunit has ' + aiCourse.units[0].subunits[0].lessons.length + ' lessons', 'info');
+              }
+            }
+          }
+
+          log('🎉 All checks passed! AI course should load correctly!', 'success');
+        } else {
+          log('❌ aiCourse NOT found!', 'error');
+        }
+      };
+      script2.onerror = function() {
+        log('❌ aiCourse.js FAILED to load!', 'error');
+      };
+      document.head.appendChild(script2);
+    };
+    script1.onerror = function() {
+      log('❌ aiUnitsAll.js FAILED to load!', 'error');
+    };
+    document.head.appendChild(script1);
+  </script>
+</body>
+</html>
