@@ -359,6 +359,7 @@ let masteredQuestions = new Set();
 let questionPool = [];
 let currentQuestionAutoPlayed = false;
 let currentView = 'dashboard';
+let currentCourse = 'french'; // Default course
 let currentConversation = null;
 let conversationMessages = [];
 let settings = {
@@ -377,12 +378,18 @@ function loadProgress() {
       const saved = window.electron.loadProgress();
       if (saved) {
         progress = saved;
+        if (saved.currentCourse) {
+          currentCourse = saved.currentCourse;
+        }
       }
     } else if (typeof window !== 'undefined' && window.require) {
       const { ipcRenderer } = window.require('electron');
       ipcRenderer.invoke('loadProgress').then(saved => {
         if (saved) {
           progress = saved;
+          if (saved.currentCourse) {
+            currentCourse = saved.currentCourse;
+          }
         }
       }).catch(err => {
         console.error('Error loading progress:', err);
@@ -392,6 +399,9 @@ function loadProgress() {
       if (saved) {
         try {
           progress = JSON.parse(saved);
+          if (progress.currentCourse) {
+            currentCourse = progress.currentCourse;
+          }
         } catch (e) {
           console.error('Error parsing saved progress:', e);
         }
@@ -433,9 +443,9 @@ function setupEventListeners() {
     });
   });
 
-  const langSelect = document.getElementById('languageSelect');
-  if (langSelect) {
-    langSelect.addEventListener('change', (e) => {
+  const courseSelect = document.getElementById('courseSelect');
+  if (courseSelect) {
+    courseSelect.addEventListener('change', (e) => {
       changeLanguage(e.target.value);
     });
   }
@@ -1357,9 +1367,49 @@ function changeSoundPack(pack) {
 
 function changeLanguage(lang) {
   console.log('Changing language to:', lang);
+  currentCourse = lang;
+  saveProgress();
+  initializeCourseSelector(); // Reorder dropdown to show current course first
   setTimeout(() => {
     renderView(currentView);
   }, 100);
+}
+
+function initializeCourseSelector() {
+  const courseSelect = document.getElementById('courseSelect');
+  if (!courseSelect) return;
+
+  // Get all course data
+  const courseIds = Object.keys(courses);
+  const currentOptions = Array.from(courseSelect.options);
+
+  // Save current selection
+  const savedValue = currentCourse;
+
+  // Clear and rebuild options with saved course first
+  courseSelect.innerHTML = '';
+
+  // Add saved course at the top if it exists
+  if (courses[savedValue]) {
+    const option = document.createElement('option');
+    option.value = savedValue;
+    option.textContent = `${courses[savedValue].flag} ${courses[savedValue].name}`;
+    courseSelect.appendChild(option);
+  }
+
+  // Add remaining courses
+  courseIds.forEach(courseId => {
+    if (courseId !== savedValue) {
+      const option = document.createElement('option');
+      option.value = courseId;
+      option.textContent = `${courses[courseId].flag} ${courses[courseId].name}`;
+      courseSelect.appendChild(option);
+    }
+  });
+
+  // Set the saved value as selected
+  courseSelect.value = savedValue;
+  console.log('Course selector initialized with:', savedValue);
 }
 
 function moveToNextUnmastered() {
@@ -1434,6 +1484,7 @@ async function init() {
 
     loadProgress();
     setupEventListeners();
+    initializeCourseSelector();
     renderView('dashboard');
     console.log('Initialization complete!');
   } catch (error) {
