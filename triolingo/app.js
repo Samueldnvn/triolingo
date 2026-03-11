@@ -345,6 +345,160 @@ const courses = {
             ]
           }
         ]
+      },
+{
+        id: 5,
+        title: 'Limits & Continuity',
+        description: 'Concept of limits, limit laws, one-sided limits, continuity, and the Squeeze Theorem',
+        lessons: [
+          {id: '5-1', title: 'Concept of limits and limit laws', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '5-2', title: 'One-sided limits and limits at infinity', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '5-3', title: 'Continuity and types of discontinuities', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '5-4', title: 'The Squeeze Theorem', xp: 0, type: 'lesson', lessonText: '', questions: []}
+        ]
+      },
+      {
+        id: 6,
+        title: 'Derivatives',
+        description: 'Derivative definition and rules including power, sum, constant, product, quotient, chain, and derivatives of special functions',
+        lessons: [
+          {id: '6-1', title: 'Derivative definition from limits', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '6-2', title: 'Power, sum, and constant rules', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '6-3', title: 'Product and quotient rules', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '6-4', title: 'Chain rule', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '6-5', title: 'Derivatives of exponential and logarithmic functions', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '6-6', title: 'Derivatives of trigonometric and inverse trig functions', xp: 0, type: 'lesson', lessonText: '', questions: []}
+        ]
+      },
+      {
+        id: 7,
+        title: 'Applications of Derivatives',
+        description: 'Applications including tangent lines, related rates, critical points, concavity, optimization, and L\'Hôpital\'s Rule',
+        lessons: [
+          {id: '7-1', title: 'Tangent lines and linear approximation', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '7-2', title: 'Related rates', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '7-3', title: 'Critical points and the first derivative test', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '7-4', title: 'Concavity and the second derivative test', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '7-5', title: 'Optimization problems', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '7-6', title: "L'Hôpital's Rule", xp: 0, type: 'lesson', lessonText: '', questions: []}
+        ]
+      },
+      {
+        id: 8,
+        title: 'Integrals',
+        description: 'Antiderivatives, Riemann sums, definite integrals, and the Fundamental Theorem of Calculus',
+        lessons: [
+          {id: '8-1', title: 'Antiderivatives and indefinite integrals', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '8-2', title: 'Riemann sums and definite integrals', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '8-3', title: 'The Fundamental Theorem of Calculus', xp: 0, type: 'lesson', lessonText: '', questions: []}
+        ]
+      },
+      {
+        id: 9,
+        title: 'Integration Techniques',
+        description: 'Advanced integration techniques including substitution, integration by parts, trig integrals, partial fractions, and improper integrals',
+        lessons: [
+          {id: '9-1', title: 'Substitution (u-substitution)', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '9-2', title: 'Integration by parts', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '9-3', title: 'Trigonometric integrals and substitutions', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '9-4', title: 'Partial fraction decomposition', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '9-5', title: 'Improper integrals', xp: 0, type: 'lesson', lessonText: '', questions: []}
+        ]
+      },
+      {
+        id: 10,
+        title: 'Applications of Integrals',
+        description: 'Applications including area between curves, volumes, arc length, surface area, and differential equations',
+        lessons: [
+          {id: '10-1', title: 'Area between curves', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '10-2', title: 'Volumes of solids (disk, washer, shell)', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '10-3', title: 'Arc length and surface area', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '10-4', title: 'Basic separable differential equations', xp: 0, type: 'lesson', lessonText: '', questions: []}
+        ]
+      },
+      {
+        id: 11,
+        title: 'Sequences & Series',
+        description: 'Sequences, infinite series, convergence tests, power series, and Taylor series',
+        lessons: [
+          {id: '11-1', title: 'Sequences and limits of sequences', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '11-2', title: 'Infinite series and geometric series', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '11-3', title: 'Convergence tests (comparison, ratio, root, integral, alternating)', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '11-4', title: 'Power series and radius of convergence', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '11-5', title: 'Taylor and Maclaurin series', xp: 0, type: 'lesson', lessonText: '', questions: []}
+        ]
+      },
+      {
+        id: 12,
+        title: 'Vectors & Geometry',
+        description: 'Vectors in 3D, dot product, cross product, lines, and planes in space',
+        lessons: [
+          {id: '12-1', title: 'Vectors in 3D, dot product, and cross product', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '12-2', title: 'Lines and planes in space', xp: 0, type: 'lesson', lessonText: '', questions: []}
+        ]
+      },
+      {
+        id: 13,
+        title: 'Vector-Valued Functions',
+        description: 'Vector functions, velocity, acceleration, arc length, and curvature',
+        lessons: [
+          {id: '13-1', title: 'Vector functions, velocity, and acceleration', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '13-2', title: 'Arc length and curvature', xp: 0, type: 'lesson', lessonText: '', questions: []}
+        ]
+      },
+      {
+        id: 14,
+        title: 'Multivariable Functions',
+        description: 'Functions of several variables, level curves, partial derivatives, chain rule, gradient, and tangent planes',
+        lessons: [
+          {id: '14-1', title: 'Functions of several variables and level curves', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '14-2', title: 'Partial derivatives and higher partials', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '14-3', title: 'Chain rule in multiple variables', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '14-4', title: 'Gradient and directional derivatives', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '14-5', title: 'Tangent planes and linear approximation', xp: 0, type: 'lesson', lessonText: '', questions: []}
+        ]
+      },
+      {
+        id: 15,
+        title: 'Multivariable Optimization',
+        description: 'Critical points in multivariable functions and Lagrange multipliers',
+        lessons: [
+          {id: '15-1', title: 'Critical points in multivariable functions', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '15-2', title: 'Lagrange multipliers', xp: 0, type: 'lesson', lessonText: '', questions: []}
+        ]
+      },
+      {
+        id: 16,
+        title: 'Multiple Integrals',
+        description: 'Double integrals, iterated integrals, general regions, polar coordinates, triple integrals, and cylindrical/spherical coordinates',
+        lessons: [
+          {id: '16-1', title: 'Double integrals and iterated integrals', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '16-2', title: 'Double integrals over general regions', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '16-3', title: 'Polar coordinates in integration', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '16-4', title: 'Triple integrals', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '16-5', title: 'Cylindrical and spherical coordinates', xp: 0, type: 'lesson', lessonText: '', questions: []}
+        ]
+      },
+      {
+        id: 17,
+        title: 'Vector Calculus',
+        description: 'Vector fields, line integrals, conservative fields, potential functions, surface integrals, and flux',
+        lessons: [
+          {id: '17-1', title: 'Vector fields and line integrals', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '17-2', title: 'Conservative fields and potential functions', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '17-3', title: 'Surface integrals and flux', xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '17-4', title: 'Major Theorems', xp: 0, type: 'lesson', lessonText: '', questions: []}
+        ]
+      },
+      {
+        id: 18,
+        title: 'Major Theorems',
+        description: 'Green\'s Theorem, Stokes\' Theorem, and the Divergence Theorem',
+        lessons: [
+          {id: '18-1', title: "Green's Theorem", xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '18-2', title: "Stokes' Theorem", xp: 0, type: 'lesson', lessonText: '', questions: []},
+          {id: '18-3', title: 'Divergence Theorem', xp: 0, type: 'lesson', lessonText: '', questions: []}
+        ]
       }
     ]
   },
