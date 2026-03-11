@@ -1,5 +1,5 @@
 // AI - All Topics
-// Generated from lessons.json with unique lesson IDs
+// Generated from lessons.json
 
 window.aiAllTopics = {
   "courseName": "AI",
@@ -3324,41 +3324,965 @@ window.aiAllTopics = {
           "id": "3-6",
           "title": "Exponential",
           "unitTitle": "Important Distributions",
-          "xp": 20,
+          "xp": 92,
           "type": "lesson",
           "difficulty": "beginner",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Exponential Distribution\n\n## What is the Exponential Distribution?\n\nThe **Exponential distribution** models the time between events in a **Poisson process** - a process where events occur continuously and independently at a constant average rate.\n\n### Key Parameter\n\n**\u03bb (lambda)**: Rate parameter (events per unit time)\n\n### Relationship to Poisson\n\n- **Poisson**: Number of events in a fixed interval\n- **Exponential**: Time until the next event\n\nLooking at `diagrams/exponential-varying-lambda.png`, you can see how \u03bb affects the distribution.\n\n### Examples of Exponential Processes\n\n1. **Customer arrivals**: Time until next customer arrives\n2. **Equipment failure**: Time until equipment fails\n3. **Radioactive decay**: Time until next particle is emitted\n4. **Server response**: Time until server responds to request\n5. **Phone calls**: Time between consecutive calls\n\n## Probability Density Function (PDF)\n\n$$f(x) = \\lambda e^{-\\lambda x} \\text{ for } x \\geq 0$$\n\nWhere:\n- **\u03bb**: Rate parameter (\u03bb > 0)\n- **x**: Time (x \u2265 0)\n- **e**: Euler's number (\u2248 2.71828)\n\n### Properties of the PDF\n\n1. **Non-negative**: f(x) \u2265 0 for all x\n2. **Decaying**: Decreases exponentially as x increases\n3. **Continuous**: Defined for x \u2265 0\n4. **Starts at \u03bb**: f(0) = \u03bb\n\n### Effect of \u03bb\n\nLooking at `diagrams/exponential-varying-lambda.png`:\n\n- **Higher \u03bb**: Steeper initial drop, shorter waiting times\n- **Lower \u03bb**: Gentler decay, longer waiting times\n\n## Cumulative Distribution Function (CDF)\n\n$$F(x) = 1 - e^{-\\lambda x} \\text{ for } x \\geq 0$$\n\n**Probability that waiting time \u2264 x:**\n$$P(X \\leq x) = F(x) = 1 - e^{-\\lambda x}$$\n\n**Probability that waiting time > x:**\n$$P(X > x) = 1 - F(x) = e^{-\\lambda x}$$\n\n## Expected Value (Mean)\n\n$$E[X] = \\frac{1}{\\lambda}$$\n\n**Intuition:** If events occur at rate \u03bb per unit time, the average time between events is 1/\u03bb.\n\n**Example:** If \u03bb = 2 events/hour, average waiting time = 1/2 = 0.5 hours = 30 minutes.\n\n## Variance\n\n$$\\text{Var}(X) = \\frac{1}{\\lambda^2}$$\n\n**Standard deviation:**\n$$\\sigma = \\sqrt{\\text{Var}(X)} = \\frac{1}{\\lambda}$$\n\n**Key property:** For Exponential distribution, E[X] = \u03c3 = 1/\u03bb (mean equals standard deviation)\n\n## Memoryless Property\n\nThe Exponential distribution has a **unique memoryless property**:\n\n$$P(X > s + t \\mid X > s) = P(X > t)$$\n\n**Intuition:** The probability of waiting t more minutes, given you've already waited s minutes, is the same as if you just started waiting.\n\nLooking at `diagrams/exponential-memoryless.png`, the probability is the same whether you start from 0 or from time 2.\n\n**Example:** If you've waited 10 minutes for a bus, the probability of waiting another 5 minutes is the same as if you just arrived.\n\n### Mathematical Derivation\n\n$$P(X > s + t \\mid X > s) = \\frac{P(X > s + t)}{P(X > s)} = \\frac{e^{-\\lambda(s+t)}}{e^{-\\lambda s}} = e^{-\\lambda t} = P(X > t)$$\n\n### Why Memoryless?\n\n**Intuitive explanation:** Events occur independently at a constant rate. The system doesn't \"remember\" how long you've been waiting.\n\n**Physical interpretation:** In a Poisson process, the probability of an event occurring in the next instant is always \u03bb, regardless of history.\n\n## Applications in AI and ML\n\nLooking at `diagrams/exponential-applications.png`:\n\n1. **Network modeling**: Inter-arrival times of packets\n2. **Queueing theory**: Service times in M/M/1 queues\n3. **Survival analysis**: Time until event (failure, death)\n4. **Reliability engineering**: Time between failures\n5. **Waiting time analysis**: Customer service, call centers\n\n## Example: Customer Service\n\nCustomers arrive at rate \u03bb = 0.5 per minute (1 customer every 2 minutes).\n\n**Expected waiting time:** E[X] = 1/\u03bb = 2 minutes\n\n**Variance:** Var(X) = 1/\u03bb\u00b2 = 4 minutes\u00b2\n\n**Probability of waiting < 1 minute:**\n$$P(X < 1) = 1 - e^{-0.5 \\times 1} = 1 - e^{-0.5} \\approx 0.393$$\n\n**Probability of waiting > 3 minutes:**\n$$P(X > 3) = e^{-0.5 \\times 3} = e^{-1.5} \\approx 0.223$$\n\n**Memoryless property:** If you've already waited 2 minutes, P(wait another 2 minutes) = P(X > 2) = e^(-1) \u2248 0.368",
+          "questions": [
+            {
+              "id": "exponential-3-6-1",
+              "type": "typing",
+              "question": "What does the Exponential distribution model?",
+              "correctAnswer": [
+                "time between events in a Poisson process",
+                "time until next event",
+                "waiting time"
+              ],
+              "xp": 3,
+              "explanation": "The Exponential distribution models the time between events in a Poisson process, where events occur continuously and independently at a constant rate \u03bb"
+            },
+            {
+              "id": "exponential-3-6-2",
+              "type": "typing",
+              "question": "What is the relationship between Poisson and Exponential distributions?",
+              "correctAnswer": [
+                "Poisson models number of events, Exponential models time between events",
+                "Poisson counts events, Exponential measures time",
+                "complementary distributions"
+              ],
+              "xp": 3,
+              "explanation": "Poisson models the number of events in a fixed interval, while Exponential models the time until the next event"
+            },
+            {
+              "id": "exponential-3-6-3",
+              "type": "typing",
+              "question": "What is the PDF of an Exponential distribution?",
+              "correctAnswer": [
+                "f(x) = lambda * e^(-lambda*x)",
+                "\u03bbe^(-\u03bbx)",
+                "lambda e to the negative lambda x"
+              ],
+              "xp": 3,
+              "explanation": "The Exponential PDF is f(x) = \u03bbe^(-\u03bbx) for x \u2265 0"
+            },
+            {
+              "id": "exponential-3-6-4",
+              "type": "multiple-choice",
+              "question": "Which of these is an Exponential process example?",
+              "options": [
+                "Rolling a die",
+                "Time between customer arrivals",
+                "Height of people",
+                "Number of heads in 10 coin flips"
+              ],
+              "correct": 1,
+              "xp": 2,
+              "explanation": "Time between customer arrivals is an Exponential process - it's the time until the next event in a Poisson process"
+            },
+            {
+              "id": "exponential-3-6-5",
+              "type": "typing",
+              "question": "What is the expected value of an Exponential distribution?",
+              "correctAnswer": [
+                "1/lambda",
+                "1/\u03bb",
+                "1 divided by lambda"
+              ],
+              "xp": 4,
+              "explanation": "E[X] = 1/\u03bb for an Exponential distribution. The average waiting time is the reciprocal of the rate"
+            },
+            {
+              "id": "exponential-3-6-6",
+              "type": "typing",
+              "question": "What is the variance of an Exponential distribution?",
+              "correctAnswer": [
+                "1/lambda^2",
+                "1/\u03bb\u00b2",
+                "1 divided by lambda squared"
+              ],
+              "xp": 4,
+              "explanation": "Var(X) = 1/\u03bb\u00b2 for an Exponential distribution"
+            },
+            {
+              "id": "exponential-3-6-7",
+              "type": "typing",
+              "question": "For \u03bb=2, what is the expected value of an Exponential distribution?",
+              "correctAnswer": [
+                "0.5",
+                "1/2",
+                "one half"
+              ],
+              "xp": 4,
+              "explanation": "E[X] = 1/\u03bb = 1/2 = 0.5"
+            },
+            {
+              "id": "exponential-3-6-8",
+              "type": "typing",
+              "question": "What is the standard deviation of an Exponential distribution?",
+              "correctAnswer": [
+                "1/lambda",
+                "same as mean",
+                "1/\u03bb"
+              ],
+              "xp": 4,
+              "explanation": "For Exponential distribution, \u03c3 = E[X] = 1/\u03bb. The standard deviation equals the mean!"
+            },
+            {
+              "id": "exponential-3-6-9",
+              "type": "multiple-choice",
+              "question": "Looking at `diagrams/exponential-varying-lambda.png`, what happens when \u03bb increases?",
+              "options": [
+                "Curve decays faster",
+                "Curve decays slower",
+                "Curve becomes symmetric",
+                "Curve shifts right"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Higher \u03bb means steeper initial drop - the distribution decays faster, indicating shorter waiting times"
+            },
+            {
+              "id": "exponential-3-6-10",
+              "type": "multiple-choice",
+              "question": "What is the memoryless property formula?",
+              "options": [
+                "P(X > s+t | X > s) = P(X > t)",
+                "P(X = s+t) = P(X = s) + P(X = t)",
+                "E[X] = 1/\u03bb",
+                "Var(X) = 1/\u03bb\u00b2"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "The memoryless property states P(X > s+t | X > s) = P(X > t) - waiting t more minutes is independent of already waiting s minutes"
+            },
+            {
+              "id": "exponential-3-6-11",
+              "type": "multiple-choice",
+              "question": "Which distribution also has the memoryless property?",
+              "options": [
+                "Only Exponential",
+                "Normal, Poisson, and Exponential",
+                "Binomial and Exponential",
+                "All continuous distributions"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "The Exponential distribution is the only continuous distribution with the memoryless property. Geometric is the only discrete one with this property"
+            },
+            {
+              "id": "exponential-3-6-12",
+              "type": "multiple-choice",
+              "question": "Looking at `diagrams/exponential-memoryless.png`, what does the shaded region represent?",
+              "options": [
+                "Probability P(X < 1)",
+                "Expected value",
+                "Memoryless property",
+                "Variance"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "The shaded region shows P(X < 1) - the probability of waiting less than 1 unit of time"
+            },
+            {
+              "id": "exponential-3-6-13",
+              "type": "typing",
+              "question": "Looking at `diagrams/exponential-applications.png`, which application has \u03bb=2.0?",
+              "correctAnswer": [
+                "Equipment failure time",
+                "Equipment Failure Time",
+                "failure time"
+              ],
+              "xp": 5,
+              "explanation": "Equipment failure time has \u03bb=2.0, meaning the mean lifetime is 1/\u03bb = 0.5 years"
+            },
+            {
+              "id": "exponential-3-6-14",
+              "type": "typing",
+              "question": "For an Exponential distribution with \u03bb=0.5, what is P(X > 2)?",
+              "correctAnswer": [
+                "e^-1",
+                "0.368",
+                "approximately 0.368"
+              ],
+              "xp": 5,
+              "explanation": "P(X > 2) = e^(-\u03bbx) = e^(-0.5\u00d72) = e^(-1) \u2248 0.368"
+            },
+            {
+              "id": "exponential-3-6-15",
+              "type": "typing",
+              "question": "What is P(X \u2264 x) for an Exponential distribution?",
+              "correctAnswer": [
+                "1 - e^(-lambda*x)",
+                "1 - e^(-\u03bbx)",
+                "1 minus e to the negative lambda x"
+              ],
+              "xp": 5,
+              "explanation": "The CDF is F(x) = P(X \u2264 x) = 1 - e^(-\u03bbx) for x \u2265 0"
+            },
+            {
+              "id": "exponential-3-6-16",
+              "type": "typing",
+              "question": "If \u03bb=3 events/hour, what is the expected time between events?",
+              "correctAnswer": [
+                "1/3 hour",
+                "20 minutes",
+                "0.333 hours"
+              ],
+              "xp": 4,
+              "explanation": "E[X] = 1/\u03bb = 1/3 hours = 20 minutes"
+            },
+            {
+              "id": "exponential-3-6-17",
+              "type": "multiple-choice",
+              "question": "Why is the Exponential distribution memoryless?",
+              "options": [
+                "Events occur independently at constant rate",
+                "Because \u03bb is small",
+                "It's symmetric",
+                "It has infinite support"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "The Exponential distribution is memoryless because events in a Poisson process occur independently at a constant rate - the system doesn't remember past waiting time"
+            },
+            {
+              "id": "exponential-3-6-18",
+              "type": "multiple-choice",
+              "question": "Looking at `diagrams/exponential-varying-lambda.png`, which \u03bb gives the longest waiting times?",
+              "options": [
+                "\u03bb=0.5",
+                "\u03bb=1.0",
+                "\u03bb=2.0",
+                "\u03bb=3.0"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "\u03bb=0.5 gives the slowest decay, meaning the longest expected waiting time (E[X] = 1/\u03bb = 2)"
+            }
+          ]
         },
         {
           "id": "3-7",
           "title": "Gamma",
           "unitTitle": "Important Distributions",
-          "xp": 20,
+          "xp": 92,
           "type": "lesson",
           "difficulty": "beginner",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Gamma Distribution\n\n## What is the Gamma Distribution?\n\nThe **Gamma distribution** is a two-parameter family of continuous probability distributions that generalizes the Exponential and Chi-squared distributions.\n\n### Key Parameters\n\n- **\u03b1 (alpha)**: Shape parameter (\u03b1 > 0)\n- **\u03b2 (beta)**: Scale parameter (\u03b2 > 0)\n\n### Special Cases\n\nLooking at `diagrams/gamma-special-cases.png`:\n\n1. **\u03b1 = 1**: Exponential distribution\n2. **\u03b1 = k/2, \u03b2 = 2**: Chi-squared distribution with k degrees of freedom\n3. **Sum of n exponentials**: Gamma with \u03b1 = n\n\n## Probability Density Function (PDF)\n\n$$f(x) = \\frac{1}{\\beta^\\alpha \\Gamma(\\alpha)} x^{\\alpha-1} e^{-x/\\beta} \\text{ for } x > 0$$\n\nWhere:\n- **\u0393(\u03b1)**: Gamma function (generalized factorial)\n- **\u03b1**: Shape parameter\n- **\u03b2**: Scale parameter\n\n### Gamma Function\n\n$$\\Gamma(\\alpha) = \\int_0^\\infty t^{\\alpha-1} e^{-t} dt$$\n\n**Key properties:**\n- \u0393(1) = 1\n- \u0393(1/2) = \u221a\u03c0\n- \u0393(n+1) = n! (for integer n)\n\nLooking at `diagrams/gamma-varying-alpha.png`, you can see how \u03b1 affects the shape.\n\n## Effect of Parameters\n\n### Shape Parameter \u03b1\n\nLooking at `diagrams/gamma-varying-alpha.png` (\u03b2 fixed = 2):\n\n- **\u03b1 < 1**: Highly skewed, decreasing function\n- **\u03b1 = 1**: Exponential distribution (straight decay)\n- **\u03b1 > 1**: Mode at (\u03b1-1)\u03b2\n- **\u03b1 large**: Approaches normal distribution\n\n### Scale Parameter \u03b2\n\nLooking at `diagrams/gamma-varying-beta.png` (\u03b1 fixed = 3):\n\n- **Larger \u03b2**: More spread out, larger values\n- **Smaller \u03b2**: More concentrated, smaller values\n\n## Expected Value (Mean)\n\n$$E[X] = \\alpha \\beta$$\n\n**Intuition:** Mean scales with both shape and scale.\n\n## Variance\n\n$$\\text{Var}(X) = \\alpha \\beta^2$$\n\n**Standard deviation:**\n$$\\sigma = \\sqrt{\\alpha \\beta^2} = \\beta\\sqrt{\\alpha}$$\n\n## Relationship to Other Distributions\n\n### Gamma vs Exponential\n\nWhen \u03b1 = 1:\n$$\\text{Gamma}(\\alpha=1, \\beta) = \\text{Exponential}(\\lambda = 1/\\beta)$$\n\nLooking at `diagrams/gamma-special-cases.png`, the top-left panel shows this relationship.\n\n### Gamma vs Chi-squared\n\nWhen \u03b1 = k/2 and \u03b2 = 2:\n$$\\text{Gamma}(\\alpha=k/2, \\beta=2) = \\chi^2_k$$\n\nLooking at `diagrams/gamma-special-cases.png`, the top-right panel shows this relationship.\n\n### Sum of Exponentials\n\nThe sum of n independent Exponential(\u03bb) variables:\n$$\\sum_{i=1}^n X_i \\sim \\text{Gamma}(\\alpha=n, \\beta=1/\\lambda)$$\n\nLooking at `diagrams/gamma-special-cases.png`, the bottom-right panel illustrates this.\n\n## Poisson Process: Waiting Time\n\nIn a Poisson process with rate \u03bb:\n\n- Time until **1st event**: Exponential(\u03bb)\n- Time until **2nd event**: Gamma(\u03b1=2, \u03b2=1/\u03bb)\n- Time until **k-th event**: Gamma(\u03b1=k, \u03b2=1/\u03bb)\n\nLooking at `diagrams/gamma-special-cases.png`, the bottom-left panel shows waiting times for different k.\n\n## Applications in AI and ML\n\n1. **Bayesian inference**: Conjugate prior for rate parameters\n2. **Queueing theory**: Service time distributions\n3. **Reliability**: Component lifetime distributions\n4. **Model fitting**: Flexible distribution for positive data\n5. **Hierarchical models**: Hyperprior for Exponential/Poisson rates",
+          "questions": [
+            {
+              "id": "gamma-3-7-1",
+              "type": "typing",
+              "question": "What are the two parameters of a Gamma distribution?",
+              "correctAnswer": [
+                "alpha and beta",
+                "shape and scale",
+                "\u03b1 and \u03b2"
+              ],
+              "xp": 3,
+              "explanation": "The Gamma distribution has two parameters: \u03b1 (alpha) for shape and \u03b2 (beta) for scale"
+            },
+            {
+              "id": "gamma-3-7-2",
+              "type": "typing",
+              "question": "What is the expected value of a Gamma distribution?",
+              "correctAnswer": [
+                "alpha * beta",
+                "\u03b1\u03b2",
+                "shape times scale"
+              ],
+              "xp": 3,
+              "explanation": "E[X] = \u03b1\u03b2 for a Gamma distribution"
+            },
+            {
+              "id": "gamma-3-7-3",
+              "type": "typing",
+              "question": "What is the variance of a Gamma distribution?",
+              "correctAnswer": [
+                "alpha * beta^2",
+                "\u03b1\u03b2\u00b2",
+                "shape times scale squared"
+              ],
+              "xp": 3,
+              "explanation": "Var(X) = \u03b1\u03b2\u00b2 for a Gamma distribution"
+            },
+            {
+              "id": "gamma-3-7-4",
+              "type": "multiple-choice",
+              "question": "Which distribution is a special case of Gamma when \u03b1=1?",
+              "options": [
+                "Normal",
+                "Exponential",
+                "Uniform",
+                "Binomial"
+              ],
+              "correct": 1,
+              "xp": 2,
+              "explanation": "When \u03b1=1, the Gamma distribution becomes the Exponential distribution"
+            },
+            {
+              "id": "gamma-3-7-5",
+              "type": "typing",
+              "question": "Looking at `diagrams/gamma-varying-alpha.png`, what happens to the shape as \u03b1 increases?",
+              "correctAnswer": [
+                "becomes more symmetric",
+                "approaches normal",
+                "mode shifts right"
+              ],
+              "xp": 4,
+              "explanation": "As \u03b1 increases, the Gamma distribution becomes more symmetric and approaches a normal distribution"
+            },
+            {
+              "id": "gamma-3-7-6",
+              "type": "typing",
+              "question": "For Gamma(\u03b1=2, \u03b2=3), what is E[X]?",
+              "correctAnswer": [
+                "6",
+                "2*3",
+                "alpha times beta"
+              ],
+              "xp": 4,
+              "explanation": "E[X] = \u03b1\u03b2 = 2 \u00d7 3 = 6"
+            },
+            {
+              "id": "gamma-3-7-7",
+              "type": "typing",
+              "question": "Looking at `diagrams/gamma-varying-beta.png`, what happens when \u03b2 increases?",
+              "correctAnswer": [
+                "distribution becomes more spread out",
+                "wider",
+                "larger variance"
+              ],
+              "xp": 4,
+              "explanation": "When \u03b2 (scale) increases, the distribution becomes more spread out with larger values"
+            },
+            {
+              "id": "gamma-3-7-8",
+              "type": "typing",
+              "question": "What is \u0393(n) for a positive integer n?",
+              "correctAnswer": [
+                "(n-1)!",
+                "(n-1) factorial",
+                "n-1 factorial"
+              ],
+              "xp": 4,
+              "explanation": "For positive integer n, \u0393(n) = (n-1)!"
+            },
+            {
+              "id": "gamma-3-7-9",
+              "type": "multiple-choice",
+              "question": "Looking at `diagrams/gamma-special-cases.png`, which panel shows Gamma as sum of exponentials?",
+              "options": [
+                "Top-left",
+                "Top-right",
+                "Bottom-left",
+                "Bottom-right"
+              ],
+              "correct": 3,
+              "xp": 3,
+              "explanation": "The bottom-right panel shows the sum of n Exponential(\u03bb) variables = Gamma(\u03b1=n, \u03b2=1)"
+            },
+            {
+              "id": "gamma-3-7-10",
+              "type": "multiple-choice",
+              "question": "What is the mode of a Gamma distribution when \u03b1 > 1?",
+              "options": [
+                "0",
+                "\u03b2",
+                "(\u03b1-1)\u03b2",
+                "\u03b1\u03b2"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "When \u03b1 > 1, the mode of a Gamma distribution is at (\u03b1-1)\u03b2"
+            },
+            {
+              "id": "gamma-3-7-11",
+              "type": "multiple-choice",
+              "question": "What distribution is Gamma(\u03b1=k/2, \u03b2=2)?",
+              "options": [
+                "Exponential",
+                "Chi-squared with k degrees of freedom",
+                "Normal",
+                "Beta"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Gamma(\u03b1=k/2, \u03b2=2) is equivalent to Chi-squared distribution with k degrees of freedom"
+            },
+            {
+              "id": "gamma-3-7-12",
+              "type": "multiple-choice",
+              "question": "In a Poisson process, what is the distribution of waiting time for the k-th event?",
+              "options": [
+                "Exponential",
+                "Gamma(\u03b1=k)",
+                "Normal",
+                "Poisson"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "The waiting time for the k-th event in a Poisson process follows Gamma(\u03b1=k, \u03b2=1/\u03bb)"
+            },
+            {
+              "id": "gamma-3-7-13",
+              "type": "typing",
+              "question": "What is the sum of n independent Exponential(\u03bb) variables distributed as?",
+              "correctAnswer": [
+                "Gamma(\u03b1=n, \u03b2=1/\u03bb)",
+                "Gamma with shape n",
+                "Gamma(n, 1/\u03bb)"
+              ],
+              "xp": 5,
+              "explanation": "The sum of n independent Exponential(\u03bb) variables follows Gamma(\u03b1=n, \u03b2=1/\u03bb)"
+            },
+            {
+              "id": "gamma-3-7-14",
+              "type": "typing",
+              "question": "Looking at `diagrams/gamma-varying-alpha.png`, what shape does Gamma have when \u03b1 < 1?",
+              "correctAnswer": [
+                "highly skewed decreasing",
+                "decreasing function",
+                "no mode at 0"
+              ],
+              "xp": 5,
+              "explanation": "When \u03b1 < 1, the Gamma distribution is highly skewed with no mode (decreasing function)"
+            },
+            {
+              "id": "gamma-3-7-15",
+              "type": "typing",
+              "question": "For Gamma(\u03b1=5, \u03b2=2), what is Var(X)?",
+              "correctAnswer": [
+                "20",
+                "5*4",
+                "\u03b1\u03b2\u00b2"
+              ],
+              "xp": 5,
+              "explanation": "Var(X) = \u03b1\u03b2\u00b2 = 5 \u00d7 2\u00b2 = 5 \u00d7 4 = 20"
+            },
+            {
+              "id": "gamma-3-7-16",
+              "type": "typing",
+              "question": "What is \u0393(1/2)?",
+              "correctAnswer": [
+                "sqrt(pi)",
+                "\u221a\u03c0",
+                "square root of pi"
+              ],
+              "xp": 4,
+              "explanation": "\u0393(1/2) = \u221a\u03c0 \u2248 1.772"
+            },
+            {
+              "id": "gamma-3-7-17",
+              "type": "multiple-choice",
+              "question": "Why is Gamma used as a conjugate prior in Bayesian inference?",
+              "options": [
+                "It has nice mathematical properties",
+                "It's symmetric",
+                "It's discrete",
+                "It's always uniform"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Gamma is used as a conjugate prior because it has nice mathematical properties - the posterior is also Gamma when the likelihood is Poisson or Exponential"
+            },
+            {
+              "id": "gamma-3-7-18",
+              "type": "multiple-choice",
+              "question": "Looking at `diagrams/gamma-varying-beta.png`, which \u03b2 gives the most concentrated distribution?",
+              "options": [
+                "\u03b2=0.5",
+                "\u03b2=1",
+                "\u03b2=2",
+                "\u03b2=4"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "\u03b2=0.5 gives the most concentrated distribution because smaller scale means tighter clustering around the mean"
+            }
+          ]
         },
         {
           "id": "3-8",
           "title": "Beta",
           "unitTitle": "Important Distributions",
-          "xp": 20,
+          "xp": 92,
           "type": "lesson",
           "difficulty": "beginner",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Beta Distribution\n\n## What is the Beta Distribution?\n\nThe **Beta distribution** is a family of continuous probability distributions defined on the interval [0, 1]. It's extremely useful for modeling probabilities, proportions, and percentages.\n\n### Key Parameters\n\n- **\u03b1 (alpha)**: Shape parameter (\u03b1 > 0)\n- **\u03b2 (beta)**: Shape parameter (\u03b2 > 0)\n\n### Support\n\n**x \u2208 [0, 1]** - The Beta distribution is only defined for values between 0 and 1.\n\n## Probability Density Function (PDF)\n\n$$f(x) = \\frac{1}{B(\\alpha, \\beta)} x^{\\alpha-1} (1-x)^{\\beta-1} \\text{ for } 0 \\leq x \\leq 1$$\n\nWhere:\n- **B(\u03b1, \u03b2)**: Beta function (normalization constant)\n- **\u03b1, \u03b2**: Shape parameters\n\n### Beta Function\n\n$$B(\\alpha, \\beta) = \\frac{\\Gamma(\\alpha)\\Gamma(\\beta)}{\\Gamma(\\alpha + \\beta)}$$\n\nLooking at `diagrams/beta-symmetric.png`, you can see Beta distributions with \u03b1=\u03b2.\n\n## Effect of Parameters\n\n### Symmetric Parameters (\u03b1 = \u03b2)\n\nLooking at `diagrams/beta-symmetric.png`:\n\n- **\u03b1 = \u03b2 = 0.5**: U-shaped (probability near 0 and 1)\n- **\u03b1 = \u03b2 = 1**: Uniform(0, 1)\n- **\u03b1 = \u03b2 > 1**: Bell-shaped (concentrated around 0.5)\n- **\u03b1 = \u03b2 = 5**: Very concentrated around 0.5\n\n### Varying \u03b1 (Fixed \u03b2)\n\nLooking at `diagrams/beta-varying-alpha.png`:\n\n- **\u03b1 < \u03b2**: Skewed toward 0\n- **\u03b1 = \u03b2**: Symmetric around 0.5\n- **\u03b1 > \u03b2**: Skewed toward 1\n\n### Shape Summary\n\n1. **\u03b1 < 1, \u03b2 < 1**: U-shaped\n2. **\u03b1 = 1, \u03b2 = 1**: Uniform\n3. **\u03b1 > 1, \u03b2 > 1**: Unimodal (bell-shaped)\n4. **\u03b1 < 1, \u03b2 > 1**: Skewed toward 0\n5. **\u03b1 > 1, \u03b2 < 1**: Skewed toward 1\n\n## Expected Value (Mean)\n\n$$E[X] = \\frac{\\alpha}{\\alpha + \\beta}$$\n\n**Intuition:** The mean is weighted by the parameters.\n\n## Variance\n\n$$\\text{Var}(X) = \\frac{\\alpha\\beta}{(\\alpha + \\beta)^2(\\alpha + \\beta + 1)}$$\n\n**Intuition:** As \u03b1+\u03b2 increases, variance decreases (more certainty).\n\n## Special Cases\n\n### Uniform Distribution\n\nWhen \u03b1 = \u03b2 = 1:\n$$\\text{Beta}(1, 1) = \\text{Uniform}(0, 1)$$\n\nLooking at `diagrams/beta-applications.png`, the top-left panel shows this.\n\n### Skewed Distributions\n\nLooking at `diagrams/beta-applications.png`, the top-right panel shows:\n- **\u03b1 = 5, \u03b2 = 1**: Skewed toward 0 (left-skewed)\n- **\u03b1 = 1, \u03b2 = 5**: Skewed toward 1 (right-skewed)\n\n### U-Shaped Distribution\n\nWhen \u03b1, \u03b2 < 1:\n- High probability near 0 and 1\n- Low probability in the middle\n\nLooking at `diagrams/beta-applications.png`, the bottom-left panel shows this.\n\n## Applications in AI and ML\n\n### Bayesian Inference\n\nLooking at `diagrams/beta-applications.png`, the bottom-right panel shows Beta as a prior for success probability:\n\n1. **Conjugate prior**: For Bernoulli and Binomial likelihoods\n2. **Prior beliefs**: Encode domain knowledge about probabilities\n3. **Posterior updating**: Easy to update with new data\n\n**Example:** If you believe success probability is around 50% with moderate certainty:\n- Prior: Beta(2, 2) (weak belief)\n- Prior: Beta(5, 5) (strong belief)\n\n### A/B Testing\n\n- Model conversion rates with Beta distributions\n- Credible intervals for success probabilities\n- Compare variants using posterior samples\n\n### Topic Modeling (LDA)\n\n- Dirichlet (multivariate generalization of Beta)\n- Model topic-word distributions\n- Model document-topic distributions\n\n### Reinforcement Learning\n\n- Model success rates in bandit problems\n- Thompson sampling with Beta posteriors\n\n### Model Evaluation\n\n- Confidence intervals for accuracy\n- Uncertainty quantification for probabilities",
+          "questions": [
+            {
+              "id": "beta-3-8-1",
+              "type": "typing",
+              "question": "What is the support of the Beta distribution?",
+              "correctAnswer": [
+                "[0, 1]",
+                "0 to 1",
+                "between 0 and 1"
+              ],
+              "xp": 3,
+              "explanation": "The Beta distribution is defined on the interval [0, 1] - it's used for probabilities and proportions"
+            },
+            {
+              "id": "beta-3-8-2",
+              "type": "typing",
+              "question": "What are the two parameters of a Beta distribution?",
+              "correctAnswer": [
+                "alpha and beta",
+                "shape parameters",
+                "\u03b1 and \u03b2"
+              ],
+              "xp": 3,
+              "explanation": "The Beta distribution has two shape parameters: \u03b1 (alpha) and \u03b2 (beta), both positive"
+            },
+            {
+              "id": "beta-3-8-3",
+              "type": "typing",
+              "question": "What is the expected value of a Beta distribution?",
+              "correctAnswer": [
+                "alpha/(alpha+beta)",
+                "\u03b1/(\u03b1+\u03b2)",
+                "shape sum ratio"
+              ],
+              "xp": 3,
+              "explanation": "E[X] = \u03b1/(\u03b1+\u03b2) for a Beta distribution"
+            },
+            {
+              "id": "beta-3-8-4",
+              "type": "multiple-choice",
+              "question": "Which distribution is a special case of Beta when \u03b1=\u03b2=1?",
+              "options": [
+                "Normal",
+                "Uniform(0,1)",
+                "Exponential",
+                "Chi-squared"
+              ],
+              "correct": 1,
+              "xp": 2,
+              "explanation": "When \u03b1=\u03b2=1, the Beta distribution becomes Uniform(0, 1)"
+            },
+            {
+              "id": "beta-3-8-5",
+              "type": "typing",
+              "question": "Looking at `diagrams/beta-symmetric.png`, what shape does Beta have when \u03b1=\u03b2 < 1?",
+              "correctAnswer": [
+                "U-shaped",
+                "bimodal at ends",
+                "high near 0 and 1"
+              ],
+              "xp": 4,
+              "explanation": "When \u03b1=\u03b2 < 1, the Beta distribution is U-shaped with high probability near 0 and 1"
+            },
+            {
+              "id": "beta-3-8-6",
+              "type": "typing",
+              "question": "For Beta(\u03b1=2, \u03b2=3), what is E[X]?",
+              "correctAnswer": [
+                "2/5",
+                "0.4",
+                "alpha/(alpha+beta)"
+              ],
+              "xp": 4,
+              "explanation": "E[X] = \u03b1/(\u03b1+\u03b2) = 2/(2+3) = 2/5 = 0.4"
+            },
+            {
+              "id": "beta-3-8-7",
+              "type": "typing",
+              "question": "Looking at `diagrams/beta-varying-alpha.png`, when is the distribution skewed toward 1?",
+              "correctAnswer": [
+                "when alpha > beta",
+                "\u03b1 > \u03b2",
+                "first parameter larger"
+              ],
+              "xp": 4,
+              "explanation": "When \u03b1 > \u03b2, the Beta distribution is skewed toward 1 (right-skewed)"
+            },
+            {
+              "id": "beta-3-8-8",
+              "type": "typing",
+              "question": "What happens to variance as \u03b1+\u03b2 increases?",
+              "correctAnswer": [
+                "decreases",
+                "more certainty",
+                "smaller variance"
+              ],
+              "xp": 4,
+              "explanation": "As \u03b1+\u03b2 increases, variance decreases - more parameters means more certainty about the probability"
+            },
+            {
+              "id": "beta-3-8-9",
+              "type": "multiple-choice",
+              "question": "Looking at `diagrams/beta-applications.png`, which panel shows Bayesian prior beliefs?",
+              "options": [
+                "Top-left",
+                "Top-right",
+                "Bottom-left",
+                "Bottom-right"
+              ],
+              "correct": 3,
+              "xp": 3,
+              "explanation": "The bottom-right panel shows different Beta priors (weak, strong, skeptical) for success probability"
+            },
+            {
+              "id": "beta-3-8-10",
+              "type": "multiple-choice",
+              "question": "What is the shape of Beta when \u03b1=5, \u03b2=1?",
+              "options": [
+                "U-shaped",
+                "Uniform",
+                "Skewed toward 0",
+                "Skewed toward 1"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "When \u03b1=5, \u03b2=1 (\u03b1 > \u03b2), the Beta distribution is skewed toward 0 (left-skewed)"
+            },
+            {
+              "id": "beta-3-8-11",
+              "type": "multiple-choice",
+              "question": "Why is Beta useful for Bayesian inference?",
+              "options": [
+                "It's conjugate to Bernoulli/Binomial",
+                "It's always symmetric",
+                "It's discrete",
+                "It has infinite support"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Beta is conjugate to Bernoulli and Binomial likelihoods - the posterior is also Beta, making computation easy"
+            },
+            {
+              "id": "beta-3-8-12",
+              "type": "multiple-choice",
+              "question": "Looking at `diagrams/beta-applications.png`, what does the U-shaped distribution represent?",
+              "options": [
+                "Certainty about extremes",
+                "Uniform distribution",
+                "Skewed beliefs",
+                "Strong prior"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "The U-shaped Beta (\u03b1=\u03b2=0.5) represents belief that the probability is likely near 0 or 1, not in the middle"
+            },
+            {
+              "id": "beta-3-8-13",
+              "type": "typing",
+              "question": "What is the Beta function B(\u03b1, \u03b2) in terms of Gamma?",
+              "correctAnswer": [
+                "Gamma(alpha)*Gamma(beta)/Gamma(alpha+beta)",
+                "\u0393(\u03b1)\u0393(\u03b2)/\u0393(\u03b1+\u03b2)",
+                "product over sum"
+              ],
+              "xp": 5,
+              "explanation": "The Beta function B(\u03b1, \u03b2) = \u0393(\u03b1)\u0393(\u03b2)/\u0393(\u03b1+\u03b2) - it's the normalization constant"
+            },
+            {
+              "id": "beta-3-8-14",
+              "type": "typing",
+              "question": "Looking at `diagrams/beta-symmetric.png`, which Beta distribution is most concentrated around 0.5?",
+              "correctAnswer": [
+                "Alpha=5, Beta=5",
+                "Beta(5,5)",
+                "large parameters"
+              ],
+              "xp": 5,
+              "explanation": "Beta(5,5) is most concentrated around 0.5 - larger symmetric parameters mean more certainty"
+            },
+            {
+              "id": "beta-3-8-15",
+              "type": "typing",
+              "question": "What distribution does Beta generalize for multivariate case?",
+              "correctAnswer": [
+                "Dirichlet",
+                "multivariate Beta",
+                "simplex distribution"
+              ],
+              "xp": 5,
+              "explanation": "The Dirichlet distribution is the multivariate generalization of the Beta distribution"
+            },
+            {
+              "id": "beta-3-8-16",
+              "type": "typing",
+              "question": "For Beta(\u03b1=3, \u03b2=3), what is the mode?",
+              "correctAnswer": [
+                "0.5",
+                "1/2",
+                "alpha-1 / alpha+beta-2"
+              ],
+              "xp": 4,
+              "explanation": "For \u03b1,\u03b2 > 1, mode = (\u03b1-1)/(\u03b1+\u03b2-2) = (3-1)/(3+3-2) = 2/4 = 0.5"
+            },
+            {
+              "id": "beta-3-8-17",
+              "type": "multiple-choice",
+              "question": "In A/B testing, what does Beta model?",
+              "options": [
+                "Conversion rates",
+                "Time between events",
+                "Customer counts",
+                "Revenue"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "In A/B testing, Beta distributions are used to model conversion rates (probabilities between 0 and 1)"
+            },
+            {
+              "id": "beta-3-8-18",
+              "type": "multiple-choice",
+              "question": "Looking at `diagrams/beta-varying-alpha.png`, what happens when \u03b1 increases with \u03b2 fixed?",
+              "options": [
+                "Skews toward 1",
+                "Skews toward 0",
+                "Becomes more symmetric",
+                "Becomes U-shaped"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "When \u03b1 increases with \u03b2 fixed, the distribution skews toward 1 (more weight on higher values)"
+            }
+          ]
         },
         {
           "id": "3-9",
           "title": "Dirichlet",
           "unitTitle": "Important Distributions",
-          "xp": 20,
+          "xp": 92,
           "type": "lesson",
           "difficulty": "beginner",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Dirichlet Distribution\n\n## What is the Dirichlet Distribution?\n\nThe **Dirichlet distribution** is a multivariate generalization of the Beta distribution. It models probabilities over a **simplex** - the space where all components are non-negative and sum to 1.\n\n### Key Parameters\n\n- **\u03b1\u2081, \u03b1\u2082, ..., \u03b1_K**: K positive concentration parameters\n- **Vector notation**: \u03b1 = (\u03b1\u2081, \u03b1\u2082, ..., \u03b1_K)\n\n### Support\n\n**Simplex**: {x = (x\u2081, x\u2082, ..., x_K) : x\u1d62 \u2265 0, \u03a3x\u1d62 = 1}\n\nThe Dirichlet distribution is only defined for vectors where all components are non-negative and sum to 1.\n\n## Probability Density Function (PDF)\n\n$$f(\\mathbf{x}) = \\frac{1}{B(\\boldsymbol{\\alpha})} \\prod_{i=1}^K x_i^{\\alpha_i - 1}$$\n\nWhere:\n- **B(\u03b1)**: Multivariate Beta function\n- **\u03b1\u1d62**: Concentration parameters\n- **x\u1d62**: Probability components\n\n### Multivariate Beta Function\n\n$$B(\\boldsymbol{\\alpha}) = \\frac{\\prod_{i=1}^K \\Gamma(\\alpha_i)}{\\Gamma(\\sum_{i=1}^K \\alpha_i)}$$\n\nLooking at `diagrams/dirichlet-simplex.png`, you can see Dirichlet distributions on a 2D simplex (K=3).\n\n## Visualizing the Simplex\n\nFor K=3, the simplex is a triangle:\n- **Corner x\u2081**: (1, 0, 0)\n- **Corner x\u2082**: (0, 1, 0)\n- **Corner x\u2083**: (0, 0, 1)\n- **Center**: (1/3, 1/3, 1/3)\n\nLooking at `diagrams/dirichlet-simplex.png`, each panel shows different parameter combinations.\n\n## Effect of Parameters\n\n### Symmetric Parameters (\u03b1\u2081 = \u03b1\u2082 = ... = \u03b1_K = \u03b1)\n\nLooking at `diagrams/dirichlet-simplex.png`:\n\n- **\u03b1 < 1**: Sparse (concentrated at corners)\n- **\u03b1 = 1**: Uniform (even distribution)\n- **\u03b1 > 1**: Concentrated (bunched around center)\n- **\u03b1 large**: Very concentrated\n\n### Asymmetric Parameters\n\nLooking at `diagrams/dirichlet-asymmetric.png`:\n\n- **Higher \u03b1\u1d62**: More probability mass near x\u1d62 corner\n- **Lower \u03b1\u1d62**: Less probability mass near x\u1d62 corner\n\n**Bias direction:** Distribution shifts toward corners with larger \u03b1\u1d62 values.\n\n## Expected Value\n\n$$E[x_i] = \\frac{\\alpha_i}{\\sum_{j=1}^K \\alpha_j}$$\n\n**Intuition:** The expected value for each component is proportional to its concentration parameter.\n\n## Variance\n\n$$\\text{Var}(x_i) = \\frac{\\alpha_i (\\alpha_0 - \\alpha_i)}{\\alpha_0^2 (\\alpha_0 + 1)}$$\n\nWhere \u03b1\u2080 = \u03a3\u03b1\u2c7c (sum of all parameters).\n\n**Covariance:**\n$$\\text{Cov}(x_i, x_j) = \\frac{-\\alpha_i \\alpha_j}{\\alpha_0^2 (\\alpha_0 + 1)} \\text{ for } i \\neq j$$\n\n**Negative covariance:** Components compete - if one is large, others tend to be small.\n\n## Relationship to Beta Distribution\n\nWhen K = 2:\n$$\\text{Dirichlet}(\\alpha_1, \\alpha_2) = \\text{Beta}(\\alpha_1, \\alpha_2)$$\n\nLooking at `diagrams/dirichlet-applications.png`, the top-left panel shows this relationship.\n\n**Proof:** For K=2, x\u2081 + x\u2082 = 1, so x\u2082 = 1 - x\u2081. The Dirichlet reduces to Beta.\n\n## Concentration Parameter\n\n**Total concentration:** \u03b1\u2080 = \u03a3\u03b1\u1d62\n\n- **\u03b1\u2080 < K**: Sparse, components are independent\n- **\u03b1\u2080 = K**: Uniform distribution\n- **\u03b1\u2080 > K**: Concentrated, correlated components\n\nLooking at `diagrams/dirichlet-applications.png`, the bottom-right panel shows how concentration affects spread.\n\n## Applications in AI and ML\n\n### Topic Modeling (LDA)\n\nLooking at `diagrams/dirichlet-applications.png`:\n\n1. **Document-Topic Distribution** (top-right):\n   - Each document has a distribution over topics\n   - Dirichlet prior: document covers few topics\n   - Sparse: most documents focus on 1-3 topics\n\n2. **Word-Topic Distribution** (bottom-left):\n   - Each topic has a distribution over words\n   - Dirichlet prior: topic is focused\n   - Sparse: each topic has characteristic words\n\n### Bayesian Inference\n\n1. **Multinomial conjugate prior**:\n   - Dirichlet is conjugate to Multinomial\n   - Posterior is also Dirichlet\n   - Easy Bayesian updating\n\n2. **Hierarchical models**:\n   - Hyperprior for categorical probabilities\n   - Shrinkage toward uniform\n\n### Natural Language Processing\n\n1. **Latent Dirichlet Allocation (LDA)**:\n   - Discover hidden topics in documents\n   - Two Dirichlet priors\n   - State-of-the-art topic model\n\n2. **Word embeddings**:\n   - Contextual word distributions\n   - Semantic similarity\n\n### Reinforcement Learning\n\n1. **Multi-armed bandits**:\n   - Thompson sampling\n   - Explore vs exploit\n\n2. **Policy gradient**:\n   - Policy parameterization\n   - Action probabilities\n\n### Computer Vision\n\n1. **Image segmentation**:\n   - Pixel class probabilities\n   - Spatial smoothness\n\n2. **Object recognition**:\n   - Class probabilities\n   - Scene understanding",
+          "questions": [
+            {
+              "id": "dirichlet-3-9-1",
+              "type": "typing",
+              "question": "What is the Dirichlet distribution a generalization of?",
+              "correctAnswer": [
+                "Beta distribution",
+                "multivariate Beta",
+                "Beta to K dimensions"
+              ],
+              "xp": 3,
+              "explanation": "The Dirichlet distribution is the multivariate generalization of the Beta distribution to K dimensions"
+            },
+            {
+              "id": "dirichlet-3-9-2",
+              "type": "typing",
+              "question": "What is the support of the Dirichlet distribution?",
+              "correctAnswer": [
+                "simplex",
+                "vectors that sum to 1",
+                "non-negative summing to 1"
+              ],
+              "xp": 3,
+              "explanation": "The Dirichlet distribution is defined on the simplex - vectors where all components are non-negative and sum to 1"
+            },
+            {
+              "id": "dirichlet-3-9-3",
+              "type": "typing",
+              "question": "What is the expected value E[x_i] of a Dirichlet distribution?",
+              "correctAnswer": [
+                "alpha_i / sum(alpha)",
+                "\u03b1\u1d62 / \u03a3\u03b1\u2c7c",
+                "parameter over sum"
+              ],
+              "xp": 3,
+              "explanation": "E[x_i] = \u03b1\u1d62 / \u03a3\u03b1\u2c7c - each component's expected value is proportional to its concentration parameter"
+            },
+            {
+              "id": "dirichlet-3-9-4",
+              "type": "multiple-choice",
+              "question": "When K=2, what distribution is Dirichlet equivalent to?",
+              "options": [
+                "Normal",
+                "Beta",
+                "Gamma",
+                "Exponential"
+              ],
+              "correct": 1,
+              "xp": 2,
+              "explanation": "When K=2, the Dirichlet distribution is equivalent to the Beta distribution"
+            },
+            {
+              "id": "dirichlet-3-9-5",
+              "type": "typing",
+              "question": "Looking at `diagrams/dirichlet-simplex.png`, what shape does Dirichlet have when \u03b1 < 1?",
+              "correctAnswer": [
+                "sparse",
+                "concentrated at corners",
+                "sparse corners"
+              ],
+              "xp": 4,
+              "explanation": "When \u03b1 < 1, the Dirichlet distribution is sparse - concentrated at the corners of the simplex"
+            },
+            {
+              "id": "dirichlet-3-9-6",
+              "type": "typing",
+              "question": "Looking at `diagrams/dirichlet-simplex.png`, what shape does Dirichlet have when \u03b1 = 1?",
+              "correctAnswer": [
+                "uniform",
+                "even distribution",
+                "flat"
+              ],
+              "xp": 4,
+              "explanation": "When \u03b1 = 1, the Dirichlet distribution is uniform - evenly distributed across the simplex"
+            },
+            {
+              "id": "dirichlet-3-9-7",
+              "type": "typing",
+              "question": "Looking at `diagrams/dirichlet-simplex.png`, what happens when \u03b1 becomes large?",
+              "correctAnswer": [
+                "concentrated around center",
+                "very concentrated",
+                "bunched together"
+              ],
+              "xp": 4,
+              "explanation": "When \u03b1 becomes large, the Dirichlet distribution becomes very concentrated around the center of the simplex"
+            },
+            {
+              "id": "dirichlet-3-9-8",
+              "type": "typing",
+              "question": "What is the covariance between different components of Dirichlet?",
+              "correctAnswer": [
+                "negative",
+                "components compete",
+                "negative correlation"
+              ],
+              "xp": 4,
+              "explanation": "Covariance between different Dirichlet components is negative - they compete because components must sum to 1"
+            },
+            {
+              "id": "dirichlet-3-9-9",
+              "type": "multiple-choice",
+              "question": "Looking at `diagrams/dirichlet-asymmetric.png`, which parameter combination biases toward x\u2081?",
+              "options": [
+                "\u03b1=(3,1,1)",
+                "\u03b1=(1,3,1)",
+                "\u03b1=(1,1,3)",
+                "\u03b1=(1,1,1)"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "\u03b1=(3,1,1) has the largest first parameter, so it biases toward the x\u2081 corner"
+            },
+            {
+              "id": "dirichlet-3-9-10",
+              "type": "multiple-choice",
+              "question": "What is LDA (Latent Dirichlet Allocation)?",
+              "options": [
+                "A topic modeling algorithm",
+                "A regression method",
+                "A clustering algorithm",
+                "A dimensionality reduction method"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "LDA (Latent Dirichlet Allocation) is a topic modeling algorithm that uses Dirichlet distributions to model topics"
+            },
+            {
+              "id": "dirichlet-3-9-11",
+              "type": "multiple-choice",
+              "question": "Looking at `diagrams/dirichlet-applications.png`, which panel shows word-topic distribution?",
+              "options": [
+                "Top-left",
+                "Top-right",
+                "Bottom-left",
+                "Bottom-right"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "The bottom-left panel shows the word-topic distribution in LDA - how words are distributed across topics"
+            },
+            {
+              "id": "dirichlet-3-9-12",
+              "type": "multiple-choice",
+              "question": "What distribution is Dirichlet conjugate to?",
+              "options": [
+                "Normal",
+                "Multinomial",
+                "Poisson",
+                "Exponential"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Dirichlet is conjugate to Multinomial - the posterior is also Dirichlet when the likelihood is Multinomial"
+            },
+            {
+              "id": "dirichlet-3-9-13",
+              "type": "typing",
+              "question": "Looking at `diagrams/dirichlet-asymmetric.png`, how does the distribution behave with asymmetric parameters?",
+              "correctAnswer": [
+                "shifts toward corners with larger alpha",
+                "biased toward high alpha",
+                "non-uniform distribution"
+              ],
+              "xp": 5,
+              "explanation": "With asymmetric parameters, the Dirichlet distribution shifts toward corners with larger \u03b1 values"
+            },
+            {
+              "id": "dirichlet-3-9-14",
+              "type": "typing",
+              "question": "For Dirichlet(\u03b1=(2,3,5)), what is E[x\u2081]?",
+              "correctAnswer": [
+                "2/10",
+                "0.2",
+                "\u03b1\u2081/\u03a3\u03b1"
+              ],
+              "xp": 5,
+              "explanation": "E[x\u2081] = \u03b1\u2081/\u03a3\u03b1 = 2/(2+3+5) = 2/10 = 0.2"
+            },
+            {
+              "id": "dirichlet-3-9-15",
+              "type": "typing",
+              "question": "Looking at `diagrams/dirichlet-applications.png`, what does the document-topic distribution show?",
+              "correctAnswer": [
+                "how topics are distributed in documents",
+                "topic proportions per document",
+                "which topics a document covers"
+              ],
+              "xp": 5,
+              "explanation": "The document-topic distribution shows how topics are distributed in documents - which topics each document covers and their proportions"
+            },
+            {
+              "id": "dirichlet-3-9-16",
+              "type": "typing",
+              "question": "What is the total concentration parameter \u03b1\u2080?",
+              "correctAnswer": [
+                "sum of all alpha_i",
+                "\u03a3\u03b1\u1d62",
+                "total concentration"
+              ],
+              "xp": 4,
+              "explanation": "\u03b1\u2080 = \u03a3\u03b1\u1d62 is the total concentration - the sum of all Dirichlet parameters"
+            },
+            {
+              "id": "dirichlet-3-9-17",
+              "type": "multiple-choice",
+              "question": "Why does Dirichlet have negative covariance between components?",
+              "options": [
+                "Components must sum to 1",
+                "Parameters are negative",
+                "It's always zero",
+                "Components are independent"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Dirichlet has negative covariance between components because they must sum to 1 - if one component is large, others must be small"
+            },
+            {
+              "id": "dirichlet-3-9-18",
+              "type": "multiple-choice",
+              "question": "Looking at `diagrams/dirichlet-simplex.png`, what is the shape when \u03b1 = (0.5, 0.5, 0.5)?",
+              "options": [
+                "Uniform",
+                "Concentrated at center",
+                "Sparse at corners",
+                "Single corner"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "When \u03b1 < 1, the Dirichlet is sparse - concentrated at the corners of the simplex"
+            }
+          ]
         }
       ]
     },
