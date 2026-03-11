@@ -507,7 +507,6 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
 
 /* Lesson Content Styles */
 .lesson-content {
-  background: var(--bg-primary);
   margin-bottom: var(--space-xl);
 }
 
@@ -518,6 +517,9 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
   margin-bottom: var(--space-lg);
   padding-bottom: var(--space-sm);
   border-bottom: 2px solid var(--border-color);
+  background: var(--bg-secondary);
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
 }
 
 .lesson-text-content {
@@ -635,16 +637,16 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
 }
 
 .question-text {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-xxl);
 }
 
 .options-container {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: var(--space-md);
 }
 
 /* Vertical layout for multiple choice options */
@@ -696,7 +698,7 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
 
 /* Answer Feedback Styles */
 .answer-feedback {
-  margin-top: var(--space-lg);
+  margin-top: var(--space-xxl);
   padding: var(--space-lg);
   border-radius: var(--radius-md);
   border: 2px solid;
@@ -753,13 +755,14 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
 /* Typing Input Styles */
 .typing-input {
   width: 100%;
-  padding: var(--space-md);
+  padding: var(--space-lg);
   border: 2px solid var(--border-color);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   background: var(--bg-primary);
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text-primary);
   transition: border-color 0.2s ease;
+  margin-top: var(--space-md);
 }
 
 .typing-input:focus {
@@ -1407,10 +1410,10 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
 
 .typing-input {
   width: 100%;
-  padding: var(--space-md);
+  padding: var(--space-lg);
   font-size: 18px;
   border: 2px solid var(--border-color);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   background: var(--bg-secondary);
   color: var(--text-primary);
   transition: all 0.2s ease;
