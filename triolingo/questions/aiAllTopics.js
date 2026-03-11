@@ -8445,6 +8445,640 @@ window.aiAllTopics = {
           "questions": []
         }
       ]
+    },
+    {
+      "unitId": "94",
+      "unitName": "Calculus I: Limits & Continuity",
+      "lessons": [
+        {
+          "id": "94-1",
+          "title": "Concept of limits and limit laws",
+          "unitTitle": "Calculus I: Limits & Continuity",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "94-2",
+          "title": "One-sided limits and limits at infinity",
+          "unitTitle": "Calculus I: Limits & Continuity",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "94-3",
+          "title": "Continuity and types of discontinuities",
+          "unitTitle": "Calculus I: Limits & Continuity",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "94-4",
+          "title": "The Squeeze Theorem",
+          "unitTitle": "Calculus I: Limits & Continuity",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        }
+      ]
+    },
+    {
+      "unitId": "95",
+      "unitName": "Calculus I: Derivatives",
+      "lessons": [
+        {
+          "id": "95-1",
+          "title": "Derivative definition from limits",
+          "unitTitle": "Calculus I: Derivatives",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "95-2",
+          "title": "Power, sum, and constant rules",
+          "unitTitle": "Calculus I: Derivatives",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "95-3",
+          "title": "Product and quotient rules",
+          "unitTitle": "Calculus I: Derivatives",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "95-4",
+          "title": "Chain rule",
+          "unitTitle": "Calculus I: Derivatives",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "95-5",
+          "title": "Derivatives of exponential and logarithmic functions",
+          "unitTitle": "Calculus I: Derivatives",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "95-6",
+          "title": "Derivatives of trigonometric and inverse trig functions",
+          "unitTitle": "Calculus I: Derivatives",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        }
+      ]
+    },
+    {
+      "unitId": "96",
+      "unitName": "Calculus I: Applications of Derivatives",
+      "lessons": [
+        {
+          "id": "96-1",
+          "title": "Tangent lines and linear approximation",
+          "unitTitle": "Calculus I: Applications of Derivatives",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "96-2",
+          "title": "Related rates",
+          "unitTitle": "Calculus I: Applications of Derivatives",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "96-3",
+          "title": "Critical points and the first derivative test",
+          "unitTitle": "Calculus I: Applications of Derivatives",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "96-4",
+          "title": "Concavity and the second derivative test",
+          "unitTitle": "Calculus I: Applications of Derivatives",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "96-5",
+          "title": "Optimization problems",
+          "unitTitle": "Calculus I: Applications of Derivatives",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "96-6",
+          "title": "L'H\u00f4pital's Rule",
+          "unitTitle": "Calculus I: Applications of Derivatives",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        }
+      ]
+    },
+    {
+      "unitId": "97",
+      "unitName": "Calculus II: Integrals",
+      "lessons": [
+        {
+          "id": "97-1",
+          "title": "Antiderivatives and indefinite integrals",
+          "unitTitle": "Calculus II: Integrals",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "97-2",
+          "title": "Riemann sums and definite integrals",
+          "unitTitle": "Calculus II: Integrals",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "97-3",
+          "title": "The Fundamental Theorem of Calculus",
+          "unitTitle": "Calculus II: Integrals",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        }
+      ]
+    },
+    {
+      "unitId": "98",
+      "unitName": "Calculus II: Integration Techniques",
+      "lessons": [
+        {
+          "id": "98-1",
+          "title": "Substitution (u-substitution)",
+          "unitTitle": "Calculus II: Integration Techniques",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "98-2",
+          "title": "Integration by parts",
+          "unitTitle": "Calculus II: Integration Techniques",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "98-3",
+          "title": "Trigonometric integrals and substitutions",
+          "unitTitle": "Calculus II: Integration Techniques",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "98-4",
+          "title": "Partial fraction decomposition",
+          "unitTitle": "Calculus II: Integration Techniques",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "98-5",
+          "title": "Improper integrals",
+          "unitTitle": "Calculus II: Integration Techniques",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        }
+      ]
+    },
+    {
+      "unitId": "99",
+      "unitName": "Calculus II: Applications of Integrals",
+      "lessons": [
+        {
+          "id": "99-1",
+          "title": "Area between curves",
+          "unitTitle": "Calculus II: Applications of Integrals",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "99-2",
+          "title": "Volumes of solids (disk, washer, shell)",
+          "unitTitle": "Calculus II: Applications of Integrals",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "99-3",
+          "title": "Arc length and surface area",
+          "unitTitle": "Calculus II: Applications of Integrals",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "99-4",
+          "title": "Basic separable differential equations",
+          "unitTitle": "Calculus II: Applications of Integrals",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        }
+      ]
+    },
+    {
+      "unitId": "100",
+      "unitName": "Calculus II: Sequences & Series",
+      "lessons": [
+        {
+          "id": "100-1",
+          "title": "Sequences and limits of sequences",
+          "unitTitle": "Calculus II: Sequences & Series",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "100-2",
+          "title": "Infinite series and geometric series",
+          "unitTitle": "Calculus II: Sequences & Series",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "100-3",
+          "title": "Convergence tests (comparison, ratio, root, integral, alternating)",
+          "unitTitle": "Calculus II: Sequences & Series",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "100-4",
+          "title": "Power series and radius of convergence",
+          "unitTitle": "Calculus II: Sequences & Series",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "100-5",
+          "title": "Taylor and Maclaurin series",
+          "unitTitle": "Calculus II: Sequences & Series",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        }
+      ]
+    },
+    {
+      "unitId": "101",
+      "unitName": "Calculus III: Vectors & Geometry",
+      "lessons": [
+        {
+          "id": "101-1",
+          "title": "Vectors in 3D, dot product, and cross product",
+          "unitTitle": "Calculus III: Vectors & Geometry",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "101-2",
+          "title": "Lines and planes in space",
+          "unitTitle": "Calculus III: Vectors & Geometry",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        }
+      ]
+    },
+    {
+      "unitId": "102",
+      "unitName": "Calculus III: Vector-Valued Functions",
+      "lessons": [
+        {
+          "id": "102-1",
+          "title": "Vector functions, velocity, and acceleration",
+          "unitTitle": "Calculus III: Vector-Valued Functions",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "102-2",
+          "title": "Arc length and curvature",
+          "unitTitle": "Calculus III: Vector-Valued Functions",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        }
+      ]
+    },
+    {
+      "unitId": "103",
+      "unitName": "Calculus III: Multivariable Functions",
+      "lessons": [
+        {
+          "id": "103-1",
+          "title": "Functions of several variables and level curves",
+          "unitTitle": "Calculus III: Multivariable Functions",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "103-2",
+          "title": "Partial derivatives and higher partials",
+          "unitTitle": "Calculus III: Multivariable Functions",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "103-3",
+          "title": "Chain rule in multiple variables",
+          "unitTitle": "Calculus III: Multivariable Functions",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "103-4",
+          "title": "Gradient and directional derivatives",
+          "unitTitle": "Calculus III: Multivariable Functions",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "103-5",
+          "title": "Tangent planes and linear approximation",
+          "unitTitle": "Calculus III: Multivariable Functions",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        }
+      ]
+    },
+    {
+      "unitId": "104",
+      "unitName": "Calculus III: Multivariable Optimization",
+      "lessons": [
+        {
+          "id": "104-1",
+          "title": "Critical points in multivariable functions",
+          "unitTitle": "Calculus III: Multivariable Optimization",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "104-2",
+          "title": "Lagrange multipliers",
+          "unitTitle": "Calculus III: Multivariable Optimization",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        }
+      ]
+    },
+    {
+      "unitId": "105",
+      "unitName": "Calculus III: Multiple Integrals",
+      "lessons": [
+        {
+          "id": "105-1",
+          "title": "Double integrals and iterated integrals",
+          "unitTitle": "Calculus III: Multiple Integrals",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "105-2",
+          "title": "Double integrals over general regions",
+          "unitTitle": "Calculus III: Multiple Integrals",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "105-3",
+          "title": "Polar coordinates in integration",
+          "unitTitle": "Calculus III: Multiple Integrals",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "105-4",
+          "title": "Triple integrals",
+          "unitTitle": "Calculus III: Multiple Integrals",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "105-5",
+          "title": "Cylindrical and spherical coordinates",
+          "unitTitle": "Calculus III: Multiple Integrals",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        }
+      ]
+    },
+    {
+      "unitId": "106",
+      "unitName": "Calculus III: Vector Calculus",
+      "lessons": [
+        {
+          "id": "106-1",
+          "title": "Vector fields and line integrals",
+          "unitTitle": "Calculus III: Vector Calculus",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "106-2",
+          "title": "Conservative fields and potential functions",
+          "unitTitle": "Calculus III: Vector Calculus",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "106-3",
+          "title": "Surface integrals and flux",
+          "unitTitle": "Calculus III: Vector Calculus",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        }
+      ]
+    },
+    {
+      "unitId": "107",
+      "unitName": "Calculus III: Major Theorems",
+      "lessons": [
+        {
+          "id": "107-1",
+          "title": "Green's Theorem",
+          "unitTitle": "Calculus III: Major Theorems",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "107-2",
+          "title": "Stokes' Theorem",
+          "unitTitle": "Calculus III: Major Theorems",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        },
+        {
+          "id": "107-3",
+          "title": "Divergence Theorem",
+          "unitTitle": "Calculus III: Major Theorems",
+          "xp": 0,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "",
+          "questions": []
+        }
+      ]
     }
   ]
 };
