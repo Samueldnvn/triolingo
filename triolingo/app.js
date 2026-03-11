@@ -381,6 +381,9 @@ function loadProgress() {
         if (saved.currentCourse) {
           currentCourse = saved.currentCourse;
         }
+        if (saved.currentView) {
+          currentView = saved.currentView;
+        }
       }
     } else if (typeof window !== 'undefined' && window.require) {
       const { ipcRenderer } = window.require('electron');
@@ -389,6 +392,9 @@ function loadProgress() {
           progress = saved;
           if (saved.currentCourse) {
             currentCourse = saved.currentCourse;
+          }
+          if (saved.currentView) {
+            currentView = saved.currentView;
           }
         }
       }).catch(err => {
@@ -401,6 +407,9 @@ function loadProgress() {
           progress = JSON.parse(saved);
           if (progress.currentCourse) {
             currentCourse = progress.currentCourse;
+          }
+          if (progress.currentView) {
+            currentView = progress.currentView;
           }
         } catch (e) {
           console.error('Error parsing saved progress:', e);
@@ -416,6 +425,10 @@ function loadProgress() {
 // Save progress to storage
 function saveProgress() {
   try {
+    // Update progress object with current state
+    progress.currentCourse = currentCourse;
+    progress.currentView = currentView;
+
     if (typeof window !== 'undefined' && window.electron && window.electron.saveProgress) {
       window.electron.saveProgress(progress);
     } else if (typeof window !== 'undefined' && window.require) {
@@ -457,6 +470,9 @@ function setupEventListeners() {
 function renderView(viewName) {
   console.log('Rendering view:', viewName);
   currentView = viewName;
+
+  // Save the current view and course to progress
+  saveProgress();
 
   const container = document.getElementById('view-container');
   if (!container) {
@@ -1485,7 +1501,7 @@ async function init() {
     loadProgress();
     setupEventListeners();
     initializeCourseSelector();
-    renderView('dashboard');
+    renderView(currentView); // Use saved view instead of always dashboard
     console.log('Initialization complete!');
   } catch (error) {
     console.error('Error during initialization:', error);
