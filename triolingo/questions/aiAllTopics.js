@@ -1,5 +1,5 @@
 // AI - All Topics
-// Generated from lessons.json
+// Generated from lessons.json with unique lesson IDs
 
 window.aiAllTopics = {
   "courseName": "AI",
@@ -9,7 +9,7 @@ window.aiAllTopics = {
       "unitName": "Probability Foundations",
       "lessons": [
         {
-          "id": 1,
+          "id": "1-1",
           "title": "Probability axioms",
           "unitTitle": "Probability Foundations",
           "xp": 88,
@@ -251,7 +251,7 @@ window.aiAllTopics = {
           ]
         },
         {
-          "id": 2,
+          "id": "1-2",
           "title": "Conditional probability",
           "unitTitle": "Probability Foundations",
           "xp": 88,
@@ -490,7 +490,7 @@ window.aiAllTopics = {
           ]
         },
         {
-          "id": 3,
+          "id": "1-3",
           "title": "Bayes theorem",
           "unitTitle": "Probability Foundations",
           "xp": 92,
@@ -729,7 +729,7 @@ window.aiAllTopics = {
           ]
         },
         {
-          "id": 4,
+          "id": "1-4",
           "title": "Independence",
           "unitTitle": "Probability Foundations",
           "xp": 92,
@@ -974,7 +974,7 @@ window.aiAllTopics = {
       "unitName": "Random Variables",
       "lessons": [
         {
-          "id": 1,
+          "id": "2-1",
           "title": "Discrete variables",
           "unitTitle": "Random Variables",
           "xp": 92,
@@ -1205,7 +1205,7 @@ window.aiAllTopics = {
           ]
         },
         {
-          "id": 2,
+          "id": "2-2",
           "title": "Continuous variables",
           "unitTitle": "Random Variables",
           "xp": 92,
@@ -1434,7 +1434,7 @@ window.aiAllTopics = {
           ]
         },
         {
-          "id": 3,
+          "id": "2-3",
           "title": "Probability mass function",
           "unitTitle": "Random Variables",
           "xp": 92,
@@ -1661,7 +1661,7 @@ window.aiAllTopics = {
           ]
         },
         {
-          "id": 4,
+          "id": "2-4",
           "title": "Probability density function",
           "unitTitle": "Random Variables",
           "xp": 92,
@@ -1885,7 +1885,7 @@ window.aiAllTopics = {
           ]
         },
         {
-          "id": 5,
+          "id": "2-5",
           "title": "Cumulative distribution function",
           "unitTitle": "Random Variables",
           "xp": 92,
@@ -2116,7 +2116,7 @@ window.aiAllTopics = {
       "unitName": "Important Distributions",
       "lessons": [
         {
-          "id": 1,
+          "id": "3-1",
           "title": "Bernoulli",
           "unitTitle": "Important Distributions",
           "xp": 92,
@@ -2359,7 +2359,7 @@ window.aiAllTopics = {
           ]
         },
         {
-          "id": 2,
+          "id": "3-2",
           "title": "Binomial",
           "unitTitle": "Important Distributions",
           "xp": 92,
@@ -2600,7 +2600,7 @@ window.aiAllTopics = {
           ]
         },
         {
-          "id": 3,
+          "id": "3-3",
           "title": "Poisson",
           "unitTitle": "Important Distributions",
           "xp": 92,
@@ -2840,7 +2840,7 @@ window.aiAllTopics = {
           ]
         },
         {
-          "id": 4,
+          "id": "3-4",
           "title": "Uniform",
           "unitTitle": "Important Distributions",
           "xp": 92,
@@ -3080,7 +3080,7 @@ window.aiAllTopics = {
           ]
         },
         {
-          "id": 5,
+          "id": "3-5",
           "title": "Gaussian",
           "unitTitle": "Important Distributions",
           "xp": 92,
@@ -3321,7 +3321,7 @@ window.aiAllTopics = {
           ]
         },
         {
-          "id": 6,
+          "id": "3-6",
           "title": "Exponential",
           "unitTitle": "Important Distributions",
           "xp": 20,
@@ -3331,7 +3331,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 7,
+          "id": "3-7",
           "title": "Gamma",
           "unitTitle": "Important Distributions",
           "xp": 20,
@@ -3341,7 +3341,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 8,
+          "id": "3-8",
           "title": "Beta",
           "unitTitle": "Important Distributions",
           "xp": 20,
@@ -3351,7 +3351,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 9,
+          "id": "3-9",
           "title": "Dirichlet",
           "unitTitle": "Important Distributions",
           "xp": 20,
@@ -3367,7 +3367,7 @@ window.aiAllTopics = {
       "unitName": "Expectations",
       "lessons": [
         {
-          "id": 1,
+          "id": "4-1",
           "title": "Expected value",
           "unitTitle": "Expectations",
           "xp": 20,
@@ -3377,7 +3377,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "4-2",
           "title": "Variance",
           "unitTitle": "Expectations",
           "xp": 20,
@@ -3387,7 +3387,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "4-3",
           "title": "Covariance",
           "unitTitle": "Expectations",
           "xp": 20,
@@ -3397,7 +3397,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "4-4",
           "title": "Correlation",
           "unitTitle": "Expectations",
           "xp": 20,
@@ -3413,7 +3413,7 @@ window.aiAllTopics = {
       "unitName": "Multivariate Probability",
       "lessons": [
         {
-          "id": 1,
+          "id": "5-1",
           "title": "Multivariate Gaussian",
           "unitTitle": "Multivariate Probability",
           "xp": 20,
@@ -3423,7 +3423,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "5-2",
           "title": "Covariance matrices",
           "unitTitle": "Multivariate Probability",
           "xp": 20,
@@ -3433,7 +3433,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "5-3",
           "title": "Independence vs uncorrelated",
           "unitTitle": "Multivariate Probability",
           "xp": 20,
@@ -3449,7 +3449,7 @@ window.aiAllTopics = {
       "unitName": "Information Theory",
       "lessons": [
         {
-          "id": 1,
+          "id": "6-1",
           "title": "Entropy",
           "unitTitle": "Information Theory",
           "xp": 20,
@@ -3459,7 +3459,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "6-2",
           "title": "Cross entropy",
           "unitTitle": "Information Theory",
           "xp": 20,
@@ -3469,7 +3469,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "6-3",
           "title": "KL divergence",
           "unitTitle": "Information Theory",
           "xp": 20,
@@ -3479,7 +3479,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "6-4",
           "title": "Mutual information",
           "unitTitle": "Information Theory",
           "xp": 20,
@@ -3495,7 +3495,7 @@ window.aiAllTopics = {
       "unitName": "Descriptive Statistics",
       "lessons": [
         {
-          "id": 1,
+          "id": "7-1",
           "title": "Mean",
           "unitTitle": "Descriptive Statistics",
           "xp": 20,
@@ -3505,7 +3505,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "7-2",
           "title": "Median",
           "unitTitle": "Descriptive Statistics",
           "xp": 20,
@@ -3515,7 +3515,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "7-3",
           "title": "Mode",
           "unitTitle": "Descriptive Statistics",
           "xp": 20,
@@ -3525,7 +3525,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "7-4",
           "title": "Variance",
           "unitTitle": "Descriptive Statistics",
           "xp": 20,
@@ -3535,7 +3535,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 5,
+          "id": "7-5",
           "title": "Standard deviation",
           "unitTitle": "Descriptive Statistics",
           "xp": 20,
@@ -3545,7 +3545,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 6,
+          "id": "7-6",
           "title": "Skewness",
           "unitTitle": "Descriptive Statistics",
           "xp": 20,
@@ -3555,7 +3555,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 7,
+          "id": "7-7",
           "title": "Kurtosis",
           "unitTitle": "Descriptive Statistics",
           "xp": 20,
@@ -3571,7 +3571,7 @@ window.aiAllTopics = {
       "unitName": "Statistical Inference",
       "lessons": [
         {
-          "id": 1,
+          "id": "8-1",
           "title": "Sampling",
           "unitTitle": "Statistical Inference",
           "xp": 20,
@@ -3581,7 +3581,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "8-2",
           "title": "Confidence intervals",
           "unitTitle": "Statistical Inference",
           "xp": 20,
@@ -3591,7 +3591,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "8-3",
           "title": "Hypothesis testing",
           "unitTitle": "Statistical Inference",
           "xp": 20,
@@ -3601,7 +3601,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "8-4",
           "title": "p-values",
           "unitTitle": "Statistical Inference",
           "xp": 20,
@@ -3617,7 +3617,7 @@ window.aiAllTopics = {
       "unitName": "Estimation",
       "lessons": [
         {
-          "id": 1,
+          "id": "9-1",
           "title": "Maximum likelihood estimation (MLE)",
           "unitTitle": "Estimation",
           "xp": 20,
@@ -3627,7 +3627,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "9-2",
           "title": "Maximum a posteriori (MAP)",
           "unitTitle": "Estimation",
           "xp": 20,
@@ -3643,7 +3643,7 @@ window.aiAllTopics = {
       "unitName": "Bayesian Statistics",
       "lessons": [
         {
-          "id": 1,
+          "id": "10-1",
           "title": "Prior distributions",
           "unitTitle": "Bayesian Statistics",
           "xp": 20,
@@ -3653,7 +3653,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "10-2",
           "title": "Posterior distributions",
           "unitTitle": "Bayesian Statistics",
           "xp": 20,
@@ -3663,7 +3663,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "10-3",
           "title": "Bayesian inference",
           "unitTitle": "Bayesian Statistics",
           "xp": 20,
@@ -3673,7 +3673,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "10-4",
           "title": "Conjugate priors",
           "unitTitle": "Bayesian Statistics",
           "xp": 20,
@@ -3689,7 +3689,7 @@ window.aiAllTopics = {
       "unitName": "Regression Analysis",
       "lessons": [
         {
-          "id": 1,
+          "id": "11-1",
           "title": "Linear regression",
           "unitTitle": "Regression Analysis",
           "xp": 20,
@@ -3699,7 +3699,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "11-2",
           "title": "Logistic regression",
           "unitTitle": "Regression Analysis",
           "xp": 20,
@@ -3709,7 +3709,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "11-3",
           "title": "Ridge regression",
           "unitTitle": "Regression Analysis",
           "xp": 20,
@@ -3719,7 +3719,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "11-4",
           "title": "Lasso regression",
           "unitTitle": "Regression Analysis",
           "xp": 20,
@@ -3735,7 +3735,7 @@ window.aiAllTopics = {
       "unitName": "Optimization",
       "lessons": [
         {
-          "id": 1,
+          "id": "12-1",
           "title": "Gradient descent",
           "unitTitle": "Optimization",
           "xp": 20,
@@ -3745,7 +3745,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "12-2",
           "title": "Stochastic gradient descent",
           "unitTitle": "Optimization",
           "xp": 20,
@@ -3755,7 +3755,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "12-3",
           "title": "Momentum",
           "unitTitle": "Optimization",
           "xp": 20,
@@ -3765,7 +3765,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "12-4",
           "title": "Adam optimizer",
           "unitTitle": "Optimization",
           "xp": 20,
@@ -3775,7 +3775,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 5,
+          "id": "12-5",
           "title": "RMSProp",
           "unitTitle": "Optimization",
           "xp": 20,
@@ -3791,7 +3791,7 @@ window.aiAllTopics = {
       "unitName": "Constrained Optimization",
       "lessons": [
         {
-          "id": 1,
+          "id": "13-1",
           "title": "Lagrange multipliers",
           "unitTitle": "Constrained Optimization",
           "xp": 20,
@@ -3801,7 +3801,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "13-2",
           "title": "Karush\u2013Kuhn\u2013Tucker conditions",
           "unitTitle": "Constrained Optimization",
           "xp": 20,
@@ -3817,7 +3817,7 @@ window.aiAllTopics = {
       "unitName": "Systems for ML",
       "lessons": [
         {
-          "id": 1,
+          "id": "14-1",
           "title": "Parallel computing",
           "unitTitle": "Systems for ML",
           "xp": 20,
@@ -3827,7 +3827,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "14-2",
           "title": "GPU programming",
           "unitTitle": "Systems for ML",
           "xp": 20,
@@ -3837,7 +3837,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "14-3",
           "title": "CUDA",
           "unitTitle": "Systems for ML",
           "xp": 20,
@@ -3847,7 +3847,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "14-4",
           "title": "Distributed systems",
           "unitTitle": "Systems for ML",
           "xp": 20,
@@ -3863,7 +3863,7 @@ window.aiAllTopics = {
       "unitName": "Data Processing",
       "lessons": [
         {
-          "id": 1,
+          "id": "15-1",
           "title": "Data cleaning",
           "unitTitle": "Data Processing",
           "xp": 20,
@@ -3873,7 +3873,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "15-2",
           "title": "Handling missing data",
           "unitTitle": "Data Processing",
           "xp": 20,
@@ -3883,7 +3883,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "15-3",
           "title": "Feature scaling",
           "unitTitle": "Data Processing",
           "xp": 20,
@@ -3893,7 +3893,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "15-4",
           "title": "Encoding categorical variables",
           "unitTitle": "Data Processing",
           "xp": 20,
@@ -3909,7 +3909,7 @@ window.aiAllTopics = {
       "unitName": "Data Pipelines",
       "lessons": [
         {
-          "id": 1,
+          "id": "16-1",
           "title": "ETL pipelines",
           "unitTitle": "Data Pipelines",
           "xp": 20,
@@ -3919,7 +3919,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "16-2",
           "title": "Streaming data",
           "unitTitle": "Data Pipelines",
           "xp": 20,
@@ -3929,7 +3929,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "16-3",
           "title": "Batch processing",
           "unitTitle": "Data Pipelines",
           "xp": 20,
@@ -3945,7 +3945,7 @@ window.aiAllTopics = {
       "unitName": "Databases",
       "lessons": [
         {
-          "id": 1,
+          "id": "17-1",
           "title": "SQL",
           "unitTitle": "Databases",
           "xp": 20,
@@ -3955,7 +3955,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "17-2",
           "title": "NoSQL",
           "unitTitle": "Databases",
           "xp": 20,
@@ -3965,7 +3965,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "17-3",
           "title": "Data lakes",
           "unitTitle": "Databases",
           "xp": 20,
@@ -3975,7 +3975,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "17-4",
           "title": "Data warehouses",
           "unitTitle": "Databases",
           "xp": 20,
@@ -3985,7 +3985,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 5,
+          "id": "17-5",
           "title": "4. Classical Machine Learning",
           "unitTitle": "Databases",
           "xp": 20,
@@ -4001,7 +4001,7 @@ window.aiAllTopics = {
       "unitName": "Linear Models",
       "lessons": [
         {
-          "id": 1,
+          "id": "18-1",
           "title": "Linear regression",
           "unitTitle": "Linear Models",
           "xp": 20,
@@ -4011,7 +4011,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "18-2",
           "title": "Logistic regression",
           "unitTitle": "Linear Models",
           "xp": 20,
@@ -4021,7 +4021,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "18-3",
           "title": "Perceptron",
           "unitTitle": "Linear Models",
           "xp": 20,
@@ -4037,7 +4037,7 @@ window.aiAllTopics = {
       "unitName": "Support Vector Machines",
       "lessons": [
         {
-          "id": 1,
+          "id": "19-1",
           "title": "Maximum margin classifier",
           "unitTitle": "Support Vector Machines",
           "xp": 20,
@@ -4047,7 +4047,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "19-2",
           "title": "Kernel trick",
           "unitTitle": "Support Vector Machines",
           "xp": 20,
@@ -4057,7 +4057,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "19-3",
           "title": "Soft margins",
           "unitTitle": "Support Vector Machines",
           "xp": 20,
@@ -4073,7 +4073,7 @@ window.aiAllTopics = {
       "unitName": "Decision Trees",
       "lessons": [
         {
-          "id": 1,
+          "id": "20-1",
           "title": "Information gain",
           "unitTitle": "Decision Trees",
           "xp": 20,
@@ -4083,7 +4083,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "20-2",
           "title": "Gini impurity",
           "unitTitle": "Decision Trees",
           "xp": 20,
@@ -4093,7 +4093,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "20-3",
           "title": "Tree pruning",
           "unitTitle": "Decision Trees",
           "xp": 20,
@@ -4109,7 +4109,7 @@ window.aiAllTopics = {
       "unitName": "Ensemble Methods",
       "lessons": [
         {
-          "id": 1,
+          "id": "21-1",
           "title": "Bagging",
           "unitTitle": "Ensemble Methods",
           "xp": 20,
@@ -4119,7 +4119,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "21-2",
           "title": "Random forests",
           "unitTitle": "Ensemble Methods",
           "xp": 20,
@@ -4129,7 +4129,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "21-3",
           "title": "Boosting",
           "unitTitle": "Ensemble Methods",
           "xp": 20,
@@ -4139,7 +4139,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "21-4",
           "title": "Gradient boosting",
           "unitTitle": "Ensemble Methods",
           "xp": 20,
@@ -4149,7 +4149,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 5,
+          "id": "21-5",
           "title": "XGBoost",
           "unitTitle": "Ensemble Methods",
           "xp": 20,
@@ -4159,7 +4159,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 6,
+          "id": "21-6",
           "title": "LightGBM",
           "unitTitle": "Ensemble Methods",
           "xp": 20,
@@ -4175,7 +4175,7 @@ window.aiAllTopics = {
       "unitName": "Clustering",
       "lessons": [
         {
-          "id": 1,
+          "id": "22-1",
           "title": "K-means",
           "unitTitle": "Clustering",
           "xp": 20,
@@ -4185,7 +4185,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "22-2",
           "title": "Hierarchical clustering",
           "unitTitle": "Clustering",
           "xp": 20,
@@ -4195,7 +4195,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "22-3",
           "title": "DBSCAN",
           "unitTitle": "Clustering",
           "xp": 20,
@@ -4205,7 +4205,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "22-4",
           "title": "Gaussian mixture models",
           "unitTitle": "Clustering",
           "xp": 20,
@@ -4221,7 +4221,7 @@ window.aiAllTopics = {
       "unitName": "Dimensionality Reduction",
       "lessons": [
         {
-          "id": 1,
+          "id": "23-1",
           "title": "PCA",
           "unitTitle": "Dimensionality Reduction",
           "xp": 20,
@@ -4231,7 +4231,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "23-2",
           "title": "t-SNE",
           "unitTitle": "Dimensionality Reduction",
           "xp": 20,
@@ -4241,7 +4241,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "23-3",
           "title": "UMAP",
           "unitTitle": "Dimensionality Reduction",
           "xp": 20,
@@ -4251,7 +4251,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "23-4",
           "title": "ICA",
           "unitTitle": "Dimensionality Reduction",
           "xp": 20,
@@ -4267,7 +4267,7 @@ window.aiAllTopics = {
       "unitName": "Density Estimation",
       "lessons": [
         {
-          "id": 1,
+          "id": "24-1",
           "title": "Kernel density estimation",
           "unitTitle": "Density Estimation",
           "xp": 20,
@@ -4277,7 +4277,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "24-2",
           "title": "Gaussian mixtures",
           "unitTitle": "Density Estimation",
           "xp": 20,
@@ -4293,7 +4293,7 @@ window.aiAllTopics = {
       "unitName": "Semi-Supervised Learning",
       "lessons": [
         {
-          "id": 1,
+          "id": "25-1",
           "title": "Self-training",
           "unitTitle": "Semi-Supervised Learning",
           "xp": 20,
@@ -4303,7 +4303,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "25-2",
           "title": "Label propagation",
           "unitTitle": "Semi-Supervised Learning",
           "xp": 20,
@@ -4313,7 +4313,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "25-3",
           "title": "Pseudo labeling",
           "unitTitle": "Semi-Supervised Learning",
           "xp": 20,
@@ -4329,7 +4329,7 @@ window.aiAllTopics = {
       "unitName": "Reinforcement Learning Basics",
       "lessons": [
         {
-          "id": 1,
+          "id": "26-1",
           "title": "Markov Decision Processes",
           "unitTitle": "Reinforcement Learning Basics",
           "xp": 20,
@@ -4339,7 +4339,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "26-2",
           "title": "Bellman equations",
           "unitTitle": "Reinforcement Learning Basics",
           "xp": 20,
@@ -4349,7 +4349,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "26-3",
           "title": "Value iteration",
           "unitTitle": "Reinforcement Learning Basics",
           "xp": 20,
@@ -4359,7 +4359,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "26-4",
           "title": "Policy iteration",
           "unitTitle": "Reinforcement Learning Basics",
           "xp": 20,
@@ -4369,7 +4369,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 5,
+          "id": "26-5",
           "title": "Q-learning",
           "unitTitle": "Reinforcement Learning Basics",
           "xp": 20,
@@ -4379,7 +4379,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 6,
+          "id": "26-6",
           "title": "5. Deep Learning",
           "unitTitle": "Reinforcement Learning Basics",
           "xp": 20,
@@ -4395,7 +4395,7 @@ window.aiAllTopics = {
       "unitName": "Neural Network Fundamentals",
       "lessons": [
         {
-          "id": 1,
+          "id": "27-1",
           "title": "Perceptrons",
           "unitTitle": "Neural Network Fundamentals",
           "xp": 20,
@@ -4405,7 +4405,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "27-2",
           "title": "Activation functions",
           "unitTitle": "Neural Network Fundamentals",
           "xp": 20,
@@ -4415,7 +4415,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "27-3",
           "title": "Backpropagation",
           "unitTitle": "Neural Network Fundamentals",
           "xp": 20,
@@ -4425,7 +4425,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "27-4",
           "title": "Loss functions",
           "unitTitle": "Neural Network Fundamentals",
           "xp": 20,
@@ -4435,7 +4435,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 5,
+          "id": "27-5",
           "title": "Activation Functions",
           "unitTitle": "Neural Network Fundamentals",
           "xp": 20,
@@ -4445,7 +4445,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 6,
+          "id": "27-6",
           "title": "ReLU",
           "unitTitle": "Neural Network Fundamentals",
           "xp": 20,
@@ -4455,7 +4455,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 7,
+          "id": "27-7",
           "title": "Leaky ReLU",
           "unitTitle": "Neural Network Fundamentals",
           "xp": 20,
@@ -4465,7 +4465,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 8,
+          "id": "27-8",
           "title": "Sigmoid",
           "unitTitle": "Neural Network Fundamentals",
           "xp": 20,
@@ -4475,7 +4475,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 9,
+          "id": "27-9",
           "title": "Tanh",
           "unitTitle": "Neural Network Fundamentals",
           "xp": 20,
@@ -4485,7 +4485,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 10,
+          "id": "27-10",
           "title": "GELU",
           "unitTitle": "Neural Network Fundamentals",
           "xp": 20,
@@ -4495,7 +4495,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 11,
+          "id": "27-11",
           "title": "Softmax",
           "unitTitle": "Neural Network Fundamentals",
           "xp": 20,
@@ -4511,7 +4511,7 @@ window.aiAllTopics = {
       "unitName": "Neural Network Training",
       "lessons": [
         {
-          "id": 1,
+          "id": "28-1",
           "title": "Initialization",
           "unitTitle": "Neural Network Training",
           "xp": 20,
@@ -4521,7 +4521,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "28-2",
           "title": "Batch normalization",
           "unitTitle": "Neural Network Training",
           "xp": 20,
@@ -4531,7 +4531,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "28-3",
           "title": "Dropout",
           "unitTitle": "Neural Network Training",
           "xp": 20,
@@ -4541,7 +4541,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "28-4",
           "title": "Regularization",
           "unitTitle": "Neural Network Training",
           "xp": 20,
@@ -4557,7 +4557,7 @@ window.aiAllTopics = {
       "unitName": "Convolutional Neural Networks",
       "lessons": [
         {
-          "id": 1,
+          "id": "29-1",
           "title": "Core Concepts",
           "unitTitle": "Convolutional Neural Networks",
           "xp": 20,
@@ -4567,7 +4567,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "29-2",
           "title": "Convolutions",
           "unitTitle": "Convolutional Neural Networks",
           "xp": 20,
@@ -4577,7 +4577,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "29-3",
           "title": "Filters",
           "unitTitle": "Convolutional Neural Networks",
           "xp": 20,
@@ -4587,7 +4587,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "29-4",
           "title": "Padding",
           "unitTitle": "Convolutional Neural Networks",
           "xp": 20,
@@ -4597,7 +4597,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 5,
+          "id": "29-5",
           "title": "Stride",
           "unitTitle": "Convolutional Neural Networks",
           "xp": 20,
@@ -4607,7 +4607,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 6,
+          "id": "29-6",
           "title": "Architectures",
           "unitTitle": "Convolutional Neural Networks",
           "xp": 20,
@@ -4617,7 +4617,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 7,
+          "id": "29-7",
           "title": "LeNet",
           "unitTitle": "Convolutional Neural Networks",
           "xp": 20,
@@ -4627,7 +4627,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 8,
+          "id": "29-8",
           "title": "AlexNet",
           "unitTitle": "Convolutional Neural Networks",
           "xp": 20,
@@ -4637,7 +4637,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 9,
+          "id": "29-9",
           "title": "VGGNet",
           "unitTitle": "Convolutional Neural Networks",
           "xp": 20,
@@ -4647,7 +4647,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 10,
+          "id": "29-10",
           "title": "ResNet",
           "unitTitle": "Convolutional Neural Networks",
           "xp": 20,
@@ -4657,7 +4657,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 11,
+          "id": "29-11",
           "title": "EfficientNet",
           "unitTitle": "Convolutional Neural Networks",
           "xp": 20,
@@ -4673,7 +4673,7 @@ window.aiAllTopics = {
       "unitName": "Recurrent Neural Networks",
       "lessons": [
         {
-          "id": 1,
+          "id": "30-1",
           "title": "Core Concepts",
           "unitTitle": "Recurrent Neural Networks",
           "xp": 20,
@@ -4683,7 +4683,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "30-2",
           "title": "Sequence modeling",
           "unitTitle": "Recurrent Neural Networks",
           "xp": 20,
@@ -4693,7 +4693,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "30-3",
           "title": "Hidden states",
           "unitTitle": "Recurrent Neural Networks",
           "xp": 20,
@@ -4703,7 +4703,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "30-4",
           "title": "Vanishing gradients",
           "unitTitle": "Recurrent Neural Networks",
           "xp": 20,
@@ -4713,7 +4713,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 5,
+          "id": "30-5",
           "title": "Architectures",
           "unitTitle": "Recurrent Neural Networks",
           "xp": 20,
@@ -4723,7 +4723,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 6,
+          "id": "30-6",
           "title": "Long Short-Term Memory",
           "unitTitle": "Recurrent Neural Networks",
           "xp": 20,
@@ -4733,7 +4733,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 7,
+          "id": "30-7",
           "title": "Gated Recurrent Unit",
           "unitTitle": "Recurrent Neural Networks",
           "xp": 20,
@@ -4743,7 +4743,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 8,
+          "id": "30-8",
           "title": "6. Natural Language Processing",
           "unitTitle": "Recurrent Neural Networks",
           "xp": 20,
@@ -4759,7 +4759,7 @@ window.aiAllTopics = {
       "unitName": "Text Processing",
       "lessons": [
         {
-          "id": 1,
+          "id": "31-1",
           "title": "Tokenization",
           "unitTitle": "Text Processing",
           "xp": 20,
@@ -4769,7 +4769,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "31-2",
           "title": "Stemming",
           "unitTitle": "Text Processing",
           "xp": 20,
@@ -4779,7 +4779,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "31-3",
           "title": "Lemmatization",
           "unitTitle": "Text Processing",
           "xp": 20,
@@ -4789,7 +4789,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "31-4",
           "title": "Stopword removal",
           "unitTitle": "Text Processing",
           "xp": 20,
@@ -4799,7 +4799,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 5,
+          "id": "31-5",
           "title": "Word Representations",
           "unitTitle": "Text Processing",
           "xp": 20,
@@ -4809,7 +4809,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 6,
+          "id": "31-6",
           "title": "Bag of Words",
           "unitTitle": "Text Processing",
           "xp": 20,
@@ -4819,7 +4819,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 7,
+          "id": "31-7",
           "title": "TF-IDF",
           "unitTitle": "Text Processing",
           "xp": 20,
@@ -4829,7 +4829,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 8,
+          "id": "31-8",
           "title": "Word2Vec",
           "unitTitle": "Text Processing",
           "xp": 20,
@@ -4839,7 +4839,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 9,
+          "id": "31-9",
           "title": "GloVe",
           "unitTitle": "Text Processing",
           "xp": 20,
@@ -4849,7 +4849,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 10,
+          "id": "31-10",
           "title": "FastText",
           "unitTitle": "Text Processing",
           "xp": 20,
@@ -4865,7 +4865,7 @@ window.aiAllTopics = {
       "unitName": "Sequence Models",
       "lessons": [
         {
-          "id": 1,
+          "id": "32-1",
           "title": "RNNs",
           "unitTitle": "Sequence Models",
           "xp": 20,
@@ -4875,7 +4875,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "32-2",
           "title": "LSTMs",
           "unitTitle": "Sequence Models",
           "xp": 20,
@@ -4885,7 +4885,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "32-3",
           "title": "Seq2Seq models",
           "unitTitle": "Sequence Models",
           "xp": 20,
@@ -4895,7 +4895,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "32-4",
           "title": "Attention mechanisms",
           "unitTitle": "Sequence Models",
           "xp": 20,
@@ -4905,7 +4905,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 5,
+          "id": "32-5",
           "title": "7. Transformers and Modern LLMs",
           "unitTitle": "Sequence Models",
           "xp": 20,
@@ -4921,7 +4921,7 @@ window.aiAllTopics = {
       "unitName": "Transformer Architecture",
       "lessons": [
         {
-          "id": 1,
+          "id": "33-1",
           "title": "Self-attention",
           "unitTitle": "Transformer Architecture",
           "xp": 20,
@@ -4931,7 +4931,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "33-2",
           "title": "Multi-head attention",
           "unitTitle": "Transformer Architecture",
           "xp": 20,
@@ -4941,7 +4941,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "33-3",
           "title": "Positional encoding",
           "unitTitle": "Transformer Architecture",
           "xp": 20,
@@ -4951,7 +4951,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "33-4",
           "title": "Feed-forward layers",
           "unitTitle": "Transformer Architecture",
           "xp": 20,
@@ -4961,7 +4961,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 5,
+          "id": "33-5",
           "title": "Layer normalization",
           "unitTitle": "Transformer Architecture",
           "xp": 20,
@@ -4971,7 +4971,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 6,
+          "id": "33-6",
           "title": "Residual connections",
           "unitTitle": "Transformer Architecture",
           "xp": 20,
@@ -4981,7 +4981,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 7,
+          "id": "33-7",
           "title": "Core Paper",
           "unitTitle": "Transformer Architecture",
           "xp": 20,
@@ -4991,7 +4991,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 8,
+          "id": "33-8",
           "title": "Attention Is All You Need",
           "unitTitle": "Transformer Architecture",
           "xp": 20,
@@ -5007,7 +5007,7 @@ window.aiAllTopics = {
       "unitName": "Transformer Variants",
       "lessons": [
         {
-          "id": 1,
+          "id": "34-1",
           "title": "BERT",
           "unitTitle": "Transformer Variants",
           "xp": 20,
@@ -5017,7 +5017,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "34-2",
           "title": "GPT",
           "unitTitle": "Transformer Variants",
           "xp": 20,
@@ -5027,7 +5027,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "34-3",
           "title": "T5",
           "unitTitle": "Transformer Variants",
           "xp": 20,
@@ -5037,7 +5037,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "34-4",
           "title": "RoBERTa",
           "unitTitle": "Transformer Variants",
           "xp": 20,
@@ -5047,7 +5047,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 5,
+          "id": "34-5",
           "title": "PaLM",
           "unitTitle": "Transformer Variants",
           "xp": 20,
@@ -5057,7 +5057,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 6,
+          "id": "34-6",
           "title": "LLaMA",
           "unitTitle": "Transformer Variants",
           "xp": 20,
@@ -5073,7 +5073,7 @@ window.aiAllTopics = {
       "unitName": "Advanced Transformer Topics",
       "lessons": [
         {
-          "id": 1,
+          "id": "35-1",
           "title": "Sparse attention",
           "unitTitle": "Advanced Transformer Topics",
           "xp": 20,
@@ -5083,7 +5083,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "35-2",
           "title": "Linear attention",
           "unitTitle": "Advanced Transformer Topics",
           "xp": 20,
@@ -5093,7 +5093,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "35-3",
           "title": "Retrieval-augmented generation (RAG)",
           "unitTitle": "Advanced Transformer Topics",
           "xp": 20,
@@ -5103,7 +5103,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "35-4",
           "title": "Mixture of experts",
           "unitTitle": "Advanced Transformer Topics",
           "xp": 20,
@@ -5113,7 +5113,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 5,
+          "id": "35-5",
           "title": "Long-context transformers",
           "unitTitle": "Advanced Transformer Topics",
           "xp": 20,
@@ -5123,7 +5123,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 6,
+          "id": "35-6",
           "title": "8. Generative Models",
           "unitTitle": "Advanced Transformer Topics",
           "xp": 20,
@@ -5139,7 +5139,7 @@ window.aiAllTopics = {
       "unitName": "Variational Autoencoders",
       "lessons": [
         {
-          "id": 1,
+          "id": "36-1",
           "title": "Latent variables",
           "unitTitle": "Variational Autoencoders",
           "xp": 20,
@@ -5149,7 +5149,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "36-2",
           "title": "ELBO objective",
           "unitTitle": "Variational Autoencoders",
           "xp": 20,
@@ -5159,7 +5159,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "36-3",
           "title": "Encoder-decoder networks",
           "unitTitle": "Variational Autoencoders",
           "xp": 20,
@@ -5175,7 +5175,7 @@ window.aiAllTopics = {
       "unitName": "Generative Adversarial Networks",
       "lessons": [
         {
-          "id": 1,
+          "id": "37-1",
           "title": "Generator",
           "unitTitle": "Generative Adversarial Networks",
           "xp": 20,
@@ -5185,7 +5185,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "37-2",
           "title": "Discriminator",
           "unitTitle": "Generative Adversarial Networks",
           "xp": 20,
@@ -5195,7 +5195,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "37-3",
           "title": "Nash equilibrium",
           "unitTitle": "Generative Adversarial Networks",
           "xp": 20,
@@ -5211,7 +5211,7 @@ window.aiAllTopics = {
       "unitName": "Diffusion Models",
       "lessons": [
         {
-          "id": 1,
+          "id": "38-1",
           "title": "Denoising diffusion",
           "unitTitle": "Diffusion Models",
           "xp": 20,
@@ -5221,7 +5221,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "38-2",
           "title": "Forward diffusion",
           "unitTitle": "Diffusion Models",
           "xp": 20,
@@ -5231,7 +5231,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "38-3",
           "title": "Reverse diffusion",
           "unitTitle": "Diffusion Models",
           "xp": 20,
@@ -5241,7 +5241,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "38-4",
           "title": "Score matching",
           "unitTitle": "Diffusion Models",
           "xp": 20,
@@ -5251,7 +5251,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 5,
+          "id": "38-5",
           "title": "9. Reinforcement Learning (Advanced)",
           "unitTitle": "Diffusion Models",
           "xp": 20,
@@ -5267,7 +5267,7 @@ window.aiAllTopics = {
       "unitName": "Deep RL",
       "lessons": [
         {
-          "id": 1,
+          "id": "39-1",
           "title": "Deep Q Networks",
           "unitTitle": "Deep RL",
           "xp": 20,
@@ -5277,7 +5277,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "39-2",
           "title": "Policy gradient methods",
           "unitTitle": "Deep RL",
           "xp": 20,
@@ -5287,7 +5287,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "39-3",
           "title": "Actor-critic methods",
           "unitTitle": "Deep RL",
           "xp": 20,
@@ -5303,7 +5303,7 @@ window.aiAllTopics = {
       "unitName": "Advanced RL",
       "lessons": [
         {
-          "id": 1,
+          "id": "40-1",
           "title": "PPO",
           "unitTitle": "Advanced RL",
           "xp": 20,
@@ -5313,7 +5313,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "40-2",
           "title": "TRPO",
           "unitTitle": "Advanced RL",
           "xp": 20,
@@ -5323,7 +5323,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "40-3",
           "title": "Soft actor-critic",
           "unitTitle": "Advanced RL",
           "xp": 20,
@@ -5339,7 +5339,7 @@ window.aiAllTopics = {
       "unitName": "RLHF",
       "lessons": [
         {
-          "id": 1,
+          "id": "41-1",
           "title": "Reward models",
           "unitTitle": "RLHF",
           "xp": 20,
@@ -5349,7 +5349,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "41-2",
           "title": "Preference learning",
           "unitTitle": "RLHF",
           "xp": 20,
@@ -5359,7 +5359,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "41-3",
           "title": "Human feedback training",
           "unitTitle": "RLHF",
           "xp": 20,
@@ -5369,7 +5369,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "41-4",
           "title": "10. AI Systems Engineering",
           "unitTitle": "RLHF",
           "xp": 20,
@@ -5385,7 +5385,7 @@ window.aiAllTopics = {
       "unitName": "Model Training",
       "lessons": [
         {
-          "id": 1,
+          "id": "42-1",
           "title": "Distributed training",
           "unitTitle": "Model Training",
           "xp": 20,
@@ -5395,7 +5395,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "42-2",
           "title": "Mixed precision training",
           "unitTitle": "Model Training",
           "xp": 20,
@@ -5405,7 +5405,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "42-3",
           "title": "Gradient checkpointing",
           "unitTitle": "Model Training",
           "xp": 20,
@@ -5421,7 +5421,7 @@ window.aiAllTopics = {
       "unitName": "MLOps",
       "lessons": [
         {
-          "id": 1,
+          "id": "43-1",
           "title": "Model versioning",
           "unitTitle": "MLOps",
           "xp": 20,
@@ -5431,7 +5431,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "43-2",
           "title": "Experiment tracking",
           "unitTitle": "MLOps",
           "xp": 20,
@@ -5441,7 +5441,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "43-3",
           "title": "Deployment pipelines",
           "unitTitle": "MLOps",
           "xp": 20,
@@ -5451,7 +5451,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "43-4",
           "title": "Tools",
           "unitTitle": "MLOps",
           "xp": 20,
@@ -5461,7 +5461,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 5,
+          "id": "43-5",
           "title": "TensorFlow",
           "unitTitle": "MLOps",
           "xp": 20,
@@ -5471,7 +5471,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 6,
+          "id": "43-6",
           "title": "PyTorch",
           "unitTitle": "MLOps",
           "xp": 20,
@@ -5481,7 +5481,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 7,
+          "id": "43-7",
           "title": "Kubeflow",
           "unitTitle": "MLOps",
           "xp": 20,
@@ -5491,7 +5491,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 8,
+          "id": "43-8",
           "title": "11. Frontier AI Topics",
           "unitTitle": "MLOps",
           "xp": 20,
@@ -5507,7 +5507,7 @@ window.aiAllTopics = {
       "unitName": "Multimodal AI",
       "lessons": [
         {
-          "id": 1,
+          "id": "44-1",
           "title": "Vision-language models",
           "unitTitle": "Multimodal AI",
           "xp": 20,
@@ -5517,7 +5517,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "44-2",
           "title": "Audio-language models",
           "unitTitle": "Multimodal AI",
           "xp": 20,
@@ -5527,7 +5527,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "44-3",
           "title": "Image generation",
           "unitTitle": "Multimodal AI",
           "xp": 20,
@@ -5543,7 +5543,7 @@ window.aiAllTopics = {
       "unitName": "Alignment and Safety",
       "lessons": [
         {
-          "id": 1,
+          "id": "45-1",
           "title": "Interpretability",
           "unitTitle": "Alignment and Safety",
           "xp": 20,
@@ -5553,7 +5553,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "45-2",
           "title": "Mechanistic interpretability",
           "unitTitle": "Alignment and Safety",
           "xp": 20,
@@ -5563,7 +5563,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "45-3",
           "title": "AI alignment",
           "unitTitle": "Alignment and Safety",
           "xp": 20,
@@ -5573,7 +5573,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "45-4",
           "title": "Constitutional AI",
           "unitTitle": "Alignment and Safety",
           "xp": 20,
@@ -5589,7 +5589,7 @@ window.aiAllTopics = {
       "unitName": "Scaling Laws",
       "lessons": [
         {
-          "id": 1,
+          "id": "46-1",
           "title": "Parameter scaling",
           "unitTitle": "Scaling Laws",
           "xp": 20,
@@ -5599,7 +5599,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "46-2",
           "title": "Data scaling",
           "unitTitle": "Scaling Laws",
           "xp": 20,
@@ -5609,7 +5609,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "46-3",
           "title": "Compute scaling",
           "unitTitle": "Scaling Laws",
           "xp": 20,
@@ -5619,7 +5619,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "46-4",
           "title": "12. Research Skills",
           "unitTitle": "Scaling Laws",
           "xp": 20,
@@ -5635,7 +5635,7 @@ window.aiAllTopics = {
       "unitName": "Reading Papers",
       "lessons": [
         {
-          "id": 1,
+          "id": "47-1",
           "title": "Understanding methodology",
           "unitTitle": "Reading Papers",
           "xp": 20,
@@ -5645,7 +5645,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "47-2",
           "title": "Reproducing experiments",
           "unitTitle": "Reading Papers",
           "xp": 20,
@@ -5661,7 +5661,7 @@ window.aiAllTopics = {
       "unitName": "Writing Papers",
       "lessons": [
         {
-          "id": 1,
+          "id": "48-1",
           "title": "Experimental design",
           "unitTitle": "Writing Papers",
           "xp": 20,
@@ -5671,7 +5671,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "48-2",
           "title": "Statistical validation",
           "unitTitle": "Writing Papers",
           "xp": 20,
@@ -5681,7 +5681,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "48-3",
           "title": "Key Conference Venues",
           "unitTitle": "Writing Papers",
           "xp": 20,
@@ -5691,7 +5691,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "48-4",
           "title": "NeurIPS",
           "unitTitle": "Writing Papers",
           "xp": 20,
@@ -5701,7 +5701,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 5,
+          "id": "48-5",
           "title": "ICML",
           "unitTitle": "Writing Papers",
           "xp": 20,
@@ -5711,7 +5711,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 6,
+          "id": "48-6",
           "title": "ICLR",
           "unitTitle": "Writing Papers",
           "xp": 20,
@@ -5721,7 +5721,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 7,
+          "id": "48-7",
           "title": "CVPR",
           "unitTitle": "Writing Papers",
           "xp": 20,
@@ -5731,7 +5731,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 8,
+          "id": "48-8",
           "title": "13. Optimization Theory (Deeper)",
           "unitTitle": "Writing Papers",
           "xp": 20,
@@ -5747,7 +5747,7 @@ window.aiAllTopics = {
       "unitName": "Convex Sets",
       "lessons": [
         {
-          "id": 1,
+          "id": "49-1",
           "title": "Convex combinations",
           "unitTitle": "Convex Sets",
           "xp": 20,
@@ -5757,7 +5757,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "49-2",
           "title": "Affine sets",
           "unitTitle": "Convex Sets",
           "xp": 20,
@@ -5767,7 +5767,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "49-3",
           "title": "Convex hull",
           "unitTitle": "Convex Sets",
           "xp": 20,
@@ -5783,7 +5783,7 @@ window.aiAllTopics = {
       "unitName": "Convex Functions",
       "lessons": [
         {
-          "id": 1,
+          "id": "50-1",
           "title": "Jensen's inequality",
           "unitTitle": "Convex Functions",
           "xp": 20,
@@ -5793,7 +5793,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "50-2",
           "title": "Convex conjugates",
           "unitTitle": "Convex Functions",
           "xp": 20,
@@ -5803,7 +5803,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "50-3",
           "title": "Fenchel duality",
           "unitTitle": "Convex Functions",
           "xp": 20,
@@ -5819,7 +5819,7 @@ window.aiAllTopics = {
       "unitName": "Optimization Problems",
       "lessons": [
         {
-          "id": 1,
+          "id": "51-1",
           "title": "Linear programming",
           "unitTitle": "Optimization Problems",
           "xp": 20,
@@ -5829,7 +5829,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "51-2",
           "title": "Quadratic programming",
           "unitTitle": "Optimization Problems",
           "xp": 20,
@@ -5839,7 +5839,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "51-3",
           "title": "Semidefinite programming",
           "unitTitle": "Optimization Problems",
           "xp": 20,
@@ -5855,7 +5855,7 @@ window.aiAllTopics = {
       "unitName": "Duality Theory",
       "lessons": [
         {
-          "id": 1,
+          "id": "52-1",
           "title": "Lagrangian duality",
           "unitTitle": "Duality Theory",
           "xp": 20,
@@ -5865,7 +5865,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "52-2",
           "title": "Strong vs weak duality",
           "unitTitle": "Duality Theory",
           "xp": 20,
@@ -5875,7 +5875,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "52-3",
           "title": "Karush\u2013Kuhn\u2013Tucker conditions",
           "unitTitle": "Duality Theory",
           "xp": 20,
@@ -5891,7 +5891,7 @@ window.aiAllTopics = {
       "unitName": "Non-Convex Optimization",
       "lessons": [
         {
-          "id": 1,
+          "id": "53-1",
           "title": "Saddle points",
           "unitTitle": "Non-Convex Optimization",
           "xp": 20,
@@ -5901,7 +5901,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "53-2",
           "title": "Local minima vs global minima",
           "unitTitle": "Non-Convex Optimization",
           "xp": 20,
@@ -5911,7 +5911,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "53-3",
           "title": "Loss landscapes",
           "unitTitle": "Non-Convex Optimization",
           "xp": 20,
@@ -5921,7 +5921,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "53-4",
           "title": "Gradient flow",
           "unitTitle": "Non-Convex Optimization",
           "xp": 20,
@@ -5931,7 +5931,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 5,
+          "id": "53-5",
           "title": "Implicit bias of gradient descent",
           "unitTitle": "Non-Convex Optimization",
           "xp": 20,
@@ -5947,7 +5947,7 @@ window.aiAllTopics = {
       "unitName": "Advanced Optimizers",
       "lessons": [
         {
-          "id": 1,
+          "id": "54-1",
           "title": "Nesterov momentum",
           "unitTitle": "Advanced Optimizers",
           "xp": 20,
@@ -5957,7 +5957,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "54-2",
           "title": "Adagrad",
           "unitTitle": "Advanced Optimizers",
           "xp": 20,
@@ -5967,7 +5967,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "54-3",
           "title": "Adadelta",
           "unitTitle": "Advanced Optimizers",
           "xp": 20,
@@ -5977,7 +5977,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "54-4",
           "title": "AdamW",
           "unitTitle": "Advanced Optimizers",
           "xp": 20,
@@ -5987,7 +5987,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 5,
+          "id": "54-5",
           "title": "LAMB optimizer",
           "unitTitle": "Advanced Optimizers",
           "xp": 20,
@@ -5997,7 +5997,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 6,
+          "id": "54-6",
           "title": "Lion optimizer",
           "unitTitle": "Advanced Optimizers",
           "xp": 20,
@@ -6007,7 +6007,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 7,
+          "id": "54-7",
           "title": "14. Numerical Methods",
           "unitTitle": "Advanced Optimizers",
           "xp": 20,
@@ -6023,7 +6023,7 @@ window.aiAllTopics = {
       "unitName": "Numerical Linear Algebra",
       "lessons": [
         {
-          "id": 1,
+          "id": "55-1",
           "title": "Iterative solvers",
           "unitTitle": "Numerical Linear Algebra",
           "xp": 20,
@@ -6033,7 +6033,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "55-2",
           "title": "Conjugate gradient",
           "unitTitle": "Numerical Linear Algebra",
           "xp": 20,
@@ -6043,7 +6043,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "55-3",
           "title": "Lanczos algorithm",
           "unitTitle": "Numerical Linear Algebra",
           "xp": 20,
@@ -6059,7 +6059,7 @@ window.aiAllTopics = {
       "unitName": "Automatic Differentiation",
       "lessons": [
         {
-          "id": 1,
+          "id": "56-1",
           "title": "Reverse mode AD",
           "unitTitle": "Automatic Differentiation",
           "xp": 20,
@@ -6069,7 +6069,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "56-2",
           "title": "Forward mode AD",
           "unitTitle": "Automatic Differentiation",
           "xp": 20,
@@ -6079,7 +6079,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "56-3",
           "title": "Computational graphs",
           "unitTitle": "Automatic Differentiation",
           "xp": 20,
@@ -6095,7 +6095,7 @@ window.aiAllTopics = {
       "unitName": "Numerical Stability",
       "lessons": [
         {
-          "id": 1,
+          "id": "57-1",
           "title": "Floating-point precision",
           "unitTitle": "Numerical Stability",
           "xp": 20,
@@ -6105,7 +6105,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "57-2",
           "title": "Overflow/underflow",
           "unitTitle": "Numerical Stability",
           "xp": 20,
@@ -6115,7 +6115,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "57-3",
           "title": "Gradient clipping",
           "unitTitle": "Numerical Stability",
           "xp": 20,
@@ -6125,7 +6125,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "57-4",
           "title": "15. Learning Theory",
           "unitTitle": "Numerical Stability",
           "xp": 20,
@@ -6141,7 +6141,7 @@ window.aiAllTopics = {
       "unitName": "PAC Learning",
       "lessons": [
         {
-          "id": 1,
+          "id": "58-1",
           "title": "Probably Approximately Correct framework",
           "unitTitle": "PAC Learning",
           "xp": 20,
@@ -6151,7 +6151,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "58-2",
           "title": "Sample complexity",
           "unitTitle": "PAC Learning",
           "xp": 20,
@@ -6161,7 +6161,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "58-3",
           "title": "VC dimension",
           "unitTitle": "PAC Learning",
           "xp": 20,
@@ -6177,7 +6177,7 @@ window.aiAllTopics = {
       "unitName": "Bias-Variance Tradeoff",
       "lessons": [
         {
-          "id": 1,
+          "id": "59-1",
           "title": "Underfitting vs overfitting",
           "unitTitle": "Bias-Variance Tradeoff",
           "xp": 20,
@@ -6187,7 +6187,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "59-2",
           "title": "Model capacity",
           "unitTitle": "Bias-Variance Tradeoff",
           "xp": 20,
@@ -6203,7 +6203,7 @@ window.aiAllTopics = {
       "unitName": "Generalization Theory",
       "lessons": [
         {
-          "id": 1,
+          "id": "60-1",
           "title": "Rademacher complexity",
           "unitTitle": "Generalization Theory",
           "xp": 20,
@@ -6213,7 +6213,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "60-2",
           "title": "Uniform convergence",
           "unitTitle": "Generalization Theory",
           "xp": 20,
@@ -6229,7 +6229,7 @@ window.aiAllTopics = {
       "unitName": "Information-Theoretic Learning",
       "lessons": [
         {
-          "id": 1,
+          "id": "61-1",
           "title": "Minimum description length",
           "unitTitle": "Information-Theoretic Learning",
           "xp": 20,
@@ -6239,7 +6239,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "61-2",
           "title": "Information bottleneck principle",
           "unitTitle": "Information-Theoretic Learning",
           "xp": 20,
@@ -6249,7 +6249,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "61-3",
           "title": "16. Graph Machine Learning",
           "unitTitle": "Information-Theoretic Learning",
           "xp": 20,
@@ -6265,7 +6265,7 @@ window.aiAllTopics = {
       "unitName": "Graph Theory",
       "lessons": [
         {
-          "id": 1,
+          "id": "62-1",
           "title": "Directed vs undirected graphs",
           "unitTitle": "Graph Theory",
           "xp": 20,
@@ -6275,7 +6275,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "62-2",
           "title": "Adjacency matrices",
           "unitTitle": "Graph Theory",
           "xp": 20,
@@ -6285,7 +6285,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "62-3",
           "title": "Laplacian matrices",
           "unitTitle": "Graph Theory",
           "xp": 20,
@@ -6301,7 +6301,7 @@ window.aiAllTopics = {
       "unitName": "Graph Algorithms",
       "lessons": [
         {
-          "id": 1,
+          "id": "63-1",
           "title": "PageRank",
           "unitTitle": "Graph Algorithms",
           "xp": 20,
@@ -6311,7 +6311,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "63-2",
           "title": "Shortest path algorithms",
           "unitTitle": "Graph Algorithms",
           "xp": 20,
@@ -6321,7 +6321,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "63-3",
           "title": "Community detection",
           "unitTitle": "Graph Algorithms",
           "xp": 20,
@@ -6337,7 +6337,7 @@ window.aiAllTopics = {
       "unitName": "Graph Neural Networks",
       "lessons": [
         {
-          "id": 1,
+          "id": "64-1",
           "title": "Graph convolution networks",
           "unitTitle": "Graph Neural Networks",
           "xp": 20,
@@ -6347,7 +6347,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "64-2",
           "title": "Graph attention networks",
           "unitTitle": "Graph Neural Networks",
           "xp": 20,
@@ -6357,7 +6357,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "64-3",
           "title": "Message passing neural networks",
           "unitTitle": "Graph Neural Networks",
           "xp": 20,
@@ -6367,7 +6367,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "64-4",
           "title": "17. Computer Vision (Full Subfield)",
           "unitTitle": "Graph Neural Networks",
           "xp": 20,
@@ -6383,7 +6383,7 @@ window.aiAllTopics = {
       "unitName": "Image Processing",
       "lessons": [
         {
-          "id": 1,
+          "id": "65-1",
           "title": "Edge detection",
           "unitTitle": "Image Processing",
           "xp": 20,
@@ -6393,7 +6393,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "65-2",
           "title": "Image filtering",
           "unitTitle": "Image Processing",
           "xp": 20,
@@ -6403,7 +6403,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "65-3",
           "title": "Fourier transforms",
           "unitTitle": "Image Processing",
           "xp": 20,
@@ -6419,7 +6419,7 @@ window.aiAllTopics = {
       "unitName": "Object Detection",
       "lessons": [
         {
-          "id": 1,
+          "id": "66-1",
           "title": "Region proposal networks",
           "unitTitle": "Object Detection",
           "xp": 20,
@@ -6429,7 +6429,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "66-2",
           "title": "Bounding box regression",
           "unitTitle": "Object Detection",
           "xp": 20,
@@ -6439,7 +6439,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "66-3",
           "title": "Architectures",
           "unitTitle": "Object Detection",
           "xp": 20,
@@ -6449,7 +6449,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "66-4",
           "title": "YOLO",
           "unitTitle": "Object Detection",
           "xp": 20,
@@ -6459,7 +6459,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 5,
+          "id": "66-5",
           "title": "Faster R-CNN",
           "unitTitle": "Object Detection",
           "xp": 20,
@@ -6475,7 +6475,7 @@ window.aiAllTopics = {
       "unitName": "Image Segmentation",
       "lessons": [
         {
-          "id": 1,
+          "id": "67-1",
           "title": "Semantic segmentation",
           "unitTitle": "Image Segmentation",
           "xp": 20,
@@ -6485,7 +6485,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "67-2",
           "title": "Instance segmentation",
           "unitTitle": "Image Segmentation",
           "xp": 20,
@@ -6495,7 +6495,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "67-3",
           "title": "Models:",
           "unitTitle": "Image Segmentation",
           "xp": 20,
@@ -6505,7 +6505,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "67-4",
           "title": "U-Net",
           "unitTitle": "Image Segmentation",
           "xp": 20,
@@ -6515,7 +6515,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 5,
+          "id": "67-5",
           "title": "Mask R-CNN",
           "unitTitle": "Image Segmentation",
           "xp": 20,
@@ -6531,7 +6531,7 @@ window.aiAllTopics = {
       "unitName": "Vision Transformers",
       "lessons": [
         {
-          "id": 1,
+          "id": "68-1",
           "title": "Patch embeddings",
           "unitTitle": "Vision Transformers",
           "xp": 20,
@@ -6541,7 +6541,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "68-2",
           "title": "Attention over patches",
           "unitTitle": "Vision Transformers",
           "xp": 20,
@@ -6551,7 +6551,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "68-3",
           "title": "Example:",
           "unitTitle": "Vision Transformers",
           "xp": 20,
@@ -6561,7 +6561,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "68-4",
           "title": "Vision Transformer",
           "unitTitle": "Vision Transformers",
           "xp": 20,
@@ -6571,7 +6571,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 5,
+          "id": "68-5",
           "title": "18. Speech and Audio AI",
           "unitTitle": "Vision Transformers",
           "xp": 20,
@@ -6587,7 +6587,7 @@ window.aiAllTopics = {
       "unitName": "Speech Processing",
       "lessons": [
         {
-          "id": 1,
+          "id": "69-1",
           "title": "Spectrograms",
           "unitTitle": "Speech Processing",
           "xp": 20,
@@ -6597,7 +6597,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "69-2",
           "title": "Mel-frequency cepstral coefficients",
           "unitTitle": "Speech Processing",
           "xp": 20,
@@ -6613,7 +6613,7 @@ window.aiAllTopics = {
       "unitName": "Speech Recognition",
       "lessons": [
         {
-          "id": 1,
+          "id": "70-1",
           "title": "Acoustic models",
           "unitTitle": "Speech Recognition",
           "xp": 20,
@@ -6623,7 +6623,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "70-2",
           "title": "Language models",
           "unitTitle": "Speech Recognition",
           "xp": 20,
@@ -6633,7 +6633,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "70-3",
           "title": "Example models:",
           "unitTitle": "Speech Recognition",
           "xp": 20,
@@ -6643,7 +6643,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "70-4",
           "title": "DeepSpeech",
           "unitTitle": "Speech Recognition",
           "xp": 20,
@@ -6653,7 +6653,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 5,
+          "id": "70-5",
           "title": "Whisper",
           "unitTitle": "Speech Recognition",
           "xp": 20,
@@ -6663,7 +6663,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 6,
+          "id": "70-6",
           "title": "19. Time Series & Sequential Modeling",
           "unitTitle": "Speech Recognition",
           "xp": 20,
@@ -6679,7 +6679,7 @@ window.aiAllTopics = {
       "unitName": "Classical Time Series",
       "lessons": [
         {
-          "id": 1,
+          "id": "71-1",
           "title": "Autoregressive models (AR)",
           "unitTitle": "Classical Time Series",
           "xp": 20,
@@ -6689,7 +6689,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "71-2",
           "title": "Moving average models (MA)",
           "unitTitle": "Classical Time Series",
           "xp": 20,
@@ -6699,7 +6699,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "71-3",
           "title": "ARIMA",
           "unitTitle": "Classical Time Series",
           "xp": 20,
@@ -6715,7 +6715,7 @@ window.aiAllTopics = {
       "unitName": "Deep Learning for Time Series",
       "lessons": [
         {
-          "id": 1,
+          "id": "72-1",
           "title": "Temporal convolution networks",
           "unitTitle": "Deep Learning for Time Series",
           "xp": 20,
@@ -6725,7 +6725,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "72-2",
           "title": "Transformers for time series",
           "unitTitle": "Deep Learning for Time Series",
           "xp": 20,
@@ -6735,7 +6735,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "72-3",
           "title": "20. Multimodal AI",
           "unitTitle": "Deep Learning for Time Series",
           "xp": 20,
@@ -6751,7 +6751,7 @@ window.aiAllTopics = {
       "unitName": "Vision-Language Models",
       "lessons": [
         {
-          "id": 1,
+          "id": "73-1",
           "title": "Cross-modal embeddings",
           "unitTitle": "Vision-Language Models",
           "xp": 20,
@@ -6761,7 +6761,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "73-2",
           "title": "Contrastive learning",
           "unitTitle": "Vision-Language Models",
           "xp": 20,
@@ -6771,7 +6771,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "73-3",
           "title": "Example models:",
           "unitTitle": "Vision-Language Models",
           "xp": 20,
@@ -6781,7 +6781,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "73-4",
           "title": "CLIP",
           "unitTitle": "Vision-Language Models",
           "xp": 20,
@@ -6791,7 +6791,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 5,
+          "id": "73-5",
           "title": "DALL\u00b7E",
           "unitTitle": "Vision-Language Models",
           "xp": 20,
@@ -6807,7 +6807,7 @@ window.aiAllTopics = {
       "unitName": "Video Models",
       "lessons": [
         {
-          "id": 1,
+          "id": "74-1",
           "title": "Spatiotemporal CNNs",
           "unitTitle": "Video Models",
           "xp": 20,
@@ -6817,7 +6817,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "74-2",
           "title": "Video transformers",
           "unitTitle": "Video Models",
           "xp": 20,
@@ -6827,7 +6827,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "74-3",
           "title": "21. Self-Supervised Learning",
           "unitTitle": "Video Models",
           "xp": 20,
@@ -6843,7 +6843,7 @@ window.aiAllTopics = {
       "unitName": "Contrastive Learning",
       "lessons": [
         {
-          "id": 1,
+          "id": "75-1",
           "title": "InfoNCE loss",
           "unitTitle": "Contrastive Learning",
           "xp": 20,
@@ -6853,7 +6853,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "75-2",
           "title": "Positive/negative pairs",
           "unitTitle": "Contrastive Learning",
           "xp": 20,
@@ -6863,7 +6863,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "75-3",
           "title": "Methods:",
           "unitTitle": "Contrastive Learning",
           "xp": 20,
@@ -6873,7 +6873,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "75-4",
           "title": "SimCLR",
           "unitTitle": "Contrastive Learning",
           "xp": 20,
@@ -6883,7 +6883,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 5,
+          "id": "75-5",
           "title": "MoCo",
           "unitTitle": "Contrastive Learning",
           "xp": 20,
@@ -6899,7 +6899,7 @@ window.aiAllTopics = {
       "unitName": "Masked Modeling",
       "lessons": [
         {
-          "id": 1,
+          "id": "76-1",
           "title": "Masked language modeling",
           "unitTitle": "Masked Modeling",
           "xp": 20,
@@ -6909,7 +6909,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "76-2",
           "title": "Masked image modeling",
           "unitTitle": "Masked Modeling",
           "xp": 20,
@@ -6919,7 +6919,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "76-3",
           "title": "Example:",
           "unitTitle": "Masked Modeling",
           "xp": 20,
@@ -6929,7 +6929,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "76-4",
           "title": "BERT",
           "unitTitle": "Masked Modeling",
           "xp": 20,
@@ -6939,7 +6939,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 5,
+          "id": "76-5",
           "title": "22. Causal Machine Learning",
           "unitTitle": "Masked Modeling",
           "xp": 20,
@@ -6955,7 +6955,7 @@ window.aiAllTopics = {
       "unitName": "Causal Inference",
       "lessons": [
         {
-          "id": 1,
+          "id": "77-1",
           "title": "Confounders",
           "unitTitle": "Causal Inference",
           "xp": 20,
@@ -6965,7 +6965,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "77-2",
           "title": "Interventions",
           "unitTitle": "Causal Inference",
           "xp": 20,
@@ -6975,7 +6975,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "77-3",
           "title": "Counterfactuals",
           "unitTitle": "Causal Inference",
           "xp": 20,
@@ -6991,7 +6991,7 @@ window.aiAllTopics = {
       "unitName": "Graphical Models",
       "lessons": [
         {
-          "id": 1,
+          "id": "78-1",
           "title": "Bayesian networks",
           "unitTitle": "Graphical Models",
           "xp": 20,
@@ -7001,7 +7001,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "78-2",
           "title": "Markov random fields",
           "unitTitle": "Graphical Models",
           "xp": 20,
@@ -7011,7 +7011,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "78-3",
           "title": "23. AI Security",
           "unitTitle": "Graphical Models",
           "xp": 20,
@@ -7027,7 +7027,7 @@ window.aiAllTopics = {
       "unitName": "Adversarial Attacks",
       "lessons": [
         {
-          "id": 1,
+          "id": "79-1",
           "title": "Adversarial examples",
           "unitTitle": "Adversarial Attacks",
           "xp": 20,
@@ -7037,7 +7037,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "79-2",
           "title": "Gradient-based attacks",
           "unitTitle": "Adversarial Attacks",
           "xp": 20,
@@ -7053,7 +7053,7 @@ window.aiAllTopics = {
       "unitName": "Model Security",
       "lessons": [
         {
-          "id": 1,
+          "id": "80-1",
           "title": "Data poisoning",
           "unitTitle": "Model Security",
           "xp": 20,
@@ -7063,7 +7063,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "80-2",
           "title": "Backdoor attacks",
           "unitTitle": "Model Security",
           "xp": 20,
@@ -7073,7 +7073,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "80-3",
           "title": "24. AI Alignment and Interpretability",
           "unitTitle": "Model Security",
           "xp": 20,
@@ -7089,7 +7089,7 @@ window.aiAllTopics = {
       "unitName": "Explainable AI",
       "lessons": [
         {
-          "id": 1,
+          "id": "81-1",
           "title": "Feature attribution",
           "unitTitle": "Explainable AI",
           "xp": 20,
@@ -7099,7 +7099,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "81-2",
           "title": "SHAP values",
           "unitTitle": "Explainable AI",
           "xp": 20,
@@ -7109,7 +7109,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "81-3",
           "title": "LIME",
           "unitTitle": "Explainable AI",
           "xp": 20,
@@ -7125,7 +7125,7 @@ window.aiAllTopics = {
       "unitName": "Mechanistic Interpretability",
       "lessons": [
         {
-          "id": 1,
+          "id": "82-1",
           "title": "Circuit analysis in transformers",
           "unitTitle": "Mechanistic Interpretability",
           "xp": 20,
@@ -7135,7 +7135,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "82-2",
           "title": "Attention head roles",
           "unitTitle": "Mechanistic Interpretability",
           "xp": 20,
@@ -7145,7 +7145,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "82-3",
           "title": "25. Hardware and Compute for AI",
           "unitTitle": "Mechanistic Interpretability",
           "xp": 20,
@@ -7161,7 +7161,7 @@ window.aiAllTopics = {
       "unitName": "AI Accelerators",
       "lessons": [
         {
-          "id": 1,
+          "id": "83-1",
           "title": "GPUs",
           "unitTitle": "AI Accelerators",
           "xp": 20,
@@ -7171,7 +7171,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "83-2",
           "title": "TPUs",
           "unitTitle": "AI Accelerators",
           "xp": 20,
@@ -7181,7 +7181,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "83-3",
           "title": "Example hardware:",
           "unitTitle": "AI Accelerators",
           "xp": 20,
@@ -7191,7 +7191,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "83-4",
           "title": "NVIDIA A100",
           "unitTitle": "AI Accelerators",
           "xp": 20,
@@ -7207,7 +7207,7 @@ window.aiAllTopics = {
       "unitName": "Distributed Training",
       "lessons": [
         {
-          "id": 1,
+          "id": "84-1",
           "title": "Data parallelism",
           "unitTitle": "Distributed Training",
           "xp": 20,
@@ -7217,7 +7217,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "84-2",
           "title": "Model parallelism",
           "unitTitle": "Distributed Training",
           "xp": 20,
@@ -7227,7 +7227,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "84-3",
           "title": "Pipeline parallelism",
           "unitTitle": "Distributed Training",
           "xp": 20,
@@ -7237,7 +7237,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "84-4",
           "title": "26. AI Product Engineering",
           "unitTitle": "Distributed Training",
           "xp": 20,
@@ -7253,7 +7253,7 @@ window.aiAllTopics = {
       "unitName": "Deployment",
       "lessons": [
         {
-          "id": 1,
+          "id": "85-1",
           "title": "Model serving",
           "unitTitle": "Deployment",
           "xp": 20,
@@ -7263,7 +7263,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "85-2",
           "title": "REST APIs",
           "unitTitle": "Deployment",
           "xp": 20,
@@ -7279,7 +7279,7 @@ window.aiAllTopics = {
       "unitName": "Monitoring",
       "lessons": [
         {
-          "id": 1,
+          "id": "86-1",
           "title": "Model drift detection",
           "unitTitle": "Monitoring",
           "xp": 20,
@@ -7289,7 +7289,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "86-2",
           "title": "Data drift detection",
           "unitTitle": "Monitoring",
           "xp": 20,
@@ -7299,7 +7299,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "86-3",
           "title": "27. Ethics, Policy, and Society",
           "unitTitle": "Monitoring",
           "xp": 20,
@@ -7315,7 +7315,7 @@ window.aiAllTopics = {
       "unitName": "AI Ethics",
       "lessons": [
         {
-          "id": 1,
+          "id": "87-1",
           "title": "Bias and fairness",
           "unitTitle": "AI Ethics",
           "xp": 20,
@@ -7325,7 +7325,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "87-2",
           "title": "Responsible AI",
           "unitTitle": "AI Ethics",
           "xp": 20,
@@ -7341,7 +7341,7 @@ window.aiAllTopics = {
       "unitName": "Regulation",
       "lessons": [
         {
-          "id": 1,
+          "id": "88-1",
           "title": "AI governance",
           "unitTitle": "Regulation",
           "xp": 20,
@@ -7351,7 +7351,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "88-2",
           "title": "Safety standards",
           "unitTitle": "Regulation",
           "xp": 20,
@@ -7361,7 +7361,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "88-3",
           "title": "28. Specialized Domains",
           "unitTitle": "Regulation",
           "xp": 20,
@@ -7377,7 +7377,7 @@ window.aiAllTopics = {
       "unitName": "Robotics",
       "lessons": [
         {
-          "id": 1,
+          "id": "89-1",
           "title": "Motion planning",
           "unitTitle": "Robotics",
           "xp": 20,
@@ -7387,7 +7387,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "89-2",
           "title": "Sim-to-real transfer",
           "unitTitle": "Robotics",
           "xp": 20,
@@ -7403,7 +7403,7 @@ window.aiAllTopics = {
       "unitName": "Scientific AI",
       "lessons": [
         {
-          "id": 1,
+          "id": "90-1",
           "title": "Protein folding",
           "unitTitle": "Scientific AI",
           "xp": 20,
@@ -7413,7 +7413,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "90-2",
           "title": "Example:",
           "unitTitle": "Scientific AI",
           "xp": 20,
@@ -7423,7 +7423,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 3,
+          "id": "90-3",
           "title": "AlphaFold",
           "unitTitle": "Scientific AI",
           "xp": 20,
@@ -7433,7 +7433,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 4,
+          "id": "90-4",
           "title": "29. Frontier Research Areas (2024\u20132030)",
           "unitTitle": "Scientific AI",
           "xp": 20,
@@ -7449,7 +7449,7 @@ window.aiAllTopics = {
       "unitName": "Scaling Laws",
       "lessons": [
         {
-          "id": 1,
+          "id": "91-1",
           "title": "Compute optimal scaling",
           "unitTitle": "Scaling Laws",
           "xp": 20,
@@ -7459,7 +7459,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "91-2",
           "title": "Data scaling laws",
           "unitTitle": "Scaling Laws",
           "xp": 20,
@@ -7475,7 +7475,7 @@ window.aiAllTopics = {
       "unitName": "Long Context Models",
       "lessons": [
         {
-          "id": 1,
+          "id": "92-1",
           "title": "Memory mechanisms",
           "unitTitle": "Long Context Models",
           "xp": 20,
@@ -7485,7 +7485,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "92-2",
           "title": "Attention scaling",
           "unitTitle": "Long Context Models",
           "xp": 20,
@@ -7501,7 +7501,7 @@ window.aiAllTopics = {
       "unitName": "Autonomous AI Agents",
       "lessons": [
         {
-          "id": 1,
+          "id": "93-1",
           "title": "Tool use",
           "unitTitle": "Autonomous AI Agents",
           "xp": 20,
@@ -7511,7 +7511,7 @@ window.aiAllTopics = {
           "questions": []
         },
         {
-          "id": 2,
+          "id": "93-2",
           "title": "Planning systems",
           "unitTitle": "Autonomous AI Agents",
           "xp": 20,
