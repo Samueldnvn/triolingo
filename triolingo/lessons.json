@@ -2116,51 +2116,1206 @@
           "id": "3-1",
           "title": "Bernoulli",
           "unitTitle": "Important Distributions",
-          "xp": 20,
+          "xp": 92,
           "type": "lesson",
           "difficulty": "beginner",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Bernoulli Distribution\n\n## What is a Bernoulli Trial?\n\nA **Bernoulli trial** is a random experiment with exactly two possible outcomes:\n\n- **Success** (coded as 1)\n- **Failure** (coded as 0)\n\n### Examples of Bernoulli Trials\n\n1. **Coin Flip**: Heads (success) or Tails (failure)\n2. **Email Classification**: Spam (success) or Not Spam (failure)\n3. **Medical Test**: Positive (success) or Negative (failure)\n4. **Customer Purchase**: Purchase (success) or No Purchase (failure)\n5. **Binary Classification**: Class 1 (success) or Class 0 (failure)\n\n## Bernoulli Random Variable\n\nLet X be a Bernoulli random variable:\n\n$$X = \\begin{cases}\n1 & \\text{with probability } p \\\\ 0 & \\text{with probability } 1-p\n\\end{cases}$$\n\nWhere:\n- **p** is the probability of success\n- **1-p** is the probability of failure\n\nLooking at `diagrams/bernoulli-pmf.png`, you can see the Bernoulli PMF for p=0.7.\n\n## Probability Mass Function (PMF)\n\nThe PMF of a Bernoulli distribution is:\n\n$$P(X = x) = p^x (1-p)^{1-x} \\text{ for } x \\in \\{0, 1\\}$$\n\n**Verification:**\n\nFor x = 0 (failure): $P(X=0) = p^0(1-p)^{1-0} = 1 \\cdot (1-p) = 1-p$\n\nFor x = 1 (success): $P(X=1) = p^1(1-p)^{1-1} = p \\cdot 1 = p$\n\nCheck: $P(X=0) + P(X=1) = (1-p) + p = 1$ \u2713\n\n## Applications in AI\n\nLooking at `diagrams/bernoulli-applications.png`, Bernoulli distributions are ubiquitous in AI:\n\n1. **Binary Classification**: Spam detection, fraud detection, medical diagnosis\n2. **Neural Networks**: Sigmoid output represents probability of class 1\n3. **Decision Trees**: Binary splits at each node\n4. **Recommender Systems**: Click or don't click\n5. **A/B Testing**: Control (0) vs Treatment (1) group assignment\n\n## Expected Value (Mean)\n\n$$E[X] = \\sum_x x \\cdot P(X=x) = 0 \\cdot (1-p) + 1 \\cdot p = p$$\n\nThe expected value of a Bernoulli random variable is simply the probability of success.\n\n**Intuitive:** If you repeat a Bernoulli trial many times, the proportion of successes approaches p.\n\n## Variance\n\n$$\\text{Var}(X) = E[X^2] - (E[X])^2$$\n\nFirst, calculate $E[X^2]$:\n\n$$E[X^2] = 0^2 \\cdot (1-p) + 1^2 \\cdot p = p$$\n\nThen variance:\n\n$$\\text{Var}(X) = p - p^2 = p(1-p)$$\n\nThe variance is maximized when p = 0.5 (maximum uncertainty), and minimized when p approaches 0 or 1 (certainty).\n\nLooking at `diagrams/bernoulli-mean-variance.png`:\n- Expected value increases linearly with p\n- Variance is maximized at p=0.5 (Var=0.25)\n- Variance approaches 0 as p approaches 0 or 1\n\n## Standard Deviation\n\n$$\\sigma = \\sqrt{\\text{Var}(X)} = \\sqrt{p(1-p)}$$\n\n## Properties\n\n1. **Single trial**: Bernoulli models one trial\n2. **Two outcomes**: Exactly two possible results\n3. **Independent trials**: Multiple Bernoulli trials are assumed independent\n4. **Fixed probability**: p is constant across trials\n\n## Relationship to Other Distributions\n\n**Bernoulli as special case of Binomial:**\n- Binomial(n=1, p) = Bernoulli(p)\n\n**Sum of Bernoulli trials:**\n- Sum of n independent Bernoulli(p) trials ~ Binomial(n, p)\n\n## Example: Email Spam Detection\n\nAn email filter classifies emails as spam or not spam:\n\n- **Success (X=1)**: Email is spam\n- **Failure (X=0)**: Email is not spam\n- **p = 0.05**: 5% of emails are spam\n\n**PMF:**\n- $P(X=0) = 1 - 0.05 = 0.95$ (95% not spam)\n- $P(X=1) = 0.05$ (5% spam)\n\n**Expected value:** $E[X] = p = 0.05$\n\n**Variance:** $\\text{Var}(X) = p(1-p) = 0.05 \\times 0.95 = 0.0475$\n\n**Interpretation:** On average, 5% of emails are spam. The variance is low because most emails are not spam.",
+          "questions": [
+            {
+              "id": "bernoulli-3-1-1",
+              "type": "typing",
+              "question": "What is a Bernoulli trial?",
+              "correctAnswer": [
+                "random experiment with two possible outcomes",
+                "experiment with two outcomes",
+                "two possible outcomes",
+                "success or failure"
+              ],
+              "xp": 3,
+              "explanation": "A Bernoulli trial is a random experiment with exactly two possible outcomes: success (coded as 1) or failure (coded as 0)"
+            },
+            {
+              "id": "bernoulli-3-1-2",
+              "type": "typing",
+              "question": "In a Bernoulli distribution, what does the parameter p represent?",
+              "correctAnswer": [
+                "probability of success",
+                "success probability",
+                "P(X=1)"
+              ],
+              "xp": 3,
+              "explanation": "The parameter p in a Bernoulli distribution represents the probability of success, i.e., P(X=1) = p"
+            },
+            {
+              "id": "bernoulli-3-1-3",
+              "type": "typing",
+              "question": "What is the PMF formula for a Bernoulli distribution?",
+              "correctAnswer": [
+                "P(X=x) = p^x (1-p)^(1-x)",
+                "p^x (1-p)^(1-x)",
+                "p to the x times (1-p) to the (1-x)"
+              ],
+              "xp": 3,
+              "explanation": "The Bernoulli PMF is P(X=x) = p^x (1-p)^(1-x) for x \u2208 {0, 1}"
+            },
+            {
+              "id": "bernoulli-3-1-4",
+              "type": "multiple-choice",
+              "question": "Which of these is NOT a Bernoulli trial?",
+              "options": [
+                "Coin flip (heads/tails)",
+                "Rolling a die",
+                "Email spam detection (spam/not spam)",
+                "Medical test (positive/negative)"
+              ],
+              "correct": 1,
+              "xp": 2,
+              "explanation": "Rolling a die has 6 possible outcomes, not 2. A Bernoulli trial must have exactly two outcomes"
+            },
+            {
+              "id": "bernoulli-3-1-5",
+              "type": "typing",
+              "question": "If p = 0.7, what is P(X=0) for a Bernoulli random variable?",
+              "correctAnswer": [
+                "0.3",
+                ".3",
+                "1 - p"
+              ],
+              "xp": 4,
+              "explanation": "P(X=0) = 1 - p = 1 - 0.7 = 0.3. This represents the probability of failure"
+            },
+            {
+              "id": "bernoulli-3-1-6",
+              "type": "typing",
+              "question": "Looking at `diagrams/bernoulli-pmf.png`, what is the expected value E[X] for a Bernoulli distribution with p=0.7?",
+              "correctAnswer": [
+                "0.7",
+                ".7",
+                "p"
+              ],
+              "xp": 4,
+              "explanation": "For a Bernoulli distribution, E[X] = p. So with p=0.7, the expected value is 0.7"
+            },
+            {
+              "id": "bernoulli-3-1-7",
+              "type": "typing",
+              "question": "What is the variance of a Bernoulli distribution?",
+              "correctAnswer": [
+                "p(1-p)",
+                "p times (1-p)",
+                "p(1 minus p)"
+              ],
+              "xp": 4,
+              "explanation": "The variance of a Bernoulli distribution is Var(X) = p(1-p)"
+            },
+            {
+              "id": "bernoulli-3-1-8",
+              "type": "typing",
+              "question": "For a Bernoulli distribution with p=0.5, what is the variance?",
+              "correctAnswer": [
+                "0.25",
+                ".25",
+                "0.5*0.5",
+                "0.5 times 0.5"
+              ],
+              "xp": 4,
+              "explanation": "Var(X) = p(1-p) = 0.5 \u00d7 0.5 = 0.25. This is the maximum possible variance for a Bernoulli distribution"
+            },
+            {
+              "id": "bernoulli-3-1-9",
+              "type": "multiple-choice",
+              "question": "When is the variance of a Bernoulli distribution maximized?",
+              "options": [
+                "When p = 0",
+                "When p = 1",
+                "When p = 0.5",
+                "Variance is constant"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "The variance p(1-p) is maximized when p=0.5, giving Var(X) = 0.25. This represents maximum uncertainty"
+            },
+            {
+              "id": "bernoulli-3-1-10",
+              "type": "multiple-choice",
+              "question": "Looking at `diagrams/bernoulli-applications.png`, which application has p=0.05?",
+              "options": [
+                "Coin flip",
+                "Email spam detection",
+                "Customer purchase",
+                "Medical test"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Email spam detection shows p=0.05 (5% spam rate) - rare events have low p values"
+            },
+            {
+              "id": "bernoulli-3-1-11",
+              "type": "multiple-choice",
+              "question": "How are outcomes coded in a Bernoulli distribution?",
+              "options": [
+                "Success = 0, Failure = 1",
+                "Success = 1, Failure = 0",
+                "Both outcomes are positive",
+                "No specific coding"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "In a Bernoulli distribution, success is coded as 1 and failure is coded as 0"
+            },
+            {
+              "id": "bernoulli-3-1-12",
+              "type": "multiple-choice",
+              "question": "What distribution is a sum of n independent Bernoulli trials?",
+              "options": [
+                "Poisson distribution",
+                "Binomial distribution",
+                "Normal distribution",
+                "Uniform distribution"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "The sum of n independent Bernoulli(p) trials follows a Binomial(n, p) distribution"
+            },
+            {
+              "id": "bernoulli-3-1-13",
+              "type": "typing",
+              "question": "What is the relationship between Bernoulli and Binomial distributions?",
+              "correctAnswer": [
+                "Bernoulli is Binomial with n=1",
+                "Binomial with n equals 1",
+                "special case"
+              ],
+              "xp": 5,
+              "explanation": "A Bernoulli distribution is a special case of the Binomial distribution where n=1: Binomial(n=1, p) = Bernoulli(p)"
+            },
+            {
+              "id": "bernoulli-3-1-14",
+              "type": "typing",
+              "question": "Looking at `diagrams/bernoulli-mean-variance.png`, what happens to variance as p approaches 0 or 1?",
+              "correctAnswer": [
+                "variance approaches 0",
+                "approaches zero",
+                "decreases to 0"
+              ],
+              "xp": 5,
+              "explanation": "As p approaches 0 or 1, variance p(1-p) approaches 0. This represents certainty - when outcomes are predictable, there's no variance"
+            },
+            {
+              "id": "bernoulli-3-1-15",
+              "type": "typing",
+              "question": "What is the standard deviation of a Bernoulli distribution?",
+              "correctAnswer": [
+                "sqrt(p(1-p))",
+                "square root of p(1-p)",
+                "\u221a(p(1-p))"
+              ],
+              "xp": 5,
+              "explanation": "The standard deviation is the square root of the variance: \u03c3 = \u221a(p(1-p))"
+            },
+            {
+              "id": "bernoulli-3-1-16",
+              "type": "typing",
+              "question": "In a spam filter, if 3% of emails are spam, what is p?",
+              "correctAnswer": [
+                "0.03",
+                ".03",
+                "3%"
+              ],
+              "xp": 4,
+              "explanation": "If 3% of emails are spam, then p = 0.03 (the probability of success/spam)"
+            },
+            {
+              "id": "bernoulli-3-1-17",
+              "type": "multiple-choice",
+              "question": "If a coin is fair (p=0.5), what is E[X] where X=1 for heads?",
+              "options": [
+                "0",
+                "0.5",
+                "1",
+                "2"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "For a Bernoulli distribution, E[X] = p. With a fair coin, p=0.5, so E[X] = 0.5"
+            },
+            {
+              "id": "bernoulli-3-1-18",
+              "type": "multiple-choice",
+              "question": "Looking at `diagrams/bernoulli-pmf.png`, which bar represents success when p=0.7?",
+              "options": [
+                "The shorter bar (0.3)",
+                "The taller bar (0.7)",
+                "Both bars",
+                "Neither bar"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "The taller bar shows P(X=1) = 0.7, which represents success in the Bernoulli distribution"
+            }
+          ]
         },
         {
           "id": "3-2",
           "title": "Binomial",
           "unitTitle": "Important Distributions",
-          "xp": 20,
+          "xp": 92,
           "type": "lesson",
           "difficulty": "beginner",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Binomial Distribution\n\n## What is the Binomial Distribution?\n\nThe **Binomial distribution** models the number of successes in **n independent Bernoulli trials**, each with the same probability of success **p**.\n\n### Key Components\n\n1. **n**: Number of independent trials\n2. **p**: Probability of success on each trial (constant)\n3. **X**: Number of successes (random variable)\n\n### When to Use Binomial\n\nUse the Binomial distribution when:\n- \u2713 Fixed number of trials (n)\n- \u2713 Each trial has two outcomes (success/failure)\n- \u2713 Trials are independent\n- \u2713 Probability of success is constant (p)\n\n### Examples of Binomial Experiments\n\n1. **Coin Flips**: Number of heads in 10 coin flips\n2. **Quality Control**: Number of defective items in 100 produced\n3. **Marketing**: Number of conversions from 1000 ad clicks\n4. **Survey**: Number of yes responses from 50 people\n5. **Machine Learning**: Number of correct predictions from 100 test samples\n\n## Probability Mass Function (PMF)\n\n$$P(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}$$\n\nWhere:\n- $\\binom{n}{k} = \\frac{n!}{k!(n-k)!}$ is the binomial coefficient\n- k is the number of successes (0 \u2264 k \u2264 n)\n\n### Understanding the Formula\n\n1. **$\\binom{n}{k}$**: Number of ways to choose k successes from n trials\n2. **$p^k$**: Probability of k successes\n3. **$(1-p)^{n-k}$**: Probability of n-k failures\n\n**Example**: Probability of exactly 2 heads in 3 coin flips (p=0.5):\n\n$$P(X=2) = \\binom{3}{2} (0.5)^2 (0.5)^{3-2} = 3 \\times 0.25 \\times 0.5 = 0.375$$\n\nThere are 3 ways to get 2 heads: HHT, HTH, THH\n\nLooking at `diagrams/binomial-bernoulli-relationship.png`, you can see how Binomial relates to Bernoulli trials.\n\n## Relationship to Bernoulli\n\nThe Binomial distribution is the sum of n independent Bernoulli trials:\n\n$$X = X_1 + X_2 + ... + X_n$$\n\nWhere each $X_i$ is a Bernoulli(p) random variable.\n\n**Special case**: Binomial(n=1, p) = Bernoulli(p)\n\n## Expected Value (Mean)\n\n$$E[X] = n \\cdot p$$\n\nThis makes intuitive sense: if each trial has probability p of success, and you do n trials, you expect np successes on average.\n\n**Example**: Expected number of heads in 10 fair coin flips:\n$$E[X] = 10 \\times 0.5 = 5$$\n\n## Variance\n\n$$\\text{Var}(X) = n \\cdot p \\cdot (1-p)$$\n\nSince trials are independent, the variance of the sum equals the sum of variances:\n\n$$\\text{Var}(X) = n \\cdot \\text{Var}(\\text{Bernoulli}) = n \\cdot p \\cdot (1-p)$$\n\n**Example**: Variance of heads in 10 fair coin flips:\n$$\\text{Var}(X) = 10 \\times 0.5 \\times 0.5 = 2.5$$\n\n## Standard Deviation\n\n$$\\sigma = \\sqrt{n \\cdot p \\cdot (1-p)}$$\n\n## Visualizing the Binomial Distribution\n\nLooking at `diagrams/binomial-varying-n.png`:\n- As n increases, the distribution becomes more symmetric\n- The distribution approaches a bell shape for large n\n- The expected value np is marked with a dashed line\n\nLooking at `diagrams/binomial-varying-p.png`:\n- When p = 0.5: Symmetric distribution\n- When p < 0.5: Skewed right (more failures)\n- When p > 0.5: Skewed left (more successes)\n- The expected value np shifts with p\n\n## Shape of the Distribution\n\nThe shape depends on p:\n\n- **p = 0.5**: Symmetric (like a normal distribution)\n- **p < 0.5**: Right-skewed (tail extends to the right)\n- **p > 0.5**: Left-skewed (tail extends to the left)\n\n## Example: Quality Control\n\nA factory produces items with a defect rate of 2%. In a batch of 100 items:\n\n- n = 100\n- p = 0.02\n\n**Expected defects:** $E[X] = 100 \\times 0.02 = 2$\n\n**Variance:** $\\text{Var}(X) = 100 \\times 0.02 \\times 0.98 = 1.96$\n\n**Probability of exactly 0 defects:**\n$$P(X=0) = \\binom{100}{0} (0.02)^0 (0.98)^{100} = 1 \\times 1 \\times 0.98^{100} \\approx 0.133$$\n\n**Probability of exactly 1 defect:**\n$$P(X=1) = \\binom{100}{1} (0.02)^1 (0.98)^{99} = 100 \\times 0.02 \\times 0.98^{99} \\approx 0.271$$\n\n## Applications in AI and ML\n\n1. **Classification Accuracy**: Number of correct predictions in n test cases\n2. **Binary Classification**: Count of positive predictions\n3. **A/B Testing**: Number of conversions in treatment group\n4. **Neural Network Training**: Count of training samples where loss < threshold\n5. **Sentiment Analysis**: Number of positive sentiments in n reviews",
+          "questions": [
+            {
+              "id": "binomial-3-2-1",
+              "type": "typing",
+              "question": "What does the Binomial distribution model?",
+              "correctAnswer": [
+                "number of successes in n independent Bernoulli trials",
+                "number of successes in n trials",
+                "successes in independent trials"
+              ],
+              "xp": 3,
+              "explanation": "The Binomial distribution models the number of successes in n independent Bernoulli trials, each with the same success probability p"
+            },
+            {
+              "id": "binomial-3-2-2",
+              "type": "typing",
+              "question": "What are the two parameters of a Binomial distribution?",
+              "correctAnswer": [
+                "n and p",
+                "n, p",
+                "number of trials and probability of success"
+              ],
+              "xp": 3,
+              "explanation": "The Binomial distribution has two parameters: n (number of trials) and p (probability of success on each trial)"
+            },
+            {
+              "id": "binomial-3-2-3",
+              "type": "typing",
+              "question": "What is the PMF formula for the Binomial distribution?",
+              "correctAnswer": [
+                "P(X=k) = C(n,k) p^k (1-p)^(n-k)",
+                "binom(n,k) p^k (1-p)^(n-k)",
+                "n choose k times p^k times (1-p)^(n-k)"
+              ],
+              "xp": 3,
+              "explanation": "The Binomial PMF is P(X=k) = C(n,k) \u00d7 p^k \u00d7 (1-p)^(n-k), where C(n,k) is the binomial coefficient"
+            },
+            {
+              "id": "binomial-3-2-4",
+              "type": "multiple-choice",
+              "question": "Which of these is NOT required for a Binomial experiment?",
+              "options": [
+                "Fixed number of trials",
+                "Independent trials",
+                "Constant probability of success",
+                "Varying probability between trials"
+              ],
+              "correct": 3,
+              "xp": 2,
+              "explanation": "A Binomial experiment requires constant probability p across all trials. Varying probability would violate this assumption"
+            },
+            {
+              "id": "binomial-3-2-5",
+              "type": "typing",
+              "question": "What is the expected value of a Binomial distribution?",
+              "correctAnswer": [
+                "n * p",
+                "n times p",
+                "np"
+              ],
+              "xp": 4,
+              "explanation": "The expected value of a Binomial distribution is E[X] = n \u00d7 p. On average, you get np successes in n trials"
+            },
+            {
+              "id": "binomial-3-2-6",
+              "type": "typing",
+              "question": "What is the variance of a Binomial distribution?",
+              "correctAnswer": [
+                "n * p * (1-p)",
+                "n p (1-p)",
+                "n times p times (1-p)"
+              ],
+              "xp": 4,
+              "explanation": "The variance of a Binomial distribution is Var(X) = n \u00d7 p \u00d7 (1-p). This comes from summing n independent Bernoulli variances"
+            },
+            {
+              "id": "binomial-3-2-7",
+              "type": "typing",
+              "question": "In a Binomial distribution with n=10 and p=0.5, what is E[X]?",
+              "correctAnswer": [
+                "5",
+                "five",
+                "10*0.5"
+              ],
+              "xp": 4,
+              "explanation": "E[X] = n \u00d7 p = 10 \u00d7 0.5 = 5. On average, you get 5 successes in 10 trials with a 50% success rate"
+            },
+            {
+              "id": "binomial-3-2-8",
+              "type": "typing",
+              "question": "What is C(5,2) (5 choose 2)?",
+              "correctAnswer": [
+                "10",
+                "ten",
+                "5!/(2!3!)"
+              ],
+              "xp": 4,
+              "explanation": "C(5,2) = 5!/(2!\u00d73!) = (5\u00d74\u00d73\u00d72\u00d71)/(2\u00d71\u00d73\u00d72\u00d71) = 20/2 = 10. There are 10 ways to choose 2 items from 5"
+            },
+            {
+              "id": "binomial-3-2-9",
+              "type": "multiple-choice",
+              "question": "Looking at `diagrams/binomial-varying-n.png`, what happens to the shape as n increases?",
+              "options": [
+                "Becomes more symmetric",
+                "Becomes more skewed",
+                "Stays the same",
+                "Becomes narrower"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "As n increases, the Binomial distribution becomes more symmetric and approaches a bell shape (normal distribution)"
+            },
+            {
+              "id": "binomial-3-2-10",
+              "type": "multiple-choice",
+              "question": "Looking at `diagrams/binomial-varying-p.png`, when is the Binomial distribution symmetric?",
+              "options": [
+                "When p = 0.5",
+                "When p < 0.5",
+                "When p > 0.5",
+                "Always symmetric"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "The Binomial distribution is symmetric when p = 0.5, right-skewed when p < 0.5, and left-skewed when p > 0.5"
+            },
+            {
+              "id": "binomial-3-2-11",
+              "type": "multiple-choice",
+              "question": "What is the sum of n independent Bernoulli(p) trials?",
+              "options": [
+                "Poisson distribution",
+                "Binomial distribution",
+                "Normal distribution",
+                "Exponential distribution"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "The sum of n independent Bernoulli(p) trials follows a Binomial(n, p) distribution"
+            },
+            {
+              "id": "binomial-3-2-12",
+              "type": "multiple-choice",
+              "question": "If n=1, what distribution does the Binomial become?",
+              "options": [
+                "Poisson",
+                "Normal",
+                "Bernoulli",
+                "Uniform"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "When n=1, the Binomial(n=1, p) distribution is equivalent to the Bernoulli(p) distribution"
+            },
+            {
+              "id": "binomial-3-2-13",
+              "type": "typing",
+              "question": "Looking at `diagrams/binomial-bernoulli-relationship.png`, how does Binomial relate to Bernoulli?",
+              "correctAnswer": [
+                "Binomial is sum of n independent Bernoulli trials",
+                "sum of Bernoulli",
+                "n Bernoulli trials summed"
+              ],
+              "xp": 5,
+              "explanation": "The Binomial distribution represents the sum of n independent Bernoulli trials. This is why it's used for counting successes"
+            },
+            {
+              "id": "binomial-3-2-14",
+              "type": "typing",
+              "question": "In 20 coin flips with a fair coin, what is the expected number of heads?",
+              "correctAnswer": [
+                "10",
+                "ten",
+                "20*0.5"
+              ],
+              "xp": 4,
+              "explanation": "E[X] = n \u00d7 p = 20 \u00d7 0.5 = 10. You expect 10 heads in 20 fair coin flips"
+            },
+            {
+              "id": "binomial-3-2-15",
+              "type": "typing",
+              "question": "What is the probability of exactly 3 heads in 5 coin flips (p=0.5)?",
+              "correctAnswer": [
+                "0.3125",
+                "10/32",
+                "C(5,3) * 0.5^5"
+              ],
+              "xp": 5,
+              "explanation": "P(X=3) = C(5,3) \u00d7 0.5^3 \u00d7 0.5^2 = 10 \u00d7 0.125 \u00d7 0.25 = 0.3125 = 10/32"
+            },
+            {
+              "id": "binomial-3-2-16",
+              "type": "typing",
+              "question": "When is a Binomial distribution right-skewed?",
+              "correctAnswer": [
+                "when p < 0.5",
+                "p less than 0.5",
+                "p is small"
+              ],
+              "xp": 5,
+              "explanation": "A Binomial distribution is right-skewed when p < 0.5 because most outcomes are failures (0), with a tail extending to the right for successes"
+            },
+            {
+              "id": "binomial-3-2-17",
+              "type": "multiple-choice",
+              "question": "If the probability of success increases, what happens to the expected value?",
+              "options": [
+                "Decreases",
+                "Stays the same",
+                "Increases",
+                "Unpredictable"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "Expected value E[X] = n \u00d7 p, so as p increases, E[X] increases linearly"
+            },
+            {
+              "id": "binomial-3-2-18",
+              "type": "multiple-choice",
+              "question": "What does C(n,k) represent in the Binomial formula?",
+              "options": [
+                "Expected value",
+                "Number of ways to choose k successes from n trials",
+                "Variance",
+                "Probability"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "C(n,k) = n!/(k!(n-k)!) represents the binomial coefficient - the number of ways to choose k successes from n trials"
+            }
+          ]
         },
         {
           "id": "3-3",
           "title": "Poisson",
           "unitTitle": "Important Distributions",
-          "xp": 20,
+          "xp": 92,
           "type": "lesson",
           "difficulty": "beginner",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Poisson Distribution\n\n## What is the Poisson Distribution?\n\nThe **Poisson distribution** models the number of events occurring in a fixed interval of time or space, given that:\n\n1. Events occur independently\n2. The average rate (\u03bb) of events is constant\n3. Two events cannot occur at the exact same instant\n\n### Key Parameter\n\n**\u03bb (lambda)**: The average rate of events per interval\n\n### Examples of Poisson Processes\n\n1. **Customer arrivals**: Number of customers arriving per hour\n2. **Website clicks**: Number of clicks per minute\n3. **Call center**: Number of calls per hour\n4. **Defects**: Number of defects per square meter of fabric\n5. **Typos**: Number of typos per page of text\n6. **Radioactive decay**: Number of particles emitted per second\n\n## Probability Mass Function (PMF)\n\n$$P(X = k) = \\frac{e^{-\\lambda} \\lambda^k}{k!}$$\n\nWhere:\n- **\u03bb**: Average rate of events\n- **k**: Number of events (k = 0, 1, 2, ...)\n- **e**: Euler's number (\u2248 2.71828)\n\n### Understanding the Formula\n\n1. **$e^{-\\lambda}$**: Normalization constant\n2. **$\\lambda^k$**: Accounts for the rate and number of events\n3. **$k!$**: Accounts for the number of ways events can occur\n\n**Example**: Average 3 emails per hour (\u03bb=3). Probability of exactly 2 emails:\n\n$$P(X=2) = \\frac{e^{-3} \\cdot 3^2}{2!} = \\frac{0.0498 \\cdot 9}{2} = \\frac{0.448}{2} = 0.224$$\n\nLooking at `diagrams/poisson-varying-lambda.png`, you can see how \u03bb affects the distribution shape.\n\n## Expected Value and Variance\n\n$$E[X] = \\lambda$$\n\n$$\\text{Var}(X) = \\lambda$$\n\n**Key property**: For Poisson distribution, mean = variance = \u03bb!\n\nLooking at `diagrams/poisson-properties.png`, the mean and variance curves overlap perfectly.\n\n**Intuition**: If you average \u03bb events per interval, you expect \u03bb events. The variance also equals \u03bb.\n\n## Shape of the Distribution\n\nLooking at `diagrams/poisson-varying-lambda.png`:\n\n- **\u03bb < 1**: Skewed right (many zeros, tail to the right)\n- **\u03bb = 1**: Moderately skewed\n- **\u03bb > 1**: Approaches symmetry as \u03bb increases\n- **\u03bb is large**: Approaches normal distribution\n\n## Poisson Approximation to Binomial\n\nWhen:\n- n is large (n \u2265 20)\n- p is small (p \u2264 0.05)\n- np is moderate (np \u2264 10)\n\nThen Binomial(n, p) \u2248 Poisson(\u03bb = np)\n\n**Example**: n=100, p=0.02\n\n- Binomial: Bin(100, 0.02)\n- Approximation: Poisson(\u03bb = 100 \u00d7 0.02 = 2)\n\nLooking at `diagrams/poisson-properties.png`, the Binomial and Poisson distributions nearly overlap when conditions are met.\n\n## Why Mean = Variance?\n\nThe Poisson distribution has a unique property where mean = variance = \u03bb.\n\n**Intuitive explanation**:\n- The spread of events (variance) depends on the average rate\n- Higher average rate \u2192 more spread\n- The spread equals the average rate\n\n**Mathematical derivation**:\n- E[X] = \u03bb (by definition of \u03bb as average rate)\n- Var(X) = \u03bb (derived from PMF)\n\n## Applications in AI and ML\n\nLooking at `diagrams/poisson-applications.png`:\n\n1. **Natural Language Processing**: Word frequency in documents\n2. **Network Traffic**: Packet arrivals per time unit\n3. **Customer Service**: Request arrivals\n4. **Anomaly Detection**: Unusual event counts trigger alerts\n5. **Queueing Theory**: Modeling service systems\n\n## Example: Customer Arrivals\n\nA store averages 4 customers per hour (\u03bb=4).\n\n**Expected customers per hour:** E[X] = 4\n\n**Variance:** Var(X) = 4\n\n**Standard deviation:** \u03c3 = \u221a4 = 2\n\n**Probability of exactly 0 customers:**\n$$P(X=0) = \\frac{e^{-4} \\cdot 4^0}{0!} = e^{-4} \\cdot 1 \\cdot 1 \\approx 0.018$$\n\n**Probability of exactly 4 customers:**\n$$P(X=4) = \\frac{e^{-4} \\cdot 4^4}{4!} = \\frac{0.018 \\cdot 256}{24} \\approx 0.195$$\n\n**Probability of more than 6 customers:**\n$$P(X > 6) = 1 - P(X \\leq 6) = 1 - \\sum_{k=0}^{6} \\frac{e^{-4} 4^k}{k!}$$\n\n## Sum of Independent Poisson Variables\n\nIf X ~ Poisson(\u03bb\u2081) and Y ~ Poisson(\u03bb\u2082) are independent:\n\n$$X + Y \\sim \\text{Poisson}(\\lambda_1 + \\lambda_2)$$\n\n**Example**: If one process averages 2 events/hour and another averages 3 events/hour, the combined process averages 5 events/hour.\n\n## Poisson Process\n\nA Poisson process is a continuous-time stochastic process where events occur continuously and independently at a constant average rate \u03bb.\n\n**Properties**:\n- Number of events in interval t follows Poisson(\u03bbt)\n- Time between events follows Exponential(\u03bb)\n\n## When NOT to Use Poisson\n\n\u274c Don't use Poisson when:\n- Events are not independent\n- Rate varies over time\n- Events can occur simultaneously\n- Rate is not constant\n\n\u2705 Do use Poisson when:\n- Counting rare events in fixed intervals\n- Events occur independently\n- Constant average rate",
+          "questions": [
+            {
+              "id": "poisson-3-3-1",
+              "type": "typing",
+              "question": "What does the Poisson distribution model?",
+              "correctAnswer": [
+                "number of events in a fixed interval",
+                "events in time or space",
+                "count of events"
+              ],
+              "xp": 3,
+              "explanation": "The Poisson distribution models the number of events occurring in a fixed interval of time or space given a constant average rate \u03bb"
+            },
+            {
+              "id": "poisson-3-3-2",
+              "type": "typing",
+              "question": "What is the parameter \u03bb in a Poisson distribution?",
+              "correctAnswer": [
+                "average rate of events",
+                "average events per interval",
+                "mean number of events"
+              ],
+              "xp": 3,
+              "explanation": "\u03bb (lambda) is the average rate of events per interval in a Poisson distribution"
+            },
+            {
+              "id": "poisson-3-3-3",
+              "type": "typing",
+              "question": "What is the PMF formula for the Poisson distribution?",
+              "correctAnswer": [
+                "P(X=k) = e^(-\u03bb) \u03bb^k / k!",
+                "e to the negative lambda times lambda to the k over k factorial"
+              ],
+              "xp": 3,
+              "explanation": "The Poisson PMF is P(X=k) = (e^(-\u03bb) \u00d7 \u03bb^k) / k! for k = 0, 1, 2, ..."
+            },
+            {
+              "id": "poisson-3-3-4",
+              "type": "multiple-choice",
+              "question": "Which of these is a valid Poisson process example?",
+              "options": [
+                "Rolling a die",
+                "Customer arrivals per hour",
+                "Height of people",
+                "Flipping a coin"
+              ],
+              "correct": 1,
+              "xp": 2,
+              "explanation": "Customer arrivals per hour is a Poisson process - events occur continuously at an average rate \u03bb"
+            },
+            {
+              "id": "poisson-3-3-5",
+              "type": "typing",
+              "question": "What is the expected value of a Poisson distribution?",
+              "correctAnswer": [
+                "\u03bb",
+                "lambda",
+                "average rate"
+              ],
+              "xp": 4,
+              "explanation": "For a Poisson distribution, E[X] = \u03bb. The expected value equals the average rate parameter"
+            },
+            {
+              "id": "poisson-3-3-6",
+              "type": "typing",
+              "question": "What is the variance of a Poisson distribution?",
+              "correctAnswer": [
+                "\u03bb",
+                "lambda",
+                "same as mean"
+              ],
+              "xp": 4,
+              "explanation": "For a Poisson distribution, Var(X) = \u03bb. The unique property is that mean = variance = \u03bb"
+            },
+            {
+              "id": "poisson-3-3-7",
+              "type": "typing",
+              "question": "If \u03bb=5, what is the standard deviation of a Poisson distribution?",
+              "correctAnswer": [
+                "sqrt(5)",
+                "square root of 5",
+                "\u221a5"
+              ],
+              "xp": 4,
+              "explanation": "Standard deviation = \u221aVar(X) = \u221a\u03bb = \u221a5 \u2248 2.236"
+            },
+            {
+              "id": "poisson-3-3-8",
+              "type": "typing",
+              "question": "Looking at `diagrams/poisson-varying-lambda.png`, what happens to the shape as \u03bb increases?",
+              "correctAnswer": [
+                "becomes more symmetric",
+                "more symmetric",
+                "approaches normal"
+              ],
+              "xp": 4,
+              "explanation": "As \u03bb increases, the Poisson distribution becomes more symmetric and approaches a normal distribution"
+            },
+            {
+              "id": "poisson-3-3-9",
+              "type": "multiple-choice",
+              "question": "When can Poisson approximate Binomial?",
+              "options": [
+                "When n is small and p is large",
+                "When n is large and p is small",
+                "When n and p are both large",
+                "Never"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Poisson can approximate Binomial when n is large (\u226520), p is small (\u22640.05), and np is moderate (\u226410)"
+            },
+            {
+              "id": "poisson-3-3-10",
+              "type": "multiple-choice",
+              "question": "Looking at `diagrams/poisson-applications.png`, which is NOT a Poisson application?",
+              "options": [
+                "Website clicks per minute",
+                "Call center calls per hour",
+                "Height of a person",
+                "Typos per page"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "Height is a continuous measurement, not a count of events. Poisson models counts of events in intervals"
+            },
+            {
+              "id": "poisson-3-3-11",
+              "type": "multiple-choice",
+              "question": "What is P(X=0) for a Poisson distribution with \u03bb=2?",
+              "options": [
+                "0",
+                "e^-2",
+                "2",
+                "2e^-2"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "P(X=0) = (e^(-\u03bb) \u00d7 \u03bb^0) / 0! = e^(-\u03bb) \u00d7 1 / 1 = e^(-2) \u2248 0.135"
+            },
+            {
+              "id": "poisson-3-3-12",
+              "type": "multiple-choice",
+              "question": "If X ~ Poisson(3) and Y ~ Poisson(4) are independent, what is X+Y distributed as?",
+              "options": [
+                "Poisson(3)",
+                "Poisson(4)",
+                "Poisson(7)",
+                "Poisson(12)"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "The sum of independent Poisson variables is Poisson with rate equal to the sum: X+Y ~ Poisson(3+4) = Poisson(7)"
+            },
+            {
+              "id": "poisson-3-3-13",
+              "type": "typing",
+              "question": "Looking at `diagrams/poisson-properties.png`, what is unique about Poisson mean and variance?",
+              "correctAnswer": [
+                "they are equal",
+                "mean equals variance",
+                "both equal \u03bb"
+              ],
+              "xp": 5,
+              "explanation": "The Poisson distribution has the unique property that E[X] = Var(X) = \u03bb. The mean and variance are equal!"
+            },
+            {
+              "id": "poisson-3-3-14",
+              "type": "typing",
+              "question": "If \u03bb=3, what is P(X=3) for a Poisson distribution?",
+              "correctAnswer": [
+                "e^-3 * 27 / 6",
+                "(e^-3 * 3^3) / 3!",
+                "approximately 0.224"
+              ],
+              "xp": 5,
+              "explanation": "P(X=3) = (e^(-3) \u00d7 3^3) / 3! = (e^(-3) \u00d7 27) / 6 \u2248 0.224"
+            },
+            {
+              "id": "poisson-3-3-15",
+              "type": "typing",
+              "question": "What does e represent in the Poisson PMF?",
+              "correctAnswer": [
+                "Euler's number",
+                "2.71828",
+                "natural number"
+              ],
+              "xp": 5,
+              "explanation": "e is Euler's number, approximately 2.71828. It's the base of natural logarithms"
+            },
+            {
+              "id": "poisson-3-3-16",
+              "type": "typing",
+              "question": "When is a Poisson distribution right-skewed?",
+              "correctAnswer": [
+                "when \u03bb < 1",
+                "lambda less than 1",
+                "small lambda"
+              ],
+              "xp": 5,
+              "explanation": "A Poisson distribution is right-skewed when \u03bb < 1 because there are many zeros and few higher values"
+            },
+            {
+              "id": "poisson-3-3-17",
+              "type": "multiple-choice",
+              "question": "In a Poisson process, what distribution does the time between events follow?",
+              "options": [
+                "Poisson",
+                "Exponential",
+                "Normal",
+                "Uniform"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "In a Poisson process, the time between events follows an Exponential distribution with rate \u03bb"
+            },
+            {
+              "id": "poisson-3-3-18",
+              "type": "multiple-choice",
+              "question": "Looking at `diagrams/poisson-properties.png`, what condition allows Poisson to approximate Binomial?",
+              "options": [
+                "n small, p large",
+                "n large, p small",
+                "n small, p small",
+                "n large, p large"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Poisson approximates Binomial when n is large (\u226520) and p is small (\u22640.05), with \u03bb = np"
+            }
+          ]
         },
         {
           "id": "3-4",
           "title": "Uniform",
           "unitTitle": "Important Distributions",
-          "xp": 20,
+          "xp": 92,
           "type": "lesson",
           "difficulty": "beginner",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Uniform Distribution\n\n## What is the Uniform Distribution?\n\nThe **Uniform distribution** is the simplest probability distribution where all outcomes are **equally likely**.\n\nThere are two types:\n\n1. **Discrete Uniform**: Countable outcomes, each equally likely\n2. **Continuous Uniform**: Continuous outcomes, equal probability density over an interval\n\n## Discrete Uniform Distribution\n\n### Definition\n\nA discrete random variable X has a discrete uniform distribution on {a, a+1, ..., b} if:\n\n$$P(X = k) = \\frac{1}{b - a + 1} \\text{ for } k = a, a+1, ..., b$$\n\n### Examples\n\n1. **Die Roll**: Each face {1, 2, 3, 4, 5, 6} has probability 1/6\n2. **Coin Flip**: Each outcome {Heads, Tails} has probability 1/2\n3. **Day of Week**: Each day {Mon, Tue, ..., Sun} has probability 1/7\n4. **Card Suit**: Each suit {Hearts, Diamonds, Clubs, Spades} has probability 1/4\n\nLooking at `diagrams/uniform-discrete-continuous.png`, the left panel shows a discrete uniform (die roll).\n\n### Expected Value (Mean)\n\n$$E[X] = \\frac{a + b}{2}$$\n\nThis is the midpoint of the range.\n\n**Example**: Die roll (a=1, b=6)\n$$E[X] = \\frac{1 + 6}{2} = 3.5$$\n\n### Variance\n\n$$\\text{Var}(X) = \\frac{(b - a + 1)^2 - 1}{12}$$\n\n**Example**: Die roll\n$$\\text{Var}(X) = \\frac{(6 - 1 + 1)^2 - 1}{12} = \\frac{36 - 1}{12} = \\frac{35}{12} \\approx 2.92$$\n\n## Continuous Uniform Distribution\n\n### Definition\n\nA continuous random variable X has a uniform distribution on [a, b] if:\n\n$$f(x) = \\begin{cases}\n\\frac{1}{b - a} & \\text{if } a \\leq x \\leq b \\\\ 0 & \\text{otherwise}\n\\end{cases}$$\n\n### PDF Visualization\n\nLooking at `diagrams/uniform-discrete-continuous.png`, the right panel shows a continuous uniform:\n- Rectangle from a to b\n- Height = 1/(b-a)\n- Area under curve = 1\n\n### CDF\n\n$$F(x) = \\begin{cases}\n0 & \\text{if } x < a \\\\\n\\frac{x - a}{b - a} & \\text{if } a \\leq x \\leq b \\\\\n1 & \\text{if } x > b\n\\end{cases}$$\n\nLooking at `diagrams/uniform-intervals-cdf.png`, the right panel shows the CDF as a linear function increasing from 0 to 1.\n\n### Expected Value (Mean)\n\n$$E[X] = \\frac{a + b}{2}$$\n\nSame formula as discrete! The midpoint of the interval.\n\nLooking at `diagrams/uniform-mean-variance.png`, the left panel shows the expected value.\n\n**Example**: Uniform(0, 10)\n$$E[X] = \\frac{0 + 10}{2} = 5$$\n\n### Variance\n\n$$\\text{Var}(X) = \\frac{(b - a)^2}{12}$$\n\nLooking at `diagrams/uniform-mean-variance.png`, the right panel shows how variance increases with interval width.\n\n**Example**: Uniform(0, 10)\n$$\\text{Var}(X) = \\frac{(10 - 0)^2}{12} = \\frac{100}{12} \\approx 8.33$$\n\n### Standard Deviation\n\n$$\\sigma = \\sqrt{\\text{Var}(X)} = \\frac{b - a}{2\\sqrt{3}}$$\n\n## Applications in AI and ML\n\n1. **Random Sampling**: Generating random numbers uniformly\n2. **Data Augmentation**: Random transformations with uniform parameters\n3. **Bayesian Priors**: Uninformative prior (all values equally likely)\n4. **Monte Carlo Methods**: Sampling from uniform distribution\n5. **Initialization**: Weight initialization in neural networks\n\n## Properties\n\n### Key Properties of Uniform Distribution\n\n1. **Equal probability**: All outcomes equally likely\n2. **Maximum entropy**: Among all distributions with given range, uniform has maximum uncertainty\n3. **Flat PDF**: Constant density over the support\n4. **Linear CDF**: Straight line from 0 to 1 (continuous case)\n\n## Example: Random Number Generator\n\nA random number generator produces uniform values in [0, 1].\n\n- a = 0, b = 1\n- f(x) = 1 for 0 \u2264 x \u2264 1\n- E[X] = 0.5\n- Var(X) = 1/12 \u2248 0.0833\n\n**Probability questions:**\n\nP(X < 0.3) = 0.3\n\nP(X > 0.7) = 0.3\n\nP(0.2 < X < 0.8) = 0.6\n\n## Example: Waiting Time\n\nSuppose a bus arrives uniformly between 0 and 10 minutes after you arrive at the stop.\n\n**Expected wait time:** E[X] = (0 + 10)/2 = 5 minutes\n\n**Variance:** Var(X) = (10 - 0)\u00b2/12 = 100/12 \u2248 8.33\n\n**Probability of waiting less than 3 minutes:**\n$$P(X < 3) = F(3) = \\frac{3 - 0}{10 - 0} = 0.3$$\n\n**Probability of waiting more than 7 minutes:**\n$$P(X > 7) = 1 - F(7) = 1 - \\frac{7 - 0}{10 - 0} = 1 - 0.7 = 0.3$$",
+          "questions": [
+            {
+              "id": "uniform-3-4-1",
+              "type": "typing",
+              "question": "What is the key characteristic of a uniform distribution?",
+              "correctAnswer": [
+                "all outcomes are equally likely",
+                "equal probability",
+                "every outcome has same chance"
+              ],
+              "xp": 3,
+              "explanation": "The key characteristic of a uniform distribution is that all outcomes are equally likely - each has the same probability"
+            },
+            {
+              "id": "uniform-3-4-2",
+              "type": "typing",
+              "question": "What are the two types of uniform distributions?",
+              "correctAnswer": [
+                "discrete and continuous",
+                "discrete uniform and continuous uniform"
+              ],
+              "xp": 3,
+              "explanation": "There are two types of uniform distributions: discrete uniform (countable outcomes) and continuous uniform (continuous interval)"
+            },
+            {
+              "id": "uniform-3-4-3",
+              "type": "typing",
+              "question": "For a continuous uniform distribution on [a, b], what is the PDF f(x)?",
+              "correctAnswer": [
+                "1/(b-a)",
+                "1 divided by (b-a)",
+                "1 over (b minus a)"
+              ],
+              "xp": 3,
+              "explanation": "For continuous uniform on [a, b], the PDF is f(x) = 1/(b-a) for a \u2264 x \u2264 b, and 0 otherwise"
+            },
+            {
+              "id": "uniform-3-4-4",
+              "type": "multiple-choice",
+              "question": "Looking at `diagrams/uniform-discrete-continuous.png`, which side shows discrete uniform?",
+              "options": [
+                "Left side (die roll)",
+                "Right side (continuous)",
+                "Both sides",
+                "Neither side"
+              ],
+              "correct": 0,
+              "xp": 2,
+              "explanation": "The left panel shows a discrete uniform distribution (die roll), while the right panel shows a continuous uniform distribution"
+            },
+            {
+              "id": "uniform-3-4-5",
+              "type": "typing",
+              "question": "What is the expected value of a uniform distribution?",
+              "correctAnswer": [
+                "(a+b)/2",
+                "midpoint",
+                "average of endpoints"
+              ],
+              "xp": 4,
+              "explanation": "For both discrete and continuous uniform, E[X] = (a + b)/2, the midpoint of the range"
+            },
+            {
+              "id": "uniform-3-4-6",
+              "type": "typing",
+              "question": "For a continuous uniform on [0, 10], what is the expected value?",
+              "correctAnswer": [
+                "5",
+                "five",
+                "(0+10)/2"
+              ],
+              "xp": 4,
+              "explanation": "E[X] = (a + b)/2 = (0 + 10)/2 = 5"
+            },
+            {
+              "id": "uniform-3-4-7",
+              "type": "typing",
+              "question": "What is the variance of a continuous uniform distribution?",
+              "correctAnswer": [
+                "(b-a)^2 / 12",
+                "(b minus a) squared over 12",
+                "width squared over 12"
+              ],
+              "xp": 4,
+              "explanation": "For continuous uniform on [a, b], Var(X) = (b - a)\u00b2 / 12"
+            },
+            {
+              "id": "uniform-3-4-8",
+              "type": "typing",
+              "question": "For a fair die roll (uniform on {1,2,3,4,5,6}), what is P(X=3)?",
+              "correctAnswer": [
+                "1/6",
+                "one sixth",
+                "0.167"
+              ],
+              "xp": 4,
+              "explanation": "For a fair die, each face has equal probability: P(X=3) = 1/6"
+            },
+            {
+              "id": "uniform-3-4-9",
+              "type": "multiple-choice",
+              "question": "Looking at `diagrams/uniform-mean-variance.png`, what happens to variance as the interval width increases?",
+              "options": [
+                "Decreases",
+                "Stays the same",
+                "Increases",
+                "Unpredictable"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "Variance increases with interval width: Var(X) = (b-a)\u00b2/12. Wider intervals have more spread"
+            },
+            {
+              "id": "uniform-3-4-10",
+              "type": "multiple-choice",
+              "question": "Looking at `diagrams/uniform-intervals-cdf.png`, what is the shape of the CDF for continuous uniform?",
+              "options": [
+                "Exponential curve",
+                "Straight line",
+                "Step function",
+                "Bell curve"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "The CDF for continuous uniform is a straight line increasing linearly from 0 to 1 over the interval"
+            },
+            {
+              "id": "uniform-3-4-11",
+              "type": "multiple-choice",
+              "question": "For Uniform(0, 1), what is P(X < 0.5)?",
+              "options": [
+                "0",
+                "0.25",
+                "0.5",
+                "1"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "For Uniform(0, 1), the CDF is F(x) = x, so P(X < 0.5) = 0.5"
+            },
+            {
+              "id": "uniform-3-4-12",
+              "type": "multiple-choice",
+              "question": "Which distribution has maximum entropy for a given range?",
+              "options": [
+                "Normal",
+                "Uniform",
+                "Exponential",
+                "Poisson"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "The uniform distribution has maximum entropy among all distributions with a given range, representing maximum uncertainty"
+            },
+            {
+              "id": "uniform-3-4-13",
+              "type": "typing",
+              "question": "Looking at `diagrams/uniform-discrete-continuous.png`, what is the height of the PDF for Uniform(0, 5)?",
+              "correctAnswer": [
+                "0.2",
+                "1/5",
+                "one fifth"
+              ],
+              "xp": 5,
+              "explanation": "For Uniform(0, 5), the height is 1/(b-a) = 1/5 = 0.2"
+            },
+            {
+              "id": "uniform-3-4-14",
+              "type": "typing",
+              "question": "For a uniform distribution, where is the mean located?",
+              "correctAnswer": [
+                "at the midpoint",
+                "in the middle",
+                "at (a+b)/2"
+              ],
+              "xp": 5,
+              "explanation": "The mean of a uniform distribution is always at the midpoint of the range: (a+b)/2"
+            },
+            {
+              "id": "uniform-3-4-15",
+              "type": "typing",
+              "question": "What is the standard deviation formula for continuous uniform?",
+              "correctAnswer": [
+                "(b-a) / (2*sqrt(3))",
+                "(b-a)/(2\u221a3)",
+                "width over 2 root 3"
+              ],
+              "xp": 5,
+              "explanation": "Standard deviation = \u221aVar(X) = (b-a)/(2\u221a3)"
+            },
+            {
+              "id": "uniform-3-4-16",
+              "type": "typing",
+              "question": "For Uniform(2, 8), what is the variance?",
+              "correctAnswer": [
+                "3",
+                "36/12",
+                "(8-2)^2/12"
+              ],
+              "xp": 4,
+              "explanation": "Var(X) = (b-a)\u00b2/12 = (8-2)\u00b2/12 = 36/12 = 3"
+            },
+            {
+              "id": "uniform-3-4-17",
+              "type": "multiple-choice",
+              "question": "If X ~ Uniform(0, 1), what is P(X > 0.8)?",
+              "options": [
+                "0.2",
+                "0.5",
+                "0.8",
+                "0.02"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "P(X > 0.8) = 1 - F(0.8) = 1 - 0.8 = 0.2"
+            },
+            {
+              "id": "uniform-3-4-18",
+              "type": "multiple-choice",
+              "question": "Looking at `diagrams/uniform-mean-variance.png`, which interval has the largest variance?",
+              "options": [
+                "(0, 2)",
+                "(0, 5)",
+                "(0, 10)",
+                "All have same variance"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "Variance increases with interval width: (0,10) has largest variance at 100/12 \u2248 8.33"
+            }
+          ]
         },
         {
           "id": "3-5",
           "title": "Gaussian",
           "unitTitle": "Important Distributions",
-          "xp": 20,
+          "xp": 92,
           "type": "lesson",
           "difficulty": "beginner",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Gaussian (Normal) Distribution\n\n## What is the Gaussian Distribution?\n\nThe **Gaussian distribution**, also called the **Normal distribution**, is the most important probability distribution in statistics and machine learning. It's defined by two parameters:\n\n- **\u03bc (mu)**: Mean (center of the distribution)\n- **\u03c3 (sigma)**: Standard deviation (spread of the distribution)\n\n### Notation\n\n$$X \\sim \\mathcal{N}(\\mu, \\sigma^2)$$\n\nRead as \"X follows a normal distribution with mean \u03bc and variance \u03c3\u00b2\"\n\n## Probability Density Function (PDF)\n\n$$f(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}} e^{-\\frac{1}{2}\\left(\\frac{x-\\mu}{\\sigma}\\right)^2}$$\n\n### Understanding the Formula\n\n1. **$\\frac{1}{\\sigma\\sqrt{2\\pi}}$**: Normalization constant (ensures total area = 1)\n2. **$\\mu$**: Mean, shifts the distribution left/right\n3. **$\\sigma$**: Standard deviation, controls spread\n4. **$\\frac{x-\\mu}{\\sigma}$**: Standardized z-score\n5. **$e^{-(x-\\mu)^2/(2\\sigma^2)}$**: Bell curve shape\n\n### Standard Normal Distribution\n\nWhen \u03bc = 0 and \u03c3 = 1:\n\n$$f(x) = \\frac{1}{\\sqrt{2\\pi}} e^{-\\frac{x^2}{2}}$$\n\nLooking at `diagrams/normal-varying-params.png`, you can see how \u03bc and \u03c3 affect the distribution.\n\n## Visualizing the Normal Distribution\n\nLooking at `diagrams/normal-varying-params.png`:\n\n**Effect of \u03bc (mean):**\n- Shifts the curve left or right\n- Does not change the shape\n- \u03bc = -2: Shifted left\n- \u03bc = 0: Centered\n- \u03bc = 2: Shifted right\n\n**Effect of \u03c3 (standard deviation):**\n- Controls the spread/width of the curve\n- \u03c3 = 0.5: Tall and narrow\n- \u03c3 = 1: Standard spread\n- \u03c3 = 3: Short and wide\n- Larger \u03c3 = wider distribution\n\n## Empirical Rule (68-95-99.7 Rule)\n\nLooking at `diagrams/normal-empirical-rule.png`:\n\n- **68%** of values fall within 1\u03c3 of \u03bc: P(\u03bc - \u03c3 < X < \u03bc + \u03c3) \u2248 0.68\n- **95%** of values fall within 2\u03c3 of \u03bc: P(\u03bc - 2\u03c3 < X < \u03bc + 2\u03c3) \u2248 0.95\n- **99.7%** of values fall within 3\u03c3 of \u03bc: P(\u03bc - 3\u03c3 < X < \u03bc + 3\u03c3) \u2248 0.997\n\n**For standard normal (\u03bc=0, \u03c3=1):**\n- P(-1 < X < 1) \u2248 0.68\n- P(-2 < X < 2) \u2248 0.95\n- P(-3 < X < 3) \u2248 0.997\n\n## Expected Value and Variance\n\n$$E[X] = \\mu$$\n\n$$\\text{Var}(X) = \\sigma^2$$\n\nThe mean \u03bc is at the center, and the variance \u03c3\u00b2 controls the spread.\n\n## Cumulative Distribution Function (CDF)\n\n$$F(x) = \\Phi\\left(\\frac{x - \\mu}{\\sigma}\\right)$$\n\nWhere \u03a6 is the standard normal CDF (no closed-form expression).\n\nLooking at `diagrams/normal-applications-cdf.png`, the right panel shows the CDF as an S-shaped curve.\n\n**Key values for standard normal:**\n- \u03a6(-2) \u2248 0.0228\n- \u03a6(-1) \u2248 0.1587\n- \u03a6(0) = 0.5\n- \u03a6(1) \u2248 0.8413\n- \u03a6(2) \u2248 0.9772\n\n## Z-Score (Standardization)\n\nTo find probabilities, convert to z-score:\n\n$$Z = \\frac{X - \\mu}{\\sigma} \\sim \\mathcal{N}(0, 1)$$\n\n**Example**: X ~ N(100, 15\u00b2). Find P(X < 115):\n\n$$Z = \\frac{115 - 100}{15} = 1$$\n$$P(X < 115) = P(Z < 1) = \\Phi(1) \\approx 0.8413$$\n\n## Why is the Normal Distribution So Important?\n\n### 1. Central Limit Theorem\n\nThe sum of many independent random variables approaches a normal distribution, regardless of their original distributions.\n\n### 2. Natural Phenomena\n\nMany natural processes follow normal distribution:\n- Height, weight, blood pressure\n- Measurement errors\n- Test scores\n\n### 3. Machine Learning\n\nLooking at `diagrams/normal-applications-cdf.png`:\n\n- **Neural Networks**: Weights initialized from normal distribution\n- **Gaussian Processes**: Bayesian non-parametric models\n- **Gaussian Naive Bayes**: Classification algorithm\n- **Linear Regression**: Assumes normally distributed errors\n\n## Properties of the Normal Distribution\n\n1. **Symmetric**: Bell-shaped, symmetric around \u03bc\n2. **Unimodal**: Single peak at \u03bc\n3. **Asymptotic**: Approaches 0 as x \u2192 \u00b1\u221e\n4. **Inflection Points**: At \u03bc \u00b1 \u03c3\n5. **Total Area**: Area under PDF = 1\n6. **Defined for all real numbers**: Support is (-\u221e, \u221e)\n\n## Applications\n\n### Example 1: Human Heights\n\nAdult male heights ~ N(170cm, 10\u00b2)\n\n- Mean height: 170 cm\n- Standard deviation: 10 cm\n- P(X > 180cm) = P(Z > 1) = 1 - 0.8413 = 0.1587\n- P(160cm < X < 180cm) = P(-1 < Z < 1) \u2248 0.68\n\n### Example 2: Test Scores\n\nTest scores ~ N(75, 10\u00b2)\n\n- Mean score: 75\n- Standard deviation: 10\n- P(X > 85) = P(Z > 1) \u2248 0.1587\n- P(X < 55) = P(Z < -2) \u2248 0.0228\n\n### Example 3: Quality Control\n\nPart lengths ~ N(10mm, 0.1\u00b2)\n\n- Mean length: 10mm\n- Standard deviation: 0.1mm\n- P(9.9 < X < 10.1) = P(-1 < Z < 1) \u2248 0.68",
+          "questions": [
+            {
+              "id": "normal-3-5-1",
+              "type": "typing",
+              "question": "What are the two parameters of a Gaussian distribution?",
+              "correctAnswer": [
+                "\u03bc and \u03c3",
+                "mean and standard deviation",
+                "mu and sigma"
+              ],
+              "xp": 3,
+              "explanation": "The Gaussian (Normal) distribution has two parameters: \u03bc (mu) for the mean and \u03c3 (sigma) for the standard deviation"
+            },
+            {
+              "id": "normal-3-5-2",
+              "type": "typing",
+              "question": "What is another name for the Gaussian distribution?",
+              "correctAnswer": [
+                "normal distribution",
+                "Normal",
+                "Normal distribution"
+              ],
+              "xp": 3,
+              "explanation": "The Gaussian distribution is also commonly called the Normal distribution"
+            },
+            {
+              "id": "normal-3-5-3",
+              "type": "typing",
+              "question": "What is the Empirical Rule (68-95-99.7 rule)?",
+              "correctAnswer": [
+                "68% within 1\u03c3, 95% within 2\u03c3, 99.7% within 3\u03c3",
+                "68-95-99.7",
+                "percentages within standard deviations"
+              ],
+              "xp": 3,
+              "explanation": "The Empirical Rule states: 68% within 1\u03c3, 95% within 2\u03c3, and 99.7% within 3\u03c3 of the mean"
+            },
+            {
+              "id": "normal-3-5-4",
+              "type": "multiple-choice",
+              "question": "Looking at `diagrams/normal-varying-params.png`, what does \u03bc control?",
+              "options": [
+                "Spread of the distribution",
+                "Center/position of the distribution",
+                "Height of the curve",
+                "Number of peaks"
+              ],
+              "correct": 1,
+              "xp": 2,
+              "explanation": "The mean \u03bc controls the center/position of the distribution, shifting it left or right without changing the shape"
+            },
+            {
+              "id": "normal-3-5-5",
+              "type": "typing",
+              "question": "What is the expected value of a normal distribution?",
+              "correctAnswer": [
+                "\u03bc",
+                "mu",
+                "mean"
+              ],
+              "xp": 4,
+              "explanation": "For a normal distribution N(\u03bc, \u03c3\u00b2), the expected value E[X] = \u03bc, the mean parameter"
+            },
+            {
+              "id": "normal-3-5-6",
+              "type": "typing",
+              "question": "What is the variance of a normal distribution?",
+              "correctAnswer": [
+                "\u03c3^2",
+                "sigma squared",
+                "standard deviation squared"
+              ],
+              "xp": 4,
+              "explanation": "For a normal distribution N(\u03bc, \u03c3\u00b2), the variance Var(X) = \u03c3\u00b2"
+            },
+            {
+              "id": "normal-3-5-7",
+              "type": "typing",
+              "question": "Looking at `diagrams/normal-empirical-rule.png`, what percentage falls within 1 standard deviation?",
+              "correctAnswer": [
+                "68%",
+                "68 percent",
+                "0.68"
+              ],
+              "xp": 4,
+              "explanation": "According to the Empirical Rule, approximately 68% of values fall within 1 standard deviation of the mean"
+            },
+            {
+              "id": "normal-3-5-8",
+              "type": "typing",
+              "question": "What is the standard normal distribution?",
+              "correctAnswer": [
+                "N(0, 1)",
+                "normal with mean 0 and variance 1",
+                "\u03bc=0, \u03c3=1"
+              ],
+              "xp": 4,
+              "explanation": "The standard normal distribution is N(0, 1), with mean \u03bc=0 and standard deviation \u03c3=1"
+            },
+            {
+              "id": "normal-3-5-9",
+              "type": "multiple-choice",
+              "question": "Looking at `diagrams/normal-varying-params.png`, what happens when \u03c3 increases?",
+              "options": [
+                "Curve becomes taller and narrower",
+                "Curve becomes shorter and wider",
+                "Curve shifts left",
+                "Curve becomes asymmetric"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "When \u03c3 increases, the distribution becomes more spread out: shorter and wider"
+            },
+            {
+              "id": "normal-3-5-10",
+              "type": "multiple-choice",
+              "question": "Looking at `diagrams/normal-empirical-rule.png`, what percentage falls within 3 standard deviations?",
+              "options": [
+                "68%",
+                "95%",
+                "99.7%",
+                "100%"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "According to the Empirical Rule, 99.7% of values fall within 3 standard deviations of the mean"
+            },
+            {
+              "id": "normal-3-5-11",
+              "type": "multiple-choice",
+              "question": "What is the z-score formula?",
+              "options": [
+                "z = (x - \u03bc)/\u03c3",
+                "z = x/\u03bc",
+                "z = \u03c3/x",
+                "z = \u03bc/\u03c3"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "The z-score standardizes a value: z = (x - \u03bc)/\u03c3"
+            },
+            {
+              "id": "normal-3-5-12",
+              "type": "multiple-choice",
+              "question": "For X ~ N(100, 25), what is the standard deviation?",
+              "options": [
+                "25",
+                "5",
+                "10",
+                "2.5"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "For N(\u03bc, \u03c3\u00b2), variance = \u03c3\u00b2 = 25, so standard deviation \u03c3 = \u221a25 = 5"
+            },
+            {
+              "id": "normal-3-5-13",
+              "type": "typing",
+              "question": "Looking at `diagrams/normal-applications-cdf.png`, what is \u03a6(0) for standard normal?",
+              "correctAnswer": [
+                "0.5",
+                "one half",
+                "0.50"
+              ],
+              "xp": 5,
+              "explanation": "For the standard normal distribution, \u03a6(0) = 0.5 because the distribution is symmetric around 0"
+            },
+            {
+              "id": "normal-3-5-14",
+              "type": "typing",
+              "question": "What is P(X > \u03bc + 2\u03c3) for a normal distribution?",
+              "correctAnswer": [
+                "about 0.0228",
+                "2.28%",
+                "1 - \u03a6(2)"
+              ],
+              "xp": 5,
+              "explanation": "P(X > \u03bc + 2\u03c3) = 1 - \u03a6(2) \u2248 1 - 0.9772 = 0.0228"
+            },
+            {
+              "id": "normal-3-5-15",
+              "type": "typing",
+              "question": "Why is the normal distribution important in machine learning?",
+              "correctAnswer": [
+                "central limit theorem and natural phenomena",
+                "CLT",
+                "many natural processes"
+              ],
+              "xp": 5,
+              "explanation": "The normal distribution is important because of the Central Limit Theorem and because many natural phenomena follow it"
+            },
+            {
+              "id": "normal-3-5-16",
+              "type": "typing",
+              "question": "For X ~ N(50, 9), what is P(X < 53)?",
+              "correctAnswer": [
+                "P(Z < 1)",
+                "\u03a6(1)",
+                "about 0.8413"
+              ],
+              "xp": 4,
+              "explanation": "z = (53-50)/3 = 1, so P(X < 53) = P(Z < 1) = \u03a6(1) \u2248 0.8413"
+            },
+            {
+              "id": "normal-3-5-17",
+              "type": "multiple-choice",
+              "question": "What theorem states that the sum of many random variables approaches normal?",
+              "options": [
+                "Bayes' Theorem",
+                "Central Limit Theorem",
+                "Law of Large Numbers",
+                "Pythagorean Theorem"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "The Central Limit Theorem states that the sum of many independent random variables approaches a normal distribution"
+            },
+            {
+              "id": "normal-3-5-18",
+              "type": "multiple-choice",
+              "question": "Looking at `diagrams/normal-varying-params.png`, which curve has the smallest spread?",
+              "options": [
+                "\u03bc=-2, \u03c3=0.5",
+                "\u03bc=0, \u03c3=1",
+                "\u03bc=2, \u03c3=3",
+                "All have same spread"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "\u03c3=0.5 gives the smallest spread - the curve is tall and narrow"
+            }
+          ]
         },
         {
           "id": "3-6",
