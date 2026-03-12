@@ -8340,44 +8340,1131 @@ window.calculusAllTopics = {
       "unitName": "12. Multiple Integrals",
       "lessons": [
         {
-          "id": "16-1",
-          "title": "Double integrals and iterated integrals",
-          "xp": 0,
+          "id": "12-1",
+          "title": "Double integrals over rectangles",
+          "xp": 88,
           "type": "lesson",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Double Integrals Over Rectangles\n\nA double integral integrates over a 2D region.\n\n## Notation:\n\n\u222b\u222bR f(x, y) dA\n\n## Over Rectangle R = [a, b] \u00d7 [c, d]:\n\n\u222b\u222bR f(x, y) dA = \u222b[c to d] \u222b[a to b] f(x, y) dx dy\n\nor\n\n\u222b\u222bR f(x, y) dA = \u222b[a to b] \u222b[c to d] f(x, y) dy dx\n\n## Iterated Integrals:\n\nWork from inside out.\n\n\u222b[c to d] \u222b[a to b] f(x, y) dx dy\n\n= \u222b[c to d] [\u222b[a to b] f(x, y) dx] dy\n\n= \u222b[c to d] [F(b, y) - F(a, y)] dy\n\n## Properties:\n\n**Linearity:** \u222b\u222b[f + g] = \u222b\u222bf + \u222b\u222bg\n\n**Constant:** \u222b\u222bcf = c\u222b\u222bf\n\n## Fubini's Theorem:\n\nIf f is continuous, order doesn't matter.\n\n## Volume Interpretation:\n\n\u222b\u222bR f(x, y) dA = volume under z = f(x, y) over R\n\n## Examples:\n\n\u222b[0 to 1] \u222b[0 to 2] x dx dy\n\nInner: \u222b[0 to 2] x dx = x\u00b2/2|\u2080\u00b2 = 2\n\nOuter: \u222b[0 to 1] 2 dy = 2y|\u2080\u00b9 = 2\n\n\u222b[0 to 1] \u222b[0 to 1] xy dx dy\n\nInner: \u222b[0 to 1] xy dx = y[x\u00b2/2]\u2080\u00b9 = y/2\n\nOuter: \u222b[0 to 1] y/2 dy = y\u00b2/4|\u2080\u00b9 = 1/4",
+          "questions": [
+            {
+              "id": "calc_u12_l1_q1",
+              "type": "typing",
+              "question": "What does \u222b\u222bR f(x, y) dA represent?",
+              "correctAnswer": [
+                "Double integral over region R",
+                "Integral over 2D region"
+              ],
+              "xp": 5,
+              "explanation": "\u222b\u222bR f(x, y) dA is a double integral over a 2D region R. It represents the volume under the surface z = f(x, y)."
+            },
+            {
+              "id": "calc_u12_l1_q2",
+              "type": "typing",
+              "question": "What is dA for a rectangle?",
+              "correctAnswer": [
+                "dx dy",
+                "dy dx"
+              ],
+              "xp": 4,
+              "explanation": "For a rectangle, dA = dx dy or dy dx. The order depends on the integration order."
+            },
+            {
+              "id": "calc_u12_l1_q3",
+              "type": "typing",
+              "question": "How do you evaluate an iterated integral?",
+              "correctAnswer": [
+                "From inside out",
+                "Work from inner integral to outer"
+              ],
+              "xp": 5,
+              "explanation": "Evaluate iterated integrals from inside out. First compute the inner integral, then use that result in the outer integral."
+            },
+            {
+              "id": "calc_u12_l1_q4",
+              "type": "multiple-choice",
+              "question": "What is Fubini's Theorem?",
+              "options": [
+                "Order doesn't matter",
+                "Order matters",
+                "Can't switch",
+                "Only for 1D"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Fubini's Theorem: For continuous functions, you can change the order of integration without changing the result."
+            },
+            {
+              "id": "calc_u12_l1_q5",
+              "type": "typing",
+              "question": "What does \u222b\u222b f(x, y) dA give geometrically?",
+              "correctAnswer": [
+                "Volume under the surface",
+                "Volume under z = f(x, y)"
+              ],
+              "xp": 4,
+              "explanation": "\u222b\u222b f(x, y) dA gives the volume under the surface z = f(x, y) above the region R in the xy-plane."
+            },
+            {
+              "id": "calc_u12_l1_q6",
+              "type": "multiple-choice",
+              "question": "What is \u222b[0 to 1] \u222b[0 to 2] x dx dy?",
+              "options": [
+                "1",
+                "2",
+                "4",
+                "0"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Inner: \u222b\u2080\u00b2 x dx = x\u00b2/2|\u2080\u00b2 = 2. Outer: \u222b\u2080\u00b9 2 dy = 2y|\u2080\u00b9 = 2."
+            },
+            {
+              "id": "calc_u12_l1_q7",
+              "type": "typing",
+              "question": "What is the inner integral of \u222b[0 to 1] \u222b[0 to 2] x dx dy?",
+              "correctAnswer": [
+                "2",
+                "\u222b\u2080\u00b2 x dx = 2"
+              ],
+              "xp": 5,
+              "explanation": "Inner: \u222b\u2080\u00b2 x dx = x\u00b2/2|\u2080\u00b2 = 2. Outer: \u222b\u2080\u00b9 2 dy = 2y|\u2080\u00b9 = 2."
+            },
+            {
+              "id": "calc_u12_l1_q8",
+              "type": "multiple-choice",
+              "question": "What is \u222b[0 to 1] \u222b[0 to 1] xy dx dy?",
+              "options": [
+                "1/2",
+                "1/4",
+                "1/8",
+                "1"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Inner: \u222b\u2080\u00b9 xy dx = y[x\u00b2/2]\u2080\u00b9 = y/2. Outer: \u222b\u2080\u00b9 y/2 dy = y\u00b2/4|\u2080\u00b9 = 1/4."
+            },
+            {
+              "id": "calc_u12_l1_q9",
+              "type": "typing",
+              "question": "What is \u222b[0 to 1] x dx?",
+              "correctAnswer": [
+                "1/2",
+                "0.5"
+              ],
+              "xp": 4,
+              "explanation": "\u222b\u2080\u00b9 x dx = x\u00b2/2|\u2080\u00b9 = 1/2."
+            },
+            {
+              "id": "calc_u12_l1_q10",
+              "type": "multiple-choice",
+              "question": "What is \u222b[0 to 2] y dx?",
+              "options": [
+                "0",
+                "2y",
+                "y",
+                "2"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "y is constant with respect to x. \u222b\u2080\u00b2 y dx = y[x]\u2080\u00b2 = 2y."
+            },
+            {
+              "id": "calc_u12_l1_q11",
+              "type": "typing",
+              "question": "What is \u222b[0 to 1] \u222b[0 to 1] 1 dx dy?",
+              "correctAnswer": [
+                "1"
+              ],
+              "xp": 5,
+              "explanation": "Inner: \u222b\u2080\u00b9 1 dx = 1. Outer: \u222b\u2080\u00b9 1 dy = 1. This is the area of the unit square."
+            },
+            {
+              "id": "calc_u12_l1_q12",
+              "type": "multiple-choice",
+              "question": "What is \u222b[0 to 1] \u222b[0 to 1] (x + y) dx dy?",
+              "options": [
+                "1",
+                "2",
+                "1/2",
+                "0"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Inner: \u222b\u2080\u00b9 (x+y) dx = [x\u00b2/2 + xy]\u2080\u00b9 = 1/2 + y. Outer: \u222b\u2080\u00b9 (1/2 + y) dy = [y/2 + y\u00b2/2]\u2080\u00b9 = 1/2 + 1/2 = 1."
+            },
+            {
+              "id": "calc_u12_l1_q13",
+              "type": "typing",
+              "question": "What is \u222b[0 to 2] x\u00b2 dx?",
+              "correctAnswer": [
+                "8/3"
+              ],
+              "xp": 4,
+              "explanation": "\u222b\u2080\u00b2 x\u00b2 dx = x\u00b3/3|\u2080\u00b2 = 8/3."
+            },
+            {
+              "id": "calc_u12_l1_q14",
+              "type": "multiple-choice",
+              "question": "What is \u222b[0 to 1] y\u00b2 dy?",
+              "options": [
+                "0",
+                "1",
+                "1/3",
+                "1/2"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "Answer: 1/3"
+            },
+            {
+              "id": "calc_u12_l1_q15",
+              "type": "typing",
+              "question": "What is \u222b[0 to 1] \u222b[0 to 1] x\u00b2 dx dy?",
+              "correctAnswer": [
+                "1/3"
+              ],
+              "xp": 5,
+              "explanation": "\u222b\u2080\u00b9 x\u00b2 dx = x\u00b3/3|\u2080\u00b9 = 1/3."
+            },
+            {
+              "id": "calc_u12_l1_q16",
+              "type": "multiple-choice",
+              "question": "Can you change the order of integration?",
+              "options": [
+                "Yes",
+                "No",
+                "Only sometimes",
+                "Never"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Answer: Yes"
+            },
+            {
+              "id": "calc_u12_l1_q17",
+              "type": "typing",
+              "question": "What is \u222b[0 to 1] \u222b[0 to 2] 3 dx dy?",
+              "correctAnswer": [
+                "6"
+              ],
+              "xp": 4,
+              "explanation": "Answer: 6"
+            },
+            {
+              "id": "calc_u12_l1_q18",
+              "type": "multiple-choice",
+              "question": "What is \u222b[0 to 2] \u222b[0 to 1] y dy dx?",
+              "options": [
+                "1",
+                "2",
+                "1/2",
+                "0"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Answer: 1"
+            }
+          ]
         },
         {
-          "id": "16-2",
+          "id": "12-2",
           "title": "Double integrals over general regions",
-          "xp": 0,
+          "xp": 90,
           "type": "lesson",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Double Integrals Over General Regions\n\n## Type I Region (dy dx):\n\nR = {(x, y): a \u2264 x \u2264 b, g\u2081(x) \u2264 y \u2264 g\u2082(x)}\n\n\u222b\u222bR f(x, y) dA = \u222b[a to b] \u222b[g\u2081(x) to g\u2082(x)] f(x, y) dy dx\n\n## Type II Region (dx dy):\n\nR = {(x, y): c \u2264 y \u2264 d, h\u2081(y) \u2264 x \u2264 h\u2082(y)}\n\n\u222b\u222bR f(x, y) dA = \u222b[c to d] \u222b[h\u2081(y) to h\u2082(y)] f(x, y) dx dy\n\n## Choosing Order:\n\n- Type I: Easier if x bounds are constants\n- Type II: Easier if y bounds are constants\n\n## Examples:\n\n**Over triangle: y from 0 to 2-x, x from 0 to 2**\n\n\u222b[0 to 2] \u222b[0 to 2-x] (x + y) dy dx\n\nInner: \u222b[0 to 2-x] (x + y) dy = xy + y\u00b2/2|\u2080^(2-x)\n= x(2-x) + (2-x)\u00b2/2\n\n**Region between curves:**\ny = x\u00b2 to y = x, x from 0 to 1\n\n\u222b[0 to 1] \u222b[x\u00b2 to x] f(x, y) dy dx\n\n## Area:\n\nArea = \u222b\u222bR 1 dA",
+          "questions": [
+            {
+              "id": "calc_u12_l2_q1",
+              "type": "typing",
+              "question": "What is a Type I region?",
+              "correctAnswer": [
+                "a \u2264 x \u2264 b, g\u2081(x) \u2264 y \u2264 g\u2082(x)",
+                "x bounds are constants"
+              ],
+              "xp": 5,
+              "explanation": "Type I region: a \u2264 x \u2264 b (constants), g\u2081(x) \u2264 y \u2264 g\u2082(x) (functions of x). Integrate dy dx."
+            },
+            {
+              "id": "calc_u12_l2_q2",
+              "type": "typing",
+              "question": "What is a Type II region?",
+              "correctAnswer": [
+                "c \u2264 y \u2264 d, h\u2081(y) \u2264 x \u2264 h\u2082(y)",
+                "y bounds are constants"
+              ],
+              "xp": 4,
+              "explanation": "Type I region: a \u2264 x \u2264 b (constants), g\u2081(x) \u2264 y \u2264 g\u2082(x) (functions of x). Integrate dy dx."
+            },
+            {
+              "id": "calc_u12_l2_q3",
+              "type": "typing",
+              "question": "For Type I, what is the integration order?",
+              "correctAnswer": [
+                "dy dx",
+                "y then x"
+              ],
+              "xp": 5,
+              "explanation": "Type I region: a \u2264 x \u2264 b (constants), g\u2081(x) \u2264 y \u2264 g\u2082(x) (functions of x). Integrate dy dx."
+            },
+            {
+              "id": "calc_u12_l2_q4",
+              "type": "multiple-choice",
+              "question": "For Type II, what is the integration order?",
+              "options": [
+                "dy dx",
+                "dx dy",
+                "Both",
+                "Neither"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Type I region: a \u2264 x \u2264 b (constants), g\u2081(x) \u2264 y \u2264 g\u2082(x) (functions of x). Integrate dy dx."
+            },
+            {
+              "id": "calc_u12_l2_q5",
+              "type": "typing",
+              "question": "When do you use Type I?",
+              "correctAnswer": [
+                "When x bounds are constants",
+                "Easier in x direction"
+              ],
+              "xp": 4,
+              "explanation": "Type I region: a \u2264 x \u2264 b (constants), g\u2081(x) \u2264 y \u2264 g\u2082(x) (functions of x). Integrate dy dx."
+            },
+            {
+              "id": "calc_u12_l2_q6",
+              "type": "multiple-choice",
+              "question": "How do you find area with double integrals?",
+              "options": [
+                "\u222b\u222b x dA",
+                "\u222b\u222b 1 dA",
+                "\u222b\u222b y dA",
+                "\u222b\u222b xy dA"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Area = \u222b\u222bR 1 dA. Integrate 1 over the region to get its area."
+            },
+            {
+              "id": "calc_u12_l2_q7",
+              "type": "typing",
+              "question": "What is \u222b[x\u00b2 to x] y dy?",
+              "correctAnswer": [
+                "(x\u00b2 - x\u2074)/2"
+              ],
+              "xp": 5,
+              "explanation": "\u222bx\u00b2\u02e3 y dy = y\u00b2/2|\u2093\u00b2\u02e3 = x\u00b2/2 - x\u2074/2 = (x\u00b2 - x\u2074)/2."
+            },
+            {
+              "id": "calc_u12_l2_q8",
+              "type": "multiple-choice",
+              "question": "What is \u222b[0 to 2-x] 1 dy?",
+              "options": [
+                "0",
+                "1",
+                "2-x",
+                "x"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "\u222b\u2080^(2-x) 1 dy = y|\u2080^(2-x) = 2 - x."
+            },
+            {
+              "id": "calc_u12_l2_q9",
+              "type": "typing",
+              "question": "What is the inner integral for \u222b[0 to 1] \u222b[0 to x] y dy dx?",
+              "correctAnswer": [
+                "x\u00b2/2"
+              ],
+              "xp": 4,
+              "explanation": "Inner: \u222b\u2080\u02e3 y dy = y\u00b2/2|\u2080\u02e3 = x\u00b2/2. Outer: \u222b\u2080\u00b9 x\u00b2/2 dx = x\u00b3/6|\u2080\u00b9 = 1/6."
+            },
+            {
+              "id": "calc_u12_l2_q10",
+              "type": "multiple-choice",
+              "question": "What is \u222b[0 to 1] x\u00b2/2 dx?",
+              "options": [
+                "1/2",
+                "1/6",
+                "1/3",
+                "1"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "\u222b\u2080\u00b9 x\u00b2/2 dx = x\u00b3/6|\u2080\u00b9 = 1/6."
+            },
+            {
+              "id": "calc_u12_l2_q11",
+              "type": "typing",
+              "question": "What is \u222b[x to 2] 1 dy?",
+              "correctAnswer": [
+                "2 - x"
+              ],
+              "xp": 5,
+              "explanation": "\u222b\u2093\u00b2 1 dy = y|\u2093\u00b2 = 2 - x."
+            },
+            {
+              "id": "calc_u12_l2_q12",
+              "type": "multiple-choice",
+              "question": "What region has bounds y from 0 to x, x from 0 to 1?",
+              "options": [
+                "Triangle",
+                "Rectangle",
+                "Circle",
+                "Parabola"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Answer: Triangle"
+            },
+            {
+              "id": "calc_u12_l2_q13",
+              "type": "typing",
+              "question": "What is \u222b[0 to x] x dy?",
+              "correctAnswer": [
+                "x\u00b2"
+              ],
+              "xp": 4,
+              "explanation": "x is constant with respect to y. \u222b\u2080\u02e3 x dy = x[y]\u2080\u02e3 = x\u00b2."
+            },
+            {
+              "id": "calc_u12_l2_q14",
+              "type": "multiple-choice",
+              "question": "For y = x\u00b2 to y = x, what are the x bounds?",
+              "options": [
+                "0 to 1",
+                "0 to 2",
+                "-1 to 1",
+                "Any"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Answer: 0 to 1"
+            },
+            {
+              "id": "calc_u12_l2_q15",
+              "type": "typing",
+              "question": "What is \u222b[x\u00b2 to x] x dy?",
+              "correctAnswer": [
+                "x(x - x\u00b2) = x\u00b2 - x\u00b3"
+              ],
+              "xp": 5,
+              "explanation": "x is constant with respect to y. \u222b\u2093\u00b2\u02e3 x dy = x[y]\u2093\u00b2\u02e3 = x(x - x\u00b2) = x\u00b2 - x\u00b3."
+            },
+            {
+              "id": "calc_u12_l2_q16",
+              "type": "multiple-choice",
+              "question": "What is \u222b[0 to 1] (x\u00b2 - x\u00b3) dx?",
+              "options": [
+                "1/12",
+                "1/6",
+                "1/3",
+                "0"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "\u222b\u2080\u00b9 (x\u00b2 - x\u00b3) dx = x\u00b3/3 - x\u2074/4|\u2080\u00b9 = 1/3 - 1/4 = 4/12 - 3/12 = 1/12."
+            },
+            {
+              "id": "calc_u12_l2_q17",
+              "type": "typing",
+              "question": "What is \u222b[y to 1] 1 dx?",
+              "correctAnswer": [
+                "1 - y"
+              ],
+              "xp": 4,
+              "explanation": "\u222b\u1d67\u00b9 1 dx = x|\u1d67\u00b9 = 1 - y."
+            },
+            {
+              "id": "calc_u12_l2_q18",
+              "type": "multiple-choice",
+              "question": "Can you switch between Type I and Type II?",
+              "options": [
+                "Yes",
+                "No",
+                "Only for rectangles",
+                "Sometimes"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Type I region: a \u2264 x \u2264 b (constants), g\u2081(x) \u2264 y \u2264 g\u2082(x) (functions of x). Integrate dy dx."
+            }
+          ]
         },
         {
-          "id": "16-3",
-          "title": "Polar coordinates in integration",
-          "xp": 0,
+          "id": "12-3",
+          "title": "Double integrals in polar coordinates",
+          "xp": 88,
           "type": "lesson",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Double Integrals in Polar Coordinates\n\nPolar: x = r cos(\u03b8), y = r sin(\u03b8)\n\n## Jacobian:\n\ndA = r dr d\u03b8\n\n**Important: Don't forget the r!**\n\n## Integral:\n\n\u222b\u222bR f(x, y) dA = \u222b\u222bR f(r cos \u03b8, r sin \u03b8) r dr d\u03b8\n\n## Common Regions:\n\n**Circle centered at origin:**\nr from 0 to R\n\u03b8 from 0 to 2\u03c0\n\n**Semicircle:**\nr from 0 to R\n\u03b8 from 0 to \u03c0\n\n**Quarter circle:**\nr from 0 to R\n\u03b8 from 0 to \u03c0/2\n\n## Examples:\n\n**Over circle r \u2264 2:**\n\n\u222b[0 to 2\u03c0] \u222b[0 to 2] r dr d\u03b8\n\nInner: \u222b[0 to 2] r dr = r\u00b2/2|\u2080\u00b2 = 2\n\nOuter: \u222b[0 to 2\u03c0] 2 d\u03b8 = 2\u03b8|\u2080^(2\u03c0) = 4\u03c0\n\n**\u222b\u222b x\u00b2 dA over unit circle:**\n\nx = r cos \u03b8, dA = r dr d\u03b8\n\n\u222b[0 to 2\u03c0] \u222b[0 to 1] (r cos \u03b8)\u00b2 r dr d\u03b8\n= \u222b[0 to 2\u03c0] \u222b[0 to 1] r\u00b3 cos\u00b2\u03b8 dr d\u03b8",
+          "questions": [
+            {
+              "id": "calc_u12_l3_q1",
+              "type": "typing",
+              "question": "What is dA in polar coordinates?",
+              "correctAnswer": [
+                "r dr d\u03b8",
+                "r dr dtheta"
+              ],
+              "xp": 5,
+              "explanation": "Answer: r dr d\u03b8"
+            },
+            {
+              "id": "calc_u12_l3_q2",
+              "type": "typing",
+              "question": "What are x and y in polar?",
+              "correctAnswer": [
+                "x = r cos(\u03b8), y = r sin(\u03b8)",
+                "x = r cos \u03b8, y = r sin \u03b8"
+              ],
+              "xp": 4,
+              "explanation": "x = r cos(\u03b8), y = r sin(\u03b8). These convert between polar and rectangular coordinates."
+            },
+            {
+              "id": "calc_u12_l3_q3",
+              "type": "typing",
+              "question": "Why is there an r in dA?",
+              "correctAnswer": [
+                "Jacobian determinant",
+                "From coordinate transformation"
+              ],
+              "xp": 5,
+              "explanation": "Answer: Jacobian determinant"
+            },
+            {
+              "id": "calc_u12_l3_q4",
+              "type": "multiple-choice",
+              "question": "What are the \u03b8 bounds for a full circle?",
+              "options": [
+                "0 to \u03c0",
+                "0 to 2\u03c0",
+                "-\u03c0 to \u03c0",
+                "0 to \u03c0/2"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "For a full circle centered at the origin, \u03b8 ranges from 0 to 2\u03c0 (one complete revolution)."
+            },
+            {
+              "id": "calc_u12_l3_q5",
+              "type": "typing",
+              "question": "What are the r bounds for circle radius 2?",
+              "correctAnswer": [
+                "0 to 2"
+              ],
+              "xp": 4,
+              "explanation": "For a circle of radius 2, r ranges from 0 (center) to 2 (edge)."
+            },
+            {
+              "id": "calc_u12_l3_q6",
+              "type": "multiple-choice",
+              "question": "What is \u222b[0 to 2] r dr?",
+              "options": [
+                "1",
+                "2",
+                "4",
+                "0"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "\u222b\u2080\u00b2 r dr = r\u00b2/2|\u2080\u00b2 = 4/2 = 2."
+            },
+            {
+              "id": "calc_u12_l3_q7",
+              "type": "typing",
+              "question": "What is \u222b[0 to 2\u03c0] 2 d\u03b8?",
+              "correctAnswer": [
+                "4\u03c0"
+              ],
+              "xp": 5,
+              "explanation": "\u222b\u2080^(2\u03c0) 2 d\u03b8 = 2\u03b8|\u2080^(2\u03c0) = 4\u03c0."
+            },
+            {
+              "id": "calc_u12_l3_q8",
+              "type": "multiple-choice",
+              "question": "What is \u222b[0 to \u03c0/2] d\u03b8?",
+              "options": [
+                "\u03c0",
+                "\u03c0/2",
+                "2\u03c0",
+                "0"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "\u222b\u2080^(\u03c0/2) d\u03b8 = \u03b8|\u2080^(\u03c0/2) = \u03c0/2."
+            },
+            {
+              "id": "calc_u12_l3_q9",
+              "type": "typing",
+              "question": "What is \u222b[0 to 1] r\u00b2 dr?",
+              "correctAnswer": [
+                "1/3"
+              ],
+              "xp": 4,
+              "explanation": "\u222b\u2080\u00b9 r\u00b2 dr = r\u00b3/3|\u2080\u00b9 = 1/3."
+            },
+            {
+              "id": "calc_u12_l3_q10",
+              "type": "multiple-choice",
+              "question": "What is \u222b[0 to 1] r\u00b3 dr?",
+              "options": [
+                "1/2",
+                "1/4",
+                "1/3",
+                "1/5"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "\u222b\u2080\u00b9 r\u00b3 dr = r\u2074/4|\u2080\u00b9 = 1/4."
+            },
+            {
+              "id": "calc_u12_l3_q11",
+              "type": "typing",
+              "question": "What is x in polar?",
+              "correctAnswer": [
+                "r cos(\u03b8)",
+                "r cos \u03b8"
+              ],
+              "xp": 5,
+              "explanation": "x = r cos(\u03b8). The x-coordinate is r times cosine of the angle."
+            },
+            {
+              "id": "calc_u12_l3_q12",
+              "type": "multiple-choice",
+              "question": "What is y in polar?",
+              "options": [
+                "r cos \u03b8",
+                "r sin \u03b8",
+                "r",
+                "\u03b8"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "y = r sin(\u03b8). The y-coordinate is r times sine of the angle."
+            },
+            {
+              "id": "calc_u12_l3_q13",
+              "type": "typing",
+              "question": "What is r for x\u00b2 + y\u00b2 = 4?",
+              "correctAnswer": [
+                "2"
+              ],
+              "xp": 4,
+              "explanation": "Answer: 2"
+            },
+            {
+              "id": "calc_u12_l3_q14",
+              "type": "multiple-choice",
+              "question": "What is \u03b8 range for first quadrant?",
+              "options": [
+                "0 to \u03c0/2",
+                "0 to \u03c0",
+                "0 to 2\u03c0",
+                "\u03c0/2 to \u03c0"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Answer: 0 to \u03c0/2"
+            },
+            {
+              "id": "calc_u12_l3_q15",
+              "type": "typing",
+              "question": "What is \u222b[0 to 2\u03c0] d\u03b8?",
+              "correctAnswer": [
+                "2\u03c0"
+              ],
+              "xp": 5,
+              "explanation": "\u222b\u2080^(2\u03c0) d\u03b8 = \u03b8|\u2080^(2\u03c0) = 2\u03c0."
+            },
+            {
+              "id": "calc_u12_l3_q16",
+              "type": "multiple-choice",
+              "question": "What is the area of circle radius R in polar?",
+              "options": [
+                "\u03c0R",
+                "\u03c0R\u00b2",
+                "R\u00b2",
+                "2\u03c0R"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Area = \u222b\u2080\u00b2\u03c0 \u222b\u2080\u1d3f r dr d\u03b8 = \u222b\u2080\u00b2\u03c0 R\u00b2/2 d\u03b8 = R\u00b2/2 \u00b7 2\u03c0 = \u03c0R\u00b2."
+            },
+            {
+              "id": "calc_u12_l3_q17",
+              "type": "typing",
+              "question": "What is \u222b[0 to R] r dr?",
+              "correctAnswer": [
+                "R\u00b2/2"
+              ],
+              "xp": 4,
+              "explanation": "Answer: R\u00b2/2"
+            },
+            {
+              "id": "calc_u12_l3_q18",
+              "type": "multiple-choice",
+              "question": "What region has r from 0 to 1, \u03b8 from 0 to \u03c0?",
+              "options": [
+                "Unit circle",
+                "Half circle",
+                "Quarter circle",
+                "Semicircle"
+              ],
+              "correct": 3,
+              "xp": 3,
+              "explanation": "Answer: Semicircle"
+            }
+          ]
         },
         {
-          "id": "16-4",
+          "id": "12-4",
           "title": "Triple integrals",
-          "xp": 0,
+          "xp": 90,
           "type": "lesson",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Triple Integrals\n\nTriple integrals integrate over a 3D region.\n\n## Notation:\n\n\u222b\u222b\u222bE f(x, y, z) dV\n\n## Over Box B = [a, b] \u00d7 [c, d] \u00d7 [e, f]:\n\n\u222b\u222b\u222bB f(x, y, z) dV = \u222b[e to f] \u222b[c to d] \u222b[a to b] f(x, y, z) dx dy dz\n\nor any order of integration.\n\n## dV in Different Coordinates:\n\n**Rectangular:** dV = dx dy dz\n\n**Cylindrical:** dV = r dz dr d\u03b8\n\n**Spherical:** dV = \u03c1\u00b2 sin(\u03c6) d\u03c1 d\u03c6 d\u03b8\n\n## Volume:\n\nVolume = \u222b\u222b\u222bE 1 dV\n\n## Examples:\n\n**Over unit cube [0,1]\u00b3:**\n\n\u222b[0 to 1] \u222b[0 to 1] \u222b[0 to 1] xyz dx dy dz\n\nInner: \u222b[0 to 1] xyz dx = yz[x\u00b2/2]\u2080\u00b9 = yz/2\n\nMiddle: \u222b[0 to 1] yz/2 dy = z[y\u00b2/4]\u2080\u00b9 = z/4\n\nOuter: \u222b[0 to 1] z/4 dz = z\u00b2/8|\u2080\u00b9 = 1/8\n\n**Cylindrical coordinates:**\n\nx = r cos \u03b8, y = r sin \u03b8, z = z\n\ndV = r dz dr d\u03b8\n\n**Spherical coordinates:**\n\nx = \u03c1 sin \u03c6 cos \u03b8\ny = \u03c1 sin \u03c6 sin \u03b8\nz = \u03c1 cos \u03c6\n\ndV = \u03c1\u00b2 sin \u03c6 d\u03c1 d\u03c6 d\u03b8",
+          "questions": [
+            {
+              "id": "calc_u12_l4_q1",
+              "type": "typing",
+              "question": "What does \u222b\u222b\u222b represent?",
+              "correctAnswer": [
+                "Triple integral",
+                "Integral over 3D region"
+              ],
+              "xp": 5,
+              "explanation": "\u222b\u222bR f(x, y) dA is a double integral over a 2D region R. It represents the volume under the surface z = f(x, y)."
+            },
+            {
+              "id": "calc_u12_l4_q2",
+              "type": "typing",
+              "question": "What is dV in rectangular coordinates?",
+              "correctAnswer": [
+                "dx dy dz",
+                "dy dx dz"
+              ],
+              "xp": 4,
+              "explanation": "Answer: dx dy dz"
+            },
+            {
+              "id": "calc_u12_l4_q3",
+              "type": "typing",
+              "question": "What is dV in cylindrical coordinates?",
+              "correctAnswer": [
+                "r dz dr d\u03b8"
+              ],
+              "xp": 5,
+              "explanation": "Answer: r dz dr d\u03b8"
+            },
+            {
+              "id": "calc_u12_l4_q4",
+              "type": "multiple-choice",
+              "question": "What is dV in spherical coordinates?",
+              "options": [
+                "r dz dr d\u03b8",
+                "\u03c1\u00b2 sin \u03c6 d\u03c1 d\u03c6 d\u03b8",
+                "\u03c1 d\u03c1 d\u03c6 d\u03b8",
+                "dx dy dz"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: \u03c1\u00b2 sin \u03c6 d\u03c1 d\u03c6 d\u03b8"
+            },
+            {
+              "id": "calc_u12_l4_q5",
+              "type": "typing",
+              "question": "What is z in spherical coordinates?",
+              "correctAnswer": [
+                "\u03c1 cos(\u03c6)",
+                "\u03c1 cos \u03c6"
+              ],
+              "xp": 4,
+              "explanation": "z = \u03c1 cos(\u03c6). The z-coordinate is \u03c1 times cosine of the polar angle \u03c6."
+            },
+            {
+              "id": "calc_u12_l4_q6",
+              "type": "multiple-choice",
+              "question": "What is the volume formula?",
+              "options": [
+                "\u222b\u222b\u222b x dV",
+                "\u222b\u222b\u222b 1 dV",
+                "\u222b\u222b\u222b z dV",
+                "\u222b\u222b\u222b xyz dV"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Volume = \u222b\u222b\u222bE 1 dV. Integrate 1 over the region to get its volume."
+            },
+            {
+              "id": "calc_u12_l4_q7",
+              "type": "typing",
+              "question": "What is \u222b[0 to 1] x dx?",
+              "correctAnswer": [
+                "1/2"
+              ],
+              "xp": 5,
+              "explanation": "\u222b\u2080\u00b9 x dx = x\u00b2/2|\u2080\u00b9 = 1/2."
+            },
+            {
+              "id": "calc_u12_l4_q8",
+              "type": "multiple-choice",
+              "question": "What is \u222b[0 to 1] x\u00b2 dx?",
+              "options": [
+                "0",
+                "1",
+                "1/2",
+                "1/3"
+              ],
+              "correct": 3,
+              "xp": 3,
+              "explanation": "\u222b\u2080\u00b9 x\u00b2 dx = x\u00b3/3|\u2080\u00b9 = 1/3."
+            },
+            {
+              "id": "calc_u12_l4_q9",
+              "type": "typing",
+              "question": "What is the inner integral of \u222b\u222b\u222b xyz dx dy dz?",
+              "correctAnswer": [
+                "yz/2"
+              ],
+              "xp": 4,
+              "explanation": "Inner: \u222b\u2080\u00b9 xyz dx = yz[x\u00b2/2]\u2080\u00b9 = yz/2."
+            },
+            {
+              "id": "calc_u12_l4_q10",
+              "type": "multiple-choice",
+              "question": "What is x in spherical coordinates?",
+              "options": [
+                "\u03c1 cos \u03b8",
+                "\u03c1 sin \u03c6 cos \u03b8",
+                "\u03c1 sin \u03c6 sin \u03b8",
+                "r cos \u03b8"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: \u03c1 sin \u03c6 cos \u03b8"
+            },
+            {
+              "id": "calc_u12_l4_q11",
+              "type": "typing",
+              "question": "What is y in spherical coordinates?",
+              "correctAnswer": [
+                "\u03c1 sin \u03c6 sin \u03b8"
+              ],
+              "xp": 5,
+              "explanation": "y = \u03c1 sin \u03c6 sin \u03b8. This is the rectangular y-coordinate in spherical coordinates."
+            },
+            {
+              "id": "calc_u12_l4_q12",
+              "type": "multiple-choice",
+              "question": "What is r in cylindrical to spherical?",
+              "options": [
+                "\u03c1",
+                "\u03c1 sin \u03c6",
+                "\u03c1 cos \u03c6",
+                "\u03c1 tan \u03c6"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: \u03c1 sin \u03c6"
+            },
+            {
+              "id": "calc_u12_l4_q13",
+              "type": "typing",
+              "question": "What is \u222b[0 to 1] \u222b[0 to 1] \u222b[0 to 1] 1 dV?",
+              "correctAnswer": [
+                "1"
+              ],
+              "xp": 4,
+              "explanation": "This is the volume of the unit cube. Each integral from 0 to 1, so volume = 1 \u00d7 1 \u00d7 1 = 1."
+            },
+            {
+              "id": "calc_u12_l4_q14",
+              "type": "multiple-choice",
+              "question": "What is \u222b[0 to 2] \u222b[0 to 2] \u222b[0 to 2] 1 dV?",
+              "options": [
+                "2",
+                "4",
+                "8",
+                "6"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "Volume of cube with side 2. \u222b0\u00b2 1 dx = 2 for each dimension. Total = 2 \u00d7 2 \u00d7 2 = 8."
+            },
+            {
+              "id": "calc_u12_l4_q15",
+              "type": "typing",
+              "question": "What is \u222b[0 to R] r dr?",
+              "correctAnswer": [
+                "R\u00b2/2"
+              ],
+              "xp": 5,
+              "explanation": "Answer: R\u00b2/2"
+            },
+            {
+              "id": "calc_u12_l4_q16",
+              "type": "multiple-choice",
+              "question": "What is \u222b[0 to \u03c0] sin \u03c6 d\u03c6?",
+              "options": [
+                "0",
+                "1",
+                "2",
+                "-1"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "\u222b\u2080^\u03c0 sin \u03c6 d\u03c6 = -cos \u03c6|\u2080^\u03c0 = -(-1) - (-1) = 1 + 1 = 2."
+            },
+            {
+              "id": "calc_u12_l4_q17",
+              "type": "typing",
+              "question": "What is \u222b[0 to 2\u03c0] d\u03b8?",
+              "correctAnswer": [
+                "2\u03c0"
+              ],
+              "xp": 4,
+              "explanation": "\u222b\u2080^(2\u03c0) d\u03b8 = \u03b8|\u2080^(2\u03c0) = 2\u03c0."
+            },
+            {
+              "id": "calc_u12_l4_q18",
+              "type": "multiple-choice",
+              "question": "What coordinates for sphere centered at origin?",
+              "options": [
+                "Rectangular",
+                "Cylindrical",
+                "Spherical",
+                "Polar"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "Answer: Spherical"
+            }
+          ]
         },
         {
-          "id": "16-5",
-          "title": "Cylindrical and spherical coordinates",
-          "xp": 0,
+          "id": "12-5",
+          "title": "Change of variables and Jacobians",
+          "xp": 88,
           "type": "lesson",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Change of Variables and Jacobians\n\nChange variables to simplify integrals.\n\n## Change of Variables Formula:\n\n\u222b\u222bR f(x, y) dA = \u222b\u222bS f(x(u, v), y(u, v)) |J| du dv\n\n## Jacobian Determinant:\n\n|J| = |\u2202(x, y)/\u2202(u, v)| = \n| x\u1d64  x\u1d65 |\n| y\u1d64  y\u1d65 |\n\n= |x\u1d64y\u1d65 - x\u1d65y\u1d64|\n\n## Polar Coordinates:\n\nx = r cos \u03b8, y = r sin \u03b8\n\nx\u1d63 = cos \u03b8, x\u1d69 = -r sin \u03b8\ny\u1d63 = sin \u03b8, y\u1d69 = r cos \u03b8\n\n|J| = |cos \u03b8 \u00b7 r cos \u03b8 - (-r sin \u03b8) \u00b7 sin \u03b8|\n= |r cos\u00b2 \u03b8 + r sin\u00b2 \u03b8| = |r| = r\n\n## Cylindrical to Rectangular:\n\nx = r cos \u03b8, y = r sin \u03b8, z = z\n\n|J| = r\n\n## Spherical to Rectangular:\n\nx = \u03c1 sin \u03c6 cos \u03b8\ny = \u03c1 sin \u03c6 sin \u03b8\nz = \u03c1 cos \u03c6\n\n|J| = \u03c1\u00b2 sin \u03c6\n\n## Steps:\n\n1. Find transformation x(u, v), y(u, v)\n2. Compute Jacobian |J|\n3. Change limits\n4. Integrate\n\n## Example:\n\n**Rectangle to general quadrilateral:**\n\nUse u = x + y, v = x - y\n\nx = (u + v)/2, y = (u - v)/2\n\nCompute Jacobian, apply formula.",
+          "questions": [
+            {
+              "id": "calc_u12_l5_q1",
+              "type": "typing",
+              "question": "What is the Jacobian?",
+              "correctAnswer": [
+                "|\u2202(x, y)/\u2202(u, v)|",
+                "Determinant of partial derivatives"
+              ],
+              "xp": 5,
+              "explanation": "Answer: |\u2202(x, y)/\u2202(u, v)|"
+            },
+            {
+              "id": "calc_u12_l5_q2",
+              "type": "typing",
+              "question": "What is |J| for polar coordinates?",
+              "correctAnswer": [
+                "r"
+              ],
+              "xp": 4,
+              "explanation": "For polar coordinates: |J| = r. This is why dA = r dr d\u03b8."
+            },
+            {
+              "id": "calc_u12_l5_q3",
+              "type": "typing",
+              "question": "What is the change of variables formula?",
+              "correctAnswer": [
+                "\u222b\u222b f(x,y) dA = \u222b\u222b f(x(u,v),y(u,v)) |J| du dv"
+              ],
+              "xp": 5,
+              "explanation": "\u222b\u222bR f(x,y) dA = \u222b\u222bS f(x(u,v), y(u,v)) |J| du dv. Substitute and multiply by Jacobian."
+            },
+            {
+              "id": "calc_u12_l5_q4",
+              "type": "multiple-choice",
+              "question": "What is |J| for spherical coordinates?",
+              "options": [
+                "r",
+                "r\u00b2",
+                "\u03c1\u00b2 sin \u03c6",
+                "\u03c1"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "For spherical coordinates: |J| = \u03c1\u00b2 sin \u03c6. This is why dV = \u03c1\u00b2 sin \u03c6 d\u03c1 d\u03c6 d\u03b8."
+            },
+            {
+              "id": "calc_u12_l5_q5",
+              "type": "typing",
+              "question": "What is x in polar?",
+              "correctAnswer": [
+                "r cos(\u03b8)",
+                "r cos \u03b8"
+              ],
+              "xp": 4,
+              "explanation": "x = r cos(\u03b8). The x-coordinate is r times cosine of the angle."
+            },
+            {
+              "id": "calc_u12_l5_q6",
+              "type": "multiple-choice",
+              "question": "What is y in polar?",
+              "options": [
+                "r cos \u03b8",
+                "r sin \u03b8",
+                "\u03b8",
+                "r"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "y = r sin(\u03b8). The y-coordinate is r times sine of the angle."
+            },
+            {
+              "id": "calc_u12_l5_q7",
+              "type": "typing",
+              "question": "Why do we use |J|?",
+              "correctAnswer": [
+                "Area/volume scaling factor",
+                "Accounts for coordinate change"
+              ],
+              "xp": 5,
+              "explanation": "Answer: Area/volume scaling factor"
+            },
+            {
+              "id": "calc_u12_l5_q8",
+              "type": "multiple-choice",
+              "question": "What is x\u1d63 for x = r cos \u03b8?",
+              "options": [
+                "sin \u03b8",
+                "cos \u03b8",
+                "r cos \u03b8",
+                "-r sin \u03b8"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "x = r cos(\u03b8). The x-coordinate is r times cosine of the angle."
+            },
+            {
+              "id": "calc_u12_l5_q9",
+              "type": "typing",
+              "question": "What is |det([[a, b], [c, d]])|?",
+              "correctAnswer": [
+                "|ad - bc|"
+              ],
+              "xp": 4,
+              "explanation": "Answer: |ad - bc|"
+            },
+            {
+              "id": "calc_u12_l5_q10",
+              "type": "multiple-choice",
+              "question": "What is x\u1d69 for x = r cos \u03b8?",
+              "options": [
+                "sin \u03b8",
+                "cos \u03b8",
+                "-r sin \u03b8",
+                "r cos \u03b8"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "x = r cos(\u03b8). The x-coordinate is r times cosine of the angle."
+            },
+            {
+              "id": "calc_u12_l5_q11",
+              "type": "typing",
+              "question": "What is y\u1d63 for y = r sin \u03b8?",
+              "correctAnswer": [
+                "sin(\u03b8)",
+                "sin \u03b8"
+              ],
+              "xp": 5,
+              "explanation": "y = r sin(\u03b8). The y-coordinate is r times sine of the angle."
+            },
+            {
+              "id": "calc_u12_l5_q12",
+              "type": "multiple-choice",
+              "question": "What is y\u1d69 for y = r sin \u03b8?",
+              "options": [
+                "sin \u03b8",
+                "cos \u03b8",
+                "r cos \u03b8",
+                "-r sin \u03b8"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "y = r sin(\u03b8). The y-coordinate is r times sine of the angle."
+            },
+            {
+              "id": "calc_u12_l5_q13",
+              "type": "typing",
+              "question": "What is |J| for cylindrical?",
+              "correctAnswer": [
+                "r"
+              ],
+              "xp": 4,
+              "explanation": "Answer: r"
+            },
+            {
+              "id": "calc_u12_l5_q14",
+              "type": "multiple-choice",
+              "question": "What transformation x = u+v, y = u-v gives?",
+              "options": [
+                "Rectangle to diamond",
+                "Rectangle to circle",
+                "Circle to square",
+                "Identity"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Answer: Rectangle to diamond"
+            },
+            {
+              "id": "calc_u12_l5_q15",
+              "type": "typing",
+              "question": "What does |J| represent?",
+              "correctAnswer": [
+                "How area/volume changes",
+                "Scaling factor"
+              ],
+              "xp": 5,
+              "explanation": "Answer: How area/volume changes"
+            },
+            {
+              "id": "calc_u12_l5_q16",
+              "type": "multiple-choice",
+              "question": "Can |J| be negative?",
+              "options": [
+                "Yes, use absolute value",
+                "No",
+                "Always positive",
+                "Zero"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Answer: Yes, use absolute value"
+            },
+            {
+              "id": "calc_u12_l5_q17",
+              "type": "typing",
+              "question": "What is det([[1, 2], [3, 4]])?",
+              "correctAnswer": [
+                "-2"
+              ],
+              "xp": 4,
+              "explanation": "det([[1, 2], [3, 4]]) = 1\u00b74 - 2\u00b73 = 4 - 6 = -2."
+            },
+            {
+              "id": "calc_u12_l5_q18",
+              "type": "multiple-choice",
+              "question": "When is |J| = 1?",
+              "options": [
+                "Identity transformation",
+                "Polar",
+                "Spherical",
+                "Never"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Answer: Identity transformation"
+            }
+          ]
         }
       ]
     },
