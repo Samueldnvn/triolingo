@@ -9,91 +9,14 @@ window.cppCombined = {
       "unitName": "1. C++ Environment and Language Basics",
       "lessons": [
         {
-    "id": 1,
-    "title": "Introduction to C++",
-    "unitTitle": "1. C++ Environment and Language Basics",
-    "xp": 32,
-    "type": "lesson",
-    "difficulty": "beginner",
-    "lessonText": "# Introduction to C++
-
-C++ is a powerful, high-performance programming language created by Bjarne Stroustrup in 1979 as an extension of C. It's used in game development, systems programming, embedded systems, and competitive programming.
-
-## Your First C++ Program
-
-```cpp
-#include <iostream>
-
-int main() {
-    std::cout << \"Hello, World!\" << std::endl;
-    return 0;
-}
-```",
-    "questions": [
-        {
-            "id": "cpp-1-1-1",
-            "type": "typing",
-            "question": "Who created C++?",
-            "correctAnswer": [
-                "Bjarne Stroustrup",
-                "Stroustrup"
-            ],
-            "explanation": "Bjarne Stroustrup created C++ in 1979 as an extension of C.",
-            "xp": 5
+          "id": 2,
+          "title": "Installing Compilers and Toolchains (GCC, Clang, MSVC)",
+          "unitTitle": "1. C++ Environment and Language Basics",
+          "xp": 15,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "questions": []
         },
-        {
-            "id": "cpp-1-1-2",
-            "type": "typing",
-            "question": "What is the entry point of a C++ program?",
-            "correctAnswer": [
-                "main()",
-                "int main()"
-            ],
-            "explanation": "The main() function is the entry point where program execution begins.",
-            "xp": 5
-        },
-        {
-            "id": "cpp-1-1-3",
-            "type": "typing",
-            "question": "What library do you include for input/output?",
-            "correctAnswer": [
-                "iostream",
-                "<iostream>"
-            ],
-            "explanation": "The iostream library provides std::cout for output and std::cin for input.",
-            "xp": 5
-        },
-        {
-            "id": "cpp-1-1-4",
-            "type": "code",
-            "question": "Write a C++ program that prints 'Hello, World!' to the console.",
-            "codeTemplate": "#include <iostream>
-
-int main() {
-    // Your code here
-    
-    return 0;
-}
-",
-            "expectedOutput": "Hello, World!",
-            "language": "cpp",
-            "localLLMGrade": true,
-            "explanation": "Use std::cout << \"Hello, World!\" << std::endl; to print the message.",
-            "xp": 12
-        },
-        {
-            "id": "cpp-1-1-5",
-            "type": "typing",
-            "question": "What operator is used with std::cout?",
-            "correctAnswer": [
-                "<<",
-                "insertion operator"
-            ],
-            "explanation": "The << operator (stream insertion) sends data to the output stream.",
-            "xp": 5
-        }
-    ]
-},
         {
           "id": 3,
           "title": "C++ Compilation Model (Source \u2192 Object \u2192 Linking)",
