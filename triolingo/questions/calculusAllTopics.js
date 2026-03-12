@@ -4429,44 +4429,1030 @@ window.calculusAllTopics = {
       "unitName": "7. Sequences & Series",
       "lessons": [
         {
-          "id": "11-1",
+          "id": "7-1",
           "title": "Sequences and limits of sequences",
-          "xp": 0,
+          "xp": 88,
           "type": "lesson",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Sequences and Limits of Sequences\n\nA sequence is an ordered list of numbers: a\u2081, a\u2082, a\u2083, ..., a\u2099, ...\n\n## Notation:\n\n{a\u2099}\u2099\u208c\u2081^\u221e or simply {a\u2099}\n\n## Limit of a Sequence:\n\nlim(n\u2192\u221e) a\u2099 = L\n\nMeans the terms get arbitrarily close to L as n increases.\n\n## Convergence vs Divergence:\n\n- **Convergent:** lim(n\u2192\u221e) a\u2099 exists and is finite\n- **Divergent:** The limit doesn't exist or is infinite\n\n## Common Sequence Types:\n\n**Arithmetic:** a\u2099 = a\u2081 + (n-1)d\nExample: 2, 5, 8, 11, ... (a\u2099 = 2 + 3(n-1))\n\n**Geometric:** a\u2099 = a\u2081\u00b7r^(n-1)\nExample: 1, 2, 4, 8, ... (a\u2099 = 2^(n-1))\n\n**nth Term Formula:** a\u2099 = f(n)\n\n## Examples:\n\nlim(n\u2192\u221e) 1/n = 0 (converges)\nlim(n\u2192\u221e) n\u00b2 = \u221e (diverges)\nlim(n\u2192\u221e) (-1)^n (doesn't exist, diverges)",
+          "questions": [
+            {
+              "id": "calc_u7_l1_q1",
+              "type": "typing",
+              "question": "What is a sequence?",
+              "correctAnswer": [
+                "An ordered list of numbers"
+              ],
+              "xp": 5
+            },
+            {
+              "id": "calc_u7_l1_q2",
+              "type": "typing",
+              "question": "What is lim(n\u2192\u221e) 1/n?",
+              "correctAnswer": [
+                "0"
+              ],
+              "xp": 4
+            },
+            {
+              "id": "calc_u7_l1_q3",
+              "type": "typing",
+              "question": "What does it mean for a sequence to converge?",
+              "correctAnswer": [
+                "The limit exists and is finite"
+              ],
+              "xp": 5
+            },
+            {
+              "id": "calc_u7_l1_q4",
+              "type": "multiple-choice",
+              "question": "What is lim(n\u2192\u221e) n?",
+              "options": [
+                "0",
+                "1",
+                "\u221e",
+                "Doesn't exist"
+              ],
+              "correct": 2,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l1_q5",
+              "type": "typing",
+              "question": "What is the nth term of 2, 5, 8, 11, ...?",
+              "correctAnswer": [
+                "2 + 3(n-1)",
+                "3n - 1"
+              ],
+              "xp": 4
+            },
+            {
+              "id": "calc_u7_l1_q6",
+              "type": "multiple-choice",
+              "question": "What type of sequence is 1, 2, 4, 8, ...?",
+              "options": [
+                "Arithmetic",
+                "Geometric",
+                "Neither",
+                "Both"
+              ],
+              "correct": 1,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l1_q7",
+              "type": "typing",
+              "question": "What is lim(n\u2192\u221e) (n+1)/n?",
+              "correctAnswer": [
+                "1"
+              ],
+              "xp": 5
+            },
+            {
+              "id": "calc_u7_l1_q8",
+              "type": "multiple-choice",
+              "question": "What is lim(n\u2192\u221e) (-1)^n?",
+              "options": [
+                "0",
+                "1",
+                "-1",
+                "Doesn't exist"
+              ],
+              "correct": 3,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l1_q9",
+              "type": "typing",
+              "question": "What is the nth term of 1, 1/2, 1/4, 1/8, ...?",
+              "correctAnswer": [
+                "1/2^(n-1)",
+                "2^(1-n)"
+              ],
+              "xp": 4
+            },
+            {
+              "id": "calc_u7_l1_q10",
+              "type": "multiple-choice",
+              "question": "A bounded monotonic sequence:",
+              "options": [
+                "Always diverges",
+                "Always converges",
+                "May diverge",
+                "Cannot determine"
+              ],
+              "correct": 1,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l1_q11",
+              "type": "typing",
+              "question": "What is lim(n\u2192\u221e) (n\u00b2 - n)/n\u00b2?",
+              "correctAnswer": [
+                "1"
+              ],
+              "xp": 5
+            },
+            {
+              "id": "calc_u7_l1_q12",
+              "type": "multiple-choice",
+              "question": "What does lim(n\u2192\u221e) r^n equal (for |r| < 1)?",
+              "options": [
+                "1",
+                "0",
+                "\u221e",
+                "Doesn't exist"
+              ],
+              "correct": 1,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l1_q13",
+              "type": "typing",
+              "question": "What is lim(n\u2192\u221e) ln(n)/n?",
+              "correctAnswer": [
+                "0"
+              ],
+              "xp": 4
+            },
+            {
+              "id": "calc_u7_l1_q14",
+              "type": "multiple-choice",
+              "question": "What is lim(n\u2192\u221e) 1/(n\u00b2 + 1)?",
+              "options": [
+                "0",
+                "1",
+                "1/2",
+                "\u221e"
+              ],
+              "correct": 0,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l1_q15",
+              "type": "typing",
+              "question": "What is lim(n\u2192\u221e) (2n + 3)/(n - 1)?",
+              "correctAnswer": [
+                "2"
+              ],
+              "xp": 5
+            },
+            {
+              "id": "calc_u7_l1_q16",
+              "type": "multiple-choice",
+              "question": "What is the common ratio in 3, 6, 12, 24, ...?",
+              "options": [
+                "2",
+                "3",
+                "6",
+                "1/2"
+              ],
+              "correct": 0,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l1_q17",
+              "type": "typing",
+              "question": "What is lim(n\u2192\u221e) sin(1/n)?",
+              "correctAnswer": [
+                "0"
+              ],
+              "xp": 4
+            },
+            {
+              "id": "calc_u7_l1_q18",
+              "type": "multiple-choice",
+              "question": "If lim(n\u2192\u221e) a\u2099 = L, then lim(n\u2192\u221e) |a\u2099| = ?",
+              "options": [
+                "|L|",
+                "L",
+                "0",
+                "Doesn't exist"
+              ],
+              "correct": 0,
+              "xp": 3
+            }
+          ]
         },
         {
-          "id": "11-2",
+          "id": "7-2",
           "title": "Infinite series and geometric series",
-          "xp": 0,
+          "xp": 90,
           "type": "lesson",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Infinite Series and Geometric Series\n\nAn infinite series is the sum of an infinite sequence.\n\n## Notation:\n\n\u2211(n=1 to \u221e) a\u2099 = a\u2081 + a\u2082 + a\u2083 + ...\n\n## Partial Sums:\n\nS\u2099 = \u2211(i=1 to n) a\u1d62\n\n## Convergence of Series:\n\nA series converges if lim(n\u2192\u221e) S\u2099 exists and is finite.\n\n## Geometric Series:\n\n\u2211(n=0 to \u221e) ar\u207f = a + ar + ar\u00b2 + ...\n\n**Sum Formula:**\n\nIf |r| < 1: S = a/(1 - r)\nIf |r| \u2265 1: Diverges\n\n## Key Tests:\n\n**nth Term Test:**\n\nIf lim(n\u2192\u221e) a\u2099 \u2260 0, then the series diverges.\n\n**Note:** If lim = 0, the test is inconclusive.\n\n## Examples:\n\n\u2211(n=0 to \u221e) (1/2)\u207f = 1/(1 - 1/2) = 2\n\u2211(n=0 to \u221e) 2\u207f = diverges (|r| = 2 \u2265 1)\n\n\u2211(n=1 to \u221e) 1/n diverges (harmonic series)\n\u2211(n=1 to \u221e) 1/n\u00b2 converges (to \u03c0\u00b2/6)",
+          "questions": [
+            {
+              "id": "calc_u7_l2_q1",
+              "type": "typing",
+              "question": "What is an infinite series?",
+              "correctAnswer": [
+                "The sum of an infinite sequence"
+              ],
+              "xp": 5
+            },
+            {
+              "id": "calc_u7_l2_q2",
+              "type": "typing",
+              "question": "What is \u2211(n=0 to \u221e) (1/2)\u207f?",
+              "correctAnswer": [
+                "2"
+              ],
+              "xp": 4
+            },
+            {
+              "id": "calc_u7_l2_q3",
+              "type": "typing",
+              "question": "When does a geometric series converge?",
+              "correctAnswer": [
+                "When |r| < 1"
+              ],
+              "xp": 5
+            },
+            {
+              "id": "calc_u7_l2_q4",
+              "type": "multiple-choice",
+              "question": "What is the sum of \u2211(n=0 to \u221e) (1/3)\u207f?",
+              "options": [
+                "1",
+                "3/2",
+                "2",
+                "3"
+              ],
+              "correct": 1,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l2_q5",
+              "type": "typing",
+              "question": "What does the nth term test say?",
+              "correctAnswer": [
+                "If lim a\u2099 \u2260 0, the series diverges"
+              ],
+              "xp": 4
+            },
+            {
+              "id": "calc_u7_l2_q6",
+              "type": "multiple-choice",
+              "question": "Does \u2211(n=1 to \u221e) 1/n converge or diverge?",
+              "options": [
+                "Converges",
+                "Diverges",
+                "Equals 0",
+                "Equals 1"
+              ],
+              "correct": 1,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l2_q7",
+              "type": "typing",
+              "question": "What is \u2211(n=0 to \u221e) 3(1/2)\u207f?",
+              "correctAnswer": [
+                "6"
+              ],
+              "xp": 5
+            },
+            {
+              "id": "calc_u7_l2_q8",
+              "type": "multiple-choice",
+              "question": "What is the sum of \u2211(n=1 to \u221e) (1/4)\u207f?",
+              "options": [
+                "1",
+                "1/3",
+                "1/2",
+                "4/3"
+              ],
+              "correct": 1,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l2_q9",
+              "type": "typing",
+              "question": "What is S\u2099 for a series?",
+              "correctAnswer": [
+                "The nth partial sum",
+                "The sum of the first n terms"
+              ],
+              "xp": 4
+            },
+            {
+              "id": "calc_u7_l2_q10",
+              "type": "multiple-choice",
+              "question": "Does \u2211(n=1 to \u221e) 1/n\u00b2 converge?",
+              "options": [
+                "Yes",
+                "No",
+                "Equals \u221e",
+                "Cannot determine"
+              ],
+              "correct": 0,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l2_q11",
+              "type": "typing",
+              "question": "What is \u2211(n=0 to \u221e) (-1/2)\u207f?",
+              "correctAnswer": [
+                "2/3"
+              ],
+              "xp": 5
+            },
+            {
+              "id": "calc_u7_l2_q12",
+              "type": "multiple-choice",
+              "question": "What is the common ratio in 1 + 2 + 4 + 8 + ...?",
+              "options": [
+                "1",
+                "2",
+                "4",
+                "8"
+              ],
+              "correct": 1,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l2_q13",
+              "type": "typing",
+              "question": "What is \u2211(n=1 to \u221e) (2/3)\u207f?",
+              "correctAnswer": [
+                "2"
+              ],
+              "xp": 4
+            },
+            {
+              "id": "calc_u7_l2_q14",
+              "type": "multiple-choice",
+              "question": "Does \u2211(n=1 to \u221e) n converge?",
+              "options": [
+                "Yes",
+                "No",
+                "Equals -1/12",
+                "Equals 0"
+              ],
+              "correct": 1,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l2_q15",
+              "type": "typing",
+              "question": "What is the sum of 3 + 1 + 1/3 + 1/9 + ...?",
+              "correctAnswer": [
+                "4.5",
+                "9/2"
+              ],
+              "xp": 5
+            },
+            {
+              "id": "calc_u7_l2_q16",
+              "type": "multiple-choice",
+              "question": "For \u2211(n=1 to \u221e) a\u2099, if a\u2099 = 1, what happens?",
+              "options": [
+                "Converges to 1",
+                "Diverges to \u221e",
+                "Converges to 0",
+                "Cannot determine"
+              ],
+              "correct": 1,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l2_q17",
+              "type": "typing",
+              "question": "What is \u2211(n=0 to \u221e) 0.5\u207f?",
+              "correctAnswer": [
+                "2"
+              ],
+              "xp": 4
+            },
+            {
+              "id": "calc_u7_l2_q18",
+              "type": "multiple-choice",
+              "question": "What is lim(n\u2192\u221e) (1/n)?",
+              "options": [
+                "0",
+                "1",
+                "\u221e",
+                "Doesn't exist"
+              ],
+              "correct": 0,
+              "xp": 3
+            }
+          ]
         },
         {
-          "id": "11-3",
-          "title": "Convergence tests (comparison, ratio, root, integral, alternating)",
-          "xp": 0,
+          "id": "7-3",
+          "title": "Convergence tests",
+          "xp": 90,
           "type": "lesson",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Convergence Tests\n\nSeveral tests determine if an infinite series converges.\n\n## 1. Integral Test:\n\nIf f(x) is positive, continuous, and decreasing, then:\n\n\u222b(1 to \u221e) f(x) dx and \u2211(n=1 to \u221e) f(n) either both converge or both diverge.\n\n## 2. Comparison Test:\n\nIf 0 \u2264 a\u2099 \u2264 b\u2099 for all n:\n- If \u2211 b\u2099 converges, then \u2211 a\u2099 converges\n- If \u2211 a\u2099 diverges, then \u2211 b\u2099 diverges\n\n## 3. Limit Comparison Test:\n\nIf lim(n\u2192\u221e) a\u2099/b\u2099 = c where 0 < c < \u221e, then \u2211 a\u2099 and \u2211 b\u2099 either both converge or both diverge.\n\n## 4. Ratio Test:\n\nLet L = lim(n\u2192\u221e) |a\u2099\u208a\u2081/a\u2099|\n- If L < 1: Converges absolutely\n- If L > 1: Diverges\n- If L = 1: Inconclusive\n\n## 5. Root Test:\n\nLet L = lim(n\u2192\u221e) \u221a\u207f|a\u2099|\n- If L < 1: Converges absolutely\n- If L > 1: Diverges\n- If L = 1: Inconclusive\n\n## 6. Alternating Series Test:\n\nFor \u2211(-1)\u207f\u207b\u00b9b\u2099 where b\u2099 > 0:\nIf b\u2099 is decreasing and lim(n\u2192\u221e) b\u2099 = 0, then the series converges.",
+          "questions": [
+            {
+              "id": "calc_u7_l3_q1",
+              "type": "typing",
+              "question": "What does the integral test relate?",
+              "correctAnswer": [
+                "Integrals and series"
+              ],
+              "xp": 5
+            },
+            {
+              "id": "calc_u7_l3_q2",
+              "type": "typing",
+              "question": "In the ratio test, if L < 1, the series:",
+              "correctAnswer": [
+                "converges absolutely",
+                "converges"
+              ],
+              "xp": 4
+            },
+            {
+              "id": "calc_u7_l3_q3",
+              "type": "typing",
+              "question": "What is the condition for the comparison test?",
+              "correctAnswer": [
+                "0 \u2264 a\u2099 \u2264 b\u2099"
+              ],
+              "xp": 5
+            },
+            {
+              "id": "calc_u7_l3_q4",
+              "type": "multiple-choice",
+              "question": "In the ratio test, if L > 1, the series:",
+              "options": [
+                "Converges",
+                "Diverges",
+                "Inconclusive",
+                "Equals 0"
+              ],
+              "correct": 1,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l3_q5",
+              "type": "typing",
+              "question": "What does the alternating series test require?",
+              "correctAnswer": [
+                "b\u2099 decreasing and lim b\u2099 = 0"
+              ],
+              "xp": 4
+            },
+            {
+              "id": "calc_u7_l3_q6",
+              "type": "multiple-choice",
+              "question": "For the integral test, f(x) must be:",
+              "options": [
+                "Negative",
+                "Positive, continuous, decreasing",
+                "Any function",
+                "Constant"
+              ],
+              "correct": 1,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l3_q7",
+              "type": "typing",
+              "question": "What is L in the ratio test?",
+              "correctAnswer": [
+                "lim(n\u2192\u221e) |a\u2099\u208a\u2081/a\u2099|"
+              ],
+              "xp": 5
+            },
+            {
+              "id": "calc_u7_l3_q8",
+              "type": "multiple-choice",
+              "question": "If \u2211 b\u2099 converges and 0 \u2264 a\u2099 \u2264 b\u2099, then \u2211 a\u2099:",
+              "options": [
+                "Diverges",
+                "Converges",
+                "May converge or diverge",
+                "Equals 0"
+              ],
+              "correct": 1,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l3_q9",
+              "type": "typing",
+              "question": "What does the root test use?",
+              "correctAnswer": [
+                "The nth root of |a\u2099|"
+              ],
+              "xp": 4
+            },
+            {
+              "id": "calc_u7_l3_q10",
+              "type": "multiple-choice",
+              "question": "In the limit comparison test, what must c satisfy?",
+              "options": [
+                "c = 0",
+                "c = 1",
+                "0 < c < \u221e",
+                "c = \u221e"
+              ],
+              "correct": 2,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l3_q11",
+              "type": "typing",
+              "question": "When is the ratio test inconclusive?",
+              "correctAnswer": [
+                "When L = 1"
+              ],
+              "xp": 5
+            },
+            {
+              "id": "calc_u7_l3_q12",
+              "type": "multiple-choice",
+              "question": "Does \u2211(n=1 to \u221e) 1/(n\u00b2+1) converge?",
+              "options": [
+                "Yes (by comparison with 1/n\u00b2)",
+                "No",
+                "Cannot determine",
+                "Equals \u03c0\u00b2/6"
+              ],
+              "correct": 0,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l3_q13",
+              "type": "typing",
+              "question": "What is the ratio for \u2211 n!?",
+              "correctAnswer": [
+                "\u221e",
+                "diverges"
+              ],
+              "xp": 4
+            },
+            {
+              "id": "calc_u7_l3_q14",
+              "type": "multiple-choice",
+              "question": "Does \u2211(n=1 to \u221e) (-1)\u207f/n converge?",
+              "options": [
+                "Yes (alternating harmonic)",
+                "No",
+                "Converges absolutely",
+                "Equals 0"
+              ],
+              "correct": 0,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l3_q15",
+              "type": "typing",
+              "question": "What test is best for \u2211 n!/10\u207f?",
+              "correctAnswer": [
+                "Ratio test"
+              ],
+              "xp": 5
+            },
+            {
+              "id": "calc_u7_l3_q16",
+              "type": "multiple-choice",
+              "question": "What is lim(n\u2192\u221e) (n+1)!/n!?",
+              "options": [
+                "0",
+                "1",
+                "\u221e",
+                "Doesn't exist"
+              ],
+              "correct": 2,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l3_q17",
+              "type": "typing",
+              "question": "Does \u2211(n=1 to \u221e) 1/\u221an converge?",
+              "options": [
+                "No (p-series with p = 1/2 \u2264 1)",
+                "Yes"
+              ],
+              "xp": 4
+            },
+            {
+              "id": "calc_u7_l3_q18",
+              "type": "multiple-choice",
+              "question": "What is a p-series?",
+              "options": [
+                "\u2211 1/n\u1d56",
+                "\u2211 n\u1d56",
+                "\u2211 p\u207f",
+                "\u2211 np"
+              ],
+              "correct": 0,
+              "xp": 3
+            }
+          ]
         },
         {
-          "id": "11-4",
+          "id": "7-4",
           "title": "Power series and radius of convergence",
-          "xp": 0,
+          "xp": 88,
           "type": "lesson",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Power Series and Radius of Convergence\n\nA power series is an infinite series of the form:\n\n\u2211(n=0 to \u221e) c\u2099(x - a)\u207f = c\u2080 + c\u2081(x-a) + c\u2082(x-a)\u00b2 + ...\n\n**a** is the center of the series.\n\n## Radius of Convergence (R):\n\nThe power series converges for |x - a| < R and diverges for |x - a| > R.\n\n## Finding R:\n\nUse the ratio test:\n\nR = lim(n\u2192\u221e) |c\u2099/c\u2099\u208a\u2081|\n\nOr:\n\nR = 1/lim(n\u2192\u221e) \u221a\u207f|c\u2099|\n\n## Interval of Convergence:\n\nTest the endpoints (x = a \u00b1 R) separately.\n\n## Special Cases:\n\n- R = 0: Converges only at x = a\n- R = \u221e: Converges for all x\n\n## Examples:\n\n**\u2211(n=0 to \u221e) x\u207f/n!**\n\nR = lim(n\u2192\u221e) |1/n! / 1/(n+1)!| = lim(n\u2192\u221e) (n+1) = \u221e\nConverges for all x (this is e\u02e3)\n\n**\u2211(n=0 to \u221e) x\u207f**\n\nR = 1, interval is (-1, 1) (geometric series)",
+          "questions": [
+            {
+              "id": "calc_u7_l4_q1",
+              "type": "typing",
+              "question": "What is the general form of a power series?",
+              "correctAnswer": [
+                "\u2211(n=0 to \u221e) c\u2099(x-a)\u207f"
+              ],
+              "xp": 5
+            },
+            {
+              "id": "calc_u7_l4_q2",
+              "type": "typing",
+              "question": "What does R represent in power series?",
+              "correctAnswer": [
+                "Radius of convergence"
+              ],
+              "xp": 4
+            },
+            {
+              "id": "calc_u7_l4_q3",
+              "type": "typing",
+              "question": "When does a power series converge?",
+              "correctAnswer": [
+                "When |x - a| < R"
+              ],
+              "xp": 5
+            },
+            {
+              "id": "calc_u7_l4_q4",
+              "type": "multiple-choice",
+              "question": "What is R for \u2211 x\u207f/n!?",
+              "options": [
+                "0",
+                "1",
+                "\u221e",
+                "Doesn't exist"
+              ],
+              "correct": 2,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l4_q5",
+              "type": "typing",
+              "question": "What is the center a in a power series?",
+              "correctAnswer": [
+                "The value the series is expanded around"
+              ],
+              "xp": 4
+            },
+            {
+              "id": "calc_u7_l4_q6",
+              "type": "multiple-choice",
+              "question": "What is R for \u2211 x\u207f?",
+              "options": [
+                "0",
+                "1",
+                "2",
+                "\u221e"
+              ],
+              "correct": 1,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l4_q7",
+              "type": "typing",
+              "question": "What happens at x = a \u00b1 R?",
+              "correctAnswer": [
+                "Must test endpoints separately"
+              ],
+              "xp": 5
+            },
+            {
+              "id": "calc_u7_l4_q8",
+              "type": "multiple-choice",
+              "question": "If R = 0, the series converges:",
+              "options": [
+                "Nowhere",
+                "Only at x = a",
+                "For all x",
+                "For |x| < 1"
+              ],
+              "correct": 1,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l4_q9",
+              "type": "typing",
+              "question": "What is \u2211(n=0 to \u221e) x\u207f?",
+              "correctAnswer": [
+                "1/(1-x) for |x| < 1"
+              ],
+              "xp": 4
+            },
+            {
+              "id": "calc_u7_l4_q10",
+              "type": "multiple-choice",
+              "question": "What test finds the radius of convergence?",
+              "options": [
+                "Ratio test",
+                "Integral test",
+                "Comparison test",
+                "Alternating test"
+              ],
+              "correct": 0,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l4_q11",
+              "type": "typing",
+              "question": "What is R for \u2211 n!x\u207f?",
+              "correctAnswer": [
+                "0"
+              ],
+              "xp": 5
+            },
+            {
+              "id": "calc_u7_l4_q12",
+              "type": "multiple-choice",
+              "question": "What is the interval of convergence for \u2211 x\u207f?",
+              "options": [
+                "(-1, 1)",
+                "[-1, 1]",
+                "(-\u221e, \u221e)",
+                "[0, \u221e)"
+              ],
+              "correct": 0,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l4_q13",
+              "type": "typing",
+              "question": "What is R for \u2211 (x-2)\u207f/n?",
+              "correctAnswer": [
+                "1"
+              ],
+              "xp": 4
+            },
+            {
+              "id": "calc_u7_l4_q14",
+              "type": "multiple-choice",
+              "question": "What function does \u2211(n=0 to \u221e) x\u207f/n! represent?",
+              "options": [
+                "ln(x)",
+                "e\u02e3",
+                "sin(x)",
+                "cos(x)"
+              ],
+              "correct": 1,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l4_q15",
+              "type": "typing",
+              "question": "What is the interval if R = 2 and a = 1?",
+              "correctAnswer": [
+                "(-1, 3)"
+              ],
+              "xp": 5
+            },
+            {
+              "id": "calc_u7_l4_q16",
+              "type": "multiple-choice",
+              "question": "Can a power series converge at its endpoints?",
+              "options": [
+                "Never",
+                "Yes, sometimes",
+                "Always",
+                "Cannot determine"
+              ],
+              "correct": 1,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l4_q17",
+              "type": "typing",
+              "question": "What is R for \u2211 (x/3)\u207f?",
+              "correctAnswer": [
+                "3"
+              ],
+              "xp": 4
+            },
+            {
+              "id": "calc_u7_l4_q18",
+              "type": "multiple-choice",
+              "question": "What is the series representation of 1/(1+x)?",
+              "options": [
+                "\u2211(-1)\u207fx\u207f",
+                "\u2211x\u207f",
+                "\u2211x\u00b2\u207f",
+                "\u2211(-1)\u207f/n! x\u207f"
+              ],
+              "correct": 0,
+              "xp": 3
+            }
+          ]
         },
         {
-          "id": "11-5",
+          "id": "7-5",
           "title": "Taylor and Maclaurin series",
-          "xp": 0,
+          "xp": 90,
           "type": "lesson",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Taylor and Maclaurin Series\n\nA Taylor series represents a function as an infinite sum of terms.\n\n## Taylor Series (about x = a):\n\nf(x) = \u2211(n=0 to \u221e) [f\u207d\u207f\u207e(a)/n!](x - a)\u207f\n\n## Maclaurin Series (about x = 0):\n\nf(x) = \u2211(n=0 to \u221e) [f\u207d\u207f\u207e(0)/n!]x\u207f\n\n## Common Maclaurin Series:\n\n**e\u02e3 = \u2211(n=0 to \u221e) x\u207f/n!**\n\n**sin(x) = \u2211(n=0 to \u221e) (-1)\u207fx^(2n+1)/(2n+1)!**\n\n**cos(x) = \u2211(n=0 to \u221e) (-1)\u207fx^(2n)/(2n)!**\n\n**1/(1-x) = \u2211(n=0 to \u221e) x\u207f** (for |x| < 1)\n\n**ln(1+x) = \u2211(n=1 to \u221e) (-1)^(n-1)x\u207f/n** (for |x| < 1)\n\n## Taylor Polynomial:\n\nThe nth degree Taylor polynomial is the partial sum up to n terms.\n\n## Remainder:\n\nR\u2099(x) = f(x) - P\u2099(x)\n\n## Example:\n\nFind Maclaurin series for e\u02e3:\n\nf\u207d\u207f\u207e(0) = 1 for all n\n\ne\u02e3 = \u2211(n=0 to \u221e) x\u207f/n! = 1 + x + x\u00b2/2! + x\u00b3/3! + ...",
+          "questions": [
+            {
+              "id": "calc_u7_l5_q1",
+              "type": "typing",
+              "question": "What is a Taylor series?",
+              "correctAnswer": [
+                "Representation of a function as an infinite sum"
+              ],
+              "xp": 5
+            },
+            {
+              "id": "calc_u7_l5_q2",
+              "type": "typing",
+              "question": "What is special about a Maclaurin series?",
+              "correctAnswer": [
+                "It's a Taylor series about x = 0"
+              ],
+              "xp": 4
+            },
+            {
+              "id": "calc_u7_l5_q3",
+              "type": "typing",
+              "question": "What is the Maclaurin series for e\u02e3?",
+              "correctAnswer": [
+                "\u2211(n=0 to \u221e) x\u207f/n!"
+              ],
+              "xp": 5
+            },
+            {
+              "id": "calc_u7_l5_q4",
+              "type": "multiple-choice",
+              "question": "What is the Maclaurin series for sin(x)?",
+              "options": [
+                "\u2211 x\u207f/n!",
+                "\u2211(-1)\u207fx^(2n+1)/(2n+1)!",
+                "\u2211(-1)\u207fx^(2n)/(2n)!",
+                "\u2211x\u00b2\u207f"
+              ],
+              "correct": 1,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l5_q5",
+              "type": "typing",
+              "question": "What is f\u207d\u207f\u207e(0) for e\u02e3?",
+              "correctAnswer": [
+                "1",
+                "1 for all n"
+              ],
+              "xp": 4
+            },
+            {
+              "id": "calc_u7_l5_q6",
+              "type": "multiple-choice",
+              "question": "What is the Maclaurin series for cos(x)?",
+              "options": [
+                "1 - x\u00b2/2! + x\u2074/4! - ...",
+                "x - x\u00b3/3! + x\u2075/5! - ...",
+                "1 + x + x\u00b2/2! + ...",
+                "x - x\u00b2 + x\u00b3/2! - ..."
+              ],
+              "correct": 0,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l5_q7",
+              "type": "typing",
+              "question": "What is the Taylor series coefficient?",
+              "correctAnswer": [
+                "f\u207d\u207f\u207e(a)/n!"
+              ],
+              "xp": 5
+            },
+            {
+              "id": "calc_u7_l5_q8",
+              "type": "multiple-choice",
+              "question": "What is the Maclaurin series for 1/(1-x)?",
+              "options": [
+                "\u2211 x\u207f",
+                "\u2211(-1)\u207fx\u207f",
+                "\u2211 x\u00b2\u207f",
+                "\u2211 x\u207f/n!"
+              ],
+              "correct": 0,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l5_q9",
+              "type": "typing",
+              "question": "What is the Taylor polynomial?",
+              "correctAnswer": [
+                "The partial sum of a Taylor series",
+                "Approximation of f(x)"
+              ],
+              "xp": 4
+            },
+            {
+              "id": "calc_u7_l5_q10",
+              "type": "multiple-choice",
+              "question": "What is R\u2099(x) in Taylor series?",
+              "options": [
+                "Remainder",
+                "Radius",
+                "Ratio",
+                "Root"
+              ],
+              "correct": 0,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l5_q11",
+              "type": "typing",
+              "question": "What is the Maclaurin series for ln(1+x)?",
+              "correctAnswer": [
+                "\u2211(-1)^(n-1)x\u207f/n"
+              ],
+              "xp": 5
+            },
+            {
+              "id": "calc_u7_l5_q12",
+              "type": "multiple-choice",
+              "question": "How do you find Taylor series coefficients?",
+              "options": [
+                "Using derivatives at a",
+                "Integrating",
+                "Using antiderivatives",
+                "Guessing"
+              ],
+              "correct": 0,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l5_q13",
+              "type": "typing",
+              "question": "What is the 3rd degree Maclaurin polynomial for e\u02e3?",
+              "correctAnswer": [
+                "1 + x + x\u00b2/2 + x\u00b3/6"
+              ],
+              "xp": 4
+            },
+            {
+              "id": "calc_u7_l5_q14",
+              "type": "multiple-choice",
+              "question": "What is the radius of convergence for e\u02e3 Maclaurin series?",
+              "options": [
+                "0",
+                "1",
+                "\u221e",
+                "2"
+              ],
+              "correct": 2,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l5_q15",
+              "type": "typing",
+              "question": "What is sin(x) approximated by near 0?",
+              "correctAnswer": [
+                "x",
+                "x - x\u00b3/6",
+                "x\u00b2/2"
+              ],
+              "xp": 5
+            },
+            {
+              "id": "calc_u7_l5_q16",
+              "type": "multiple-choice",
+              "question": "What function does \u2211(-1)\u207fx^(2n)/(2n)! represent?",
+              "options": [
+                "sin(x)",
+                "cos(x)",
+                "e\u02e3",
+                "ln(1+x)"
+              ],
+              "correct": 1,
+              "xp": 3
+            },
+            {
+              "id": "calc_u7_l5_q17",
+              "type": "typing",
+              "question": "What is f'(a) in Taylor series?",
+              "correctAnswer": [
+                "The coefficient for (x-a) term"
+              ],
+              "xp": 4
+            },
+            {
+              "id": "calc_u7_l5_q18",
+              "type": "multiple-choice",
+              "question": "Can Taylor series approximate any function?",
+              "options": [
+                "No, only analytic functions",
+                "Yes, any function",
+                "Only continuous functions",
+                "Only differentiable functions"
+              ],
+              "correct": 0,
+              "xp": 3
+            }
+          ]
         }
       ]
     },
