@@ -1,7 +1,7 @@
-// CPP - All Topics
-// Generated from topic file
+// CPP - Combined Course
+// C++ for Python Programmers + Algorithms
 
-window.cppAllTopics = {
+window.cppCombined = {
   "courseName": "C++",
   "units": [
     {
