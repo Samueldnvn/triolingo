@@ -7875,20 +7875,463 @@ window.calculusAllTopics = {
       "unitName": "11. Multivariable Optimization",
       "lessons": [
         {
-          "id": "15-1",
-          "title": "Critical points in multivariable functions",
-          "xp": 0,
+          "id": "11-1",
+          "title": "Critical points and classification",
+          "xp": 88,
           "type": "lesson",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Critical Points and Classification\n\n## Critical Points:\n\nA point (a, b) is critical if:\n\n\u2207f(a, b) = \u27e80, 0\u27e9\n\ni.e., f\u2093(a, b) = 0 and f\u1d67(a, b) = 0\n\n## Second Derivatives Test:\n\nLet D = f\u2093\u2093(a, b)f\u1d67\u1d67(a, b) - [f\u2093\u1d67(a, b)]\u00b2\n\n**Case 1:** D > 0 and f\u2093\u2093 > 0 \u2192 **Local minimum**\n\n**Case 2:** D > 0 and f\u2093\u2093 < 0 \u2192 **Local maximum**\n\n**Case 3:** D < 0 \u2192 **Saddle point**\n\n**Case 4:** D = 0 \u2192 **Test inconclusive**\n\n## Steps:\n\n1. Find f\u2093 and f\u1d67\n2. Set both = 0, solve for critical points\n3. Find f\u2093\u2093, f\u1d67\u1d67, f\u2093\u1d67\n4. Compute D at each critical point\n5. Classify using the test\n\n## Examples:\n\n**f(x, y) = x\u00b2 + y\u00b2**\nf\u2093 = 2x, f\u1d67 = 2y \u2192 (0, 0) critical\nf\u2093\u2093 = 2, f\u1d67\u1d67 = 2, f\u2093\u1d67 = 0\nD = 4 > 0, f\u2093\u2093 = 2 > 0 \u2192 Local minimum\n\n**f(x, y) = x\u00b2 - y\u00b2**\nf\u2093 = 2x, f\u1d67 = -2y \u2192 (0, 0) critical\nf\u2093\u2093 = 2, f\u1d67\u1d67 = -2, f\u2093\u1d67 = 0\nD = -4 < 0 \u2192 Saddle point",
+          "questions": [
+            {
+              "id": "calc_u11_l1_q1",
+              "type": "typing",
+              "question": "What is a critical point for f(x, y)?",
+              "correctAnswer": [
+                "Where \u2207f = <0,0>",
+                "Where f\u2093 = 0 and f\u1d67 = 0"
+              ],
+              "xp": 5,
+              "explanation": "A critical point is where \u2207f = \u27e80, 0\u27e9, i.e., f\u2093 = 0 and f\u1d67 = 0 simultaneously."
+            },
+            {
+              "id": "calc_u11_l1_q2",
+              "type": "typing",
+              "question": "What is the discriminant D formula?",
+              "correctAnswer": [
+                "f\u2093\u2093f\u1d67\u1d67 - (f\u2093\u1d67)\u00b2",
+                "f\u2093\u2093\u00b7f\u1d67\u1d67 - f\u2093\u1d67\u00b2"
+              ],
+              "xp": 4,
+              "explanation": "The discriminant is D = f\u2093\u2093f\u1d67\u1d67 - (f\u2093\u1d67)\u00b2. It determines the type of critical point."
+            },
+            {
+              "id": "calc_u11_l1_q3",
+              "type": "typing",
+              "question": "If D > 0 and f\u2093\u2093 > 0, what type of point?",
+              "correctAnswer": [
+                "Local minimum",
+                "Minimum"
+              ],
+              "xp": 5,
+              "explanation": "D > 0 means the test is conclusive. f\u2093\u2093 > 0 means the second derivative is positive (curving up). Local minimum."
+            },
+            {
+              "id": "calc_u11_l1_q4",
+              "type": "multiple-choice",
+              "question": "If D > 0 and f\u2093\u2093 < 0, what type of point?",
+              "options": [
+                "Local minimum",
+                "Local maximum",
+                "Saddle point",
+                "Inconclusive"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "D > 0 means conclusive. f\u2093\u2093 < 0 means second derivative is negative (curving down). Local maximum."
+            },
+            {
+              "id": "calc_u11_l1_q5",
+              "type": "typing",
+              "question": "If D < 0, what type of point?",
+              "correctAnswer": [
+                "Saddle point",
+                "Saddle"
+              ],
+              "xp": 4,
+              "explanation": "D < 0 means the discriminant is negative. This always indicates a saddle point (neither max nor min)."
+            },
+            {
+              "id": "calc_u11_l1_q6",
+              "type": "multiple-choice",
+              "question": "What is f\u2093 for f(x, y) = x\u00b2 + y\u00b2?",
+              "options": [
+                "2x",
+                "2y",
+                "0",
+                "2"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "f\u2093 = \u2202/\u2202x(x\u00b2 + y\u00b2) = 2x. Treat y as constant."
+            },
+            {
+              "id": "calc_u11_l1_q7",
+              "type": "typing",
+              "question": "What is the critical point of x\u00b2 + y\u00b2?",
+              "correctAnswer": [
+                "(0, 0)"
+              ],
+              "xp": 5,
+              "explanation": "For f = x\u00b2 + y\u00b2: f\u2093 = 2x = 0 \u2192 x = 0, f\u1d67 = 2y = 0 \u2192 y = 0. Critical point is (0, 0)."
+            },
+            {
+              "id": "calc_u11_l1_q8",
+              "type": "multiple-choice",
+              "question": "What is f\u2093\u2093 for f(x, y) = x\u00b2 + y\u00b2?",
+              "options": [
+                "0",
+                "1",
+                "2",
+                "2x"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "f\u2093 = \u2202/\u2202x(x\u00b2 + y\u00b2) = 2x. Treat y as constant."
+            },
+            {
+              "id": "calc_u11_l1_q9",
+              "type": "typing",
+              "question": "What is D for f(x, y) = x\u00b2 + y\u00b2 at (0,0)?",
+              "correctAnswer": [
+                "4"
+              ],
+              "xp": 4,
+              "explanation": "f\u2093\u2093 = 2, f\u1d67\u1d67 = 2, f\u2093\u1d67 = 0. D = 2\u00b72 - 0\u00b2 = 4."
+            },
+            {
+              "id": "calc_u11_l1_q10",
+              "type": "multiple-choice",
+              "question": "What type of point is (0,0) for x\u00b2 + y\u00b2?",
+              "options": [
+                "Minimum",
+                "Maximum",
+                "Saddle",
+                "Inconclusive"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "For x\u00b2 + y\u00b2 at (0,0): D = 4 > 0, f\u2093\u2093 = 2 > 0. Local minimum (paraboloid opening up)."
+            },
+            {
+              "id": "calc_u11_l1_q11",
+              "type": "typing",
+              "question": "What is the critical point of x\u00b2 - y\u00b2?",
+              "correctAnswer": [
+                "(0, 0)"
+              ],
+              "xp": 5,
+              "explanation": "For f = x\u00b2 - y\u00b2: f\u2093 = 2x = 0 \u2192 x = 0, f\u1d67 = -2y = 0 \u2192 y = 0. Critical point is (0, 0)."
+            },
+            {
+              "id": "calc_u11_l1_q12",
+              "type": "multiple-choice",
+              "question": "What is D for f(x, y) = x\u00b2 - y\u00b2?",
+              "options": [
+                "4",
+                "-4",
+                "0",
+                "2"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "f\u2093\u2093 = 2, f\u1d67\u1d67 = -2, f\u2093\u1d67 = 0. D = 2\u00b7(-2) - 0\u00b2 = -4."
+            },
+            {
+              "id": "calc_u11_l1_q13",
+              "type": "typing",
+              "question": "What type of point is (0,0) for x\u00b2 - y\u00b2?",
+              "correctAnswer": [
+                "Saddle point",
+                "Saddle"
+              ],
+              "xp": 4,
+              "explanation": "For x\u00b2 - y\u00b2 at (0,0): D = -4 < 0. Saddle point (hyperbolic paraboloid)."
+            },
+            {
+              "id": "calc_u11_l1_q14",
+              "type": "multiple-choice",
+              "question": "What is f\u1d67\u1d67 for f(x, y) = x\u00b2 - y\u00b2?",
+              "options": [
+                "2",
+                "-2",
+                "0",
+                "2y"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "f\u1d67\u1d67 = \u2202\u00b2/\u2202y\u00b2(x\u00b2 - y\u00b2) = \u2202/\u2202y(-2y) = -2. x\u00b2 disappears (treated as constant)."
+            },
+            {
+              "id": "calc_u11_l1_q15",
+              "type": "typing",
+              "question": "What does D = 0 mean?",
+              "correctAnswer": [
+                "Test is inconclusive",
+                "Cannot determine"
+              ],
+              "xp": 5,
+              "explanation": "D = 0 means the second derivative test is inconclusive. Higher order tests needed."
+            },
+            {
+              "id": "calc_u11_l1_q16",
+              "type": "multiple-choice",
+              "question": "What is f\u2093 for f(x, y) = xy?",
+              "options": [
+                "x",
+                "y",
+                "0",
+                "1"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "f\u2093 = \u2202/\u2202x(xy) = y. Treat y as constant."
+            },
+            {
+              "id": "calc_u11_l1_q17",
+              "type": "typing",
+              "question": "What is the critical point of xy?",
+              "correctAnswer": [
+                "(0, 0)"
+              ],
+              "xp": 4,
+              "explanation": "For f = xy: f\u2093 = y = 0 \u2192 y = 0, f\u1d67 = x = 0 \u2192 x = 0. Critical point is (0, 0)."
+            },
+            {
+              "id": "calc_u11_l1_q18",
+              "type": "multiple-choice",
+              "question": "What type of point is (0,0) for xy?",
+              "options": [
+                "Minimum",
+                "Maximum",
+                "Saddle",
+                "Inconclusive"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "For xy at (0,0): f\u2093\u2093 = 0, f\u1d67\u1d67 = 0, f\u2093\u1d67 = 1. D = -1 < 0. Saddle point."
+            }
+          ]
         },
         {
-          "id": "15-2",
+          "id": "11-2",
           "title": "Lagrange multipliers",
-          "xp": 0,
+          "xp": 90,
           "type": "lesson",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Lagrange Multipliers\n\nLagrange multipliers find extrema subject to constraints.\n\n## Problem:\n\nMaximize/minimize f(x, y) subject to g(x, y) = k\n\n## Method:\n\n\u2207f(x, y) = \u03bb\u2207g(x, y)\ng(x, y) = k\n\nWhere \u03bb (lambda) is the Lagrange multiplier.\n\n## Steps:\n\n1. Write \u2207f = \u03bb\u2207g as two equations\n2. Include constraint g(x, y) = k\n3. Solve the system for x, y, \u03bb\n4. Evaluate f at candidate points\n5. Identify max and min\n\n## Example:\n\n**Maximize f(x, y) = x + y subject to x\u00b2 + y\u00b2 = 1**\n\n\u2207f = \u27e81, 1\u27e9\n\u2207g = \u27e82x, 2y\u27e9\n\n1 = \u03bb(2x) \u2192 x = 1/(2\u03bb)\n1 = \u03bb(2y) \u2192 y = 1/(2\u03bb)\n\nFrom constraint: (1/(2\u03bb))\u00b2 + (1/(2\u03bb))\u00b2 = 1\n2/(4\u03bb\u00b2) = 1 \u2192 \u03bb = \u00b11/\u221a2\n\n**Candidates:** (1/\u221a2, 1/\u221a2) and (-1/\u221a2, -1/\u221a2)\n**Max:** \u221a2 at (1/\u221a2, 1/\u221a2)\n**Min:** -\u221a2 at (-1/\u221a2, -1/\u221a2)\n\n## Geometric Interpretation:\n\n\u2207f and \u2207g are parallel at optimum (constrained tangent)",
+          "questions": [
+            {
+              "id": "calc_u11_l2_q1",
+              "type": "typing",
+              "question": "What is the Lagrange multiplier equation?",
+              "correctAnswer": [
+                "\u2207f = \u03bb\u2207g",
+                "gradient of f equals lambda times gradient of g"
+              ],
+              "xp": 5,
+              "explanation": "Answer: \u2207f = \u03bb\u2207g"
+            },
+            {
+              "id": "calc_u11_l2_q2",
+              "type": "typing",
+              "question": "What does Lagrange multipliers find?",
+              "correctAnswer": [
+                "Extrema subject to constraints",
+                "Maximum and minimum under constraints"
+              ],
+              "xp": 4,
+              "explanation": "Answer: Extrema subject to constraints"
+            },
+            {
+              "id": "calc_u11_l2_q3",
+              "type": "typing",
+              "question": "What is \u03bb called?",
+              "correctAnswer": [
+                "Lambda",
+                "Lagrange multiplier"
+              ],
+              "xp": 5,
+              "explanation": "\u03bb is called the Lagrange multiplier. It's a scalar multiplier that enforces the constraint."
+            },
+            {
+              "id": "calc_u11_l2_q4",
+              "type": "multiple-choice",
+              "question": "Besides \u2207f = \u03bb\u2207g, what else is needed?",
+              "options": [
+                "\u2207f = 0",
+                "g(x, y) = k",
+                "\u03bb = 0",
+                "x = y"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "We also need the constraint equation: g(x, y) = k. Three equations for x, y, \u03bb."
+            },
+            {
+              "id": "calc_u11_l2_q5",
+              "type": "typing",
+              "question": "How many equations do we solve?",
+              "correctAnswer": [
+                "3",
+                "Two from \u2207f = \u03bb\u2207g, one constraint"
+              ],
+              "xp": 4,
+              "explanation": "We solve 3 equations: 2 from \u2207f = \u03bb\u2207g (one for each component), and 1 from g(x, y) = k."
+            },
+            {
+              "id": "calc_u11_l2_q6",
+              "type": "multiple-choice",
+              "question": "What is \u2207f for f(x, y) = x + y?",
+              "options": [
+                "\u27e80, 0\u27e9",
+                "\u27e81, 1\u27e9",
+                "\u27e81, 0\u27e9",
+                "\u27e80, 1\u27e9"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "\u2207f = \u27e8\u2202f/\u2202x, \u2202f/\u2202y\u27e9 = \u27e81, 1\u27e9. Derivative of x is 1, derivative of y is 1."
+            },
+            {
+              "id": "calc_u11_l2_q7",
+              "type": "typing",
+              "question": "What is \u2207g for g(x, y) = x\u00b2 + y\u00b2?",
+              "correctAnswer": [
+                "<2x, 2y>",
+                "\u27e82x, 2y\u27e9"
+              ],
+              "xp": 5,
+              "explanation": "\u2207g = \u27e8\u2202g/\u2202x, \u2202g/\u2202y\u27e9 = \u27e82x, 2y\u27e9. Same as \u2207f for this function."
+            },
+            {
+              "id": "calc_u11_l2_q8",
+              "type": "multiple-choice",
+              "question": "At optimum, \u2207f and \u2207g are:",
+              "options": [
+                "Perpendicular",
+                "Parallel",
+                "Zero",
+                "Unrelated"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: Parallel"
+            },
+            {
+              "id": "calc_u11_l2_q9",
+              "type": "typing",
+              "question": "What is the geometric meaning of Lagrange multipliers?",
+              "correctAnswer": [
+                "\u2207f is parallel to \u2207g",
+                "Gradients are parallel"
+              ],
+              "xp": 4,
+              "explanation": "Geometrically: \u2207f is parallel to \u2207g at the constrained optimum. Both perpendicular to constraint curve."
+            },
+            {
+              "id": "calc_u11_l2_q10",
+              "type": "multiple-choice",
+              "question": "How many unknowns in Lagrange multiplier problem?",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "1"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "We have 3 unknowns: x, y, and \u03bb. We need 3 equations to solve."
+            },
+            {
+              "id": "calc_u11_l2_q11",
+              "type": "typing",
+              "question": "What is \u2207f for f(x, y) = xy?",
+              "correctAnswer": [
+                "<y, x>",
+                "\u27e8y, x\u27e9"
+              ],
+              "xp": 5,
+              "explanation": "\u2207f = \u27e8\u2202f/\u2202x, \u2202f/\u2202y\u27e9 = \u27e8y, x\u27e9. Derivative of xy w.r.t x is y, w.r.t y is x."
+            },
+            {
+              "id": "calc_u11_l2_q12",
+              "type": "multiple-choice",
+              "question": "What is \u2207g for g(x, y) = x + y?",
+              "options": [
+                "\u27e81, 1\u27e9",
+                "\u27e81, 0\u27e9",
+                "\u27e80, 1\u27e9",
+                "\u27e8x, y\u27e9"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "\u2207g = \u27e8\u2202g/\u2202x, \u2202g/\u2202y\u27e9 = \u27e81, 1\u27e9. Derivative of x is 1, derivative of y is 1."
+            },
+            {
+              "id": "calc_u11_l2_q13",
+              "type": "typing",
+              "question": "If \u2207f = \u03bb\u2207g and \u03bb = 0, what is \u2207f?",
+              "correctAnswer": [
+                "0",
+                "<0, 0>",
+                "\u27e80, 0\u27e9"
+              ],
+              "xp": 4,
+              "explanation": "If \u03bb = 0, then \u2207f = 0. This means we're at an unconstrained critical point."
+            },
+            {
+              "id": "calc_u11_l2_q14",
+              "type": "multiple-choice",
+              "question": "Lagrange multipliers work for what type of problems?",
+              "options": [
+                "Unconstrained",
+                "Constrained",
+                "Both",
+                "Neither"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Lagrange multipliers are for constrained optimization problems (with restrictions)."
+            },
+            {
+              "id": "calc_u11_l2_q15",
+              "type": "typing",
+              "question": "What is \u2207f for f(x, y) = x\u00b2 + y\u00b2?",
+              "correctAnswer": [
+                "<2x, 2y>",
+                "\u27e82x, 2y\u27e9"
+              ],
+              "xp": 5,
+              "explanation": "\u2207f = \u27e8\u2202f/\u2202x, \u2202f/\u2202y\u27e9 = \u27e82x, 2y\u27e9. Power rule on each term."
+            },
+            {
+              "id": "calc_u11_l2_q16",
+              "type": "multiple-choice",
+              "question": "What is \u2207g for g(x, y) = x - y?",
+              "options": [
+                "\u27e81, 1\u27e9",
+                "\u27e81, -1\u27e9",
+                "\u27e8-1, 1\u27e9",
+                "\u27e8-1, -1\u27e9"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "\u2207g = \u27e8\u2202g/\u2202x, \u2202g/\u2202y\u27e9 = \u27e81, -1\u27e9. Derivative of x is 1, derivative of -y is -1."
+            },
+            {
+              "id": "calc_u11_l2_q17",
+              "type": "typing",
+              "question": "After solving, what do you evaluate?",
+              "correctAnswer": [
+                "f at candidate points",
+                "The function f"
+              ],
+              "xp": 4,
+              "explanation": "After finding candidate points (x, y), evaluate f at each to find max and min values."
+            },
+            {
+              "id": "calc_u11_l2_q18",
+              "type": "multiple-choice",
+              "question": "Can Lagrange multipliers find both max and min?",
+              "options": [
+                "Yes",
+                "No, only max",
+                "No, only min",
+                "Only minima"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Yes, Lagrange multipliers can find both maximum and minimum values under the constraint."
+            }
+          ]
         }
       ]
     },
