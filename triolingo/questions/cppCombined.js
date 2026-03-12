@@ -9,8 +9,74 @@ window.cppCombined = {
       "unitName": "1. C++ Environment and Language Basics",
       "lessons": [
         {
-          "id": 2,
-          "title": "Installing Compilers and Toolchains (GCC, Clang, MSVC)",
+          "id": "1-1",
+          "title": "Introduction to C++",
+          "unitTitle": "1. C++ Environment and Language Basics",
+          "xp": 32,
+          "type": "lesson",
+          "difficulty": "beginner",
+          "lessonText": "# Introduction to C++\n\nC++ is a powerful, high-performance programming language created by Bjarne Stroustrup in 1979 as an extension of C. It's used in game development, systems programming, embedded systems, and competitive programming.\n\n## Your First C++ Program\n\n```cpp\n#include <iostream>\n\nint main() {\n    std::cout << \"Hello, World!\" << std::endl;\n    return 0;\n}\n```\n\n**Explanation:**\n- `#include <iostream>`: Includes input/output library\n- `int main()`: Entry point of the program\n- `std::cout`: Standard output stream\n- `<<`: Stream insertion operator\n- `std::endl`: End line (flushes buffer)\n- `return 0`: Indicates successful execution",
+          "questions": [
+            {
+              "id": "cpp-1-1-1",
+              "type": "typing",
+              "question": "Who created C++?",
+              "correctAnswer": [
+                "Bjarne Stroustrup",
+                "Stroustrup"
+              ],
+              "explanation": "Bjarne Stroustrup created C++ in 1979 as an extension of C.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-1-1-2",
+              "type": "typing",
+              "question": "What is the entry point of a C++ program?",
+              "correctAnswer": [
+                "main()",
+                "int main()"
+              ],
+              "explanation": "The main() function is the entry point where program execution begins.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-1-1-3",
+              "type": "typing",
+              "question": "What library do you include for input/output?",
+              "correctAnswer": [
+                "iostream",
+                "<iostream>"
+              ],
+              "explanation": "The iostream library provides std::cout for output and std::cin for input.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-1-1-4",
+              "type": "code",
+              "question": "Write a C++ program that prints 'Hello, World!' to the console.",
+              "codeTemplate": "#include <iostream>\n\nint main() {\n    // Your code here\n    \n    return 0;\n}\n",
+              "expectedOutput": "Hello, World!",
+              "language": "cpp",
+              "localLLMGrade": true,
+              "explanation": "Use std::cout << \"Hello, World!\" << std::endl; to print the message.",
+              "xp": 12
+            },
+            {
+              "id": "cpp-1-1-5",
+              "type": "typing",
+              "question": "What operator is used with std::cout?",
+              "correctAnswer": [
+                "<<",
+                "insertion operator"
+              ],
+              "explanation": "The << operator (stream insertion) sends data to the output stream.",
+              "xp": 5
+            }
+          ]
+        },
+        {
+          "id": "1-2",
+          "title": "C++ Compilation Model (Source → Object → Linking)",
           "unitTitle": "1. C++ Environment and Language Basics",
           "xp": 15,
           "type": "lesson",
@@ -18,16 +84,7 @@ window.cppCombined = {
           "questions": []
         },
         {
-          "id": 3,
-          "title": "C++ Compilation Model (Source \u2192 Object \u2192 Linking)",
-          "unitTitle": "1. C++ Environment and Language Basics",
-          "xp": 15,
-          "type": "lesson",
-          "difficulty": "beginner",
-          "questions": []
-        },
-        {
-          "id": 4,
+          "id": "1-3",
           "title": "Program Structure (main, headers, translation units)",
           "unitTitle": "1. C++ Environment and Language Basics",
           "xp": 15,
@@ -36,7 +93,7 @@ window.cppCombined = {
           "questions": []
         },
         {
-          "id": 5,
+          "id": "1-4",
           "title": "Basic Syntax Differences from Python",
           "unitTitle": "1. C++ Environment and Language Basics",
           "xp": 15,
@@ -45,7 +102,7 @@ window.cppCombined = {
           "questions": []
         },
         {
-          "id": 6,
+          "id": "1-5",
           "title": "Variables, Types, and Initialization Styles",
           "unitTitle": "1. C++ Environment and Language Basics",
           "xp": 15,
@@ -54,7 +111,7 @@ window.cppCombined = {
           "questions": []
         },
         {
-          "id": 7,
+          "id": "1-6",
           "title": "Input/Output with iostream",
           "unitTitle": "1. C++ Environment and Language Basics",
           "xp": 15,
@@ -1015,7 +1072,7 @@ window.cppCombined = {
         },
         {
           "id": 2,
-          "title": "Asymptotic notation (Big O, Big \u0398, Big \u03a9)",
+          "title": "Asymptotic notation (Big O, Big Θ, Big Ω)",
           "unitTitle": "20. Foundations of Algorithm Analysis",
           "xp": 15,
           "type": "lesson",
@@ -2038,7 +2095,7 @@ window.cppCombined = {
         },
         {
           "id": 109,
-          "title": "Aho\u2013Corasick automaton",
+          "title": "Aho–Corasick automaton",
           "unitTitle": "30. String Trees",
           "xp": 15,
           "type": "lesson",
@@ -2347,7 +2404,7 @@ window.cppCombined = {
         },
         {
           "id": 140,
-          "title": "Bellman\u2013Ford",
+          "title": "Bellman–Ford",
           "unitTitle": "35. Shortest Path",
           "xp": 15,
           "type": "lesson",
@@ -2356,7 +2413,7 @@ window.cppCombined = {
         },
         {
           "id": 141,
-          "title": "Floyd\u2013Warshall",
+          "title": "Floyd–Warshall",
           "unitTitle": "35. Shortest Path",
           "xp": 15,
           "type": "lesson",
@@ -2383,7 +2440,7 @@ window.cppCombined = {
         },
         {
           "id": 144,
-          "title": "Dial\u2019s algorithm",
+          "title": "Dial’s algorithm",
           "unitTitle": "35. Shortest Path",
           "xp": 15,
           "type": "lesson",
@@ -2434,7 +2491,7 @@ window.cppCombined = {
         },
         {
           "id": 149,
-          "title": "Bor\u016fvka algorithm",
+          "title": "Borůvka algorithm",
           "unitTitle": "36. Minimum Spanning Tree",
           "xp": 15,
           "type": "lesson",
@@ -2458,7 +2515,7 @@ window.cppCombined = {
       "lessons": [
         {
           "id": 151,
-          "title": "Ford\u2013Fulkerson",
+          "title": "Ford–Fulkerson",
           "unitTitle": "37. Flow Algorithms",
           "xp": 15,
           "type": "lesson",
@@ -2467,7 +2524,7 @@ window.cppCombined = {
         },
         {
           "id": 152,
-          "title": "Edmonds\u2013Karp",
+          "title": "Edmonds–Karp",
           "unitTitle": "37. Flow Algorithms",
           "xp": 15,
           "type": "lesson",
@@ -2536,7 +2593,7 @@ window.cppCombined = {
         },
         {
           "id": 159,
-          "title": "Hopcroft\u2013Karp",
+          "title": "Hopcroft–Karp",
           "unitTitle": "38. Matching Algorithms",
           "xp": 15,
           "type": "lesson",
@@ -2638,7 +2695,7 @@ window.cppCombined = {
         },
         {
           "id": 169,
-          "title": "Knuth\u2013Morris\u2013Pratt",
+          "title": "Knuth–Morris–Pratt",
           "unitTitle": "40. Pattern Matching",
           "xp": 15,
           "type": "lesson",
@@ -2647,7 +2704,7 @@ window.cppCombined = {
         },
         {
           "id": 170,
-          "title": "Boyer\u2013Moore",
+          "title": "Boyer–Moore",
           "unitTitle": "40. Pattern Matching",
           "xp": 15,
           "type": "lesson",
@@ -2656,7 +2713,7 @@ window.cppCombined = {
         },
         {
           "id": 171,
-          "title": "Rabin\u2013Karp",
+          "title": "Rabin–Karp",
           "unitTitle": "40. Pattern Matching",
           "xp": 15,
           "type": "lesson",
@@ -2674,7 +2731,7 @@ window.cppCombined = {
         },
         {
           "id": 173,
-          "title": "Aho\u2013Corasick",
+          "title": "Aho–Corasick",
           "unitTitle": "40. Pattern Matching",
           "xp": 15,
           "type": "lesson",
@@ -2725,7 +2782,7 @@ window.cppCombined = {
         },
         {
           "id": 178,
-          "title": "Burrows\u2013Wheeler transform",
+          "title": "Burrows–Wheeler transform",
           "unitTitle": "41. String Processing",
           "xp": 15,
           "type": "lesson",
@@ -2794,7 +2851,7 @@ window.cppCombined = {
         },
         {
           "id": 185,
-          "title": "Mo\u2019s algorithm",
+          "title": "Mo’s algorithm",
           "unitTitle": "42. Range Query Techniques",
           "xp": 15,
           "type": "lesson",
