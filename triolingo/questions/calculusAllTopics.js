@@ -6741,44 +6741,1132 @@ window.calculusAllTopics = {
       "unitName": "10. Multivariable Functions",
       "lessons": [
         {
-          "id": "14-1",
-          "title": "Functions of several variables and level curves",
-          "xp": 0,
+          "id": "10-1",
+          "title": "Functions of several variables",
+          "xp": 88,
           "type": "lesson",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Functions of Several Variables\n\nA multivariable function has multiple inputs and one output.\n\n## Notation:\n\nf(x, y) = z (2 variables)\nf(x, y, z) = w (3 variables)\n\n## Domain and Range:\n\n**Domain:** All allowed input values (x, y) pairs\n**Range:** All possible output values (z)\n\n## Level Curves:\n\nFor constant k, the level curve is:\nf(x, y) = k\n\nThese are contours on a map (same elevation).\n\n## Level Surfaces (3D):\n\nFor constant k, the level surface is:\nf(x, y, z) = k\n\n## Examples:\n\n**f(x, y) = x\u00b2 + y\u00b2**\n- Domain: All real (x, y)\n- Range: z \u2265 0\n- Level curves: x\u00b2 + y\u00b2 = k (circles)\n\n**f(x, y) = \u221a(25 - x\u00b2 - y\u00b2)**\n- Domain: x\u00b2 + y\u00b2 \u2264 25 (disk radius 5)\n- Range: 0 \u2264 z \u2264 5",
+          "questions": [
+            {
+              "id": "calc_u10_l1_q1",
+              "type": "typing",
+              "question": "What does f(x, y) represent?",
+              "correctAnswer": [
+                "A function of two variables",
+                "A multivariable function"
+              ],
+              "xp": 5,
+              "explanation": "Answer: A function of two variables"
+            },
+            {
+              "id": "calc_u10_l1_q2",
+              "type": "typing",
+              "question": "What is the domain of f(x, y) = x\u00b2 + y\u00b2?",
+              "correctAnswer": [
+                "All real numbers",
+                "R\u00b2",
+                "All (x, y)"
+              ],
+              "xp": 4,
+              "explanation": "x\u00b2 + y\u00b2 is defined for all real (x, y). No restrictions, so domain is R\u00b2."
+            },
+            {
+              "id": "calc_u10_l1_q3",
+              "type": "typing",
+              "question": "What is a level curve?",
+              "correctAnswer": [
+                "f(x, y) = k",
+                "The set of points where f equals a constant"
+              ],
+              "xp": 5,
+              "explanation": "Answer: f(x, y) = k"
+            },
+            {
+              "id": "calc_u10_l1_q4",
+              "type": "multiple-choice",
+              "question": "What is the range of f(x, y) = x\u00b2 + y\u00b2?",
+              "options": [
+                "All real numbers",
+                "z \u2265 0",
+                "z \u2264 0",
+                "z = 0"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "x\u00b2 + y\u00b2 is always \u2265 0. Can be any non-negative real number."
+            },
+            {
+              "id": "calc_u10_l1_q5",
+              "type": "typing",
+              "question": "What shape are level curves of f(x, y) = x\u00b2 + y\u00b2?",
+              "correctAnswer": [
+                "Circles",
+                "x\u00b2 + y\u00b2 = k"
+              ],
+              "xp": 4,
+              "explanation": "x\u00b2 + y\u00b2 = k are circles centered at origin with radius \u221ak."
+            },
+            {
+              "id": "calc_u10_l1_q6",
+              "type": "multiple-choice",
+              "question": "What is the domain of \u221a(9 - x\u00b2 - y\u00b2)?",
+              "options": [
+                "All real numbers",
+                "x\u00b2 + y\u00b2 \u2264 9",
+                "x\u00b2 + y\u00b2 \u2265 9",
+                "x = 0"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "For \u221a, we need 9 - x\u00b2 - y\u00b2 \u2265 0, so x\u00b2 + y\u00b2 \u2264 9 (disk radius 3)."
+            },
+            {
+              "id": "calc_u10_l1_q7",
+              "type": "typing",
+              "question": "What is the range of \u221a(25 - x\u00b2 - y\u00b2)?",
+              "correctAnswer": [
+                "0 \u2264 z \u2264 5"
+              ],
+              "xp": 5,
+              "explanation": "\u221a gives values from 0 to \u221a25 = 5. Range is 0 \u2264 z \u2264 5."
+            },
+            {
+              "id": "calc_u10_l1_q8",
+              "type": "multiple-choice",
+              "question": "How many inputs does f(x, y, z) have?",
+              "options": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "Answer: 3"
+            },
+            {
+              "id": "calc_u10_l1_q9",
+              "type": "typing",
+              "question": "What is f(2, 3) for f(x, y) = x + y?",
+              "correctAnswer": [
+                "5"
+              ],
+              "xp": 4,
+              "explanation": "f(2, 3) = 2 + 3 = 5. Substitute x=2, y=3."
+            },
+            {
+              "id": "calc_u10_l1_q10",
+              "type": "multiple-choice",
+              "question": "What is the level curve of x + y = 5?",
+              "options": [
+                "Circle",
+                "Line",
+                "Parabola",
+                "Hyperbola"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "x + y = 5 is a line with slope -1, y-intercept 5."
+            },
+            {
+              "id": "calc_u10_l1_q11",
+              "type": "typing",
+              "question": "What is the domain of 1/(x - y)?",
+              "correctAnswer": [
+                "All points where x \u2260 y",
+                "x \u2260 y"
+              ],
+              "xp": 5,
+              "explanation": "For 1/(x-y), we need x - y \u2260 0, so x \u2260 y."
+            },
+            {
+              "id": "calc_u10_l1_q12",
+              "type": "multiple-choice",
+              "question": "What is f(1, 0) for f(x, y) = x\u00b2 + y\u00b2?",
+              "options": [
+                "0",
+                "1",
+                "2",
+                "-1"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "f(1, 0) = 1\u00b2 + 0\u00b2 = 1. Square each and add."
+            },
+            {
+              "id": "calc_u10_l1_q13",
+              "type": "typing",
+              "question": "What is a level surface?",
+              "correctAnswer": [
+                "f(x, y, z) = k"
+              ],
+              "xp": 4,
+              "explanation": "Answer: f(x, y, z) = k"
+            },
+            {
+              "id": "calc_u10_l1_q14",
+              "type": "multiple-choice",
+              "question": "What is the domain of ln(x + y)?",
+              "options": [
+                "All real numbers",
+                "x + y > 0",
+                "x + y \u2265 0",
+                "x + y = 0"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "For ln(x+y), we need x + y > 0 (positive argument only)."
+            },
+            {
+              "id": "calc_u10_l1_q15",
+              "type": "typing",
+              "question": "What is f(0, 0) for f(x, y) = \u221a(4 - x\u00b2 - y\u00b2)?",
+              "correctAnswer": [
+                "2"
+              ],
+              "xp": 5,
+              "explanation": "f(0, 0) = \u221a(4 - 0 - 0) = \u221a4 = 2."
+            },
+            {
+              "id": "calc_u10_l1_q16",
+              "type": "multiple-choice",
+              "question": "What is the level curve of xy = 1?",
+              "options": [
+                "Circle",
+                "Line",
+                "Hyperbola",
+                "Parabola"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "xy = 1 is a hyperbola with asymptotes at axes."
+            },
+            {
+              "id": "calc_u10_l1_q17",
+              "type": "typing",
+              "question": "What is the domain of \u221ax + \u221ay?",
+              "correctAnswer": [
+                "x \u2265 0 and y \u2265 0"
+              ],
+              "xp": 4,
+              "explanation": "Answer: x \u2265 0 and y \u2265 0"
+            },
+            {
+              "id": "calc_u10_l1_q18",
+              "type": "multiple-choice",
+              "question": "How many variables in f(x, y, z, w)?",
+              "options": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "correct": 3,
+              "xp": 3,
+              "explanation": "Answer: 4"
+            }
+          ]
         },
         {
-          "id": "14-2",
-          "title": "Partial derivatives and higher partials",
-          "xp": 0,
+          "id": "10-2",
+          "title": "Partial derivatives",
+          "xp": 90,
           "type": "lesson",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Partial Derivatives\n\nPartial derivatives measure the rate of change with respect to one variable while holding others constant.\n\n## Notation:\n\n**\u2202f/\u2202x** or **f\u2093** - derivative with respect to x\n**\u2202f/\u2202y** or **f\u1d67** - derivative with respect to y\n\n## Definition:\n\nf\u2093(x, y) = lim(h\u21920) [f(x+h, y) - f(x, y)]/h\n\nTreating y as a constant, differentiate with respect to x.\n\n## Computing:\n\n**f(x, y) = x\u00b2y + 3y\u00b2**\n\nf\u2093 = 2xy (y is constant)\nf\u1d67 = x\u00b2 + 6y (x is constant)\n\n## Higher Order:\n\n**Second partial derivatives:**\n- f\u2093\u2093 = \u2202\u00b2f/\u2202x\u00b2\n- f\u1d67\u1d67 = \u2202\u00b2f/\u2202y\u00b2\n- f\u2093\u1d67 = \u2202\u00b2f/\u2202x\u2202y\n- f\u1d67\u2093 = \u2202\u00b2f/\u2202y\u2202x\n\n**Clairaut's Theorem:** f\u2093\u1d67 = f\u1d67\u2093 (if continuous)\n\n## Examples:\n\n**f(x, y) = x\u00b2 + y\u00b3**\nf\u2093 = 2x, f\u1d67 = 3y\u00b2\nf\u2093\u2093 = 2, f\u1d67\u1d67 = 6y\nf\u2093\u1d67 = 0, f\u1d67\u2093 = 0",
+          "questions": [
+            {
+              "id": "calc_u10_l2_q1",
+              "type": "typing",
+              "question": "What is \u2202f/\u2202x?",
+              "correctAnswer": [
+                "The partial derivative with respect to x",
+                "Derivative with respect to x"
+              ],
+              "xp": 5,
+              "explanation": "Answer: The partial derivative with respect to x"
+            },
+            {
+              "id": "calc_u10_l2_q2",
+              "type": "typing",
+              "question": "When finding f\u2093, what do you do with y?",
+              "correctAnswer": [
+                "Treat it as a constant",
+                "Hold it constant"
+              ],
+              "xp": 4,
+              "explanation": "Answer: Treat it as a constant"
+            },
+            {
+              "id": "calc_u10_l2_q3",
+              "type": "typing",
+              "question": "What is f\u2093 for f(x, y) = x\u00b2y?",
+              "correctAnswer": [
+                "2xy"
+              ],
+              "xp": 5,
+              "explanation": "f\u2093 = derivative w.r.t x treating y constant: d/dx[x\u00b2y] = 2xy."
+            },
+            {
+              "id": "calc_u10_l2_q4",
+              "type": "multiple-choice",
+              "question": "What is f\u1d67 for f(x, y) = x\u00b2y?",
+              "options": [
+                "2x",
+                "x\u00b2",
+                "2xy",
+                "y"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "f\u1d67 = derivative w.r.t y treating x constant: d/dy[x\u00b2y] = x\u00b2."
+            },
+            {
+              "id": "calc_u10_l2_q5",
+              "type": "typing",
+              "question": "What is f\u2093 for f(x, y) = x + y?",
+              "correctAnswer": [
+                "1"
+              ],
+              "xp": 4,
+              "explanation": "f\u2093 = d/dx[x + y] = 1 (y is constant)."
+            },
+            {
+              "id": "calc_u10_l2_q6",
+              "type": "multiple-choice",
+              "question": "What is f\u1d67 for f(x, y) = x + y?",
+              "options": [
+                "0",
+                "1",
+                "x",
+                "y"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "f\u1d67 = d/dy[x + y] = 1 (x is constant)."
+            },
+            {
+              "id": "calc_u10_l2_q7",
+              "type": "typing",
+              "question": "What is f\u2093 for f(x, y) = xy?",
+              "correctAnswer": [
+                "y"
+              ],
+              "xp": 5,
+              "explanation": "f\u2093 = d/dx[xy] = y (treat y as constant)."
+            },
+            {
+              "id": "calc_u10_l2_q8",
+              "type": "multiple-choice",
+              "question": "What is f\u1d67 for f(x, y) = xy?",
+              "options": [
+                "x",
+                "y",
+                "0",
+                "1"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "f\u1d67 = d/dy[xy] = x (treat x as constant)."
+            },
+            {
+              "id": "calc_u10_l2_q9",
+              "type": "typing",
+              "question": "What is f\u2093\u2093 for f(x, y) = x\u00b2 + y\u00b2?",
+              "correctAnswer": [
+                "2"
+              ],
+              "xp": 4,
+              "explanation": "f\u2093 = 2x, so f\u2093\u2093 = d/dx[2x] = 2."
+            },
+            {
+              "id": "calc_u10_l2_q10",
+              "type": "multiple-choice",
+              "question": "What does Clairaut's Theorem say?",
+              "options": [
+                "f\u2093\u1d67 = f\u1d67\u2093",
+                "f\u2093 = f\u1d67",
+                "f\u2093\u2093 = f\u1d67\u1d67",
+                "f = 0"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Clairaut's Theorem: f\u2093\u1d67 = f\u1d67\u2093 when partial derivatives are continuous."
+            },
+            {
+              "id": "calc_u10_l2_q11",
+              "type": "typing",
+              "question": "What is f\u1d67\u1d67 for f(x, y) = y\u00b3?",
+              "correctAnswer": [
+                "6y"
+              ],
+              "xp": 5,
+              "explanation": "f\u1d67 = 3y\u00b2, so f\u1d67\u1d67 = d/dy[3y\u00b2] = 6y."
+            },
+            {
+              "id": "calc_u10_l2_q12",
+              "type": "multiple-choice",
+              "question": "What is f\u2093\u1d67 for f(x, y) = xy?",
+              "options": [
+                "0",
+                "1",
+                "x",
+                "y"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "f\u2093 = d/dx[xy] = y (treat y as constant)."
+            },
+            {
+              "id": "calc_u10_l2_q13",
+              "type": "typing",
+              "question": "What is f\u2093 for f(x, y) = e\u02e3y?",
+              "correctAnswer": [
+                "e\u02e3y"
+              ],
+              "xp": 4,
+              "explanation": "f\u2093 = d/dx[e\u02e3y] = e\u02e3y (derivative of e\u02e3 is e\u02e3, y constant)."
+            },
+            {
+              "id": "calc_u10_l2_q14",
+              "type": "multiple-choice",
+              "question": "What is f\u1d67 for f(x, y) = sin(x) + y?",
+              "options": [
+                "cos(x)",
+                "0",
+                "1",
+                "-cos(x)"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "f\u1d67 = d/dy[sin(x) + y] = 1 (sin(x) is constant)."
+            },
+            {
+              "id": "calc_u10_l2_q15",
+              "type": "typing",
+              "question": "What is f\u2093\u1d67 for f(x, y) = x\u00b2y?",
+              "correctAnswer": [
+                "2x"
+              ],
+              "xp": 5,
+              "explanation": "f\u2093 = derivative w.r.t x treating y constant: d/dx[x\u00b2y] = 2xy."
+            },
+            {
+              "id": "calc_u10_l2_q16",
+              "type": "multiple-choice",
+              "question": "What is f\u1d67\u2093 for f(x, y) = x\u00b2y?",
+              "options": [
+                "2y",
+                "2x",
+                "y",
+                "x"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "f\u1d67 = derivative w.r.t y treating x constant: d/dy[x\u00b2y] = x\u00b2."
+            },
+            {
+              "id": "calc_u10_l2_q17",
+              "type": "typing",
+              "question": "What is f\u2093 for f(x, y) = x/y?",
+              "correctAnswer": [
+                "1/y"
+              ],
+              "xp": 4,
+              "explanation": "f\u2093 = d/dx[x/y] = 1/y (treat 1/y as constant)."
+            },
+            {
+              "id": "calc_u10_l2_q18",
+              "type": "multiple-choice",
+              "question": "What is f\u2093\u2093 for f(x, y) = e\u02e3?",
+              "options": [
+                "0",
+                "1",
+                "e\u02e3",
+                "-e\u02e3"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "f\u2093 = e\u02e3, so f\u2093\u2093 = d/dx[e\u02e3] = e\u02e3."
+            }
+          ]
         },
         {
-          "id": "14-3",
-          "title": "Chain rule in multiple variables",
-          "xp": 0,
+          "id": "10-3",
+          "title": "Tangent planes and linear approximations",
+          "xp": 88,
           "type": "lesson",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Tangent Planes and Linear Approximations\n\n## Tangent Plane at (a, b, f(a,b)):\n\nz = f(a, b) + f\u2093(a, b)(x - a) + f\u1d67(a, b)(y - b)\n\nThis is the best linear approximation to f near (a, b).\n\n## Linear Approximation (Differential):\n\n\u0394z \u2248 f\u2093(a, b)\u0394x + f\u1d67(a, b)\u0394y\n\nor\n\nf(x, y) \u2248 f(a, b) + f\u2093(a, b)(x - a) + f\u1d67(a, b)(y - b)\n\n## Total Differential:\n\ndz = f\u2093(x, y)dx + f\u1d67(x, y)dy\n\n## Gradient:\n\n\u2207f = \u27e8f\u2093, f\u1d67\u27e9\n\nThe gradient points in direction of steepest increase.\n\n## Directional Derivative:\n\nD\u1d64f = \u2207f \u00b7 \u00fb\n\nRate of change in direction of unit vector u.\n\n## Examples:\n\n**f(x, y) = x\u00b2 + y\u00b2 at (1, 2)**\nf\u2093 = 2x = 2, f\u1d67 = 2y = 4\nTangent: z = 5 + 2(x-1) + 4(y-2) = 2x + 4y - 5",
+          "questions": [
+            {
+              "id": "calc_u10_l3_q1",
+              "type": "typing",
+              "question": "What is the tangent plane formula?",
+              "correctAnswer": [
+                "z = f(a,b) + f\u2093(a,b)(x-a) + f\u1d67(a,b)(y-b)"
+              ],
+              "xp": 5,
+              "explanation": "Answer: z = f(a,b) + f\u2093(a,b)(x-a) + f\u1d67(a,b)(y-b)"
+            },
+            {
+              "id": "calc_u10_l3_q2",
+              "type": "typing",
+              "question": "What does the tangent plane approximate?",
+              "correctAnswer": [
+                "The function near (a,b)",
+                "f(x,y)"
+              ],
+              "xp": 4,
+              "explanation": "Answer: The function near (a,b)"
+            },
+            {
+              "id": "calc_u10_l3_q3",
+              "type": "typing",
+              "question": "What is the gradient?",
+              "correctAnswer": [
+                "\u2207f = \u27e8f\u2093, f\u1d67\u27e9"
+              ],
+              "xp": 5,
+              "explanation": "Answer: \u2207f = \u27e8f\u2093, f\u1d67\u27e9"
+            },
+            {
+              "id": "calc_u10_l3_q4",
+              "type": "multiple-choice",
+              "question": "What does the gradient point toward?",
+              "options": [
+                "Steepest decrease",
+                "Steepest increase",
+                "Flat",
+                "Downhill"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: Steepest increase"
+            },
+            {
+              "id": "calc_u10_l3_q5",
+              "type": "typing",
+              "question": "What is dz?",
+              "correctAnswer": [
+                "f\u2093(x,y)dx + f\u1d67(x,y)dy",
+                "The total differential"
+              ],
+              "xp": 4,
+              "explanation": "Answer: f\u2093(x,y)dx + f\u1d67(x,y)dy"
+            },
+            {
+              "id": "calc_u10_l3_q6",
+              "type": "multiple-choice",
+              "question": "What is D\u1d64f?",
+              "options": [
+                "\u2207f \u00d7 \u00fb",
+                "\u2207f \u00b7 \u00fb",
+                "\u2207f + \u00fb",
+                "\u2207f - \u00fb"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: \u2207f \u00b7 \u00fb"
+            },
+            {
+              "id": "calc_u10_l3_q7",
+              "type": "typing",
+              "question": "What is \u0394z \u2248?",
+              "correctAnswer": [
+                "f\u2093(a,b)\u0394x + f\u1d67(a,b)\u0394y"
+              ],
+              "xp": 5,
+              "explanation": "Answer: f\u2093(a,b)\u0394x + f\u1d67(a,b)\u0394y"
+            },
+            {
+              "id": "calc_u10_l3_q8",
+              "type": "multiple-choice",
+              "question": "At (0,0), what is the tangent plane of z = x + y?",
+              "options": [
+                "z = 0",
+                "z = x + y",
+                "z = 1",
+                "z = x - y"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: z = x + y"
+            },
+            {
+              "id": "calc_u10_l3_q9",
+              "type": "typing",
+              "question": "What is \u2207f for f(x, y) = x\u00b2 + y\u00b2?",
+              "correctAnswer": [
+                "<2x, 2y>",
+                "\u27e82x, 2y\u27e9"
+              ],
+              "xp": 4,
+              "explanation": "\u2207f = \u27e8f\u2093, f\u1d67\u27e9 = \u27e82x, 2y\u27e9. Differentiate each component."
+            },
+            {
+              "id": "calc_u10_l3_q10",
+              "type": "multiple-choice",
+              "question": "What is the directional derivative in the gradient direction?",
+              "options": [
+                "0",
+                "1",
+                "|\u2207f|",
+                "-|\u2207f|"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "The directional derivative in gradient direction is |\u2207f|, the maximum value."
+            },
+            {
+              "id": "calc_u10_l3_q11",
+              "type": "typing",
+              "question": "What is the tangent plane of f(x,y)=x\u00b2 at (0,0)?",
+              "correctAnswer": [
+                "z = 0"
+              ],
+              "xp": 5,
+              "explanation": "f\u2093 = 2x = 0, f\u1d67 = 0, f(0,0) = 0. Plane: z = 0 + 0(x) + 0(y) = 0."
+            },
+            {
+              "id": "calc_u10_l3_q12",
+              "type": "multiple-choice",
+              "question": "What is dz for f(x,y)=x+y?",
+              "options": [
+                "dx + dy",
+                "dx - dy",
+                "xdx + ydy",
+                "0"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Answer: dx + dy"
+            },
+            {
+              "id": "calc_u10_l3_q13",
+              "type": "typing",
+              "question": "What is \u2207f for f(x, y) = xy at (1, 1)?",
+              "correctAnswer": [
+                "<1, 1>",
+                "\u27e81, 1\u27e9"
+              ],
+              "xp": 4,
+              "explanation": "\u2207f = \u27e8y, x\u27e9 = \u27e81, 1\u27e9 at (1, 1)."
+            },
+            {
+              "id": "calc_u10_l3_q14",
+              "type": "multiple-choice",
+              "question": "What is the directional derivative in opposite direction of gradient?",
+              "options": [
+                "0",
+                "|\u2207f|",
+                "-|\u2207f|",
+                "\u2207f"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "The directional derivative opposite to gradient is -|\u2207f|, the minimum value."
+            },
+            {
+              "id": "calc_u10_l3_q15",
+              "type": "typing",
+              "question": "What is the tangent plane of f(x,y)=x+y at (0,0)?",
+              "correctAnswer": [
+                "z = x + y"
+              ],
+              "xp": 5,
+              "explanation": "Answer: z = x + y"
+            },
+            {
+              "id": "calc_u10_l3_q16",
+              "type": "multiple-choice",
+              "question": "If \u2207f = \u27e82, 3\u27e9, what is |\u2207f|?",
+              "options": [
+                "5",
+                "\u221a5",
+                "\u221a13",
+                "6"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "|\u27e82, 3\u27e9| = \u221a(4 + 9) = \u221a13. Square each component, sum, square root."
+            },
+            {
+              "id": "calc_u10_l3_q17",
+              "type": "typing",
+              "question": "What is the directional derivative for f(x,y)=x in direction \u27e81,0\u27e9?",
+              "correctAnswer": [
+                "1"
+              ],
+              "xp": 4,
+              "explanation": "Answer: 1"
+            },
+            {
+              "id": "calc_u10_l3_q18",
+              "type": "multiple-choice",
+              "question": "What is dz for f(x,y)=xy?",
+              "options": [
+                "xdx + ydy",
+                "ydx + xdy",
+                "dx + dy",
+                "0"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "f\u2093 = y, f\u1d67 = x, so dz = ydx + xdy."
+            }
+          ]
         },
         {
-          "id": "14-4",
-          "title": "Gradient and directional derivatives",
-          "xp": 0,
+          "id": "10-4",
+          "title": "Chain rule for multivariable functions",
+          "xp": 90,
           "type": "lesson",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Chain Rule for Multivariable Functions\n\n## Chain Rule (Case 1):\n\nIf z = f(x, y) and x = g(t), y = h(t):\n\ndz/dt = (\u2202f/\u2202x)(dx/dt) + (\u2202f/\u2202y)(dy/dt)\n\n## Chain Rule (Case 2): Tree Diagram\n\nIf z = f(x, y) and x = g(s, t), y = h(s, t):\n\n\u2202z/\u2202s = (\u2202f/\u2202x)(\u2202x/\u2202s) + (\u2202f/\u2202y)(\u2202y/\u2202s)\n\u2202z/\u2202t = (\u2202f/\u2202x)(\u2202x/\u2202t) + (\u2202f/\u2202y)(\u2202y/\u2202t)\n\n## Implicit Differentiation:\n\nFor F(x, y, z) = 0:\n\n\u2202z/\u2202x = -F\u2093/F\u1d67\n\u2202z/\u2202y = -F\u1d67/F\u1d67\n\nActually: \u2202z/\u2202x = -F\u2093/F_z, \u2202z/\u2202y = -F\u1d67/F_z\n\n## Examples:\n\n**z = x\u00b2y, x = t, y = t\u00b2**\n\n\u2202z/\u2202x = 2xy = 2t\u00b3\n\u2202z/\u2202y = x\u00b2 = t\u00b2\ndx/dt = 1, dy/dt = 2t\n\ndz/dt = (2t\u00b3)(1) + (t\u00b2)(2t) = 4t\u00b3",
+          "questions": [
+            {
+              "id": "calc_u10_l4_q1",
+              "type": "typing",
+              "question": "What is the chain rule for dz/dt?",
+              "correctAnswer": [
+                "(\u2202f/\u2202x)(dx/dt) + (\u2202f/\u2202y)(dy/dt)",
+                "f\u2093(dx/dt) + f\u1d67(dy/dt)"
+              ],
+              "xp": 5,
+              "explanation": "Answer: (\u2202f/\u2202x)(dx/dt) + (\u2202f/\u2202y)(dy/dt)"
+            },
+            {
+              "id": "calc_u10_l4_q2",
+              "type": "typing",
+              "question": "If z = f(x,y) with x = g(t), y = h(t), what is dz/dt?",
+              "correctAnswer": [
+                "\u2202z/\u2202x \u00b7 dx/dt + \u2202z/\u2202y \u00b7 dy/dt"
+              ],
+              "xp": 4,
+              "explanation": "Answer: \u2202z/\u2202x \u00b7 dx/dt + \u2202z/\u2202y \u00b7 dy/dt"
+            },
+            {
+              "id": "calc_u10_l4_q3",
+              "type": "typing",
+              "question": "What is \u2202z/\u2202s in chain rule case 2?",
+              "correctAnswer": [
+                "(\u2202f/\u2202x)(\u2202x/\u2202s) + (\u2202f/\u2202y)(\u2202y/\u2202s)"
+              ],
+              "xp": 5,
+              "explanation": "Answer: (\u2202f/\u2202x)(\u2202x/\u2202s) + (\u2202f/\u2202y)(\u2202y/\u2202s)"
+            },
+            {
+              "id": "calc_u10_l4_q4",
+              "type": "multiple-choice",
+              "question": "How many paths does chain rule create?",
+              "options": [
+                "1",
+                "2",
+                "3",
+                "Depends"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: 2"
+            },
+            {
+              "id": "calc_u10_l4_q5",
+              "type": "typing",
+              "question": "What is implicit differentiation for \u2202z/\u2202x?",
+              "correctAnswer": [
+                "-F\u2093/F_z"
+              ],
+              "xp": 4,
+              "explanation": "For F(x, y, z) = 0, \u2202z/\u2202x = -F\u2093/F_z. Use negative ratio of partials."
+            },
+            {
+              "id": "calc_u10_l4_q6",
+              "type": "multiple-choice",
+              "question": "If z = x\u00b2y, what is \u2202z/\u2202x?",
+              "options": [
+                "y",
+                "x\u00b2",
+                "2xy",
+                "2x"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "Answer: 2xy"
+            },
+            {
+              "id": "calc_u10_l4_q7",
+              "type": "typing",
+              "question": "What does a tree diagram show?",
+              "correctAnswer": [
+                "The paths of dependence",
+                "How variables connect"
+              ],
+              "xp": 5,
+              "explanation": "Tree diagram shows how z depends on x and y, and how x and y depend on s and t."
+            },
+            {
+              "id": "calc_u10_l4_q8",
+              "type": "multiple-choice",
+              "question": "If z = x + y, x = t, y = t\u00b2, what is dz/dt?",
+              "options": [
+                "1",
+                "2t",
+                "1 + 2t",
+                "t + t\u00b2"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "dz = f\u2093dx + f\u1d67dy = 1\u00b7dx + 1\u00b7dy = dx + dy."
+            },
+            {
+              "id": "calc_u10_l4_q9",
+              "type": "typing",
+              "question": "What is \u2202z/\u2202t in chain rule case 2?",
+              "correctAnswer": [
+                "(\u2202f/\u2202x)(\u2202x/\u2202t) + (\u2202f/\u2202y)(\u2202y/\u2202t)"
+              ],
+              "xp": 4,
+              "explanation": "Answer: (\u2202f/\u2202x)(\u2202x/\u2202t) + (\u2202f/\u2202y)(\u2202y/\u2202t)"
+            },
+            {
+              "id": "calc_u10_l4_q10",
+              "type": "multiple-choice",
+              "question": "For implicit diff, \u2202z/\u2202x uses which partials?",
+              "options": [
+                "F\u2093 and F\u1d67",
+                "F\u2093 and F_z",
+                "F\u1d67 and F_z",
+                "Just F\u2093"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "For F(x, y, z) = 0, \u2202z/\u2202x = -F\u2093/F_z. Use negative ratio of partials."
+            },
+            {
+              "id": "calc_u10_l4_q11",
+              "type": "typing",
+              "question": "If z = xy, x = t, y = 2t, what is dz/dt?",
+              "correctAnswer": [
+                "4t"
+              ],
+              "xp": 5,
+              "explanation": "f\u2093 = y, f\u1d67 = x, so dz = ydx + xdy."
+            },
+            {
+              "id": "calc_u10_l4_q12",
+              "type": "multiple-choice",
+              "question": "What is -F\u1d67/F_z?",
+              "options": [
+                "\u2202z/\u2202x",
+                "\u2202z/\u2202y",
+                "\u2202x/\u2202y",
+                "\u2202y/\u2202x"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: \u2202z/\u2202y"
+            },
+            {
+              "id": "calc_u10_l4_q13",
+              "type": "typing",
+              "question": "What is dz/dt if z = x\u00b2 + y\u00b2, x = t, y = t?",
+              "correctAnswer": [
+                "4t"
+              ],
+              "xp": 4,
+              "explanation": "\u2202z/\u2202x = 2x = 2t, \u2202z/\u2202y = 2y = 2t, dx/dt = 1, dy/dt = 1. dz/dt = 2t + 2t = 4t."
+            },
+            {
+              "id": "calc_u10_l4_q14",
+              "type": "multiple-choice",
+              "question": "How many partial derivatives are needed for dz/dt?",
+              "options": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: 2"
+            },
+            {
+              "id": "calc_u10_l4_q15",
+              "type": "typing",
+              "question": "What is dz/dt if z = x + y, x = t, y = t?",
+              "correctAnswer": [
+                "2"
+              ],
+              "xp": 5,
+              "explanation": "dz = f\u2093dx + f\u1d67dy = 1\u00b7dx + 1\u00b7dy = dx + dy."
+            },
+            {
+              "id": "calc_u10_l4_q16",
+              "type": "multiple-choice",
+              "question": "For z = f(x,y), what does \u2202z/\u2202s involve?",
+              "options": [
+                "Only x",
+                "Only y",
+                "Both x and y",
+                "Neither"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "Answer: Both x and y"
+            },
+            {
+              "id": "calc_u10_l4_q17",
+              "type": "typing",
+              "question": "What is \u2202z/\u2202y for implicit differentiation?",
+              "correctAnswer": [
+                "-F\u1d67/F_z"
+              ],
+              "xp": 4,
+              "explanation": "For F(x, y, z) = 0, \u2202z/\u2202y = -F\u1d67/F_z. Use negative ratio of partials."
+            },
+            {
+              "id": "calc_u10_l4_q18",
+              "type": "multiple-choice",
+              "question": "If z = f(x,y) and only x depends on t, what is dz/dt?",
+              "options": [
+                "f\u2093",
+                "f\u1d67",
+                "f\u2093(dx/dt)",
+                "f\u1d67(dy/dt)"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "If only x depends on t, then dz/dt = f\u2093(dx/dt). The f\u1d67 term is 0."
+            }
+          ]
         },
         {
-          "id": "14-5",
-          "title": "Tangent planes and linear approximation",
-          "xp": 0,
+          "id": "10-5",
+          "title": "Directional derivatives and gradient",
+          "xp": 88,
           "type": "lesson",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Directional Derivatives and Gradient\n\n## Directional Derivative:\n\nD\u1d64f(x, y) = \u2207f \u00b7 \u00fb = f\u2093cos(\u03b8) + f\u1d67sin(\u03b8)\n\nRate of change in direction of unit vector u.\n\n## Gradient Properties:\n\n**\u2207f** = \u27e8f\u2093, f\u1d67\u27e9\n\n- Points in direction of steepest increase\n- Magnitude is maximum rate of change\n- Perpendicular to level curves\n\n## Maximum Directional Derivative:\n\n|D\u1d64f| \u2264 |\u2207f|\n\nMaximum = |\u2207f| in direction of \u2207f\n\nMinimum = -|\u2207f| in opposite direction\n\n## Level Curves:\n\n\u2207f is perpendicular to level curves f(x, y) = k.\n\n## Examples:\n\n**f(x, y) = x\u00b2 + y\u00b2 at (1, 1)**\n\u2207f = \u27e82x, 2y\u27e9 = \u27e82, 2\u27e9\n|\u2207f| = \u221a(4 + 4) = \u221a8 = 2\u221a2\n\nMaximum increase: 2\u221a2 in direction \u27e82, 2\u27e9\nDirectional derivative in \u27e81, 0\u27e9: 2\n\n**f(x, y) = xy at (1, 2)**\n\u2207f = \u27e8y, x\u27e9 = \u27e82, 1\u27e9\n|\u2207f| = \u221a5",
+          "questions": [
+            {
+              "id": "calc_u10_l5_q1",
+              "type": "typing",
+              "question": "What is the directional derivative formula?",
+              "correctAnswer": [
+                "D\u1d64f = \u2207f \u00b7 \u00fb",
+                "\u2207f \u00b7 \u00fb"
+              ],
+              "xp": 5,
+              "explanation": "Answer: D\u1d64f = \u2207f \u00b7 \u00fb"
+            },
+            {
+              "id": "calc_u10_l5_q2",
+              "type": "typing",
+              "question": "What does \u2207f point toward?",
+              "correctAnswer": [
+                "Steepest increase",
+                "Direction of maximum increase"
+              ],
+              "xp": 4,
+              "explanation": "Answer: Steepest increase"
+            },
+            {
+              "id": "calc_u10_l5_q3",
+              "type": "typing",
+              "question": "What is |\u2207f|?",
+              "correctAnswer": [
+                "The maximum rate of change",
+                "Maximum directional derivative"
+              ],
+              "xp": 5,
+              "explanation": "Answer: The maximum rate of change"
+            },
+            {
+              "id": "calc_u10_l5_q4",
+              "type": "multiple-choice",
+              "question": "What is the minimum directional derivative?",
+              "options": [
+                "0",
+                "|\u2207f|",
+                "-|\u2207f|",
+                "\u221e"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "Answer: -|\u2207f|"
+            },
+            {
+              "id": "calc_u10_l5_q5",
+              "type": "typing",
+              "question": "What is \u2207f for f(x, y) = x\u00b2 + y\u00b2?",
+              "correctAnswer": [
+                "<2x, 2y>",
+                "\u27e82x, 2y\u27e9"
+              ],
+              "xp": 4,
+              "explanation": "\u2207f = \u27e8f\u2093, f\u1d67\u27e9 = \u27e82x, 2y\u27e9. Differentiate each component."
+            },
+            {
+              "id": "calc_u10_l5_q6",
+              "type": "multiple-choice",
+              "question": "What is |\u27e83, 4\u27e9|?",
+              "options": [
+                "5",
+                "7",
+                "12",
+                "25"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Answer: 5"
+            },
+            {
+              "id": "calc_u10_l5_q7",
+              "type": "typing",
+              "question": "What is \u2207f for f(x, y) = xy?",
+              "correctAnswer": [
+                "<y, x>",
+                "\u27e8y, x\u27e9"
+              ],
+              "xp": 5,
+              "explanation": "Answer: <y, x>"
+            },
+            {
+              "id": "calc_u10_l5_q8",
+              "type": "multiple-choice",
+              "question": "Is \u2207f perpendicular to level curves?",
+              "options": [
+                "Yes",
+                "No",
+                "Only at origin",
+                "Sometimes"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Answer: Yes"
+            },
+            {
+              "id": "calc_u10_l5_q9",
+              "type": "typing",
+              "question": "What is D\u1d64f for u = \u27e81, 0\u27e9?",
+              "correctAnswer": [
+                "f\u2093",
+                "The partial with respect to x"
+              ],
+              "xp": 4,
+              "explanation": "Answer: f\u2093"
+            },
+            {
+              "id": "calc_u10_l5_q10",
+              "type": "multiple-choice",
+              "question": "What is |\u27e81, 1\u27e9|?",
+              "options": [
+                "1",
+                "2",
+                "\u221a2",
+                "0"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "Answer: \u221a2"
+            },
+            {
+              "id": "calc_u10_l5_q11",
+              "type": "typing",
+              "question": "What is \u2207f at (1, 1) for f(x, y) = x + y?",
+              "correctAnswer": [
+                "<1, 1>",
+                "\u27e81, 1\u27e9"
+              ],
+              "xp": 5,
+              "explanation": "\u2207f = \u27e81, 1\u27e9. Derivative of x is 1, derivative of y is 1."
+            },
+            {
+              "id": "calc_u10_l5_q12",
+              "type": "multiple-choice",
+              "question": "What is the max of |D\u1d64f|?",
+              "options": [
+                "0",
+                "|\u2207f|",
+                "\u221e",
+                "Depends"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: |\u2207f|"
+            },
+            {
+              "id": "calc_u10_l5_q13",
+              "type": "typing",
+              "question": "What is |\u2207f| for f(x, y) = x\u00b2 + y\u00b2 at (1, 0)?",
+              "correctAnswer": [
+                "2"
+              ],
+              "xp": 4,
+              "explanation": "f(1, 0) = 1\u00b2 + 0\u00b2 = 1. Square each and add."
+            },
+            {
+              "id": "calc_u10_l5_q14",
+              "type": "multiple-choice",
+              "question": "What is D\u1d64f for u = \u27e80, 1\u27e9?",
+              "options": [
+                "f\u2093",
+                "f\u1d67",
+                "f\u2093 + f\u1d67",
+                "0"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: f\u1d67"
+            },
+            {
+              "id": "calc_u10_l5_q15",
+              "type": "typing",
+              "question": "What is the direction of steepest decrease?",
+              "correctAnswer": [
+                "Opposite to \u2207f",
+                "-\u2207f"
+              ],
+              "xp": 5,
+              "explanation": "The opposite of gradient (-\u2207f) points in direction of steepest decrease."
+            },
+            {
+              "id": "calc_u10_l5_q16",
+              "type": "multiple-choice",
+              "question": "What is |\u27e82, 2\u27e9|?",
+              "options": [
+                "2",
+                "4",
+                "\u221a8",
+                "8"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "Answer: \u221a8"
+            },
+            {
+              "id": "calc_u10_l5_q17",
+              "type": "typing",
+              "question": "What is \u2207f for f(x, y) = x\u00b2 - y\u00b2?",
+              "correctAnswer": [
+                "<2x, -2y>",
+                "\u27e82x, -2y\u27e9"
+              ],
+              "xp": 4,
+              "explanation": "Answer: <2x, -2y>"
+            },
+            {
+              "id": "calc_u10_l5_q18",
+              "type": "multiple-choice",
+              "question": "If \u2207f = 0, what is the directional derivative?",
+              "options": [
+                "0",
+                "1",
+                "\u221e",
+                "Undefined"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Answer: 0"
+            }
+          ]
         }
       ]
     },
