@@ -43,7 +43,7 @@ window.calculusAllTopics = {
                 "7"
               ],
               "xp": 4,
-              "explanation": "Answer: 7"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u1_l1_q4",
@@ -53,7 +53,7 @@ window.calculusAllTopics = {
                 "3"
               ],
               "xp": 4,
-              "explanation": "Answer: 3"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u1_l1_q5",
@@ -87,7 +87,7 @@ window.calculusAllTopics = {
                 "2"
               ],
               "xp": 5,
-              "explanation": "Answer: 2"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u1_l1_q8",
@@ -101,7 +101,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: The same"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u1_l1_q9",
@@ -135,7 +135,7 @@ window.calculusAllTopics = {
                 "12"
               ],
               "xp": 5,
-              "explanation": "Answer: 12"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u1_l1_q12",
@@ -149,7 +149,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: Continuous"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u1_l1_q13",
@@ -159,7 +159,7 @@ window.calculusAllTopics = {
                 "1"
               ],
               "xp": 4,
-              "explanation": "Answer: 1"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u1_l1_q14",
@@ -173,7 +173,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: lim(x\u21920) 1/|x|"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u1_l1_q15",
@@ -221,7 +221,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Answer: Limits"
+              "explanation": "Answer: Limits. Apply the appropriate formula from the lesson."
             }
           ]
         },
@@ -240,7 +240,7 @@ window.calculusAllTopics = {
                 "8"
               ],
               "xp": 5,
-              "explanation": "Answer: 8"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u1_l2_q2",
@@ -274,7 +274,7 @@ window.calculusAllTopics = {
               ],
               "correct": 2,
               "xp": 3,
-              "explanation": "Correct: Highest powers"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u1_l2_q5",
@@ -285,7 +285,7 @@ window.calculusAllTopics = {
                 "0.5"
               ],
               "xp": 5,
-              "explanation": "Answer: 1/2"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u1_l2_q6",
@@ -309,7 +309,7 @@ window.calculusAllTopics = {
                 "6"
               ],
               "xp": 4,
-              "explanation": "Answer: 6"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u1_l2_q8",
@@ -323,7 +323,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Answer: 0"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u1_l2_q9",
@@ -347,7 +347,7 @@ window.calculusAllTopics = {
               ],
               "correct": 0,
               "xp": 3,
-              "explanation": "Correct: 0/0 or \u221e/\u221e"
+              "explanation": "Correct: 0/0 or \u221e/\u221e. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u1_l2_q11",
@@ -381,7 +381,7 @@ window.calculusAllTopics = {
                 "1"
               ],
               "xp": 4,
-              "explanation": "Answer: 1"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u1_l2_q14",
@@ -395,7 +395,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Answer: Hole"
+              "explanation": "Answer: Hole. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u1_l2_q15",
@@ -430,7 +430,7 @@ window.calculusAllTopics = {
                 "\u221e"
               ],
               "xp": 4,
-              "explanation": "Answer: undefined"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u1_l2_q18",
@@ -444,7 +444,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Answer: 0"
+              "explanation": "Answer: 0. Apply the appropriate formula from the lesson."
             }
           ]
         }
@@ -510,7 +510,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "12"
               ],
-              "explanation": "Answer: 12",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 5
             },
             {
@@ -524,7 +524,7 @@ window.calculusAllTopics = {
                 "d\u00b2y/dx\u00b2"
               ],
               "correct": 3,
-              "explanation": "Correct: d\u00b2y/dx\u00b2",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 3
             },
             {
@@ -546,7 +546,7 @@ window.calculusAllTopics = {
                 "velocity",
                 "instantaneous velocity"
               ],
-              "explanation": "Answer: velocity",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 4
             },
             {
@@ -556,7 +556,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "0"
               ],
-              "explanation": "Answer: 0",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 4
             },
             {
@@ -566,7 +566,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1"
               ],
-              "explanation": "Answer: 1",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 4
             },
             {
@@ -576,7 +576,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "increasing"
               ],
-              "explanation": "Answer: increasing",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 4
             },
             {
@@ -590,7 +590,7 @@ window.calculusAllTopics = {
                 "function value"
               ],
               "correct": 0,
-              "explanation": "Correct: change in x",
+              "explanation": "Correct: change in x. Apply the appropriate formula from the lesson.",
               "xp": 3
             },
             {
@@ -610,7 +610,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "dy/dx"
               ],
-              "explanation": "Answer: dy/dx",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 4
             },
             {
@@ -621,7 +621,7 @@ window.calculusAllTopics = {
                 "-1/x^2",
                 "-1/x\u00b2"
               ],
-              "explanation": "Answer: -1/x^2",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 5
             },
             {
@@ -631,7 +631,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "acceleration"
               ],
-              "explanation": "Answer: acceleration",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 4
             },
             {
@@ -645,7 +645,7 @@ window.calculusAllTopics = {
                 "x-axis"
               ],
               "correct": 1,
-              "explanation": "Correct: secant line",
+              "explanation": "Correct: secant line. Apply the appropriate formula from the lesson.",
               "xp": 3
             },
             {
@@ -655,7 +655,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "5"
               ],
-              "explanation": "Answer: 5",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 5
             }
           ]
@@ -685,7 +685,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "7x^6"
               ],
-              "explanation": "Answer: 7x^6",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 5
             },
             {
@@ -696,7 +696,7 @@ window.calculusAllTopics = {
                 "-3x^(-4)",
                 "-3/x^4"
               ],
-              "explanation": "Answer: -3x^(-4)",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 5
             },
             {
@@ -707,7 +707,7 @@ window.calculusAllTopics = {
                 "1/(2\u221ax)",
                 "1/(2x^(1/2))"
               ],
-              "explanation": "Answer: 1/(2\u221ax)",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 5
             },
             {
@@ -717,7 +717,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "12x^3"
               ],
-              "explanation": "Answer: 12x^3",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 5
             },
             {
@@ -761,7 +761,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "0"
               ],
-              "explanation": "Answer: 0",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 4
             },
             {
@@ -775,7 +775,7 @@ window.calculusAllTopics = {
                 "undefined"
               ],
               "correct": 0,
-              "explanation": "Answer: 0",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 3
             },
             {
@@ -786,7 +786,7 @@ window.calculusAllTopics = {
                 "(1/3)x^(-2/3)",
                 "1/(3x^(2/3))"
               ],
-              "explanation": "Answer: (1/3)x^(-2/3)",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 5
             },
             {
@@ -806,7 +806,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "10"
               ],
-              "explanation": "Answer: 10",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 5
             },
             {
@@ -820,7 +820,7 @@ window.calculusAllTopics = {
                 "5"
               ],
               "correct": 1,
-              "explanation": "Answer: 1",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 4
             },
             {
@@ -831,7 +831,7 @@ window.calculusAllTopics = {
                 "-5/x^6",
                 "-5x^(-6)"
               ],
-              "explanation": "Answer: -5/x^6",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 5
             },
             {
@@ -842,7 +842,7 @@ window.calculusAllTopics = {
                 "(3/2)x^(1/2)",
                 "(3/2)\u221ax"
               ],
-              "explanation": "Answer: (3/2)x^(1/2)",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 5
             },
             {
@@ -856,7 +856,7 @@ window.calculusAllTopics = {
                 "d/dx[cf] = cf"
               ],
               "correct": 0,
-              "explanation": "Correct: d/dx[cf] = c\u00b7f'",
+              "explanation": "Correct: d/dx[cf] = c\u00b7f'. Apply the appropriate formula from the lesson.",
               "xp": 3
             },
             {
@@ -886,7 +886,7 @@ window.calculusAllTopics = {
                 "f'g + fg'",
                 "d/dx[fg] = f'g + fg'"
               ],
-              "explanation": "Answer: f'g + fg'",
+              "explanation": "Answer: f'g + fg'. Apply the appropriate formula from the lesson.",
               "xp": 5
             },
             {
@@ -898,7 +898,7 @@ window.calculusAllTopics = {
                 "g^2",
                 "denominator squared"
               ],
-              "explanation": "Answer: g(x)^2",
+              "explanation": "Answer: g(x)^2. Apply the appropriate formula from the lesson.",
               "xp": 4
             },
             {
@@ -930,7 +930,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1/(x+1)^2"
               ],
-              "explanation": "Answer: 1/(x+1)^2",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 5
             },
             {
@@ -944,7 +944,7 @@ window.calculusAllTopics = {
                 "1/x"
               ],
               "correct": 0,
-              "explanation": "Answer: -1/x\u00b2",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 3
             },
             {
@@ -989,7 +989,7 @@ window.calculusAllTopics = {
                 "chain rule"
               ],
               "correct": 0,
-              "explanation": "Correct: product rule",
+              "explanation": "Correct: product rule. Apply the appropriate formula from the lesson.",
               "xp": 3
             },
             {
@@ -999,7 +999,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "-2/(x-1)^2"
               ],
-              "explanation": "Answer: -2/(x-1)^2",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 5
             },
             {
@@ -1033,7 +1033,7 @@ window.calculusAllTopics = {
                 "(fg' + f'g)/g\u00b2"
               ],
               "correct": 0,
-              "explanation": "Correct: (f'g - fg')/g\u00b2",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 3
             },
             {
@@ -1043,7 +1043,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "4x + 1"
               ],
-              "explanation": "Answer: 4x + 1",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 5
             },
             {
@@ -1077,7 +1077,7 @@ window.calculusAllTopics = {
                 "power rule"
               ],
               "correct": 0,
-              "explanation": "Correct: quotient rule",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 3
             }
           ]
@@ -1098,7 +1098,7 @@ window.calculusAllTopics = {
                 "dy/dx = dy/du * du/dx",
                 "f'(g(x)) * g'(x)"
               ],
-              "explanation": "Answer: f'(g(x))g'(x)",
+              "explanation": "Answer: f'(g(x))g'(x). Apply the appropriate formula from the lesson.",
               "xp": 5
             },
             {
@@ -1108,7 +1108,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "6(2x+1)^2"
               ],
-              "explanation": "Answer: 6(2x+1)^2",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 5
             },
             {
@@ -1128,7 +1128,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "4e^(4x)"
               ],
-              "explanation": "Answer: 4e^(4x)",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 5
             },
             {
@@ -1183,7 +1183,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1/(2\u221a(x+1))"
               ],
-              "explanation": "Answer: 1/(2\u221a(x+1))",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 5
             },
             {
@@ -1197,7 +1197,7 @@ window.calculusAllTopics = {
                 "3x"
               ],
               "correct": 0,
-              "explanation": "Answer: 18x",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 4
             },
             {
@@ -1228,7 +1228,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "-2/(x+1)^3"
               ],
-              "explanation": "Answer: -2/(x+1)^3",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 5
             },
             {
@@ -1287,7 +1287,7 @@ window.calculusAllTopics = {
                 "2sec^2(2x)",
                 "2sec\u00b2(2x)"
               ],
-              "explanation": "Answer: 2sec^2(2x)",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 5
             }
           ]
@@ -1326,7 +1326,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "3e^(3x)"
               ],
-              "explanation": "Answer: 3e^(3x)",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 5
             },
             {
@@ -1336,7 +1336,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "2^x ln(2)"
               ],
-              "explanation": "Answer: 2^x ln(2)",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 5
             },
             {
@@ -1417,7 +1417,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "10^x ln(10)"
               ],
-              "explanation": "Answer: 10^x ln(10)",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 5
             },
             {
@@ -1427,7 +1427,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "-e^(-x)"
               ],
-              "explanation": "Answer: -e^(-x)",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 5
             },
             {
@@ -1536,7 +1536,7 @@ window.calculusAllTopics = {
                 "sec^2(x)",
                 "sec\u00b2(x)"
               ],
-              "explanation": "Answer: sec^2(x)",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 4
             },
             {
@@ -1582,7 +1582,7 @@ window.calculusAllTopics = {
                 "1/(1+x^2)",
                 "1/(1+x\u00b2)"
               ],
-              "explanation": "Answer: 1/(1+x^2)",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 5
             },
             {
@@ -1593,7 +1593,7 @@ window.calculusAllTopics = {
                 "sec(x)tan(x)",
                 "sec(x)tan(x)"
               ],
-              "explanation": "Answer: sec(x)tan(x)",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 5
             },
             {
@@ -1604,7 +1604,7 @@ window.calculusAllTopics = {
                 "-csc(x)cot(x)",
                 "-csc(x)cot(x)"
               ],
-              "explanation": "Answer: -csc(x)cot(x)",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 5
             },
             {
@@ -1640,7 +1640,7 @@ window.calculusAllTopics = {
                 "2/(1+4x^2)",
                 "2/(1+4x\u00b2)"
               ],
-              "explanation": "Answer: 2/(1+4x^2)",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 5
             },
             {
@@ -1651,7 +1651,7 @@ window.calculusAllTopics = {
                 "-csc^2(x)",
                 "-csc\u00b2(x)"
               ],
-              "explanation": "Answer: -csc^2(x)",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 5
             },
             {
@@ -1665,7 +1665,7 @@ window.calculusAllTopics = {
                 "tan(5x)"
               ],
               "correct": 0,
-              "explanation": "Correct: 5sec\u00b2(5x)",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 4
             },
             {
@@ -1701,7 +1701,7 @@ window.calculusAllTopics = {
                 "quotient rule"
               ],
               "correct": 0,
-              "explanation": "Correct: chain rule",
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives.",
               "xp": 3
             },
             {
@@ -1749,7 +1749,7 @@ window.calculusAllTopics = {
                 "derivatives"
               ],
               "xp": 4,
-              "explanation": "Answer: differentiation"
+              "explanation": "Answer: differentiation. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u3_l1_q3",
@@ -1845,7 +1845,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: Integrals"
+              "explanation": "Use integration rules: power rule, standard integrals, or substitution/parts."
             },
             {
               "id": "calc_u3_l1_q11",
@@ -1894,7 +1894,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: Specific bounds"
+              "explanation": "Use integration rules: power rule, standard integrals, or substitution/parts."
             },
             {
               "id": "calc_u3_l1_q15",
@@ -1973,7 +1973,7 @@ window.calculusAllTopics = {
                 "value"
               ],
               "xp": 4,
-              "explanation": "Answer: number"
+              "explanation": "Use integration rules: power rule, standard integrals, or substitution/parts."
             },
             {
               "id": "calc_u3_l2_q3",
@@ -2070,7 +2070,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: Negative"
+              "explanation": "Correct: Negative. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u3_l2_q11",
@@ -2095,7 +2095,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: Changes sign"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u3_l2_q13",
@@ -2119,7 +2119,7 @@ window.calculusAllTopics = {
               ],
               "correct": 2,
               "xp": 3,
-              "explanation": "Answer: 0"
+              "explanation": "Use integration rules: power rule, standard integrals, or substitution/parts."
             },
             {
               "id": "calc_u3_l2_q15",
@@ -2229,7 +2229,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: Velocity"
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives."
             },
             {
               "id": "calc_u4_l1_q5",
@@ -2239,7 +2239,7 @@ window.calculusAllTopics = {
                 "60"
               ],
               "xp": 4,
-              "explanation": "Answer: 60"
+              "explanation": "Answer: 60. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u4_l1_q6",
@@ -2253,7 +2253,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: Velocity"
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives."
             },
             {
               "id": "calc_u4_l1_q7",
@@ -2263,7 +2263,7 @@ window.calculusAllTopics = {
                 "2t + 2"
               ],
               "xp": 5,
-              "explanation": "Answer: 2t + 2"
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives."
             },
             {
               "id": "calc_u4_l1_q8",
@@ -2277,7 +2277,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: Secant line"
+              "explanation": "Correct: Secant line. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u4_l1_q9",
@@ -2287,7 +2287,7 @@ window.calculusAllTopics = {
                 "6t"
               ],
               "xp": 4,
-              "explanation": "Answer: 6t"
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives."
             },
             {
               "id": "calc_u4_l1_q10",
@@ -2301,7 +2301,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: Derivative"
+              "explanation": "Correct: Derivative. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u4_l1_q11",
@@ -2312,7 +2312,7 @@ window.calculusAllTopics = {
                 "t\u00b2/2 + t + C"
               ],
               "xp": 5,
-              "explanation": "Answer: (1/2)t\u00b2 + t + C"
+              "explanation": "Answer: (1/2)t\u00b2 + t + C. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u4_l1_q12",
@@ -2326,7 +2326,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: Velocity"
+              "explanation": "Velocity = r'(t). Speed = |velocity|. Acceleration = v'(t) = r''(t)."
             },
             {
               "id": "calc_u4_l1_q13",
@@ -2336,7 +2336,7 @@ window.calculusAllTopics = {
                 "2t + C"
               ],
               "xp": 4,
-              "explanation": "Answer: 2t + C"
+              "explanation": "Answer: 2t + C. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u4_l1_q14",
@@ -2350,7 +2350,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: Increasing"
+              "explanation": "Velocity = r'(t). Speed = |velocity|. Acceleration = v'(t) = r''(t)."
             },
             {
               "id": "calc_u4_l1_q15",
@@ -2360,7 +2360,7 @@ window.calculusAllTopics = {
                 "12t\u00b2"
               ],
               "xp": 5,
-              "explanation": "Answer: 12t\u00b2"
+              "explanation": "Answer: 12t\u00b2. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u4_l1_q16",
@@ -2398,7 +2398,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: Acceleration"
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives."
             }
           ]
         },
@@ -2452,7 +2452,7 @@ window.calculusAllTopics = {
               ],
               "correct": 2,
               "xp": 3,
-              "explanation": "Answer: Disks"
+              "explanation": "Answer: Disks. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u4_l2_q5",
@@ -2476,7 +2476,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Answer: A hole"
+              "explanation": "Answer: A hole. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u4_l2_q7",
@@ -2524,7 +2524,7 @@ window.calculusAllTopics = {
               ],
               "correct": 0,
               "xp": 3,
-              "explanation": "Correct: \u03c0\u222b (y)\u00b2 dx"
+              "explanation": "Correct: \u03c0\u222b (y)\u00b2 dx. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u4_l2_q11",
@@ -2572,7 +2572,7 @@ window.calculusAllTopics = {
               ],
               "correct": 2,
               "xp": 3,
-              "explanation": "Correct: \u221a(1 + f'(x)\u00b2)"
+              "explanation": "Arc length = \u222b|r'(t)| dt. Curvature measures how fast curve bends."
             },
             {
               "id": "calc_u4_l2_q15",
@@ -2606,7 +2606,7 @@ window.calculusAllTopics = {
                 "\u03c0/5"
               ],
               "xp": 4,
-              "explanation": "Answer: \u03c0/5"
+              "explanation": "Answer: \u03c0/5. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u4_l2_q18",
@@ -2757,7 +2757,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: Becomes du/u'"
+              "explanation": "Correct: Becomes du/u'. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u5_l1_q11",
@@ -2782,7 +2782,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: Use du/2"
+              "explanation": "Correct: Use du/2. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u5_l1_q13",
@@ -2807,7 +2807,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: Back-substitute"
+              "explanation": "Correct: Back-substitute. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u5_l1_q15",
@@ -2857,7 +2857,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: Try different u"
+              "explanation": "Correct: Try different u. Apply the appropriate formula from the lesson."
             }
           ]
         },
@@ -2912,7 +2912,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: Logarithmic"
+              "explanation": "Correct: Logarithmic. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u5_l2_q5",
@@ -2961,7 +2961,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: Inverse trig"
+              "explanation": "Correct: Inverse trig. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u5_l2_q9",
@@ -3123,7 +3123,7 @@ window.calculusAllTopics = {
                 "sin(x)"
               ],
               "xp": 5,
-              "explanation": "Answer: One sin(x)"
+              "explanation": "Answer: One sin(x). Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u5_l3_q4",
@@ -3137,7 +3137,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Answer: 1"
+              "explanation": "Answer: 1. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u5_l3_q5",
@@ -3185,7 +3185,7 @@ window.calculusAllTopics = {
               ],
               "correct": 2,
               "xp": 3,
-              "explanation": "Correct: sec\u00b2(x)"
+              "explanation": "Correct: sec\u00b2(x). Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u5_l3_q9",
@@ -3210,7 +3210,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: x = 2sin(\u03b8)"
+              "explanation": "Correct: x = 2sin(\u03b8). Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u5_l3_q11",
@@ -3234,7 +3234,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: x = tan(\u03b8)"
+              "explanation": "Correct: x = tan(\u03b8). Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u5_l3_q13",
@@ -3258,7 +3258,7 @@ window.calculusAllTopics = {
               ],
               "correct": 2,
               "xp": 3,
-              "explanation": "Correct: tan\u00b2(x)"
+              "explanation": "Correct: tan\u00b2(x). Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u5_l3_q15",
@@ -3283,7 +3283,7 @@ window.calculusAllTopics = {
               ],
               "correct": 2,
               "xp": 3,
-              "explanation": "Correct: x = 3sec(\u03b8)"
+              "explanation": "Correct: x = 3sec(\u03b8). Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u5_l3_q17",
@@ -3362,7 +3362,7 @@ window.calculusAllTopics = {
               ],
               "correct": 0,
               "xp": 3,
-              "explanation": "Correct: A/(x+3)"
+              "explanation": "Correct: A/(x+3). Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u5_l4_q5",
@@ -3410,7 +3410,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: (Ax+B)/(x\u00b2+1)"
+              "explanation": "Correct: (Ax+B)/(x\u00b2+1). Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u5_l4_q9",
@@ -3434,7 +3434,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: Using algebra"
+              "explanation": "Correct: Using algebra. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u5_l4_q11",
@@ -3656,7 +3656,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: \u222b f converges"
+              "explanation": "Use integration rules: power rule, standard integrals, or substitution/parts."
             },
             {
               "id": "calc_u5_l5_q11",
@@ -3704,7 +3704,7 @@ window.calculusAllTopics = {
               ],
               "correct": 0,
               "xp": 3,
-              "explanation": "Answer: At c"
+              "explanation": "Use integration rules: power rule, standard integrals, or substitution/parts."
             },
             {
               "id": "calc_u5_l5_q15",
@@ -3815,7 +3815,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: f(x) - g(x)"
+              "explanation": "Correct: f(x) - g(x). Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u6_l1_q5",
@@ -3839,7 +3839,7 @@ window.calculusAllTopics = {
               ],
               "correct": 2,
               "xp": 3,
-              "explanation": "Correct: f(x) = g(x)"
+              "explanation": "Correct: f(x) = g(x). Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u6_l1_q7",
@@ -3888,7 +3888,7 @@ window.calculusAllTopics = {
               ],
               "correct": 2,
               "xp": 3,
-              "explanation": "Correct: Positive"
+              "explanation": "Correct: Positive. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u6_l1_q11",
@@ -3913,7 +3913,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: Sign flips"
+              "explanation": "Correct: Sign flips. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u6_l1_q13",
@@ -4018,7 +4018,7 @@ window.calculusAllTopics = {
                 "\u03c0\u222b[f(x)]\u00b2 dx"
               ],
               "xp": 4,
-              "explanation": "Answer: \u222b\u2090\u1d47 \u03c0[f(x)]\u00b2 dx"
+              "explanation": "Answer: \u222b\u2090\u1d47 \u03c0[f(x)]\u00b2 dx. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u6_l2_q3",
@@ -4029,7 +4029,7 @@ window.calculusAllTopics = {
                 "8pi"
               ],
               "xp": 5,
-              "explanation": "Answer: 8\u03c0"
+              "explanation": "Answer: 8\u03c0. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u6_l2_q4",
@@ -4079,7 +4079,7 @@ window.calculusAllTopics = {
                 "pi/5"
               ],
               "xp": 5,
-              "explanation": "Answer: \u03c0/5"
+              "explanation": "Answer: \u03c0/5. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u6_l2_q8",
@@ -4103,7 +4103,7 @@ window.calculusAllTopics = {
                 "2\u03c0/15"
               ],
               "xp": 4,
-              "explanation": "Answer: 2\u03c0/15"
+              "explanation": "Answer: 2\u03c0/15. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u6_l2_q10",
@@ -4117,7 +4117,7 @@ window.calculusAllTopics = {
               ],
               "correct": 2,
               "xp": 3,
-              "explanation": "Answer: f(x)"
+              "explanation": "Answer: f(x). Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u6_l2_q11",
@@ -4142,7 +4142,7 @@ window.calculusAllTopics = {
               ],
               "correct": 2,
               "xp": 3,
-              "explanation": "Correct: Circumference"
+              "explanation": "Correct: Circumference. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u6_l2_q13",
@@ -4153,7 +4153,7 @@ window.calculusAllTopics = {
                 "pi/2"
               ],
               "xp": 4,
-              "explanation": "Answer: \u03c0/2"
+              "explanation": "Answer: \u03c0/2. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u6_l2_q14",
@@ -4167,7 +4167,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Answer: y-axis"
+              "explanation": "Answer: y-axis. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u6_l2_q15",
@@ -4203,7 +4203,7 @@ window.calculusAllTopics = {
                 "16pi/3"
               ],
               "xp": 4,
-              "explanation": "Answer: 16\u03c0/3"
+              "explanation": "Answer: 16\u03c0/3. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u6_l2_q18",
@@ -4298,7 +4298,7 @@ window.calculusAllTopics = {
               ],
               "correct": 2,
               "xp": 3,
-              "explanation": "Correct: Circumference"
+              "explanation": "Correct: Circumference. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u6_l3_q7",
@@ -4397,7 +4397,7 @@ window.calculusAllTopics = {
               ],
               "correct": 2,
               "xp": 3,
-              "explanation": "Correct: f(x) and f'(x)"
+              "explanation": "Correct: f(x) and f'(x). Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u6_l3_q15",
@@ -4494,7 +4494,7 @@ window.calculusAllTopics = {
                 "y = sqrt(1 + x\u00b2)"
               ],
               "xp": 5,
-              "explanation": "Answer: y = \u221a(1 + x\u00b2)"
+              "explanation": "Answer: y = \u221a(1 + x\u00b2). Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u6_l4_q4",
@@ -4519,7 +4519,7 @@ window.calculusAllTopics = {
                 "y = 3e^(x^2)"
               ],
               "xp": 4,
-              "explanation": "Answer: y = 3e^(x\u00b2)"
+              "explanation": "Answer: y = 3e^(x\u00b2). Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u6_l4_q6",
@@ -4533,7 +4533,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: P = Ce^(kt)"
+              "explanation": "Correct: P = Ce^(kt). Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u6_l4_q7",
@@ -4543,7 +4543,7 @@ window.calculusAllTopics = {
                 "y = 2x"
               ],
               "xp": 5,
-              "explanation": "Answer: y = 2x"
+              "explanation": "Answer: y = 2x. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u6_l4_q8",
@@ -4568,7 +4568,7 @@ window.calculusAllTopics = {
                 "y = e^(x^3/3)"
               ],
               "xp": 4,
-              "explanation": "Answer: y = e^(x\u00b3/3)"
+              "explanation": "Answer: y = e^(x\u00b3/3). Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u6_l4_q10",
@@ -4593,7 +4593,7 @@ window.calculusAllTopics = {
                 "y = sqrt(2e^x + 2)"
               ],
               "xp": 5,
-              "explanation": "Answer: y = \u221a(2e^x + 2)"
+              "explanation": "Answer: y = \u221a(2e^x + 2). Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u6_l4_q12",
@@ -4723,7 +4723,7 @@ window.calculusAllTopics = {
                 "0"
               ],
               "xp": 4,
-              "explanation": "Answer: 0"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u7_l1_q3",
@@ -4747,7 +4747,7 @@ window.calculusAllTopics = {
               ],
               "correct": 2,
               "xp": 3,
-              "explanation": "Answer: \u221e"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u7_l1_q5",
@@ -4758,7 +4758,7 @@ window.calculusAllTopics = {
                 "3n - 1"
               ],
               "xp": 4,
-              "explanation": "Answer: 2 + 3(n-1)"
+              "explanation": "Answer: 2 + 3(n-1). Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l1_q6",
@@ -4772,7 +4772,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: Geometric"
+              "explanation": "Correct: Geometric. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l1_q7",
@@ -4782,7 +4782,7 @@ window.calculusAllTopics = {
                 "1"
               ],
               "xp": 5,
-              "explanation": "Answer: 1"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u7_l1_q8",
@@ -4796,7 +4796,7 @@ window.calculusAllTopics = {
               ],
               "correct": 3,
               "xp": 3,
-              "explanation": "Correct: Doesn't exist"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u7_l1_q9",
@@ -4807,7 +4807,7 @@ window.calculusAllTopics = {
                 "2^(1-n)"
               ],
               "xp": 4,
-              "explanation": "Answer: 1/2^(n-1)"
+              "explanation": "Answer: 1/2^(n-1). Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l1_q10",
@@ -4831,7 +4831,7 @@ window.calculusAllTopics = {
                 "1"
               ],
               "xp": 5,
-              "explanation": "Answer: 1"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u7_l1_q12",
@@ -4845,7 +4845,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Answer: 0"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u7_l1_q13",
@@ -4855,7 +4855,7 @@ window.calculusAllTopics = {
                 "0"
               ],
               "xp": 4,
-              "explanation": "Answer: 0"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u7_l1_q14",
@@ -4869,7 +4869,7 @@ window.calculusAllTopics = {
               ],
               "correct": 0,
               "xp": 3,
-              "explanation": "Answer: 0"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u7_l1_q15",
@@ -4879,7 +4879,7 @@ window.calculusAllTopics = {
                 "2"
               ],
               "xp": 5,
-              "explanation": "Answer: 2"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u7_l1_q16",
@@ -4893,7 +4893,7 @@ window.calculusAllTopics = {
               ],
               "correct": 0,
               "xp": 3,
-              "explanation": "Answer: 2"
+              "explanation": "Answer: 2. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l1_q17",
@@ -4903,7 +4903,7 @@ window.calculusAllTopics = {
                 "0"
               ],
               "xp": 4,
-              "explanation": "Answer: 0"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u7_l1_q18",
@@ -4917,7 +4917,7 @@ window.calculusAllTopics = {
               ],
               "correct": 0,
               "xp": 3,
-              "explanation": "Answer: |L|"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             }
           ]
         },
@@ -4946,7 +4946,7 @@ window.calculusAllTopics = {
                 "2"
               ],
               "xp": 4,
-              "explanation": "Answer: 2"
+              "explanation": "Answer: 2. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l2_q3",
@@ -4970,7 +4970,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Answer: 3/2"
+              "explanation": "Answer: 3/2. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l2_q5",
@@ -4994,7 +4994,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: Diverges"
+              "explanation": "Correct: Diverges. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l2_q7",
@@ -5004,7 +5004,7 @@ window.calculusAllTopics = {
                 "6"
               ],
               "xp": 5,
-              "explanation": "Answer: 6"
+              "explanation": "Answer: 6. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l2_q8",
@@ -5018,7 +5018,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Answer: 1/3"
+              "explanation": "Answer: 1/3. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l2_q9",
@@ -5043,7 +5043,7 @@ window.calculusAllTopics = {
               ],
               "correct": 0,
               "xp": 3,
-              "explanation": "Answer: Yes"
+              "explanation": "Answer: Yes. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l2_q11",
@@ -5053,7 +5053,7 @@ window.calculusAllTopics = {
                 "2/3"
               ],
               "xp": 5,
-              "explanation": "Answer: 2/3"
+              "explanation": "Answer: 2/3. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l2_q12",
@@ -5067,7 +5067,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Answer: 2"
+              "explanation": "Answer: 2. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l2_q13",
@@ -5077,7 +5077,7 @@ window.calculusAllTopics = {
                 "2"
               ],
               "xp": 4,
-              "explanation": "Answer: 2"
+              "explanation": "Answer: 2. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l2_q14",
@@ -5091,7 +5091,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Answer: No"
+              "explanation": "Answer: No. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l2_q15",
@@ -5102,7 +5102,7 @@ window.calculusAllTopics = {
                 "9/2"
               ],
               "xp": 5,
-              "explanation": "Answer: 4.5"
+              "explanation": "Answer: 4.5. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l2_q16",
@@ -5116,7 +5116,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: Diverges to \u221e"
+              "explanation": "Correct: Diverges to \u221e. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l2_q17",
@@ -5126,7 +5126,7 @@ window.calculusAllTopics = {
                 "2"
               ],
               "xp": 4,
-              "explanation": "Answer: 2"
+              "explanation": "Answer: 2. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l2_q18",
@@ -5140,7 +5140,7 @@ window.calculusAllTopics = {
               ],
               "correct": 0,
               "xp": 3,
-              "explanation": "Answer: 0"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             }
           ]
         },
@@ -5180,7 +5180,7 @@ window.calculusAllTopics = {
                 "0 \u2264 a\u2099 \u2264 b\u2099"
               ],
               "xp": 5,
-              "explanation": "Answer: 0 \u2264 a\u2099 \u2264 b\u2099"
+              "explanation": "Answer: 0 \u2264 a\u2099 \u2264 b\u2099. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l3_q4",
@@ -5194,7 +5194,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: Diverges"
+              "explanation": "Correct: Diverges. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l3_q5",
@@ -5242,7 +5242,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: Converges"
+              "explanation": "Correct: Converges. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l3_q9",
@@ -5266,7 +5266,7 @@ window.calculusAllTopics = {
               ],
               "correct": 2,
               "xp": 3,
-              "explanation": "Correct: 0 < c < \u221e"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u7_l3_q11",
@@ -5276,7 +5276,7 @@ window.calculusAllTopics = {
                 "When L = 1"
               ],
               "xp": 5,
-              "explanation": "Answer: When L = 1"
+              "explanation": "Answer: When L = 1. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l3_q12",
@@ -5301,7 +5301,7 @@ window.calculusAllTopics = {
                 "diverges"
               ],
               "xp": 4,
-              "explanation": "Answer: \u221e"
+              "explanation": "Answer: \u221e. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l3_q14",
@@ -5325,7 +5325,7 @@ window.calculusAllTopics = {
                 "Ratio test"
               ],
               "xp": 5,
-              "explanation": "Answer: Ratio test"
+              "explanation": "Answer: Ratio test. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l3_q16",
@@ -5339,7 +5339,7 @@ window.calculusAllTopics = {
               ],
               "correct": 2,
               "xp": 3,
-              "explanation": "Answer: \u221e"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u7_l3_q17",
@@ -5417,7 +5417,7 @@ window.calculusAllTopics = {
               ],
               "correct": 2,
               "xp": 3,
-              "explanation": "Answer: \u221e"
+              "explanation": "Answer: \u221e. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l4_q5",
@@ -5441,7 +5441,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Answer: 1"
+              "explanation": "Answer: 1. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l4_q7",
@@ -5465,7 +5465,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: Only at x = a"
+              "explanation": "Correct: Only at x = a. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l4_q9",
@@ -5489,7 +5489,7 @@ window.calculusAllTopics = {
               ],
               "correct": 0,
               "xp": 3,
-              "explanation": "Correct: Ratio test"
+              "explanation": "Correct: Ratio test. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l4_q11",
@@ -5499,7 +5499,7 @@ window.calculusAllTopics = {
                 "0"
               ],
               "xp": 5,
-              "explanation": "Answer: 0"
+              "explanation": "Answer: 0. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l4_q12",
@@ -5513,7 +5513,7 @@ window.calculusAllTopics = {
               ],
               "correct": 0,
               "xp": 3,
-              "explanation": "Correct: (-1, 1)"
+              "explanation": "Correct: (-1, 1). Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l4_q13",
@@ -5523,7 +5523,7 @@ window.calculusAllTopics = {
                 "1"
               ],
               "xp": 4,
-              "explanation": "Answer: 1"
+              "explanation": "Answer: 1. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l4_q14",
@@ -5537,7 +5537,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Answer: e\u02e3"
+              "explanation": "Answer: e\u02e3. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l4_q15",
@@ -5547,7 +5547,7 @@ window.calculusAllTopics = {
                 "(-1, 3)"
               ],
               "xp": 5,
-              "explanation": "Answer: (-1, 3)"
+              "explanation": "Answer: (-1, 3). Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l4_q16",
@@ -5561,7 +5561,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Correct: Yes, sometimes"
+              "explanation": "Correct: Yes, sometimes. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l4_q17",
@@ -5571,7 +5571,7 @@ window.calculusAllTopics = {
                 "3"
               ],
               "xp": 4,
-              "explanation": "Answer: 3"
+              "explanation": "Answer: 3. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l4_q18",
@@ -5585,7 +5585,7 @@ window.calculusAllTopics = {
               ],
               "correct": 0,
               "xp": 3,
-              "explanation": "Correct: \u2211(-1)\u207fx\u207f"
+              "explanation": "Correct: \u2211(-1)\u207fx\u207f. Apply the appropriate formula from the lesson."
             }
           ]
         },
@@ -5649,7 +5649,7 @@ window.calculusAllTopics = {
                 "1 for all n"
               ],
               "xp": 4,
-              "explanation": "Answer: 1"
+              "explanation": "Answer: 1. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l5_q6",
@@ -5712,7 +5712,7 @@ window.calculusAllTopics = {
               ],
               "correct": 0,
               "xp": 3,
-              "explanation": "Correct: Remainder"
+              "explanation": "Correct: Remainder. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l5_q11",
@@ -5772,7 +5772,7 @@ window.calculusAllTopics = {
                 "x\u00b2/2"
               ],
               "xp": 5,
-              "explanation": "Answer: x"
+              "explanation": "Answer: x. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l5_q16",
@@ -5786,7 +5786,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Answer: cos(x)"
+              "explanation": "Answer: cos(x). Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u7_l5_q17",
@@ -5848,7 +5848,7 @@ window.calculusAllTopics = {
                 "<3, 4>"
               ],
               "xp": 4,
-              "explanation": "Answer: 3, 4"
+              "explanation": "Answer: 3, 4. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u8_l1_q3",
@@ -5898,7 +5898,7 @@ window.calculusAllTopics = {
               ],
               "correct": 0,
               "xp": 3,
-              "explanation": "Answer: \u23292,6\u232a"
+              "explanation": "Answer: \u23292,6\u232a. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u8_l1_q7",
@@ -5909,7 +5909,7 @@ window.calculusAllTopics = {
                 "(4, 6)"
               ],
               "xp": 5,
-              "explanation": "Answer: <4, 6>"
+              "explanation": "Answer: <4, 6>. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u8_l1_q8",
@@ -5949,7 +5949,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Answer: \u23291,0,0\u232a"
+              "explanation": "Answer: \u23291,0,0\u232a. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u8_l1_q11",
@@ -5959,7 +5959,7 @@ window.calculusAllTopics = {
                 "13"
               ],
               "xp": 5,
-              "explanation": "Answer: 13"
+              "explanation": "Answer: 13. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u8_l1_q12",
@@ -5973,7 +5973,7 @@ window.calculusAllTopics = {
               ],
               "correct": 0,
               "xp": 3,
-              "explanation": "Answer: \u23291,2\u232a"
+              "explanation": "Answer: \u23291,2\u232a. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u8_l1_q13",
@@ -5984,7 +5984,7 @@ window.calculusAllTopics = {
                 "(3, 4, 1)"
               ],
               "xp": 4,
-              "explanation": "Answer: <3, 4, 1>"
+              "explanation": "Answer: <3, 4, 1>. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u8_l1_q14",
@@ -5998,7 +5998,7 @@ window.calculusAllTopics = {
               ],
               "correct": 2,
               "xp": 3,
-              "explanation": "Answer: \u221a3"
+              "explanation": "Answer: \u221a3. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u8_l1_q15",
@@ -6023,7 +6023,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Answer: \u2329-1,-2\u232a"
+              "explanation": "Answer: \u2329-1,-2\u232a. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u8_l1_q17",
@@ -6049,7 +6049,7 @@ window.calculusAllTopics = {
               ],
               "correct": 0,
               "xp": 3,
-              "explanation": "Answer: 5"
+              "explanation": "Answer: 5. Apply the appropriate formula from the lesson."
             }
           ]
         },
@@ -6103,7 +6103,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Answer: 1"
+              "explanation": "Answer: 1. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u8_l2_q5",
@@ -6138,7 +6138,7 @@ window.calculusAllTopics = {
                 "11"
               ],
               "xp": 5,
-              "explanation": "Answer: 11"
+              "explanation": "Answer: 11. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u8_l2_q8",
@@ -6162,7 +6162,7 @@ window.calculusAllTopics = {
                 "|u||v|sin(\u03b8)"
               ],
               "xp": 4,
-              "explanation": "Answer: |u||v|sin(\u03b8)"
+              "explanation": "Answer: |u||v|sin(\u03b8). Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u8_l2_q10",
@@ -6176,7 +6176,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Answer: -k"
+              "explanation": "Answer: -k. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u8_l2_q11",
@@ -6186,7 +6186,7 @@ window.calculusAllTopics = {
                 "0"
               ],
               "xp": 5,
-              "explanation": "Answer: 0"
+              "explanation": "Answer: 0. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u8_l2_q12",
@@ -6211,7 +6211,7 @@ window.calculusAllTopics = {
                 "zero"
               ],
               "xp": 4,
-              "explanation": "Answer: 0"
+              "explanation": "Answer: 0. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u8_l2_q14",
@@ -6225,7 +6225,7 @@ window.calculusAllTopics = {
               ],
               "correct": 2,
               "xp": 3,
-              "explanation": "Answer: j"
+              "explanation": "Answer: j. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u8_l2_q15",
@@ -6235,7 +6235,7 @@ window.calculusAllTopics = {
                 "6"
               ],
               "xp": 5,
-              "explanation": "Answer: 6"
+              "explanation": "Answer: 6. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u8_l2_q16",
@@ -6249,7 +6249,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Answer: 0"
+              "explanation": "Answer: 0. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u8_l2_q17",
@@ -6260,7 +6260,7 @@ window.calculusAllTopics = {
                 "<0, -1, 0>"
               ],
               "xp": 4,
-              "explanation": "Answer: -j"
+              "explanation": "Answer: -j. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u8_l2_q18",
@@ -6274,7 +6274,7 @@ window.calculusAllTopics = {
               ],
               "correct": 2,
               "xp": 3,
-              "explanation": "Answer: Both u and v"
+              "explanation": "Answer: Both u and v. Apply the appropriate formula from the lesson."
             }
           ]
         }
@@ -6360,7 +6360,7 @@ window.calculusAllTopics = {
               ],
               "correct": 0,
               "xp": 3,
-              "explanation": "Answer: 5"
+              "explanation": "Answer: 5. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u9_l1_q7",
@@ -6371,7 +6371,7 @@ window.calculusAllTopics = {
                 "(0, 2)"
               ],
               "xp": 5,
-              "explanation": "Answer: <0, 2>"
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives."
             },
             {
               "id": "calc_u9_l1_q8",
@@ -6385,7 +6385,7 @@ window.calculusAllTopics = {
               ],
               "correct": 2,
               "xp": 3,
-              "explanation": "Answer: Acceleration"
+              "explanation": "Apply derivative rules: power rule, product rule, chain rule, or standard derivatives."
             },
             {
               "id": "calc_u9_l1_q9",
@@ -6396,7 +6396,7 @@ window.calculusAllTopics = {
                 "(2, 4)"
               ],
               "xp": 4,
-              "explanation": "Answer: <2, 4>"
+              "explanation": "Direct substitution: plug in the value. For 0/0, use factoring or special limits."
             },
             {
               "id": "calc_u9_l1_q10",
@@ -6614,7 +6614,7 @@ window.calculusAllTopics = {
               ],
               "correct": 1,
               "xp": 3,
-              "explanation": "Answer: Along the curve"
+              "explanation": "Answer: Along the curve. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u9_l2_q9",
@@ -6673,7 +6673,7 @@ window.calculusAllTopics = {
                 "(1, 0)"
               ],
               "xp": 4,
-              "explanation": "Answer: <1, 0>"
+              "explanation": "Answer: <1, 0>. Apply the appropriate formula from the lesson."
             },
             {
               "id": "calc_u9_l2_q14",
