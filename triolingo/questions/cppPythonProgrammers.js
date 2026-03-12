@@ -1,32 +1,17 @@
-// C++ for Python Programmers
-// Generated from outline
+// CPP - All Topics
+// Generated from topic file
 
-window.cppPythonProgrammers = {
+window.cppAllTopics = {
   "courseName": "C++ for Python Programmers",
   "units": [
     {
-      "unitId": "20",
-      "unitName": "General",
-      "lessons": [
-        {
-          "id": 1,
-          "title": "C++ Course Outline (for Python Programmers)",
-          "unitTitle": "General",
-          "xp": 15,
-          "type": "lesson",
-          "difficulty": "beginner",
-          "questions": []
-        }
-      ]
-    },
-    {
-      "unitId": "21",
-      "unitName": "C++ Environment and Language Basics",
+      "unitId": "1",
+      "unitName": "1. C++ Environment and Language Basics",
       "lessons": [
         {
           "id": 2,
           "title": "Installing Compilers and Toolchains (GCC, Clang, MSVC)",
-          "unitTitle": "C++ Environment and Language Basics",
+          "unitTitle": "1. C++ Environment and Language Basics",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -35,7 +20,7 @@ window.cppPythonProgrammers = {
         {
           "id": 3,
           "title": "C++ Compilation Model (Source \u2192 Object \u2192 Linking)",
-          "unitTitle": "C++ Environment and Language Basics",
+          "unitTitle": "1. C++ Environment and Language Basics",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -44,7 +29,7 @@ window.cppPythonProgrammers = {
         {
           "id": 4,
           "title": "Program Structure (main, headers, translation units)",
-          "unitTitle": "C++ Environment and Language Basics",
+          "unitTitle": "1. C++ Environment and Language Basics",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -53,7 +38,7 @@ window.cppPythonProgrammers = {
         {
           "id": 5,
           "title": "Basic Syntax Differences from Python",
-          "unitTitle": "C++ Environment and Language Basics",
+          "unitTitle": "1. C++ Environment and Language Basics",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -62,7 +47,7 @@ window.cppPythonProgrammers = {
         {
           "id": 6,
           "title": "Variables, Types, and Initialization Styles",
-          "unitTitle": "C++ Environment and Language Basics",
+          "unitTitle": "1. C++ Environment and Language Basics",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -71,7 +56,7 @@ window.cppPythonProgrammers = {
         {
           "id": 7,
           "title": "Input/Output with iostream",
-          "unitTitle": "C++ Environment and Language Basics",
+          "unitTitle": "1. C++ Environment and Language Basics",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -80,13 +65,13 @@ window.cppPythonProgrammers = {
       ]
     },
     {
-      "unitId": "22",
-      "unitName": "Core Language Fundamentals",
+      "unitId": "2",
+      "unitName": "2. Core Language Fundamentals",
       "lessons": [
         {
           "id": 8,
           "title": "Primitive Types and Type Modifiers",
-          "unitTitle": "Core Language Fundamentals",
+          "unitTitle": "2. Core Language Fundamentals",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -95,7 +80,7 @@ window.cppPythonProgrammers = {
         {
           "id": 9,
           "title": "Constants and constexpr",
-          "unitTitle": "Core Language Fundamentals",
+          "unitTitle": "2. Core Language Fundamentals",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -104,7 +89,7 @@ window.cppPythonProgrammers = {
         {
           "id": 10,
           "title": "Operators and Expressions",
-          "unitTitle": "Core Language Fundamentals",
+          "unitTitle": "2. Core Language Fundamentals",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -113,7 +98,7 @@ window.cppPythonProgrammers = {
         {
           "id": 11,
           "title": "Control Flow (if, switch, loops)",
-          "unitTitle": "Core Language Fundamentals",
+          "unitTitle": "2. Core Language Fundamentals",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -122,7 +107,7 @@ window.cppPythonProgrammers = {
         {
           "id": 12,
           "title": "Scope and Lifetime Basics",
-          "unitTitle": "Core Language Fundamentals",
+          "unitTitle": "2. Core Language Fundamentals",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -131,7 +116,7 @@ window.cppPythonProgrammers = {
         {
           "id": 13,
           "title": "Basic Error Handling",
-          "unitTitle": "Core Language Fundamentals",
+          "unitTitle": "2. Core Language Fundamentals",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -140,13 +125,13 @@ window.cppPythonProgrammers = {
       ]
     },
     {
-      "unitId": "23",
-      "unitName": "Functions and Modularity",
+      "unitId": "3",
+      "unitName": "3. Functions and Modularity",
       "lessons": [
         {
           "id": 14,
           "title": "Function Declarations vs Definitions",
-          "unitTitle": "Functions and Modularity",
+          "unitTitle": "3. Functions and Modularity",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -155,7 +140,7 @@ window.cppPythonProgrammers = {
         {
           "id": 15,
           "title": "Pass by Value vs Reference",
-          "unitTitle": "Functions and Modularity",
+          "unitTitle": "3. Functions and Modularity",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -164,7 +149,7 @@ window.cppPythonProgrammers = {
         {
           "id": 16,
           "title": "Function Overloading",
-          "unitTitle": "Functions and Modularity",
+          "unitTitle": "3. Functions and Modularity",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -173,7 +158,7 @@ window.cppPythonProgrammers = {
         {
           "id": 17,
           "title": "Default Arguments",
-          "unitTitle": "Functions and Modularity",
+          "unitTitle": "3. Functions and Modularity",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -182,7 +167,7 @@ window.cppPythonProgrammers = {
         {
           "id": 18,
           "title": "Inline Functions",
-          "unitTitle": "Functions and Modularity",
+          "unitTitle": "3. Functions and Modularity",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -191,7 +176,7 @@ window.cppPythonProgrammers = {
         {
           "id": 19,
           "title": "Header Files and Code Organization",
-          "unitTitle": "Functions and Modularity",
+          "unitTitle": "3. Functions and Modularity",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -200,13 +185,13 @@ window.cppPythonProgrammers = {
       ]
     },
     {
-      "unitId": "24",
-      "unitName": "Pointers and References",
+      "unitId": "4",
+      "unitName": "4. Pointers and References",
       "lessons": [
         {
           "id": 20,
           "title": "Memory Model Overview",
-          "unitTitle": "Pointers and References",
+          "unitTitle": "4. Pointers and References",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -215,7 +200,7 @@ window.cppPythonProgrammers = {
         {
           "id": 21,
           "title": "References vs Pointers",
-          "unitTitle": "Pointers and References",
+          "unitTitle": "4. Pointers and References",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -224,7 +209,7 @@ window.cppPythonProgrammers = {
         {
           "id": 22,
           "title": "Pointer Arithmetic",
-          "unitTitle": "Pointers and References",
+          "unitTitle": "4. Pointers and References",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -233,7 +218,7 @@ window.cppPythonProgrammers = {
         {
           "id": 23,
           "title": "const Correctness",
-          "unitTitle": "Pointers and References",
+          "unitTitle": "4. Pointers and References",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -242,7 +227,7 @@ window.cppPythonProgrammers = {
         {
           "id": 24,
           "title": "nullptr and Null Safety",
-          "unitTitle": "Pointers and References",
+          "unitTitle": "4. Pointers and References",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -251,7 +236,7 @@ window.cppPythonProgrammers = {
         {
           "id": 25,
           "title": "Pointer Pitfalls",
-          "unitTitle": "Pointers and References",
+          "unitTitle": "4. Pointers and References",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -260,13 +245,13 @@ window.cppPythonProgrammers = {
       ]
     },
     {
-      "unitId": "25",
-      "unitName": "Arrays, Strings, and Basic Data Structures",
+      "unitId": "5",
+      "unitName": "5. Arrays, Strings, and Basic Data Structures",
       "lessons": [
         {
           "id": 26,
           "title": "C-style Arrays",
-          "unitTitle": "Arrays, Strings, and Basic Data Structures",
+          "unitTitle": "5. Arrays, Strings, and Basic Data Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -275,7 +260,7 @@ window.cppPythonProgrammers = {
         {
           "id": 27,
           "title": "std::array",
-          "unitTitle": "Arrays, Strings, and Basic Data Structures",
+          "unitTitle": "5. Arrays, Strings, and Basic Data Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -284,7 +269,7 @@ window.cppPythonProgrammers = {
         {
           "id": 28,
           "title": "std::string",
-          "unitTitle": "Arrays, Strings, and Basic Data Structures",
+          "unitTitle": "5. Arrays, Strings, and Basic Data Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -293,7 +278,7 @@ window.cppPythonProgrammers = {
         {
           "id": 29,
           "title": "Multidimensional Arrays",
-          "unitTitle": "Arrays, Strings, and Basic Data Structures",
+          "unitTitle": "5. Arrays, Strings, and Basic Data Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -302,7 +287,7 @@ window.cppPythonProgrammers = {
         {
           "id": 30,
           "title": "Iteration Patterns",
-          "unitTitle": "Arrays, Strings, and Basic Data Structures",
+          "unitTitle": "5. Arrays, Strings, and Basic Data Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -311,13 +296,13 @@ window.cppPythonProgrammers = {
       ]
     },
     {
-      "unitId": "26",
-      "unitName": "Object-Oriented Programming in C++",
+      "unitId": "6",
+      "unitName": "6. Object-Oriented Programming in C++",
       "lessons": [
         {
           "id": 31,
           "title": "Structs vs Classes",
-          "unitTitle": "Object-Oriented Programming in C++",
+          "unitTitle": "6. Object-Oriented Programming in C++",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -326,7 +311,7 @@ window.cppPythonProgrammers = {
         {
           "id": 32,
           "title": "Encapsulation and Access Specifiers",
-          "unitTitle": "Object-Oriented Programming in C++",
+          "unitTitle": "6. Object-Oriented Programming in C++",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -335,7 +320,7 @@ window.cppPythonProgrammers = {
         {
           "id": 33,
           "title": "Constructors and Destructors",
-          "unitTitle": "Object-Oriented Programming in C++",
+          "unitTitle": "6. Object-Oriented Programming in C++",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -344,7 +329,7 @@ window.cppPythonProgrammers = {
         {
           "id": 34,
           "title": "Member Functions",
-          "unitTitle": "Object-Oriented Programming in C++",
+          "unitTitle": "6. Object-Oriented Programming in C++",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -353,7 +338,7 @@ window.cppPythonProgrammers = {
         {
           "id": 35,
           "title": "this Pointer",
-          "unitTitle": "Object-Oriented Programming in C++",
+          "unitTitle": "6. Object-Oriented Programming in C++",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -362,7 +347,7 @@ window.cppPythonProgrammers = {
         {
           "id": 36,
           "title": "Operator Overloading",
-          "unitTitle": "Object-Oriented Programming in C++",
+          "unitTitle": "6. Object-Oriented Programming in C++",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -371,13 +356,13 @@ window.cppPythonProgrammers = {
       ]
     },
     {
-      "unitId": "27",
-      "unitName": "Resource Management",
+      "unitId": "7",
+      "unitName": "7. Resource Management",
       "lessons": [
         {
           "id": 37,
           "title": "RAII (Resource Acquisition Is Initialization)",
-          "unitTitle": "Resource Management",
+          "unitTitle": "7. Resource Management",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -386,7 +371,7 @@ window.cppPythonProgrammers = {
         {
           "id": 38,
           "title": "Copy Constructor and Copy Assignment",
-          "unitTitle": "Resource Management",
+          "unitTitle": "7. Resource Management",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -395,7 +380,7 @@ window.cppPythonProgrammers = {
         {
           "id": 39,
           "title": "Move Constructor and Move Assignment",
-          "unitTitle": "Resource Management",
+          "unitTitle": "7. Resource Management",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -404,7 +389,7 @@ window.cppPythonProgrammers = {
         {
           "id": 40,
           "title": "Rule of Three / Five / Zero",
-          "unitTitle": "Resource Management",
+          "unitTitle": "7. Resource Management",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -413,7 +398,7 @@ window.cppPythonProgrammers = {
         {
           "id": 41,
           "title": "Managing Resources Safely",
-          "unitTitle": "Resource Management",
+          "unitTitle": "7. Resource Management",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -422,13 +407,13 @@ window.cppPythonProgrammers = {
       ]
     },
     {
-      "unitId": "28",
-      "unitName": "Dynamic Memory",
+      "unitId": "8",
+      "unitName": "8. Dynamic Memory",
       "lessons": [
         {
           "id": 42,
           "title": "Stack vs Heap",
-          "unitTitle": "Dynamic Memory",
+          "unitTitle": "8. Dynamic Memory",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -437,7 +422,7 @@ window.cppPythonProgrammers = {
         {
           "id": 43,
           "title": "new and delete",
-          "unitTitle": "Dynamic Memory",
+          "unitTitle": "8. Dynamic Memory",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -446,7 +431,7 @@ window.cppPythonProgrammers = {
         {
           "id": 44,
           "title": "Common Memory Errors",
-          "unitTitle": "Dynamic Memory",
+          "unitTitle": "8. Dynamic Memory",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -455,7 +440,7 @@ window.cppPythonProgrammers = {
         {
           "id": 45,
           "title": "Smart Pointers Overview",
-          "unitTitle": "Dynamic Memory",
+          "unitTitle": "8. Dynamic Memory",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -464,7 +449,7 @@ window.cppPythonProgrammers = {
         {
           "id": 46,
           "title": "unique_ptr, shared_ptr, weak_ptr",
-          "unitTitle": "Dynamic Memory",
+          "unitTitle": "8. Dynamic Memory",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -473,13 +458,13 @@ window.cppPythonProgrammers = {
       ]
     },
     {
-      "unitId": "29",
-      "unitName": "Standard Template Library (STL)",
+      "unitId": "9",
+      "unitName": "9. Standard Template Library (STL)",
       "lessons": [
         {
           "id": 47,
           "title": "Overview of STL Components",
-          "unitTitle": "Standard Template Library (STL)",
+          "unitTitle": "9. Standard Template Library (STL)",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -488,7 +473,7 @@ window.cppPythonProgrammers = {
         {
           "id": 48,
           "title": "Iterators",
-          "unitTitle": "Standard Template Library (STL)",
+          "unitTitle": "9. Standard Template Library (STL)",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -497,7 +482,7 @@ window.cppPythonProgrammers = {
         {
           "id": 49,
           "title": "Sequence Containers (vector, deque, list)",
-          "unitTitle": "Standard Template Library (STL)",
+          "unitTitle": "9. Standard Template Library (STL)",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -506,7 +491,7 @@ window.cppPythonProgrammers = {
         {
           "id": 50,
           "title": "Associative Containers (map, set)",
-          "unitTitle": "Standard Template Library (STL)",
+          "unitTitle": "9. Standard Template Library (STL)",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -515,7 +500,7 @@ window.cppPythonProgrammers = {
         {
           "id": 51,
           "title": "Container Adaptors (stack, queue)",
-          "unitTitle": "Standard Template Library (STL)",
+          "unitTitle": "9. Standard Template Library (STL)",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -524,7 +509,7 @@ window.cppPythonProgrammers = {
         {
           "id": 52,
           "title": "STL Algorithms",
-          "unitTitle": "Standard Template Library (STL)",
+          "unitTitle": "9. Standard Template Library (STL)",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -533,13 +518,13 @@ window.cppPythonProgrammers = {
       ]
     },
     {
-      "unitId": "30",
-      "unitName": "Templates and Generic Programming",
+      "unitId": "10",
+      "unitName": "10. Templates and Generic Programming",
       "lessons": [
         {
           "id": 53,
           "title": "Function Templates",
-          "unitTitle": "Templates and Generic Programming",
+          "unitTitle": "10. Templates and Generic Programming",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -548,7 +533,7 @@ window.cppPythonProgrammers = {
         {
           "id": 54,
           "title": "Class Templates",
-          "unitTitle": "Templates and Generic Programming",
+          "unitTitle": "10. Templates and Generic Programming",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -557,7 +542,7 @@ window.cppPythonProgrammers = {
         {
           "id": 55,
           "title": "Template Specialization",
-          "unitTitle": "Templates and Generic Programming",
+          "unitTitle": "10. Templates and Generic Programming",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -566,7 +551,7 @@ window.cppPythonProgrammers = {
         {
           "id": 56,
           "title": "Variadic Templates",
-          "unitTitle": "Templates and Generic Programming",
+          "unitTitle": "10. Templates and Generic Programming",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -575,7 +560,7 @@ window.cppPythonProgrammers = {
         {
           "id": 57,
           "title": "Template Type Deduction",
-          "unitTitle": "Templates and Generic Programming",
+          "unitTitle": "10. Templates and Generic Programming",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -584,13 +569,13 @@ window.cppPythonProgrammers = {
       ]
     },
     {
-      "unitId": "31",
-      "unitName": "Advanced Object-Oriented Programming",
+      "unitId": "11",
+      "unitName": "11. Advanced Object-Oriented Programming",
       "lessons": [
         {
           "id": 58,
           "title": "Inheritance",
-          "unitTitle": "Advanced Object-Oriented Programming",
+          "unitTitle": "11. Advanced Object-Oriented Programming",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -599,7 +584,7 @@ window.cppPythonProgrammers = {
         {
           "id": 59,
           "title": "Virtual Functions and Polymorphism",
-          "unitTitle": "Advanced Object-Oriented Programming",
+          "unitTitle": "11. Advanced Object-Oriented Programming",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -608,7 +593,7 @@ window.cppPythonProgrammers = {
         {
           "id": 60,
           "title": "Abstract Classes and Interfaces",
-          "unitTitle": "Advanced Object-Oriented Programming",
+          "unitTitle": "11. Advanced Object-Oriented Programming",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -617,7 +602,7 @@ window.cppPythonProgrammers = {
         {
           "id": 61,
           "title": "Multiple Inheritance",
-          "unitTitle": "Advanced Object-Oriented Programming",
+          "unitTitle": "11. Advanced Object-Oriented Programming",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -626,7 +611,7 @@ window.cppPythonProgrammers = {
         {
           "id": 62,
           "title": "Composition vs Inheritance",
-          "unitTitle": "Advanced Object-Oriented Programming",
+          "unitTitle": "11. Advanced Object-Oriented Programming",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -635,13 +620,13 @@ window.cppPythonProgrammers = {
       ]
     },
     {
-      "unitId": "32",
-      "unitName": "Modern C++ Features",
+      "unitId": "12",
+      "unitName": "12. Modern C++ Features",
       "lessons": [
         {
           "id": 63,
           "title": "auto and Type Deduction",
-          "unitTitle": "Modern C++ Features",
+          "unitTitle": "12. Modern C++ Features",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -650,7 +635,7 @@ window.cppPythonProgrammers = {
         {
           "id": 64,
           "title": "Range-Based Loops",
-          "unitTitle": "Modern C++ Features",
+          "unitTitle": "12. Modern C++ Features",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -659,7 +644,7 @@ window.cppPythonProgrammers = {
         {
           "id": 65,
           "title": "Lambda Functions",
-          "unitTitle": "Modern C++ Features",
+          "unitTitle": "12. Modern C++ Features",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -668,7 +653,7 @@ window.cppPythonProgrammers = {
         {
           "id": 66,
           "title": "enum class",
-          "unitTitle": "Modern C++ Features",
+          "unitTitle": "12. Modern C++ Features",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -677,7 +662,7 @@ window.cppPythonProgrammers = {
         {
           "id": 67,
           "title": "Structured Bindings",
-          "unitTitle": "Modern C++ Features",
+          "unitTitle": "12. Modern C++ Features",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -686,7 +671,7 @@ window.cppPythonProgrammers = {
         {
           "id": 68,
           "title": "std::optional, std::variant, std::any",
-          "unitTitle": "Modern C++ Features",
+          "unitTitle": "12. Modern C++ Features",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -695,13 +680,13 @@ window.cppPythonProgrammers = {
       ]
     },
     {
-      "unitId": "33",
-      "unitName": "Exception Handling",
+      "unitId": "13",
+      "unitName": "13. Exception Handling",
       "lessons": [
         {
           "id": 69,
           "title": "try, catch, throw",
-          "unitTitle": "Exception Handling",
+          "unitTitle": "13. Exception Handling",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -710,7 +695,7 @@ window.cppPythonProgrammers = {
         {
           "id": 70,
           "title": "Exception Safety Levels",
-          "unitTitle": "Exception Handling",
+          "unitTitle": "13. Exception Handling",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -719,7 +704,7 @@ window.cppPythonProgrammers = {
         {
           "id": 71,
           "title": "Custom Exceptions",
-          "unitTitle": "Exception Handling",
+          "unitTitle": "13. Exception Handling",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -728,7 +713,7 @@ window.cppPythonProgrammers = {
         {
           "id": 72,
           "title": "Alternatives to Exceptions",
-          "unitTitle": "Exception Handling",
+          "unitTitle": "13. Exception Handling",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -737,13 +722,13 @@ window.cppPythonProgrammers = {
       ]
     },
     {
-      "unitId": "34",
-      "unitName": "Concurrency",
+      "unitId": "14",
+      "unitName": "14. Concurrency",
       "lessons": [
         {
           "id": 73,
           "title": "Threads (std::thread)",
-          "unitTitle": "Concurrency",
+          "unitTitle": "14. Concurrency",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -752,7 +737,7 @@ window.cppPythonProgrammers = {
         {
           "id": 74,
           "title": "Mutexes and Locks",
-          "unitTitle": "Concurrency",
+          "unitTitle": "14. Concurrency",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -761,7 +746,7 @@ window.cppPythonProgrammers = {
         {
           "id": 75,
           "title": "Condition Variables",
-          "unitTitle": "Concurrency",
+          "unitTitle": "14. Concurrency",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -770,7 +755,7 @@ window.cppPythonProgrammers = {
         {
           "id": 76,
           "title": "Futures and Promises",
-          "unitTitle": "Concurrency",
+          "unitTitle": "14. Concurrency",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -779,7 +764,7 @@ window.cppPythonProgrammers = {
         {
           "id": 77,
           "title": "Parallel Algorithms",
-          "unitTitle": "Concurrency",
+          "unitTitle": "14. Concurrency",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -788,13 +773,13 @@ window.cppPythonProgrammers = {
       ]
     },
     {
-      "unitId": "35",
-      "unitName": "File I/O and Serialization",
+      "unitId": "15",
+      "unitName": "15. File I/O and Serialization",
       "lessons": [
         {
           "id": 78,
           "title": "File Streams",
-          "unitTitle": "File I/O and Serialization",
+          "unitTitle": "15. File I/O and Serialization",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -803,7 +788,7 @@ window.cppPythonProgrammers = {
         {
           "id": 79,
           "title": "Binary vs Text Files",
-          "unitTitle": "File I/O and Serialization",
+          "unitTitle": "15. File I/O and Serialization",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -812,7 +797,7 @@ window.cppPythonProgrammers = {
         {
           "id": 80,
           "title": "Parsing Structured Data",
-          "unitTitle": "File I/O and Serialization",
+          "unitTitle": "15. File I/O and Serialization",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -821,7 +806,7 @@ window.cppPythonProgrammers = {
         {
           "id": 81,
           "title": "Basic Serialization Patterns",
-          "unitTitle": "File I/O and Serialization",
+          "unitTitle": "15. File I/O and Serialization",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -830,13 +815,13 @@ window.cppPythonProgrammers = {
       ]
     },
     {
-      "unitId": "36",
-      "unitName": "Performance and Low-Level Concepts",
+      "unitId": "16",
+      "unitName": "16. Performance and Low-Level Concepts",
       "lessons": [
         {
           "id": 82,
           "title": "Value vs Reference Semantics",
-          "unitTitle": "Performance and Low-Level Concepts",
+          "unitTitle": "16. Performance and Low-Level Concepts",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -845,7 +830,7 @@ window.cppPythonProgrammers = {
         {
           "id": 83,
           "title": "Cache and Memory Layout",
-          "unitTitle": "Performance and Low-Level Concepts",
+          "unitTitle": "16. Performance and Low-Level Concepts",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -854,7 +839,7 @@ window.cppPythonProgrammers = {
         {
           "id": 84,
           "title": "Inline vs Virtual Costs",
-          "unitTitle": "Performance and Low-Level Concepts",
+          "unitTitle": "16. Performance and Low-Level Concepts",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -863,7 +848,7 @@ window.cppPythonProgrammers = {
         {
           "id": 85,
           "title": "Move Semantics and Performance",
-          "unitTitle": "Performance and Low-Level Concepts",
+          "unitTitle": "16. Performance and Low-Level Concepts",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -872,7 +857,7 @@ window.cppPythonProgrammers = {
         {
           "id": 86,
           "title": "Profiling and Optimization",
-          "unitTitle": "Performance and Low-Level Concepts",
+          "unitTitle": "16. Performance and Low-Level Concepts",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -881,13 +866,13 @@ window.cppPythonProgrammers = {
       ]
     },
     {
-      "unitId": "37",
-      "unitName": "Build Systems and Tooling",
+      "unitId": "17",
+      "unitName": "17. Build Systems and Tooling",
       "lessons": [
         {
           "id": 87,
           "title": "Makefiles",
-          "unitTitle": "Build Systems and Tooling",
+          "unitTitle": "17. Build Systems and Tooling",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -896,7 +881,7 @@ window.cppPythonProgrammers = {
         {
           "id": 88,
           "title": "CMake Basics",
-          "unitTitle": "Build Systems and Tooling",
+          "unitTitle": "17. Build Systems and Tooling",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -905,7 +890,7 @@ window.cppPythonProgrammers = {
         {
           "id": 89,
           "title": "Dependency Management",
-          "unitTitle": "Build Systems and Tooling",
+          "unitTitle": "17. Build Systems and Tooling",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -914,7 +899,7 @@ window.cppPythonProgrammers = {
         {
           "id": 90,
           "title": "Static vs Dynamic Linking",
-          "unitTitle": "Build Systems and Tooling",
+          "unitTitle": "17. Build Systems and Tooling",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -923,7 +908,7 @@ window.cppPythonProgrammers = {
         {
           "id": 91,
           "title": "Debugging Tools (gdb, sanitizers)",
-          "unitTitle": "Build Systems and Tooling",
+          "unitTitle": "17. Build Systems and Tooling",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -932,13 +917,13 @@ window.cppPythonProgrammers = {
       ]
     },
     {
-      "unitId": "38",
-      "unitName": "Best Practices and Idioms",
+      "unitId": "18",
+      "unitName": "18. Best Practices and Idioms",
       "lessons": [
         {
           "id": 92,
           "title": "C++ Coding Guidelines",
-          "unitTitle": "Best Practices and Idioms",
+          "unitTitle": "18. Best Practices and Idioms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -947,7 +932,7 @@ window.cppPythonProgrammers = {
         {
           "id": 93,
           "title": "Idiomatic STL Usage",
-          "unitTitle": "Best Practices and Idioms",
+          "unitTitle": "18. Best Practices and Idioms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -956,7 +941,7 @@ window.cppPythonProgrammers = {
         {
           "id": 94,
           "title": "Avoiding Raw Pointers",
-          "unitTitle": "Best Practices and Idioms",
+          "unitTitle": "18. Best Practices and Idioms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -965,7 +950,7 @@ window.cppPythonProgrammers = {
         {
           "id": 95,
           "title": "Header Design Best Practices",
-          "unitTitle": "Best Practices and Idioms",
+          "unitTitle": "18. Best Practices and Idioms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -974,7 +959,7 @@ window.cppPythonProgrammers = {
         {
           "id": 96,
           "title": "Writing Maintainable C++",
-          "unitTitle": "Best Practices and Idioms",
+          "unitTitle": "18. Best Practices and Idioms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -983,13 +968,13 @@ window.cppPythonProgrammers = {
       ]
     },
     {
-      "unitId": "39",
-      "unitName": "Interoperability",
+      "unitId": "19",
+      "unitName": "19. Interoperability",
       "lessons": [
         {
           "id": 97,
           "title": "C and C++ Interoperability",
-          "unitTitle": "Interoperability",
+          "unitTitle": "19. Interoperability",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -998,7 +983,7 @@ window.cppPythonProgrammers = {
         {
           "id": 98,
           "title": "Calling Native Libraries",
-          "unitTitle": "Interoperability",
+          "unitTitle": "19. Interoperability",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1007,7 +992,7 @@ window.cppPythonProgrammers = {
         {
           "id": 99,
           "title": "ABI and Binary Compatibility",
-          "unitTitle": "Interoperability",
+          "unitTitle": "19. Interoperability",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
