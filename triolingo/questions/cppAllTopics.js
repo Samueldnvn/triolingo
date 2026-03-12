@@ -6,12 +6,12 @@ window.cppAllTopics = {
   "units": [
     {
       "unitId": "1",
-      "unitName": "Foundations of Algorithm Analysis",
+      "unitName": "1. Foundations of Algorithm Analysis",
       "lessons": [
         {
           "id": 1,
           "title": "Algorithm correctness",
-          "unitTitle": "Foundations of Algorithm Analysis",
+          "unitTitle": "1. Foundations of Algorithm Analysis",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -20,7 +20,7 @@ window.cppAllTopics = {
         {
           "id": 2,
           "title": "Asymptotic notation (Big O, Big \u0398, Big \u03a9)",
-          "unitTitle": "Foundations of Algorithm Analysis",
+          "unitTitle": "1. Foundations of Algorithm Analysis",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -29,7 +29,7 @@ window.cppAllTopics = {
         {
           "id": 3,
           "title": "Amortized analysis",
-          "unitTitle": "Foundations of Algorithm Analysis",
+          "unitTitle": "1. Foundations of Algorithm Analysis",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -38,7 +38,7 @@ window.cppAllTopics = {
         {
           "id": 4,
           "title": "Average vs worst vs best case",
-          "unitTitle": "Foundations of Algorithm Analysis",
+          "unitTitle": "1. Foundations of Algorithm Analysis",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -47,7 +47,7 @@ window.cppAllTopics = {
         {
           "id": 5,
           "title": "Recurrence relations",
-          "unitTitle": "Foundations of Algorithm Analysis",
+          "unitTitle": "1. Foundations of Algorithm Analysis",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -56,7 +56,7 @@ window.cppAllTopics = {
         {
           "id": 6,
           "title": "Master theorem",
-          "unitTitle": "Foundations of Algorithm Analysis",
+          "unitTitle": "1. Foundations of Algorithm Analysis",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -65,7 +65,7 @@ window.cppAllTopics = {
         {
           "id": 7,
           "title": "Recursion tree analysis",
-          "unitTitle": "Foundations of Algorithm Analysis",
+          "unitTitle": "1. Foundations of Algorithm Analysis",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -74,7 +74,7 @@ window.cppAllTopics = {
         {
           "id": 8,
           "title": "Proof by induction",
-          "unitTitle": "Foundations of Algorithm Analysis",
+          "unitTitle": "1. Foundations of Algorithm Analysis",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -83,7 +83,7 @@ window.cppAllTopics = {
         {
           "id": 9,
           "title": "Lower bounds",
-          "unitTitle": "Foundations of Algorithm Analysis",
+          "unitTitle": "1. Foundations of Algorithm Analysis",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -92,7 +92,7 @@ window.cppAllTopics = {
         {
           "id": 10,
           "title": "Decision tree complexity",
-          "unitTitle": "Foundations of Algorithm Analysis",
+          "unitTitle": "1. Foundations of Algorithm Analysis",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -101,7 +101,7 @@ window.cppAllTopics = {
         {
           "id": 11,
           "title": "Time-space tradeoffs",
-          "unitTitle": "Foundations of Algorithm Analysis",
+          "unitTitle": "1. Foundations of Algorithm Analysis",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -110,7 +110,7 @@ window.cppAllTopics = {
         {
           "id": 12,
           "title": "Cache complexity",
-          "unitTitle": "Foundations of Algorithm Analysis",
+          "unitTitle": "1. Foundations of Algorithm Analysis",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -119,7 +119,7 @@ window.cppAllTopics = {
         {
           "id": 13,
           "title": "External memory model",
-          "unitTitle": "Foundations of Algorithm Analysis",
+          "unitTitle": "1. Foundations of Algorithm Analysis",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -128,7 +128,7 @@ window.cppAllTopics = {
         {
           "id": 14,
           "title": "Parallel complexity",
-          "unitTitle": "Foundations of Algorithm Analysis",
+          "unitTitle": "1. Foundations of Algorithm Analysis",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -137,7 +137,7 @@ window.cppAllTopics = {
         {
           "id": 15,
           "title": "Basic Data Structures",
-          "unitTitle": "Foundations of Algorithm Analysis",
+          "unitTitle": "1. Foundations of Algorithm Analysis",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -147,12 +147,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "2",
-      "unitName": "Arrays and Variants",
+      "unitName": "2. Arrays and Variants",
       "lessons": [
         {
           "id": 16,
           "title": "Static arrays",
-          "unitTitle": "Arrays and Variants",
+          "unitTitle": "2. Arrays and Variants",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -161,7 +161,7 @@ window.cppAllTopics = {
         {
           "id": 17,
           "title": "Dynamic arrays",
-          "unitTitle": "Arrays and Variants",
+          "unitTitle": "2. Arrays and Variants",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -170,7 +170,7 @@ window.cppAllTopics = {
         {
           "id": 18,
           "title": "Multidimensional arrays",
-          "unitTitle": "Arrays and Variants",
+          "unitTitle": "2. Arrays and Variants",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -179,7 +179,7 @@ window.cppAllTopics = {
         {
           "id": 19,
           "title": "Circular arrays",
-          "unitTitle": "Arrays and Variants",
+          "unitTitle": "2. Arrays and Variants",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -188,7 +188,7 @@ window.cppAllTopics = {
         {
           "id": 20,
           "title": "Sparse arrays",
-          "unitTitle": "Arrays and Variants",
+          "unitTitle": "2. Arrays and Variants",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -197,7 +197,7 @@ window.cppAllTopics = {
         {
           "id": 21,
           "title": "Bit arrays",
-          "unitTitle": "Arrays and Variants",
+          "unitTitle": "2. Arrays and Variants",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -206,7 +206,7 @@ window.cppAllTopics = {
         {
           "id": 22,
           "title": "Difference arrays",
-          "unitTitle": "Arrays and Variants",
+          "unitTitle": "2. Arrays and Variants",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -215,7 +215,7 @@ window.cppAllTopics = {
         {
           "id": 23,
           "title": "Prefix arrays",
-          "unitTitle": "Arrays and Variants",
+          "unitTitle": "2. Arrays and Variants",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -224,7 +224,7 @@ window.cppAllTopics = {
         {
           "id": 24,
           "title": "Sliding window arrays",
-          "unitTitle": "Arrays and Variants",
+          "unitTitle": "2. Arrays and Variants",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -233,7 +233,7 @@ window.cppAllTopics = {
         {
           "id": 25,
           "title": "Cache-aware arrays",
-          "unitTitle": "Arrays and Variants",
+          "unitTitle": "2. Arrays and Variants",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -243,12 +243,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "3",
-      "unitName": "Linked Structures",
+      "unitName": "3. Linked Structures",
       "lessons": [
         {
           "id": 26,
           "title": "Singly linked list",
-          "unitTitle": "Linked Structures",
+          "unitTitle": "3. Linked Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -257,7 +257,7 @@ window.cppAllTopics = {
         {
           "id": 27,
           "title": "Doubly linked list",
-          "unitTitle": "Linked Structures",
+          "unitTitle": "3. Linked Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -266,7 +266,7 @@ window.cppAllTopics = {
         {
           "id": 28,
           "title": "Circular linked list",
-          "unitTitle": "Linked Structures",
+          "unitTitle": "3. Linked Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -275,7 +275,7 @@ window.cppAllTopics = {
         {
           "id": 29,
           "title": "XOR linked list",
-          "unitTitle": "Linked Structures",
+          "unitTitle": "3. Linked Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -284,7 +284,7 @@ window.cppAllTopics = {
         {
           "id": 30,
           "title": "Skip list",
-          "unitTitle": "Linked Structures",
+          "unitTitle": "3. Linked Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -293,7 +293,7 @@ window.cppAllTopics = {
         {
           "id": 31,
           "title": "Unrolled linked list",
-          "unitTitle": "Linked Structures",
+          "unitTitle": "3. Linked Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -302,7 +302,7 @@ window.cppAllTopics = {
         {
           "id": 32,
           "title": "Self-organizing list",
-          "unitTitle": "Linked Structures",
+          "unitTitle": "3. Linked Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -311,7 +311,7 @@ window.cppAllTopics = {
         {
           "id": 33,
           "title": "Intrusive lists",
-          "unitTitle": "Linked Structures",
+          "unitTitle": "3. Linked Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -321,12 +321,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "4",
-      "unitName": "Stack Structures",
+      "unitName": "4. Stack Structures",
       "lessons": [
         {
           "id": 34,
           "title": "Array stack",
-          "unitTitle": "Stack Structures",
+          "unitTitle": "4. Stack Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -335,7 +335,7 @@ window.cppAllTopics = {
         {
           "id": 35,
           "title": "Linked stack",
-          "unitTitle": "Stack Structures",
+          "unitTitle": "4. Stack Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -344,7 +344,7 @@ window.cppAllTopics = {
         {
           "id": 36,
           "title": "Min stack",
-          "unitTitle": "Stack Structures",
+          "unitTitle": "4. Stack Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -353,7 +353,7 @@ window.cppAllTopics = {
         {
           "id": 37,
           "title": "Max stack",
-          "unitTitle": "Stack Structures",
+          "unitTitle": "4. Stack Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -362,7 +362,7 @@ window.cppAllTopics = {
         {
           "id": 38,
           "title": "Persistent stack",
-          "unitTitle": "Stack Structures",
+          "unitTitle": "4. Stack Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -371,7 +371,7 @@ window.cppAllTopics = {
         {
           "id": 39,
           "title": "Multi-stack structures",
-          "unitTitle": "Stack Structures",
+          "unitTitle": "4. Stack Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -381,12 +381,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "5",
-      "unitName": "Queue Structures",
+      "unitName": "5. Queue Structures",
       "lessons": [
         {
           "id": 40,
           "title": "Array queue",
-          "unitTitle": "Queue Structures",
+          "unitTitle": "5. Queue Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -395,7 +395,7 @@ window.cppAllTopics = {
         {
           "id": 41,
           "title": "Circular queue",
-          "unitTitle": "Queue Structures",
+          "unitTitle": "5. Queue Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -404,7 +404,7 @@ window.cppAllTopics = {
         {
           "id": 42,
           "title": "Deque",
-          "unitTitle": "Queue Structures",
+          "unitTitle": "5. Queue Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -413,7 +413,7 @@ window.cppAllTopics = {
         {
           "id": 43,
           "title": "Monotonic queue",
-          "unitTitle": "Queue Structures",
+          "unitTitle": "5. Queue Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -422,7 +422,7 @@ window.cppAllTopics = {
         {
           "id": 44,
           "title": "Priority queue",
-          "unitTitle": "Queue Structures",
+          "unitTitle": "5. Queue Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -431,7 +431,7 @@ window.cppAllTopics = {
         {
           "id": 45,
           "title": "Double-ended priority queue",
-          "unitTitle": "Queue Structures",
+          "unitTitle": "5. Queue Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -440,7 +440,7 @@ window.cppAllTopics = {
         {
           "id": 46,
           "title": "Persistent queue",
-          "unitTitle": "Queue Structures",
+          "unitTitle": "5. Queue Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -449,7 +449,7 @@ window.cppAllTopics = {
         {
           "id": 47,
           "title": "Hashing",
-          "unitTitle": "Queue Structures",
+          "unitTitle": "5. Queue Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -459,12 +459,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "6",
-      "unitName": "Hash Tables",
+      "unitName": "6. Hash Tables",
       "lessons": [
         {
           "id": 48,
           "title": "Direct addressing",
-          "unitTitle": "Hash Tables",
+          "unitTitle": "6. Hash Tables",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -473,7 +473,7 @@ window.cppAllTopics = {
         {
           "id": 49,
           "title": "Hash functions",
-          "unitTitle": "Hash Tables",
+          "unitTitle": "6. Hash Tables",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -482,7 +482,7 @@ window.cppAllTopics = {
         {
           "id": 50,
           "title": "Polynomial hashing",
-          "unitTitle": "Hash Tables",
+          "unitTitle": "6. Hash Tables",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -491,7 +491,7 @@ window.cppAllTopics = {
         {
           "id": 51,
           "title": "Rolling hash",
-          "unitTitle": "Hash Tables",
+          "unitTitle": "6. Hash Tables",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -500,7 +500,7 @@ window.cppAllTopics = {
         {
           "id": 52,
           "title": "Perfect hashing",
-          "unitTitle": "Hash Tables",
+          "unitTitle": "6. Hash Tables",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -509,7 +509,7 @@ window.cppAllTopics = {
         {
           "id": 53,
           "title": "Universal hashing",
-          "unitTitle": "Hash Tables",
+          "unitTitle": "6. Hash Tables",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -518,7 +518,7 @@ window.cppAllTopics = {
         {
           "id": 54,
           "title": "Open addressing",
-          "unitTitle": "Hash Tables",
+          "unitTitle": "6. Hash Tables",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -527,7 +527,7 @@ window.cppAllTopics = {
         {
           "id": 55,
           "title": "Linear probing",
-          "unitTitle": "Hash Tables",
+          "unitTitle": "6. Hash Tables",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -536,7 +536,7 @@ window.cppAllTopics = {
         {
           "id": 56,
           "title": "Quadratic probing",
-          "unitTitle": "Hash Tables",
+          "unitTitle": "6. Hash Tables",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -545,7 +545,7 @@ window.cppAllTopics = {
         {
           "id": 57,
           "title": "Double hashing",
-          "unitTitle": "Hash Tables",
+          "unitTitle": "6. Hash Tables",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -554,7 +554,7 @@ window.cppAllTopics = {
         {
           "id": 58,
           "title": "Separate chaining",
-          "unitTitle": "Hash Tables",
+          "unitTitle": "6. Hash Tables",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -563,7 +563,7 @@ window.cppAllTopics = {
         {
           "id": 59,
           "title": "Cuckoo hashing",
-          "unitTitle": "Hash Tables",
+          "unitTitle": "6. Hash Tables",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -572,7 +572,7 @@ window.cppAllTopics = {
         {
           "id": 60,
           "title": "Robin Hood hashing",
-          "unitTitle": "Hash Tables",
+          "unitTitle": "6. Hash Tables",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -581,7 +581,7 @@ window.cppAllTopics = {
         {
           "id": 61,
           "title": "Hopscotch hashing",
-          "unitTitle": "Hash Tables",
+          "unitTitle": "6. Hash Tables",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -590,7 +590,7 @@ window.cppAllTopics = {
         {
           "id": 62,
           "title": "Extendible hashing",
-          "unitTitle": "Hash Tables",
+          "unitTitle": "6. Hash Tables",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -599,7 +599,7 @@ window.cppAllTopics = {
         {
           "id": 63,
           "title": "Dynamic hashing",
-          "unitTitle": "Hash Tables",
+          "unitTitle": "6. Hash Tables",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -608,7 +608,7 @@ window.cppAllTopics = {
         {
           "id": 64,
           "title": "Bloom filter",
-          "unitTitle": "Hash Tables",
+          "unitTitle": "6. Hash Tables",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -617,7 +617,7 @@ window.cppAllTopics = {
         {
           "id": 65,
           "title": "Counting Bloom filter",
-          "unitTitle": "Hash Tables",
+          "unitTitle": "6. Hash Tables",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -626,7 +626,7 @@ window.cppAllTopics = {
         {
           "id": 66,
           "title": "Cuckoo filter",
-          "unitTitle": "Hash Tables",
+          "unitTitle": "6. Hash Tables",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -635,7 +635,7 @@ window.cppAllTopics = {
         {
           "id": 67,
           "title": "HyperLogLog",
-          "unitTitle": "Hash Tables",
+          "unitTitle": "6. Hash Tables",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -644,7 +644,7 @@ window.cppAllTopics = {
         {
           "id": 68,
           "title": "Tree Data Structures",
-          "unitTitle": "Hash Tables",
+          "unitTitle": "6. Hash Tables",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -654,12 +654,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "7",
-      "unitName": "Binary Trees",
+      "unitName": "7. Binary Trees",
       "lessons": [
         {
           "id": 69,
           "title": "Binary tree traversal",
-          "unitTitle": "Binary Trees",
+          "unitTitle": "7. Binary Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -668,7 +668,7 @@ window.cppAllTopics = {
         {
           "id": 70,
           "title": "Threaded binary tree",
-          "unitTitle": "Binary Trees",
+          "unitTitle": "7. Binary Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -677,7 +677,7 @@ window.cppAllTopics = {
         {
           "id": 71,
           "title": "Binary search tree",
-          "unitTitle": "Binary Trees",
+          "unitTitle": "7. Binary Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -686,7 +686,7 @@ window.cppAllTopics = {
         {
           "id": 72,
           "title": "Balanced BST",
-          "unitTitle": "Binary Trees",
+          "unitTitle": "7. Binary Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -695,7 +695,7 @@ window.cppAllTopics = {
         {
           "id": 73,
           "title": "Order statistic tree",
-          "unitTitle": "Binary Trees",
+          "unitTitle": "7. Binary Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -704,7 +704,7 @@ window.cppAllTopics = {
         {
           "id": 74,
           "title": "Augmented trees",
-          "unitTitle": "Binary Trees",
+          "unitTitle": "7. Binary Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -714,12 +714,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "8",
-      "unitName": "Self-Balancing Trees",
+      "unitName": "8. Self-Balancing Trees",
       "lessons": [
         {
           "id": 75,
           "title": "AVL tree",
-          "unitTitle": "Self-Balancing Trees",
+          "unitTitle": "8. Self-Balancing Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -728,7 +728,7 @@ window.cppAllTopics = {
         {
           "id": 76,
           "title": "Red-black tree",
-          "unitTitle": "Self-Balancing Trees",
+          "unitTitle": "8. Self-Balancing Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -737,7 +737,7 @@ window.cppAllTopics = {
         {
           "id": 77,
           "title": "AA tree",
-          "unitTitle": "Self-Balancing Trees",
+          "unitTitle": "8. Self-Balancing Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -746,7 +746,7 @@ window.cppAllTopics = {
         {
           "id": 78,
           "title": "Treap",
-          "unitTitle": "Self-Balancing Trees",
+          "unitTitle": "8. Self-Balancing Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -755,7 +755,7 @@ window.cppAllTopics = {
         {
           "id": 79,
           "title": "Splay tree",
-          "unitTitle": "Self-Balancing Trees",
+          "unitTitle": "8. Self-Balancing Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -764,7 +764,7 @@ window.cppAllTopics = {
         {
           "id": 80,
           "title": "Scapegoat tree",
-          "unitTitle": "Self-Balancing Trees",
+          "unitTitle": "8. Self-Balancing Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -773,7 +773,7 @@ window.cppAllTopics = {
         {
           "id": 81,
           "title": "Tango tree",
-          "unitTitle": "Self-Balancing Trees",
+          "unitTitle": "8. Self-Balancing Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -782,7 +782,7 @@ window.cppAllTopics = {
         {
           "id": 82,
           "title": "Weight-balanced tree",
-          "unitTitle": "Self-Balancing Trees",
+          "unitTitle": "8. Self-Balancing Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -791,7 +791,7 @@ window.cppAllTopics = {
         {
           "id": 83,
           "title": "Randomized BST",
-          "unitTitle": "Self-Balancing Trees",
+          "unitTitle": "8. Self-Balancing Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -801,12 +801,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "9",
-      "unitName": "Multiway Trees",
+      "unitName": "9. Multiway Trees",
       "lessons": [
         {
           "id": 84,
           "title": "B-tree",
-          "unitTitle": "Multiway Trees",
+          "unitTitle": "9. Multiway Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -815,7 +815,7 @@ window.cppAllTopics = {
         {
           "id": 85,
           "title": "B+ tree",
-          "unitTitle": "Multiway Trees",
+          "unitTitle": "9. Multiway Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -824,7 +824,7 @@ window.cppAllTopics = {
         {
           "id": 86,
           "title": "B* tree",
-          "unitTitle": "Multiway Trees",
+          "unitTitle": "9. Multiway Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -833,7 +833,7 @@ window.cppAllTopics = {
         {
           "id": 87,
           "title": "2-3 tree",
-          "unitTitle": "Multiway Trees",
+          "unitTitle": "9. Multiway Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -842,7 +842,7 @@ window.cppAllTopics = {
         {
           "id": 88,
           "title": "2-3-4 tree",
-          "unitTitle": "Multiway Trees",
+          "unitTitle": "9. Multiway Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -851,7 +851,7 @@ window.cppAllTopics = {
         {
           "id": 89,
           "title": "Fusion tree",
-          "unitTitle": "Multiway Trees",
+          "unitTitle": "9. Multiway Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -860,7 +860,7 @@ window.cppAllTopics = {
         {
           "id": 90,
           "title": "Cache-oblivious tree",
-          "unitTitle": "Multiway Trees",
+          "unitTitle": "9. Multiway Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -870,12 +870,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "10",
-      "unitName": "Specialized Trees",
+      "unitName": "10. Specialized Trees",
       "lessons": [
         {
           "id": 91,
           "title": "Segment tree",
-          "unitTitle": "Specialized Trees",
+          "unitTitle": "10. Specialized Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -884,7 +884,7 @@ window.cppAllTopics = {
         {
           "id": 92,
           "title": "Lazy propagation segment tree",
-          "unitTitle": "Specialized Trees",
+          "unitTitle": "10. Specialized Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -893,7 +893,7 @@ window.cppAllTopics = {
         {
           "id": 93,
           "title": "Persistent segment tree",
-          "unitTitle": "Specialized Trees",
+          "unitTitle": "10. Specialized Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -902,7 +902,7 @@ window.cppAllTopics = {
         {
           "id": 94,
           "title": "Dynamic segment tree",
-          "unitTitle": "Specialized Trees",
+          "unitTitle": "10. Specialized Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -911,7 +911,7 @@ window.cppAllTopics = {
         {
           "id": 95,
           "title": "Merge sort tree",
-          "unitTitle": "Specialized Trees",
+          "unitTitle": "10. Specialized Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -920,7 +920,7 @@ window.cppAllTopics = {
         {
           "id": 96,
           "title": "Fenwick tree (Binary Indexed Tree)",
-          "unitTitle": "Specialized Trees",
+          "unitTitle": "10. Specialized Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -929,7 +929,7 @@ window.cppAllTopics = {
         {
           "id": 97,
           "title": "Range tree",
-          "unitTitle": "Specialized Trees",
+          "unitTitle": "10. Specialized Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -938,7 +938,7 @@ window.cppAllTopics = {
         {
           "id": 98,
           "title": "Interval tree",
-          "unitTitle": "Specialized Trees",
+          "unitTitle": "10. Specialized Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -947,7 +947,7 @@ window.cppAllTopics = {
         {
           "id": 99,
           "title": "Order statistic tree",
-          "unitTitle": "Specialized Trees",
+          "unitTitle": "10. Specialized Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -956,7 +956,7 @@ window.cppAllTopics = {
         {
           "id": 100,
           "title": "Cartesian tree",
-          "unitTitle": "Specialized Trees",
+          "unitTitle": "10. Specialized Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -965,7 +965,7 @@ window.cppAllTopics = {
         {
           "id": 101,
           "title": "Tournament tree",
-          "unitTitle": "Specialized Trees",
+          "unitTitle": "10. Specialized Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -975,12 +975,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "11",
-      "unitName": "String Trees",
+      "unitName": "11. String Trees",
       "lessons": [
         {
           "id": 102,
           "title": "Trie",
-          "unitTitle": "String Trees",
+          "unitTitle": "11. String Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -989,7 +989,7 @@ window.cppAllTopics = {
         {
           "id": 103,
           "title": "Compressed trie",
-          "unitTitle": "String Trees",
+          "unitTitle": "11. String Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -998,7 +998,7 @@ window.cppAllTopics = {
         {
           "id": 104,
           "title": "Radix tree",
-          "unitTitle": "String Trees",
+          "unitTitle": "11. String Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1007,7 +1007,7 @@ window.cppAllTopics = {
         {
           "id": 105,
           "title": "Patricia trie",
-          "unitTitle": "String Trees",
+          "unitTitle": "11. String Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1016,7 +1016,7 @@ window.cppAllTopics = {
         {
           "id": 106,
           "title": "Suffix tree",
-          "unitTitle": "String Trees",
+          "unitTitle": "11. String Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1025,7 +1025,7 @@ window.cppAllTopics = {
         {
           "id": 107,
           "title": "Suffix automaton",
-          "unitTitle": "String Trees",
+          "unitTitle": "11. String Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1034,7 +1034,7 @@ window.cppAllTopics = {
         {
           "id": 108,
           "title": "DAWG",
-          "unitTitle": "String Trees",
+          "unitTitle": "11. String Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1043,7 +1043,7 @@ window.cppAllTopics = {
         {
           "id": 109,
           "title": "Aho\u2013Corasick automaton",
-          "unitTitle": "String Trees",
+          "unitTitle": "11. String Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1052,7 +1052,7 @@ window.cppAllTopics = {
         {
           "id": 110,
           "title": "Heaps and Priority Structures",
-          "unitTitle": "String Trees",
+          "unitTitle": "11. String Trees",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1062,12 +1062,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "12",
-      "unitName": "Heap Structures",
+      "unitName": "12. Heap Structures",
       "lessons": [
         {
           "id": 111,
           "title": "Binary heap",
-          "unitTitle": "Heap Structures",
+          "unitTitle": "12. Heap Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1076,7 +1076,7 @@ window.cppAllTopics = {
         {
           "id": 112,
           "title": "d-ary heap",
-          "unitTitle": "Heap Structures",
+          "unitTitle": "12. Heap Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1085,7 +1085,7 @@ window.cppAllTopics = {
         {
           "id": 113,
           "title": "Binomial heap",
-          "unitTitle": "Heap Structures",
+          "unitTitle": "12. Heap Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1094,7 +1094,7 @@ window.cppAllTopics = {
         {
           "id": 114,
           "title": "Fibonacci heap",
-          "unitTitle": "Heap Structures",
+          "unitTitle": "12. Heap Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1103,7 +1103,7 @@ window.cppAllTopics = {
         {
           "id": 115,
           "title": "Pairing heap",
-          "unitTitle": "Heap Structures",
+          "unitTitle": "12. Heap Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1112,7 +1112,7 @@ window.cppAllTopics = {
         {
           "id": 116,
           "title": "Skew heap",
-          "unitTitle": "Heap Structures",
+          "unitTitle": "12. Heap Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1121,7 +1121,7 @@ window.cppAllTopics = {
         {
           "id": 117,
           "title": "Leftist heap",
-          "unitTitle": "Heap Structures",
+          "unitTitle": "12. Heap Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1130,7 +1130,7 @@ window.cppAllTopics = {
         {
           "id": 118,
           "title": "Soft heap",
-          "unitTitle": "Heap Structures",
+          "unitTitle": "12. Heap Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1139,7 +1139,7 @@ window.cppAllTopics = {
         {
           "id": 119,
           "title": "Brodal queue",
-          "unitTitle": "Heap Structures",
+          "unitTitle": "12. Heap Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1148,7 +1148,7 @@ window.cppAllTopics = {
         {
           "id": 120,
           "title": "Graph Data Structures",
-          "unitTitle": "Heap Structures",
+          "unitTitle": "12. Heap Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1158,12 +1158,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "13",
-      "unitName": "Graph Representations",
+      "unitName": "13. Graph Representations",
       "lessons": [
         {
           "id": 121,
           "title": "Adjacency matrix",
-          "unitTitle": "Graph Representations",
+          "unitTitle": "13. Graph Representations",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1172,7 +1172,7 @@ window.cppAllTopics = {
         {
           "id": 122,
           "title": "Adjacency list",
-          "unitTitle": "Graph Representations",
+          "unitTitle": "13. Graph Representations",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1181,7 +1181,7 @@ window.cppAllTopics = {
         {
           "id": 123,
           "title": "Edge list",
-          "unitTitle": "Graph Representations",
+          "unitTitle": "13. Graph Representations",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1190,7 +1190,7 @@ window.cppAllTopics = {
         {
           "id": 124,
           "title": "Incidence matrix",
-          "unitTitle": "Graph Representations",
+          "unitTitle": "13. Graph Representations",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1199,7 +1199,7 @@ window.cppAllTopics = {
         {
           "id": 125,
           "title": "Compressed sparse row",
-          "unitTitle": "Graph Representations",
+          "unitTitle": "13. Graph Representations",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1208,7 +1208,7 @@ window.cppAllTopics = {
         {
           "id": 126,
           "title": "Compressed sparse column",
-          "unitTitle": "Graph Representations",
+          "unitTitle": "13. Graph Representations",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1218,12 +1218,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "14",
-      "unitName": "Graph Traversal",
+      "unitName": "14. Graph Traversal",
       "lessons": [
         {
           "id": 127,
           "title": "Breadth-first search",
-          "unitTitle": "Graph Traversal",
+          "unitTitle": "14. Graph Traversal",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1232,7 +1232,7 @@ window.cppAllTopics = {
         {
           "id": 128,
           "title": "Depth-first search",
-          "unitTitle": "Graph Traversal",
+          "unitTitle": "14. Graph Traversal",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1241,7 +1241,7 @@ window.cppAllTopics = {
         {
           "id": 129,
           "title": "Iterative deepening DFS",
-          "unitTitle": "Graph Traversal",
+          "unitTitle": "14. Graph Traversal",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1250,7 +1250,7 @@ window.cppAllTopics = {
         {
           "id": 130,
           "title": "Bidirectional search",
-          "unitTitle": "Graph Traversal",
+          "unitTitle": "14. Graph Traversal",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1259,7 +1259,7 @@ window.cppAllTopics = {
         {
           "id": 131,
           "title": "Graph Algorithms",
-          "unitTitle": "Graph Traversal",
+          "unitTitle": "14. Graph Traversal",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1269,12 +1269,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "15",
-      "unitName": "Connectivity",
+      "unitName": "15. Connectivity",
       "lessons": [
         {
           "id": 132,
           "title": "Connected components",
-          "unitTitle": "Connectivity",
+          "unitTitle": "15. Connectivity",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1283,7 +1283,7 @@ window.cppAllTopics = {
         {
           "id": 133,
           "title": "Strongly connected components",
-          "unitTitle": "Connectivity",
+          "unitTitle": "15. Connectivity",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1292,7 +1292,7 @@ window.cppAllTopics = {
         {
           "id": 134,
           "title": "Kosaraju algorithm",
-          "unitTitle": "Connectivity",
+          "unitTitle": "15. Connectivity",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1301,7 +1301,7 @@ window.cppAllTopics = {
         {
           "id": 135,
           "title": "Tarjan algorithm",
-          "unitTitle": "Connectivity",
+          "unitTitle": "15. Connectivity",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1310,7 +1310,7 @@ window.cppAllTopics = {
         {
           "id": 136,
           "title": "Bridge finding",
-          "unitTitle": "Connectivity",
+          "unitTitle": "15. Connectivity",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1319,7 +1319,7 @@ window.cppAllTopics = {
         {
           "id": 137,
           "title": "Articulation points",
-          "unitTitle": "Connectivity",
+          "unitTitle": "15. Connectivity",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1328,7 +1328,7 @@ window.cppAllTopics = {
         {
           "id": 138,
           "title": "Biconnected components",
-          "unitTitle": "Connectivity",
+          "unitTitle": "15. Connectivity",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1338,12 +1338,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "16",
-      "unitName": "Shortest Path",
+      "unitName": "16. Shortest Path",
       "lessons": [
         {
           "id": 139,
           "title": "Dijkstra algorithm",
-          "unitTitle": "Shortest Path",
+          "unitTitle": "16. Shortest Path",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1352,7 +1352,7 @@ window.cppAllTopics = {
         {
           "id": 140,
           "title": "Bellman\u2013Ford",
-          "unitTitle": "Shortest Path",
+          "unitTitle": "16. Shortest Path",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1361,7 +1361,7 @@ window.cppAllTopics = {
         {
           "id": 141,
           "title": "Floyd\u2013Warshall",
-          "unitTitle": "Shortest Path",
+          "unitTitle": "16. Shortest Path",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1370,7 +1370,7 @@ window.cppAllTopics = {
         {
           "id": 142,
           "title": "Johnson algorithm",
-          "unitTitle": "Shortest Path",
+          "unitTitle": "16. Shortest Path",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1379,7 +1379,7 @@ window.cppAllTopics = {
         {
           "id": 143,
           "title": "A* search",
-          "unitTitle": "Shortest Path",
+          "unitTitle": "16. Shortest Path",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1388,7 +1388,7 @@ window.cppAllTopics = {
         {
           "id": 144,
           "title": "Dial\u2019s algorithm",
-          "unitTitle": "Shortest Path",
+          "unitTitle": "16. Shortest Path",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1397,7 +1397,7 @@ window.cppAllTopics = {
         {
           "id": 145,
           "title": "SPFA",
-          "unitTitle": "Shortest Path",
+          "unitTitle": "16. Shortest Path",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1406,7 +1406,7 @@ window.cppAllTopics = {
         {
           "id": 146,
           "title": "Multi-source BFS",
-          "unitTitle": "Shortest Path",
+          "unitTitle": "16. Shortest Path",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1416,12 +1416,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "17",
-      "unitName": "Minimum Spanning Tree",
+      "unitName": "17. Minimum Spanning Tree",
       "lessons": [
         {
           "id": 147,
           "title": "Kruskal algorithm",
-          "unitTitle": "Minimum Spanning Tree",
+          "unitTitle": "17. Minimum Spanning Tree",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1430,7 +1430,7 @@ window.cppAllTopics = {
         {
           "id": 148,
           "title": "Prim algorithm",
-          "unitTitle": "Minimum Spanning Tree",
+          "unitTitle": "17. Minimum Spanning Tree",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1439,7 +1439,7 @@ window.cppAllTopics = {
         {
           "id": 149,
           "title": "Bor\u016fvka algorithm",
-          "unitTitle": "Minimum Spanning Tree",
+          "unitTitle": "17. Minimum Spanning Tree",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1448,7 +1448,7 @@ window.cppAllTopics = {
         {
           "id": 150,
           "title": "Reverse-delete algorithm",
-          "unitTitle": "Minimum Spanning Tree",
+          "unitTitle": "17. Minimum Spanning Tree",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1458,12 +1458,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "18",
-      "unitName": "Flow Algorithms",
+      "unitName": "18. Flow Algorithms",
       "lessons": [
         {
           "id": 151,
           "title": "Ford\u2013Fulkerson",
-          "unitTitle": "Flow Algorithms",
+          "unitTitle": "18. Flow Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1472,7 +1472,7 @@ window.cppAllTopics = {
         {
           "id": 152,
           "title": "Edmonds\u2013Karp",
-          "unitTitle": "Flow Algorithms",
+          "unitTitle": "18. Flow Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1481,7 +1481,7 @@ window.cppAllTopics = {
         {
           "id": 153,
           "title": "Dinic algorithm",
-          "unitTitle": "Flow Algorithms",
+          "unitTitle": "18. Flow Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1490,7 +1490,7 @@ window.cppAllTopics = {
         {
           "id": 154,
           "title": "Push-relabel",
-          "unitTitle": "Flow Algorithms",
+          "unitTitle": "18. Flow Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1499,7 +1499,7 @@ window.cppAllTopics = {
         {
           "id": 155,
           "title": "Min-cost max-flow",
-          "unitTitle": "Flow Algorithms",
+          "unitTitle": "18. Flow Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1508,7 +1508,7 @@ window.cppAllTopics = {
         {
           "id": 156,
           "title": "Circulation with demands",
-          "unitTitle": "Flow Algorithms",
+          "unitTitle": "18. Flow Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1518,12 +1518,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "19",
-      "unitName": "Matching Algorithms",
+      "unitName": "19. Matching Algorithms",
       "lessons": [
         {
           "id": 157,
           "title": "Bipartite matching",
-          "unitTitle": "Matching Algorithms",
+          "unitTitle": "19. Matching Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1532,7 +1532,7 @@ window.cppAllTopics = {
         {
           "id": 158,
           "title": "Hungarian algorithm",
-          "unitTitle": "Matching Algorithms",
+          "unitTitle": "19. Matching Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1541,7 +1541,7 @@ window.cppAllTopics = {
         {
           "id": 159,
           "title": "Hopcroft\u2013Karp",
-          "unitTitle": "Matching Algorithms",
+          "unitTitle": "19. Matching Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1550,7 +1550,7 @@ window.cppAllTopics = {
         {
           "id": 160,
           "title": "Blossom algorithm",
-          "unitTitle": "Matching Algorithms",
+          "unitTitle": "19. Matching Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1560,12 +1560,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "20",
-      "unitName": "Graph Theory Algorithms",
+      "unitName": "20. Graph Theory Algorithms",
       "lessons": [
         {
           "id": 161,
           "title": "Topological sorting",
-          "unitTitle": "Graph Theory Algorithms",
+          "unitTitle": "20. Graph Theory Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1574,7 +1574,7 @@ window.cppAllTopics = {
         {
           "id": 162,
           "title": "Transitive closure",
-          "unitTitle": "Graph Theory Algorithms",
+          "unitTitle": "20. Graph Theory Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1583,7 +1583,7 @@ window.cppAllTopics = {
         {
           "id": 163,
           "title": "Eulerian paths",
-          "unitTitle": "Graph Theory Algorithms",
+          "unitTitle": "20. Graph Theory Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1592,7 +1592,7 @@ window.cppAllTopics = {
         {
           "id": 164,
           "title": "Hamiltonian paths",
-          "unitTitle": "Graph Theory Algorithms",
+          "unitTitle": "20. Graph Theory Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1601,7 +1601,7 @@ window.cppAllTopics = {
         {
           "id": 165,
           "title": "Graph coloring",
-          "unitTitle": "Graph Theory Algorithms",
+          "unitTitle": "20. Graph Theory Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1610,7 +1610,7 @@ window.cppAllTopics = {
         {
           "id": 166,
           "title": "Planarity testing",
-          "unitTitle": "Graph Theory Algorithms",
+          "unitTitle": "20. Graph Theory Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1619,7 +1619,7 @@ window.cppAllTopics = {
         {
           "id": 167,
           "title": "String Algorithms",
-          "unitTitle": "Graph Theory Algorithms",
+          "unitTitle": "20. Graph Theory Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1629,12 +1629,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "21",
-      "unitName": "Pattern Matching",
+      "unitName": "21. Pattern Matching",
       "lessons": [
         {
           "id": 168,
           "title": "Naive search",
-          "unitTitle": "Pattern Matching",
+          "unitTitle": "21. Pattern Matching",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1643,7 +1643,7 @@ window.cppAllTopics = {
         {
           "id": 169,
           "title": "Knuth\u2013Morris\u2013Pratt",
-          "unitTitle": "Pattern Matching",
+          "unitTitle": "21. Pattern Matching",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1652,7 +1652,7 @@ window.cppAllTopics = {
         {
           "id": 170,
           "title": "Boyer\u2013Moore",
-          "unitTitle": "Pattern Matching",
+          "unitTitle": "21. Pattern Matching",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1661,7 +1661,7 @@ window.cppAllTopics = {
         {
           "id": 171,
           "title": "Rabin\u2013Karp",
-          "unitTitle": "Pattern Matching",
+          "unitTitle": "21. Pattern Matching",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1670,7 +1670,7 @@ window.cppAllTopics = {
         {
           "id": 172,
           "title": "Z-algorithm",
-          "unitTitle": "Pattern Matching",
+          "unitTitle": "21. Pattern Matching",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1679,7 +1679,7 @@ window.cppAllTopics = {
         {
           "id": 173,
           "title": "Aho\u2013Corasick",
-          "unitTitle": "Pattern Matching",
+          "unitTitle": "21. Pattern Matching",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1689,12 +1689,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "22",
-      "unitName": "String Processing",
+      "unitName": "22. String Processing",
       "lessons": [
         {
           "id": 174,
           "title": "Longest common prefix",
-          "unitTitle": "String Processing",
+          "unitTitle": "22. String Processing",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1703,7 +1703,7 @@ window.cppAllTopics = {
         {
           "id": 175,
           "title": "Longest repeated substring",
-          "unitTitle": "String Processing",
+          "unitTitle": "22. String Processing",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1712,7 +1712,7 @@ window.cppAllTopics = {
         {
           "id": 176,
           "title": "Suffix arrays",
-          "unitTitle": "String Processing",
+          "unitTitle": "22. String Processing",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1721,7 +1721,7 @@ window.cppAllTopics = {
         {
           "id": 177,
           "title": "LCP arrays",
-          "unitTitle": "String Processing",
+          "unitTitle": "22. String Processing",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1730,7 +1730,7 @@ window.cppAllTopics = {
         {
           "id": 178,
           "title": "Burrows\u2013Wheeler transform",
-          "unitTitle": "String Processing",
+          "unitTitle": "22. String Processing",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1739,7 +1739,7 @@ window.cppAllTopics = {
         {
           "id": 179,
           "title": "Range Query Structures",
-          "unitTitle": "String Processing",
+          "unitTitle": "22. String Processing",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1749,12 +1749,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "23",
-      "unitName": "Range Query Techniques",
+      "unitName": "23. Range Query Techniques",
       "lessons": [
         {
           "id": 180,
           "title": "Prefix sums",
-          "unitTitle": "Range Query Techniques",
+          "unitTitle": "23. Range Query Techniques",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1763,7 +1763,7 @@ window.cppAllTopics = {
         {
           "id": 181,
           "title": "Difference arrays",
-          "unitTitle": "Range Query Techniques",
+          "unitTitle": "23. Range Query Techniques",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1772,7 +1772,7 @@ window.cppAllTopics = {
         {
           "id": 182,
           "title": "Sparse tables",
-          "unitTitle": "Range Query Techniques",
+          "unitTitle": "23. Range Query Techniques",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1781,7 +1781,7 @@ window.cppAllTopics = {
         {
           "id": 183,
           "title": "Segment trees",
-          "unitTitle": "Range Query Techniques",
+          "unitTitle": "23. Range Query Techniques",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1790,7 +1790,7 @@ window.cppAllTopics = {
         {
           "id": 184,
           "title": "Fenwick trees",
-          "unitTitle": "Range Query Techniques",
+          "unitTitle": "23. Range Query Techniques",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1799,7 +1799,7 @@ window.cppAllTopics = {
         {
           "id": 185,
           "title": "Mo\u2019s algorithm",
-          "unitTitle": "Range Query Techniques",
+          "unitTitle": "23. Range Query Techniques",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1808,7 +1808,7 @@ window.cppAllTopics = {
         {
           "id": 186,
           "title": "Wavelet tree",
-          "unitTitle": "Range Query Techniques",
+          "unitTitle": "23. Range Query Techniques",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1817,7 +1817,7 @@ window.cppAllTopics = {
         {
           "id": 187,
           "title": "Dynamic Programming",
-          "unitTitle": "Range Query Techniques",
+          "unitTitle": "23. Range Query Techniques",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1827,12 +1827,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "24",
-      "unitName": "Core DP",
+      "unitName": "24. Core DP",
       "lessons": [
         {
           "id": 188,
           "title": "Memoization",
-          "unitTitle": "Core DP",
+          "unitTitle": "24. Core DP",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1841,7 +1841,7 @@ window.cppAllTopics = {
         {
           "id": 189,
           "title": "Tabulation",
-          "unitTitle": "Core DP",
+          "unitTitle": "24. Core DP",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1850,7 +1850,7 @@ window.cppAllTopics = {
         {
           "id": 190,
           "title": "Bitmask DP",
-          "unitTitle": "Core DP",
+          "unitTitle": "24. Core DP",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1859,7 +1859,7 @@ window.cppAllTopics = {
         {
           "id": 191,
           "title": "Tree DP",
-          "unitTitle": "Core DP",
+          "unitTitle": "24. Core DP",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1868,7 +1868,7 @@ window.cppAllTopics = {
         {
           "id": 192,
           "title": "Digit DP",
-          "unitTitle": "Core DP",
+          "unitTitle": "24. Core DP",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1877,7 +1877,7 @@ window.cppAllTopics = {
         {
           "id": 193,
           "title": "Interval DP",
-          "unitTitle": "Core DP",
+          "unitTitle": "24. Core DP",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1886,7 +1886,7 @@ window.cppAllTopics = {
         {
           "id": 194,
           "title": "DP on graphs",
-          "unitTitle": "Core DP",
+          "unitTitle": "24. Core DP",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1896,12 +1896,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "25",
-      "unitName": "Advanced DP Optimizations",
+      "unitName": "25. Advanced DP Optimizations",
       "lessons": [
         {
           "id": 195,
           "title": "Divide and conquer DP",
-          "unitTitle": "Advanced DP Optimizations",
+          "unitTitle": "25. Advanced DP Optimizations",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1910,7 +1910,7 @@ window.cppAllTopics = {
         {
           "id": 196,
           "title": "Knuth optimization",
-          "unitTitle": "Advanced DP Optimizations",
+          "unitTitle": "25. Advanced DP Optimizations",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1919,7 +1919,7 @@ window.cppAllTopics = {
         {
           "id": 197,
           "title": "Convex hull trick",
-          "unitTitle": "Advanced DP Optimizations",
+          "unitTitle": "25. Advanced DP Optimizations",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1928,7 +1928,7 @@ window.cppAllTopics = {
         {
           "id": 198,
           "title": "Li Chao tree",
-          "unitTitle": "Advanced DP Optimizations",
+          "unitTitle": "25. Advanced DP Optimizations",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1937,7 +1937,7 @@ window.cppAllTopics = {
         {
           "id": 199,
           "title": "Monotonic queue optimization",
-          "unitTitle": "Advanced DP Optimizations",
+          "unitTitle": "25. Advanced DP Optimizations",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1946,7 +1946,7 @@ window.cppAllTopics = {
         {
           "id": 200,
           "title": "Alien trick",
-          "unitTitle": "Advanced DP Optimizations",
+          "unitTitle": "25. Advanced DP Optimizations",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1955,7 +1955,7 @@ window.cppAllTopics = {
         {
           "id": 201,
           "title": "SMAWK algorithm",
-          "unitTitle": "Advanced DP Optimizations",
+          "unitTitle": "25. Advanced DP Optimizations",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1964,7 +1964,7 @@ window.cppAllTopics = {
         {
           "id": 202,
           "title": "Greedy Algorithms",
-          "unitTitle": "Advanced DP Optimizations",
+          "unitTitle": "25. Advanced DP Optimizations",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1973,7 +1973,7 @@ window.cppAllTopics = {
         {
           "id": 203,
           "title": "Activity selection",
-          "unitTitle": "Advanced DP Optimizations",
+          "unitTitle": "25. Advanced DP Optimizations",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1982,7 +1982,7 @@ window.cppAllTopics = {
         {
           "id": 204,
           "title": "Huffman coding",
-          "unitTitle": "Advanced DP Optimizations",
+          "unitTitle": "25. Advanced DP Optimizations",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -1991,7 +1991,7 @@ window.cppAllTopics = {
         {
           "id": 205,
           "title": "Interval scheduling",
-          "unitTitle": "Advanced DP Optimizations",
+          "unitTitle": "25. Advanced DP Optimizations",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2000,7 +2000,7 @@ window.cppAllTopics = {
         {
           "id": 206,
           "title": "Matroid theory",
-          "unitTitle": "Advanced DP Optimizations",
+          "unitTitle": "25. Advanced DP Optimizations",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2009,7 +2009,7 @@ window.cppAllTopics = {
         {
           "id": 207,
           "title": "Divide and Conquer",
-          "unitTitle": "Advanced DP Optimizations",
+          "unitTitle": "25. Advanced DP Optimizations",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2018,7 +2018,7 @@ window.cppAllTopics = {
         {
           "id": 208,
           "title": "Binary search",
-          "unitTitle": "Advanced DP Optimizations",
+          "unitTitle": "25. Advanced DP Optimizations",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2027,7 +2027,7 @@ window.cppAllTopics = {
         {
           "id": 209,
           "title": "Merge sort",
-          "unitTitle": "Advanced DP Optimizations",
+          "unitTitle": "25. Advanced DP Optimizations",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2036,7 +2036,7 @@ window.cppAllTopics = {
         {
           "id": 210,
           "title": "Quick sort",
-          "unitTitle": "Advanced DP Optimizations",
+          "unitTitle": "25. Advanced DP Optimizations",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2045,7 +2045,7 @@ window.cppAllTopics = {
         {
           "id": 211,
           "title": "Karatsuba multiplication",
-          "unitTitle": "Advanced DP Optimizations",
+          "unitTitle": "25. Advanced DP Optimizations",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2054,7 +2054,7 @@ window.cppAllTopics = {
         {
           "id": 212,
           "title": "Strassen algorithm",
-          "unitTitle": "Advanced DP Optimizations",
+          "unitTitle": "25. Advanced DP Optimizations",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2063,7 +2063,7 @@ window.cppAllTopics = {
         {
           "id": 213,
           "title": "FFT",
-          "unitTitle": "Advanced DP Optimizations",
+          "unitTitle": "25. Advanced DP Optimizations",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2072,7 +2072,7 @@ window.cppAllTopics = {
         {
           "id": 214,
           "title": "NTT",
-          "unitTitle": "Advanced DP Optimizations",
+          "unitTitle": "25. Advanced DP Optimizations",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2081,7 +2081,7 @@ window.cppAllTopics = {
         {
           "id": 215,
           "title": "Computational Geometry",
-          "unitTitle": "Advanced DP Optimizations",
+          "unitTitle": "25. Advanced DP Optimizations",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2091,12 +2091,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "26",
-      "unitName": "Geometry Structures",
+      "unitName": "26. Geometry Structures",
       "lessons": [
         {
           "id": 216,
           "title": "KD-tree",
-          "unitTitle": "Geometry Structures",
+          "unitTitle": "26. Geometry Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2105,7 +2105,7 @@ window.cppAllTopics = {
         {
           "id": 217,
           "title": "Range tree",
-          "unitTitle": "Geometry Structures",
+          "unitTitle": "26. Geometry Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2114,7 +2114,7 @@ window.cppAllTopics = {
         {
           "id": 218,
           "title": "BSP tree",
-          "unitTitle": "Geometry Structures",
+          "unitTitle": "26. Geometry Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2123,7 +2123,7 @@ window.cppAllTopics = {
         {
           "id": 219,
           "title": "Quad tree",
-          "unitTitle": "Geometry Structures",
+          "unitTitle": "26. Geometry Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2132,7 +2132,7 @@ window.cppAllTopics = {
         {
           "id": 220,
           "title": "R-tree",
-          "unitTitle": "Geometry Structures",
+          "unitTitle": "26. Geometry Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2142,12 +2142,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "27",
-      "unitName": "Geometry Algorithms",
+      "unitName": "27. Geometry Algorithms",
       "lessons": [
         {
           "id": 221,
           "title": "Convex hull",
-          "unitTitle": "Geometry Algorithms",
+          "unitTitle": "27. Geometry Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2156,7 +2156,7 @@ window.cppAllTopics = {
         {
           "id": 222,
           "title": "Graham scan",
-          "unitTitle": "Geometry Algorithms",
+          "unitTitle": "27. Geometry Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2165,7 +2165,7 @@ window.cppAllTopics = {
         {
           "id": 223,
           "title": "Jarvis march",
-          "unitTitle": "Geometry Algorithms",
+          "unitTitle": "27. Geometry Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2174,7 +2174,7 @@ window.cppAllTopics = {
         {
           "id": 224,
           "title": "Line sweep",
-          "unitTitle": "Geometry Algorithms",
+          "unitTitle": "27. Geometry Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2183,7 +2183,7 @@ window.cppAllTopics = {
         {
           "id": 225,
           "title": "Closest pair of points",
-          "unitTitle": "Geometry Algorithms",
+          "unitTitle": "27. Geometry Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2192,7 +2192,7 @@ window.cppAllTopics = {
         {
           "id": 226,
           "title": "Delaunay triangulation",
-          "unitTitle": "Geometry Algorithms",
+          "unitTitle": "27. Geometry Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2201,7 +2201,7 @@ window.cppAllTopics = {
         {
           "id": 227,
           "title": "Voronoi diagrams",
-          "unitTitle": "Geometry Algorithms",
+          "unitTitle": "27. Geometry Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2210,7 +2210,7 @@ window.cppAllTopics = {
         {
           "id": 228,
           "title": "Randomized Algorithms",
-          "unitTitle": "Geometry Algorithms",
+          "unitTitle": "27. Geometry Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2219,7 +2219,7 @@ window.cppAllTopics = {
         {
           "id": 229,
           "title": "Randomized quicksort",
-          "unitTitle": "Geometry Algorithms",
+          "unitTitle": "27. Geometry Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2228,7 +2228,7 @@ window.cppAllTopics = {
         {
           "id": 230,
           "title": "Randomized selection",
-          "unitTitle": "Geometry Algorithms",
+          "unitTitle": "27. Geometry Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2237,7 +2237,7 @@ window.cppAllTopics = {
         {
           "id": 231,
           "title": "Reservoir sampling",
-          "unitTitle": "Geometry Algorithms",
+          "unitTitle": "27. Geometry Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2246,7 +2246,7 @@ window.cppAllTopics = {
         {
           "id": 232,
           "title": "Skip lists",
-          "unitTitle": "Geometry Algorithms",
+          "unitTitle": "27. Geometry Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2255,7 +2255,7 @@ window.cppAllTopics = {
         {
           "id": 233,
           "title": "Monte Carlo algorithms",
-          "unitTitle": "Geometry Algorithms",
+          "unitTitle": "27. Geometry Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2264,7 +2264,7 @@ window.cppAllTopics = {
         {
           "id": 234,
           "title": "Las Vegas algorithms",
-          "unitTitle": "Geometry Algorithms",
+          "unitTitle": "27. Geometry Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2273,7 +2273,7 @@ window.cppAllTopics = {
         {
           "id": 235,
           "title": "Approximation Algorithms",
-          "unitTitle": "Geometry Algorithms",
+          "unitTitle": "27. Geometry Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2282,7 +2282,7 @@ window.cppAllTopics = {
         {
           "id": 236,
           "title": "Greedy approximation",
-          "unitTitle": "Geometry Algorithms",
+          "unitTitle": "27. Geometry Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2291,7 +2291,7 @@ window.cppAllTopics = {
         {
           "id": 237,
           "title": "Local search",
-          "unitTitle": "Geometry Algorithms",
+          "unitTitle": "27. Geometry Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2300,7 +2300,7 @@ window.cppAllTopics = {
         {
           "id": 238,
           "title": "PTAS",
-          "unitTitle": "Geometry Algorithms",
+          "unitTitle": "27. Geometry Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2309,7 +2309,7 @@ window.cppAllTopics = {
         {
           "id": 239,
           "title": "FPTAS",
-          "unitTitle": "Geometry Algorithms",
+          "unitTitle": "27. Geometry Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2318,7 +2318,7 @@ window.cppAllTopics = {
         {
           "id": 240,
           "title": "Advanced Topics",
-          "unitTitle": "Geometry Algorithms",
+          "unitTitle": "27. Geometry Algorithms",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2328,12 +2328,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "28",
-      "unitName": "Advanced Data Structures",
+      "unitName": "28. Advanced Data Structures",
       "lessons": [
         {
           "id": 241,
           "title": "Persistent data structures",
-          "unitTitle": "Advanced Data Structures",
+          "unitTitle": "28. Advanced Data Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2342,7 +2342,7 @@ window.cppAllTopics = {
         {
           "id": 242,
           "title": "Retroactive data structures",
-          "unitTitle": "Advanced Data Structures",
+          "unitTitle": "28. Advanced Data Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2351,7 +2351,7 @@ window.cppAllTopics = {
         {
           "id": 243,
           "title": "Functional data structures",
-          "unitTitle": "Advanced Data Structures",
+          "unitTitle": "28. Advanced Data Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2360,7 +2360,7 @@ window.cppAllTopics = {
         {
           "id": 244,
           "title": "Succinct data structures",
-          "unitTitle": "Advanced Data Structures",
+          "unitTitle": "28. Advanced Data Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2369,7 +2369,7 @@ window.cppAllTopics = {
         {
           "id": 245,
           "title": "Compressed data structures",
-          "unitTitle": "Advanced Data Structures",
+          "unitTitle": "28. Advanced Data Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2379,12 +2379,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "29",
-      "unitName": "Advanced Graph Theory",
+      "unitName": "29. Advanced Graph Theory",
       "lessons": [
         {
           "id": 246,
           "title": "Tree decomposition",
-          "unitTitle": "Advanced Graph Theory",
+          "unitTitle": "29. Advanced Graph Theory",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2393,7 +2393,7 @@ window.cppAllTopics = {
         {
           "id": 247,
           "title": "Centroid decomposition",
-          "unitTitle": "Advanced Graph Theory",
+          "unitTitle": "29. Advanced Graph Theory",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2402,7 +2402,7 @@ window.cppAllTopics = {
         {
           "id": 248,
           "title": "Heavy-light decomposition",
-          "unitTitle": "Advanced Graph Theory",
+          "unitTitle": "29. Advanced Graph Theory",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2411,7 +2411,7 @@ window.cppAllTopics = {
         {
           "id": 249,
           "title": "Dynamic connectivity",
-          "unitTitle": "Advanced Graph Theory",
+          "unitTitle": "29. Advanced Graph Theory",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2420,7 +2420,7 @@ window.cppAllTopics = {
         {
           "id": 250,
           "title": "Link-cut trees",
-          "unitTitle": "Advanced Graph Theory",
+          "unitTitle": "29. Advanced Graph Theory",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2429,7 +2429,7 @@ window.cppAllTopics = {
         {
           "id": 251,
           "title": "Euler tour trees",
-          "unitTitle": "Advanced Graph Theory",
+          "unitTitle": "29. Advanced Graph Theory",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2439,12 +2439,12 @@ window.cppAllTopics = {
     },
     {
       "unitId": "30",
-      "unitName": "Advanced String Structures",
+      "unitName": "30. Advanced String Structures",
       "lessons": [
         {
           "id": 252,
           "title": "Palindromic tree (Eertree)",
-          "unitTitle": "Advanced String Structures",
+          "unitTitle": "30. Advanced String Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2453,7 +2453,7 @@ window.cppAllTopics = {
         {
           "id": 253,
           "title": "Rope",
-          "unitTitle": "Advanced String Structures",
+          "unitTitle": "30. Advanced String Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2462,7 +2462,7 @@ window.cppAllTopics = {
         {
           "id": 254,
           "title": "Piece table",
-          "unitTitle": "Advanced String Structures",
+          "unitTitle": "30. Advanced String Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2471,7 +2471,7 @@ window.cppAllTopics = {
         {
           "id": 255,
           "title": "Gap buffer",
-          "unitTitle": "Advanced String Structures",
+          "unitTitle": "30. Advanced String Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2480,7 +2480,7 @@ window.cppAllTopics = {
         {
           "id": 256,
           "title": "Parallel and External Algorithms",
-          "unitTitle": "Advanced String Structures",
+          "unitTitle": "30. Advanced String Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2489,7 +2489,7 @@ window.cppAllTopics = {
         {
           "id": 257,
           "title": "Parallel prefix sum",
-          "unitTitle": "Advanced String Structures",
+          "unitTitle": "30. Advanced String Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2498,7 +2498,7 @@ window.cppAllTopics = {
         {
           "id": 258,
           "title": "Parallel BFS",
-          "unitTitle": "Advanced String Structures",
+          "unitTitle": "30. Advanced String Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2507,7 +2507,7 @@ window.cppAllTopics = {
         {
           "id": 259,
           "title": "External merge sort",
-          "unitTitle": "Advanced String Structures",
+          "unitTitle": "30. Advanced String Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2516,7 +2516,7 @@ window.cppAllTopics = {
         {
           "id": 260,
           "title": "Cache-oblivious algorithms",
-          "unitTitle": "Advanced String Structures",
+          "unitTitle": "30. Advanced String Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2525,7 +2525,7 @@ window.cppAllTopics = {
         {
           "id": 261,
           "title": "Specialized Algorithmic Paradigms",
-          "unitTitle": "Advanced String Structures",
+          "unitTitle": "30. Advanced String Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2534,7 +2534,7 @@ window.cppAllTopics = {
         {
           "id": 262,
           "title": "Branch and bound",
-          "unitTitle": "Advanced String Structures",
+          "unitTitle": "30. Advanced String Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2543,7 +2543,7 @@ window.cppAllTopics = {
         {
           "id": 263,
           "title": "Meet in the middle",
-          "unitTitle": "Advanced String Structures",
+          "unitTitle": "30. Advanced String Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2552,7 +2552,7 @@ window.cppAllTopics = {
         {
           "id": 264,
           "title": "Backtracking",
-          "unitTitle": "Advanced String Structures",
+          "unitTitle": "30. Advanced String Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2561,7 +2561,7 @@ window.cppAllTopics = {
         {
           "id": 265,
           "title": "Simulated annealing",
-          "unitTitle": "Advanced String Structures",
+          "unitTitle": "30. Advanced String Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
@@ -2570,7 +2570,7 @@ window.cppAllTopics = {
         {
           "id": 266,
           "title": "Genetic algorithms",
-          "unitTitle": "Advanced String Structures",
+          "unitTitle": "30. Advanced String Structures",
           "xp": 15,
           "type": "lesson",
           "difficulty": "beginner",
