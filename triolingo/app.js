@@ -1210,15 +1210,20 @@ function renderMarkdownContent(text) {
 
 function renderLessonContent() {
   const lessonText = currentLesson.lessonText || '';
-  const hasContent = lessonText && lessonText.length > 10;
+  const hasText = lessonText && lessonText.length > 10;
+  const hasQuestions = currentLesson.questions && currentLesson.questions.length > 0;
 
   return `
     <div class="lesson-view">
       <div class="lesson-content">
         <h2 class="lesson-title">${currentLesson.title}</h2>
-        ${hasContent ? `
+        ${hasText ? `
           <div class="lesson-text-content">
             ${renderMarkdownContent(lessonText)}
+          </div>
+        ` : hasQuestions ? `
+          <div class="lesson-text-content">
+            <p>Ready to practice with ${currentLesson.questions.length} questions!</p>
           </div>
         ` : '<p>No lesson content available</p>'}
       </div>
