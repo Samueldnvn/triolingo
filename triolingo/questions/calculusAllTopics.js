@@ -6,7 +6,7 @@ window.calculusAllTopics = {
   "units": [
     {
       "unitId": "1",
-      "unitName": "Limits",
+      "unitName": "1. Limits",
       "lessons": [
         {
           "id": "1-1",
@@ -416,7 +416,7 @@ window.calculusAllTopics = {
     },
     {
       "unitId": "2",
-      "unitName": "Derivatives",
+      "unitName": "2. Derivatives",
       "lessons": [
         {
           "id": "2-1",
@@ -1684,7 +1684,7 @@ window.calculusAllTopics = {
     },
     {
       "unitId": "3",
-      "unitName": "Integration",
+      "unitName": "3. Integration",
       "lessons": [
         {
           "id": "3-1",
@@ -2105,7 +2105,7 @@ window.calculusAllTopics = {
     },
     {
       "unitId": "4",
-      "unitName": "Applications",
+      "unitName": "4. Applications",
       "lessons": [
         {
           "id": "4-1",
@@ -2520,7 +2520,7 @@ window.calculusAllTopics = {
     },
     {
       "unitId": "5",
-      "unitName": "Integration Techniques",
+      "unitName": "5. Integration Techniques",
       "lessons": [
         {
           "id": "5-1",
@@ -3563,7 +3563,7 @@ window.calculusAllTopics = {
     },
     {
       "unitId": "6",
-      "unitName": "Applications of Integrals",
+      "unitName": "6. Applications of Integrals",
       "lessons": [
         {
           "id": "6-1",
@@ -4426,7 +4426,7 @@ window.calculusAllTopics = {
     },
     {
       "unitId": "7",
-      "unitName": "Sequences & Series",
+      "unitName": "7. Sequences & Series",
       "lessons": [
         {
           "id": "11-1",
@@ -4472,7 +4472,7 @@ window.calculusAllTopics = {
     },
     {
       "unitId": "8",
-      "unitName": "Vectors & Geometry",
+      "unitName": "8. Vectors & Geometry",
       "lessons": [
         {
           "id": "12-1",
@@ -4494,7 +4494,7 @@ window.calculusAllTopics = {
     },
     {
       "unitId": "9",
-      "unitName": "Vector-Valued Functions",
+      "unitName": "9. Vector-Valued Functions",
       "lessons": [
         {
           "id": "13-1",
@@ -4516,7 +4516,7 @@ window.calculusAllTopics = {
     },
     {
       "unitId": "10",
-      "unitName": "Multivariable Functions",
+      "unitName": "10. Multivariable Functions",
       "lessons": [
         {
           "id": "14-1",
@@ -4562,7 +4562,7 @@ window.calculusAllTopics = {
     },
     {
       "unitId": "11",
-      "unitName": "Multivariable Optimization",
+      "unitName": "11. Multivariable Optimization",
       "lessons": [
         {
           "id": "15-1",
@@ -4584,7 +4584,7 @@ window.calculusAllTopics = {
     },
     {
       "unitId": "12",
-      "unitName": "Multiple Integrals",
+      "unitName": "12. Multiple Integrals",
       "lessons": [
         {
           "id": "16-1",
@@ -4630,7 +4630,7 @@ window.calculusAllTopics = {
     },
     {
       "unitId": "13",
-      "unitName": "Vector Calculus",
+      "unitName": "13. Vector Calculus",
       "lessons": [
         {
           "id": "17-1",
@@ -4668,7 +4668,7 @@ window.calculusAllTopics = {
     },
     {
       "unitId": "14",
-      "unitName": "Major Theorems",
+      "unitName": "14. Major Theorems",
       "lessons": [
         {
           "id": "18-1",
