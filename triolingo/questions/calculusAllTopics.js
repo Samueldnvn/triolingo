@@ -5821,20 +5821,462 @@ window.calculusAllTopics = {
       "unitName": "8. Vectors & Geometry",
       "lessons": [
         {
-          "id": "12-1",
-          "title": "Vectors in 3D, dot product, and cross product",
-          "xp": 0,
+          "id": "8-1",
+          "title": "Vectors in 2D and 3D",
+          "xp": 90,
           "type": "lesson",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Vectors in 2D and 3D\n\nVectors are quantities with both magnitude and direction.\n\n## Vector Notation:\n\n**2D:** v = \u2329v\u2081, v\u2082\u232a or v = v\u2081i + v\u2082j\n**3D:** v = \u2329v\u2081, v\u2082, v\u2083\u232a or v = v\u2081i + v\u2082j + v\u2083k\n\nWhere i = \u23291,0,0\u232a, j = \u23290,1,0\u232a, k = \u23290,0,1\u232a\n\n## Vector Operations:\n\n**Addition:** u + v = \u2329u\u2081+v\u2081, u\u2082+v\u2082\u232a\n\n**Scalar Multiplication:** cu = \u2329cu\u2081, cu\u2082\u232a\n\n**Magnitude:** |v| = \u221a(v\u2081\u00b2 + v\u2082\u00b2 + v\u2083\u00b2)\n\n**Unit Vector:** u = v/|v| (a vector with length 1)\n\n## Standard Unit Vectors:\n\n- i = \u23291,0,0\u232a points along x-axis\n- j = \u23290,1,0\u232a points along y-axis  \n- k = \u23290,0,1\u232a points along z-axis\n\n## Examples:\n\nIf u = \u23293,4\u232a, then |u| = \u221a(9+16) = 5\nUnit vector in direction of u: \u23293/5, 4/5\u232a",
+          "questions": [
+            {
+              "id": "calc_u8_l1_q1",
+              "type": "typing",
+              "question": "What is a vector?",
+              "correctAnswer": [
+                "A quantity with magnitude and direction",
+                "Magnitude and direction"
+              ],
+              "xp": 5,
+              "explanation": "Answer: A quantity with magnitude and direction"
+            },
+            {
+              "id": "calc_u8_l1_q2",
+              "type": "typing",
+              "question": "What are the components of v = 3i + 4j?",
+              "correctAnswer": [
+                "3, 4",
+                "(3, 4)",
+                "<3, 4>"
+              ],
+              "xp": 4,
+              "explanation": "Answer: 3, 4"
+            },
+            {
+              "id": "calc_u8_l1_q3",
+              "type": "typing",
+              "question": "What is i + j?",
+              "correctAnswer": [
+                "<1, 1>",
+                "(1, 1)"
+              ],
+              "xp": 5,
+              "explanation": "i = \u23291,0,0\u232a, j = \u23290,1,0\u232a. i + j = \u23291,1,0\u232a"
+            },
+            {
+              "id": "calc_u8_l1_q4",
+              "type": "multiple-choice",
+              "question": "What is the magnitude of \u23293,4\u232a?",
+              "options": [
+                "5",
+                "7",
+                "\u221a7",
+                "25"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Magnitude: |v| = \u221a(v\u2081\u00b2 + v\u2082\u00b2 + v\u2083\u00b2). Use the distance formula."
+            },
+            {
+              "id": "calc_u8_l1_q5",
+              "type": "typing",
+              "question": "What is a unit vector?",
+              "correctAnswer": [
+                "A vector with magnitude 1",
+                "Length 1"
+              ],
+              "xp": 4,
+              "explanation": "Unit vector = v/|v|. Divide each component by the magnitude."
+            },
+            {
+              "id": "calc_u8_l1_q6",
+              "type": "multiple-choice",
+              "question": "What is 2\u27e81,3\u27e9?",
+              "options": [
+                "\u23292,6\u232a",
+                "\u23293,5\u232a",
+                "\u23291,3\u232a",
+                "\u23292,3\u232a"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Answer: \u23292,6\u232a"
+            },
+            {
+              "id": "calc_u8_l1_q7",
+              "type": "typing",
+              "question": "What is \u23291,2\u232a + \u23293,4\u232a?",
+              "correctAnswer": [
+                "<4, 6>",
+                "(4, 6)"
+              ],
+              "xp": 5,
+              "explanation": "Answer: <4, 6>"
+            },
+            {
+              "id": "calc_u8_l1_q8",
+              "type": "multiple-choice",
+              "question": "What is the magnitude of \u23291,0,0\u232a?",
+              "options": [
+                "0",
+                "1",
+                "2",
+                "\u221a2"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Magnitude: |v| = \u221a(v\u2081\u00b2 + v\u2082\u00b2 + v\u2083\u00b2). Use the distance formula."
+            },
+            {
+              "id": "calc_u8_l1_q9",
+              "type": "typing",
+              "question": "What is the unit vector in direction of \u23296,8\u232a?",
+              "correctAnswer": [
+                "<3/5, 4/5>",
+                "(0.6, 0.8)",
+                "<0.6, 0.8>"
+              ],
+              "xp": 4,
+              "explanation": "Unit vector = v/|v|. Divide each component by the magnitude."
+            },
+            {
+              "id": "calc_u8_l1_q10",
+              "type": "multiple-choice",
+              "question": "What does i represent?",
+              "options": [
+                "\u23290,1,0\u232a",
+                "\u23291,0,0\u232a",
+                "\u23290,0,1\u232a",
+                "\u23291,1,0\u232a"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: \u23291,0,0\u232a"
+            },
+            {
+              "id": "calc_u8_l1_q11",
+              "type": "typing",
+              "question": "What is |\u23295,12\u232a|?",
+              "correctAnswer": [
+                "13"
+              ],
+              "xp": 5,
+              "explanation": "Answer: 13"
+            },
+            {
+              "id": "calc_u8_l1_q12",
+              "type": "multiple-choice",
+              "question": "What is \u23292,3\u232a - \u23291,1\u232a?",
+              "options": [
+                "\u23291,2\u232a",
+                "\u23293,4\u232a",
+                "\u23291,1\u232a",
+                "\u23292,2\u232a"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Answer: \u23291,2\u232a"
+            },
+            {
+              "id": "calc_u8_l1_q13",
+              "type": "typing",
+              "question": "What is 3i + 4j + k in component form?",
+              "correctAnswer": [
+                "<3, 4, 1>",
+                "(3, 4, 1)"
+              ],
+              "xp": 4,
+              "explanation": "Answer: <3, 4, 1>"
+            },
+            {
+              "id": "calc_u8_l1_q14",
+              "type": "multiple-choice",
+              "question": "What is |\u23291,1,1\u232a|?",
+              "options": [
+                "1",
+                "2",
+                "\u221a3",
+                "3"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "Answer: \u221a3"
+            },
+            {
+              "id": "calc_u8_l1_q15",
+              "type": "typing",
+              "question": "What is a zero vector?",
+              "correctAnswer": [
+                "A vector with magnitude 0",
+                "\u23290,0\u232a or \u23290,0,0\u232a"
+              ],
+              "xp": 5,
+              "explanation": "Answer: A vector with magnitude 0"
+            },
+            {
+              "id": "calc_u8_l1_q16",
+              "type": "multiple-choice",
+              "question": "If v = \u23291,2\u232a, what is -v?",
+              "options": [
+                "\u23291,-2\u232a",
+                "\u2329-1,-2\u232a",
+                "\u2329-1,2\u232a",
+                "\u23292,1\u232a"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: \u2329-1,-2\u232a"
+            },
+            {
+              "id": "calc_u8_l1_q17",
+              "type": "typing",
+              "question": "What is the unit vector in direction of i + j?",
+              "correctAnswer": [
+                "<1/\u221a2, 1/\u221a2>",
+                "(1/\u221a2, 1/\u221a2)",
+                "<0.707, 0.707>"
+              ],
+              "xp": 4,
+              "explanation": "Unit vector = v/|v|. Divide each component by the magnitude."
+            },
+            {
+              "id": "calc_u8_l1_q18",
+              "type": "multiple-choice",
+              "question": "What is |\u23293,0,4\u232a|?",
+              "options": [
+                "5",
+                "7",
+                "25",
+                "\u221a25"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Answer: 5"
+            }
+          ]
         },
         {
-          "id": "12-2",
-          "title": "Lines and planes in space",
-          "xp": 0,
+          "id": "8-2",
+          "title": "Dot product and cross product",
+          "xp": 90,
           "type": "lesson",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Dot Product and Cross Product\n\nTwo ways to combine vectors.\n\n## Dot Product:\n\nu \u00b7 v = u\u2081v\u2081 + u\u2082v\u2082 + u\u2083v\u2083\n\n**Properties:**\n- u \u00b7 v = v \u00b7 u (commutative)\n- u \u00b7 (v + w) = u\u00b7v + u\u00b7w\n- |u|\u00b2 = u \u00b7 u\n\n**Angle Formula:**\n\nu \u00b7 v = |u||v|cos(\u03b8)\n\nwhere \u03b8 is the angle between u and v.\n\n**Orthogonal (Perpendicular):**\n\nu \u22a5 v if and only if u \u00b7 v = 0\n\n## Cross Product (3D only):\n\nu \u00d7 v = |i  j  k|\n        |u\u2081 u\u2082 u\u2083|\n        |v\u2081 v\u2082 v\u2083|\n\n      = (u\u2082v\u2083 - u\u2083v\u2082)i - (u\u2081v\u2083 - u\u2083v\u2081)j + (u\u2081v\u2082 - u\u2082v\u2081)k\n\n**Properties:**\n- u \u00d7 v = -(v \u00d7 u) (anti-commutative)\n- |u \u00d7 v| = |u||v|sin(\u03b8)\n- u \u00d7 v is perpendicular to both u and v\n\n**Right-Hand Rule:**\n\nCross product follows right-hand rule for direction.\n\n## Examples:\n\ni \u00b7 j = 0 (orthogonal)\ni \u00d7 j = k (right-hand rule)\n\n\u23291,2,3\u232a \u00b7 \u23294,5,6\u232a = 4 + 10 + 18 = 32",
+          "questions": [
+            {
+              "id": "calc_u8_l2_q1",
+              "type": "typing",
+              "question": "What is the dot product formula?",
+              "correctAnswer": [
+                "u\u00b7v = u\u2081v\u2081 + u\u2082v\u2082 + u\u2083v\u2083"
+              ],
+              "xp": 5,
+              "explanation": "Dot product: u\u00b7v = u\u2081v\u2081 + u\u2082v\u2082. Used for projections and finding angles."
+            },
+            {
+              "id": "calc_u8_l2_q2",
+              "type": "typing",
+              "question": "What is i \u00b7 j?",
+              "correctAnswer": [
+                "0"
+              ],
+              "xp": 4,
+              "explanation": "i \u00b7 j = 0 (orthogonal). i \u00b7 i = 1 (same direction)."
+            },
+            {
+              "id": "calc_u8_l2_q3",
+              "type": "typing",
+              "question": "When are two vectors orthogonal?",
+              "correctAnswer": [
+                "When their dot product is 0",
+                "Dot product = 0"
+              ],
+              "xp": 5,
+              "explanation": "Vectors are orthogonal when their dot product = 0 (perpendicular)."
+            },
+            {
+              "id": "calc_u8_l2_q4",
+              "type": "multiple-choice",
+              "question": "What is i \u00b7 i?",
+              "options": [
+                "0",
+                "1",
+                "-1",
+                "i"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: 1"
+            },
+            {
+              "id": "calc_u8_l2_q5",
+              "type": "typing",
+              "question": "What is the cross product used for?",
+              "correctAnswer": [
+                "Finding a perpendicular vector",
+                "Calculating torque"
+              ],
+              "xp": 4,
+              "explanation": "Cross product: u \u00d7 v gives a vector perpendicular to both. Use determinant or right-hand rule."
+            },
+            {
+              "id": "calc_u8_l2_q6",
+              "type": "multiple-choice",
+              "question": "What is i \u00d7 j?",
+              "options": [
+                "i",
+                "j",
+                "k",
+                "0"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "i \u00d7 j = k (right-hand rule). j \u00d7 k = i. k \u00d7 i = j."
+            },
+            {
+              "id": "calc_u8_l2_q7",
+              "type": "typing",
+              "question": "What is \u23291,2\u232a \u00b7 \u23293,4\u232a?",
+              "correctAnswer": [
+                "11"
+              ],
+              "xp": 5,
+              "explanation": "Answer: 11"
+            },
+            {
+              "id": "calc_u8_l2_q8",
+              "type": "multiple-choice",
+              "question": "Is cross product commutative?",
+              "options": [
+                "Yes",
+                "No, u\u00d7v = -(v\u00d7u)",
+                "Only in 2D",
+                "Only for unit vectors"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Cross product: u \u00d7 v gives a vector perpendicular to both. Use determinant or right-hand rule."
+            },
+            {
+              "id": "calc_u8_l2_q9",
+              "type": "typing",
+              "question": "What does |u \u00d7 v| equal?",
+              "correctAnswer": [
+                "|u||v|sin(\u03b8)"
+              ],
+              "xp": 4,
+              "explanation": "Answer: |u||v|sin(\u03b8)"
+            },
+            {
+              "id": "calc_u8_l2_q10",
+              "type": "multiple-choice",
+              "question": "What is j \u00d7 i?",
+              "options": [
+                "k",
+                "-k",
+                "i",
+                "-i"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: -k"
+            },
+            {
+              "id": "calc_u8_l2_q11",
+              "type": "typing",
+              "question": "What is \u23291,0,0\u232a \u00b7 \u23290,1,0\u232a?",
+              "correctAnswer": [
+                "0"
+              ],
+              "xp": 5,
+              "explanation": "Answer: 0"
+            },
+            {
+              "id": "calc_u8_l2_q12",
+              "type": "multiple-choice",
+              "question": "What is the dot product of a vector with itself?",
+              "options": [
+                "0",
+                "1",
+                "Its magnitude squared",
+                "Undefined"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "Dot product: u\u00b7v = u\u2081v\u2081 + u\u2082v\u2082. Used for projections and finding angles."
+            },
+            {
+              "id": "calc_u8_l2_q13",
+              "type": "typing",
+              "question": "What is |u \u00d7 v| if u and v are parallel?",
+              "correctAnswer": [
+                "0",
+                "zero"
+              ],
+              "xp": 4,
+              "explanation": "Answer: 0"
+            },
+            {
+              "id": "calc_u8_l2_q14",
+              "type": "multiple-choice",
+              "question": "What is k \u00d7 i?",
+              "options": [
+                "i",
+                "-i",
+                "j",
+                "-j"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "Answer: j"
+            },
+            {
+              "id": "calc_u8_l2_q15",
+              "type": "typing",
+              "question": "What is \u23291,2,3\u232a \u00b7 \u23291,1,1\u232a?",
+              "correctAnswer": [
+                "6"
+              ],
+              "xp": 5,
+              "explanation": "Answer: 6"
+            },
+            {
+              "id": "calc_u8_l2_q16",
+              "type": "multiple-choice",
+              "question": "What is u \u00b7 v if \u03b8 = 90\u00b0?",
+              "options": [
+                "|u||v|",
+                "0",
+                "|u||v|/2",
+                "Undefined"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: 0"
+            },
+            {
+              "id": "calc_u8_l2_q17",
+              "type": "typing",
+              "question": "What is i \u00d7 k?",
+              "correctAnswer": [
+                "-j",
+                "<0, -1, 0>"
+              ],
+              "xp": 4,
+              "explanation": "Answer: -j"
+            },
+            {
+              "id": "calc_u8_l2_q18",
+              "type": "multiple-choice",
+              "question": "What is u \u00d7 v perpendicular to?",
+              "options": [
+                "Only u",
+                "Only v",
+                "Both u and v",
+                "Neither"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "Answer: Both u and v"
+            }
+          ]
         }
       ]
     },
@@ -5843,20 +6285,461 @@ window.calculusAllTopics = {
       "unitName": "9. Vector-Valued Functions",
       "lessons": [
         {
-          "id": "13-1",
-          "title": "Vector functions, velocity, and acceleration",
-          "xp": 0,
+          "id": "9-1",
+          "title": "Vector-valued functions and derivatives",
+          "xp": 90,
           "type": "lesson",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Vector-Valued Functions and Derivatives\n\nA vector-valued function takes a scalar input and outputs a vector.\n\n## Notation:\n\nr(t) = \u2329f(t), g(t), h(t)\u232a = f(t)i + g(t)j + h(t)k\n\nwhere f, g, h are scalar functions.\n\n## Limits:\n\nlim(t\u2192a) r(t) = \u2329lim f(t), lim g(t), lim h(t)\u232a\n\n## Derivatives:\n\nr'(t) = \u2329f'(t), g'(t), h'(t)\u232a\n\nDifferentiate each component separately.\n\n## Interpretation:\n\n- **Position:** r(t) gives position at time t\n- **Velocity:** v(t) = r'(t) is velocity vector\n- **Speed:** |v(t)| is speed (magnitude of velocity)\n- **Acceleration:** a(t) = v'(t) = r''(t) is acceleration\n\n## Examples:\n\nr(t) = \u2329t, t\u00b2, 0\u232a\n\nr'(t) = \u23291, 2t, 0\u232a (velocity)\n\n|r'(t)| = \u221a(1 + 4t\u00b2) (speed)\n\nr''(t) = \u23290, 2, 0\u232a (acceleration)",
+          "questions": [
+            {
+              "id": "calc_u9_l1_q1",
+              "type": "typing",
+              "question": "What is a vector-valued function?",
+              "correctAnswer": [
+                "A function that outputs a vector",
+                "Maps scalars to vectors"
+              ],
+              "xp": 5,
+              "explanation": "Answer: A function that outputs a vector"
+            },
+            {
+              "id": "calc_u9_l1_q2",
+              "type": "typing",
+              "question": "What is r'(t) for r(t) = \u2329t, t\u00b2\u232a?",
+              "correctAnswer": [
+                "<1, 2t>",
+                "(1, 2t)"
+              ],
+              "xp": 4,
+              "explanation": "Derivative: r'(t) = \u2329f'(t), g'(t), h'(t)\u232a. Differentiate each component separately."
+            },
+            {
+              "id": "calc_u9_l1_q3",
+              "type": "typing",
+              "question": "What does the derivative of position represent?",
+              "correctAnswer": [
+                "Velocity"
+              ],
+              "xp": 5,
+              "explanation": "Derivative: r'(t) = \u2329f'(t), g'(t), h'(t)\u232a. Differentiate each component separately."
+            },
+            {
+              "id": "calc_u9_l1_q4",
+              "type": "multiple-choice",
+              "question": "How do you find r'(t)?",
+              "options": [
+                "Integrate each component",
+                "Differentiate each component",
+                "Cross product",
+                "Dot product"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Derivative: r'(t) = \u2329f'(t), g'(t), h'(t)\u232a. Differentiate each component separately."
+            },
+            {
+              "id": "calc_u9_l1_q5",
+              "type": "typing",
+              "question": "What is speed?",
+              "correctAnswer": [
+                "The magnitude of velocity",
+                "|v(t)|"
+              ],
+              "xp": 4,
+              "explanation": "Speed = |v(t)| = magnitude of velocity vector. Use distance formula on components."
+            },
+            {
+              "id": "calc_u9_l1_q6",
+              "type": "multiple-choice",
+              "question": "What is |v(t)| if v(t) = \u23293,4\u232a?",
+              "options": [
+                "5",
+                "7",
+                "25",
+                "\u221a7"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Answer: 5"
+            },
+            {
+              "id": "calc_u9_l1_q7",
+              "type": "typing",
+              "question": "What is r''(t) if r(t) = \u2329t, t\u00b2\u232a?",
+              "correctAnswer": [
+                "<0, 2>",
+                "(0, 2)"
+              ],
+              "xp": 5,
+              "explanation": "Answer: <0, 2>"
+            },
+            {
+              "id": "calc_u9_l1_q8",
+              "type": "multiple-choice",
+              "question": "What does r''(t) represent?",
+              "options": [
+                "Velocity",
+                "Speed",
+                "Acceleration",
+                "Position"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "Answer: Acceleration"
+            },
+            {
+              "id": "calc_u9_l1_q9",
+              "type": "typing",
+              "question": "What is the limit of \u2329t, t\u00b2\u232a as t\u21922?",
+              "correctAnswer": [
+                "<2, 4>",
+                "(2, 4)"
+              ],
+              "xp": 4,
+              "explanation": "Answer: <2, 4>"
+            },
+            {
+              "id": "calc_u9_l1_q10",
+              "type": "multiple-choice",
+              "question": "What is r'(t) for r(t) = \u2329e\u1d57, sin(t)\u232a?",
+              "options": [
+                "\u2329e\u1d57, cos(t)\u232a",
+                "\u2329e\u1d57, -cos(t)\u232a",
+                "\u2329te\u1d57, cos(t)\u232a",
+                "\u2329e\u1d57, sin(t)\u232a"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Derivative: r'(t) = \u2329f'(t), g'(t), h'(t)\u232a. Differentiate each component separately."
+            },
+            {
+              "id": "calc_u9_l1_q11",
+              "type": "typing",
+              "question": "What is the velocity at t=1 for r(t)=\u2329t, t\u00b2\u232a?",
+              "correctAnswer": [
+                "<1, 2>",
+                "(1, 2)"
+              ],
+              "xp": 5,
+              "explanation": "Velocity = r'(t), the derivative of position. Speed = |velocity|."
+            },
+            {
+              "id": "calc_u9_l1_q12",
+              "type": "multiple-choice",
+              "question": "What is speed at t=1 for r(t)=\u2329t, t\u00b2\u232a?",
+              "options": [
+                "1",
+                "2",
+                "\u221a5",
+                "5"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "Speed = |v(t)| = magnitude of velocity vector. Use distance formula on components."
+            },
+            {
+              "id": "calc_u9_l1_q13",
+              "type": "typing",
+              "question": "What is acceleration for r(t) = \u2329e\u1d57, cos(t)\u232a?",
+              "correctAnswer": [
+                "<e\u1d57, -cos(t)>",
+                "(e\u1d57, -cos(t))"
+              ],
+              "xp": 4,
+              "explanation": "Acceleration = v'(t) = r''(t). Second derivative of position."
+            },
+            {
+              "id": "calc_u9_l1_q14",
+              "type": "multiple-choice",
+              "question": "What does |r'(t)| represent?",
+              "options": [
+                "Position",
+                "Velocity",
+                "Speed",
+                "Acceleration"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "Derivative: r'(t) = \u2329f'(t), g'(t), h'(t)\u232a. Differentiate each component separately."
+            },
+            {
+              "id": "calc_u9_l1_q15",
+              "type": "typing",
+              "question": "What is r'(t) for r(t) = \u2329cos(t), sin(t)\u232a?",
+              "correctAnswer": [
+                "<-sin(t), cos(t)>",
+                "(-sin(t), cos(t))"
+              ],
+              "xp": 5,
+              "explanation": "Derivative: r'(t) = \u2329f'(t), g'(t), h'(t)\u232a. Differentiate each component separately."
+            },
+            {
+              "id": "calc_u9_l1_q16",
+              "type": "multiple-choice",
+              "question": "What is speed of \u2329cos(t), sin(t)\u232a?",
+              "options": [
+                "0",
+                "1",
+                "2",
+                "\u221a2"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Speed = |v(t)| = magnitude of velocity vector. Use distance formula on components."
+            },
+            {
+              "id": "calc_u9_l1_q17",
+              "type": "typing",
+              "question": "What is acceleration for \u2329cos(t), sin(t)\u232a?",
+              "correctAnswer": [
+                "<-cos(t), -sin(t)>",
+                "(-cos(t), -sin(t))"
+              ],
+              "xp": 4,
+              "explanation": "Acceleration = v'(t) = r''(t). Second derivative of position."
+            },
+            {
+              "id": "calc_u9_l1_q18",
+              "type": "multiple-choice",
+              "question": "What shape is r(t) = \u2329cos(t), sin(t)\u232a?",
+              "options": [
+                "Line",
+                "Circle",
+                "Spiral",
+                "Parabola"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "For \u2329cos(t), sin(t)\u232a: r' = \u2329-sin, cos\u232a, r'' = \u2329-cos, -sin\u232a, speed = 1 (circle radius 1)."
+            }
+          ]
         },
         {
-          "id": "13-2",
+          "id": "9-2",
           "title": "Arc length and curvature",
-          "xp": 0,
+          "xp": 90,
           "type": "lesson",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Arc Length and Curvature\n\nMeasuring curves and their bending.\n\n## Arc Length:\n\nFor r(t) from a to b:\n\nL = \u222b[a to b] |r'(t)| dt\n\n**Where:** |r'(t)| = \u221a[(x')\u00b2 + (y')\u00b2 + (z')\u00b2]\n\n## Speed-Distance Relationship:\n\nSince |r'(t)| = speed, arc length = \u222b speed dt = distance traveled.\n\n## Arc Length Function:\n\ns(t) = \u222b[t\u2080 to t] |r'(u)| du\n\n## Curvature:\n\n\u03ba (kappa) measures how fast the curve bends.\n\n**Formula:** \u03ba = |r'(t) \u00d7 r''(t)| / |r'(t)|\u00b3\n\n**For 2D:** \u03ba = |x'y'' - y'x''| / [(x')\u00b2 + (y')\u00b2]^(3/2)\n\n## Radius of Curvature:\n\nR = 1/\u03ba\n\nThe radius of the osculating circle.\n\n## Unit Tangent Vector:\n\nT(t) = r'(t) / |r'(t)|\n\nPoints in direction of motion.\n\n## Normal Vector:\n\nN(t) = T'(t) / |T'(t)|\n\nPoints toward center of curvature.",
+          "questions": [
+            {
+              "id": "calc_u9_l2_q1",
+              "type": "typing",
+              "question": "What is the arc length formula?",
+              "correctAnswer": [
+                "L = \u222b|r'(t)| dt",
+                "\u222b speed dt"
+              ],
+              "xp": 5,
+              "explanation": "Arc length = \u222b|r'(t)| dt = \u222b speed dt. This is the distance traveled."
+            },
+            {
+              "id": "calc_u9_l2_q2",
+              "type": "typing",
+              "question": "What does |r'(t)| represent in arc length?",
+              "correctAnswer": [
+                "Speed"
+              ],
+              "xp": 4,
+              "explanation": "Derivative: r'(t) = \u2329f'(t), g'(t), h'(t)\u232a. Differentiate each component separately."
+            },
+            {
+              "id": "calc_u9_l2_q3",
+              "type": "typing",
+              "question": "What does curvature measure?",
+              "correctAnswer": [
+                "How fast the curve bends",
+                "Rate of bending"
+              ],
+              "xp": 5,
+              "explanation": "Curvature \u03ba = |r' \u00d7 r''| / |r'|\u00b3. Measures how fast curve bends (straight line = 0, circle = 1/R)."
+            },
+            {
+              "id": "calc_u9_l2_q4",
+              "type": "multiple-choice",
+              "question": "What is curvature for a straight line?",
+              "options": [
+                "0",
+                "1",
+                "\u221e",
+                "Undefined"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Curvature \u03ba = |r' \u00d7 r''| / |r'|\u00b3. Measures how fast curve bends (straight line = 0, circle = 1/R)."
+            },
+            {
+              "id": "calc_u9_l2_q5",
+              "type": "typing",
+              "question": "What is the arc length from 0 to 1 for \u2329t, 0, 0\u232a?",
+              "correctAnswer": [
+                "1"
+              ],
+              "xp": 4,
+              "explanation": "Arc length = \u222b|r'(t)| dt = \u222b speed dt. This is the distance traveled."
+            },
+            {
+              "id": "calc_u9_l2_q6",
+              "type": "multiple-choice",
+              "question": "What is curvature for a circle of radius R?",
+              "options": [
+                "0",
+                "1",
+                "1/R",
+                "R"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "Curvature \u03ba = |r' \u00d7 r''| / |r'|\u00b3. Measures how fast curve bends (straight line = 0, circle = 1/R)."
+            },
+            {
+              "id": "calc_u9_l2_q7",
+              "type": "typing",
+              "question": "What is the unit tangent vector T(t)?",
+              "correctAnswer": [
+                "r'(t)/|r'(t)|",
+                "Velocity / speed"
+              ],
+              "xp": 5,
+              "explanation": "Unit tangent T = r'/|r'|. Points along direction of motion."
+            },
+            {
+              "id": "calc_u9_l2_q8",
+              "type": "multiple-choice",
+              "question": "What direction does T(t) point?",
+              "options": [
+                "Normal to curve",
+                "Along the curve",
+                "Perpendicular",
+                "Backward"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: Along the curve"
+            },
+            {
+              "id": "calc_u9_l2_q9",
+              "type": "typing",
+              "question": "What is |r'(t)| for \u23293t, 4t\u232a?",
+              "correctAnswer": [
+                "5"
+              ],
+              "xp": 4,
+              "explanation": "Derivative: r'(t) = \u2329f'(t), g'(t), h'(t)\u232a. Differentiate each component separately."
+            },
+            {
+              "id": "calc_u9_l2_q10",
+              "type": "multiple-choice",
+              "question": "What is R in terms of curvature?",
+              "options": [
+                "R = \u03ba",
+                "R = 1/\u03ba",
+                "R = \u03ba\u00b2",
+                "R = 1/\u03ba\u00b2"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Curvature \u03ba = |r' \u00d7 r''| / |r'|\u00b3. Measures how fast curve bends (straight line = 0, circle = 1/R)."
+            },
+            {
+              "id": "calc_u9_l2_q11",
+              "type": "typing",
+              "question": "What is arc length for \u2329cos(t), sin(t)\u232a from 0 to 2\u03c0?",
+              "correctAnswer": [
+                "2\u03c0"
+              ],
+              "xp": 5,
+              "explanation": "Arc length = \u222b|r'(t)| dt = \u222b speed dt. This is the distance traveled."
+            },
+            {
+              "id": "calc_u9_l2_q12",
+              "type": "multiple-choice",
+              "question": "What does N(t) point toward?",
+              "options": [
+                "Tangent",
+                "Center of curvature",
+                "Outward",
+                "Backward"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: Center of curvature"
+            },
+            {
+              "id": "calc_u9_l2_q13",
+              "type": "typing",
+              "question": "What is T(t) for \u2329t, 0\u232a?",
+              "correctAnswer": [
+                "<1, 0>",
+                "(1, 0)"
+              ],
+              "xp": 4,
+              "explanation": "Answer: <1, 0>"
+            },
+            {
+              "id": "calc_u9_l2_q14",
+              "type": "multiple-choice",
+              "question": "What curvature has the tightest bend?",
+              "options": [
+                "\u03ba = 0",
+                "\u03ba = 1",
+                "\u03ba = 10",
+                "\u03ba = 100"
+              ],
+              "correct": 3,
+              "xp": 3,
+              "explanation": "Curvature \u03ba = |r' \u00d7 r''| / |r'|\u00b3. Measures how fast curve bends (straight line = 0, circle = 1/R)."
+            },
+            {
+              "id": "calc_u9_l2_q15",
+              "type": "typing",
+              "question": "What is s(t)?",
+              "correctAnswer": [
+                "Arc length function",
+                "Distance traveled"
+              ],
+              "xp": 5,
+              "explanation": "Answer: Arc length function"
+            },
+            {
+              "id": "calc_u9_l2_q16",
+              "type": "multiple-choice",
+              "question": "What is |r'(t) \u00d7 r''(t)|?",
+              "options": [
+                "Speed",
+                "Acceleration",
+                "Related to curvature",
+                "Torque"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "Derivative: r'(t) = \u2329f'(t), g'(t), h'(t)\u232a. Differentiate each component separately."
+            },
+            {
+              "id": "calc_u9_l2_q17",
+              "type": "typing",
+              "question": "What is curvature of a large circle?",
+              "correctAnswer": [
+                "Small",
+                "Close to 0"
+              ],
+              "xp": 4,
+              "explanation": "Curvature \u03ba = |r' \u00d7 r''| / |r'|\u00b3. Measures how fast curve bends (straight line = 0, circle = 1/R)."
+            },
+            {
+              "id": "calc_u9_l2_q18",
+              "type": "multiple-choice",
+              "question": "What is the arc length of \u23292t, 0\u232a from 0 to 1?",
+              "options": [
+                "0",
+                "1",
+                "2",
+                "\u221a2"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "Arc length = \u222b|r'(t)| dt = \u222b speed dt. This is the distance traveled."
+            }
+          ]
         }
       ]
     },
