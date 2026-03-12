@@ -10394,28 +10394,683 @@ window.calculusAllTopics = {
       "unitName": "14. Major Theorems",
       "lessons": [
         {
-          "id": "18-1",
-          "title": "Green's Theorem",
-          "xp": 0,
+          "id": "14-1",
+          "title": "The Fundamental Theorem of Calculus",
+          "xp": 88,
           "type": "lesson",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# The Fundamental Theorem of Calculus\n\nThe FTC connects differentiation and integration.\n\n## FTC Part 1:\n\nIf F(x) = \u222b[a to x] f(t) dt, then F'(x) = f(x)\n\n**Key insight:** Derivative of integral is original function.\n\n## FTC Part 2:\n\n\u222b[a to b] f(x) dx = F(b) - F(a)\n\nwhere F is any antiderivative of f.\n\n**Key insight:** Evaluate integral by antiderivatives.\n\n## Examples:\n\n**FTC Part 1:** d/dx \u222b[0 to x] cos(t) dt = cos(x)\n\n**FTC Part 2:** \u222b[0 to 1] x\u00b2 dx = x\u00b3/3|\u2080\u00b9 = 1/3\n\n\u222b[0 to \u03c0] sin(x) dx = -cos(x)|\u2080^\u03c0 = -(-1) - (-1) = 2\n\n\u222b[1 to e] 1/x dx = ln(x)|\u2081\u1d49 = ln(e) - ln(1) = 1\n\n## Applications:\n\n- Net area under curves\n- Accumulation functions\n- Average value: (1/(b-a)) \u222b[a to b] f(x) dx",
+          "questions": [
+            {
+              "id": "calc_u14_l1_q1",
+              "type": "typing",
+              "question": "What is FTC Part 1?",
+              "correctAnswer": [
+                "d/dx \u222b[a to x] f(t) dt = f(x)",
+                "Derivative of integral is f(x)"
+              ],
+              "xp": 5,
+              "explanation": "FTC Part 1: d/dx \u222b[a to x] f(t) dt = f(x). The derivative of the integral from a to x gives the original function."
+            },
+            {
+              "id": "calc_u14_l1_q2",
+              "type": "typing",
+              "question": "What is FTC Part 2?",
+              "correctAnswer": [
+                "\u222b[a to b] f(x) dx = F(b) - F(a)",
+                "Integral equals antiderivative difference"
+              ],
+              "xp": 4,
+              "explanation": "FTC Part 2: \u222b[a to b] f(x) dx = F(b) - F(a). Evaluate the antiderivative at the bounds and subtract."
+            },
+            {
+              "id": "calc_u14_l1_q3",
+              "type": "typing",
+              "question": "What does FTC connect?",
+              "correctAnswer": [
+                "Differentiation and integration",
+                "Derivatives and integrals"
+              ],
+              "xp": 5,
+              "explanation": "Answer: Differentiation and integration"
+            },
+            {
+              "id": "calc_u14_l1_q4",
+              "type": "multiple-choice",
+              "question": "What is d/dx \u222b[0 to x] t\u00b2 dt?",
+              "options": [
+                "0",
+                "x",
+                "x\u00b2",
+                "x\u00b3"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "By FTC Part 1: d/dx \u222b[0 to x] t\u00b2 dt = x\u00b2. The derivative of the integral is the original function evaluated at x."
+            },
+            {
+              "id": "calc_u14_l1_q5",
+              "type": "typing",
+              "question": "What is \u222b[0 to 1] x dx?",
+              "correctAnswer": [
+                "1/2"
+              ],
+              "xp": 4,
+              "explanation": "\u222b\u2080\u00b9 x dx = x\u00b2/2|\u2080\u00b9 = 1/2. Use FTC Part 2 with F(x) = x\u00b2/2."
+            },
+            {
+              "id": "calc_u14_l1_q6",
+              "type": "multiple-choice",
+              "question": "What is \u222b[0 to \u03c0] sin(x) dx?",
+              "options": [
+                "0",
+                "1",
+                "2",
+                "\u03c0"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "\u222b\u2080^\u03c0 sin(x) dx = -cos(x)|\u2080^\u03c0 = -(-1) - (-1) = 2. cos(\u03c0) = -1, cos(0) = 1."
+            },
+            {
+              "id": "calc_u14_l1_q7",
+              "type": "typing",
+              "question": "What is \u222b[1 to e] 1/x dx?",
+              "correctAnswer": [
+                "1"
+              ],
+              "xp": 5,
+              "explanation": "\u222b\u2081\u1d49 1/x dx = ln(x)|\u2081\u1d49 = ln(e) - ln(1) = 1 - 0 = 1."
+            },
+            {
+              "id": "calc_u14_l1_q8",
+              "type": "multiple-choice",
+              "question": "What is d/dx \u222b[0 to x] e\u1d57 dt?",
+              "options": [
+                "0",
+                "e\u1d57",
+                "e\u02e3",
+                "te\u1d57"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "By FTC Part 1: d/dx \u222b[0 to x] e\u1d57 dt = e\u02e3. The derivative of the integral is e\u02e3."
+            },
+            {
+              "id": "calc_u14_l1_q9",
+              "type": "typing",
+              "question": "What is \u222b[0 to 2] 3x dx?",
+              "correctAnswer": [
+                "6"
+              ],
+              "xp": 4,
+              "explanation": "\u222b\u2080\u00b2 3x dx = 3\u00b7x\u00b2/2|\u2080\u00b2 = 3\u00b74/2 = 6."
+            },
+            {
+              "id": "calc_u14_l1_q10",
+              "type": "multiple-choice",
+              "question": "What is \u222b[0 to 1] x\u00b2 dx?",
+              "options": [
+                "0",
+                "1/2",
+                "1/3",
+                "1"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "\u222b\u2080\u00b9 x\u00b2 dx = x\u00b3/3|\u2080\u00b9 = 1/3."
+            },
+            {
+              "id": "calc_u14_l1_q11",
+              "type": "typing",
+              "question": "What is F(b) - F(a) called?",
+              "correctAnswer": [
+                "The definite integral",
+                "Net area"
+              ],
+              "xp": 5,
+              "explanation": "Answer: The definite integral"
+            },
+            {
+              "id": "calc_u14_l1_q12",
+              "type": "multiple-choice",
+              "question": "What is the average value formula?",
+              "options": [
+                "\u222b[a to b] f(x) dx",
+                "(1/(b-a)) \u222b[a to b] f(x) dx",
+                "f(b) - f(a)",
+                "f'(c)"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Average value = (1/(b-a)) \u222b[a to b] f(x) dx. Divide the integral by the interval length."
+            },
+            {
+              "id": "calc_u14_l1_q13",
+              "type": "typing",
+              "question": "What is d/dx \u222b[0 to x] cos(t) dt?",
+              "correctAnswer": [
+                "cos(x)"
+              ],
+              "xp": 4,
+              "explanation": "By FTC Part 1: d/dx \u222b[0 to x] cos(t) dt = cos(x)."
+            },
+            {
+              "id": "calc_u14_l1_q14",
+              "type": "multiple-choice",
+              "question": "What is \u222b[-1 to 1] x\u00b3 dx?",
+              "options": [
+                "0",
+                "1/2",
+                "1/4",
+                "2"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "\u222b\u208b\u2081\u00b9 x\u00b3 dx = x\u2074/4|\u208b\u2081\u00b9 = 1/4 - 1/4 = 0. Odd function over symmetric interval = 0."
+            },
+            {
+              "id": "calc_u14_l1_q15",
+              "type": "typing",
+              "question": "What is the integral of constant k?",
+              "correctAnswer": [
+                "kx",
+                "kx + C"
+              ],
+              "xp": 5,
+              "explanation": "\u222b k dx = kx + C. The integral of a constant is the constant times x."
+            },
+            {
+              "id": "calc_u14_l1_q16",
+              "type": "multiple-choice",
+              "question": "What does FTC Part 1 give?",
+              "options": [
+                "Integral",
+                "Derivative",
+                "Antiderivative",
+                "Area"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "FTC Part 1: d/dx \u222b[a to x] f(t) dt = f(x). The derivative of the integral from a to x gives the original function."
+            },
+            {
+              "id": "calc_u14_l1_q17",
+              "type": "typing",
+              "question": "What is \u222b[0 to 1] e\u02e3 dx?",
+              "correctAnswer": [
+                "e - 1"
+              ],
+              "xp": 4,
+              "explanation": "\u222b\u2080\u00b9 e\u02e3 dx = e\u02e3|\u2080\u00b9 = e\u00b9 - e\u2070 = e - 1."
+            },
+            {
+              "id": "calc_u14_l1_q18",
+              "type": "multiple-choice",
+              "question": "Why is FTC important?",
+              "options": [
+                "Connects derivatives and integrals",
+                "Hard to remember",
+                "Only for polynomials",
+                "Uses in physics"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Answer: Connects derivatives and integrals"
+            }
+          ]
         },
         {
-          "id": "18-2",
-          "title": "Stokes' Theorem",
-          "xp": 0,
+          "id": "14-2",
+          "title": "The Mean Value Theorem",
+          "xp": 88,
           "type": "lesson",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# The Mean Value Theorem\n\nThe MVT guarantees a point with specific slope.\n\n## MVT for Derivatives:\n\nIf f is continuous on [a, b] and differentiable on (a, b),\n\nthere exists c \u2208 (a, b) such that:\n\nf'(c) = (f(b) - f(a))/(b - a)\n\n**Meaning:** At some point, instantaneous rate = average rate.\n\n## MVT for Integrals:\n\nIf f is continuous on [a, b],\n\nthere exists c \u2208 (a, b) such that:\n\nf(c) = (1/(b-a)) \u222b[a to b] f(x) dx\n\n**Meaning:** At some point, function value = average value.\n\n## Examples:\n\n**MVT for f(x) = x\u00b2 on [0, 2]:**\n\nAverage slope: (4 - 0)/(2 - 0) = 2\nf'(x) = 2x = 2 \u2192 x = 1\n\nc = 1 is in (0, 2) \u2713\n\n**MVT Integral for f(x) = x on [0, 1]:**\n\nAverage: (1/(1-0)) \u222b\u2080\u00b9 x dx = 1/2\nf(c) = c = 1/2 \u2192 c = 1/2\n\nc = 1/2 is in (0, 1) \u2713\n\n## Conditions:\n\n- Continuous on closed interval\n- Differentiable on open interval (for derivative version)",
+          "questions": [
+            {
+              "id": "calc_u14_l2_q1",
+              "type": "typing",
+              "question": "What is the MVT formula for derivatives?",
+              "correctAnswer": [
+                "f'(c) = (f(b) - f(a))/(b - a)",
+                "Derivative equals average rate"
+              ],
+              "xp": 5,
+              "explanation": "Answer: f'(c) = (f(b) - f(a))/(b - a)"
+            },
+            {
+              "id": "calc_u14_l2_q2",
+              "type": "typing",
+              "question": "What are the conditions for MVT?",
+              "correctAnswer": [
+                "Continuous on [a, b], differentiable on (a, b)",
+                "Continuous and differentiable"
+              ],
+              "xp": 4,
+              "explanation": "Answer: Continuous on [a, b], differentiable on (a, b)"
+            },
+            {
+              "id": "calc_u14_l2_q3",
+              "type": "typing",
+              "question": "What does MVT guarantee?",
+              "correctAnswer": [
+                "A point where f'(c) = average rate",
+                "Exists c in (a, b)"
+              ],
+              "xp": 5,
+              "explanation": "Answer: A point where f'(c) = average rate"
+            },
+            {
+              "id": "calc_u14_l2_q4",
+              "type": "multiple-choice",
+              "question": "What is (f(b) - f(a))/(b - a)?",
+              "options": [
+                "Instantaneous rate",
+                "Average rate",
+                "Derivative",
+                "Integral"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "(f(b) - f(a))/(b - a) is the average rate of change (slope of secant line)."
+            },
+            {
+              "id": "calc_u14_l2_q5",
+              "type": "typing",
+              "question": "For f(x) = x\u00b2 on [0, 2], what is average slope?",
+              "correctAnswer": [
+                "2"
+              ],
+              "xp": 4,
+              "explanation": "Average slope = (f(2) - f(0))/(2 - 0) = (4 - 0)/2 = 2."
+            },
+            {
+              "id": "calc_u14_l2_q6",
+              "type": "multiple-choice",
+              "question": "What is f'(c) for f(x) = x\u00b2 when c = 1?",
+              "options": [
+                "0",
+                "1",
+                "2",
+                "4"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "f'(x) = 2x, so f'(1) = 2\u00b71 = 2."
+            },
+            {
+              "id": "calc_u14_l2_q7",
+              "type": "typing",
+              "question": "What is MVT for integrals?",
+              "correctAnswer": [
+                "f(c) = (1/(b-a)) \u222b[a to b] f(x) dx",
+                "Function equals average value"
+              ],
+              "xp": 5,
+              "explanation": "MVT for integrals: f(c) = (1/(b-a)) \u222b[a to b] f(x) dx. At some point, function equals average value."
+            },
+            {
+              "id": "calc_u14_l2_q8",
+              "type": "multiple-choice",
+              "question": "For f(x) = x on [0, 1], what is average value?",
+              "options": [
+                "0",
+                "1",
+                "1/2",
+                "1/3"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "Average value = (1/(b-a)) \u222b[a to b] f(x) dx. Divide the integral by the interval length."
+            },
+            {
+              "id": "calc_u14_l2_q9",
+              "type": "typing",
+              "question": "What is c for f(x) = x on [0, 1] using MVT integral?",
+              "correctAnswer": [
+                "1/2"
+              ],
+              "xp": 4,
+              "explanation": "f(c) = c = average = 1/2, so c = 1/2. This is in (0, 1)."
+            },
+            {
+              "id": "calc_u14_l2_q10",
+              "type": "multiple-choice",
+              "question": "Does MVT apply to f(x) = |x| on [-1, 1]?",
+              "options": [
+                "Yes",
+                "No (not differentiable at 0)",
+                "Only at 0",
+                "Sometimes"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "f(x) = |x| is not differentiable at x = 0. MVT requires differentiability on open interval, so MVT doesn't apply."
+            },
+            {
+              "id": "calc_u14_l2_q11",
+              "type": "typing",
+              "question": "What is the interval for c?",
+              "correctAnswer": [
+                "(a, b)",
+                "Open interval between a and b"
+              ],
+              "xp": 5,
+              "explanation": "c is in the open interval (a, b), not including endpoints."
+            },
+            {
+              "id": "calc_u14_l2_q12",
+              "type": "multiple-choice",
+              "question": "For f(x) = x\u00b3 on [0, 2], what is average slope?",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "8"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "Average slope = (f(2) - f(0))/(2 - 0) = (8 - 0)/2 = 4."
+            },
+            {
+              "id": "calc_u14_l2_q13",
+              "type": "typing",
+              "question": "What is c for f(x) = x\u00b3 on [0, 2]?",
+              "correctAnswer": [
+                "2/\u221a3"
+              ],
+              "xp": 4,
+              "explanation": "f'(c) = 3c\u00b2 = average = 4, so c = \u221a(4/3) = 2/\u221a3."
+            },
+            {
+              "id": "calc_u14_l2_q14",
+              "type": "multiple-choice",
+              "question": "What if f is not continuous?",
+              "options": [
+                "MVT doesn't apply",
+                "Still works",
+                "Always false",
+                "Use integration"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Answer: MVT doesn't apply"
+            },
+            {
+              "id": "calc_u14_l2_q15",
+              "type": "typing",
+              "question": "What is Rolle's Theorem?",
+              "correctAnswer": [
+                "Special case of MVT when f(a) = f(b)",
+                "MVT with f(a) = f(b)"
+              ],
+              "xp": 5,
+              "explanation": "Rolle's Theorem is a special case of MVT when f(a) = f(b). It guarantees f'(c) = 0 for some c \u2208 (a, b)."
+            },
+            {
+              "id": "calc_u14_l2_q16",
+              "type": "multiple-choice",
+              "question": "What does Rolle's guarantee?",
+              "options": [
+                "f'(c) = 0",
+                "f(c) = 0",
+                "c = 0",
+                "f = 0"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Rolle's guarantees there exists c \u2208 (a, b) where f'(c) = 0 when f(a) = f(b)."
+            },
+            {
+              "id": "calc_u14_l2_q17",
+              "type": "typing",
+              "question": "What is average value formula?",
+              "correctAnswer": [
+                "(1/(b-a)) \u222b[a to b] f(x) dx"
+              ],
+              "xp": 4,
+              "explanation": "Average value = (1/(b-a)) \u222b[a to b] f(x) dx. Divide the integral by the interval length."
+            },
+            {
+              "id": "calc_u14_l2_q18",
+              "type": "multiple-choice",
+              "question": "Does MVT give a unique c?",
+              "options": [
+                "Yes",
+                "No, may be multiple",
+                "Never",
+                "Always 2"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: No, may be multiple"
+            }
+          ]
         },
         {
-          "id": "18-3",
-          "title": "Divergence Theorem",
-          "xp": 0,
+          "id": "14-3",
+          "title": "Taylor's Theorem",
+          "xp": 90,
           "type": "lesson",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Taylor's Theorem\n\nTaylor polynomials approximate functions.\n\n## Taylor Series:\n\nf(x) \u2248 \u03a3[n=0 to \u221e] f\u207d\u207f\u207e(a)(x-a)\u207f/n!\n\n## Taylor Polynomial (degree n):\n\nT\u2099(x) = \u03a3[k=0 to n] f\u207d\u1d4f\u207e(a)(x-a)\u1d4f/k!\n\n= f(a) + f'(a)(x-a) + f''(a)(x-a)\u00b2/2! + ...\n\n## Remainder (Lagrange form):\n\nR\u2099(x) = f\u207d\u207f\u207a\u00b9\u207e(c)(x-a)\u207f\u207a\u00b9/(n+1)!\n\nfor some c between a and x.\n\n## Maclaurin Series (a = 0):\n\ne\u02e3 = \u03a3[n=0 to \u221e] x\u207f/n!\n\nsin(x) = \u03a3[n=0 to \u221e] (-1)\u207f x\u00b2\u207f\u207a\u00b9/(2n+1)!\n\ncos(x) = \u03a3[n=0 to \u221e] (-1)\u207f x\u00b2\u207f/(2n)!\n\n## Examples:\n\n**e\u02e3 about a = 0:**\n\nT\u2082(x) = 1 + x + x\u00b2/2\n\nR\u2082(x) = e\u1d9c x\u00b3/6 for some c\n\n**sin(x) about a = 0:**\n\nT\u2083(x) = x - x\u00b3/6\n\n## Error Bound:\n\n|R\u2099(x)| \u2264 M|x-a|\u207f\u207a\u00b9/(n+1)!\n\nwhere M = max |f\u207d\u207f\u207a\u00b9\u207e| on interval",
+          "questions": [
+            {
+              "id": "calc_u14_l3_q1",
+              "type": "typing",
+              "question": "What is Taylor's Theorem?",
+              "correctAnswer": [
+                "f(x) = \u03a3 f\u207d\u207f\u207e(a)(x-a)\u207f/n!",
+                "Approximates functions with polynomials"
+              ],
+              "xp": 5,
+              "explanation": "Taylor's Theorem: f(x) \u2248 \u03a3[n=0 to \u221e] f\u207d\u207f\u207e(a)(x-a)\u207f/n!. Approximates functions with infinite polynomial series."
+            },
+            {
+              "id": "calc_u14_l3_q2",
+              "type": "typing",
+              "question": "What is a Maclaurin series?",
+              "correctAnswer": [
+                "Taylor series with a = 0",
+                "Series about 0"
+              ],
+              "xp": 4,
+              "explanation": "Answer: Taylor series with a = 0"
+            },
+            {
+              "id": "calc_u14_l3_q3",
+              "type": "typing",
+              "question": "What is the remainder term?",
+              "correctAnswer": [
+                "R\u2099(x) = f\u207d\u207f\u207a\u00b9\u207e(c)(x-a)\u207f\u207a\u00b9/(n+1)!",
+                "Error term"
+              ],
+              "xp": 5,
+              "explanation": "R\u2099(x) = f\u207d\u207f\u207a\u00b9\u207e(c)(x-a)\u207f\u207a\u00b9/(n+1)!. The remainder term bounds the error of the approximation."
+            },
+            {
+              "id": "calc_u14_l3_q4",
+              "type": "multiple-choice",
+              "question": "What is the Maclaurin series for e\u02e3?",
+              "options": [
+                "\u03a3 x\u207f",
+                "\u03a3 x\u207f/n!",
+                "\u03a3 (-1)\u207f x\u207f",
+                "\u03a3 x\u00b2\u207f"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: \u03a3 x\u207f/n!"
+            },
+            {
+              "id": "calc_u14_l3_q5",
+              "type": "typing",
+              "question": "What is T\u2082(x) for e\u02e3 about 0?",
+              "correctAnswer": [
+                "1 + x + x\u00b2/2"
+              ],
+              "xp": 4,
+              "explanation": "T\u2082(x) = 1 + x + x\u00b2/2. Uses f(0)=1, f'(0)=1, f''(0)=1."
+            },
+            {
+              "id": "calc_u14_l3_q6",
+              "type": "multiple-choice",
+              "question": "What is sin(x) Maclaurin series?",
+              "options": [
+                "x + x\u00b3/6",
+                "x - x\u00b3/6",
+                "x\u00b2/2",
+                "1 - x\u00b2/2"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: x - x\u00b3/6"
+            },
+            {
+              "id": "calc_u14_l3_q7",
+              "type": "typing",
+              "question": "What is cos(x) Maclaurin series?",
+              "correctAnswer": [
+                "1 - x\u00b2/2 + x\u2074/24 - ..."
+              ],
+              "xp": 5,
+              "explanation": "Answer: 1 - x\u00b2/2 + x\u2074/24 - ..."
+            },
+            {
+              "id": "calc_u14_l3_q8",
+              "type": "multiple-choice",
+              "question": "What is T\u2081(x) for e\u02e3?",
+              "options": [
+                "1",
+                "x",
+                "1 + x",
+                "e\u02e3"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "T\u2081(x) = 1 + x. Linear approximation using f(0)=1, f'(0)=1."
+            },
+            {
+              "id": "calc_u14_l3_q9",
+              "type": "typing",
+              "question": "What is T\u2083(x) for sin(x) about 0?",
+              "correctAnswer": [
+                "x - x\u00b3/6"
+              ],
+              "xp": 4,
+              "explanation": "T\u2083(x) = x - x\u00b3/6. Uses f(0)=0, f'(0)=1, f''(0)=0, f'''(0)=-1."
+            },
+            {
+              "id": "calc_u14_l3_q10",
+              "type": "multiple-choice",
+              "question": "What does R\u2099(x) represent?",
+              "options": [
+                "Exact value",
+                "Error",
+                "Derivative",
+                "Integral"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "R\u2099(x) represents the error or remainder - the difference between f(x) and the Taylor polynomial T\u2099(x)."
+            },
+            {
+              "id": "calc_u14_l3_q11",
+              "type": "typing",
+              "question": "What is the error bound formula?",
+              "correctAnswer": [
+                "|R\u2099(x)| \u2264 M|x-a|\u207f\u207a\u00b9/(n+1)!",
+                "Bound on remainder"
+              ],
+              "xp": 5,
+              "explanation": "R\u2099(x) = f\u207d\u207f\u207a\u00b9\u207e(c)(x-a)\u207f\u207a\u00b9/(n+1)!. The remainder term bounds the error of the approximation."
+            },
+            {
+              "id": "calc_u14_l3_q12",
+              "type": "multiple-choice",
+              "question": "For e\u02e3, what is f'(0)?",
+              "options": [
+                "0",
+                "1",
+                "e",
+                "\u221e"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: 1"
+            },
+            {
+              "id": "calc_u14_l3_q13",
+              "type": "typing",
+              "question": "What is f''(0) for e\u02e3?",
+              "correctAnswer": [
+                "1"
+              ],
+              "xp": 4,
+              "explanation": "f''(x) = e\u02e3, so f''(0) = e\u2070 = 1."
+            },
+            {
+              "id": "calc_u14_l3_q14",
+              "type": "multiple-choice",
+              "question": "What is f'(0) for sin(x)?",
+              "options": [
+                "0",
+                "1",
+                "-1",
+                "cos(0)"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "f'(x) = cos(x), so f'(0) = cos(0) = 1."
+            },
+            {
+              "id": "calc_u14_l3_q15",
+              "type": "typing",
+              "question": "What is f''(0) for sin(x)?",
+              "correctAnswer": [
+                "0"
+              ],
+              "xp": 5,
+              "explanation": "f''(x) = -sin(x), so f''(0) = -sin(0) = 0."
+            },
+            {
+              "id": "calc_u14_l3_q16",
+              "type": "multiple-choice",
+              "question": "What is f'(0) for cos(x)?",
+              "options": [
+                "0",
+                "1",
+                "-1",
+                "sin(0)"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "f'(x) = -sin(x), so f'(0) = -sin(0) = 0."
+            },
+            {
+              "id": "calc_u14_l3_q17",
+              "type": "typing",
+              "question": "Why use Taylor polynomials?",
+              "correctAnswer": [
+                "Approximate functions",
+                "Simplify calculations"
+              ],
+              "xp": 4,
+              "explanation": "Answer: Approximate functions"
+            },
+            {
+              "id": "calc_u14_l3_q18",
+              "type": "multiple-choice",
+              "question": "Does Taylor series converge?",
+              "options": [
+                "Always",
+                "For some x",
+                "Never",
+                "Only at a"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: For some x"
+            }
+          ]
         }
       ]
     }
