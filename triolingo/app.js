@@ -316,6 +316,15 @@ function loadCourseData() {
     console.warn('⚠️ AI not loaded');
   }
 
+  // Load Calculus data
+  console.log('Checking calculusAllTopics:', typeof window.calculusAllTopics);
+  if (window.calculusAllTopics && window.calculusAllTopics.units && window.calculusAllTopics.units.length > 0) {
+    courses.calculus.units = window.calculusAllTopics.units;
+    console.log('✅ Calculus loaded:', courses.calculus.units.length, 'units');
+  } else {
+    console.warn('⚠️ Calculus not loaded');
+  }
+
   // Load C++ data
   console.log('Checking cppCombined:', typeof window.cppCombined);
   if (window.cppCombined && window.cppCombined.units && window.cppCombined.units.length > 0) {
@@ -338,6 +347,7 @@ function loadCourseData() {
   console.log('Final counts:', {
     'Linear Algebra': courses.linearAlgebra.units.length,
     'AI': courses.ai.units.length,
+    'Calculus': courses.calculus.units.length,
     'C++': courses.cpp.units.length,
     'Hexapod': courses.hexapod.units.length
   });
