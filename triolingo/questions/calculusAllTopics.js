@@ -13,7 +13,7 @@ window.calculusAllTopics = {
           "title": "Understanding Limits",
           "xp": 85,
           "type": "lesson",
-          "lessonText": "",
+          "lessonText": "# Understanding Limits\n\nA limit describes what value a function approaches as the input approaches a certain value. It's the foundation of calculus!\n\n## Notation:\n\nlim(x\u2192a) f(x) = L\n\nRead as \"the limit of f(x) as x approaches a is L.\"\n\n## Key Concepts:\n\n**The function doesn't need to equal the limit:**\n\nlim(x\u21922) (x\u00b2 - 4)/(x - 2) = 4\n\nEven though the function is undefined at x = 2, the limit exists!\n\n**Left-hand and right-hand limits:**\n\n- lim(x\u2192a\u207b) f(x) - limit from the left (x < a)\n- lim(x\u2192a\u207a) f(x) - limit from the right (x > a)\n\nFor the limit to exist, both must be equal.\n\n**Special limits:**\n\n- lim(x\u21920) sin(x)/x = 1\n- lim(x\u21920) (1 - cos(x))/x\u00b2 = 1/2\n- lim(x\u2192\u221e) (1 + 1/x)^x = e",
           "questions": [
             {
               "id": "calc_u1_l1_q1",
@@ -212,7 +212,7 @@ window.calculusAllTopics = {
           "title": "Calculating Limits",
           "xp": 88,
           "type": "lesson",
-          "lessonText": "",
+          "lessonText": "# Calculating Limits\n\nDifferent techniques for evaluating limits.\n\n## Direct Substitution:\n\nIf plugging in the value doesn't cause problems:\n\nlim(x\u21923) (2x + 1) = 2(3) + 1 = 7\n\n## Factoring:\n\nFor 0/0 forms, try factoring:\n\nlim(x\u21924) (x\u00b2 - 16)/(x - 4)\n= lim(x\u21924) (x - 4)(x + 4)/(x - 4)\n= lim(x\u21924) (x + 4) = 8\n\n## Limits at Infinity:\n\nCompare highest powers:\n\nlim(x\u2192\u221e) (3x\u00b2 + 2x)/(x\u00b2 + 1)\n= lim(x\u2192\u221e) (3 + 2/x)/(1 + 1/x\u00b2)\n= 3/1 = 3\n\n## L'H\u00f4pital's Rule:\n\nFor 0/0 or \u221e/\u221e forms:\n\nlim(x\u2192a) f(x)/g(x) = lim(x\u2192a) f'(x)/g'(x)\n\n## Rationalization:\n\nMultiply by the conjugate:\n\nlim(x\u21920) \u221a(x+1) - 1/x\n= lim(x\u21920) [(\u221a(x+1) - 1)(\u221a(x+1) + 1)]/[x(\u221a(x+1) + 1)]\n= lim(x\u21920) (x+1 - 1)/[x(\u221a(x+1) + 1)]\n= lim(x\u21920) x/[x(\u221a(x+1) + 1)]\n= lim(x\u21920) 1/(\u221a(x+1) + 1) = 1/2",
           "questions": [
             {
               "id": "calc_u1_l2_q1",
