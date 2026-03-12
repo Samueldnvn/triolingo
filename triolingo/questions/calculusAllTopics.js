@@ -9473,36 +9473,919 @@ window.calculusAllTopics = {
       "unitName": "13. Vector Calculus",
       "lessons": [
         {
-          "id": "17-1",
+          "id": "13-1",
           "title": "Vector fields and line integrals",
-          "xp": 0,
+          "xp": 88,
           "type": "lesson",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Vector Fields and Line Integrals\n\n## Vector Fields:\n\nA vector field F assigns a vector to each point.\n\nF(x, y) = \u27e8P(x, y), Q(x, y)\u27e9\n\n**Examples:**\n\n- F = \u27e8-y, x\u27e9 (rotation)\n- F = \u27e8x, y\u27e9 (radial)\n- F = \u27e80, -g\u27e9 (gravity)\n\n## Gradient Fields:\n\n\u2207f = \u27e8f\u2093, f\u1d67\u27e9\n\nThe gradient of a scalar function is a vector field.\n\n## Conservative Fields:\n\nF is conservative if F = \u2207f for some f.\n\nEquivalent: \u2202P/\u2202y = \u2202Q/\u2202x\n\n## Line Integrals:\n\n**Of a scalar function:**\n\u222bC f(x, y) ds = \u222b[a to b] f(r(t)) |r'(t)| dt\n\n**Of a vector field:**\n\u222bC F \u00b7 dr = \u222b[a to b] F(r(t)) \u00b7 r'(t) dt\n\n## Work:\n\nWork = \u222bC F \u00b7 dr\n\n## Examples:\n\n**F = \u27e8y, x\u27e9, C: r(t) = \u27e8t, t\u00b2\u27e9, 0 \u2264 t \u2264 1**\n\nF(r(t)) = \u27e8t\u00b2, t\u27e9\nr'(t) = \u27e81, 2t\u27e9\n\nF \u00b7 r' = t\u00b2\u00b71 + t\u00b72t = 3t\u00b2\n\nWork = \u222b\u2080\u00b9 3t\u00b2 dt = t\u00b3|\u2080\u00b9 = 1\n\n**Line integral of f = x + y along r(t) = \u27e8t, t\u27e9, 0 \u2264 t \u2264 1:**\n\n|r'| = \u221a(1 + 1) = \u221a2\nf(r(t)) = 2t\n\n\u222b\u2080\u00b9 2t \u00b7 \u221a2 dt = \u221a2 \u00b7 t\u00b2|\u2080\u00b9 = \u221a2",
+          "questions": [
+            {
+              "id": "calc_u13_l1_q1",
+              "type": "typing",
+              "question": "What is a vector field?",
+              "correctAnswer": [
+                "Assigns a vector to each point",
+                "F(x, y) = \u27e8P(x, y), Q(x, y)\u27e9"
+              ],
+              "xp": 5,
+              "explanation": "A vector field F assigns a vector to each point: F(x, y) = \u27e8P(x, y), Q(x, y)\u27e9."
+            },
+            {
+              "id": "calc_u13_l1_q2",
+              "type": "typing",
+              "question": "What is \u2207f?",
+              "correctAnswer": [
+                "Gradient of f",
+                "\u27e8f\u2093, f\u1d67\u27e9"
+              ],
+              "xp": 4,
+              "explanation": "\u2207f = \u27e8f\u2093, f\u1d67\u27e9. The gradient is a vector field pointing in direction of steepest increase."
+            },
+            {
+              "id": "calc_u13_l1_q3",
+              "type": "typing",
+              "question": "When is a field conservative?",
+              "correctAnswer": [
+                "When F = \u2207f for some f",
+                "When \u2202P/\u2202y = \u2202Q/\u2202x"
+              ],
+              "xp": 5,
+              "explanation": "A field is conservative if F = \u2207f for some scalar function f. Equivalently, \u2202P/\u2202y = \u2202Q/\u2202x."
+            },
+            {
+              "id": "calc_u13_l1_q4",
+              "type": "multiple-choice",
+              "question": "What is work in terms of line integrals?",
+              "options": [
+                "\u222bC F \u00b7 dr",
+                "\u222bC F \u00d7 dr",
+                "\u222bC |F| ds",
+                "\u222bC F"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Work = \u222bC F \u00b7 dr. The line integral of a vector field gives the work done by the field along the path."
+            },
+            {
+              "id": "calc_u13_l1_q5",
+              "type": "typing",
+              "question": "What is the line integral formula for vector fields?",
+              "correctAnswer": [
+                "\u222bC F \u00b7 dr = \u222b F(r(t)) \u00b7 r'(t) dt"
+              ],
+              "xp": 4,
+              "explanation": "A vector field F assigns a vector to each point: F(x, y) = \u27e8P(x, y), Q(x, y)\u27e9."
+            },
+            {
+              "id": "calc_u13_l1_q6",
+              "type": "multiple-choice",
+              "question": "What is \u2202P/\u2202y = \u2202Q/\u2202x?",
+              "options": [
+                "Gradient test",
+                "Conservative test",
+                "Divergence test",
+                "Curl test"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "This is the conservative test. If \u2202P/\u2202y = \u2202Q/\u2202x, then F = \u27e8P, Q\u27e9 is conservative."
+            },
+            {
+              "id": "calc_u13_l1_q7",
+              "type": "typing",
+              "question": "What is r'(t) for r(t) = \u27e8t, t\u00b2\u27e9?",
+              "correctAnswer": [
+                "<1, 2t>",
+                "\u27e81, 2t\u27e9"
+              ],
+              "xp": 5,
+              "explanation": "r'(t) = \u27e8d/dt(t), d/dt(t\u00b2)\u27e9 = \u27e81, 2t\u27e9. Differentiate each component."
+            },
+            {
+              "id": "calc_u13_l1_q8",
+              "type": "multiple-choice",
+              "question": "Is F = \u27e8y, x\u27e9 conservative?",
+              "options": [
+                "Yes",
+                "No",
+                "Sometimes",
+                "Only at origin"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "F = \u27e8y, x\u27e9. \u2202P/\u2202y = 1, \u2202Q/\u2202x = 1. Since equal, F is conservative (f = xy)."
+            },
+            {
+              "id": "calc_u13_l1_q9",
+              "type": "typing",
+              "question": "What is |\u27e81, 1\u27e9|?",
+              "correctAnswer": [
+                "\u221a2",
+                "sqrt(2)"
+              ],
+              "xp": 4,
+              "explanation": "|\u27e81, 1\u27e9| = \u221a(1 + 1) = \u221a2. Magnitude formula."
+            },
+            {
+              "id": "calc_u13_l1_q10",
+              "type": "multiple-choice",
+              "question": "What is F for F = \u27e8-y, x\u27e9 at (1, 1)?",
+              "options": [
+                "\u27e81, 1\u27e9",
+                "\u27e8-1, 1\u27e9",
+                "\u27e8-1, -1\u27e9",
+                "\u27e81, -1\u27e9"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "F(1, 1) = \u27e8-1, 1\u27e9. Plug in x=1, y=1: \u27e8-y, x\u27e9 = \u27e8-1, 1\u27e9."
+            },
+            {
+              "id": "calc_u13_l1_q11",
+              "type": "typing",
+              "question": "What is \u2207f for f(x, y) = x + y?",
+              "correctAnswer": [
+                "<1, 1>",
+                "\u27e81, 1\u27e9"
+              ],
+              "xp": 5,
+              "explanation": "\u2207f = \u27e8f\u2093, f\u1d67\u27e9 = \u27e81, 1\u27e9. Derivative of x is 1, derivative of y is 1."
+            },
+            {
+              "id": "calc_u13_l1_q12",
+              "type": "multiple-choice",
+              "question": "What is \u222b\u2080\u00b9 3t\u00b2 dt?",
+              "options": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "\u222b\u2080\u00b9 3t\u00b2 dt = 3 \u00b7 t\u00b3/3|\u2080\u00b9 = t\u00b3|\u2080\u00b9 = 1."
+            },
+            {
+              "id": "calc_u13_l1_q13",
+              "type": "typing",
+              "question": "What is ds for parametric curves?",
+              "correctAnswer": [
+                "|r'(t)| dt",
+                "The speed times dt"
+              ],
+              "xp": 4,
+              "explanation": "Answer: |r'(t)| dt"
+            },
+            {
+              "id": "calc_u13_l1_q14",
+              "type": "multiple-choice",
+              "question": "What is the line integral of F = \u27e81, 0\u27e9 along x-axis?",
+              "options": [
+                "0",
+                "1",
+                "Length",
+                "Area"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "Answer: Length"
+            },
+            {
+              "id": "calc_u13_l1_q15",
+              "type": "typing",
+              "question": "Is F = \u27e8x, y\u27e9 conservative?",
+              "correctAnswer": [
+                "Yes",
+                "\u2207(x\u00b2/2 + y\u00b2/2)"
+              ],
+              "xp": 5,
+              "explanation": "F = \u27e8x, y\u27e9. \u2202P/\u2202y = 0, \u2202Q/\u2202x = 0. Conservative (f = x\u00b2/2 + y\u00b2/2)."
+            },
+            {
+              "id": "calc_u13_l1_q16",
+              "type": "multiple-choice",
+              "question": "What is F = \u27e80, -g\u27e9?",
+              "options": [
+                "Gravity field",
+                "Electric field",
+                "Magnetic field",
+                "Velocity field"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Answer: Gravity field"
+            },
+            {
+              "id": "calc_u13_l1_q17",
+              "type": "typing",
+              "question": "What is \u2202Q/\u2202x for F = \u27e8y, x\u27e9?",
+              "correctAnswer": [
+                "1"
+              ],
+              "xp": 4,
+              "explanation": "\u2202Q/\u2202x = \u2202/\u2202x(x) = 1. Q = x, derivative with respect to x is 1."
+            },
+            {
+              "id": "calc_u13_l1_q18",
+              "type": "multiple-choice",
+              "question": "Work done by a conservative field depends on:",
+              "options": [
+                "Path only",
+                "Endpoints only",
+                "Speed",
+                "Both"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: Endpoints only"
+            }
+          ]
         },
         {
-          "id": "17-2",
-          "title": "Conservative fields and potential functions",
-          "xp": 0,
+          "id": "13-2",
+          "title": "Green's Theorem",
+          "xp": 90,
           "type": "lesson",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Green's Theorem\n\nGreen's Theorem relates line integrals to double integrals.\n\n## Green's Theorem:\n\n\u222eC P dx + Q dy = \u222b\u222bD (\u2202Q/\u2202x - \u2202P/\u2202y) dA\n\nwhere:\n- C is a positively oriented simple closed curve\n- D is the region bounded by C\n\n## Circulation Form:\n\n\u222eC F \u00b7 dr = \u222b\u222bD curl(F) \u00b7 k dA\n\nwhere curl(F) = \u2202Q/\u2202x - \u2202P/\u2202y\n\n## Area Form:\n\nArea(D) = (1/2)\u222eC x dy - y dx\n\nor\n\nArea(D) = \u222eC x dy = -\u222eC y dx\n\n## Examples:\n\n**Verify for circle x\u00b2 + y\u00b2 = 1:**\n\nF = \u27e8-y, x\u27e9\n\u2202Q/\u2202x = 1, \u2202P/\u2202y = -1\n\u222b\u222bD (1 - (-1)) dA = \u222b\u222bD 2 dA = 2\u03c0\n\nLine integral: \u222eC (-y)dx + x dy\nParametric: x = cos t, y = sin t\n\u222e = 2\u03c0 \u2713\n\n**Area using Green's:**\n\nArea = (1/2)\u222eC x dy - y dx\n\nFor rectangle [0,1] \u00d7 [0,1]:\nTraverse boundary clockwise\nArea = 1",
+          "questions": [
+            {
+              "id": "calc_u13_l2_q1",
+              "type": "typing",
+              "question": "What is Green's Theorem?",
+              "correctAnswer": [
+                "\u222eC P dx + Q dy = \u222b\u222bD (\u2202Q/\u2202x - \u2202P/\u2202y) dA",
+                "Relates line and double integrals"
+              ],
+              "xp": 5,
+              "explanation": "\u222eC P dx + Q dy = \u222b\u222bD (\u2202Q/\u2202x - \u2202P/\u2202y) dA. Relates closed line integral to double integral over region."
+            },
+            {
+              "id": "calc_u13_l2_q2",
+              "type": "typing",
+              "question": "What does C need to be for Green's Theorem?",
+              "correctAnswer": [
+                "Simple closed curve",
+                "Closed loop"
+              ],
+              "xp": 4,
+              "explanation": "\u222eC P dx + Q dy = \u222b\u222bD (\u2202Q/\u2202x - \u2202P/\u2202y) dA. Relates closed line integral to double integral over region."
+            },
+            {
+              "id": "calc_u13_l2_q3",
+              "type": "typing",
+              "question": "What is curl(F) in 2D?",
+              "correctAnswer": [
+                "\u2202Q/\u2202x - \u2202P/\u2202y"
+              ],
+              "xp": 5,
+              "explanation": "Answer: \u2202Q/\u2202x - \u2202P/\u2202y"
+            },
+            {
+              "id": "calc_u13_l2_q4",
+              "type": "multiple-choice",
+              "question": "What is the area formula using Green's?",
+              "options": [
+                "(1/2)\u222eC x dy - y dx",
+                "\u222eC x dx + y dy",
+                "\u222b\u222bD 1 dA",
+                "\u222eC F \u00b7 dr"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Answer: (1/2)\u222eC x dy - y dx"
+            },
+            {
+              "id": "calc_u13_l2_q5",
+              "type": "typing",
+              "question": "For F = \u27e8-y, x\u27e9, what is \u2202Q/\u2202x - \u2202P/\u2202y?",
+              "correctAnswer": [
+                "2",
+                "1 - (-1) = 2"
+              ],
+              "xp": 4,
+              "explanation": "\u2202Q/\u2202x = \u2202/\u2202x(x) = 1. \u2202P/\u2202y = \u2202/\u2202y(-y) = -1. curl = 1 - (-1) = 2."
+            },
+            {
+              "id": "calc_u13_l2_q6",
+              "type": "multiple-choice",
+              "question": "For circle radius R, area using Green's is:",
+              "options": [
+                "\u03c0R",
+                "\u03c0R\u00b2",
+                "2\u03c0R",
+                "4\u03c0R\u00b2"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: \u03c0R\u00b2"
+            },
+            {
+              "id": "calc_u13_l2_q7",
+              "type": "typing",
+              "question": "What is the circulation of F = \u27e8y, -x\u27e9 around unit circle?",
+              "correctAnswer": [
+                "-2\u03c0",
+                "\u222e = -2\u03c0"
+              ],
+              "xp": 5,
+              "explanation": "\u2202Q/\u2202x = \u2202/\u2202x(-x) = -1. \u2202P/\u2202y = \u2202/\u2202y(y) = 1. curl = -1 - 1 = -2. \u222b\u222b(-2) dA = -2\u03c0."
+            },
+            {
+              "id": "calc_u13_l2_q8",
+              "type": "multiple-choice",
+              "question": "If curl(F) = 0, what is \u222eC F \u00b7 dr?",
+              "options": [
+                "0",
+                "Area",
+                "Perimeter",
+                "Depends"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Answer: 0"
+            },
+            {
+              "id": "calc_u13_l2_q9",
+              "type": "typing",
+              "question": "What is \u2202Q/\u2202x for F = \u27e8y, x\u00b2\u27e9?",
+              "correctAnswer": [
+                "2x"
+              ],
+              "xp": 4,
+              "explanation": "\u2202Q/\u2202x = \u2202/\u2202x(x\u00b2) = 2x."
+            },
+            {
+              "id": "calc_u13_l2_q10",
+              "type": "multiple-choice",
+              "question": "What is \u2202P/\u2202y for F = \u27e8xy, y\u27e9?",
+              "options": [
+                "x",
+                "y",
+                "1",
+                "0"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "\u2202P/\u2202y = \u2202/\u2202y(xy) = x. Treat x as constant."
+            },
+            {
+              "id": "calc_u13_l2_q11",
+              "type": "typing",
+              "question": "What is positively oriented?",
+              "correctAnswer": [
+                "Counter-clockwise",
+                "CCW"
+              ],
+              "xp": 5,
+              "explanation": "Positively oriented means counter-clockwise (CCW). The boundary is traversed CCW."
+            },
+            {
+              "id": "calc_u13_l2_q12",
+              "type": "multiple-choice",
+              "question": "Green's Theorem applies to what dimension?",
+              "options": [
+                "1D",
+                "2D",
+                "3D",
+                "4D"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "\u222eC P dx + Q dy = \u222b\u222bD (\u2202Q/\u2202x - \u2202P/\u2202y) dA. Relates closed line integral to double integral over region."
+            },
+            {
+              "id": "calc_u13_l2_q13",
+              "type": "typing",
+              "question": "What is \u2202Q/\u2202x - \u2202P/\u2202y for F = \u27e8x, y\u27e9?",
+              "correctAnswer": [
+                "0",
+                "1 - 1 = 0"
+              ],
+              "xp": 4,
+              "explanation": "\u2202Q/\u2202x = \u2202/\u2202x(y) = 0. \u2202P/\u2202y = \u2202/\u2202y(x) = 0. curl = 0 - 0 = 0."
+            },
+            {
+              "id": "calc_u13_l2_q14",
+              "type": "multiple-choice",
+              "question": "What is the area of [0,1]\u00b2 using Green's?",
+              "options": [
+                "0",
+                "1",
+                "2",
+                "\u03c0"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: 1"
+            },
+            {
+              "id": "calc_u13_l2_q15",
+              "type": "typing",
+              "question": "What does \u222eC mean?",
+              "correctAnswer": [
+                "Closed line integral",
+                "Integral around closed curve"
+              ],
+              "xp": 5,
+              "explanation": "Answer: Closed line integral"
+            },
+            {
+              "id": "calc_u13_l2_q16",
+              "type": "multiple-choice",
+              "question": "For F = \u27e80, x\u27e9, what is curl(F)?",
+              "options": [
+                "0",
+                "1",
+                "-1",
+                "x"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "\u2202Q/\u2202x = \u2202/\u2202x(x) = 1. \u2202P/\u2202y = \u2202/\u2202y(0) = 0. curl = 1 - 0 = 1."
+            },
+            {
+              "id": "calc_u13_l2_q17",
+              "type": "typing",
+              "question": "What is \u2202P/\u2202y for F = \u27e80, x\u27e9?",
+              "correctAnswer": [
+                "0"
+              ],
+              "xp": 4,
+              "explanation": "\u2202Q/\u2202x = \u2202/\u2202x(x) = 1. \u2202P/\u2202y = \u2202/\u2202y(0) = 0. curl = 1 - 0 = 1."
+            },
+            {
+              "id": "calc_u13_l2_q18",
+              "type": "multiple-choice",
+              "question": "Green's Theorem is a special case of:",
+              "options": [
+                "Stokes' Theorem",
+                "Divergence Theorem",
+                "FTC",
+                "Fubini"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "\u222eC P dx + Q dy = \u222b\u222bD (\u2202Q/\u2202x - \u2202P/\u2202y) dA. Relates closed line integral to double integral over region."
+            }
+          ]
         },
         {
-          "id": "17-3",
-          "title": "Surface integrals and flux",
-          "xp": 0,
+          "id": "13-3",
+          "title": "Curl and divergence",
+          "xp": 88,
           "type": "lesson",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Curl and Divergence\n\n## Curl:\n\nMeasures rotation of a vector field.\n\ncurl(F) = \u2207 \u00d7 F = \n| i     j     k |\n| \u2202/\u2202x \u2202/\u2202y \u2202/\u2202z |\n| P     Q     R |\n\n= \u27e8\u2202R/\u2202y - \u2202Q/\u2202z, \u2202P/\u2202z - \u2202R/\u2202x, \u2202Q/\u2202x - \u2202P/\u2202y\u27e9\n\n**2D curl:** curl(F) = \u2202Q/\u2202x - \u2202P/\u2202y\n\n**Curl = 0:** Field is irrotational (conservative if simply connected)\n\n## Divergence:\n\nMeasures expansion/contraction of a field.\n\ndiv(F) = \u2207 \u00b7 F = \u2202P/\u2202x + \u2202Q/\u2202y + \u2202R/\u2202z\n\n**div > 0:** Source (outward)\n**div < 0:** Sink (inward)\n**div = 0:** Solenoidal (incompressible)\n\n## Laplacian:\n\n\u0394f = \u2207\u00b2f = f\u2093\u2093 + f\u1d67\u1d67 + fzz\n\n## Examples:\n\n**F = \u27e8-y, x, 0\u27e9 (rotation in xy-plane)**\n\ncurl(F) = \u27e80, 0, 2\u27e9 (constant rotation)\ndiv(F) = 0 (incompressible)\n\n**F = \u27e8x, y, z\u27e9 (radial)**\n\ncurl(F) = \u27e80, 0, 0\u27e9 (irrotational)\ndiv(F) = 3 (expanding)\n\n**F = \u27e8x\u00b3, y\u00b3, z\u00b3\u27e9**\n\n\u0394f = 6x\u00b2 + 6y\u00b2 + 6z\u00b2",
+          "questions": [
+            {
+              "id": "calc_u13_l3_q1",
+              "type": "typing",
+              "question": "What is curl(F)?",
+              "correctAnswer": [
+                "\u2207 \u00d7 F",
+                "Cross product of gradient and F"
+              ],
+              "xp": 5,
+              "explanation": "Answer: \u2207 \u00d7 F"
+            },
+            {
+              "id": "calc_u13_l3_q2",
+              "type": "typing",
+              "question": "What does curl measure?",
+              "correctAnswer": [
+                "Rotation",
+                "How the field rotates"
+              ],
+              "xp": 4,
+              "explanation": "Answer: Rotation"
+            },
+            {
+              "id": "calc_u13_l3_q3",
+              "type": "typing",
+              "question": "What is div(F)?",
+              "correctAnswer": [
+                "\u2207 \u00b7 F",
+                "Dot product of gradient and F"
+              ],
+              "xp": 5,
+              "explanation": "Answer: \u2207 \u00b7 F"
+            },
+            {
+              "id": "calc_u13_l3_q4",
+              "type": "multiple-choice",
+              "question": "What does divergence measure?",
+              "options": [
+                "Rotation",
+                "Expansion/contraction",
+                "Magnitude",
+                "Direction"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: Expansion/contraction"
+            },
+            {
+              "id": "calc_u13_l3_q5",
+              "type": "typing",
+              "question": "What is the 2D curl formula?",
+              "correctAnswer": [
+                "\u2202Q/\u2202x - \u2202P/\u2202y"
+              ],
+              "xp": 4,
+              "explanation": "Answer: \u2202Q/\u2202x - \u2202P/\u2202y"
+            },
+            {
+              "id": "calc_u13_l3_q6",
+              "type": "multiple-choice",
+              "question": "If curl = 0, the field is:",
+              "options": [
+                "Irrotational",
+                "Solenoidal",
+                "Conservative",
+                "Both"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Answer: Irrotational"
+            },
+            {
+              "id": "calc_u13_l3_q7",
+              "type": "typing",
+              "question": "What is \u2207\u00b2f?",
+              "correctAnswer": [
+                "Laplacian",
+                "f\u2093\u2093 + f\u1d67\u1d67 + fzz"
+              ],
+              "xp": 5,
+              "explanation": "\u2207\u00b2f = f\u2093\u2093 + f\u1d67\u1d67 + fzz. The Laplacian is the sum of second partial derivatives."
+            },
+            {
+              "id": "calc_u13_l3_q8",
+              "type": "multiple-choice",
+              "question": "What is div(F) for F = \u27e8x, y, z\u27e9?",
+              "options": [
+                "0",
+                "1",
+                "3",
+                "xyz"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "div(F) = \u2202x/\u2202x + \u2202y/\u2202y + \u2202z/\u2202z = 1 + 1 + 1 = 3."
+            },
+            {
+              "id": "calc_u13_l3_q9",
+              "type": "typing",
+              "question": "What is curl(F) for F = \u27e8x, y, z\u27e9?",
+              "correctAnswer": [
+                "<0, 0, 0>",
+                "\u27e80, 0, 0\u27e9"
+              ],
+              "xp": 4,
+              "explanation": "curl(F) = \u27e80, 0, 0\u27e9. All partial derivatives are 0: \u2202z/\u2202y - \u2202y/\u2202z = 0, etc."
+            },
+            {
+              "id": "calc_u13_l3_q10",
+              "type": "multiple-choice",
+              "question": "What is curl(F) for F = \u27e8-y, x, 0\u27e9?",
+              "options": [
+                "\u27e80, 0, 0\u27e9",
+                "\u27e80, 0, 1\u27e9",
+                "\u27e80, 0, 2\u27e9",
+                "\u27e80, 0, -2\u27e9"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "curl(F) = \u27e80, 0, 2\u27e9. z-component: \u2202Q/\u2202x - \u2202P/\u2202y = 1 - (-1) = 2."
+            },
+            {
+              "id": "calc_u13_l3_q11",
+              "type": "typing",
+              "question": "What is \u2207 \u00b7 F called?",
+              "correctAnswer": [
+                "Divergence",
+                "div(F)"
+              ],
+              "xp": 5,
+              "explanation": "Answer: Divergence"
+            },
+            {
+              "id": "calc_u13_l3_q12",
+              "type": "multiple-choice",
+              "question": "What is div(F) for F = \u27e8-y, x, 0\u27e9?",
+              "options": [
+                "0",
+                "2",
+                "-2",
+                "1"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "div(F) = \u2202(-y)/\u2202x + \u2202x/\u2202y + \u22020/\u2202z = 0 + 0 + 0 = 0."
+            },
+            {
+              "id": "calc_u13_l3_q13",
+              "type": "typing",
+              "question": "What does div > 0 mean?",
+              "correctAnswer": [
+                "Source",
+                "Outward expansion"
+              ],
+              "xp": 4,
+              "explanation": "div > 0 means source - the field is expanding outward from that point."
+            },
+            {
+              "id": "calc_u13_l3_q14",
+              "type": "multiple-choice",
+              "question": "What does div < 0 mean?",
+              "options": [
+                "Source",
+                "Sink",
+                "Zero",
+                "Undefined"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "div < 0 means sink - the field is contracting inward toward that point."
+            },
+            {
+              "id": "calc_u13_l3_q15",
+              "type": "typing",
+              "question": "What is \u2207 \u00d7 (\u2207f)?",
+              "correctAnswer": [
+                "0",
+                "The zero vector"
+              ],
+              "xp": 5,
+              "explanation": "\u2207f = \u27e8f\u2093, f\u1d67\u27e9. The gradient is a vector field pointing in direction of steepest increase."
+            },
+            {
+              "id": "calc_u13_l3_q16",
+              "type": "multiple-choice",
+              "question": "What is \u2207 \u00b7 (\u2207 \u00d7 F)?",
+              "options": [
+                "0",
+                "1",
+                "curl",
+                "div"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "\u2207 \u00b7 (\u2207 \u00d7 F) = 0. The divergence of a curl is always zero (vector identity)."
+            },
+            {
+              "id": "calc_u13_l3_q17",
+              "type": "typing",
+              "question": "What is \u0394x\u00b2?",
+              "correctAnswer": [
+                "2"
+              ],
+              "xp": 4,
+              "explanation": "\u0394x\u00b2 = (d\u00b2/dx\u00b2)(x\u00b2) = d/dx(2x) = 2. Second derivative of x\u00b2 is 2."
+            },
+            {
+              "id": "calc_u13_l3_q18",
+              "type": "multiple-choice",
+              "question": "What field has curl = 0 everywhere?",
+              "options": [
+                "Radial",
+                "Rotational",
+                "Both",
+                "Neither"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Answer: Radial"
+            }
+          ]
         },
         {
-          "id": "17-4",
-          "title": "Major Theorems",
-          "xp": 0,
+          "id": "13-4",
+          "title": "Surface integrals and fundamental theorems",
+          "xp": 90,
           "type": "lesson",
-          "lessonText": "",
-          "questions": []
+          "lessonText": "# Surface Integrals and Fundamental Theorems\n\n## Surface Integrals:\n\n**Of a scalar function:**\n\u222b\u222bS f(x, y, z) dS = \u222b\u222bD f(r(u, v)) |r\u1d64 \u00d7 r\u1d65| du dv\n\n**Of a vector field (flux):**\n\u222b\u222bS F \u00b7 dS = \u222b\u222bD F(r(u, v)) \u00b7 (r\u1d64 \u00d7 r\u1d65) du dv\n\nwhere S is parametrized by r(u, v).\n\n## Stokes' Theorem:\n\n\u222eC F \u00b7 dr = \u222b\u222bS curl(F) \u00b7 dS\n\nRelates line integral over boundary to surface integral of curl.\n\nC is boundary of surface S.\n\n## Divergence Theorem:\n\n\u222b\u222b\u2202E F \u00b7 dS = \u222b\u222b\u222bE div(F) dV\n\nRelates flux through closed surface to volume integral of divergence.\n\n\u2202E is boundary of region E.\n\n## Examples:\n\n**Stokes': F = \u27e8y, -x, 0\u27e9, S is unit disk**\n\ncurl(F) = \u27e80, 0, -2\u27e9\n\u222b\u222bS \u27e80, 0, -2\u27e9 \u00b7 k dS = -2\u03c0\n\n\u222eC F \u00b7 dr = -2\u03c0 \u2713\n\n**Divergence Theorem:** F = \u27e8x, y, z\u27e9, E is unit ball\n\ndiv(F) = 3\n\u222b\u222b\u2202E F \u00b7 dS = \u222b\u222b\u222bE 3 dV = 3 \u00b7 (4\u03c0/3) = 4\u03c0",
+          "questions": [
+            {
+              "id": "calc_u13_l4_q1",
+              "type": "typing",
+              "question": "What is Stokes' Theorem?",
+              "correctAnswer": [
+                "\u222eC F \u00b7 dr = \u222b\u222bS curl(F) \u00b7 dS",
+                "Line integral equals surface integral of curl"
+              ],
+              "xp": 5,
+              "explanation": "Answer: \u222eC F \u00b7 dr = \u222b\u222bS curl(F) \u00b7 dS"
+            },
+            {
+              "id": "calc_u13_l4_q2",
+              "type": "typing",
+              "question": "What is the Divergence Theorem?",
+              "correctAnswer": [
+                "\u222b\u222b\u2202E F \u00b7 dS = \u222b\u222b\u222bE div(F) dV",
+                "Flux equals volume integral of divergence"
+              ],
+              "xp": 4,
+              "explanation": "\u222b\u222b\u2202E F \u00b7 dS = \u222b\u222b\u222bE div(F) dV. Relates flux through boundary to volume integral of divergence."
+            },
+            {
+              "id": "calc_u13_l4_q3",
+              "type": "typing",
+              "question": "What is dS for surface integrals?",
+              "correctAnswer": [
+                "|r\u1d64 \u00d7 r\u1d65| du dv",
+                "Magnitude of cross product"
+              ],
+              "xp": 5,
+              "explanation": "Answer: |r\u1d64 \u00d7 r\u1d65| du dv"
+            },
+            {
+              "id": "calc_u13_l4_q4",
+              "type": "multiple-choice",
+              "question": "What is flux?",
+              "options": [
+                "\u222b\u222bS F \u00b7 dS",
+                "\u222b\u222bS |F| dS",
+                "\u222b\u222bS F \u00d7 dS",
+                "\u222b\u222bS F dS"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "Flux = \u222b\u222bS F \u00b7 dS. Measures how much field passes through the surface."
+            },
+            {
+              "id": "calc_u13_l4_q5",
+              "type": "typing",
+              "question": "What does Stokes' relate?",
+              "correctAnswer": [
+                "Line integral to surface integral",
+                "Boundary to surface"
+              ],
+              "xp": 4,
+              "explanation": "Answer: Line integral to surface integral"
+            },
+            {
+              "id": "calc_u13_l4_q6",
+              "type": "multiple-choice",
+              "question": "What does Divergence Theorem relate?",
+              "options": [
+                "Line to area",
+                "Surface flux to volume integral",
+                "Both",
+                "Neither"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "\u222b\u222b\u2202E F \u00b7 dS = \u222b\u222b\u222bE div(F) dV. Relates flux through boundary to volume integral of divergence."
+            },
+            {
+              "id": "calc_u13_l4_q7",
+              "type": "typing",
+              "question": "What is \u2202E?",
+              "correctAnswer": [
+                "Boundary of E",
+                "Surface enclosing E"
+              ],
+              "xp": 5,
+              "explanation": "\u2202E is the boundary of region E - the surface enclosing the volume."
+            },
+            {
+              "id": "calc_u13_l4_q8",
+              "type": "multiple-choice",
+              "question": "For F = \u27e8x, y, z\u27e9, what is div(F)?",
+              "options": [
+                "0",
+                "1",
+                "3",
+                "x+y+z"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "div(F) = \u2202x/\u2202x + \u2202y/\u2202y + \u2202z/\u2202z = 1 + 1 + 1 = 3."
+            },
+            {
+              "id": "calc_u13_l4_q9",
+              "type": "typing",
+              "question": "What is the volume of unit ball?",
+              "correctAnswer": [
+                "4\u03c0/3"
+              ],
+              "xp": 4,
+              "explanation": "Volume of unit sphere = (4/3)\u03c0R\u00b3 = 4\u03c0/3 when R = 1."
+            },
+            {
+              "id": "calc_u13_l4_q10",
+              "type": "multiple-choice",
+              "question": "What is |r\u1d64 \u00d7 r\u1d65|?",
+              "options": [
+                "dS",
+                "Magnitude",
+                "Both",
+                "Neither"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "Answer: Both"
+            },
+            {
+              "id": "calc_u13_l4_q11",
+              "type": "typing",
+              "question": "What is the surface integral of 1?",
+              "correctAnswer": [
+                "Surface area",
+                "Area of the surface"
+              ],
+              "xp": 5,
+              "explanation": "\u222b\u222bS 1 dS = surface area. Integrating 1 over a surface gives its area."
+            },
+            {
+              "id": "calc_u13_l4_q12",
+              "type": "multiple-choice",
+              "question": "What is \u2207 \u00b7 (\u2207 \u00d7 F)?",
+              "options": [
+                "0",
+                "1",
+                "curl",
+                "div"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "\u2207 \u00b7 (\u2207 \u00d7 F) = 0. The divergence of a curl is always zero (vector identity)."
+            },
+            {
+              "id": "calc_u13_l4_q13",
+              "type": "typing",
+              "question": "What is the flux through a closed surface?",
+              "correctAnswer": [
+                "\u222b\u222b\u2202E F \u00b7 dS",
+                "Surface integral over boundary"
+              ],
+              "xp": 4,
+              "explanation": "Flux = \u222b\u222bS F \u00b7 dS. Measures how much field passes through the surface."
+            },
+            {
+              "id": "calc_u13_l4_q14",
+              "type": "multiple-choice",
+              "question": "Stokes' Theorem works in what dimension?",
+              "options": [
+                "2D",
+                "3D",
+                "4D",
+                "All"
+              ],
+              "correct": 1,
+              "xp": 3,
+              "explanation": "Answer: 3D"
+            },
+            {
+              "id": "calc_u13_l4_q15",
+              "type": "typing",
+              "question": "What is curl(F) \u00b7 dS?",
+              "correctAnswer": [
+                "Component of curl normal to surface"
+              ],
+              "xp": 5,
+              "explanation": "Answer: Component of curl normal to surface"
+            },
+            {
+              "id": "calc_u13_l4_q16",
+              "type": "multiple-choice",
+              "question": "What is \u2207 \u00d7 \u2207f?",
+              "options": [
+                "0",
+                "curl",
+                "div",
+                "f"
+              ],
+              "correct": 0,
+              "xp": 3,
+              "explanation": "\u2207f = \u27e8f\u2093, f\u1d67\u27e9. The gradient is a vector field pointing in direction of steepest increase."
+            },
+            {
+              "id": "calc_u13_l4_q17",
+              "type": "typing",
+              "question": "What is the flux of F = \u27e80, 0, 1\u27e9 through xy-plane?",
+              "correctAnswer": [
+                "Area",
+                "The area of the region"
+              ],
+              "xp": 4,
+              "explanation": "Flux = \u222b\u222bS F \u00b7 dS. Measures how much field passes through the surface."
+            },
+            {
+              "id": "calc_u13_l4_q18",
+              "type": "multiple-choice",
+              "question": "What is the boundary of a sphere?",
+              "options": [
+                "Circle",
+                "Nothing",
+                "Empty set",
+                "Sphere itself"
+              ],
+              "correct": 2,
+              "xp": 3,
+              "explanation": "Answer: Empty set"
+            }
+          ]
         }
       ]
     },
