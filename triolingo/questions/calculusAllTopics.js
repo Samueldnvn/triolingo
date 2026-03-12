@@ -1691,7 +1691,7 @@ window.calculusAllTopics = {
           "title": "Introduction to Integration",
           "xp": 88,
           "type": "lesson",
-          "lessonText": "",
+          "lessonText": "# Introduction to Integration\n\nIntegration is the reverse process of differentiation. If F'(x) = f(x), then F(x) is the antiderivative of f(x).\n\n## The Integral Symbol:\n\n\u222b f(x) dx = F(x) + C\n\nThe symbol \u222b represents integration, f(x) is the integrand, dx tells us the variable of integration, and C is the constant of integration.\n\n## The Power Rule for Integration:\n\n\u222b x\u207f dx = x^(n+1)/(n+1) + C (for n \u2260 -1)\n\n## Key Concepts:\n\n**Why the constant C?**\n\nWhen differentiating, constants disappear (derivative of x\u00b2+5 is 2x, same as derivative of x\u00b2). So when integrating, we add C to account for all possible antiderivatives.\n\n**Common Integrals:**\n\n- \u222b k dx = kx + C (where k is constant)\n- \u222b e\u02e3 dx = e\u02e3 + C\n- \u222b 1/x dx = ln|x| + C\n- \u222b sin(x) dx = -cos(x) + C\n- \u222b cos(x) dx = sin(x) + C",
           "questions": [
             {
               "id": "calc_u3_l1_q1",
@@ -1738,7 +1738,7 @@ window.calculusAllTopics = {
             {
               "id": "calc_u3_l1_q5",
               "type": "typing",
-              "question": "What is \u222b x^n dx (for n \u2260 -1)?",
+              "question": "What is \u222b x\u207f dx (for n \u2260 -1)?",
               "correctAnswer": [
                 "x^(n+1)/(n+1) + C"
               ],
@@ -1782,7 +1782,7 @@ window.calculusAllTopics = {
             {
               "id": "calc_u3_l1_q9",
               "type": "typing",
-              "question": "What is \u222b e^x dx?",
+              "question": "What is \u222b e\u02e3 dx?",
               "correctAnswer": [
                 "e^x + C"
               ],
@@ -1897,7 +1897,7 @@ window.calculusAllTopics = {
           "title": "Definite Integrals",
           "xp": 88,
           "type": "lesson",
-          "lessonText": "",
+          "lessonText": "# Definite Integrals\n\nA definite integral has specific bounds and evaluates to a number (no constant C).\n\n## Notation:\n\n\u222b\u2090\u1d47 f(x) dx = F(b) - F(a)\n\nThis is read as \"the integral of f from a to b.\"\n\n## The Fundamental Theorem of Calculus (Part 2):\n\nIf F is an antiderivative of f, then:\n\n\u222b\u2090\u1d47 f(x) dx = F(b) - F(a)\n\n## Properties:\n\n1. **Reversing limits changes sign:**\n   \u222b\u2090\u1d47 f(x) dx = -\u222b\u1d47\u1d43 f(x) dx\n\n2. **Adding intervals:**\n   \u222b\u2090\u1d47 f(x) dx + \u222b\u1d47\u1d9c f(x) dx = \u222b\u2090\u1d9c f(x) dx\n\n3. **Same limits equal zero:**\n   \u222b\u2090\u1d43 f(x) dx = 0\n\n## Area Interpretation:\n\n- If f(x) > 0 on [a,b], \u222b\u2090\u1d47 f(x) dx is the area under the curve\n- If f(x) < 0 on [a,b], the integral is negative\n- If f(x) changes sign, you get net area (positive minus negative)\n\n## Example:\n\n\u222b\u2080\u00b2 x\u00b2 dx = [x\u00b3/3]\u2080\u00b2 = 8/3 - 0 = 8/3\n\nThis is the area under y = x\u00b2 from x = 0 to x = 2.",
           "questions": [
             {
               "id": "calc_u3_l2_q1",
@@ -2011,7 +2011,7 @@ window.calculusAllTopics = {
             {
               "id": "calc_u3_l2_q11",
               "type": "typing",
-              "question": "What is \u222b from 0 to 1 e^x dx?",
+              "question": "What is \u222b from 0 to 1 e\u02e3 dx?",
               "correctAnswer": [
                 "e - 1",
                 "1.718"
@@ -2112,7 +2112,7 @@ window.calculusAllTopics = {
           "title": "Rates of Change",
           "xp": 88,
           "type": "lesson",
-          "lessonText": "",
+          "lessonText": "# Rates of Change\n\nDerivatives and integrals describe how quantities change over time.\n\n## Position, Velocity, and Acceleration:\n\n**Position:** s(t) - where an object is at time t\n\n**Velocity:** v(t) = s'(t) - how fast position is changing\n\n**Acceleration:** a(t) = v'(t) = s''(t) - how fast velocity is changing\n\n## Relationships:\n\n- Given position: differentiate to get velocity, then acceleration\n- Given acceleration: integrate to get velocity, then position\n\n## Example:\n\nIf s(t) = t\u00b3 + 2t, find v(t) and a(t).\n\nv(t) = s'(t) = 3t\u00b2 + 2\na(t) = v'(t) = 6t\n\n## From Acceleration to Position:\n\nIf a(t) = 2, then:\nv(t) = \u222b a(t) dt = 2t + C\u2081\ns(t) = \u222b v(t) dt = t\u00b2 + C\u2081t + C\u2082\n\nThe constants C\u2081 and C\u2082 are determined by initial conditions (like initial position and velocity).\n\n## Speed vs Velocity:\n\n- Velocity can be positive or negative (direction matters)\n- Speed is the absolute value of velocity: speed = |v(t)|",
           "questions": [
             {
               "id": "calc_u4_l1_q1",
@@ -2317,7 +2317,7 @@ window.calculusAllTopics = {
           "title": "Area and Volume",
           "xp": 88,
           "type": "lesson",
-          "lessonText": "",
+          "lessonText": "# Area and Volume\n\nIntegrals help us calculate geometric quantities like area and volume.\n\n## Area Under a Curve:\n\nThe area under f(x) from a to b is:\n\nArea = \u222b\u2090\u1d47 f(x) dx\n\n## Area Between Curves:\n\nThe area between f(x) (top) and g(x) (bottom) from a to b:\n\nArea = \u222b\u2090\u1d47 [f(x) - g(x)] dx\n\n## Volumes of Revolution:\n\n**Disk Method (rotation about x-axis):**\n\nV = \u222b\u2090\u1d47 \u03c0[f(x)]\u00b2 dx\n\nEach cross-section is a disk with radius f(x).\n\n**Washer Method (rotation about x-axis with hole):**\n\nV = \u222b\u2090\u1d47 \u03c0{[f(x)]\u00b2 - [g(x)]\u00b2} dx\n\nOuter radius f(x), inner radius g(x).\n\n**Shell Method (rotation about y-axis):**\n\nV = \u222b\u2090\u1d47 2\u03c0x\u00b7f(x) dx\n\nEach shell has radius x and height f(x).\n\n## Example (Disk):\n\nVolume of y = \u221ax from 0 to 4 rotated about x-axis:\n\nV = \u222b\u2080\u2074 \u03c0(\u221ax)\u00b2 dx = \u03c0\u222b\u2080\u2074 x dx = 8\u03c0",
           "questions": [
             {
               "id": "calc_u4_l2_q1",
