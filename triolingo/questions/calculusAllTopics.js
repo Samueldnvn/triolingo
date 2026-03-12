@@ -22,7 +22,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "4"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Direct substitution: lim(x\u21922) x\u00b2 = 2\u00b2 = 4"
             },
             {
               "id": "calc_u1_l1_q2",
@@ -31,7 +32,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "The value a function approaches as x approaches a certain value"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: The value a function approaches as x approaches a certain value"
             },
             {
               "id": "calc_u1_l1_q3",
@@ -40,7 +42,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "7"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: 7"
             },
             {
               "id": "calc_u1_l1_q4",
@@ -49,7 +52,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "3"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: 3"
             },
             {
               "id": "calc_u1_l1_q5",
@@ -58,7 +62,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "lim(x\u21920) sin(x)/x = 1. This is a standard trigonometric limit."
             },
             {
               "id": "calc_u1_l1_q6",
@@ -71,7 +76,8 @@ window.calculusAllTopics = {
                 "Undefined"
               ],
               "correct": 0,
-              "xp": 3
+              "xp": 3,
+              "explanation": "As x approaches infinity, 1/x approaches 0."
             },
             {
               "id": "calc_u1_l1_q7",
@@ -80,7 +86,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "2"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Answer: 2"
             },
             {
               "id": "calc_u1_l1_q8",
@@ -93,7 +100,8 @@ window.calculusAllTopics = {
                 "Both zero"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: The same"
             },
             {
               "id": "calc_u1_l1_q9",
@@ -102,7 +110,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "0"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "As x approaches infinity, 1/x approaches 0."
             },
             {
               "id": "calc_u1_l1_q10",
@@ -115,7 +124,8 @@ window.calculusAllTopics = {
                 "Infinite limit"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Right-hand limit"
             },
             {
               "id": "calc_u1_l1_q11",
@@ -124,7 +134,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "12"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Answer: 12"
             },
             {
               "id": "calc_u1_l1_q12",
@@ -137,7 +148,8 @@ window.calculusAllTopics = {
                 "Undefined"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Continuous"
             },
             {
               "id": "calc_u1_l1_q13",
@@ -146,7 +158,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: 1"
             },
             {
               "id": "calc_u1_l1_q14",
@@ -159,7 +172,8 @@ window.calculusAllTopics = {
                 "lim(x\u21921) x + 1"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: lim(x\u21920) 1/|x|"
             },
             {
               "id": "calc_u1_l1_q15",
@@ -168,7 +182,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "2"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "As x approaches infinity, 1/x approaches 0."
             },
             {
               "id": "calc_u1_l1_q16",
@@ -181,7 +196,8 @@ window.calculusAllTopics = {
                 "The function is undefined"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Left and right limits equal the function value"
             },
             {
               "id": "calc_u1_l1_q17",
@@ -190,7 +206,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "lim(x\u21920) sin(x)/x = 1. This is a standard trigonometric limit."
             },
             {
               "id": "calc_u1_l1_q18",
@@ -203,7 +220,8 @@ window.calculusAllTopics = {
                 "Areas"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Answer: Limits"
             }
           ]
         },
@@ -221,7 +239,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "8"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Answer: 8"
             },
             {
               "id": "calc_u1_l2_q2",
@@ -230,7 +249,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "Factoring or rationalization"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: Factoring or rationalization"
             },
             {
               "id": "calc_u1_l2_q3",
@@ -239,7 +259,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "3"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "As x approaches infinity, 1/x approaches 0."
             },
             {
               "id": "calc_u1_l2_q4",
@@ -252,7 +273,8 @@ window.calculusAllTopics = {
                 "Constants"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Highest powers"
             },
             {
               "id": "calc_u1_l2_q5",
@@ -262,7 +284,8 @@ window.calculusAllTopics = {
                 "1/2",
                 "0.5"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Answer: 1/2"
             },
             {
               "id": "calc_u1_l2_q6",
@@ -275,7 +298,8 @@ window.calculusAllTopics = {
                 "1/a"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "lim(x\u21920) sin(x)/x = 1. This is a standard trigonometric limit."
             },
             {
               "id": "calc_u1_l2_q7",
@@ -284,7 +308,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "6"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: 6"
             },
             {
               "id": "calc_u1_l2_q8",
@@ -297,7 +322,8 @@ window.calculusAllTopics = {
                 "Undefined"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Answer: 0"
             },
             {
               "id": "calc_u1_l2_q9",
@@ -306,7 +332,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "0"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "As x approaches infinity, 1/x approaches 0."
             },
             {
               "id": "calc_u1_l2_q10",
@@ -319,7 +346,8 @@ window.calculusAllTopics = {
                 "\u221e - \u221e"
               ],
               "correct": 0,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: 0/0 or \u221e/\u221e"
             },
             {
               "id": "calc_u1_l2_q11",
@@ -328,7 +356,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "3"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Direct substitution: lim(x\u21922) x\u00b2 = 2\u00b2 = 4"
             },
             {
               "id": "calc_u1_l2_q12",
@@ -341,7 +370,8 @@ window.calculusAllTopics = {
                 "1/x"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "As x approaches infinity, 1/x approaches 0."
             },
             {
               "id": "calc_u1_l2_q13",
@@ -350,7 +380,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: 1"
             },
             {
               "id": "calc_u1_l2_q14",
@@ -363,7 +394,8 @@ window.calculusAllTopics = {
                 "Infinite"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Answer: Hole"
             },
             {
               "id": "calc_u1_l2_q15",
@@ -372,7 +404,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "0"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "As x approaches infinity, 1/x approaches 0."
             },
             {
               "id": "calc_u1_l2_q16",
@@ -385,7 +418,8 @@ window.calculusAllTopics = {
                 "\u221e"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "As x approaches infinity, 1/x approaches 0."
             },
             {
               "id": "calc_u1_l2_q17",
@@ -395,7 +429,8 @@ window.calculusAllTopics = {
                 "undefined",
                 "\u221e"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: undefined"
             },
             {
               "id": "calc_u1_l2_q18",
@@ -408,7 +443,8 @@ window.calculusAllTopics = {
                 "Undefined"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Answer: 0"
             }
           ]
         }
@@ -433,7 +469,7 @@ window.calculusAllTopics = {
                 "lim(h->0) (f(a+h)-f(a))/h",
                 "limit as h approaches 0 of (f(a+h)-f(a))/h"
               ],
-              "explanation": "The derivative is f'(a) = lim(h\u21920) [f(a+h) - f(a)]/h",
+              "explanation": "d/dx[sin(x)] = cos(x). The derivative of sine is cosine.",
               "xp": 5
             },
             {
@@ -444,7 +480,7 @@ window.calculusAllTopics = {
                 "slope of the tangent line",
                 "tangent line slope"
               ],
-              "explanation": "The derivative represents the slope of the tangent line.",
+              "explanation": "Answer: slope of the tangent line",
               "xp": 4
             },
             {
@@ -454,7 +490,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "3"
               ],
-              "explanation": "f'(x) = lim(h\u21920) [3(x+h) - 3x]/h = lim(h\u21920) 3h/h = 3",
+              "explanation": "d/dx[sin(x)] = cos(x). The derivative of sine is cosine.",
               "xp": 5
             },
             {
@@ -464,7 +500,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "difference quotient"
               ],
-              "explanation": "The expression [f(a+h) - f(a)]/h is the difference quotient.",
+              "explanation": "Answer: difference quotient",
               "xp": 4
             },
             {
@@ -474,7 +510,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "12"
               ],
-              "explanation": "f'(x) = 3x\u00b2, so f'(2) = 3(4) = 12",
+              "explanation": "Answer: 12",
               "xp": 5
             },
             {
@@ -488,7 +524,7 @@ window.calculusAllTopics = {
                 "d\u00b2y/dx\u00b2"
               ],
               "correct": 3,
-              "explanation": "d\u00b2y/dx\u00b2 is second derivative notation.",
+              "explanation": "Correct: d\u00b2y/dx\u00b2",
               "xp": 3
             },
             {
@@ -499,7 +535,7 @@ window.calculusAllTopics = {
                 "horizontal tangent line",
                 "horizontal tangent"
               ],
-              "explanation": "A derivative of 0 means a horizontal tangent line.",
+              "explanation": "Answer: horizontal tangent line",
               "xp": 4
             },
             {
@@ -510,7 +546,7 @@ window.calculusAllTopics = {
                 "velocity",
                 "instantaneous velocity"
               ],
-              "explanation": "The derivative of position is velocity.",
+              "explanation": "Answer: velocity",
               "xp": 4
             },
             {
@@ -520,7 +556,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "0"
               ],
-              "explanation": "The derivative of any constant is 0.",
+              "explanation": "Answer: 0",
               "xp": 4
             },
             {
@@ -530,7 +566,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1"
               ],
-              "explanation": "f'(x) = lim(h\u21920) [(x+h)-x]/h = lim(h\u21920) h/h = 1",
+              "explanation": "Answer: 1",
               "xp": 4
             },
             {
@@ -540,7 +576,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "increasing"
               ],
-              "explanation": "Positive derivative means increasing.",
+              "explanation": "Answer: increasing",
               "xp": 4
             },
             {
@@ -554,7 +590,7 @@ window.calculusAllTopics = {
                 "function value"
               ],
               "correct": 0,
-              "explanation": "h is the change in x (horizontal distance).",
+              "explanation": "Correct: change in x",
               "xp": 3
             },
             {
@@ -564,7 +600,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "6"
               ],
-              "explanation": "f'(x) = 2x, so f'(3) = 6",
+              "explanation": "Power rule: d/dx[x\u00b2] = 2x (multiply by power, decrease by 1)",
               "xp": 5
             },
             {
@@ -574,7 +610,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "dy/dx"
               ],
-              "explanation": "dy/dx is Leibniz notation for the derivative.",
+              "explanation": "Answer: dy/dx",
               "xp": 4
             },
             {
@@ -585,7 +621,7 @@ window.calculusAllTopics = {
                 "-1/x^2",
                 "-1/x\u00b2"
               ],
-              "explanation": "d/dx(x^(-1)) = -x^(-2) = -1/x\u00b2",
+              "explanation": "Answer: -1/x^2",
               "xp": 5
             },
             {
@@ -595,7 +631,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "acceleration"
               ],
-              "explanation": "Second derivative of position is acceleration.",
+              "explanation": "Answer: acceleration",
               "xp": 4
             },
             {
@@ -609,7 +645,7 @@ window.calculusAllTopics = {
                 "x-axis"
               ],
               "correct": 1,
-              "explanation": "It's the slope of the secant line (approaching tangent as h\u21920).",
+              "explanation": "Correct: secant line",
               "xp": 3
             },
             {
@@ -619,7 +655,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "5"
               ],
-              "explanation": "d/dx(5x) = 5, derivative of constant 2 is 0",
+              "explanation": "Answer: 5",
               "xp": 5
             }
           ]
@@ -639,7 +675,7 @@ window.calculusAllTopics = {
                 "d/dx[x^n] = nx^(n-1)",
                 "nx^(n-1)"
               ],
-              "explanation": "The power rule is d/dx[x^n] = nx^(n-1)",
+              "explanation": "Answer: d/dx[x^n] = nx^(n-1)",
               "xp": 5
             },
             {
@@ -649,7 +685,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "7x^6"
               ],
-              "explanation": "d/dx[x^7] = 7x^(7-1) = 7x^6",
+              "explanation": "Answer: 7x^6",
               "xp": 5
             },
             {
@@ -660,7 +696,7 @@ window.calculusAllTopics = {
                 "-3x^(-4)",
                 "-3/x^4"
               ],
-              "explanation": "d/dx[x^(-3)] = -3x^(-3-1) = -3x^(-4)",
+              "explanation": "Answer: -3x^(-4)",
               "xp": 5
             },
             {
@@ -671,7 +707,7 @@ window.calculusAllTopics = {
                 "1/(2\u221ax)",
                 "1/(2x^(1/2))"
               ],
-              "explanation": "d/dx[x^(1/2)] = (1/2)x^(-1/2) = 1/(2\u221ax)",
+              "explanation": "Answer: 1/(2\u221ax)",
               "xp": 5
             },
             {
@@ -681,7 +717,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "12x^3"
               ],
-              "explanation": "d/dx[3x^4] = 3(4x^3) = 12x^3",
+              "explanation": "Answer: 12x^3",
               "xp": 5
             },
             {
@@ -695,7 +731,7 @@ window.calculusAllTopics = {
                 "sum of derivatives = derivative of sum"
               ],
               "correct": 0,
-              "explanation": "The sum rule: d/dx[f+g] = f' + g'",
+              "explanation": "Correct: derivative of sum = sum of derivatives",
               "xp": 3
             },
             {
@@ -705,7 +741,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "5x^4 + 6x"
               ],
-              "explanation": "d/dx[x^5] = 5x^4, d/dx[3x^2] = 6x",
+              "explanation": "Power rule: d/dx[x\u00b2] = 2x (multiply by power, decrease by 1)",
               "xp": 5
             },
             {
@@ -715,7 +751,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "6x^2 - 5"
               ],
-              "explanation": "d/dx[2x^3] = 6x^2, d/dx[5x] = 5",
+              "explanation": "Power rule: d/dx[x\u00b3] = 3x\u00b2",
               "xp": 5
             },
             {
@@ -725,7 +761,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "0"
               ],
-              "explanation": "Derivative of any constant is 0.",
+              "explanation": "Answer: 0",
               "xp": 4
             },
             {
@@ -739,7 +775,7 @@ window.calculusAllTopics = {
                 "undefined"
               ],
               "correct": 0,
-              "explanation": "x^0 = 1, derivative of constant 1 is 0",
+              "explanation": "Answer: 0",
               "xp": 3
             },
             {
@@ -750,7 +786,7 @@ window.calculusAllTopics = {
                 "(1/3)x^(-2/3)",
                 "1/(3x^(2/3))"
               ],
-              "explanation": "d/dx[x^(1/3)] = (1/3)x^(1/3-1) = (1/3)x^(-2/3)",
+              "explanation": "Answer: (1/3)x^(-2/3)",
               "xp": 5
             },
             {
@@ -760,7 +796,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "10x + 2"
               ],
-              "explanation": "10x + 2 + 0 = 10x + 2",
+              "explanation": "Power rule: d/dx[x\u00b2] = 2x (multiply by power, decrease by 1)",
               "xp": 5
             },
             {
@@ -770,7 +806,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "10"
               ],
-              "explanation": "d/dx[x^10] = 10x^9, at x=1: 10(1)^9 = 10",
+              "explanation": "Answer: 10",
               "xp": 5
             },
             {
@@ -784,7 +820,7 @@ window.calculusAllTopics = {
                 "5"
               ],
               "correct": 1,
-              "explanation": "f'(x) = 12x^2 + 1, f'(0) = 0 + 1 = 1",
+              "explanation": "Answer: 1",
               "xp": 4
             },
             {
@@ -795,7 +831,7 @@ window.calculusAllTopics = {
                 "-5/x^6",
                 "-5x^(-6)"
               ],
-              "explanation": "d/dx[x^(-5)] = -5x^(-6) = -5/x^6",
+              "explanation": "Answer: -5/x^6",
               "xp": 5
             },
             {
@@ -806,7 +842,7 @@ window.calculusAllTopics = {
                 "(3/2)x^(1/2)",
                 "(3/2)\u221ax"
               ],
-              "explanation": "d/dx[x^(3/2)] = (3/2)x^(3/2-1) = (3/2)x^(1/2)",
+              "explanation": "Answer: (3/2)x^(1/2)",
               "xp": 5
             },
             {
@@ -820,7 +856,7 @@ window.calculusAllTopics = {
                 "d/dx[cf] = cf"
               ],
               "correct": 0,
-              "explanation": "The constant can be factored out: d/dx[cf] = c\u00b7f'",
+              "explanation": "Correct: d/dx[cf] = c\u00b7f'",
               "xp": 3
             },
             {
@@ -830,7 +866,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "28x^3 - 4x + 5"
               ],
-              "explanation": "28x^3 - 4x + 5 - 0 = 28x^3 - 4x + 5",
+              "explanation": "Power rule: d/dx[x\u00b2] = 2x (multiply by power, decrease by 1)",
               "xp": 5
             }
           ]
@@ -850,7 +886,7 @@ window.calculusAllTopics = {
                 "f'g + fg'",
                 "d/dx[fg] = f'g + fg'"
               ],
-              "explanation": "The product rule: d/dx[fg] = f'g + fg'",
+              "explanation": "Answer: f'g + fg'",
               "xp": 5
             },
             {
@@ -862,7 +898,7 @@ window.calculusAllTopics = {
                 "g^2",
                 "denominator squared"
               ],
-              "explanation": "The denominator is [g(x)]\u00b2 (the square of the denominator)",
+              "explanation": "Answer: g(x)^2",
               "xp": 4
             },
             {
@@ -873,7 +909,7 @@ window.calculusAllTopics = {
                 "sin(x) + xcos(x)",
                 "sin(x) + x cos(x)"
               ],
-              "explanation": "1\u00b7sin(x) + x\u00b7cos(x) = sin(x) + xcos(x)",
+              "explanation": "d/dx[sin(x)] = cos(x). The derivative of sine is cosine.",
               "xp": 5
             },
             {
@@ -884,7 +920,7 @@ window.calculusAllTopics = {
                 "2x e^x + x^2 e^x",
                 "(2x + x^2)e^x"
               ],
-              "explanation": "2x\u00b7e^x + x\u00b2\u00b7e^x = (2x + x\u00b2)e^x",
+              "explanation": "Power rule: d/dx[x\u00b2] = 2x (multiply by power, decrease by 1)",
               "xp": 5
             },
             {
@@ -894,7 +930,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1/(x+1)^2"
               ],
-              "explanation": "(1\u00b7(x+1) - x\u00b71)/(x+1)\u00b2 = 1/(x+1)\u00b2",
+              "explanation": "Answer: 1/(x+1)^2",
               "xp": 5
             },
             {
@@ -908,7 +944,7 @@ window.calculusAllTopics = {
                 "1/x"
               ],
               "correct": 0,
-              "explanation": "d/dx[x^(-1)] = -1x^(-2) = -1/x\u00b2",
+              "explanation": "Answer: -1/x\u00b2",
               "xp": 3
             },
             {
@@ -919,7 +955,7 @@ window.calculusAllTopics = {
                 "2x cos(x) - (x^2+1)sin(x)",
                 "2xcos(x) - (x\u00b2+1)sin(x)"
               ],
-              "explanation": "2x\u00b7cos(x) + (x\u00b2+1)\u00b7(-sin(x)) = 2xcos(x) - (x\u00b2+1)sin(x)",
+              "explanation": "Power rule: d/dx[x\u00b2] = 2x (multiply by power, decrease by 1)",
               "xp": 5
             },
             {
@@ -929,7 +965,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "(xcos(x) - sin(x))/x^2"
               ],
-              "explanation": "(cos(x)\u00b7x - sin(x)\u00b71)/x\u00b2 = (xcos(x) - sin(x))/x\u00b2",
+              "explanation": "d/dx[sin(x)] = cos(x). The derivative of sine is cosine.",
               "xp": 5
             },
             {
@@ -939,7 +975,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "3x^2 ln(x) + x^2"
               ],
-              "explanation": "3x\u00b2\u00b7ln(x) + x\u00b3\u00b7(1/x) = 3x\u00b2ln(x) + x\u00b2",
+              "explanation": "Power rule: d/dx[x\u00b3] = 3x\u00b2",
               "xp": 5
             },
             {
@@ -953,7 +989,7 @@ window.calculusAllTopics = {
                 "chain rule"
               ],
               "correct": 0,
-              "explanation": "Products require the product rule: f'g + fg'",
+              "explanation": "Correct: product rule",
               "xp": 3
             },
             {
@@ -963,7 +999,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "-2/(x-1)^2"
               ],
-              "explanation": "(1\u00b7(x-1) - (x+1)\u00b71)/(x-1)\u00b2 = -2/(x-1)\u00b2",
+              "explanation": "Answer: -2/(x-1)^2",
               "xp": 5
             },
             {
@@ -973,7 +1009,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "4x^3"
               ],
-              "explanation": "1\u00b7x\u00b3 + x\u00b73x\u00b2 = x\u00b3 + 3x\u00b3 = 4x\u00b3",
+              "explanation": "Power rule: d/dx[x\u00b3] = 3x\u00b2",
               "xp": 5
             },
             {
@@ -983,7 +1019,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "-2x/(x^2+1)^2"
               ],
-              "explanation": "-2x/(x\u00b2+1)\u00b2",
+              "explanation": "Power rule: d/dx[x\u00b2] = 2x (multiply by power, decrease by 1)",
               "xp": 5
             },
             {
@@ -997,7 +1033,7 @@ window.calculusAllTopics = {
                 "(fg' + f'g)/g\u00b2"
               ],
               "correct": 0,
-              "explanation": "Quotient rule: (f'g - fg')/g\u00b2",
+              "explanation": "Correct: (f'g - fg')/g\u00b2",
               "xp": 3
             },
             {
@@ -1007,7 +1043,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "4x + 1"
               ],
-              "explanation": "2\u00b7(x-1) + (2x+3)\u00b71 = 2x-2 + 2x+3 = 4x+1",
+              "explanation": "Answer: 4x + 1",
               "xp": 5
             },
             {
@@ -1017,7 +1053,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "-3/x^4"
               ],
-              "explanation": "d/dx[x^(-3)] = -3x^(-4) = -3/x\u2074",
+              "explanation": "Power rule: d/dx[x\u00b3] = 3x\u00b2",
               "xp": 5
             },
             {
@@ -1027,7 +1063,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "(2x(x+2) - x^2)/(x+2)^2"
               ],
-              "explanation": "(2x(x+2) - x\u00b2)/(x+2)\u00b2",
+              "explanation": "Power rule: d/dx[x\u00b2] = 2x (multiply by power, decrease by 1)",
               "xp": 5
             },
             {
@@ -1041,7 +1077,7 @@ window.calculusAllTopics = {
                 "power rule"
               ],
               "correct": 0,
-              "explanation": "Constants over functions use quotient rule: (0\u00b7g - 1\u00b7g')/g\u00b2 = -g'/g\u00b2",
+              "explanation": "Correct: quotient rule",
               "xp": 3
             }
           ]
@@ -1062,7 +1098,7 @@ window.calculusAllTopics = {
                 "dy/dx = dy/du * du/dx",
                 "f'(g(x)) * g'(x)"
               ],
-              "explanation": "Chain rule: d/dx[f(g(x))] = f'(g(x)) \u00b7 g'(x)",
+              "explanation": "Answer: f'(g(x))g'(x)",
               "xp": 5
             },
             {
@@ -1072,7 +1108,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "6(2x+1)^2"
               ],
-              "explanation": "3(2x+1)\u00b2 \u00b7 2 = 6(2x+1)\u00b2",
+              "explanation": "Answer: 6(2x+1)^2",
               "xp": 5
             },
             {
@@ -1082,7 +1118,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "3cos(3x)"
               ],
-              "explanation": "cos(3x) \u00b7 3 = 3cos(3x)",
+              "explanation": "d/dx[sin(x)] = cos(x). The derivative of sine is cosine.",
               "xp": 5
             },
             {
@@ -1092,7 +1128,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "4e^(4x)"
               ],
-              "explanation": "e^(4x) \u00b7 4 = 4e^(4x)",
+              "explanation": "Answer: 4e^(4x)",
               "xp": 5
             },
             {
@@ -1103,7 +1139,7 @@ window.calculusAllTopics = {
                 "-2xsin(x^2)",
                 "-2xsin(x\u00b2)"
               ],
-              "explanation": "-sin(x\u00b2) \u00b7 2x = -2xsin(x\u00b2)",
+              "explanation": "Power rule: d/dx[x\u00b2] = 2x (multiply by power, decrease by 1)",
               "xp": 5
             },
             {
@@ -1117,7 +1153,7 @@ window.calculusAllTopics = {
                 "constant functions"
               ],
               "correct": 0,
-              "explanation": "Chain rule is for composite functions (functions within functions)",
+              "explanation": "Correct: composite functions",
               "xp": 3
             },
             {
@@ -1127,7 +1163,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "10x(x^2+1)^4"
               ],
-              "explanation": "5(x\u00b2+1)\u2074 \u00b7 2x = 10x(x\u00b2+1)\u2074",
+              "explanation": "Power rule: d/dx[x\u00b2] = 2x (multiply by power, decrease by 1)",
               "xp": 5
             },
             {
@@ -1137,7 +1173,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1/x"
               ],
-              "explanation": "(1/(5x)) \u00b7 5 = 5/5x = 1/x",
+              "explanation": "d/dx[ln(x)] = 1/x. The derivative of natural log is 1/x.",
               "xp": 5
             },
             {
@@ -1147,7 +1183,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1/(2\u221a(x+1))"
               ],
-              "explanation": "(1/2)(x+1)^(-1/2) \u00b7 1 = 1/(2\u221a(x+1))",
+              "explanation": "Answer: 1/(2\u221a(x+1))",
               "xp": 5
             },
             {
@@ -1161,7 +1197,7 @@ window.calculusAllTopics = {
                 "3x"
               ],
               "correct": 0,
-              "explanation": "2(3x) \u00b7 3 = 6(3x) = 18x",
+              "explanation": "Answer: 18x",
               "xp": 4
             },
             {
@@ -1172,7 +1208,7 @@ window.calculusAllTopics = {
                 "3x^2 e^(x^3)",
                 "3x\u00b2e^(x\u00b3)"
               ],
-              "explanation": "e^(x\u00b3) \u00b7 3x\u00b2 = 3x\u00b2e^(x\u00b3)",
+              "explanation": "Power rule: d/dx[x\u00b3] = 3x\u00b2",
               "xp": 5
             },
             {
@@ -1182,7 +1218,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "-sin(x)cos(cos(x))"
               ],
-              "explanation": "cos(cos(x)) \u00b7 (-sin(x)) = -sin(x)cos(cos(x))",
+              "explanation": "d/dx[sin(x)] = cos(x). The derivative of sine is cosine.",
               "xp": 5
             },
             {
@@ -1192,7 +1228,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "-2/(x+1)^3"
               ],
-              "explanation": "-2(x+1)^(-3) \u00b7 1 = -2/(x+1)\u00b3",
+              "explanation": "Answer: -2/(x+1)^3",
               "xp": 5
             },
             {
@@ -1206,7 +1242,7 @@ window.calculusAllTopics = {
                 "only linear functions"
               ],
               "correct": 0,
-              "explanation": "Chain rule works with all types of functions: power, trig, exponential, logarithmic",
+              "explanation": "Correct: power, trig, exponential, log",
               "xp": 3
             },
             {
@@ -1216,7 +1252,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "6x^5"
               ],
-              "explanation": "3(x\u00b2)\u00b2 \u00b7 2x = 3x\u2074 \u00b7 2x = 6x\u2075",
+              "explanation": "Power rule: d/dx[x\u00b2] = 2x (multiply by power, decrease by 1)",
               "xp": 5
             },
             {
@@ -1226,7 +1262,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "2/x"
               ],
-              "explanation": "(1/x\u00b2) \u00b7 2x = 2x/x\u00b2 = 2/x",
+              "explanation": "Power rule: d/dx[x\u00b2] = 2x (multiply by power, decrease by 1)",
               "xp": 5
             },
             {
@@ -1240,7 +1276,7 @@ window.calculusAllTopics = {
                 "use product rule"
               ],
               "correct": 0,
-              "explanation": "Chain rule: differentiate outer function first, then multiply by derivative of inner",
+              "explanation": "Correct: differentiate outside, then inside",
               "xp": 3
             },
             {
@@ -1251,7 +1287,7 @@ window.calculusAllTopics = {
                 "2sec^2(2x)",
                 "2sec\u00b2(2x)"
               ],
-              "explanation": "sec\u00b2(2x) \u00b7 2 = 2sec\u00b2(2x)",
+              "explanation": "Answer: 2sec^2(2x)",
               "xp": 5
             }
           ]
@@ -1270,7 +1306,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "e^x"
               ],
-              "explanation": "d/dx[e^x] = e^x (it's its own derivative!)",
+              "explanation": "d/dx[e\u02e3] = e\u02e3. The exponential function is its own derivative.",
               "xp": 4
             },
             {
@@ -1280,7 +1316,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1/x"
               ],
-              "explanation": "d/dx[ln(x)] = 1/x",
+              "explanation": "d/dx[ln(x)] = 1/x. The derivative of natural log is 1/x.",
               "xp": 4
             },
             {
@@ -1290,7 +1326,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "3e^(3x)"
               ],
-              "explanation": "e^(3x) \u00b7 3 = 3e^(3x)",
+              "explanation": "Answer: 3e^(3x)",
               "xp": 5
             },
             {
@@ -1300,7 +1336,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "2^x ln(2)"
               ],
-              "explanation": "d/dx[a^x] = a^x ln(a), so d/dx[2^x] = 2^x ln(2)",
+              "explanation": "Answer: 2^x ln(2)",
               "xp": 5
             },
             {
@@ -1310,7 +1346,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1/x"
               ],
-              "explanation": "(1/(2x)) \u00b7 2 = 2/2x = 1/x",
+              "explanation": "d/dx[ln(x)] = 1/x. The derivative of natural log is 1/x.",
               "xp": 5
             },
             {
@@ -1324,7 +1360,7 @@ window.calculusAllTopics = {
                 "5x\u00b2e^(5x\u00b2)"
               ],
               "correct": 0,
-              "explanation": "e^(5x\u00b2) \u00b7 10x = 10xe^(5x\u00b2)",
+              "explanation": "Power rule: d/dx[x\u00b2] = 2x (multiply by power, decrease by 1)",
               "xp": 4
             },
             {
@@ -1335,7 +1371,7 @@ window.calculusAllTopics = {
                 "2x/(x^2+1)",
                 "2x/(x\u00b2+1)"
               ],
-              "explanation": "(2x)/(x\u00b2+1)",
+              "explanation": "Power rule: d/dx[x\u00b2] = 2x (multiply by power, decrease by 1)",
               "xp": 5
             },
             {
@@ -1346,7 +1382,7 @@ window.calculusAllTopics = {
                 "cos(x) e^(sin(x))",
                 "e^(sin(x)) cos(x)"
               ],
-              "explanation": "e^(sin(x)) \u00b7 cos(x)",
+              "explanation": "d/dx[sin(x)] = cos(x). The derivative of sine is cosine.",
               "xp": 5
             },
             {
@@ -1357,7 +1393,7 @@ window.calculusAllTopics = {
                 "-tan(x)",
                 "-sin(x)/cos(x)"
               ],
-              "explanation": "-sin(x)/cos(x) = -tan(x)",
+              "explanation": "d/dx[cos(x)] = -sin(x). The derivative of cosine is negative sine.",
               "xp": 5
             },
             {
@@ -1371,7 +1407,7 @@ window.calculusAllTopics = {
                 "constant"
               ],
               "correct": 0,
-              "explanation": "d/dx[a^x] = a^x ln(a) - uses natural log of the base",
+              "explanation": "Correct: natural log of base",
               "xp": 3
             },
             {
@@ -1381,7 +1417,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "10^x ln(10)"
               ],
-              "explanation": "d/dx[10^x] = 10^x ln(10)",
+              "explanation": "Answer: 10^x ln(10)",
               "xp": 5
             },
             {
@@ -1391,7 +1427,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "-e^(-x)"
               ],
-              "explanation": "e^(-x) \u00b7 (-1) = -e^(-x)",
+              "explanation": "Answer: -e^(-x)",
               "xp": 5
             },
             {
@@ -1401,7 +1437,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1"
               ],
-              "explanation": "(1/e^x) \u00b7 e^x = 1",
+              "explanation": "d/dx[e\u02e3] = e\u02e3. The exponential function is its own derivative.",
               "xp": 5
             },
             {
@@ -1415,7 +1451,7 @@ window.calculusAllTopics = {
                 "1/x"
               ],
               "correct": 0,
-              "explanation": "(3x\u00b2)/x\u00b3 = 3/x",
+              "explanation": "Power rule: d/dx[x\u00b3] = 3x\u00b2",
               "xp": 4
             },
             {
@@ -1425,7 +1461,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "3e^x"
               ],
-              "explanation": "3 \u00b7 e^x = 3e^x (constant multiple rule)",
+              "explanation": "d/dx[e\u02e3] = e\u02e3. The exponential function is its own derivative.",
               "xp": 5
             },
             {
@@ -1435,7 +1471,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "-1/x"
               ],
-              "explanation": "(-1/x\u00b2)/(1/x) = -1/x\u00b2 \u00b7 x = -1/x",
+              "explanation": "d/dx[ln(x)] = 1/x. The derivative of natural log is 1/x.",
               "xp": 5
             },
             {
@@ -1449,7 +1485,7 @@ window.calculusAllTopics = {
                 "no derivative"
               ],
               "correct": 0,
-              "explanation": "e^x is unique because d/dx[e^x] = e^x",
+              "explanation": "Correct: derivative equals itself",
               "xp": 3
             },
             {
@@ -1460,7 +1496,7 @@ window.calculusAllTopics = {
                 "1/(x ln(5))",
                 "1/(xln5)"
               ],
-              "explanation": "d/dx[log_a(x)] = 1/(x ln(a))",
+              "explanation": "d/dx[ln(x)] = 1/x. The derivative of natural log is 1/x.",
               "xp": 5
             }
           ]
@@ -1479,7 +1515,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "cos(x)"
               ],
-              "explanation": "d/dx[sin(x)] = cos(x)",
+              "explanation": "d/dx[sin(x)] = cos(x). The derivative of sine is cosine.",
               "xp": 4
             },
             {
@@ -1489,7 +1525,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "-sin(x)"
               ],
-              "explanation": "d/dx[cos(x)] = -sin(x)",
+              "explanation": "d/dx[cos(x)] = -sin(x). The derivative of cosine is negative sine.",
               "xp": 4
             },
             {
@@ -1500,7 +1536,7 @@ window.calculusAllTopics = {
                 "sec^2(x)",
                 "sec\u00b2(x)"
               ],
-              "explanation": "d/dx[tan(x)] = sec\u00b2(x)",
+              "explanation": "Answer: sec^2(x)",
               "xp": 4
             },
             {
@@ -1510,7 +1546,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "2cos(2x)"
               ],
-              "explanation": "cos(2x) \u00b7 2 = 2cos(2x)",
+              "explanation": "d/dx[sin(x)] = cos(x). The derivative of sine is cosine.",
               "xp": 5
             },
             {
@@ -1521,7 +1557,7 @@ window.calculusAllTopics = {
                 "1/\u221a(1-x^2)",
                 "1/\u221a(1-x\u00b2)"
               ],
-              "explanation": "d/dx[arcsin(x)] = 1/\u221a(1-x\u00b2)",
+              "explanation": "d/dx[sin(x)] = cos(x). The derivative of sine is cosine.",
               "xp": 5
             },
             {
@@ -1535,7 +1571,7 @@ window.calculusAllTopics = {
                 "1/(1+x\u00b2)"
               ],
               "correct": 0,
-              "explanation": "d/dx[arccos(x)] = -1/\u221a(1-x\u00b2) (negative of arcsin)",
+              "explanation": "d/dx[cos(x)] = -sin(x). The derivative of cosine is negative sine.",
               "xp": 4
             },
             {
@@ -1546,7 +1582,7 @@ window.calculusAllTopics = {
                 "1/(1+x^2)",
                 "1/(1+x\u00b2)"
               ],
-              "explanation": "d/dx[arctan(x)] = 1/(1+x\u00b2)",
+              "explanation": "Answer: 1/(1+x^2)",
               "xp": 5
             },
             {
@@ -1557,7 +1593,7 @@ window.calculusAllTopics = {
                 "sec(x)tan(x)",
                 "sec(x)tan(x)"
               ],
-              "explanation": "d/dx[sec(x)] = sec(x)tan(x)",
+              "explanation": "Answer: sec(x)tan(x)",
               "xp": 5
             },
             {
@@ -1568,7 +1604,7 @@ window.calculusAllTopics = {
                 "-csc(x)cot(x)",
                 "-csc(x)cot(x)"
               ],
-              "explanation": "d/dx[csc(x)] = -csc(x)cot(x)",
+              "explanation": "Answer: -csc(x)cot(x)",
               "xp": 5
             },
             {
@@ -1582,7 +1618,7 @@ window.calculusAllTopics = {
                 "3cos(3x)"
               ],
               "correct": 0,
-              "explanation": "-sin(3x) \u00b7 3 = -3sin(3x)",
+              "explanation": "d/dx[cos(x)] = -sin(x). The derivative of cosine is negative sine.",
               "xp": 4
             },
             {
@@ -1593,7 +1629,7 @@ window.calculusAllTopics = {
                 "3/\u221a(1-9x^2)",
                 "3/\u221a(1-9x\u00b2)"
               ],
-              "explanation": "3/\u221a(1-(3x)\u00b2) = 3/\u221a(1-9x\u00b2)",
+              "explanation": "d/dx[sin(x)] = cos(x). The derivative of sine is cosine.",
               "xp": 5
             },
             {
@@ -1604,7 +1640,7 @@ window.calculusAllTopics = {
                 "2/(1+4x^2)",
                 "2/(1+4x\u00b2)"
               ],
-              "explanation": "2/(1+(2x)\u00b2) = 2/(1+4x\u00b2)",
+              "explanation": "Answer: 2/(1+4x^2)",
               "xp": 5
             },
             {
@@ -1615,7 +1651,7 @@ window.calculusAllTopics = {
                 "-csc^2(x)",
                 "-csc\u00b2(x)"
               ],
-              "explanation": "d/dx[cot(x)] = -csc\u00b2(x)",
+              "explanation": "Answer: -csc^2(x)",
               "xp": 5
             },
             {
@@ -1629,7 +1665,7 @@ window.calculusAllTopics = {
                 "tan(5x)"
               ],
               "correct": 0,
-              "explanation": "sec\u00b2(5x) \u00b7 5 = 5sec\u00b2(5x)",
+              "explanation": "Correct: 5sec\u00b2(5x)",
               "xp": 4
             },
             {
@@ -1640,7 +1676,7 @@ window.calculusAllTopics = {
                 "-2x/\u221a(1-x^4)",
                 "-2x/\u221a(1-x\u2074)"
               ],
-              "explanation": "-2x/\u221a(1-(x\u00b2)\u00b2) = -2x/\u221a(1-x\u2074)",
+              "explanation": "Power rule: d/dx[x\u00b2] = 2x (multiply by power, decrease by 1)",
               "xp": 5
             },
             {
@@ -1651,7 +1687,7 @@ window.calculusAllTopics = {
                 "2sin(x)cos(x)",
                 "sin(2x)"
               ],
-              "explanation": "2sin(x) \u00b7 cos(x) = 2sin(x)cos(x)",
+              "explanation": "d/dx[sin(x)] = cos(x). The derivative of sine is cosine.",
               "xp": 5
             },
             {
@@ -1665,7 +1701,7 @@ window.calculusAllTopics = {
                 "quotient rule"
               ],
               "correct": 0,
-              "explanation": "sec\u00b2(x) is a composite function: outer is ( )\u00b2, inner is sec(x)",
+              "explanation": "Correct: chain rule",
               "xp": 3
             },
             {
@@ -1675,7 +1711,7 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1"
               ],
-              "explanation": "1/\u221a(1-0) = 1/1 = 1",
+              "explanation": "d/dx[sin(x)] = cos(x). The derivative of sine is cosine.",
               "xp": 4
             }
           ]
@@ -1701,7 +1737,8 @@ window.calculusAllTopics = {
                 "x^2/2 + C",
                 "(1/2)x^2 + C"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u3_l1_q2",
@@ -1711,7 +1748,8 @@ window.calculusAllTopics = {
                 "differentiation",
                 "derivatives"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: differentiation"
             },
             {
               "id": "calc_u3_l1_q3",
@@ -1720,7 +1758,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "x^2 + C"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u3_l1_q4",
@@ -1733,7 +1772,8 @@ window.calculusAllTopics = {
                 "C is arbitrary"
               ],
               "correct": 0,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Derivatives of constants are zero"
             },
             {
               "id": "calc_u3_l1_q5",
@@ -1742,7 +1782,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "x^(n+1)/(n+1) + C"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u3_l1_q6",
@@ -1755,7 +1796,8 @@ window.calculusAllTopics = {
                 "3/C"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u3_l1_q7",
@@ -1764,7 +1806,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "x^2/2 + x + C"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u3_l1_q8",
@@ -1777,7 +1820,8 @@ window.calculusAllTopics = {
                 "-sin(x) + C"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u3_l1_q9",
@@ -1786,7 +1830,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "e^x + C"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u3_l1_q10",
@@ -1799,7 +1844,8 @@ window.calculusAllTopics = {
                 "Limits"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Integrals"
             },
             {
               "id": "calc_u3_l1_q11",
@@ -1809,7 +1855,8 @@ window.calculusAllTopics = {
                 "ln|x| + C",
                 "ln(x) + C"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u3_l1_q12",
@@ -1822,7 +1869,8 @@ window.calculusAllTopics = {
                 "Volume"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u3_l1_q13",
@@ -1831,7 +1879,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "sin(x) + C"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u3_l1_q14",
@@ -1844,7 +1893,8 @@ window.calculusAllTopics = {
                 "No C"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Specific bounds"
             },
             {
               "id": "calc_u3_l1_q15",
@@ -1853,7 +1903,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "2"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u3_l1_q16",
@@ -1866,7 +1917,8 @@ window.calculusAllTopics = {
                 "Slopes and tangents"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Derivatives and integrals"
             },
             {
               "id": "calc_u3_l1_q17",
@@ -1875,7 +1927,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "f(x)"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u3_l1_q18",
@@ -1888,7 +1941,8 @@ window.calculusAllTopics = {
                 "Integrated separately"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             }
           ]
         },
@@ -1906,7 +1960,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u3_l2_q2",
@@ -1917,7 +1972,8 @@ window.calculusAllTopics = {
                 "constant",
                 "value"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: number"
             },
             {
               "id": "calc_u3_l2_q3",
@@ -1926,7 +1982,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "4"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u3_l2_q4",
@@ -1939,7 +1996,8 @@ window.calculusAllTopics = {
                 "Undefined"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u3_l2_q5",
@@ -1948,7 +2006,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "2"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u3_l2_q6",
@@ -1961,7 +2020,8 @@ window.calculusAllTopics = {
                 "f(c) - f(a)"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u3_l2_q7",
@@ -1971,7 +2031,8 @@ window.calculusAllTopics = {
                 "8/3",
                 "2.67"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u00b2 dx = x\u00b3/3 + C (add 1 to power, divide by new power)"
             },
             {
               "id": "calc_u3_l2_q8",
@@ -1984,7 +2045,8 @@ window.calculusAllTopics = {
                 "f(a) - f(b)"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u3_l2_q9",
@@ -1993,7 +2055,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "0"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Power rule: \u222bx\u00b3 dx = x\u2074/4 + C"
             },
             {
               "id": "calc_u3_l2_q10",
@@ -2006,7 +2069,8 @@ window.calculusAllTopics = {
                 "Undefined"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Negative"
             },
             {
               "id": "calc_u3_l2_q11",
@@ -2016,7 +2080,8 @@ window.calculusAllTopics = {
                 "e - 1",
                 "1.718"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u3_l2_q12",
@@ -2029,7 +2094,8 @@ window.calculusAllTopics = {
                 "Becomes zero"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Changes sign"
             },
             {
               "id": "calc_u3_l2_q13",
@@ -2038,7 +2104,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u3_l2_q14",
@@ -2051,7 +2118,8 @@ window.calculusAllTopics = {
                 "2\u222b from 0 to a"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Answer: 0"
             },
             {
               "id": "calc_u3_l2_q15",
@@ -2061,7 +2129,8 @@ window.calculusAllTopics = {
                 "ln(2)",
                 "0.693"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u3_l2_q16",
@@ -2074,7 +2143,8 @@ window.calculusAllTopics = {
                 "Total absolute area"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Positive minus negative"
             },
             {
               "id": "calc_u3_l2_q17",
@@ -2084,7 +2154,8 @@ window.calculusAllTopics = {
                 "5/6",
                 "0.833"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Power rule: \u222bx\u00b2 dx = x\u00b3/3 + C (add 1 to power, divide by new power)"
             },
             {
               "id": "calc_u3_l2_q18",
@@ -2097,7 +2168,8 @@ window.calculusAllTopics = {
                 "f'(c)"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: \u222b from a to b f(x)dx/(b-a)"
             }
           ]
         }
@@ -2121,7 +2193,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "2t"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Velocity = derivative of position. v(t) = s'(t)"
             },
             {
               "id": "calc_u4_l1_q2",
@@ -2131,7 +2204,8 @@ window.calculusAllTopics = {
                 "position",
                 "displacement"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Velocity = derivative of position. v(t) = s'(t)"
             },
             {
               "id": "calc_u4_l1_q3",
@@ -2140,7 +2214,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "6t"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Acceleration = derivative of velocity. a(t) = v'(t)"
             },
             {
               "id": "calc_u4_l1_q4",
@@ -2153,7 +2228,8 @@ window.calculusAllTopics = {
                 "Distance"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Velocity"
             },
             {
               "id": "calc_u4_l1_q5",
@@ -2162,7 +2238,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "60"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: 60"
             },
             {
               "id": "calc_u4_l1_q6",
@@ -2175,7 +2252,8 @@ window.calculusAllTopics = {
                 "Distance"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Velocity"
             },
             {
               "id": "calc_u4_l1_q7",
@@ -2184,7 +2262,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "2t + 2"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Answer: 2t + 2"
             },
             {
               "id": "calc_u4_l1_q8",
@@ -2197,7 +2276,8 @@ window.calculusAllTopics = {
                 "Horizontal line"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Secant line"
             },
             {
               "id": "calc_u4_l1_q9",
@@ -2206,7 +2286,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "6t"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: 6t"
             },
             {
               "id": "calc_u4_l1_q10",
@@ -2219,7 +2300,8 @@ window.calculusAllTopics = {
                 "Limit"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Derivative"
             },
             {
               "id": "calc_u4_l1_q11",
@@ -2229,7 +2311,8 @@ window.calculusAllTopics = {
                 "(1/2)t\u00b2 + t + C",
                 "t\u00b2/2 + t + C"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Answer: (1/2)t\u00b2 + t + C"
             },
             {
               "id": "calc_u4_l1_q12",
@@ -2242,7 +2325,8 @@ window.calculusAllTopics = {
                 "Distance"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Velocity"
             },
             {
               "id": "calc_u4_l1_q13",
@@ -2251,7 +2335,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "2t + C"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: 2t + C"
             },
             {
               "id": "calc_u4_l1_q14",
@@ -2264,7 +2349,8 @@ window.calculusAllTopics = {
                 "Zero"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Increasing"
             },
             {
               "id": "calc_u4_l1_q15",
@@ -2273,7 +2359,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "12t\u00b2"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Answer: 12t\u00b2"
             },
             {
               "id": "calc_u4_l1_q16",
@@ -2286,7 +2373,8 @@ window.calculusAllTopics = {
                 "Always zero"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Positive or negative"
             },
             {
               "id": "calc_u4_l1_q17",
@@ -2295,7 +2383,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "0"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Acceleration = derivative of velocity. a(t) = v'(t)"
             },
             {
               "id": "calc_u4_l1_q18",
@@ -2308,7 +2397,8 @@ window.calculusAllTopics = {
                 "Jerk"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Acceleration"
             }
           ]
         },
@@ -2327,7 +2417,8 @@ window.calculusAllTopics = {
                 "1.5",
                 "3/2"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u4_l2_q2",
@@ -2336,7 +2427,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "2"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Area = \u222bf(x) dx from a to b. This is the accumulated area under the curve."
             },
             {
               "id": "calc_u4_l2_q3",
@@ -2345,7 +2437,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "2"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u4_l2_q4",
@@ -2358,7 +2451,8 @@ window.calculusAllTopics = {
                 "Shells"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Answer: Disks"
             },
             {
               "id": "calc_u4_l2_q5",
@@ -2367,7 +2461,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "(4/3)\u03c0r\u00b3"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Radius R: series converges for |x-a|<R, diverges for |x-a|>R. Test endpoints."
             },
             {
               "id": "calc_u4_l2_q6",
@@ -2380,7 +2475,8 @@ window.calculusAllTopics = {
                 "No solid"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Answer: A hole"
             },
             {
               "id": "calc_u4_l2_q7",
@@ -2389,7 +2485,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1/3"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u00b2 dx = x\u00b3/3 + C (add 1 to power, divide by new power)"
             },
             {
               "id": "calc_u4_l2_q8",
@@ -2402,7 +2499,8 @@ window.calculusAllTopics = {
                 "Base \u00d7 height"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Circumference \u00d7 height"
             },
             {
               "id": "calc_u4_l2_q9",
@@ -2411,7 +2509,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1/6"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Area = \u222bf(x) dx from a to b. This is the accumulated area under the curve."
             },
             {
               "id": "calc_u4_l2_q10",
@@ -2424,7 +2523,8 @@ window.calculusAllTopics = {
                 "\u222b x dy"
               ],
               "correct": 0,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: \u03c0\u222b (y)\u00b2 dx"
             },
             {
               "id": "calc_u4_l2_q11",
@@ -2433,7 +2533,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "8/3"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Area = \u222bf(x) dx from a to b. This is the accumulated area under the curve."
             },
             {
               "id": "calc_u4_l2_q12",
@@ -2446,7 +2547,8 @@ window.calculusAllTopics = {
                 "Bottom minus top"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Top minus bottom"
             },
             {
               "id": "calc_u4_l2_q13",
@@ -2455,7 +2557,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "\u03c0r\u00b2h"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Radius R: series converges for |x-a|<R, diverges for |x-a|>R. Test endpoints."
             },
             {
               "id": "calc_u4_l2_q14",
@@ -2468,7 +2571,8 @@ window.calculusAllTopics = {
                 "f(x)\u00b2"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: \u221a(1 + f'(x)\u00b2)"
             },
             {
               "id": "calc_u4_l2_q15",
@@ -2477,7 +2581,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1/6"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Area = \u222bf(x) dx from a to b. This is the accumulated area under the curve."
             },
             {
               "id": "calc_u4_l2_q16",
@@ -2490,7 +2595,8 @@ window.calculusAllTopics = {
                 "\u03c0\u222b f(x)\u00b2 dx"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: 2\u03c0\u222b f(x)\u221a(1+f'(x)\u00b2) dx"
             },
             {
               "id": "calc_u4_l2_q17",
@@ -2499,7 +2605,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "\u03c0/5"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: \u03c0/5"
             },
             {
               "id": "calc_u4_l2_q18",
@@ -2512,7 +2619,8 @@ window.calculusAllTopics = {
                 "Use shell method"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Integrate separately"
             }
           ]
         }
@@ -2537,7 +2645,8 @@ window.calculusAllTopics = {
                 "chain rule",
                 "Chain Rule"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "U-substitution: Choose u, find du, substitute, integrate, back-substitute"
             },
             {
               "id": "calc_u5_l1_q2",
@@ -2547,7 +2656,8 @@ window.calculusAllTopics = {
                 "e^(x\u00b2) + C",
                 "e^(x^2) + C"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Power rule: \u222bx\u00b2 dx = x\u00b3/3 + C (add 1 to power, divide by new power)"
             },
             {
               "id": "calc_u5_l1_q3",
@@ -2557,7 +2667,8 @@ window.calculusAllTopics = {
                 "Choose u",
                 "pick u"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "U-substitution: Choose u, find du, substitute, integrate, back-substitute"
             },
             {
               "id": "calc_u5_l1_q4",
@@ -2570,7 +2681,8 @@ window.calculusAllTopics = {
                 "3x\u00b2"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Power rule: \u222bx\u00b2 dx = x\u00b3/3 + C (add 1 to power, divide by new power)"
             },
             {
               "id": "calc_u5_l1_q5",
@@ -2580,7 +2692,8 @@ window.calculusAllTopics = {
                 "sin\u00b2(x)/2 + C",
                 "sin^2(x)/2 + C"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l1_q6",
@@ -2593,7 +2706,8 @@ window.calculusAllTopics = {
                 "1"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Power rule: \u222bx\u00b2 dx = x\u00b3/3 + C (add 1 to power, divide by new power)"
             },
             {
               "id": "calc_u5_l1_q7",
@@ -2603,7 +2717,8 @@ window.calculusAllTopics = {
                 "(x\u00b2+1)^(3/2)/3 + C",
                 "(x^2+1)^(3/2)/3 + C"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u00b2 dx = x\u00b3/3 + C (add 1 to power, divide by new power)"
             },
             {
               "id": "calc_u5_l1_q8",
@@ -2616,7 +2731,8 @@ window.calculusAllTopics = {
                 "Neither"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Both u and du (or constant multiple)"
             },
             {
               "id": "calc_u5_l1_q9",
@@ -2626,7 +2742,8 @@ window.calculusAllTopics = {
                 "ln|1+e^x| + C",
                 "ln(1+e^x) + C"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l1_q10",
@@ -2639,7 +2756,8 @@ window.calculusAllTopics = {
                 "Disappears"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Becomes du/u'"
             },
             {
               "id": "calc_u5_l1_q11",
@@ -2649,7 +2767,8 @@ window.calculusAllTopics = {
                 "sin(x\u00b2)/2 + C",
                 "sin(x^2)/2 + C"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u00b2 dx = x\u00b3/3 + C (add 1 to power, divide by new power)"
             },
             {
               "id": "calc_u5_l1_q12",
@@ -2662,7 +2781,8 @@ window.calculusAllTopics = {
                 "Change u"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Use du/2"
             },
             {
               "id": "calc_u5_l1_q13",
@@ -2672,7 +2792,8 @@ window.calculusAllTopics = {
                 "(ln(x))\u00b2/2 + C",
                 "ln(x)^2/2 + C"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l1_q14",
@@ -2685,7 +2806,8 @@ window.calculusAllTopics = {
                 "Find du"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Back-substitute"
             },
             {
               "id": "calc_u5_l1_q15",
@@ -2695,7 +2817,8 @@ window.calculusAllTopics = {
                 "-ln|cos(x)| + C",
                 "ln|sec(x)| + C"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l1_q16",
@@ -2708,7 +2831,8 @@ window.calculusAllTopics = {
                 "Only with polynomials"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: No, only when u and du are present"
             },
             {
               "id": "calc_u5_l1_q17",
@@ -2718,7 +2842,8 @@ window.calculusAllTopics = {
                 "(1/3)ln|x\u00b3+1| + C",
                 "ln|x\u00b3+1|/3 + C"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Power rule: \u222bx\u00b2 dx = x\u00b3/3 + C (add 1 to power, divide by new power)"
             },
             {
               "id": "calc_u5_l1_q18",
@@ -2731,7 +2856,8 @@ window.calculusAllTopics = {
                 "Integration impossible"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Try different u"
             }
           ]
         },
@@ -2750,7 +2876,8 @@ window.calculusAllTopics = {
                 "product rule",
                 "Product Rule"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Integration by parts: \u222bu dv = uv - \u222bv du (reverse of product rule)"
             },
             {
               "id": "calc_u5_l2_q2",
@@ -2759,7 +2886,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "\u222b u dv = uv - \u222b v du"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Integration by parts: \u222bu dv = uv - \u222bv du (reverse of product rule)"
             },
             {
               "id": "calc_u5_l2_q3",
@@ -2769,7 +2897,8 @@ window.calculusAllTopics = {
                 "xe\u02e3 - e\u02e3 + C",
                 "xe^x - e^x + C"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l2_q4",
@@ -2782,7 +2911,8 @@ window.calculusAllTopics = {
                 "Last"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Logarithmic"
             },
             {
               "id": "calc_u5_l2_q5",
@@ -2791,7 +2921,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "x\u00b7sin(x) + cos(x) + C"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l2_q6",
@@ -2804,7 +2935,8 @@ window.calculusAllTopics = {
                 "Cannot use parts"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l2_q7",
@@ -2814,7 +2946,8 @@ window.calculusAllTopics = {
                 "x\u00b7ln(x) - x + C",
                 "x ln(x) - x + C"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l2_q8",
@@ -2827,7 +2960,8 @@ window.calculusAllTopics = {
                 "Impossible"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Inverse trig"
             },
             {
               "id": "calc_u5_l2_q9",
@@ -2836,7 +2970,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "x\u00b2e\u02e3 - 2xe\u02e3 + 2e\u02e3 + C"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u00b2 dx = x\u00b3/3 + C (add 1 to power, divide by new power)"
             },
             {
               "id": "calc_u5_l2_q10",
@@ -2849,7 +2984,8 @@ window.calculusAllTopics = {
                 "Only with e\u02e3"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: When the result still has a product"
             },
             {
               "id": "calc_u5_l2_q11",
@@ -2858,7 +2994,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "x\u00b2ln(x)/2 - x\u00b2/4 + C"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l2_q12",
@@ -2871,7 +3008,8 @@ window.calculusAllTopics = {
                 "x\u00b2\u00b7arctan(x) + C"
               ],
               "correct": 0,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l2_q13",
@@ -2880,7 +3018,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "e\u02e3(sin(x) - cos(x))/2 + C"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l2_q14",
@@ -2893,7 +3032,8 @@ window.calculusAllTopics = {
                 "Impossible"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Good - this is the goal"
             },
             {
               "id": "calc_u5_l2_q15",
@@ -2902,7 +3042,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "-x\u00b7cos(x) + sin(x) + C"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l2_q16",
@@ -2915,7 +3056,8 @@ window.calculusAllTopics = {
                 "Never"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: No, only product-type integrals"
             },
             {
               "id": "calc_u5_l2_q17",
@@ -2924,7 +3066,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "x\u00b7arcsin(x) + \u221a(1-x\u00b2) + C"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l2_q18",
@@ -2937,7 +3080,8 @@ window.calculusAllTopics = {
                 "Give up"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Solve for the integral algebraically"
             }
           ]
         },
@@ -2956,7 +3100,8 @@ window.calculusAllTopics = {
                 "Save one cos(x), use cos\u00b2 = 1 - sin\u00b2",
                 "u-substitution with u = sin(x)"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l3_q2",
@@ -2966,7 +3111,8 @@ window.calculusAllTopics = {
                 "sin\u00b2(x)/2 + C",
                 "sin^2(x)/2 + C"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l3_q3",
@@ -2976,7 +3122,8 @@ window.calculusAllTopics = {
                 "One sin(x)",
                 "sin(x)"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Answer: One sin(x)"
             },
             {
               "id": "calc_u5_l3_q4",
@@ -2989,7 +3136,8 @@ window.calculusAllTopics = {
                 "cos(2x)"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Answer: 1"
             },
             {
               "id": "calc_u5_l3_q5",
@@ -2998,7 +3146,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "x/2 - sin(2x)/4 + C"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l3_q6",
@@ -3011,7 +3160,8 @@ window.calculusAllTopics = {
                 "Trig substitution"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Power-reduction formulas"
             },
             {
               "id": "calc_u5_l3_q7",
@@ -3020,7 +3170,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "tan(x) - x + C"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l3_q8",
@@ -3033,7 +3184,8 @@ window.calculusAllTopics = {
                 "csc\u00b2(x)"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: sec\u00b2(x)"
             },
             {
               "id": "calc_u5_l3_q9",
@@ -3043,7 +3195,8 @@ window.calculusAllTopics = {
                 "sec\u2074(x)/4 + C",
                 "sec^4(x)/4 + C"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l3_q10",
@@ -3056,7 +3209,8 @@ window.calculusAllTopics = {
                 "x = 2cos(\u03b8)"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: x = 2sin(\u03b8)"
             },
             {
               "id": "calc_u5_l3_q11",
@@ -3065,7 +3219,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "x/2 + sin(2x)/4 + C"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l3_q12",
@@ -3078,7 +3233,8 @@ window.calculusAllTopics = {
                 "x = cos(\u03b8)"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: x = tan(\u03b8)"
             },
             {
               "id": "calc_u5_l3_q13",
@@ -3087,7 +3243,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "cos\u00b3(x)/3 - cos(x) + C"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l3_q14",
@@ -3100,7 +3257,8 @@ window.calculusAllTopics = {
                 "cot\u00b2(x)"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: tan\u00b2(x)"
             },
             {
               "id": "calc_u5_l3_q15",
@@ -3110,7 +3268,8 @@ window.calculusAllTopics = {
                 "tan\u00b2(x)/2 + C",
                 "tan^2(x)/2 + C"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l3_q16",
@@ -3123,7 +3282,8 @@ window.calculusAllTopics = {
                 "x = 3cos(\u03b8)"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: x = 3sec(\u03b8)"
             },
             {
               "id": "calc_u5_l3_q17",
@@ -3132,7 +3292,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "sin(x) - sin\u00b3(x)/3 + C"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l3_q18",
@@ -3145,7 +3306,8 @@ window.calculusAllTopics = {
                 "Cannot convert"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "U-substitution: Choose u, find du, substitute, integrate, back-substitute"
             }
           ]
         },
@@ -3164,7 +3326,8 @@ window.calculusAllTopics = {
                 "rational functions",
                 "P(x)/Q(x)"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Partial fractions: Decompose P(x)/Q(x) into simpler terms, then integrate each"
             },
             {
               "id": "calc_u5_l4_q2",
@@ -3174,7 +3337,8 @@ window.calculusAllTopics = {
                 "Factor the denominator",
                 "factor Q(x)"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Partial fractions: Decompose P(x)/Q(x) into simpler terms, then integrate each"
             },
             {
               "id": "calc_u5_l4_q3",
@@ -3183,7 +3347,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "(1/2)ln|x-1| - (1/2)ln|x+1| + C"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u00b2 dx = x\u00b3/3 + C (add 1 to power, divide by new power)"
             },
             {
               "id": "calc_u5_l4_q4",
@@ -3196,7 +3361,8 @@ window.calculusAllTopics = {
                 "A/(x+3)\u00b2"
               ],
               "correct": 0,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: A/(x+3)"
             },
             {
               "id": "calc_u5_l4_q5",
@@ -3205,7 +3371,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "(1/4)ln|(x-2)/(x+2)| + C"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Power rule: \u222bx\u00b2 dx = x\u00b3/3 + C (add 1 to power, divide by new power)"
             },
             {
               "id": "calc_u5_l4_q6",
@@ -3218,7 +3385,8 @@ window.calculusAllTopics = {
                 "4"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Partial fractions: Decompose P(x)/Q(x) into simpler terms, then integrate each"
             },
             {
               "id": "calc_u5_l4_q7",
@@ -3227,7 +3395,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "ln|x+1| + 1/(x+1) + C"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u00b2 dx = x\u00b3/3 + C (add 1 to power, divide by new power)"
             },
             {
               "id": "calc_u5_l4_q8",
@@ -3240,7 +3409,8 @@ window.calculusAllTopics = {
                 "Cannot do"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: (Ax+B)/(x\u00b2+1)"
             },
             {
               "id": "calc_u5_l4_q9",
@@ -3249,7 +3419,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "(1/6)ln|(x-3)/(x+3)| + C"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Power rule: \u222bx\u00b2 dx = x\u00b3/3 + C (add 1 to power, divide by new power)"
             },
             {
               "id": "calc_u5_l4_q10",
@@ -3262,7 +3433,8 @@ window.calculusAllTopics = {
                 "Differentiation"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Using algebra"
             },
             {
               "id": "calc_u5_l4_q11",
@@ -3271,7 +3443,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "ln|x+2| + C"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u00b2 dx = x\u00b3/3 + C (add 1 to power, divide by new power)"
             },
             {
               "id": "calc_u5_l4_q12",
@@ -3284,7 +3457,8 @@ window.calculusAllTopics = {
                 "Never"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: No, degree of P must be less than Q"
             },
             {
               "id": "calc_u5_l4_q13",
@@ -3293,7 +3467,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "ln|x\u00b2-1| + C"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Power rule: \u222bx\u00b2 dx = x\u00b3/3 + C (add 1 to power, divide by new power)"
             },
             {
               "id": "calc_u5_l4_q14",
@@ -3306,7 +3481,8 @@ window.calculusAllTopics = {
                 "Impossible"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Do polynomial division first"
             },
             {
               "id": "calc_u5_l4_q15",
@@ -3315,7 +3491,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "ln|(x+1)/(x+2)| + C"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l4_q16",
@@ -3328,7 +3505,8 @@ window.calculusAllTopics = {
                 "Stop"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Integrate each term"
             },
             {
               "id": "calc_u5_l4_q17",
@@ -3337,7 +3515,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "-(3/4)ln|x| + (3/4)ln|x-4| + C"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Power rule: \u222bx\u00b2 dx = x\u00b3/3 + C (add 1 to power, divide by new power)"
             },
             {
               "id": "calc_u5_l4_q18",
@@ -3350,7 +3529,8 @@ window.calculusAllTopics = {
                 "Factor by force"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Use different integration method"
             }
           ]
         },
@@ -3368,7 +3548,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "Infinite limit or infinite discontinuity"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Improper integrals have infinite limits or discontinuities. Use limits to evaluate."
             },
             {
               "id": "calc_u5_l5_q2",
@@ -3377,7 +3558,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Power rule: \u222bx\u00b2 dx = x\u00b3/3 + C (add 1 to power, divide by new power)"
             },
             {
               "id": "calc_u5_l5_q3",
@@ -3387,7 +3569,8 @@ window.calculusAllTopics = {
                 "lim(b\u2192\u221e) \u222b\u2090\u1d47 f(x) dx",
                 "limit as b approaches infinity"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l5_q4",
@@ -3400,7 +3583,8 @@ window.calculusAllTopics = {
                 "Equals 0"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l5_q5",
@@ -3409,7 +3593,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l5_q6",
@@ -3422,7 +3607,8 @@ window.calculusAllTopics = {
                 "p \u2265 1"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l5_q7",
@@ -3431,7 +3617,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1/2"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l5_q8",
@@ -3444,7 +3631,8 @@ window.calculusAllTopics = {
                 "Neither"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Infinite discontinuity"
             },
             {
               "id": "calc_u5_l5_q9",
@@ -3453,7 +3641,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "converges"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Power rule: \u222bx\u00b3 dx = x\u2074/4 + C"
             },
             {
               "id": "calc_u5_l5_q10",
@@ -3466,7 +3655,8 @@ window.calculusAllTopics = {
                 "Both diverge"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: \u222b f converges"
             },
             {
               "id": "calc_u5_l5_q11",
@@ -3475,7 +3665,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1/2"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u00b2 dx = x\u00b3/3 + C (add 1 to power, divide by new power)"
             },
             {
               "id": "calc_u5_l5_q12",
@@ -3488,7 +3679,8 @@ window.calculusAllTopics = {
                 "Cannot evaluate"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: The limit doesn't exist"
             },
             {
               "id": "calc_u5_l5_q13",
@@ -3497,7 +3689,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "2"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u5_l5_q14",
@@ -3510,7 +3703,8 @@ window.calculusAllTopics = {
                 "Integrate directly"
               ],
               "correct": 0,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Answer: At c"
             },
             {
               "id": "calc_u5_l5_q15",
@@ -3519,7 +3713,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "converges"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Power rule: \u222bx\u00b2 dx = x\u00b3/3 + C (add 1 to power, divide by new power)"
             },
             {
               "id": "calc_u5_l5_q16",
@@ -3532,7 +3727,8 @@ window.calculusAllTopics = {
                 "Never"
               ],
               "correct": 0,
-              "xp": 3
+              "xp": 3,
+              "explanation": "\u222b1/x dx = ln|x| + C. The natural log is the antiderivative of 1/x."
             },
             {
               "id": "calc_u5_l5_q17",
@@ -3542,7 +3738,8 @@ window.calculusAllTopics = {
                 "\u03c0/4",
                 "pi/4"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Power rule: \u222bx\u00b2 dx = x\u00b3/3 + C (add 1 to power, divide by new power)"
             },
             {
               "id": "calc_u5_l5_q18",
@@ -3555,7 +3752,8 @@ window.calculusAllTopics = {
                 "Never"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Improper integrals have infinite limits or discontinuities. Use limits to evaluate."
             }
           ]
         }
@@ -3580,7 +3778,8 @@ window.calculusAllTopics = {
                 "\u222b\u2090\u1d47 [f(x) - g(x)] dx",
                 "integral from a to b of (f(x) - g(x)) dx"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Area = \u222bf(x) dx from a to b. This is the accumulated area under the curve."
             },
             {
               "id": "calc_u6_l1_q2",
@@ -3591,7 +3790,8 @@ window.calculusAllTopics = {
                 "Find where f(x) = g(x)",
                 "Solve f(x) = g(x)"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Area = \u222bf(x) dx from a to b. This is the accumulated area under the curve."
             },
             {
               "id": "calc_u6_l1_q3",
@@ -3600,7 +3800,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1/6"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Area = \u222bf(x) dx from a to b. This is the accumulated area under the curve."
             },
             {
               "id": "calc_u6_l1_q4",
@@ -3613,7 +3814,8 @@ window.calculusAllTopics = {
                 "f(x) / g(x)"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: f(x) - g(x)"
             },
             {
               "id": "calc_u6_l1_q5",
@@ -3622,7 +3824,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1/6"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Area = \u222bf(x) dx from a to b. This is the accumulated area under the curve."
             },
             {
               "id": "calc_u6_l1_q6",
@@ -3635,7 +3838,8 @@ window.calculusAllTopics = {
                 "f(x) + g(x) = 0"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: f(x) = g(x)"
             },
             {
               "id": "calc_u6_l1_q7",
@@ -3645,7 +3849,8 @@ window.calculusAllTopics = {
                 "9/2",
                 "4.5"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Area = \u222bf(x) dx from a to b. This is the accumulated area under the curve."
             },
             {
               "id": "calc_u6_l1_q8",
@@ -3658,7 +3863,8 @@ window.calculusAllTopics = {
                 "Add the areas"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Split into separate integrals"
             },
             {
               "id": "calc_u6_l1_q9",
@@ -3667,7 +3873,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "4/3"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Area = \u222bf(x) dx from a to b. This is the accumulated area under the curve."
             },
             {
               "id": "calc_u6_l1_q10",
@@ -3680,7 +3887,8 @@ window.calculusAllTopics = {
                 "Complex"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Positive"
             },
             {
               "id": "calc_u6_l1_q11",
@@ -3690,7 +3898,8 @@ window.calculusAllTopics = {
                 "2 - ln(2)",
                 "2 - ln2"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Area = \u222bf(x) dx from a to b. This is the accumulated area under the curve."
             },
             {
               "id": "calc_u6_l1_q12",
@@ -3703,7 +3912,8 @@ window.calculusAllTopics = {
                 "Undefined"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Sign flips"
             },
             {
               "id": "calc_u6_l1_q13",
@@ -3713,7 +3923,8 @@ window.calculusAllTopics = {
                 "\u221a2 - 1",
                 "sqrt(2) - 1"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Area = \u222bf(x) dx from a to b. This is the accumulated area under the curve."
             },
             {
               "id": "calc_u6_l1_q14",
@@ -3726,7 +3937,8 @@ window.calculusAllTopics = {
                 "The constant C"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: The integrand f(x) - g(x)"
             },
             {
               "id": "calc_u6_l1_q15",
@@ -3735,7 +3947,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1/4"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Area = \u222bf(x) dx from a to b. This is the accumulated area under the curve."
             },
             {
               "id": "calc_u6_l1_q16",
@@ -3748,7 +3961,8 @@ window.calculusAllTopics = {
                 "Arc length"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Power rule: \u222bx\u207f dx = x^(n+1)/(n+1) + C"
             },
             {
               "id": "calc_u6_l1_q17",
@@ -3757,7 +3971,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "32/3"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Area = \u222bf(x) dx from a to b. This is the accumulated area under the curve."
             },
             {
               "id": "calc_u6_l1_q18",
@@ -3770,7 +3985,8 @@ window.calculusAllTopics = {
                 "Never"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Yes - use horizontal slices"
             }
           ]
         },
@@ -3790,7 +4006,8 @@ window.calculusAllTopics = {
                 "Disks",
                 "\u03c0r\u00b2 slices"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Disk method: V = \u222b\u03c0[f(x)]\u00b2 dx (solid of revolution about x-axis)"
             },
             {
               "id": "calc_u6_l2_q2",
@@ -3800,7 +4017,8 @@ window.calculusAllTopics = {
                 "\u222b\u2090\u1d47 \u03c0[f(x)]\u00b2 dx",
                 "\u03c0\u222b[f(x)]\u00b2 dx"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: \u222b\u2090\u1d47 \u03c0[f(x)]\u00b2 dx"
             },
             {
               "id": "calc_u6_l2_q3",
@@ -3810,7 +4028,8 @@ window.calculusAllTopics = {
                 "8\u03c0",
                 "8pi"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Answer: 8\u03c0"
             },
             {
               "id": "calc_u6_l2_q4",
@@ -3823,7 +4042,8 @@ window.calculusAllTopics = {
                 "It's faster"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: It has a hole like a washer"
             },
             {
               "id": "calc_u6_l2_q5",
@@ -3833,7 +4053,8 @@ window.calculusAllTopics = {
                 "8\u03c0",
                 "8pi"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Shell method: V = \u222b2\u03c0x\u00b7f(x) dx (rotation about y-axis)"
             },
             {
               "id": "calc_u6_l2_q6",
@@ -3846,7 +4067,8 @@ window.calculusAllTopics = {
                 "\u222bf(x)dx"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Radius R: series converges for |x-a|<R, diverges for |x-a|>R. Test endpoints."
             },
             {
               "id": "calc_u6_l2_q7",
@@ -3856,7 +4078,8 @@ window.calculusAllTopics = {
                 "\u03c0/5",
                 "pi/5"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Answer: \u03c0/5"
             },
             {
               "id": "calc_u6_l2_q8",
@@ -3869,7 +4092,8 @@ window.calculusAllTopics = {
                 "Never use it"
               ],
               "correct": 0,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: When there's a hole"
             },
             {
               "id": "calc_u6_l2_q9",
@@ -3878,7 +4102,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "2\u03c0/15"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: 2\u03c0/15"
             },
             {
               "id": "calc_u6_l2_q10",
@@ -3891,7 +4116,8 @@ window.calculusAllTopics = {
                 "f'(x)"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Answer: f(x)"
             },
             {
               "id": "calc_u6_l2_q11",
@@ -3901,7 +4127,8 @@ window.calculusAllTopics = {
                 "4\u03c0/5",
                 "4pi/5"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Shell method: V = \u222b2\u03c0x\u00b7f(x) dx (rotation about y-axis)"
             },
             {
               "id": "calc_u6_l2_q12",
@@ -3914,7 +4141,8 @@ window.calculusAllTopics = {
                 "Volume"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Circumference"
             },
             {
               "id": "calc_u6_l2_q13",
@@ -3924,7 +4152,8 @@ window.calculusAllTopics = {
                 "\u03c0/2",
                 "pi/2"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: \u03c0/2"
             },
             {
               "id": "calc_u6_l2_q14",
@@ -3937,7 +4166,8 @@ window.calculusAllTopics = {
                 "Diagonal"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Answer: y-axis"
             },
             {
               "id": "calc_u6_l2_q15",
@@ -3947,7 +4177,8 @@ window.calculusAllTopics = {
                 "2\u03c0/5",
                 "2pi/5"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Shell method: V = \u222b2\u03c0x\u00b7f(x) dx (rotation about y-axis)"
             },
             {
               "id": "calc_u6_l2_q16",
@@ -3960,7 +4191,8 @@ window.calculusAllTopics = {
                 "Disk has hole"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Washer subtracts inner radius"
             },
             {
               "id": "calc_u6_l2_q17",
@@ -3970,7 +4202,8 @@ window.calculusAllTopics = {
                 "16\u03c0/3",
                 "16pi/3"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: 16\u03c0/3"
             },
             {
               "id": "calc_u6_l2_q18",
@@ -3983,7 +4216,8 @@ window.calculusAllTopics = {
                 "Never"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Yes - use horizontal slices"
             }
           ]
         },
@@ -4001,7 +4235,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "\u222b\u2090\u1d47 \u221a[1 + (f'(x))\u00b2] dx"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Arc length: L = \u222b\u221a[1+(f'(x))\u00b2] dx. This measures the length along the curve."
             },
             {
               "id": "calc_u6_l3_q2",
@@ -4012,7 +4247,8 @@ window.calculusAllTopics = {
                 "ds",
                 "Infinitesimal arc length"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: Differential arc length"
             },
             {
               "id": "calc_u6_l3_q3",
@@ -4021,7 +4257,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "17/6"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Arc length: L = \u222b\u221a[1+(f'(x))\u00b2] dx. This measures the length along the curve."
             },
             {
               "id": "calc_u6_l3_q4",
@@ -4034,7 +4271,8 @@ window.calculusAllTopics = {
                 "\u222bf'(x)dx"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: \u222b2\u03c0f(x)\u221a[1+f'(x)\u00b2]dx"
             },
             {
               "id": "calc_u6_l3_q5",
@@ -4045,7 +4283,8 @@ window.calculusAllTopics = {
                 "ds",
                 "Differential arc length"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Arc length: L = \u222b\u221a[1+(f'(x))\u00b2] dx. This measures the length along the curve."
             },
             {
               "id": "calc_u6_l3_q6",
@@ -4058,7 +4297,8 @@ window.calculusAllTopics = {
                 "Area"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Circumference"
             },
             {
               "id": "calc_u6_l3_q7",
@@ -4068,7 +4308,8 @@ window.calculusAllTopics = {
                 "\u221a(1 + e\u00b2) - 1",
                 "sqrt(1+e\u00b2) - 1"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Arc length: L = \u222b\u221a[1+(f'(x))\u00b2] dx. This measures the length along the curve."
             },
             {
               "id": "calc_u6_l3_q8",
@@ -4081,7 +4322,8 @@ window.calculusAllTopics = {
                 "Arc length = \u222bf'(x)dx"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Arc length uses f'(x) in formula"
             },
             {
               "id": "calc_u6_l3_q9",
@@ -4091,7 +4333,8 @@ window.calculusAllTopics = {
                 "(2/27)(10\u221a10 - 1)",
                 "(2/27)(10sqrt(10) - 1)"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Arc length: L = \u222b\u221a[1+(f'(x))\u00b2] dx. This measures the length along the curve."
             },
             {
               "id": "calc_u6_l3_q10",
@@ -4104,7 +4347,8 @@ window.calculusAllTopics = {
                 "Only polynomials"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Only if f' is continuous"
             },
             {
               "id": "calc_u6_l3_q11",
@@ -4114,7 +4358,8 @@ window.calculusAllTopics = {
                 "\u03c0(5\u221a5 - 1)/6",
                 "pi(5sqrt(5)-1)/6"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Area = \u222bf(x) dx from a to b. This is the accumulated area under the curve."
             },
             {
               "id": "calc_u6_l3_q12",
@@ -4127,7 +4372,8 @@ window.calculusAllTopics = {
                 "Can't do it"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Use x as a function of y"
             },
             {
               "id": "calc_u6_l3_q13",
@@ -4136,7 +4382,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "3/4"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Arc length: L = \u222b\u221a[1+(f'(x))\u00b2] dx. This measures the length along the curve."
             },
             {
               "id": "calc_u6_l3_q14",
@@ -4149,7 +4396,8 @@ window.calculusAllTopics = {
                 "dx and dy"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: f(x) and f'(x)"
             },
             {
               "id": "calc_u6_l3_q15",
@@ -4162,7 +4410,8 @@ window.calculusAllTopics = {
                 "Slope"
               ],
               "correct": 1,
-              "xp": 5
+              "xp": 5,
+              "explanation": "Apply the formula from the lesson to solve this problem."
             },
             {
               "id": "calc_u6_l3_q16",
@@ -4175,7 +4424,8 @@ window.calculusAllTopics = {
                 "Uses squares"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Accounts for diagonal movement"
             },
             {
               "id": "calc_u6_l3_q17",
@@ -4187,7 +4437,8 @@ window.calculusAllTopics = {
                 "Mean Value Theorem",
                 "Chain rule"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Arc length: L = \u222b\u221a[1+(f'(x))\u00b2] dx. This measures the length along the curve."
             },
             {
               "id": "calc_u6_l3_q18",
@@ -4200,7 +4451,8 @@ window.calculusAllTopics = {
                 "Line"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Arc length: L = \u222b\u221a[1+(f'(x))\u00b2] dx. This measures the length along the curve."
             }
           ]
         },
@@ -4219,7 +4471,8 @@ window.calculusAllTopics = {
                 "Can write as dy/dx = f(x)g(y)",
                 "Variables can be separated"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Separable DE: dy/dx = f(x)g(y). Separate: dy/g(y) = f(x)dx, then integrate both sides."
             },
             {
               "id": "calc_u6_l4_q2",
@@ -4229,7 +4482,8 @@ window.calculusAllTopics = {
                 "Separate the variables",
                 "Get all y on left, all x on right"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Separable DE: dy/dx = f(x)g(y). Separate: dy/g(y) = f(x)dx, then integrate both sides."
             },
             {
               "id": "calc_u6_l4_q3",
@@ -4239,7 +4493,8 @@ window.calculusAllTopics = {
                 "y = \u221a(1 + x\u00b2)",
                 "y = sqrt(1 + x\u00b2)"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Answer: y = \u221a(1 + x\u00b2)"
             },
             {
               "id": "calc_u6_l4_q4",
@@ -4252,7 +4507,8 @@ window.calculusAllTopics = {
                 "The limit"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: A family of solutions"
             },
             {
               "id": "calc_u6_l4_q5",
@@ -4262,7 +4518,8 @@ window.calculusAllTopics = {
                 "y = 3e^(x\u00b2)",
                 "y = 3e^(x^2)"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: y = 3e^(x\u00b2)"
             },
             {
               "id": "calc_u6_l4_q6",
@@ -4275,7 +4532,8 @@ window.calculusAllTopics = {
                 "P = C"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: P = Ce^(kt)"
             },
             {
               "id": "calc_u6_l4_q7",
@@ -4284,7 +4542,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "y = 2x"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Answer: y = 2x"
             },
             {
               "id": "calc_u6_l4_q8",
@@ -4297,7 +4556,8 @@ window.calculusAllTopics = {
                 "Undefined"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Might be equilibrium solution"
             },
             {
               "id": "calc_u6_l4_q9",
@@ -4307,7 +4567,8 @@ window.calculusAllTopics = {
                 "y = e^(x\u00b3/3)",
                 "y = e^(x^3/3)"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: y = e^(x\u00b3/3)"
             },
             {
               "id": "calc_u6_l4_q10",
@@ -4320,7 +4581,8 @@ window.calculusAllTopics = {
                 "Add extra terms"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Determine the constant C"
             },
             {
               "id": "calc_u6_l4_q11",
@@ -4330,7 +4592,8 @@ window.calculusAllTopics = {
                 "y = \u221a(2e^x + 2)",
                 "y = sqrt(2e^x + 2)"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Answer: y = \u221a(2e^x + 2)"
             },
             {
               "id": "calc_u6_l4_q12",
@@ -4343,7 +4606,8 @@ window.calculusAllTopics = {
                 "Logarithmic"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Solution grows as Ce^(kt)"
             },
             {
               "id": "calc_u6_l4_q13",
@@ -4353,7 +4617,8 @@ window.calculusAllTopics = {
                 "y = \u221a(1 + 2ln(x))",
                 "y = sqrt(1 + 2ln(x))"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: y = \u221a(1 + 2ln(x))"
             },
             {
               "id": "calc_u6_l4_q14",
@@ -4366,7 +4631,8 @@ window.calculusAllTopics = {
                 "Nothing uses them"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Population growth, cooling, decay"
             },
             {
               "id": "calc_u6_l4_q15",
@@ -4379,7 +4645,8 @@ window.calculusAllTopics = {
                 "Final answer"
               ],
               "correct": 0,
-              "xp": 5
+              "xp": 5,
+              "explanation": "Apply the formula from the lesson to solve this problem."
             },
             {
               "id": "calc_u6_l4_q16",
@@ -4392,7 +4659,8 @@ window.calculusAllTopics = {
                 "Always"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: No - can't separate variables"
             },
             {
               "id": "calc_u6_l4_q17",
@@ -4405,7 +4673,8 @@ window.calculusAllTopics = {
                 "Always linear"
               ],
               "correct": 0,
-              "xp": 4
+              "xp": 4,
+              "explanation": "Apply the formula from the lesson to solve this problem."
             },
             {
               "id": "calc_u6_l4_q18",
@@ -4418,7 +4687,8 @@ window.calculusAllTopics = {
                 "Delete it"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Use initial conditions to find it"
             }
           ]
         }
@@ -4442,7 +4712,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "An ordered list of numbers"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "A sequence {a\u2099} is an ordered list. lim(n\u2192\u221e)a\u2099 = L means terms approach L."
             },
             {
               "id": "calc_u7_l1_q2",
@@ -4451,7 +4722,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "0"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: 0"
             },
             {
               "id": "calc_u7_l1_q3",
@@ -4460,7 +4732,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "The limit exists and is finite"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "A sequence {a\u2099} is an ordered list. lim(n\u2192\u221e)a\u2099 = L means terms approach L."
             },
             {
               "id": "calc_u7_l1_q4",
@@ -4473,7 +4746,8 @@ window.calculusAllTopics = {
                 "Doesn't exist"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Answer: \u221e"
             },
             {
               "id": "calc_u7_l1_q5",
@@ -4483,7 +4757,8 @@ window.calculusAllTopics = {
                 "2 + 3(n-1)",
                 "3n - 1"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: 2 + 3(n-1)"
             },
             {
               "id": "calc_u7_l1_q6",
@@ -4496,7 +4771,8 @@ window.calculusAllTopics = {
                 "Both"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Geometric"
             },
             {
               "id": "calc_u7_l1_q7",
@@ -4505,7 +4781,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Answer: 1"
             },
             {
               "id": "calc_u7_l1_q8",
@@ -4518,7 +4795,8 @@ window.calculusAllTopics = {
                 "Doesn't exist"
               ],
               "correct": 3,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Doesn't exist"
             },
             {
               "id": "calc_u7_l1_q9",
@@ -4528,7 +4806,8 @@ window.calculusAllTopics = {
                 "1/2^(n-1)",
                 "2^(1-n)"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: 1/2^(n-1)"
             },
             {
               "id": "calc_u7_l1_q10",
@@ -4541,7 +4820,8 @@ window.calculusAllTopics = {
                 "Cannot determine"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Always converges"
             },
             {
               "id": "calc_u7_l1_q11",
@@ -4550,7 +4830,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Answer: 1"
             },
             {
               "id": "calc_u7_l1_q12",
@@ -4563,7 +4844,8 @@ window.calculusAllTopics = {
                 "Doesn't exist"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Answer: 0"
             },
             {
               "id": "calc_u7_l1_q13",
@@ -4572,7 +4854,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "0"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: 0"
             },
             {
               "id": "calc_u7_l1_q14",
@@ -4585,7 +4868,8 @@ window.calculusAllTopics = {
                 "\u221e"
               ],
               "correct": 0,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Answer: 0"
             },
             {
               "id": "calc_u7_l1_q15",
@@ -4594,7 +4878,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "2"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Answer: 2"
             },
             {
               "id": "calc_u7_l1_q16",
@@ -4607,7 +4892,8 @@ window.calculusAllTopics = {
                 "1/2"
               ],
               "correct": 0,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Answer: 2"
             },
             {
               "id": "calc_u7_l1_q17",
@@ -4616,7 +4902,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "0"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: 0"
             },
             {
               "id": "calc_u7_l1_q18",
@@ -4629,7 +4916,8 @@ window.calculusAllTopics = {
                 "Doesn't exist"
               ],
               "correct": 0,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Answer: |L|"
             }
           ]
         },
@@ -4647,7 +4935,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "The sum of an infinite sequence"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "A series \u2211a\u2099 is the sum of a sequence. Check convergence using tests."
             },
             {
               "id": "calc_u7_l2_q2",
@@ -4656,7 +4945,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "2"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: 2"
             },
             {
               "id": "calc_u7_l2_q3",
@@ -4665,7 +4955,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "When |r| < 1"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Geometric series: \u2211ar\u207f = a/(1-r) if |r|<1, otherwise diverges"
             },
             {
               "id": "calc_u7_l2_q4",
@@ -4678,7 +4969,8 @@ window.calculusAllTopics = {
                 "3"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Answer: 3/2"
             },
             {
               "id": "calc_u7_l2_q5",
@@ -4687,7 +4979,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "If lim a\u2099 \u2260 0, the series diverges"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: If lim a\u2099 \u2260 0, the series diverges"
             },
             {
               "id": "calc_u7_l2_q6",
@@ -4700,7 +4993,8 @@ window.calculusAllTopics = {
                 "Equals 1"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Diverges"
             },
             {
               "id": "calc_u7_l2_q7",
@@ -4709,7 +5003,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "6"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Answer: 6"
             },
             {
               "id": "calc_u7_l2_q8",
@@ -4722,7 +5017,8 @@ window.calculusAllTopics = {
                 "4/3"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Answer: 1/3"
             },
             {
               "id": "calc_u7_l2_q9",
@@ -4732,7 +5028,8 @@ window.calculusAllTopics = {
                 "The nth partial sum",
                 "The sum of the first n terms"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "A series \u2211a\u2099 is the sum of a sequence. Check convergence using tests."
             },
             {
               "id": "calc_u7_l2_q10",
@@ -4745,7 +5042,8 @@ window.calculusAllTopics = {
                 "Cannot determine"
               ],
               "correct": 0,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Answer: Yes"
             },
             {
               "id": "calc_u7_l2_q11",
@@ -4754,7 +5052,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "2/3"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Answer: 2/3"
             },
             {
               "id": "calc_u7_l2_q12",
@@ -4767,7 +5066,8 @@ window.calculusAllTopics = {
                 "8"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Answer: 2"
             },
             {
               "id": "calc_u7_l2_q13",
@@ -4776,7 +5076,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "2"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: 2"
             },
             {
               "id": "calc_u7_l2_q14",
@@ -4789,7 +5090,8 @@ window.calculusAllTopics = {
                 "Equals 0"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Answer: No"
             },
             {
               "id": "calc_u7_l2_q15",
@@ -4799,7 +5101,8 @@ window.calculusAllTopics = {
                 "4.5",
                 "9/2"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Answer: 4.5"
             },
             {
               "id": "calc_u7_l2_q16",
@@ -4812,7 +5115,8 @@ window.calculusAllTopics = {
                 "Cannot determine"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Diverges to \u221e"
             },
             {
               "id": "calc_u7_l2_q17",
@@ -4821,7 +5125,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "2"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: 2"
             },
             {
               "id": "calc_u7_l2_q18",
@@ -4834,7 +5139,8 @@ window.calculusAllTopics = {
                 "Doesn't exist"
               ],
               "correct": 0,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Answer: 0"
             }
           ]
         },
@@ -4852,7 +5158,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "Integrals and series"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Answer: Integrals and series"
             },
             {
               "id": "calc_u7_l3_q2",
@@ -4862,7 +5169,8 @@ window.calculusAllTopics = {
                 "converges absolutely",
                 "converges"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "A series \u2211a\u2099 is the sum of a sequence. Check convergence using tests."
             },
             {
               "id": "calc_u7_l3_q3",
@@ -4871,7 +5179,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "0 \u2264 a\u2099 \u2264 b\u2099"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Answer: 0 \u2264 a\u2099 \u2264 b\u2099"
             },
             {
               "id": "calc_u7_l3_q4",
@@ -4884,7 +5193,8 @@ window.calculusAllTopics = {
                 "Equals 0"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Diverges"
             },
             {
               "id": "calc_u7_l3_q5",
@@ -4893,7 +5203,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "b\u2099 decreasing and lim b\u2099 = 0"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "A series \u2211a\u2099 is the sum of a sequence. Check convergence using tests."
             },
             {
               "id": "calc_u7_l3_q6",
@@ -4906,7 +5217,8 @@ window.calculusAllTopics = {
                 "Constant"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Positive, continuous, decreasing"
             },
             {
               "id": "calc_u7_l3_q7",
@@ -4915,7 +5227,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "lim(n\u2192\u221e) |a\u2099\u208a\u2081/a\u2099|"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Answer: lim(n\u2192\u221e) |a\u2099\u208a\u2081/a\u2099|"
             },
             {
               "id": "calc_u7_l3_q8",
@@ -4928,7 +5241,8 @@ window.calculusAllTopics = {
                 "Equals 0"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Converges"
             },
             {
               "id": "calc_u7_l3_q9",
@@ -4937,7 +5251,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "The nth root of |a\u2099|"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: The nth root of |a\u2099|"
             },
             {
               "id": "calc_u7_l3_q10",
@@ -4950,7 +5265,8 @@ window.calculusAllTopics = {
                 "c = \u221e"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: 0 < c < \u221e"
             },
             {
               "id": "calc_u7_l3_q11",
@@ -4959,7 +5275,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "When L = 1"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Answer: When L = 1"
             },
             {
               "id": "calc_u7_l3_q12",
@@ -4972,7 +5289,8 @@ window.calculusAllTopics = {
                 "Equals \u03c0\u00b2/6"
               ],
               "correct": 0,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Yes (by comparison with 1/n\u00b2)"
             },
             {
               "id": "calc_u7_l3_q13",
@@ -4982,7 +5300,8 @@ window.calculusAllTopics = {
                 "\u221e",
                 "diverges"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: \u221e"
             },
             {
               "id": "calc_u7_l3_q14",
@@ -4995,7 +5314,8 @@ window.calculusAllTopics = {
                 "Equals 0"
               ],
               "correct": 0,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Yes (alternating harmonic)"
             },
             {
               "id": "calc_u7_l3_q15",
@@ -5004,7 +5324,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "Ratio test"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Answer: Ratio test"
             },
             {
               "id": "calc_u7_l3_q16",
@@ -5017,7 +5338,8 @@ window.calculusAllTopics = {
                 "Doesn't exist"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Answer: \u221e"
             },
             {
               "id": "calc_u7_l3_q17",
@@ -5027,7 +5349,8 @@ window.calculusAllTopics = {
                 "No (p-series with p = 1/2 \u2264 1)",
                 "Yes"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Apply the formula from the lesson to solve this problem."
             },
             {
               "id": "calc_u7_l3_q18",
@@ -5040,7 +5363,8 @@ window.calculusAllTopics = {
                 "\u2211 np"
               ],
               "correct": 0,
-              "xp": 3
+              "xp": 3,
+              "explanation": "A series \u2211a\u2099 is the sum of a sequence. Check convergence using tests."
             }
           ]
         },
@@ -5058,7 +5382,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "\u2211(n=0 to \u221e) c\u2099(x-a)\u207f"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "A series \u2211a\u2099 is the sum of a sequence. Check convergence using tests."
             },
             {
               "id": "calc_u7_l4_q2",
@@ -5067,7 +5392,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "Radius of convergence"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "A series \u2211a\u2099 is the sum of a sequence. Check convergence using tests."
             },
             {
               "id": "calc_u7_l4_q3",
@@ -5076,7 +5402,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "When |x - a| < R"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Use tests: integral, comparison, ratio, root, alternating series. Check conditions carefully."
             },
             {
               "id": "calc_u7_l4_q4",
@@ -5089,7 +5416,8 @@ window.calculusAllTopics = {
                 "Doesn't exist"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Answer: \u221e"
             },
             {
               "id": "calc_u7_l4_q5",
@@ -5098,7 +5426,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "The value the series is expanded around"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "A series \u2211a\u2099 is the sum of a sequence. Check convergence using tests."
             },
             {
               "id": "calc_u7_l4_q6",
@@ -5111,7 +5440,8 @@ window.calculusAllTopics = {
                 "\u221e"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Answer: 1"
             },
             {
               "id": "calc_u7_l4_q7",
@@ -5120,7 +5450,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "Must test endpoints separately"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Answer: Must test endpoints separately"
             },
             {
               "id": "calc_u7_l4_q8",
@@ -5133,7 +5464,8 @@ window.calculusAllTopics = {
                 "For |x| < 1"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Only at x = a"
             },
             {
               "id": "calc_u7_l4_q9",
@@ -5142,7 +5474,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1/(1-x) for |x| < 1"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: 1/(1-x) for |x| < 1"
             },
             {
               "id": "calc_u7_l4_q10",
@@ -5155,7 +5488,8 @@ window.calculusAllTopics = {
                 "Alternating test"
               ],
               "correct": 0,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Ratio test"
             },
             {
               "id": "calc_u7_l4_q11",
@@ -5164,7 +5498,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "0"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Answer: 0"
             },
             {
               "id": "calc_u7_l4_q12",
@@ -5177,7 +5512,8 @@ window.calculusAllTopics = {
                 "[0, \u221e)"
               ],
               "correct": 0,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: (-1, 1)"
             },
             {
               "id": "calc_u7_l4_q13",
@@ -5186,7 +5522,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: 1"
             },
             {
               "id": "calc_u7_l4_q14",
@@ -5199,7 +5536,8 @@ window.calculusAllTopics = {
                 "cos(x)"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Answer: e\u02e3"
             },
             {
               "id": "calc_u7_l4_q15",
@@ -5208,7 +5546,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "(-1, 3)"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Answer: (-1, 3)"
             },
             {
               "id": "calc_u7_l4_q16",
@@ -5221,7 +5560,8 @@ window.calculusAllTopics = {
                 "Cannot determine"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Yes, sometimes"
             },
             {
               "id": "calc_u7_l4_q17",
@@ -5230,7 +5570,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "3"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: 3"
             },
             {
               "id": "calc_u7_l4_q18",
@@ -5243,7 +5584,8 @@ window.calculusAllTopics = {
                 "\u2211(-1)\u207f/n! x\u207f"
               ],
               "correct": 0,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: \u2211(-1)\u207fx\u207f"
             }
           ]
         },
@@ -5261,7 +5603,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "Representation of a function as an infinite sum"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "A series \u2211a\u2099 is the sum of a sequence. Check convergence using tests."
             },
             {
               "id": "calc_u7_l5_q2",
@@ -5270,7 +5613,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "It's a Taylor series about x = 0"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "A series \u2211a\u2099 is the sum of a sequence. Check convergence using tests."
             },
             {
               "id": "calc_u7_l5_q3",
@@ -5279,7 +5623,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "\u2211(n=0 to \u221e) x\u207f/n!"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "A series \u2211a\u2099 is the sum of a sequence. Check convergence using tests."
             },
             {
               "id": "calc_u7_l5_q4",
@@ -5292,7 +5637,8 @@ window.calculusAllTopics = {
                 "\u2211x\u00b2\u207f"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: \u2211(-1)\u207fx^(2n+1)/(2n+1)!"
             },
             {
               "id": "calc_u7_l5_q5",
@@ -5302,7 +5648,8 @@ window.calculusAllTopics = {
                 "1",
                 "1 for all n"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Answer: 1"
             },
             {
               "id": "calc_u7_l5_q6",
@@ -5315,7 +5662,8 @@ window.calculusAllTopics = {
                 "x - x\u00b2 + x\u00b3/2! - ..."
               ],
               "correct": 0,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: 1 - x\u00b2/2! + x\u2074/4! - ..."
             },
             {
               "id": "calc_u7_l5_q7",
@@ -5324,7 +5672,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "f\u207d\u207f\u207e(a)/n!"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "A series \u2211a\u2099 is the sum of a sequence. Check convergence using tests."
             },
             {
               "id": "calc_u7_l5_q8",
@@ -5337,7 +5686,8 @@ window.calculusAllTopics = {
                 "\u2211 x\u207f/n!"
               ],
               "correct": 0,
-              "xp": 3
+              "xp": 3,
+              "explanation": "A series \u2211a\u2099 is the sum of a sequence. Check convergence using tests."
             },
             {
               "id": "calc_u7_l5_q9",
@@ -5347,7 +5697,8 @@ window.calculusAllTopics = {
                 "The partial sum of a Taylor series",
                 "Approximation of f(x)"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Taylor: f(x)=\u2211[f\u207d\u207f\u207e(a)/n!](x-a)\u207f. Maclaurin has a=0."
             },
             {
               "id": "calc_u7_l5_q10",
@@ -5360,7 +5711,8 @@ window.calculusAllTopics = {
                 "Root"
               ],
               "correct": 0,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Remainder"
             },
             {
               "id": "calc_u7_l5_q11",
@@ -5369,7 +5721,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "\u2211(-1)^(n-1)x\u207f/n"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "A series \u2211a\u2099 is the sum of a sequence. Check convergence using tests."
             },
             {
               "id": "calc_u7_l5_q12",
@@ -5382,7 +5735,8 @@ window.calculusAllTopics = {
                 "Guessing"
               ],
               "correct": 0,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: Using derivatives at a"
             },
             {
               "id": "calc_u7_l5_q13",
@@ -5391,7 +5745,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "1 + x + x\u00b2/2 + x\u00b3/6"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "Taylor: f(x)=\u2211[f\u207d\u207f\u207e(a)/n!](x-a)\u207f. Maclaurin has a=0."
             },
             {
               "id": "calc_u7_l5_q14",
@@ -5404,7 +5759,8 @@ window.calculusAllTopics = {
                 "2"
               ],
               "correct": 2,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Use tests: integral, comparison, ratio, root, alternating series. Check conditions carefully."
             },
             {
               "id": "calc_u7_l5_q15",
@@ -5415,7 +5771,8 @@ window.calculusAllTopics = {
                 "x - x\u00b3/6",
                 "x\u00b2/2"
               ],
-              "xp": 5
+              "xp": 5,
+              "explanation": "Answer: x"
             },
             {
               "id": "calc_u7_l5_q16",
@@ -5428,7 +5785,8 @@ window.calculusAllTopics = {
                 "ln(1+x)"
               ],
               "correct": 1,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Answer: cos(x)"
             },
             {
               "id": "calc_u7_l5_q17",
@@ -5437,7 +5795,8 @@ window.calculusAllTopics = {
               "correctAnswer": [
                 "The coefficient for (x-a) term"
               ],
-              "xp": 4
+              "xp": 4,
+              "explanation": "A series \u2211a\u2099 is the sum of a sequence. Check convergence using tests."
             },
             {
               "id": "calc_u7_l5_q18",
@@ -5450,7 +5809,8 @@ window.calculusAllTopics = {
                 "Only differentiable functions"
               ],
               "correct": 0,
-              "xp": 3
+              "xp": 3,
+              "explanation": "Correct: No, only analytic functions"
             }
           ]
         }
