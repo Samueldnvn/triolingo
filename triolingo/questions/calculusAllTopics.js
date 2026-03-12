@@ -1466,12 +1466,865 @@ window.calculusAllTopics = {
     {
       "unitId": "6",
       "unitName": "Applications of Integrals",
-      "lessons": [
-        {"id": "10-1", "title": "Area between curves", "xp": 0, "type": "lesson", "lessonText": "", "questions": []},
-        {"id": "10-2", "title": "Volumes of solids (disk, washer, shell)", "xp": 0, "type": "lesson", "lessonText": "", "questions": []},
-        {"id": "10-3", "title": "Arc length and surface area", "xp": 0, "type": "lesson", "lessonText": "", "questions": []},
-        {"id": "10-4", "title": "Basic separable differential equations", "xp": 0, "type": "lesson", "lessonText": "", "questions": []}
-      ]
+      "lessons":         [
+          {
+            "id": "6-1",
+            "title": "Area between curves",
+            "xp": 85,
+            "type": "lesson",
+            "lessonText": "# Area Between Curves\n\nThe area between two curves \\(f(x)\\) and \\(g(x)\\) from \\(a\\) to \\(b\\) (where \\(f(x) \\geq g(x)\\)) is given by:\n\n\\[ \\text{Area} = \\int_a^b [f(x) - g(x)] \\, dx \\]\n\n## Key Steps:\n\n1. **Find the points of intersection** - Solve \\(f(x) = g(x)\\)\n2. **Determine which function is on top** - Which is larger in the interval?\n3. **Set up the integral** - Top curve minus bottom curve\n4. **Evaluate** - Compute the definite integral\n\n## Example:\n\nFind the area between \\(y = x\\) and \\(y = x^2\\) from 0 to 1.\n\n**Step 1:** Points of intersection at \\(x = 0\\) and \\(x = 1\\).\n\n**Step 2:** Since \\(x \\geq x^2\\) on \\([0, 1]\\), \\(x\\) is on top.\n\n**Step 3:** Set up the integral.\n\n\\[ \\text{Area} = \\int_0^1 (x - x^2) \\, dx \\]\n\n**Step 4:** Evaluate.\n\n\\[ \\text{Area} = \\left[\\frac{x^2}{2} - \\frac{x^3}{3}\\right]_0^1 = \\frac{1}{2} - \\frac{1}{3} = \\frac{1}{6} \\]\n\n---\n\n## When Curves Cross:\n\nIf the curves cross within your interval, **split the integral** at the crossing point(s). The \"top\" function changes, so you need separate integrals for each region.",
+            "questions": [
+              {
+                "id": "calc_u6_l1_q1",
+                "type": "typing",
+                "question": "What is the formula for area between curves f(x) and g(x) from a to b?",
+                "correctAnswer": [
+                  "\u222b\u2090\u1d47 [f(x) - g(x)] dx",
+                  "integral from a to b of (f(x) - g(x)) dx"
+                ],
+                "xp": 5
+              },
+              {
+                "id": "calc_u6_l1_q2",
+                "type": "typing",
+                "question": "What is the first step to find area between two curves?",
+                "correctAnswer": [
+                  "Find points of intersection",
+                  "Find where f(x) = g(x)",
+                  "Solve f(x) = g(x)"
+                ],
+                "xp": 4
+              },
+              {
+                "id": "calc_u6_l1_q3",
+                "type": "typing",
+                "question": "Find the area between y = x and y = x\u00b2 from 0 to 1.",
+                "correctAnswer": [
+                  "1/6"
+                ],
+                "xp": 5
+              },
+              {
+                "id": "calc_u6_l1_q4",
+                "type": "multiple-choice",
+                "question": "If f(x) \u2265 g(x), what represents the vertical distance between curves?",
+                "options": [
+                  "f(x) + g(x)",
+                  "f(x) - g(x)",
+                  "f(x) \u00b7 g(x)",
+                  "f(x) / g(x)"
+                ],
+                "correct": 1,
+                "xp": 3
+              },
+              {
+                "id": "calc_u6_l1_q5",
+                "type": "typing",
+                "question": "What is the area between y = \u221ax and y = x from 0 to 1?",
+                "correctAnswer": [
+                  "1/6"
+                ],
+                "xp": 4
+              },
+              {
+                "id": "calc_u6_l1_q6",
+                "type": "multiple-choice",
+                "question": "To find intersection points, you set what equal?",
+                "options": [
+                  "f'(x) = g'(x)",
+                  "\u222bf(x) = \u222bg(x)",
+                  "f(x) = g(x)",
+                  "f(x) + g(x) = 0"
+                ],
+                "correct": 2,
+                "xp": 3
+              },
+              {
+                "id": "calc_u6_l1_q7",
+                "type": "typing",
+                "question": "Find area between y = x\u00b2 and y = x + 2 from -1 to 2.",
+                "correctAnswer": [
+                  "9/2",
+                  "4.5"
+                ],
+                "xp": 5
+              },
+              {
+                "id": "calc_u6_l1_q8",
+                "type": "multiple-choice",
+                "question": "What happens if curves cross within the interval?",
+                "options": [
+                  "Ignore it",
+                  "Use absolute value",
+                  "Split into separate integrals",
+                  "Add the areas"
+                ],
+                "correct": 2,
+                "xp": 3
+              },
+              {
+                "id": "calc_u6_l1_q9",
+                "type": "typing",
+                "question": "Find area between y = 2x and y = x\u00b2 from 0 to 2.",
+                "correctAnswer": [
+                  "4/3"
+                ],
+                "xp": 4
+              },
+              {
+                "id": "calc_u6_l1_q10",
+                "type": "multiple-choice",
+                "question": "The area between curves is always what type of number?",
+                "options": [
+                  "Negative",
+                  "Zero",
+                  "Positive",
+                  "Complex"
+                ],
+                "correct": 2,
+                "xp": 3
+              },
+              {
+                "id": "calc_u6_l1_q11",
+                "type": "typing",
+                "question": "Find area between y = e\u02e3 and y = 1 from 0 to ln(2).",
+                "correctAnswer": [
+                  "2 - ln(2)",
+                  "2 - ln2"
+                ],
+                "xp": 5
+              },
+              {
+                "id": "calc_u6_l1_q12",
+                "type": "multiple-choice",
+                "question": "What if you integrate from right to left (b to a)?",
+                "options": [
+                  "Area doubles",
+                  "Sign flips",
+                  "No change",
+                  "Undefined"
+                ],
+                "correct": 1,
+                "xp": 3
+              },
+              {
+                "id": "calc_u6_l1_q13",
+                "type": "typing",
+                "question": "Find area between y = cos(x) and y = sin(x) from 0 to \u03c0/4.",
+                "correctAnswer": [
+                  "\u221a2 - 1",
+                  "sqrt(2) - 1"
+                ],
+                "xp": 4
+              },
+              {
+                "id": "calc_u6_l1_q14",
+                "type": "multiple-choice",
+                "question": "When setting up area integrals, what must be positive?",
+                "options": [
+                  "The limits",
+                  "The derivative",
+                  "The integrand f(x) - g(x)",
+                  "The constant C"
+                ],
+                "correct": 2,
+                "xp": 3
+              },
+              {
+                "id": "calc_u6_l1_q15",
+                "type": "typing",
+                "question": "Find area between y = x\u00b3 and y = x from 0 to 1.",
+                "correctAnswer": [
+                  "1/4"
+                ],
+                "xp": 5
+              },
+              {
+                "id": "calc_u6_l1_q16",
+                "type": "multiple-choice",
+                "question": "What is the geometric interpretation of \u222b[f(x) - g(x)]dx?",
+                "options": [
+                  "Volume",
+                  "Surface area",
+                  "Sum of infinitesimal rectangles",
+                  "Arc length"
+                ],
+                "correct": 2,
+                "xp": 3
+              },
+              {
+                "id": "calc_u6_l1_q17",
+                "type": "typing",
+                "question": "Find area between y = 4 - x\u00b2 and the x-axis from -2 to 2.",
+                "correctAnswer": [
+                  "32/3"
+                ],
+                "xp": 4
+              },
+              {
+                "id": "calc_u6_l1_q18",
+                "type": "multiple-choice",
+                "question": "Can you find area using respect to y instead of x?",
+                "options": [
+                  "No",
+                  "Yes - use horizontal slices",
+                  "Only for vertical curves",
+                  "Never"
+                ],
+                "correct": 1,
+                "xp": 3
+              }
+            ]
+          },
+          {
+            "id": "6-2",
+            "title": "Volumes of solids (disk, washer, shell)",
+            "xp": 90,
+            "type": "lesson",
+            "lessonText": "# Volumes of Solids of Revolution\n\n## Disk Method\n\nWhen rotating the region under \\(f(x)\\) from \\(a\\) to \\(b\\) about the **x-axis**, each cross-section is a disk:\n\n\\[ V = \\int_a^b \\pi [f(x)]^2 \\, dx \\]\n\nThe **radius** of each disk is the function value \\(f(x)\\).\n\n## Washer Method\n\nWhen rotating the region between two curves, there's a hole:\n\n\\[ V = \\int_a^b \\pi \\{[f(x)]^2 - [g(x)]^2\\} \\, dx \\]\n\nThe outer radius is \\(f(x)\\), inner radius is \\(g(x)\\).\n\n## Shell Method\n\nFor rotation about the **y-axis** using vertical slices:\n\n\\[ V = \\int_a^b 2\\pi x \\cdot f(x) \\, dx \\]\n\n- **Radius:** \\(x\\) (distance from y-axis)\n- **Height:** \\(f(x)\\) (function value)\n- **Circumference:** \\(2\\pi x\\)\n\n---\n\n## Example (Disk):\n\nVolume of \\(y = \\sqrt{x}\\) from 0 to 4 rotated about x-axis.\n\n\\[ V = \\int_0^4 \\pi (\\sqrt{x})^2 \\, dx = \\pi \\int_0^4 x \\, dx = \\pi \\left[\\frac{x^2}{2}\\right]_0^4 = 8\\pi \\]\n\n## Example (Shell):\n\nVolume of \\(y = x^2\\) from 0 to 2 rotated about y-axis.\n\n\\[ V = \\int_0^2 2\\pi x \\cdot x^2 \\, dx = 2\\pi \\int_0^2 x^3 \\, dx = 2\\pi \\left[\\frac{x^4}{4}\\right]_0^2 = 8\\pi \\]",
+            "questions": [
+              {
+                "id": "calc_u6_l2_q1",
+                "type": "typing",
+                "question": "What does the disk method use for volume?",
+                "correctAnswer": [
+                  "Circular cross-sections",
+                  "Disks",
+                  "\u03c0r\u00b2 slices"
+                ],
+                "xp": 5
+              },
+              {
+                "id": "calc_u6_l2_q2",
+                "type": "typing",
+                "question": "What is the formula for the disk method?",
+                "correctAnswer": [
+                  "\u222b\u2090\u1d47 \u03c0[f(x)]\u00b2 dx",
+                  "\u03c0\u222b[f(x)]\u00b2 dx"
+                ],
+                "xp": 4
+              },
+              {
+                "id": "calc_u6_l2_q3",
+                "type": "typing",
+                "question": "Find volume of y = \u221ax (0 to 4) rotated about x-axis.",
+                "correctAnswer": [
+                  "8\u03c0",
+                  "8pi"
+                ],
+                "xp": 5
+              },
+              {
+                "id": "calc_u6_l2_q4",
+                "type": "multiple-choice",
+                "question": "Why is it called the 'washer' method?",
+                "options": [
+                  "It washes away volume",
+                  "It has a hole like a washer",
+                  "It uses water",
+                  "It's faster"
+                ],
+                "correct": 1,
+                "xp": 3
+              },
+              {
+                "id": "calc_u6_l2_q5",
+                "type": "typing",
+                "question": "Find volume of y = x\u00b2 (0 to 2) rotated about y-axis using shells.",
+                "correctAnswer": [
+                  "8\u03c0",
+                  "8pi"
+                ],
+                "xp": 4
+              },
+              {
+                "id": "calc_u6_l2_q6",
+                "type": "multiple-choice",
+                "question": "What is the radius in the disk method?",
+                "options": [
+                  "f'(x)",
+                  "f(x)",
+                  "x",
+                  "\u222bf(x)dx"
+                ],
+                "correct": 1,
+                "xp": 3
+              },
+              {
+                "id": "calc_u6_l2_q7",
+                "type": "typing",
+                "question": "Find volume of y = x\u00b2 (0 to 1) rotated about x-axis.",
+                "correctAnswer": [
+                  "\u03c0/5",
+                  "pi/5"
+                ],
+                "xp": 5
+              },
+              {
+                "id": "calc_u6_l2_q8",
+                "type": "multiple-choice",
+                "question": "When do you use the washer method?",
+                "options": [
+                  "When there's a hole",
+                  "For flat curves",
+                  "Only for circles",
+                  "Never use it"
+                ],
+                "correct": 0,
+                "xp": 3
+              },
+              {
+                "id": "calc_u6_l2_q9",
+                "type": "typing",
+                "question": "Find volume between y = x and y = x\u00b2 (0 to 1) rotated about x-axis.",
+                "correctAnswer": [
+                  "2\u03c0/15"
+                ],
+                "xp": 4
+              },
+              {
+                "id": "calc_u6_l2_q10",
+                "type": "multiple-choice",
+                "question": "What does the shell method use as the 'height'?",
+                "options": [
+                  "x",
+                  "2\u03c0x",
+                  "f(x)",
+                  "f'(x)"
+                ],
+                "correct": 2,
+                "xp": 3
+              },
+              {
+                "id": "calc_u6_l2_q11",
+                "type": "typing",
+                "question": "Find volume of y = \u221ax (0 to 1) rotated about y-axis using shells.",
+                "correctAnswer": [
+                  "4\u03c0/5",
+                  "4pi/5"
+                ],
+                "xp": 5
+              },
+              {
+                "id": "calc_u6_l2_q12",
+                "type": "multiple-choice",
+                "question": "What is 2\u03c0x in the shell method formula?",
+                "options": [
+                  "Area",
+                  "Radius",
+                  "Circumference",
+                  "Volume"
+                ],
+                "correct": 2,
+                "xp": 3
+              },
+              {
+                "id": "calc_u6_l2_q13",
+                "type": "typing",
+                "question": "Find volume of y = 1/x (1 to 2) rotated about x-axis.",
+                "correctAnswer": [
+                  "\u03c0/2",
+                  "pi/2"
+                ],
+                "xp": 4
+              },
+              {
+                "id": "calc_u6_l2_q14",
+                "type": "multiple-choice",
+                "question": "The shell method is best when rotation is about what axis?",
+                "options": [
+                  "x-axis",
+                  "y-axis",
+                  "z-axis",
+                  "Diagonal"
+                ],
+                "correct": 1,
+                "xp": 3
+              },
+              {
+                "id": "calc_u6_l2_q15",
+                "type": "typing",
+                "question": "Find volume of y = x\u00b3 (0 to 1) rotated about y-axis using shells.",
+                "correctAnswer": [
+                  "2\u03c0/5",
+                  "2pi/5"
+                ],
+                "xp": 5
+              },
+              {
+                "id": "calc_u6_l2_q16",
+                "type": "multiple-choice",
+                "question": "What's the difference between disk and washer?",
+                "options": [
+                  "Washer has no hole",
+                  "Washer subtracts inner radius",
+                  "Same thing",
+                  "Disk has hole"
+                ],
+                "correct": 1,
+                "xp": 3
+              },
+              {
+                "id": "calc_u6_l2_q17",
+                "type": "typing",
+                "question": "Find volume of y = \u221a(4 - x\u00b2) (-2 to 2) rotated about x-axis.",
+                "correctAnswer": [
+                  "16\u03c0/3",
+                  "16pi/3"
+                ],
+                "xp": 4
+              },
+              {
+                "id": "calc_u6_l2_q18",
+                "type": "multiple-choice",
+                "question": "Can you use shells for rotation about x-axis?",
+                "options": [
+                  "No",
+                  "Yes - use horizontal slices",
+                  "Only vertical",
+                  "Never"
+                ],
+                "correct": 1,
+                "xp": 3
+              }
+            ]
+          },
+          {
+            "id": "6-3",
+            "title": "Arc length and surface area",
+            "xp": 88,
+            "type": "lesson",
+            "lessonText": "# Arc Length and Surface Area\n\n## Arc Length\n\nFor a curve \\(y = f(x)\\) from \\(a\\) to \\(b\\):\n\n\\[ L = \\int_a^b \\sqrt{1 + [f'(x)]^2} \\, dx \\]\n\nThis comes from the **Pythagorean theorem**: each tiny segment has length \\(ds = \\sqrt{dx^2 + dy^2} = \\sqrt{1 + (dy/dx)^2} dx\\).\n\n## Surface Area\n\nFor rotation about the **x-axis**, the surface area is:\n\n\\[ SA = \\int_a^b 2\\pi f(x) \\sqrt{1 + [f'(x)]^2} \\, dx \\]\n\nThink of this as the sum of the surface areas of many thin bands:\n- **Band width:** \\(ds = \\sqrt{1 + [f'(x)]^2} dx\\) (arc length)\n- **Band circumference:** \\(2\\pi f(x)\\) (circumference of circle with radius f(x))\n\n---\n\n## Example (Arc Length):\n\nFind the length of \\(y = x^{3/2}\\) from 0 to 1.\n\n\\[ f'(x) = \\frac{3}{2}\\sqrt{x} \\]\n\n\\[ L = \\int_0^1 \\sqrt{1 + \\frac{9x}{4}} \\, dx = \\frac{4}{9} \\cdot \\frac{2}{3}\\left[\\left(1 + \\frac{9x}{4}\\right)^{3/2}\\right]_0^1 \\]\n\n\\[ L = \\frac{8}{27}\\left[\\left(\\frac{13}{4}\\right)^{3/2} - 1\\right] \\]\n\n## Example (Surface Area):\n\n\\(y = \\sqrt{x}\\) from 0 to 1 rotated about x-axis.\n\n\\[ SA = 2\\pi \\int_0^1 \\sqrt{x} \\cdot \\sqrt{1 + \\frac{1}{4x}} \\, dx = \\frac{\\pi}{6}(5\\sqrt{5} - 1) \\]",
+            "questions": [
+              {
+                "id": "calc_u6_l3_q1",
+                "type": "typing",
+                "question": "What is the formula for arc length of y = f(x)?",
+                "correctAnswer": [
+                  "\u222b\u2090\u1d47 \u221a[1 + (f'(x))\u00b2] dx"
+                ],
+                "xp": 5
+              },
+              {
+                "id": "calc_u6_l3_q2",
+                "type": "typing",
+                "question": "What does \u221a[1 + (f'(x))\u00b2] represent?",
+                "correctAnswer": [
+                  "Differential arc length",
+                  "ds",
+                  "Infinitesimal arc length"
+                ],
+                "xp": 4
+              },
+              {
+                "id": "calc_u6_l3_q3",
+                "type": "typing",
+                "question": "Find arc length of y = (x\u00b3/6) + (1/2x) from 1 to 2.",
+                "correctAnswer": [
+                  "17/6"
+                ],
+                "xp": 5
+              },
+              {
+                "id": "calc_u6_l3_q4",
+                "type": "multiple-choice",
+                "question": "What is the surface area formula for rotation about x-axis?",
+                "options": [
+                  "\u222b2\u03c0f(x)dx",
+                  "\u222b2\u03c0f(x)\u221a[1+f'(x)\u00b2]dx",
+                  "\u222b\u03c0f(x)\u00b2dx",
+                  "\u222bf'(x)dx"
+                ],
+                "correct": 1,
+                "xp": 3
+              },
+              {
+                "id": "calc_u6_l3_q5",
+                "type": "typing",
+                "question": "What is ds in arc length integrals?",
+                "correctAnswer": [
+                  "\u221a[1 + (f'(x))\u00b2] dx",
+                  "ds",
+                  "Differential arc length"
+                ],
+                "xp": 4
+              },
+              {
+                "id": "calc_u6_l3_q6",
+                "type": "multiple-choice",
+                "question": "What does 2\u03c0f(x) represent in surface area?",
+                "options": [
+                  "Arc length",
+                  "Radius",
+                  "Circumference",
+                  "Area"
+                ],
+                "correct": 2,
+                "xp": 3
+              },
+              {
+                "id": "calc_u6_l3_q7",
+                "type": "typing",
+                "question": "Find arc length of y = ln(x) from 1 to e.",
+                "correctAnswer": [
+                  "\u221a(1 + e\u00b2) - 1",
+                  "sqrt(1+e\u00b2) - 1"
+                ],
+                "xp": 5
+              },
+              {
+                "id": "calc_u6_l3_q8",
+                "type": "multiple-choice",
+                "question": "What's the relationship between arc length and the derivative?",
+                "options": [
+                  "No relationship",
+                  "Arc length uses f'(x) in formula",
+                  "f'(x) is arc length",
+                  "Arc length = \u222bf'(x)dx"
+                ],
+                "correct": 1,
+                "xp": 3
+              },
+              {
+                "id": "calc_u6_l3_q9",
+                "type": "typing",
+                "question": "Find arc length of y = 2x^(3/2) from 0 to 1.",
+                "correctAnswer": [
+                  "(2/27)(10\u221a10 - 1)",
+                  "(2/27)(10sqrt(10) - 1)"
+                ],
+                "xp": 4
+              },
+              {
+                "id": "calc_u6_l3_q10",
+                "type": "multiple-choice",
+                "question": "Can arc length be computed for any function?",
+                "options": [
+                  "Always",
+                  "Only if f' is continuous",
+                  "Never",
+                  "Only polynomials"
+                ],
+                "correct": 1,
+                "xp": 3
+              },
+              {
+                "id": "calc_u6_l3_q11",
+                "type": "typing",
+                "question": "Find surface area of y = \u221ax from 0 to 1 rotated about x-axis.",
+                "correctAnswer": [
+                  "\u03c0(5\u221a5 - 1)/6",
+                  "pi(5sqrt(5)-1)/6"
+                ],
+                "xp": 5
+              },
+              {
+                "id": "calc_u6_l3_q12",
+                "type": "multiple-choice",
+                "question": "What if you rotate about y-axis instead?",
+                "options": [
+                  "Impossible",
+                  "Use x as a function of y",
+                  "Same formula",
+                  "Can't do it"
+                ],
+                "correct": 1,
+                "xp": 3
+              },
+              {
+                "id": "calc_u6_l3_q13",
+                "type": "typing",
+                "question": "Find arc length of y = cosh(x) from 0 to ln(2).",
+                "correctAnswer": [
+                  "3/4"
+                ],
+                "xp": 4
+              },
+              {
+                "id": "calc_u6_l3_q14",
+                "type": "multiple-choice",
+                "question": "Surface area depends on what two factors?",
+                "options": [
+                  "Only f(x)",
+                  "Only f'(x)",
+                  "f(x) and f'(x)",
+                  "dx and dy"
+                ],
+                "correct": 2,
+                "xp": 3
+              },
+              {
+                "id": "calc_u6_l3_q15",
+                "type": "typing",
+                "question": "What is the geometric interpretation of arc length?",
+                "options": [
+                  "Area under curve",
+                  "Sum of infinitesimal straight segments",
+                  "Volume",
+                  "Slope"
+                ],
+                "correct": 1,
+                "xp": 5
+              },
+              {
+                "id": "calc_u6_l3_q16",
+                "type": "multiple-choice",
+                "question": "Why is arc length formula different from just integrating f(x)?",
+                "options": [
+                  "Same thing",
+                  "Accounts for diagonal movement",
+                  "Adds extra length",
+                  "Uses squares"
+                ],
+                "correct": 1,
+                "xp": 3
+              },
+              {
+                "id": "calc_u6_l3_q17",
+                "type": "typing",
+                "question": "What theorem underlies the arc length formula?",
+                "correctAnswer": [
+                  "Pythagorean theorem",
+                  "Fundamental Theorem",
+                  "Mean Value Theorem",
+                  "Chain rule"
+                ],
+                "xp": 4
+              },
+              {
+                "id": "calc_u6_l3_q18",
+                "type": "multiple-choice",
+                "question": "What is L in the arc length formula?",
+                "options": [
+                  "Limit",
+                  "Length",
+                  "Logarithm",
+                  "Line"
+                ],
+                "correct": 1,
+                "xp": 3
+              }
+            ]
+          },
+          {
+            "id": "6-4",
+            "title": "Basic separable differential equations",
+            "xp": 85,
+            "type": "lesson",
+            "lessonText": "# Basic Separable Differential Equations\n\n## What is a Separable DE?\n\nA differential equation is **separable** if you can write it in the form:\n\n\\[ \\frac{dy}{dx} = f(x) \\cdot g(y) \\]\n\nThis means all \\(x\\)'s can be on one side and all \\(y\\)'s on the other.\n\n## Solving Steps:\n\n1. **Separate the variables:** Move all \\(y\\)'s to the left, all \\(x\\)'s to the right\n2. **Integrate both sides:** \\(\\int \\frac{dy}{g(y)} = \\int f(x) \\, dx\\)\n3. **Solve for y:** Get \\(y\\) by itself if possible\n4. **Use initial conditions:** Find \\(C\\) if given\n\n---\n\n## Example 1:\n\nSolve \\(\\frac{dy}{dx} = xy\\), with \\(y(0) = 1\\).\n\n**Separate:** \\(\\frac{dy}{y} = x \\, dx\\)\n\n**Integrate:** \\(\\ln|y| = \\frac{x^2}{2} + C\\)\n\n**Apply IC:** \\(\\ln(1) = 0 + C\\), so \\(C = 0\\)\n\n**Solve:** \\(\\ln(y) = \\frac{x^2}{2}\\), so \\(y = e^{x^2/2}\\)\n\n---\n\n## Example 2 (Population Growth):\n\n\\(\\frac{dP}{dt} = kP\\)\n\nThis models exponential growth (or decay if \\(k < 0\\)).\n\n**Separate:** \\(\\frac{dP}{P} = k \\, dt\\)\n\n**Integrate:** \\(\\ln(P) = kt + C\\)\n\n**Solve:** \\(P = Ce^{kt}\\)\n\n---\n\n## Important Notes:\n\n- \\(y = 0\\) might be an **equilibrium solution** (constant solution where \\(dy/dx = 0\\))\n- The constant \\(C\\) represents a **family of solutions**; initial conditions pick one\n- **Exponential growth/decay**, cooling, and radioactive decay are all modeled by separable DEs\n- If \\(dy/dx = f(y)\\) only (no \\(x\\)), it's **autonomous**",
+            "questions": [
+              {
+                "id": "calc_u6_l4_q1",
+                "type": "typing",
+                "question": "What makes a differential equation 'separable'?",
+                "correctAnswer": [
+                  "Can write as dy/dx = f(x)g(y)",
+                  "Variables can be separated"
+                ],
+                "xp": 5
+              },
+              {
+                "id": "calc_u6_l4_q2",
+                "type": "typing",
+                "question": "What is the first step in solving separable DEs?",
+                "correctAnswer": [
+                  "Separate the variables",
+                  "Get all y on left, all x on right"
+                ],
+                "xp": 4
+              },
+              {
+                "id": "calc_u6_l4_q3",
+                "type": "typing",
+                "question": "Solve dy/dx = x/y, with y(0) = 1.",
+                "correctAnswer": [
+                  "y = \u221a(1 + x\u00b2)",
+                  "y = sqrt(1 + x\u00b2)"
+                ],
+                "xp": 5
+              },
+              {
+                "id": "calc_u6_l4_q4",
+                "type": "multiple-choice",
+                "question": "What does the constant C represent in solutions?",
+                "options": [
+                  "A specific solution",
+                  "A family of solutions",
+                  "An error term",
+                  "The limit"
+                ],
+                "correct": 1,
+                "xp": 3
+              },
+              {
+                "id": "calc_u6_l4_q5",
+                "type": "typing",
+                "question": "Solve dy/dx = 2xy, with y(0) = 3.",
+                "correctAnswer": [
+                  "y = 3e^(x\u00b2)",
+                  "y = 3e^(x^2)"
+                ],
+                "xp": 4
+              },
+              {
+                "id": "calc_u6_l4_q6",
+                "type": "multiple-choice",
+                "question": "What is the general solution to dP/dt = kP?",
+                "options": [
+                  "P = Ct",
+                  "P = Ce^(kt)",
+                  "P = C/t",
+                  "P = C"
+                ],
+                "correct": 1,
+                "xp": 3
+              },
+              {
+                "id": "calc_u6_l4_q7",
+                "type": "typing",
+                "question": "Solve dy/dx = y/x, with y(1) = 2.",
+                "correctAnswer": [
+                  "y = 2x"
+                ],
+                "xp": 5
+              },
+              {
+                "id": "calc_u6_l4_q8",
+                "type": "multiple-choice",
+                "question": "What happens if y = 0 in a separable DE?",
+                "options": [
+                  "Cannot solve",
+                  "Might be equilibrium solution",
+                  "Always zero",
+                  "Undefined"
+                ],
+                "correct": 1,
+                "xp": 3
+              },
+              {
+                "id": "calc_u6_l4_q9",
+                "type": "typing",
+                "question": "Solve dy/dx = x\u00b2y, with y(0) = 1.",
+                "correctAnswer": [
+                  "y = e^(x\u00b3/3)",
+                  "y = e^(x^3/3)"
+                ],
+                "xp": 4
+              },
+              {
+                "id": "calc_u6_l4_q10",
+                "type": "multiple-choice",
+                "question": "How do initial conditions determine the solution?",
+                "options": [
+                  "Change the formula",
+                  "Determine the constant C",
+                  "Make it invalid",
+                  "Add extra terms"
+                ],
+                "correct": 1,
+                "xp": 3
+              },
+              {
+                "id": "calc_u6_l4_q11",
+                "type": "typing",
+                "question": "Solve dy/dx = e^x/y, with y(0) = 2.",
+                "correctAnswer": [
+                  "y = \u221a(2e^x + 2)",
+                  "y = sqrt(2e^x + 2)"
+                ],
+                "xp": 5
+              },
+              {
+                "id": "calc_u6_l4_q12",
+                "type": "multiple-choice",
+                "question": "What is exponential growth?",
+                "options": [
+                  "Linear increase",
+                  "Solution grows as Ce^(kt)",
+                  "Square growth",
+                  "Logarithmic"
+                ],
+                "correct": 1,
+                "xp": 3
+              },
+              {
+                "id": "calc_u6_l4_q13",
+                "type": "typing",
+                "question": "Solve dy/dx = 1/(xy), with y(1) = 1.",
+                "correctAnswer": [
+                  "y = \u221a(1 + 2ln(x))",
+                  "y = sqrt(1 + 2ln(x))"
+                ],
+                "xp": 4
+              },
+              {
+                "id": "calc_u6_l4_q14",
+                "type": "multiple-choice",
+                "question": "What models use separable DEs?",
+                "options": [
+                  "Only physics",
+                  "Population growth, cooling, decay",
+                  "Only chemistry",
+                  "Nothing uses them"
+                ],
+                "correct": 1,
+                "xp": 3
+              },
+              {
+                "id": "calc_u6_l4_q15",
+                "type": "typing",
+                "question": "What is equilibrium in differential equations?",
+                "options": [
+                  "Constant solution where dy/dx = 0",
+                  "Maximum value",
+                  "Initial condition",
+                  "Final answer"
+                ],
+                "correct": 0,
+                "xp": 5
+              },
+              {
+                "id": "calc_u6_l4_q16",
+                "type": "multiple-choice",
+                "question": "Solve dy/dx = x + y (is this separable?).",
+                "options": [
+                  "Yes",
+                  "No - can't separate variables",
+                  "Maybe",
+                  "Always"
+                ],
+                "correct": 1,
+                "xp": 3
+              },
+              {
+                "id": "calc_u6_l4_q17",
+                "type": "typing",
+                "question": "What's special about autonomous equations?",
+                "options": [
+                  "dy/dx = f(y) only",
+                  "dy/dx = f(x) only",
+                  "Cannot solve",
+                  "Always linear"
+                ],
+                "correct": 0,
+                "xp": 4
+              },
+              {
+                "id": "calc_u6_l4_q18",
+                "type": "multiple-choice",
+                "question": "After integrating, what do you do with C?",
+                "options": [
+                  "Ignore it",
+                  "Use initial conditions to find it",
+                  "Set C = 0",
+                  "Delete it"
+                ],
+                "correct": 1,
+                "xp": 3
+              }
+            ]
+          }
+        ]
     },
     {
       "unitId": "7",
