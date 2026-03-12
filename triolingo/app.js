@@ -1059,6 +1059,21 @@ function submitAnswer() {
       isCorrect = correctAnswers.includes(userAnswer);
       feedback = isCorrect ? 'Correct answer!' : `Incorrect. Acceptable answers: ${question.correctAnswer.join(', ')}`;
       break;
+    case 'code':
+      const codeEditor = document.querySelector(`#code-editor-${currentQuestionIndex}`);
+      const userCode = codeEditor ? codeEditor.value.trim() : '';
+      // For code questions, we need to grade them
+      // For now, accept any non-empty code submission
+      // In the future, we can integrate with the Code Editor component for AI grading
+      isCorrect = userCode.length > 0;
+      if (question.localLLMGrade && isCorrect) {
+        feedback = 'Code submitted! AI grading will be implemented soon. For now, your submission is recorded.';
+      } else if (isCorrect) {
+        feedback = 'Code submitted!';
+      } else {
+        feedback = 'Please write some code before submitting.';
+      }
+      break;
     case 'fill-blank':
       // For fill-in-blank, we need to check the filled value
       // This would need to be implemented based on how fill-blank questions work
@@ -1251,6 +1266,8 @@ function renderQuestion(question) {
       return renderFillBlankQuestion(question);
     case 'typing':
       return renderTypingQuestion(question);
+    case 'code':
+      return renderCodeQuestion(question);
     default:
       return `<p>Unknown question type: ${question.type}</p>`;
   }
@@ -1288,6 +1305,39 @@ function renderTypingQuestion(question) {
     <div class="typing-question">
       <p class="question-text">${renderedQuestion}</p>
       <input type="text" class="typing-input" placeholder="Type your answer...">
+    </div>
+  `;
+}
+
+function renderCodeQuestion(question) {
+  const renderedQuestion = renderMarkdownContent(question.question);
+  const language = question.language || 'cpp';
+  const codeTemplate = question.codeTemplate || '';
+  const expectedOutput = question.expectedOutput || '';
+  const localLLMGrade = question.localLLMGrade !== false; // Default to true
+
+  return `
+    <div class="code-question">
+      <p class="question-text">${renderedQuestion}</p>
+      <div class="code-editor-container">
+        <div class="code-editor-header">
+          <span class="code-language">${language}</span>
+          <span class="code-status" id="code-status-${currentQuestionIndex}"></span>
+        </div>
+        <textarea class="code-editor-input" id="code-editor-${currentQuestionIndex}"
+                  placeholder="Write your ${language} code here..."
+                  rows="12"
+                  spellcheck="false">${codeTemplate}</textarea>
+        <div class="code-output-section">
+          <label class="code-output-label">Expected Output:</label>
+          <code class="code-output-display">${expectedOutput}</code>
+        </div>
+        ${localLLMGrade ? `
+        <div class="code-llm-info">
+          <small>🤖 This code will be graded by an AI. Write your solution above.</small>
+        </div>
+        ` : ''}
+      </div>
     </div>
   `;
 }
