@@ -515,6 +515,7 @@ function renderView(viewName) {
       break;
     case 'learn':
       container.innerHTML = renderLearn();
+      setupDashboardListeners();
       break;
     case 'conversations':
       container.innerHTML = renderConversations();
