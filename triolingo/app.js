@@ -970,6 +970,7 @@ function setupSettingsListeners() {
 // Lesson view
 let lessonPhase = 'content'; // 'content' or 'questions'
 let currentAnswerFeedback = null; // Store answer feedback
+let userSubmittedAnswer = null; // Store user's submitted answer
 
 function renderLesson() {
   if (!currentLesson) {
@@ -1013,6 +1014,18 @@ function renderAnswerFeedback(question) {
       <div class="feedback-icon">${isCorrect ? '✅' : '❌'}</div>
       <div class="feedback-content">
         <h3>${isCorrect ? 'Correct!' : 'Incorrect'}</h3>
+        ${userSubmittedAnswer ? `
+          <div class="user-answer">
+            <strong>Your answer:</strong>
+            ${userSubmittedAnswer.type === 'code' ? `
+              <pre class="code-answer">${userSubmittedAnswer.value}</pre>
+            ` : userSubmittedAnswer.type === 'multiple-choice' ? `
+              <span class="choice-answer">${userSubmittedAnswer.value}</span>
+            ` : `
+              <span class="text-answer">${userSubmittedAnswer.value}</span>
+            `}
+          </div>
+        ` : ''}
         ${feedback ? `<p class="feedback-message">${feedback}</p>` : ''}
         ${!isCorrect && question.type === 'multiple-choice' ? `
           <p class="correct-answer"><strong>Correct answer:</strong> ${question.options[question.correct]}</p>
@@ -1149,6 +1162,7 @@ function submitAnswer() {
     currentQuestionIndex++;
     selectedAnswer = null;
     currentAnswerFeedback = null;
+    userSubmittedAnswer = null;
 
     if (currentQuestionIndex >= currentLesson.questions.length) {
       completeLesson();
@@ -1167,6 +1181,11 @@ function submitAnswer() {
     case 'multiple-choice':
       isCorrect = selectedAnswer === question.correct;
       feedback = isCorrect ? 'Correct answer!' : `Incorrect. The correct answer is: ${question.options[question.correct]}`;
+      // Store the user's answer
+      userSubmittedAnswer = {
+        type: 'multiple-choice',
+        value: question.options[selectedAnswer] || 'No answer selected'
+      };
       break;
     case 'typing':
       const typingInput = document.querySelector('.typing-input');
@@ -1174,6 +1193,11 @@ function submitAnswer() {
       const correctAnswers = question.correctAnswer.map(a => a.toLowerCase());
       isCorrect = correctAnswers.includes(userAnswer);
       feedback = isCorrect ? 'Correct answer!' : `Incorrect. Acceptable answers: ${question.correctAnswer.join(', ')}`;
+      // Store the user's answer
+      userSubmittedAnswer = {
+        type: 'typing',
+        value: typingInput ? typingInput.value.trim() : 'No answer'
+      };
       break;
     case 'code':
       console.log('[DEBUG] Code question submitted');
@@ -1187,6 +1211,11 @@ function submitAnswer() {
         console.log('[DEBUG] Code is empty - marking incorrect');
         isCorrect = false;
         feedback = 'Please write some code before submitting.';
+        // Store the user's answer
+        userSubmittedAnswer = {
+          type: 'code',
+          value: userCode
+        };
         break;
       }
 
@@ -1196,12 +1225,21 @@ function submitAnswer() {
       console.log('[DEBUG] Grading result:', gradingResult);
       isCorrect = gradingResult.correct;
       feedback = gradingResult.feedback;
+      // Store the user's answer
+      userSubmittedAnswer = {
+        type: 'code',
+        value: userCode
+      };
       break;
     case 'fill-blank':
       // For fill-in-blank, we need to check the filled value
       // This would need to be implemented based on how fill-blank questions work
       isCorrect = true; // Placeholder
       feedback = 'Answer submitted';
+      userSubmittedAnswer = {
+        type: 'fill-blank',
+        value: 'Answer submitted'
+      };
       break;
   }
 
@@ -1277,6 +1315,7 @@ function completeLesson() {
   }
 
   currentLesson = null;
+  userSubmittedAnswer = null;
   renderView('dashboard');
 }
 
