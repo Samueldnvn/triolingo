@@ -1052,8 +1052,8 @@ function gradeCodeAnswer(question, userCode) {
   // Check if expected output is provided
   if (!question.expectedOutput) {
     return {
-      correct: true,
-      feedback: 'Code submitted! (No expected output defined for grading)'
+      correct: false,
+      feedback: '❌ This question does not have an expected output defined for grading. Please contact the instructor.'
     };
   }
 
@@ -1070,8 +1070,7 @@ function gradeCodeAnswer(question, userCode) {
     };
   }
 
-  // Check for expected output string (simple check)
-  // For C++ code, look for expected output in std::cout statements
+  // STRICT CHECK: Must have expected output
   const expectedOutput = question.expectedOutput.toLowerCase();
   const lowerUserCode = userCode.toLowerCase();
 
@@ -1102,53 +1101,21 @@ function gradeCodeAnswer(question, userCode) {
         console.log('[DEBUG] Expected output not found - marking incorrect');
         return {
           correct: false,
-          feedback: '❌ Your code doesn\'t seem to output the expected result: ' + question.expectedOutput +
-                   '. Make sure you have a print statement with the correct output.'
+          feedback: '❌ Your code doesn\'t output the expected result: "' + question.expectedOutput + '"\n\n' +
+                   'Make sure your print statement includes exactly: "' + question.expectedOutput + '"'
         };
       }
     }
   }
 
-  // If we can't determine via simple checks, check for basic code structure
-  const language = question.language || 'cpp';
-
-  if (language === 'cpp') {
-    // Check for basic C++ structure
-    const hasMain = userCode.includes('int main') || userCode.includes('main()');
-    const hasBraces = userCode.includes('{') && userCode.includes('}');
-
-    console.log('[DEBUG] C++ structure check:', { hasMain, hasBraces });
-
-    if (hasMain && hasBraces) {
-      return {
-        correct: true,
-        feedback: '✅ Code submitted! Good structure with main() function.'
-      };
-    } else if (!hasMain) {
-      return {
-        correct: false,
-        feedback: '❌ Your C++ code should have a main() function.'
-      };
-    } else if (!hasBraces) {
-      return {
-        correct: false,
-        feedback: '❌ Your code is missing braces { }. Make sure your code is properly structured.'
-      };
-    }
-  }
-
-  // Default: accept the code if it has some content and structure
-  if (userCode.length > 50) {
-    return {
-      correct: true,
-      feedback: '✅ Code submitted! Looks like you\'ve written some code.'
-    };
-  } else {
-    return {
-      correct: false,
-      feedback: '❌ Please write more code to complete the exercise.'
-    };
-  }
+  // If no output statement found, reject
+  console.log('[DEBUG] No output statement found - marking incorrect');
+  return {
+    correct: false,
+    feedback: '❌ Your code doesn\'t have a print statement (std::cout, printf, etc.)\n\n' +
+             'Expected output: "' + question.expectedOutput + '"\n\n' +
+             'Please add a print statement with the correct output.'
+  };
 }
 
 function submitAnswer() {
