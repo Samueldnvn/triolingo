@@ -1013,6 +1013,7 @@ function renderAnswerFeedback(question) {
       <div class="feedback-icon">${isCorrect ? '✅' : '❌'}</div>
       <div class="feedback-content">
         <h3>${isCorrect ? 'Correct!' : 'Incorrect'}</h3>
+        ${feedback ? `<p class="feedback-message">${feedback}</p>` : ''}
         ${!isCorrect && question.type === 'multiple-choice' ? `
           <p class="correct-answer"><strong>Correct answer:</strong> ${question.options[question.correct]}</p>
         ` : ''}
@@ -1026,12 +1027,12 @@ function renderAnswerFeedback(question) {
 function gradeCodeAnswer(question, userCode) {
   console.log('[DEBUG] gradeCodeAnswer called with:', { question, userCode });
 
-  // STRICT REJECT: Require at least 100 characters
-  if (userCode.length < 100) {
-    console.log('[DEBUG] Code too short (< 100 chars)');
+  // STRICT REJECT: Require at least 60 characters
+  if (userCode.length < 60) {
+    console.log('[DEBUG] Code too short (< 60 chars)');
     return {
       correct: false,
-      feedback: `❌ Code is too short! You need at least 100 characters. Current: ${userCode.length} characters. Please write a complete solution.`
+      feedback: `❌ Code is too short! You need at least 60 characters. Current: ${userCode.length} characters. Please write a complete solution.`
     };
   }
 
