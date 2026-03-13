@@ -1024,6 +1024,17 @@ function renderAnswerFeedback(question) {
 }
 
 function gradeCodeAnswer(question, userCode) {
+  console.log('[DEBUG] gradeCodeAnswer called with:', { question, userCode });
+
+  // STRICT REJECT: Require at least 100 characters
+  if (userCode.length < 100) {
+    console.log('[DEBUG] Code too short (< 100 chars)');
+    return {
+      correct: false,
+      feedback: `❌ Code is too short! You need at least 100 characters. Current: ${userCode.length} characters. Please write a complete solution.`
+    };
+  }
+
   // Check if expected output is provided
   if (!question.expectedOutput) {
     return {
@@ -1038,9 +1049,10 @@ function gradeCodeAnswer(question, userCode) {
 
   // Check if user just copied the template without modifications
   if (normalizedUserCode === normalizedTemplate) {
+    console.log('[DEBUG] User copied template without modification');
     return {
       correct: false,
-      feedback: 'Please modify the template code - don\'t just copy it. Complete the exercise!'
+      feedback: '❌ Please modify the template code - don\'t just copy it. Complete the exercise!'
     };
   }
 
@@ -1049,12 +1061,16 @@ function gradeCodeAnswer(question, userCode) {
   const expectedOutput = question.expectedOutput.toLowerCase();
   const lowerUserCode = userCode.toLowerCase();
 
+  console.log('[DEBUG] Expected output:', expectedOutput);
+
   // Check if expected output appears in cout/print statements
   if (lowerUserCode.includes('std::cout') || lowerUserCode.includes('printf') || lowerUserCode.includes('print')) {
     // Extract output from code
     const outputMatches = lowerUserCode.match(/<<\s*"([^"]+)"/g) ||
                          lowerUserCode.match(/"([^"]+)"/g) ||
                          [];
+
+    console.log('[DEBUG] Output matches found:', outputMatches);
 
     if (outputMatches.length > 0) {
       // Check if expected output is in any of the quoted strings
@@ -1063,14 +1079,16 @@ function gradeCodeAnswer(question, userCode) {
       );
 
       if (foundOutput) {
+        console.log('[DEBUG] Found expected output - marking correct');
         return {
           correct: true,
-          feedback: 'Correct! Your code should output: ' + question.expectedOutput
+          feedback: '✅ Correct! Your code should output: ' + question.expectedOutput
         };
       } else {
+        console.log('[DEBUG] Expected output not found - marking incorrect');
         return {
           correct: false,
-          feedback: 'Your code doesn\'t seem to output the expected result: ' + question.expectedOutput +
+          feedback: '❌ Your code doesn\'t seem to output the expected result: ' + question.expectedOutput +
                    '. Make sure you have a print statement with the correct output.'
         };
       }
@@ -1085,20 +1103,22 @@ function gradeCodeAnswer(question, userCode) {
     const hasMain = userCode.includes('int main') || userCode.includes('main()');
     const hasBraces = userCode.includes('{') && userCode.includes('}');
 
+    console.log('[DEBUG] C++ structure check:', { hasMain, hasBraces });
+
     if (hasMain && hasBraces) {
       return {
         correct: true,
-        feedback: 'Code submitted! Good structure with main() function.'
+        feedback: '✅ Code submitted! Good structure with main() function.'
       };
     } else if (!hasMain) {
       return {
         correct: false,
-        feedback: 'Your C++ code should have a main() function.'
+        feedback: '❌ Your C++ code should have a main() function.'
       };
     } else if (!hasBraces) {
       return {
         correct: false,
-        feedback: 'Your code is missing braces { }. Make sure your code is properly structured.'
+        feedback: '❌ Your code is missing braces { }. Make sure your code is properly structured.'
       };
     }
   }
@@ -1107,12 +1127,12 @@ function gradeCodeAnswer(question, userCode) {
   if (userCode.length > 50) {
     return {
       correct: true,
-      feedback: 'Code submitted! Looks like you\'ve written some code.'
+      feedback: '✅ Code submitted! Looks like you\'ve written some code.'
     };
   } else {
     return {
       correct: false,
-      feedback: 'Please write more code to complete the exercise.'
+      feedback: '❌ Please write more code to complete the exercise.'
     };
   }
 }
@@ -1155,18 +1175,24 @@ function submitAnswer() {
       feedback = isCorrect ? 'Correct answer!' : `Incorrect. Acceptable answers: ${question.correctAnswer.join(', ')}`;
       break;
     case 'code':
+      console.log('[DEBUG] Code question submitted');
       const codeEditor = document.querySelector(`#code-editor-${currentQuestionIndex}`);
       const userCode = codeEditor ? codeEditor.value.trim() : '';
+      console.log('[DEBUG] User code:', userCode);
+      console.log('[DEBUG] Code length:', userCode.length);
 
       // Check if code is empty
       if (!userCode) {
+        console.log('[DEBUG] Code is empty - marking incorrect');
         isCorrect = false;
         feedback = 'Please write some code before submitting.';
         break;
       }
 
       // Grade code question
+      console.log('[DEBUG] Calling gradeCodeAnswer...');
       const gradingResult = gradeCodeAnswer(question, userCode);
+      console.log('[DEBUG] Grading result:', gradingResult);
       isCorrect = gradingResult.correct;
       feedback = gradingResult.feedback;
       break;
