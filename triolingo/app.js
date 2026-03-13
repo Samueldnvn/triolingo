@@ -1451,8 +1451,10 @@ function changeLanguage(lang) {
   currentCourse = lang;
   saveProgress();
   initializeCourseSelector(); // Reorder dropdown to show current course first
+  // Force render the learn view when changing course
   setTimeout(() => {
-    renderView(currentView);
+    currentView = 'learn';
+    renderView('learn');
   }, 100);
 }
 

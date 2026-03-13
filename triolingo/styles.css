@@ -3288,7 +3288,7 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
 .mobile-menu-toggle {
   display: none;
   position: fixed;
-  top: calc(var(--space-md) + 4px);
+  top: 8px;
   right: var(--space-md);
   z-index: 900;
   background: var(--accent);
@@ -3301,6 +3301,8 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
+  line-height: 1;
+  text-align: center;
 }
 
 .mobile-menu-toggle:hover {
@@ -3330,15 +3332,24 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
 /* Fix z-index to ensure mobile menu is above everything on mobile */
 @media (max-width: 768px) {
   .mobile-menu-toggle {
-    z-index: 1100;
+    z-index: 9999;
   }
 
   .mobile-overlay {
-    z-index: 1050;
+    z-index: 9990;
   }
 
   .sidebar {
-    z-index: 1060;
+    z-index: 9995;
+  }
+
+  .top-header {
+    z-index: 800;
+  }
+
+  #view-container,
+  .main-content {
+    z-index: 1;
   }
 }
 
@@ -3814,18 +3825,9 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
     max-width: 180px;
   }
 
+  /* Hide settings button on mobile - use sidebar instead */
   .theme-toggle-btn {
-    min-width: 40px;
-    min-height: 40px;
-    padding: var(--space-sm);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .theme-toggle-btn svg {
-    width: 20px;
-    height: 20px;
+    display: none;
   }
 
   /* Ensure buttons don't shrink */
@@ -3846,16 +3848,7 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
     max-width: 140px;
   }
 
-  .theme-toggle-btn {
-    min-width: 36px;
-    min-height: 36px;
-    padding: var(--space-xs);
-  }
-
-  .theme-toggle-btn svg {
-    width: 18px;
-    height: 18px;
-  }
+  /* Settings button is already hidden on mobile */
 }
 
 /* Ensure header doesn't overlap with content */
@@ -3864,6 +3857,12 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
     position: sticky;
     top: 0;
     z-index: 800;
+    margin-bottom: 0;
+    padding-bottom: var(--space-md);
+  }
+
+  .header-right {
+    margin-bottom: 0;
   }
 
   #view-container {
@@ -3874,6 +3873,18 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
 /* Fix top header z-index conflict with mobile menu */
 @media (max-width: 768px) {
   .top-header {
-    z-index: 800;
+    z-index: 800 !important;
+  }
+
+  .mobile-menu-toggle {
+    z-index: 9999 !important;
+  }
+
+  .mobile-overlay {
+    z-index: 9990 !important;
+  }
+
+  .sidebar {
+    z-index: 9995 !important;
   }
 }
