@@ -3288,16 +3288,16 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
 .mobile-menu-toggle {
   display: none;
   position: fixed;
-  top: var(--space-md);
+  top: calc(var(--space-md) + 4px);
   right: var(--space-md);
-  z-index: 1000;
+  z-index: 900;
   background: var(--accent);
   color: white;
   border: none;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 24px;
+  width: 44px;
+  height: 44px;
+  font-size: 22px;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
@@ -3325,6 +3325,21 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
 
 .mobile-overlay.active {
   display: block;
+}
+
+/* Fix z-index to ensure mobile menu is above everything on mobile */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    z-index: 1100;
+  }
+
+  .mobile-overlay {
+    z-index: 1050;
+  }
+
+  .sidebar {
+    z-index: 1060;
+  }
 }
 
 /* Tablet Landscape (768px - 1024px) */
@@ -3371,8 +3386,9 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
   /* Main content adjusts */
   .main-content {
     margin-left: 0;
-    padding-top: 70px; /* Space for mobile toggle */
   }
+
+  /* No extra padding needed since header is sticky and already positioned */
 
   /* Header adjustments */
   .top-header {
@@ -3774,5 +3790,90 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
   body {
     background: white;
     color: black;
+  }
+}
+
+/* ============================================
+   FIXES FOR MOBILE HEADER BUTTONS
+   ============================================ */
+
+/* Make header buttons touch-friendly on mobile */
+@media (max-width: 768px) {
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    flex-wrap: nowrap;
+    min-height: 44px;
+  }
+
+  .course-selector select {
+    min-height: 36px;
+    padding: var(--space-sm) var(--space-md);
+    font-size: 14px;
+    max-width: 180px;
+  }
+
+  .theme-toggle-btn {
+    min-width: 40px;
+    min-height: 40px;
+    padding: var(--space-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .theme-toggle-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Ensure buttons don't shrink */
+  .header-right > * {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-right {
+    gap: var(--space-xs);
+  }
+
+  .course-selector select {
+    min-height: 32px;
+    padding: var(--space-xs) var(--space-sm);
+    font-size: 12px;
+    max-width: 140px;
+  }
+
+  .theme-toggle-btn {
+    min-width: 36px;
+    min-height: 36px;
+    padding: var(--space-xs);
+  }
+
+  .theme-toggle-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Ensure header doesn't overlap with content */
+@media (max-width: 768px) {
+  .top-header {
+    position: sticky;
+    top: 0;
+    z-index: 800;
+  }
+
+  #view-container {
+    padding-top: var(--space-lg);
+  }
+}
+
+/* Fix top header z-index conflict with mobile menu */
+@media (max-width: 768px) {
+  .top-header {
+    z-index: 800;
   }
 }
