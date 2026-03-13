@@ -3280,3 +3280,499 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
   font-size: 13px;
   line-height: 1.4;
 }
+/* ============================================
+   MOBILE RESPONSIVE DESIGN
+   ============================================ */
+
+/* Mobile Navigation Toggle */
+.mobile-menu-toggle {
+  display: none;
+  position: fixed;
+  top: var(--space-md);
+  right: var(--space-md);
+  z-index: 1000;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+  transform: scale(1.1);
+}
+
+.mobile-menu-toggle.active {
+  background: var(--error);
+}
+
+/* Mobile Overlay */
+.mobile-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+}
+
+.mobile-overlay.active {
+  display: block;
+}
+
+/* Tablet Landscape (768px - 1024px) */
+@media (max-width: 1024px) {
+  .top-header {
+    padding: var(--space-md);
+  }
+
+  .course-selector select {
+    font-size: 14px;
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .lesson-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+/* Tablet Portrait (480px - 768px) */
+@media (max-width: 768px) {
+  /* Sidebar becomes off-canvas on mobile */
+  .sidebar {
+    position: fixed;
+    left: -280px;
+    top: 0;
+    bottom: 0;
+    width: 280px;
+    z-index: 999;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  /* Show mobile menu toggle */
+  .mobile-menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Main content adjusts */
+  .main-content {
+    margin-left: 0;
+    padding-top: 70px; /* Space for mobile toggle */
+  }
+
+  /* Header adjustments */
+  .top-header {
+    padding: var(--space-sm) var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .header-left h2 {
+    font-size: 18px;
+  }
+
+  .header-right {
+    width: 100%;
+    margin-top: var(--space-sm);
+    justify-content: center;
+  }
+
+  .course-selector {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .course-selector select {
+    width: 100%;
+  }
+
+  /* Logo in sidebar */
+  .sidebar .logo h1 {
+    font-size: 24px;
+  }
+
+  /* Navigation buttons */
+  .nav-item {
+    padding: var(--space-md);
+  }
+
+  .nav-item span {
+    font-size: 16px;
+  }
+
+  /* Dashboard grid */
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  /* Course cards */
+  .course-cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* Lesson grid */
+  .lesson-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  /* Unit cards */
+  .unit-card {
+    padding: var(--space-md);
+  }
+
+  .unit-lessons {
+    grid-template-columns: 1fr;
+  }
+
+  /* Progress bar */
+  .progress-bar-container {
+    height: 8px;
+  }
+
+  /* Lesson view */
+  .lesson-header {
+    padding: var(--space-md);
+  }
+
+  .lesson-header h2 {
+    font-size: 20px;
+  }
+
+  .lesson-content {
+    padding: var(--space-md);
+  }
+
+  /* Questions */
+  .question-container {
+    padding: var(--space-md);
+    font-size: 16px;
+  }
+
+  .question-text {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  /* Multiple choice options */
+  .options-vertical {
+    gap: var(--space-sm);
+  }
+
+  .option-btn {
+    padding: var(--space-md);
+    font-size: 16px;
+  }
+
+  /* Typing input */
+  .typing-input {
+    font-size: 18px;
+    padding: var(--space-md);
+  }
+
+  /* Match pairs */
+  .match-pairs-container {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .match-item {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 14px;
+  }
+
+  /* Fill blank */
+  .fill-blank-sentence {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .blank-input {
+    font-size: 18px;
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  /* Lesson controls */
+  .lesson-controls {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .lesson-controls button {
+    width: 100%;
+    padding: var(--space-md);
+  }
+
+  /* Feedback */
+  .feedback-container {
+    padding: var(--space-md);
+    margin: var(--space-md) 0;
+  }
+
+  .feedback-container h3 {
+    font-size: 18px;
+  }
+
+  /* Code questions */
+  .code-editor-container {
+    padding: var(--space-md);
+  }
+
+  .code-editor-input {
+    font-size: 14px;
+    padding: var(--space-sm);
+    min-height: 150px;
+  }
+
+  .code-output-display {
+    font-size: 12px;
+    padding: var(--space-sm);
+  }
+
+  /* Conversations */
+  .conversations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .conversation-card {
+    padding: var(--space-md);
+  }
+
+  /* Settings */
+  .settings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .setting-item {
+    padding: var(--space-md);
+  }
+
+  /* Progress view */
+  .progress-summary {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .progress-summary-card {
+    width: 100%;
+  }
+
+  /* Animations - disable for performance */
+  .lesson-card:hover {
+    transform: none;
+  }
+
+  .unit-card:hover {
+    transform: none;
+  }
+}
+
+/* Mobile Portrait (320px - 480px) */
+@media (max-width: 480px) {
+  :root {
+    --space-sm: 6px;
+    --space-md: 10px;
+    --space-lg: 16px;
+    --space-xl: 20px;
+  }
+
+  /* Sidebar - smaller on small phones */
+  .sidebar {
+    width: 250px;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  /* Mobile menu toggle - adjust position */
+  .mobile-menu-toggle {
+    top: var(--space-sm);
+    right: var(--space-sm);
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+
+  /* Main content */
+  .main-content {
+    padding-top: 60px;
+  }
+
+  /* Header */
+  .header-left h2 {
+    font-size: 16px;
+  }
+
+  /* Logo */
+  .sidebar .logo h1 {
+    font-size: 20px;
+  }
+
+  /* Nav items */
+  .nav-item {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .nav-item svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .nav-item span {
+    font-size: 14px;
+  }
+
+  /* Course cards */
+  .course-card {
+    padding: var(--space-md);
+  }
+
+  .course-card h3 {
+    font-size: 16px;
+  }
+
+  /* Lesson cards */
+  .lesson-card {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .lesson-card-title {
+    font-size: 14px;
+  }
+
+  /* Questions */
+  .question-text {
+    font-size: 16px;
+  }
+
+  .option-btn {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 14px;
+  }
+
+  /* Typing */
+  .typing-input {
+    font-size: 16px;
+  }
+
+  /* Lesson controls */
+  .lesson-controls button {
+    font-size: 14px;
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  /* Feedback */
+  .feedback-container h3 {
+    font-size: 16px;
+  }
+
+  .feedback-container p {
+    font-size: 14px;
+  }
+
+  /* Code editor */
+  .code-editor-input {
+    font-size: 12px;
+    padding: var(--space-sm);
+    min-height: 120px;
+  }
+
+  /* Conversation cards */
+  .conversation-card h3 {
+    font-size: 14px;
+  }
+
+  .conversation-card p {
+    font-size: 12px;
+  }
+}
+
+/* Touch-friendly adjustments */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects on touch devices */
+  .lesson-card:hover,
+  .unit-card:hover,
+  .course-card:hover,
+  .conversation-card:hover {
+    transform: none;
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Make buttons larger for touch */
+  .btn {
+    padding: var(--space-md) var(--space-lg);
+    font-size: 16px;
+    min-height: 44px; /* Apple's recommended minimum touch target */
+  }
+
+  .option-btn {
+    padding: var(--space-md);
+    font-size: 16px;
+    min-height: 44px;
+  }
+
+  /* Make inputs larger for touch */
+  .typing-input,
+  .blank-input {
+    font-size: 16px; /* Prevent iOS auto-zoom */
+    padding: var(--space-md);
+    min-height: 44px;
+  }
+
+  /* Navigation items */
+  .nav-item {
+    padding: var(--space-md);
+    min-height: 48px;
+  }
+}
+
+/* Landscape mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .sidebar {
+    top: -60px; /* Hide part of header on landscape */
+  }
+
+  .main-content {
+    padding-top: 60px;
+  }
+
+  .lesson-content {
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
+  }
+}
+
+/* Print styles */
+@media print {
+  .sidebar,
+  .mobile-menu-toggle,
+  .lesson-controls,
+  .top-header {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 0;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+}

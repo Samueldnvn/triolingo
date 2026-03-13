@@ -1577,3 +1577,133 @@ async function init() {
 
 // Start the app
 document.addEventListener('DOMContentLoaded', init);
+// =====================================================================
+// MOBILE DETECTION AND RESPONSIVE BEHAVIOR
+// =====================================================================
+
+// Detect if device is mobile
+function isMobileDevice() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+         window.innerWidth <= 768;
+}
+
+// Mobile menu functionality
+let isMobileMenuOpen = false;
+
+function toggleMobileMenu() {
+  const sidebar = document.querySelector('.sidebar');
+  const overlay = document.querySelector('.mobile-overlay');
+  const toggle = document.querySelector('.mobile-menu-toggle');
+  
+  isMobileMenuOpen = !isMobileMenuOpen;
+  
+  if (isMobileMenuOpen) {
+    sidebar.classList.add('open');
+    overlay.classList.add('active');
+    toggle.classList.add('active');
+    toggle.innerHTML = '✕';
+    document.body.style.overflow = 'hidden'; // Prevent scrolling
+  } else {
+    closeMobileMenu();
+  }
+}
+
+function closeMobileMenu() {
+  const sidebar = document.querySelector('.sidebar');
+  const overlay = document.querySelector('.mobile-overlay');
+  const toggle = document.querySelector('.mobile-menu-toggle');
+  
+  isMobileMenuOpen = false;
+  sidebar.classList.remove('open');
+  overlay.classList.remove('active');
+  toggle.classList.remove('active');
+  toggle.innerHTML = '☰';
+  document.body.style.overflow = ''; // Re-enable scrolling
+}
+
+// Create mobile menu toggle button
+function createMobileMenuToggle() {
+  const toggle = document.createElement('button');
+  toggle.className = 'mobile-menu-toggle';
+  toggle.innerHTML = '☰';
+  toggle.setAttribute('aria-label', 'Toggle menu');
+  toggle.onclick = toggleMobileMenu;
+  document.body.appendChild(toggle);
+}
+
+// Create mobile overlay
+function createMobileOverlay() {
+  const overlay = document.createElement('div');
+  overlay.className = 'mobile-overlay';
+  overlay.onclick = closeMobileMenu;
+  document.body.appendChild(overlay);
+}
+
+// Initialize mobile UI
+function initMobileUI() {
+  // Only create mobile elements if on mobile device
+  if (isMobileDevice()) {
+    createMobileMenuToggle();
+    createMobileOverlay();
+    console.log('Mobile UI initialized');
+  }
+}
+
+// Close mobile menu when navigating to a new view
+const originalRenderView = window.renderView;
+if (typeof originalRenderView === 'function') {
+  window.renderView = function(view) {
+    if (isMobileDevice() && isMobileMenuOpen) {
+      closeMobileMenu();
+    }
+    return originalRenderView.call(this, view);
+  };
+}
+
+// Handle orientation changes
+window.addEventListener('orientationchange', function() {
+  setTimeout(function() {
+    if (isMobileDevice()) {
+      console.log('Orientation changed');
+      // Adjust any UI if needed
+    }
+  }, 100);
+});
+
+// Handle window resize
+let resizeTimer;
+window.addEventListener('resize', function() {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(function() {
+    const wasMobile = isMobileMenuOpen;
+    const isNowMobile = isMobileDevice();
+    
+    // If switching from mobile to desktop, close menu
+    if (wasMobile && !isNowMobile) {
+      closeMobileMenu();
+    }
+    
+    // Recreate mobile UI if switching from desktop to mobile
+    if (isNowMobile && !document.querySelector('.mobile-menu-toggle')) {
+      createMobileMenuToggle();
+      createMobileOverlay();
+    }
+  }, 250);
+});
+
+// Log device info for debugging
+function logDeviceInfo() {
+  console.log('=== Device Info ===');
+  console.log('User Agent:', navigator.userAgent);
+  console.log('Is Mobile:', isMobileDevice());
+  console.log('Screen Width:', window.innerWidth);
+  console.log('Screen Height:', window.innerHeight);
+  console.log('Touch Support:', 'ontouchstart' in window);
+  console.log('Orientation:', screen.orientation ? screen.orientation.type : 'unknown');
+}
+
+// Call initialization
+document.addEventListener('DOMContentLoaded', function() {
+  initMobileUI();
+  logDeviceInfo();
+});
