@@ -1023,6 +1023,100 @@ function renderAnswerFeedback(question) {
   `;
 }
 
+function gradeCodeAnswer(question, userCode) {
+  // Check if expected output is provided
+  if (!question.expectedOutput) {
+    return {
+      correct: true,
+      feedback: 'Code submitted! (No expected output defined for grading)'
+    };
+  }
+
+  // Normalize code for comparison
+  const normalizedUserCode = userCode.toLowerCase().replace(/\s+/g, '');
+  const normalizedTemplate = question.codeTemplate ? question.codeTemplate.toLowerCase().replace(/\s+/g, '') : '';
+
+  // Check if user just copied the template without modifications
+  if (normalizedUserCode === normalizedTemplate) {
+    return {
+      correct: false,
+      feedback: 'Please modify the template code - don\'t just copy it. Complete the exercise!'
+    };
+  }
+
+  // Check for expected output string (simple check)
+  // For C++ code, look for expected output in std::cout statements
+  const expectedOutput = question.expectedOutput.toLowerCase();
+  const lowerUserCode = userCode.toLowerCase();
+
+  // Check if expected output appears in cout/print statements
+  if (lowerUserCode.includes('std::cout') || lowerUserCode.includes('printf') || lowerUserCode.includes('print')) {
+    // Extract output from code
+    const outputMatches = lowerUserCode.match(/<<\s*"([^"]+)"/g) ||
+                         lowerUserCode.match(/"([^"]+)"/g) ||
+                         [];
+
+    if (outputMatches.length > 0) {
+      // Check if expected output is in any of the quoted strings
+      const foundOutput = outputMatches.some(match =>
+        match.toLowerCase().includes(expectedOutput)
+      );
+
+      if (foundOutput) {
+        return {
+          correct: true,
+          feedback: 'Correct! Your code should output: ' + question.expectedOutput
+        };
+      } else {
+        return {
+          correct: false,
+          feedback: 'Your code doesn\'t seem to output the expected result: ' + question.expectedOutput +
+                   '. Make sure you have a print statement with the correct output.'
+        };
+      }
+    }
+  }
+
+  // If we can't determine via simple checks, check for basic code structure
+  const language = question.language || 'cpp';
+
+  if (language === 'cpp') {
+    // Check for basic C++ structure
+    const hasMain = userCode.includes('int main') || userCode.includes('main()');
+    const hasBraces = userCode.includes('{') && userCode.includes('}');
+
+    if (hasMain && hasBraces) {
+      return {
+        correct: true,
+        feedback: 'Code submitted! Good structure with main() function.'
+      };
+    } else if (!hasMain) {
+      return {
+        correct: false,
+        feedback: 'Your C++ code should have a main() function.'
+      };
+    } else if (!hasBraces) {
+      return {
+        correct: false,
+        feedback: 'Your code is missing braces { }. Make sure your code is properly structured.'
+      };
+    }
+  }
+
+  // Default: accept the code if it has some content and structure
+  if (userCode.length > 50) {
+    return {
+      correct: true,
+      feedback: 'Code submitted! Looks like you\'ve written some code.'
+    };
+  } else {
+    return {
+      correct: false,
+      feedback: 'Please write more code to complete the exercise.'
+    };
+  }
+}
+
 function submitAnswer() {
   if (!currentLesson) {
     console.error('No lesson in progress');
@@ -1063,17 +1157,18 @@ function submitAnswer() {
     case 'code':
       const codeEditor = document.querySelector(`#code-editor-${currentQuestionIndex}`);
       const userCode = codeEditor ? codeEditor.value.trim() : '';
-      // For code questions, we need to grade them
-      // For now, accept any non-empty code submission
-      // In the future, we can integrate with the Code Editor component for AI grading
-      isCorrect = userCode.length > 0;
-      if (question.localLLMGrade && isCorrect) {
-        feedback = 'Code submitted! AI grading will be implemented soon. For now, your submission is recorded.';
-      } else if (isCorrect) {
-        feedback = 'Code submitted!';
-      } else {
+
+      // Check if code is empty
+      if (!userCode) {
+        isCorrect = false;
         feedback = 'Please write some code before submitting.';
+        break;
       }
+
+      // Grade code question
+      const gradingResult = gradeCodeAnswer(question, userCode);
+      isCorrect = gradingResult.correct;
+      feedback = gradingResult.feedback;
       break;
     case 'fill-blank':
       // For fill-in-blank, we need to check the filled value
