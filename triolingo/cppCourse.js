@@ -26,7 +26,7 @@ const cppCourse = {
     cppUnit18,  // Best Practices and Idioms
     cppUnit19,  // Interoperability
 
-    // Algorithms and Data Structures (Units 20-54)
+    // Algorithms and Data Structures (Units 20-49)
     cppUnit20,  // Foundations of Algorithm Analysis
     cppUnit21,  // Arrays and Variants
     cppUnit22,  // Linked Structures
@@ -57,10 +57,6 @@ const cppCourse = {
     cppUnit47,  // Computational Geometry
     cppUnit48,  // Randomized Algorithms
     cppUnit49,  // Approximation Algorithms
-    cppUnit50,  // Advanced Data Structures
-    cppUnit51,  // Advanced Graph Theory
-    cppUnit52,  // Advanced String Structures
-    cppUnit53,  // Parallel and External Algorithms
-    cppUnit54   // Specialized Algorithmic Paradigms
+
   ]
 };
