@@ -1147,24 +1147,40 @@ function submitAnswer() {
   switch (question.type) {
     case 'multiple-choice':
       isCorrect = selectedAnswer === question.correct;
-      feedback = isCorrect ? 'Correct answer!' : `Incorrect. The correct answer is: ${question.options[question.correct]}`;
       // Store the user's answer
       userSubmittedAnswer = {
         type: 'multiple-choice',
         value: question.options[selectedAnswer] || 'No answer selected'
       };
+      if (isCorrect) {
+        feedback = 'Correct answer!';
+      } else {
+        const selectedOption = question.options[selectedAnswer];
+        const correctOption = question.options[question.correct];
+        feedback = `❌ You selected: "${selectedOption}"\n\n✅ Correct answer: "${correctOption}"\n\n${selectedOption} is not the correct answer. ${correctOption} is the right choice.`;
+      }
       break;
     case 'typing':
       const typingInput = document.querySelector('.typing-input');
-      const userAnswer = typingInput ? typingInput.value.trim().toLowerCase() : '';
+      const userAnswer = typingInput ? typingInput.value.trim() : '';
       const correctAnswers = question.correctAnswer.map(a => a.toLowerCase());
-      isCorrect = correctAnswers.includes(userAnswer);
-      feedback = isCorrect ? 'Correct answer!' : `Incorrect. Acceptable answers: ${question.correctAnswer.join(', ')}`;
+      const userAnswerLower = userAnswer.toLowerCase();
+      isCorrect = correctAnswers.includes(userAnswerLower);
       // Store the user's answer
       userSubmittedAnswer = {
         type: 'typing',
-        value: typingInput ? typingInput.value.trim() : 'No answer'
+        value: userAnswer || 'No answer'
       };
+      if (isCorrect) {
+        feedback = 'Correct answer!';
+      } else {
+        const bestMatch = findBestMatch(userAnswer, question.correctAnswer);
+        if (bestMatch) {
+          feedback = `❌ You entered: "${userAnswer}"\n\n✅ Correct answer: "${bestMatch}"\n\nYour answer is close but not quite right. The correct answer is "${bestMatch}". Check your spelling and try again.`;
+        } else {
+          feedback = `❌ You entered: "${userAnswer}"\n\n✅ Acceptable answers: ${question.correctAnswer.map(a => `"${a}"`).join(', ')}\n\nYour answer doesn't match any of the acceptable answers. Try again!`;
+        }
+      }
       break;
     case 'code':
       console.log('[DEBUG] Code question submitted');
@@ -1708,6 +1724,83 @@ async function init() {
 
 // Start the app
 document.addEventListener('DOMContentLoaded', init);
+// =====================================================================
+// HELPER FUNCTIONS
+// =====================================================================
+
+function findBestMatch(userAnswer, correctAnswers) {
+  if (!userAnswer || !correctAnswers || correctAnswers.length === 0) {
+    return null;
+  }
+
+  const userLower = userAnswer.toLowerCase().trim();
+
+  // Find the closest match based on string similarity
+  let bestMatch = null;
+  let bestScore = 0;
+
+  for (const correct of correctAnswers) {
+    const correctLower = correct.toLowerCase();
+
+    // Exact match
+    if (correctLower === userLower) {
+      return correct;
+    }
+
+    // Calculate similarity score
+    const score = calculateSimilarity(userLower, correctLower);
+    if (score > bestScore && score > 0.5) {
+      bestScore = score;
+      bestMatch = correct;
+    }
+  }
+
+  return bestMatch;
+}
+
+function calculateSimilarity(str1, str2) {
+  // Simple similarity based on character overlap
+  const longer = str1.length > str2.length ? str1 : str2;
+  const shorter = str1.length > str2.length ? str2 : str1;
+
+  if (longer.length === 0) {
+    return 1.0;
+  }
+
+  const editDistance = levenshteinDistance(longer, shorter);
+  return (longer.length - editDistance) / longer.length;
+}
+
+function levenshteinDistance(str1, str2) {
+  const m = str1.length;
+  const n = str2.length;
+  const dp = Array.from({ length: m + 1 }, () => Array(n + 1).fill(0));
+
+  for (let i = 0; i <= m; i++) {
+    dp[i][0] = i;
+  }
+
+  for (let j = 0; j <= n; j++) {
+    dp[0][j] = j;
+  }
+
+  for (let i = 1; i <= m; i++) {
+    for (let j = 1; j <= n; j++) {
+      if (str1[i - 1] === str2[j - 1]) {
+        dp[i][j] = dp[i - 1][j - 1];
+      } else {
+        dp[i][j] = Math.min(
+          dp[i - 1][j] + 1,
+          dp[i][j - 1] + 1,
+          dp[i - 1][j - 1] + 1
+        );
+      }
+    }
+  }
+
+  return dp[m][n];
+}
+
 // =====================================================================
 // MOBILE DETECTION AND RESPONSIVE BEHAVIOR
 // =====================================================================

@@ -3943,6 +3943,77 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
   border-left-color: var(--success);
 }
 
+/* Feedback message styling */
+.feedback-message {
+  white-space: pre-line;
+  line-height: 1.6;
+  margin: var(--space-sm) 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .user-answer {
+    padding: var(--space-sm);
+    margin: var(--space-sm) 0;
+  }
+
+  .code-answer {
+    font-size: 11px;
+    padding: var(--space-sm);
+    max-height: 150px;
+  }
+
+  .user-answer strong {
+    font-size: 12px;
+  }
+
+  .feedback-message {
+    font-size: 14px;
+  }
+}
+
+.user-answer strong {
+  display: block;
+  margin-bottom: var(--space-sm);
+  color: var(--text-secondary);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.text-answer,
+.choice-answer {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+}
+
+.code-answer {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: var(--space-md);
+  font-family: 'Courier New', 'Monaco', monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-primary);
+  max-height: 200px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.answer-feedback.incorrect .user-answer {
+  border-left-color: var(--error);
+}
+
+.answer-feedback.correct .user-answer {
+  border-left-color: var(--success);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .user-answer {
