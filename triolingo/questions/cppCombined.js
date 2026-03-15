@@ -11,11 +11,10 @@ window.cppCombined = {
         {
           "id": "1-1",
           "title": "Introduction to C++",
-          "unitTitle": "1. C++ Environment and Language Basics",
-          "xp": 32,
+          "xp": 200,
           "type": "lesson",
           "difficulty": "beginner",
-          "lessonText": "# Introduction to C++\n\nC++ is a powerful, high-performance programming language created by Bjarne Stroustrup in 1979 as an extension of C. It's used in game development, systems programming, embedded systems, and competitive programming.\n\n## Your First C++ Program\n\n```cpp\n#include <iostream>\n\nint main() {\n    std::cout << \"Hello, World!\" << std::endl;\n    return 0;\n}\n```\n\n**Explanation:**\n- `#include <iostream>`: Includes input/output library\n- `int main()`: Entry point of the program\n- `std::cout`: Standard output stream\n- `<<`: Stream insertion operator\n- `std::endl`: End line (flushes buffer)\n- `return 0`: Indicates successful execution",
+          "lessonText": "# Introduction to C++\n\nC++ is a powerful, high-performance programming language created by Bjarne Stroustrup in 1979 as an extension of C. It's used in game development, systems programming, embedded systems, and competitive programming.\n\n## Your First C++ Program\n\n```cpp\n#include <iostream>\n\nint main() {\n    std::cout << \"Hello, World!\" << std::endl;\n    return 0;\n}\n```",
           "questions": [
             {
               "id": "cpp-1-1-1",
@@ -71,6 +70,173 @@ window.cppCombined = {
               ],
               "explanation": "The << operator (stream insertion) sends data to the output stream.",
               "xp": 5
+            },
+            {
+              "id": "cpp-1-1-6",
+              "type": "code",
+              "question": "Write a C++ program that prints your name to the console.",
+              "codeTemplate": "#include <iostream>\n\nint main() {\n    // Print your name here\n    \n    return 0;\n}\n",
+              "expectedOutput": "Your Name",
+              "language": "cpp",
+              "localLLMGrade": true,
+              "explanation": "Use std::cout << \"Your Name\" << std::endl; (replace with your actual name).",
+              "xp": 12
+            },
+            {
+              "id": "cpp-1-1-7",
+              "type": "typing",
+              "question": "What does return 0 indicate in main()?",
+              "correctAnswer": [
+                "Program succeeded",
+                "Success",
+                "Successful execution"
+              ],
+              "explanation": "Returning 0 from main() indicates successful program execution.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-1-1-8",
+              "type": "code",
+              "question": "Write a C++ program that prints two separate lines: 'Line 1' and 'Line 2'.",
+              "codeTemplate": "#include <iostream>\n\nint main() {\n    // Your code here\n    \n    return 0;\n}\n",
+              "expectedOutput": "Line 1\nLine 2",
+              "language": "cpp",
+              "localLLMGrade": true,
+              "explanation": "Use two std::cout statements, each with std::endl to create new lines.",
+              "xp": 12
+            },
+            {
+              "id": "cpp-1-1-9",
+              "type": "typing",
+              "question": "What is the file extension for C++ source files?",
+              "correctAnswer": [
+                ".cpp",
+                "cpp"
+              ],
+              "explanation": "C++ source files use the .cpp extension (other options: .cc, .cxx, .C).",
+              "xp": 5
+            },
+            {
+              "id": "cpp-1-1-10",
+              "type": "code",
+              "question": "Write a C++ program that prints 'C++' followed by a newline.",
+              "codeTemplate": "#include <iostream>\n\nint main() {\n    // Your code here\n    \n    return 0;\n}\n",
+              "expectedOutput": "C++",
+              "language": "cpp",
+              "localLLMGrade": true,
+              "explanation": "Use std::cout << \"C++\" << std::endl; to print C++ with a newline.",
+              "xp": 12
+            },
+            {
+              "id": "cpp-1-1-11",
+              "type": "typing",
+              "question": "What does std stand for in std::cout?",
+              "correctAnswer": [
+                "standard",
+                "Standard Library"
+              ],
+              "explanation": "std is the namespace for the C++ Standard Library.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-1-1-12",
+              "type": "code",
+              "question": "Write a C++ program that prints 'C++ is awesome!' three times.",
+              "codeTemplate": "#include <iostream>\n\nint main() {\n    // Your code here\n    \n    return 0;\n}\n",
+              "expectedOutput": "C++ is awesome!\nC++ is awesome!\nC++ is awesome!",
+              "language": "cpp",
+              "localLLMGrade": true,
+              "explanation": "You can use a loop or three separate std::cout statements.",
+              "xp": 12
+            },
+            {
+              "id": "cpp-1-1-13",
+              "type": "typing",
+              "question": "What type does main() return?",
+              "correctAnswer": [
+                "int",
+                "integer"
+              ],
+              "explanation": "The main() function returns an int (integer), typically 0 for success.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-1-1-14",
+              "type": "code",
+              "question": "Write a C++ program that prints the number 42.",
+              "codeTemplate": "#include <iostream>\n\nint main() {\n    // Your code here\n    \n    return 0;\n}\n",
+              "expectedOutput": "42",
+              "language": "cpp",
+              "localLLMGrade": true,
+              "explanation": "Use std::cout << 42 << std::endl; to print the number.",
+              "xp": 12
+            },
+            {
+              "id": "cpp-1-1-15",
+              "type": "typing",
+              "question": "What year was C++ created?",
+              "correctAnswer": [
+                "1979"
+              ],
+              "explanation": "C++ was created by Bjarne Stroustrup in 1979 as an extension of C.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-1-1-16",
+              "type": "code",
+              "question": "Write a C++ program that prints 'Programming is fun!'",
+              "codeTemplate": "#include <iostream>\n\nint main() {\n    // Your code here\n    \n    return 0;\n}\n",
+              "expectedOutput": "Programming is fun!",
+              "language": "cpp",
+              "localLLMGrade": true,
+              "explanation": "Use std::cout << \"Programming is fun!\" << std::endl;",
+              "xp": 12
+            },
+            {
+              "id": "cpp-1-1-17",
+              "type": "typing",
+              "question": "What does std::endl do?",
+              "correctAnswer": [
+                "Ends line and flushes buffer",
+                "Newline",
+                "Line break"
+              ],
+              "explanation": "std::endl inserts a newline character and flushes the output buffer.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-1-1-18",
+              "type": "code",
+              "question": "Write a C++ program that prints your age (use any number).",
+              "codeTemplate": "#include <iostream>\n\nint main() {\n    // Print your age here\n    \n    return 0;\n}\n",
+              "expectedOutput": "Any age number",
+              "language": "cpp",
+              "localLLMGrade": true,
+              "explanation": "Use std::cout << your_age << std::endl; with any number.",
+              "xp": 12
+            },
+            {
+              "id": "cpp-1-1-19",
+              "type": "typing",
+              "question": "What command compiles a C++ file named program.cpp?",
+              "correctAnswer": [
+                "g++ -o program program.cpp",
+                "g++ program.cpp",
+                "g++ program.cpp -o program"
+              ],
+              "explanation": "g++ -o program program.cpp compiles program.cpp and creates executable named 'program'.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-1-1-20",
+              "type": "code",
+              "question": "Write a C++ program that prints 'Welcome to C++!'",
+              "codeTemplate": "#include <iostream>\n\nint main() {\n    // Your code here\n    \n    return 0;\n}\n",
+              "expectedOutput": "Welcome to C++!",
+              "language": "cpp",
+              "localLLMGrade": true,
+              "explanation": "Use std::cout << \"Welcome to C++!\" << std::endl;",
+              "xp": 12
             }
           ]
         },
