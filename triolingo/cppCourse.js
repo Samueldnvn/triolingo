@@ -1,5 +1,5 @@
 // C++ Course - Main Configuration
-const cppCourse = {
+window.cppCourse = {
   courseId: "cpp",
   courseName: "C++",
   courseDescription: "Master C++ programming from basics to advanced, including comprehensive algorithms and data structures: designed specifically for Python programmers transitioning to C++",
