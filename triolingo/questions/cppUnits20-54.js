@@ -1,861 +1,2606 @@
-// C++ Course - Units 20-51: Algorithms and Data Structures
-// Adding comprehensive algorithm and data structure units after the C++ fundamentals
+// C++ Units 20-54
 
-// Unit 20: Foundations of Algorithm Analysis
- window.cppUnit20 = {
-  unitId: "20",
-  unitName: "Foundations of Algorithm Analysis",
-  subunits: [{
-    subunitId: "20.1",
-    subunitName: "Algorithm Correctness and Notation",
-    lessons: [
-      { lessonId: "algorithm-correctness", lessonName: "Algorithm Correctness", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "asymptotic-notation", lessonName: "Asymptotic Notation", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "amortized-analysis", lessonName: "Amortized Analysis", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }, {
-    subunitId: "20.2",
-    subunitName: "Complexity Analysis",
-    lessons: [
-      { lessonId: "average-worst-best", lessonName: "Average vs Worst vs Best Case", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "recurrence-relations", lessonName: "Recurrence Relations", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "master-theorem", lessonName: "Master Theorem", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }, {
-    subunitId: "20.3",
-    subunitName: "Advanced Analysis",
-    lessons: [
-      { lessonId: "recursion-tree", lessonName: "Recursion Tree Analysis", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "proof-induction", lessonName: "Proof by Induction", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "lower-bounds", lessonName: "Lower Bounds", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }, {
-    subunitId: "20.4",
-    subunitName: "Complexity Models",
-    lessons: [
-      { lessonId: "decision-tree", lessonName: "Decision Tree Complexity", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "time-space-tradeoffs", lessonName: "Time-Space Tradeoffs", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "cache-complexity", lessonName: "Cache Complexity", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "external-memory", lessonName: "External Memory Model", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "parallel-complexity", lessonName: "Parallel Complexity", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
+window.cppUnit20 = {
+  "unitId": "20",
+  "unitName": "20. Foundations of Algorithm Analysis",
+  "lessons": [
+    {
+      "id": 1,
+      "title": "Algorithm correctness",
+      "unitTitle": "20. Foundations of Algorithm Analysis",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 2,
+      "title": "Asymptotic notation (Big O, Big Θ, Big Ω)",
+      "unitTitle": "20. Foundations of Algorithm Analysis",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 3,
+      "title": "Amortized analysis",
+      "unitTitle": "20. Foundations of Algorithm Analysis",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 4,
+      "title": "Average vs worst vs best case",
+      "unitTitle": "20. Foundations of Algorithm Analysis",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 5,
+      "title": "Recurrence relations",
+      "unitTitle": "20. Foundations of Algorithm Analysis",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 6,
+      "title": "Master theorem",
+      "unitTitle": "20. Foundations of Algorithm Analysis",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 7,
+      "title": "Recursion tree analysis",
+      "unitTitle": "20. Foundations of Algorithm Analysis",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 8,
+      "title": "Proof by induction",
+      "unitTitle": "20. Foundations of Algorithm Analysis",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 9,
+      "title": "Lower bounds",
+      "unitTitle": "20. Foundations of Algorithm Analysis",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 10,
+      "title": "Decision tree complexity",
+      "unitTitle": "20. Foundations of Algorithm Analysis",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 11,
+      "title": "Time-space tradeoffs",
+      "unitTitle": "20. Foundations of Algorithm Analysis",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 12,
+      "title": "Cache complexity",
+      "unitTitle": "20. Foundations of Algorithm Analysis",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 13,
+      "title": "External memory model",
+      "unitTitle": "20. Foundations of Algorithm Analysis",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 14,
+      "title": "Parallel complexity",
+      "unitTitle": "20. Foundations of Algorithm Analysis",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 15,
+      "title": "Basic Data Structures",
+      "unitTitle": "20. Foundations of Algorithm Analysis",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 21: Arrays and Variants
- window.cppUnit21 = {
-  unitId: "21",
-  unitName: "Arrays and Variants",
-  subunits: [{
-    subunitId: "21.1",
-    subunitName: "Basic Arrays",
-    lessons: [
-      { lessonId: "static-arrays", lessonName: "Static Arrays", type: "placeholder", difficulty: "beginner", questions: [] },
-      { lessonId: "dynamic-arrays", lessonName: "Dynamic Arrays", type: "placeholder", difficulty: "beginner", questions: [] },
-      { lessonId: "multidimensional-arrays", lessonName: "Multidimensional Arrays", type: "placeholder", difficulty: "intermediate", questions: [] }
-    ]
-  }, {
-    subunitId: "21.2",
-    subunitName: "Specialized Arrays",
-    lessons: [
-      { lessonId: "circular-arrays", lessonName: "Circular Arrays", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "sparse-arrays", lessonName: "Sparse Arrays", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "bit-arrays", lessonName: "Bit Arrays", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "difference-arrays", lessonName: "Difference Arrays", type: "placeholder", difficulty: "intermediate", questions: [] }
-    ]
-  }, {
-    subunitId: "21.3",
-    subunitName: "Advanced Arrays",
-    lessons: [
-      { lessonId: "prefix-arrays", lessonName: "Prefix Arrays", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "sliding-window", lessonName: "Sliding Window Arrays", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "cache-aware-arrays", lessonName: "Cache-Aware Arrays", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
+window.cppUnit21 = {
+  "unitId": "21",
+  "unitName": "21. Arrays and Variants",
+  "lessons": [
+    {
+      "id": 16,
+      "title": "Static arrays",
+      "unitTitle": "21. Arrays and Variants",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 17,
+      "title": "Dynamic arrays",
+      "unitTitle": "21. Arrays and Variants",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 18,
+      "title": "Multidimensional arrays",
+      "unitTitle": "21. Arrays and Variants",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 19,
+      "title": "Circular arrays",
+      "unitTitle": "21. Arrays and Variants",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 20,
+      "title": "Sparse arrays",
+      "unitTitle": "21. Arrays and Variants",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 21,
+      "title": "Bit arrays",
+      "unitTitle": "21. Arrays and Variants",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 22,
+      "title": "Difference arrays",
+      "unitTitle": "21. Arrays and Variants",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 23,
+      "title": "Prefix arrays",
+      "unitTitle": "21. Arrays and Variants",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 24,
+      "title": "Sliding window arrays",
+      "unitTitle": "21. Arrays and Variants",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 25,
+      "title": "Cache-aware arrays",
+      "unitTitle": "21. Arrays and Variants",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 22: Linked Structures
- window.cppUnit22 = {
-  unitId: "22",
-  unitName: "Linked Structures",
-  subunits: [{
-    subunitId: "22.1",
-    subunitName: "Basic Linked Lists",
-    lessons: [
-      { lessonId: "singly-linked", lessonName: "Singly Linked List", type: "placeholder", difficulty: "beginner", questions: [] },
-      { lessonId: "doubly-linked", lessonName: "Doubly Linked List", type: "placeholder", difficulty: "beginner", questions: [] },
-      { lessonId: "circular-linked", lessonName: "Circular Linked List", type: "placeholder", difficulty: "intermediate", questions: [] }
-    ]
-  }, {
-    subunitId: "22.2",
-    subunitName: "Advanced Linked Lists",
-    lessons: [
-      { lessonId: "xor-linked", lessonName: "XOR Linked List", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "skip-list", lessonName: "Skip List", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "unrolled-linked", lessonName: "Unrolled Linked List", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "self-organizing", lessonName: "Self-Organizing List", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "intrusive-lists", lessonName: "Intrusive Lists", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
+window.cppUnit22 = {
+  "unitId": "22",
+  "unitName": "22. Linked Structures",
+  "lessons": [
+    {
+      "id": 26,
+      "title": "Singly linked list",
+      "unitTitle": "22. Linked Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 27,
+      "title": "Doubly linked list",
+      "unitTitle": "22. Linked Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 28,
+      "title": "Circular linked list",
+      "unitTitle": "22. Linked Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 29,
+      "title": "XOR linked list",
+      "unitTitle": "22. Linked Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 30,
+      "title": "Skip list",
+      "unitTitle": "22. Linked Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 31,
+      "title": "Unrolled linked list",
+      "unitTitle": "22. Linked Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 32,
+      "title": "Self-organizing list",
+      "unitTitle": "22. Linked Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 33,
+      "title": "Intrusive lists",
+      "unitTitle": "22. Linked Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 23: Stack Structures
- window.cppUnit23 = {
-  unitId: "23",
-  unitName: "Stack Structures",
-  subunits: [{
-    subunitId: "23.1",
-    subunitName: "Basic Stacks",
-    lessons: [
-      { lessonId: "array-stack", lessonName: "Array Stack", type: "placeholder", difficulty: "beginner", questions: [] },
-      { lessonId: "linked-stack", lessonName: "Linked Stack", type: "placeholder", difficulty: "beginner", questions: [] }
-    ]
-  }, {
-    subunitId: "23.2",
-    subunitName: "Specialized Stacks",
-    lessons: [
-      { lessonId: "min-stack", lessonName: "Min Stack", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "max-stack", lessonName: "Max Stack", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "persistent-stack", lessonName: "Persistent Stack", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "multi-stack", lessonName: "Multi-Stack Structures", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
+window.cppUnit23 = {
+  "unitId": "23",
+  "unitName": "23. Stack Structures",
+  "lessons": [
+    {
+      "id": 34,
+      "title": "Array stack",
+      "unitTitle": "23. Stack Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 35,
+      "title": "Linked stack",
+      "unitTitle": "23. Stack Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 36,
+      "title": "Min stack",
+      "unitTitle": "23. Stack Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 37,
+      "title": "Max stack",
+      "unitTitle": "23. Stack Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 38,
+      "title": "Persistent stack",
+      "unitTitle": "23. Stack Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 39,
+      "title": "Multi-stack structures",
+      "unitTitle": "23. Stack Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 24: Queue Structures
- window.cppUnit24 = {
-  unitId: "24",
-  unitName: "Queue Structures",
-  subunits: [{
-    subunitId: "24.1",
-    subunitName: "Basic Queues",
-    lessons: [
-      { lessonId: "array-queue", lessonName: "Array Queue", type: "placeholder", difficulty: "beginner", questions: [] },
-      { lessonId: "circular-queue", lessonName: "Circular Queue", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "deque", lessonName: "Deque", type: "placeholder", difficulty: "intermediate", questions: [] }
-    ]
-  }, {
-    subunitId: "24.2",
-    subunitName: "Advanced Queues",
-    lessons: [
-      { lessonId: "monotonic-queue", lessonName: "Monotonic Queue", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "priority-queue", lessonName: "Priority Queue", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "double-ended-priority", lessonName: "Double-Ended Priority Queue", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "persistent-queue", lessonName: "Persistent Queue", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
+window.cppUnit24 = {
+  "unitId": "24",
+  "unitName": "24. Queue Structures",
+  "lessons": [
+    {
+      "id": 40,
+      "title": "Array queue",
+      "unitTitle": "24. Queue Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 41,
+      "title": "Circular queue",
+      "unitTitle": "24. Queue Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 42,
+      "title": "Deque",
+      "unitTitle": "24. Queue Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 43,
+      "title": "Monotonic queue",
+      "unitTitle": "24. Queue Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 44,
+      "title": "Priority queue",
+      "unitTitle": "24. Queue Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 45,
+      "title": "Double-ended priority queue",
+      "unitTitle": "24. Queue Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 46,
+      "title": "Persistent queue",
+      "unitTitle": "24. Queue Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 47,
+      "title": "Hashing",
+      "unitTitle": "24. Queue Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 25: Hash Tables
- window.cppUnit25 = {
-  unitId: "25",
-  unitName: "Hash Tables",
-  subunits: [{
-    subunitId: "25.1",
-    subunitName: "Hash Functions",
-    lessons: [
-      { lessonId: "direct-addressing", lessonName: "Direct Addressing", type: "placeholder", difficulty: "beginner", questions: [] },
-      { lessonId: "hash-functions", lessonName: "Hash Functions", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "polynomial-hashing", lessonName: "Polynomial Hashing", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "rolling-hash", lessonName: "Rolling Hash", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "perfect-hashing", lessonName: "Perfect Hashing", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "universal-hashing", lessonName: "Universal Hashing", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }, {
-    subunitId: "25.2",
-    subunitName: "Collision Resolution",
-    lessons: [
-      { lessonId: "open-addressing", lessonName: "Open Addressing", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "linear-probing", lessonName: "Linear Probing", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "quadratic-probing", lessonName: "Quadratic Probing", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "double-hashing", lessonName: "Double Hashing", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "separate-chaining", lessonName: "Separate Chaining", type: "placeholder", difficulty: "intermediate", questions: [] }
-    ]
-  }, {
-    subunitId: "25.3",
-    subunitName: "Advanced Hashing",
-    lessons: [
-      { lessonId: "cuckoo-hashing", lessonName: "Cuckoo Hashing", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "robin-hood", lessonName: "Robin Hood Hashing", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "hopscotch", lessonName: "Hopscotch Hashing", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "extendible", lessonName: "Extendible Hashing", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "dynamic-hashing", lessonName: "Dynamic Hashing", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }, {
-    subunitId: "25.4",
-    subunitName: "Probabilistic Structures",
-    lessons: [
-      { lessonId: "bloom-filter", lessonName: "Bloom Filter", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "counting-bloom", lessonName: "Counting Bloom Filter", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "cuckoo-filter", lessonName: "Cuckoo Filter", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "hyperloglog", lessonName: "HyperLogLog", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
+window.cppUnit25 = {
+  "unitId": "25",
+  "unitName": "25. Hash Tables",
+  "lessons": [
+    {
+      "id": 48,
+      "title": "Direct addressing",
+      "unitTitle": "25. Hash Tables",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 49,
+      "title": "Hash functions",
+      "unitTitle": "25. Hash Tables",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 50,
+      "title": "Polynomial hashing",
+      "unitTitle": "25. Hash Tables",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 51,
+      "title": "Rolling hash",
+      "unitTitle": "25. Hash Tables",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 52,
+      "title": "Perfect hashing",
+      "unitTitle": "25. Hash Tables",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 53,
+      "title": "Universal hashing",
+      "unitTitle": "25. Hash Tables",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 54,
+      "title": "Open addressing",
+      "unitTitle": "25. Hash Tables",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 55,
+      "title": "Linear probing",
+      "unitTitle": "25. Hash Tables",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 56,
+      "title": "Quadratic probing",
+      "unitTitle": "25. Hash Tables",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 57,
+      "title": "Double hashing",
+      "unitTitle": "25. Hash Tables",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 58,
+      "title": "Separate chaining",
+      "unitTitle": "25. Hash Tables",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 59,
+      "title": "Cuckoo hashing",
+      "unitTitle": "25. Hash Tables",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 60,
+      "title": "Robin Hood hashing",
+      "unitTitle": "25. Hash Tables",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 61,
+      "title": "Hopscotch hashing",
+      "unitTitle": "25. Hash Tables",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 62,
+      "title": "Extendible hashing",
+      "unitTitle": "25. Hash Tables",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 63,
+      "title": "Dynamic hashing",
+      "unitTitle": "25. Hash Tables",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 64,
+      "title": "Bloom filter",
+      "unitTitle": "25. Hash Tables",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 65,
+      "title": "Counting Bloom filter",
+      "unitTitle": "25. Hash Tables",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 66,
+      "title": "Cuckoo filter",
+      "unitTitle": "25. Hash Tables",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 67,
+      "title": "HyperLogLog",
+      "unitTitle": "25. Hash Tables",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 68,
+      "title": "Tree Data Structures",
+      "unitTitle": "25. Hash Tables",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 26: Binary Trees
- window.cppUnit26 = {
-  unitId: "26",
-  unitName: "Binary Trees",
-  subunits: [{
-    subunitId: "26.1",
-    subunitName: "Binary Tree Basics",
-    lessons: [
-      { lessonId: "binary-traversal", lessonName: "Binary Tree Traversal", type: "placeholder", difficulty: "beginner", questions: [] },
-      { lessonId: "threaded-binary", lessonName: "Threaded Binary Tree", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "bst", lessonName: "Binary Search Tree", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "balanced-bst", lessonName: "Balanced BST", type: "placeholder", difficulty: "intermediate", questions: [] }
-    ]
-  }, {
-    subunitId: "26.2",
-    subunitName: "Advanced Binary Trees",
-    lessons: [
-      { lessonId: "order-statistic", lessonName: "Order Statistic Tree", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "augmented-trees", lessonName: "Augmented Trees", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
+window.cppUnit26 = {
+  "unitId": "26",
+  "unitName": "26. Binary Trees",
+  "lessons": [
+    {
+      "id": 69,
+      "title": "Binary tree traversal",
+      "unitTitle": "26. Binary Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 70,
+      "title": "Threaded binary tree",
+      "unitTitle": "26. Binary Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 71,
+      "title": "Binary search tree",
+      "unitTitle": "26. Binary Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 72,
+      "title": "Balanced BST",
+      "unitTitle": "26. Binary Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 73,
+      "title": "Order statistic tree",
+      "unitTitle": "26. Binary Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 74,
+      "title": "Augmented trees",
+      "unitTitle": "26. Binary Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 27: Self-Balancing Trees
- window.cppUnit27 = {
-  unitId: "27",
-  unitName: "Self-Balancing Trees",
-  subunits: [{
-    subunitId: "27.1",
-    subunitName: "Rotation-Based Trees",
-    lessons: [
-      { lessonId: "avl", lessonName: "AVL Tree", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "red-black", lessonName: "Red-Black Tree", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "aa-tree", lessonName: "AA Tree", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }, {
-    subunitId: "27.2",
-    subunitName: "Randomized and Adaptive Trees",
-    lessons: [
-      { lessonId: "treap", lessonName: "Treap", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "splay", lessonName: "Splay Tree", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "scapegoat", lessonName: "Scapegoat Tree", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "tango", lessonName: "Tango Tree", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "weight-balanced", lessonName: "Weight-Balanced Tree", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "randomized-bst", lessonName: "Randomized BST", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
+window.cppUnit27 = {
+  "unitId": "27",
+  "unitName": "27. Self-Balancing Trees",
+  "lessons": [
+    {
+      "id": 75,
+      "title": "AVL tree",
+      "unitTitle": "27. Self-Balancing Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 76,
+      "title": "Red-black tree",
+      "unitTitle": "27. Self-Balancing Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 77,
+      "title": "AA tree",
+      "unitTitle": "27. Self-Balancing Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 78,
+      "title": "Treap",
+      "unitTitle": "27. Self-Balancing Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 79,
+      "title": "Splay tree",
+      "unitTitle": "27. Self-Balancing Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 80,
+      "title": "Scapegoat tree",
+      "unitTitle": "27. Self-Balancing Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 81,
+      "title": "Tango tree",
+      "unitTitle": "27. Self-Balancing Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 82,
+      "title": "Weight-balanced tree",
+      "unitTitle": "27. Self-Balancing Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 83,
+      "title": "Randomized BST",
+      "unitTitle": "27. Self-Balancing Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 28: Multiway Trees
- window.cppUnit28 = {
-  unitId: "28",
-  unitName: "Multiway Trees",
-  subunits: [{
-    subunitId: "28.1",
-    subunitName: "B-Tree Variants",
-    lessons: [
-      { lessonId: "b-tree", lessonName: "B-Tree", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "b-plus-tree", lessonName: "B+ Tree", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "b-star-tree", lessonName: "B* Tree", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }, {
-    subunitId: "28.2",
-    subunitName: "2-3 Trees",
-    lessons: [
-      { lessonId: "2-3-tree", lessonName: "2-3 Tree", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "2-3-4-tree", lessonName: "2-3-4 Tree", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }, {
-    subunitId: "28.3",
-    subunitName: "Advanced Multiway Trees",
-    lessons: [
-      { lessonId: "fusion-tree", lessonName: "Fusion Tree", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "cache-oblivious", lessonName: "Cache-Oblivious Tree", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
+window.cppUnit28 = {
+  "unitId": "28",
+  "unitName": "28. Multiway Trees",
+  "lessons": [
+    {
+      "id": 84,
+      "title": "B-tree",
+      "unitTitle": "28. Multiway Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 85,
+      "title": "B+ tree",
+      "unitTitle": "28. Multiway Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 86,
+      "title": "B* tree",
+      "unitTitle": "28. Multiway Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 87,
+      "title": "2-3 tree",
+      "unitTitle": "28. Multiway Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 88,
+      "title": "2-3-4 tree",
+      "unitTitle": "28. Multiway Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 89,
+      "title": "Fusion tree",
+      "unitTitle": "28. Multiway Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 90,
+      "title": "Cache-oblivious tree",
+      "unitTitle": "28. Multiway Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 29: Specialized Trees
- window.cppUnit29 = {
-  unitId: "29",
-  unitName: "Specialized Trees",
-  subunits: [{
-    subunitId: "29.1",
-    subunitName: "Segment Trees",
-    lessons: [
-      { lessonId: "segment-tree", lessonName: "Segment Tree", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "lazy-propagation", lessonName: "Lazy Propagation Segment Tree", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "persistent-segment", lessonName: "Persistent Segment Tree", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "dynamic-segment", lessonName: "Dynamic Segment Tree", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }, {
-    subunitId: "29.2",
-    subunitName: "Range Trees",
-    lessons: [
-      { lessonId: "merge-sort-tree", lessonName: "Merge Sort Tree", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "fenwick", lessonName: "Fenwick Tree (Binary Indexed Tree)", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "range-tree", lessonName: "Range Tree", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "interval-tree", lessonName: "Interval Tree", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }, {
-    subunitId: "29.3",
-    subunitName: "Other Specialized Trees",
-    lessons: [
-      { lessonId: "order-stat-tree", lessonName: "Order Statistic Tree", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "cartesian", lessonName: "Cartesian Tree", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "tournament", lessonName: "Tournament Tree", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
+window.cppUnit29 = {
+  "unitId": "29",
+  "unitName": "29. Specialized Trees",
+  "lessons": [
+    {
+      "id": 91,
+      "title": "Segment tree",
+      "unitTitle": "29. Specialized Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 92,
+      "title": "Lazy propagation segment tree",
+      "unitTitle": "29. Specialized Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 93,
+      "title": "Persistent segment tree",
+      "unitTitle": "29. Specialized Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 94,
+      "title": "Dynamic segment tree",
+      "unitTitle": "29. Specialized Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 95,
+      "title": "Merge sort tree",
+      "unitTitle": "29. Specialized Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 96,
+      "title": "Fenwick tree (Binary Indexed Tree)",
+      "unitTitle": "29. Specialized Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 97,
+      "title": "Range tree",
+      "unitTitle": "29. Specialized Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 98,
+      "title": "Interval tree",
+      "unitTitle": "29. Specialized Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 99,
+      "title": "Order statistic tree",
+      "unitTitle": "29. Specialized Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 100,
+      "title": "Cartesian tree",
+      "unitTitle": "29. Specialized Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 101,
+      "title": "Tournament tree",
+      "unitTitle": "29. Specialized Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 30: String Trees
- window.cppUnit30 = {
-  unitId: "30",
-  unitName: "String Trees",
-  subunits: [{
-    subunitId: "30.1",
-    subunitName: "Trie Structures",
-    lessons: [
-      { lessonId: "trie", lessonName: "Trie", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "compressed-trie", lessonName: "Compressed Trie", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "radix-tree", lessonName: "Radix Tree", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "patricia", lessonName: "Patricia Trie", type: "placeholder", difficulty: "intermediate", questions: [] }
-    ]
-  }, {
-    subunitId: "30.2",
-    subunitName: "Suffix Structures",
-    lessons: [
-      { lessonId: "suffix-tree", lessonName: "Suffix Tree", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "suffix-automaton", lessonName: "Suffix Automaton", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "dawg", lessonName: "DAWG", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "aho-corasick", lessonName: "Aho–Corasick Automaton", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
+window.cppUnit30 = {
+  "unitId": "30",
+  "unitName": "30. String Trees",
+  "lessons": [
+    {
+      "id": 102,
+      "title": "Trie",
+      "unitTitle": "30. String Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 103,
+      "title": "Compressed trie",
+      "unitTitle": "30. String Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 104,
+      "title": "Radix tree",
+      "unitTitle": "30. String Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 105,
+      "title": "Patricia trie",
+      "unitTitle": "30. String Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 106,
+      "title": "Suffix tree",
+      "unitTitle": "30. String Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 107,
+      "title": "Suffix automaton",
+      "unitTitle": "30. String Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 108,
+      "title": "DAWG",
+      "unitTitle": "30. String Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 109,
+      "title": "Aho–Corasick automaton",
+      "unitTitle": "30. String Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 110,
+      "title": "Heaps and Priority Structures",
+      "unitTitle": "30. String Trees",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 31: Heap Structures
- window.cppUnit31 = {
-  unitId: "31",
-  unitName: "Heap Structures",
-  subunits: [{
-    subunitId: "31.1",
-    subunitName: "Binary Heaps",
-    lessons: [
-      { lessonId: "binary-heap", lessonName: "Binary Heap", type: "placeholder", difficulty: "beginner", questions: [] },
-      { lessonId: "d-ary-heap", lessonName: "d-ary Heap", type: "placeholder", difficulty: "intermediate", questions: [] }
-    ]
-  }, {
-    subunitId: "31.2",
-    subunitName: "Advanced Heaps",
-    lessons: [
-      { lessonId: "binomial", lessonName: "Binomial Heap", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "fibonacci", lessonName: "Fibonacci Heap", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "pairing", lessonName: "Pairing Heap", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "skew", lessonName: "Skew Heap", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "leftist", lessonName: "Leftist Heap", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "soft", lessonName: "Soft Heap", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "brodal", lessonName: "Brodal Queue", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
+window.cppUnit31 = {
+  "unitId": "31",
+  "unitName": "31. Heap Structures",
+  "lessons": [
+    {
+      "id": 111,
+      "title": "Binary heap",
+      "unitTitle": "31. Heap Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 112,
+      "title": "d-ary heap",
+      "unitTitle": "31. Heap Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 113,
+      "title": "Binomial heap",
+      "unitTitle": "31. Heap Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 114,
+      "title": "Fibonacci heap",
+      "unitTitle": "31. Heap Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 115,
+      "title": "Pairing heap",
+      "unitTitle": "31. Heap Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 116,
+      "title": "Skew heap",
+      "unitTitle": "31. Heap Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 117,
+      "title": "Leftist heap",
+      "unitTitle": "31. Heap Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 118,
+      "title": "Soft heap",
+      "unitTitle": "31. Heap Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 119,
+      "title": "Brodal queue",
+      "unitTitle": "31. Heap Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 120,
+      "title": "Graph Data Structures",
+      "unitTitle": "31. Heap Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 32: Graph Representations
- window.cppUnit32 = {
-  unitId: "32",
-  unitName: "Graph Representations",
-  subunits: [{
-    subunitId: "32.1",
-    subunitName: "Basic Representations",
-    lessons: [
-      { lessonId: "adjacency-matrix", lessonName: "Adjacency Matrix", type: "placeholder", difficulty: "beginner", questions: [] },
-      { lessonId: "adjacency-list", lessonName: "Adjacency List", type: "placeholder", difficulty: "beginner", questions: [] },
-      { lessonId: "edge-list", lessonName: "Edge List", type: "placeholder", difficulty: "beginner", questions: [] }
-    ]
-  }, {
-    subunitId: "32.2",
-    subunitName: "Advanced Representations",
-    lessons: [
-      { lessonId: "incidence-matrix", lessonName: "Incidence Matrix", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "csr", lessonName: "Compressed Sparse Row", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "csc", lessonName: "Compressed Sparse Column", type: "placeholder", difficulty: "intermediate", questions: [] }
-    ]
-  }]
+window.cppUnit32 = {
+  "unitId": "32",
+  "unitName": "32. Graph Representations",
+  "lessons": [
+    {
+      "id": 121,
+      "title": "Adjacency matrix",
+      "unitTitle": "32. Graph Representations",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 122,
+      "title": "Adjacency list",
+      "unitTitle": "32. Graph Representations",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 123,
+      "title": "Edge list",
+      "unitTitle": "32. Graph Representations",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 124,
+      "title": "Incidence matrix",
+      "unitTitle": "32. Graph Representations",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 125,
+      "title": "Compressed sparse row",
+      "unitTitle": "32. Graph Representations",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 126,
+      "title": "Compressed sparse column",
+      "unitTitle": "32. Graph Representations",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 33: Graph Traversal
- window.cppUnit33 = {
-  unitId: "33",
-  unitName: "Graph Traversal",
-  subunits: [{
-    subunitId: "33.1",
-    subunitName: "Basic Traversal",
-    lessons: [
-      { lessonId: "bfs", lessonName: "Breadth-First Search", type: "placeholder", difficulty: "beginner", questions: [] },
-      { lessonId: "dfs", lessonName: "Depth-First Search", type: "placeholder", difficulty: "beginner", questions: [] }
-    ]
-  }, {
-    subunitId: "33.2",
-    subunitName: "Advanced Traversal",
-    lessons: [
-      { lessonId: "iterative-deepening", lessonName: "Iterative Deepening DFS", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "bidirectional", lessonName: "Bidirectional Search", type: "placeholder", difficulty: "intermediate", questions: [] }
-    ]
-  }]
+window.cppUnit33 = {
+  "unitId": "33",
+  "unitName": "33. Graph Traversal",
+  "lessons": [
+    {
+      "id": 127,
+      "title": "Breadth-first search",
+      "unitTitle": "33. Graph Traversal",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 128,
+      "title": "Depth-first search",
+      "unitTitle": "33. Graph Traversal",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 129,
+      "title": "Iterative deepening DFS",
+      "unitTitle": "33. Graph Traversal",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 130,
+      "title": "Bidirectional search",
+      "unitTitle": "33. Graph Traversal",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 131,
+      "title": "Graph Algorithms",
+      "unitTitle": "33. Graph Traversal",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 34: Connectivity
- window.cppUnit34 = {
-  unitId: "34",
-  unitName: "Connectivity",
-  subunits: [{
-    subunitId: "34.1",
-    subunitName: "Components",
-    lessons: [
-      { lessonId: "connected-components", lessonName: "Connected Components", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "strongly-connected", lessonName: "Strongly Connected Components", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }, {
-    subunitId: "34.2",
-    subunitName: "SCC Algorithms",
-    lessons: [
-      { lessonId: "kosaraju", lessonName: "Kosaraju Algorithm", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "tarjan", lessonName: "Tarjan Algorithm", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }, {
-    subunitId: "34.3",
-    subunitName: "Bridges and Articulation Points",
-    lessons: [
-      { lessonId: "bridge-finding", lessonName: "Bridge Finding", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "articulation-points", lessonName: "Articulation Points", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "biconnected", lessonName: "Biconnected Components", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
+window.cppUnit34 = {
+  "unitId": "34",
+  "unitName": "34. Connectivity",
+  "lessons": [
+    {
+      "id": 132,
+      "title": "Connected components",
+      "unitTitle": "34. Connectivity",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 133,
+      "title": "Strongly connected components",
+      "unitTitle": "34. Connectivity",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 134,
+      "title": "Kosaraju algorithm",
+      "unitTitle": "34. Connectivity",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 135,
+      "title": "Tarjan algorithm",
+      "unitTitle": "34. Connectivity",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 136,
+      "title": "Bridge finding",
+      "unitTitle": "34. Connectivity",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 137,
+      "title": "Articulation points",
+      "unitTitle": "34. Connectivity",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 138,
+      "title": "Biconnected components",
+      "unitTitle": "34. Connectivity",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 35: Shortest Path
- window.cppUnit35 = {
-  unitId: "35",
-  unitName: "Shortest Path",
-  subunits: [{
-    subunitId: "35.1",
-    subunitName: "Basic Shortest Path",
-    lessons: [
-      { lessonId: "dijkstra", lessonName: "Dijkstra Algorithm", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "bellman-ford", lessonName: "Bellman–Ford", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "floyd-warshall", lessonName: "Floyd–Warshall", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "johnson", lessonName: "Johnson Algorithm", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }, {
-    subunitId: "35.2",
-    subunitName: "Specialized Shortest Path",
-    lessons: [
-      { lessonId: "a-star", lessonName: "A* Search", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "dial", lessonName: "Dial's Algorithm", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "spfa", lessonName: "SPFA", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "multi-source-bfs", lessonName: "Multi-Source BFS", type: "placeholder", difficulty: "intermediate", questions: [] }
-    ]
-  }]
+window.cppUnit35 = {
+  "unitId": "35",
+  "unitName": "35. Shortest Path",
+  "lessons": [
+    {
+      "id": 139,
+      "title": "Dijkstra algorithm",
+      "unitTitle": "35. Shortest Path",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 140,
+      "title": "Bellman–Ford",
+      "unitTitle": "35. Shortest Path",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 141,
+      "title": "Floyd–Warshall",
+      "unitTitle": "35. Shortest Path",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 142,
+      "title": "Johnson algorithm",
+      "unitTitle": "35. Shortest Path",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 143,
+      "title": "A* search",
+      "unitTitle": "35. Shortest Path",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 144,
+      "title": "Dial’s algorithm",
+      "unitTitle": "35. Shortest Path",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 145,
+      "title": "SPFA",
+      "unitTitle": "35. Shortest Path",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 146,
+      "title": "Multi-source BFS",
+      "unitTitle": "35. Shortest Path",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 36: Minimum Spanning Tree
- window.cppUnit36 = {
-  unitId: "36",
-  unitName: "Minimum Spanning Tree",
-  subunits: [{
-    subunitId: "36.1",
-    subunitName: "MST Algorithms",
-    lessons: [
-      { lessonId: "kruskal", lessonName: "Kruskal Algorithm", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "prim", lessonName: "Prim Algorithm", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "boruvka", lessonName: "Borůvka Algorithm", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "reverse-delete", lessonName: "Reverse-Delete Algorithm", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
+window.cppUnit36 = {
+  "unitId": "36",
+  "unitName": "36. Minimum Spanning Tree",
+  "lessons": [
+    {
+      "id": 147,
+      "title": "Kruskal algorithm",
+      "unitTitle": "36. Minimum Spanning Tree",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 148,
+      "title": "Prim algorithm",
+      "unitTitle": "36. Minimum Spanning Tree",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 149,
+      "title": "Borůvka algorithm",
+      "unitTitle": "36. Minimum Spanning Tree",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 150,
+      "title": "Reverse-delete algorithm",
+      "unitTitle": "36. Minimum Spanning Tree",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 37: Flow Algorithms
- window.cppUnit37 = {
-  unitId: "37",
-  unitName: "Flow Algorithms",
-  subunits: [{
-    subunitId: "37.1",
-    subunitName: "Max Flow",
-    lessons: [
-      { lessonId: "ford-fulkerson", lessonName: "Ford–Fulkerson", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "edmonds-karp", lessonName: "Edmonds–Karp", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "dinic", lessonName: "Dinic Algorithm", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "push-relabel", lessonName: "Push-Relabel", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }, {
-    subunitId: "37.2",
-    subunitName: "Advanced Flow",
-    lessons: [
-      { lessonId: "min-cost", lessonName: "Min-Cost Max-Flow", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "circulation", lessonName: "Circulation with Demands", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
+window.cppUnit37 = {
+  "unitId": "37",
+  "unitName": "37. Flow Algorithms",
+  "lessons": [
+    {
+      "id": 151,
+      "title": "Ford–Fulkerson",
+      "unitTitle": "37. Flow Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 152,
+      "title": "Edmonds–Karp",
+      "unitTitle": "37. Flow Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 153,
+      "title": "Dinic algorithm",
+      "unitTitle": "37. Flow Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 154,
+      "title": "Push-relabel",
+      "unitTitle": "37. Flow Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 155,
+      "title": "Min-cost max-flow",
+      "unitTitle": "37. Flow Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 156,
+      "title": "Circulation with demands",
+      "unitTitle": "37. Flow Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 38: Matching Algorithms
- window.cppUnit38 = {
-  unitId: "38",
-  unitName: "Matching Algorithms",
-  subunits: [{
-    subunitId: "38.1",
-    subunitName: "Bipartite Matching",
-    lessons: [
-      { lessonId: "bipartite-matching", lessonName: "Bipartite Matching", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "hungarian", lessonName: "Hungarian Algorithm", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "hopcroft-karp", lessonName: "Hopcroft–Karp", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }, {
-    subunitId: "38.2",
-    subunitName: "General Matching",
-    lessons: [
-      { lessonId: "blossom", lessonName: "Blossom Algorithm", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
+window.cppUnit38 = {
+  "unitId": "38",
+  "unitName": "38. Matching Algorithms",
+  "lessons": [
+    {
+      "id": 157,
+      "title": "Bipartite matching",
+      "unitTitle": "38. Matching Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 158,
+      "title": "Hungarian algorithm",
+      "unitTitle": "38. Matching Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 159,
+      "title": "Hopcroft–Karp",
+      "unitTitle": "38. Matching Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 160,
+      "title": "Blossom algorithm",
+      "unitTitle": "38. Matching Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 39: Graph Theory Algorithms
- window.cppUnit39 = {
-  unitId: "39",
-  unitName: "Graph Theory Algorithms",
-  subunits: [{
-    subunitId: "39.1",
-    subunitName: "Graph Properties",
-    lessons: [
-      { lessonId: "topological-sort", lessonName: "Topological Sorting", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "transitive-closure", lessonName: "Transitive Closure", type: "placeholder", difficulty: "intermediate", questions: [] }
-    ]
-  }, {
-    subunitId: "39.2",
-    subunitName: "Paths and Coloring",
-    lessons: [
-      { lessonId: "eulerian", lessonName: "Eulerian Paths", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "hamiltonian", lessonName: "Hamiltonian Paths", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "graph-coloring", lessonName: "Graph Coloring", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "planarity", lessonName: "Planarity Testing", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
+window.cppUnit39 = {
+  "unitId": "39",
+  "unitName": "39. Graph Theory Algorithms",
+  "lessons": [
+    {
+      "id": 161,
+      "title": "Topological sorting",
+      "unitTitle": "39. Graph Theory Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 162,
+      "title": "Transitive closure",
+      "unitTitle": "39. Graph Theory Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 163,
+      "title": "Eulerian paths",
+      "unitTitle": "39. Graph Theory Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 164,
+      "title": "Hamiltonian paths",
+      "unitTitle": "39. Graph Theory Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 165,
+      "title": "Graph coloring",
+      "unitTitle": "39. Graph Theory Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 166,
+      "title": "Planarity testing",
+      "unitTitle": "39. Graph Theory Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 167,
+      "title": "String Algorithms",
+      "unitTitle": "39. Graph Theory Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 40: Pattern Matching
- window.cppUnit40 = {
-  unitId: "40",
-  unitName: "Pattern Matching",
-  subunits: [{
-    subunitId: "40.1",
-    subunitName: "String Matching",
-    lessons: [
-      { lessonId: "naive-search", lessonName: "Naive Search", type: "placeholder", difficulty: "beginner", questions: [] },
-      { lessonId: "kmp", lessonName: "Knuth–Morris–Pratt", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "boyer-moore", lessonName: "Boyer–Moore", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "rabin-karp", lessonName: "Rabin–Karp", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "z-algorithm", lessonName: "Z-Algorithm", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "aho-corasick-string", lessonName: "Aho–Corasick", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
+window.cppUnit40 = {
+  "unitId": "40",
+  "unitName": "40. Pattern Matching",
+  "lessons": [
+    {
+      "id": 168,
+      "title": "Naive search",
+      "unitTitle": "40. Pattern Matching",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 169,
+      "title": "Knuth–Morris–Pratt",
+      "unitTitle": "40. Pattern Matching",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 170,
+      "title": "Boyer–Moore",
+      "unitTitle": "40. Pattern Matching",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 171,
+      "title": "Rabin–Karp",
+      "unitTitle": "40. Pattern Matching",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 172,
+      "title": "Z-algorithm",
+      "unitTitle": "40. Pattern Matching",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 173,
+      "title": "Aho–Corasick",
+      "unitTitle": "40. Pattern Matching",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 41: String Processing
- window.cppUnit41 = {
-  unitId: "41",
-  unitName: "String Processing",
-  subunits: [{
-    subunitId: "41.1",
-    subunitName: "String Operations",
-    lessons: [
-      { lessonId: "lcp", lessonName: "Longest Common Prefix", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "lrs", lessonName: "Longest Repeated Substring", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "suffix-arrays", lessonName: "Suffix Arrays", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "lcp-arrays", lessonName: "LCP Arrays", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "bwt", lessonName: "Burrows–Wheeler Transform", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
+window.cppUnit41 = {
+  "unitId": "41",
+  "unitName": "41. String Processing",
+  "lessons": [
+    {
+      "id": 174,
+      "title": "Longest common prefix",
+      "unitTitle": "41. String Processing",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 175,
+      "title": "Longest repeated substring",
+      "unitTitle": "41. String Processing",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 176,
+      "title": "Suffix arrays",
+      "unitTitle": "41. String Processing",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 177,
+      "title": "LCP arrays",
+      "unitTitle": "41. String Processing",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 178,
+      "title": "Burrows–Wheeler transform",
+      "unitTitle": "41. String Processing",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 179,
+      "title": "Range Query Structures",
+      "unitTitle": "41. String Processing",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 42: Range Query Techniques
- window.cppUnit42 = {
-  unitId: "42",
-  unitName: "Range Query Techniques",
-  subunits: [{
-    subunitId: "42.1",
-    subunitName: "Basic Range Queries",
-    lessons: [
-      { lessonId: "prefix-sums", lessonName: "Prefix Sums", type: "placeholder", difficulty: "beginner", questions: [] },
-      { lessonId: "difference-arrays", lessonName: "Difference Arrays", type: "placeholder", difficulty: "intermediate", questions: [] }
-    ]
-  }, {
-    subunitId: "42.2",
-    subunitName: "Advanced Range Queries",
-    lessons: [
-      { lessonId: "sparse-tables", lessonName: "Sparse Tables", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "segment-trees-rq", lessonName: "Segment Trees", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "fenwick-rq", lessonName: "Fenwick Trees", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "mo-algorithm", lessonName: "Mo's Algorithm", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "wavelet-tree", lessonName: "Wavelet Tree", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
+window.cppUnit42 = {
+  "unitId": "42",
+  "unitName": "42. Range Query Techniques",
+  "lessons": [
+    {
+      "id": 180,
+      "title": "Prefix sums",
+      "unitTitle": "42. Range Query Techniques",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 181,
+      "title": "Difference arrays",
+      "unitTitle": "42. Range Query Techniques",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 182,
+      "title": "Sparse tables",
+      "unitTitle": "42. Range Query Techniques",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 183,
+      "title": "Segment trees",
+      "unitTitle": "42. Range Query Techniques",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 184,
+      "title": "Fenwick trees",
+      "unitTitle": "42. Range Query Techniques",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 185,
+      "title": "Mo’s algorithm",
+      "unitTitle": "42. Range Query Techniques",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 186,
+      "title": "Wavelet tree",
+      "unitTitle": "42. Range Query Techniques",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 187,
+      "title": "Dynamic Programming",
+      "unitTitle": "42. Range Query Techniques",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 43: Core DP
- window.cppUnit43 = {
-  unitId: "43",
-  unitName: "Core Dynamic Programming",
-  subunits: [{
-    subunitId: "43.1",
-    subunitName: "DP Basics",
-    lessons: [
-      { lessonId: "memoization", lessonName: "Memoization", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "tabulation", lessonName: "Tabulation", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "bitmask-dp", lessonName: "Bitmask DP", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }, {
-    subunitId: "43.2",
-    subunitName: "DP on Structures",
-    lessons: [
-      { lessonId: "tree-dp", lessonName: "Tree DP", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "digit-dp", lessonName: "Digit DP", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "interval-dp", lessonName: "Interval DP", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "dp-graphs", lessonName: "DP on Graphs", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
+window.cppUnit43 = {
+  "unitId": "43",
+  "unitName": "43. Core DP",
+  "lessons": [
+    {
+      "id": 188,
+      "title": "Memoization",
+      "unitTitle": "43. Core DP",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 189,
+      "title": "Tabulation",
+      "unitTitle": "43. Core DP",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 190,
+      "title": "Bitmask DP",
+      "unitTitle": "43. Core DP",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 191,
+      "title": "Tree DP",
+      "unitTitle": "43. Core DP",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 192,
+      "title": "Digit DP",
+      "unitTitle": "43. Core DP",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 193,
+      "title": "Interval DP",
+      "unitTitle": "43. Core DP",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 194,
+      "title": "DP on graphs",
+      "unitTitle": "43. Core DP",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 44: Advanced DP Optimizations
- window.cppUnit44 = {
-  unitId: "44",
-  unitName: "Advanced DP Optimizations",
-  subunits: [{
-    subunitId: "44.1",
-    subunitName: "Optimization Techniques",
-    lessons: [
-      { lessonId: "divide-conquer-dp", lessonName: "Divide and Conquer DP", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "knuth-optimization", lessonName: "Knuth Optimization", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "convex-hull", lessonName: "Convex Hull Trick", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "li-chao", lessonName: "Li Chao Tree", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }, {
-    subunitId: "44.2",
-    subunitName: "Specialized Optimizations",
-    lessons: [
-      { lessonId: "monotonic-queue", lessonName: "Monotonic Queue Optimization", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "alien-trick", lessonName: "Alien Trick", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "smawk", lessonName: "SMAWK Algorithm", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
+window.cppUnit44 = {
+  "unitId": "44",
+  "unitName": "44. Advanced DP Optimizations",
+  "lessons": [
+    {
+      "id": 195,
+      "title": "Divide and conquer DP",
+      "unitTitle": "44. Advanced DP Optimizations",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 196,
+      "title": "Knuth optimization",
+      "unitTitle": "44. Advanced DP Optimizations",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 197,
+      "title": "Convex hull trick",
+      "unitTitle": "44. Advanced DP Optimizations",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 198,
+      "title": "Li Chao tree",
+      "unitTitle": "44. Advanced DP Optimizations",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 199,
+      "title": "Monotonic queue optimization",
+      "unitTitle": "44. Advanced DP Optimizations",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 200,
+      "title": "Alien trick",
+      "unitTitle": "44. Advanced DP Optimizations",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 201,
+      "title": "SMAWK algorithm",
+      "unitTitle": "44. Advanced DP Optimizations",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 202,
+      "title": "Greedy Algorithms",
+      "unitTitle": "44. Advanced DP Optimizations",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 203,
+      "title": "Activity selection",
+      "unitTitle": "44. Advanced DP Optimizations",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 204,
+      "title": "Huffman coding",
+      "unitTitle": "44. Advanced DP Optimizations",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 205,
+      "title": "Interval scheduling",
+      "unitTitle": "44. Advanced DP Optimizations",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 206,
+      "title": "Matroid theory",
+      "unitTitle": "44. Advanced DP Optimizations",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 207,
+      "title": "Divide and Conquer",
+      "unitTitle": "44. Advanced DP Optimizations",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 208,
+      "title": "Binary search",
+      "unitTitle": "44. Advanced DP Optimizations",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 209,
+      "title": "Merge sort",
+      "unitTitle": "44. Advanced DP Optimizations",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 210,
+      "title": "Quick sort",
+      "unitTitle": "44. Advanced DP Optimizations",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 211,
+      "title": "Karatsuba multiplication",
+      "unitTitle": "44. Advanced DP Optimizations",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 212,
+      "title": "Strassen algorithm",
+      "unitTitle": "44. Advanced DP Optimizations",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 213,
+      "title": "FFT",
+      "unitTitle": "44. Advanced DP Optimizations",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 214,
+      "title": "NTT",
+      "unitTitle": "44. Advanced DP Optimizations",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 215,
+      "title": "Computational Geometry",
+      "unitTitle": "44. Advanced DP Optimizations",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 45: Greedy Algorithms
- window.cppUnit45 = {
-  unitId: "45",
-  unitName: "Greedy Algorithms",
-  subunits: [{
-    subunitId: "45.1",
-    subunitName: "Classic Greedy",
-    lessons: [
-      { lessonId: "activity-selection", lessonName: "Activity Selection", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "huffman", lessonName: "Huffman Coding", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "interval-scheduling", lessonName: "Interval Scheduling", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "matroid", lessonName: "Matroid Theory", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
+window.cppUnit45 = {
+  "unitId": "45",
+  "unitName": "45. Geometry Structures",
+  "lessons": [
+    {
+      "id": 216,
+      "title": "KD-tree",
+      "unitTitle": "45. Geometry Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 217,
+      "title": "Range tree",
+      "unitTitle": "45. Geometry Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 218,
+      "title": "BSP tree",
+      "unitTitle": "45. Geometry Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 219,
+      "title": "Quad tree",
+      "unitTitle": "45. Geometry Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 220,
+      "title": "R-tree",
+      "unitTitle": "45. Geometry Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 46: Divide and Conquer
- window.cppUnit46 = {
-  unitId: "46",
-  unitName: "Divide and Conquer",
-  subunits: [{
-    subunitId: "46.1",
-    subunitName: "Classic D&C",
-    lessons: [
-      { lessonId: "binary-search", lessonName: "Binary Search", type: "placeholder", difficulty: "beginner", questions: [] },
-      { lessonId: "merge-sort", lessonName: "Merge Sort", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "quick-sort", lessonName: "Quick Sort", type: "placeholder", difficulty: "intermediate", questions: [] }
-    ]
-  }, {
-    subunitId: "46.2",
-    subunitName: "Advanced D&C",
-    lessons: [
-      { lessonId: "karatsuba", lessonName: "Karatsuba Multiplication", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "strassen", lessonName: "Strassen Algorithm", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "fft", lessonName: "FFT", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "ntt", lessonName: "NTT", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
+window.cppUnit46 = {
+  "unitId": "46",
+  "unitName": "46. Geometry Algorithms",
+  "lessons": [
+    {
+      "id": 221,
+      "title": "Convex hull",
+      "unitTitle": "46. Geometry Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 222,
+      "title": "Graham scan",
+      "unitTitle": "46. Geometry Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 223,
+      "title": "Jarvis march",
+      "unitTitle": "46. Geometry Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 224,
+      "title": "Line sweep",
+      "unitTitle": "46. Geometry Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 225,
+      "title": "Closest pair of points",
+      "unitTitle": "46. Geometry Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 226,
+      "title": "Delaunay triangulation",
+      "unitTitle": "46. Geometry Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 227,
+      "title": "Voronoi diagrams",
+      "unitTitle": "46. Geometry Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 228,
+      "title": "Randomized Algorithms",
+      "unitTitle": "46. Geometry Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 229,
+      "title": "Randomized quicksort",
+      "unitTitle": "46. Geometry Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 230,
+      "title": "Randomized selection",
+      "unitTitle": "46. Geometry Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 231,
+      "title": "Reservoir sampling",
+      "unitTitle": "46. Geometry Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 232,
+      "title": "Skip lists",
+      "unitTitle": "46. Geometry Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 233,
+      "title": "Monte Carlo algorithms",
+      "unitTitle": "46. Geometry Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 234,
+      "title": "Las Vegas algorithms",
+      "unitTitle": "46. Geometry Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 235,
+      "title": "Approximation Algorithms",
+      "unitTitle": "46. Geometry Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 236,
+      "title": "Greedy approximation",
+      "unitTitle": "46. Geometry Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 237,
+      "title": "Local search",
+      "unitTitle": "46. Geometry Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 238,
+      "title": "PTAS",
+      "unitTitle": "46. Geometry Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 239,
+      "title": "FPTAS",
+      "unitTitle": "46. Geometry Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 240,
+      "title": "Advanced Topics",
+      "unitTitle": "46. Geometry Algorithms",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 47: Computational Geometry
- window.cppUnit47 = {
-  unitId: "47",
-  unitName: "Computational Geometry",
-  subunits: [{
-    subunitId: "47.1",
-    subunitName: "Geometry Structures",
-    lessons: [
-      { lessonId: "kd-tree", lessonName: "KD-Tree", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "range-tree-geom", lessonName: "Range Tree", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "bsp-tree", lessonName: "BSP Tree", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "quad-tree", lessonName: "Quad Tree", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "r-tree", lessonName: "R-Tree", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }, {
-    subunitId: "47.2",
-    subunitName: "Geometry Algorithms",
-    lessons: [
-      { lessonId: "convex-hull", lessonName: "Convex Hull", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "graham-scan", lessonName: "Graham Scan", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "jarvis", lessonName: "Jarvis March", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "line-sweep", lessonName: "Line Sweep", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "closest-pair", lessonName: "Closest Pair of Points", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "delaunay", lessonName: "Delaunay Triangulation", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "voronoi", lessonName: "Voronoi Diagrams", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
+window.cppUnit47 = {
+  "unitId": "47",
+  "unitName": "47. Advanced Data Structures",
+  "lessons": [
+    {
+      "id": 241,
+      "title": "Persistent data structures",
+      "unitTitle": "47. Advanced Data Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 242,
+      "title": "Retroactive data structures",
+      "unitTitle": "47. Advanced Data Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 243,
+      "title": "Functional data structures",
+      "unitTitle": "47. Advanced Data Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 244,
+      "title": "Succinct data structures",
+      "unitTitle": "47. Advanced Data Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 245,
+      "title": "Compressed data structures",
+      "unitTitle": "47. Advanced Data Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 48: Randomized Algorithms
- window.cppUnit48 = {
-  unitId: "48",
-  unitName: "Randomized Algorithms",
-  subunits: [{
-    subunitId: "48.1",
-    subunitName: "Basic Randomization",
-    lessons: [
-      { lessonId: "randomized-quicksort", lessonName: "Randomized Quicksort", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "randomized-selection", lessonName: "Randomized Selection", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "reservoir", lessonName: "Reservoir Sampling", type: "placeholder", difficulty: "intermediate", questions: [] }
-    ]
-  }, {
-    subunitId: "48.2",
-    subunitName: "Randomized Structures",
-    lessons: [
-      { lessonId: "skip-lists-rand", lessonName: "Skip Lists", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }, {
-    subunitId: "48.3",
-    subunitName: "Paradigms",
-    lessons: [
-      { lessonId: "monte-carlo", lessonName: "Monte Carlo Algorithms", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "las-vegas", lessonName: "Las Vegas Algorithms", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
+window.cppUnit48 = {
+  "unitId": "48",
+  "unitName": "48. Advanced Graph Theory",
+  "lessons": [
+    {
+      "id": 246,
+      "title": "Tree decomposition",
+      "unitTitle": "48. Advanced Graph Theory",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 247,
+      "title": "Centroid decomposition",
+      "unitTitle": "48. Advanced Graph Theory",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 248,
+      "title": "Heavy-light decomposition",
+      "unitTitle": "48. Advanced Graph Theory",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 249,
+      "title": "Dynamic connectivity",
+      "unitTitle": "48. Advanced Graph Theory",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 250,
+      "title": "Link-cut trees",
+      "unitTitle": "48. Advanced Graph Theory",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 251,
+      "title": "Euler tour trees",
+      "unitTitle": "48. Advanced Graph Theory",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 49: Approximation Algorithms
- window.cppUnit49 = {
-  unitId: "49",
-  unitName: "Approximation Algorithms",
-  subunits: [{
-    subunitId: "49.1",
-    subunitName: "Approximation Techniques",
-    lessons: [
-      { lessonId: "greedy-approx", lessonName: "Greedy Approximation", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "local-search", lessonName: "Local Search", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "ptas", lessonName: "PTAS", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "fptas", lessonName: "FPTAS", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
+window.cppUnit49 = {
+  "unitId": "49",
+  "unitName": "49. Advanced String Structures",
+  "lessons": [
+    {
+      "id": 252,
+      "title": "Palindromic tree (Eertree)",
+      "unitTitle": "49. Advanced String Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 253,
+      "title": "Rope",
+      "unitTitle": "49. Advanced String Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 254,
+      "title": "Piece table",
+      "unitTitle": "49. Advanced String Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 255,
+      "title": "Gap buffer",
+      "unitTitle": "49. Advanced String Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 256,
+      "title": "Parallel and External Algorithms",
+      "unitTitle": "49. Advanced String Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 257,
+      "title": "Parallel prefix sum",
+      "unitTitle": "49. Advanced String Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 258,
+      "title": "Parallel BFS",
+      "unitTitle": "49. Advanced String Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 259,
+      "title": "External merge sort",
+      "unitTitle": "49. Advanced String Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 260,
+      "title": "Cache-oblivious algorithms",
+      "unitTitle": "49. Advanced String Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 261,
+      "title": "Specialized Algorithmic Paradigms",
+      "unitTitle": "49. Advanced String Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 262,
+      "title": "Branch and bound",
+      "unitTitle": "49. Advanced String Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 263,
+      "title": "Meet in the middle",
+      "unitTitle": "49. Advanced String Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 264,
+      "title": "Backtracking",
+      "unitTitle": "49. Advanced String Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 265,
+      "title": "Simulated annealing",
+      "unitTitle": "49. Advanced String Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    },
+    {
+      "id": 266,
+      "title": "Genetic algorithms",
+      "unitTitle": "49. Advanced String Structures",
+      "xp": 15,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": []
+    }
+  ]
 };
 
-// Unit 50: Advanced Data Structures
- window.cppUnit50 = {
-  unitId: "50",
-  unitName: "Advanced Data Structures",
-  subunits: [{
-    subunitId: "50.1",
-    subunitName: "Persistent Structures",
-    lessons: [
-      { lessonId: "persistent-ds", lessonName: "Persistent Data Structures", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "retroactive", lessonName: "Retroactive Data Structures", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "functional", lessonName: "Functional Data Structures", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }, {
-    subunitId: "50.2",
-    subunitName: "Compressed Structures",
-    lessons: [
-      { lessonId: "succinct", lessonName: "Succinct Data Structures", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "compressed", lessonName: "Compressed Data Structures", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
-};
-
-// Unit 51: Advanced Graph Theory
- window.cppUnit51 = {
-  unitId: "51",
-  unitName: "Advanced Graph Theory",
-  subunits: [{
-    subunitId: "51.1",
-    subunitName: "Tree Decompositions",
-    lessons: [
-      { lessonId: "tree-decomposition", lessonName: "Tree Decomposition", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "centroid", lessonName: "Centroid Decomposition", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "heavy-light", lessonName: "Heavy-Light Decomposition", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }, {
-    subunitId: "51.2",
-    subunitName: "Dynamic Graphs",
-    lessons: [
-      { lessonId: "dynamic-connectivity", lessonName: "Dynamic Connectivity", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "link-cut", lessonName: "Link-Cut Trees", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "euler-tour", lessonName: "Euler Tour Trees", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
-};
-
-// Unit 52: Advanced String Structures
- window.cppUnit52 = {
-  unitId: "52",
-  unitName: "Advanced String Structures",
-  subunits: [{
-    subunitId: "52.1",
-    subunitName: "Advanced String Data Structures",
-    lessons: [
-      { lessonId: "eertree", lessonName: "Palindromic Tree (Eertree)", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "rope", lessonName: "Rope", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "piece-table", lessonName: "Piece Table", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "gap-buffer", lessonName: "Gap Buffer", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
-};
-
-// Unit 53: Parallel and External Algorithms
- window.cppUnit53 = {
-  unitId: "53",
-  unitName: "Parallel and External Algorithms",
-  subunits: [{
-    subunitId: "53.1",
-    subunitName: "Parallel Algorithms",
-    lessons: [
-      { lessonId: "parallel-prefix", lessonName: "Parallel Prefix Sum", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "parallel-bfs", lessonName: "Parallel BFS", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }, {
-    subunitId: "53.2",
-    subunitName: "External Memory",
-    lessons: [
-      { lessonId: "external-merge", lessonName: "External Merge Sort", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "cache-oblivious-alg", lessonName: "Cache-Oblivious Algorithms", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
-};
-
-// Unit 54: Specialized Algorithmic Paradigms
- window.cppUnit54 = {
-  unitId: "54",
-  unitName: "Specialized Algorithmic Paradigms",
-  subunits: [{
-    subunitId: "54.1",
-    subunitName: "Search Paradigms",
-    lessons: [
-      { lessonId: "branch-bound", lessonName: "Branch and Bound", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "meet-middle", lessonName: "Meet in the Middle", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }, {
-    subunitId: "54.2",
-    subunitName: "Optimization Paradigms",
-    lessons: [
-      { lessonId: "backtracking", lessonName: "Backtracking", type: "placeholder", difficulty: "intermediate", questions: [] },
-      { lessonId: "simulated-annealing", lessonName: "Simulated Annealing", type: "placeholder", difficulty: "advanced", questions: [] },
-      { lessonId: "genetic", lessonName: "Genetic Algorithms", type: "placeholder", difficulty: "advanced", questions: [] }
-    ]
-  }]
-};
