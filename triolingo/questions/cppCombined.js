@@ -76,48 +76,339 @@ window.cppCombined = {
         },
         {
           "id": "1-2",
-          "title": "C++ Compilation Model (Source → Object → Linking)",
-          "unitTitle": "1. C++ Environment and Language Basics",
-          "xp": 15,
+          "title": "Variables and Data Types",
+          "xp": 88,
           "type": "lesson",
           "difficulty": "beginner",
-          "questions": []
+          "lessonText": "# Variables and Data Types in C++\n\nVariables are containers for storing data values. Each variable has a specific data type that determines what kind of data it can hold.\n\n## Declaring Variables\n\n```cpp\ntype variableName = value;\n```\n\n**Examples:**\n```cpp\nint age = 25;\ndouble price = 19.99;\nchar grade = 'A';\nbool passed = true;\n```\n\n## Basic Data Types\n\n- `int`: Whole numbers (e.g., 42, -10)\n- `double`: Decimal numbers (e.g., 3.14, -0.5)\n- `char`: Single character (e.g., 'A', '7')\n- `bool`: true or false\n- `std::string`: Text (requires #include <string>)",
+          "questions": [
+            {
+              "id": "cpp-1-2-1",
+              "type": "typing",
+              "question": "What data type stores whole numbers?",
+              "correctAnswer": [
+                "int",
+                "integer"
+              ],
+              "explanation": "The int type is used to store whole numbers (integers) in C++.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-1-2-2",
+              "type": "typing",
+              "question": "What data type stores decimal numbers?",
+              "correctAnswer": [
+                "double"
+              ],
+              "explanation": "double is used for decimal numbers with high precision.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-1-2-3",
+              "type": "code",
+              "question": "Declare an integer variable named 'count' and set it to 5.",
+              "codeTemplate": "#include <iostream>\n\nint main() {\n    // Declare count here\n    \n    std::cout << count << std::endl;\n    return 0;\n}\n",
+              "expectedOutput": "5",
+              "language": "cpp",
+              "localLLMGrade": true,
+              "explanation": "Use int count = 5; to declare and initialize the variable.",
+              "xp": 12
+            },
+            {
+              "id": "cpp-1-2-4",
+              "type": "typing",
+              "question": "What type stores a single character?",
+              "correctAnswer": [
+                "char",
+                "character"
+              ],
+              "explanation": "The char type stores a single character (1 byte).",
+              "xp": 5
+            },
+            {
+              "id": "cpp-1-2-5",
+              "type": "code",
+              "question": "Declare a string variable named 'name' with value 'C++'.",
+              "codeTemplate": "#include <iostream>\n#include <string>\n\nint main() {\n    // Declare name here\n    \n    std::cout << name << std::endl;\n    return 0;\n}\n",
+              "expectedOutput": "C++",
+              "language": "cpp",
+              "localLLMGrade": true,
+              "explanation": "Use std::string name = \"C++\"; to declare a string.",
+              "xp": 12
+            }
+          ]
         },
         {
           "id": "1-3",
-          "title": "Program Structure (main, headers, translation units)",
-          "unitTitle": "1. C++ Environment and Language Basics",
-          "xp": 15,
+          "title": "Input and Output",
+          "xp": 88,
           "type": "lesson",
           "difficulty": "beginner",
-          "questions": []
+          "lessonText": "# Input and Output in C++\n\nC++ uses the iostream library for input and output operations.\n\n## Standard Output (std::cout)\n\n```cpp\nstd::cout << \"Hello\" << std::endl;\n```\n\n## Standard Input (std::cin)\n\n```cpp\nint age;\nstd::cin >> age;\n```\n\n## Complete Example\n\n```cpp\n#include <iostream>\n#include <string>\n\nint main() {\n    std::string name;\n    int age;\n    \n    std::cout << \"Enter your name: \";\n    std::cin >> name;\n    \n    std::cout << \"Enter your age: \";\n    std::cin >> age;\n    \n    std::cout << \"Hello \" << name << \"! You are \" << age << \" years old.\" << std::endl;\n    \n    return 0;\n}\n```",
+          "questions": [
+            {
+              "id": "cpp-1-3-1",
+              "type": "typing",
+              "question": "What object is used for standard output?",
+              "correctAnswer": [
+                "std::cout",
+                "cout"
+              ],
+              "explanation": "std::cout (character output) is used to print to the console.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-1-3-2",
+              "type": "typing",
+              "question": "What object is used for standard input?",
+              "correctAnswer": [
+                "std::cin",
+                "cin"
+              ],
+              "explanation": "std::cin (character input) is used to read from the keyboard.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-1-3-3",
+              "type": "code",
+              "question": "Read an integer from input and store it in variable 'x'.",
+              "codeTemplate": "#include <iostream>\n\nint main() {\n    int x;\n    // Read x from input here\n    \n    std::cout << x << std::endl;\n    return 0;\n}\n",
+              "expectedOutput": "User input value",
+              "language": "cpp",
+              "localLLMGrade": true,
+              "explanation": "Use std::cin >> x; to read an integer from input.",
+              "xp": 12
+            },
+            {
+              "id": "cpp-1-3-4",
+              "type": "multiple-choice",
+              "question": "What operator does std::cin use?",
+              "options": [
+                "<<",
+                ">>",
+                "->",
+                "::"
+              ],
+              "correct": 1,
+              "explanation": "std::cin uses the >> operator (stream extraction) to read input.",
+              "xp": 3
+            },
+            {
+              "id": "cpp-1-3-5",
+              "type": "code",
+              "question": "Read two integers a and b, then print their sum.",
+              "codeTemplate": "#include <iostream>\n\nint main() {\n    int a, b;\n    // Read a and b\n    // Print their sum\n    \n    return 0;\n}\n",
+              "expectedOutput": "Sum of a and b",
+              "language": "cpp",
+              "localLLMGrade": true,
+              "explanation": "Use std::cin >> a >> b; then std::cout << a + b << std::endl;",
+              "xp": 12
+            }
+          ]
         },
         {
           "id": "1-4",
-          "title": "Basic Syntax Differences from Python",
-          "unitTitle": "1. C++ Environment and Language Basics",
-          "xp": 15,
+          "title": "Basic Operators",
+          "xp": 88,
           "type": "lesson",
           "difficulty": "beginner",
-          "questions": []
+          "lessonText": "# Basic Operators in C++\n\n## Arithmetic Operators\n\n- `+`: Addition\n- `-`: Subtraction\n- `*`: Multiplication\n- `/`: Division\n- `%`: Modulo (remainder)\n\n**Example:**\n```cpp\nint a = 10, b = 3;\nstd::cout << a + b;  // 13\nstd::cout << a % b;  // 1 (remainder)\n```\n\n## Assignment Operators\n\n```cpp\n+=  // Add and assign\n-=  // Subtract and assign\n*=  // Multiply and assign\n/=  // Divide and assign\n%=  // Modulo and assign\n```\n\n## Comparison Operators\n\n- `==`: Equal to\n- `!=`: Not equal to\n- `>`: Greater than\n- `<`: Less than\n\nThese return `true` or `false`.",
+          "questions": [
+            {
+              "id": "cpp-1-4-1",
+              "type": "typing",
+              "question": "What operator gives the remainder?",
+              "correctAnswer": [
+                "%",
+                "modulo"
+              ],
+              "explanation": "The % operator (modulo) returns the remainder of division.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-1-4-2",
+              "type": "typing",
+              "question": "What is 10 % 3?",
+              "correctAnswer": [
+                "1"
+              ],
+              "explanation": "10 divided by 3 is 3 with remainder 1, so 10 % 3 = 1.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-1-4-3",
+              "type": "code",
+              "question": "Add 5 to variable 'x' using += operator.",
+              "codeTemplate": "#include <iostream>\n\nint main() {\n    int x = 10;\n    // Add 5 to x using +=\n    \n    std::cout << x << std::endl;\n    return 0;\n}\n",
+              "expectedOutput": "15",
+              "language": "cpp",
+              "localLLMGrade": true,
+              "explanation": "Use x += 5; to add 5 to x.",
+              "xp": 12
+            },
+            {
+              "id": "cpp-1-4-4",
+              "type": "multiple-choice",
+              "question": "What operator checks if two values are equal?",
+              "options": [
+                "=",
+                "==",
+                "===",
+                "equals"
+              ],
+              "correct": 1,
+              "explanation": "== is the equality operator. = is assignment.",
+              "xp": 3
+            },
+            {
+              "id": "cpp-1-4-5",
+              "type": "code",
+              "question": "Check if x is greater than 5 and print 'true' or 'false'.",
+              "codeTemplate": "#include <iostream>\n\nint main() {\n    int x = 7;\n    // Check if x > 5 and print result\n    \n    return 0;\n}\n",
+              "expectedOutput": "true",
+              "language": "cpp",
+              "localLLMGrade": true,
+              "explanation": "Use std::cout << std::boolalpha << (x > 5) << std::endl;",
+              "xp": 12
+            }
+          ]
         },
         {
           "id": "1-5",
-          "title": "Variables, Types, and Initialization Styles",
-          "unitTitle": "1. C++ Environment and Language Basics",
-          "xp": 15,
+          "title": "Control Flow: If Statements",
+          "xp": 88,
           "type": "lesson",
           "difficulty": "beginner",
-          "questions": []
+          "lessonText": "# Control Flow: If Statements in C++\n\n## If Statement\n\n```cpp\nif (condition) {\n    // Code to execute if condition is true\n}\n```\n\n## If-Else Statement\n\n```cpp\nif (condition) {\n    // Code if true\n} else {\n    // Code if false\n}\n```\n\n## If-Else If-Else\n\n```cpp\nif (condition1) {\n    // Code if condition1 is true\n} else if (condition2) {\n    // Code if condition1 is false and condition2 is true\n} else {\n    // Code if all conditions are false\n}\n```\n\n**Example:**\n```cpp\nint score = 85;\n\nif (score >= 90) {\n    std::cout << \"Grade: A\";\n} else if (score >= 80) {\n    std::cout << \"Grade: B\";\n} else {\n    std::cout << \"Grade: C\";\n}\n```",
+          "questions": [
+            {
+              "id": "cpp-1-5-1",
+              "type": "typing",
+              "question": "What keyword is used for conditional statements?",
+              "correctAnswer": [
+                "if",
+                "if statement"
+              ],
+              "explanation": "The 'if' keyword is used to create conditional statements in C++.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-1-5-2",
+              "type": "typing",
+              "question": "What does the else block execute?",
+              "correctAnswer": [
+                "When if condition is false",
+                "Otherwise"
+              ],
+              "explanation": "The else block executes when the if condition is false.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-1-5-3",
+              "type": "code",
+              "question": "Write an if statement that checks if x is positive and prints 'Positive'.",
+              "codeTemplate": "#include <iostream>\n\nint main() {\n    int x = 5;\n    // Check if x is positive\n    \n    return 0;\n}\n",
+              "expectedOutput": "Positive",
+              "language": "cpp",
+              "localLLMGrade": true,
+              "explanation": "Use if (x > 0) { std::cout << \"Positive\" << std::endl; }",
+              "xp": 12
+            },
+            {
+              "id": "cpp-1-5-4",
+              "type": "multiple-choice",
+              "question": "What does else if do?",
+              "options": [
+                "Always runs",
+                "Checks another condition",
+                "Runs if if is true",
+                "Same as else"
+              ],
+              "correct": 1,
+              "explanation": "else if checks another condition if the previous if was false.",
+              "xp": 3
+            },
+            {
+              "id": "cpp-1-5-5",
+              "type": "code",
+              "question": "Write if-else to print 'Even' if x is even, 'Odd' otherwise.",
+              "codeTemplate": "#include <iostream>\n\nint main() {\n    int x = 4;\n    // Check even or odd\n    \n    return 0;\n}\n",
+              "expectedOutput": "Even",
+              "language": "cpp",
+              "localLLMGrade": true,
+              "explanation": "Use if (x % 2 == 0) { ... } else { ... } with modulo operator.",
+              "xp": 12
+            }
+          ]
         },
         {
           "id": "1-6",
-          "title": "Input/Output with iostream",
-          "unitTitle": "1. C++ Environment and Language Basics",
-          "xp": 15,
+          "title": "Control Flow: Loops",
+          "xp": 88,
           "type": "lesson",
           "difficulty": "beginner",
-          "questions": []
+          "lessonText": "# Control Flow: Loops in C++\n\n## For Loop\n\n```cpp\nfor (initialization; condition; update) {\n    // Code to repeat\n}\n```\n\n**Example:**\n```cpp\nfor (int i = 0; i < 5; i++) {\n    std::cout << i << \" \";\n}\n// Output: 0 1 2 3 4\n```\n\n## While Loop\n\n```cpp\nwhile (condition) {\n    // Code to repeat\n}\n```\n\n## Break and Continue\n\n- **break**: Exit the loop immediately\n- **continue**: Skip to next iteration\n\n```cpp\nfor (int i = 0; i < 10; i++) {\n    if (i == 5) break;  // Exit when i equals 5\n    std::cout << i << \" \";\n}\n// Output: 0 1 2 3 4\n```",
+          "questions": [
+            {
+              "id": "cpp-1-6-1",
+              "type": "typing",
+              "question": "What loop is best when you know the number of iterations?",
+              "correctAnswer": [
+                "for loop",
+                "for"
+              ],
+              "explanation": "The for loop is best when you know how many times to iterate.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-1-6-2",
+              "type": "typing",
+              "question": "What does break do in a loop?",
+              "correctAnswer": [
+                "Exits the loop",
+                "Stops",
+                "Terminates"
+              ],
+              "explanation": "The break statement exits the loop immediately.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-1-6-3",
+              "type": "code",
+              "question": "Write a for loop that prints numbers 1 to 5.",
+              "codeTemplate": "#include <iostream>\n\nint main() {\n    // Write for loop here\n    \n    return 0;\n}\n",
+              "expectedOutput": "1 2 3 4 5",
+              "language": "cpp",
+              "localLLMGrade": true,
+              "explanation": "for (int i = 1; i <= 5; i++) { std::cout << i << \" \"; }",
+              "xp": 12
+            },
+            {
+              "id": "cpp-1-6-4",
+              "type": "multiple-choice",
+              "question": "What does continue do?",
+              "options": [
+                "Exits loop",
+                "Skips to next iteration",
+                "Stops program",
+                "No effect"
+              ],
+              "correct": 1,
+              "explanation": "The continue statement skips the rest of the current iteration and moves to the next.",
+              "xp": 3
+            },
+            {
+              "id": "cpp-1-6-5",
+              "type": "code",
+              "question": "Write a while loop that prints even numbers from 0 to 10.",
+              "codeTemplate": "#include <iostream>\n\nint main() {\n    // Write while loop here\n    \n    return 0;\n}\n",
+              "expectedOutput": "0 2 4 6 8 10",
+              "language": "cpp",
+              "localLLMGrade": true,
+              "explanation": "int i = 0; while (i <= 10) { std::cout << i << \" \"; i += 2; }",
+              "xp": 12
+            }
+          ]
         }
       ]
     },
