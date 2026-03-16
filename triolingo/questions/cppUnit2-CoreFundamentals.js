@@ -1,255 +1,323 @@
-// C++ Unit 2
+// C++ Unit 2 - Functions and Data Structures
+// Generated from cppCombined.js
 
 window.cppUnit2 = {
   "unitId": "2",
   "unitName": "2. Functions and Data Structures",
   "lessons": [
     {
-      "id": "2-1",
+      "id": 7,
       "title": "Functions and Scope",
       "xp": 85,
       "type": "lesson",
       "difficulty": "intermediate",
-      "lessonText": "# Functions and Scope in C++\n\nFunctions are reusable blocks of code that perform specific tasks. They help organize code, avoid repetition, and make programs easier to maintain.\n\n## Declaring Functions\n\nA function has three main parts:\n1. **Return type**: What value the function returns (use `void` if no return)\n2. **Function name**: Identifier to call the function\n3. **Parameters**: Input values (optional)\n\n**Syntax:**\n```cpp\nreturnType functionName(parameters) {\n    // Function body\n    return value;  // if returnType is not void\n}\n```\n\n## Example: Return Type Function\n\n```cpp\nint add(int a, int b) {\n    return a + b;\n}\n\nint main() {\n    int result = add(5, 3);\n    std::cout << result;  // Output: 8\n    return 0;\n}\n```\n\n## Example: Void Function\n\nVoid functions don't return a value:\n```cpp\nvoid greet(std::string name) {\n    std::cout << \"Hello, \" << name << \"!\" << std::endl;\n}\n\nint main() {\n    greet(\"Alice\");  // Output: Hello, Alice!\n    return 0;\n}\n```\n\n## Function Parameters\n\nC++ supports three ways to pass parameters:\n\n### 1. Pass by Value (Default)\nCreates a **copy** of the value. Changes inside the function don't affect the original.\n\n```cpp\nvoid increment(int x) {\n    x++;  // Only modifies the copy\n}\nint main() {\n    int num = 5;\n    increment(num);\n    std::cout << num;  // Output: 5 (unchanged)\n}\n```\n\n### 2. Pass by Reference\nPasses the **original variable** using `&`. Changes affect the original.\n\n```cpp\nvoid increment(int& x) {\n    x++;  // Modifies the original\n}\nint main() {\n    int num = 5;\n    increment(num);\n    std::cout << num;  // Output: 6 (changed)\n}\n```\n\n### 3. Pass by Pointer\nPasses the **memory address** using `*`. Changes affect the original.\n\n```cpp\nvoid increment(int* x) {\n    (*x)++;  // Dereference and modify\n}\nint main() {\n    int num = 5;\n    increment(&num);  // Pass address\n    std::cout << num;  // Output: 6 (changed)\n}\n```\n\n## Scope\n\nScope determines where variables can be accessed:\n\n### Local Scope\nVariables declared inside a function are **local** - only accessible within that function.\n\n```cpp\nvoid myFunction() {\n    int x = 10;  // Local variable\n    std::cout << x;  // OK\n}\nint main() {\n    myFunction();\n    std::cout << x;  // ERROR: x not accessible here\n}\n```\n\n### Global Scope\nVariables declared **outside** all functions are **global** - accessible everywhere.\n\n```cpp\nint globalVar = 100;  // Global variable\n\nvoid myFunction() {\n    std::cout << globalVar;  // OK\n}\nint main() {\n    std::cout << globalVar;  // OK\n}\n```\n\n## Default Parameters\n\nFunctions can have default values for parameters:\n```cpp\nint power(int base, int exp = 2) {\n    int result = 1;\n    for (int i = 0; i < exp; i++) {\n        result *= base;\n    }\n    return result;\n}\npower(3);     // 3^2 = 9\npower(3, 3);  // 3^3 = 27\n```",
+      "lessonText": "# Functions and Scope\n\nFunctions are reusable blocks of code that perform specific tasks. They help organize code and avoid repetition.\n\n## Function Declaration and Definition\n\n```cpp\n// Declaration\nint add(int a, int b);\n\n// Definition\nint add(int a, int b) {\n    return a + b;\n}\n```\n\n## Parameters: Pass by Value vs Reference\n\n```cpp\nvoid byValue(int x) {\n    x = 10;  // Doesn't affect original\n}\n\nvoid byReference(int& x) {\n    x = 10;  // Modifies original\n}\n```\n\n## Default Parameters\n\n```cpp\nint greet(string name = \"World\") {\n    cout << \"Hello \" << name << endl;\n}\n```\n\n## Variable Scope\n\n- **Local:** Variables inside functions\n- **Global:** Variables outside all functions\n- **Block:** Variables inside any {} block",
       "questions": [
         {
           "id": "cpp-2-1-1",
           "type": "typing",
-          "question": "What keyword is used for functions that don't return a value?",
+          "question": "What is a function?",
           "correctAnswer": [
-            "void"
+            "reusable block of code",
+            "named block of code"
           ],
-          "explanation": "The void keyword is used for functions that don't return a value. They can still perform actions like printing to the console.",
+          "explanation": "A function is a reusable block of code that performs a specific task.",
           "xp": 5
         },
         {
           "id": "cpp-2-1-2",
-          "type": "typing",
-          "question": "What is the entry point of a C++ program?",
+          "type": "code",
+          "question": "Write a function called 'square' that takes an int and returns its square.",
           "correctAnswer": [
-            "main()",
-            "int main()"
+            "int square(int x) { return x * x; }",
+            "int square(int x) {\\n    return x * x;\\n}"
           ],
-          "explanation": "The main() function is the entry point where program execution begins. Every C++ program must have exactly one main() function.",
-          "xp": 5
+          "explanation": "A function with return type int, parameter int x, that returns x multiplied by itself.",
+          "xp": 15
         },
         {
           "id": "cpp-2-1-3",
-          "type": "typing",
-          "question": "What does pass by value mean?",
-          "correctAnswer": [
-            "copy of value",
-            "copies the value"
+          "type": "multiple",
+          "question": "What is the difference between pass by value and pass by reference?",
+          "options": [
+            "Pass by value copies the data",
+            "Pass by reference works with original data",
+            "Both A and B",
+            "Neither"
           ],
-          "explanation": "Pass by value means a copy of the parameter is passed to the function. Changes made to the copy don't affect the original variable.",
+          "correctAnswer": [
+            2
+          ],
+          "explanation": "Pass by value creates a copy, pass by reference works directly with the original data.",
           "xp": 5
         },
         {
           "id": "cpp-2-1-4",
-          "type": "typing",
-          "question": "What symbol is used to pass by reference?",
+          "type": "code",
+          "question": "Write a function that takes a string by reference and appends '!' to it.",
           "correctAnswer": [
-            "&",
-            "ampersand"
+            "void appendExclamation(string& s) { s += \"!\"; }",
+            "void appendExclamation(string& s) {\\n    s += \"!\";\\n}"
           ],
-          "explanation": "The & symbol after the type indicates pass by reference. This allows the function to modify the original variable.",
-          "xp": 5
+          "explanation": "Use reference parameter to modify the original string.",
+          "xp": 15
         },
         {
           "id": "cpp-2-1-5",
-          "type": "typing",
-          "question": "What is local scope?",
+          "type": "code",
+          "question": "Create a function with a default parameter for name='Anonymous'.",
           "correctAnswer": [
-            "variables inside function",
-            "function local variables"
+            "void greet(string name = \"Anonymous\") { cout << name << endl; }"
           ],
-          "explanation": "Local scope refers to variables declared inside a function. These variables are only accessible within that function.",
-          "xp": 5
+          "explanation": "Default parameters are specified in function declaration with assignment operator.",
+          "xp": 15
         },
         {
           "id": "cpp-2-1-6",
-          "type": "typing",
-          "question": "What is global scope?",
-          "correctAnswer": [
-            "variables outside all functions",
-            "accessible everywhere"
+          "type": "multiple",
+          "question": "What happens to a local variable after the function returns?",
+          "options": [
+            "It's destroyed",
+            "It becomes global",
+            "It stays in memory",
+            "None of the above"
           ],
-          "explanation": "Global scope refers to variables declared outside all functions. These variables can be accessed anywhere in the program.",
+          "correctAnswer": [
+            0
+          ],
+          "explanation": "Local variables are destroyed when the function returns.",
           "xp": 5
         },
         {
           "id": "cpp-2-1-7",
-          "type": "typing",
-          "question": "What is the default parameter passing method?",
+          "type": "code",
+          "question": "Write a function that returns the maximum of two integers.",
           "correctAnswer": [
-            "pass by value",
-            "value"
+            "int max(int a, int b) { return a > b ? a : b; }",
+            "int max(int a, int b) {\\n    if (a > b) return a;\\n    return b;\\n}"
           ],
-          "explanation": "C++ defaults to pass by value, which creates a copy of the parameter.",
-          "xp": 5
+          "explanation": "Use conditional operator or if statement to return the larger value.",
+          "xp": 15
         },
         {
           "id": "cpp-2-1-8",
           "type": "typing",
-          "question": "Can a function have multiple return statements?",
+          "question": "What is function overloading?",
           "correctAnswer": [
-            "yes",
-            "Yes"
+            "multiple functions with same name but different parameters",
+            "same name different signatures"
           ],
-          "explanation": "Yes, functions can have multiple return statements in different branches or conditions. The function exits when it encounters the first return statement that executes.",
-          "xp": 4
+          "explanation": "Function overloading is having multiple functions with the same name but different parameters.",
+          "xp": 5
         },
         {
           "id": "cpp-2-1-9",
-          "type": "typing",
-          "question": "What is a function prototype?",
+          "type": "code",
+          "question": "Create overloaded functions for print() that print int and string.",
           "correctAnswer": [
-            "declaration without body",
-            "function declaration"
+            "void print(int i) { cout << i; }\\nvoid print(string s) { cout << s; }"
           ],
-          "explanation": "A function prototype declares the function's name, return type, and parameters without providing the function body. It allows you to use the function before it's defined.",
-          "xp": 4
+          "explanation": "Overloaded functions have same name but different parameter types.",
+          "xp": 15
         },
         {
           "id": "cpp-2-1-10",
-          "type": "typing",
-          "question": "What happens if you don't return a value from a non-void function?",
-          "correctAnswer": [
-            "undefined behavior",
-            "error"
+          "type": "multiple",
+          "question": "Can a function call itself?",
+          "options": [
+            "Yes, that's recursion",
+            "No, causes error",
+            "Only with special keyword",
+            "No, infinite loop"
           ],
-          "explanation": "Not returning a value from a non-void function results in undefined behavior. The program may compile but produce unpredictable results.",
+          "correctAnswer": [
+            0
+          ],
+          "explanation": "A function can call itself - this is called recursion.",
           "xp": 5
         },
         {
           "id": "cpp-2-1-11",
-          "type": "typing",
-          "question": "What is function overloading?",
+          "type": "code",
+          "question": "Write a recursive function to calculate factorial of n.",
           "correctAnswer": [
-            "same name different parameters",
-            "multiple functions same name"
+            "int factorial(int n) {\\n    if (n <= 1) return 1;\\n    return n * factorial(n - 1);\\n}"
           ],
-          "explanation": "Function overloading allows multiple functions with the same name but different parameters (different number or type). The compiler chooses the right one based on arguments.",
-          "xp": 4
+          "explanation": "Recursive function calls itself with smaller input until base case.",
+          "xp": 15
         },
         {
           "id": "cpp-2-1-12",
-          "type": "typing",
-          "question": "What is recursion?",
-          "correctAnswer": [
-            "function calls itself",
-            "self-calling function"
+          "type": "multiple",
+          "question": "What is a global variable?",
+          "options": [
+            "Variable declared outside all functions",
+            "Variable in main",
+            "Variable with global keyword",
+            "Public variable"
           ],
-          "explanation": "Recursion is when a function calls itself. It requires a base case to stop the recursion, otherwise it creates infinite recursion.",
+          "correctAnswer": [
+            0
+          ],
+          "explanation": "Global variables are declared outside all functions and accessible anywhere.",
           "xp": 5
         },
         {
           "id": "cpp-2-1-13",
-          "type": "multiple-choice",
-          "question": "Which parameter passing method can modify the original variable?",
-          "options": [
-            "Pass by value",
-            "Pass by reference",
-            "Pass by constant",
-            "Pass by copy"
+          "type": "code",
+          "question": "Create a function that uses a global variable counter.",
+          "correctAnswer": [
+            "int counter = 0;\\nvoid increment() { counter++; }"
           ],
-          "correct": 1,
-          "explanation": "Pass by reference (using &) allows the function to modify the original variable because it passes a reference to the original, not a copy.",
-          "xp": 3
+          "explanation": "Global variables are accessible inside functions without being passed as parameters.",
+          "xp": 15
         },
         {
           "id": "cpp-2-1-14",
-          "type": "multiple-choice",
-          "question": "What is the purpose of the return statement?",
-          "options": [
-            "Print to console",
-            "Exit function and return value",
-            "Create variable",
-            "Declare function"
+          "type": "typing",
+          "question": "What is a function prototype?",
+          "correctAnswer": [
+            "declaration of a function before its definition",
+            "function signature without body"
           ],
-          "correct": 1,
-          "explanation": "The return statement exits the function and optionally returns a value. For void functions, return exits without returning a value.",
-          "xp": 3
+          "explanation": "A function prototype declares the function before it's defined.",
+          "xp": 5
         },
         {
           "id": "cpp-2-1-15",
-          "type": "multiple-choice",
-          "question": "Can a function call another function?",
-          "options": [
-            "No",
-            "Yes",
-            "Only if they have same return type",
-            "Only if both are void"
+          "type": "code",
+          "question": "Write a function prototype and definition for a function that adds two doubles.",
+          "correctAnswer": [
+            "double add(double a, double b);\\ndouble add(double a, double b) {\\n    return a + b;\\n}"
           ],
-          "correct": 1,
-          "explanation": "Yes, functions can call other functions. This is called function composition and is a common practice in programming.",
-          "xp": 3
+          "explanation": "Prototype declares function, definition provides implementation.",
+          "xp": 15
         },
         {
           "id": "cpp-2-1-16",
-          "type": "multiple-choice",
-          "question": "What is the base case in recursion?",
+          "type": "multiple",
+          "question": "What is void return type?",
           "options": [
-            "First call",
-            "Termination condition",
-            "Last call",
-            "Error condition"
+            "Function returns nothing",
+            "Function returns any type",
+            "Function returns void type",
+            "Error"
           ],
-          "correct": 1,
-          "explanation": "The base case is the termination condition that stops the recursion. Without a base case, recursive functions would create infinite recursion and crash.",
-          "xp": 3
+          "correctAnswer": [
+            0
+          ],
+          "explanation": "void means the function returns nothing.",
+          "xp": 5
         },
         {
           "id": "cpp-2-1-17",
-          "type": "multiple-choice",
-          "question": "Which symbol is used to get the address of a variable?",
-          "options": [
-            "*",
-            "&",
-            "#",
-            "@"
+          "type": "code",
+          "question": "Create a void function that prints a message multiple times.",
+          "correctAnswer": [
+            "void printMessage(string msg, int times) {\\n    for (int i = 0; i < times; i++)\\n        cout << msg << endl;\\n}"
           ],
-          "correct": 1,
-          "explanation": "The & operator (address-of operator) is used to get the memory address of a variable. This is used when passing parameters by pointer.",
-          "xp": 3
+          "explanation": "Void function doesn't return a value but performs an action.",
+          "xp": 15
         },
         {
           "id": "cpp-2-1-18",
-          "type": "code",
-          "question": "Write a function called 'square' that takes an integer and returns its square.",
-          "codeTemplate": "#include <iostream>\n\nint square(int x) {\n    // Write your code here\n    return 0;\n}\n\nint main() {\n    std::cout << square(5) << std::endl;\n    return 0;\n}\n",
-          "expectedOutput": "25",
-          "language": "cpp",
-          "localLLMGrade": true,
-          "explanation": "Return x * x or return pow(x, 2). For example: return x * x;",
-          "xp": 10
+          "type": "multiple",
+          "question": "Can main() be overloaded?",
+          "options": [
+            "No",
+            "Yes",
+            "Only in special cases",
+            "Only if static"
+          ],
+          "correctAnswer": [
+            0
+          ],
+          "explanation": "main() cannot be overloaded - it's the program entry point.",
+          "xp": 5
         },
         {
           "id": "cpp-2-1-19",
           "type": "code",
-          "question": "Write a void function 'printMessage' that prints 'Hello World!'",
-          "codeTemplate": "#include <iostream>\n\nvoid printMessage() {\n    // Write your code here\n}\n\nint main() {\n    printMessage();\n    return 0;\n}\n",
-          "expectedOutput": "Hello World!",
-          "language": "cpp",
-          "localLLMGrade": true,
-          "explanation": "Use std::cout with the message and std::endl. For example: std::cout << \"Hello World!\" << std::endl;",
-          "xp": 10
+          "question": "Write a function that takes two parameters and returns true if both are positive.",
+          "correctAnswer": [
+            "bool bothPositive(int a, int b) {\\n    return a > 0 && b > 0;\\n}"
+          ],
+          "explanation": "Function with bool return type and logical AND operator.",
+          "xp": 15
         },
         {
           "id": "cpp-2-1-20",
+          "type": "typing",
+          "question": "What is function signature?",
+          "correctAnswer": [
+            "function name, return type, and parameters",
+            "declaration of a function"
+          ],
+          "explanation": "Function signature consists of name, return type, and parameter types.",
+          "xp": 5
+        },
+        {
+          "id": "cpp-2-1-21",
           "type": "code",
-          "question": "Write a function 'max' that takes two integers and returns the larger one.",
-          "codeTemplate": "#include <iostream>\n\nint max(int a, int b) {\n    // Write your code here\n    return 0;\n}\n\nint main() {\n    std::cout << max(10, 5) << std::endl;\n    return 0;\n}\n",
-          "expectedOutput": "10",
-          "language": "cpp",
-          "localLLMGrade": true,
-          "explanation": "Use if-else or ternary operator. For example: return a > b ? a : b; or if (a > b) return a; else return b;",
-          "xp": 10
+          "question": "Create a function that returns a reference to a global variable.",
+          "correctAnswer": [
+            "int& getGlobal() {\\n    return globalVar;\\n}"
+          ],
+          "explanation": "Function can return reference to allow modification of returned value.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-2-1-22",
+          "type": "multiple",
+          "question": "What is the scope of a variable declared inside a loop?",
+          "options": [
+            "Limited to the loop block",
+            "Global scope",
+            "Function scope",
+            "File scope"
+          ],
+          "correctAnswer": [
+            0
+          ],
+          "explanation": "Variables inside loops have block scope, accessible only within the loop.",
+          "xp": 5
+        },
+        {
+          "id": "cpp-2-1-23",
+          "type": "code",
+          "question": "Write a function with const reference parameter for efficiency.",
+          "correctAnswer": [
+            "void process(const string& s) {\\n    // read s but not modify\\n}"
+          ],
+          "explanation": "const reference prevents modification while avoiding copy overhead.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-2-1-24",
+          "type": "typing",
+          "question": "What is the purpose of default arguments?",
+          "correctAnswer": [
+            "provide default values for parameters",
+            "make parameters optional"
+          ],
+          "explanation": "Default arguments allow parameters to be optional with fallback values.",
+          "xp": 5
+        },
+        {
+          "id": "cpp-2-1-25",
+          "type": "code",
+          "question": "Create a function that can be called with 1, 2, or 3 arguments using default values.",
+          "correctAnswer": [
+            "void show(int a, int b = 0, int c = 0) {\\n    cout << a << b << c << endl;\\n}"
+          ],
+          "explanation": "Default arguments allow flexible number of arguments.",
+          "xp": 15
         }
-      ]
+      ],
+      "unitTitle": "2. Functions and Data Structures"
     },
     {
-      "id": "2-2",
+      "id": 8,
       "title": "Arrays and Vectors",
       "xp": 85,
       "type": "lesson",
@@ -259,244 +327,298 @@ window.cppUnit2 = {
         {
           "id": "cpp-2-2-1",
           "type": "typing",
-          "question": "What is the first array index in C++?",
+          "question": "What is an array?",
           "correctAnswer": [
-            "0",
-            "zero"
+            "fixed-size collection of same-type elements",
+            "collection of same type elements"
           ],
-          "explanation": "Array indices in C++ start at 0 (zero-based indexing). The first element is at index 0.",
+          "explanation": "An array is a fixed-size collection of elements of the same type.",
           "xp": 5
         },
         {
           "id": "cpp-2-2-2",
           "type": "typing",
-          "question": "What header do you need to use vectors?",
+          "question": "How do you access array elements?",
           "correctAnswer": [
-            "<vector>"
+            "using index with square brackets",
+            "array[index]"
           ],
-          "explanation": "You must include #include <vector> to use std::vector from the C++ Standard Template Library.",
+          "explanation": "Array elements are accessed using square brackets with an index: arr[i]",
           "xp": 5
         },
         {
           "id": "cpp-2-2-3",
           "type": "typing",
-          "question": "What method adds an element to the end of a vector?",
+          "question": "What is std::vector?",
           "correctAnswer": [
-            "push_back()",
-            "push_back"
+            "dynamic array that can grow and shrink",
+            " resizable array"
           ],
-          "explanation": "push_back() adds a new element to the end of the vector, increasing its size by 1.",
+          "explanation": "std::vector is a dynamic array that can automatically resize.",
           "xp": 5
         },
         {
           "id": "cpp-2-2-4",
           "type": "typing",
-          "question": "What method returns the number of elements in a vector?",
+          "question": "How do you add elements to a vector?",
           "correctAnswer": [
-            "size()",
-            "size"
+            "push_back",
+            "using push_back method"
           ],
-          "explanation": "The size() method returns the number of elements currently in the vector.",
+          "explanation": "Use push_back() to add elements to the end of a vector.",
           "xp": 5
         },
         {
           "id": "cpp-2-2-5",
           "type": "typing",
-          "question": "What happens when you access an array index out of bounds?",
+          "question": "What happens if you access an array out of bounds?",
           "correctAnswer": [
             "undefined behavior",
-            "error",
-            "crash"
+            "may crash"
           ],
-          "explanation": "Accessing an array out of bounds causes undefined behavior, which may result in incorrect values, crashes, or security vulnerabilities.",
+          "explanation": "Accessing arrays out of bounds results in undefined behavior.",
           "xp": 5
         },
         {
           "id": "cpp-2-2-6",
-          "type": "typing",
-          "question": "What is the key difference between arrays and vectors?",
-          "correctAnswer": [
-            "arrays fixed size vectors dynamic",
-            "vectors dynamic arrays fixed"
+          "type": "multiple",
+          "question": "Which is a correct array declaration?",
+          "options": [
+            "int arr[5];",
+            "int arr[];",
+            "arr[5];",
+            "Both A and B"
           ],
-          "explanation": "Arrays have fixed size that cannot change, while vectors are dynamic arrays that can grow or shrink at runtime.",
+          "correctAnswer": [
+            0
+          ],
+          "explanation": "Array declaration must specify type, name, and size.",
           "xp": 5
         },
         {
           "id": "cpp-2-2-7",
-          "type": "typing",
-          "question": "What method removes the last element from a vector?",
-          "correctAnswer": [
-            "pop_back()",
-            "pop_back"
+          "type": "multiple",
+          "question": "What is the first index of a C++ array?",
+          "options": [
+            "0",
+            "1",
+            "-1",
+            "Depends on declaration"
           ],
-          "explanation": "pop_back() removes the last element from the vector, reducing its size by 1.",
+          "correctAnswer": [
+            0
+          ],
+          "explanation": "C++ arrays are zero-indexed, so the first element is at index 0.",
           "xp": 5
         },
         {
           "id": "cpp-2-2-8",
-          "type": "typing",
-          "question": "What does the at() method do for vectors?",
-          "correctAnswer": [
-            "access with bounds checking",
-            "checks bounds"
+          "type": "multiple",
+          "question": "What method gets the size of a vector?",
+          "options": [
+            "size()",
+            "length()",
+            "count()",
+            "getSize()"
           ],
-          "explanation": "at() accesses an element and throws an exception if the index is out of bounds, providing safer access than the [] operator.",
-          "xp": 4
+          "correctAnswer": [
+            0
+          ],
+          "explanation": "size() returns the number of elements in a vector.",
+          "xp": 5
         },
         {
           "id": "cpp-2-2-9",
-          "type": "typing",
-          "question": "What loop construct iterates through elements without index?",
-          "correctAnswer": [
-            "range-based for loop",
-            "for-each loop",
-            "for each"
+          "type": "multiple",
+          "question": "Can vector change its size after creation?",
+          "options": [
+            "Yes",
+            "No",
+            "Only if declared dynamic",
+            "Only with special functions"
           ],
-          "explanation": "The range-based for loop (for (type var : container)) iterates through each element without needing to manage an index.",
+          "correctAnswer": [
+            0
+          ],
+          "explanation": "Vectors can grow and shrink dynamically using push_back, pop_back, etc.",
           "xp": 5
         },
         {
           "id": "cpp-2-2-10",
-          "type": "typing",
-          "question": "What is a 2D array?",
-          "correctAnswer": [
-            "array of arrays",
-            "matrix",
-            "nested array"
+          "type": "multiple",
+          "question": "What is a multidimensional array?",
+          "options": [
+            "Array of arrays",
+            "Array with multiple types",
+            "Vector of vectors",
+            "Both A and D"
           ],
-          "explanation": "A 2D array is an array of arrays, used to represent tabular data or matrices. Accessed with two indices: array[row][col].",
-          "xp": 4
+          "correctAnswer": [
+            3
+          ],
+          "explanation": "Multidimensional arrays are arrays of arrays (or vectors of vectors).",
+          "xp": 5
         },
         {
           "id": "cpp-2-2-11",
-          "type": "typing",
-          "question": "What method clears all elements from a vector?",
+          "type": "code",
+          "question": "Declare an array of 10 integers.",
           "correctAnswer": [
-            "clear()",
-            "clear"
+            "int arr[10];"
           ],
-          "explanation": "clear() removes all elements from the vector, making its size zero (but capacity may remain the same).",
-          "xp": 5
+          "explanation": "Array declaration: type name[size];",
+          "xp": 15
         },
         {
           "id": "cpp-2-2-12",
-          "type": "typing",
-          "question": "What is vector capacity?",
+          "type": "code",
+          "question": "Declare and initialize an array with values 1, 2, 3, 4, 5.",
           "correctAnswer": [
-            "allocated memory",
-            "total allocated space"
+            "int arr[] = {1, 2, 3, 4, 5};",
+            "int arr[5] = {1, 2, 3, 4, 5};"
           ],
-          "explanation": "Capacity is the amount of memory allocated by the vector, which is always >= the size. Capacity can grow larger than size to avoid frequent reallocations.",
-          "xp": 5
+          "explanation": "Arrays can be initialized with an initializer list.",
+          "xp": 15
         },
         {
           "id": "cpp-2-2-13",
-          "type": "multiple-choice",
-          "question": "Which is a valid way to initialize an array with 5 zeros?",
-          "options": [
-            "int arr[5];",
-            "int arr[5] = {0};",
-            "int arr = {0, 0, 0, 0, 0};",
-            "int arr(5) = 0;"
+          "type": "code",
+          "question": "Set the first element of array arr to 100.",
+          "correctAnswer": [
+            "arr[0] = 100;"
           ],
-          "correct": 1,
-          "explanation": "int arr[5] = {0}; initializes all 5 elements to 0. The first element is 0, and all remaining elements are also initialized to 0.",
-          "xp": 3
+          "explanation": "Access array element with index and assign value.",
+          "xp": 15
         },
         {
           "id": "cpp-2-2-14",
-          "type": "multiple-choice",
-          "question": "Which is TRUE about vectors?",
-          "options": [
-            "Vectors cannot grow after creation",
-            "Vectors store elements of different types",
-            "Vectors provide bounds checking with at()",
-            "Vectors are faster than arrays"
+          "type": "code",
+          "question": "Create a vector of integers.",
+          "correctAnswer": [
+            "vector<int> vec;",
+            "#include <vector>"
           ],
-          "correct": 2,
-          "explanation": "Vectors provide bounds checking through the at() method, which throws an exception for invalid indices. Vectors can grow, store elements of the same type, and are slightly slower than arrays.",
-          "xp": 3
+          "explanation": "Vector is a template class: vector<type> name;",
+          "xp": 15
         },
         {
           "id": "cpp-2-2-15",
-          "type": "multiple-choice",
-          "question": "What is the last index in an array of size 10?",
-          "options": [
-            "10",
-            "9",
-            "11",
-            "0"
+          "type": "code",
+          "question": "Add 5 to a vector named vec.",
+          "correctAnswer": [
+            "vec.push_back(5);"
           ],
-          "correct": 1,
-          "explanation": "Array indices are zero-based, so for an array of size 10, valid indices are 0 through 9. The last index is size-1 = 9.",
-          "xp": 3
+          "explanation": "push_back adds element to the end of the vector.",
+          "xp": 15
         },
         {
           "id": "cpp-2-2-16",
-          "type": "multiple-choice",
-          "question": "Which method checks if a vector is empty?",
-          "options": [
-            "size() == 0",
-            "isEmpty()",
-            "empty()",
-            "length() == 0"
+          "type": "code",
+          "question": "Print all elements of an array arr of size 5 using a loop.",
+          "correctAnswer": [
+            "for (int i = 0; i < 5; i++) { cout << arr[i] << \" \"; }"
           ],
-          "correct": 2,
-          "explanation": "The empty() method returns true if the vector contains no elements (size is 0).",
-          "xp": 3
+          "explanation": "Use for loop with index to iterate through array.",
+          "xp": 15
         },
         {
           "id": "cpp-2-2-17",
-          "type": "multiple-choice",
-          "question": "Where are arrays stored in memory?",
-          "options": [
-            "Heap",
-            "Stack",
-            "Cache",
-            "Register"
+          "type": "code",
+          "question": "Print all elements of a vector using range-based for loop.",
+          "correctAnswer": [
+            "for (int x : vec) { cout << x << \" \"; }"
           ],
-          "correct": 1,
-          "explanation": "Arrays are stored on the stack by default, while vectors store their data on the heap (dynamic allocation).",
-          "xp": 3
+          "explanation": "Range-based for loop iterates through all elements.",
+          "xp": 15
         },
         {
           "id": "cpp-2-2-18",
           "type": "code",
-          "question": "Declare an array of 5 integers initialized to 0 and print all elements.",
-          "codeTemplate": "#include <iostream>\n\nint main() {\n    // Declare and initialize array here\n    \n    // Print all elements using a loop\n    \n    return 0;\n}\n",
-          "expectedOutput": "0 0 0 0 0",
-          "language": "cpp",
-          "localLLMGrade": true,
-          "explanation": "int arr[5] = {0}; then for (int i = 0; i < 5; i++) std::cout << arr[i] << \" \";",
-          "xp": 10
+          "question": "Create a 2D array (3x3) of integers.",
+          "correctAnswer": [
+            "int arr[3][3];"
+          ],
+          "explanation": "2D array: type name[rows][cols];",
+          "xp": 15
         },
         {
           "id": "cpp-2-2-19",
           "type": "code",
-          "question": "Create a vector, add numbers 1, 2, 3 using push_back, then print all elements.",
-          "codeTemplate": "#include <iostream>\n#include <vector>\n\nint main() {\n    // Create vector\n    \n    // Add elements\n    \n    // Print all elements\n    \n    return 0;\n}\n",
-          "expectedOutput": "1 2 3",
-          "language": "cpp",
-          "localLLMGrade": true,
-          "explanation": "std::vector<int> v; v.push_back(1); v.push_back(2); v.push_back(3); for (int x : v) std::cout << x << \" \";",
-          "xp": 10
+          "question": "Access element at row 2, column 3 of 2D array arr.",
+          "correctAnswer": [
+            "arr[1][2]",
+            "arr[1][2];"
+          ],
+          "explanation": "2D array access: arr[row][col] (indices start at 0).",
+          "xp": 15
         },
         {
           "id": "cpp-2-2-20",
           "type": "code",
-          "question": "Find and print the sum of array elements {1, 2, 3, 4, 5}.",
-          "codeTemplate": "#include <iostream>\n\nint main() {\n    int arr[] = {1, 2, 3, 4, 5};\n    int sum = 0;\n    // Calculate sum here\n    \n    std::cout << sum << std::endl;\n    return 0;\n}\n",
-          "expectedOutput": "15",
-          "language": "cpp",
-          "localLLMGrade": true,
-          "explanation": "for (int i = 0; i < 5; i++) sum += arr[i];",
-          "xp": 10
+          "question": "Remove the last element from a vector.",
+          "correctAnswer": [
+            "vec.pop_back();"
+          ],
+          "explanation": "pop_back removes the last element from the vector.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-2-2-21",
+          "type": "code",
+          "question": "Check if a vector is empty.",
+          "correctAnswer": [
+            "if (vec.empty())",
+            "vec.empty()"
+          ],
+          "explanation": "empty() returns true if vector has no elements.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-2-2-22",
+          "type": "code",
+          "question": "Get the size of a vector and store it in a variable.",
+          "correctAnswer": [
+            "int size = vec.size();"
+          ],
+          "explanation": "size() returns number of elements as size_t.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-2-2-23",
+          "type": "code",
+          "question": "Access the last element of a vector without removing it.",
+          "correctAnswer": [
+            "vec.back()",
+            "int last = vec.back();"
+          ],
+          "explanation": "back() returns reference to the last element.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-2-2-24",
+          "type": "code",
+          "question": "Clear all elements from a vector.",
+          "correctAnswer": [
+            "vec.clear();"
+          ],
+          "explanation": "clear() removes all elements, making size 0.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-2-2-25",
+          "type": "code",
+          "question": "Find the sum of all elements in an array arr of size 5.",
+          "correctAnswer": [
+            "int sum = 0;\\nfor (int i = 0; i < 5; i++) {\\n    sum += arr[i];\\n}"
+          ],
+          "explanation": "Iterate through array and accumulate sum.",
+          "xp": 15
         }
-      ]
+      ],
+      "unitTitle": "2. Functions and Data Structures"
     },
     {
-      "id": "2-3",
+      "id": 9,
       "title": "Strings and String Manipulation",
       "xp": 85,
       "type": "lesson",
@@ -736,11 +858,66 @@ window.cppUnit2 = {
           "localLLMGrade": true,
           "explanation": "if (s.find(\"cat\") != std::string::npos) std::cout << \"found\"; else std::cout << \"not found\";",
           "xp": 10
+        },
+        {
+          "id": "cpp-2-3-21",
+          "type": "code",
+          "question": "Append a character to a string.",
+          "correctAnswer": [
+            "s += 'x';",
+            "s.append('x');",
+            "s.push_back('x');"
+          ],
+          "explanation": "Use +=, append(), or push_back() to add characters to string.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-2-3-22",
+          "type": "code",
+          "question": "Convert string to uppercase.",
+          "correctAnswer": [
+            "transform(s.begin(), s.end(), s.begin(), ::toupper);"
+          ],
+          "explanation": "Use transform with toupper from <algorithm>.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-2-3-23",
+          "type": "code",
+          "question": "Find position of substring in string.",
+          "correctAnswer": [
+            "size_t pos = s.find(substring);",
+            "int pos = s.find(sub);"
+          ],
+          "explanation": "find() returns position of substring or string::npos if not found.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-2-3-24",
+          "type": "code",
+          "question": "Replace all occurrences of 'a' with 'b' in string.",
+          "correctAnswer": [
+            "while (s.find('a') != string::npos) { s.replace(s.find('a'), 1, \"b\"); }"
+          ],
+          "explanation": "Find and replace in loop. (In practice, use replace() with appropriate parameters)",
+          "xp": 15
+        },
+        {
+          "id": "cpp-2-3-25",
+          "type": "code",
+          "question": "Convert integer to string.",
+          "correctAnswer": [
+            "string s = to_string(42);",
+            "string s = std::to_string(num);"
+          ],
+          "explanation": "Use to_string() function to convert numeric types to string.",
+          "xp": 15
         }
-      ]
+      ],
+      "unitTitle": "2. Functions and Data Structures"
     },
     {
-      "id": "2-4",
+      "id": 10,
       "title": "References and Pointers",
       "xp": 85,
       "type": "lesson",
@@ -982,11 +1159,66 @@ window.cppUnit2 = {
           "localLLMGrade": true,
           "explanation": "int* ptr = new int(42); std::cout << *ptr; delete ptr;",
           "xp": 10
+        },
+        {
+          "id": "cpp-2-4-21",
+          "type": "code",
+          "question": "Create reference to array element.",
+          "correctAnswer": [
+            "int& ref = arr[0];"
+          ],
+          "explanation": "Reference to array element allows modification.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-2-4-22",
+          "type": "code",
+          "question": "Pass array to function using pointer.",
+          "correctAnswer": [
+            "void func(int* arr, int size)",
+            "void func(int arr[], int size)"
+          ],
+          "explanation": "Arrays decay to pointers when passed to functions.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-2-4-23",
+          "type": "code",
+          "question": "Increment value through pointer.",
+          "correctAnswer": [
+            "(*p)++;",
+            "++(*p);"
+          ],
+          "explanation": "Dereference first with parentheses, then increment.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-2-4-24",
+          "type": "code",
+          "question": "Check if pointer points to same location as another.",
+          "correctAnswer": [
+            "if (p1 == p2)",
+            "p1 == p2"
+          ],
+          "explanation": "Compare pointers to check if they point to same location.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-2-4-25",
+          "type": "code",
+          "question": "Create pointer to pointer (double pointer).",
+          "correctAnswer": [
+            "int** pp = &p;",
+            "int **pp = &p;"
+          ],
+          "explanation": "Pointer to pointer: type** name",
+          "xp": 15
         }
-      ]
+      ],
+      "unitTitle": "2. Functions and Data Structures"
     },
     {
-      "id": "2-5",
+      "id": 11,
       "title": "Basic Algorithms",
       "xp": 85,
       "type": "lesson",
@@ -1226,11 +1458,62 @@ window.cppUnit2 = {
           "localLLMGrade": true,
           "explanation": "std::sort(arr, arr + 5); for (int i = 0; i < 5; i++) std::cout << arr[i] << \" \";",
           "xp": 10
+        },
+        {
+          "id": "cpp-2-5-21",
+          "type": "code",
+          "question": "Use STL sort to sort vector.",
+          "correctAnswer": [
+            "sort(vec.begin(), vec.end());"
+          ],
+          "explanation": "STL sort: sort(begin, end)",
+          "xp": 15
+        },
+        {
+          "id": "cpp-2-5-22",
+          "type": "code",
+          "question": "Use STL find to search vector.",
+          "correctAnswer": [
+            "auto it = find(vec.begin(), vec.end(), target);"
+          ],
+          "explanation": "find returns iterator to found element or end().",
+          "xp": 15
+        },
+        {
+          "id": "cpp-2-5-23",
+          "type": "code",
+          "question": "Use STL count to count occurrences.",
+          "correctAnswer": [
+            "int c = count(vec.begin(), vec.end(), value);"
+          ],
+          "explanation": "count returns number of occurrences of value.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-2-5-24",
+          "type": "code",
+          "question": "Find max element using STL max_element.",
+          "correctAnswer": [
+            "auto it = max_element(vec.begin(), vec.end());"
+          ],
+          "explanation": "max_element returns iterator to maximum element.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-2-5-25",
+          "type": "code",
+          "question": "Use reverse to reverse vector.",
+          "correctAnswer": [
+            "reverse(vec.begin(), vec.end());"
+          ],
+          "explanation": "reverse reverses elements in range.",
+          "xp": 15
         }
-      ]
+      ],
+      "unitTitle": "2. Functions and Data Structures"
     },
     {
-      "id": "2-6",
+      "id": 12,
       "title": "Advanced Control Flow",
       "xp": 85,
       "type": "lesson",
@@ -1471,8 +1754,60 @@ window.cppUnit2 = {
           "localLLMGrade": true,
           "explanation": "for (int i = 0; i < 2; i++) { for (int j = 0; j < 3; j++) { sum += matrix[i][j]; } }",
           "xp": 10
+        },
+        {
+          "id": "cpp-2-6-21",
+          "type": "code",
+          "question": "Use break to exit inner loop in nested loop.",
+          "correctAnswer": [
+            "for (int i = 0; i < 5; i++) {\\n    for (int j = 0; j < 5; j++) {\\n        if (found) break;\\n    }\\n}"
+          ],
+          "explanation": "break only exits the innermost loop.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-2-6-22",
+          "type": "code",
+          "question": "Use labeled goto to exit nested loops.",
+          "correctAnswer": [
+            "outer: for (int i = 0; i < 5; i++) {\\n    for (int j = 0; j < 5; j++) {\\n        if (found) goto outer;\\n    }\\n}"
+          ],
+          "explanation": "goto with label can exit multiple loops (but avoid when possible).",
+          "xp": 15
+        },
+        {
+          "id": "cpp-2-6-23",
+          "type": "code",
+          "question": "Use continue to skip even numbers.",
+          "correctAnswer": [
+            "for (int i = 0; i < 10; i++) {\\n    if (i % 2 == 0) continue;\\n    cout << i;\\n}"
+          ],
+          "explanation": "continue skips to next iteration.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-2-6-24",
+          "type": "code",
+          "question": "Use ternary operator for conditional assignment.",
+          "correctAnswer": [
+            "int max = (a > b) ? a : b;",
+            "int max = a > b ? a : b;"
+          ],
+          "explanation": "Ternary: condition ? expr1 : expr2",
+          "xp": 15
+        },
+        {
+          "id": "cpp-2-6-25",
+          "type": "code",
+          "question": "Use switch with fall-through.",
+          "correctAnswer": [
+            "switch (x) {\\n    case 1:\\n    case 2:\\n        cout << \"1 or 2\";\\n        break;\\n    default:\\n        cout << \"other\";\\n}"
+          ],
+          "explanation": "Multiple cases can share same code (fall-through).",
+          "xp": 15
         }
-      ]
+      ],
+      "unitTitle": "2. Functions and Data Structures"
     }
   ]
 };
