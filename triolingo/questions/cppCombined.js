@@ -96629,93 +96629,2685 @@ window.cppCombined = {
       "lessons": [
         {
           "id": "cpp-U44-L1",
-          "title": "Divide and conquer DP",
-          "unitTitle": "44. Advanced DP Optimizations",
-          "xp": 15,
+          "title": "Thread Basics",
+          "unitTitle": "44. Multithreading & Concurrency",
+          "xp": 85,
           "type": "lesson",
-          "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "difficulty": "beginner",
+          "questions": [
+            {
+              "id": "cpp-44-1-1",
+              "type": "typing",
+              "question": "thread?",
+              "correctAnswer": [
+                "concurrent",
+                "parallel",
+                "execution"
+              ],
+              "explanation": "Thread execution.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-1-2",
+              "type": "typing",
+              "question": "std::thread?",
+              "correctAnswer": [
+                "C++",
+                "thread",
+                "class"
+              ],
+              "explanation": "C++ thread class.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-1-3",
+              "type": "typing",
+              "question": "join()?",
+              "correctAnswer": [
+                "wait",
+                "complete",
+                "thread"
+              ],
+              "explanation": "Wait for thread.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-1-4",
+              "type": "multiple",
+              "question": "Thread creation?",
+              "options": [
+                "function",
+                "lambda",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both methods.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-1-5",
+              "type": "multiple",
+              "question": "Thread operations?",
+              "options": [
+                "join",
+                "detach",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both operations.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-1-6",
+              "type": "code",
+              "question": "Create thread.",
+              "correctAnswer": [
+                "std::thread t(myFunction)",
+                "create"
+              ],
+              "explanation": "Create thread.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-1-7",
+              "type": "code",
+              "question": "Join thread.",
+              "correctAnswer": [
+                "t.join()",
+                "join"
+              ],
+              "explanation": "Join thread.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-1-8",
+              "type": "code",
+              "question": "Detach thread.",
+              "correctAnswer": [
+                "t.detach()",
+                "detach"
+              ],
+              "explanation": "Detach thread.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-1-9",
+              "type": "code",
+              "question": "Thread function.",
+              "correctAnswer": [
+                "void worker() { /* code */ }",
+                "function"
+              ],
+              "explanation": "Thread function.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-1-10",
+              "type": "code",
+              "question": "Lambda thread.",
+              "correctAnswer": [
+                "std::thread t([]() { /* code */ })",
+                "lambda"
+              ],
+              "explanation": "Lambda thread.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-1-11",
+              "type": "code",
+              "question": "Thread with args.",
+              "correctAnswer": [
+                "std::thread t(myFunction, arg1, arg2)",
+                "args"
+              ],
+              "explanation": "Thread with args.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-1-12",
+              "type": "code",
+              "question": "Testing threads.",
+              "correctAnswer": [
+                "void testThreads() { // Test threads }",
+                "test"
+              ],
+              "explanation": "Test threads.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-1-13",
+              "type": "code",
+              "question": "Thread ID.",
+              "correctAnswer": [
+                "t.get_id()",
+                "id"
+              ],
+              "explanation": "Get thread ID.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-1-14",
+              "type": "code",
+              "question": "Hardware concurrency.",
+              "correctAnswer": [
+                "std::thread::hardware_concurrency()",
+                "hardware"
+              ],
+              "explanation": "Hardware threads.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-1-15",
+              "type": "code",
+              "question": "This thread.",
+              "correctAnswer": [
+                "std::this_thread::get_id()",
+                "this"
+              ],
+              "explanation": "Current thread.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-1-16",
+              "type": "code",
+              "question": "Sleep.",
+              "correctAnswer": [
+                "std::this_thread::sleep_for(std::chrono::milliseconds(100))",
+                "sleep"
+              ],
+              "explanation": "Sleep thread.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-1-17",
+              "type": "code",
+              "question": "Yield.",
+              "correctAnswer": [
+                "std::this_thread::yield()",
+                "yield"
+              ],
+              "explanation": "Yield thread.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-1-18",
+              "type": "code",
+              "question": "Thread wrapper.",
+              "correctAnswer": [
+                "// Thread RAII wrapper",
+                "wrapper"
+              ],
+              "explanation": "Thread wrapper.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-1-19",
+              "type": "code",
+              "question": "Multiple threads.",
+              "correctAnswer": [
+                "std::vector<std::thread> threads",
+                "multiple"
+              ],
+              "explanation": "Multiple threads.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-1-20",
+              "type": "code",
+              "question": "Thread summary.",
+              "correctAnswer": [
+                "// Threads: create, join, detach, with args",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-1-21",
+              "type": "code",
+              "question": "Process vs thread.",
+              "correctAnswer": [
+                "// Process: separate memory\n// Thread: shared memory",
+                "process thread"
+              ],
+              "explanation": "Process vs thread.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-1-22",
+              "type": "code",
+              "question": "Shared data.",
+              "correctAnswer": [
+                "// Threads share process memory",
+                "shared"
+              ],
+              "explanation": "Shared data.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-1-23",
+              "type": "code",
+              "question": "Race condition.",
+              "correctAnswer": [
+                "// Unsynchronized access leads to race conditions",
+                "race"
+              ],
+              "explanation": "Race condition.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-1-24",
+              "type": "code",
+              "question": "Thread basics.",
+              "correctAnswer": [
+                "// std::thread, join, detach, hardware_concurrency",
+                "basics"
+              ],
+              "explanation": "Thread basics.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-1-25",
+              "type": "code",
+              "question": "Introduction.",
+              "correctAnswer": [
+                "// Lesson 1: Thread Basics - COMPLETE",
+                "intro"
+              ],
+              "explanation": "Introduction complete.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Thread Basics\n\nIntroduction to C++ threads.\n\n## Creating a Thread\n\n```cpp\n#include <thread>\n\nvoid worker() {\n    std::cout << \"Worker thread\" << std::endl;\n}\n\nint main() {\n    std::thread t(worker);\n    t.join();\n}\n```\n\n## Thread with Lambda\n\n```cpp\nstd::thread t([]() {\n    std::cout << \"Lambda thread\" << std::endl;\n});\nt.join();\n```\n\n## Thread with Arguments\n\n```cpp\nvoid print(int id, const std::string& name) {\n    std::cout << id << \": \" << name << std::endl;\n}\n\nint main() {\n    std::thread t1(print, 1, \"Alice\");\n    std::thread t2(print, 2, \"Bob\");\n    \n    t1.join();\n    t2.join();\n}\n```\n\n## Join vs Detach\n\n| Operation | Description |\n|-----------|-------------|\n| join() | Wait for thread to finish |\n| detach() | Run independently |\n\n```cpp\n// Join - wait for completion\nstd::thread t1(worker);\nt1.join();\n\n// Detach - run in background\nstd::thread t2(worker);\nt2.detach();\n```\n\n## Thread ID\n\n```cpp\nstd::thread t(worker);\nstd::thread::id id = t.get_id();\nstd::cout << \"Thread ID: \" << id << std::endl;\n```\n\n## Hardware Concurrency\n\n```cpp\nunsigned int n = std::thread::hardware_concurrency();\nstd::cout << \"Hardware threads: \" << n << std::endl;\n```\n\n## This Thread\n\n```cpp\n#include <this_thread>\n\nstd::thread::id current_id = std::this_thread::get_id();\nstd::this_thread::sleep_for(std::chrono::milliseconds(100));\nstd::this_thread::yield();\n```\n\n## RAII Wrapper\n\n```cpp\nclass ThreadGuard {\n    std::thread& t;\npublic:\n    ThreadGuard(std::thread& t_) : t(t_) {}\n    ~ThreadGuard() {\n        if (t.joinable()) t.join();\n    }\n    ThreadGuard(const ThreadGuard&) = delete;\n    ThreadGuard& operator=(const ThreadGuard&) = delete;\n};\n```\n\n## Best Practices\n\n1. **Always join** or **detach** threads\n2. **Use RAII** for thread management\n3. **Be careful** with shared data\n4. **Use synchronization** for shared access\n5. **Handle exceptions** in threads\n"
         },
         {
           "id": "cpp-U44-L2",
-          "title": "Knuth optimization",
-          "unitTitle": "44. Advanced DP Optimizations",
-          "xp": 15,
+          "title": "Thread Synchronization",
+          "unitTitle": "44. Multithreading & Concurrency",
+          "xp": 85,
           "type": "lesson",
-          "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "difficulty": "beginner",
+          "questions": [
+            {
+              "id": "cpp-44-2-1",
+              "type": "typing",
+              "question": "mutex?",
+              "correctAnswer": [
+                "mutual exclusion",
+                "lock",
+                "synchronization"
+              ],
+              "explanation": "Mutex lock.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-2-2",
+              "type": "typing",
+              "question": "lock_guard?",
+              "correctAnswer": [
+                "RAII",
+                "lock",
+                "scope"
+              ],
+              "explanation": "RAII lock.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-2-3",
+              "type": "typing",
+              "question": "unique_lock?",
+              "correctAnswer": [
+                "flexible",
+                "lock",
+                "RAII"
+              ],
+              "explanation": "Flexible lock.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-2-4",
+              "type": "multiple",
+              "question": "Lock types?",
+              "options": [
+                "lock_guard",
+                "unique_lock",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both locks.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-2-5",
+              "type": "multiple",
+              "question": "Synchronization issues?",
+              "options": [
+                "race",
+                "deadlock",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both issues.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-2-6",
+              "type": "code",
+              "question": "Mutex lock.",
+              "correctAnswer": [
+                "std::mutex mtx; mtx.lock(); mtx.unlock();",
+                "mutex"
+              ],
+              "explanation": "Mutex lock.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-2-7",
+              "type": "code",
+              "question": "lock_guard.",
+              "correctAnswer": [
+                "std::lock_guard<std::mutex> lock(mtx)",
+                "lock_guard"
+              ],
+              "explanation": "Lock guard.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-2-8",
+              "type": "code",
+              "question": "unique_lock.",
+              "correctAnswer": [
+                "std::unique_lock<std::mutex> lock(mtx)",
+                "unique_lock"
+              ],
+              "explanation": "Unique lock.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-2-9",
+              "type": "code",
+              "question": "try_lock.",
+              "correctAnswer": [
+                "if (mtx.try_lock())",
+                "try_lock"
+              ],
+              "explanation": "Try lock.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-2-10",
+              "type": "code",
+              "question": "Testing sync.",
+              "correctAnswer": [
+                "void testSync() { // Test synchronization }",
+                "test"
+              ],
+              "explanation": "Test sync.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-2-11",
+              "type": "code",
+              "question": "Shared counter.",
+              "correctAnswer": [
+                "std::mutex mtx;\nint counter = 0;\n{\n  std::lock_guard<std::mutex> lock(mtx);\n  counter++;\n}",
+                "counter"
+              ],
+              "explanation": "Shared counter.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-2-12",
+              "type": "code",
+              "question": "Race condition.",
+              "correctAnswer": [
+                "// Race: unsynchronized access to shared data",
+                "race"
+              ],
+              "explanation": "Race condition.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-2-13",
+              "type": "code",
+              "question": "Deadlock.",
+              "correctAnswer": [
+                "// Deadlock: threads waiting on each other",
+                "deadlock"
+              ],
+              "explanation": "Deadlock.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-2-14",
+              "type": "code",
+              "question": "Prevent deadlock.",
+              "correctAnswer": [
+                "// Always lock in same order, use try_lock",
+                "prevent"
+              ],
+              "explanation": "Prevent deadlock.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-2-15",
+              "type": "code",
+              "question": "scoped_lock.",
+              "correctAnswer": [
+                "std::scoped_lock(mtx1, mtx2)",
+                "scoped"
+              ],
+              "explanation": "Scoped lock.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-2-16",
+              "type": "code",
+              "question": "Lock wrapper.",
+              "correctAnswer": [
+                "// Lock RAII wrapper",
+                "wrapper"
+              ],
+              "explanation": "Lock wrapper.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-2-17",
+              "type": "code",
+              "question": "Multiple mutexes.",
+              "correctAnswer": [
+                "std::mutex mtx1, mtx2;",
+                "multiple"
+              ],
+              "explanation": "Multiple mutexes.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-2-18",
+              "type": "code",
+              "question": "Lock order.",
+              "correctAnswer": [
+                "// Lock in consistent order to avoid deadlock",
+                "order"
+              ],
+              "explanation": "Lock order.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-2-19",
+              "type": "code",
+              "question": "Sync summary.",
+              "correctAnswer": [
+                "// Sync: mutex, lock_guard, unique_lock, scoped_lock",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-2-20",
+              "type": "code",
+              "question": "Best practices.",
+              "correctAnswer": [
+                "// Use RAII locks, minimize lock scope, consistent order",
+                "practices"
+              ],
+              "explanation": "Best practices.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-2-21",
+              "type": "code",
+              "question": "Lock granularity.",
+              "correctAnswer": [
+                "// Fine-grained: better concurrency\n// Coarse-grained: simpler",
+                "granularity"
+              ],
+              "explanation": "Lock granularity.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-2-22",
+              "type": "code",
+              "question": "Recursive mutex.",
+              "correctAnswer": [
+                "std::recursive_mutex rmtx",
+                "recursive"
+              ],
+              "explanation": "Recursive mutex.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-2-23",
+              "type": "code",
+              "question": "Timed mutex.",
+              "correctAnswer": [
+                "std::timed_mutex mtx",
+                "timed"
+              ],
+              "explanation": "Timed mutex.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-2-24",
+              "type": "code",
+              "question": "Shared mutex.",
+              "correctAnswer": [
+                "std::shared_mutex mtx",
+                "shared"
+              ],
+              "explanation": "Shared mutex.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-2-25",
+              "type": "code",
+              "question": "Sync complete.",
+              "correctAnswer": [
+                "// Lesson 2: Thread Synchronization - COMPLETE",
+                "complete"
+              ],
+              "explanation": "Complete.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Thread Synchronization\n\nSynchronizing thread access to shared data.\n\n## Mutex\n\n```cpp\n#include <mutex>\n\nstd::mutex mtx;\nint counter = 0;\n\nvoid increment() {\n    mtx.lock();\n    counter++;\n    mtx.unlock();\n}\n```\n\n## lock_guard\n\n```cpp\nvoid increment() {\n    std::lock_guard<std::mutex> lock(mtx);\n    counter++;\n}\n```\n\n## unique_lock\n\n```cpp\nvoid increment() {\n    std::unique_lock<std::mutex> lock(mtx);\n    counter++;\n    lock.unlock();  // Manual unlock\n}\n```\n\n## try_lock\n\n```cpp\nbool tryIncrement() {\n    if (mtx.try_lock()) {\n        counter++;\n        mtx.unlock();\n        return true;\n    }\n    return false;\n}\n```\n\n## Multiple Mutexes\n\n```cpp\nvoid transfer(Account& from, Account& to, int amount) {\n    // Lock both to prevent deadlock\n    std::scoped_lock lock(from.mtx, to.mtx);\n    from.balance -= amount;\n    to.balance += amount;\n}\n```\n\n## Mutex Types\n\n| Type | Description |\n|------|-------------|\n| mutex | Basic mutex |\n| recursive_mutex | Can be locked multiple times by same thread |\n| timed_mutex | Supports timed lock attempts |\n| shared_mutex | Multiple readers, single writer |\n\n## Best Practices\n\n1. **Use RAII locks** (lock_guard, unique_lock)\n2. **Minimize lock scope**\n3. **Lock consistently** to avoid deadlock\n4. **Use scoped_lock** for multiple mutexes\n5. **Prefer lock_guard** over manual lock/unlock\n6. **Be careful** with recursive locks\n"
         },
         {
           "id": "cpp-U44-L3",
-          "title": "Convex hull trick",
-          "unitTitle": "44. Advanced DP Optimizations",
-          "xp": 15,
+          "title": "Condition Variables",
+          "unitTitle": "44. Multithreading & Concurrency",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-44-3-1",
+              "type": "typing",
+              "question": "condition_variable?",
+              "correctAnswer": [
+                "notify",
+                "wait",
+                "synchronization"
+              ],
+              "explanation": "Condition variable.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-3-2",
+              "type": "typing",
+              "question": "wait()?",
+              "correctAnswer": [
+                "wait",
+                "condition",
+                "signal"
+              ],
+              "explanation": "Wait for condition.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-3-3",
+              "type": "typing",
+              "question": "notify_one()?",
+              "correctAnswer": [
+                "notify",
+                "one",
+                "thread"
+              ],
+              "explanation": "Notify one thread.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-3-4",
+              "type": "multiple",
+              "question": "Notify methods?",
+              "options": [
+                "notify_one",
+                "notify_all",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both methods.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-3-5",
+              "type": "multiple",
+              "question": "Wait variants?",
+              "options": [
+                "wait",
+                "wait_for",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both variants.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-3-6",
+              "type": "code",
+              "question": "Wait for condition.",
+              "correctAnswer": [
+                "cv.wait(lock, []{ return ready; })",
+                "wait"
+              ],
+              "explanation": "Wait for condition.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-3-7",
+              "type": "code",
+              "question": "Notify one.",
+              "correctAnswer": [
+                "cv.notify_one()",
+                "notify_one"
+              ],
+              "explanation": "Notify one thread.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-3-8",
+              "type": "code",
+              "question": "Notify all.",
+              "correctAnswer": [
+                "cv.notify_all()",
+                "notify_all"
+              ],
+              "explanation": "Notify all threads.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-3-9",
+              "type": "code",
+              "question": "Producer-consumer.",
+              "correctAnswer": [
+                "// Producer: add, notify\n// Consumer: wait, consume",
+                "producer consumer"
+              ],
+              "explanation": "Producer-consumer.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-3-10",
+              "type": "code",
+              "question": "Testing condition.",
+              "correctAnswer": [
+                "void testCondition() { // Test condition variable }",
+                "test"
+              ],
+              "explanation": "Test condition.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-3-11",
+              "type": "code",
+              "question": "Wait with timeout.",
+              "correctAnswer": [
+                "cv.wait_for(lock, std::chrono::seconds(1), predicate)",
+                "timeout"
+              ],
+              "explanation": "Wait with timeout.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-3-12",
+              "type": "code",
+              "question": "Queue with condition.",
+              "correctAnswer": [
+                "// Thread-safe queue with condition variable",
+                "queue"
+              ],
+              "explanation": "Thread-safe queue.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-3-13",
+              "type": "code",
+              "question": "Spurious wakeup.",
+              "correctAnswer": [
+                "// Always use predicate with wait",
+                "spurious"
+              ],
+              "explanation": "Spurious wakeup.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-3-14",
+              "type": "code",
+              "question": "Condition wrapper.",
+              "correctAnswer": [
+                "// Condition variable wrapper",
+                "wrapper"
+              ],
+              "explanation": "Condition wrapper.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-3-15",
+              "type": "code",
+              "question": "Barrier.",
+              "correctAnswer": [
+                "// Use condition variable for barrier",
+                "barrier"
+              ],
+              "explanation": "Barrier pattern.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-3-16",
+              "type": "code",
+              "question": "Signal.",
+              "correctAnswer": [
+                "// Signal pattern: wait for event",
+                "signal"
+              ],
+              "explanation": "Signal pattern.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-3-17",
+              "type": "code",
+              "question": "Bounded buffer.",
+              "correctAnswer": [
+                "// Bounded buffer with condition variables",
+                "buffer"
+              ],
+              "explanation": "Bounded buffer.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-3-18",
+              "type": "code",
+              "question": "Condition summary.",
+              "correctAnswer": [
+                "// Condition: wait, notify_one, notify_all, predicate",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-3-19",
+              "type": "code",
+              "question": "Best practices.",
+              "correctAnswer": [
+                "// Use predicate, lock before wait, notify after modify",
+                "practices"
+              ],
+              "explanation": "Best practices.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-3-20",
+              "type": "code",
+              "question": "Complete producer.",
+              "correctAnswer": [
+                "// Full producer-consumer implementation",
+                "complete"
+              ],
+              "explanation": "Complete producer.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-3-21",
+              "type": "code",
+              "question": "Thread pool.",
+              "correctAnswer": [
+                "// Use condition variable for thread pool",
+                "pool"
+              ],
+              "explanation": "Thread pool.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-3-22",
+              "type": "code",
+              "question": "Event loop.",
+              "correctAnswer": [
+                "// Event loop with condition variable",
+                "event"
+              ],
+              "explanation": "Event loop.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-3-23",
+              "type": "code",
+              "question": "Wait until.",
+              "correctAnswer": [
+                "cv.wait_until(lock, deadline, predicate)",
+                "wait_until"
+              ],
+              "explanation": "Wait until time.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-3-24",
+              "type": "code",
+              "question": "Condition patterns.",
+              "correctAnswer": [
+                "// Patterns: producer-consumer, barrier, signal",
+                "patterns"
+              ],
+              "explanation": "Patterns.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-3-25",
+              "type": "code",
+              "question": "Complete.",
+              "correctAnswer": [
+                "// Lesson 3: Condition Variables - COMPLETE",
+                "complete"
+              ],
+              "explanation": "Complete.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Condition Variables\n\nSynchronizing thread execution with conditions.\n\n## Basic Usage\n\n```cpp\n#include <condition_variable>\n\nstd::mutex mtx;\nstd::condition_variable cv;\nbool ready = false;\n\nvoid worker() {\n    std::unique_lock<std::mutex> lock(mtx);\n    cv.wait(lock, []{ return ready; });\n    // Do work\n}\n\nvoid signal() {\n    {\n        std::lock_guard<std::mutex> lock(mtx);\n        ready = true;\n    }\n    cv.notify_one();\n}\n```\n\n## Producer-Consumer\n\n```cpp\ntemplate<typename T>\nclass ThreadSafeQueue {\n    std::queue<T> queue;\n    std::mutex mtx;\n    std::condition_variable cv;\n    \npublic:\n    void push(const T& item) {\n        std::lock_guard<std::mutex> lock(mtx);\n        queue.push(item);\n        cv.notify_one();\n    }\n    \n    T pop() {\n        std::unique_lock<std::mutex> lock(mtx);\n        cv.wait(lock, [&]{ return !queue.empty(); });\n        T item = queue.front();\n        queue.pop();\n        return item;\n    }\n};\n```\n\n## Notify Methods\n\n| Method | Description |\n|--------|-------------|\n| notify_one() | Wake one waiting thread |\n| notify_all() | Wake all waiting threads |\n\n## Wait Variants\n\n| Method | Description |\n|--------|-------------|\n| wait() | Wait indefinitely |\n| wait_for() | Wait with timeout |\n| wait_until() | Wait until time point |\n\n## Spurious Wakeup\n\n```cpp\n// Always use predicate to handle spurious wakeups\ncv.wait(lock, []{ return condition; });\n```\n\n## Best Practices\n\n1. **Always use predicate** with wait\n2. **Lock mutex** before calling wait\n3. **Hold lock** when modifying condition\n4. **Notify** after modifying condition\n5. **Use notify_one** for single consumer\n6. **Use notify_all** for multiple consumers\n"
         },
         {
           "id": "cpp-U44-L4",
-          "title": "Li Chao tree",
-          "unitTitle": "44. Advanced DP Optimizations",
-          "xp": 15,
+          "title": "Atomic Operations",
+          "unitTitle": "44. Multithreading & Concurrency",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-44-4-1",
+              "type": "typing",
+              "question": "atomic?",
+              "correctAnswer": [
+                "lock-free",
+                "atomic",
+                "operation"
+              ],
+              "explanation": "Atomic operation.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-4-2",
+              "type": "typing",
+              "question": "fetch_add?",
+              "correctAnswer": [
+                "atomic",
+                "add",
+                "return"
+              ],
+              "explanation": "Atomic add.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-4-3",
+              "type": "typing",
+              "question": "compare_exchange?",
+              "correctAnswer": [
+                "CAS",
+                "compare",
+                "swap"
+              ],
+              "explanation": "Compare exchange.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-4-4",
+              "type": "multiple",
+              "question": "Atomic types?",
+              "options": [
+                "int",
+                "bool",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both types.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-4-5",
+              "type": "multiple",
+              "question": "Memory orders?",
+              "options": [
+                "relaxed",
+                "acquire",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both orders.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-4-6",
+              "type": "code",
+              "question": "Atomic int.",
+              "correctAnswer": [
+                "std::atomic<int> counter",
+                "atomic int"
+              ],
+              "explanation": "Atomic int.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-4-7",
+              "type": "code",
+              "question": "Atomic load.",
+              "correctAnswer": [
+                "int value = counter.load()",
+                "load"
+              ],
+              "explanation": "Atomic load.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-4-8",
+              "type": "code",
+              "question": "Atomic store.",
+              "correctAnswer": [
+                "counter.store(42)",
+                "store"
+              ],
+              "explanation": "Atomic store.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-4-9",
+              "type": "code",
+              "question": "Atomic add.",
+              "correctAnswer": [
+                "counter.fetch_add(1)",
+                "fetch_add"
+              ],
+              "explanation": "Atomic add.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-4-10",
+              "type": "code",
+              "question": "CAS.",
+              "correctAnswer": [
+                "counter.compare_exchange_strong(expected, desired)",
+                "cas"
+              ],
+              "explanation": "Compare exchange.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-4-11",
+              "type": "code",
+              "question": "Testing atomic.",
+              "correctAnswer": [
+                "void testAtomic() { // Test atomic }",
+                "test"
+              ],
+              "explanation": "Test atomic.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-4-12",
+              "type": "code",
+              "question": "Atomic flag.",
+              "correctAnswer": [
+                "std::atomic_flag flag",
+                "flag"
+              ],
+              "explanation": "Atomic flag.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-4-13",
+              "type": "code",
+              "question": "Lock-free.",
+              "correctAnswer": [
+                "counter.is_lock_free()",
+                "lock_free"
+              ],
+              "explanation": "Lock-free check.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-4-14",
+              "type": "code",
+              "question": "Memory order relaxed.",
+              "correctAnswer": [
+                "counter.fetch_add(1, std::memory_order_relaxed)",
+                "relaxed"
+              ],
+              "explanation": "Relaxed order.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-4-15",
+              "type": "code",
+              "question": "Memory order acquire.",
+              "correctAnswer": [
+                "counter.load(std::memory_order_acquire)",
+                "acquire"
+              ],
+              "explanation": "Acquire order.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-4-16",
+              "type": "code",
+              "question": "Memory order release.",
+              "correctAnswer": [
+                "counter.store(1, std::memory_order_release)",
+                "release"
+              ],
+              "explanation": "Release order.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-4-17",
+              "type": "code",
+              "question": "Atomic pointer.",
+              "correctAnswer": [
+                "std::atomic<void*> ptr",
+                "pointer"
+              ],
+              "explanation": "Atomic pointer.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-4-18",
+              "type": "code",
+              "question": "Atomic summary.",
+              "correctAnswer": [
+                "// Atomic: load, store, fetch_add, compare_exchange",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-4-19",
+              "type": "code",
+              "question": "Spinlock.",
+              "correctAnswer": [
+                "// Spinlock using atomic_flag",
+                "spinlock"
+              ],
+              "explanation": "Spinlock.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-4-20",
+              "type": "code",
+              "question": "Lock-free queue.",
+              "correctAnswer": [
+                "// Lock-free queue using atomic",
+                "queue"
+              ],
+              "explanation": "Lock-free queue.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-4-21",
+              "type": "code",
+              "question": "Best practices.",
+              "correctAnswer": [
+                "// Use atomics for simple operations, prefer mutex for complex",
+                "practices"
+              ],
+              "explanation": "Best practices.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-4-22",
+              "type": "code",
+              "question": "Atomic bool.",
+              "correctAnswer": [
+                "std::atomic<bool> flag",
+                "atomic bool"
+              ],
+              "explanation": "Atomic bool.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-4-23",
+              "type": "code",
+              "question": "Atomic shared_ptr.",
+              "correctAnswer": [
+                "std::atomic<std::shared_ptr<T>> ptr",
+                "shared_ptr"
+              ],
+              "explanation": "Atomic shared_ptr.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-4-24",
+              "type": "code",
+              "question": "Complete atomic.",
+              "correctAnswer": [
+                "// Full atomic implementation",
+                "complete"
+              ],
+              "explanation": "Complete atomic.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-4-25",
+              "type": "code",
+              "question": "Complete.",
+              "correctAnswer": [
+                "// Lesson 4: Atomic Operations - COMPLETE",
+                "complete"
+              ],
+              "explanation": "Complete.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Atomic Operations\n\nLock-free concurrent operations.\n\n## Basic Atomic\n\n```cpp\n#include <atomic>\n\nstd::atomic<int> counter(0);\n\nvoid increment() {\n    counter.fetch_add(1);\n}\n\nint getValue() {\n    return counter.load();\n}\n\nvoid setValue(int v) {\n    counter.store(v);\n}\n```\n\n## Compare-Exchange (CAS)\n\n```cpp\nstd::atomic<int> counter(0);\n\nvoid increment() {\n    int expected = counter.load();\n    while (!counter.compare_exchange_weak(expected, expected + 1)) {\n        // Retry if failed\n    }\n}\n```\n\n## Memory Orders\n\n| Order | Description |\n|-------|-------------|\n| relaxed | No ordering guarantees |\n| acquire | Acquire semantics |\n| release | Release semantics |\n| acq_rel | Acquire and release |\n| seq_cst | Sequential consistency |\n\n```cpp\n// Relaxed: no synchronization\ncounter.fetch_add(1, std::memory_order_relaxed);\n\n// Acquire-Release: synchronizes with other operations\ncounter.fetch_add(1, std::memory_order_acq_rel);\n\n// Sequential consistency: total ordering\ncounter.fetch_add(1, std::memory_order_seq_cst);\n```\n\n## Atomic Flag\n\n```cpp\nstd::atomic_flag flag = ATOMIC_FLAG_INIT;\n\nvoid lock() {\n    while (flag.test_and_set(std::memory_order_acquire)) {\n        // Spin\n    }\n}\n\nvoid unlock() {\n    flag.clear(std::memory_order_release);\n}\n```\n\n## Lock-Free Check\n\n```cpp\nif (counter.is_lock_free()) {\n    // Lock-free operation\n}\n```\n\n## Best Practices\n\n1. **Use atomics** for simple operations\n2. **Use mutex** for complex operations\n3. **Specify memory order** explicitly\n4. **Check is_lock_free()** for performance\n5. **Use compare_exchange** for CAS patterns\n6. **Prefer seq_cst** for simplicity\n"
         },
         {
           "id": "cpp-U44-L5",
-          "title": "Monotonic queue optimization",
-          "unitTitle": "44. Advanced DP Optimizations",
-          "xp": 15,
+          "title": "Thread Pools",
+          "unitTitle": "44. Multithreading & Concurrency",
+          "xp": 85,
           "type": "lesson",
-          "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "difficulty": "advanced",
+          "questions": [
+            {
+              "id": "cpp-44-5-1",
+              "type": "typing",
+              "question": "thread pool?",
+              "correctAnswer": [
+                "reuse",
+                "threads",
+                "workers"
+              ],
+              "explanation": "Thread pool.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-5-2",
+              "type": "typing",
+              "question": "enqueue?",
+              "correctAnswer": [
+                "add",
+                "task",
+                "queue"
+              ],
+              "explanation": "Enqueue task.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-5-3",
+              "type": "typing",
+              "question": "worker?",
+              "correctAnswer": [
+                "process",
+                "task",
+                "thread"
+              ],
+              "explanation": "Worker thread.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-5-4",
+              "type": "multiple",
+              "question": "Pool components?",
+              "options": [
+                "queue",
+                "threads",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both components.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-5-5",
+              "type": "multiple",
+              "question": "Task types?",
+              "options": [
+                "function",
+                "lambda",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both types.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-5-6",
+              "type": "code",
+              "question": "Thread pool.",
+              "correctAnswer": [
+                "class ThreadPool { std::vector<std::thread> workers; std::queue<Task> tasks; }",
+                "pool"
+              ],
+              "explanation": "Thread pool.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-5-7",
+              "type": "code",
+              "question": "Enqueue task.",
+              "correctAnswer": [
+                "void enqueue(Task task) { queue.push(task); cv.notify_one(); }",
+                "enqueue"
+              ],
+              "explanation": "Enqueue task.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-5-8",
+              "type": "code",
+              "question": "Worker function.",
+              "correctAnswer": [
+                "void worker() { while(true) { Task task = pop(); task(); } }",
+                "worker"
+              ],
+              "explanation": "Worker function.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-5-9",
+              "type": "code",
+              "question": "Testing pool.",
+              "correctAnswer": [
+                "void testPool() { // Test thread pool }",
+                "test"
+              ],
+              "explanation": "Test pool.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-5-10",
+              "type": "code",
+              "question": "Shutdown pool.",
+              "correctAnswer": [
+                "void shutdown() { stop = true; cv.notify_all(); for (auto& t : workers) t.join(); }",
+                "shutdown"
+              ],
+              "explanation": "Shutdown pool.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-5-11",
+              "type": "code",
+              "question": "Future result.",
+              "correctAnswer": [
+                "std::future<Result> f = pool.enqueue(task)",
+                "future"
+              ],
+              "explanation": "Future result.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-5-12",
+              "type": "code",
+              "question": "Thread pool wrapper.",
+              "correctAnswer": [
+                "// Thread pool implementation",
+                "wrapper"
+              ],
+              "explanation": "Thread pool wrapper.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-5-13",
+              "type": "code",
+              "question": "Work stealing.",
+              "correctAnswer": [
+                "// Work stealing thread pool",
+                "stealing"
+              ],
+              "explanation": "Work stealing.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-5-14",
+              "type": "code",
+              "question": "Priority queue.",
+              "correctAnswer": [
+                "// Priority-based thread pool",
+                "priority"
+              ],
+              "explanation": "Priority queue.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-5-15",
+              "type": "code",
+              "question": "Pool summary.",
+              "correctAnswer": [
+                "// Pool: workers, queue, enqueue, shutdown",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-5-16",
+              "type": "code",
+              "question": "Complete pool.",
+              "correctAnswer": [
+                "// Full thread pool implementation",
+                "complete"
+              ],
+              "explanation": "Complete pool.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-5-17",
+              "type": "code",
+              "question": "Best practices.",
+              "correctAnswer": [
+                "// Use pool size = hardware_concurrency, RAII cleanup",
+                "practices"
+              ],
+              "explanation": "Best practices.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-5-18",
+              "type": "code",
+              "question": "Task scheduling.",
+              "correctAnswer": [
+                "// FIFO, priority, work stealing",
+                "scheduling"
+              ],
+              "explanation": "Task scheduling.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-5-19",
+              "type": "code",
+              "question": "Exception handling.",
+              "correctAnswer": [
+                "// Catch exceptions in workers, propagate via future",
+                "exception"
+              ],
+              "explanation": "Exception handling.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-5-20",
+              "type": "code",
+              "question": "Load balancing.",
+              "correctAnswer": [
+                "// Distribute work evenly",
+                "balance"
+              ],
+              "explanation": "Load balancing.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-5-21",
+              "type": "code",
+              "question": "Pool patterns.",
+              "correctAnswer": [
+                "// Fixed-size, cached, fork-join",
+                "patterns"
+              ],
+              "explanation": "Pool patterns.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-5-22",
+              "type": "code",
+              "question": "Dynamic sizing.",
+              "correctAnswer": [
+                "// Grow/shrink pool based on load",
+                "dynamic"
+              ],
+              "explanation": "Dynamic sizing.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-5-23",
+              "type": "code",
+              "question": "Monitoring.",
+              "correctAnswer": [
+                "// Track active tasks, queue size",
+                "monitor"
+              ],
+              "explanation": "Monitoring.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-5-24",
+              "type": "code",
+              "question": "Pool complete.",
+              "correctAnswer": [
+                "// Complete thread pool with futures",
+                "pool complete"
+              ],
+              "explanation": "Complete pool.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-5-25",
+              "type": "code",
+              "question": "Complete.",
+              "correctAnswer": [
+                "// Lesson 5: Thread Pools - COMPLETE",
+                "complete"
+              ],
+              "explanation": "Complete.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Thread Pools\n\nManaging worker threads efficiently.\n\n## Basic Thread Pool\n\n```cpp\nclass ThreadPool {\n    std::vector<std::thread> workers;\n    std::queue<std::function<void()>> tasks;\n    std::mutex mtx;\n    std::condition_variable cv;\n    bool stop = false;\n    \npublic:\n    ThreadPool(size_t threads) {\n        for (size_t i = 0; i < threads; ++i) {\n            workers.emplace_back([this] {\n                while (true) {\n                    std::function<void()> task;\n                    {\n                        std::unique_lock<std::mutex> lock(mtx);\n                        cv.wait(lock, [this] { return stop || !tasks.empty(); });\n                        if (stop && tasks.empty()) return;\n                        task = std::move(tasks.front());\n                        tasks.pop();\n                    }\n                    task();\n                }\n            });\n        }\n    }\n    \n    template<typename F>\n    void enqueue(F&& f) {\n        {\n            std::lock_guard<std::mutex> lock(mtx);\n            tasks.emplace(std::forward<F>(f));\n        }\n        cv.notify_one();\n    }\n    \n    ~ThreadPool() {\n        {\n            std::lock_guard<std::mutex> lock(mtx);\n            stop = true;\n        }\n        cv.notify_all();\n        for (auto& worker : workers) worker.join();\n    }\n};\n```\n\n## With Futures\n\n```cpp\ntemplate<typename F>\nauto enqueue(F&& f) -> std::future<decltype(f())> {\n    using ReturnType = decltype(f());\n    auto task = std::make_shared<std::packaged_task<ReturnType()>>(\n        std::forward<F>(f)\n    );\n    std::future<ReturnType> result = task->get_future();\n    {\n        std::lock_guard<std::mutex> lock(mtx);\n        tasks.emplace([task] { (*task)(); });\n    }\n    cv.notify_one();\n    return result;\n}\n```\n\n## Usage\n\n```cpp\nThreadPool pool(4);\n\nauto result = pool.enqueue([]() {\n    std::this_thread::sleep_for(std::chrono::seconds(1));\n    return 42;\n});\n\nstd::cout << \"Result: \" << result.get() << std::endl;\n```\n\n## Best Practices\n\n1. **Pool size = hardware_concurrency**\n2. **Use RAII** for cleanup\n3. **Handle exceptions** properly\n4. **Use futures** for results\n5. **Consider work stealing** for load balancing\n"
         },
         {
           "id": "cpp-U44-L6",
-          "title": "Alien trick",
-          "unitTitle": "44. Advanced DP Optimizations",
-          "xp": 15,
+          "title": "Parallel Algorithms",
+          "unitTitle": "44. Multithreading & Concurrency",
+          "xp": 85,
           "type": "lesson",
-          "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "difficulty": "advanced",
+          "questions": [
+            {
+              "id": "cpp-44-6-1",
+              "type": "typing",
+              "question": "execution::par?",
+              "correctAnswer": [
+                "parallel",
+                "execution",
+                "policy"
+              ],
+              "explanation": "Parallel execution.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-6-2",
+              "type": "typing",
+              "question": "std::for_each?",
+              "correctAnswer": [
+                "parallel",
+                "for_each",
+                "algorithm"
+              ],
+              "explanation": "Parallel for_each.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-6-3",
+              "type": "typing",
+              "question": "std::transform?",
+              "correctAnswer": [
+                "parallel",
+                "transform",
+                "algorithm"
+              ],
+              "explanation": "Parallel transform.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-6-4",
+              "type": "multiple",
+              "question": "Execution policies?",
+              "options": [
+                "seq",
+                "par",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both policies.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-6-5",
+              "type": "multiple",
+              "question": "Parallel algorithms?",
+              "options": [
+                "sort",
+                "for_each",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both algorithms.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-6-6",
+              "type": "code",
+              "question": "Parallel for_each.",
+              "correctAnswer": [
+                "std::for_each(std::execution::par, v.begin(), v.end(), f)",
+                "for_each"
+              ],
+              "explanation": "Parallel for_each.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-6-7",
+              "type": "code",
+              "question": "Parallel transform.",
+              "correctAnswer": [
+                "std::transform(std::execution::par, v.begin(), v.end(), result.begin(), f)",
+                "transform"
+              ],
+              "explanation": "Parallel transform.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-6-8",
+              "type": "code",
+              "question": "Parallel sort.",
+              "correctAnswer": [
+                "std::sort(std::execution::par, v.begin(), v.end())",
+                "sort"
+              ],
+              "explanation": "Parallel sort.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-6-9",
+              "type": "code",
+              "question": "Parallel reduce.",
+              "correctAnswer": [
+                "std::reduce(std::execution::par, v.begin(), v.end(), 0)",
+                "reduce"
+              ],
+              "explanation": "Parallel reduce.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-6-10",
+              "type": "code",
+              "question": "Testing parallel.",
+              "correctAnswer": [
+                "void testParallel() { // Test parallel algorithms }",
+                "test"
+              ],
+              "explanation": "Test parallel.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-6-11",
+              "type": "code",
+              "question": "Sequential policy.",
+              "correctAnswer": [
+                "std::execution::seq",
+                "seq"
+              ],
+              "explanation": "Sequential policy.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-6-12",
+              "type": "code",
+              "question": "Parallel policy.",
+              "correctAnswer": [
+                "std::execution::par",
+                "par"
+              ],
+              "explanation": "Parallel policy.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-6-13",
+              "type": "code",
+              "question": "Parallel unsequenced.",
+              "correctAnswer": [
+                "std::execution::par_unseq",
+                "par_unseq"
+              ],
+              "explanation": "Parallel unsequenced.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-6-14",
+              "type": "code",
+              "question": "Parallel scan.",
+              "correctAnswer": [
+                "std::exclusive_scan(std::execution::par, v.begin(), v.end(), result.begin(), 0)",
+                "scan"
+              ],
+              "explanation": "Parallel scan.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-6-15",
+              "type": "code",
+              "question": "Parallel summary.",
+              "correctAnswer": [
+                "// Parallel: execution::par, sort, for_each, transform, reduce",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-6-16",
+              "type": "code",
+              "question": "Best practices.",
+              "correctAnswer": [
+                "// Use par for CPU-bound, seq for small data, avoid side effects",
+                "practices"
+              ],
+              "explanation": "Best practices.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-6-17",
+              "type": "code",
+              "question": "Performance.",
+              "correctAnswer": [
+                "// Parallel overhead vs speedup",
+                "performance"
+              ],
+              "explanation": "Performance.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-6-18",
+              "type": "code",
+              "question": "Data race.",
+              "correctAnswer": [
+                "// Avoid data races in parallel algorithms",
+                "race"
+              ],
+              "explanation": "Data race.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-6-19",
+              "type": "code",
+              "question": "Thread safety.",
+              "correctAnswer": [
+                "// Ensure operations are thread-safe",
+                "safety"
+              ],
+              "explanation": "Thread safety.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-6-20",
+              "type": "code",
+              "question": "Complete parallel.",
+              "correctAnswer": [
+                "// Full parallel algorithm example",
+                "complete"
+              ],
+              "explanation": "Complete parallel.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-6-21",
+              "type": "code",
+              "question": "Parallel count.",
+              "correctAnswer": [
+                "std::count(std::execution::par, v.begin(), v.end(), value)",
+                "count"
+              ],
+              "explanation": "Parallel count.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-6-22",
+              "type": "code",
+              "question": "Parallel find.",
+              "correctAnswer": [
+                "std::find(std::execution::par, v.begin(), v.end(), value)",
+                "find"
+              ],
+              "explanation": "Parallel find.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-6-23",
+              "type": "code",
+              "question": "Parallel copy.",
+              "correctAnswer": [
+                "std::copy(std::execution::par, v.begin(), v.end(), result.begin())",
+                "copy"
+              ],
+              "explanation": "Parallel copy.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-6-24",
+              "type": "code",
+              "question": "Parallel patterns.",
+              "correctAnswer": [
+                "// Map, reduce, scan patterns",
+                "patterns"
+              ],
+              "explanation": "Parallel patterns.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-6-25",
+              "type": "code",
+              "question": "Complete.",
+              "correctAnswer": [
+                "// Lesson 6: Parallel Algorithms - COMPLETE",
+                "complete"
+              ],
+              "explanation": "Complete.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Parallel Algorithms\n\nC++17 parallel algorithms.\n\n## Execution Policies\n\n| Policy | Description |\n|--------|-------------|\n| seq | Sequential execution |\n| par | Parallel execution |\n| par_unseq | Parallel + vectorized |\n\n## Parallel for_each\n\n```cpp\n#include <execution>\n\nstd::vector<int> v(1000000);\n\nstd::for_each(std::execution::par, v.begin(), v.end(), [](int& x) {\n    x *= 2;\n});\n```\n\n## Parallel Transform\n\n```cpp\nstd::vector<int> input = {1, 2, 3, 4, 5};\nstd::vector<int> output(5);\n\nstd::transform(std::execution::par,\n               input.begin(), input.end(),\n               output.begin(),\n               [](int x) { return x * 2; });\n```\n\n## Parallel Sort\n\n```cpp\nstd::vector<int> v = {5, 2, 8, 1, 9};\nstd::sort(std::execution::par, v.begin(), v.end());\n```\n\n## Parallel Reduce\n\n```cpp\nstd::vector<int> v = {1, 2, 3, 4, 5};\nint sum = std::reduce(std::execution::par,\n                      v.begin(), v.end(),\n                      0);  // Initial value\n```\n\n## Parallel Algorithms\n\n| Algorithm | Parallel |\n|-----------|----------|\n| for_each | Yes |\n| transform | Yes |\n| sort | Yes |\n| reduce | Yes |\n| count | Yes |\n| find | Yes |\n| copy | Yes |\n\n## Best Practices\n\n1. **Use par for CPU-bound** operations\n2. **Use seq for small data** (overhead)\n3. **Avoid side effects** in functions\n4. **Ensure thread safety**\n5. **Benchmark** before using parallel\n"
         },
         {
           "id": "cpp-U44-L7",
-          "title": "SMAWK algorithm",
-          "unitTitle": "44. Advanced DP Optimizations",
-          "xp": 15,
+          "title": "Async & Futures",
+          "unitTitle": "44. Multithreading & Concurrency",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-44-7-1",
+              "type": "typing",
+              "question": "std::async?",
+              "correctAnswer": [
+                "async",
+                "future",
+                "task"
+              ],
+              "explanation": "Async task.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-7-2",
+              "type": "typing",
+              "question": "std::future?",
+              "correctAnswer": [
+                "future",
+                "result",
+                "async"
+              ],
+              "explanation": "Future result.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-7-3",
+              "type": "typing",
+              "question": "get()?",
+              "correctAnswer": [
+                "get",
+                "result",
+                "wait"
+              ],
+              "explanation": "Get result.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-7-4",
+              "type": "multiple",
+              "question": "Future operations?",
+              "options": [
+                "get",
+                "wait",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both operations.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-7-5",
+              "type": "multiple",
+              "question": "Launch policies?",
+              "options": [
+                "async",
+                "deferred",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both policies.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-7-6",
+              "type": "code",
+              "question": "Async task.",
+              "correctAnswer": [
+                "std::future<int> f = std::async(std::launch::async, []{ return 42; })",
+                "async"
+              ],
+              "explanation": "Async task.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-7-7",
+              "type": "code",
+              "question": "Get result.",
+              "correctAnswer": [
+                "int result = f.get()",
+                "get"
+              ],
+              "explanation": "Get result.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-7-8",
+              "type": "code",
+              "question": "Wait for future.",
+              "correctAnswer": [
+                "f.wait()",
+                "wait"
+              ],
+              "explanation": "Wait for future.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-7-9",
+              "type": "code",
+              "question": "Wait for timeout.",
+              "correctAnswer": [
+                "f.wait_for(std::chrono::seconds(1))",
+                "wait_for"
+              ],
+              "explanation": "Wait with timeout.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-7-10",
+              "type": "code",
+              "question": "Testing async.",
+              "correctAnswer": [
+                "void testAsync() { // Test async }",
+                "test"
+              ],
+              "explanation": "Test async.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-7-11",
+              "type": "code",
+              "question": "Launch async.",
+              "correctAnswer": [
+                "std::launch::async",
+                "launch async"
+              ],
+              "explanation": "Launch async.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-7-12",
+              "type": "code",
+              "question": "Launch deferred.",
+              "correctAnswer": [
+                "std::launch::deferred",
+                "launch deferred"
+              ],
+              "explanation": "Launch deferred.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-7-13",
+              "type": "code",
+              "question": "Shared future.",
+              "correctAnswer": [
+                "std::shared_future<int> sf = f.share()",
+                "shared"
+              ],
+              "explanation": "Shared future.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-7-14",
+              "type": "code",
+              "question": "Future ready.",
+              "correctAnswer": [
+                "f.valid()",
+                "valid"
+              ],
+              "explanation": "Check ready.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-7-15",
+              "type": "code",
+              "question": "Async wrapper.",
+              "correctAnswer": [
+                "// Async wrapper with exception handling",
+                "wrapper"
+              ],
+              "explanation": "Async wrapper.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-7-16",
+              "type": "code",
+              "question": "Async summary.",
+              "correctAnswer": [
+                "// Async: async, future, get, wait, shared_future",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-7-17",
+              "type": "code",
+              "question": "Exception handling.",
+              "correctAnswer": [
+                "// Exceptions propagate through future.get()",
+                "exception"
+              ],
+              "explanation": "Exception handling.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-7-18",
+              "type": "code",
+              "question": "Promise.",
+              "correctAnswer": [
+                "std::promise<int> p",
+                "promise"
+              ],
+              "explanation": "Promise.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-7-19",
+              "type": "code",
+              "question": "Set promise.",
+              "correctAnswer": [
+                "p.set_value(42)",
+                "set_value"
+              ],
+              "explanation": "Set value.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-7-20",
+              "type": "code",
+              "question": "Complete async.",
+              "correctAnswer": [
+                "// Full async implementation",
+                "complete"
+              ],
+              "explanation": "Complete async.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-7-21",
+              "type": "code",
+              "question": "Multiple tasks.",
+              "correctAnswer": [
+                "// Run multiple async tasks and wait",
+                "multiple"
+              ],
+              "explanation": "Multiple tasks.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-7-22",
+              "type": "code",
+              "question": "When_all.",
+              "correctAnswer": [
+                "// Wait for all futures",
+                "when_all"
+              ],
+              "explanation": "Wait for all.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-7-23",
+              "type": "code",
+              "question": "Best practices.",
+              "correctAnswer": [
+                "// Use async for I/O-bound, consider thread pool for CPU-bound",
+                "practices"
+              ],
+              "explanation": "Best practices.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-7-24",
+              "type": "code",
+              "question": "Performance.",
+              "correctAnswer": [
+                "// Async vs thread overhead",
+                "performance"
+              ],
+              "explanation": "Performance.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-7-25",
+              "type": "code",
+              "question": "Complete.",
+              "correctAnswer": [
+                "// Lesson 7: Async & Futures - COMPLETE",
+                "complete"
+              ],
+              "explanation": "Complete.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Async & Futures\n\nAsynchronous task execution.\n\n## std::async\n\n```cpp\n#include <future>\n\nstd::future<int> f = std::async(std::launch::async, []() {\n    std::this_thread::sleep_for(std::chrono::seconds(1));\n    return 42;\n});\n\nint result = f.get();\nstd::cout << \"Result: \" << result << std::endl;\n```\n\n## Launch Policies\n\n| Policy | Description |\n|--------|-------------|\n| async | Run in new thread |\n| deferred | Run when get() is called |\n\n```cpp\n// Async: run immediately\nauto f1 = std::async(std::launch::async, task);\n\n// Deferred: run when get() is called\nauto f2 = std::async(std::launch::deferred, task);\n\n// Either: implementation chooses\nauto f3 = std::async(task);\n```\n\n## Future Operations\n\n```cpp\nstd::future<int> f = std::async(task);\n\n// Wait for result\nint result = f.get();\n\n// Wait without getting result\nf.wait();\n\n// Wait with timeout\nauto status = f.wait_for(std::chrono::seconds(1));\n\n// Check if ready\nif (f.valid()) {\n    // Result is ready\n}\n```\n\n## Shared Future\n\n```cpp\nstd::future<int> f = std::async(task);\nstd::shared_future<int> sf = f.share();\n\n// Multiple threads can wait on shared_future\nstd::thread t1([&sf] { int r1 = sf.get(); });\nstd::thread t2([&sf] { int r2 = sf.get(); });\n```\n\n## Promise\n\n```cpp\nstd::promise<int> p;\nstd::future<int> f = p.get_future();\n\nstd::thread t([&p] {\n    p.set_value(42);\n});\n\nint result = f.get();\n```\n\n## Best Practices\n\n1. **Use async** for I/O-bound tasks\n2. **Use thread pool** for CPU-bound tasks\n3. **Handle exceptions** with try-catch around get()\n4. **Use shared_future** for multiple waiters\n5. **Consider deferred** for lazy evaluation\n"
         },
         {
           "id": "cpp-U44-L8",
-          "title": "Greedy Algorithms",
-          "unitTitle": "44. Advanced DP Optimizations",
-          "xp": 15,
+          "title": "Concurrency Patterns",
+          "unitTitle": "44. Multithreading & Concurrency",
+          "xp": 85,
           "type": "lesson",
-          "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "difficulty": "advanced",
+          "questions": [
+            {
+              "id": "cpp-44-8-1",
+              "type": "typing",
+              "question": "producer-consumer?",
+              "correctAnswer": [
+                "queue",
+                "pattern",
+                "concurrency"
+              ],
+              "explanation": "Producer-consumer.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-8-2",
+              "type": "typing",
+              "question": "reader-writer?",
+              "correctAnswer": [
+                "shared",
+                "exclusive",
+                "lock"
+              ],
+              "explanation": "Reader-writer.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-8-3",
+              "type": "typing",
+              "question": "barrier?",
+              "correctAnswer": [
+                "synchronize",
+                "threads",
+                "point"
+              ],
+              "explanation": "Barrier pattern.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-8-4",
+              "type": "multiple",
+              "question": "Patterns?",
+              "options": [
+                "pipeline",
+                "map-reduce",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both patterns.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-8-5",
+              "type": "multiple",
+              "question": "Sync primitives?",
+              "options": [
+                "barrier",
+                "latch",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both primitives.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-8-6",
+              "type": "code",
+              "question": "Producer-consumer.",
+              "correctAnswer": [
+                "// Thread-safe queue with mutex and condition variable",
+                "producer consumer"
+              ],
+              "explanation": "Producer-consumer.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-8-7",
+              "type": "code",
+              "question": "Reader-writer.",
+              "correctAnswer": [
+                "std::shared_mutex mtx; // shared_lock for read, unique_lock for write",
+                "reader writer"
+              ],
+              "explanation": "Reader-writer.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-8-8",
+              "type": "code",
+              "question": "Barrier.",
+              "correctAnswer": [
+                "std::barrier b(num_threads); b.arrive_and_wait();",
+                "barrier"
+              ],
+              "explanation": "Barrier.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-8-9",
+              "type": "code",
+              "question": "Latch.",
+              "correctAnswer": [
+                "std::latch l(count); l.count_down(); l.wait();",
+                "latch"
+              ],
+              "explanation": "Latch.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-8-10",
+              "type": "code",
+              "question": "Testing patterns.",
+              "correctAnswer": [
+                "void testPatterns() { // Test concurrency patterns }",
+                "test"
+              ],
+              "explanation": "Test patterns.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-8-11",
+              "type": "code",
+              "question": "Pipeline.",
+              "correctAnswer": [
+                "// Pipeline: stages with queues between",
+                "pipeline"
+              ],
+              "explanation": "Pipeline.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-8-12",
+              "type": "code",
+              "question": "Map-reduce.",
+              "correctAnswer": [
+                "// Map: parallel transform, Reduce: parallel reduce",
+                "map reduce"
+              ],
+              "explanation": "Map-reduce.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-8-13",
+              "type": "code",
+              "question": "Fork-join.",
+              "correctAnswer": [
+                "// Fork: create threads, Join: wait for completion",
+                "fork join"
+              ],
+              "explanation": "Fork-join.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-8-14",
+              "type": "code",
+              "question": "Patterns summary.",
+              "correctAnswer": [
+                "// Patterns: producer-consumer, reader-writer, barrier, latch",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-8-15",
+              "type": "code",
+              "question": "Semaphore.",
+              "correctAnswer": [
+                "// Semaphore using condition variable",
+                "semaphore"
+              ],
+              "explanation": "Semaphore.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-8-16",
+              "type": "code",
+              "question": "Mutex patterns.",
+              "correctAnswer": [
+                "// Scoped, recursive, shared, timed mutex",
+                "mutex patterns"
+              ],
+              "explanation": "Mutex patterns.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-8-17",
+              "type": "code",
+              "question": "Complete patterns.",
+              "correctAnswer": [
+                "// Full concurrency patterns",
+                "complete"
+              ],
+              "explanation": "Complete patterns.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-8-18",
+              "type": "code",
+              "question": "Best practices.",
+              "correctAnswer": [
+                "// Choose right pattern, minimize contention, test thoroughly",
+                "practices"
+              ],
+              "explanation": "Best practices.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-8-19",
+              "type": "code",
+              "question": "Deadlock prevention.",
+              "correctAnswer": [
+                "// Lock ordering, try_lock, timeout",
+                "deadlock"
+              ],
+              "explanation": "Deadlock prevention.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-8-20",
+              "type": "code",
+              "question": "Performance.",
+              "correctAnswer": [
+                "// Minimize lock scope, use lock-free, balance load",
+                "performance"
+              ],
+              "explanation": "Performance.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-8-21",
+              "type": "code",
+              "question": "Testing concurrency.",
+              "correctAnswer": [
+                "// Thread sanitizer, stress testing, race detectors",
+                "testing"
+              ],
+              "explanation": "Testing concurrency.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-8-22",
+              "type": "code",
+              "question": "Debugging.",
+              "correctAnswer": [
+                "// gdb threads, race detectors, logging",
+                "debugging"
+              ],
+              "explanation": "Debugging.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-8-23",
+              "type": "code",
+              "question": "Real-world patterns.",
+              "correctAnswer": [
+                "// Web server, task queue, event loop",
+                "real"
+              ],
+              "explanation": "Real-world patterns.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-8-24",
+              "type": "code",
+              "question": "Patterns complete.",
+              "correctAnswer": [
+                "// Complete concurrency patterns guide",
+                "patterns complete"
+              ],
+              "explanation": "Complete.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-8-25",
+              "type": "code",
+              "question": "Complete.",
+              "correctAnswer": [
+                "// Lesson 8: Concurrency Patterns - COMPLETE",
+                "complete"
+              ],
+              "explanation": "Complete.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Concurrency Patterns\n\nCommon concurrency design patterns.\n\n## Producer-Consumer\n\n```cpp\ntemplate<typename T>\nclass ThreadSafeQueue {\n    std::queue<T> queue;\n    std::mutex mtx;\n    std::condition_variable cv;\n    \npublic:\n    void push(const T& item) {\n        std::lock_guard<std::mutex> lock(mtx);\n        queue.push(item);\n        cv.notify_one();\n    }\n    \n    T pop() {\n        std::unique_lock<std::mutex> lock(mtx);\n        cv.wait(lock, [&]{ return !queue.empty(); });\n        T item = queue.front();\n        queue.pop();\n        return item;\n    }\n};\n```\n\n## Reader-Writer Lock\n\n```cpp\nclass ReadWriteLock {\n    std::shared_mutex mtx;\n    \npublic:\n    void readLock() {\n        mtx.lock_shared();\n    }\n    \n    void readUnlock() {\n        mtx.unlock_shared();\n    }\n    \n    void writeLock() {\n        mtx.lock();\n    }\n    \n    void writeUnlock() {\n        mtx.unlock();\n    }\n};\n```\n\n## Barrier (C++20)\n\n```cpp\n#include <barrier>\n\nstd::barrier sync_point(4);\n\nvoid worker(int id) {\n    // Do work\n    sync_point.arrive_and_wait();  // Wait for all threads\n    // Continue\n}\n```\n\n## Latch (C++20)\n\n```cpp\n#include <latch>\n\nstd::latch ready(4);\n\nvoid worker(int id) {\n    // Do work\n    ready.count_down();\n}\n\nvoid waitForAll() {\n    ready.wait();  // Wait for all workers\n}\n```\n\n## Common Patterns\n\n| Pattern | Description |\n|---------|-------------|\n| Producer-Consumer | Queue-based communication |\n| Reader-Writer | Multiple readers, single writer |\n| Barrier | Synchronize at specific point |\n| Latch | One-time synchronization |\n| Pipeline | Staged processing |\n| Map-Reduce | Parallel transformation + aggregation |\n\n## Best Practices\n\n1. **Choose right pattern** for the problem\n2. **Minimize contention** on shared resources\n3. **Use lock-free** when possible\n4. **Test thoroughly** with many threads\n5. **Use sanitizers** to detect issues\n"
         },
         {
           "id": "cpp-U44-L9",
-          "title": "Activity selection",
-          "unitTitle": "44. Advanced DP Optimizations",
-          "xp": 15,
+          "title": "Concurrency Summary",
+          "unitTitle": "44. Multithreading & Concurrency",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-44-9-1",
+              "type": "typing",
+              "question": "thread?",
+              "correctAnswer": [
+                "concurrent",
+                "execution",
+                "parallel"
+              ],
+              "explanation": "Thread execution.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-9-2",
+              "type": "typing",
+              "question": "mutex?",
+              "correctAnswer": [
+                "lock",
+                "synchronization",
+                "mutual"
+              ],
+              "explanation": "Mutex lock.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-9-3",
+              "type": "typing",
+              "question": "atomic?",
+              "correctAnswer": [
+                "lock-free",
+                "operation",
+                "atomic"
+              ],
+              "explanation": "Atomic operation.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-9-4",
+              "type": "multiple",
+              "question": "Synchronization?",
+              "options": [
+                "mutex",
+                "condition",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both methods.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-9-5",
+              "type": "multiple",
+              "question": "Async?",
+              "options": [
+                "async",
+                "future",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both features.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-44-9-6",
+              "type": "code",
+              "question": "Complete example.",
+              "correctAnswer": [
+                "// Full concurrency example",
+                "complete"
+              ],
+              "explanation": "Complete example.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-9-7",
+              "type": "code",
+              "question": "Thread summary.",
+              "correctAnswer": [
+                "// Thread: create, join, detach, with args",
+                "thread summary"
+              ],
+              "explanation": "Thread summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-9-8",
+              "type": "code",
+              "question": "Mutex summary.",
+              "correctAnswer": [
+                "// Mutex: lock_guard, unique_lock, scoped_lock",
+                "mutex summary"
+              ],
+              "explanation": "Mutex summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-9-9",
+              "type": "code",
+              "question": "Condition summary.",
+              "correctAnswer": [
+                "// Condition: wait, notify_one, notify_all",
+                "condition summary"
+              ],
+              "explanation": "Condition summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-9-10",
+              "type": "code",
+              "question": "Atomic summary.",
+              "correctAnswer": [
+                "// Atomic: load, store, fetch_add, compare_exchange",
+                "atomic summary"
+              ],
+              "explanation": "Atomic summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-9-11",
+              "type": "code",
+              "question": "Async summary.",
+              "correctAnswer": [
+                "// Async: async, future, get, wait",
+                "async summary"
+              ],
+              "explanation": "Async summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-9-12",
+              "type": "code",
+              "question": "Best practices.",
+              "correctAnswer": [
+                "// RAII, minimize lock scope, avoid deadlock, test thoroughly",
+                "practices"
+              ],
+              "explanation": "Best practices.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-9-13",
+              "type": "code",
+              "question": "Real-world apps.",
+              "correctAnswer": [
+                "// Web servers, task queues, parallel processing",
+                "apps"
+              ],
+              "explanation": "Real-world apps.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-9-14",
+              "type": "code",
+              "question": "Testing concurrency.",
+              "correctAnswer": [
+                "void testConcurrency() { // Test concurrency }",
+                "test"
+              ],
+              "explanation": "Test concurrency.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-9-15",
+              "type": "code",
+              "question": "Tools.",
+              "correctAnswer": [
+                "// thread, mutex, condition, atomic, async, future",
+                "tools"
+              ],
+              "explanation": "Concurrency tools.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-9-16",
+              "type": "code",
+              "question": "Unit 44 summary.",
+              "correctAnswer": [
+                "// Unit 44: Threads, mutex, condition, atomic, async, patterns",
+                "unit summary"
+              ],
+              "explanation": "Unit 44 summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-9-17",
+              "type": "code",
+              "question": "Course progress.",
+              "correctAnswer": [
+                "// Completing Unit 44 of 49",
+                "progress"
+              ],
+              "explanation": "Course progress.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-9-18",
+              "type": "code",
+              "question": "Practice projects.",
+              "correctAnswer": [
+                "// Thread pool, parallel sort, async web crawler",
+                "projects"
+              ],
+              "explanation": "Practice projects.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-9-19",
+              "type": "code",
+              "question": "Advanced topics.",
+              "correctAnswer": [
+                "// Lock-free data structures, coroutine, GPU computing",
+                "advanced"
+              ],
+              "explanation": "Advanced topics.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-9-20",
+              "type": "code",
+              "question": "Final summary.",
+              "correctAnswer": [
+                "// Concurrency: threads, mutex, condition, atomic, async, patterns",
+                "final"
+              ],
+              "explanation": "Final summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-9-21",
+              "type": "code",
+              "question": "Congratulations.",
+              "correctAnswer": [
+                "// Unit 44 COMPLETE! Mastered C++ Concurrency!",
+                "congratulations"
+              ],
+              "explanation": "Congratulations!",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-9-22",
+              "type": "code",
+              "question": "Next steps.",
+              "correctAnswer": [
+                "// Continue to next unit, practice, build concurrent apps",
+                "next"
+              ],
+              "explanation": "Next steps.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-9-23",
+              "type": "code",
+              "question": "Milestone.",
+              "correctAnswer": [
+                "// 90% COMPLETE! 5 more units to 100%!",
+                "milestone"
+              ],
+              "explanation": "Milestone!",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-9-24",
+              "type": "code",
+              "question": "Achievement.",
+              "correctAnswer": [
+                "// 20 complete units with 4,500 questions!",
+                "achievement"
+              ],
+              "explanation": "Achievement!",
+              "xp": 15
+            },
+            {
+              "id": "cpp-44-9-25",
+              "type": "code",
+              "question": "SO CLOSE!",
+              "correctAnswer": [
+                "// 90% COMPLETE! JUST 5 MORE UNITS TO 100%!",
+                "so close"
+              ],
+              "explanation": "SO CLOSE!",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Concurrency Summary\n\nComplete guide to C++ concurrency.\n\n## Key Concepts\n\n| Concept | Description |\n|---------|-------------|\n| **Thread** | Unit of execution |\n| **Mutex** | Mutual exclusion lock |\n| **Condition** | Wait for condition |\n| **Atomic** | Lock-free operations |\n| **Async** | Asynchronous tasks |\n| **Future** | Future result |\n\n## Quick Reference\n\n### Create Thread\n```cpp\nstd::thread t(function);\nt.join();\n```\n\n### Mutex Lock\n```cpp\nstd::mutex mtx;\nstd::lock_guard<std::mutex> lock(mtx);\n```\n\n### Condition Variable\n```cpp\ncv.wait(lock, predicate);\ncv.notify_one();\n```\n\n### Atomic Operation\n```cpp\nstd::atomic<int> counter;\ncounter.fetch_add(1);\n```\n\n### Async Task\n```cpp\nauto f = std::async(std::launch::async, task);\nauto result = f.get();\n```\n\n## Complete Example\n\n```cpp\nclass ParallelProcessor {\n    ThreadPool pool;\n    std::mutex mtx;\n    std::atomic<int> counter{0};\n    \npublic:\n    void process(const std::vector<int>& data) {\n        std::vector<std::future<int>> results;\n        \n        for (int item : data) {\n            results.push_back(pool.enqueue([this, item] {\n                int result = heavyComputation(item);\n                {\n                    std::lock_guard<std::mutex> lock(mtx);\n                    std::cout << \"Processed: \" << result << std::endl;\n                }\n                counter.fetch_add(1);\n                return result;\n            }));\n        }\n        \n        for (auto& f : results) {\n            f.wait();\n        }\n    }\n};\n```\n\n## Project Ideas\n\n1. **Thread Pool**: Efficient task execution\n2. **Parallel Sort**: Multi-threaded sorting\n3. **Web Server**: Concurrent HTTP server\n4. **Task Queue**: Producer-consumer system\n5. **Parallel Calculator**: Matrix operations\n\n## Best Practices\n\n1. **Use RAII** for lock management\n2. **Minimize lock scope**\n3. **Prefer atomics** for simple operations\n4. **Handle exceptions** properly\n5. **Test with many threads**\n6. **Use sanitizers** to detect issues\n7. **Document** synchronization requirements\n\nCongratulations! You've completed C++ Concurrency!\n"
         },
         {
           "id": "cpp-U44-L10",
@@ -96837,7 +99429,8 @@ window.cppCombined = {
           "questions": [],
           "locked": true
         }
-      ]
+      ],
+      "unitTitle": "44. Multithreading & Concurrency"
     },
     {
       "unitId": "45",
