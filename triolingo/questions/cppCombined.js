@@ -29537,7 +29537,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 5,
@@ -29546,7 +29547,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 6,
@@ -29555,7 +29557,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 7,
@@ -29564,7 +29567,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 8,
@@ -29573,7 +29577,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 9,
@@ -29582,7 +29587,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 10,
@@ -29591,7 +29597,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 11,
@@ -29600,7 +29607,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 12,
@@ -29609,7 +29617,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 13,
@@ -29618,7 +29627,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 14,
@@ -29627,7 +29637,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 15,
@@ -29636,7 +29647,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -29651,7 +29663,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 17,
@@ -29660,7 +29673,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 18,
@@ -29669,7 +29683,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 19,
@@ -29678,7 +29693,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 20,
@@ -29687,7 +29703,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 21,
@@ -29696,7 +29713,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 22,
@@ -29705,7 +29723,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 23,
@@ -29714,7 +29733,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 24,
@@ -29723,7 +29743,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 25,
@@ -29732,7 +29753,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -29747,7 +29769,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 27,
@@ -29756,7 +29779,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 28,
@@ -29765,7 +29789,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 29,
@@ -29774,7 +29799,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 30,
@@ -29783,7 +29809,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 31,
@@ -29792,7 +29819,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 32,
@@ -29801,7 +29829,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 33,
@@ -29810,7 +29839,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -29825,7 +29855,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 35,
@@ -29834,7 +29865,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 36,
@@ -29843,7 +29875,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 37,
@@ -29852,7 +29885,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 38,
@@ -29861,7 +29895,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 39,
@@ -29870,7 +29905,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -29885,7 +29921,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 41,
@@ -29894,7 +29931,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 42,
@@ -29903,7 +29941,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 43,
@@ -29912,7 +29951,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 44,
@@ -29921,7 +29961,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 45,
@@ -29930,7 +29971,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 46,
@@ -29939,7 +29981,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 47,
@@ -29948,7 +29991,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -29963,7 +30007,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 49,
@@ -29972,7 +30017,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 50,
@@ -29981,7 +30027,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 51,
@@ -29990,7 +30037,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 52,
@@ -29999,7 +30047,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 53,
@@ -30008,7 +30057,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 54,
@@ -30017,7 +30067,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 55,
@@ -30026,7 +30077,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 56,
@@ -30035,7 +30087,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 57,
@@ -30044,7 +30097,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 58,
@@ -30053,7 +30107,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 59,
@@ -30062,7 +30117,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 60,
@@ -30071,7 +30127,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 61,
@@ -30080,7 +30137,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 62,
@@ -30089,7 +30147,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 63,
@@ -30098,7 +30157,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 64,
@@ -30107,7 +30167,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 65,
@@ -30116,7 +30177,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 66,
@@ -30125,7 +30187,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 67,
@@ -30134,7 +30197,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 68,
@@ -30143,7 +30207,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -30158,7 +30223,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 70,
@@ -30167,7 +30233,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 71,
@@ -30176,7 +30243,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 72,
@@ -30185,7 +30253,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 73,
@@ -30194,7 +30263,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 74,
@@ -30203,7 +30273,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -30218,7 +30289,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 76,
@@ -30227,7 +30299,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 77,
@@ -30236,7 +30309,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 78,
@@ -30245,7 +30319,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 79,
@@ -30254,7 +30329,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 80,
@@ -30263,7 +30339,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 81,
@@ -30272,7 +30349,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 82,
@@ -30281,7 +30359,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 83,
@@ -30290,7 +30369,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -30305,7 +30385,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 85,
@@ -30314,7 +30395,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 86,
@@ -30323,7 +30405,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 87,
@@ -30332,7 +30415,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 88,
@@ -30341,7 +30425,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 89,
@@ -30350,7 +30435,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 90,
@@ -30359,7 +30445,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -30374,7 +30461,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 92,
@@ -30383,7 +30471,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 93,
@@ -30392,7 +30481,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 94,
@@ -30401,7 +30491,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 95,
@@ -30410,7 +30501,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 96,
@@ -30419,7 +30511,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 97,
@@ -30428,7 +30521,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 98,
@@ -30437,7 +30531,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 99,
@@ -30446,7 +30541,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 100,
@@ -30455,7 +30551,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 101,
@@ -30464,7 +30561,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -30479,7 +30577,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 103,
@@ -30488,7 +30587,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 104,
@@ -30497,7 +30597,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 105,
@@ -30506,7 +30607,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 106,
@@ -30515,7 +30617,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 107,
@@ -30524,7 +30627,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 108,
@@ -30533,7 +30637,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 109,
@@ -30542,7 +30647,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 110,
@@ -30551,7 +30657,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -30566,7 +30673,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 112,
@@ -30575,7 +30683,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 113,
@@ -30584,7 +30693,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 114,
@@ -30593,7 +30703,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 115,
@@ -30602,7 +30713,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 116,
@@ -30611,7 +30723,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 117,
@@ -30620,7 +30733,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 118,
@@ -30629,7 +30743,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 119,
@@ -30638,7 +30753,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 120,
@@ -30647,7 +30763,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -30662,7 +30779,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 122,
@@ -30671,7 +30789,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 123,
@@ -30680,7 +30799,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 124,
@@ -30689,7 +30809,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 125,
@@ -30698,7 +30819,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 126,
@@ -30707,7 +30829,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -30722,7 +30845,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 128,
@@ -30731,7 +30855,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 129,
@@ -30740,7 +30865,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 130,
@@ -30749,7 +30875,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 131,
@@ -30758,7 +30885,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -30773,7 +30901,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 133,
@@ -30782,7 +30911,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 134,
@@ -30791,7 +30921,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 135,
@@ -30800,7 +30931,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 136,
@@ -30809,7 +30941,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 137,
@@ -30818,7 +30951,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 138,
@@ -30827,7 +30961,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -30842,7 +30977,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 140,
@@ -30851,7 +30987,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 141,
@@ -30860,7 +30997,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 142,
@@ -30869,7 +31007,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 143,
@@ -30878,7 +31017,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 144,
@@ -30887,7 +31027,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 145,
@@ -30896,7 +31037,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 146,
@@ -30905,7 +31047,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -30920,7 +31063,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 148,
@@ -30929,7 +31073,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 149,
@@ -30938,7 +31083,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 150,
@@ -30947,7 +31093,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -30962,7 +31109,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 152,
@@ -30971,7 +31119,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 153,
@@ -30980,7 +31129,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 154,
@@ -30989,7 +31139,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 155,
@@ -30998,7 +31149,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 156,
@@ -31007,7 +31159,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -31022,7 +31175,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 158,
@@ -31031,7 +31185,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 159,
@@ -31040,7 +31195,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 160,
@@ -31049,7 +31205,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -31064,7 +31221,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 162,
@@ -31073,7 +31231,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 163,
@@ -31082,7 +31241,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 164,
@@ -31091,7 +31251,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 165,
@@ -31100,7 +31261,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 166,
@@ -31109,7 +31271,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 167,
@@ -31118,7 +31281,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -31133,7 +31297,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 169,
@@ -31142,7 +31307,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 170,
@@ -31151,7 +31317,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 171,
@@ -31160,7 +31327,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 172,
@@ -31169,7 +31337,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 173,
@@ -31178,7 +31347,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -31193,7 +31363,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 175,
@@ -31202,7 +31373,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 176,
@@ -31211,7 +31383,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 177,
@@ -31220,7 +31393,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 178,
@@ -31229,7 +31403,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 179,
@@ -31238,7 +31413,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -31253,7 +31429,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 181,
@@ -31262,7 +31439,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 182,
@@ -31271,7 +31449,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 183,
@@ -31280,7 +31459,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 184,
@@ -31289,7 +31469,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 185,
@@ -31298,7 +31479,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 186,
@@ -31307,7 +31489,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 187,
@@ -31316,7 +31499,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -31331,7 +31515,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 189,
@@ -31340,7 +31525,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 190,
@@ -31349,7 +31535,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 191,
@@ -31358,7 +31545,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 192,
@@ -31367,7 +31555,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 193,
@@ -31376,7 +31565,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 194,
@@ -31385,7 +31575,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -31400,7 +31591,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 196,
@@ -31409,7 +31601,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 197,
@@ -31418,7 +31611,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 198,
@@ -31427,7 +31621,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 199,
@@ -31436,7 +31631,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 200,
@@ -31445,7 +31641,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 201,
@@ -31454,7 +31651,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 202,
@@ -31463,7 +31661,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 203,
@@ -31472,7 +31671,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 204,
@@ -31481,7 +31681,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 205,
@@ -31490,7 +31691,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 206,
@@ -31499,7 +31701,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 207,
@@ -31508,7 +31711,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 208,
@@ -31517,7 +31721,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 209,
@@ -31526,7 +31731,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 210,
@@ -31535,7 +31741,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 211,
@@ -31544,7 +31751,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 212,
@@ -31553,7 +31761,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 213,
@@ -31562,7 +31771,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 214,
@@ -31571,7 +31781,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 215,
@@ -31580,7 +31791,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -31595,7 +31807,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 217,
@@ -31604,7 +31817,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 218,
@@ -31613,7 +31827,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 219,
@@ -31622,7 +31837,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 220,
@@ -31631,7 +31847,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -31646,7 +31863,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 222,
@@ -31655,7 +31873,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 223,
@@ -31664,7 +31883,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 224,
@@ -31673,7 +31893,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 225,
@@ -31682,7 +31903,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 226,
@@ -31691,7 +31913,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 227,
@@ -31700,7 +31923,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 228,
@@ -31709,7 +31933,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 229,
@@ -31718,7 +31943,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 230,
@@ -31727,7 +31953,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 231,
@@ -31736,7 +31963,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 232,
@@ -31745,7 +31973,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 233,
@@ -31754,7 +31983,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 234,
@@ -31763,7 +31993,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 235,
@@ -31772,7 +32003,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 236,
@@ -31781,7 +32013,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 237,
@@ -31790,7 +32023,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 238,
@@ -31799,7 +32033,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 239,
@@ -31808,7 +32043,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 240,
@@ -31817,7 +32053,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -31832,7 +32069,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 242,
@@ -31841,7 +32079,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 243,
@@ -31850,7 +32089,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 244,
@@ -31859,7 +32099,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 245,
@@ -31868,7 +32109,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -31883,7 +32125,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 247,
@@ -31892,7 +32135,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 248,
@@ -31901,7 +32145,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 249,
@@ -31910,7 +32155,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 250,
@@ -31919,7 +32165,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 251,
@@ -31928,7 +32175,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     },
@@ -31943,7 +32191,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 253,
@@ -31952,7 +32201,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 254,
@@ -31961,7 +32211,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 255,
@@ -31970,7 +32221,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 256,
@@ -31979,7 +32231,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 257,
@@ -31988,7 +32241,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 258,
@@ -31997,7 +32251,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 259,
@@ -32006,7 +32261,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 260,
@@ -32015,7 +32271,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 261,
@@ -32024,7 +32281,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 262,
@@ -32033,7 +32291,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 263,
@@ -32042,7 +32301,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 264,
@@ -32051,7 +32311,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 265,
@@ -32060,7 +32321,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         },
         {
           "id": 266,
@@ -32069,7 +32331,8 @@ window.cppCombined = {
           "xp": 15,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": []
+          "questions": [],
+          "locked": true
         }
       ]
     }
