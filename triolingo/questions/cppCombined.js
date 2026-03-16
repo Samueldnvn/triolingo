@@ -31314,33 +31314,896 @@ window.cppCombined = {
         },
         {
           "id": "cpp-U20-L10",
-          "title": "Decision tree complexity",
-          "unitTitle": "20. Foundations of Algorithm Analysis",
-          "xp": 15,
+          "title": "C++ and Other Languages",
+          "unitTitle": "20. C and C++ Interoperability",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-20-10-1",
+              "type": "typing",
+              "question": "Can C++ call C?",
+              "correctAnswer": [
+                "yes",
+                "can"
+              ],
+              "explanation": "C++ can call C via extern C.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-20-10-2",
+              "type": "typing",
+              "question": "Can C call C++?",
+              "correctAnswer": [
+                "yes with wrapper",
+                "yes"
+              ],
+              "explanation": "C can call C++ via extern C wrapper.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-20-10-3",
+              "type": "typing",
+              "question": "Can C++ call Python?",
+              "correctAnswer": [
+                "yes via Python API",
+                "yes"
+              ],
+              "explanation": "Python C API for C++.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-20-10-4",
+              "type": "multiple",
+              "question": "Java JNI?",
+              "options": [
+                "Java Native Interface",
+                "Java Native Integration",
+                "Java Native Internet",
+                "none"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "JNI is Java Native Interface.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-20-10-5",
+              "type": "multiple",
+              "question": "C# interop?",
+              "options": [
+                "P/Invoke",
+                "DLLImport",
+                "extern",
+                "both"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "P/Invoke for C# interop.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-20-10-6",
+              "type": "code",
+              "question": "Python include.",
+              "correctAnswer": [
+                "#include <Python.h>",
+                "Python C API"
+              ],
+              "explanation": "#include <Python.h>",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-10-7",
+              "type": "code",
+              "question": "Python interpreter init.",
+              "correctAnswer": [
+                "Py_Initialize();",
+                "init Python"
+              ],
+              "explanation": "Py_Initialize()",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-10-8",
+              "type": "code",
+              "question": "Python finalise.",
+              "correctAnswer": [
+                "Py_Finalize();",
+                "finalise Python"
+              ],
+              "explanation": "Py_Finalize()",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-10-9",
+              "type": "code",
+              "question": "Python import module.",
+              "correctAnswer": [
+                "PyObject* module = PyImport_ImportModule(\"module\");",
+                "import module"
+              ],
+              "explanation": "PyImport_ImportModule()",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-10-10",
+              "type": "code",
+              "question": "Python call function.",
+              "correctAnswer": [
+                "PyObject* result = PyObject_CallObject(func, args);",
+                "call Python function"
+              ],
+              "explanation": "PyObject_CallObject()",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-10-11",
+              "type": "code",
+              "question": "JNI include.",
+              "correctAnswer": [
+                "#include <jni.h>",
+                "JNI header"
+              ],
+              "explanation": "#include <jni.h>",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-10-12",
+              "type": "code",
+              "question": "JNI method signature.",
+              "correctAnswer": [
+                "JNIEXPORT jint JNICALL Java_Class_method(JNIEnv*, jobject)",
+                "JNI function"
+              ],
+              "explanation": "JNIEXPORT Type JNICALL Java_Class_method",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-10-13",
+              "type": "code",
+              "question": "JNI get method ID.",
+              "correctAnswer": [
+                "jmethodID mid = env->GetMethodID(clazz, \"method\", \"(I)V\");",
+                "GetMethodID"
+              ],
+              "explanation": "env->GetMethodID()",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-10-14",
+              "type": "code",
+              "question": "JNI call method.",
+              "correctAnswer": [
+                "env->CallVoidMethod(obj, mid, arg);",
+                "CallVoidMethod"
+              ],
+              "explanation": "env->CallVoidMethod()",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-10-15",
+              "type": "code",
+              "question": "C# P/Invoke.",
+              "correctAnswer": [
+                "[DllImport(\"lib.dll\")]\nstatic extern int Function(int arg);",
+                "DllImport"
+              ],
+              "explanation": "[DllImport(\"lib.dll\")]",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-10-16",
+              "type": "code",
+              "question": "C# extern C.",
+              "correctAnswer": [
+                "[DllImport(\"lib\", CallingConvention=CallingConvention.Cdecl)]",
+                "Cdecl calling"
+              ],
+              "explanation": "CallingConvention.Cdecl",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-10-17",
+              "type": "code",
+              "question": "Rust extern C.",
+              "correctAnswer": [
+                "extern \"C\" fn c_function() {}",
+                "extern C in Rust"
+              ],
+              "explanation": "extern \"C\" fn",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-10-18",
+              "type": "code",
+              "question": "Go cgo include.",
+              "correctAnswer": [
+                "/* #include <header.h> */",
+                "cgo include"
+              ],
+              "explanation": "/* #include */ in Go",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-10-19",
+              "type": "code",
+              "question": "Go cgo function.",
+              "correctAnswer": [
+                "/*\nimport \"C\"\n*/\nfunc GoFunction() int {\n    return C.c_function()\n}",
+                "cgo call"
+              ],
+              "explanation": "C.c_function() in Go",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-10-20",
+              "type": "code",
+              "question": "Node.js N-API.",
+              "correctAnswer": [
+                "#include <node_api.h>",
+                "Node.js API"
+              ],
+              "explanation": "#include <node_api.h>",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-10-21",
+              "type": "code",
+              "question": "Node.js init.",
+              "correctAnswer": [
+                "napi_value Init(napi_env env, napi_value exports)",
+                "NAPI init"
+              ],
+              "explanation": "napi_value Init()",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-10-22",
+              "type": "code",
+              "question": "Node.js register.",
+              "correctAnswer": [
+                "NAPI_MODULE(NODE_GYP_MODULE_NAME, Init)",
+                "NAPI_MODULE"
+              ],
+              "explanation": "NAPI_MODULE()",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-10-23",
+              "type": "code",
+              "question": "Lua include.",
+              "correctAnswer": [
+                "#include <lua.h>",
+                "Lua header"
+              ],
+              "explanation": "#include <lua.h>",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-10-24",
+              "type": "code",
+              "question": "Lua state.",
+              "correctAnswer": [
+                "lua_State* L = luaL_newstate();",
+                "Lua state"
+              ],
+              "explanation": "lua_State* L",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-10-25",
+              "type": "code",
+              "question": "Language boundary.",
+              "correctAnswer": [
+                "// Use extern C at language boundaries",
+                "extern C"
+              ],
+              "explanation": "extern \"C\" for interop.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# C++ and Other Languages\n\nInteroperating C++ with Python, Java, C#, Rust, Go, and more.\n\n## Python C API\n\n```cpp\n#include <Python.h>\n\nvoid call_python() {\n    // Initialize Python interpreter\n    Py_Initialize();\n\n    // Import module\n    PyObject* module = PyImport_ImportModule(\"mymodule\");\n\n    // Get function\n    PyObject* func = PyObject_GetAttrString(module, \"myfunction\");\n\n    // Call function\n    PyObject* result = PyObject_CallObject(func, NULL);\n\n    // Cleanup\n    Py_DECREF(result);\n    Py_Finalize();\n}\n```\n\n## Java JNI\n\n```cpp\n#include <jni.h>\n\nJNIEXPORT jint JNICALL Java_MyClass_nativeMethod(JNIEnv* env, jobject obj, jint value) {\n    return value * 2;\n}\n```\n\n## C# P/Invoke\n\n```csharp\nusing System.Runtime.InteropServices;\n\nclass Native {\n    [DllImport(\"mylib.dll\", CallingConvention = CallingConvention.Cdecl)]\n    public static extern int MyFunction(int arg);\n}\n```\n\n## Rust\n\n```rust\n#[no_mangle]\npub extern \"C\" fn c_function(x: i32) -> i32 {\n    x * 2\n}\n```\n\n## Go cgo\n\n```go\n/*\n#include <header.h>\n*/\nimport \"C\"\n\nfunc CallC() int {\n    return C.c_function()\n}\n```\n"
         },
         {
           "id": "cpp-U20-L11",
-          "title": "Time-space tradeoffs",
-          "unitTitle": "20. Foundations of Algorithm Analysis",
-          "xp": 15,
+          "title": "Performance Considerations",
+          "unitTitle": "20. C and C++ Interoperability",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-20-11-1",
+              "type": "typing",
+              "question": "extern C overhead?",
+              "correctAnswer": [
+                "minimal",
+                "none",
+                "very small"
+              ],
+              "explanation": "Minimal overhead for extern C.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-20-11-2",
+              "type": "typing",
+              "question": "ABI vs API?",
+              "correctAnswer": [
+                "binary vs application",
+                "interface level"
+              ],
+              "explanation": "ABI is binary, API is source.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-20-11-3",
+              "type": "typing",
+              "question": "Inline across boundaries?",
+              "correctAnswer": [
+                "no",
+                "cannot"
+              ],
+              "explanation": "Inline functions can't cross extern C.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-20-11-4",
+              "type": "multiple",
+              "question": "Pass by value vs pointer?",
+              "options": [
+                "pointer faster for large",
+                "value always faster",
+                "same",
+                "depends"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "Pointer faster for large objects.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-20-11-5",
+              "type": "multiple",
+              "question": "Calling convention?",
+              "options": [
+                "stdcall cdecl fastcall",
+                "only cdecl",
+                "only stdcall",
+                "auto"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "Multiple calling conventions.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-20-11-6",
+              "type": "code",
+              "question": "stdcall.",
+              "correctAnswer": [
+                "void __stdcall func()",
+                "stdcall convention"
+              ],
+              "explanation": "__stdcall",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-11-7",
+              "type": "code",
+              "question": "cdecl.",
+              "correctAnswer": [
+                "void __cdecl func()",
+                "cdecl convention"
+              ],
+              "explanation": "__cdecl",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-11-8",
+              "type": "code",
+              "question": "fastcall.",
+              "correctAnswer": [
+                "void __fastcall func(int a, int b)",
+                "fastcall convention"
+              ],
+              "explanation": "__fastcall",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-11-9",
+              "type": "code",
+              "question": "Naked function.",
+              "correctAnswer": [
+                "void __declspec(naked) func()",
+                "naked no prolog"
+              ],
+              "explanation": "__declspec(naked)",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-11-10",
+              "type": "code",
+              "question": "Inline assembly.",
+              "correctAnswer": [
+                "__asm { mov eax, 1 }",
+                "inline asm"
+              ],
+              "explanation": "__asm {}",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-11-11",
+              "type": "code",
+              "question": "Restrict pointer.",
+              "correctAnswer": [
+                "void func(int* __restrict ptr)",
+                "restrict no alias"
+              ],
+              "explanation": "__restrict",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-11-12",
+              "type": "code",
+              "question": "Const correctness.",
+              "correctAnswer": [
+                "void func(const int* ptr)",
+                "const pointer"
+              ],
+              "explanation": "const for read-only.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-11-13",
+              "type": "code",
+              "question": "Noinline.",
+              "correctAnswer": [
+                "void __attribute__((noinline)) func()",
+                "prevent inlining"
+              ],
+              "explanation": "__attribute__((noinline))",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-11-14",
+              "type": "code",
+              "question": "Always inline.",
+              "correctAnswer": [
+                "void __attribute__((always_inline)) func()",
+                "force inline"
+              ],
+              "explanation": "__attribute__((always_inline))",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-11-15",
+              "type": "code",
+              "question": "Hot attribute.",
+              "correctAnswer": [
+                "void __attribute__((hot)) func()",
+                "hot path"
+              ],
+              "explanation": "__attribute__((hot))",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-11-16",
+              "type": "code",
+              "question": "Cold attribute.",
+              "correctAnswer": [
+                "void __attribute__((cold)) func()",
+                "cold path"
+              ],
+              "explanation": "__attribute__((cold))",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-11-17",
+              "type": "code",
+              "question": "Flatten.",
+              "correctAnswer": [
+                "void __attribute__((flatten)) func()",
+                "flatten calls"
+              ],
+              "explanation": "__attribute__((flatten))",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-11-18",
+              "type": "code",
+              "question": "Pure attribute.",
+              "correctAnswer": [
+                "int __attribute__((pure)) func()",
+                "pure function"
+              ],
+              "explanation": "__attribute__((pure))",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-11-19",
+              "type": "code",
+              "question": "Const attribute.",
+              "correctAnswer": [
+                "int __attribute__((const)) func()",
+                "const pure"
+              ],
+              "explanation": "__attribute__((const))",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-11-20",
+              "type": "code",
+              "question": "Optimize attribute.",
+              "correctAnswer": [
+                "void __attribute__((optimize(\"O3\"))) func()",
+                "optimize level"
+              ],
+              "explanation": "__attribute__((optimize))",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-11-21",
+              "type": "code",
+              "question": "Likely macro.",
+              "correctAnswer": [
+                "#if __builtin_expect(condition, 1)",
+                "likely branch"
+              ],
+              "explanation": "__builtin_expect()",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-11-22",
+              "type": "code",
+              "question": "Unlikely macro.",
+              "correctAnswer": [
+                "#if __builtin_expect(condition, 0)",
+                "unlikely branch"
+              ],
+              "explanation": "__builtin_expect(0)",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-11-23",
+              "type": "code",
+              "question": "Prefetch.",
+              "correctAnswer": [
+                "__builtin_prefetch(ptr);",
+                "prefetch memory"
+              ],
+              "explanation": "__builtin_prefetch()",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-11-24",
+              "type": "code",
+              "question": "Cache line size.",
+              "correctAnswer": [
+                "constexpr int CACHE_LINE = 64;",
+                "cache align"
+              ],
+              "explanation": "Align to cache line.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-11-25",
+              "type": "code",
+              "question": "Minimize calls.",
+              "correctAnswer": [
+                "// Batch operations to reduce boundary crossings",
+                "batch calls"
+              ],
+              "explanation": "Reduce crossing frequency.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Performance Considerations\n\nOptimizing performance across language boundaries.\n\n## Minimal Overhead\n\n```cpp\nextern \"C\" {\n    // Direct function call - no overhead\n    int fast_function(int a, int b) {\n        return a + b;\n    }\n}\n```\n\n## Calling Conventions\n\n```cpp\n// __cdecl - caller cleans stack (default C)\nint __cdecl cdecl_func(int a, int b);\n\n// __stdcall - callee cleans stack (Windows API)\nint __stdcall stdcall_func(int a, int b);\n\n// __fastcall - first args in registers\nint __fastcall fastcall_func(int a, int b);\n```\n\n## Compiler Attributes\n\n```cpp\n// Prevent inlining\nvoid __attribute__((noinline)) dont_inline();\n\n// Force inlining\nvoid __attribute__((always_inline)) force_inline();\n\n// Mark hot/cold paths\nvoid __attribute__((hot)) hot_function();\nvoid __attribute__((cold)) error_handler();\n\n// Pure/const functions\nint __attribute__((pure)) compute(int x);\nint __attribute__((const)) constant_time(int x);\n```\n\n## Performance Tips\n\n- Use `__restrict` for non-aliasing pointers\n- Batch operations to minimize boundary crossings\n- Pass large objects by pointer, not value\n- Use `const` for read-only data\n- Align data to cache lines\n- Prefer `__builtin_expect` for branch hints\n"
         },
         {
           "id": "cpp-U20-L12",
-          "title": "Cache complexity",
-          "unitTitle": "20. Foundations of Algorithm Analysis",
-          "xp": 15,
+          "title": "Debugging Mixed Code",
+          "unitTitle": "20. C and C++ Interoperability",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-20-12-1",
+              "type": "typing",
+              "question": "GDB C++?",
+              "correctAnswer": [
+                "gdb",
+                "can"
+              ],
+              "explanation": "GDB works for C++.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-20-12-2",
+              "type": "typing",
+              "question": "GDB C?",
+              "correctAnswer": [
+                "gdb",
+                "can"
+              ],
+              "explanation": "GDB works for C.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-20-12-3",
+              "type": "typing",
+              "question": "Demangle names?",
+              "correctAnswer": [
+                "c++filt",
+                "demangle",
+                "gdb does"
+              ],
+              "explanation": "c++filt demangles names.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-20-12-4",
+              "type": "multiple",
+              "question": "Debug symbols?",
+              "options": [
+                "-g",
+                "-O0",
+                "-d",
+                "both"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "-g for debug symbols.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-20-12-5",
+              "type": "multiple",
+              "question": "Break in extern C?",
+              "options": [
+                "yes",
+                "no",
+                "sometimes",
+                "never"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "Can breakpoint extern C.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-20-12-6",
+              "type": "code",
+              "question": "Compile debug.",
+              "correctAnswer": [
+                "g++ -g -O0 file.cpp",
+                "debug compile"
+              ],
+              "explanation": "g++ -g -O0",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-12-7",
+              "type": "code",
+              "question": "Run GDB.",
+              "correctAnswer": [
+                "gdb ./program",
+                "start GDB"
+              ],
+              "explanation": "gdb ./program",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-12-8",
+              "type": "code",
+              "question": "GDB break.",
+              "correctAnswer": [
+                "(gdb) break function",
+                "breakpoint"
+              ],
+              "explanation": "(gdb) break function",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-12-9",
+              "type": "code",
+              "question": "GDB run.",
+              "correctAnswer": [
+                "(gdb) run",
+                "run program"
+              ],
+              "explanation": "(gdb) run",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-12-10",
+              "type": "code",
+              "question": "GDB step.",
+              "correctAnswer": [
+                "(gdb) step",
+                "step into"
+              ],
+              "explanation": "(gdb) step",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-12-11",
+              "type": "code",
+              "question": "GDB next.",
+              "correctAnswer": [
+                "(gdb) next",
+                "step over"
+              ],
+              "explanation": "(gdb) next",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-12-12",
+              "type": "code",
+              "question": "GDB print.",
+              "correctAnswer": [
+                "(gdb) print variable",
+                "print value"
+              ],
+              "explanation": "(gdb) print var",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-12-13",
+              "type": "code",
+              "question": "GDB backtrace.",
+              "correctAnswer": [
+                "(gdb) backtrace",
+                "stack trace"
+              ],
+              "explanation": "(gdb) backtrace",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-12-14",
+              "type": "code",
+              "question": "GDB continue.",
+              "correctAnswer": [
+                "(gdb) continue",
+                "continue execution"
+              ],
+              "explanation": "(gdb) continue",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-12-15",
+              "type": "code",
+              "question": "Demangle symbol.",
+              "correctAnswer": [
+                "c++filt _Z3funcv",
+                "demangle name"
+              ],
+              "explanation": "c++filt symbol",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-12-16",
+              "type": "code",
+              "question": "Valgrind.",
+              "correctAnswer": [
+                "valgrind --leak-check=full ./program",
+                "memory check"
+              ],
+              "explanation": "valgrind",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-12-17",
+              "type": "code",
+              "question": "Strace.",
+              "correctAnswer": [
+                "strace ./program",
+                "system calls"
+              ],
+              "explanation": "strace",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-12-18",
+              "type": "code",
+              "question": "Ltrace.",
+              "correctAnswer": [
+                "ltrace ./program",
+                "library calls"
+              ],
+              "explanation": "ltrace",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-12-19",
+              "type": "code",
+              "question": "Addr2line.",
+              "correctAnswer": [
+                "addr2line -e program address",
+                "address to line"
+              ],
+              "explanation": "addr2line",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-12-20",
+              "type": "code",
+              "question": "Objdump.",
+              "correctAnswer": [
+                "objdump -d program",
+                "disassemble"
+              ],
+              "explanation": "objdump -d",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-12-21",
+              "type": "code",
+              "question": "Readelf.",
+              "correctAnswer": [
+                "readelf -h program",
+                "elf header"
+              ],
+              "explanation": "readelf",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-12-22",
+              "type": "code",
+              "question": "Nm symbols.",
+              "correctAnswer": [
+                "nm program",
+                "list symbols"
+              ],
+              "explanation": "nm",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-12-23",
+              "type": "code",
+              "question": "GDB attach.",
+              "correctAnswer": [
+                "gdb -p <pid>",
+                "attach to process"
+              ],
+              "explanation": "gdb -p",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-12-24",
+              "type": "code",
+              "question": "Core dump.",
+              "correctAnswer": [
+                "gdb core program",
+                "debug core"
+              ],
+              "explanation": "gdb core",
+              "xp": 15
+            },
+            {
+              "id": "cpp-20-12-25",
+              "type": "code",
+              "question": "Mixed debugging.",
+              "correctAnswer": [
+                "// Use GDB with debug symbols for both C and C++",
+                "debug both"
+              ],
+              "explanation": "GDB handles both.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Debugging Mixed Code\n\nDebugging C and C++ code together.\n\n## Compile with Debug Symbols\n\n```bash\n# C++ with debug info\ng++ -g -O0 -o program program.cpp\n\n# C with debug info\ngcc -g -O0 -o program program.c\n```\n\n## GDB Commands\n\n```bash\n# Start GDB\ngdb ./program\n\n# Common commands\n(gdb) break function      # Set breakpoint\n(gdb) break file.cpp:42   # Set breakpoint at line\n(gdb) run                 # Run program\n(gdb) step                # Step into\n(gdb) next                # Step over\n(gdb) continue            # Continue execution\n(gdb) print var           # Print variable\n(gdb) backtrace           # Show stack\n(gdb) frame 3             # Switch frame\n(gdb) quit                # Exit GDB\n```\n\n## Debugging Tools\n\n```bash\n# Check for memory leaks\nvalgrind --leak-check=full ./program\n\n# Trace system calls\nstrace ./program\n\n# Trace library calls\nltrace ./program\n\n# Demangle C++ symbols\nc++filt _Z3funcv\n\n# Convert address to line\naddr2line -e program 0x400500\n```\n\n## Mixed Code Debugging\n\n```cpp\n// Set breakpoints in both C and C++ code\nextern \"C\" void c_function() {\n    // Can breakpoint here\n}\n\nvoid cpp_function() {\n    c_function();  // Can step from C++ to C\n}\n```\n\nGDB handles both C and C++ seamlessly!\n"
         },
         {
           "id": "cpp-U20-L13",
