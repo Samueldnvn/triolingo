@@ -8,7 +8,7 @@ window.cppCombined = {
       "unitName": "1. C++ Environment and Language Basics",
       "lessons": [
         {
-          "id": "1-1",
+          "id": "cpp-U1-L1",
           "title": "Introduction to C++",
           "xp": 200,
           "type": "lesson",
@@ -278,7 +278,7 @@ window.cppCombined = {
           ]
         },
         {
-          "id": "1-2",
+          "id": "cpp-U1-L2",
           "title": "Variables and Data Types",
           "xp": 220,
           "type": "lesson",
@@ -573,7 +573,7 @@ window.cppCombined = {
           ]
         },
         {
-          "id": "1-3",
+          "id": "cpp-U1-L3",
           "title": "Input and Output",
           "xp": 220,
           "type": "lesson",
@@ -864,7 +864,7 @@ window.cppCombined = {
           ]
         },
         {
-          "id": "1-4",
+          "id": "cpp-U1-L4",
           "title": "Basic Operators",
           "xp": 220,
           "type": "lesson",
@@ -1154,7 +1154,7 @@ window.cppCombined = {
           ]
         },
         {
-          "id": "1-5",
+          "id": "cpp-U1-L5",
           "title": "Control Flow: If Statements",
           "xp": 220,
           "type": "lesson",
@@ -1442,7 +1442,7 @@ window.cppCombined = {
           ]
         },
         {
-          "id": "1-6",
+          "id": "cpp-U1-L6",
           "title": "Control Flow: Loops",
           "xp": 220,
           "type": "lesson",
@@ -1702,7 +1702,7 @@ window.cppCombined = {
       "unitName": "2. Functions and Data Structures",
       "lessons": [
         {
-          "id": 7,
+          "id": "cpp-U2-L1",
           "title": "Functions and Scope",
           "xp": 85,
           "type": "lesson",
@@ -2013,7 +2013,7 @@ window.cppCombined = {
           "unitTitle": "2. Functions and Data Structures"
         },
         {
-          "id": 8,
+          "id": "cpp-U2-L2",
           "title": "Arrays and Vectors",
           "xp": 85,
           "type": "lesson",
@@ -2314,7 +2314,7 @@ window.cppCombined = {
           "unitTitle": "2. Functions and Data Structures"
         },
         {
-          "id": 9,
+          "id": "cpp-U2-L3",
           "title": "Strings and String Manipulation",
           "xp": 85,
           "type": "lesson",
@@ -2613,7 +2613,7 @@ window.cppCombined = {
           "unitTitle": "2. Functions and Data Structures"
         },
         {
-          "id": 10,
+          "id": "cpp-U2-L4",
           "title": "References and Pointers",
           "xp": 85,
           "type": "lesson",
@@ -2914,7 +2914,7 @@ window.cppCombined = {
           "unitTitle": "2. Functions and Data Structures"
         },
         {
-          "id": 11,
+          "id": "cpp-U2-L5",
           "title": "Basic Algorithms",
           "xp": 85,
           "type": "lesson",
@@ -3209,7 +3209,7 @@ window.cppCombined = {
           "unitTitle": "2. Functions and Data Structures"
         },
         {
-          "id": 12,
+          "id": "cpp-U2-L6",
           "title": "Advanced Control Flow",
           "xp": 85,
           "type": "lesson",
@@ -3512,7 +3512,7 @@ window.cppCombined = {
       "unitName": "3. Object-Oriented Programming",
       "lessons": [
         {
-          "id": 13,
+          "id": "cpp-U3-L1",
           "title": "Classes and Objects",
           "unitTitle": "3. Object-Oriented Programming",
           "xp": 85,
@@ -3817,7 +3817,7 @@ window.cppCombined = {
           ]
         },
         {
-          "id": 14,
+          "id": "cpp-U3-L2",
           "title": "Methods and Access Control",
           "unitTitle": "3. Object-Oriented Programming",
           "xp": 85,
@@ -4125,7 +4125,7 @@ window.cppCombined = {
           ]
         },
         {
-          "id": 15,
+          "id": "cpp-U3-L3",
           "title": "Inheritance",
           "unitTitle": "3. Object-Oriented Programming",
           "xp": 85,
@@ -4434,7 +4434,7 @@ window.cppCombined = {
           ]
         },
         {
-          "id": 16,
+          "id": "cpp-U3-L4",
           "title": "Polymorphism",
           "unitTitle": "3. Object-Oriented Programming",
           "xp": 85,
@@ -4736,7 +4736,7 @@ window.cppCombined = {
           ]
         },
         {
-          "id": 17,
+          "id": "cpp-U3-L5",
           "title": "Operator Overloading",
           "unitTitle": "3. Object-Oriented Programming",
           "xp": 85,
@@ -5036,7 +5036,7 @@ window.cppCombined = {
           ]
         },
         {
-          "id": 18,
+          "id": "cpp-U3-L6",
           "title": "Advanced OOP Concepts",
           "unitTitle": "3. Object-Oriented Programming",
           "xp": 85,
@@ -5345,7 +5345,7 @@ window.cppCombined = {
       "unitName": "4. Pointers and References",
       "lessons": [
         {
-          "id": 19,
+          "id": "cpp-U4-L1",
           "title": "Memory Model Overview",
           "unitTitle": "4. Pointers and References",
           "xp": 85,
@@ -5657,7 +5657,7 @@ window.cppCombined = {
           "lessonText": "# Memory Model Overview\n\nC++ gives you direct control over memory through pointers. Understanding how memory is organized is crucial for effective programming.\n\n## Memory Layout\n\nA running C++ program's memory is divided into regions:\n\n1. **Code Segment** - Stores program instructions (read-only)\n2. **Data Segment** - Global and static variables\n3. **Stack** - Local variables, function call frames (automatic)\n4. **Heap** - Dynamic memory allocation (manual)\n\n## Memory Addresses\n\nEvery variable in memory has a unique address. In C++, addresses are represented as hexadecimal numbers.\n\n```cpp\nint x = 42;\ncout << &x;  // Prints: 0x7fff1234abcd\n```\n\n## Pointers\n\nA pointer is a variable that stores a memory address. The pointer type indicates what kind of data it points to.\n\n```cpp\nint x = 10;\nint* p = &x;  // p holds address of x\n```\n\n**Declaration:** `type* pointerName;` or `type *pointerName;`\n\n## Stack vs Heap\n\n**Stack:**\n- Automatic allocation/deallocation\n- LIFO (Last In, First Out) structure\n- Limited size\n- Fast access\n- Used for: local variables, function calls\n\n**Heap:**\n- Manual allocation with `new`/`malloc`\n- Manual deallocation with `delete`/`free`\n- Larger size\n- Slightly slower\n- Used for: dynamic data structures, large arrays\n\n## Null Pointers\n\nA null pointer doesn't point to valid memory. Use `nullptr` (C++11) to represent this.\n\n```cpp\nint* p = nullptr;  // p doesn't point anywhere\nif (p != nullptr) {\n    // Safe to use p\n}\n```\n\n## Dynamic Memory Allocation\n\n```cpp\n// Allocate single value\nint* p = new int(42);\ndelete p;\n\n// Allocate array\nint* arr = new int[10];\ndelete[] arr;  // Note the brackets\n```\n\n**Warning:** Forgetting to `delete` causes memory leaks!\n"
         },
         {
-          "id": 20,
+          "id": "cpp-U4-L2",
           "title": "References vs Pointers",
           "unitTitle": "4. Pointers and References",
           "xp": 85,
@@ -5962,7 +5962,7 @@ window.cppCombined = {
           "lessonText": "# References vs Pointers\n\nBoth references and pointers allow indirect access to variables, but they have important differences.\n\n## References\n\nA reference is an **alias** for an existing variable.\n\n```cpp\nint x = 10;\nint& ref = x;  // ref is now an alias for x\nref = 20;      // This changes x to 20\n```\n\n**Key Characteristics:**\n- Must be initialized when declared\n- Cannot be null\n- Cannot be reseated (always refers to same variable)\n- No separate memory overhead\n- Used with `&` in declaration\n\n## Pointers\n\nA pointer holds a **memory address**.\n\n```cpp\nint x = 10;\nint* p = &x;    // p holds address of x\n*p = 20;        // Dereference to modify x\np = nullptr;    // p can be reseated\n```\n\n**Key Characteristics:**\n- Can be uninitialized (dangerous)\n- Can be null (`nullptr`)\n- Can be reseated to point elsewhere\n- Has its own memory address\n- Used with `*` in declaration\n\n## Comparison\n\n| Feature | Reference | Pointer |\n|---------|-----------|---------|\n| Initialization | Required | Optional |\n| Can be null | No | Yes |\n| Can be reseated | No | Yes |\n| Memory overhead | None | Size of address |\n| Syntax | `&` in declaration | `*` in declaration |\n| Dereference | Implicit (just use name) | Explicit (`*ptr`) |\n\n## When to Use References\n\n✅ **Use references when:**\n- Passing large objects to functions (avoid copy)\n- Function needs to modify parameters\n- Working with operators\n- Return values that can be modified\n\n```cpp\nvoid swap(int& a, int& b) {\n    int temp = a;\n    a = b;\n    b = temp;\n}\n```\n\n## When to Use Pointers\n\n✅ **Use pointers when:**\n- Need optional values (can be null)\n- Need to change what's pointed to (reseat)\n- Working with arrays\n- Dynamic memory allocation\n- Implementing data structures\n\n```cpp\nint* p = nullptr;  // Optional value\np = new int(42);   // Can reseat\ndelete p;          // Manual management\n```\n\n## Reference Parameters\n\nPass by reference allows functions to modify original values:\n\n```cpp\nvoid increment(int& x) {\n    x++;  // Modifies caller's variable\n}\n\nint num = 5;\nincrement(num);  // num is now 6\n```\n\n## Const References\n\n`const` reference prevents modification while avoiding copy:\n\n```cpp\nvoid print(const string& s) {\n    cout << s;  // Can read but not modify s\n}\n```\n\n**Best Practice:** Use `const T&` for large objects you don't need to modify.\n"
         },
         {
-          "id": 21,
+          "id": "cpp-U4-L3",
           "title": "Pointer Arithmetic",
           "unitTitle": "4. Pointers and References",
           "xp": 85,
@@ -6273,7 +6273,7 @@ window.cppCombined = {
           "lessonText": "# Pointer Arithmetic\n\nPointer arithmetic allows you to perform mathematical operations on pointers to navigate through memory.\n\n## Basic Operations\n\n```cpp\nint arr[5] = {10, 20, 30, 40, 50};\nint* p = arr;  // p points to arr[0]\n\np++;      // p now points to arr[1]\np + 2;    // Points to arr[3]\np - 1;    // Points back to arr[0]\n```\n\n## How It Works\n\nWhen you add or subtract from a pointer, the operation advances by the size of the pointed-to type:\n\n```cpp\nint* p = arr;    // arr = 0x1000\np++;             // p = 0x1004 (4 bytes for int)\n*(p + 2);        // Accesses arr[2] at 0x1008\n```\n\n**Formula:** `new_address = old_address + (offset * sizeof(type))`\n\n## Array-Pointer Equivalence\n\n```cpp\narr[3]   // Array subscript\n*(arr + 3)  // Pointer arithmetic (equivalent)\n```\n\n## Pointer Subtraction\n\n```cpp\nint arr[10] = {0};\nint* p1 = &arr[0];\nint* p2 = &arr[7];\n\nptrdiff_t diff = p2 - p1;  // diff = 7\n```\n\nPointer subtraction returns the **number of elements** between the pointers, not the byte difference.\n\n## Looping with Pointers\n\n```cpp\nint arr[5] = {1, 2, 3, 4, 5};\n\n// Method 1: Pointer arithmetic\nfor (int* p = arr; p < arr + 5; p++) {\n    cout << *p << \" \";\n}\n\n// Method 2: Index notation\nfor (int* p = arr; p < arr + 5; p++) {\n    cout << p[0] << \" \";\n}\n```\n\n## Pointer Comparison\n\nYou can compare pointers using relational operators:\n\n```cpp\nint* p1 = &arr[0];\nint* p2 = &arr[4];\n\nif (p1 < p2)    // true - p1 points to earlier element\nif (p1 == p2)   // false - different addresses\nif (p1 != p2)   // true - different addresses\n```\n\n## Important Rules\n\n✅ **Allowed:**\n- Adding/subtracting integers from pointers\n- Subtracting two pointers of the same type\n- Comparing pointers of the same type\n- Using pointers as arrays with []\n\n❌ **Not Allowed:**\n- Adding two pointers\n- Multiplying pointers\n- Dividing pointers\n- Pointer arithmetic on `void*`\n\n## Common Patterns\n\n**Reverse iteration:**\n```cpp\nfor (int* p = arr + 4; p >= arr; p--) {\n    cout << *p << \" \";\n}\n```\n\n**Find array length with pointers:**\n```cpp\nint arr[] = {1, 2, 3, 4, 5};\nint* begin = arr;\nint* end = arr + 5;  // Pointer past last element\nsize_t len = end - begin;  // len = 5\n```\n"
         },
         {
-          "id": 22,
+          "id": "cpp-U4-L4",
           "title": "const Correctness",
           "unitTitle": "4. Pointers and References",
           "xp": 85,
@@ -6579,7 +6579,7 @@ window.cppCombined = {
           "lessonText": "# const Correctness\n\n`const` is a powerful tool for writing safer, clearer code by making your intentions explicit.\n\n## const Variables\n\n```cpp\nconst int MAX = 100;  // Cannot be modified\nMAX = 200;  // Compilation error!\n```\n\n## Pointers and const\n\n### 1. Pointer to const: `const int* p`\n\nThe value cannot be modified through the pointer.\n\n```cpp\nint x = 10;\nconst int* p = &x;\n\n*p = 20;  // Error: cannot modify\np = &y;   // OK: pointer can be changed\n```\n\n**Memory aid:** \"const on the left protects the value\"\n\n### 2. Const pointer: `int* const p`\n\nThe pointer cannot be changed to point elsewhere.\n\n```cpp\nint x = 10;\nint* const p = &x;  // Must initialize!\n\np = &y;   // Error: cannot reseat pointer\n*p = 20;  // OK: value can be modified\n```\n\n**Memory aid:** \"const on the right protects the pointer\"\n\n### 3. Both: `const int* const p`\n\nNeither the pointer nor the value can be changed.\n\n```cpp\nint x = 10;\nconst int* const p = &x;\n\np = &y;   // Error: cannot reseat\n*p = 20;  // Error: cannot modify\n```\n\n## const in Function Parameters\n\n### const Reference (Best Practice)\n\n```cpp\nvoid print(const string& s) {\n    cout << s;  // Can read\n    // s = \"new\";  // Error: cannot modify\n}\n```\n\n**Benefits:**\n- Avoids copying large objects\n- Guarantees function won't modify\n- Makes intent clear to readers\n\n### const Pointer Parameter\n\n```cpp\nvoid process(const int* arr, int size) {\n    for (int i = 0; i < size; i++) {\n        cout << arr[i];  // Can read\n        // arr[i] = 10;  // Error: cannot modify\n    }\n}\n```\n\n## const Member Functions\n\nMember functions marked `const` promise not to modify the object.\n\n```cpp\nclass Point {\nprivate:\n    int x, y;\npublic:\n    int getX() const {  // Promises not to modify\n        return x;\n    }\n    \n    void move(int dx, int dy) {  // Not const - modifies object\n        x += dx;\n        y += dy;\n    }\n};\n```\n\n**When to use:**\n- Getter functions\n- Functions that only read member variables\n- Functions called on const objects\n\n## const Return Values\n\n```cpp\nconst int& getValue() const {\n    return value;  // Caller cannot modify\n}\n\n// This prevents:\nobj.getValue() = 42;  // Error!\n```\n\n## Best Practices\n\n✅ **DO:**\n- Use `const` for values that shouldn't change\n- Pass large objects by `const T&`\n- Mark getter functions as `const`\n- Use `const` to document intent\n\n❌ **DON'T:**\n- Use `const` when you need to modify\n- Overuse `const` to the point of confusion\n- Cast away const unless absolutely necessary\n\n## Summary Table\n\n| Declaration | Can modify value? | Can change pointer? |\n|-------------|-------------------|---------------------|\n| `int* p` | ✅ Yes | ✅ Yes |\n| `const int* p` | ❌ No | ✅ Yes |\n| `int* const p` | ✅ Yes | ❌ No |\n| `const int* const p` | ❌ No | ❌ No |\n\n## const and Performance\n\n`const` doesn't just prevent bugs - it can help the compiler optimize:\n\n```cpp\nconst int N = 100;\nint arr[N];  // Compiler knows size won't change\n```\n\nThe compiler can make assumptions and optimizations knowing `const` values won't change.\n"
         },
         {
-          "id": 23,
+          "id": "cpp-U4-L5",
           "title": "nullptr and Null Safety",
           "unitTitle": "4. Pointers and References",
           "xp": 85,
@@ -6892,7 +6892,7 @@ window.cppCombined = {
           "lessonText": "# nullptr and Null Safety\n\nNull safety is crucial when working with pointers. A null pointer doesn't point to valid memory and dereferencing it causes crashes.\n\n## nullptr (C++11)\n\n`nullptr` is a null pointer literal, representing a pointer that points to nothing.\n\n```cpp\nint* p = nullptr;  // Modern C++ style\nint* p = NULL;     // Old style (macro)\nint* p = 0;        // Older style\n```\n\n**Why nullptr?**\n- Type-safe (has its own type: `std::nullptr_t`)\n- Better overload resolution\n- Clearer intent\n- No ambiguity with integers\n\n## Checking for Null\n\nAlways check before dereferencing:\n\n```cpp\nint* p = nullptr;\n// ... some code that may or may not set p ...\n\nif (p != nullptr) {  // Check for null\n    *p = 10;         // Safe to dereference\n}\n```\n\n**Boolean context:**\n```cpp\nif (p) {        // true if p is not nullptr\n    // Safe to use\n}\n\nif (!p) {       // true if p is nullptr\n    // Pointer is null\n}\n```\n\n## Ternary Operator\n\nThe ternary operator `?:` is useful for conditional expressions:\n\n```cpp\n// Syntax: condition ? expr_if_true : expr_if_false\n\nint max = (a > b) ? a : b;\n\n// With pointers:\nint* p = (isValid) ? &value : nullptr;\n```\n\n**Common patterns:**\n```cpp\n// Conditional return\nreturn (found) ? &item : nullptr;\n\n// Conditional assignment\nint* p = (ptr1 != nullptr) ? ptr1 : ptr2;\n```\n\n## Null Safety Best Practices\n\n### 1. Always Initialize\n\n```cpp\nint* p = nullptr;  // ✅ Good\nint* p;            // ❌ Bad - uninitialized\n```\n\n### 2. Always Check Before Use\n\n```cpp\nvoid process(int* p) {\n    if (p == nullptr) {  // Check at start\n        return;  // Handle null case\n    }\n    *p = 10;  // Safe to use\n}\n```\n\n### 3. Reset After Deletion\n\n```cpp\ndelete p;\np = nullptr;  // Prevent dangling pointer\n```\n\n### 4. Use nullptr for Optional Parameters\n\n```cpp\nvoid configure(int* p = nullptr) {\n    if (p != nullptr) {\n        *p = 10;\n    }\n    // Works with or without parameter\n}\n```\n\n## Common Pointer Problems\n\n### Dangling Pointer\n\n```cpp\nint* p = new int(10);\ndelete p;\n*p = 20;  // ❌ Undefined behavior - dangling pointer!\n\n// Fix:\ndelete p;\np = nullptr;  // ✅ Reset to prevent use\n```\n\n### Memory Leak\n\n```cpp\nvoid leak() {\n    int* p = new int(10);\n    // ❌ Forgot delete - memory leak!\n}\n\n// Fix:\nvoid noLeak() {\n    int* p = new int(10);\n    delete p;  // ✅ Free memory\n}\n```\n\n### Double Deletion\n\n```cpp\nint* p = new int(10);\ndelete p;\ndelete p;  // ❌ Undefined behavior!\n\n// Fix:\ndelete p;\np = nullptr;  // ✅ Safe to delete nullptr\n```\n\n## Null Pointer vs nullptr\n\n| Feature | nullptr | NULL |\n|---------|----------|------|\n| Type | `std::nullptr_t` | Macro (usually 0) |\n| Type-safe | ✅ Yes | ❌ No |\n| Overload resolution | ✅ Works | ❌ Issues |\n| C++ Standard | C++11+ | Pre-C++11 |\n\n## Summary\n\n✅ **Always:**\n- Initialize pointers to nullptr\n- Check for nullptr before dereferencing\n- Reset to nullptr after deletion\n- Use nullptr (not NULL or 0)\n\n❌ **Never:**\n- Dereference without checking\n- Use uninitialized pointers\n- Forget to delete allocated memory\n- Delete the same pointer twice\n"
         },
         {
-          "id": 24,
+          "id": "cpp-U4-L6",
           "title": "Pointer Pitfalls",
           "unitTitle": "4. Pointers and References",
           "xp": 85,
@@ -7201,7 +7201,7 @@ window.cppCombined = {
       "unitName": "5. Arrays, Strings, and Basic Data Structures",
       "lessons": [
         {
-          "id": 25,
+          "id": "cpp-U5-L1",
           "title": "C-style Arrays",
           "unitTitle": "5. Arrays, Strings, and Basic Data Structures",
           "xp": 85,
@@ -7485,7 +7485,7 @@ window.cppCombined = {
           "lessonText": "# C-style Arrays\n\nC-style arrays are the most basic way to store collections of values in C++.\n\n## Array Declaration\n\n```cpp\ntype name[size];\n```\n\n```cpp\nint arr[5];           // Array of 5 integers\ndouble values[10];    // Array of 10 doubles\nchar name[20];        // Array of 20 characters\n```\n\n## Array Initialization\n\n```cpp\n// Initialize with values\nint arr[] = {1, 2, 3, 4, 5};        // Size inferred (5)\nint arr[5] = {10, 20, 30, 40, 50};  // Explicit size\n\n// Partial initialization (rest are zero)\nint arr[5] = {1, 2, 3};             // {1, 2, 3, 0, 0}\n\n// Zero initialization\nint arr[5] = {0};                   // All zeros\n```\n\n## Accessing Elements\n\n```cpp\nint arr[5] = {10, 20, 30, 40, 50};\n\narr[0]  // First element: 10\narr[4]  // Last element: 50\narr[2]  // Third element: 30\n```\n\n**Important:** Array indices are zero-based!\n\n## Iterating Through Arrays\n\n```cpp\nint arr[5] = {1, 2, 3, 4, 5};\n\n// Using index\nfor (int i = 0; i < 5; i++) {\n    cout << arr[i] << \" \";\n}\n\n// Using pointer\nfor (int* p = arr; p < arr + 5; p++) {\n    cout << *p << \" \";\n}\n\n// Range-based for (C++11)\nfor (int x : arr) {\n    cout << x << \" \";\n}\n```\n\n## Common Operations\n\n### Find Sum\n```cpp\nint sum = 0;\nfor (int i = 0; i < 5; i++) {\n    sum += arr[i];\n}\n```\n\n### Find Maximum\n```cpp\nint max = arr[0];\nfor (int i = 1; i < 5; i++) {\n    if (arr[i] > max) max = arr[i];\n}\n```\n\n### Linear Search\n```cpp\nbool found = false;\nfor (int i = 0; i < 5; i++) {\n    if (arr[i] == target) {\n        found = true;\n        break;\n    }\n}\n```\n\n## Multidimensional Arrays\n\n```cpp\n// 2D array\nint matrix[3][3] = {\n    {1, 2, 3},\n    {4, 5, 6},\n    {7, 8, 9}\n};\n\n// Access\nmatrix[0][0]  // 1\nmatrix[2][2]  // 9\n\n// Nested loops to iterate\nfor (int i = 0; i < 3; i++) {\n    for (int j = 0; j < 3; j++) {\n        cout << matrix[i][j] << \" \";\n    }\n}\n```\n\n## Arrays and Functions\n\n```cpp\n// Arrays decay to pointers when passed\nvoid printArray(int arr[], int size) {\n    for (int i = 0; i < size; i++) {\n        cout << arr[i] << \" \";\n    }\n}\n\nint arr[5] = {1, 2, 3, 4, 5};\nprintArray(arr, 5);  // Note: must pass size separately\n```\n\n**Important:** Arrays lose their size information when passed to functions!\n\n## Array Size\n\n```cpp\nint arr[5];\n\n// Total bytes\nint bytes = sizeof(arr);  // 20 (5 * 4)\n\n// Number of elements\nint size = sizeof(arr) / sizeof(arr[0]);  // 5\n```\n\n## Character Arrays as Strings\n\n```cpp\nchar str[] = \"Hello\";  // {'H', 'e', 'l', 'l', 'o', '\\0'}\n\n// C-style strings are null-terminated\n```\n\n## Warnings\n\n❌ **Out of bounds access:**\n```cpp\nint arr[5];\narr[10] = 100;  // ❌ Undefined behavior!\n```\n\n❌ **No bounds checking:**\n```cpp\n// No automatic bounds checking - you're responsible!\nfor (int i = 0; i <= 5; i++) {  // Bug: should be < 5\n    arr[i] = i;  // Memory corruption!\n}\n```\n\n❌ **Cannot resize:**\n```cpp\nint arr[5];\n// arr cannot be resized! Use vector instead\n```\n\n## When to Use C-style Arrays\n\n✅ **Use when:**\n- You know the size at compile time\n- Performance is critical\n- You need fixed-size storage\n- Working with legacy code\n\n❌ **Avoid when:**\n- Size needs to change dynamically\n- You need bounds checking\n- Working with strings (use std::string)\n- Need flexible containers (use vector)\n"
         },
         {
-          "id": 26,
+          "id": "cpp-U5-L2",
           "title": "std::array",
           "unitTitle": "5. Arrays, Strings, and Basic Data Structures",
           "xp": 85,
@@ -7775,7 +7775,7 @@ window.cppCombined = {
           "lessonText": "# std::array\n\n`std::array` is a modern C++ container that provides a safe, feature-rich alternative to C-style arrays.\n\n## Declaration\n\n```cpp\n#include <array>\n\nstd::array<type, size> name;\n```\n\n```cpp\nstd::array<int, 5> arr;              // Array of 5 integers\nstd::array<double, 10> values;       // Array of 10 doubles\nstd::array<std::string, 3> names;    // Array of 3 strings\n```\n\n## Initialization\n\n```cpp\n// Initialize with values\nstd::array<int, 5> arr = {1, 2, 3, 4, 5};\n\n// Uniform initialization\nstd::array<int, 5> arr{1, 2, 3, 4, 5};\n\n// Default initialization (zero for built-in types)\nstd::array<int, 5> arr{};  // All zeros\n```\n\n## Element Access\n\n### Operator [] (No bounds checking)\n```cpp\narr[0] = 10;  // Set first element\nint x = arr[2];  // Get third element\n```\n\n### at() (Bounds checking)\n```cpp\narr.at(0) = 10;  // Set first element (with bounds check)\nint x = arr.at(2);  // Get third element (with bounds check)\n```\n\n**Difference:** `at()` throws `std::out_of_range` if index is invalid, `[]` is undefined behavior.\n\n## Member Functions\n\n```cpp\nstd::array<int, 5> arr = {1, 2, 3, 4, 5};\n\n// Size\narr.size();    // 5\narr.empty();   // false\n\n// Element access\narr.front();   // 1 (first element)\narr.back();    // 5 (last element)\narr.data();    // pointer to underlying array\n\n// Fill\narr.fill(42);  // All elements now 42\n\n// Swap\narr1.swap(arr2);  // Exchange contents\n```\n\n## Iteration\n\n### Iterator-based\n```cpp\nfor (auto it = arr.begin(); it != arr.end(); it++) {\n    std::cout << *it << \" \";\n}\n\n// Reverse iteration\nfor (auto it = arr.rbegin(); it != arr.rend(); it++) {\n    std::cout << *it << \" \";\n}\n```\n\n### Range-based for\n```cpp\nfor (int x : arr) {\n    std::cout << x << \" \";\n}\n```\n\n### With index\n```cpp\nfor (size_t i = 0; i < arr.size(); i++) {\n    std::cout << arr[i] << \" \";\n}\n```\n\n## Passing to Functions\n\n### By reference (preferred)\n```cpp\nvoid process(std::array<int, 5>& arr) {\n    // Can modify\n    arr[0] = 100;\n}\n```\n\n### By const reference\n```cpp\nvoid print(const std::array<int, 5>& arr) {\n    // Cannot modify\n    for (int x : arr) {\n        std::cout << x;\n    }\n}\n```\n\n## Comparison\n\n```cpp\nstd::array<int, 5> arr1 = {1, 2, 3, 4, 5};\nstd::array<int, 5> arr2 = {1, 2, 3, 4, 5};\n\nif (arr1 == arr2) {  // Compare element by element\n    // Equal\n}\n\nif (arr1 < arr2) {  // Lexicographic comparison\n    // Less than\n}\n```\n\n## STL Algorithms\n\n```cpp\nstd::array<int, 5> arr = {3, 1, 4, 1, 5};\n\n// Sort\nstd::sort(arr.begin(), arr.end());\n\n// Find\nauto it = std::find(arr.begin(), arr.end(), 4);\n\n// Count\nint count = std::count(arr.begin(), arr.end(), 1);\n```\n\n## std::array vs C-style Arrays\n\n| Feature | std::array | C-style array |\n|---------|-----------|---------------|\n| Size information | ✅ Known | ❌ Decays to pointer |\n| Bounds checking | ✅ at() | ❌ No |\n| Iterators | ✅ Yes | ❌ No |\n| Member functions | ✅ Yes | ❌ No |\n| Comparison | ✅ Yes | ❌ No |\n| Performance | ✅ Same | ✅ Same |\n| Copy/assign | ✅ Yes | ❌ No |\n\n## Common Patterns\n\n### Find maximum\n```cpp\nauto max = std::max_element(arr.begin(), arr.end());\n```\n\n### Fill with value\n```cpp\narr.fill(0);  // Set all elements to 0\n```\n\n### Convert to C-style array\n```cpp\nint* c_arr = arr.data();  // Pass to C API\n```\n\n### Aggregate initialization\n```cpp\nstruct Point {\n    std::array<int, 3> coords;\n};\n\nPoint p{ {1, 2, 3} };\n```\n"
         },
         {
-          "id": 27,
+          "id": "cpp-U5-L3",
           "title": "std::string",
           "unitTitle": "5. Arrays, Strings, and Basic Data Structures",
           "xp": 85,
@@ -8064,7 +8064,7 @@ window.cppCombined = {
           "lessonText": "# std::string\n\n`std::string` is C++'s modern string class that provides safe, flexible string handling with automatic memory management.\n\n## Declaration and Initialization\n\n```cpp\n#include <string>\n\n// Empty string\nstd::string s;\n\n// Initialize with text\nstd::string s = \"Hello\";\nstd::string s(\"Hello\");\n\n// Repeat character\nstd::string s(5, 'x');  // \"xxxxx\"\n\n// From substring\nstd::string s(\"Hello World\", 0, 5);  // \"Hello\"\n```\n\n## String Operations\n\n### Concatenation\n```cpp\nstd::string s1 = \"Hello\";\nstd::string s2 = \" World\";\n\nstd::string s3 = s1 + s2;  // \"Hello World\"\ns1 += \"!\";                  // \"Hello!\"\n```\n\n### Accessing Characters\n```cpp\nstd::string s = \"Hello\";\n\nchar c1 = s[0];      // 'H' (no bounds checking)\nchar c2 = s.at(0);   // 'H' (with bounds checking)\n\n// Modify\ns[0] = 'J';          // \"Jello\"\n```\n\n### Length and Size\n```cpp\nstd::string s = \"Hello\";\ns.length();   // 5\ns.size();     // 5\ns.empty();    // false\n```\n\n## Modifying Strings\n\n### Append\n```cpp\ns += \" World\";      // Append with +=\ns.append(\"!!\");     // Append with append()\ns.push_back('!');   // Append single character\n```\n\n### Insert\n```cpp\ns.insert(5, \" there\");  // Insert at position 5\n```\n\n### Erase\n```cpp\ns.erase(5, 3);  // Erase 3 characters from position 5\ns.clear();      // Remove all characters\n```\n\n### Replace\n```cpp\ns.replace(0, 5, \"Hi\");  // Replace 5 chars at position 0\n```\n\n## Searching\n\n```cpp\nstd::string s = \"Hello World\";\n\n// Find\nsize_t pos = s.find(\"World\");  // 6\npos = s.find(\"xyz\");           // string::npos (not found)\n\n// Find from position\npos = s.find(\"o\", 5);  // Find 'o' starting at position 5\n\n// Check if found\nif (pos != std::string::npos) {\n    // Found\n}\n```\n\n## Substrings\n\n```cpp\nstd::string s = \"Hello World\";\n\nstd::string sub = s.substr(6, 5);  // \"World\"\nstd::string sub = s.substr(6);     // \"World\" to end\n```\n\n## Comparison\n\n```cpp\nstd::string s1 = \"Hello\";\nstd::string s2 = \"World\";\n\nif (s1 == s2) { }  // Equality\nif (s1 != s2) { }  // Inequality\nif (s1 < s2)  { }  // Less than (lexicographic)\nif (s1 > s2)  { }  // Greater than\n```\n\n## Iteration\n\n### Range-based for\n```cpp\nstd::string s = \"Hello\";\n\nfor (char c : s) {\n    std::cout << c;\n}\n```\n\n### Index-based\n```cpp\nfor (size_t i = 0; i < s.length(); i++) {\n    std::cout << s[i];\n}\n```\n\n### Iterator\n```cpp\nfor (auto it = s.begin(); it != s.end(); it++) {\n    std::cout << *it;\n}\n```\n\n## Type Conversion\n\n```cpp\n// Number to string\nstd::string s1 = std::to_string(42);        // \"42\"\nstd::string s2 = std::to_string(3.14);      // \"3.14\"\nstd::string s3 = std::to_string(true);      // \"1\"\n\n// String to number (with <sstream>)\nint x = std::stoi(\"42\");              // 42\ndouble d = std::stod(\"3.14\");         // 3.14\n```\n\n## Case Conversion\n\n```cpp\n#include <algorithm>\n#include <cctype>\n\nstd::string s = \"Hello\";\n\n// To uppercase\nstd::transform(s.begin(), s.end(), s.begin(), ::toupper);\n// \"HELLO\"\n\n// To lowercase\nstd::transform(s.begin(), s.end(), s.begin(), ::tolower);\n// \"hello\"\n```\n\n## Finding and Counting\n\n```cpp\nstd::string s = \"Hello World Hello\";\n\n// Count occurrences\nint count = 0;\nsize_t pos = 0;\nwhile ((pos = s.find(\"Hello\", pos)) != std::string::npos) {\n    count++;\n    pos += 5;\n}\n```\n\n## String Views (C++17)\n\n```cpp\n#include <string_view>\n\nstd::string s = \"Hello World\";\nstd::string_view sv = s.substr(0, 5);  // View without copying\n```\n\n## Common Patterns\n\n### Trim whitespace\n```cpp\n// Remove leading whitespace\ns.erase(0, s.find_first_not_of(\" \t\n\r\"));\n\n// Remove trailing whitespace\ns.erase(s.find_last_not_of(\" \t\n\r\") + 1);\n```\n\n### Split by delimiter\n```cpp\nstd::vector<std::string> split(const std::string& s, char delimiter) {\n    std::vector<std::string> tokens;\n    std::string token;\n    std::istringstream tokenStream(s);\n    while (std::getline(tokenStream, token, delimiter)) {\n        tokens.push_back(token);\n    }\n    return tokens;\n}\n```\n\n### Read line into string\n```cpp\nstd::string line;\nstd::getline(std::cin, line);\n```\n\n## Memory Management\n\n```cpp\nstd::string s;\n\n// Reserve capacity (pre-allocate)\ns.reserve(100);  // Allocate space for 100 characters\n\n// Shrink to fit\ns.shrink_to_fit();  // Reduce capacity to match size\n\n// Capacity\ns.capacity();  // Current allocated capacity\ns.size();     // Current string length\n```\n"
         },
         {
-          "id": 28,
+          "id": "cpp-U5-L4",
           "title": "Multidimensional Arrays",
           "unitTitle": "5. Arrays, Strings, and Basic Data Structures",
           "xp": 85,
@@ -8343,7 +8343,7 @@ window.cppCombined = {
           "lessonText": "# Multidimensional Arrays\n\nMultidimensional arrays allow you to store data in multiple dimensions (tables, matrices, 3D grids, etc.).\n\n## Declaration\n\n```cpp\n// 2D array (matrix)\ntype name[rows][cols];\n\nint matrix[3][4];    // 3 rows, 4 columns\ndouble grid[5][5];   // 5x5 grid\n\n// 3D array\nint cube[2][3][4];   // 2 layers, 3 rows, 4 columns\n```\n\n## Initialization\n\n```cpp\n// Complete initialization\nint matrix[2][3] = {\n    {1, 2, 3},\n    {4, 5, 6}\n};\n\n// Partial initialization (rest are zero)\nint matrix[2][3] = {\n    {1, 2, 3},\n    {4}  // {4, 0, 0}\n};\n\n// Zero initialization\nint matrix[3][4] = {0};  // All zeros\n```\n\n## Accessing Elements\n\n```cpp\nint matrix[3][4] = {\n    {1, 2, 3, 4},\n    {5, 6, 7, 8},\n    {9, 10, 11, 12}\n};\n\n// Access element\nmatrix[0][0]  // 1 (first row, first column)\nmatrix[2][3]  // 12 (last row, last column)\nmatrix[1][2]  // 7 (second row, third column)\n```\n\n## Memory Layout (Row-Major Order)\n\nC++ stores multidimensional arrays in **row-major order**:\n\n```\nmatrix[2][3] = {\n    {1, 2, 3},\n    {4, 5, 6}\n}\n\nMemory: [1, 2, 3, 4, 5, 6]\n        └─row 0──┘ └─row 1──┘\n```\n\n**Linear index formula:**\n```cpp\nint linear_index = row * num_columns + column;\n```\n\n## Iterating Through 2D Arrays\n\n```cpp\nint matrix[3][4] = {\n    {1, 2, 3, 4},\n    {5, 6, 7, 8},\n    {9, 10, 11, 12}\n};\n\n// Using nested loops\nfor (int i = 0; i < 3; i++) {      // Rows\n    for (int j = 0; j < 4; j++) {  // Columns\n        std::cout << matrix[i][j] << \" \";\n    }\n    std::cout << \"\\n\";\n}\n```\n\n## Common Operations\n\n### Sum of all elements\n```cpp\nint sum = 0;\nfor (int i = 0; i < rows; i++) {\n    for (int j = 0; j < cols; j++) {\n        sum += matrix[i][j];\n    }\n}\n```\n\n### Find maximum\n```cpp\nint max = matrix[0][0];\nfor (int i = 0; i < rows; i++) {\n    for (int j = 0; j < cols; j++) {\n        if (matrix[i][j] > max) {\n            max = matrix[i][j];\n        }\n    }\n}\n```\n\n### Sum of rows\n```cpp\nfor (int i = 0; i < rows; i++) {\n    int row_sum = 0;\n    for (int j = 0; j < cols; j++) {\n        row_sum += matrix[i][j];\n    }\n    std::cout << \"Row \" << i << \": \" << row_sum << \"\\n\";\n}\n```\n\n### Sum of columns\n```cpp\nfor (int j = 0; j < cols; j++) {\n    int col_sum = 0;\n    for (int i = 0; i < rows; i++) {\n        col_sum += matrix[i][j];\n    }\n    std::cout << \"Column \" << j << \": \" << col_sum << \"\\n\";\n}\n```\n\n## Diagonal Operations\n\n```cpp\nint matrix[3][3] = {\n    {1, 2, 3},\n    {4, 5, 6},\n    {7, 8, 9}\n};\n\n// Main diagonal (top-left to bottom-right)\nfor (int i = 0; i < 3; i++) {\n    std::cout << matrix[i][i] << \" \";  // 1, 5, 9\n}\n\n// Anti-diagonal (top-right to bottom-left)\nfor (int i = 0; i < 3; i++) {\n    std::cout << matrix[i][2-i] << \" \";  // 3, 5, 7\n}\n```\n\n## Transpose\n\nSwap rows with columns:\n\n```cpp\nint matrix[3][3] = {\n    {1, 2, 3},\n    {4, 5, 6},\n    {7, 8, 9}\n};\n\nfor (int i = 0; i < 3; i++) {\n    for (int j = i + 1; j < 3; j++) {\n        // Swap matrix[i][j] with matrix[j][i]\n        int temp = matrix[i][j];\n        matrix[i][j] = matrix[j][i];\n        matrix[j][i] = temp;\n    }\n}\n```\n\n## Passing to Functions\n\n```cpp\n// Function with 2D array parameter\nvoid processMatrix(int arr[][4], int rows) {\n    for (int i = 0; i < rows; i++) {\n        for (int j = 0; j < 4; j++) {\n            arr[i][j] *= 2;\n        }\n    }\n}\n\n// Call\nint matrix[3][4];\nprocessMatrix(matrix, 3);\n```\n\n**Important:** Column dimension must be specified in function parameter!\n\n## 3D Arrays\n\n```cpp\nint cube[2][3][4] = {\n    {\n        {1, 2, 3, 4},\n        {5, 6, 7, 8},\n        {9, 10, 11, 12}\n    },\n    {\n        {13, 14, 15, 16},\n        {17, 18, 19, 20},\n        {21, 22, 23, 24}\n    }\n};\n\n// Access\ncube[0][0][0]  // 1 (first layer, first row, first column)\ncube[1][2][3]  // 24\n\n// Iterate\nfor (int l = 0; l < 2; l++) {        // Layers\n    for (int i = 0; i < 3; i++) {    // Rows\n        for (int j = 0; j < 4; j++) {  // Columns\n            std::cout << cube[l][i][j] << \" \";\n        }\n        std::cout << \"\\n\";\n    }\n    std::cout << \"\\n\";\n}\n```\n\n## Using std::array for Multidimensional\n\n```cpp\n#include <array>\n\n// 2D array using std::array\nstd::array<std::array<int, 4>, 3> matrix = {{\n    {1, 2, 3, 4},\n    {5, 6, 7, 8},\n    {9, 10, 11, 12}\n}};\n\n// Access\nmatrix[0][0]  // 1\n\n// Size\nmatrix.size()     // 3 rows\nmatrix[0].size()  // 4 columns\n```\n\n## Jagged Arrays\n\nC++ doesn't support true jagged arrays natively, but you can simulate them:\n\n```cpp\nint* jagged[3];\njagged[0] = new int[2];\njagged[1] = new int[3];\njagged[2] = new int[4];\n\n// Better: use vector\nstd::vector<std::vector<int>> jagged = {\n    {1, 2},\n    {3, 4, 5},\n    {6, 7, 8, 9}\n};\n```\n"
         },
         {
-          "id": 29,
+          "id": "cpp-U5-L5",
           "title": "Iteration Patterns",
           "unitTitle": "5. Arrays, Strings, and Basic Data Structures",
           "xp": 85,
@@ -8630,7 +8630,7 @@ window.cppCombined = {
       "unitName": "6. Object-Oriented Programming in C++",
       "lessons": [
         {
-          "id": 30,
+          "id": "cpp-U6-L1",
           "title": "Structs vs Classes",
           "unitTitle": "6. Object-Oriented Programming in C++",
           "xp": 85,
@@ -8919,7 +8919,7 @@ window.cppCombined = {
           "lessonText": "# Structs vs Classes\n\nIn C++, `struct` and `class` are almost identical, with one key difference.\n\n## The Only Difference\n\n```cpp\nstruct MyStruct {\n    int x;        // public by default\n    void func() {} // public by default\n};\n\nclass MyClass {\n    int x;        // private by default\n    void func() {} // private by default\n};\n```\n\n- **struct:** Default access is **public**\n- **class:** Default access is **private**\n\n## When to Use struct\n\n✅ **Use struct for:**\n- Plain Old Data (POD) types\n- Data structures without invariants\n- Public interfaces\n- C interop\n- Simple data containers\n\n```cpp\nstruct Point {\n    double x, y;\n};\n\nstruct Color {\n    int r, g, b, a;\n};\n\nstruct Vertex {\n    Point position;\n    Color color;\n    Vector2 uv;\n};\n```\n\n## When to Use class\n\n✅ **Use class for:**\n- Objects with behavior\n- Encapsulation needed\n- Invariants to maintain\n- Complex types with constructors/destructors\n\n```cpp\nclass BankAccount {\nprivate:\n    double balance;\n    \npublic:\n    void deposit(double amount) {\n        balance += amount;\n    }\n    \n    void withdraw(double amount) {\n        if (amount <= balance) {\n            balance -= amount;\n        }\n    }\n    \n    double getBalance() const {\n        return balance;\n    }\n};\n```\n\n## Struct Features\n\n### Initialization\n```cpp\nstruct Point {\n    int x, y;\n};\n\n// Brace initialization\nPoint p1 = {10, 20};\nPoint p2{10, 20};\n\n// Default initialization (C++11)\nstruct Point2 {\n    int x = 0;\n    int y = 0;\n};\n\nPoint2 p3;  // {0, 0}\n```\n\n### Member Access\n```cpp\nPoint p = {10, 20};\n\n// Dot operator\np.x = 15;\nint y = p.y;\n\n// Pointer to struct\nPoint* ptr = &p;\nptr->x = 20;  // Arrow operator\n```\n\n### Member Functions\n```cpp\nstruct Point {\n    int x, y;\n    \n    void print() {\n        std::cout << \"(\" << x << \", \" << y << \")\";\n    }\n    \n    void move(int dx, int dy) {\n        x += dx;\n        y += dy;\n    }\n};\n```\n\n### Constructors\n```cpp\nstruct Point {\n    int x, y;\n    \n    // Default constructor\n    Point() : x(0), y(0) {}\n    \n    // Parameterized constructor\n    Point(int x, int y) : x(x), y(y) {}\n    \n    // Copy constructor\n    Point(const Point& other) : x(other.x), y(other.y) {}\n};\n```\n\n## Struct as Function Parameters\n\n```cpp\nstruct Point {\n    int x, y;\n};\n\n// By value (copy)\nvoid printPoint(Point p) {\n    std::cout << p.x << \", \" << p.y;\n}\n\n// By reference (no copy, can modify)\nvoid movePoint(Point& p, int dx, int dy) {\n    p.x += dx;\n    p.y += dy;\n}\n\n// By const reference (no copy, read-only)\nvoid readPoint(const Point& p) {\n    std::cout << p.x << \", \" << p.y;\n}\n```\n\n## Struct Return Values\n\n```cpp\nPoint createPoint(int x, int y) {\n    Point p{x, y};\n    return p;  // Return by value (may use RVO)\n}\n\n// Usage\nPoint p = createPoint(10, 20);\n```\n\n## Struct Arrays\n\n```cpp\nPoint points[5] = {\n    {0, 0},\n    {1, 1},\n    {2, 2},\n    {3, 3},\n    {4, 4}\n};\n\nfor (int i = 0; i < 5; i++) {\n    std::cout << points[i].x << \", \" << points[i].y << \"\\n\";\n}\n```\n\n## Struct Comparison\n\nStructs don't have built-in comparison operators:\n\n```cpp\nstruct Point {\n    int x, y;\n};\n\nPoint p1{1, 2};\nPoint p2{1, 2};\n\n// Manual comparison\nbool equal = (p1.x == p2.x && p1.y == p2.y);\n\n// Or define operator==\nbool operator==(const Point& lhs, const Point& rhs) {\n    return lhs.x == rhs.x && lhs.y == rhs.y;\n}\n\nif (p1 == p2) { }  // Now works\n```\n\n## Struct Inheritance\n\nStructs can inherit (public by default):\n\n```cpp\nstruct Shape {\n    int x, y;\n};\n\nstruct Circle : Shape {\n    int radius;\n};\n\nstruct Rectangle : Shape {\n    int width, height;\n};\n```\n\n## Best Practices\n\n✅ **DO:**\n- Use struct for simple data containers\n- Use class for objects with behavior and invariants\n- Initialize structs with braces\n- Pass large structs by const reference\n\n❌ **DON'T:**\n- Use struct when you need encapsulation\n- Assume structs are always simple\n- Forget that structs can have methods\n- Overuse structs for complex logic\n\n## Struct vs Class Summary\n\n| Feature | struct | class |\n|---------|--------|-------|\n| Default member access | public | private |\n| Default inheritance | public | private |\n| Can have methods | ✅ Yes | ✅ Yes |\n| Can have constructors | ✅ Yes | ✅ Yes |\n| Can have destructors | ✅ Yes | ✅ Yes |\n| Can inherit | ✅ Yes | ✅ Yes |\n| Use case | Data containers | Objects with behavior |\n"
         },
         {
-          "id": 31,
+          "id": "cpp-U6-L2",
           "title": "Encapsulation and Access Specifiers",
           "unitTitle": "6. Object-Oriented Programming in C++",
           "xp": 85,
@@ -9194,7 +9194,7 @@ window.cppCombined = {
           "lessonText": "# Encapsulation and Access Specifiers\n\nEncapsulation is bundling data and methods that operate on that data, restricting access to internal details.\n\n## Access Specifiers\n\n```cpp\nclass MyClass {\npublic:     // Accessible from anywhere\n    int publicVar;\n    void publicMethod();\n\nprivate:    // Only accessible within class\n    int privateVar;\n    void privateMethod();\n\nprotected:  // Class and derived classes\n    int protectedVar;\n    void protectedMethod();\n};\n```\n\n## Default Access\n\n- **class:** `private`\n- **struct:** `public`\n\n## Public Members\n\n```cpp\nclass BankAccount {\npublic:\n    void deposit(double amount) {\n        balance += amount;\n    }\n    \n    double getBalance() const {\n        return balance;\n    }\n\nprivate:\n    double balance;\n};\n```\n\n## Private Members\n\n```cpp\nclass Rectangle {\nprivate:\n    double width, height;\n    \n    double calculateArea() {\n        return width * height;\n    }\n\npublic:\n    void setDimensions(double w, double h) {\n        if (w > 0 && h > 0) {\n            width = w;\n            height = h;\n        }\n    }\n    \n    double getArea() {\n        return calculateArea();\n    }\n};\n```\n\n## Protected Members\n\n```cpp\nclass Animal {\nprotected:\n    std::string name;\n    \npublic:\n    Animal(const std::string& n) : name(n) {}\n};\n\nclass Dog : public Animal {\npublic:\n    Dog(const std::string& n) : Animal(n) {}\n    \n    void bark() {\n        std::cout << name << \" says Woof!\";  // Can access protected name\n    }\n};\n```\n\n## Getters and Setters\n\n```cpp\nclass Person {\nprivate:\n    std::string name;\n    int age;\n\npublic:\n    // Getter\n    std::string getName() const { return name; }\n    int getAge() const { return age; }\n    \n    // Setter with validation\n    void setAge(int a) {\n        if (a >= 0 && a <= 150) {\n            age = a;\n        }\n    }\n};\n```\n\n## Friend Functions\n\n```cpp\nclass Vector {\nprivate:\n    double x, y;\n    \npublic:\n    Vector(double x, double y) : x(x), y(y) {}\n    \n    // Friend function can access private members\n    friend double dotProduct(const Vector& v1, const Vector& v2);\n};\n\ndouble dotProduct(const Vector& v1, const Vector& v2) {\n    return v1.x * v2.x + v1.y * v2.y;\n}\n```\n\n## Friend Classes\n\n```cpp\nclass Node {\nprivate:\n    int data;\n    \n    friend class BinaryTree;  // BinaryTree can access private members\n};\n\nclass BinaryTree {\n    // Can access Node::data\n};\n```\n\n## Mutable Members\n\n```cpp\nclass Cache {\nprivate:\n    mutable int accessCount;  // Can be modified in const methods\n    int cachedValue;\n    \npublic:\n    int getValue() const {\n        accessCount++;  // OK even though method is const\n        return cachedValue;\n    }\n};\n```\n\n## Best Practices\n\n✅ **DO:**\n- Make data members private\n- Provide getters/setters when needed\n- Use protected for inheritance\n- Keep public interface minimal\n- Validate in setters\n\n❌ **DON'T:**\n- Make everything public\n- Break encapsulation unnecessarily\n- Expose internal representation\n- Skip validation in setters\n"
         },
         {
-          "id": 32,
+          "id": "cpp-U6-L3",
           "title": "Constructors and Destructors",
           "unitTitle": "6. Object-Oriented Programming in C++",
           "xp": 85,
@@ -9471,7 +9471,7 @@ window.cppCombined = {
           "lessonText": "# Constructors and Destructors\n\nConstructors initialize objects, destructors clean them up.\n\n## Constructors\n\n```cpp\nclass MyClass {\npublic:\n    // Default constructor\n    MyClass() : value(0) {}\n    \n    // Parameterized constructor\n    MyClass(int val) : value(val) {}\n    \n    // Copy constructor\n    MyClass(const MyClass& other) : value(other.value) {}\n    \n    // Move constructor (C++11)\n    MyClass(MyClass&& other) noexcept : value(std::move(other.value)) {}\n    \nprivate:\n    int value;\n};\n```\n\n## Member Initializer List\n\n```cpp\nclass Point {\nprivate:\n    double x, y;\n    \npublic:\n    // Using initializer list (preferred)\n    Point(double x, double y) : x(x), y(y) {}\n    \n    // Using assignment body (less efficient for some types)\n    Point(double x, double y) {\n        this->x = x;\n        this->y = y;\n    }\n};\n```\n\n**Why initializer lists?**\n- Required for const/reference members\n- More efficient for non-trivial types\n- Member initialization order is declaration order\n\n## Destructors\n\n```cpp\nclass Resource {\nprivate:\n    int* data;\n    \npublic:\n    Resource(size_t size) {\n        data = new int[size];\n    }\n    \n    ~Resource() {\n        delete[] data;  // Clean up\n        data = nullptr;\n    }\n};\n```\n\n## Constructor Features\n\n### Default Constructor\n```cpp\nclass MyClass {\npublic:\n    MyClass() = default;  // Compiler generates\n};\n```\n\n### Deleted Constructor\n```cpp\nclass MyClass {\npublic:\n    MyClass() = delete;  // Cannot create default instance\n};\n```\n\n### Explicit Constructor\n```cpp\nclass MyClass {\npublic:\n    explicit MyClass(int x) : value(x) {}  // Prevent implicit conversion\n};\n```\n\n### Constructor with Default Parameters\n```cpp\nclass MyClass {\npublic:\n    MyClass(int x = 0, int y = 0) : mx(x), my(y) {}\n};\n```\n\n### Delegating Constructor (C++11)\n```cpp\nclass MyClass {\npublic:\n    MyClass(int x) : MyClass(x, 0) {}  // Calls other constructor\n    \nprivate:\n    MyClass(int x, int y) : mx(x), my(y) {}\n};\n```\n\n## Virtual Destructors\n\n```cpp\nclass Base {\npublic:\n    virtual ~Base() {}  // Virtual for proper polymorphic cleanup\n};\n\nclass Derived : public Base {\npublic:\n    ~Derived() {}\n};\n```\n\n## Rule of Three/Five\n\nIf you need any of:\n- Destructor\n- Copy constructor\n- Copy assignment\n\nYou probably need all three (and in C++11: move constructor + move assignment).\n\n```cpp\nclass Resource {\nprivate:\n    int* data;\n    size_t size;\n    \npublic:\n    // Constructor\n    Resource(size_t s) : size(s) {\n        data = new int[size];\n    }\n    \n    // Destructor\n    ~Resource() {\n        delete[] data;\n    }\n    \n    // Copy constructor\n    Resource(const Resource& other) : size(other.size) {\n        data = new int[size];\n        std::copy(other.data, other.data + size, data);\n    }\n    \n    // Copy assignment\n    Resource& operator=(const Resource& other) {\n        if (this != &other) {\n            delete[] data;\n            size = other.size;\n            data = new int[size];\n            std::copy(other.data, other.data + size, data);\n        }\n        return *this;\n    }\n    \n    // Move constructor (C++11)\n    Resource(Resource&& other) noexcept : data(other.data), size(other.size) {\n        other.data = nullptr;\n        other.size = 0;\n    }\n    \n    // Move assignment (C++11)\n    Resource& operator=(Resource&& other) noexcept {\n        if (this != &other) {\n            delete[] data;\n            data = other.data;\n            size = other.size;\n            other.data = nullptr;\n            other.size = 0;\n        }\n        return *this;\n    }\n};\n```\n"
         },
         {
-          "id": 33,
+          "id": "cpp-U6-L4",
           "title": "Member Functions",
           "unitTitle": "6. Object-Oriented Programming in C++",
           "xp": 85,
@@ -9751,7 +9751,7 @@ window.cppCombined = {
           "lessonText": "# Member Functions\n\nMember functions (methods) operate on class data.\n\n## Basic Member Functions\n\n```cpp\nclass MyClass {\nprivate:\n    int value;\n    \npublic:\n    // Basic member function\n    void setValue(int v) {\n        value = v;\n    }\n    \n    // Const member function\n    int getValue() const {\n        return value;  // Cannot modify value here\n    }\n};\n```\n\n## Const Member Functions\n\n```cpp\nclass Point {\nprivate:\n    double x, y;\n    \npublic:\n    // Can modify object\n    void move(double dx, double dy) {\n        x += dx;\n        y += dy;\n    }\n    \n    // Cannot modify object (const)\n    double getX() const {\n        return x;  // Read-only access\n    }\n    \n    double getY() const {\n        return y;\n    }\n    \n    double distance() const {\n        return std::sqrt(x*x + y*y);  // Can compute but not modify\n    }\n};\n```\n\n## Static Member Functions\n\n```cpp\nclass Counter {\nprivate:\n    static int count;\n    \npublic:\n    Counter() {\n        count++;\n    }\n    \n    // Static member function\n    static int getCount() {\n        return count;  // Can only access static members\n    }\n    \n    // Non-static member function\n    int getInstanceCount() const {\n        return Counter::getCount();  // Can call static function\n    }\n};\n\nint Counter::count = 0;\n\n// Usage\nint c = Counter::getCount();  // Call without object\n```\n\n## Defining Functions Outside Class\n\n```cpp\n// Header\nclass MyClass {\npublic:\n    void func();\n    int getValue() const;\n};\n\n// Implementation\nvoid MyClass::func() {\n    // Implementation\n}\n\nint MyClass::getValue() const {\n    return value;\n}\n```\n\n## Inline Functions\n\n```cpp\nclass MyClass {\npublic:\n    // Implicitly inline (defined in class)\n    int getValue() const {\n        return value;\n    }\n};\n\n// Explicitly inline\ninline int MyClass::getValue() const {\n    return value;\n}\n```\n\n## Virtual Functions\n\n```cpp\nclass Shape {\npublic:\n    virtual double area() const = 0;  // Pure virtual\n    virtual void draw() const {\n        std::cout << \"Drawing shape\\n\";\n    }\n};\n\nclass Circle : public Shape {\npublic:\n    double area() const override {\n        return 3.14159 * radius * radius;\n    }\n    \n    void draw() const override {\n        std::cout << \"Drawing circle\\n\";\n    }\n    \nprivate:\n    double radius;\n};\n```\n\n## this Pointer\n\n```cpp\nclass MyClass {\nprivate:\n    int value;\n    \npublic:\n    void setValue(int value) {\n        this->value = value;  // this-> disambiguates\n    }\n    \n    MyClass& setValueAndReturn(int value) {\n        this->value = value;\n        return *this;  // Return reference to current object\n    }\n};\n\n// Chaining\nobj.setValue(10).setValue(20).setValue(30);\n```\n\n## Const Overloading\n\n```cpp\nclass MyClass {\npublic:\n    // Non-const version\n    int& operator[](int index) {\n        return data[index];  // Can modify\n    }\n    \n    // Const version\n    const int& operator[](int index) const {\n        return data[index];  // Cannot modify\n    }\n    \nprivate:\n    int data[10];\n};\n```\n\n## noexcept Member Functions\n\n```cpp\nclass MyClass {\npublic:\n    // Promises not to throw\n    int getValue() const noexcept {\n        return value;\n    }\n    \n    // May throw\n    void riskyOperation();\n};\n```\n"
         },
         {
-          "id": 34,
+          "id": "cpp-U6-L5",
           "title": "this Pointer",
           "unitTitle": "6. Object-Oriented Programming in C++",
           "xp": 85,
@@ -10000,7 +10000,7 @@ window.cppCombined = {
           "lessonText": "# this Pointer\n\nThe `this` pointer points to the current object.\n\n```cpp\nclass MyClass {\npublic:\n    void setX(int x) {\n        this->x = x;  // Use this pointer\n    }\n};\n```\n\n**Key Points:**\n- `this` is available in all non-static member functions\n- Cannot be modified\n- Used to resolve name conflicts\n- Return `*this` for method chaining"
         },
         {
-          "id": 35,
+          "id": "cpp-U6-L6",
           "title": "Operator Overloading",
           "unitTitle": "6. Object-Oriented Programming in C++",
           "xp": 85,
@@ -10256,7 +10256,7 @@ window.cppCombined = {
       "unitName": "7. Resource Management",
       "lessons": [
         {
-          "id": 36,
+          "id": "cpp-U7-L1",
           "title": "RAII (Resource Acquisition Is Initialization)",
           "unitTitle": "7. Resource Management",
           "xp": 85,
@@ -10533,7 +10533,7 @@ window.cppCombined = {
           "lessonText": "# RAII: Resource Acquisition Is Initialization\n\nRAII is a C++ idiom that ties resource lifetime to object lifetime.\n\n## What is RAII?\n\nRAII stands for **Resource Acquisition Is Initialization**. The core idea:\n\n- Acquire resource in **constructor**\n- Release resource in **destructor**\n\n```cpp\nclass FileHandle {\nprivate:\n    FILE* file;\n    \npublic:\n    // Acquire resource\n    FileHandle(const char* filename) {\n        file = fopen(filename, \"r\");\n        if (!file) {\n            throw std::runtime_error(\"Failed to open file\");\n        }\n    }\n    \n    // Release resource\n    ~FileHandle() {\n        if (file) {\n            fclose(file);\n        }\n    }\n    \n    // Disable copying\n    FileHandle(const FileHandle&) = delete;\n    FileHandle& operator=(const FileHandle&) = delete;\n};\n\n// Usage\n{\n    FileHandle f(\"data.txt\");\n    // Use file...\n} // Automatically closed when f goes out of scope\n```\n\n## Exception Safety\n\nRAII provides strong exception safety:\n\n```cpp\nvoid processData() {\n    FileHandle input(\"input.txt\");\n    FileHandle output(\"output.txt\");\n    \n    // Process data...\n    \n    // Even if exception is thrown here,\n    // both files are automatically closed\n}\n```\n\n## Common RAII Patterns\n\n### 1. Smart Pointers\n\n```cpp\n// unique_ptr - exclusive ownership\nstd::unique_ptr<int> ptr(new int(42));\n\n// shared_ptr - shared ownership\nstd::shared_ptr<int> shared = std::make_shared<int>(42);\n```\n\n### 2. Lock Guard\n\n```cpp\nclass LockGuard {\nprivate:\n    std::mutex& mutex;\n    \npublic:\n    LockGuard(std::mutex& m) : mutex(m) {\n        mutex.lock();\n    }\n    \n    ~LockGuard() {\n        mutex.unlock();\n    }\n};\n\n// Or use std::lock_guard\nstd::mutex mtx;\n{\n    std::lock_guard<std::mutex> lock(mtx);\n    // Critical section...\n} // Automatically unlocked\n```\n\n### 3. Scope Timer\n\n```cpp\nclass Timer {\nprivate:\n    std::chrono::time_point<std::chrono::high_resolution_clock> start;\n    \npublic:\n    Timer() : start(std::chrono::high_resolution_clock::now()) {}\n    \n    ~Timer() {\n        auto end = std::chrono::high_resolution_clock::now();\n        auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);\n        std::cout << \"Time: \" << duration.count() << \"ms\\n\";\n    }\n};\n\n// Usage\nvoid myFunction() {\n    Timer timer;  // Starts timing\n    // Do work...\n} // Automatically prints time when function ends\n```\n\n## RAII Benefits\n\n✅ **Automatic cleanup** - No need to remember to free resources\n✅ **Exception safe** - Resources released even when exceptions occur\n✅ **Prevents leaks** - Guaranteed cleanup in all code paths\n✅ **Clear ownership** - Resource lifetime is explicit\n✅ **Thread safe** - Proper locking and unlocking\n\n## Move Semantics with RAII\n\n```cpp\nclass Resource {\nprivate:\n    int* data;\n    \npublic:\n    // Constructor\n    Resource(size_t size) : data(new int[size]) {}\n    \n    // Destructor\n    ~Resource() {\n        delete[] data;\n    }\n    \n    // Move constructor\n    Resource(Resource&& other) noexcept : data(other.data) {\n        other.data = nullptr;\n    }\n    \n    // Move assignment\n    Resource& operator=(Resource&& other) noexcept {\n        if (this != &other) {\n            delete[] data;\n            data = other.data;\n            other.data = nullptr;\n        }\n        return *this;\n    }\n    \n    // Disable copy\n    Resource(const Resource&) = delete;\n    Resource& operator=(const Resource&) = delete;\n};\n```\n\n## RAII for C Resources\n\n```cpp\nclass CResourceWrapper {\nprivate:\n    void* handle;\n    \npublic:\n    CResourceWrapper() {\n        handle = create_c_resource();\n    }\n    \n    ~CResourceWrapper() {\n        if (handle) {\n            destroy_c_resource(handle);\n        }\n    }\n    \n    // Prevent copying\n    CResourceWrapper(const CResourceWrapper&) = delete;\n    CResourceWrapper& operator=(const CResourceWrapper&) = delete;\n};\n```\n"
         },
         {
-          "id": 37,
+          "id": "cpp-U7-L2",
           "title": "Copy Constructor and Copy Assignment",
           "unitTitle": "7. Resource Management",
           "xp": 85,
@@ -10788,7 +10788,7 @@ window.cppCombined = {
           "lessonText": "# Copy Constructor and Copy Assignment\n\nCopy operations control how objects are copied.\n\n```cpp\nclass MyClass {\nprivate:\n    int* data;\n    size_t size;\npublic:\n    // Copy constructor\n    MyClass(const MyClass& other) : size(other.size) {\n        data = new int[size];\n        std::copy(other.data, other.data + size, data);\n    }\n    \n    // Copy assignment\n    MyClass& operator=(const MyClass& other) {\n        if (this != &other) {\n            delete[] data;\n            size = other.size;\n            data = new int[size];\n            std::copy(other.data, other.data + size, data);\n        }\n        return *this;\n    }\n};\n```\n\n**Key points:**\n- Copy constructor: `ClassName(const ClassName& other)`\n- Copy assignment: `operator=(const ClassName& other)`\n- Check self-assignment: `if (this != &other)`\n- Return `*this` from assignment"
         },
         {
-          "id": 38,
+          "id": "cpp-U7-L3",
           "title": "Move Constructor and Move Assignment",
           "unitTitle": "7. Resource Management",
           "xp": 85,
@@ -11047,7 +11047,7 @@ window.cppCombined = {
           "lessonText": "# Move Constructor and Move Assignment\n\nMove operations transfer ownership of resources.\n\n```cpp\nclass MyClass {\nprivate:\n    int* data;\npublic:\n    // Move constructor\n    MyClass(MyClass&& other) noexcept : data(other.data) {\n        other.data = nullptr;  // Leave source in valid state\n    }\n    \n    // Move assignment\n    MyClass& operator=(MyClass&& other) noexcept {\n        if (this != &other) {\n            delete[] data;\n            data = other.data;\n            other.data = nullptr;\n        }\n        return *this;\n    }\n};\n```\n\n**Key points:**\n- Takes rvalue reference: `ClassName(ClassName&& other)`\n- Transfer ownership, don't copy\n- Leave source in valid state\n- Mark noexcept when possible"
         },
         {
-          "id": 39,
+          "id": "cpp-U7-L4",
           "title": "Rule of Three / Five / Zero",
           "unitTitle": "7. Resource Management",
           "xp": 85,
@@ -11300,7 +11300,7 @@ window.cppCombined = {
           "lessonText": "# Rule of Three/Five/Zero\n\nGuidelines for resource management.\n\n**Rule of Three:** If you need any of destructor, copy constructor, or copy assignment, you need all three.\n\n**Rule of Five:** Add move constructor and move assignment to Rule of Three.\n\n**Rule of Zero:** If you don't manage resources directly, use smart pointers and avoid manual management.\n\n```cpp\n// Rule of Zero (preferred)\nclass MyClass {\n    std::unique_ptr<int> data;  // Automatically managed\n    std::vector<int> vec;      // Automatically managed\n};\n```\n\n```cpp\n// Rule of Five (when needed)\nclass Resource {\npublic:\n    ~Resource();  // Destructor\n    Resource(const Resource&);  // Copy\n    Resource& operator=(const Resource&);\n    Resource(Resource&&) noexcept;  // Move\n    Resource& operator=(Resource&&) noexcept;\n};\n```"
         },
         {
-          "id": 40,
+          "id": "cpp-U7-L5",
           "title": "Managing Resources Safely",
           "unitTitle": "7. Resource Management",
           "xp": 85,
@@ -11567,7 +11567,7 @@ window.cppCombined = {
       "unitName": "8. Templates and Metaprogramming",
       "lessons": [
         {
-          "id": 41,
+          "id": "cpp-U8-L1",
           "title": "Function Templates",
           "unitTitle": "8. Templates and Metaprogramming",
           "xp": 85,
@@ -11846,7 +11846,7 @@ window.cppCombined = {
           "lessonText": "# Function Templates\n\nFunction templates create generic functions that work with multiple types.\n\n## Basic Syntax\n\n```cpp\ntemplate<typename T>\nT maximum(T a, T b) {\n    return (a > b) ? a : b;\n}\n```\n\n## Usage\n\n```cpp\n// Type deduction\nmax(10, 20);        // int\nmax(3.14, 2.71);    // double\n\n// Explicit instantiation\nmax<int>(10, 20);\nmax<double>(3.14, 2.71);\n```\n\n## Multiple Type Parameters\n\n```cpp\ntemplate<typename T, typename U>\nvoid print(T t, U u) {\n    std::cout << t << \" \" << u;\n}\n\nprint(10, 3.14);  // int, double\nprint(\"hi\", 42);   // string, int\n```\n\n## Default Type Parameters\n\n```cpp\ntemplate<typename T = int>\nvoid print(T value) {\n    std::cout << value;\n}\n\nprint(42);        // int (default)\nprint(3.14);     // double\n```\n\n## Non-Type Parameters\n\n```cpp\ntemplate<typename T, int N>\nvoid printArray(T (&arr)[N]) {\n    for (int i = 0; i < N; i++) {\n        std::cout << arr[i] << \" \";\n    }\n}\n\nint arr[5] = {1, 2, 3, 4, 5};\nprintArray(arr);  // N is deduced as 5\n```\n\n## constexpr Function Templates\n\n```cpp\ntemplate<typename T>\nconstexpr T square(T x) {\n    return x * x;\n}\n\nconstexpr int result = square(5);  // Computed at compile time\n```\n\n## Perfect Forwarding\n\n```cpp\ntemplate<typename T>\nvoid wrapper(T&& arg) {\n    func(std::forward<T>(arg));\n}\n```\n"
         },
         {
-          "id": 42,
+          "id": "cpp-U8-L2",
           "title": "Class Templates",
           "unitTitle": "8. Templates and Metaprogramming",
           "xp": 85,
@@ -12103,7 +12103,7 @@ window.cppCombined = {
           "lessonText": "# Class Templates\n\nClass templates create generic classes that work with multiple types.\n\n```cpp\ntemplate<typename T>\nclass Stack {\nprivate:\n    std::vector<T> data;\npublic:\n    void push(const T& value) { data.push_back(value); }\n    T pop() { T val = data.back(); data.pop_back(); return val; }\n};\n\nStack<int> intStack;\nStack<std::string> stringStack;\n```\n\n**Key points:**\n- Template syntax: `template<typename T>` before class\n- Type deduction from usage\n- Can have multiple type parameters\n- Member functions can be defined inside or outside class"
         },
         {
-          "id": 43,
+          "id": "cpp-U8-L3",
           "title": "Template Specialization",
           "unitTitle": "8. Templates and Metaprogramming",
           "xp": 85,
@@ -12359,7 +12359,7 @@ window.cppCombined = {
           "lessonText": "# Template Specialization\n\nTemplate specialization provides custom implementation for specific types.\n\n```cpp\ntemplate<typename T>\nclass Printer {\npublic:\n    void print(const T& value) {\n        std::cout << value;\n    }\n};\n\n// Full specialization for bool\ntemplate<>\nclass Printer<bool> {\npublic:\n    void print(bool value) {\n        std::cout << (value ? \"true\" : \"false\");\n    }\n};\n```\n\n**Types:**\n- Full specialization: All parameters specified\n- Partial specialization: Some parameters specified (class templates only)"
         },
         {
-          "id": 44,
+          "id": "cpp-U8-L4",
           "title": "Variadic Templates",
           "unitTitle": "8. Templates and Metaprogramming",
           "xp": 85,
@@ -12616,7 +12616,7 @@ window.cppCombined = {
           "lessonText": "# Variadic Templates\n\nVariadic templates accept any number of arguments.\n\n```cpp\ntemplate<typename... Args>\nvoid print(Args... args) {\n    (std::cout << ... << args) << '\\n';\n}\n\nprint(1, 2.0, \"hello\", 'a');\n```\n\n**Fold expressions (C++17):**\n```cpp\ntemplate<typename... Args>\nauto sum(Args... args) {\n    return (args + ... + 0);\n}\n```\n\n**Parameter pack:**\n- `Args...` - type parameter pack\n- `args...` - function parameter pack"
         },
         {
-          "id": 45,
+          "id": "cpp-U8-L5",
           "title": "Compile-Time Programming",
           "unitTitle": "8. Templates and Metaprogramming",
           "xp": 85,
@@ -12886,7 +12886,7 @@ window.cppCombined = {
       "unitName": "9. Standard Template Library (STL)",
       "lessons": [
         {
-          "id": 46,
+          "id": "cpp-U9-L1",
           "title": "Overview of STL Components",
           "unitTitle": "9. Standard Template Library (STL)",
           "xp": 85,
@@ -13173,7 +13173,7 @@ window.cppCombined = {
           "lessonText": "# Standard Template Library (STL)\n\nSTL is a collection of powerful C++ template classes and algorithms.\n\n## Three Main Components\n\n### 1. Containers\nData structures that store objects:\n- **Sequence containers**: vector, deque, list\n- **Associative containers**: map, set, multimap, multiset\n- **Container adaptors**: stack, queue, priority_queue\n\n### 2. Algorithms\nFunctions that operate on ranges of elements:\n- Sorting: `sort()`, `stable_sort()`\n- Searching: `find()`, `binary_search()`\n- Modifying: `transform()`, `copy()`, `remove()`\n- Numeric: `accumulate()`, `inner_product()`\n\n### 3. Iterators\nObjects that traverse and access container elements:\n- **Input iterators**: read-only\n- **Output iterators**: write-only\n- **Forward iterators**: read/write forward\n- **Bidirectional iterators**: read/write both directions\n- **Random access iterators**: direct access\n\n## Basic Usage\n\n```cpp\n#include <vector>\n#include <algorithm>\n#include <iostream>\n\nint main() {\n    std::vector<int> v = {5, 2, 8, 1, 9};\n    \n    // Sort\n    std::sort(v.begin(), v.end());\n    \n    // Print\n    for (int x : v) {\n        std::cout << x << ' ';\n    }\n}\n```\n\n## Common Operations\n\n```cpp\nv.push_back(10);      // Add element\nv.pop_back();          // Remove last\nv.size();              // Get size\nv.empty();             // Check if empty\nv.clear();             // Remove all\nv.begin();             // First element iterator\nv.end();               // Past-end iterator\n```\n"
         },
         {
-          "id": 47,
+          "id": "cpp-U9-L2",
           "title": "Iterators",
           "unitTitle": "9. Standard Template Library (STL)",
           "xp": 85,
@@ -13436,7 +13436,7 @@ window.cppCombined = {
           "lessonText": "# Iterators\n\nIterators provide a uniform way to traverse containers.\n\n```cpp\nstd::vector<int> v = {1, 2, 3, 4, 5};\n\n// Iterator loop\nfor (auto it = v.begin(); it != v.end(); ++it) {\n    std::cout << *it << ' ';\n}\n\n// Range-based for (C++11)\nfor (int x : v) {\n    std::cout << x << ' ';\n}\n```\n\n**Iterator operations:**\n- `*it` - dereference\n- `++it` - advance\n- `it->member` - member access\n- `it + n` - random access (some iterators)"
         },
         {
-          "id": 48,
+          "id": "cpp-U9-L3",
           "title": "Sequence Containers (vector, deque, list)",
           "unitTitle": "9. Standard Template Library (STL)",
           "xp": 85,
@@ -13699,7 +13699,7 @@ window.cppCombined = {
           "lessonText": "# Sequence Containers\n\n**vector** - Dynamic array with fast random access\n```cpp\nstd::vector<int> v = {1, 2, 3};\nv.push_back(4);        // Add to end\nv[0] = 10;            // Random access\n```\n\n**deque** - Double-ended queue\n```cpp\nstd::deque<int> d;\nd.push_front(1);        // Add to front\nd.push_back(2);         // Add to end\n```\n\n**list** - Doubly linked list\n```cpp\nstd::list<int> l = {1, 2, 3};\nl.push_front(0);       // Add to front\nl.insert(it, 5);       // Insert at position\n```"
         },
         {
-          "id": 49,
+          "id": "cpp-U9-L4",
           "title": "Associative Containers (map, set)",
           "unitTitle": "9. Standard Template Library (STL)",
           "xp": 85,
@@ -13965,7 +13965,7 @@ window.cppCombined = {
           "lessonText": "# Associative Containers\n\n**map** - Key-value pairs sorted by key\n```cpp\nstd::map<std::string, int> ages;\nages[\"Alice\"] = 25;\nages[\"Bob\"] = 30;\n\n// Access\nint aliceAge = ages[\"Alice\"];\n```\n\n**set** - Unique sorted elements\n```cpp\nstd::set<int> s = {5, 2, 8, 2, 5};  // {2, 5, 8}\ns.insert(10);\n\n// Find\nif (s.find(5) != s.end()) {\n    // Found\n}\n```\n\n**unordered_map/set** - Hash-based, O(1) average"
         },
         {
-          "id": 50,
+          "id": "cpp-U9-L5",
           "title": "Container Adaptors (stack, queue)",
           "unitTitle": "9. Standard Template Library (STL)",
           "xp": 85,
@@ -14229,7 +14229,7 @@ window.cppCombined = {
           "lessonText": "# Container Adaptors\n\n**stack** - LIFO (Last In, First Out)\n```cpp\nstd::stack<int> s;\ns.push(10);     // Push\nint top = s.top();  // Peek\ns.pop();           // Pop\n```\n\n**queue** - FIFO (First In, First Out)\n```cpp\nstd::queue<int> q;\nq.push(10);      // Enqueue\nint front = q.front();  // Front\nq.pop();               // Dequeue\n```\n\n**priority_queue** - Highest priority first\n```cpp\nstd::priority_queue<int> pq;\npq.push(10);  // O(log n)\npq.pop();     // O(log n)\n```"
         },
         {
-          "id": 51,
+          "id": "cpp-U9-L6",
           "title": "STL Algorithms",
           "unitTitle": "9. Standard Template Library (STL)",
           "xp": 85,
@@ -14492,7 +14492,7 @@ window.cppCombined = {
       "unitName": "10. Modern C++ Features",
       "lessons": [
         {
-          "id": 52,
+          "id": "cpp-U10-L1",
           "title": "C++11 Features",
           "unitTitle": "10. Modern C++ Features",
           "xp": 85,
@@ -14837,7 +14837,7 @@ window.cppCombined = {
           "lessonText": "# C++11 Features\n\nC++11 introduced major modernization of C++.\n\n## Type Deduction\n\n```cpp\nauto x = 42;                    // x is int\nauto s = \"hello\";              // s is const char*\nauto& ref = x;                 // reference\nauto* ptr = &x;                // pointer\n\ndecltype(x) y = 5;             // same type as x\n```\n\n## Lambda Expressions\n\n```cpp\n// Simple lambda\n[]() { return 42; }\n\n// With parameters\n[](int x) { return x * 2; }\n\n// Capture by value\n[x]() { return x * 2; }\n[=]() { return x + y; }\n\n// Capture by reference\n[&x]() { x++; }\n[&]() { x++; y++; }\n\n// With return type\n[]() -> int { return 42; }\n\n// Mutable\n[x]() mutable { x++; }  // Can modify captured by value\n```\n\n## Range-Based For Loop\n\n```cpp\nstd::vector<int> v = {1, 2, 3};\n\n// By value\nfor (int x : v) {\n    std::cout << x;\n}\n\n// By reference\nfor (auto& x : v) {\n    x *= 2;\n}\n```\n\n## Other C++11 Features\n\n```cpp\n// nullptr\nint* ptr = nullptr;\n\n// enum class\nenum class Color { Red, Green, Blue };\n\n// noexcept\nvoid func() noexcept;\n\n// constexpr\nconstexpr int square(int x) { return x * x; }\n\n// static_assert\nstatic_assert(sizeof(int) == 4, \"int must be 4 bytes\");\n\n// std::function\nstd::function<int(int)> f = [](int x) { return x * 2; };\n```\n"
         },
         {
-          "id": 53,
+          "id": "cpp-U10-L2",
           "title": "C++14 Features",
           "unitTitle": "10. Modern C++ Features",
           "xp": 85,
@@ -15143,7 +15143,7 @@ window.cppCombined = {
           "lessonText": "# C++14 Features\n\nC++14 is a minor update with useful improvements.\n\n**Generic lambdas:**\n```cpp\nauto lambda = [](auto x) { return x * 2; };  // Works with any type\nlambda(5);       // int\nlambda(3.14);    // double\n```\n\n**Relaxed constexpr:**\n```cpp\nconstexpr int factorial(int n) {\n    if (n <= 1) return 1;\n    return n * factorial(n - 1);  // Now allowed in C++14\n}\n```\n\n**Binary literals:**\n```cpp\nint value = 0b1010;  // Binary literal\n```"
         },
         {
-          "id": 54,
+          "id": "cpp-U10-L3",
           "title": "C++17 Features",
           "unitTitle": "10. Modern C++ Features",
           "xp": 85,
@@ -15459,7 +15459,7 @@ window.cppCombined = {
           "lessonText": "# C++17 Features\n\nC++17 adds significant language and library improvements.\n\n**Structured bindings:**\n```cpp\nstd::pair<int, string> p = {42, \"hello\"};\nauto [num, str] = p;  // Unpack pair\n\nstd::map<string, int> m;\nfor (auto [key, value] : m) {\n    // Access key and value directly\n}\n```\n\n**if constexpr:**\n```cpp\ntemplate<typename T>\nauto get_value(T t) {\n    if constexpr (std::is_pointer_v<T>) {\n        return *t;  // Only compiled if T is pointer\n    } else {\n        return t;\n    }\n}\n```\n\n**Fold expressions:**\n```cpp\ntemplate<typename... Args>\nauto sum(Args... args) {\n    return (args + ... + 0);  // Binary left fold\n}\n```"
         },
         {
-          "id": 55,
+          "id": "cpp-U10-L4",
           "title": "C++20 Features",
           "unitTitle": "10. Modern C++ Features",
           "xp": 85,
@@ -15770,7 +15770,7 @@ window.cppCombined = {
           "lessonText": "# C++20 Features\n\nC++20 is a major update with four new features.\n\n**Concepts:**\n```cpp\ntemplate<typename T>\nconcept Integral = std::is_integral_v<T>;\n\ntemplate<Integral T>\nT add(T a, T b) {\n    return a + b;\n}\n```\n\n**Ranges:**\n```cpp\n#include <ranges>\nstd::vector<int> v = {1, 2, 3, 4, 5};\nauto result = v | std::views::filter([](int x) { return x % 2 == 0; })\n                 | std::views::transform([](int x) { return x * 2; });\n```\n\n**Modules:**\n```cpp\n// module.cppm\nexport module mymodule;\nexport int func() { return 42; }\n\n// main.cpp\nimport mymodule;\n```\n\n**Coroutines:**\n```cpp\n#include <coroutine>\n\nGenerator range(int start, int end) {\n    while (start < end) {\n        co_yield start++;\n    }\n}\n```"
         },
         {
-          "id": 56,
+          "id": "cpp-U10-L5",
           "title": "Best Practices and Idioms",
           "unitTitle": "10. Modern C++ Features",
           "xp": 85,
@@ -16089,7 +16089,7 @@ window.cppCombined = {
       "unitName": "11. Advanced Object-Oriented Programming",
       "lessons": [
         {
-          "id": 57,
+          "id": "cpp-U11-L1",
           "title": "Inheritance",
           "unitTitle": "11. Advanced Object-Oriented Programming",
           "xp": 85,
@@ -16431,7 +16431,7 @@ window.cppCombined = {
           "lessonText": "# Inheritance\n\nInheritance allows creating new classes based on existing classes.\n\n## Basic Inheritance\n\n```cpp\nclass Base {\npublic:\n    void baseMethod() { std::cout << \"Base method\"; }\n};\n\nclass Derived : public Base {\npublic:\n    void derivedMethod() { std::cout << \"Derived method\"; }\n};\n```\n\n## Access Specifiers\n\n```cpp\nclass Base {\npublic:    // Accessible everywhere\n    int publicVar;\nprotected: // Accessible in derived classes\n    int protectedVar;\nprivate:   // Only accessible in Base\n    int privateVar;\n};\n```\n\n## Inheritance Types\n\n```cpp\nclass PublicDerived : public Base {};      // Public members stay public\nclass ProtectedDerived : protected Base {}; // Public become protected\nclass PrivateDerived : private Base {};     // All become private\n```\n\n## Calling Base Constructor\n\n```cpp\nclass Derived : public Base {\npublic:\n    Derived(int x) : Base(x) {  // Initialize base class\n        // Derived initialization\n    }\n};\n```\n\n## Overriding\n\n```cpp\nclass Derived : public Base {\npublic:\n    void baseMethod() override {  // Override base method\n        std::cout << \"Derived override\";\n    }\n};\n```\n"
         },
         {
-          "id": 58,
+          "id": "cpp-U11-L2",
           "title": "Virtual Functions and Polymorphism",
           "unitTitle": "11. Advanced Object-Oriented Programming",
           "xp": 85,
@@ -16748,7 +16748,7 @@ window.cppCombined = {
           "lessonText": "# Virtual Functions and Polymorphism\n\nVirtual functions enable runtime polymorphism.\n\n```cpp\nclass Base {\npublic:\n    virtual void func() {\n        std::cout << \"Base implementation\";\n    }\n};\n\nclass Derived : public Base {\npublic:\n    void func() override {\n        std::cout << \"Derived implementation\";\n    }\n};\n\nBase* ptr = new Derived();\nptr->func();  // Calls Derived::func()\n```"
         },
         {
-          "id": 59,
+          "id": "cpp-U11-L3",
           "title": "Abstract Classes and Interfaces",
           "unitTitle": "11. Advanced Object-Oriented Programming",
           "xp": 85,
@@ -17055,7 +17055,7 @@ window.cppCombined = {
           "lessonText": "# Abstract Classes and Interfaces\n\nAbstract classes cannot be instantiated and define interfaces.\n\n```cpp\nclass Shape {\npublic:\n    virtual ~Shape() = default;\n    virtual double area() const = 0;  // Pure virtual\n    virtual double perimeter() const = 0;\n};\n\nclass Circle : public Shape {\nprivate:\n    double radius;\npublic:\n    Circle(double r) : radius(r) {}\n    double area() const override {\n        return 3.14159 * radius * radius;\n    }\n};\n```\n\n**Interfaces in C++** are abstract classes with only pure virtual functions."
         },
         {
-          "id": 60,
+          "id": "cpp-U11-L4",
           "title": "Multiple Inheritance",
           "unitTitle": "11. Advanced Object-Oriented Programming",
           "xp": 85,
@@ -17364,7 +17364,7 @@ window.cppCombined = {
           "lessonText": "# Multiple Inheritance\n\nC++ allows inheriting from multiple base classes.\n\n```cpp\nclass A { public: void a() {} };\nclass B { public: void b() {} };\n\nclass C : public A, public B {\npublic:\n    void c() {}\n};\n```\n\n**Diamond Problem:**\nWhen two base classes share a common ancestor, use virtual inheritance.\n\n```cpp\nclass Base {};\nclass D1 : virtual public Base {};\nclass D2 : virtual public Base {};\nclass Derived : public D1, public D2 {};\n```"
         },
         {
-          "id": 61,
+          "id": "cpp-U11-L5",
           "title": "Composition vs Inheritance",
           "unitTitle": "11. Advanced Object-Oriented Programming",
           "xp": 85,
@@ -17674,7 +17674,7 @@ window.cppCombined = {
       "unitName": "12. Modern C++ Features",
       "lessons": [
         {
-          "id": 62,
+          "id": "cpp-U12-L1",
           "title": "auto and Type Deduction",
           "unitTitle": "12. Modern C++ Features",
           "xp": 85,
@@ -17966,7 +17966,7 @@ window.cppCombined = {
           "lessonText": "# auto and Type Deduction in Practice\n\nPractical uses of automatic type deduction.\n\n## When to Use auto\n\n```cpp\n// Complex types\nauto it = container.begin();\nauto result = std::make_tuple(1, 'a', 3.14);\n\n// Range-based for\nfor (auto& element : container) {\n    element *= 2;\n}\n\n// Generic code\ntemplate<typename T>\nvoid process(T&& value) {\n    auto&& ref = value;  // Universal reference\n}\n```\n\n## Preserving Qualifiers\n\n```cpp\n// Preserve reference\nauto& ref = value;\n\n// Preserve const\nconst auto& cref = value;\n\n// Perfect forwarding\nauto&& uref = expr;\n\n// decltype(auto) for return types\ndecltype(auto) get() {\n    return value;  // Preserves reference\n}\n```\n\n## Best Practices\n\n```cpp\n// ✓ Good: Type is obvious\nauto count = v.size();\n\n// ✓ Good: Complex type\nauto it = std::find(v.begin(), v.end(), target);\n\n// ✗ Avoid: Type not clear\nauto result = someFunction();  // What does this return?\n```\n"
         },
         {
-          "id": 63,
+          "id": "cpp-U12-L2",
           "title": "Range-Based Loops",
           "unitTitle": "12. Modern C++ Features",
           "xp": 85,
@@ -18255,7 +18255,7 @@ window.cppCombined = {
           "lessonText": "# Range-Based Loops\n\nClean iteration over containers.\n\n```cpp\nstd::vector<int> v = {1, 2, 3, 4, 5};\n\n// By value (copy)\nfor (int x : v) {\n    std::cout << x;\n}\n\n// By reference (modify)\nfor (auto& x : v) {\n    x *= 2;\n}\n\n// By const reference (read)\nfor (const auto& x : v) {\n    std::cout << x;\n}\n```"
         },
         {
-          "id": 64,
+          "id": "cpp-U12-L3",
           "title": "Lambda Functions",
           "unitTitle": "12. Modern C++ Features",
           "xp": 85,
@@ -18545,7 +18545,7 @@ window.cppCombined = {
           "lessonText": "# Lambda Functions\n\nAnonymous functions for concise code.\n\n```cpp\n// Simple lambda\nauto lambda = []() { return 42; };\n\n// With capture\nint x = 10;\nauto capture = [x]() { return x * 2; };\n\n// With reference capture\nauto refCapture = [&x]() { x++; };\n\n// Generic lambda\nauto generic = [](auto x) { return x * 2; };\n```"
         },
         {
-          "id": 65,
+          "id": "cpp-U12-L4",
           "title": "enum class",
           "unitTitle": "12. Modern C++ Features",
           "xp": 85,
@@ -18837,7 +18837,7 @@ window.cppCombined = {
           "lessonText": "# enum class\n\nScoped enums for type-safe enumerations.\n\n```cpp\nenum class Color {\n    Red,\n    Green,\n    Blue\n};\n\nColor c = Color::Red;  // Must use Color::\nif (c == Color::Red) {\n    // Handle red\n}\n```\n\n**Benefits:**\n- Scoped (no name pollution)\n- Strongly typed\n- Can specify underlying type"
         },
         {
-          "id": 66,
+          "id": "cpp-U12-L5",
           "title": "Structured Bindings",
           "unitTitle": "12. Modern C++ Features",
           "xp": 85,
@@ -19129,7 +19129,7 @@ window.cppCombined = {
           "lessonText": "# Structured Bindings\n\nUnpack tuples, pairs, and structs.\n\n```cpp\nstd::pair<int, string> p = {42, \"hello\"};\nauto [num, str] = p;  // Unpack pair\n\nstd::tuple<int, double, string> t = {1, 3.14, \"world\"};\nauto [i, d, s] = t;  // Unpack tuple\n\nfor (auto [key, value] : map) {\n    // Access key and value directly\n}\n```"
         },
         {
-          "id": 67,
+          "id": "cpp-U12-L6",
           "title": "std::optional, std::variant, std::any",
           "unitTitle": "12. Modern C++ Features",
           "xp": 85,
@@ -19429,7 +19429,7 @@ window.cppCombined = {
       "unitName": "13. Exception Handling",
       "lessons": [
         {
-          "id": 68,
+          "id": "cpp-U13-L1",
           "title": "try, catch, throw",
           "unitTitle": "13. Exception Handling",
           "xp": 85,
@@ -19722,7 +19722,7 @@ window.cppCombined = {
           "lessonText": "# try, catch, throw\n\nBasic exception handling in C++.\n\n## Try-Catch Syntax\n\n```cpp\ntry {\n    // Code that may throw\n    riskyFunction();\n} catch (const std::exception& e) {\n    // Handle exception\n    std::cerr << \"Error: \" << e.what() << std::endl;\n} catch (...) {\n    // Catch all other exceptions\n    std::cerr << \"Unknown error\" << std::endl;\n}\n```\n\n## Throwing Exceptions\n\n```cpp\n// Throw standard exception\nthrow std::runtime_error(\"Something went wrong\");\n\n// Throw with custom message\nthrow std::invalid_argument(\"Invalid argument: \" + arg);\n\n// Rethrow caught exception\ncatch (const std::exception& e) {\n    throw;  // Re-throw same exception\n}\n```\n\n## Best Practices\n\n```cpp\n// Catch by const reference\ncatch (const std::exception& e) {\n    std::cout << e.what();\n}\n\n// Prefer specific exception types\ncatch (const std::runtime_error& e) {\n    // Handle runtime error\n}\n```\n"
         },
         {
-          "id": 69,
+          "id": "cpp-U13-L2",
           "title": "Exception Safety Levels",
           "unitTitle": "13. Exception Handling",
           "xp": 85,
@@ -20013,7 +20013,7 @@ window.cppCombined = {
           "lessonText": "# Exception Safety Levels\n\nUnderstanding exception safety guarantees.\n\n## Safety Guarantees\n\n**No-throw guarantee:** Operation never throws\n```cpp\nvoid swap(T& a, T& b) noexcept {\n    T temp = std::move(a);\n    a = std::move(b);\n    b = std::move(temp);\n}\n```\n\n**Strong guarantee:** All or nothing\n```cpp\nMyClass& operator=(const MyClass& other) {\n    MyClass temp(other);  // May throw\n    swap(*this, temp);    // No-throw\n    return *this;\n}\n```\n\n**Basic guarantee:** Object in valid state\n```cpp\nvoid push(const T& value) {\n    // May throw but leaves container valid\n    data.push_back(value);\n}\n```\n\n## noexcept\n\n```cpp\n// Function never throws\nvoid func() noexcept;\n\n// Conditional noexcept\nvoid func() noexcept(noexcept(std::declval<T&>().swap(std::declval<T&>())));\n```\n"
         },
         {
-          "id": 70,
+          "id": "cpp-U13-L3",
           "title": "Custom Exceptions",
           "unitTitle": "13. Exception Handling",
           "xp": 85,
@@ -20299,7 +20299,7 @@ window.cppCombined = {
           "lessonText": "# Custom Exceptions\n\nCreating your own exception types.\n\n## Basic Custom Exception\n\n```cpp\nclass MyException : public std::exception {\npublic:\n    const char* what() const noexcept override {\n        return \"My custom error\";\n    }\n};\n```\n\n## Exception with Message\n\n```cpp\nclass CustomError : public std::runtime_error {\npublic:\n    CustomError(const std::string& msg)\n        : std::runtime_error(msg) {}\n};\n```\n\n## Exception with Additional Data\n\n```cpp\nclass FileError : public std::exception {\n    std::string filename;\n    int errorCode;\npublic:\n    FileError(const std::string& file, int code)\n        : filename(file), errorCode(code) {}\n\n    const char* what() const noexcept override {\n        return message.c_str();\n    }\n\n    int getCode() const { return errorCode; }\n};\n```\n"
         },
         {
-          "id": 71,
+          "id": "cpp-U13-L4",
           "title": "Alternatives to Exceptions",
           "unitTitle": "13. Exception Handling",
           "xp": 85,
@@ -20603,7 +20603,7 @@ window.cppCombined = {
       "unitName": "14. Concurrency",
       "lessons": [
         {
-          "id": 72,
+          "id": "cpp-U14-L1",
           "title": "Threads (std::thread)",
           "unitTitle": "14. Concurrency",
           "xp": 85,
@@ -20898,7 +20898,7 @@ window.cppCombined = {
           "lessonText": "# std::thread\n\nBasic thread creation and management.\n\n## Creating Threads\n\n```cpp\nvoid worker() {\n    std::cout << \"Worker running\n\";\n}\n\nint main() {\n    std::thread t(worker);  // Create thread\n    t.join();               // Wait for completion\n}\n```\n\n## Thread with Lambda\n\n```cpp\nstd::thread t([](int id) {\n    std::cout << \"Thread \" << id << \"\n\";\n}, 42);\nt.join();\n```\n\n## Thread Arguments\n\n```cpp\n// Pass by value\nstd::thread t(func, 42);\n\n// Pass by reference\nstd::thread t(func, std::ref(value));\n\n// Pass by move\nstd::thread t(func, std::move(obj));\n```\n\n## Managing Threads\n\n```cpp\n// Check if joinable\nif (t.joinable()) {\n    t.join();\n}\n\n// Detach (runs independently)\nt.detach();\n```\n"
         },
         {
-          "id": 73,
+          "id": "cpp-U14-L2",
           "title": "Mutexes and Locks",
           "unitTitle": "14. Concurrency",
           "xp": 85,
@@ -21192,7 +21192,7 @@ window.cppCombined = {
           "lessonText": "# Mutexes and Locks\n\nThread synchronization and mutual exclusion.\n\n## Basic Mutex\n\n```cpp\nstd::mutex mtx;\nint shared = 0;\n\nvoid threadFunc() {\n    std::lock_guard<std::mutex> lock(mtx);\n    ++shared;\n}\n```\n\n## lock_guard vs unique_lock\n\n```cpp\n// lock_guard - simple, auto lock/unlock\n{\n    std::lock_guard<std::mutex> lock(mtx);\n    // Critical section\n}  // Auto unlock\n\n// unique_lock - flexible\nstd::unique_lock<std::mutex> lk(mtx);\n// Can unlock early\nlk.unlock();\n// Can lock again\nlk.lock();\n```\n\n## Shared Mutex\n\n```cpp\nstd::shared_mutex mtx;\n\n// Multiple readers\nstd::shared_lock<std::shared_mutex> lk(mtx);\n// Read operation\n\n// Single writer\nstd::unique_lock<std::shared_mutex> lk(mtx);\n// Write operation\n```\n"
         },
         {
-          "id": 74,
+          "id": "cpp-U14-L3",
           "title": "Condition Variables",
           "unitTitle": "14. Concurrency",
           "xp": 85,
@@ -21483,7 +21483,7 @@ window.cppCombined = {
           "lessonText": "# Condition Variables\n\nWait and notify for thread synchronization.\n\n## Basic Usage\n\n```cpp\nstd::mutex mtx;\nstd::condition_variable cv;\nbool ready = false;\n\nvoid worker() {\n    std::unique_lock<std::mutex> lk(mtx);\n    cv.wait(lk, []{ return ready; });  // Wait for ready\n    // Do work\n}\n\nvoid signal() {\n    {\n        std::lock_guard<std::mutex> lk(mtx);\n        ready = true;\n    }\n    cv.notify_one();  // Wake one thread\n}\n```\n\n## Producer-Consumer\n\n```cpp\nstd::queue<int> q;\nstd::mutex mtx;\nstd::condition_variable cv;\n\nvoid producer() {\n    for (int i = 0; i < 100; ++i) {\n        {\n            std::lock_guard<std::mutex> lk(mtx);\n            q.push(i);\n        }\n        cv.notify_one();\n    }\n}\n\nvoid consumer() {\n    while (true) {\n        std::unique_lock<std::mutex> lk(mtx);\n        cv.wait(lk, []{ return !q.empty(); });\n        int value = q.front();\n        q.pop();\n        // Process value\n    }\n}\n```\n"
         },
         {
-          "id": 75,
+          "id": "cpp-U14-L4",
           "title": "Futures and Promises",
           "unitTitle": "14. Concurrency",
           "xp": 85,
@@ -21778,7 +21778,7 @@ window.cppCombined = {
           "lessonText": "# Futures and Promises\n\nAsynchronous result passing.\n\n## std::async\n\n```cpp\nint compute() {\n    return 42;\n}\n\nint main() {\n    // Run async\n    auto future = std::async(std::launch::async, compute);\n\n    // Do other work...\n\n    // Get result (blocks if not ready)\n    int result = future.get();\n}\n```\n\n## Promise and Future\n\n```cpp\nstd::promise<int> prom;\nstd::future<int> fut = prom.get_future();\n\n// Set value in another thread\nstd::thread t([&prom]() {\n    int result = compute();\n    prom.set_value(result);\n});\n\n// Get result\nint value = fut.get();\nt.join();\n```\n\n## Shared Future\n\n```cpp\nauto future = std::async(func);\nauto shared = future.share();  // Can be copied\n\n// Multiple threads can wait\nstd::thread t1([&]() { auto v = shared.get(); });\nstd::thread t2([&]() { auto v = shared.get(); });\n```\n"
         },
         {
-          "id": 76,
+          "id": "cpp-U14-L5",
           "title": "Parallel Algorithms",
           "unitTitle": "14. Concurrency",
           "xp": 85,
@@ -22080,7 +22080,7 @@ window.cppCombined = {
       "unitName": "15. File I/O and Serialization",
       "lessons": [
         {
-          "id": 77,
+          "id": "cpp-U15-L1",
           "title": "File Streams",
           "unitTitle": "15. File I/O and Serialization",
           "xp": 85,
@@ -22377,7 +22377,7 @@ window.cppCombined = {
           "lessonText": "# File Streams\n\nReading and writing files in C++.\n\n## Basic File Operations\n\n```cpp\n#include <fstream>\n#include <iostream>\n\n// Write to file\nstd::ofstream outFile(\"output.txt\");\nif (outFile.is_open()) {\n    outFile << \"Hello, World!\" << std::endl;\n    outFile << 42 << std::endl;\n    outFile.close();\n}\n\n// Read from file\nstd::ifstream inFile(\"input.txt\");\nif (inFile.is_open()) {\n    std::string line;\n    while (std::getline(inFile, line)) {\n        std::cout << line << std::endl;\n    }\n    inFile.close();\n}\n```\n\n## File Modes\n\n```cpp\n// Append to file\nstd::ofstream file(\"data.txt\", std::ios::app);\n\n// Binary mode\nstd::fstream file(\"data.bin\", std::ios::binary | std::ios::in | std::ios::out);\n\n// Truncate (overwrite)\nstd::ofstream file(\"output.txt\", std::ios::trunc);\n```\n"
         },
         {
-          "id": 78,
+          "id": "cpp-U15-L2",
           "title": "Binary vs Text Files",
           "unitTitle": "15. File I/O and Serialization",
           "xp": 85,
@@ -22674,7 +22674,7 @@ window.cppCombined = {
           "lessonText": "# Binary vs Text Files\n\nText files store human-readable characters, binary files store raw bytes.\n\n## Text File\n\n```cpp\n// Write text\nstd::ofstream textFile(\"data.txt\");\ntextFile << \"42\" << std::endl;  // ASCII: '4', '2', '\\n'\n\n// Read text\nstd::string text;\nstd::ifstream textFile(\"data.txt\");\ntextFile >> text;  // text = \"42\"\n```\n\n## Binary File\n\n```cpp\n// Write binary\nint value = 42;\nstd::ofstream binFile(\"data.bin\", std::ios::binary);\nbinFile.write(reinterpret_cast<const char*>(&value), sizeof(value));\n\n// Read binary\nint value;\nstd::ifstream binFile(\"data.bin\", std::ios::binary);\nbinFile.read(reinterpret_cast<char*>(&value), sizeof(value));\n```\n\n## Binary Struct I/O\n\n```cpp\nstruct Person {\n    char name[50];\n    int age;\n};\n\nPerson p = {\"Alice\", 30};\n\n// Write\nfile.write(reinterpret_cast<const char*>(&p), sizeof(Person));\n\n// Read\nPerson p;\nfile.read(reinterpret_cast<char*>(&p), sizeof(Person));\n```\n"
         },
         {
-          "id": 79,
+          "id": "cpp-U15-L3",
           "title": "Parsing Structured Data",
           "unitTitle": "15. File I/O and Serialization",
           "xp": 85,
@@ -22972,7 +22972,7 @@ window.cppCombined = {
           "lessonText": "# Parsing Structured Data\n\nReading and interpreting structured file formats.\n\n## CSV Parsing\n\n```cpp\n// Parse CSV line\nstd::string line = \"John,Doe,30\";\nstd::stringstream ss(line);\nstd::string field;\nstd::vector<std::string> fields;\n\nwhile (std::getline(ss, field, ',')) {\n    fields.push_back(field);\n}\n// fields: [\"John\", \"Doe\", \"30\"]\n```\n\n## Key=Value Parsing\n\n```cpp\nstd::string line = \"name=John\";\nsize_t pos = line.find('=');\nif (pos != std::string::npos) {\n    std::string key = line.substr(0, pos);\n    std::string value = line.substr(pos + 1);\n}\n```\n\n## JSON (using nlohmann/json)\n\n```cpp\n#include <nlohmann/json.hpp>\nusing json = nlohmann::json;\n\n// Parse JSON\nstd::string jsonStr = R\"({\"name\":\"John\",\"age\":30})\";\njson j = json::parse(jsonStr);\n\n// Access fields\nstd::string name = j[\"name\"];\nint age = j[\"age\"];\n```\n"
         },
         {
-          "id": 80,
+          "id": "cpp-U15-L4",
           "title": "Basic Serialization Patterns",
           "unitTitle": "15. File I/O and Serialization",
           "xp": 85,
@@ -23275,7 +23275,7 @@ window.cppCombined = {
       "unitName": "16. Performance and Low-Level Concepts",
       "lessons": [
         {
-          "id": 81,
+          "id": "cpp-U16-L1",
           "title": "Value vs Reference Semantics",
           "unitTitle": "16. Performance and Low-Level Concepts",
           "xp": 85,
@@ -23572,7 +23572,7 @@ window.cppCombined = {
           "lessonText": "# Value vs Reference Semantics\n\nUnderstanding when to copy vs reference.\n\n## Pass by Value\n\n```cpp\n// Small types: int, double, pointer\nvoid func(int value) {\n    // Copies value (cheap for small types)\n}\n\n// Use for types cheap to copy\nvoid process(int x, double y, bool flag) {\n}\n```\n\n## Pass by Reference\n\n```cpp\n// Large types: vectors, strings\nvoid func(const std::vector<int>& v) {\n    // No copy, just reference\n}\n\n// Mutable reference\nvoid increment(int& value) {\n    ++value;\n}\n```\n\n## Perfect Forwarding\n\n```cpp\ntemplate<typename T>\nvoid wrapper(T&& arg) {\n    target(std::forward<T>(arg));\n}\n\nint x = 42;\nwrapper(x);          // Passes lvalue\nwrapper(42);         // Passes rvalue\n```\n"
         },
         {
-          "id": 82,
+          "id": "cpp-U16-L2",
           "title": "Cache and Memory Layout",
           "unitTitle": "16. Performance and Low-Level Concepts",
           "xp": 85,
@@ -23868,7 +23868,7 @@ window.cppCombined = {
           "lessonText": "# Cache and Memory Layout\n\nUnderstanding memory access patterns.\n\n## Cache Locality\n\n```cpp\n// Good: Contiguous access\nstd::vector<int> data(1000);\nfor (size_t i = 0; i < data.size(); ++i) {\n    sum += data[i];  // Sequential access\n}\n\n// Bad: Random access\nstd::list<int> data;\nfor (auto& item : data) {\n    sum += item;  // Poor locality\n}\n```\n\n## Memory Alignment\n\n```cpp\n// Align to cache line (64 bytes)\nstruct alignas(64) CacheLine {\n    int value;\n    // Padding to 64 bytes\n};\n```\n\n## Structure of Arrays\n\n```cpp\n// Array of Structures (AoS)\nstruct Point { float x, y, z; };\nstd::vector<Point> points;\n\n// Structure of Arrays (SoA)\nstruct Points {\n    std::vector<float> x, y, z;\n};\n```\n"
         },
         {
-          "id": 83,
+          "id": "cpp-U16-L3",
           "title": "Inline vs Virtual Costs",
           "unitTitle": "16. Performance and Low-Level Concepts",
           "xp": 85,
@@ -24164,7 +24164,7 @@ window.cppCombined = {
           "lessonText": "# Inline vs Virtual Costs\n\nUnderstanding function call overhead.\n\n## Inline Functions\n\n```cpp\n// Inline function (hint to compiler)\ninline int add(int a, int b) {\n    return a + b;\n}\n\n// May be inlined at call site\nint result = add(5, 3);\n// Becomes: int result = 5 + 3;\n```\n\n## Virtual Function Overhead\n\n```cpp\nclass Base {\npublic:\n    virtual void func() { }  // vtable lookup\n};\n\nclass Derived : public Base {\npublic:\n    void func() override { }\n};\n\nBase* ptr = new Derived();\nptr->func();  // Virtual dispatch (indirect call)\n```\n\n## CRTP (Static Polymorphism)\n\n```cpp\ntemplate<typename Derived>\nclass Base {\npublic:\n    void interface() {\n        // Static cast, no virtual overhead\n        static_cast<Derived*>(this)->implementation();\n    }\n};\n```\n"
         },
         {
-          "id": 84,
+          "id": "cpp-U16-L4",
           "title": "Move Semantics and Performance",
           "unitTitle": "16. Performance and Low-Level Concepts",
           "xp": 85,
@@ -24460,7 +24460,7 @@ window.cppCombined = {
           "lessonText": "# Move Semantics\n\nEfficiently transferring resources.\n\n## Move vs Copy\n\n```cpp\n// Copy: Expensive\nstd::vector<int> v1 = {1, 2, 3};\nstd::vector<int> v2 = v1;  // Copies all elements\n\n// Move: Cheap\nstd::vector<int> v3 = std::move(v1);  // Just swaps pointers\n```\n\n## Move Constructor\n\n```cpp\nclass Buffer {\n    int* data;\n    size_t size;\npublic:\n    // Move constructor\n    Buffer(Buffer&& other) noexcept\n        : data(other.data), size(other.size) {\n        other.data = nullptr;\n        other.size = 0;\n    }\n};\n```\n\n## emplace_back\n\n```cpp\nstd::vector<std::string> v;\n\n// Copy/move push_back\nv.push_back(\"hello\");\n\n// Construct in-place (no copy/move)\nv.emplace_back(\"hello\");\n```\n"
         },
         {
-          "id": 85,
+          "id": "cpp-U16-L5",
           "title": "Profiling and Optimization",
           "unitTitle": "16. Performance and Low-Level Concepts",
           "xp": 85,
@@ -24762,7 +24762,7 @@ window.cppCombined = {
       "unitName": "17. Build Systems and Tooling",
       "lessons": [
         {
-          "id": 86,
+          "id": "cpp-U17-L1",
           "title": "Makefiles",
           "unitTitle": "17. Build Systems and Tooling",
           "xp": 85,
@@ -25060,7 +25060,7 @@ window.cppCombined = {
           "lessonText": "# Makefiles\n\nBuild automation with Make.\n\n## Basic Makefile\n\n```makefile\nCC = gcc\nCXX = g++\nCXXFLAGS = -Wall -Wextra\n\nall: program\n\nprogram: main.o utils.o\n\t$(CXX) -o $@ $^\n\n%.o: %.cpp\n\t$(CXX) $(CXXFLAGS) -c $< -o $@\n\nclean:\n\trm -f *.o program\n\n.PHONY: clean all\n```\n\n## Automatic Variables\n\n- `$@` - Target name\n- `$^` - All dependencies\n- `$<` - First dependency\n\n## Running Make\n\n```bash\nmake           # Build default target\nmake clean     # Clean build artifacts\nmake -j4       # Parallel build with 4 jobs\n```\n"
         },
         {
-          "id": 87,
+          "id": "cpp-U17-L2",
           "title": "CMake Basics",
           "unitTitle": "17. Build Systems and Tooling",
           "xp": 85,
@@ -25356,7 +25356,7 @@ window.cppCombined = {
           "lessonText": "# CMake Basics\n\nCross-platform build system.\n\n## CMakeLists.txt\n\n```cmake\ncmake_minimum_required(VERSION 3.10)\nproject(MyApp VERSION 1.0 LANGUAGES CXX)\n\nset(CMAKE_CXX_STANDARD 17)\nset(CMAKE_CXX_STANDARD_REQUIRED ON)\n\nadd_executable(myapp main.cpp utils.cpp)\ntarget_include_directories(myapp PRIVATE include)\ntarget_link_libraries(myapp PRIVATE mylib)\n\ninstall(TARGETS myapp DESTINATION bin)\n```\n\n## Building\n\n```bash\n# Configure\ncmake -S . -B build\n\n# Build\ncmake --build build\n\n# Clean\ncmake --build build --target clean\n```\n\n## Common Commands\n\n- `add_executable()` - Create executable\n- `add_library()` - Create library\n- `target_link_libraries()` - Link libraries\n- `target_include_directories()` - Add include paths\n- `find_package()` - Find dependencies\n"
         },
         {
-          "id": 88,
+          "id": "cpp-U17-L3",
           "title": "Dependency Management",
           "unitTitle": "17. Build Systems and Tooling",
           "xp": 85,
@@ -25654,7 +25654,7 @@ window.cppCombined = {
           "lessonText": "# Dependency Management\n\nManaging C++ libraries and packages.\n\n## System Package Managers\n\n```bash\n# Ubuntu/Debian\nsudo apt install libboost-all-dev\n\n# macOS\nbrew install boost\n\n# Windows (vcpkg)\nvcpkg install boost\n```\n\n## Conan\n\n```bash\n# Install Conan\npip install conan\n\n# conanfile.txt\n[requires]\nnlohmann_json/3.9.1\n\n[generators]\ncmake\nCMakeDeps\nCMakeToolchain\n\n# Install\nconan install . --build=missing\n```\n\n## FetchContent\n\n```cmake\ninclude(FetchContent)\nFetchContent_Declare(\n  fmtlib\n  GIT_REPOSITORY https://github.com/fmtlib/fmt.git\n  GIT_TAG 7.1.3\n)\nFetchContent_MakeAvailable(fmtlib)\n\ntarget_link_libraries(myapp PRIVATE fmt::fmt)\n```\n"
         },
         {
-          "id": 89,
+          "id": "cpp-U17-L4",
           "title": "Static vs Dynamic Linking",
           "unitTitle": "17. Build Systems and Tooling",
           "xp": 85,
@@ -25952,7 +25952,7 @@ window.cppCombined = {
           "lessonText": "# Static vs Dynamic Linking\n\nLibrary linking strategies.\n\n## Static Linking\n\n```bash\n# Create static library\ng++ -c -fPIC lib.cpp\nar rcs libmylib.a lib.o\n\n# Link static library\ng++ -o app main.cpp libmylib.a\n```\n\n## Dynamic Linking\n\n```bash\n# Create shared library\ng++ -shared -fPIC -o libmylib.so lib.cpp\n\n# Link shared library\ng++ -o app main.cpp -L. -lmylib\n\n# Run\nLD_LIBRARY_PATH=. ./app\n```\n\n## CMake\n\n```cmake\n# Static library\nadd_library(mylib STATIC lib.cpp)\n\n# Shared library\nadd_library(mylib SHARED lib.cpp)\n\n# Link\ntarget_link_libraries(myapp PRIVATE mylib)\n```\n"
         },
         {
-          "id": 90,
+          "id": "cpp-U17-L5",
           "title": "Debugging Tools (gdb, sanitizers)",
           "unitTitle": "17. Build Systems and Tooling",
           "xp": 85,
@@ -26258,7 +26258,7 @@ window.cppCombined = {
       "unitName": "18. Best Practices and Idioms",
       "lessons": [
         {
-          "id": 91,
+          "id": "cpp-U18-L1",
           "title": "Socket Programming Basics",
           "unitTitle": "18. Networking Basics",
           "xp": 85,
@@ -26555,7 +26555,7 @@ window.cppCombined = {
           "lessonText": "# Socket Programming Basics\n\nNetwork communication with sockets.\n\n## Creating a Socket\n\n```cpp\n#include <sys/socket.h>\n#include <netinet/in.h>\n#include <arpa/inet.h>\n\n// Create socket\nint sock = socket(AF_INET, SOCK_STREAM, 0);\nif (sock < 0) {\n    perror(\"socket\");\n    return -1;\n}\n```\n\n## Server\n\n```cpp\nstruct sockaddr_in addr;\naddr.sin_family = AF_INET;\naddr.sin_port = htons(8080);\naddr.sin_addr.s_addr = INADDR_ANY;\n\nbind(sock, (struct sockaddr*)&addr, sizeof(addr));\nlisten(sock, 5);\n\nint client = accept(sock, NULL, NULL);\n```\n\n## Client\n\n```cpp\nconnect(sock, (struct sockaddr*)&addr, sizeof(addr));\nsend(sock, \"Hello\", 5, 0);\nrecv(sock, buffer, size, 0);\n```\n"
         },
         {
-          "id": 92,
+          "id": "cpp-U18-L2",
           "title": "HTTP with C++",
           "unitTitle": "18. Networking Basics",
           "xp": 85,
@@ -26853,7 +26853,7 @@ window.cppCombined = {
           "lessonText": "# HTTP with C++\n\nBuilding HTTP clients and servers.\n\n## HTTP Request\n\n```cpp\nconst char* request =\n    \"GET / HTTP/1.1\r\n\"\n    \"Host: example.com\r\n\"\n    \"User-Agent: MyClient/1.0\r\n\"\n    \"\r\n\";\n\nsend(sock, request, strlen(request), 0);\n```\n\n## HTTP Response\n\n```\nHTTP/1.1 200 OK\nContent-Type: text/html\nContent-Length: 1234\n\n<html>...</html>\n```\n\n## POST Request\n\n```cpp\nconst char* body = \"{\"name\":\"John\"}\";\nchar request[1024];\nsnprintf(request, sizeof(request),\n    \"POST /api HTTP/1.1\r\n\"\n    \"Host: api.example.com\r\n\"\n    \"Content-Type: application/json\r\n\"\n    \"Content-Length: %zu\r\n\"\n    \"\r\n%s\",\n    strlen(body), body);\n```\n"
         },
         {
-          "id": 93,
+          "id": "cpp-U18-L3",
           "title": "Asynchronous I/O and Select",
           "unitTitle": "18. Networking Basics",
           "xp": 85,
@@ -27150,7 +27150,7 @@ window.cppCombined = {
           "lessonText": "# Asynchronous I/O and Select\n\nMonitoring multiple sockets.\n\n## Using select\n\n```cpp\nfd_set read_fds;\nFD_ZERO(&read_fds);\nFD_SET(server_sock, &read_fds);\nFD_SET(client_sock, &read_fds);\n\nint max_fd = std::max(server_sock, client_sock);\nint ready = select(max_fd + 1, &read_fds, NULL, NULL, NULL);\n\nif (FD_ISSET(server_sock, &read_fds)) {\n    // New connection\n    int client = accept(server_sock, NULL, NULL);\n}\n\nif (FD_ISSET(client_sock, &read_fds)) {\n    // Data available\n    recv(client_sock, buffer, size, 0);\n}\n```\n\n## select Functions\n\n- `FD_ZERO(&set)` - Clear set\n- `FD_SET(fd, &set)` - Add fd\n- `FD_CLR(fd, &set)` - Remove fd\n- `FD_ISSET(fd, &set)` - Check if fd is in set\n"
         },
         {
-          "id": 94,
+          "id": "cpp-U18-L4",
           "title": "DNS Resolution",
           "unitTitle": "18. Networking Basics",
           "xp": 85,
@@ -27446,7 +27446,7 @@ window.cppCombined = {
           "lessonText": "# DNS Resolution\n\nResolving hostnames to IP addresses.\n\n## getaddrinfo\n\n```cpp\n#include <netdb.h>\n#include <sys/socket.h>\n\nstruct addrinfo hints = {};\nhints.ai_family = AF_INET;       // IPv4\nhints.ai_socktype = SOCK_STREAM; // TCP\n\nstruct addrinfo* result;\nint status = getaddrinfo(\"example.com\", \"80\", &hints, &result);\n\nif (status != 0) {\n    fprintf(stderr, \"getaddrinfo: %s\n\", gai_strerror(status));\n    return -1;\n}\n\n// Use result\nint sock = socket(result->ai_family, result->ai_socktype, result->ai_protocol);\nconnect(sock, result->ai_addr, result->ai_addrlen);\n\nfreeaddrinfo(result);\n```\n\n## IP Conversion\n\n```cpp\n// Binary to string\nchar ip_str[INET_ADDRSTRLEN];\ninet_ntop(AF_INET, &addr->sin_addr, ip_str, sizeof(ip_str));\n\n// String to binary\ninet_pton(AF_INET, \"192.168.1.1\", &addr->sin_addr);\n```\n"
         },
         {
-          "id": 95,
+          "id": "cpp-U18-L5",
           "title": "JSON and Web APIs",
           "unitTitle": "18. Networking Basics",
           "xp": 85,
@@ -27748,7 +27748,7 @@ window.cppCombined = {
       "unitName": "19. Interoperability",
       "lessons": [
         {
-          "id": 96,
+          "id": "cpp-U19-L1",
           "title": "C++ Coding Guidelines",
           "unitTitle": "19. Best Practices and Idioms",
           "xp": 85,
@@ -28044,7 +28044,7 @@ window.cppCombined = {
           "lessonText": "# C++ Coding Guidelines\n\nModern C++ best practices.\n\n## RAII (Resource Acquisition Is Initialization)\n\n```cpp\nclass File {\n    FILE* handle;\npublic:\n    File(const char* path) : handle(fopen(path, \"r\")) {\n        if (!handle) throw std::runtime_error(\"Cannot open file\");\n    }\n    ~File() { fclose(handle); }  // Resource released automatically\n};\n```\n\n## Rule of Five\n\n```cpp\nclass Resource {\n    int* data;\npublic:\n    // Constructor\n    Resource(size_t size) : data(new int[size]) {}\n\n    // Destructor\n    ~Resource() { delete[] data; }\n\n    // Copy operations\n    Resource(const Resource& other) = delete;\n    Resource& operator=(const Resource& other) = delete;\n\n    // Move operations\n    Resource(Resource&& other) noexcept : data(other.data) {\n        other.data = nullptr;\n    }\n    Resource& operator=(Resource&& other) noexcept {\n        delete[] data;\n        data = other.data;\n        other.data = nullptr;\n        return *this;\n    }\n};\n```\n\n## Best Practices\n\n- Use `nullptr` instead of `NULL`\n- Use `enum class` instead of plain `enum`\n- Use `constexpr` for compile-time constants\n- Use `auto` for type deduction\n- Use `override` for virtual functions\n- Use `noexcept` for non-throwing functions\n- Use smart pointers (`unique_ptr`, `shared_ptr`)\n- Prefer `std::array` and `std::vector` over C-arrays\n"
         },
         {
-          "id": 97,
+          "id": "cpp-U19-L2",
           "title": "Idiomatic STL Usage",
           "unitTitle": "19. Best Practices and Idioms",
           "xp": 85,
@@ -28340,7 +28340,7 @@ window.cppCombined = {
           "lessonText": "# Idiomatic STL Usage\n\nUsing the Standard Template Library effectively.\n\n## Container Iteration\n\n```cpp\n// Range-based for (preferred)\nfor (const auto& item : vec) {\n    std::cout << item << std::endl;\n}\n\n// Iterator-based\nfor (auto it = vec.begin(); it != vec.end(); ++it) {\n    std::cout << *it << std::endl;\n}\n```\n\n## Common Operations\n\n```cpp\n// Add elements\nvec.push_back(42);        // Copy\nvec.emplace_back(42);     // Construct in-place\n\n// Remove elements\nvec.erase(vec.begin() + 5);  // By position\nvec.erase(std::remove(vec.begin(), vec.end(), 42), vec.end());  // By value\n\n// Find\nauto it = std::find(vec.begin(), vec.end(), 42);\nif (it != vec.end()) {\n    // Found\n}\n\n// Sort\nstd::sort(vec.begin(), vec.end());\n```\n\n## Associative Containers\n\n```cpp\n// Map\nstd::map<std::string, int> scores;\nscores[\"Alice\"] = 95;\n\nauto it = scores.find(\"Alice\");\nif (it != scores.end()) {\n    std::cout << it->second << std::endl;\n}\n\n// Unordered Map (faster lookup)\nstd::unordered_map<std::string, int> cache;\n```\n"
         },
         {
-          "id": 98,
+          "id": "cpp-U19-L3",
           "title": "Avoiding Raw Pointers",
           "unitTitle": "19. Best Practices and Idioms",
           "xp": 85,
@@ -28642,7 +28642,7 @@ window.cppCombined = {
       "unitName": "20. Foundations of Algorithm Analysis",
       "lessons": [
         {
-          "id": 101,
+          "id": "cpp-U20-L1",
           "title": "C and C++ Interoperability",
           "unitTitle": "20. C and C++ Interoperability",
           "xp": 85,
@@ -28938,7 +28938,7 @@ window.cppCombined = {
           "lessonText": "# C and C++ Interoperability\n\nCalling C from C++ and vice versa.\n\n## extern \"C\"\n\n```cpp\n// C++ file\nextern \"C\" {\n    // These functions have C linkage (no name mangling)\n    void c_function();\n    int c_library_call(int arg);\n}\n\n// Define C-compatible function\nextern \"C\" void cpp_callable() {\n    std::cout << \"C++ called from C\" << std::endl;\n}\n```\n\n## Compatibility Header\n\n```c\n// header.h (can be included from both C and C++)\n#ifdef __cplusplus\nextern \"C\" {\n#endif\n\nvoid api_function();\nint calculate_value(int x, int y);\n\n#ifdef __cplusplus\n}\n#endif\n```\n\n## Key Points\n\n- **Name mangling**: C++ mangles names for overloading, C doesn't\n- **extern \"C\"**: Disables name mangling for C linkage\n- **Conditional compilation**: Use `#ifdef __cplusplus` for mixed headers\n- **No C++ features in extern \"C\"**: No overloading, templates, or classes with virtual functions\n\n## Calling Conventions\n\n- C and C++ typically use same calling convention\n- Stack layout must match\n- Struct layout must be compatible (POD types)\n"
         },
         {
-          "id": 102,
+          "id": "cpp-U20-L2",
           "title": "Calling Native Libraries",
           "unitTitle": "20. C and C++ Interoperability",
           "xp": 85,
@@ -29234,7 +29234,7 @@ window.cppCombined = {
           "lessonText": "# Calling Native Libraries\n\nDynamic loading of shared libraries.\n\n## Unix/Linux (dlopen)\n\n```cpp\n#include <dlfcn.h>\n\n// Load library\nvoid* handle = dlopen(\"./libexample.so\", RTLD_LAZY);\nif (!handle) {\n    fprintf(stderr, \"%s\n\", dlerror());\n    return;\n}\n\n// Get symbol\ntypedef int (*AddFunc)(int, int);\nAddFunc add = (AddFunc)dlsym(handle, \"add\");\nif (!add) {\n    fprintf(stderr, \"%s\n\", dlerror());\n    dlclose(handle);\n    return;\n}\n\n// Use function\nint result = add(5, 3);\n\n// Close library\ndlclose(handle);\n```\n\n## Windows (LoadLibrary)\n\n```cpp\n#include <windows.h>\n\n// Load library\nHMODULE handle = LoadLibraryA(\"example.dll\");\nif (!handle) {\n    return;\n}\n\n// Get symbol\ntypedef int (*AddFunc)(int, int);\nAddFunc add = (AddFunc)GetProcAddress(handle, \"add\");\nif (!add) {\n    FreeLibrary(handle);\n    return;\n}\n\n// Use function\nint result = add(5, 3);\n\n// Free library\nFreeLibrary(handle);\n```\n\n## Flags\n\n- `RTLD_LAZY`: Resolve symbols as needed\n- `RTLD_NOW`: Resolve all symbols immediately\n- `RTLD_GLOBAL`: Export symbols to other libraries\n"
         },
         {
-          "id": 103,
+          "id": "cpp-U20-L3",
           "title": "ABI and Binary Compatibility",
           "unitTitle": "20. C and C++ Interoperability",
           "xp": 85,
@@ -29531,7 +29531,7 @@ window.cppCombined = {
           "lessonText": "# ABI and Binary Compatibility\n\nMaintaining stable binary interfaces.\n\n## What is ABI?\n\nABI (Application Binary Interface) defines how binaries interact:\n\n- Data structure layout\n- Calling conventions\n- Name mangling\n- Virtual table layout\n- Exception handling\n\n## Pimpl Idiom (Pointer to Implementation)\n\n```cpp\n// Header (stable ABI)\nclass MyClass {\n    struct Impl;\n    std::unique_ptr<Impl> impl;\npublic:\n    MyClass();\n    ~MyClass();\n    void method();\n};\n\n// Source (implementation)\nstruct MyClass::Impl {\n    int data;\n};\n\nMyClass::MyClass() : impl(new Impl()) {}\nvoid MyClass::method() {\n    impl->data = 42;\n}\n```\n\n## ABI-Breaking Changes\n\n❌ **Breaks ABI:**\n- Adding/removing members\n- Reordering members\n- Adding virtual functions\n- Changing virtual function order\n- Changing base class\n- Adding new base class\n\n✅ **Safe Changes:**\n- Adding non-virtual functions\n- Changing private members (with Pimpl)\n- Changing inline functions\n- Adding overloaded functions\n"
         },
         {
-          "id": 4,
+          "id": "cpp-U20-L4",
           "title": "Average vs worst vs best case",
           "unitTitle": "20. Foundations of Algorithm Analysis",
           "xp": 15,
@@ -29541,7 +29541,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 5,
+          "id": "cpp-U20-L5",
           "title": "Recurrence relations",
           "unitTitle": "20. Foundations of Algorithm Analysis",
           "xp": 15,
@@ -29551,7 +29551,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 6,
+          "id": "cpp-U20-L6",
           "title": "Master theorem",
           "unitTitle": "20. Foundations of Algorithm Analysis",
           "xp": 15,
@@ -29561,7 +29561,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 7,
+          "id": "cpp-U20-L7",
           "title": "Recursion tree analysis",
           "unitTitle": "20. Foundations of Algorithm Analysis",
           "xp": 15,
@@ -29571,7 +29571,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 8,
+          "id": "cpp-U20-L8",
           "title": "Proof by induction",
           "unitTitle": "20. Foundations of Algorithm Analysis",
           "xp": 15,
@@ -29581,7 +29581,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 9,
+          "id": "cpp-U20-L9",
           "title": "Lower bounds",
           "unitTitle": "20. Foundations of Algorithm Analysis",
           "xp": 15,
@@ -29591,7 +29591,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 10,
+          "id": "cpp-U20-L10",
           "title": "Decision tree complexity",
           "unitTitle": "20. Foundations of Algorithm Analysis",
           "xp": 15,
@@ -29601,7 +29601,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 11,
+          "id": "cpp-U20-L11",
           "title": "Time-space tradeoffs",
           "unitTitle": "20. Foundations of Algorithm Analysis",
           "xp": 15,
@@ -29611,7 +29611,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 12,
+          "id": "cpp-U20-L12",
           "title": "Cache complexity",
           "unitTitle": "20. Foundations of Algorithm Analysis",
           "xp": 15,
@@ -29621,7 +29621,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 13,
+          "id": "cpp-U20-L13",
           "title": "External memory model",
           "unitTitle": "20. Foundations of Algorithm Analysis",
           "xp": 15,
@@ -29631,7 +29631,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 14,
+          "id": "cpp-U20-L14",
           "title": "Parallel complexity",
           "unitTitle": "20. Foundations of Algorithm Analysis",
           "xp": 15,
@@ -29641,7 +29641,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 15,
+          "id": "cpp-U20-L15",
           "title": "Basic Data Structures",
           "unitTitle": "20. Foundations of Algorithm Analysis",
           "xp": 15,
@@ -29657,7 +29657,7 @@ window.cppCombined = {
       "unitName": "21. Arrays and Variants",
       "lessons": [
         {
-          "id": 16,
+          "id": "cpp-U21-L1",
           "title": "Static arrays",
           "unitTitle": "21. Arrays and Variants",
           "xp": 15,
@@ -29667,7 +29667,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 17,
+          "id": "cpp-U21-L2",
           "title": "Dynamic arrays",
           "unitTitle": "21. Arrays and Variants",
           "xp": 15,
@@ -29677,7 +29677,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 18,
+          "id": "cpp-U21-L3",
           "title": "Multidimensional arrays",
           "unitTitle": "21. Arrays and Variants",
           "xp": 15,
@@ -29687,7 +29687,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 19,
+          "id": "cpp-U21-L4",
           "title": "Circular arrays",
           "unitTitle": "21. Arrays and Variants",
           "xp": 15,
@@ -29697,7 +29697,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 20,
+          "id": "cpp-U21-L5",
           "title": "Sparse arrays",
           "unitTitle": "21. Arrays and Variants",
           "xp": 15,
@@ -29707,7 +29707,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 21,
+          "id": "cpp-U21-L6",
           "title": "Bit arrays",
           "unitTitle": "21. Arrays and Variants",
           "xp": 15,
@@ -29717,7 +29717,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 22,
+          "id": "cpp-U21-L7",
           "title": "Difference arrays",
           "unitTitle": "21. Arrays and Variants",
           "xp": 15,
@@ -29727,7 +29727,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 23,
+          "id": "cpp-U21-L8",
           "title": "Prefix arrays",
           "unitTitle": "21. Arrays and Variants",
           "xp": 15,
@@ -29737,7 +29737,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 24,
+          "id": "cpp-U21-L9",
           "title": "Sliding window arrays",
           "unitTitle": "21. Arrays and Variants",
           "xp": 15,
@@ -29747,7 +29747,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 25,
+          "id": "cpp-U21-L10",
           "title": "Cache-aware arrays",
           "unitTitle": "21. Arrays and Variants",
           "xp": 15,
@@ -29763,7 +29763,7 @@ window.cppCombined = {
       "unitName": "22. Linked Structures",
       "lessons": [
         {
-          "id": 26,
+          "id": "cpp-U22-L1",
           "title": "Singly linked list",
           "unitTitle": "22. Linked Structures",
           "xp": 15,
@@ -29773,7 +29773,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 27,
+          "id": "cpp-U22-L2",
           "title": "Doubly linked list",
           "unitTitle": "22. Linked Structures",
           "xp": 15,
@@ -29783,7 +29783,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 28,
+          "id": "cpp-U22-L3",
           "title": "Circular linked list",
           "unitTitle": "22. Linked Structures",
           "xp": 15,
@@ -29793,7 +29793,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 29,
+          "id": "cpp-U22-L4",
           "title": "XOR linked list",
           "unitTitle": "22. Linked Structures",
           "xp": 15,
@@ -29803,7 +29803,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 30,
+          "id": "cpp-U22-L5",
           "title": "Skip list",
           "unitTitle": "22. Linked Structures",
           "xp": 15,
@@ -29813,7 +29813,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 31,
+          "id": "cpp-U22-L6",
           "title": "Unrolled linked list",
           "unitTitle": "22. Linked Structures",
           "xp": 15,
@@ -29823,7 +29823,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 32,
+          "id": "cpp-U22-L7",
           "title": "Self-organizing list",
           "unitTitle": "22. Linked Structures",
           "xp": 15,
@@ -29833,7 +29833,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 33,
+          "id": "cpp-U22-L8",
           "title": "Intrusive lists",
           "unitTitle": "22. Linked Structures",
           "xp": 15,
@@ -29849,7 +29849,7 @@ window.cppCombined = {
       "unitName": "23. Stack Structures",
       "lessons": [
         {
-          "id": 34,
+          "id": "cpp-U23-L1",
           "title": "Array stack",
           "unitTitle": "23. Stack Structures",
           "xp": 15,
@@ -29859,7 +29859,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 35,
+          "id": "cpp-U23-L2",
           "title": "Linked stack",
           "unitTitle": "23. Stack Structures",
           "xp": 15,
@@ -29869,7 +29869,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 36,
+          "id": "cpp-U23-L3",
           "title": "Min stack",
           "unitTitle": "23. Stack Structures",
           "xp": 15,
@@ -29879,7 +29879,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 37,
+          "id": "cpp-U23-L4",
           "title": "Max stack",
           "unitTitle": "23. Stack Structures",
           "xp": 15,
@@ -29889,7 +29889,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 38,
+          "id": "cpp-U23-L5",
           "title": "Persistent stack",
           "unitTitle": "23. Stack Structures",
           "xp": 15,
@@ -29899,7 +29899,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 39,
+          "id": "cpp-U23-L6",
           "title": "Multi-stack structures",
           "unitTitle": "23. Stack Structures",
           "xp": 15,
@@ -29915,7 +29915,7 @@ window.cppCombined = {
       "unitName": "24. Queue Structures",
       "lessons": [
         {
-          "id": 40,
+          "id": "cpp-U24-L1",
           "title": "Array queue",
           "unitTitle": "24. Queue Structures",
           "xp": 15,
@@ -29925,7 +29925,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 41,
+          "id": "cpp-U24-L2",
           "title": "Circular queue",
           "unitTitle": "24. Queue Structures",
           "xp": 15,
@@ -29935,7 +29935,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 42,
+          "id": "cpp-U24-L3",
           "title": "Deque",
           "unitTitle": "24. Queue Structures",
           "xp": 15,
@@ -29945,7 +29945,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 43,
+          "id": "cpp-U24-L4",
           "title": "Monotonic queue",
           "unitTitle": "24. Queue Structures",
           "xp": 15,
@@ -29955,7 +29955,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 44,
+          "id": "cpp-U24-L5",
           "title": "Priority queue",
           "unitTitle": "24. Queue Structures",
           "xp": 15,
@@ -29965,7 +29965,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 45,
+          "id": "cpp-U24-L6",
           "title": "Double-ended priority queue",
           "unitTitle": "24. Queue Structures",
           "xp": 15,
@@ -29975,7 +29975,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 46,
+          "id": "cpp-U24-L7",
           "title": "Persistent queue",
           "unitTitle": "24. Queue Structures",
           "xp": 15,
@@ -29985,7 +29985,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 47,
+          "id": "cpp-U24-L8",
           "title": "Hashing",
           "unitTitle": "24. Queue Structures",
           "xp": 15,
@@ -30001,7 +30001,7 @@ window.cppCombined = {
       "unitName": "25. Hash Tables",
       "lessons": [
         {
-          "id": 48,
+          "id": "cpp-U25-L1",
           "title": "Direct addressing",
           "unitTitle": "25. Hash Tables",
           "xp": 15,
@@ -30011,7 +30011,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 49,
+          "id": "cpp-U25-L2",
           "title": "Hash functions",
           "unitTitle": "25. Hash Tables",
           "xp": 15,
@@ -30021,7 +30021,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 50,
+          "id": "cpp-U25-L3",
           "title": "Polynomial hashing",
           "unitTitle": "25. Hash Tables",
           "xp": 15,
@@ -30031,7 +30031,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 51,
+          "id": "cpp-U25-L4",
           "title": "Rolling hash",
           "unitTitle": "25. Hash Tables",
           "xp": 15,
@@ -30041,7 +30041,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 52,
+          "id": "cpp-U25-L5",
           "title": "Perfect hashing",
           "unitTitle": "25. Hash Tables",
           "xp": 15,
@@ -30051,7 +30051,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 53,
+          "id": "cpp-U25-L6",
           "title": "Universal hashing",
           "unitTitle": "25. Hash Tables",
           "xp": 15,
@@ -30061,7 +30061,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 54,
+          "id": "cpp-U25-L7",
           "title": "Open addressing",
           "unitTitle": "25. Hash Tables",
           "xp": 15,
@@ -30071,7 +30071,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 55,
+          "id": "cpp-U25-L8",
           "title": "Linear probing",
           "unitTitle": "25. Hash Tables",
           "xp": 15,
@@ -30081,7 +30081,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 56,
+          "id": "cpp-U25-L9",
           "title": "Quadratic probing",
           "unitTitle": "25. Hash Tables",
           "xp": 15,
@@ -30091,7 +30091,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 57,
+          "id": "cpp-U25-L10",
           "title": "Double hashing",
           "unitTitle": "25. Hash Tables",
           "xp": 15,
@@ -30101,7 +30101,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 58,
+          "id": "cpp-U25-L11",
           "title": "Separate chaining",
           "unitTitle": "25. Hash Tables",
           "xp": 15,
@@ -30111,7 +30111,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 59,
+          "id": "cpp-U25-L12",
           "title": "Cuckoo hashing",
           "unitTitle": "25. Hash Tables",
           "xp": 15,
@@ -30121,7 +30121,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 60,
+          "id": "cpp-U25-L13",
           "title": "Robin Hood hashing",
           "unitTitle": "25. Hash Tables",
           "xp": 15,
@@ -30131,7 +30131,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 61,
+          "id": "cpp-U25-L14",
           "title": "Hopscotch hashing",
           "unitTitle": "25. Hash Tables",
           "xp": 15,
@@ -30141,7 +30141,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 62,
+          "id": "cpp-U25-L15",
           "title": "Extendible hashing",
           "unitTitle": "25. Hash Tables",
           "xp": 15,
@@ -30151,7 +30151,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 63,
+          "id": "cpp-U25-L16",
           "title": "Dynamic hashing",
           "unitTitle": "25. Hash Tables",
           "xp": 15,
@@ -30161,7 +30161,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 64,
+          "id": "cpp-U25-L17",
           "title": "Bloom filter",
           "unitTitle": "25. Hash Tables",
           "xp": 15,
@@ -30171,7 +30171,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 65,
+          "id": "cpp-U25-L18",
           "title": "Counting Bloom filter",
           "unitTitle": "25. Hash Tables",
           "xp": 15,
@@ -30181,7 +30181,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 66,
+          "id": "cpp-U25-L19",
           "title": "Cuckoo filter",
           "unitTitle": "25. Hash Tables",
           "xp": 15,
@@ -30191,7 +30191,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 67,
+          "id": "cpp-U25-L20",
           "title": "HyperLogLog",
           "unitTitle": "25. Hash Tables",
           "xp": 15,
@@ -30201,7 +30201,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 68,
+          "id": "cpp-U25-L21",
           "title": "Tree Data Structures",
           "unitTitle": "25. Hash Tables",
           "xp": 15,
@@ -30217,7 +30217,7 @@ window.cppCombined = {
       "unitName": "26. Binary Trees",
       "lessons": [
         {
-          "id": 69,
+          "id": "cpp-U26-L1",
           "title": "Binary tree traversal",
           "unitTitle": "26. Binary Trees",
           "xp": 15,
@@ -30227,7 +30227,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 70,
+          "id": "cpp-U26-L2",
           "title": "Threaded binary tree",
           "unitTitle": "26. Binary Trees",
           "xp": 15,
@@ -30237,7 +30237,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 71,
+          "id": "cpp-U26-L3",
           "title": "Binary search tree",
           "unitTitle": "26. Binary Trees",
           "xp": 15,
@@ -30247,7 +30247,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 72,
+          "id": "cpp-U26-L4",
           "title": "Balanced BST",
           "unitTitle": "26. Binary Trees",
           "xp": 15,
@@ -30257,7 +30257,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 73,
+          "id": "cpp-U26-L5",
           "title": "Order statistic tree",
           "unitTitle": "26. Binary Trees",
           "xp": 15,
@@ -30267,7 +30267,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 74,
+          "id": "cpp-U26-L6",
           "title": "Augmented trees",
           "unitTitle": "26. Binary Trees",
           "xp": 15,
@@ -30283,7 +30283,7 @@ window.cppCombined = {
       "unitName": "27. Self-Balancing Trees",
       "lessons": [
         {
-          "id": 75,
+          "id": "cpp-U27-L1",
           "title": "AVL tree",
           "unitTitle": "27. Self-Balancing Trees",
           "xp": 15,
@@ -30293,7 +30293,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 76,
+          "id": "cpp-U27-L2",
           "title": "Red-black tree",
           "unitTitle": "27. Self-Balancing Trees",
           "xp": 15,
@@ -30303,7 +30303,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 77,
+          "id": "cpp-U27-L3",
           "title": "AA tree",
           "unitTitle": "27. Self-Balancing Trees",
           "xp": 15,
@@ -30313,7 +30313,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 78,
+          "id": "cpp-U27-L4",
           "title": "Treap",
           "unitTitle": "27. Self-Balancing Trees",
           "xp": 15,
@@ -30323,7 +30323,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 79,
+          "id": "cpp-U27-L5",
           "title": "Splay tree",
           "unitTitle": "27. Self-Balancing Trees",
           "xp": 15,
@@ -30333,7 +30333,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 80,
+          "id": "cpp-U27-L6",
           "title": "Scapegoat tree",
           "unitTitle": "27. Self-Balancing Trees",
           "xp": 15,
@@ -30343,7 +30343,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 81,
+          "id": "cpp-U27-L7",
           "title": "Tango tree",
           "unitTitle": "27. Self-Balancing Trees",
           "xp": 15,
@@ -30353,7 +30353,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 82,
+          "id": "cpp-U27-L8",
           "title": "Weight-balanced tree",
           "unitTitle": "27. Self-Balancing Trees",
           "xp": 15,
@@ -30363,7 +30363,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 83,
+          "id": "cpp-U27-L9",
           "title": "Randomized BST",
           "unitTitle": "27. Self-Balancing Trees",
           "xp": 15,
@@ -30379,7 +30379,7 @@ window.cppCombined = {
       "unitName": "28. Multiway Trees",
       "lessons": [
         {
-          "id": 84,
+          "id": "cpp-U28-L1",
           "title": "B-tree",
           "unitTitle": "28. Multiway Trees",
           "xp": 15,
@@ -30389,7 +30389,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 85,
+          "id": "cpp-U28-L2",
           "title": "B+ tree",
           "unitTitle": "28. Multiway Trees",
           "xp": 15,
@@ -30399,7 +30399,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 86,
+          "id": "cpp-U28-L3",
           "title": "B* tree",
           "unitTitle": "28. Multiway Trees",
           "xp": 15,
@@ -30409,7 +30409,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 87,
+          "id": "cpp-U28-L4",
           "title": "2-3 tree",
           "unitTitle": "28. Multiway Trees",
           "xp": 15,
@@ -30419,7 +30419,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 88,
+          "id": "cpp-U28-L5",
           "title": "2-3-4 tree",
           "unitTitle": "28. Multiway Trees",
           "xp": 15,
@@ -30429,7 +30429,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 89,
+          "id": "cpp-U28-L6",
           "title": "Fusion tree",
           "unitTitle": "28. Multiway Trees",
           "xp": 15,
@@ -30439,7 +30439,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 90,
+          "id": "cpp-U28-L7",
           "title": "Cache-oblivious tree",
           "unitTitle": "28. Multiway Trees",
           "xp": 15,
@@ -30455,7 +30455,7 @@ window.cppCombined = {
       "unitName": "29. Specialized Trees",
       "lessons": [
         {
-          "id": 91,
+          "id": "cpp-U29-L1",
           "title": "Segment tree",
           "unitTitle": "29. Specialized Trees",
           "xp": 15,
@@ -30465,7 +30465,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 92,
+          "id": "cpp-U29-L2",
           "title": "Lazy propagation segment tree",
           "unitTitle": "29. Specialized Trees",
           "xp": 15,
@@ -30475,7 +30475,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 93,
+          "id": "cpp-U29-L3",
           "title": "Persistent segment tree",
           "unitTitle": "29. Specialized Trees",
           "xp": 15,
@@ -30485,7 +30485,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 94,
+          "id": "cpp-U29-L4",
           "title": "Dynamic segment tree",
           "unitTitle": "29. Specialized Trees",
           "xp": 15,
@@ -30495,7 +30495,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 95,
+          "id": "cpp-U29-L5",
           "title": "Merge sort tree",
           "unitTitle": "29. Specialized Trees",
           "xp": 15,
@@ -30505,7 +30505,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 96,
+          "id": "cpp-U29-L6",
           "title": "Fenwick tree (Binary Indexed Tree)",
           "unitTitle": "29. Specialized Trees",
           "xp": 15,
@@ -30515,7 +30515,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 97,
+          "id": "cpp-U29-L7",
           "title": "Range tree",
           "unitTitle": "29. Specialized Trees",
           "xp": 15,
@@ -30525,7 +30525,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 98,
+          "id": "cpp-U29-L8",
           "title": "Interval tree",
           "unitTitle": "29. Specialized Trees",
           "xp": 15,
@@ -30535,7 +30535,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 99,
+          "id": "cpp-U29-L9",
           "title": "Order statistic tree",
           "unitTitle": "29. Specialized Trees",
           "xp": 15,
@@ -30545,7 +30545,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 100,
+          "id": "cpp-U29-L10",
           "title": "Cartesian tree",
           "unitTitle": "29. Specialized Trees",
           "xp": 15,
@@ -30555,7 +30555,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 101,
+          "id": "cpp-U29-L11",
           "title": "Tournament tree",
           "unitTitle": "29. Specialized Trees",
           "xp": 15,
@@ -30571,7 +30571,7 @@ window.cppCombined = {
       "unitName": "30. String Trees",
       "lessons": [
         {
-          "id": 102,
+          "id": "cpp-U30-L1",
           "title": "Trie",
           "unitTitle": "30. String Trees",
           "xp": 15,
@@ -30581,7 +30581,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 103,
+          "id": "cpp-U30-L2",
           "title": "Compressed trie",
           "unitTitle": "30. String Trees",
           "xp": 15,
@@ -30591,7 +30591,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 104,
+          "id": "cpp-U30-L3",
           "title": "Radix tree",
           "unitTitle": "30. String Trees",
           "xp": 15,
@@ -30601,7 +30601,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 105,
+          "id": "cpp-U30-L4",
           "title": "Patricia trie",
           "unitTitle": "30. String Trees",
           "xp": 15,
@@ -30611,7 +30611,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 106,
+          "id": "cpp-U30-L5",
           "title": "Suffix tree",
           "unitTitle": "30. String Trees",
           "xp": 15,
@@ -30621,7 +30621,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 107,
+          "id": "cpp-U30-L6",
           "title": "Suffix automaton",
           "unitTitle": "30. String Trees",
           "xp": 15,
@@ -30631,7 +30631,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 108,
+          "id": "cpp-U30-L7",
           "title": "DAWG",
           "unitTitle": "30. String Trees",
           "xp": 15,
@@ -30641,7 +30641,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 109,
+          "id": "cpp-U30-L8",
           "title": "Aho–Corasick automaton",
           "unitTitle": "30. String Trees",
           "xp": 15,
@@ -30651,7 +30651,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 110,
+          "id": "cpp-U30-L9",
           "title": "Heaps and Priority Structures",
           "unitTitle": "30. String Trees",
           "xp": 15,
@@ -30667,7 +30667,7 @@ window.cppCombined = {
       "unitName": "31. Heap Structures",
       "lessons": [
         {
-          "id": 111,
+          "id": "cpp-U31-L1",
           "title": "Binary heap",
           "unitTitle": "31. Heap Structures",
           "xp": 15,
@@ -30677,7 +30677,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 112,
+          "id": "cpp-U31-L2",
           "title": "d-ary heap",
           "unitTitle": "31. Heap Structures",
           "xp": 15,
@@ -30687,7 +30687,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 113,
+          "id": "cpp-U31-L3",
           "title": "Binomial heap",
           "unitTitle": "31. Heap Structures",
           "xp": 15,
@@ -30697,7 +30697,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 114,
+          "id": "cpp-U31-L4",
           "title": "Fibonacci heap",
           "unitTitle": "31. Heap Structures",
           "xp": 15,
@@ -30707,7 +30707,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 115,
+          "id": "cpp-U31-L5",
           "title": "Pairing heap",
           "unitTitle": "31. Heap Structures",
           "xp": 15,
@@ -30717,7 +30717,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 116,
+          "id": "cpp-U31-L6",
           "title": "Skew heap",
           "unitTitle": "31. Heap Structures",
           "xp": 15,
@@ -30727,7 +30727,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 117,
+          "id": "cpp-U31-L7",
           "title": "Leftist heap",
           "unitTitle": "31. Heap Structures",
           "xp": 15,
@@ -30737,7 +30737,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 118,
+          "id": "cpp-U31-L8",
           "title": "Soft heap",
           "unitTitle": "31. Heap Structures",
           "xp": 15,
@@ -30747,7 +30747,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 119,
+          "id": "cpp-U31-L9",
           "title": "Brodal queue",
           "unitTitle": "31. Heap Structures",
           "xp": 15,
@@ -30757,7 +30757,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 120,
+          "id": "cpp-U31-L10",
           "title": "Graph Data Structures",
           "unitTitle": "31. Heap Structures",
           "xp": 15,
@@ -30773,7 +30773,7 @@ window.cppCombined = {
       "unitName": "32. Graph Representations",
       "lessons": [
         {
-          "id": 121,
+          "id": "cpp-U32-L1",
           "title": "Adjacency matrix",
           "unitTitle": "32. Graph Representations",
           "xp": 15,
@@ -30783,7 +30783,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 122,
+          "id": "cpp-U32-L2",
           "title": "Adjacency list",
           "unitTitle": "32. Graph Representations",
           "xp": 15,
@@ -30793,7 +30793,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 123,
+          "id": "cpp-U32-L3",
           "title": "Edge list",
           "unitTitle": "32. Graph Representations",
           "xp": 15,
@@ -30803,7 +30803,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 124,
+          "id": "cpp-U32-L4",
           "title": "Incidence matrix",
           "unitTitle": "32. Graph Representations",
           "xp": 15,
@@ -30813,7 +30813,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 125,
+          "id": "cpp-U32-L5",
           "title": "Compressed sparse row",
           "unitTitle": "32. Graph Representations",
           "xp": 15,
@@ -30823,7 +30823,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 126,
+          "id": "cpp-U32-L6",
           "title": "Compressed sparse column",
           "unitTitle": "32. Graph Representations",
           "xp": 15,
@@ -30839,7 +30839,7 @@ window.cppCombined = {
       "unitName": "33. Graph Traversal",
       "lessons": [
         {
-          "id": 127,
+          "id": "cpp-U33-L1",
           "title": "Breadth-first search",
           "unitTitle": "33. Graph Traversal",
           "xp": 15,
@@ -30849,7 +30849,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 128,
+          "id": "cpp-U33-L2",
           "title": "Depth-first search",
           "unitTitle": "33. Graph Traversal",
           "xp": 15,
@@ -30859,7 +30859,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 129,
+          "id": "cpp-U33-L3",
           "title": "Iterative deepening DFS",
           "unitTitle": "33. Graph Traversal",
           "xp": 15,
@@ -30869,7 +30869,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 130,
+          "id": "cpp-U33-L4",
           "title": "Bidirectional search",
           "unitTitle": "33. Graph Traversal",
           "xp": 15,
@@ -30879,7 +30879,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 131,
+          "id": "cpp-U33-L5",
           "title": "Graph Algorithms",
           "unitTitle": "33. Graph Traversal",
           "xp": 15,
@@ -30895,7 +30895,7 @@ window.cppCombined = {
       "unitName": "34. Connectivity",
       "lessons": [
         {
-          "id": 132,
+          "id": "cpp-U34-L1",
           "title": "Connected components",
           "unitTitle": "34. Connectivity",
           "xp": 15,
@@ -30905,7 +30905,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 133,
+          "id": "cpp-U34-L2",
           "title": "Strongly connected components",
           "unitTitle": "34. Connectivity",
           "xp": 15,
@@ -30915,7 +30915,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 134,
+          "id": "cpp-U34-L3",
           "title": "Kosaraju algorithm",
           "unitTitle": "34. Connectivity",
           "xp": 15,
@@ -30925,7 +30925,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 135,
+          "id": "cpp-U34-L4",
           "title": "Tarjan algorithm",
           "unitTitle": "34. Connectivity",
           "xp": 15,
@@ -30935,7 +30935,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 136,
+          "id": "cpp-U34-L5",
           "title": "Bridge finding",
           "unitTitle": "34. Connectivity",
           "xp": 15,
@@ -30945,7 +30945,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 137,
+          "id": "cpp-U34-L6",
           "title": "Articulation points",
           "unitTitle": "34. Connectivity",
           "xp": 15,
@@ -30955,7 +30955,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 138,
+          "id": "cpp-U34-L7",
           "title": "Biconnected components",
           "unitTitle": "34. Connectivity",
           "xp": 15,
@@ -30971,7 +30971,7 @@ window.cppCombined = {
       "unitName": "35. Shortest Path",
       "lessons": [
         {
-          "id": 139,
+          "id": "cpp-U35-L1",
           "title": "Dijkstra algorithm",
           "unitTitle": "35. Shortest Path",
           "xp": 15,
@@ -30981,7 +30981,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 140,
+          "id": "cpp-U35-L2",
           "title": "Bellman–Ford",
           "unitTitle": "35. Shortest Path",
           "xp": 15,
@@ -30991,7 +30991,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 141,
+          "id": "cpp-U35-L3",
           "title": "Floyd–Warshall",
           "unitTitle": "35. Shortest Path",
           "xp": 15,
@@ -31001,7 +31001,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 142,
+          "id": "cpp-U35-L4",
           "title": "Johnson algorithm",
           "unitTitle": "35. Shortest Path",
           "xp": 15,
@@ -31011,7 +31011,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 143,
+          "id": "cpp-U35-L5",
           "title": "A* search",
           "unitTitle": "35. Shortest Path",
           "xp": 15,
@@ -31021,7 +31021,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 144,
+          "id": "cpp-U35-L6",
           "title": "Dial’s algorithm",
           "unitTitle": "35. Shortest Path",
           "xp": 15,
@@ -31031,7 +31031,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 145,
+          "id": "cpp-U35-L7",
           "title": "SPFA",
           "unitTitle": "35. Shortest Path",
           "xp": 15,
@@ -31041,7 +31041,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 146,
+          "id": "cpp-U35-L8",
           "title": "Multi-source BFS",
           "unitTitle": "35. Shortest Path",
           "xp": 15,
@@ -31057,7 +31057,7 @@ window.cppCombined = {
       "unitName": "36. Minimum Spanning Tree",
       "lessons": [
         {
-          "id": 147,
+          "id": "cpp-U36-L1",
           "title": "Kruskal algorithm",
           "unitTitle": "36. Minimum Spanning Tree",
           "xp": 15,
@@ -31067,7 +31067,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 148,
+          "id": "cpp-U36-L2",
           "title": "Prim algorithm",
           "unitTitle": "36. Minimum Spanning Tree",
           "xp": 15,
@@ -31077,7 +31077,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 149,
+          "id": "cpp-U36-L3",
           "title": "Borůvka algorithm",
           "unitTitle": "36. Minimum Spanning Tree",
           "xp": 15,
@@ -31087,7 +31087,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 150,
+          "id": "cpp-U36-L4",
           "title": "Reverse-delete algorithm",
           "unitTitle": "36. Minimum Spanning Tree",
           "xp": 15,
@@ -31103,7 +31103,7 @@ window.cppCombined = {
       "unitName": "37. Flow Algorithms",
       "lessons": [
         {
-          "id": 151,
+          "id": "cpp-U37-L1",
           "title": "Ford–Fulkerson",
           "unitTitle": "37. Flow Algorithms",
           "xp": 15,
@@ -31113,7 +31113,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 152,
+          "id": "cpp-U37-L2",
           "title": "Edmonds–Karp",
           "unitTitle": "37. Flow Algorithms",
           "xp": 15,
@@ -31123,7 +31123,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 153,
+          "id": "cpp-U37-L3",
           "title": "Dinic algorithm",
           "unitTitle": "37. Flow Algorithms",
           "xp": 15,
@@ -31133,7 +31133,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 154,
+          "id": "cpp-U37-L4",
           "title": "Push-relabel",
           "unitTitle": "37. Flow Algorithms",
           "xp": 15,
@@ -31143,7 +31143,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 155,
+          "id": "cpp-U37-L5",
           "title": "Min-cost max-flow",
           "unitTitle": "37. Flow Algorithms",
           "xp": 15,
@@ -31153,7 +31153,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 156,
+          "id": "cpp-U37-L6",
           "title": "Circulation with demands",
           "unitTitle": "37. Flow Algorithms",
           "xp": 15,
@@ -31169,7 +31169,7 @@ window.cppCombined = {
       "unitName": "38. Matching Algorithms",
       "lessons": [
         {
-          "id": 157,
+          "id": "cpp-U38-L1",
           "title": "Bipartite matching",
           "unitTitle": "38. Matching Algorithms",
           "xp": 15,
@@ -31179,7 +31179,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 158,
+          "id": "cpp-U38-L2",
           "title": "Hungarian algorithm",
           "unitTitle": "38. Matching Algorithms",
           "xp": 15,
@@ -31189,7 +31189,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 159,
+          "id": "cpp-U38-L3",
           "title": "Hopcroft–Karp",
           "unitTitle": "38. Matching Algorithms",
           "xp": 15,
@@ -31199,7 +31199,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 160,
+          "id": "cpp-U38-L4",
           "title": "Blossom algorithm",
           "unitTitle": "38. Matching Algorithms",
           "xp": 15,
@@ -31215,7 +31215,7 @@ window.cppCombined = {
       "unitName": "39. Graph Theory Algorithms",
       "lessons": [
         {
-          "id": 161,
+          "id": "cpp-U39-L1",
           "title": "Topological sorting",
           "unitTitle": "39. Graph Theory Algorithms",
           "xp": 15,
@@ -31225,7 +31225,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 162,
+          "id": "cpp-U39-L2",
           "title": "Transitive closure",
           "unitTitle": "39. Graph Theory Algorithms",
           "xp": 15,
@@ -31235,7 +31235,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 163,
+          "id": "cpp-U39-L3",
           "title": "Eulerian paths",
           "unitTitle": "39. Graph Theory Algorithms",
           "xp": 15,
@@ -31245,7 +31245,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 164,
+          "id": "cpp-U39-L4",
           "title": "Hamiltonian paths",
           "unitTitle": "39. Graph Theory Algorithms",
           "xp": 15,
@@ -31255,7 +31255,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 165,
+          "id": "cpp-U39-L5",
           "title": "Graph coloring",
           "unitTitle": "39. Graph Theory Algorithms",
           "xp": 15,
@@ -31265,7 +31265,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 166,
+          "id": "cpp-U39-L6",
           "title": "Planarity testing",
           "unitTitle": "39. Graph Theory Algorithms",
           "xp": 15,
@@ -31275,7 +31275,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 167,
+          "id": "cpp-U39-L7",
           "title": "String Algorithms",
           "unitTitle": "39. Graph Theory Algorithms",
           "xp": 15,
@@ -31291,7 +31291,7 @@ window.cppCombined = {
       "unitName": "40. Pattern Matching",
       "lessons": [
         {
-          "id": 168,
+          "id": "cpp-U40-L1",
           "title": "Naive search",
           "unitTitle": "40. Pattern Matching",
           "xp": 15,
@@ -31301,7 +31301,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 169,
+          "id": "cpp-U40-L2",
           "title": "Knuth–Morris–Pratt",
           "unitTitle": "40. Pattern Matching",
           "xp": 15,
@@ -31311,7 +31311,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 170,
+          "id": "cpp-U40-L3",
           "title": "Boyer–Moore",
           "unitTitle": "40. Pattern Matching",
           "xp": 15,
@@ -31321,7 +31321,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 171,
+          "id": "cpp-U40-L4",
           "title": "Rabin–Karp",
           "unitTitle": "40. Pattern Matching",
           "xp": 15,
@@ -31331,7 +31331,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 172,
+          "id": "cpp-U40-L5",
           "title": "Z-algorithm",
           "unitTitle": "40. Pattern Matching",
           "xp": 15,
@@ -31341,7 +31341,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 173,
+          "id": "cpp-U40-L6",
           "title": "Aho–Corasick",
           "unitTitle": "40. Pattern Matching",
           "xp": 15,
@@ -31357,7 +31357,7 @@ window.cppCombined = {
       "unitName": "41. String Processing",
       "lessons": [
         {
-          "id": 174,
+          "id": "cpp-U41-L1",
           "title": "Longest common prefix",
           "unitTitle": "41. String Processing",
           "xp": 15,
@@ -31367,7 +31367,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 175,
+          "id": "cpp-U41-L2",
           "title": "Longest repeated substring",
           "unitTitle": "41. String Processing",
           "xp": 15,
@@ -31377,7 +31377,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 176,
+          "id": "cpp-U41-L3",
           "title": "Suffix arrays",
           "unitTitle": "41. String Processing",
           "xp": 15,
@@ -31387,7 +31387,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 177,
+          "id": "cpp-U41-L4",
           "title": "LCP arrays",
           "unitTitle": "41. String Processing",
           "xp": 15,
@@ -31397,7 +31397,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 178,
+          "id": "cpp-U41-L5",
           "title": "Burrows–Wheeler transform",
           "unitTitle": "41. String Processing",
           "xp": 15,
@@ -31407,7 +31407,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 179,
+          "id": "cpp-U41-L6",
           "title": "Range Query Structures",
           "unitTitle": "41. String Processing",
           "xp": 15,
@@ -31423,7 +31423,7 @@ window.cppCombined = {
       "unitName": "42. Range Query Techniques",
       "lessons": [
         {
-          "id": 180,
+          "id": "cpp-U42-L1",
           "title": "Prefix sums",
           "unitTitle": "42. Range Query Techniques",
           "xp": 15,
@@ -31433,7 +31433,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 181,
+          "id": "cpp-U42-L2",
           "title": "Difference arrays",
           "unitTitle": "42. Range Query Techniques",
           "xp": 15,
@@ -31443,7 +31443,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 182,
+          "id": "cpp-U42-L3",
           "title": "Sparse tables",
           "unitTitle": "42. Range Query Techniques",
           "xp": 15,
@@ -31453,7 +31453,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 183,
+          "id": "cpp-U42-L4",
           "title": "Segment trees",
           "unitTitle": "42. Range Query Techniques",
           "xp": 15,
@@ -31463,7 +31463,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 184,
+          "id": "cpp-U42-L5",
           "title": "Fenwick trees",
           "unitTitle": "42. Range Query Techniques",
           "xp": 15,
@@ -31473,7 +31473,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 185,
+          "id": "cpp-U42-L6",
           "title": "Mo’s algorithm",
           "unitTitle": "42. Range Query Techniques",
           "xp": 15,
@@ -31483,7 +31483,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 186,
+          "id": "cpp-U42-L7",
           "title": "Wavelet tree",
           "unitTitle": "42. Range Query Techniques",
           "xp": 15,
@@ -31493,7 +31493,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 187,
+          "id": "cpp-U42-L8",
           "title": "Dynamic Programming",
           "unitTitle": "42. Range Query Techniques",
           "xp": 15,
@@ -31509,7 +31509,7 @@ window.cppCombined = {
       "unitName": "43. Core DP",
       "lessons": [
         {
-          "id": 188,
+          "id": "cpp-U43-L1",
           "title": "Memoization",
           "unitTitle": "43. Core DP",
           "xp": 15,
@@ -31519,7 +31519,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 189,
+          "id": "cpp-U43-L2",
           "title": "Tabulation",
           "unitTitle": "43. Core DP",
           "xp": 15,
@@ -31529,7 +31529,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 190,
+          "id": "cpp-U43-L3",
           "title": "Bitmask DP",
           "unitTitle": "43. Core DP",
           "xp": 15,
@@ -31539,7 +31539,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 191,
+          "id": "cpp-U43-L4",
           "title": "Tree DP",
           "unitTitle": "43. Core DP",
           "xp": 15,
@@ -31549,7 +31549,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 192,
+          "id": "cpp-U43-L5",
           "title": "Digit DP",
           "unitTitle": "43. Core DP",
           "xp": 15,
@@ -31559,7 +31559,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 193,
+          "id": "cpp-U43-L6",
           "title": "Interval DP",
           "unitTitle": "43. Core DP",
           "xp": 15,
@@ -31569,7 +31569,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 194,
+          "id": "cpp-U43-L7",
           "title": "DP on graphs",
           "unitTitle": "43. Core DP",
           "xp": 15,
@@ -31585,7 +31585,7 @@ window.cppCombined = {
       "unitName": "44. Advanced DP Optimizations",
       "lessons": [
         {
-          "id": 195,
+          "id": "cpp-U44-L1",
           "title": "Divide and conquer DP",
           "unitTitle": "44. Advanced DP Optimizations",
           "xp": 15,
@@ -31595,7 +31595,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 196,
+          "id": "cpp-U44-L2",
           "title": "Knuth optimization",
           "unitTitle": "44. Advanced DP Optimizations",
           "xp": 15,
@@ -31605,7 +31605,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 197,
+          "id": "cpp-U44-L3",
           "title": "Convex hull trick",
           "unitTitle": "44. Advanced DP Optimizations",
           "xp": 15,
@@ -31615,7 +31615,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 198,
+          "id": "cpp-U44-L4",
           "title": "Li Chao tree",
           "unitTitle": "44. Advanced DP Optimizations",
           "xp": 15,
@@ -31625,7 +31625,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 199,
+          "id": "cpp-U44-L5",
           "title": "Monotonic queue optimization",
           "unitTitle": "44. Advanced DP Optimizations",
           "xp": 15,
@@ -31635,7 +31635,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 200,
+          "id": "cpp-U44-L6",
           "title": "Alien trick",
           "unitTitle": "44. Advanced DP Optimizations",
           "xp": 15,
@@ -31645,7 +31645,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 201,
+          "id": "cpp-U44-L7",
           "title": "SMAWK algorithm",
           "unitTitle": "44. Advanced DP Optimizations",
           "xp": 15,
@@ -31655,7 +31655,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 202,
+          "id": "cpp-U44-L8",
           "title": "Greedy Algorithms",
           "unitTitle": "44. Advanced DP Optimizations",
           "xp": 15,
@@ -31665,7 +31665,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 203,
+          "id": "cpp-U44-L9",
           "title": "Activity selection",
           "unitTitle": "44. Advanced DP Optimizations",
           "xp": 15,
@@ -31675,7 +31675,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 204,
+          "id": "cpp-U44-L10",
           "title": "Huffman coding",
           "unitTitle": "44. Advanced DP Optimizations",
           "xp": 15,
@@ -31685,7 +31685,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 205,
+          "id": "cpp-U44-L11",
           "title": "Interval scheduling",
           "unitTitle": "44. Advanced DP Optimizations",
           "xp": 15,
@@ -31695,7 +31695,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 206,
+          "id": "cpp-U44-L12",
           "title": "Matroid theory",
           "unitTitle": "44. Advanced DP Optimizations",
           "xp": 15,
@@ -31705,7 +31705,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 207,
+          "id": "cpp-U44-L13",
           "title": "Divide and Conquer",
           "unitTitle": "44. Advanced DP Optimizations",
           "xp": 15,
@@ -31715,7 +31715,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 208,
+          "id": "cpp-U44-L14",
           "title": "Binary search",
           "unitTitle": "44. Advanced DP Optimizations",
           "xp": 15,
@@ -31725,7 +31725,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 209,
+          "id": "cpp-U44-L15",
           "title": "Merge sort",
           "unitTitle": "44. Advanced DP Optimizations",
           "xp": 15,
@@ -31735,7 +31735,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 210,
+          "id": "cpp-U44-L16",
           "title": "Quick sort",
           "unitTitle": "44. Advanced DP Optimizations",
           "xp": 15,
@@ -31745,7 +31745,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 211,
+          "id": "cpp-U44-L17",
           "title": "Karatsuba multiplication",
           "unitTitle": "44. Advanced DP Optimizations",
           "xp": 15,
@@ -31755,7 +31755,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 212,
+          "id": "cpp-U44-L18",
           "title": "Strassen algorithm",
           "unitTitle": "44. Advanced DP Optimizations",
           "xp": 15,
@@ -31765,7 +31765,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 213,
+          "id": "cpp-U44-L19",
           "title": "FFT",
           "unitTitle": "44. Advanced DP Optimizations",
           "xp": 15,
@@ -31775,7 +31775,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 214,
+          "id": "cpp-U44-L20",
           "title": "NTT",
           "unitTitle": "44. Advanced DP Optimizations",
           "xp": 15,
@@ -31785,7 +31785,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 215,
+          "id": "cpp-U44-L21",
           "title": "Computational Geometry",
           "unitTitle": "44. Advanced DP Optimizations",
           "xp": 15,
@@ -31801,7 +31801,7 @@ window.cppCombined = {
       "unitName": "45. Geometry Structures",
       "lessons": [
         {
-          "id": 216,
+          "id": "cpp-U45-L1",
           "title": "KD-tree",
           "unitTitle": "45. Geometry Structures",
           "xp": 15,
@@ -31811,7 +31811,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 217,
+          "id": "cpp-U45-L2",
           "title": "Range tree",
           "unitTitle": "45. Geometry Structures",
           "xp": 15,
@@ -31821,7 +31821,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 218,
+          "id": "cpp-U45-L3",
           "title": "BSP tree",
           "unitTitle": "45. Geometry Structures",
           "xp": 15,
@@ -31831,7 +31831,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 219,
+          "id": "cpp-U45-L4",
           "title": "Quad tree",
           "unitTitle": "45. Geometry Structures",
           "xp": 15,
@@ -31841,7 +31841,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 220,
+          "id": "cpp-U45-L5",
           "title": "R-tree",
           "unitTitle": "45. Geometry Structures",
           "xp": 15,
@@ -31857,7 +31857,7 @@ window.cppCombined = {
       "unitName": "46. Geometry Algorithms",
       "lessons": [
         {
-          "id": 221,
+          "id": "cpp-U46-L1",
           "title": "Convex hull",
           "unitTitle": "46. Geometry Algorithms",
           "xp": 15,
@@ -31867,7 +31867,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 222,
+          "id": "cpp-U46-L2",
           "title": "Graham scan",
           "unitTitle": "46. Geometry Algorithms",
           "xp": 15,
@@ -31877,7 +31877,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 223,
+          "id": "cpp-U46-L3",
           "title": "Jarvis march",
           "unitTitle": "46. Geometry Algorithms",
           "xp": 15,
@@ -31887,7 +31887,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 224,
+          "id": "cpp-U46-L4",
           "title": "Line sweep",
           "unitTitle": "46. Geometry Algorithms",
           "xp": 15,
@@ -31897,7 +31897,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 225,
+          "id": "cpp-U46-L5",
           "title": "Closest pair of points",
           "unitTitle": "46. Geometry Algorithms",
           "xp": 15,
@@ -31907,7 +31907,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 226,
+          "id": "cpp-U46-L6",
           "title": "Delaunay triangulation",
           "unitTitle": "46. Geometry Algorithms",
           "xp": 15,
@@ -31917,7 +31917,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 227,
+          "id": "cpp-U46-L7",
           "title": "Voronoi diagrams",
           "unitTitle": "46. Geometry Algorithms",
           "xp": 15,
@@ -31927,7 +31927,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 228,
+          "id": "cpp-U46-L8",
           "title": "Randomized Algorithms",
           "unitTitle": "46. Geometry Algorithms",
           "xp": 15,
@@ -31937,7 +31937,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 229,
+          "id": "cpp-U46-L9",
           "title": "Randomized quicksort",
           "unitTitle": "46. Geometry Algorithms",
           "xp": 15,
@@ -31947,7 +31947,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 230,
+          "id": "cpp-U46-L10",
           "title": "Randomized selection",
           "unitTitle": "46. Geometry Algorithms",
           "xp": 15,
@@ -31957,7 +31957,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 231,
+          "id": "cpp-U46-L11",
           "title": "Reservoir sampling",
           "unitTitle": "46. Geometry Algorithms",
           "xp": 15,
@@ -31967,7 +31967,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 232,
+          "id": "cpp-U46-L12",
           "title": "Skip lists",
           "unitTitle": "46. Geometry Algorithms",
           "xp": 15,
@@ -31977,7 +31977,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 233,
+          "id": "cpp-U46-L13",
           "title": "Monte Carlo algorithms",
           "unitTitle": "46. Geometry Algorithms",
           "xp": 15,
@@ -31987,7 +31987,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 234,
+          "id": "cpp-U46-L14",
           "title": "Las Vegas algorithms",
           "unitTitle": "46. Geometry Algorithms",
           "xp": 15,
@@ -31997,7 +31997,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 235,
+          "id": "cpp-U46-L15",
           "title": "Approximation Algorithms",
           "unitTitle": "46. Geometry Algorithms",
           "xp": 15,
@@ -32007,7 +32007,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 236,
+          "id": "cpp-U46-L16",
           "title": "Greedy approximation",
           "unitTitle": "46. Geometry Algorithms",
           "xp": 15,
@@ -32017,7 +32017,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 237,
+          "id": "cpp-U46-L17",
           "title": "Local search",
           "unitTitle": "46. Geometry Algorithms",
           "xp": 15,
@@ -32027,7 +32027,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 238,
+          "id": "cpp-U46-L18",
           "title": "PTAS",
           "unitTitle": "46. Geometry Algorithms",
           "xp": 15,
@@ -32037,7 +32037,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 239,
+          "id": "cpp-U46-L19",
           "title": "FPTAS",
           "unitTitle": "46. Geometry Algorithms",
           "xp": 15,
@@ -32047,7 +32047,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 240,
+          "id": "cpp-U46-L20",
           "title": "Advanced Topics",
           "unitTitle": "46. Geometry Algorithms",
           "xp": 15,
@@ -32063,7 +32063,7 @@ window.cppCombined = {
       "unitName": "47. Advanced Data Structures",
       "lessons": [
         {
-          "id": 241,
+          "id": "cpp-U47-L1",
           "title": "Persistent data structures",
           "unitTitle": "47. Advanced Data Structures",
           "xp": 15,
@@ -32073,7 +32073,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 242,
+          "id": "cpp-U47-L2",
           "title": "Retroactive data structures",
           "unitTitle": "47. Advanced Data Structures",
           "xp": 15,
@@ -32083,7 +32083,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 243,
+          "id": "cpp-U47-L3",
           "title": "Functional data structures",
           "unitTitle": "47. Advanced Data Structures",
           "xp": 15,
@@ -32093,7 +32093,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 244,
+          "id": "cpp-U47-L4",
           "title": "Succinct data structures",
           "unitTitle": "47. Advanced Data Structures",
           "xp": 15,
@@ -32103,7 +32103,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 245,
+          "id": "cpp-U47-L5",
           "title": "Compressed data structures",
           "unitTitle": "47. Advanced Data Structures",
           "xp": 15,
@@ -32119,7 +32119,7 @@ window.cppCombined = {
       "unitName": "48. Advanced Graph Theory",
       "lessons": [
         {
-          "id": 246,
+          "id": "cpp-U48-L1",
           "title": "Tree decomposition",
           "unitTitle": "48. Advanced Graph Theory",
           "xp": 15,
@@ -32129,7 +32129,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 247,
+          "id": "cpp-U48-L2",
           "title": "Centroid decomposition",
           "unitTitle": "48. Advanced Graph Theory",
           "xp": 15,
@@ -32139,7 +32139,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 248,
+          "id": "cpp-U48-L3",
           "title": "Heavy-light decomposition",
           "unitTitle": "48. Advanced Graph Theory",
           "xp": 15,
@@ -32149,7 +32149,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 249,
+          "id": "cpp-U48-L4",
           "title": "Dynamic connectivity",
           "unitTitle": "48. Advanced Graph Theory",
           "xp": 15,
@@ -32159,7 +32159,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 250,
+          "id": "cpp-U48-L5",
           "title": "Link-cut trees",
           "unitTitle": "48. Advanced Graph Theory",
           "xp": 15,
@@ -32169,7 +32169,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 251,
+          "id": "cpp-U48-L6",
           "title": "Euler tour trees",
           "unitTitle": "48. Advanced Graph Theory",
           "xp": 15,
@@ -32185,7 +32185,7 @@ window.cppCombined = {
       "unitName": "49. Advanced String Structures",
       "lessons": [
         {
-          "id": 252,
+          "id": "cpp-U49-L1",
           "title": "Palindromic tree (Eertree)",
           "unitTitle": "49. Advanced String Structures",
           "xp": 15,
@@ -32195,7 +32195,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 253,
+          "id": "cpp-U49-L2",
           "title": "Rope",
           "unitTitle": "49. Advanced String Structures",
           "xp": 15,
@@ -32205,7 +32205,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 254,
+          "id": "cpp-U49-L3",
           "title": "Piece table",
           "unitTitle": "49. Advanced String Structures",
           "xp": 15,
@@ -32215,7 +32215,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 255,
+          "id": "cpp-U49-L4",
           "title": "Gap buffer",
           "unitTitle": "49. Advanced String Structures",
           "xp": 15,
@@ -32225,7 +32225,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 256,
+          "id": "cpp-U49-L5",
           "title": "Parallel and External Algorithms",
           "unitTitle": "49. Advanced String Structures",
           "xp": 15,
@@ -32235,7 +32235,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 257,
+          "id": "cpp-U49-L6",
           "title": "Parallel prefix sum",
           "unitTitle": "49. Advanced String Structures",
           "xp": 15,
@@ -32245,7 +32245,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 258,
+          "id": "cpp-U49-L7",
           "title": "Parallel BFS",
           "unitTitle": "49. Advanced String Structures",
           "xp": 15,
@@ -32255,7 +32255,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 259,
+          "id": "cpp-U49-L8",
           "title": "External merge sort",
           "unitTitle": "49. Advanced String Structures",
           "xp": 15,
@@ -32265,7 +32265,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 260,
+          "id": "cpp-U49-L9",
           "title": "Cache-oblivious algorithms",
           "unitTitle": "49. Advanced String Structures",
           "xp": 15,
@@ -32275,7 +32275,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 261,
+          "id": "cpp-U49-L10",
           "title": "Specialized Algorithmic Paradigms",
           "unitTitle": "49. Advanced String Structures",
           "xp": 15,
@@ -32285,7 +32285,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 262,
+          "id": "cpp-U49-L11",
           "title": "Branch and bound",
           "unitTitle": "49. Advanced String Structures",
           "xp": 15,
@@ -32295,7 +32295,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 263,
+          "id": "cpp-U49-L12",
           "title": "Meet in the middle",
           "unitTitle": "49. Advanced String Structures",
           "xp": 15,
@@ -32305,7 +32305,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 264,
+          "id": "cpp-U49-L13",
           "title": "Backtracking",
           "unitTitle": "49. Advanced String Structures",
           "xp": 15,
@@ -32315,7 +32315,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 265,
+          "id": "cpp-U49-L14",
           "title": "Simulated annealing",
           "unitTitle": "49. Advanced String Structures",
           "xp": 15,
@@ -32325,7 +32325,7 @@ window.cppCombined = {
           "locked": true
         },
         {
-          "id": 266,
+          "id": "cpp-U49-L15",
           "title": "Genetic algorithms",
           "unitTitle": "49. Advanced String Structures",
           "xp": 15,
