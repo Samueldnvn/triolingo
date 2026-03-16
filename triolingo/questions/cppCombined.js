@@ -27748,31 +27748,892 @@ window.cppCombined = {
       "unitName": "19. Interoperability",
       "lessons": [
         {
-          "id": 97,
-          "title": "C and C++ Interoperability",
-          "unitTitle": "19. Interoperability",
-          "xp": 15,
+          "id": 96,
+          "title": "C++ Coding Guidelines",
+          "unitTitle": "19. Best Practices and Idioms",
+          "xp": 85,
           "type": "lesson",
-          "difficulty": "beginner",
-          "questions": []
+          "difficulty": "intermediate",
+          "questions": [
+            {
+              "id": "cpp-19-1-1",
+              "type": "typing",
+              "question": "What is RAII?",
+              "correctAnswer": [
+                "Resource Acquisition Is Initialization",
+                "acquire resource in constructor"
+              ],
+              "explanation": "RAII manages resources.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-19-1-2",
+              "type": "typing",
+              "question": "What is rule of three?",
+              "correctAnswer": [
+                "destructor copy copy-assignment",
+                "if define one define all"
+              ],
+              "explanation": "Rule of three for resource management.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-19-1-3",
+              "type": "typing",
+              "question": "What is rule of five?",
+              "correctAnswer": [
+                "destructor copy move",
+                "add move operations"
+              ],
+              "explanation": "Rule of five for C++11.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-19-1-4",
+              "type": "multiple",
+              "question": "Prefer initialization to assignment?",
+              "options": [
+                "Yes",
+                "No",
+                "Sometimes",
+                "Never"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "Initialize in constructor.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-19-1-5",
+              "type": "multiple",
+              "question": "Use const when possible?",
+              "options": [
+                "Yes",
+                "No",
+                "Rarely",
+                "Only variables"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "const prevents modification.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-19-1-6",
+              "type": "code",
+              "question": "Use initializer list.",
+              "correctAnswer": [
+                "MyClass(int x) : member(x) { }",
+                "constructor : member(value)"
+              ],
+              "explanation": "Initialize members in list.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-1-7",
+              "type": "code",
+              "question": "Mark function const.",
+              "correctAnswer": [
+                "int getValue() const { return value; }",
+                "const member function"
+              ],
+              "explanation": "const after function signature.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-1-8",
+              "type": "code",
+              "question": "Pass by const reference.",
+              "correctAnswer": [
+                "void func(const std::string& str)",
+                "const Type& param"
+              ],
+              "explanation": "Pass large objects by const&.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-1-9",
+              "type": "code",
+              "question": "Use enum class.",
+              "correctAnswer": [
+                "enum class Color { Red, Green, Blue };",
+                "scoped enum"
+              ],
+              "explanation": "enum class for scoped enums.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-1-10",
+              "type": "code",
+              "question": "Use nullptr instead of NULL.",
+              "correctAnswer": [
+                "int* ptr = nullptr;",
+                "nullptr not NULL"
+              ],
+              "explanation": "nullptr is type-safe.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-1-11",
+              "type": "code",
+              "question": "Use constexpr.",
+              "correctAnswer": [
+                "constexpr int MAX_SIZE = 100;",
+                "compile-time constant"
+              ],
+              "explanation": "constexpr for compile-time.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-1-12",
+              "type": "code",
+              "question": "Use auto.",
+              "correctAnswer": [
+                "auto it = vec.begin();",
+                "auto for type deduction"
+              ],
+              "explanation": "auto for complex types.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-1-13",
+              "type": "code",
+              "question": "Use range-based for.",
+              "correctAnswer": [
+                "for (auto& item : vec) { }",
+                "for-each loop"
+              ],
+              "explanation": "Range-based for iteration.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-1-14",
+              "type": "code",
+              "question": "Use override.",
+              "correctAnswer": [
+                "void func() override",
+                "override specifier"
+              ],
+              "explanation": "override ensures virtual override.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-1-15",
+              "type": "code",
+              "question": "Use default constructor.",
+              "correctAnswer": [
+                "MyClass() = default;",
+                "= default for compiler-generated"
+              ],
+              "explanation": "= default for special functions.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-1-16",
+              "type": "code",
+              "question": "Delete copy constructor.",
+              "correctAnswer": [
+                "MyClass(const MyClass&) = delete;",
+                "= delete prevents copy"
+              ],
+              "explanation": "= delete to disable.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-1-17",
+              "type": "code",
+              "question": "Use unique_ptr.",
+              "correctAnswer": [
+                "auto ptr = std::make_unique<int>(42);",
+                "unique_ptr for exclusive ownership"
+              ],
+              "explanation": "unique_ptr for RAII.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-1-18",
+              "type": "code",
+              "question": "Use noexcept.",
+              "correctAnswer": [
+                "void func() noexcept",
+                "noexcept specifier"
+              ],
+              "explanation": "noexcept for non-throwing.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-1-19",
+              "type": "code",
+              "question": "Use const correctness.",
+              "correctAnswer": [
+                "const int getValue() const",
+                "const member function"
+              ],
+              "explanation": "const for read-only.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-1-20",
+              "type": "code",
+              "question": "Use std::array.",
+              "correctAnswer": [
+                "std::array<int, 10> arr;",
+                "array for fixed size"
+              ],
+              "explanation": "std::array over C-array.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-1-21",
+              "type": "code",
+              "question": "Use std::vector.",
+              "correctAnswer": [
+                "std::vector<int> vec;",
+                "vector for dynamic size"
+              ],
+              "explanation": "vector for dynamic arrays.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-1-22",
+              "type": "code",
+              "question": "Reserve vector capacity.",
+              "correctAnswer": [
+                "vec.reserve(1000);",
+                "reserve prevents reallocation"
+              ],
+              "explanation": "Reserve for performance.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-1-23",
+              "type": "code",
+              "question": "Use emplace_back.",
+              "correctAnswer": [
+                "vec.emplace_back(1, 2, 3);",
+                "emplace_back constructs in-place"
+              ],
+              "explanation": "emplace_back is efficient.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-1-24",
+              "type": "code",
+              "question": "Use using alias.",
+              "correctAnswer": [
+                "using VecInt = std::vector<int>;",
+                "using alias instead of typedef"
+              ],
+              "explanation": "using for type aliases.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-1-25",
+              "type": "code",
+              "question": "Use std::string_view.",
+              "correctAnswer": [
+                "void func(std::string_view str)",
+                "string_view for non-owning"
+              ],
+              "explanation": "string_view avoids allocation.",
+              "xp": 15
+            }
+          ],
+          "lessonText": "# C++ Coding Guidelines\n\nModern C++ best practices.\n\n## RAII (Resource Acquisition Is Initialization)\n\n```cpp\nclass File {\n    FILE* handle;\npublic:\n    File(const char* path) : handle(fopen(path, \"r\")) {\n        if (!handle) throw std::runtime_error(\"Cannot open file\");\n    }\n    ~File() { fclose(handle); }  // Resource released automatically\n};\n```\n\n## Rule of Five\n\n```cpp\nclass Resource {\n    int* data;\npublic:\n    // Constructor\n    Resource(size_t size) : data(new int[size]) {}\n\n    // Destructor\n    ~Resource() { delete[] data; }\n\n    // Copy operations\n    Resource(const Resource& other) = delete;\n    Resource& operator=(const Resource& other) = delete;\n\n    // Move operations\n    Resource(Resource&& other) noexcept : data(other.data) {\n        other.data = nullptr;\n    }\n    Resource& operator=(Resource&& other) noexcept {\n        delete[] data;\n        data = other.data;\n        other.data = nullptr;\n        return *this;\n    }\n};\n```\n\n## Best Practices\n\n- Use `nullptr` instead of `NULL`\n- Use `enum class` instead of plain `enum`\n- Use `constexpr` for compile-time constants\n- Use `auto` for type deduction\n- Use `override` for virtual functions\n- Use `noexcept` for non-throwing functions\n- Use smart pointers (`unique_ptr`, `shared_ptr`)\n- Prefer `std::array` and `std::vector` over C-arrays\n"
+        },
+        {
+          "id": 97,
+          "title": "Idiomatic STL Usage",
+          "unitTitle": "19. Best Practices and Idioms",
+          "xp": 85,
+          "type": "lesson",
+          "difficulty": "intermediate",
+          "questions": [
+            {
+              "id": "cpp-19-2-1",
+              "type": "typing",
+              "question": "What is iterator?",
+              "correctAnswer": [
+                "pointer-like object",
+                "traverse container"
+              ],
+              "explanation": "Iterator traverses containers.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-19-2-2",
+              "type": "typing",
+              "question": "What is begin()?",
+              "correctAnswer": [
+                "returns first iterator",
+                "start iterator"
+              ],
+              "explanation": "begin() returns start.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-19-2-3",
+              "type": "typing",
+              "question": "What is end()?",
+              "correctAnswer": [
+                "returns past-end iterator",
+                "end sentinel"
+              ],
+              "explanation": "end() returns one past end.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-19-2-4",
+              "type": "multiple",
+              "question": "What is size()?",
+              "options": [
+                "Element count",
+                "Capacity",
+                "Index",
+                "Length in bytes"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "size() returns count.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-19-2-5",
+              "type": "multiple",
+              "question": "What is empty()?",
+              "options": [
+                "Check if empty",
+                "Clear container",
+                "Size zero",
+                "Resize"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "empty() checks emptiness.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-19-2-6",
+              "type": "code",
+              "question": "Iterate with iterator.",
+              "correctAnswer": [
+                "for (auto it = vec.begin(); it != vec.end(); ++it) { }",
+                "iterator loop"
+              ],
+              "explanation": "Use begin() and end().",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-2-7",
+              "type": "code",
+              "question": "Range-based for loop.",
+              "correctAnswer": [
+                "for (const auto& item : vec) { }",
+                "for-each iteration"
+              ],
+              "explanation": "Range-based for is cleaner.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-2-8",
+              "type": "code",
+              "question": "Push back element.",
+              "correctAnswer": [
+                "vec.push_back(42);",
+                "push_back()"
+              ],
+              "explanation": "push_back() adds to end.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-2-9",
+              "type": "code",
+              "question": "Emplace back element.",
+              "correctAnswer": [
+                "vec.emplace_back(42);",
+                "emplace_back()"
+              ],
+              "explanation": "emplace_back() constructs.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-2-10",
+              "type": "code",
+              "question": "Insert in map.",
+              "correctAnswer": [
+                "map.insert({key, value});",
+                "map[key] = value;"
+              ],
+              "explanation": "insert() or operator[].",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-2-11",
+              "type": "code",
+              "question": "Find in map.",
+              "correctAnswer": [
+                "auto it = map.find(key);",
+                "find() returns iterator"
+              ],
+              "explanation": "find() returns iterator.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-2-12",
+              "type": "code",
+              "question": "Check if found.",
+              "correctAnswer": [
+                "if (it != map.end())",
+                "end() means not found"
+              ],
+              "explanation": "Compare with end().",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-2-13",
+              "type": "code",
+              "question": "Erase from vector.",
+              "correctAnswer": [
+                "vec.erase(vec.begin() + index);",
+                "erase() removes element"
+              ],
+              "explanation": "erase() takes iterator.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-2-14",
+              "type": "code",
+              "question": "Erase-remove idiom.",
+              "correctAnswer": [
+                "vec.erase(std::remove(vec.begin(), vec.end(), value), vec.end());",
+                "erase-remove pattern"
+              ],
+              "explanation": "remove() then erase().",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-2-15",
+              "type": "code",
+              "question": "Sort vector.",
+              "correctAnswer": [
+                "std::sort(vec.begin(), vec.end());",
+                "std::sort()"
+              ],
+              "explanation": "sort() requires iterators.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-2-16",
+              "type": "code",
+              "question": "Find in vector.",
+              "correctAnswer": [
+                "auto it = std::find(vec.begin(), vec.end(), value);",
+                "std::find()"
+              ],
+              "explanation": "find() from <algorithm>.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-2-17",
+              "type": "code",
+              "question": "Count occurrences.",
+              "correctAnswer": [
+                "size_t count = std::count(vec.begin(), vec.end(), value);",
+                "std::count()"
+              ],
+              "explanation": "count() from <algorithm>.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-2-18",
+              "type": "code",
+              "question": "Use map for key-value.",
+              "correctAnswer": [
+                "std::map<std::string, int> scores;",
+                "map for ordered mapping"
+              ],
+              "explanation": "map for key-value pairs.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-2-19",
+              "type": "code",
+              "question": "Use unordered_map.",
+              "correctAnswer": [
+                "std::unordered_map<std::string, int> cache;",
+                "unordered_map for hashing"
+              ],
+              "explanation": "unordered_map is faster.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-2-20",
+              "type": "code",
+              "question": "Use set for unique.",
+              "correctAnswer": [
+                "std::set<int> unique;",
+                "set for unique sorted"
+              ],
+              "explanation": "set keeps unique sorted.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-2-21",
+              "type": "code",
+              "question": "Use std::move.",
+              "correctAnswer": [
+                "auto vec2 = std::move(vec1);",
+                "std::move() for transfer"
+              ],
+              "explanation": "std::move() for efficiency.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-2-22",
+              "type": "code",
+              "question": "Use std::swap.",
+              "correctAnswer": [
+                "std::swap(a, b);",
+                "swap() for exchanging"
+              ],
+              "explanation": "swap() is efficient.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-2-23",
+              "type": "code",
+              "question": "Use back()",
+              "correctAnswer": [
+                "int last = vec.back();",
+                "back() returns last"
+              ],
+              "explanation": "back() for last element.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-2-24",
+              "type": "code",
+              "question": "Use front()",
+              "correctAnswer": [
+                "int first = vec.front();",
+                "front() returns first"
+              ],
+              "explanation": "front() for first element.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-2-25",
+              "type": "code",
+              "question": "Use clear()",
+              "correctAnswer": [
+                "vec.clear();",
+                "clear() empties container"
+              ],
+              "explanation": "clear() removes all elements.",
+              "xp": 15
+            }
+          ],
+          "lessonText": "# Idiomatic STL Usage\n\nUsing the Standard Template Library effectively.\n\n## Container Iteration\n\n```cpp\n// Range-based for (preferred)\nfor (const auto& item : vec) {\n    std::cout << item << std::endl;\n}\n\n// Iterator-based\nfor (auto it = vec.begin(); it != vec.end(); ++it) {\n    std::cout << *it << std::endl;\n}\n```\n\n## Common Operations\n\n```cpp\n// Add elements\nvec.push_back(42);        // Copy\nvec.emplace_back(42);     // Construct in-place\n\n// Remove elements\nvec.erase(vec.begin() + 5);  // By position\nvec.erase(std::remove(vec.begin(), vec.end(), 42), vec.end());  // By value\n\n// Find\nauto it = std::find(vec.begin(), vec.end(), 42);\nif (it != vec.end()) {\n    // Found\n}\n\n// Sort\nstd::sort(vec.begin(), vec.end());\n```\n\n## Associative Containers\n\n```cpp\n// Map\nstd::map<std::string, int> scores;\nscores[\"Alice\"] = 95;\n\nauto it = scores.find(\"Alice\");\nif (it != scores.end()) {\n    std::cout << it->second << std::endl;\n}\n\n// Unordered Map (faster lookup)\nstd::unordered_map<std::string, int> cache;\n```\n"
         },
         {
           "id": 98,
-          "title": "Calling Native Libraries",
-          "unitTitle": "19. Interoperability",
-          "xp": 15,
+          "title": "Avoiding Raw Pointers",
+          "unitTitle": "19. Best Practices and Idioms",
+          "xp": 85,
           "type": "lesson",
-          "difficulty": "beginner",
-          "questions": []
-        },
-        {
-          "id": 99,
-          "title": "ABI and Binary Compatibility",
-          "unitTitle": "19. Interoperability",
-          "xp": 15,
-          "type": "lesson",
-          "difficulty": "beginner",
-          "questions": []
+          "difficulty": "intermediate",
+          "questions": [
+            {
+              "id": "cpp-19-3-1",
+              "type": "typing",
+              "question": "What is unique_ptr?",
+              "correctAnswer": [
+                "exclusive ownership pointer",
+                "smart pointer"
+              ],
+              "explanation": "unique_ptr owns exclusively.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-19-3-2",
+              "type": "typing",
+              "question": "What is shared_ptr?",
+              "correctAnswer": [
+                "shared ownership pointer",
+                "reference counted"
+              ],
+              "explanation": "shared_ptr shares ownership.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-19-3-3",
+              "type": "typing",
+              "question": "What is weak_ptr?",
+              "correctAnswer": [
+                "non-owning pointer",
+                "observe shared_ptr"
+              ],
+              "explanation": "weak_ptr observes shared_ptr.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-19-3-4",
+              "type": "multiple",
+              "question": "unique_ptr can be copied?",
+              "options": [
+                "No",
+                "Yes",
+                "Sometimes",
+                "Only with move"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "unique_ptr can only be moved.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-19-3-5",
+              "type": "multiple",
+              "question": "shared_ptr can be copied?",
+              "options": [
+                "Yes",
+                "No",
+                "Only moved",
+                "Rarely"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "shared_ptr can be copied.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-19-3-6",
+              "type": "code",
+              "question": "Create unique_ptr.",
+              "correctAnswer": [
+                "auto ptr = std::make_unique<int>(42);",
+                "std::unique_ptr<int> ptr(new int(42));"
+              ],
+              "explanation": "make_unique() is preferred.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-3-7",
+              "type": "code",
+              "question": "Create shared_ptr.",
+              "correctAnswer": [
+                "auto ptr = std::make_shared<int>(42);",
+                "std::shared_ptr<int> ptr(new int(42));"
+              ],
+              "explanation": "make_shared() is preferred.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-3-8",
+              "type": "code",
+              "question": "Move unique_ptr.",
+              "correctAnswer": [
+                "auto ptr2 = std::move(ptr);",
+                "transfer ownership"
+              ],
+              "explanation": "std::move() to transfer.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-3-9",
+              "type": "code",
+              "question": "Get raw pointer.",
+              "correctAnswer": [
+                "int* raw = ptr.get();",
+                "get() returns raw pointer"
+              ],
+              "explanation": "get() returns raw pointer.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-3-10",
+              "type": "code",
+              "question": "Reset smart pointer.",
+              "correctAnswer": [
+                "ptr.reset(new int(100));",
+                "ptr.reset();"
+              ],
+              "explanation": "reset() releases and replaces.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-3-11",
+              "type": "code",
+              "question": "Release unique_ptr.",
+              "correctAnswer": [
+                "int* raw = ptr.release();",
+                "release() gives up ownership"
+              ],
+              "explanation": "release() gives ownership.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-3-12",
+              "type": "code",
+              "question": "Check if pointer null.",
+              "correctAnswer": [
+                "if (ptr) { }",
+                "if (ptr != nullptr)"
+              ],
+              "explanation": "Smart pointer is truthy if not null.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-3-13",
+              "type": "code",
+              "question": "Use use_count.",
+              "correctAnswer": [
+                "size_t count = ptr.use_count();",
+                "reference count"
+              ],
+              "explanation": "use_count() returns ref count.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-3-14",
+              "type": "code",
+              "question": "Create weak_ptr from shared.",
+              "correctAnswer": [
+                "std::weak_ptr<int> weak = shared;",
+                "weak_ptr observes"
+              ],
+              "explanation": "weak_ptr from shared_ptr.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-3-15",
+              "type": "code",
+              "question": "Lock weak_ptr.",
+              "correctAnswer": [
+                "if (auto shared = weak.lock()) { }",
+                "lock() returns shared_ptr"
+              ],
+              "explanation": "lock() returns shared_ptr or empty.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-3-16",
+              "type": "code",
+              "question": "Custom deleter.",
+              "correctAnswer": [
+                "auto ptr = std::unique_ptr<FILE, decltype(&fclose)>(fopen(\"file\", \"r\"), fclose);",
+                "custom deleter"
+              ],
+              "explanation": "Custom deleter in smart pointer.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-3-17",
+              "type": "code",
+              "question": "Unique_ptr to array.",
+              "correctAnswer": [
+                "std::unique_ptr<int[]> arr(new int[10]);",
+                "unique_ptr<T[]> for array"
+              ],
+              "explanation": "unique_ptr<T[]> for arrays.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-3-18",
+              "type": "code",
+              "question": "Make shared for efficiency.",
+              "correctAnswer": [
+                "auto ptr = std::make_shared<MyClass>(args);",
+                "single allocation"
+              ],
+              "explanation": "make_shared is more efficient.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-3-19",
+              "type": "code",
+              "question": "Alias constructor shared_ptr.",
+              "correctAnswer": [
+                "std::shared_ptr<MyClass> ptr(shared, &sub_object);",
+                "alias constructor"
+              ],
+              "explanation": "Shared ownership of sub-object.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-3-20",
+              "type": "code",
+              "question": "Pointer comparison.",
+              "correctAnswer": [
+                "if (ptr1 < ptr2) { }",
+                "pointer comparison"
+              ],
+              "explanation": "Smart pointers support comparison.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-3-21",
+              "type": "code",
+              "question": "Use owner_before.",
+              "correctAnswer": [
+                "ptr.owner_before(other)",
+                "owner-based ordering"
+              ],
+              "explanation": "owner_before for weak_ptr order.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-3-22",
+              "type": "code",
+              "question": "Expired weak_ptr.",
+              "correctAnswer": [
+                "if (weak.expired()) { }",
+                "check if expired"
+              ],
+              "explanation": "expired() checks if expired.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-3-23",
+              "type": "code",
+              "question": "Use enable_shared_from_this.",
+              "correctAnswer": [
+                "class MyClass : public std::enable_shared_from_this<MyClass>",
+                "get shared_ptr from this"
+              ],
+              "explanation": "enable_shared_from_this for self-reference.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-3-24",
+              "type": "code",
+              "question": "Swap smart pointers.",
+              "correctAnswer": [
+                "ptr1.swap(ptr2);",
+                "swap()"
+              ],
+              "explanation": "swap() exchanges ownership.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-19-3-25",
+              "type": "code",
+              "question": "Dereference smart pointer.",
+              "correctAnswer": [
+                "int value = *ptr;",
+                "int value = ptr->member;"
+              ],
+              "explanation": "* and -> operators work.",
+              "xp": 15
+            }
+          ],
+          "lessonText": "# Avoiding Raw Pointers\n\nUsing smart pointers for memory safety.\n\n## unique_ptr (Exclusive Ownership)\n\n```cpp\n#include <memory>\n\n// Create\nauto ptr = std::make_unique<int>(42);\n\n// Move (cannot copy)\nauto ptr2 = std::move(ptr);\n\n// Access\nstd::cout << *ptr2 << std::endl;\n\n// Reset\nptr2.reset();\n\n// Release (gives up ownership)\nint* raw = ptr2.release();\ndelete raw;\n```\n\n## shared_ptr (Shared Ownership)\n\n```cpp\n#include <memory>\n\n// Create\nauto ptr = std::make_shared<int>(42);\n\n// Copy (increases ref count)\nauto ptr2 = ptr;\n\n// Check ref count\nstd::cout << ptr.use_count() << std::endl;  // 2\n\n// Reset\nptr.reset();  // Decreases ref count\n```\n\n## weak_ptr (Non-owning Observer)\n\n```cpp\nstd::weak_ptr<int> weak = ptr;\n\n// Check if expired\nif (!weak.expired()) {\n    // Lock to get shared_ptr\n    if (auto shared = weak.lock()) {\n        std::cout << *shared << std::endl;\n    }\n}\n```\n"
         }
       ]
     },
