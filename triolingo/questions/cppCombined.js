@@ -80508,45 +80508,2684 @@ window.cppCombined = {
       "lessons": [
         {
           "id": "cpp-U38-L1",
-          "title": "Bipartite matching",
-          "unitTitle": "38. Matching Algorithms",
-          "xp": 15,
+          "title": "Network Basics",
+          "unitTitle": "38. Network Programming",
+          "xp": 85,
           "type": "lesson",
-          "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "difficulty": "beginner",
+          "questions": [
+            {
+              "id": "cpp-38-1-1",
+              "type": "typing",
+              "question": "IP address?",
+              "correctAnswer": [
+                "internet protocol",
+                "unique identifier",
+                "network address"
+              ],
+              "explanation": "Unique network identifier.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-1-2",
+              "type": "typing",
+              "question": "Port?",
+              "correctAnswer": [
+                "port number",
+                "16-bit",
+                "endpoint"
+              ],
+              "explanation": "16-bit endpoint identifier.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-1-3",
+              "type": "typing",
+              "question": "Socket?",
+              "correctAnswer": [
+                "network endpoint",
+                "communication",
+                "IP+port"
+              ],
+              "explanation": "Network communication endpoint.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-1-4",
+              "type": "multiple",
+              "question": "Protocols?",
+              "options": [
+                "TCP",
+                "UDP",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both TCP and UDP.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-1-5",
+              "type": "multiple",
+              "question": "IP versions?",
+              "options": [
+                "IPv4",
+                "IPv6",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both IPv4 and IPv6.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-1-6",
+              "type": "code",
+              "question": "Include socket header.",
+              "correctAnswer": [
+                "#include <sys/socket.h>",
+                "include"
+              ],
+              "explanation": "Socket header.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-1-7",
+              "type": "code",
+              "question": "Socket descriptor.",
+              "correctAnswer": [
+                "int sock = socket(AF_INET, SOCK_STREAM, 0);",
+                "socket"
+              ],
+              "explanation": "Create socket descriptor.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-1-8",
+              "type": "code",
+              "question": "Bind socket.",
+              "correctAnswer": [
+                "bind(sock, (struct sockaddr*)&addr, sizeof(addr));",
+                "bind"
+              ],
+              "explanation": "Bind socket to address.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-1-9",
+              "type": "code",
+              "question": "Listen socket.",
+              "correctAnswer": [
+                "listen(sock, SOMAXCONN);",
+                "listen"
+              ],
+              "explanation": "Listen for connections.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-1-10",
+              "type": "code",
+              "question": "Accept connection.",
+              "correctAnswer": [
+                "int client = accept(sock, NULL, NULL);",
+                "accept"
+              ],
+              "explanation": "Accept incoming connection.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-1-11",
+              "type": "code",
+              "question": "Connect socket.",
+              "correctAnswer": [
+                "connect(sock, (struct sockaddr*)&addr, sizeof(addr));",
+                "connect"
+              ],
+              "explanation": "Connect to server.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-1-12",
+              "type": "code",
+              "question": "Send data.",
+              "correctAnswer": [
+                "send(sock, data, size, 0);",
+                "send"
+              ],
+              "explanation": "Send data on socket.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-1-13",
+              "type": "code",
+              "question": "Receive data.",
+              "correctAnswer": [
+                "recv(sock, buffer, size, 0);",
+                "recv"
+              ],
+              "explanation": "Receive data from socket.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-1-14",
+              "type": "code",
+              "question": "Close socket.",
+              "correctAnswer": [
+                "close(sock);",
+                "close"
+              ],
+              "explanation": "Close socket.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-1-15",
+              "type": "code",
+              "question": "Set address.",
+              "correctAnswer": [
+                "addr.sin_family = AF_INET;\naddr.sin_port = htons(port);\naddr.sin_addr.s_addr = INADDR_ANY;",
+                "address"
+              ],
+              "explanation": "Set socket address.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-1-16",
+              "type": "code",
+              "question": "Convert port.",
+              "correctAnswer": [
+                "htons(port);",
+                "htons"
+              ],
+              "explanation": "Host to network short.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-1-17",
+              "type": "code",
+              "question": "Convert IP.",
+              "correctAnswer": [
+                "inet_addr(\"127.0.0.1\");",
+                "inet_addr"
+              ],
+              "explanation": "Convert IP string.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-1-18",
+              "type": "code",
+              "question": "Error handling.",
+              "correctAnswer": [
+                "if (sock < 0) { perror(\"socket error\"); }",
+                "error"
+              ],
+              "explanation": "Handle socket errors.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-1-19",
+              "type": "code",
+              "question": "TCP vs UDP.",
+              "correctAnswer": [
+                "// TCP: reliable, connection-oriented; UDP: fast, connectionless",
+                "compare"
+              ],
+              "explanation": "TCP vs UDP.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-1-20",
+              "type": "code",
+              "question": "Client-server model.",
+              "correctAnswer": [
+                "// Server: bind, listen, accept; Client: connect, send, recv",
+                "client server"
+              ],
+              "explanation": "Client-server model.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-1-21",
+              "type": "code",
+              "question": "Testing basics.",
+              "correctAnswer": [
+                "void testNetworkBasics() { // Test socket operations }",
+                "test"
+              ],
+              "explanation": "Test network basics.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-1-22",
+              "type": "code",
+              "question": "Port ranges.",
+              "correctAnswer": [
+                "// Well-known: 0-1023, Registered: 1024-49151, Dynamic: 49152-65535",
+                "ports"
+              ],
+              "explanation": "Port ranges.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-1-23",
+              "type": "code",
+              "question": "Localhost.",
+              "correctAnswer": [
+                "127.0.0.1 or ::1 for IPv6",
+                "localhost"
+              ],
+              "explanation": "Localhost addresses.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-1-24",
+              "type": "code",
+              "question": "Loopback.",
+              "correctAnswer": [
+                "// 127.0.0.0/8 for IPv4, ::1 for IPv6",
+                "loopback"
+              ],
+              "explanation": "Loopback addresses.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-1-25",
+              "type": "code",
+              "question": "Summary.",
+              "correctAnswer": [
+                "// Network basics: sockets, TCP/UDP, IP, ports, client-server",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Network Basics\n\nIntroduction to network programming concepts.\n\n## Key Concepts\n\n**IP Address:** Unique identifier for network interface\n- IPv4: 192.168.1.1 (32-bit)\n- IPv6: 2001:db8::1 (128-bit)\n\n**Port:** 16-bit number (0-65535) identifying endpoint\n- Well-known: 0-1023\n- Registered: 1024-49151\n- Dynamic: 49152-65535\n\n**Socket:** Network communication endpoint\n- Identified by IP address + port number\n\n## Protocols\n\n| Protocol | Type | Characteristics |\n|----------|------|-----------------|\n| TCP | Connection-oriented | Reliable, ordered, error-checked |\n| UDP | Connectionless | Fast, unordered, no guarantees |\n\n## Socket Types\n\n```cpp\n// TCP socket\nint sock = socket(AF_INET, SOCK_STREAM, 0);\n\n// UDP socket\nint sock = socket(AF_INET, SOCK_DGRAM, 0);\n```\n\n## Address Families\n\n| Family | Description |\n|--------|-------------|\n| AF_INET | IPv4 |\n| AF_INET6 | IPv6 |\n| AF_UNIX | Local domain |\n\n## Basic Socket Operations\n\n```cpp\n#include <sys/socket.h>\n#include <netinet/in.h>\n#include <arpa/inet.h>\n\n// Create socket\nint sock = socket(AF_INET, SOCK_STREAM, 0);\nif (sock < 0) {\n    perror(\"socket error\");\n    return -1;\n}\n\n// Set address\nstruct sockaddr_in addr;\naddr.sin_family = AF_INET;\naddr.sin_port = htons(8080);\naddr.sin_addr.s_addr = INADDR_ANY;\n\n// Bind\nbind(sock, (struct sockaddr*)&addr, sizeof(addr));\n\n// Listen\nlisten(sock, SOMAXCONN);\n\n// Accept\nint client = accept(sock, NULL, NULL);\n\n// Send/Receive\nsend(sock, data, size, 0);\nrecv(sock, buffer, size, 0);\n\n// Close\nclose(sock);\n```\n\n## Client-Server Model\n\n**Server:**\n1. Create socket\n2. Bind to address\n3. Listen for connections\n4. Accept connections\n5. Communicate\n6. Close\n\n**Client:**\n1. Create socket\n2. Connect to server\n3. Communicate\n4. Close\n\n## Network Byte Order\n\n```cpp\n// Host to Network Short (port)\nuint16_t net_port = htons(host_port);\n\n// Network to Host Short (port)\nuint16_t host_port = ntohs(net_port);\n\n// Host to Network Long (IP)\nuint32_t net_ip = htonl(host_ip);\n\n// Network to Host Long (IP)\nuint32_t host_ip = ntohl(net_ip);\n```\n"
         },
         {
           "id": "cpp-U38-L2",
-          "title": "Hungarian algorithm",
-          "unitTitle": "38. Matching Algorithms",
-          "xp": 15,
+          "title": "TCP Programming",
+          "unitTitle": "38. Network Programming",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-38-2-1",
+              "type": "typing",
+              "question": "TCP?",
+              "correctAnswer": [
+                "transmission control protocol",
+                "reliable",
+                "connection-oriented"
+              ],
+              "explanation": "Reliable, connection-oriented protocol.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-2-2",
+              "type": "typing",
+              "question": "Three-way handshake?",
+              "correctAnswer": [
+                "SYN",
+                "SYN-ACK",
+                "ACK"
+              ],
+              "explanation": "TCP connection establishment.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-2-3",
+              "type": "typing",
+              "question": "SOCK_STREAM?",
+              "correctAnswer": [
+                "TCP",
+                "reliable",
+                "stream"
+              ],
+              "explanation": "TCP socket type.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-2-4",
+              "type": "multiple",
+              "question": "TCP features?",
+              "options": [
+                "reliable",
+                "ordered",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Reliable and ordered.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-2-5",
+              "type": "multiple",
+              "question": "Server functions?",
+              "options": [
+                "bind",
+                "listen",
+                "accept",
+                "all"
+              ],
+              "correctAnswer": [
+                3
+              ],
+              "explanation": "All three functions.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-2-6",
+              "type": "code",
+              "question": "TCP server setup.",
+              "correctAnswer": [
+                "int server = socket(AF_INET, SOCK_STREAM, 0);\nstruct sockaddr_in addr = {0};\naddr.sin_family = AF_INET;\naddr.sin_addr.s_addr = INADDR_ANY;\naddr.sin_port = htons(8080);\nbind(server, (struct sockaddr*)&addr, sizeof(addr));\nlisten(server, 5);",
+                "server setup"
+              ],
+              "explanation": "TCP server setup.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-2-7",
+              "type": "code",
+              "question": "TCP client setup.",
+              "correctAnswer": [
+                "int client = socket(AF_INET, SOCK_STREAM, 0);\nstruct sockaddr_in addr = {0};\naddr.sin_family = AF_INET;\naddr.sin_port = htons(8080);\ninet_pton(AF_INET, \"127.0.0.1\", &addr.sin_addr);\nconnect(client, (struct sockaddr*)&addr, sizeof(addr));",
+                "client setup"
+              ],
+              "explanation": "TCP client setup.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-2-8",
+              "type": "code",
+              "question": "Send data TCP.",
+              "correctAnswer": [
+                "const char* msg = \"Hello\";\nsend(sock, msg, strlen(msg), 0);",
+                "send"
+              ],
+              "explanation": "Send data on TCP socket.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-2-9",
+              "type": "code",
+              "question": "Receive data TCP.",
+              "correctAnswer": [
+                "char buffer[1024];\nssize_t bytes = recv(sock, buffer, sizeof(buffer), 0);\nif (bytes > 0) buffer[bytes] = '\\0';",
+                "recv"
+              ],
+              "explanation": "Receive data from TCP socket.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-2-10",
+              "type": "code",
+              "question": "Handle accept loop.",
+              "correctAnswer": [
+                "while (true) {\n    int client = accept(server, NULL, NULL);\n    if (client < 0) break;\n    // handle client\n}",
+                "accept loop"
+              ],
+              "explanation": "Handle multiple clients.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-2-11",
+              "type": "code",
+              "question": "Send all data.",
+              "correctAnswer": [
+                "ssize_t sendAll(int sock, const void* data, size_t len) {\n    size_t sent = 0;\n    while (sent < len) {\n        ssize_t n = send(sock, (char*)data + sent, len - sent, 0);\n        if (n <= 0) return n;\n        sent += n;\n    }\n    return sent;\n}",
+                "send all"
+              ],
+              "explanation": "Send all data reliably.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-2-12",
+              "type": "code",
+              "question": "Receive all data.",
+              "correctAnswer": [
+                "ssize_t recvAll(int sock, void* buffer, size_t len) {\n    size_t received = 0;\n    while (received < len) {\n        ssize_t n = recv(sock, (char*)buffer + received, len - received, 0);\n        if (n <= 0) return n;\n        received += n;\n    }\n    return received;\n}",
+                "recv all"
+              ],
+              "explanation": "Receive all data reliably.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-2-13",
+              "type": "code",
+              "question": "Graceful shutdown.",
+              "correctAnswer": [
+                "shutdown(sock, SHUT_WR); // Send FIN\n// Wait for remote close\nchar buf[1];\nwhile (recv(sock, buf, 1, 0) > 0);\nclose(sock);",
+                "shutdown"
+              ],
+              "explanation": "Graceful TCP shutdown.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-2-14",
+              "type": "code",
+              "question": "TCP keepalive.",
+              "correctAnswer": [
+                "int keepalive = 1;\nsetsockopt(sock, SOL_SOCKET, SO_KEEPALIVE, &keepalive, sizeof(keepalive));",
+                "keepalive"
+              ],
+              "explanation": "Enable TCP keepalive.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-2-15",
+              "type": "code",
+              "question": "Set timeout.",
+              "correctAnswer": [
+                "struct timeval tv = {10, 0}; // 10 seconds\nsetsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, &tv, sizeof(tv));",
+                "timeout"
+              ],
+              "explanation": "Set socket timeout.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-2-16",
+              "type": "code",
+              "question": "Reuse address.",
+              "correctAnswer": [
+                "int reuse = 1;\nsetsockopt(sock, SOL_SOCKET, SO_REUSEADDR, &reuse, sizeof(reuse));",
+                "reuse address"
+              ],
+              "explanation": "Reuse socket address.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-2-17",
+              "type": "code",
+              "question": "Testing TCP.",
+              "correctAnswer": [
+                "void testTCP() { // Test TCP client/server }",
+                "test"
+              ],
+              "explanation": "Test TCP operations.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-2-18",
+              "type": "code",
+              "question": "Connection handling.",
+              "correctAnswer": [
+                "// Handle connection errors, timeouts, partial sends",
+                "handling"
+              ],
+              "explanation": "Connection handling.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-2-19",
+              "type": "code",
+              "question": "Performance tips.",
+              "correctAnswer": [
+                "// Use Nagle, TCP_CORK, larger buffers",
+                "performance"
+              ],
+              "explanation": "TCP performance.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-2-20",
+              "type": "code",
+              "question": "Edge cases.",
+              "correctAnswer": [
+                "// Connection refused, timeout, broken pipe",
+                "edge"
+              ],
+              "explanation": "TCP edge cases.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-2-21",
+              "type": "code",
+              "question": "Error codes.",
+              "correctAnswer": [
+                "// ECONNREFUSED, ETIMEDOUT, EPIPE, ECONNRESET",
+                "errors"
+              ],
+              "explanation": "TCP error codes.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-2-22",
+              "type": "code",
+              "question": "Backlog queue.",
+              "correctAnswer": [
+                "// Controls pending connection queue length",
+                "backlog"
+              ],
+              "explanation": "Listen backlog.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-2-23",
+              "type": "code",
+              "question": "Buffer sizes.",
+              "correctAnswer": [
+                "// Adjust SO_RCVBUF, SO_SNDBUF for performance",
+                "buffers"
+              ],
+              "explanation": "TCP buffer sizes.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-2-24",
+              "type": "code",
+              "question": "TCP_NODELAY.",
+              "correctAnswer": [
+                "int nodelay = 1;\nsetsockopt(sock, IPPROTO_TCP, TCP_NODELAY, &nodelay, sizeof(nodelay));",
+                "nodelay"
+              ],
+              "explanation": "Disable Nagle algorithm.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-2-25",
+              "type": "code",
+              "question": "Summary.",
+              "correctAnswer": [
+                "// TCP: reliable, ordered, connection-oriented, streams",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# TCP Programming\n\nReliable, connection-oriented network programming.\n\n## TCP Characteristics\n\n- **Reliable**: Guaranteed delivery\n- **Ordered**: Data arrives in order\n- **Connection-oriented**: Three-way handshake\n- **Error-checked**: Checksum and retransmission\n\n## TCP Server Example\n\n```cpp\n#include <sys/socket.h>\n#include <netinet/in.h>\n#include <arpa/inet.h>\n#include <unistd.h>\n#include <string.h>\n\nint createTCPServer(int port) {\n    int server = socket(AF_INET, SOCK_STREAM, 0);\n    if (server < 0) return -1;\n    \n    int opt = 1;\n    setsockopt(server, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt));\n    \n    struct sockaddr_in addr = {0};\n    addr.sin_family = AF_INET;\n    addr.sin_addr.s_addr = INADDR_ANY;\n    addr.sin_port = htons(port);\n    \n    if (bind(server, (struct sockaddr*)&addr, sizeof(addr)) < 0) {\n        close(server);\n        return -1;\n    }\n    \n    if (listen(server, 10) < 0) {\n        close(server);\n        return -1;\n    }\n    \n    return server;\n}\n```\n\n## TCP Client Example\n\n```cpp\nint createTCPClient(const char* ip, int port) {\n    int client = socket(AF_INET, SOCK_STREAM, 0);\n    if (client < 0) return -1;\n    \n    struct sockaddr_in addr = {0};\n    addr.sin_family = AF_INET;\n    addr.sin_port = htons(port);\n    inet_pton(AF_INET, ip, &addr.sin_addr);\n    \n    if (connect(client, (struct sockaddr*)&addr, sizeof(addr)) < 0) {\n        close(client);\n        return -1;\n    }\n    \n    return client;\n}\n```\n\n## Send All Data\n\n```cpp\nssize_t sendAll(int sock, const void* data, size_t len) {\n    size_t sent = 0;\n    while (sent < len) {\n        ssize_t n = send(sock, (char*)data + sent, len - sent, 0);\n        if (n <= 0) return n;\n        sent += n;\n    }\n    return sent;\n}\n```\n\n## Receive All Data\n\n```cpp\nssize_t recvAll(int sock, void* buffer, size_t len) {\n    size_t received = 0;\n    while (received < len) {\n        ssize_t n = recv(sock, (char*)buffer + received, len - received, 0);\n        if (n <= 0) return n;\n        received += n;\n    }\n    return received;\n}\n```\n\n## Graceful Shutdown\n\n```cpp\nvoid gracefulShutdown(int sock) {\n    // Send FIN\n    shutdown(sock, SHUT_WR);\n    \n    // Receive remaining data\n    char buffer[1024];\n    ssize_t bytes;\n    while ((bytes = recv(sock, buffer, sizeof(buffer), 0)) > 0) {\n        // Process remaining data\n    }\n    \n    close(sock);\n}\n```\n\n## Socket Options\n\n```cpp\n// Reuse address\nint reuse = 1;\nsetsockopt(sock, SOL_SOCKET, SO_REUSEADDR, &reuse, sizeof(reuse));\n\n// Set timeout\nstruct timeval tv = {10, 0};  // 10 seconds\nsetsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, &tv, sizeof(tv));\nsetsockopt(sock, SOL_SOCKET, SO_SNDTIMEO, &tv, sizeof(tv));\n\n// Keepalive\nint keepalive = 1;\nsetsockopt(sock, SOL_SOCKET, SO_KEEPALIVE, &keepalive, sizeof(keepalive));\n\n// Disable Nagle\nint nodelay = 1;\nsetsockopt(sock, IPPROTO_TCP, TCP_NODELAY, &nodelay, sizeof(nodelay));\n\n// Buffer sizes\nint bufsize = 65536;\nsetsockopt(sock, SOL_SOCKET, SO_RCVBUF, &bufsize, sizeof(bufsize));\nsetsockopt(sock, SOL_SOCKET, SO_SNDBUF, &bufsize, sizeof(bufsize));\n```\n\n## Common TCP Errors\n\n| Error | Description |\n|-------|-------------|\n| ECONNREFUSED | Connection refused |\n| ETIMEDOUT | Connection timeout |\n| EPIPE | Broken pipe |\n| ECONNRESET | Connection reset |\n| EINPROGRESS | Non-blocking connect |\n\n## Best Practices\n\n1. **Handle partial sends**: sendAll/recvAll\n2. **Set timeouts**: Avoid hanging\n3. **Graceful shutdown**: Use shutdown() before close()\n4. **Error checking**: Always check return values\n5. **Reuse address**: SO_REUSEADDR\n6. **Keepalive**: Detect dead connections\n"
         },
         {
           "id": "cpp-U38-L3",
-          "title": "Hopcroft–Karp",
-          "unitTitle": "38. Matching Algorithms",
-          "xp": 15,
+          "title": "UDP Programming",
+          "unitTitle": "38. Network Programming",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-38-3-1",
+              "type": "typing",
+              "question": "UDP?",
+              "correctAnswer": [
+                "user datagram protocol",
+                "unreliable",
+                "connectionless"
+              ],
+              "explanation": "Unreliable, connectionless protocol.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-3-2",
+              "type": "typing",
+              "question": "SOCK_DGRAM?",
+              "correctAnswer": [
+                "UDP",
+                "datagram",
+                "connectionless"
+              ],
+              "explanation": "UDP socket type.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-3-3",
+              "type": "typing",
+              "question": "sendto?",
+              "correctAnswer": [
+                "send to address",
+                "UDP send",
+                "destination"
+              ],
+              "explanation": "Send to specific address.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-3-4",
+              "type": "multiple",
+              "question": "UDP features?",
+              "options": [
+                "fast",
+                "unordered",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Fast and unordered.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-3-5",
+              "type": "multiple",
+              "question": "UDP functions?",
+              "options": [
+                "sendto",
+                "recvfrom",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both functions.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-3-6",
+              "type": "code",
+              "question": "UDP socket.",
+              "correctAnswer": [
+                "int sock = socket(AF_INET, SOCK_DGRAM, 0);",
+                "socket"
+              ],
+              "explanation": "Create UDP socket.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-3-7",
+              "type": "code",
+              "question": "Send UDP.",
+              "correctAnswer": [
+                "sendto(sock, data, size, 0, (struct sockaddr*)&addr, sizeof(addr));",
+                "sendto"
+              ],
+              "explanation": "Send UDP datagram.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-3-8",
+              "type": "code",
+              "question": "Receive UDP.",
+              "correctAnswer": [
+                "struct sockaddr_in from;\nsocklen_t fromlen = sizeof(from);\nrecvfrom(sock, buffer, size, 0, (struct sockaddr*)&from, &fromlen);",
+                "recvfrom"
+              ],
+              "explanation": "Receive UDP datagram.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-3-9",
+              "type": "code",
+              "question": "UDP server.",
+              "correctAnswer": [
+                "int sock = socket(AF_INET, SOCK_DGRAM, 0);\nstruct sockaddr_in addr = {0};\naddr.sin_family = AF_INET;\naddr.sin_addr.s_addr = INADDR_ANY;\naddr.sin_port = htons(8080);\nbind(sock, (struct sockaddr*)&addr, sizeof(addr));",
+                "server"
+              ],
+              "explanation": "UDP server setup.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-3-10",
+              "type": "code",
+              "question": "UDP client.",
+              "correctAnswer": [
+                "int sock = socket(AF_INET, SOCK_DGRAM, 0);\nstruct sockaddr_in addr = {0};\naddr.sin_family = AF_INET;\naddr.sin_port = htons(8080);\ninet_pton(AF_INET, \"127.0.0.1\", &addr.sin_addr);",
+                "client"
+              ],
+              "explanation": "UDP client setup.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-3-11",
+              "type": "code",
+              "question": "No connection.",
+              "correctAnswer": [
+                "// UDP is connectionless, no connect() needed",
+                "no connect"
+              ],
+              "explanation": "UDP is connectionless.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-3-12",
+              "type": "code",
+              "question": "Packet loss.",
+              "correctAnswer": [
+                "// UDP may lose packets, no guarantee",
+                "loss"
+              ],
+              "explanation": "Handle packet loss.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-3-13",
+              "type": "code",
+              "question": "Unordered delivery.",
+              "correctAnswer": [
+                "// UDP packets may arrive out of order",
+                "unordered"
+              ],
+              "explanation": "Handle unordered delivery.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-3-14",
+              "type": "code",
+              "question": "Broadcast.",
+              "correctAnswer": [
+                "int broadcast = 1;\nsetsockopt(sock, SOL_SOCKET, SO_BROADCAST, &broadcast, sizeof(broadcast));\naddr.sin_addr.s_addr = INADDR_BROADCAST;",
+                "broadcast"
+              ],
+              "explanation": "Enable UDP broadcast.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-3-15",
+              "type": "code",
+              "question": "Multicast.",
+              "correctAnswer": [
+                "// Use IP multicast addresses",
+                "multicast"
+              ],
+              "explanation": "UDP multicast.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-3-16",
+              "type": "code",
+              "question": "Connected UDP.",
+              "correctAnswer": [
+                "connect(sock, (struct sockaddr*)&addr, sizeof(addr));\n// Now can use send/recv",
+                "connected udp"
+              ],
+              "explanation": "Connected UDP socket.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-3-17",
+              "type": "code",
+              "question": "Testing UDP.",
+              "correctAnswer": [
+                "void testUDP() { // Test UDP operations }",
+                "test"
+              ],
+              "explanation": "Test UDP operations.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-3-18",
+              "type": "code",
+              "question": "Performance.",
+              "correctAnswer": [
+                "// UDP is faster, lower latency",
+                "performance"
+              ],
+              "explanation": "UDP performance.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-3-19",
+              "type": "code",
+              "question": "Use cases.",
+              "correctAnswer": [
+                "// DNS, VoIP, gaming, streaming",
+                "use cases"
+              ],
+              "explanation": "UDP use cases.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-3-20",
+              "type": "code",
+              "question": "Reliability layer.",
+              "correctAnswer": [
+                "// Add ACK, sequence numbers for reliability",
+                "reliability"
+              ],
+              "explanation": "Build reliability on UDP.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-3-21",
+              "type": "code",
+              "question": "Max datagram size.",
+              "correctAnswer": [
+                "// 65507 bytes (65535 - IP header - UDP header)",
+                "max size"
+              ],
+              "explanation": "Maximum UDP datagram.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-3-22",
+              "type": "code",
+              "question": "Fragmentation.",
+              "correctAnswer": [
+                "// Large UDP packets fragment at IP layer",
+                "fragmentation"
+              ],
+              "explanation": "UDP fragmentation.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-3-23",
+              "type": "code",
+              "question": "Checksum.",
+              "correctAnswer": [
+                "// UDP has optional checksum",
+                "checksum"
+              ],
+              "explanation": "UDP checksum.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-3-24",
+              "type": "code",
+              "question": "TCP vs UDP.",
+              "correctAnswer": [
+                "// TCP: reliable, slower; UDP: unreliable, faster",
+                "compare"
+              ],
+              "explanation": "TCP vs UDP comparison.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-3-25",
+              "type": "code",
+              "question": "Summary.",
+              "correctAnswer": [
+                "// UDP: connectionless, fast, unreliable, datagrams",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# UDP Programming\n\nFast, connectionless network programming.\n\n## UDP Characteristics\n\n- **Fast**: Low overhead\n- **Connectionless**: No handshake\n- **Unreliable**: No delivery guarantee\n- **Unordered**: No ordering guarantee\n- **Datagram-based**: Message boundaries\n\n## UDP Socket Creation\n\n```cpp\n#include <sys/socket.h>\n#include <netinet/in.h>\n#include <arpa/inet.h>\n\nint sock = socket(AF_INET, SOCK_DGRAM, 0);\nif (sock < 0) {\n    perror(\"socket error\");\n    return -1;\n}\n```\n\n## UDP Send\n\n```cpp\nconst char* message = \"Hello, UDP!\";\nstruct sockaddr_in dest_addr = {0};\ndest_addr.sin_family = AF_INET;\ndest_addr.sin_port = htons(8080);\ninet_pton(AF_INET, \"127.0.0.1\", &dest_addr.sin_addr);\n\nssize_t sent = sendto(sock, message, strlen(message), 0,\n                      (struct sockaddr*)&dest_addr, \n                      sizeof(dest_addr));\n```\n\n## UDP Receive\n\n```cpp\nchar buffer[1024];\nstruct sockaddr_in from_addr = {0};\nsocklen_t from_len = sizeof(from_addr);\n\nssize_t received = recvfrom(sock, buffer, sizeof(buffer), 0,\n                             (struct sockaddr*)&from_addr, \n                             &from_len);\n\nif (received > 0) {\n    buffer[received] = '\\0';\n    printf(\"Received: %s\\n\", buffer);\n}\n```\n\n## UDP Server\n\n```cpp\nint createUDPServer(int port) {\n    int sock = socket(AF_INET, SOCK_DGRAM, 0);\n    if (sock < 0) return -1;\n    \n    struct sockaddr_in addr = {0};\n    addr.sin_family = AF_INET;\n    addr.sin_addr.s_addr = INADDR_ANY;\n    addr.sin_port = htons(port);\n    \n    if (bind(sock, (struct sockaddr*)&addr, sizeof(addr)) < 0) {\n        close(sock);\n        return -1;\n    }\n    \n    return sock;\n}\n```\n\n## UDP Client\n\n```cpp\nint sendUDPMessage(const char* ip, int port, \n                    const char* message) {\n    int sock = socket(AF_INET, SOCK_DGRAM, 0);\n    if (sock < 0) return -1;\n    \n    struct sockaddr_in addr = {0};\n    addr.sin_family = AF_INET;\n    addr.sin_port = htons(port);\n    inet_pton(AF_INET, ip, &addr.sin_addr);\n    \n    ssize_t sent = sendto(sock, message, strlen(message), 0,\n                          (struct sockaddr*)&addr, \n                          sizeof(addr));\n    \n    close(sock);\n    return sent;\n}\n```\n\n## Connected UDP\n\n```cpp\n// Connect to specific address\nconnect(sock, (struct sockaddr*)&addr, sizeof(addr));\n\n// Now can use send/recv instead of sendto/recvfrom\nsend(sock, data, size, 0);\nrecv(sock, buffer, size, 0);\n```\n\n## UDP Broadcast\n\n```cpp\nint broadcast = 1;\nsetsockopt(sock, SOL_SOCKET, SO_BROADCAST, \n           &broadcast, sizeof(broadcast));\n\nstruct sockaddr_in broadcast_addr = {0};\nbroadcast_addr.sin_family = AF_INET;\nbroadcast_addr.sin_port = htons(8080);\nbroadcast_addr.sin_addr.s_addr = INADDR_BROADCAST;\n\nsendto(sock, message, strlen(message), 0,\n       (struct sockaddr*)&broadcast_addr, \n       sizeof(broadcast_addr));\n```\n\n## UDP vs TCP\n\n| Aspect | TCP | UDP |\n|--------|-----|-----|\n| Reliability | Guaranteed | No guarantee |\n| Ordering | Guaranteed | No ordering |\n| Connection | Required | Connectionless |\n| Speed | Slower | Faster |\n| Overhead | Higher | Lower |\n| Use Case | HTTP, FTP | DNS, VoIP, Gaming |\n\n## UDP Use Cases\n\n- **DNS**: Fast lookups\n- **VoIP**: Real-time audio\n- **Gaming**: Fast updates\n- **Streaming**: Real-time video\n- **DHCP**: Configuration\n- **SNMP**: Network monitoring\n\n## Handling Packet Loss\n\n```cpp\n// Add sequence numbers\nstruct Packet {\n    uint32_t seq;\n    char data[1000];\n};\n\n// Implement ACK/retry\nuint32_t expected_seq = 0;\nwhile (true) {\n    Packet pkt;\n    recvfrom(sock, &pkt, sizeof(pkt), 0, ...);\n    if (pkt.seq >= expected_seq) {\n        expected_seq = pkt.seq + 1;\n        sendACK(pkt.seq);\n    }\n}\n```\n"
         },
         {
           "id": "cpp-U38-L4",
-          "title": "Blossom algorithm",
-          "unitTitle": "38. Matching Algorithms",
-          "xp": 15,
+          "title": "Socket Options",
+          "unitTitle": "38. Network Programming",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-38-4-1",
+              "type": "typing",
+              "question": "setsockopt?",
+              "correctAnswer": [
+                "set socket option",
+                "configure",
+                "socket behavior"
+              ],
+              "explanation": "Set socket options.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-4-2",
+              "type": "typing",
+              "question": "SO_REUSEADDR?",
+              "correctAnswer": [
+                "reuse address",
+                "bind again",
+                "immediate restart"
+              ],
+              "explanation": "Reuse socket address.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-4-3",
+              "type": "typing",
+              "question": "SO_KEEPALIVE?",
+              "correctAnswer": [
+                "keepalive",
+                "detect dead",
+                "heartbeat"
+              ],
+              "explanation": "Enable TCP keepalive.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-4-4",
+              "type": "multiple",
+              "question": "Timeout options?",
+              "options": [
+                "SO_RCVTIMEO",
+                "SO_SNDTIMEO",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both timeout options.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-4-5",
+              "type": "multiple",
+              "question": "Buffer options?",
+              "options": [
+                "SO_RCVBUF",
+                "SO_SNDBUF",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both buffer options.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-4-6",
+              "type": "code",
+              "question": "Set reuse address.",
+              "correctAnswer": [
+                "int opt = 1;\nsetsockopt(sock, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt));",
+                "reuse"
+              ],
+              "explanation": "Set SO_REUSEADDR.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-4-7",
+              "type": "code",
+              "question": "Set keepalive.",
+              "correctAnswer": [
+                "int opt = 1;\nsetsockopt(sock, SOL_SOCKET, SO_KEEPALIVE, &opt, sizeof(opt));",
+                "keepalive"
+              ],
+              "explanation": "Set SO_KEEPALIVE.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-4-8",
+              "type": "code",
+              "question": "Set timeout.",
+              "correctAnswer": [
+                "struct timeval tv = {10, 0};\nsetsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, &tv, sizeof(tv));",
+                "timeout"
+              ],
+              "explanation": "Set socket timeout.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-4-9",
+              "type": "code",
+              "question": "Set buffer size.",
+              "correctAnswer": [
+                "int bufsize = 65536;\nsetsockopt(sock, SOL_SOCKET, SO_RCVBUF, &bufsize, sizeof(bufsize));",
+                "buffer"
+              ],
+              "explanation": "Set receive buffer.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-4-10",
+              "type": "code",
+              "question": "TCP_NODELAY.",
+              "correctAnswer": [
+                "int opt = 1;\nsetsockopt(sock, IPPROTO_TCP, TCP_NODELAY, &opt, sizeof(opt));",
+                "nodelay"
+              ],
+              "explanation": "Set TCP_NODELAY.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-4-11",
+              "type": "code",
+              "question": "SO_BROADCAST.",
+              "correctAnswer": [
+                "int opt = 1;\nsetsockopt(sock, SOL_SOCKET, SO_BROADCAST, &opt, sizeof(opt));",
+                "broadcast"
+              ],
+              "explanation": "Enable broadcast.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-4-12",
+              "type": "code",
+              "question": "SO_LINGER.",
+              "correctAnswer": [
+                "struct linger ling = {1, 10}; // l_onoff=1, l_linger=10\nsetsockopt(sock, SOL_SOCKET, SO_LINGER, &ling, sizeof(ling));",
+                "linger"
+              ],
+              "explanation": "Set SO_LINGER.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-4-13",
+              "type": "code",
+              "question": "Get socket option.",
+              "correctAnswer": [
+                "int opt, optlen;\ngetsockopt(sock, SOL_SOCKET, SO_REUSEADDR, &opt, &optlen);",
+                "getsockopt"
+              ],
+              "explanation": "Get socket option.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-4-14",
+              "type": "code",
+              "question": "Non-blocking mode.",
+              "correctAnswer": [
+                "int flags = fcntl(sock, F_GETFL, 0);\nfcntl(sock, F_SETFL, flags | O_NONBLOCK);",
+                "nonblocking"
+              ],
+              "explanation": "Set non-blocking mode.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-4-15",
+              "type": "code",
+              "question": "Testing options.",
+              "correctAnswer": [
+                "void testSocketOptions() { // Test socket options }",
+                "test"
+              ],
+              "explanation": "Test socket options.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-4-16",
+              "type": "code",
+              "question": "Common use cases.",
+              "correctAnswer": [
+                "// Reuse: quick restart; Keepalive: detect disconnect; Timeout: avoid hang",
+                "use cases"
+              ],
+              "explanation": "Common use cases.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-4-17",
+              "type": "code",
+              "question": "Performance tuning.",
+              "correctAnswer": [
+                "// Adjust buffers, disable Nagle, use keepalive",
+                "tuning"
+              ],
+              "explanation": "Performance tuning.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-4-18",
+              "type": "code",
+              "question": "Debugging.",
+              "correctAnswer": [
+                "// Get options to check current settings",
+                "debug"
+              ],
+              "explanation": "Debug socket options.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-4-19",
+              "type": "code",
+              "question": "Error handling.",
+              "correctAnswer": [
+                "if (setsockopt(...) < 0) { perror(\"setsockopt\"); }",
+                "error"
+              ],
+              "explanation": "Handle option errors.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-4-20",
+              "type": "code",
+              "question": "Platform differences.",
+              "correctAnswer": [
+                "// Some options differ between Unix and Windows",
+                "platform"
+              ],
+              "explanation": "Platform differences.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-4-21",
+              "type": "code",
+              "question": "Security options.",
+              "correctAnswer": [
+                "// SO_BINDTODEVICE, IP_TTL, etc.",
+                "security"
+              ],
+              "explanation": "Security options.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-4-22",
+              "type": "code",
+              "question": "IPv6 options.",
+              "correctAnswer": [
+                "// IPV6_V6ONLY, IPV6_UNICAST_HOPS, etc.",
+                "ipv6"
+              ],
+              "explanation": "IPv6 socket options.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-4-23",
+              "type": "code",
+              "question": "TCP specific.",
+              "correctAnswer": [
+                "// TCP_NODELAY, TCP_KEEPALIVE, TCP_CORK",
+                "tcp"
+              ],
+              "explanation": "TCP-specific options.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-4-24",
+              "type": "code",
+              "question": "UDP specific.",
+              "correctAnswer": [
+                "// IP_MULTICAST_TTL, IP_ADD_MEMBERSHIP",
+                "udp"
+              ],
+              "explanation": "UDP-specific options.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-4-25",
+              "type": "code",
+              "question": "Summary.",
+              "correctAnswer": [
+                "// Options: SO_REUSEADDR, SO_KEEPALIVE, timeouts, buffers",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Socket Options\n\nConfiguring socket behavior with options.\n\n## Setting Options\n\n```cpp\n#include <sys/socket.h>\n\nint setsockopt(int sockfd, int level, int optname,\n               const void *optval, socklen_t optlen);\n```\n\n## Common Socket Options\n\n### SO_REUSEADDR\n\nAllows binding to address that's in TIME_WAIT state.\n\n```cpp\nint reuse = 1;\nsetsockopt(sock, SOL_SOCKET, SO_REUSEADDR, \n           &reuse, sizeof(reuse));\n```\n\n**Use case:** Quick server restart\n\n### SO_KEEPALIVE\n\nDetect dead connections.\n\n```cpp\nint keepalive = 1;\nsetsockopt(sock, SOL_SOCKET, SO_KEEPALIVE, \n           &keepalive, sizeof(keepalive));\n```\n\n**Use case:** Long-lived connections\n\n### SO_RCVTIMEO / SO_SNDTIMEO\n\nSet socket timeouts.\n\n```cpp\nstruct timeval tv = {10, 0};  // 10 seconds\nsetsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, &tv, sizeof(tv));\nsetsockopt(sock, SOL_SOCKET, SO_SNDTIMEO, &tv, sizeof(tv));\n```\n\n**Use case:** Avoid blocking forever\n\n### SO_RCVBUF / SO_SNDBUF\n\nSet buffer sizes.\n\n```cpp\nint bufsize = 65536;  // 64KB\nsetsockopt(sock, SOL_SOCKET, SO_RCVBUF, \n           &bufsize, sizeof(bufsize));\nsetsockopt(sock, SOL_SOCKET, SO_SNDBUF, \n           &bufsize, sizeof(bufsize));\n```\n\n**Use case:** Performance tuning\n\n### TCP_NODELAY\n\nDisable Nagle algorithm.\n\n```cpp\nint nodelay = 1;\nsetsockopt(sock, IPPROTO_TCP, TCP_NODELAY, \n           &nodelay, sizeof(nodelay));\n```\n\n**Use case:** Real-time applications\n\n### SO_BROADCAST\n\nEnable UDP broadcast.\n\n```cpp\nint broadcast = 1;\nsetsockopt(sock, SOL_SOCKET, SO_BROADCAST, \n           &broadcast, sizeof(broadcast));\n```\n\n**Use case:** Discovery protocols\n\n### SO_LINGER\n\nControl close behavior.\n\n```cpp\nstruct linger ling = {1, 10};  // Wait up to 10 seconds\nsetsockopt(sock, SOL_SOCKET, SO_LINGER, \n           &ling, sizeof(ling));\n```\n\n**Use case:** Ensure data sent on close\n\n## Getting Options\n\n```cpp\n#include <sys/socket.h>\n\nint getsockopt(int sockfd, int level, int optname,\n               void *optval, socklen_t *optlen);\n```\n\n```cpp\nint opt, optlen;\ngetsockopt(sock, SOL_SOCKET, SO_REUSEADDR, &opt, &optlen);\n```\n\n## Non-Blocking Mode\n\n```cpp\n#include <fcntl.h>\n\nint flags = fcntl(sock, F_GETFL, 0);\nfcntl(sock, F_SETFL, flags | O_NONBLOCK);\n```\n\n## Option Reference\n\n| Level | Option | Type | Description |\n|-------|--------|------|-------------|\n| SOL_SOCKET | SO_REUSEADDR | int | Reuse address |\n| SOL_SOCKET | SO_KEEPALIVE | int | TCP keepalive |\n| SOL_SOCKET | SO_RCVTIMEO | timeval | Receive timeout |\n| SOL_SOCKET | SO_SNDTIMEO | timeval | Send timeout |\n| SOL_SOCKET | SO_RCVBUF | int | Receive buffer |\n| SOL_SOCKET | SO_SNDBUF | int | Send buffer |\n| SOL_SOCKET | SO_BROADCAST | int | Allow broadcast |\n| SOL_SOCKET | SO_LINGER | linger | Close behavior |\n| IPPROTO_TCP | TCP_NODELAY | int | Disable Nagle |\n| IPPROTO_IP | IP_TTL | int | Time-to-live |\n| IPPROTO_IP | IP_MULTICAST_TTL | int | Multicast TTL |\n\n## Best Practices\n\n1. **Always set SO_REUSEADDR** on server sockets\n2. **Use timeouts** to avoid blocking\n3. **Keepalive** for long connections\n4. **Tune buffers** for performance\n5. **Nagle off** for real-time\n6. **Check errors** on setsockopt\n\n## Common Patterns\n\n```cpp\n// Server socket setup\nint sock = socket(AF_INET, SOCK_STREAM, 0);\nint reuse = 1;\nsetsockopt(sock, SOL_SOCKET, SO_REUSEADDR, &reuse, sizeof(reuse));\n\n// Client with timeout\nint sock = socket(AF_INET, SOCK_STREAM, 0);\nstruct timeval tv = {5, 0};\nsetsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, &tv, sizeof(tv));\nsetsockopt(sock, SOL_SOCKET, SO_SNDTIMEO, &tv, sizeof(tv));\n\n// Real-time socket\nint sock = socket(AF_INET, SOCK_STREAM, 0);\nint nodelay = 1;\nsetsockopt(sock, IPPROTO_TCP, TCP_NODELAY, &nodelay, sizeof(nodelay));\n```\n"
+        },
+        {
+          "id": "cpp-U38-L5",
+          "title": "HTTP Protocol",
+          "questions": [
+            {
+              "id": "cpp-38-5-1",
+              "type": "typing",
+              "question": "HTTP?",
+              "correctAnswer": [
+                "hypertext transfer protocol",
+                "web",
+                "request-response"
+              ],
+              "explanation": "Web protocol.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-5-2",
+              "type": "typing",
+              "question": "GET?",
+              "correctAnswer": [
+                "retrieve",
+                "fetch",
+                "request"
+              ],
+              "explanation": "HTTP GET method.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-5-3",
+              "type": "typing",
+              "question": "POST?",
+              "correctAnswer": [
+                "submit",
+                "send data",
+                "upload"
+              ],
+              "explanation": "HTTP POST method.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-5-4",
+              "type": "multiple",
+              "question": "Methods?",
+              "options": [
+                "GET",
+                "POST",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both GET and POST.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-5-5",
+              "type": "multiple",
+              "question": "Status codes?",
+              "options": [
+                "200",
+                "404",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both status codes.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-5-6",
+              "type": "code",
+              "question": "HTTP GET request.",
+              "correctAnswer": [
+                "string request = \"GET / HTTP/1.1\\r\\nHost: example.com\\r\\nConnection: close\\r\\n\\r\\n\";",
+                "get"
+              ],
+              "explanation": "HTTP GET request.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-5-7",
+              "type": "code",
+              "question": "HTTP POST request.",
+              "correctAnswer": [
+                "string request = \"POST /api/data HTTP/1.1\\r\\nHost: example.com\\r\\nContent-Type: application/json\\r\\nContent-Length: 13\\r\\n\\r\\n{\\\"key\\\":\\\"value\\\"}\";",
+                "post"
+              ],
+              "explanation": "HTTP POST request.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-5-8",
+              "type": "code",
+              "question": "Parse HTTP response.",
+              "correctAnswer": [
+                "// Parse status line, headers, body",
+                "parse"
+              ],
+              "explanation": "Parse HTTP response.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-5-9",
+              "type": "code",
+              "question": "HTTP client.",
+              "correctAnswer": [
+                "int sock = socket(AF_INET, SOCK_STREAM, 0);\nconnect(sock, &addr, sizeof(addr));\nsend(sock, request.c_str(), request.size(), 0);\nrecv(sock, buffer, size, 0);",
+                "client"
+              ],
+              "explanation": "Simple HTTP client.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-5-10",
+              "type": "code",
+              "question": "HTTP server.",
+              "correctAnswer": [
+                "// Accept connection, parse request, send response",
+                "server"
+              ],
+              "explanation": "Simple HTTP server.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-5-11",
+              "type": "code",
+              "question": "Status line.",
+              "correctAnswer": [
+                "string status = \"HTTP/1.1 200 OK\\r\\n\";",
+                "status"
+              ],
+              "explanation": "HTTP status line.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-5-12",
+              "type": "code",
+              "question": "Content-Type.",
+              "correctAnswer": [
+                "string header = \"Content-Type: text/html\\r\\n\";",
+                "content type"
+              ],
+              "explanation": "Content-Type header.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-5-13",
+              "type": "code",
+              "question": "Content-Length.",
+              "correctAnswer": [
+                "string header = \"Content-Length: \" + to_string(body.size()) + \"\\r\\n\";",
+                "content length"
+              ],
+              "explanation": "Content-Length header.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-5-14",
+              "type": "code",
+              "question": "HTTP methods.",
+              "correctAnswer": [
+                "// GET, POST, PUT, DELETE, HEAD, OPTIONS, PATCH",
+                "methods"
+              ],
+              "explanation": "HTTP methods.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-5-15",
+              "type": "code",
+              "question": "Status codes.",
+              "correctAnswer": [
+                "// 2xx: success, 3xx: redirect, 4xx: client error, 5xx: server error",
+                "codes"
+              ],
+              "explanation": "HTTP status codes.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-5-16",
+              "type": "code",
+              "question": "Testing HTTP.",
+              "correctAnswer": [
+                "void testHTTP() { // Test HTTP operations }",
+                "test"
+              ],
+              "explanation": "Test HTTP operations.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-5-17",
+              "type": "code",
+              "question": "Headers.",
+              "correctAnswer": [
+                "// Common headers: Host, User-Agent, Accept, Content-Type",
+                "headers"
+              ],
+              "explanation": "Common HTTP headers.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-5-18",
+              "type": "code",
+              "question": "Keep-alive.",
+              "correctAnswer": [
+                "// Connection: keep-alive for persistent connections",
+                "keepalive"
+              ],
+              "explanation": "HTTP keep-alive.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-5-19",
+              "type": "code",
+              "question": "Chunked encoding.",
+              "correctAnswer": [
+                "// Transfer-Encoding: chunked for streaming",
+                "chunked"
+              ],
+              "explanation": "Chunked transfer encoding.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-5-20",
+              "type": "code",
+              "question": "HTTPS.",
+              "correctAnswer": [
+                "// Use TLS/SSL for HTTPS",
+                "https"
+              ],
+              "explanation": "HTTPS security.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-5-21",
+              "type": "code",
+              "question": "Error handling.",
+              "correctAnswer": [
+                "// Check status code, handle errors",
+                "error"
+              ],
+              "explanation": "Handle HTTP errors.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-5-22",
+              "type": "code",
+              "question": "Redirects.",
+              "correctAnswer": [
+                "// Follow 3xx status codes with Location header",
+                "redirects"
+              ],
+              "explanation": "Handle redirects.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-5-23",
+              "type": "code",
+              "question": "Cookies.",
+              "correctAnswer": [
+                "// Set-Cookie header, Cookie header",
+                "cookies"
+              ],
+              "explanation": "HTTP cookies.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-5-24",
+              "type": "code",
+              "question": "REST API.",
+              "correctAnswer": [
+                "// Use HTTP methods for RESTful APIs",
+                "rest"
+              ],
+              "explanation": "REST API design.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-5-25",
+              "type": "code",
+              "question": "Summary.",
+              "correctAnswer": [
+                "// HTTP: methods, status codes, headers, request-response",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            }
+          ],
+          "unitTitle": "38. Network Programming",
+          "xp": 85,
+          "type": "lesson",
+          "difficulty": "intermediate",
+          "lessonText": "# HTTP Protocol\n\nHypertext Transfer Protocol for web communication.\n\n## HTTP Request Structure\n\n```http\nGET /path HTTP/1.1\nHost: example.com\nUser-Agent: MyClient/1.0\nAccept: */*\n\nBody (for POST/PUT)\n```\n\n## HTTP Response Structure\n\n```http\nHTTP/1.1 200 OK\nContent-Type: text/html\nContent-Length: 1234\n\n<html><body>Hello</body></html>\n```\n\n## HTTP Methods\n\n| Method | Description | Safe | Idempotent |\n|--------|-------------|------|------------|\n| GET | Retrieve | Yes | Yes |\n| POST | Submit | No | No |\n| PUT | Update | No | Yes |\n| DELETE | Remove | No | Yes |\n| HEAD | Headers | Yes | Yes |\n| OPTIONS | Capabilities | Yes | Yes |\n\n## HTTP GET Request\n\n```cpp\n#include <string>\nusing namespace std;\n\nstring buildGETRequest(const string& host, const string& path) {\n    string request = \"GET \" + path + \" HTTP/1.1\\r\\n\";\n    request += \"Host: \" + host + \"\\r\\n\";\n    request += \"User-Agent: MyClient/1.0\\r\\n\";\n    request += \"Connection: close\\r\\n\";\n    request += \"\\r\\n\";\n    return request;\n}\n```\n\n## HTTP POST Request\n\n```cpp\nstring buildPOSTRequest(const string& host, const string& path,\n                       const string& body) {\n    string request = \"POST \" + path + \" HTTP/1.1\\r\\n\";\n    request += \"Host: \" + host + \"\\r\\n\";\n    request += \"Content-Type: application/json\\r\\n\";\n    request += \"Content-Length: \" + to_string(body.size()) + \"\\r\\n\";\n    request += \"\\r\\n\";\n    request += body;\n    return request;\n}\n```\n\n## HTTP Client\n\n```cpp\n#include <sys/socket.h>\n#include <netinet/in.h>\n#include <arpa/inet.h>\n#include <unistd.h>\n#include <string>\n\nint main() {\n    int sock = socket(AF_INET, SOCK_STREAM, 0);\n    \n    struct sockaddr_in addr = {0};\n    addr.sin_family = AF_INET;\n    addr.sin_port = htons(80);\n    inet_pton(AF_INET, \"93.184.216.34\", &addr.sin_addr);\n    \n    connect(sock, (struct sockaddr*)&addr, sizeof(addr));\n    \n    string request = buildGETRequest(\"example.com\", \"/\");\n    send(sock, request.c_str(), request.size(), 0);\n    \n    char buffer[4096];\n    recv(sock, buffer, sizeof(buffer), 0);\n    \n    close(sock);\n    return 0;\n}\n```\n\n## HTTP Status Codes\n\n| Code | Class | Description |\n|------|-------|-------------|\n| 2xx | Success | Request succeeded |\n| 3xx | Redirect | Further action needed |\n| 4xx | Client Error | Bad request |\n| 5xx | Server Error | Server failed |\n\n**Common Codes:**\n- 200 OK\n- 201 Created\n- 301 Moved Permanently\n- 302 Found\n- 400 Bad Request\n- 401 Unauthorized\n- 403 Forbidden\n- 404 Not Found\n- 500 Internal Server Error\n\n## Common Headers\n\n| Header | Description |\n|--------|-------------|\n| Host | Domain name |\n| User-Agent | Client software |\n| Accept | Content types |\n| Content-Type | Body type |\n| Content-Length | Body size |\n| Connection | Connection control |\n| Location | Redirect URL |\n| Set-Cookie | Cookie setting |\n| Authorization | Credentials |\n\n## REST API Example\n\n```cpp\n// GET /api/users\nstring getUsers() {\n    return buildGETRequest(\"api.example.com\", \"/api/users\");\n}\n\n// POST /api/users\nstring createUser(const string& json) {\n    return buildPOSTRequest(\"api.example.com\", \"/api/users\", json);\n}\n\n// PUT /api/users/123\nstring updateUser(int id, const string& json) {\n    string path = \"/api/users/\" + to_string(id);\n    return buildPOSTRequest(\"api.example.com\", path, json);\n}\n\n// DELETE /api/users/123\nstring deleteUser(int id) {\n    string path = \"/api/users/\" + to_string(id);\n    // Use DELETE method\n    return \"DELETE \" + path + \" HTTP/1.1\\r\\n...\\r\\n\";\n}\n```\n"
+        },
+        {
+          "id": "cpp-U38-L6",
+          "title": "Asynchronous I/O",
+          "questions": [
+            {
+              "id": "cpp-38-6-1",
+              "type": "typing",
+              "question": "select?",
+              "correctAnswer": [
+                "multiplex",
+                "monitor",
+                "multiple sockets"
+              ],
+              "explanation": "Monitor multiple sockets.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-6-2",
+              "type": "typing",
+              "question": "poll?",
+              "correctAnswer": [
+                "multiplex",
+                "monitor",
+                "alternative"
+              ],
+              "explanation": "Alternative to select.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-6-3",
+              "type": "typing",
+              "question": "epoll?",
+              "correctAnswer": [
+                "Linux",
+                "scalable",
+                "high performance"
+              ],
+              "explanation": "Linux scalable I/O.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-6-4",
+              "type": "multiple",
+              "question": "Async methods?",
+              "options": [
+                "select",
+                "poll",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both async methods.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-6-5",
+              "type": "multiple",
+              "question": "Advantages?",
+              "options": [
+                "scalable",
+                "efficient",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both advantages.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-6-6",
+              "type": "code",
+              "question": "select example.",
+              "correctAnswer": [
+                "fd_set readfds;\nFD_ZERO(&readfds);\nFD_SET(sock, &readfds);\nselect(sock + 1, &readfds, NULL, NULL, NULL);",
+                "select"
+              ],
+              "explanation": "select() example.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-6-7",
+              "type": "code",
+              "question": "poll example.",
+              "correctAnswer": [
+                "struct pollfd fds[1];\nfds[0].fd = sock;\nfds[0].events = POLLIN;\npoll(fds, 1, -1);",
+                "poll"
+              ],
+              "explanation": "poll() example.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-6-8",
+              "type": "code",
+              "question": "epoll create.",
+              "correctAnswer": [
+                "int epfd = epoll_create1(0);",
+                "epoll create"
+              ],
+              "explanation": "Create epoll instance.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-6-9",
+              "type": "code",
+              "question": "epoll add.",
+              "correctAnswer": [
+                "struct epoll_event ev = {0};\nev.events = EPOLLIN;\nev.data.fd = sock;\nepoll_ctl(epfd, EPOLL_CTL_ADD, sock, &ev);",
+                "epoll add"
+              ],
+              "explanation": "Add socket to epoll.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-6-10",
+              "type": "code",
+              "question": "epoll wait.",
+              "correctAnswer": [
+                "struct epoll_event events[MAX_EVENTS];\nint nfds = epoll_wait(epfd, events, MAX_EVENTS, -1);",
+                "epoll wait"
+              ],
+              "explanation": "Wait for epoll events.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-6-11",
+              "type": "code",
+              "question": "Non-blocking socket.",
+              "correctAnswer": [
+                "int flags = fcntl(sock, F_GETFL, 0);\nfcntl(sock, F_SETFL, flags | O_NONBLOCK);",
+                "nonblocking"
+              ],
+              "explanation": "Set non-blocking mode.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-6-12",
+              "type": "code",
+              "question": "Event loop.",
+              "correctAnswer": [
+                "while (running) {\n    int nfds = epoll_wait(epfd, events, MAX_EVENTS, 1000);\n    for (int i = 0; i < nfds; i++) {\n        if (events[i].events & EPOLLIN) {\n            // handle read\n        }\n    }\n}",
+                "event loop"
+              ],
+              "explanation": "Event loop pattern.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-6-13",
+              "type": "code",
+              "question": "Edge triggered.",
+              "correctAnswer": [
+                "ev.events = EPOLLIN | EPOLLET;",
+                "edge"
+              ],
+              "explanation": "Edge-triggered mode.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-6-14",
+              "type": "code",
+              "question": "Level triggered.",
+              "correctAnswer": [
+                "ev.events = EPOLLIN; // default level triggered",
+                "level"
+              ],
+              "explanation": "Level-triggered mode.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-6-15",
+              "type": "code",
+              "question": "Testing async.",
+              "correctAnswer": [
+                "void testAsyncIO() { // Test async I/O }",
+                "test"
+              ],
+              "explanation": "Test async I/O.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-6-16",
+              "type": "code",
+              "question": "Select limitations.",
+              "correctAnswer": [
+                "// FD_SETSIZE limit, O(n) complexity",
+                "select limits"
+              ],
+              "explanation": "Select limitations.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-6-17",
+              "type": "code",
+              "question": "Poll advantages.",
+              "correctAnswer": [
+                "// No FD limit, still O(n)",
+                "poll advantages"
+              ],
+              "explanation": "Poll advantages.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-6-18",
+              "type": "code",
+              "question": "Epoll advantages.",
+              "correctAnswer": [
+                "// O(1) complexity, scalable",
+                "epoll advantages"
+              ],
+              "explanation": "Epoll advantages.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-6-19",
+              "type": "code",
+              "question": "Error handling.",
+              "correctAnswer": [
+                "// Handle EAGAIN, EINTR for non-blocking",
+                "error"
+              ],
+              "explanation": "Handle async errors.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-6-20",
+              "type": "code",
+              "question": "Performance.",
+              "correctAnswer": [
+                "// Epoll best for many connections",
+                "performance"
+              ],
+              "explanation": "Performance comparison.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-6-21",
+              "type": "code",
+              "question": "Portability.",
+              "correctAnswer": [
+                "// select/poll portable, epoll Linux only",
+                "portability"
+              ],
+              "explanation": "Portability.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-6-22",
+              "type": "code",
+              "question": "Edge vs level.",
+              "correctAnswer": [
+                "// Edge: notification once, Level: continuous",
+                "edge level"
+              ],
+              "explanation": "Edge vs level triggered.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-6-23",
+              "type": "code",
+              "question": "Timeout handling.",
+              "correctAnswer": [
+                "// Use timeout in select/poll/epoll_wait",
+                "timeout"
+              ],
+              "explanation": "Handle timeouts.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-6-24",
+              "type": "code",
+              "question": "Signal handling.",
+              "correctAnswer": [
+                "// Handle SIGINT, SIGTERM gracefully",
+                "signals"
+              ],
+              "explanation": "Signal handling.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-6-25",
+              "type": "code",
+              "question": "Summary.",
+              "correctAnswer": [
+                "// Async: select, poll, epoll, event loop",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            }
+          ],
+          "unitTitle": "38. Network Programming",
+          "xp": 85,
+          "type": "lesson",
+          "difficulty": "advanced",
+          "lessonText": "# Asynchronous I/O\n\nNon-blocking and multiplexed I/O operations.\n\n## Why Asynchronous I/O?\n\n- Handle multiple connections efficiently\n- Avoid blocking threads\n- Better resource utilization\n- Scalable servers\n\n## select()\n\nMonitor multiple file descriptors.\n\n```cpp\n#include <sys/select.h>\n\nint select(int nfds, fd_set *readfds, fd_set *writefds,\n           fd_set *exceptfds, struct timeval *timeout);\n```\n\n### Select Example\n\n```cpp\nint sock = socket(AF_INET, SOCK_STREAM, 0);\n// Setup socket...\n\nfd_set readfds;\nstruct timeval tv;\n\nwhile (true) {\n    FD_ZERO(&readfds);\n    FD_SET(sock, &readfds);\n    \n    tv.tv_sec = 5;\n    tv.tv_usec = 0;\n    \n    int retval = select(sock + 1, &readfds, NULL, NULL, &tv);\n    \n    if (retval < 0) {\n        perror(\"select\");\n        break;\n    } else if (retval == 0) {\n        printf(\"Timeout\\n\");\n    } else {\n        if (FD_ISSET(sock, &readfds)) {\n            // Ready to read\n            char buffer[1024];\n            recv(sock, buffer, sizeof(buffer), 0);\n        }\n    }\n}\n```\n\n## poll()\n\nAlternative to select with better scalability.\n\n```cpp\n#include <poll.h>\n\nint poll(struct pollfd *fds, nfds_t nfds, int timeout);\n```\n\n### Poll Example\n\n```cpp\nstruct pollfd fds[1];\nfds[0].fd = sock;\nfds[0].events = POLLIN | POLLOUT;\n\nwhile (true) {\n    int retval = poll(fds, 1, 5000);  // 5 second timeout\n    \n    if (retval < 0) {\n        perror(\"poll\");\n        break;\n    } else if (retval == 0) {\n        printf(\"Timeout\\n\");\n    } else {\n        if (fds[0].revents & POLLIN) {\n            // Ready to read\n        }\n        if (fds[0].revents & POLLOUT) {\n            // Ready to write\n        }\n    }\n}\n```\n\n## epoll() (Linux-specific)\n\nHighly scalable I/O event notification.\n\n```cpp\n#include <sys/epoll.h>\n\nint epoll_create1(int flags);\nint epoll_ctl(int epfd, int op, int fd, struct epoll_event *event);\nint epoll_wait(int epfd, struct epoll_event *events, \n               int maxevents, int timeout);\n```\n\n### Epoll Example\n\n```cpp\n#define MAX_EVENTS 64\n\nint epfd = epoll_create1(0);\n\nstruct epoll_event ev = {0};\nev.events = EPOLLIN;\nev.data.fd = sock;\nepoll_ctl(epfd, EPOLL_CTL_ADD, sock, &ev);\n\nstruct epoll_event events[MAX_EVENTS];\n\nwhile (running) {\n    int nfds = epoll_wait(epfd, events, MAX_EVENTS, 1000);\n    \n    for (int i = 0; i < nfds; i++) {\n        int fd = events[i].data.fd;\n        \n        if (events[i].events & EPOLLIN) {\n            // Ready to read\n            char buffer[1024];\n            recv(fd, buffer, sizeof(buffer), 0);\n        }\n        \n        if (events[i].events & EPOLLERR) {\n            // Error occurred\n            close(fd);\n            epoll_ctl(epfd, EPOLL_CTL_DEL, fd, NULL);\n        }\n    }\n}\n```\n\n## Comparison\n\n| Method | Complexity | FD Limit | Portability |\n|--------|------------|----------|-------------|\n| select | O(n) | FD_SETSIZE | Universal |\n| poll | O(n) | None | POSIX |\n| epoll | O(1) | None | Linux only |\n\n## Non-Blocking Sockets\n\n```cpp\n#include <fcntl.h>\n\nint flags = fcntl(sock, F_GETFL, 0);\nfcntl(sock, F_SETFL, flags | O_NONBLOCK);\n\n// Now operations return EAGAIN if would block\nssize_t n = recv(sock, buffer, size, 0);\nif (n < 0 && errno == EAGAIN) {\n    // Would block, try later\n}\n```\n\n## Event Flags\n\n| Flag | Description |\n|------|-------------|\n| EPOLLIN | Ready to read |\n| EPOLLOUT | Ready to write |\n| EPOLLERR | Error condition |\n| EPOLLHUP | Hang up |\n| EPOLLRDHUP | Peer shutdown |\n| EPOLLET | Edge-triggered |\n| EPOLLONESHOT | One-shot |\n\n## Best Practices\n\n1. **Use epoll on Linux**: Best performance\n2. **Handle EAGAIN/EINTR**: Non-blocking behavior\n3. **Set timeouts**: Avoid infinite wait\n4. **Check errors**: Handle connection failures\n5. **Resource cleanup**: Remove closed sockets\n6. **Signal handling**: Graceful shutdown\n"
+        },
+        {
+          "id": "cpp-U38-L7",
+          "title": "Network Security",
+          "questions": [
+            {
+              "id": "cpp-38-7-1",
+              "type": "typing",
+              "question": "SSL/TLS?",
+              "correctAnswer": [
+                "secure",
+                "encrypted",
+                "HTTPS"
+              ],
+              "explanation": "Secure network layer.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-7-2",
+              "type": "typing",
+              "question": "Encryption?",
+              "correctAnswer": [
+                "protect data",
+                "confidentiality",
+                "privacy"
+              ],
+              "explanation": "Data encryption.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-7-3",
+              "type": "typing",
+              "question": "Authentication?",
+              "correctAnswer": [
+                "verify identity",
+                "certificates",
+                "trust"
+              ],
+              "explanation": "Verify peer identity.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-7-4",
+              "type": "multiple",
+              "question": "Security methods?",
+              "options": [
+                "SSL/TLS",
+                "certificates",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both security methods.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-7-5",
+              "type": "multiple",
+              "question": "Best practices?",
+              "options": [
+                "validation",
+                "sanitization",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both practices.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-7-6",
+              "type": "code",
+              "question": "SSL library.",
+              "correctAnswer": [
+                "#include <openssl/ssl.h>\n#include <openssl/err.h>",
+                "ssl include"
+              ],
+              "explanation": "OpenSSL headers.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-7-7",
+              "type": "code",
+              "question": "Initialize SSL.",
+              "correctAnswer": [
+                "SSL_library_init();\nSSL_load_error_strings();\nOpenSSL_add_all_algorithms();",
+                "init ssl"
+              ],
+              "explanation": "Initialize OpenSSL.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-7-8",
+              "type": "code",
+              "question": "Create SSL context.",
+              "correctAnswer": [
+                "SSL_CTX* ctx = SSL_CTX_new(TLS_client_method());",
+                "context"
+              ],
+              "explanation": "Create SSL context.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-7-9",
+              "type": "code",
+              "question": "Create SSL connection.",
+              "correctAnswer": [
+                "SSL* ssl = SSL_new(ctx);\nSSL_set_fd(ssl, sock);\nSSL_connect(ssl);",
+                "ssl connect"
+              ],
+              "explanation": "Create SSL connection.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-7-10",
+              "type": "code",
+              "question": "SSL send.",
+              "correctAnswer": [
+                "SSL_write(ssl, data, size);",
+                "ssl write"
+              ],
+              "explanation": "Send encrypted data.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-7-11",
+              "type": "code",
+              "question": "SSL receive.",
+              "correctAnswer": [
+                "SSL_read(ssl, buffer, size);",
+                "ssl read"
+              ],
+              "explanation": "Receive encrypted data.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-7-12",
+              "type": "code",
+              "question": "Validate certificate.",
+              "correctAnswer": [
+                "// Verify peer certificate, check hostname, expiration",
+                "validate"
+              ],
+              "explanation": "Validate certificate.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-7-13",
+              "type": "code",
+              "question": "Load certificates.",
+              "correctAnswer": [
+                "SSL_CTX_load_verify_locations(ctx, \"/path/to/cert.pem\", NULL);",
+                "load cert"
+              ],
+              "explanation": "Load CA certificates.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-7-14",
+              "type": "code",
+              "question": "Cleanup SSL.",
+              "correctAnswer": [
+                "SSL_shutdown(ssl);\nSSL_free(ssl);\nSSL_CTX_free(ctx);\nEVP_cleanup();",
+                "cleanup"
+              ],
+              "explanation": "Cleanup SSL resources.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-7-15",
+              "type": "code",
+              "question": "Input validation.",
+              "correctAnswer": [
+                "// Validate and sanitize all input",
+                "validation"
+              ],
+              "explanation": "Validate network input.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-7-16",
+              "type": "code",
+              "question": "Buffer overflow.",
+              "correctAnswer": [
+                "// Always check buffer sizes, use safe functions",
+                "buffer overflow"
+              ],
+              "explanation": "Prevent buffer overflow.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-7-17",
+              "type": "code",
+              "question": "Testing security.",
+              "correctAnswer": [
+                "void testSecurity() { // Test security features }",
+                "test"
+              ],
+              "explanation": "Test security.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-7-18",
+              "type": "code",
+              "question": "Common vulnerabilities.",
+              "correctAnswer": [
+                "// Buffer overflow, injection, DoS, MITM",
+                "vulnerabilities"
+              ],
+              "explanation": "Common vulnerabilities.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-7-19",
+              "type": "code",
+              "question": "HTTPS client.",
+              "correctAnswer": [
+                "// Use SSL/TLS for secure HTTP",
+                "https"
+              ],
+              "explanation": "HTTPS client.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-7-20",
+              "type": "code",
+              "question": "Error handling.",
+              "correctAnswer": [
+                "// Check SSL errors, handle gracefully",
+                "error"
+              ],
+              "explanation": "Handle SSL errors.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-7-21",
+              "type": "code",
+              "question": "DoS prevention.",
+              "correctAnswer": [
+                "// Rate limiting, connection limits, timeouts",
+                "dos"
+              ],
+              "explanation": "Prevent DoS attacks.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-7-22",
+              "type": "code",
+              "question": "Secure coding.",
+              "correctAnswer": [
+                "// Validate input, use secure functions, follow best practices",
+                "secure coding"
+              ],
+              "explanation": "Secure coding practices.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-7-23",
+              "type": "code",
+              "question": "Certificate pinning.",
+              "correctAnswer": [
+                "// Pin specific certificates for trust",
+                "pinning"
+              ],
+              "explanation": "Certificate pinning.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-7-24",
+              "type": "code",
+              "question": "Protocol negotiation.",
+              "correctAnswer": [
+                "// Negotiate highest supported TLS version",
+                "negotiation"
+              ],
+              "explanation": "TLS version negotiation.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-7-25",
+              "type": "code",
+              "question": "Summary.",
+              "correctAnswer": [
+                "// Security: SSL/TLS, encryption, certificates, validation",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            }
+          ],
+          "unitTitle": "38. Network Programming",
+          "xp": 85,
+          "type": "lesson",
+          "difficulty": "advanced",
+          "lessonText": "# Network Security\n\nSecure network programming with SSL/TLS.\n\n## SSL/TLS Overview\n\nSSL/TLS provides:\n- **Encryption**: Confidentiality\n- **Authentication**: Identity verification\n- **Integrity**: Data tamper detection\n\n## OpenSSL Initialization\n\n```cpp\n#include <openssl/ssl.h>\n#include <openssl/err.h>\n\nvoid initSSL() {\n    SSL_library_init();\n    SSL_load_error_strings();\n    OpenSSL_add_all_algorithms();\n}\n```\n\n## Create SSL Context\n\n```cpp\nSSL_CTX* createSSLContext(bool isServer) {\n    const SSL_METHOD* method = isServer ? \n        TLS_server_method() : TLS_client_method();\n    \n    SSL_CTX* ctx = SSL_CTX_new(method);\n    if (!ctx) return nullptr;\n    \n    // Set minimum protocol version\n    SSL_CTX_set_min_proto_version(ctx, TLS1_2_VERSION);\n    \n    // Load CA certificates\n    if (!SSL_CTX_load_verify_locations(ctx, \n            \"/etc/ssl/certs/ca-certificates.crt\", NULL)) {\n        SSL_CTX_free(ctx);\n        return nullptr;\n    }\n    \n    // Server: load certificate and key\n    if (isServer) {\n        SSL_CTX_use_certificate_file(ctx, \"server.crt\", \n                                      SSL_FILETYPE_PEM);\n        SSL_CTX_use_PrivateKey_file(ctx, \"server.key\", \n                                     SSL_FILETYPE_PEM);\n    }\n    \n    return ctx;\n}\n```\n\n## SSL Client\n\n```cpp\nint sslClientConnect(const char* host, int port) {\n    int sock = socket(AF_INET, SOCK_STREAM, 0);\n    \n    struct sockaddr_in addr = {0};\n    addr.sin_family = AF_INET;\n    addr.sin_port = htons(port);\n    inet_pton(AF_INET, host, &addr.sin_addr);\n    \n    connect(sock, (struct sockaddr*)&addr, sizeof(addr));\n    \n    SSL_CTX* ctx = createSSLContext(false);\n    SSL* ssl = SSL_new(ctx);\n    \n    SSL_set_fd(ssl, sock);\n    \n    if (SSL_connect(ssl) <= 0) {\n        ERR_print_errors_fp(stderr);\n        SSL_free(ssl);\n        close(sock);\n        return -1;\n    }\n    \n    // Verify certificate\n    X509* cert = SSL_get_peer_certificate(ssl);\n    if (cert) {\n        X509_free(cert);\n    }\n    \n    if (SSL_get_verify_result(ssl) != X509_V_OK) {\n        fprintf(stderr, \"Certificate verification failed\\n\");\n    }\n    \n    // Use SSL_read/SSL_write for communication\n    return sock;\n}\n```\n\n## SSL Server\n\n```cpp\nint sslServerStart(int port) {\n    int sock = socket(AF_INET, SOCK_STREAM, 0);\n    \n    struct sockaddr_in addr = {0};\n    addr.sin_family = AF_INET;\n    addr.sin_addr.s_addr = INADDR_ANY;\n    addr.sin_port = htons(port);\n    \n    bind(sock, (struct sockaddr*)&addr, sizeof(addr));\n    listen(sock, 10);\n    \n    SSL_CTX* ctx = createSSLContext(true);\n    \n    while (true) {\n        int client = accept(sock, NULL, NULL);\n        \n        SSL* ssl = SSL_new(ctx);\n        SSL_set_fd(ssl, client);\n        \n        if (SSL_accept(ssl) <= 0) {\n            ERR_print_errors_fp(stderr);\n            SSL_free(ssl);\n            close(client);\n            continue;\n        }\n        \n        // Handle SSL connection\n        char buffer[1024];\n        SSL_read(ssl, buffer, sizeof(buffer));\n        SSL_write(ssl, \"Hello\", 5);\n        \n        SSL_shutdown(ssl);\n        SSL_free(ssl);\n        close(client);\n    }\n    \n    return 0;\n}\n```\n\n## Secure Communication\n\n```cpp\n// Send encrypted data\nint sslSend(SSL* ssl, const void* data, size_t len) {\n    int sent = SSL_write(ssl, data, len);\n    if (sent <= 0) {\n        int err = SSL_get_error(ssl, sent);\n        if (err == SSL_ERROR_WANT_WRITE ||\n            err == SSL_ERROR_WANT_READ) {\n            // Retry later\n        }\n    }\n    return sent;\n}\n\n// Receive encrypted data\nint sslRecv(SSL* ssl, void* buffer, size_t len) {\n    int received = SSL_read(ssl, buffer, len);\n    if (received <= 0) {\n        int err = SSL_get_error(ssl, received);\n        if (err == SSL_ERROR_ZERO_RETURN) {\n            // Connection closed\n        } else if (err == SSL_ERROR_WANT_READ ||\n                   err == SSL_ERROR_WANT_WRITE) {\n            // Retry later\n        }\n    }\n    return received;\n}\n```\n\n## Cleanup\n\n```cpp\nvoid cleanupSSL(SSL* ssl, SSL_CTX* ctx) {\n    if (ssl) {\n        SSL_shutdown(ssl);\n        SSL_free(ssl);\n    }\n    if (ctx) {\n        SSL_CTX_free(ctx);\n    }\n    EVP_cleanup();\n}\n```\n\n## Security Best Practices\n\n1. **Always use TLS 1.2+**: Disable older versions\n2. **Validate certificates**: Don't ignore verification errors\n3. **Use strong ciphers**: Disable weak algorithms\n4. **Secure key storage**: Protect private keys\n5. **Input validation**: Sanitize all input\n6. **Error handling**: Don't leak sensitive info\n7. **Keep updated**: Use latest OpenSSL\n8. **Certificate pinning**: For critical applications\n\n## Common Vulnerabilities\n\n| Vulnerability | Prevention |\n|---------------|------------|\n| MITM | Certificate validation |\n| Injection | Input sanitization |\n| Buffer overflow | Bounds checking |\n| DoS | Rate limiting |\n| Key disclosure | Secure storage |\n\n## HTTPS Client\n\n```cpp\nstring httpsGet(const string& url) {\n    // Parse URL, extract host and path\n    // Create SSL connection\n    // Send GET request\n    // Receive and parse response\n    return response;\n}\n```\n"
+        },
+        {
+          "id": "cpp-U38-L8",
+          "title": "Network Applications",
+          "questions": [
+            {
+              "id": "cpp-38-8-1",
+              "type": "typing",
+              "question": "Chat server?",
+              "correctAnswer": [
+                "multiple clients",
+                "broadcast",
+                "TCP"
+              ],
+              "explanation": "Multi-client chat server.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-8-2",
+              "type": "typing",
+              "question": "File transfer?",
+              "correctAnswer": [
+                "send",
+                "receive",
+                "TCP/UDP"
+              ],
+              "explanation": "File transfer protocol.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-8-3",
+              "type": "typing",
+              "question": "Web server?",
+              "correctAnswer": [
+                "HTTP",
+                "serve content",
+                "TCP"
+              ],
+              "explanation": "HTTP web server.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-8-4",
+              "type": "multiple",
+              "question": "Applications?",
+              "options": [
+                "client",
+                "server",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both client and server.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-8-5",
+              "type": "multiple",
+              "question": "Protocols?",
+              "options": [
+                "HTTP",
+                "custom",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "HTTP and custom.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-8-6",
+              "type": "code",
+              "question": "Chat server structure.",
+              "correctAnswer": [
+                "// Accept clients, maintain client list, broadcast messages",
+                "chat structure"
+              ],
+              "explanation": "Chat server structure.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-8-7",
+              "type": "code",
+              "question": "Client management.",
+              "correctAnswer": [
+                "vector<int> clients; // Track connected clients",
+                "client management"
+              ],
+              "explanation": "Manage clients.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-8-8",
+              "type": "code",
+              "question": "Broadcast message.",
+              "correctAnswer": [
+                "for (int client : clients) {\n    if (client != sender) send(client, msg, len, 0);\n}",
+                "broadcast"
+              ],
+              "explanation": "Broadcast to clients.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-8-9",
+              "type": "code",
+              "question": "File send.",
+              "correctAnswer": [
+                "// Open file, send size, send chunks",
+                "file send"
+              ],
+              "explanation": "Send file over network.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-8-10",
+              "type": "code",
+              "question": "File receive.",
+              "correctAnswer": [
+                "// Receive size, create file, receive chunks",
+                "file receive"
+              ],
+              "explanation": "Receive file over network.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-8-11",
+              "type": "code",
+              "question": "Web server handler.",
+              "correctAnswer": [
+                "// Parse request, determine file, send response",
+                "web handler"
+              ],
+              "explanation": "Handle HTTP requests.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-8-12",
+              "type": "code",
+              "question": "MIME types.",
+              "correctAnswer": [
+                "// Map file extensions to content types",
+                "mime"
+              ],
+              "explanation": "MIME type mapping.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-8-13",
+              "type": "code",
+              "question": "Custom protocol.",
+              "correctAnswer": [
+                "// Define message format, serialization",
+                "custom protocol"
+              ],
+              "explanation": "Design custom protocol.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-8-14",
+              "type": "code",
+              "question": "Testing applications.",
+              "correctAnswer": [
+                "void testApplications() { // Test network apps }",
+                "test"
+              ],
+              "explanation": "Test applications.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-8-15",
+              "type": "code",
+              "question": "Error handling.",
+              "correctAnswer": [
+                "// Handle disconnects, timeouts, errors",
+                "error"
+              ],
+              "explanation": "Handle application errors.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-8-16",
+              "type": "code",
+              "question": "Scalability.",
+              "correctAnswer": [
+                "// Use threading, epoll, connection pooling",
+                "scalability"
+              ],
+              "explanation": "Scale applications.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-8-17",
+              "type": "code",
+              "question": "Performance.",
+              "correctAnswer": [
+                "// Optimize protocols, use compression",
+                "performance"
+              ],
+              "explanation": "Improve performance.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-8-18",
+              "type": "code",
+              "question": "Security.",
+              "correctAnswer": [
+                "// Use SSL/TLS, validate input, rate limit",
+                "security"
+              ],
+              "explanation": "Secure applications.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-8-19",
+              "type": "code",
+              "question": "Logging.",
+              "correctAnswer": [
+                "// Log connections, requests, errors",
+                "logging"
+              ],
+              "explanation": "Application logging.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-8-20",
+              "type": "code",
+              "question": "Configuration.",
+              "correctAnswer": [
+                "// Load config from file, command line",
+                "config"
+              ],
+              "explanation": "Application configuration.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-8-21",
+              "type": "code",
+              "question": "Edge cases.",
+              "correctAnswer": [
+                "// Handle partial sends, disconnects, large files",
+                "edge"
+              ],
+              "explanation": "Handle edge cases.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-8-22",
+              "type": "code",
+              "question": "Testing strategies.",
+              "correctAnswer": [
+                "// Unit tests, integration tests, load tests",
+                "testing"
+              ],
+              "explanation": "Test strategies.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-8-23",
+              "type": "code",
+              "question": "Deployment.",
+              "correctAnswer": [
+                "// Package, install, daemonize",
+                "deployment"
+              ],
+              "explanation": "Deploy applications.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-8-24",
+              "type": "code",
+              "question": "Monitoring.",
+              "correctAnswer": [
+                "// Track connections, bandwidth, errors",
+                "monitoring"
+              ],
+              "explanation": "Monitor applications.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-8-25",
+              "type": "code",
+              "question": "Summary.",
+              "correctAnswer": [
+                "// Applications: chat, file transfer, web server, protocols",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            }
+          ],
+          "unitTitle": "38. Network Programming",
+          "xp": 85,
+          "type": "lesson",
+          "difficulty": "intermediate",
+          "lessonText": "# Network Applications\n\nReal-world network application examples.\n\n## Chat Server\n\nMulti-client TCP chat server.\n\n```cpp\n#include <vector>\n#include <thread>\n#include <mutex>\n\nvector<int> clients;\nmutex clients_mutex;\n\nvoid handleClient(int client) {\n    char buffer[1024];\n    while (true) {\n        ssize_t received = recv(client, buffer, sizeof(buffer), 0);\n        if (received <= 0) break;\n        \n        // Broadcast to other clients\n        lock_guard<mutex> lock(clients_mutex);\n        for (int c : clients) {\n            if (c != client) {\n                send(c, buffer, received, 0);\n            }\n        }\n    }\n    \n    lock_guard<mutex> lock(clients_mutex);\n    clients.erase(remove(clients.begin(), clients.end(), client), \n                  clients.end());\n    close(client);\n}\n\nint main() {\n    int server = socket(AF_INET, SOCK_STREAM, 0);\n    \n    struct sockaddr_in addr = {0};\n    addr.sin_family = AF_INET;\n    addr.sin_addr.s_addr = INADDR_ANY;\n    addr.sin_port = htons(8080);\n    \n    bind(server, (struct sockaddr*)&addr, sizeof(addr));\n    listen(server, 10);\n    \n    while (true) {\n        int client = accept(server, NULL, NULL);\n        \n        lock_guard<mutex> lock(clients_mutex);\n        clients.push_back(client);\n        \n        thread(handleClient, client).detach();\n    }\n    \n    return 0;\n}\n```\n\n## File Transfer\n\nSend files over TCP.\n\n### Sender\n\n```cpp\nvoid sendFile(int sock, const string& filename) {\n    ifstream file(filename, ios::binary);\n    file.seekg(0, ios::end);\n    long filesize = file.tellg();\n    file.seekg(0, ios::beg);\n    \n    // Send file size\n    send(sock, (char*)&filesize, sizeof(filesize), 0);\n    \n    // Send file content\n    char buffer[4096];\n    while (!file.eof()) {\n        file.read(buffer, sizeof(buffer));\n        send(sock, buffer, file.gcount(), 0);\n    }\n    \n    file.close();\n}\n```\n\n### Receiver\n\n```cpp\nvoid receiveFile(int sock, const string& filename) {\n    long filesize;\n    recv(sock, (char*)&filesize, sizeof(filesize), 0);\n    \n    ofstream file(filename, ios::binary);\n    \n    long received = 0;\n    char buffer[4096];\n    while (received < filesize) {\n        ssize_t n = recv(sock, buffer, min(sizeof(buffer), \n                                          filesize - received), 0);\n        if (n <= 0) break;\n        file.write(buffer, n);\n        received += n;\n    }\n    \n    file.close();\n}\n```\n\n## Simple Web Server\n\nHTTP server serving static files.\n\n```cpp\n#include <map>\n\nstring getMimeType(const string& filename) {\n    static map<string, string> types = {\n        {\".html\", \"text/html\"},\n        {\".css\", \"text/css\"},\n        {\".js\", \"application/javascript\"},\n        {\".jpg\", \"image/jpeg\"},\n        {\".png\", \"image/png\"},\n        {\".txt\", \"text/plain\"}\n    };\n    \n    size_t pos = filename.find_last_of('.');\n    if (pos != string::npos) {\n        string ext = filename.substr(pos);\n        if (types.count(ext)) return types[ext];\n    }\n    \n    return \"application/octet-stream\";\n}\n\nvoid handleRequest(int client) {\n    char buffer[4096];\n    recv(client, buffer, sizeof(buffer), 0);\n    \n    string request(buffer);\n    size_t pos = request.find(' ');\n    string method = request.substr(0, pos);\n    request = request.substr(pos + 1);\n    pos = request.find(' ');\n    string path = request.substr(0, pos);\n    \n    if (path == \"/\") path = \"/index.html\";\n    path = \".\" + path;\n    \n    ifstream file(path, ios::binary);\n    if (!file.is_open()) {\n        string response = \"HTTP/1.1 404 Not Found\\r\\n\\r\\n\";\n        send(client, response.c_str(), response.size(), 0);\n        return;\n    }\n    \n    string content((istreambuf_iterator<char>(file)), \n                   istreambuf_iterator<char>());\n    file.close();\n    \n    string response = \"HTTP/1.1 200 OK\\r\\n\";\n    response += \"Content-Type: \" + getMimeType(path) + \"\\r\\n\";\n    response += \"Content-Length: \" + to_string(content.size()) + \"\\r\\n\";\n    response += \"\\r\\n\";\n    response += content;\n    \n    send(client, response.c_str(), response.size(), 0);\n}\n```\n\n## Custom Protocol\n\nDefine application protocol.\n\n```cpp\n#pragma pack(push, 1)\nstruct MessageHeader {\n    uint32_t type;      // Message type\n    uint32_t length;    // Payload length\n    uint32_t seq;       // Sequence number\n};\n\nenum MessageType {\n    MSG_LOGIN = 1,\n    MSG_CHAT,\n    MSG_FILE,\n    MSG_LOGOUT\n};\n#pragma pack(pop)\n\nvoid sendMessage(int sock, MessageType type, \n                const string& payload) {\n    MessageHeader header;\n    header.type = htonl(type);\n    header.length = htonl(payload.size());\n    header.seq = htonl(sequence++);\n    \n    send(sock, &header, sizeof(header), 0);\n    send(sock, payload.c_str(), payload.size(), 0);\n}\n\nMessage receiveMessage(int sock) {\n    MessageHeader header;\n    recv(sock, &header, sizeof(header), 0);\n    \n    header.type = ntohl(header.type);\n    header.length = ntohl(header.length);\n    header.seq = ntohl(header.seq);\n    \n    string payload(header.length, 0);\n    recv(sock, &payload[0], header.length, 0);\n    \n    return {header, payload};\n}\n```\n\n## Best Practices\n\n1. **Error handling**: Check all return values\n2. **Resource cleanup**: Close sockets, free memory\n3. **Thread safety**: Use mutexes for shared data\n4. **Scalability**: Use epoll for many connections\n5. **Security**: Validate input, use SSL/TLS\n6. **Logging**: Track operations and errors\n7. **Configuration**: Make parameters configurable\n8. **Testing**: Unit and integration tests\n\n## Application Architecture\n\n| Component | Purpose |\n|-----------|---------|\n| Listener | Accept new connections |\n| Handler | Process client requests |\n| Dispatcher | Route to appropriate handler |\n| Protocol | Define communication format |\n| Storage | Persist data |\n| Logging | Track activity |\n| Config | Configure behavior |\n| Monitor | Track performance |\n"
+        },
+        {
+          "id": "cpp-U38-L9",
+          "title": "Network Programming Summary",
+          "questions": [
+            {
+              "id": "cpp-38-9-1",
+              "type": "typing",
+              "question": "Sockets?",
+              "correctAnswer": [
+                "network endpoint",
+                "communication",
+                "IP+port"
+              ],
+              "explanation": "Network communication endpoint.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-9-2",
+              "type": "typing",
+              "question": "TCP?",
+              "correctAnswer": [
+                "reliable",
+                "connection-oriented",
+                "stream"
+              ],
+              "explanation": "Reliable protocol.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-9-3",
+              "type": "typing",
+              "question": "UDP?",
+              "correctAnswer": [
+                "fast",
+                "connectionless",
+                "datagram"
+              ],
+              "explanation": "Fast protocol.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-9-4",
+              "type": "multiple",
+              "question": "Key topics?",
+              "options": [
+                "sockets",
+                "protocols",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both topics.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-9-5",
+              "type": "multiple",
+              "question": "Advanced?",
+              "options": [
+                "async",
+                "security",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both advanced.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-38-9-6",
+              "type": "code",
+              "question": "Complete TCP example.",
+              "correctAnswer": [
+                "// Socket, bind, listen, accept, send/recv, close",
+                "tcp example"
+              ],
+              "explanation": "Complete TCP example.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-9-7",
+              "type": "code",
+              "question": "Complete UDP example.",
+              "correctAnswer": [
+                "// Socket, bind, sendto/recvfrom",
+                "udp example"
+              ],
+              "explanation": "Complete UDP example.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-9-8",
+              "type": "code",
+              "question": "Network patterns.",
+              "correctAnswer": [
+                "// Client-server, peer-to-peer, broadcast, multicast",
+                "patterns"
+              ],
+              "explanation": "Network patterns.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-9-9",
+              "type": "code",
+              "question": "Performance summary.",
+              "correctAnswer": [
+                "// Use epoll, optimize buffers, tune options",
+                "performance"
+              ],
+              "explanation": "Performance tips.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-9-10",
+              "type": "code",
+              "question": "Security summary.",
+              "correctAnswer": [
+                "// Use SSL/TLS, validate input, rate limit",
+                "security"
+              ],
+              "explanation": "Security summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-9-11",
+              "type": "code",
+              "question": "Error handling summary.",
+              "correctAnswer": [
+                "// Check all returns, handle timeouts, retry failures",
+                "error handling"
+              ],
+              "explanation": "Error handling summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-9-12",
+              "type": "code",
+              "question": "Best practices.",
+              "correctAnswer": [
+                "// RAII, error checking, resource cleanup",
+                "practices"
+              ],
+              "explanation": "Best practices summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-9-13",
+              "type": "code",
+              "question": "Common pitfalls.",
+              "correctAnswer": [
+                "// Not checking errors, buffer overflow, race conditions",
+                "pitfalls"
+              ],
+              "explanation": "Common pitfalls.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-9-14",
+              "type": "code",
+              "question": "Debugging tips.",
+              "correctAnswer": [
+                "// Use tcpdump, Wireshark, logging",
+                "debug"
+              ],
+              "explanation": "Debug network code.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-9-15",
+              "type": "code",
+              "question": "Testing network.",
+              "correctAnswer": [
+                "void testAll() { // Test all network operations }",
+                "test"
+              ],
+              "explanation": "Test network operations.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-9-16",
+              "type": "code",
+              "question": "Cross-platform.",
+              "correctAnswer": [
+                "// Use portable code, handle platform differences",
+                "cross platform"
+              ],
+              "explanation": "Cross-platform considerations.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-9-17",
+              "type": "code",
+              "question": "IPv6 support.",
+              "correctAnswer": [
+                "// Use AF_INET6, handle both IPv4 and IPv6",
+                "ipv6"
+              ],
+              "explanation": "IPv6 support.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-9-18",
+              "type": "code",
+              "question": "Unit 38 summary.",
+              "correctAnswer": [
+                "// Unit 38: Network basics, TCP/UDP, sockets, HTTP, async, security",
+                "unit summary"
+              ],
+              "explanation": "Unit 38 summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-9-19",
+              "type": "code",
+              "question": "Course progress.",
+              "correctAnswer": [
+                "// Completing Unit 38 of 49",
+                "progress"
+              ],
+              "explanation": "Course progress.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-9-20",
+              "type": "code",
+              "question": "Further reading.",
+              "correctAnswer": [
+                "// Beej's Guide to Network Programming, TCP/IP Illustrated",
+                "reading"
+              ],
+              "explanation": "Further reading.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-9-21",
+              "type": "code",
+              "question": "Practice projects.",
+              "correctAnswer": [
+                "// Chat server, web server, file transfer, DNS client",
+                "projects"
+              ],
+              "explanation": "Practice project ideas.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-9-22",
+              "type": "code",
+              "question": "Real-world applications.",
+              "correctAnswer": [
+                "// Servers, clients, APIs, distributed systems",
+                "applications"
+              ],
+              "explanation": "Real-world applications.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-9-23",
+              "type": "code",
+              "question": "Final summary.",
+              "correctAnswer": [
+                "// Network programming: sockets, TCP/UDP, HTTP, async, security",
+                "final"
+              ],
+              "explanation": "Final summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-9-24",
+              "type": "code",
+              "question": "Congratulations.",
+              "correctAnswer": [
+                "// Unit 38 COMPLETE! Mastered C++ Network Programming!",
+                "congratulations"
+              ],
+              "explanation": "Congratulations!",
+              "xp": 15
+            },
+            {
+              "id": "cpp-38-9-25",
+              "type": "code",
+              "question": "Next steps.",
+              "correctAnswer": [
+                "// Continue to next unit, practice, build projects",
+                "next"
+              ],
+              "explanation": "Next steps.",
+              "xp": 15
+            }
+          ],
+          "unitTitle": "38. Network Programming",
+          "xp": 85,
+          "type": "lesson",
+          "difficulty": "intermediate",
+          "lessonText": "# Network Programming Summary\n\nComplete guide to network programming in C++.\n\n## Key Concepts\n\n| Concept | Description |\n|---------|-------------|\n| **Socket** | Network communication endpoint |\n| **TCP** | Reliable, connection-oriented |\n| **UDP** | Fast, connectionless |\n| **HTTP** | Web protocol |\n| **SSL/TLS** | Secure communication |\n| **Async I/O** | Non-blocking operations |\n\n## Quick Reference\n\n### Socket Lifecycle\n```cpp\n// Create\nint sock = socket(AF_INET, SOCK_STREAM, 0);\n\n// Configure (server)\nbind(sock, &addr, sizeof(addr));\nlisten(sock, backlog);\n\n// Connect (client)\nconnect(sock, &addr, sizeof(addr));\n\n// Accept (server)\nint client = accept(sock, NULL, NULL);\n\n// Communicate\nsend(sock, data, size, 0);\nrecv(sock, buffer, size, 0);\n\n// Cleanup\nclose(sock);\n```\n\n### Address Setup\n```cpp\nstruct sockaddr_in addr = {0};\naddr.sin_family = AF_INET;\naddr.sin_port = htons(port);\ninet_pton(AF_INET, \"127.0.0.1\", &addr.sin_addr);\n```\n\n### TCP vs UDP\n```cpp\n// TCP\nint sock = socket(AF_INET, SOCK_STREAM, 0);\n\n// UDP\nint sock = socket(AF_INET, SOCK_DGRAM, 0);\n```\n\n### HTTP Request\n```cpp\nGET /path HTTP/1.1\nHost: example.com\nConnection: close\n\n```\n\n### Async I/O\n```cpp\n// epoll (Linux)\nint epfd = epoll_create1(0);\nepoll_ctl(epfd, EPOLL_CTL_ADD, sock, &ev);\nepoll_wait(epfd, events, MAX_EVENTS, -1);\n```\n\n## Best Practices\n\n### Server\n1. Use SO_REUSEADDR for quick restart\n2. Set timeouts to avoid hanging\n3. Handle multiple clients (threading/epoll)\n4. Validate all input\n5. Implement proper error handling\n6. Use SSL/TLS for security\n7. Log operations\n8. Monitor performance\n\n### Client\n1. Handle connection errors\n2. Set reasonable timeouts\n3. Validate server certificates\n4. Handle partial sends/receives\n5. Implement retry logic\n6. Graceful shutdown\n\n### Security\n1. Use SSL/TLS always\n2. Validate certificates\n3. Sanitize input\n4. Rate limiting\n5. Use strong protocols (TLS 1.2+)\n6. Secure key storage\n\n## Common Patterns\n\n### Client-Server\n```\nServer: bind → listen → accept → handle\nClient: connect → send/recv → close\n```\n\n### Multi-Client Server\n```\nMain: accept → thread/process → handle\nAsync: epoll → event loop → handle\n```\n\n### Request-Response\n```\nClient: send request → wait → receive response\nServer: receive → process → send response\n```\n\n## Performance Tips\n\n1. **Use epoll** for many connections\n2. **Optimize buffers** (SO_RCVBUF/SO_SNDBUF)\n3. **Disable Nagle** for real-time (TCP_NODELAY)\n4. **Reuse connections** (keep-alive)\n5. **Minimize copies**\n6. **Use efficient serialization**\n\n## Troubleshooting\n\n| Problem | Solution |\n|---------|----------|\n| Connection refused | Check server running, correct port |\n| Timeout | Check network, firewall |\n| Partial send/recv | Use sendAll/recvAll |\n| EAGAIN | Use non-blocking or retry |\n| Connection reset | Check remote end, network |\n| Certificate error | Validate certificates |\n\n## Tools\n\n- **tcpdump**: Packet capture\n- **Wireshark**: Network analysis\n- **netstat**: Connection status\n- **ss**: Socket statistics\n- **nc**: Network testing\n- **curl**: HTTP testing\n\n## Further Learning\n\n- **Beej's Guide**: Network programming tutorial\n- **TCP/IP Illustrated**: Protocol details\n- **Unix Network Programming**: Advanced topics\n- **Design Patterns**: Architecture patterns\n\n## Project Ideas\n\n1. **Chat Server**: Real-time messaging\n2. **Web Server**: HTTP server\n3. **File Server**: File transfer service\n4. **DNS Client**: DNS resolution\n5. **Proxy Server**: Forward proxy\n6. **Game Server**: Real-time game\n7. **API Server**: RESTful API\n8. **Monitoring Tool**: Network monitoring\n\nCongratulations! You've completed Network Programming!\n"
         }
-      ]
+      ],
+      "unitTitle": "38. Network Programming"
     },
     {
       "unitId": "39",
