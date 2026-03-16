@@ -77820,65 +77820,2687 @@ window.cppCombined = {
       "lessons": [
         {
           "id": "cpp-U37-L1",
-          "title": "Ford–Fulkerson",
-          "unitTitle": "37. Flow Algorithms",
-          "xp": 15,
+          "title": "I/O Stream Basics",
+          "unitTitle": "37. File I/O & Streams",
+          "xp": 85,
           "type": "lesson",
-          "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "difficulty": "beginner",
+          "questions": [
+            {
+              "id": "cpp-37-1-1",
+              "type": "typing",
+              "question": "cout?",
+              "correctAnswer": [
+                "standard output",
+                "console output",
+                "print"
+              ],
+              "explanation": "Standard output stream.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-1-2",
+              "type": "typing",
+              "question": "cin?",
+              "correctAnswer": [
+                "standard input",
+                "console input",
+                "read"
+              ],
+              "explanation": "Standard input stream.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-1-3",
+              "type": "typing",
+              "question": "cerr?",
+              "correctAnswer": [
+                "standard error",
+                "error output",
+                "unbuffered"
+              ],
+              "explanation": "Standard error stream.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-1-4",
+              "type": "multiple",
+              "question": "Stream class?",
+              "options": [
+                "iostream",
+                "fstream",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both are stream classes.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-1-5",
+              "type": "multiple",
+              "question": "Streams?",
+              "options": [
+                "input",
+                "output",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both input and output streams.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-1-6",
+              "type": "code",
+              "question": "Hello World.",
+              "correctAnswer": [
+                "#include <iostream>\nusing namespace std;\nint main() {\n    cout << \"Hello, World!\" << endl;\n    return 0;\n}",
+                "hello"
+              ],
+              "explanation": "Hello World with cout.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-1-7",
+              "type": "code",
+              "question": "Read integer.",
+              "correctAnswer": [
+                "int x; cin >> x;",
+                "read int"
+              ],
+              "explanation": "Read integer from cin.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-1-8",
+              "type": "code",
+              "question": "Print integer.",
+              "correctAnswer": [
+                "int x = 42; cout << x << endl;",
+                "print int"
+              ],
+              "explanation": "Print integer to cout.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-1-9",
+              "type": "code",
+              "question": "Multiple outputs.",
+              "correctAnswer": [
+                "cout << \"Name: \" << name << \", Age: \" << age << endl;",
+                "multiple"
+              ],
+              "explanation": "Multiple outputs with chaining.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-1-10",
+              "type": "code",
+              "question": "Read string.",
+              "correctAnswer": [
+                "string name; cin >> name;",
+                "read string"
+              ],
+              "explanation": "Read string from cin.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-1-11",
+              "type": "code",
+              "question": "Read line.",
+              "correctAnswer": [
+                "string line; getline(cin, line);",
+                "read line"
+              ],
+              "explanation": "Read entire line.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-1-12",
+              "type": "code",
+              "question": "Print with formatting.",
+              "correctAnswer": [
+                "cout << fixed << setprecision(2) << value << endl;",
+                "format"
+              ],
+              "explanation": "Format output with precision.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-1-13",
+              "type": "code",
+              "question": "Set width.",
+              "correctAnswer": [
+                "cout << setw(10) << value;",
+                "width"
+              ],
+              "explanation": "Set output width.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-1-14",
+              "type": "code",
+              "question": "Fill character.",
+              "correctAnswer": [
+                "cout << setfill('-') << setw(10) << \"test\";",
+                "fill"
+              ],
+              "explanation": "Set fill character.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-1-15",
+              "type": "code",
+              "question": "Left/right alignment.",
+              "correctAnswer": [
+                "cout << left << setw(10) << \"left\" << endl;\ncout << right << setw(10) << \"right\" << endl;",
+                "alignment"
+              ],
+              "explanation": "Set text alignment.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-1-16",
+              "type": "code",
+              "question": "Stream flags.",
+              "correctAnswer": [
+                "cout.flags(ios::fixed | ios::showpoint);",
+                "flags"
+              ],
+              "explanation": "Set stream flags.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-1-17",
+              "type": "code",
+              "question": "Flush buffer.",
+              "correctAnswer": [
+                "cout.flush(); // or endl does this automatically",
+                "flush"
+              ],
+              "explanation": "Flush output buffer.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-1-18",
+              "type": "code",
+              "question": "cerr example.",
+              "correctAnswer": [
+                "cerr << \"Error: \" << errorMessage << endl;",
+                "cerr"
+              ],
+              "explanation": "Print to cerr.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-1-19",
+              "type": "code",
+              "question": "clog example.",
+              "correctAnswer": [
+                "clog << \"Log: \" << message << endl;",
+                "clog"
+              ],
+              "explanation": "Print to clog.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-1-20",
+              "type": "code",
+              "question": "Stream state.",
+              "correctAnswer": [
+                "if (cin) { // stream is good }\nif (cin.fail()) { // stream failed }",
+                "state"
+              ],
+              "explanation": "Check stream state.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-1-21",
+              "type": "code",
+              "question": "Clear errors.",
+              "correctAnswer": [
+                "cin.clear(); // clear error flags",
+                "clear"
+              ],
+              "explanation": "Clear stream errors.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-1-22",
+              "type": "code",
+              "question": "Ignore input.",
+              "correctAnswer": [
+                "cin.ignore(numeric_limits<streamsize>::max(), '\\n');",
+                "ignore"
+              ],
+              "explanation": "Ignore remaining input.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-1-23",
+              "type": "code",
+              "question": "Peek character.",
+              "correctAnswer": [
+                "char c = cin.peek();",
+                "peek"
+              ],
+              "explanation": "Peek at next character.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-1-24",
+              "type": "code",
+              "question": "Put character.",
+              "correctAnswer": [
+                "cout.put(ch);",
+                "put"
+              ],
+              "explanation": "Put character to stream.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-1-25",
+              "type": "code",
+              "question": "Stream manipulators.",
+              "correctAnswer": [
+                "// endl, setw, setprecision, fixed, scientific, left, right, setfill",
+                "manipulators"
+              ],
+              "explanation": "Stream manipulators.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# I/O Stream Basics\n\nUnderstanding C++ streams for input/output.\n\n## What are Streams?\n\nStreams are objects that facilitate I/O operations. They act as a source or destination for data.\n\n| Stream | Purpose | Direction |\n|--------|---------|-----------|\n| `cin` | Standard input | Input |\n| `cout` | Standard output | Output |\n| `cerr` | Standard error | Output |\n| `clog` | Standard log | Output |\n\n## Basic Output\n\n```cpp\n#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"Hello, World!\" << endl;\n    \n    int x = 42;\n    cout << \"Value: \" << x << endl;\n    \n    double pi = 3.14159;\n    cout << \"Pi: \" << pi << endl;\n    \n    return 0;\n}\n```\n\n## Basic Input\n\n```cpp\n#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int age;\n    cout << \"Enter age: \";\n    cin >> age;\n    \n    string name;\n    cout << \"Enter name: \";\n    cin >> name;\n    \n    cout << \"Hello, \" << name << \", age \" << age << endl;\n    \n    return 0;\n}\n```\n\n## Reading Lines\n\n```cpp\n#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string line;\n    cout << \"Enter a line: \";\n    getline(cin, line);\n    \n    cout << \"You entered: \" << line << endl;\n    \n    return 0;\n}\n```\n\n## Formatting\n\n```cpp\n#include <iostream>\n#include <iomanip>\nusing namespace std;\n\nint main() {\n    double pi = 3.14159265359;\n    \n    // Set precision\n    cout << fixed << setprecision(2) << pi << endl;  // 3.14\n    \n    // Set width\n    cout << setw(10) << \"Hello\" << endl;\n    \n    // Set fill character\n    cout << setfill('-') << setw(10) << \"Hi\" << endl;\n    \n    // Alignment\n    cout << left << setw(10) << \"Left\" << endl;\n    cout << right << setw(10) << \"Right\" << endl;\n    \n    return 0;\n}\n```\n\n## Stream Manipulators\n\n| Manipulator | Description |\n|-------------|-------------|\n| `endl` | Newline + flush |\n| `setw(n)` | Set field width |\n| `setprecision(n)` | Set precision |\n| `fixed` | Fixed notation |\n| `scientific` | Scientific notation |\n| `left` | Left align |\n| `right` | Right align |\n| `setfill(c)` | Set fill character |\n\n## Error Handling\n\n```cpp\n#include <iostream>\nusing namespace std;\n\nint main() {\n    int value;\n    cout << \"Enter number: \";\n    cin >> value;\n    \n    if (cin.fail()) {\n        cout << \"Invalid input!\" << endl;\n        cin.clear();  // Clear error\n        cin.ignore(numeric_limits<streamsize>::max(), '\\n');\n    }\n    \n    return 0;\n}\n```\n"
         },
         {
           "id": "cpp-U37-L2",
-          "title": "Edmonds–Karp",
-          "unitTitle": "37. Flow Algorithms",
-          "xp": 15,
+          "title": "File Operations",
+          "unitTitle": "37. File I/O & Streams",
+          "xp": 85,
           "type": "lesson",
-          "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "difficulty": "beginner",
+          "questions": [
+            {
+              "id": "cpp-37-2-1",
+              "type": "typing",
+              "question": "ifstream?",
+              "correctAnswer": [
+                "input file stream",
+                "read file",
+                "ifstream"
+              ],
+              "explanation": "Input file stream.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-2-2",
+              "type": "typing",
+              "question": "ofstream?",
+              "correctAnswer": [
+                "output file stream",
+                "write file",
+                "ofstream"
+              ],
+              "explanation": "Output file stream.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-2-3",
+              "type": "typing",
+              "question": "fstream?",
+              "correctAnswer": [
+                "file stream",
+                "read/write",
+                "both"
+              ],
+              "explanation": "File stream (read/write).",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-2-4",
+              "type": "multiple",
+              "question": "Open modes?",
+              "options": [
+                "in",
+                "out",
+                "both",
+                "all"
+              ],
+              "correctAnswer": [
+                3
+              ],
+              "explanation": "All are open modes.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-2-5",
+              "type": "multiple",
+              "question": "File check?",
+              "options": [
+                "is_open",
+                "good",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both check file status.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-2-6",
+              "type": "code",
+              "question": "Open input file.",
+              "correctAnswer": [
+                "ifstream inputFile(\"input.txt\");",
+                "open input"
+              ],
+              "explanation": "Open input file.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-2-7",
+              "type": "code",
+              "question": "Open output file.",
+              "correctAnswer": [
+                "ofstream outputFile(\"output.txt\");",
+                "open output"
+              ],
+              "explanation": "Open output file.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-2-8",
+              "type": "code",
+              "question": "Open read/write.",
+              "correctAnswer": [
+                "fstream file(\"data.txt\", ios::in | ios::out);",
+                "read write"
+              ],
+              "explanation": "Open file for reading and writing.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-2-9",
+              "type": "code",
+              "question": "Check if open.",
+              "correctAnswer": [
+                "if (file.is_open()) { // file is open }",
+                "check open"
+              ],
+              "explanation": "Check if file is open.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-2-10",
+              "type": "code",
+              "question": "Close file.",
+              "correctAnswer": [
+                "file.close();",
+                "close"
+              ],
+              "explanation": "Close file.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-2-11",
+              "type": "code",
+              "question": "Append mode.",
+              "correctAnswer": [
+                "ofstream file(\"log.txt\", ios::app);",
+                "append"
+              ],
+              "explanation": "Open file in append mode.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-2-12",
+              "type": "code",
+              "question": "Truncate mode.",
+              "correctAnswer": [
+                "ofstream file(\"data.txt\", ios::trunc);",
+                "truncate"
+              ],
+              "explanation": "Open file in truncate mode.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-2-13",
+              "type": "code",
+              "question": "Binary mode.",
+              "correctAnswer": [
+                "ifstream file(\"data.bin\", ios::binary);",
+                "binary"
+              ],
+              "explanation": "Open file in binary mode.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-2-14",
+              "type": "code",
+              "question": "Open with path.",
+              "correctAnswer": [
+                "ifstream file(\"/path/to/file.txt\");",
+                "path"
+              ],
+              "explanation": "Open file with path.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-2-15",
+              "type": "code",
+              "question": "Check exists.",
+              "correctAnswer": [
+                "ifstream file(\"file.txt\"); if (file.good()) { // file exists }",
+                "exists"
+              ],
+              "explanation": "Check if file exists.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-2-16",
+              "type": "code",
+              "question": "Error handling.",
+              "correctAnswer": [
+                "if (!file.is_open()) { cerr << \"Error opening file\" << endl; }",
+                "error"
+              ],
+              "explanation": "Handle file open errors.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-2-17",
+              "type": "code",
+              "question": "RAII file handling.",
+              "correctAnswer": [
+                "void processFile() { ifstream file(\"data.txt\"); // automatically closed when function ends }",
+                "raii"
+              ],
+              "explanation": "RAII file handling.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-2-18",
+              "type": "code",
+              "question": "Multiple files.",
+              "correctAnswer": [
+                "ifstream in1(\"file1.txt\"); ifstream in2(\"file2.txt\");",
+                "multiple"
+              ],
+              "explanation": "Open multiple files.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-2-19",
+              "type": "code",
+              "question": "Open mode combinations.",
+              "correctAnswer": [
+                "fstream file(\"data.txt\", ios::in | ios::out | ios::binary);",
+                "combinations"
+              ],
+              "explanation": "Combine open modes.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-2-20",
+              "type": "code",
+              "question": "ATE mode.",
+              "correctAnswer": [
+                "fstream file(\"data.txt\", ios::in | ios::ate);",
+                "ate"
+              ],
+              "explanation": "Open at end.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-2-21",
+              "type": "code",
+              "question": "Testing file ops.",
+              "correctAnswer": [
+                "void testFileOps() { // Test file operations }",
+                "test"
+              ],
+              "explanation": "Test file operations.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-2-22",
+              "type": "code",
+              "question": "Edge cases.",
+              "correctAnswer": [
+                "// Non-existent file, permissions, locked file",
+                "edge"
+              ],
+              "explanation": "Edge cases.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-2-23",
+              "type": "code",
+              "question": "Portable paths.",
+              "correctAnswer": [
+                "// Use forward slashes, avoid backslashes",
+                "portable"
+              ],
+              "explanation": "Portable file paths.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-2-24",
+              "type": "code",
+              "question": "Memory management.",
+              "correctAnswer": [
+                "// Streams manage buffers automatically",
+                "memory"
+              ],
+              "explanation": "Memory management.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-2-25",
+              "type": "code",
+              "question": "Summary.",
+              "correctAnswer": [
+                "// Files: ifstream/ofstream/fstream, open modes, error handling",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# File Operations\n\nOpening, closing, and managing files.\n\n## File Stream Classes\n\n| Class | Purpose | Direction |\n|-------|---------|-----------|\n| `ifstream` | Input file | Read |\n| `ofstream` | Output file | Write |\n| `fstream` | File stream | Read/Write |\n\n## Opening Files\n\n### Constructor\n```cpp\n#include <fstream>\nusing namespace std;\n\nint main() {\n    // Open input file\n    ifstream inputFile(\"input.txt\");\n    \n    // Open output file\n    ofstream outputFile(\"output.txt\");\n    \n    // Open for read/write\n    fstream file(\"data.txt\", ios::in | ios::out);\n    \n    return 0;\n}\n```\n\n### Open Method\n```cpp\nifstream file;\nfile.open(\"data.txt\");\n\nfstream multi;\nmulti.open(\"data.txt\", ios::in | ios::out);\n```\n\n## Open Modes\n\n| Mode | Description |\n|------|-------------|\n| `ios::in` | Open for reading |\n| `ios::out` | Open for writing |\n| `ios::app` | Append to file |\n| `ios::ate` | Open at end |\n| `ios::trunc` | Truncate file |\n| `ios::binary` | Binary mode |\n\n## Common Patterns\n\n```cpp\n// Input file\nifstream inputFile(\"data.txt\");\nif (!inputFile.is_open()) {\n    cerr << \"Failed to open input file\" << endl;\n    return 1;\n}\n\n// Output file (overwrite)\nofstream outputFile(\"result.txt\");\nif (!outputFile.is_open()) {\n    cerr << \"Failed to open output file\" << endl;\n    return 1;\n}\n\n// Append mode\nofstream logFile(\"log.txt\", ios::app);\nif (!logFile.is_open()) {\n    cerr << \"Failed to open log file\" << endl;\n    return 1;\n}\n\n// Read/Write mode\nfstream dataFile(\"data.bin\", ios::in | ios::out | ios::binary);\nif (!dataFile.is_open()) {\n    cerr << \"Failed to open data file\" << endl;\n    return 1;\n}\n```\n\n## Closing Files\n\n```cpp\nfile.close();  // Explicit close\n\n// RAII: automatically closed when out of scope\n{\n    ifstream file(\"data.txt\");\n    // use file\n} // file closed here\n```\n\n## Checking File State\n\n```cpp\nifstream file(\"data.txt\");\n\nif (!file.is_open()) {\n    cerr << \"File not found\" << endl;\n}\n\nif (file.good()) {\n    cout << \"Stream is good\" << endl;\n}\n\nif (file.eof()) {\n    cout << \"End of file reached\" << endl;\n}\n\nif (file.fail()) {\n    cout << \"Logical error occurred\" << endl;\n}\n```\n"
         },
         {
           "id": "cpp-U37-L3",
-          "title": "Dinic algorithm",
-          "unitTitle": "37. Flow Algorithms",
-          "xp": 15,
+          "title": "Reading Files",
+          "unitTitle": "37. File I/O & Streams",
+          "xp": 85,
           "type": "lesson",
-          "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "difficulty": "beginner",
+          "questions": [
+            {
+              "id": "cpp-37-3-1",
+              "type": "typing",
+              "question": "Read line?",
+              "correctAnswer": [
+                "getline",
+                "read entire line",
+                "getline"
+              ],
+              "explanation": "Use getline().",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-3-2",
+              "type": "typing",
+              "question": "Read word?",
+              "correctAnswer": [
+                "operator>>",
+                "whitespace delimited",
+                "extraction"
+              ],
+              "explanation": "Use >> operator.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-3-3",
+              "type": "typing",
+              "question": "EOF check?",
+              "correctAnswer": [
+                "eof()",
+                "end of file",
+                "check"
+              ],
+              "explanation": "Check eof().",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-3-4",
+              "type": "multiple",
+              "question": "Read methods?",
+              "options": [
+                "get",
+                "read",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both get() and read().",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-3-5",
+              "type": "multiple",
+              "question": "Seek operations?",
+              "options": [
+                "seekg",
+                "tellg",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both seekg and tellg.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-3-6",
+              "type": "code",
+              "question": "Read line by line.",
+              "correctAnswer": [
+                "ifstream file(\"data.txt\"); string line;\nwhile (getline(file, line)) {\n    cout << line << endl;\n}",
+                "read lines"
+              ],
+              "explanation": "Read file line by line.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-3-7",
+              "type": "code",
+              "question": "Read word by word.",
+              "correctAnswer": [
+                "ifstream file(\"data.txt\"); string word;\nwhile (file >> word) {\n    cout << word << endl;\n}",
+                "read words"
+              ],
+              "explanation": "Read file word by word.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-3-8",
+              "type": "code",
+              "question": "Read integers.",
+              "correctAnswer": [
+                "ifstream file(\"numbers.txt\"); int num;\nwhile (file >> num) {\n    cout << num << endl;\n}",
+                "read ints"
+              ],
+              "explanation": "Read integers from file.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-3-9",
+              "type": "code",
+              "question": "Read to vector.",
+              "correctAnswer": [
+                "ifstream file(\"data.txt\"); vector<int> numbers; int num;\nwhile (file >> num) {\n    numbers.push_back(num);\n}",
+                "read vector"
+              ],
+              "explanation": "Read file to vector.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-3-10",
+              "type": "code",
+              "question": "Read entire file.",
+              "correctAnswer": [
+                "ifstream file(\"data.txt\"); stringstream buffer;\nbuffer << file.rdbuf();\nstring content = buffer.str();",
+                "read entire"
+              ],
+              "explanation": "Read entire file at once.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-3-11",
+              "type": "code",
+              "question": "Read char by char.",
+              "correctAnswer": [
+                "ifstream file(\"data.txt\"); char ch;\nwhile (file.get(ch)) {\n    cout << ch;\n}",
+                "read chars"
+              ],
+              "explanation": "Read character by character.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-3-12",
+              "type": "code",
+              "question": "Read binary.",
+              "correctAnswer": [
+                "ifstream file(\"data.bin\", ios::binary);\nchar buffer[1024];\nfile.read(buffer, sizeof(buffer));",
+                "read binary"
+              ],
+              "explanation": "Read binary data.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-3-13",
+              "type": "code",
+              "question": "Seek position.",
+              "correctAnswer": [
+                "file.seekg(pos);",
+                "seek"
+              ],
+              "explanation": "Seek to position.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-3-14",
+              "type": "code",
+              "question": "Seek from beginning.",
+              "correctAnswer": [
+                "file.seekg(0, ios::beg);",
+                "seek beg"
+              ],
+              "explanation": "Seek from beginning.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-3-15",
+              "type": "code",
+              "question": "Seek from end.",
+              "correctAnswer": [
+                "file.seekg(0, ios::end);",
+                "seek end"
+              ],
+              "explanation": "Seek from end.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-3-16",
+              "type": "code",
+              "question": "Tell position.",
+              "correctAnswer": [
+                "streampos pos = file.tellg();",
+                "tell"
+              ],
+              "explanation": "Tell current position.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-3-17",
+              "type": "code",
+              "question": "Get file size.",
+              "correctAnswer": [
+                "file.seekg(0, ios::end);\nstreampos size = file.tellg();\nfile.seekg(0, ios::beg);",
+                "file size"
+              ],
+              "explanation": "Get file size.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-3-18",
+              "type": "code",
+              "question": "Read with delimiter.",
+              "correctAnswer": [
+                "getline(file, line, ',');",
+                "delimiter"
+              ],
+              "explanation": "Read with custom delimiter.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-3-19",
+              "type": "code",
+              "question": "Read structured data.",
+              "correctAnswer": [
+                "struct Person { string name; int age; };\nPerson p;\nfile >> p.name >> p.age;",
+                "structured"
+              ],
+              "explanation": "Read structured data.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-3-20",
+              "type": "code",
+              "question": "Read CSV.",
+              "correctAnswer": [
+                "vector<vector<string>> readCSV(string filename) { // parse CSV file }",
+                "csv"
+              ],
+              "explanation": "Parse CSV file.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-3-21",
+              "type": "code",
+              "question": "Read JSON.",
+              "correctAnswer": [
+                "// Use library or parse manually",
+                "json"
+              ],
+              "explanation": "Parse JSON file.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-3-22",
+              "type": "code",
+              "question": "Error handling.",
+              "correctAnswer": [
+                "if (file.fail()) { cerr << \"Read error\" << endl; }",
+                "error"
+              ],
+              "explanation": "Handle read errors.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-3-23",
+              "type": "code",
+              "question": "Buffering.",
+              "correctAnswer": [
+                "file.rdbuf(); // get stream buffer",
+                "buffering"
+              ],
+              "explanation": "Stream buffer access.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-3-24",
+              "type": "code",
+              "question": "Performance tips.",
+              "correctAnswer": [
+                "// Read in chunks, minimize seeks",
+                "performance"
+              ],
+              "explanation": "Performance tips.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-3-25",
+              "type": "code",
+              "question": "Summary.",
+              "correctAnswer": [
+                "// Reading: getline, >>, get, read, seek",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Reading Files\n\nReading data from files in C++.\n\n## Reading Line by Line\n\n```cpp\n#include <fstream>\n#include <string>\nusing namespace std;\n\nint main() {\n    ifstream file(\"data.txt\");\n    \n    if (!file.is_open()) {\n        cerr << \"Failed to open file\" << endl;\n        return 1;\n    }\n    \n    string line;\n    while (getline(file, line)) {\n        cout << line << endl;\n    }\n    \n    return 0;\n}\n```\n\n## Reading Word by Word\n\n```cpp\nifstream file(\"data.txt\");\nstring word;\n\nwhile (file >> word) {\n    cout << word << endl;\n}\n```\n\n## Reading Numbers\n\n```cpp\nifstream file(\"numbers.txt\");\nint num;\n\nwhile (file >> num) {\n    cout << num << endl;\n}\n```\n\n## Reading into Vector\n\n```cpp\n#include <fstream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    ifstream file(\"data.txt\");\n    vector<int> numbers;\n    int num;\n    \n    while (file >> num) {\n        numbers.push_back(num);\n    }\n    \n    return 0;\n}\n```\n\n## Reading Entire File\n\n```cpp\n#include <fstream>\n#include <sstream>\nusing namespace std;\n\nint main() {\n    ifstream file(\"data.txt\");\n    stringstream buffer;\n    \n    buffer << file.rdbuf();\n    string content = buffer.str();\n    \n    cout << content << endl;\n    \n    return 0;\n}\n```\n\n## Reading Characters\n\n```cpp\nifstream file(\"data.txt\");\nchar ch;\n\nwhile (file.get(ch)) {\n    cout << ch;\n}\n```\n\n## Binary Reading\n\n```cpp\n#include <fstream>\nusing namespace std;\n\nint main() {\n    ifstream file(\"data.bin\", ios::binary);\n    char buffer[1024];\n    \n    file.read(buffer, sizeof(buffer));\n    \n    return 0;\n}\n```\n\n## Random Access\n\n```cpp\n#include <fstream>\nusing namespace std;\n\nint main() {\n    ifstream file(\"data.txt\");\n    \n    // Seek to beginning\n    file.seekg(0, ios::beg);\n    \n    // Seek to end\n    file.seekg(0, ios::end);\n    \n    // Seek from current\n    file.seekg(10, ios::cur);\n    \n    // Get current position\n    streampos pos = file.tellg();\n    \n    // Get file size\n    file.seekg(0, ios::end);\n    streampos size = file.tellg();\n    file.seekg(0, ios::beg);\n    \n    return 0;\n}\n```\n\n## Reading with Delimiter\n\n```cpp\nifstream file(\"data.txt\");\nstring token;\n\nwhile (getline(file, token, ',')) {\n    cout << token << endl;\n}\n```\n\n## Reading Structured Data\n\n```cpp\nstruct Person {\n    string name;\n    int age;\n    double salary;\n};\n\nint main() {\n    ifstream file(\"people.txt\");\n    vector<Person> people;\n    \n    Person p;\n    while (file >> p.name >> p.age >> p.salary) {\n        people.push_back(p);\n    }\n    \n    return 0;\n}\n```\n"
         },
         {
           "id": "cpp-U37-L4",
-          "title": "Push-relabel",
-          "unitTitle": "37. Flow Algorithms",
-          "xp": 15,
+          "title": "Writing Files",
+          "unitTitle": "37. File I/O & Streams",
+          "xp": 85,
           "type": "lesson",
-          "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "difficulty": "beginner",
+          "questions": [
+            {
+              "id": "cpp-37-4-1",
+              "type": "typing",
+              "question": "Write string?",
+              "correctAnswer": [
+                "operator<<",
+                "insertion",
+                "output"
+              ],
+              "explanation": "Use << operator.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-4-2",
+              "type": "typing",
+              "question": "Write line?",
+              "correctAnswer": [
+                "endl",
+                "newline",
+                "flush"
+              ],
+              "explanation": "Use endl or \\n.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-4-3",
+              "type": "typing",
+              "question": "Flush?",
+              "correctAnswer": [
+                "flush",
+                "write buffer",
+                "force"
+              ],
+              "explanation": "Force buffer write.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-4-4",
+              "type": "multiple",
+              "question": "Write methods?",
+              "options": [
+                "put",
+                "write",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both put() and write().",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-4-5",
+              "type": "multiple",
+              "question": "Seek write?",
+              "options": [
+                "seekp",
+                "tellp",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both seekp and tellp.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-4-6",
+              "type": "code",
+              "question": "Write line.",
+              "correctAnswer": [
+                "ofstream file(\"output.txt\");\nfile << \"Hello, World!\" << endl;",
+                "write line"
+              ],
+              "explanation": "Write line to file.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-4-7",
+              "type": "code",
+              "question": "Write integer.",
+              "correctAnswer": [
+                "int x = 42;\nfile << \"Value: \" << x << endl;",
+                "write int"
+              ],
+              "explanation": "Write integer to file.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-4-8",
+              "type": "code",
+              "question": "Write multiple.",
+              "correctAnswer": [
+                "file << \"Name: \" << name << \", Age: \" << age << endl;",
+                "write multiple"
+              ],
+              "explanation": "Write multiple values.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-4-9",
+              "type": "code",
+              "question": "Write formatted.",
+              "correctAnswer": [
+                "file << fixed << setprecision(2) << value << endl;",
+                "write formatted"
+              ],
+              "explanation": "Write formatted output.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-4-10",
+              "type": "code",
+              "question": "Write char by char.",
+              "correctAnswer": [
+                "ofstream file(\"output.txt\");\nfor (char ch : str) file.put(ch);",
+                "write chars"
+              ],
+              "explanation": "Write character by character.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-4-11",
+              "type": "code",
+              "question": "Write binary.",
+              "correctAnswer": [
+                "ofstream file(\"data.bin\", ios::binary);\nfile.write(buffer, size);",
+                "write binary"
+              ],
+              "explanation": "Write binary data.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-4-12",
+              "type": "code",
+              "question": "Seek write position.",
+              "correctAnswer": [
+                "file.seekp(pos);",
+                "seekp"
+              ],
+              "explanation": "Seek write position.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-4-13",
+              "type": "code",
+              "question": "Tell write position.",
+              "correctAnswer": [
+                "streampos pos = file.tellp();",
+                "tellp"
+              ],
+              "explanation": "Tell write position.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-4-14",
+              "type": "code",
+              "question": "Append mode.",
+              "correctAnswer": [
+                "ofstream file(\"log.txt\", ios::app);\nfile << \"Log entry\" << endl;",
+                "append"
+              ],
+              "explanation": "Write in append mode.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-4-15",
+              "type": "code",
+              "question": "Write vector.",
+              "correctAnswer": [
+                "for (const auto& item : vector) file << item << endl;",
+                "write vector"
+              ],
+              "explanation": "Write vector to file.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-4-16",
+              "type": "code",
+              "question": "Write structured.",
+              "correctAnswer": [
+                "file << person.name << \" \" << person.age << \" \" << person.salary << endl;",
+                "write structured"
+              ],
+              "explanation": "Write structured data.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-4-17",
+              "type": "code",
+              "question": "Write CSV.",
+              "correctAnswer": [
+                "file << name << \",\" << age << \",\" << score << endl;",
+                "write csv"
+              ],
+              "explanation": "Write CSV format.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-4-18",
+              "type": "code",
+              "question": "Write JSON.",
+              "correctAnswer": [
+                "file << \"{\\\"name\\\": \\\"\" << name << \"\\\", \\\"age\\\": \" << age << \"}\" << endl;",
+                "write json"
+              ],
+              "explanation": "Write JSON format.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-4-19",
+              "type": "code",
+              "question": "Flush explicitly.",
+              "correctAnswer": [
+                "file.flush();",
+                "flush"
+              ],
+              "explanation": "Explicitly flush buffer.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-4-20",
+              "type": "code",
+              "question": "Error handling.",
+              "correctAnswer": [
+                "if (file.fail()) { cerr << \"Write error\" << endl; }",
+                "error"
+              ],
+              "explanation": "Handle write errors.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-4-21",
+              "type": "code",
+              "question": "Buffering optimization.",
+              "correctAnswer": [
+                "file.rdbuf()->pubsetbuf(buffer, size);",
+                "buffering"
+              ],
+              "explanation": "Set custom buffer.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-4-22",
+              "type": "code",
+              "question": "Large file writes.",
+              "correctAnswer": [
+                "// Write in chunks to avoid memory issues",
+                "large"
+              ],
+              "explanation": "Handle large file writes.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-4-23",
+              "type": "code",
+              "question": "Atomic writes.",
+              "correctAnswer": [
+                "// Write to temp file, then rename",
+                "atomic"
+              ],
+              "explanation": "Atomic file operations.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-4-24",
+              "type": "code",
+              "question": "Performance tips.",
+              "correctAnswer": [
+                "// Minimize flushes, use larger buffers",
+                "performance"
+              ],
+              "explanation": "Performance tips.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-4-25",
+              "type": "code",
+              "question": "Summary.",
+              "correctAnswer": [
+                "// Writing: <<, put, write, seekp, flush",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Writing Files\n\nWriting data to files in C++.\n\n## Basic Writing\n\n```cpp\n#include <fstream>\nusing namespace std;\n\nint main() {\n    ofstream file(\"output.txt\");\n    \n    if (!file.is_open()) {\n        cerr << \"Failed to open file\" << endl;\n        return 1;\n    }\n    \n    file << \"Hello, World!\" << endl;\n    file << \"This is a new line.\" << endl;\n    \n    return 0;\n}\n```\n\n## Writing Multiple Values\n\n```cpp\nofstream file(\"data.txt\");\n\nstring name = \"Alice\";\nint age = 30;\ndouble salary = 50000.50;\n\nfile << name << \" \" << age << \" \" << salary << endl;\n```\n\n## Formatted Output\n\n```cpp\n#include <fstream>\n#include <iomanip>\nusing namespace std;\n\nint main() {\n    ofstream file(\"data.txt\");\n    \n    double pi = 3.14159;\n    \n    file << fixed << setprecision(4) << pi << endl;\n    \n    file << setw(10) << left << \"Name\" \n         << setw(5) << \"Age\" << endl;\n    \n    return 0;\n}\n```\n\n## Writing Characters\n\n```cpp\nofstream file(\"output.txt\");\nstring text = \"Hello\";\n\nfor (char ch : text) {\n    file.put(ch);\n}\n```\n\n## Binary Writing\n\n```cpp\n#include <fstream>\nusing namespace std;\n\nint main() {\n    ofstream file(\"data.bin\", ios::binary);\n    \n    int numbers[] = {1, 2, 3, 4, 5};\n    file.write(reinterpret_cast<char*>(numbers), \n               sizeof(numbers));\n    \n    return 0;\n}\n```\n\n## Random Access Writing\n\n```cpp\nofstream file(\"data.txt\");\n\n// Seek to position\nfile.seekp(100);\n\n// Write at position\nfile << \"Data at position 100\";\n\n// Get write position\nstreampos pos = file.tellp();\n```\n\n## Append Mode\n\n```cpp\n#include <fstream>\nusing namespace std;\n\nint main() {\n    ofstream logFile(\"log.txt\", ios::app);\n    \n    logFile << \"[INFO] New log entry\" << endl;\n    logFile << \"[ERROR] Error occurred\" << endl;\n    \n    return 0;\n}\n```\n\n## Writing Collections\n\n```cpp\n#include <fstream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    ofstream file(\"output.txt\");\n    vector<int> numbers = {1, 2, 3, 4, 5};\n    \n    for (int num : numbers) {\n        file << num << endl;\n    }\n    \n    return 0;\n}\n```\n\n## Writing Structured Data\n\n```cpp\nstruct Person {\n    string name;\n    int age;\n    double salary;\n};\n\nint main() {\n    ofstream file(\"people.txt\");\n    vector<Person> people = {\n        {\"Alice\", 30, 50000.0},\n        {\"Bob\", 25, 45000.0}\n    };\n    \n    for (const auto& person : people) {\n        file << person.name << \" \" \n             << person.age << \" \" \n             << person.salary << endl;\n    }\n    \n    return 0;\n}\n```\n\n## Flush Buffer\n\n```cpp\nofstream file(\"output.txt\");\nfile << \"Critical data\" << endl;\nfile.flush();  // Force write to disk\n```\n"
         },
         {
           "id": "cpp-U37-L5",
-          "title": "Min-cost max-flow",
-          "unitTitle": "37. Flow Algorithms",
-          "xp": 15,
+          "title": "String Streams",
+          "unitTitle": "37. File I/O & Streams",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-37-5-1",
+              "type": "typing",
+              "question": "stringstream?",
+              "correctAnswer": [
+                "string stream",
+                "in-memory",
+                "both"
+              ],
+              "explanation": "In-memory string stream.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-5-2",
+              "type": "typing",
+              "question": "istringstream?",
+              "correctAnswer": [
+                "input string stream",
+                "read from string",
+                "parse"
+              ],
+              "explanation": "Read from string.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-5-3",
+              "type": "typing",
+              "question": "ostringstream?",
+              "correctAnswer": [
+                "output string stream",
+                "write to string",
+                "build"
+              ],
+              "explanation": "Write to string.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-5-4",
+              "type": "multiple",
+              "question": "String stream uses?",
+              "options": [
+                "parsing",
+                "building",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both parsing and building.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-5-5",
+              "type": "multiple",
+              "question": "Extract?",
+              "options": [
+                "str()",
+                "get string",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Use str() to extract.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-5-6",
+              "type": "code",
+              "question": "Parse integers.",
+              "correctAnswer": [
+                "string s = \"10 20 30\";\nistringstream iss(s);\nint x, y, z;\niss >> x >> y >> z;",
+                "parse ints"
+              ],
+              "explanation": "Parse integers from string.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-5-7",
+              "type": "code",
+              "question": "Parse words.",
+              "correctAnswer": [
+                "string s = \"Hello World\";\nistringstream iss(s);\nstring word1, word2;\niss >> word1 >> word2;",
+                "parse words"
+              ],
+              "explanation": "Parse words from string.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-5-8",
+              "type": "code",
+              "question": "Build string.",
+              "correctAnswer": [
+                "ostringstream oss;\noss << \"Value: \" << value;\nstring result = oss.str();",
+                "build string"
+              ],
+              "explanation": "Build string from parts.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-5-9",
+              "type": "code",
+              "question": "Format string.",
+              "correctAnswer": [
+                "ostringstream oss;\noss << fixed << setprecision(2) << value;\nstring result = oss.str();",
+                "format string"
+              ],
+              "explanation": "Format string with precision.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-5-10",
+              "type": "code",
+              "question": "Split string.",
+              "correctAnswer": [
+                "string s = \"a,b,c\";\nistringstream iss(s);\nstring token;\nwhile (getline(iss, token, ',')) {\n    cout << token << endl;\n}",
+                "split"
+              ],
+              "explanation": "Split string by delimiter.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-5-11",
+              "type": "code",
+              "question": "Convert to int.",
+              "correctAnswer": [
+                "string s = \"123\";\nistringstream iss(s);\nint x;\niss >> x;",
+                "to int"
+              ],
+              "explanation": "Convert string to int.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-5-12",
+              "type": "code",
+              "question": "Convert to string.",
+              "correctAnswer": [
+                "ostringstream oss;\noss << 123;\nstring s = oss.str();",
+                "to string"
+              ],
+              "explanation": "Convert int to string.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-5-13",
+              "type": "code",
+              "question": "Mixed types.",
+              "correctAnswer": [
+                "ostringstream oss;\noss << \"Name: \" << name << \", Age: \" << age;\nstring result = oss.str();",
+                "mixed"
+              ],
+              "explanation": "Combine multiple types.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-5-14",
+              "type": "code",
+              "question": "Parse CSV line.",
+              "correctAnswer": [
+                "string line = \"John,Doe,30\";\nistringstream iss(line);\nstring first, last; int age;\ngetline(iss, first, ',');\ngetline(iss, last, ',');\niss >> age;",
+                "parse csv"
+              ],
+              "explanation": "Parse CSV line.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-5-15",
+              "type": "code",
+              "question": "Build CSV.",
+              "correctAnswer": [
+                "ostringstream oss;\noss << first << \",\" << last << \",\" << age;\nstring csv = oss.str();",
+                "build csv"
+              ],
+              "explanation": "Build CSV string.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-5-16",
+              "type": "code",
+              "question": "Clear stream.",
+              "correctAnswer": [
+                "iss.str(\"\"); iss.clear();",
+                "clear"
+              ],
+              "explanation": "Clear string stream.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-5-17",
+              "type": "code",
+              "question": "String manipulation.",
+              "correctAnswer": [
+                "// Use stringstream for string operations",
+                "manipulation"
+              ],
+              "explanation": "String manipulation.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-5-18",
+              "type": "code",
+              "question": "Type conversion.",
+              "correctAnswer": [
+                "// Stringstream for type conversion",
+                "conversion"
+              ],
+              "explanation": "Type conversion.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-5-19",
+              "type": "code",
+              "question": "Error handling.",
+              "correctAnswer": [
+                "if (iss.fail()) { // parse error }",
+                "error"
+              ],
+              "explanation": "Handle parse errors.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-5-20",
+              "type": "code",
+              "question": "Performance.",
+              "correctAnswer": [
+                "// Faster than multiple concatenations",
+                "performance"
+              ],
+              "explanation": "Performance considerations.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-5-21",
+              "type": "code",
+              "question": "Testing stringstream.",
+              "correctAnswer": [
+                "void testStringStream() { // Test stringstream }",
+                "test"
+              ],
+              "explanation": "Test stringstream.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-5-22",
+              "type": "code",
+              "question": "Edge cases.",
+              "correctAnswer": [
+                "// Empty string, invalid data, overflow",
+                "edge"
+              ],
+              "explanation": "Edge cases.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-5-23",
+              "type": "code",
+              "question": "Memory efficiency.",
+              "correctAnswer": [
+                "// Reuse streams, avoid copies",
+                "memory"
+              ],
+              "explanation": "Memory efficiency.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-5-24",
+              "type": "code",
+              "question": "Advanced parsing.",
+              "correctAnswer": [
+                "// Complex parsing with multiple types",
+                "advanced"
+              ],
+              "explanation": "Advanced parsing.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-5-25",
+              "type": "code",
+              "question": "Summary.",
+              "correctAnswer": [
+                "// String streams: istringstream, ostringstream, stringstream",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# String Streams\n\nIn-memory string I/O with string streams.\n\n## What are String Streams?\n\nString streams allow you to read from and write to strings as if they were streams.\n\n| Type | Purpose |\n|------|---------|\n| `istringstream` | Read from string |\n| `ostringstream` | Write to string |\n| `stringstream` | Read/write to string |\n\n## Reading from String\n\n```cpp\n#include <sstream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string data = \"10 20 30\";\n    istringstream iss(data);\n    \n    int x, y, z;\n    iss >> x >> y >> z;\n    \n    cout << x << \" \" << y << \" \" << z << endl;  // 10 20 30\n    \n    return 0;\n}\n```\n\n## Writing to String\n\n```cpp\n#include <sstream>\n#include <string>\nusing namespace std;\n\nint main() {\n    ostringstream oss;\n    \n    oss << \"Value: \" << 42 << \", Name: \" << \"Alice\";\n    \n    string result = oss.str();\n    cout << result << endl;  // Value: 42, Name: Alice\n    \n    return 0;\n}\n```\n\n## Type Conversion\n\n### String to Number\n```cpp\nstring s = \"123\";\nistringstream iss(s);\nint x;\niss >> x;\n```\n\n### Number to String\n```cpp\nostringstream oss;\noss << 123;\nstring s = oss.str();\n```\n\n## Splitting Strings\n\n```cpp\n#include <sstream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    string data = \"apple,banana,cherry\";\n    istringstream iss(data);\n    string token;\n    \n    while (getline(iss, token, ',')) {\n        cout << token << endl;\n    }\n    \n    return 0;\n}\n```\n\n## Building CSV Strings\n\n```cpp\nostringstream oss;\noss << \"John\" << \",\" << \"Doe\" << \",\" << 30;\nstring csv = oss.str();\n```\n\n## Parsing CSV Strings\n\n```cpp\nstring line = \"John,Doe,30\";\nistringstream iss(line);\nstring first, last;\nint age;\n\ngetline(iss, first, ',');\ngetline(iss, last, ',');\niss >> age;\n```\n\n## Formatted String Building\n\n```cpp\n#include <iomanip>\nusing namespace std;\n\nint main() {\n    double pi = 3.14159;\n    \n    ostringstream oss;\n    oss << fixed << setprecision(2) << pi;\n    \n    string result = oss.str();  // \"3.14\"\n    \n    return 0;\n}\n```\n\n## Clearing String Stream\n\n```cpp\nistringstream iss(\"data\");\n// use stream\niss.str(\"\");  // Clear content\niss.clear();  // Clear flags\n```\n\n## Multiple Values\n\n```cpp\nistringstream iss(\"10 20 hello 3.14\");\nint a, b;\nstring word;\ndouble d;\n\niss >> a >> b >> word >> d;\n// a=10, b=20, word=\"hello\", d=3.14\n```\n\n## Advantages\n\n- **Efficient**: Better than string concatenation\n- **Flexible**: Supports all stream operations\n- **Type-safe**: Automatic type conversion\n- **Parseable**: Easy to parse structured data\n"
         },
         {
           "id": "cpp-U37-L6",
-          "title": "Circulation with demands",
-          "unitTitle": "37. Flow Algorithms",
-          "xp": 15,
+          "title": "Error Handling",
+          "unitTitle": "37. File I/O & Streams",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-37-6-1",
+              "type": "typing",
+              "question": "Stream state?",
+              "correctAnswer": [
+                "good",
+                "fail",
+                "eof",
+                "bad"
+              ],
+              "explanation": "Stream state flags.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-6-2",
+              "type": "typing",
+              "question": "Check good?",
+              "correctAnswer": [
+                "good()",
+                "is good",
+                "no errors"
+              ],
+              "explanation": "Check if stream is good.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-6-3",
+              "type": "typing",
+              "question": "Check EOF?",
+              "correctAnswer": [
+                "eof()",
+                "end of file",
+                "reached end"
+              ],
+              "explanation": "Check if EOF reached.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-6-4",
+              "type": "multiple",
+              "question": "Error states?",
+              "options": [
+                "failbit",
+                "badbit",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both error bits.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-6-5",
+              "type": "multiple",
+              "question": "Clear errors?",
+              "options": [
+                "clear()",
+                "reset",
+                "both"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "Use clear().",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-6-6",
+              "type": "code",
+              "question": "Check file open.",
+              "correctAnswer": [
+                "ifstream file(\"data.txt\");\nif (!file.is_open()) {\n    cerr << \"Error: cannot open file\" << endl;\n    return 1;\n}",
+                "check open"
+              ],
+              "explanation": "Check if file opened successfully.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-6-7",
+              "type": "code",
+              "question": "Check read success.",
+              "correctAnswer": [
+                "int x;\nif (cin >> x) {\n    // read successful\n} else {\n    cerr << \"Read error\" << endl;\n}",
+                "check read"
+              ],
+              "explanation": "Check if read succeeded.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-6-8",
+              "type": "code",
+              "question": "Check EOF.",
+              "correctAnswer": [
+                "if (file.eof()) {\n    cout << \"End of file\" << endl;\n}",
+                "check eof"
+              ],
+              "explanation": "Check EOF condition.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-6-9",
+              "type": "code",
+              "question": "Check fail.",
+              "correctAnswer": [
+                "if (file.fail()) {\n    cerr << \"Operation failed\" << endl;\n}",
+                "check fail"
+              ],
+              "explanation": "Check fail condition.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-6-10",
+              "type": "code",
+              "question": "Clear errors.",
+              "correctAnswer": [
+                "file.clear();",
+                "clear"
+              ],
+              "explanation": "Clear error flags.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-6-11",
+              "type": "code",
+              "question": "Exception handling.",
+              "correctAnswer": [
+                "file.exceptions(ios::failbit | ios::badbit);\ntry {\n    // file operations\n} catch (const exception& e) {\n    cerr << e.what() << endl;\n}",
+                "exception"
+              ],
+              "explanation": "Exception-based error handling.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-6-12",
+              "type": "code",
+              "question": "Ignore bad input.",
+              "correctAnswer": [
+                "cin.clear();\ncin.ignore(numeric_limits<streamsize>::max(), '\\n');",
+                "ignore"
+              ],
+              "explanation": "Ignore remaining bad input.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-6-13",
+              "type": "code",
+              "question": "Validate input.",
+              "correctAnswer": [
+                "int x;\nwhile (!(cin >> x)) {\n    cin.clear();\n    cin.ignore(numeric_limits<streamsize>::max(), '\\n');\n    cout << \"Invalid input. Try again: \";\n}",
+                "validate"
+              ],
+              "explanation": "Validate and retry input.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-6-14",
+              "type": "code",
+              "question": "Permission error.",
+              "correctAnswer": [
+                "if (!file) {\n    if (errno == EACCES) {\n        cerr << \"Permission denied\" << endl;\n    }\n}",
+                "permission"
+              ],
+              "explanation": "Check permission error.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-6-15",
+              "type": "code",
+              "question": "File not found.",
+              "correctAnswer": [
+                "if (!file.is_open()) {\n    cerr << \"File not found\" << endl;\n}",
+                "not found"
+              ],
+              "explanation": "Handle file not found.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-6-16",
+              "type": "code",
+              "question": "Disk full.",
+              "correctAnswer": [
+                "if (file.bad()) {\n    cerr << \"Disk full or write error\" << endl;\n}",
+                "disk full"
+              ],
+              "explanation": "Handle disk full error.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-6-17",
+              "type": "code",
+              "question": "Read error recovery.",
+              "correctAnswer": [
+                "if (file.fail()) {\n    file.clear();\n    // attempt recovery\n}",
+                "recovery"
+              ],
+              "explanation": "Recover from read error.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-6-18",
+              "type": "code",
+              "question": "Logging errors.",
+              "correctAnswer": [
+                "cerr << \"Error at \" << __FILE__ << \":\" << __LINE__ << endl;",
+                "logging"
+              ],
+              "explanation": "Log errors with context.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-6-19",
+              "type": "code",
+              "question": "Safe file wrapper.",
+              "correctAnswer": [
+                "class SafeFile {\n    ifstream file;\npublic:\n    SafeFile(string name) : file(name) {\n        if (!file.is_open()) throw runtime_error(\"Cannot open\");\n    }\n};",
+                "wrapper"
+              ],
+              "explanation": "Safe file wrapper class.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-6-20",
+              "type": "code",
+              "question": "Testing errors.",
+              "correctAnswer": [
+                "void testErrors() { // Test error handling }",
+                "test"
+              ],
+              "explanation": "Test error handling.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-6-21",
+              "type": "code",
+              "question": "Common pitfalls.",
+              "correctAnswer": [
+                "// Not checking state, not clearing errors",
+                "pitfalls"
+              ],
+              "explanation": "Common error handling pitfalls.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-6-22",
+              "type": "code",
+              "question": "Debugging tips.",
+              "correctAnswer": [
+                "// Print stream state, use debugger",
+                "debug"
+              ],
+              "explanation": "Debug stream errors.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-6-23",
+              "type": "code",
+              "question": "Production patterns.",
+              "correctAnswer": [
+                "// RAII, exceptions, logging",
+                "patterns"
+              ],
+              "explanation": "Production error handling.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-6-24",
+              "type": "code",
+              "question": "Performance impact.",
+              "correctAnswer": [
+                "// Error checking minimal impact",
+                "performance"
+              ],
+              "explanation": "Error checking performance.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-6-25",
+              "type": "code",
+              "question": "Summary.",
+              "correctAnswer": [
+                "// Error handling: state flags, clear, exceptions",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Error Handling\n\nRobust error handling for stream operations.\n\n## Stream State Flags\n\n| Flag | Meaning | Check |\n|------|---------|-------|\n| `goodbit` | No errors | `good()` |\n| `failbit` | Logical error | `fail()` |\n| `badbit` | Read/write error | `bad()` |\n| `eofbit` | End of file | `eof()` |\n\n## Checking State\n\n```cpp\n#include <fstream>\nusing namespace std;\n\nint main() {\n    ifstream file(\"data.txt\");\n    \n    if (!file.is_open()) {\n        cerr << \"Failed to open file\" << endl;\n        return 1;\n    }\n    \n    if (file.good()) {\n        cout << \"Stream is good\" << endl;\n    }\n    \n    if (file.fail()) {\n        cerr << \"Operation failed\" << endl;\n    }\n    \n    if (file.bad()) {\n        cerr << \"Critical error\" << endl;\n    }\n    \n    if (file.eof()) {\n        cout << \"End of file reached\" << endl;\n    }\n    \n    return 0;\n}\n```\n\n## Clearing Errors\n\n```cpp\n// Clear all error flags\nfile.clear();\n\n// Clear specific flag\nfile.clear(ios::failbit);\n\n// Reset to good state\nfile.clear(ios::goodbit);\n```\n\n## Exception Handling\n\n```cpp\n#include <fstream>\n#include <stdexcept>\nusing namespace std;\n\nint main() {\n    ifstream file;\n    \n    // Enable exceptions\n    file.exceptions(ios::failbit | ios::badbit);\n    \n    try {\n        file.open(\"data.txt\");\n        // Process file\n    } catch (const exception& e) {\n        cerr << \"Error: \" << e.what() << endl;\n    }\n    \n    return 0;\n}\n```\n\n## Input Validation\n\n```cpp\n#include <limits>\nusing namespace std;\n\nint getValidInt() {\n    int x;\n    while (!(cin >> x)) {\n        cin.clear();\n        cin.ignore(numeric_limits<streamsize>::max(), '\\n');\n        cout << \"Invalid input. Enter integer: \";\n    }\n    return x;\n}\n```\n\n## Common Error Patterns\n\n```cpp\n// File not found\nifstream file(\"data.txt\");\nif (!file.is_open()) {\n    cerr << \"File not found\" << endl;\n    return 1;\n}\n\n// Read error\nint x;\nif (!(cin >> x)) {\n    cerr << \"Invalid input\" << endl;\n    cin.clear();\n    cin.ignore(numeric_limits<streamsize>::max(), '\\n');\n}\n\n// Write error\nif (!file) {\n    cerr << \"Write failed\" << endl;\n    return 1;\n}\n```\n\n## Safe File Wrapper\n\n```cpp\n#include <fstream>\n#include <stdexcept>\nusing namespace std;\n\nclass SafeFile {\n    ifstream file;\npublic:\n    SafeFile(const string& filename) : file(filename) {\n        if (!file.is_open()) {\n            throw runtime_error(\"Cannot open file: \" + filename);\n        }\n    }\n    \n    ifstream& get() { return file; }\n    ~SafeFile() { file.close(); }\n};\n```\n\n## Error Logging\n\n```cpp\n#include <iostream>\nusing namespace std;\n\nvoid logError(const string& message) {\n    cerr << \"[ERROR] \" << message \n         << \" at \" << __FILE__ \n         << \":\" << __LINE__ << endl;\n}\n```\n\n## Best Practices\n\n1. **Always check** file open operations\n2. **Clear errors** before retrying\n3. **Use exceptions** for critical errors\n4. **Log errors** with context\n5. **Handle EOF** gracefully\n6. **Validate input** before use\n"
+        },
+        {
+          "id": "cpp-U37-L7",
+          "title": "Advanced I/O",
+          "questions": [
+            {
+              "id": "cpp-37-7-1",
+              "type": "typing",
+              "question": "Binary I/O?",
+              "correctAnswer": [
+                "binary mode",
+                "ios::binary",
+                "raw bytes"
+              ],
+              "explanation": "Binary file operations.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-7-2",
+              "type": "typing",
+              "question": "Buffering?",
+              "correctAnswer": [
+                "stream buffer",
+                "rdbuf",
+                "performance"
+              ],
+              "explanation": "Stream buffer management.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-7-3",
+              "type": "typing",
+              "question": "Locale?",
+              "correctAnswer": [
+                "locale",
+                "formatting",
+                "culture"
+              ],
+              "explanation": "Locale-specific formatting.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-7-4",
+              "type": "multiple",
+              "question": "Advanced features?",
+              "options": [
+                "binary",
+                "buffering",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both are advanced.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-7-5",
+              "type": "multiple",
+              "question": "Custom manipulators?",
+              "options": [
+                "possible",
+                "functions",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Custom manipulators.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-7-6",
+              "type": "code",
+              "question": "Write binary struct.",
+              "correctAnswer": [
+                "struct Data { int id; double value; };\nData d = {1, 3.14};\nofstream file(\"data.bin\", ios::binary);\nfile.write(reinterpret_cast<char*>(&d), sizeof(d));",
+                "binary struct"
+              ],
+              "explanation": "Write binary struct.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-7-7",
+              "type": "code",
+              "question": "Read binary struct.",
+              "correctAnswer": [
+                "ifstream file(\"data.bin\", ios::binary);\nData d;\nfile.read(reinterpret_cast<char*>(&d), sizeof(d));",
+                "read binary"
+              ],
+              "explanation": "Read binary struct.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-7-8",
+              "type": "code",
+              "question": "Set buffer.",
+              "correctAnswer": [
+                "char buffer[4096];\nfile.rdbuf()->pubsetbuf(buffer, sizeof(buffer));",
+                "set buffer"
+              ],
+              "explanation": "Set custom buffer.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-7-9",
+              "type": "code",
+              "question": "Custom manipulator.",
+              "correctAnswer": [
+                "ostream& bold(ostream& os) {\n    return os << \"\\033[1m\";\n}",
+                "custom manipulator"
+              ],
+              "explanation": "Create custom manipulator.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-7-10",
+              "type": "code",
+              "question": "Set locale.",
+              "correctAnswer": [
+                "file.imbue(locale(\"en_US.UTF-8\"));",
+                "locale"
+              ],
+              "explanation": "Set file locale.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-7-11",
+              "type": "code",
+              "question": "Binary array write.",
+              "correctAnswer": [
+                "int arr[] = {1, 2, 3, 4, 5};\nfile.write(reinterpret_cast<char*>(arr), sizeof(arr));",
+                "binary array"
+              ],
+              "explanation": "Write binary array.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-7-12",
+              "type": "code",
+              "question": "Binary array read.",
+              "correctAnswer": [
+                "int arr[5];\nfile.read(reinterpret_cast<char*>(arr), sizeof(arr));",
+                "read array"
+              ],
+              "explanation": "Read binary array.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-7-13",
+              "type": "code",
+              "question": "Buffer performance.",
+              "correctAnswer": [
+                "// Larger buffers reduce I/O operations",
+                "performance"
+              ],
+              "explanation": "Buffer performance.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-7-14",
+              "type": "code",
+              "question": "Endianness handling.",
+              "correctAnswer": [
+                "// Check system endianness, handle conversion",
+                "endianness"
+              ],
+              "explanation": "Handle endianness.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-7-15",
+              "type": "code",
+              "question": "Binary file header.",
+              "correctAnswer": [
+                "struct Header { char magic[4]; int version; };\nHeader h = {{'B','I','N','\\0'}, 1};\nfile.write(reinterpret_cast<char*>(&h), sizeof(h));",
+                "header"
+              ],
+              "explanation": "Write binary file header.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-7-16",
+              "type": "code",
+              "question": "Custom format.",
+              "correctAnswer": [
+                "// Use custom manipulators for complex formatting",
+                "custom format"
+              ],
+              "explanation": "Custom formatting.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-7-17",
+              "type": "code",
+              "question": "Advanced parsing.",
+              "correctAnswer": [
+                "// Use regex with string streams",
+                "advanced parsing"
+              ],
+              "explanation": "Advanced parsing techniques.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-7-18",
+              "type": "code",
+              "question": "Memory-mapped files.",
+              "correctAnswer": [
+                "// Platform-specific memory mapping",
+                "mmap"
+              ],
+              "explanation": "Memory-mapped files.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-7-19",
+              "type": "code",
+              "question": "Compression.",
+              "correctAnswer": [
+                "// Use compression libraries with streams",
+                "compression"
+              ],
+              "explanation": "Stream compression.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-7-20",
+              "type": "code",
+              "question": "Testing advanced.",
+              "correctAnswer": [
+                "void testAdvanced() { // Test advanced features }",
+                "test"
+              ],
+              "explanation": "Test advanced features.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-7-21",
+              "type": "code",
+              "question": "Performance tuning.",
+              "correctAnswer": [
+                "// Optimize buffer size, reduce seeks",
+                "tuning"
+              ],
+              "explanation": "Performance tuning.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-7-22",
+              "type": "code",
+              "question": "Cross-platform.",
+              "correctAnswer": [
+                "// Handle line endings, path separators",
+                "cross platform"
+              ],
+              "explanation": "Cross-platform I/O.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-7-23",
+              "type": "code",
+              "question": "Security.",
+              "correctAnswer": [
+                "// Validate input, sanitize paths",
+                "security"
+              ],
+              "explanation": "I/O security.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-7-24",
+              "type": "code",
+              "question": "Large file support.",
+              "correctAnswer": [
+                "// Use 64-bit file offsets for large files",
+                "large file"
+              ],
+              "explanation": "Large file handling.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-7-25",
+              "type": "code",
+              "question": "Summary.",
+              "correctAnswer": [
+                "// Advanced: binary, buffering, locale, custom manipulators",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            }
+          ],
+          "unitTitle": "37. File I/O & Streams",
+          "xp": 85,
+          "type": "lesson",
+          "difficulty": "advanced",
+          "lessonText": "# Advanced I/O\n\nAdvanced I/O techniques and optimizations.\n\n## Binary I/O\n\n### Writing Binary Data\n\n```cpp\n#include <fstream>\nusing namespace std;\n\nstruct Data {\n    int id;\n    double value;\n    char name[50];\n};\n\nint main() {\n    Data data = {1, 3.14159, \"Test\"};\n    \n    ofstream file(\"data.bin\", ios::binary);\n    file.write(reinterpret_cast<char*>(&data), sizeof(data));\n    \n    return 0;\n}\n```\n\n### Reading Binary Data\n\n```cpp\nifstream file(\"data.bin\", ios::binary);\nData data;\nfile.read(reinterpret_cast<char*>(&data), sizeof(data));\n```\n\n## Custom Buffering\n\n```cpp\n#include <fstream>\nusing namespace std;\n\nint main() {\n    char buffer[4096];  // 4KB buffer\n    \n    ofstream file(\"output.txt\");\n    file.rdbuf()->pubsetbuf(buffer, sizeof(buffer));\n    \n    // Use file normally\n    for (int i = 0; i < 10000; i++) {\n        file << \"Line \" << i << endl;\n    }\n    \n    return 0;\n}\n```\n\n## Custom Manipulators\n\n```cpp\n#include <iostream>\nusing namespace std;\n\n// Simple manipulator\nostream& bold(ostream& os) {\n    return os << \"\\033[1m\";\n}\n\nostream& reset(ostream& os) {\n    return os << \"\\033[0m\";\n}\n\n// Parameterized manipulator\nstruct setw_custom {\n    int width;\n    setw_custom(int w) : width(w) {}\n};\n\nostream& operator<<(ostream& os, const setw_custom& w) {\n    os.width(w.width);\n    return os;\n}\n\nint main() {\n    cout << bold << \"Bold text\" << reset << endl;\n    cout << setw_custom(20) << \"Padded\" << endl;\n    return 0;\n}\n```\n\n## Locale Support\n\n```cpp\n#include <fstream>\n#include <locale>\nusing namespace std;\n\nint main() {\n    ofstream file(\"output.txt\");\n    \n    // Set locale for formatting\n    file.imbue(locale(\"en_US.UTF-8\"));\n    \n    double value = 1234.56;\n    file << value << endl;  // Uses locale-specific format\n    \n    return 0;\n}\n```\n\n## Endianness Handling\n\n```cpp\n#include <cstdint>\n\nbool isLittleEndian() {\n    uint32_t x = 1;\n    return *reinterpret_cast<uint8_t*>(&x) == 1;\n}\n\nvoid writeInt32(ofstream& file, int32_t value) {\n    if (isLittleEndian()) {\n        file.write(reinterpret_cast<char*>(&value), sizeof(value));\n    } else {\n        // Swap bytes for little-endian format\n        value = ((value >> 24) & 0xFF) |\n                ((value >> 8) & 0xFF00) |\n                ((value << 8) & 0xFF0000) |\n                ((value << 24) & 0xFF000000);\n        file.write(reinterpret_cast<char*>(&value), sizeof(value));\n    }\n}\n```\n\n## Binary File Format\n\n```cpp\n#pragma pack(push, 1)\nstruct FileHeader {\n    char magic[4];      // \"BIN\u0000\"\n    int32_t version;    // File version\n    int32_t itemCount;  // Number of items\n};\n\nstruct FileItem {\n    int32_t id;\n    double value;\n};\n#pragma pack(pop)\n\nint main() {\n    FileHeader header = {{'B','I','N','\\0'}, 1, 100};\n    \n    ofstream file(\"data.bin\", ios::binary);\n    file.write(reinterpret_cast<char*>(&header), sizeof(header));\n    \n    // Write items\n    for (int i = 0; i < header.itemCount; i++) {\n        FileItem item = {i, i * 1.1};\n        file.write(reinterpret_cast<char*>(&item), sizeof(item));\n    }\n    \n    return 0;\n}\n```\n"
+        },
+        {
+          "id": "cpp-U37-L8",
+          "title": "File System Operations",
+          "questions": [
+            {
+              "id": "cpp-37-8-1",
+              "type": "typing",
+              "question": "filesystem?",
+              "correctAnswer": [
+                "C++17",
+                "std::filesystem",
+                "fs"
+              ],
+              "explanation": "C++17 filesystem library.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-8-2",
+              "type": "typing",
+              "question": "path?",
+              "correctAnswer": [
+                "std::filesystem::path",
+                "file path",
+                "directory"
+              ],
+              "explanation": "Filesystem path class.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-8-3",
+              "type": "typing",
+              "question": "exists?",
+              "correctAnswer": [
+                "exists()",
+                "check file",
+                "is file"
+              ],
+              "explanation": "Check if path exists.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-8-4",
+              "type": "multiple",
+              "question": "Operations?",
+              "options": [
+                "create",
+                "remove",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both create and remove.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-8-5",
+              "type": "multiple",
+              "question": "Iterators?",
+              "options": [
+                "directory_iterator",
+                "recursive_directory_iterator",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both iterator types.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-8-6",
+              "type": "code",
+              "question": "Check exists.",
+              "correctAnswer": [
+                "#include <filesystem>\nnamespace fs = std::filesystem;\nif (fs::exists(\"file.txt\")) {\n    cout << \"File exists\" << endl;\n}",
+                "exists"
+              ],
+              "explanation": "Check if file exists.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-8-7",
+              "type": "code",
+              "question": "Create directory.",
+              "correctAnswer": [
+                "fs::create_directory(\"new_dir\");",
+                "create dir"
+              ],
+              "explanation": "Create directory.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-8-8",
+              "type": "code",
+              "question": "Remove file.",
+              "correctAnswer": [
+                "fs::remove(\"file.txt\");",
+                "remove file"
+              ],
+              "explanation": "Remove file.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-8-9",
+              "type": "code",
+              "question": "Remove directory.",
+              "correctAnswer": [
+                "fs::remove_all(\"dir\");",
+                "remove dir"
+              ],
+              "explanation": "Remove directory recursively.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-8-10",
+              "type": "code",
+              "question": "List directory.",
+              "correctAnswer": [
+                "for (const auto& entry : fs::directory_iterator(\".\")) {\n    cout << entry.path() << endl;\n}",
+                "list dir"
+              ],
+              "explanation": "List directory contents.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-8-11",
+              "type": "code",
+              "question": "Recursive list.",
+              "correctAnswer": [
+                "for (const auto& entry : fs::recursive_directory_iterator(\".\")) {\n    cout << entry.path() << endl;\n}",
+                "recursive list"
+              ],
+              "explanation": "List directory recursively.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-8-12",
+              "type": "code",
+              "question": "File size.",
+              "correctAnswer": [
+                "auto size = fs::file_size(\"file.txt\");",
+                "file size"
+              ],
+              "explanation": "Get file size.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-8-13",
+              "type": "code",
+              "question": "Copy file.",
+              "correctAnswer": [
+                "fs::copy_file(\"source.txt\", \"dest.txt\");",
+                "copy"
+              ],
+              "explanation": "Copy file.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-8-14",
+              "type": "code",
+              "question": "Move file.",
+              "correctAnswer": [
+                "fs::rename(\"old.txt\", \"new.txt\");",
+                "move"
+              ],
+              "explanation": "Move/rename file.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-8-15",
+              "type": "code",
+              "question": "Is directory.",
+              "correctAnswer": [
+                "if (fs::is_directory(\"path\")) {",
+                "is dir"
+              ],
+              "explanation": "Check if directory.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-8-16",
+              "type": "code",
+              "question": "Is regular file.",
+              "correctAnswer": [
+                "if (fs::is_regular_file(\"path\")) {",
+                "is file"
+              ],
+              "explanation": "Check if regular file.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-8-17",
+              "type": "code",
+              "question": "Last write time.",
+              "correctAnswer": [
+                "auto time = fs::last_write_time(\"file.txt\");",
+                "last write"
+              ],
+              "explanation": "Get last write time.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-8-18",
+              "type": "code",
+              "question": "Current path.",
+              "correctAnswer": [
+                "auto path = fs::current_path();",
+                "current path"
+              ],
+              "explanation": "Get current path.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-8-19",
+              "type": "code",
+              "question": "Change directory.",
+              "correctAnswer": [
+                "fs::current_path(\"/new/path\");",
+                "change dir"
+              ],
+              "explanation": "Change current directory.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-8-20",
+              "type": "code",
+              "question": "Create path.",
+              "correctAnswer": [
+                "fs::path p = \"/path/to/file.txt\";\nstring filename = p.filename();",
+                "create path"
+              ],
+              "explanation": "Create and manipulate path.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-8-21",
+              "type": "code",
+              "question": "Path operations.",
+              "correctAnswer": [
+                "fs::path p = \"dir/file.txt\";\ncout << p.parent_path() << endl;\ncout << p.extension() << endl;",
+                "path ops"
+              ],
+              "explanation": "Path manipulation.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-8-22",
+              "type": "code",
+              "question": "Temporary files.",
+              "correctAnswer": [
+                "auto tempPath = fs::temp_directory_path();\nauto tempFile = fs::path(tempPath) / \"temp_XXXXXX\";",
+                "temp"
+              ],
+              "explanation": "Work with temporary files.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-8-23",
+              "type": "code",
+              "question": "Testing filesystem.",
+              "correctAnswer": [
+                "void testFilesystem() { // Test filesystem }",
+                "test"
+              ],
+              "explanation": "Test filesystem operations.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-8-24",
+              "type": "code",
+              "question": "Error handling.",
+              "correctAnswer": [
+                "try { fs::create_directory(\"dir\"); } catch (const fs::filesystem_error& e) { cerr << e.what() << endl; }",
+                "error"
+              ],
+              "explanation": "Filesystem error handling.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-8-25",
+              "type": "code",
+              "question": "Summary.",
+              "correctAnswer": [
+                "// Filesystem: paths, directories, files, iterators",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            }
+          ],
+          "unitTitle": "37. File I/O & Streams",
+          "xp": 85,
+          "type": "lesson",
+          "difficulty": "intermediate",
+          "lessonText": "# File System Operations\n\nWorking with files and directories using C++17 filesystem.\n\n## Include and Namespace\n\n```cpp\n#include <filesystem>\nnamespace fs = std::filesystem;\n```\n\n## Path Operations\n\n```cpp\n#include <filesystem>\nusing namespace std;\nnamespace fs = std::filesystem;\n\nint main() {\n    // Create path\n    fs::path p = \"/home/user/documents/file.txt\";\n    \n    // Get components\n    cout << \"Filename: \" << p.filename() << endl;\n    cout << \"Extension: \" << p.extension() << endl;\n    cout << \"Parent: \" << p.parent_path() << endl;\n    cout << \"Root: \" << p.root_path() << endl;\n    \n    // Build path\n    fs::path combined = fs::path(\"dir\") / \"subdir\" / \"file.txt\";\n    \n    return 0;\n}\n```\n\n## File Existence Check\n\n```cpp\n#include <filesystem>\nnamespace fs = std::filesystem;\n\nint main() {\n    std::string filename = \"data.txt\";\n    \n    if (fs::exists(filename)) {\n        if (fs::is_regular_file(filename)) {\n            cout << \"Regular file exists\" << endl;\n        } else if (fs::is_directory(filename)) {\n            cout << \"Directory exists\" << endl;\n        }\n    } else {\n        cout << \"Path does not exist\" << endl;\n    }\n    \n    return 0;\n}\n```\n\n## Directory Operations\n\n```cpp\n// Create directory\nfs::create_directory(\"new_folder\");\n\n// Create directories recursively\nfs::create_directories(\"a/b/c/d\");\n\n// Remove empty directory\nfs::remove(\"empty_folder\");\n\n// Remove directory and contents\nfs::remove_all(\"non_empty_folder\");\n```\n\n## File Operations\n\n```cpp\n// Copy file\nfs::copy_file(\"source.txt\", \"destination.txt\");\n\n// Move/rename file\nfs::rename(\"old_name.txt\", \"new_name.txt\");\n\n// Remove file\nfs::remove(\"file.txt\");\n\n// Get file size\nauto size = fs::file_size(\"large_file.txt\");\n\n// Get last write time\nauto time = fs::last_write_time(\"file.txt\");\n```\n\n## List Directory Contents\n\n```cpp\n#include <filesystem>\nnamespace fs = std::filesystem;\n\nint main() {\n    for (const auto& entry : fs::directory_iterator(\".\")) {\n        cout << entry.path() << endl;\n    }\n    \n    return 0;\n}\n```\n\n## Recursive Directory Traversal\n\n```cpp\n#include <filesystem>\nnamespace fs = std::filesystem;\n\nint main() {\n    for (const auto& entry : \n         fs::recursive_directory_iterator(\"project\")) {\n        cout << entry.path() << endl;\n    }\n    \n    return 0;\n}\n```\n\n## Current Path\n\n```cpp\n// Get current path\nauto current = fs::current_path();\ncout << \"Current directory: \" << current << endl;\n\n// Change current path\nfs::current_path(\"/home/user\");\n```\n\n## File Attributes\n\n```cpp\nfs::path p = \"data.txt\";\n\nif (fs::exists(p)) {\n    cout << \"Size: \" << fs::file_size(p) << endl;\n    cout << \"Permissions: \" << fs::status(p).permissions() << endl;\n    cout << \"Last modified: \" << fs::last_write_time(p) << endl;\n}\n```\n\n## Error Handling\n\n```cpp\n#include <filesystem>\nnamespace fs = std::filesystem;\n\nint main() {\n    try {\n        fs::create_directory(\"new_dir\");\n        fs::copy_file(\"source.txt\", \"dest.txt\");\n    } catch (const fs::filesystem_error& e) {\n        cerr << \"Error: \" << e.what() << endl;\n        cerr << \"Path1: \" << e.path1() << endl;\n        cerr << \"Path2: \" << e.path2() << endl;\n    }\n    \n    return 0;\n}\n```\n\n## Common Operations\n\n| Operation | Function |\n|-----------|----------|\n| Check exists | `fs::exists(path)` |\n| Check directory | `fs::is_directory(path)` |\n| Check regular file | `fs::is_regular_file(path)` |\n| Create directory | `fs::create_directory(path)` |\n| Remove | `fs::remove(path)` |\n| Remove all | `fs::remove_all(path)` |\n| Copy file | `fs::copy_file(src, dest)` |\n| Move file | `fs::rename(src, dest)` |\n| File size | `fs::file_size(path)` |\n"
+        },
+        {
+          "id": "cpp-U37-L9",
+          "title": "I/O Summary",
+          "questions": [
+            {
+              "id": "cpp-37-9-1",
+              "type": "typing",
+              "question": "Streams?",
+              "correctAnswer": [
+                "iostream",
+                "fstream",
+                "stringstream"
+              ],
+              "explanation": "Standard C++ streams.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-9-2",
+              "type": "typing",
+              "question": "File I/O?",
+              "correctAnswer": [
+                "ifstream",
+                "ofstream",
+                "fstream"
+              ],
+              "explanation": "File stream classes.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-9-3",
+              "type": "typing",
+              "question": "String streams?",
+              "correctAnswer": [
+                "istringstream",
+                "ostringstream",
+                "stringstream"
+              ],
+              "explanation": "String stream classes.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-9-4",
+              "type": "multiple",
+              "question": "Key concepts?",
+              "options": [
+                "streams",
+                "files",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both streams and files.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-9-5",
+              "type": "multiple",
+              "question": "Best practices?",
+              "options": [
+                "RAII",
+                "error handling",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both are important.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-37-9-6",
+              "type": "code",
+              "question": "Complete read example.",
+              "correctAnswer": [
+                "ifstream file(\"data.txt\");\nif (!file.is_open()) return 1;\nstring line;\nwhile (getline(file, line)) {\n    cout << line << endl;\n}\nfile.close();",
+                "read example"
+              ],
+              "explanation": "Complete read example.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-9-7",
+              "type": "code",
+              "question": "Complete write example.",
+              "correctAnswer": [
+                "ofstream file(\"output.txt\");\nif (!file.is_open()) return 1;\nfile << \"Hello, World!\" << endl;\nfile.close();",
+                "write example"
+              ],
+              "explanation": "Complete write example.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-9-8",
+              "type": "code",
+              "question": "I/O patterns.",
+              "correctAnswer": [
+                "// Read: check, read, validate; Write: check, write, flush",
+                "patterns"
+              ],
+              "explanation": "Common I/O patterns.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-9-9",
+              "type": "code",
+              "question": "Error handling summary.",
+              "correctAnswer": [
+                "// Always check state, handle errors, clear when needed",
+                "error handling"
+              ],
+              "explanation": "Error handling summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-9-10",
+              "type": "code",
+              "question": "Performance tips.",
+              "correctAnswer": [
+                "// Use buffering, minimize seeks, batch operations",
+                "performance"
+              ],
+              "explanation": "Performance tips.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-9-11",
+              "type": "code",
+              "question": "Security tips.",
+              "correctAnswer": [
+                "// Validate paths, sanitize input, check permissions",
+                "security"
+              ],
+              "explanation": "Security considerations.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-9-12",
+              "type": "code",
+              "question": "Best practices.",
+              "correctAnswer": [
+                "// RAII, check errors, use exceptions, log issues",
+                "practices"
+              ],
+              "explanation": "Best practices summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-9-13",
+              "type": "code",
+              "question": "Common pitfalls.",
+              "correctAnswer": [
+                "// Not checking state, forgetting close, buffer issues",
+                "pitfalls"
+              ],
+              "explanation": "Common pitfalls.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-9-14",
+              "type": "code",
+              "question": "Debugging tips.",
+              "correctAnswer": [
+                "// Print state, use debugger, trace operations",
+                "debug"
+              ],
+              "explanation": "Debugging I/O.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-9-15",
+              "type": "code",
+              "question": "Testing I/O.",
+              "correctAnswer": [
+                "void testAll() { // Test all I/O operations }",
+                "test"
+              ],
+              "explanation": "Test I/O operations.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-9-16",
+              "type": "code",
+              "question": "File formats.",
+              "correctAnswer": [
+                "// Text: human-readable; Binary: compact, fast",
+                "formats"
+              ],
+              "explanation": "File format choices.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-9-17",
+              "type": "code",
+              "question": "Cross-platform.",
+              "correctAnswer": [
+                "// Use forward slashes, handle line endings",
+                "cross platform"
+              ],
+              "explanation": "Cross-platform I/O.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-9-18",
+              "type": "code",
+              "question": "Large files.",
+              "correctAnswer": [
+                "// Stream in chunks, use seek, avoid memory load",
+                "large files"
+              ],
+              "explanation": "Handle large files.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-9-19",
+              "type": "code",
+              "question": "Unit 37 summary.",
+              "correctAnswer": [
+                "// Unit 37: I/O streams, files, string streams, error handling, filesystem",
+                "unit summary"
+              ],
+              "explanation": "Unit 37 summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-9-20",
+              "type": "code",
+              "question": "Course progress.",
+              "correctAnswer": [
+                "// Completing Unit 37 of 49",
+                "progress"
+              ],
+              "explanation": "Course progress.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-9-21",
+              "type": "code",
+              "question": "Further reading.",
+              "correctAnswer": [
+                "// cppreference.com, C++ Primer, Effective C++",
+                "reading"
+              ],
+              "explanation": "Further reading.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-9-22",
+              "type": "code",
+              "question": "Practice projects.",
+              "correctAnswer": [
+                "// Log parser, config reader, data exporter",
+                "projects"
+              ],
+              "explanation": "Practice project ideas.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-9-23",
+              "type": "code",
+              "question": "Real-world applications.",
+              "correctAnswer": [
+                "// Config files, logs, data export/import, serialization",
+                "applications"
+              ],
+              "explanation": "Real-world I/O applications.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-9-24",
+              "type": "code",
+              "question": "Final summary.",
+              "correctAnswer": [
+                "// I/O: streams, files, strings, error handling, filesystem",
+                "final"
+              ],
+              "explanation": "Final summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-37-9-25",
+              "type": "code",
+              "question": "Congratulations.",
+              "correctAnswer": [
+                "// Unit 37 COMPLETE! Mastered C++ I/O & Streams!",
+                "congratulations"
+              ],
+              "explanation": "Congratulations!",
+              "xp": 15
+            }
+          ],
+          "unitTitle": "37. File I/O & Streams",
+          "xp": 85,
+          "type": "lesson",
+          "difficulty": "intermediate",
+          "lessonText": "# I/O Summary\n\nComplete guide to C++ I/O and streams.\n\n## Key Concepts\n\n| Concept | Description |\n|---------|-------------|\n| **Streams** | Abstract I/O interface |\n| **File Streams** | Read/write files |\n| **String Streams** | In-memory I/O |\n| **Error Handling** | Robust I/O operations |\n| **Filesystem** | File/directory operations |\n\n## Stream Hierarchy\n\n```\nios_base\n  └── ios\n        ├── istream\n        │    ├── ifstream\n        │    └── istringstream\n        └── ostream\n             ├── ofstream\n             ├── ostringstream\n             └── iostream (both)\n                  ├── fstream\n                  └── stringstream\n```\n\n## Quick Reference\n\n### Basic I/O\n```cpp\n// Console I/O\ncout << \"Hello\" << endl;\ncin >> variable;\n\n// File I/O\nifstream inputFile(\"in.txt\");\nofstream outputFile(\"out.txt\");\n\n// String I/O\nistringstream iss(\"data\");\nostringstream oss;\n```\n\n### File Operations\n```cpp\n// Open modes\nios::in | ios::out | ios::binary | ios::app\n\n// Check state\nfile.is_open(), file.good(), file.eof()\n\n// Positioning\nfile.seekg(pos), file.tellg()\nfile.seekp(pos), file.tellp()\n```\n\n### Error Handling\n```cpp\n// Check errors\nif (!file) { /* handle error */ }\n\n// Clear errors\nfile.clear();\n\n// Exception handling\nfile.exceptions(ios::failbit);\n```\n\n### Filesystem (C++17)\n```cpp\nnamespace fs = std::filesystem;\n\nfs::exists(path)\nfs::create_directory(path)\nfs::remove(path)\nfs::copy_file(src, dest)\nfs::file_size(path)\n```\n\n## Best Practices\n\n1. **RAII**: Let destructors handle cleanup\n2. **Check errors**: Always verify operations\n3. **Use exceptions**: For critical errors\n4. **Buffer wisely**: Optimize performance\n5. **Validate input**: Don't trust external data\n6. **Handle EOF**: Graceful end-of-file handling\n\n## Common Patterns\n\n### Read File Line by Line\n```cpp\nifstream file(\"data.txt\");\nstring line;\nwhile (getline(file, line)) {\n    // process line\n}\n```\n\n### Write to File\n```cpp\nofstream file(\"output.txt\");\nif (!file.is_open()) return 1;\nfile << \"Data\" << endl;\n```\n\n### Parse CSV\n```cpp\nstring line;\nwhile (getline(file, line)) {\n    istringstream iss(line);\n    string token;\n    while (getline(iss, token, ',')) {\n        // process token\n    }\n}\n```\n\n### Binary I/O\n```cpp\n// Write\nfile.write(reinterpret_cast<char*>(&data), sizeof(data));\n\n// Read\nfile.read(reinterpret_cast<char*>(&data), sizeof(data));\n```\n\n## Further Reading\n\n- **cppreference.com**: Complete reference\n- **C++ Primer**: Chapter 8 (IO Library)\n- **Effective C++**: Item 15 (Resource management)\n"
         }
-      ]
+      ],
+      "unitTitle": "37. File I/O & Streams"
     },
     {
       "unitId": "38",
