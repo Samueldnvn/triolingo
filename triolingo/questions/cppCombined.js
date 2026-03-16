@@ -46894,73 +46894,2107 @@ window.cppCombined = {
         },
         {
           "id": "cpp-U25-L15",
-          "title": "Extendible hashing",
-          "unitTitle": "25. Hash Tables",
-          "xp": 15,
+          "title": "Bloom Filters",
+          "unitTitle": "25. Hashing & Filters",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-25-15-1",
+              "type": "typing",
+              "question": "Bloom filter is?",
+              "correctAnswer": [
+                "probabilistic",
+                "approximate",
+                "filter"
+              ],
+              "explanation": "Probabilistic structure.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-15-2",
+              "type": "typing",
+              "question": "False positive?",
+              "correctAnswer": [
+                "yes",
+                "possible",
+                "can"
+              ],
+              "explanation": "Possible false positives.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-15-3",
+              "type": "typing",
+              "question": "False negative?",
+              "correctAnswer": [
+                "no",
+                "never",
+                "impossible"
+              ],
+              "explanation": "No false negatives.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-15-4",
+              "type": "multiple",
+              "question": "Uses?",
+              "options": [
+                "bit array",
+                "hash functions",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Bit array + hash.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-15-5",
+              "type": "multiple",
+              "question": "Space O?",
+              "options": [
+                "m",
+                "n",
+                "log n",
+                "n"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "O(m) where m is bits.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-15-6",
+              "type": "code",
+              "question": "Bloom filter class.",
+              "correctAnswer": [
+                "class BloomFilter { vector<bool> bits; int size; int numHashes; public: BloomFilter(int s, int k); void add(const string& key); bool contains(const string& key); };",
+                "class"
+              ],
+              "explanation": "Bloom filter struct.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-15-7",
+              "type": "code",
+              "question": "Initialize bloom.",
+              "correctAnswer": [
+                "BloomFilter::BloomFilter(int s, int k) : size(s), numHashes(k) { bits.resize(size, false); }",
+                "init"
+              ],
+              "explanation": "Initialize bit array.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-15-8",
+              "type": "code",
+              "question": "Hash function.",
+              "correctAnswer": [
+                "int hash(const string& key, int seed) { return polyHash(key, seed) % size; }",
+                "hash"
+              ],
+              "explanation": "Hash with seed.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-15-9",
+              "type": "code",
+              "question": "Add bloom.",
+              "correctAnswer": [
+                "void BloomFilter::add(const string& key) { for (int i = 0; i < numHashes; i++) bits[hash(key, i)] = true; }",
+                "add"
+              ],
+              "explanation": "Set all hash bits.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-15-10",
+              "type": "code",
+              "question": "Contains bloom.",
+              "correctAnswer": [
+                "bool BloomFilter::contains(const string& key) { for (int i = 0; i < numHashes; i++) if (!bits[hash(key, i)]) return false; return true; }",
+                "contains"
+              ],
+              "explanation": "Check all bits.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-15-11",
+              "type": "code",
+              "question": "False positive rate.",
+              "correctAnswer": [
+                "// (1 - e^(-kn/m))^k",
+                "fpr"
+              ],
+              "explanation": "Probability formula.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-15-12",
+              "type": "code",
+              "question": "Optimal k.",
+              "correctAnswer": [
+                "// k = (m/n) * ln(2)",
+                "optimal"
+              ],
+              "explanation": "Optimal hash count.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-15-13",
+              "type": "code",
+              "question": "Union bloom.",
+              "correctAnswer": [
+                "// OR the bit arrays",
+                "union"
+              ],
+              "explanation": "Union of filters.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-15-14",
+              "type": "code",
+              "question": "Intersection bloom.",
+              "correctAnswer": [
+                "// AND the bit arrays",
+                "intersection"
+              ],
+              "explanation": "Intersection of filters.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-15-15",
+              "type": "code",
+              "question": "Counting bloom.",
+              "correctAnswer": [
+                "// Use counters instead of bits",
+                "counting"
+              ],
+              "explanation": "Counting variant.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-15-16",
+              "type": "code",
+              "question": "Delete counting.",
+              "correctAnswer": [
+                "void remove(const string& key) { for (int i = 0; i < numHashes; i++) counters[hash(key, i)]--; }",
+                "delete"
+              ],
+              "explanation": "Decrement counters.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-15-17",
+              "type": "code",
+              "question": "Space efficient.",
+              "correctAnswer": [
+                "// Very space efficient",
+                "space"
+              ],
+              "explanation": "Space usage.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-15-18",
+              "type": "code",
+              "question": "Time complexity.",
+              "correctAnswer": [
+                "// O(k) where k is number of hashes",
+                "time"
+              ],
+              "explanation": "Time complexity.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-15-19",
+              "type": "code",
+              "question": "vs hash set.",
+              "correctAnswer": [
+                "// Less space, probabilistic",
+                "compare"
+              ],
+              "explanation": "Tradeoffs.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-15-20",
+              "type": "code",
+              "question": "Applications.",
+              "correctAnswer": [
+                "// Spell check, web cache",
+                "applications"
+              ],
+              "explanation": "Use cases.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-15-21",
+              "type": "code",
+              "question": "Tuning.",
+              "correctAnswer": [
+                "// Tune m and k for desired FPR",
+                "tuning"
+              ],
+              "explanation": "Parameter selection.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-15-22",
+              "type": "code",
+              "question": "Scalable bloom.",
+              "correctAnswer": [
+                "// Grow filter as needed",
+                "scalable"
+              ],
+              "explanation": "Dynamic sizing.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-15-23",
+              "type": "code",
+              "question": "Compressed bloom.",
+              "correctAnswer": [
+                "// Compress bit array",
+                "compressed"
+              ],
+              "explanation": "Compression.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-15-24",
+              "type": "code",
+              "question": "Security.",
+              "correctAnswer": [
+                "// Not cryptographically secure",
+                "security"
+              ],
+              "explanation": "Security note.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-15-25",
+              "type": "code",
+              "question": "Real-world usage.",
+              "correctAnswer": [
+                "// Databases, caches, networks",
+                "real"
+              ],
+              "explanation": "Practical use.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Bloom Filters\n\nProbabilistic data structure for set membership testing.\n\n## Concept\n\nBit array + multiple hash functions. No false negatives, possible false positives.\n\n## Implementation\n\n```cpp\nclass BloomFilter {\n    std::vector<bool> bits;\n    int size;\n    int numHashes;\n    \n    int hash(const std::string& key, int seed) {\n        int h = seed;\n        for (char c : key) {\n            h = (h * 31 + c) % size;\n        }\n        return h;\n    }\n    \npublic:\n    BloomFilter(int s, int k) : size(s), numHashes(k) {\n        bits.resize(size, false);\n    }\n    \n    void add(const std::string& key) {\n        for (int i = 0; i < numHashes; i++) {\n            bits[hash(key, i)] = true;\n        }\n    }\n    \n    bool contains(const std::string& key) {\n        for (int i = 0; i < numHashes; i++) {\n            if (!bits[hash(key, i)]) {\n                return false;  // Definitely not in set\n            }\n        }\n        return true;  // Probably in set\n    }\n};\n```\n\n## Properties\n\n- **No false negatives**: If says no, definitely not in set\n- **Possible false positives**: If says yes, maybe in set\n- **Space efficient**: O(m) bits\n- **Fast**: O(k) operations\n\n## False Positive Rate\n\n```\nFPR ≈ (1 - e^(-kn/m))^k\n\nOptimal k = (m/n) × ln(2)\n```\n\n## Variants\n\n- **Counting Bloom**: Use counters for deletion\n- **Scalable Bloom**: Grow as needed\n- **Compressed Bloom**: Reduce space\n"
         },
         {
           "id": "cpp-U25-L16",
-          "title": "Dynamic hashing",
-          "unitTitle": "25. Hash Tables",
-          "xp": 15,
+          "title": "Count-Min Sketch",
+          "unitTitle": "25. Hashing & Filters",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-25-16-1",
+              "type": "typing",
+              "question": "Count-Min estimates?",
+              "correctAnswer": [
+                "frequency",
+                "count",
+                "occurrences"
+              ],
+              "explanation": "Estimates frequency.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-16-2",
+              "type": "typing",
+              "question": "Overestimates?",
+              "correctAnswer": [
+                "yes",
+                "never underestimates",
+                "upper bound"
+              ],
+              "explanation": "Upper bound estimate.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-16-3",
+              "type": "typing",
+              "question": "Uses?",
+              "correctAnswer": [
+                "counter array",
+                "2D array",
+                "table"
+              ],
+              "explanation": "Counter matrix.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-16-4",
+              "type": "multiple",
+              "question": "Space O?",
+              "options": [
+                "w×d",
+                "n",
+                "log n",
+                "n^2"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "w×d counters.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-16-5",
+              "type": "multiple",
+              "question": "Accuracy?",
+              "options": [
+                "depends on size",
+                "exact",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "Size dependent.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-16-6",
+              "type": "code",
+              "question": "Count-Min class.",
+              "correctAnswer": [
+                "class CountMinSketch { vector<vector<int>> table; int width, depth; public: CountMinSketch(int w, int d); void add(const string& key); int query(const string& key); };",
+                "class"
+              ],
+              "explanation": "Count-Min struct.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-16-7",
+              "type": "code",
+              "question": "Initialize Count-Min.",
+              "correctAnswer": [
+                "CountMinSketch::CountMinSketch(int w, int d) : width(w), depth(d) { table.resize(depth, vector<int>(width, 0)); }",
+                "init"
+              ],
+              "explanation": "Initialize table.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-16-8",
+              "type": "code",
+              "question": "Hash row.",
+              "correctAnswer": [
+                "int hashRow(const string& key, int row) { return hash(key, row) % width; }",
+                "hash"
+              ],
+              "explanation": "Hash for row.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-16-9",
+              "type": "code",
+              "question": "Add Count-Min.",
+              "correctAnswer": [
+                "void CountMinSketch::add(const string& key) { for (int i = 0; i < depth; i++) table[i][hashRow(key, i)]++; }",
+                "add"
+              ],
+              "explanation": "Increment counters.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-16-10",
+              "type": "code",
+              "question": "Query Count-Min.",
+              "correctAnswer": [
+                "int CountMinSketch::query(const string& key) { int minCount = INT_MAX; for (int i = 0; i < depth; i++) minCount = min(minCount, table[i][hashRow(key, i)]); return minCount; }",
+                "query"
+              ],
+              "explanation": "Minimum counter.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-16-11",
+              "type": "code",
+              "question": "Error bound.",
+              "correctAnswer": [
+                "// Error ≤ e * n",
+                "error"
+              ],
+              "explanation": "Error guarantee.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-16-12",
+              "type": "code",
+              "question": "Probability bound.",
+              "correctAnswer": [
+                "// With probability ≥ 1 - δ",
+                "probability"
+              ],
+              "explanation": "Success probability.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-16-13",
+              "type": "code",
+              "question": "Optimal parameters.",
+              "correctAnswer": [
+                "// w = e/ε, d = ln(1/δ)",
+                "optimal"
+              ],
+              "explanation": "Parameter selection.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-16-14",
+              "type": "code",
+              "question": "Conservative update.",
+              "correctAnswer": [
+                "// Update only if counter is min",
+                "conservative"
+              ],
+              "explanation": "Reduce error.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-16-15",
+              "type": "code",
+              "question": "Heavy hitters.",
+              "correctAnswer": [
+                "// Find items with high frequency",
+                "heavy"
+              ],
+              "explanation": "Heavy hitters.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-16-16",
+              "type": "code",
+              "question": "vs exact counting.",
+              "correctAnswer": [
+                "// Less space, approximate",
+                "compare"
+              ],
+              "explanation": "Tradeoffs.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-16-17",
+              "type": "code",
+              "question": "Space efficient.",
+              "correctAnswer": [
+                "// O(w×d) space",
+                "space"
+              ],
+              "explanation": "Space usage.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-16-18",
+              "type": "code",
+              "question": "Time complexity.",
+              "correctAnswer": [
+                "// O(d) per operation",
+                "time"
+              ],
+              "explanation": "Time complexity.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-16-19",
+              "type": "code",
+              "question": "Applications.",
+              "correctAnswer": [
+                "// Network monitoring, streams",
+                "applications"
+              ],
+              "explanation": "Use cases.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-16-20",
+              "type": "code",
+              "question": "Tuning.",
+              "correctAnswer": [
+                "// Tune ε and δ",
+                "tuning"
+              ],
+              "explanation": "Parameter tuning.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-16-21",
+              "type": "code",
+              "question": "Decay.",
+              "correctAnswer": [
+                "// Decay old values",
+                "decay"
+              ],
+              "explanation": "Time decay.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-16-22",
+              "type": "code",
+              "question": "Merge.",
+              "correctAnswer": [
+                "// Sum two sketches",
+                "merge"
+              ],
+              "explanation": "Combine sketches.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-16-23",
+              "type": "code",
+              "question": "Scale.",
+              "correctAnswer": [
+                "// Scale counters",
+                "scale"
+              ],
+              "explanation": "Scaling.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-16-24",
+              "type": "code",
+              "question": "Real-world usage.",
+              "correctAnswer": [
+                "// Redis, analytics",
+                "real"
+              ],
+              "explanation": "Practical use.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-16-25",
+              "type": "code",
+              "question": "Analysis.",
+              "correctAnswer": [
+                "// Theoretical guarantees",
+                "analysis"
+              ],
+              "explanation": "Theory.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Count-Min Sketch\n\nProbabilistic frequency counter with upper bound guarantees.\n\n## Concept\n\n2D counter table. Each item hashed to one counter per row. Query returns minimum counter value (upper bound on true frequency).\n\n## Implementation\n\n```cpp\nclass CountMinSketch {\n    std::vector<std::vector<int>> table;\n    int width;\n    int depth;\n    \n    int hash(const std::string& key, int row) {\n        int h = row;\n        for (char c : key) {\n            h = (h * 31 + c) % width;\n        }\n        return h;\n    }\n    \npublic:\n    CountMinSketch(int w, int d) : width(w), depth(d) {\n        table.resize(depth, std::vector<int>(width, 0));\n    }\n    \n    void add(const std::string& key, int count = 1) {\n        for (int i = 0; i < depth; i++) {\n            table[i][hash(key, i)] += count;\n        }\n    }\n    \n    int query(const std::string& key) {\n        int minCount = INT_MAX;\n        for (int i = 0; i < depth; i++) {\n            minCount = std::min(minCount, table[i][hash(key, i)]);\n        }\n        return minCount;\n    }\n};\n```\n\n## Guarantees\n\n- **Never underestimates**: Estimate ≥ true frequency\n- **Error bound**: Estimate ≤ true frequency + εn\n- **Probability**: With probability ≥ 1 - δ\n\n## Optimal Parameters\n\n```\nwidth  = e/ε\ndepth  = ln(1/δ)\n```\n\n## Applications\n\n- Network traffic monitoring\n- Streaming data analytics\n- Frequency estimation\n- Heavy hitters detection\n"
         },
         {
           "id": "cpp-U25-L17",
-          "title": "Bloom filter",
-          "unitTitle": "25. Hash Tables",
-          "xp": 15,
+          "title": "HyperLogLog",
+          "unitTitle": "25. Hashing & Filters",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-25-17-1",
+              "type": "typing",
+              "question": "HyperLogLog estimates?",
+              "correctAnswer": [
+                "cardinality",
+                "distinct count",
+                "unique items"
+              ],
+              "explanation": "Count distinct items.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-17-2",
+              "type": "typing",
+              "question": "Error rate?",
+              "correctAnswer": [
+                "~1.04/√m",
+                "low",
+                "constant"
+              ],
+              "explanation": "Small constant error.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-17-3",
+              "type": "typing",
+              "question": "Space O?",
+              "options": [
+                "log(log(n))",
+                "n",
+                "log n",
+                "n"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "Tiny space.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-17-4",
+              "type": "multiple",
+              "question": "Uses?",
+              "options": [
+                "bit patterns",
+                "hash values",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Hash bit patterns.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-17-5",
+              "type": "multiple",
+              "question": "Accuracy?",
+              "options": [
+                "approximate",
+                "exact",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "Probabilistic.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-17-6",
+              "type": "code",
+              "question": "HyperLogLog class.",
+              "correctAnswer": [
+                "class HyperLogLog { vector<int> registers; int m; public: HyperLogLog(int m); void add(const string& key); int estimate(); };",
+                "class"
+              ],
+              "explanation": "HLL struct.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-17-7",
+              "type": "code",
+              "question": "Initialize HLL.",
+              "correctAnswer": [
+                "HyperLogLog::HyperLogLog(int m) : m(m) { registers.assign(m, 0); }",
+                "init"
+              ],
+              "explanation": "Initialize registers.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-17-8",
+              "type": "code",
+              "question": "Hash to int.",
+              "correctAnswer": [
+                "uint32_t hashKey(const string& key) { return murmurHash(key); }",
+                "hash"
+              ],
+              "explanation": "Hash key to 32-bit.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-17-9",
+              "type": "code",
+              "question": "Leading zeros.",
+              "correctAnswer": [
+                "int leadingZeros(uint32_t x) { int count = 0; while ((x & 1) == 0) { count++; x >>= 1; } return count; }",
+                "zeros"
+              ],
+              "explanation": "Count leading zeros.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-17-10",
+              "type": "code",
+              "question": "Add HLL.",
+              "correctAnswer": [
+                "void HyperLogLog::add(const string& key) { uint32_t h = hashKey(key); int idx = h % m; int rho = leadingZeros(h / m) + 1; registers[idx] = max(registers[idx], rho); }",
+                "add"
+              ],
+              "explanation": "Update register.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-17-11",
+              "type": "code",
+              "question": "Estimate HLL.",
+              "correctAnswer": [
+                "double HyperLogLog::estimate() { double sum = 0; for (int r : registers) sum += pow(2, -r); double Z = 1.0 / sum; return alpha * m * m * Z; }",
+                "estimate"
+              ],
+              "explanation": "Harmonic mean.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-17-12",
+              "type": "code",
+              "question": "Alpha constant.",
+              "correctAnswer": [
+                "// Depends on m",
+                "alpha"
+              ],
+              "explanation": "Bias correction.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-17-13",
+              "type": "code",
+              "question": "Small range correction.",
+              "correctAnswer": [
+                "// Linear counting for small sets",
+                "small"
+              ],
+              "explanation": "Small range bias.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-17-14",
+              "type": "code",
+              "question": "Large range correction.",
+              "correctAnswer": [
+                "// Log-log bias correction",
+                "large"
+              ],
+              "explanation": "Large range bias.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-17-15",
+              "type": "code",
+              "question": "Merge HLL.",
+              "correctAnswer": [
+                "// Max of registers",
+                "merge"
+              ],
+              "explanation": "Union of sets.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-17-16",
+              "type": "code",
+              "question": "Space usage.",
+              "correctAnswer": [
+                "// 12KB for 1% error",
+                "space"
+              ],
+              "explanation": "Tiny memory.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-17-17",
+              "type": "code",
+              "question": "Time complexity.",
+              "correctAnswer": [
+                "// O(1) per operation",
+                "time"
+              ],
+              "explanation": "Constant time.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-17-18",
+              "type": "code",
+              "question": "vs exact count.",
+              "correctAnswer": [
+                "// 1-1000x less space",
+                "compare"
+              ],
+              "explanation": "Massive savings.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-17-19",
+              "type": "code",
+              "question": "Applications.",
+              "correctAnswer": [
+                "// Big data, analytics",
+                "applications"
+              ],
+              "explanation": "Use cases.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-17-20",
+              "type": "code",
+              "question": "Tuning.",
+              "correctAnswer": [
+                "// Tune m for accuracy",
+                "tuning"
+              ],
+              "explanation": "Parameter tuning.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-17-21",
+              "type": "code",
+              "question": "Precision.",
+              "correctAnswer": [
+                "// ±1.04/√m error",
+                "precision"
+              ],
+              "explanation": "Error formula.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-17-22",
+              "type": "code",
+              "question": "Sparse representation.",
+              "correctAnswer": [
+                "// Compress sparse registers",
+                "sparse"
+              ],
+              "explanation": "Sparse HLL.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-17-23",
+              "type": "code",
+              "question": "Real-world usage.",
+              "correctAnswer": [
+                "// Redis, Google",
+                "real"
+              ],
+              "explanation": "Industry use.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-17-24",
+              "type": "code",
+              "question": "Analysis.",
+              "correctAnswer": [
+                "// Statistical analysis",
+                "analysis"
+              ],
+              "explanation": "Theory.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-17-25",
+              "type": "code",
+              "question": "Variants.",
+              "correctAnswer": [
+                "// LogLog, HyperLogLog++",
+                "variants"
+              ],
+              "explanation": "Different versions.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# HyperLogLog\n\nProbabilistic cardinality estimation with tiny memory footprint.\n\n## Concept\n\nHash items, look at leading zeros, use harmonic mean of register values.\n\n## Implementation\n\n```cpp\nclass HyperLogLog {\n    std::vector<int> registers;  // Store leading zero counts\n    int m;  // Number of registers\n    \n    uint32_t hash(const std::string& key) {\n        // 32-bit hash\n        uint32_t h = 0;\n        for (char c : key) {\n            h = h * 31 + c;\n        }\n        return h;\n    }\n    \n    int leadingZeros(uint32_t x) {\n        int count = 0;\n        while ((x & 1) == 0) {\n            count++;\n            x >>= 1;\n        }\n        return count;\n    }\n    \npublic:\n    HyperLogLog(int m) : m(m) {\n        registers.assign(m, 0);\n    }\n    \n    void add(const std::string& key) {\n        uint32_t h = hash(key);\n        int idx = h % m;\n        int rho = leadingZeros(h / m) + 1;\n        registers[idx] = std::max(registers[idx], rho);\n    }\n    \n    double estimate() {\n        double sum = 0;\n        for (int r : registers) {\n            sum += std::pow(2, -r);\n        }\n        double Z = 1.0 / sum;\n        double alpha = 0.7213 / (1 + 1.079 / m);\n        return alpha * m * m * Z;\n    }\n};\n```\n\n## Error Rate\n\n```\nError ≈ 1.04 / √m\n```\n\nFor m = 4096, error ≈ 1.6%\n\n## Space\n\n- 12KB for ~1.6% error\n- Scales with desired accuracy, not data size\n\n## Applications\n\n- Unique visitors\n- Distinct items in streams\n- Big data analytics\n- Database optimization\n"
         },
         {
           "id": "cpp-U25-L18",
-          "title": "Counting Bloom filter",
-          "unitTitle": "25. Hash Tables",
-          "xp": 15,
+          "title": "Locality-Sensitive Hashing",
+          "unitTitle": "25. Hashing & Filters",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-25-18-1",
+              "type": "typing",
+              "question": "LSH hashes?",
+              "correctAnswer": [
+                "similar items",
+                "nearby",
+                "close"
+              ],
+              "explanation": "Similar items map nearby.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-18-2",
+              "type": "typing",
+              "question": "Purpose?",
+              "correctAnswer": [
+                "similarity search",
+                "nearest neighbor",
+                "search"
+              ],
+              "explanation": "Find similar items.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-18-3",
+              "type": "typing",
+              "question": "Used for?",
+              "correctAnswer": [
+                "high-dimensional",
+                "vectors",
+                "embedding"
+              ],
+              "explanation": "High-dim data.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-18-4",
+              "type": "multiple",
+              "question": "Collision?",
+              "options": [
+                "likely for similar",
+                "unlikely for similar",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "Similar → high collision.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-18-5",
+              "type": "multiple",
+              "question": "Tradeoff?",
+              "options": [
+                "recall vs precision",
+                "speed",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "Recall-precision trade.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-18-6",
+              "type": "code",
+              "question": "LSH class.",
+              "correctAnswer": [
+                "class LSH { vector<unordered_set<int>> buckets; int numTables; int hashSize; public: LSH(int t, int h); void add(const vector<int>& vec); vector<int> query(const vector<int>& vec); };",
+                "class"
+              ],
+              "explanation": "LSH struct.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-18-7",
+              "type": "code",
+              "question": "Random projection.",
+              "correctAnswer": [
+                "int project(const vector<int>& vec) { int h = 0; for (int i = 0; i < vec.size(); i++) h += vec[i] * random(); return h; }",
+                "project"
+              ],
+              "explanation": "Random projection.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-18-8",
+              "type": "code",
+              "question": "MinHash LSH.",
+              "correctAnswer": [
+                "int minHash(const set<int>& set1, const set<int>& set2) { return ... }",
+                "minhash"
+              ],
+              "explanation": "MinHash for Jaccard.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-18-9",
+              "type": "code",
+              "question": "Add LSH.",
+              "correctAnswer": [
+                "void LSH::add(const vector<int>& vec) { for (int i = 0; i < numTables; i++) { int h = project(vec); buckets[i][h].insert(id); } }",
+                "add"
+              ],
+              "explanation": "Add to buckets.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-18-10",
+              "type": "code",
+              "question": "Query LSH.",
+              "correctAnswer": [
+                "vector<int> LSH::query(const vector<int>& vec) { set<int> candidates; for (int i = 0; i < numTables; i++) { int h = project(vec); candidates.insert(buckets[i][h].begin(), buckets[i][h].end()); } return vector<int>(candidates.begin(), candidates.end()); }",
+                "query"
+              ],
+              "explanation": "Find candidates.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-18-11",
+              "type": "code",
+              "question": "Similarity threshold.",
+              "correctAnswer": [
+                "// Tune for desired similarity",
+                "threshold"
+              ],
+              "explanation": "Set threshold.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-18-12",
+              "type": "code",
+              "question": "Bands technique.",
+              "correctAnswer": [
+                "// Divide signature into bands",
+                "bands"
+              ],
+              "explanation": "Banding approach.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-18-13",
+              "type": "code",
+              "question": "AND-OR construction.",
+              "correctAnswer": [
+                "// AND of bands, OR of tables",
+                "and-or"
+              ],
+              "explanation": "Combining hashes.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-18-14",
+              "type": "code",
+              "question": "Euclidean LSH.",
+              "correctAnswer": [
+                "// Random projections for Euclidean",
+                "euclidean"
+              ],
+              "explanation": "L2 distance.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-18-15",
+              "type": "code",
+              "question": "Cosine LSH.",
+              "correctAnswer": [
+                "// Random hyperplanes for cosine",
+                "cosine"
+              ],
+              "explanation": "Cosine similarity.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-18-16",
+              "type": "code",
+              "question": "Hamming LSH.",
+              "correctAnswer": [
+                "// Random bits for Hamming",
+                "hamming"
+              ],
+              "explanation": "Hamming distance.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-18-17",
+              "type": "code",
+              "question": "Parameter tuning.",
+              "correctAnswer": [
+                "// Tune k, L for recall/precision",
+                "tuning"
+              ],
+              "explanation": "Parameter selection.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-18-18",
+              "type": "code",
+              "question": "Space complexity.",
+              "correctAnswer": [
+                "// O(n * L)",
+                "space"
+              ],
+              "explanation": "Space usage.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-18-19",
+              "type": "code",
+              "question": "Time complexity.",
+              "correctAnswer": [
+                "// O(k + candidates)",
+                "time"
+              ],
+              "explanation": "Query time.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-18-20",
+              "type": "code",
+              "question": "Applications.",
+              "correctAnswer": [
+                "// Document similarity, recommendation",
+                "applications"
+              ],
+              "explanation": "Use cases.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-18-21",
+              "type": "code",
+              "question": "vs exact NN.",
+              "correctAnswer": [
+                "// Faster, approximate",
+                "compare"
+              ],
+              "explanation": "Tradeoffs.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-18-22",
+              "type": "code",
+              "question": "Amplification.",
+              "correctAnswer": [
+                "// Use multiple hash tables",
+                "amplification"
+              ],
+              "explanation": "Increase recall.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-18-23",
+              "type": "code",
+              "question": "Verification.",
+              "correctAnswer": [
+                "// Verify actual similarity",
+                "verification"
+              ],
+              "explanation": "False positive check.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-18-24",
+              "type": "code",
+              "question": "Real-world usage.",
+              "correctAnswer": [
+                "// Search engines, recommendation",
+                "real"
+              ],
+              "explanation": "Industry use.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-18-25",
+              "type": "code",
+              "question": "Analysis.",
+              "correctAnswer": [
+                "// Probability analysis",
+                "analysis"
+              ],
+              "explanation": "Theoretical bounds.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Locality-Sensitive Hashing\n\nHash function that maps similar items to same bucket with high probability.\n\n## Concept\n\nUnlike standard hashing (which aims to distribute uniformly), LSH preserves locality - similar items likely collide.\n\n## Implementation\n\n```cpp\nclass LSH {\n    std::vector<std::unordered_set<int>> buckets;\n    int numTables;\n    int hashSize;\n    \n    int randomProjection(const std::vector<int>& vec) {\n        int h = 0;\n        for (int i = 0; i < vec.size(); i++) {\n            h += vec[i] * (rand() % 2 ? 1 : -1);\n        }\n        return abs(h) % hashSize;\n    }\n    \npublic:\n    LSH(int tables, int size) : numTables(tables), hashSize(size) {\n        buckets.resize(tables);\n    }\n    \n    void add(const std::vector<int>& vec, int id) {\n        for (int i = 0; i < numTables; i++) {\n            int h = randomProjection(vec);\n            buckets[i][h].insert(id);\n        }\n    }\n    \n    std::vector<int> query(const std::vector<int>& vec) {\n        std::set<int> candidates;\n        for (int i = 0; i < numTables; i++) {\n            int h = randomProjection(vec);\n            candidates.insert(buckets[i][h].begin(), \n                              buckets[i][h].end());\n        }\n        return std::vector<int>(candidates.begin(), \n                                 candidates.end());\n    }\n};\n```\n\n## Applications\n\n- Document similarity search\n- Nearest neighbor search\n- Duplicate detection\n- Recommendation systems\n- Image/video similarity\n\n## Tradeoff\n\n- More hash tables → higher recall, slower\n- Fewer hash tables → lower recall, faster\n"
         },
         {
           "id": "cpp-U25-L19",
-          "title": "Cuckoo filter",
-          "unitTitle": "25. Hash Tables",
-          "xp": 15,
+          "title": "Consistent Hashing",
+          "unitTitle": "25. Hashing & Filters",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-25-19-1",
+              "type": "typing",
+              "question": "Consistent hashing maps?",
+              "correctAnswer": [
+                "nodes to ring",
+                "circular",
+                "hash ring"
+              ],
+              "explanation": "Hash ring.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-19-2",
+              "type": "typing",
+              "question": "Adding node?",
+              "correctAnswer": [
+                "minimal data",
+                "partial",
+                "subset"
+              ],
+              "explanation": "Only affects subset.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-19-3",
+              "type": "typing",
+              "question": "Removing node?",
+              "correctAnswer": [
+                "minimal data",
+                "partial",
+                "subset"
+              ],
+              "explanation": "Only affects subset.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-19-4",
+              "type": "multiple",
+              "question": "Data movement?",
+              "options": [
+                "minimal",
+                "none",
+                "all",
+                "half"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "Minimal redistribution.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-19-5",
+              "type": "multiple",
+              "question": "Load balancing?",
+              "options": [
+                "virtual nodes",
+                "replicas",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Virtual nodes.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-19-6",
+              "type": "code",
+              "question": "Consistent hash class.",
+              "correctAnswer": [
+                "class ConsistentHashing { map<int, string> ring; int virtualNodes; public: void addNode(const string& node); void removeNode(const string& node); string getNode(const string& key); };",
+                "class"
+              ],
+              "explanation": "Consistent hashing.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-19-7",
+              "type": "code",
+              "question": "Hash function.",
+              "correctAnswer": [
+                "int hash(const string& s) { return murmurHash(s); }",
+                "hash"
+              ],
+              "explanation": "Hash to ring.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-19-8",
+              "type": "code",
+              "question": "Add node.",
+              "correctAnswer": [
+                "void ConsistentHashing::addNode(const string& node) { for (int i = 0; i < virtualNodes; i++) { ring[hash(node + to_string(i))] = node; } }",
+                "add"
+              ],
+              "explanation": "Add virtual nodes.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-19-9",
+              "type": "code",
+              "question": "Remove node.",
+              "correctAnswer": [
+                "void ConsistentHashing::removeNode(const string& node) { for (int i = 0; i < virtualNodes; i++) ring.erase(hash(node + to_string(i))); }",
+                "remove"
+              ],
+              "explanation": "Remove virtual nodes.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-19-10",
+              "type": "code",
+              "question": "Get node.",
+              "correctAnswer": [
+                "string ConsistentHashing::getNode(const string& key) { int h = hash(key); auto it = ring.lower_bound(h); if (it == ring.end()) it = ring.begin(); return it->second; }",
+                "get"
+              ],
+              "explanation": "Find responsible node.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-19-11",
+              "type": "code",
+              "question": "Virtual nodes.",
+              "correctAnswer": [
+                "// Add multiple virtual per real node",
+                "virtual"
+              ],
+              "explanation": "Load balancing.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-19-12",
+              "type": "code",
+              "question": "Replication.",
+              "correctAnswer": [
+                "// Replicate to next N nodes",
+                "replication"
+              ],
+              "explanation": "Replication strategy.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-19-13",
+              "type": "code",
+              "question": "Weighted nodes.",
+              "correctAnswer": [
+                "// Different virtual nodes per weight",
+                "weighted"
+              ],
+              "explanation": "Unequal capacity.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-19-14",
+              "type": "code",
+              "question": "vs modulo hashing.",
+              "correctAnswer": [
+                "// Minimal data movement",
+                "compare"
+              ],
+              "explanation": "Comparison.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-19-15",
+              "type": "code",
+              "question": "Data redistribution.",
+              "correctAnswer": [
+                "// ~1/n data moves",
+                "redistribution"
+              ],
+              "explanation": "Minimal movement.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-19-16",
+              "type": "code",
+              "question": "Hotspots.",
+              "correctAnswer": [
+                "// Virtual nodes prevent hotspots",
+                "hotspots"
+              ],
+              "explanation": "Balancing.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-19-17",
+              "type": "code",
+              "question": "Time complexity.",
+              "correctAnswer": [
+                "// O(log n) with tree",
+                "time"
+              ],
+              "explanation": "Lookup time.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-19-18",
+              "type": "code",
+              "question": "Space complexity.",
+              "correctAnswer": [
+                "// O(n * virtual)",
+                "space"
+              ],
+              "explanation": "Space usage.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-19-19",
+              "type": "code",
+              "question": "Applications.",
+              "correctAnswer": [
+                "// Databases, CDNs, caching",
+                "applications"
+              ],
+              "explanation": "Use cases.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-19-20",
+              "type": "code",
+              "question": "Tuning.",
+              "correctAnswer": [
+                "// Tune virtual nodes count",
+                "tuning"
+              ],
+              "explanation": "Parameter tuning.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-19-21",
+              "type": "code",
+              "question": "Failure handling.",
+              "correctAnswer": [
+                "// Next node takes over",
+                "failure"
+              ],
+              "explanation": "Node failure.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-19-22",
+              "type": "code",
+              "question": "Scaling.",
+              "correctAnswer": [
+                "// Easy to scale out",
+                "scaling"
+              ],
+              "explanation": "Horizontal scaling.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-19-23",
+              "type": "code",
+              "question": "Real-world usage.",
+              "correctAnswer": [
+                "// Dynamo, Cassandra",
+                "real"
+              ],
+              "explanation": "Industry use.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-19-24",
+              "type": "code",
+              "question": "Analysis.",
+              "correctAnswer": [
+                "// Load distribution analysis",
+                "analysis"
+              ],
+              "explanation": "Load analysis.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-19-25",
+              "type": "code",
+              "question": "Variants.",
+              "correctAnswer": [
+                "// Rendezvous hashing",
+                "variants"
+              ],
+              "explanation": "Alternatives.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Consistent Hashing\n\nDistributed hashing that minimizes data movement when nodes change.\n\n## Concept\n\nMap both nodes and keys to a ring. Key assigned to next node clockwise.\n\n## Implementation\n\n```cpp\n#include <map>\n\nclass ConsistentHashing {\n    std::map<int, std::string> ring;\n    int virtualNodes;\n    \n    int hash(const std::string& s) {\n        uint32_t h = 0;\n        for (char c : s) {\n            h = h * 31 + c;\n        }\n        return h;\n    }\n    \npublic:\n    ConsistentHashing(int v = 100) : virtualNodes(v) {}\n    \n    void addNode(const std::string& node) {\n        for (int i = 0; i < virtualNodes; i++) {\n            int h = hash(node + std::to_string(i));\n            ring[h] = node;\n        }\n    }\n    \n    void removeNode(const std::string& node) {\n        for (int i = 0; i < virtualNodes; i++) {\n            ring.erase(hash(node + std::to_string(i)));\n        }\n    }\n    \n    std::string getNode(const std::string& key) {\n        if (ring.empty()) return \"\";\n        \n        int h = hash(key);\n        auto it = ring.lower_bound(h);\n        if (it == ring.end()) {\n            it = ring.begin();\n        }\n        return it->second;\n    }\n};\n```\n\n## Benefits\n\n- **Minimal data movement**: Only 1/n of data moves on node change\n- **Load balancing**: Virtual nodes distribute load\n- **Scalability**: Easy to add/remove nodes\n- **Fault tolerance**: Replication to next nodes\n\n## Applications\n\n- Distributed databases\n- Content delivery networks\n- Distributed caches\n- Load balancers\n"
         },
         {
           "id": "cpp-U25-L20",
-          "title": "HyperLogLog",
-          "unitTitle": "25. Hash Tables",
-          "xp": 15,
+          "title": "Merkle Trees",
+          "unitTitle": "25. Hashing & Filters",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-25-20-1",
+              "type": "typing",
+              "question": "Merkle tree is?",
+              "correctAnswer": [
+                "hash tree",
+                "binary tree",
+                "tree of hashes"
+              ],
+              "explanation": "Tree of hashes.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-20-2",
+              "type": "typing",
+              "question": "Leaves contain?",
+              "correctAnswer": [
+                "data hashes",
+                "item hashes",
+                "leaf values"
+              ],
+              "explanation": "Hash of data.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-20-3",
+              "type": "typing",
+              "question": "Root is?",
+              "correctAnswer": [
+                "hash of children",
+                "top hash",
+                "merkle root"
+              ],
+              "explanation": "Top-level hash.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-20-4",
+              "type": "multiple",
+              "question": "Verify?",
+              "options": [
+                "O(log n)",
+                "O(n)",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "Log time verification.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-20-5",
+              "type": "multiple",
+              "question": "Used for?",
+              "options": [
+                "blockchain",
+                "P2P",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Data integrity.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-20-6",
+              "type": "code",
+              "question": "Merkle node.",
+              "correctAnswer": [
+                "struct MerkleNode { string hash; MerkleNode* left; MerkleNode* right; };",
+                "node"
+              ],
+              "explanation": "Tree node.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-20-7",
+              "type": "code",
+              "question": "Compute hash.",
+              "correctAnswer": [
+                "string computeHash(const string& data) { return sha256(data); }",
+                "hash"
+              ],
+              "explanation": "Hash function.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-20-8",
+              "type": "code",
+              "question": "Build leaf.",
+              "correctAnswer": [
+                "MerkleNode* buildLeaf(const string& data) { MerkleNode* node = new MerkleNode(); node->hash = computeHash(data); node->left = node->right = nullptr; return node; }",
+                "leaf"
+              ],
+              "explanation": "Create leaf node.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-20-9",
+              "type": "code",
+              "question": "Build internal.",
+              "correctAnswer": [
+                "MerkleNode* buildInternal(MerkleNode* left, MerkleNode* right) { MerkleNode* node = new MerkleNode(); node->hash = computeHash(left->hash + right->hash); node->left = left; node->right = right; return node; }",
+                "internal"
+              ],
+              "explanation": "Create internal node.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-20-10",
+              "type": "code",
+              "question": "Build tree.",
+              "correctAnswer": [
+                "MerkleNode* buildTree(const vector<string>& data) { vector<MerkleNode*> nodes; for (const string& d : data) nodes.push_back(buildLeaf(d)); while (nodes.size() > 1) { vector<MerkleNode*> next; for (int i = 0; i < nodes.size(); i += 2) { if (i + 1 < nodes.size()) next.push_back(buildInternal(nodes[i], nodes[i+1])); else next.push_back(nodes[i]); } nodes = next; } return nodes[0]; }",
+                "tree"
+              ],
+              "explanation": "Build full tree.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-20-11",
+              "type": "code",
+              "question": "Merkle proof.",
+              "correctAnswer": [
+                "vector<string> getProof(const string& data, int index) { ... }",
+                "proof"
+              ],
+              "explanation": "Generate proof.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-20-12",
+              "type": "code",
+              "question": "Verify proof.",
+              "correctAnswer": [
+                "bool verifyProof(const string& data, const vector<string>& proof, const string& root) { ... }",
+                "verify"
+              ],
+              "explanation": "Verify membership.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-20-13",
+              "type": "code",
+              "question": "Update leaf.",
+              "correctAnswer": [
+                "void updateLeaf(MerkleNode* node, const string& newData) { node->hash = computeHash(newData); recalculateHashes(node); }",
+                "update"
+              ],
+              "explanation": "Update and rehash.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-20-14",
+              "type": "code",
+              "question": "Recalculate.",
+              "correctAnswer": [
+                "void recalculateHashes(MerkleNode* node) { while (node->parent) { node->parent->hash = computeHash(node->parent->left->hash + node->parent->right->hash); node = node->parent; } }",
+                "recalculate"
+              ],
+              "explanation": "Update parent hashes.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-20-15",
+              "type": "code",
+              "question": "Sync subset.",
+              "correctAnswer": [
+                "// Only sync changed data",
+                "sync"
+              ],
+              "explanation": "Efficient sync.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-20-16",
+              "type": "code",
+              "question": "Proof size.",
+              "correctAnswer": [
+                "// O(log n) hashes",
+                "size"
+              ],
+              "explanation": "Proof size.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-20-17",
+              "type": "code",
+              "question": "Space efficiency.",
+              "correctAnswer": [
+                "// O(n) for full tree",
+                "space"
+              ],
+              "explanation": "Space usage.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-20-18",
+              "type": "code",
+              "question": "Time complexity.",
+              "correctAnswer": [
+                "// O(log n) verify, O(n) build",
+                "time"
+              ],
+              "explanation": "Time complexity.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-20-19",
+              "type": "code",
+              "question": "Applications.",
+              "correctAnswer": [
+                "// Blockchain, Git, P2P",
+                "applications"
+              ],
+              "explanation": "Use cases.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-20-20",
+              "type": "code",
+              "question": "Bitcoin usage.",
+              "correctAnswer": [
+                "// Transaction verification",
+                "bitcoin"
+              ],
+              "explanation": "Blockchain use.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-20-21",
+              "type": "code",
+              "question": "IPFS usage.",
+              "correctAnswer": [
+                "// Content addressing",
+                "ipfs"
+              ],
+              "explanation": "P2P storage.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-20-22",
+              "type": "code",
+              "question": "Variants.",
+              "correctAnswer": [
+                "// Merkle Patricia trie",
+                "variants"
+              ],
+              "explanation": "Different trees.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-20-23",
+              "type": "code",
+              "question": "Real-world usage.",
+              "correctAnswer": [
+                "// Ethereum, IPFS, Git",
+                "real"
+              ],
+              "explanation": "Industry use.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-20-24",
+              "type": "code",
+              "question": "Security.",
+              "correctAnswer": [
+                "// Cryptographic hash",
+                "security"
+              ],
+              "explanation": "Security property.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-20-25",
+              "type": "code",
+              "question": "Analysis.",
+              "correctAnswer": [
+                "// Integrity guarantees",
+                "analysis"
+              ],
+              "explanation": "Data integrity.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Merkle Trees\n\nHash-based binary tree for efficient data verification.\n\n## Concept\n\nBinary tree where each node contains hash of its children. Leaf nodes contain data hashes.\n\n## Implementation\n\n```cpp\nstruct MerkleNode {\n    std::string hash;\n    MerkleNode* left;\n    MerkleNode* right;\n    MerkleNode* parent;\n};\n\nstd::string hash(const std::string& data) {\n    // SHA-256 or similar\n    return sha256(data);\n}\n\nMerkleNode* buildLeaf(const std::string& data) {\n    MerkleNode* node = new MerkleNode();\n    node->hash = hash(data);\n    node->left = nullptr;\n    node->right = nullptr;\n    node->parent = nullptr;\n    return node;\n}\n\nMerkleNode* buildInternal(MerkleNode* left, MerkleNode* right) {\n    MerkleNode* node = new MerkleNode();\n    node->hash = hash(left->hash + right->hash);\n    node->left = left;\n    node->right = right;\n    left->parent = node;\n    right->parent = node;\n    return node;\n}\n\nMerkleNode* buildTree(const std::vector<std::string>& data) {\n    std::vector<MerkleNode*> nodes;\n    for (const auto& d : data) {\n        nodes.push_back(buildLeaf(d));\n    }\n    \n    while (nodes.size() > 1) {\n        std::vector<MerkleNode*> next;\n        for (size_t i = 0; i < nodes.size(); i += 2) {\n            if (i + 1 < nodes.size()) {\n                next.push_back(buildInternal(nodes[i], nodes[i+1]));\n            } else {\n                next.push_back(nodes[i]);\n            }\n        }\n        nodes = next;\n    }\n    \n    return nodes[0];\n}\n```\n\n## Merkle Proof\n\nPath of hashes from leaf to root to verify data integrity.\n\n## Complexity\n\n- Build: O(n)\n- Verify: O(log n)\n- Proof size: O(log n)\n\n## Applications\n\n- Blockchain (Bitcoin, Ethereum)\n- P2P file sharing (IPFS)\n- Version control (Git)\n- Data synchronization\n"
         },
         {
           "id": "cpp-U25-L21",
-          "title": "Tree Data Structures",
-          "unitTitle": "25. Hash Tables",
-          "xp": 15,
+          "title": "Hash-Based Applications",
+          "unitTitle": "25. Hashing & Filters",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-25-21-1",
+              "type": "typing",
+              "question": "Hash used for?",
+              "correctAnswer": [
+                "data integrity",
+                "verification",
+                "authentication"
+              ],
+              "explanation": "Many uses.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-21-2",
+              "type": "typing",
+              "question": "Password hashing?",
+              "correctAnswer": [
+                "slow hash",
+                "salted",
+                "bcrypt"
+              ],
+              "explanation": "Need slow hash.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-21-3",
+              "type": "typing",
+              "question": "Cryptography uses?",
+              "correctAnswer": [
+                "SHA-256",
+                "MD5",
+                "hash"
+              ],
+              "explanation": "Cryptographic hashes.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-21-4",
+              "type": "multiple",
+              "question": "Caching uses?",
+              "options": [
+                "hash key",
+                "hash table",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Cache keys.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-21-5",
+              "type": "multiple",
+              "question": "Load balancing?",
+              "options": [
+                "consistent hash",
+                "modulo",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "Consistent hashing.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-25-21-6",
+              "type": "code",
+              "question": "File checksum.",
+              "correctAnswer": [
+                "string fileHash(const string& filename) { ifstream file(filename); string content((istreambuf_iterator<char>(file)), istreambuf_iterator<char>()); return sha256(content); }",
+                "checksum"
+              ],
+              "explanation": "Hash file.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-21-7",
+              "type": "code",
+              "question": "Password hash.",
+              "correctAnswer": [
+                "string hashPassword(const string& password, const string& salt) { return bcrypt(password + salt); }",
+                "password"
+              ],
+              "explanation": "Secure password hash.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-21-8",
+              "type": "code",
+              "question": "Generate salt.",
+              "correctAnswer": [
+                "string generateSalt() { return randomString(16); }",
+                "salt"
+              ],
+              "explanation": "Generate random salt.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-21-9",
+              "type": "code",
+              "question": "Verify password.",
+              "correctAnswer": [
+                "bool verifyPassword(const string& password, const string& hash, const string& salt) { return hashPassword(password, salt) == hash; }",
+                "verify"
+              ],
+              "explanation": "Verify password.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-21-10",
+              "type": "code",
+              "question": "Cache key.",
+              "correctAnswer": [
+                "string cacheKey(const string& method, const map<string, string>& params) { string key = method; for (auto& p : params) key += p.first + p.second; return sha256(key); }",
+                "cache"
+              ],
+              "explanation": "Generate cache key.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-21-11",
+              "type": "code",
+              "question": "Deduplication.",
+              "correctAnswer": [
+                "bool isDuplicate(const string& content, unordered_set<string>& hashes) { string h = sha256(content); return hashes.count(h) > 0; }",
+                "dedup"
+              ],
+              "explanation": "Check duplicates.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-21-12",
+              "type": "code",
+              "question": "Digital signature.",
+              "correctAnswer": [
+                "string sign(const string& message, const string& privateKey) { return signWithRSA(message, privateKey); }",
+                "signature"
+              ],
+              "explanation": "Sign message.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-21-13",
+              "type": "code",
+              "question": "Verify signature.",
+              "correctAnswer": [
+                "bool verify(const string& message, const string& signature, const string& publicKey) { return verifyWithRSA(message, signature, publicKey); }",
+                "verify sig"
+              ],
+              "explanation": "Verify signature.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-21-14",
+              "type": "code",
+              "question": "Commit hash.",
+              "correctAnswer": [
+                "string commitHash(const string& tree, const string& parent, const string& author) { return sha256(tree + parent + author); }",
+                "commit"
+              ],
+              "explanation": "Git commit hash.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-21-15",
+              "type": "code",
+              "question": "Content addressing.",
+              "correctAnswer": [
+                "string contentAddress(const string& content) { return sha256(content); }",
+                "content"
+              ],
+              "explanation": "Address by content.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-21-16",
+              "type": "code",
+              "question": "URL shortener.",
+              "correctAnswer": [
+                "string shortURL(const string& url) { int id = getNextID(); string code = base62Encode(id); return domain + '/' + code; }",
+                "shortener"
+              ],
+              "explanation": "Shorten URL.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-21-17",
+              "type": "code",
+              "question": "Token generation.",
+              "correctAnswer": [
+                "string generateToken() { return randomString(32); }",
+                "token"
+              ],
+              "explanation": "Generate token.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-21-18",
+              "type": "code",
+              "question": "Session ID.",
+              "correctAnswer": [
+                "string sessionID() { return uuid(); }",
+                "session"
+              ],
+              "explanation": "Session identifier.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-21-19",
+              "type": "code",
+              "question": "Hash map.",
+              "correctAnswer": [
+                "unordered_map<string, int> cache;",
+                "hashmap"
+              ],
+              "explanation": "STL hash map.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-21-20",
+              "type": "code",
+              "question": "Hash set.",
+              "correctAnswer": [
+                "unordered_set<string> seen;",
+                "hashset"
+              ],
+              "explanation": "STL hash set.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-21-21",
+              "type": "code",
+              "question": "Custom hash.",
+              "correctAnswer": [
+                "struct PointHash { size_t operator()(const Point& p) const { return hash<int>()(p.x) ^ hash<int>()(p.y); } };",
+                "custom"
+              ],
+              "explanation": "Custom hash function.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-21-22",
+              "type": "code",
+              "question": "Performance.",
+              "correctAnswer": [
+                "// O(1) average for hash containers",
+                "performance"
+              ],
+              "explanation": "Hash container performance.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-21-23",
+              "type": "code",
+              "question": "Best practices.",
+              "correctAnswer": [
+                "// Use good hash functions, handle collisions",
+                "practices"
+              ],
+              "explanation": "Hash best practices.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-21-24",
+              "type": "code",
+              "question": "Security considerations.",
+              "correctAnswer": [
+                "// Avoid hash collisions attacks",
+                "security"
+              ],
+              "explanation": "Security issues.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-25-21-25",
+              "type": "code",
+              "question": "Real-world examples.",
+              "correctAnswer": [
+                "// Database indexes, caches, auth",
+                "real"
+              ],
+              "explanation": "Practical examples.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Hash-Based Applications\n\nPractical applications of hashing in software systems.\n\n## Password Hashing\n\n```cpp\n// Never store plain passwords!\nstd::string hashPassword(const std::string& password, \n                         const std::string& salt) {\n    // Use slow hash like bcrypt, Argon2, or PBKDF2\n    return bcrypt(password + salt);\n}\n\nstd::string generateSalt() {\n    // 16+ random bytes\n    return randomBytes(16);\n}\n```\n\n## File Integrity\n\n```cpp\nstd::string fileChecksum(const std::string& filename) {\n    std::ifstream file(filename);\n    std::string content((std::istreambuf_iterator<char>(file)),\n                        std::istreambuf_iterator<char>());\n    return sha256(content);\n}\n```\n\n## Caching\n\n```cpp\nstd::string cacheKey(const std::string& method,\n                     const std::map<std::string, std::string>& params) {\n    std::string key = method;\n    for (const auto& p : params) {\n        key += p.first + p.second;\n    }\n    return sha256(key);\n}\n```\n\n## Deduplication\n\n```cpp\nbool isDuplicate(const std::string& content,\n                 std::unordered_set<std::string>& hashes) {\n    std::string h = sha256(content);\n    return hashes.count(h) > 0;\n}\n```\n\n## URL Shortening\n\n```cpp\nstd::string shortURL(const std::string& url) {\n    int id = getNextID();\n    std::string code = base62Encode(id);\n    return \"https://shrt.io/\" + code;\n}\n```\n\n## Applications\n\n- **Authentication**: Password hashing, token generation\n- **Data Integrity**: Checksums, digital signatures\n- **Caching**: Cache keys, memoization\n- **Storage**: Content addressing, deduplication\n- **Databases**: Indexes, joins\n- **Networking**: Load balancing, routing\n- **Version Control**: Git commit hashes\n- **Blockchain**: Merkle trees, transaction verification\n"
         }
       ]
     },
