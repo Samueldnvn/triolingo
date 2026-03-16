@@ -236,6 +236,44 @@ window.cppCombined = {
               "localLLMGrade": true,
               "explanation": "Use std::cout << \"Welcome to C++!\" << std::endl;",
               "xp": 12
+            },
+            {
+              "id": "cpp-1-1-21",
+              "type": "code",
+              "question": "Create a simple C++ program that prints 'Hello, World!'",
+              "correctAnswer": [
+                "#include <iostream>\nint main() {\n    std::cout << \"Hello, World!\" << std::endl;\n    return 0;\n}"
+              ],
+              "xp": 15
+            },
+            {
+              "id": "cpp-1-1-22",
+              "type": "code",
+              "question": "Write a C++ comment on a single line.",
+              "correctAnswer": [
+                "// This is a comment",
+                "// comment"
+              ],
+              "xp": 10
+            },
+            {
+              "id": "cpp-1-1-23",
+              "type": "code",
+              "question": "Write a multi-line C++ comment.",
+              "correctAnswer": [
+                "/* This is a\n   multi-line comment */",
+                "/* comment */"
+              ],
+              "xp": 10
+            },
+            {
+              "id": "cpp-1-1-24",
+              "type": "code",
+              "question": "Include the iostream header.",
+              "correctAnswer": [
+                "#include <iostream>"
+              ],
+              "xp": 10
             }
           ]
         },
@@ -491,6 +529,46 @@ window.cppCombined = {
               "localLLMGrade": true,
               "explanation": "Use count = count + 1; or count++; to increment.",
               "xp": 10
+            },
+            {
+              "id": "cpp-1-2-23",
+              "type": "code",
+              "question": "Declare a const integer variable.",
+              "correctAnswer": [
+                "const int MAX_VALUE = 100;",
+                "const int x = 42;"
+              ],
+              "xp": 15
+            },
+            {
+              "id": "cpp-1-2-24",
+              "type": "code",
+              "question": "Use auto to deduce variable type.",
+              "correctAnswer": [
+                "auto x = 42;",
+                "auto name = \"Hello\";"
+              ],
+              "xp": 15
+            },
+            {
+              "id": "cpp-1-2-25",
+              "type": "code",
+              "question": "Declare an unsigned integer.",
+              "correctAnswer": [
+                "unsigned int count;",
+                "unsigned int x = 0;"
+              ],
+              "xp": 10
+            },
+            {
+              "id": "cpp-1-2-26",
+              "type": "code",
+              "question": "Use sizeof operator.",
+              "correctAnswer": [
+                "sizeof(int)",
+                "size_t size = sizeof(double);"
+              ],
+              "xp": 10
             }
           ]
         },
@@ -744,6 +822,44 @@ window.cppCombined = {
               "localLLMGrade": true,
               "explanation": "Use both std::cout << num << std::endl; and std::cout << num << '\\n';",
               "xp": 10
+            },
+            {
+              "id": "cpp-1-3-23",
+              "type": "code",
+              "question": "Read an integer from stdin.",
+              "correctAnswer": [
+                "int x; std::cin >> x;"
+              ],
+              "xp": 15
+            },
+            {
+              "id": "cpp-1-3-24",
+              "type": "code",
+              "question": "Read a string with spaces.",
+              "correctAnswer": [
+                "std::string name; std::getline(std::cin, name);"
+              ],
+              "xp": 15
+            },
+            {
+              "id": "cpp-1-3-25",
+              "type": "code",
+              "question": "Set precision for floating point output.",
+              "correctAnswer": [
+                "std::cout << std::setprecision(2);",
+                "std::cout << std::fixed << std::setprecision(2);"
+              ],
+              "xp": 15
+            },
+            {
+              "id": "cpp-1-3-26",
+              "type": "code",
+              "question": "Flush the output stream.",
+              "correctAnswer": [
+                "std::cout << std::flush;",
+                "std::cout.flush();"
+              ],
+              "xp": 10
             }
           ]
         },
@@ -993,6 +1109,47 @@ window.cppCombined = {
               "localLLMGrade": true,
               "explanation": "Use std::cout << 17 % 5 << std::endl;",
               "xp": 10
+            },
+            {
+              "id": "cpp-1-4-23",
+              "type": "code",
+              "question": "Use modulo operator.",
+              "correctAnswer": [
+                "int remainder = a % b;",
+                "x % 2"
+              ],
+              "xp": 10
+            },
+            {
+              "id": "cpp-1-4-24",
+              "type": "code",
+              "question": "Use compound assignment operator.",
+              "correctAnswer": [
+                "x += 5;",
+                "x *= 2;",
+                "x /= 3;"
+              ],
+              "xp": 10
+            },
+            {
+              "id": "cpp-1-4-25",
+              "type": "code",
+              "question": "Use increment operator (prefix).",
+              "correctAnswer": [
+                "++x;",
+                "int y = ++x;"
+              ],
+              "xp": 10
+            },
+            {
+              "id": "cpp-1-4-26",
+              "type": "code",
+              "question": "Use bitwise AND operator.",
+              "correctAnswer": [
+                "result = a & b;",
+                "int flags = FLAG_A & FLAG_B;"
+              ],
+              "xp": 15
             }
           ]
         },
@@ -1241,6 +1398,45 @@ window.cppCombined = {
               "language": "cpp",
               "localLLMGrade": true,
               "explanation": "Use if (x % 2 == 0 && x % 3 == 0) { ... }",
+              "xp": 10
+            },
+            {
+              "id": "cpp-1-5-23",
+              "type": "code",
+              "question": "Write if-else statement.",
+              "correctAnswer": [
+                "if (condition) { } else { }",
+                "if (x > 0) { } else { }"
+              ],
+              "xp": 15
+            },
+            {
+              "id": "cpp-1-5-24",
+              "type": "code",
+              "question": "Write else-if chain.",
+              "correctAnswer": [
+                "if (x > 0) { } else if (x < 0) { } else { }"
+              ],
+              "xp": 15
+            },
+            {
+              "id": "cpp-1-5-25",
+              "type": "code",
+              "question": "Use ternary operator.",
+              "correctAnswer": [
+                "int max = (a > b) ? a : b;",
+                "result = (condition) ? true : false;"
+              ],
+              "xp": 15
+            },
+            {
+              "id": "cpp-1-5-26",
+              "type": "code",
+              "question": "Use logical AND in condition.",
+              "correctAnswer": [
+                "if (x > 0 && x < 100)",
+                "if (a && b)"
+              ],
               "xp": 10
             }
           ]
