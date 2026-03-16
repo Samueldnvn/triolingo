@@ -91252,85 +91252,2689 @@ window.cppCombined = {
       "lessons": [
         {
           "id": "cpp-U42-L1",
-          "title": "Prefix sums",
-          "unitTitle": "42. Range Query Techniques",
-          "xp": 15,
+          "title": "CMake Basics",
+          "unitTitle": "42. Build Systems & Package Management",
+          "xp": 85,
           "type": "lesson",
-          "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "difficulty": "beginner",
+          "questions": [
+            {
+              "id": "cpp-42-1-1",
+              "type": "typing",
+              "question": "CMake?",
+              "correctAnswer": [
+                "build system",
+                "generator",
+                "cross-platform"
+              ],
+              "explanation": "Cross-platform build system.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-1-2",
+              "type": "typing",
+              "question": "CMakeLists.txt?",
+              "correctAnswer": [
+                "configure",
+                "project",
+                "build"
+              ],
+              "explanation": "CMake configuration file.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-1-3",
+              "type": "typing",
+              "question": "cmake .?",
+              "correctAnswer": [
+                "configure",
+                "generate",
+                "build files"
+              ],
+              "explanation": "Configure CMake.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-1-4",
+              "type": "multiple",
+              "question": "Minimum version?",
+              "options": [
+                "cmake_minimum_required",
+                "project",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both commands.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-1-5",
+              "type": "multiple",
+              "question": "Generators?",
+              "options": [
+                "Unix Makefiles",
+                "Visual Studio",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both generators.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-1-6",
+              "type": "code",
+              "question": "Minimum version.",
+              "correctAnswer": [
+                "cmake_minimum_required(VERSION 3.10)",
+                "minimum"
+              ],
+              "explanation": "Set minimum version.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-1-7",
+              "type": "code",
+              "question": "Project declaration.",
+              "correctAnswer": [
+                "project(MyProject VERSION 1.0 LANGUAGES CXX)",
+                "project"
+              ],
+              "explanation": "Declare project.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-1-8",
+              "type": "code",
+              "question": "Add executable.",
+              "correctAnswer": [
+                "add_executable(myapp main.cpp)",
+                "add_executable"
+              ],
+              "explanation": "Add executable.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-1-9",
+              "type": "code",
+              "question": "Add library.",
+              "correctAnswer": [
+                "add_library(mylib mylib.cpp)",
+                "add_library"
+              ],
+              "explanation": "Add library.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-1-10",
+              "type": "code",
+              "question": "Set C++ standard.",
+              "correctAnswer": [
+                "set(CMAKE_CXX_STANDARD 17)",
+                "standard"
+              ],
+              "explanation": "Set C++ standard.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-1-11",
+              "type": "code",
+              "question": "Configure CMake.",
+              "correctAnswer": [
+                "cmake -S . -B build",
+                "configure"
+              ],
+              "explanation": "Configure CMake.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-1-12",
+              "type": "code",
+              "question": "Build with CMake.",
+              "correctAnswer": [
+                "cmake --build build",
+                "build"
+              ],
+              "explanation": "Build with CMake.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-1-13",
+              "type": "code",
+              "question": "Clean build.",
+              "correctAnswer": [
+                "rm -rf build && cmake -S . -B build",
+                "clean"
+              ],
+              "explanation": "Clean build.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-1-14",
+              "type": "code",
+              "question": "Include directories.",
+              "correctAnswer": [
+                "target_include_directories(myapp PRIVATE include)",
+                "include"
+              ],
+              "explanation": "Add include directories.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-1-15",
+              "type": "code",
+              "question": "Testing cmake.",
+              "correctAnswer": [
+                "void testCMake() { // Test CMake }",
+                "test"
+              ],
+              "explanation": "Test CMake.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-1-16",
+              "type": "code",
+              "question": "Generator selection.",
+              "correctAnswer": [
+                "cmake -G \"Unix Makefiles\" -S . -B build",
+                "generator"
+              ],
+              "explanation": "Select generator.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-1-17",
+              "type": "code",
+              "question": "CMake options.",
+              "correctAnswer": [
+                "cmake -D BUILD_TESTING=ON -S . -B build",
+                "options"
+              ],
+              "explanation": "Pass options.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-1-18",
+              "type": "code",
+              "question": "Target sources.",
+              "correctAnswer": [
+                "target_sources(myapp PRIVATE source.cpp)",
+                "sources"
+              ],
+              "explanation": "Add sources.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-1-19",
+              "type": "code",
+              "question": "CMake variables.",
+              "correctAnswer": [
+                "set(MY_VAR \"value\")",
+                "variables"
+              ],
+              "explanation": "Set variables.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-1-20",
+              "type": "code",
+              "question": "Message output.",
+              "correctAnswer": [
+                "message(STATUS \"Building...\")",
+                "message"
+              ],
+              "explanation": "Print message.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-1-21",
+              "type": "code",
+              "question": "Debug build.",
+              "correctAnswer": [
+                "cmake -DCMAKE_BUILD_TYPE=Debug -S . -B build",
+                "debug"
+              ],
+              "explanation": "Debug build.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-1-22",
+              "type": "code",
+              "question": "Release build.",
+              "correctAnswer": [
+                "cmake -DCMAKE_BUILD_TYPE=Release -S . -B build",
+                "release"
+              ],
+              "explanation": "Release build.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-1-23",
+              "type": "code",
+              "question": "Install target.",
+              "correctAnswer": [
+                "install(TARGETS myapp DESTINATION bin)",
+                "install"
+              ],
+              "explanation": "Install target.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-1-24",
+              "type": "code",
+              "question": "CMake wrapper.",
+              "correctAnswer": [
+                "// CMake helper functions",
+                "wrapper"
+              ],
+              "explanation": "CMake wrapper.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-1-25",
+              "type": "code",
+              "question": "Summary.",
+              "correctAnswer": [
+                "// CMake: project, add_executable, add_library, configure, build",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# CMake Basics\n\nModern C++ build system.\n\n## What is CMake?\n\nCMake is a cross-platform build system generator. It doesn't build directly but generates build files (Makefiles, Visual Studio projects, etc.).\n\n## Basic CMakeLists.txt\n\n```cmake\ncmake_minimum_required(VERSION 3.10)\n\nproject(MyProject VERSION 1.0 LANGUAGES CXX)\n\nset(CMAKE_CXX_STANDARD 17)\nset(CMAKE_CXX_STANDARD_REQUIRED ON)\n\nadd_executable(myapp main.cpp)\n```\n\n## Building with CMake\n\n```bash\n# Configure\ncmake -S . -B build\n\n# Build\ncmake --build build\n\n# Clean\nrm -rf build && cmake -S . -B build\n```\n\n## Add Executable\n\n```cmake\n# Simple\nadd_executable(myapp main.cpp)\n\n# Multiple sources\nadd_executable(myapp main.cpp utils.cpp helpers.cpp)\n\n# With target properties\nadd_executable(myapp main.cpp)\ntarget_include_directories(myapp PRIVATE include)\ntarget_compile_features(myapp PRIVATE cxx_std_17)\n```\n\n## Add Library\n\n```cmake\n# Static library\nadd_library(mylib STATIC mylib.cpp)\n\n# Shared library\nadd_library(mylib SHARED mylib.cpp)\n\n# Interface (header-only)\nadd_library(mylib INTERFACE)\ntarget_include_directories(mylib INTERFACE include)\n```\n\n## C++ Standard\n\n```cmake\n# Set standard\nset(CMAKE_CXX_STANDARD 17)\nset(CMAKE_CXX_STANDARD_REQUIRED ON)\n\n# Per-target\nset_property(TARGET myapp PROPERTY CXX_STANDARD 20)\n```\n\n## Build Types\n\n```bash\n# Debug\ncmake -DCMAKE_BUILD_TYPE=Debug -S . -B build\n\n# Release\ncmake -DCMAKE_BUILD_TYPE=Release -S . -B build\n\n# RelWithDebInfo\ncmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -S . -B build\n```\n\n## Generators\n\n| Generator | Platform |\n|-----------|----------|\n| Unix Makefiles | Linux, macOS |\n| Ninja | Linux, macOS, Windows |\n| Visual Studio | Windows |\n| Xcode | macOS |\n\n```bash\n# Specify generator\ncmake -G \"Unix Makefiles\" -S . -B build\ncmake -G \"Visual Studio 17 2022\" -S . -B build\ncmake -G Ninja -S . -B build\n```\n\n## Best Practices\n\n1. **Use out-of-source build** (build directory)\n2. **Set C++ standard** explicitly\n3. **Use target_* commands** over global\n4. **Use semantic versioning**\n5. **Document** CMake options\n"
         },
         {
           "id": "cpp-U42-L2",
-          "title": "Difference arrays",
-          "unitTitle": "42. Range Query Techniques",
-          "xp": 15,
+          "title": "CMake Targets & Dependencies",
+          "unitTitle": "42. Build Systems & Package Management",
+          "xp": 85,
           "type": "lesson",
-          "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "difficulty": "beginner",
+          "questions": [
+            {
+              "id": "cpp-42-2-1",
+              "type": "typing",
+              "question": "target_link_libraries?",
+              "correctAnswer": [
+                "link",
+                "dependencies",
+                "libraries"
+              ],
+              "explanation": "Link libraries.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-2-2",
+              "type": "typing",
+              "question": "PRIVATE?",
+              "correctAnswer": [
+                "private",
+                "usage",
+                "transitive"
+              ],
+              "explanation": "Private visibility.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-2-3",
+              "type": "typing",
+              "question": "PUBLIC?",
+              "correctAnswer": [
+                "public",
+                "transitive",
+                "export"
+              ],
+              "explanation": "Public visibility.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-2-4",
+              "type": "multiple",
+              "question": "Visibility?",
+              "options": [
+                "PRIVATE",
+                "PUBLIC",
+                "INTERFACE"
+              ],
+              "correctAnswer": [
+                0,
+                1,
+                2
+              ],
+              "explanation": "All three.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-2-5",
+              "type": "multiple",
+              "question": "Dependencies?",
+              "options": [
+                "find_package",
+                "target_link_libraries",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both commands.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-2-6",
+              "type": "code",
+              "question": "Link library.",
+              "correctAnswer": [
+                "target_link_libraries(myapp PRIVATE mylib)",
+                "link"
+              ],
+              "explanation": "Link library.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-2-7",
+              "type": "code",
+              "question": "Public dependency.",
+              "correctAnswer": [
+                "target_link_libraries(mylib PUBLIC dependency)",
+                "public"
+              ],
+              "explanation": "Public dependency.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-2-8",
+              "type": "code",
+              "question": "Include directories.",
+              "correctAnswer": [
+                "target_include_directories(myapp PRIVATE include)",
+                "include"
+              ],
+              "explanation": "Include directories.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-2-9",
+              "type": "code",
+              "question": "Compile definitions.",
+              "correctAnswer": [
+                "target_compile_definitions(myapp PRIVATE DEBUG)",
+                "definitions"
+              ],
+              "explanation": "Compile definitions.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-2-10",
+              "type": "code",
+              "question": "Link directories.",
+              "correctAnswer": [
+                "target_link_directories(myapp PRIVATE lib)",
+                "link dirs"
+              ],
+              "explanation": "Link directories.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-2-11",
+              "type": "code",
+              "question": "Find package.",
+              "correctAnswer": [
+                "find_package(SomePackage REQUIRED)",
+                "find"
+              ],
+              "explanation": "Find package.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-2-12",
+              "type": "code",
+              "question": "Add subdirectory.",
+              "correctAnswer": [
+                "add_subdirectory(submodule)",
+                "add_subdirectory"
+              ],
+              "explanation": "Add subdirectory.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-2-13",
+              "type": "code",
+              "question": "External project.",
+              "correctAnswer": [
+                "include(ExternalProject)",
+                "external"
+              ],
+              "explanation": "External project.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-2-14",
+              "type": "code",
+              "question": "Fetch content.",
+              "correctAnswer": [
+                "include(FetchContent)",
+                "fetch"
+              ],
+              "explanation": "Fetch content.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-2-15",
+              "type": "code",
+              "question": "Testing dependencies.",
+              "correctAnswer": [
+                "void testDependencies() { // Test dependencies }",
+                "test"
+              ],
+              "explanation": "Test dependencies.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-2-16",
+              "type": "code",
+              "question": "PRIVATE vs PUBLIC.",
+              "correctAnswer": [
+                "// PRIVATE: only used by this target\n// PUBLIC: used by this target and dependents",
+                "private public"
+              ],
+              "explanation": "Visibility differences.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-2-17",
+              "type": "code",
+              "question": "INTERFACE.",
+              "correctAnswer": [
+                "// INTERFACE: only for dependents",
+                "interface"
+              ],
+              "explanation": "INTERFACE visibility.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-2-18",
+              "type": "code",
+              "question": "Alias target.",
+              "correctAnswer": [
+                "add_library(mylib::mylib ALIAS mylib)",
+                "alias"
+              ],
+              "explanation": "Alias target.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-2-19",
+              "type": "code",
+              "question": "Dependency chain.",
+              "correctAnswer": [
+                "// app -> lib -> dependency",
+                "chain"
+              ],
+              "explanation": "Dependency chain.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-2-20",
+              "type": "code",
+              "question": "Custom target.",
+              "correctAnswer": [
+                "add_custom_target(run COMMAND myapp)",
+                "custom"
+              ],
+              "explanation": "Custom target.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-2-21",
+              "type": "code",
+              "question": "Target properties.",
+              "correctAnswer": [
+                "get_target_property(var myapp PROPERTY)",
+                "properties"
+              ],
+              "explanation": "Target properties.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-2-22",
+              "type": "code",
+              "question": "Link options.",
+              "correctAnswer": [
+                "target_link_options(myapp PRIVATE -pthread)",
+                "link options"
+              ],
+              "explanation": "Link options.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-2-23",
+              "type": "code",
+              "question": "Compile options.",
+              "correctAnswer": [
+                "target_compile_options(myapp PRIVATE -Wall)",
+                "compile options"
+              ],
+              "explanation": "Compile options.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-2-24",
+              "type": "code",
+              "question": "Dependency wrapper.",
+              "correctAnswer": [
+                "// Helper function for dependencies",
+                "wrapper"
+              ],
+              "explanation": "Dependency wrapper.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-2-25",
+              "type": "code",
+              "question": "Summary.",
+              "correctAnswer": [
+                "// Targets: link_libraries, include, visibility, dependencies",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# CMake Targets & Dependencies\n\nManaging targets and their relationships.\n\n## Target Visibility\n\n| Keyword | Propagates to Dependents |\n|---------|--------------------------|\n| PRIVATE | No |\n| PUBLIC | Yes |\n| INTERFACE | Yes (only for header-only) |\n\n## Linking Libraries\n\n```cmake\nadd_executable(myapp main.cpp)\nadd_library(mylib mylib.cpp)\n\n# Private: mylib is not visible to myapp's dependents\ntarget_link_libraries(myapp PRIVATE mylib)\n\n# Public: mylib is visible to myapp's dependents\ntarget_link_libraries(mylib PUBLIC pthread)\n\n# Interface: Only for dependents\ntarget_include_directories(mylib INTERFACE include)\n```\n\n## Include Directories\n\n```cmake\n# Private: only for this target\ntarget_include_directories(myapp PRIVATE include)\n\n# Public: for this target and dependents\ntarget_include_directories(mylib PUBLIC include)\n\n# Interface: only for dependents (header-only library)\ntarget_include_directories(mylib INTERFACE include)\n```\n\n## Compile Definitions\n\n```cmake\n# Define preprocessor macros\ntarget_compile_definitions(myapp PRIVATE DEBUG)\ntarget_compile_definitions(mylib PUBLIC VERSION_MAJOR=1)\n```\n\n## Compile Options\n\n```cmake\n# Compiler flags\ntarget_compile_options(myapp PRIVATE -Wall -Wextra)\ntarget_compile_options(myapp PRIVATE $<$<CXX_COMPILER_ID:MSVC>:/W4>)\n```\n\n## Find Package\n\n```cmake\nfind_package(SomePackage REQUIRED)\n\n# Use the package\ntarget_link_libraries(myapp PRIVATE SomePackage::SomeLibrary)\n```\n\n## Fetch Content (CMake 3.11+)\n\n```cmake\ninclude(FetchContent)\n\nFetchContent_Declare(\n    googletest\n    GIT_REPOSITORY https://github.com/google/googletest.git\n    GIT_TAG release-1.11.0\n)\n\nFetchContent_MakeAvailable(googletest)\n\ntarget_link_libraries(myapp PRIVATE gtest)\n```\n\n## External Project\n\n```cmake\ninclude(ExternalProject)\n\nExternalProject_Add(\n    my_dependency\n    GIT_REPOSITORY https://github.com/user/repo.git\n    GIT_TAG main\n    PREFIX ${CMAKE_BINARY_DIR}/my_dependency\n    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}\n)\n\nadd_dependencies(myapp my_dependency)\n```\n\n## Add Subdirectory\n\n```cmake\n# Add another CMake project\nadd_subdirectory(external/lib)\n\n# Use targets from that project\ntarget_link_libraries(myapp PRIVATE lib::lib)\n```\n\n## Alias Target\n\n```cmake\nadd_library(mylib mylib.cpp)\nadd_library(mylib::mylib ALIAS mylib)\n\n# Use alias\ntarget_link_libraries(myapp PRIVATE mylib::mylib)\n```\n\n## Best Practices\n\n1. **Use target_* commands** for target-specific settings\n2. **Choose visibility** appropriately\n3. **Use find_package** for dependencies\n4. **Fetch dependencies** automatically when possible\n5. **Document** required packages\n"
         },
         {
           "id": "cpp-U42-L3",
-          "title": "Sparse tables",
-          "unitTitle": "42. Range Query Techniques",
-          "xp": 15,
+          "title": "CMake Testing",
+          "unitTitle": "42. Build Systems & Package Management",
+          "xp": 85,
           "type": "lesson",
-          "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "difficulty": "beginner",
+          "questions": [
+            {
+              "id": "cpp-42-3-1",
+              "type": "typing",
+              "question": "CTest?",
+              "correctAnswer": [
+                "testing",
+                "framework",
+                "CMake"
+              ],
+              "explanation": "CMake testing tool.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-3-2",
+              "type": "typing",
+              "question": "enable_testing()?",
+              "correctAnswer": [
+                "enable",
+                "tests",
+                "CMake"
+              ],
+              "explanation": "Enable testing.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-3-3",
+              "type": "typing",
+              "question": "add_test()?",
+              "correctAnswer": [
+                "add",
+                "test",
+                "CTest"
+              ],
+              "explanation": "Add test.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-3-4",
+              "type": "multiple",
+              "question": "Test frameworks?",
+              "options": [
+                "Google Test",
+                "Catch2",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both frameworks.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-3-5",
+              "type": "multiple",
+              "question": "Running tests?",
+              "options": [
+                "ctest",
+                "make test",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both commands.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-3-6",
+              "type": "code",
+              "question": "Enable testing.",
+              "correctAnswer": [
+                "enable_testing()",
+                "enable"
+              ],
+              "explanation": "Enable testing.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-3-7",
+              "type": "code",
+              "question": "Add test.",
+              "correctAnswer": [
+                "add_test(NAME MyTest COMMAND myapp)",
+                "add_test"
+              ],
+              "explanation": "Add test.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-3-8",
+              "type": "code",
+              "question": "Run tests.",
+              "correctAnswer": [
+                "ctest",
+                "ctest"
+              ],
+              "explanation": "Run CTest.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-3-9",
+              "type": "code",
+              "question": "Verbose tests.",
+              "correctAnswer": [
+                "ctest --verbose",
+                "verbose"
+              ],
+              "explanation": "Verbose test output.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-3-10",
+              "type": "code",
+              "question": "Google Test setup.",
+              "correctAnswer": [
+                "#include <gtest/gtest.h>\nTEST(TestName, TestCase) { EXPECT_EQ(1, 1); }",
+                "gtest"
+              ],
+              "explanation": "Google Test.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-3-11",
+              "type": "code",
+              "question": "Catch2 setup.",
+              "correctAnswer": [
+                "#include <catch2/catch.hpp>\nTEST_CASE(\"Test Name\") { REQUIRE(1 == 1); }",
+                "catch2"
+              ],
+              "explanation": "Catch2.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-3-12",
+              "type": "code",
+              "question": "Discover tests.",
+              "correctAnswer": [
+                "include(GoogleTest)\ngoogle_discover_tests(mytest)",
+                "discover"
+              ],
+              "explanation": "Auto-discover tests.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-3-13",
+              "type": "code",
+              "question": "Test properties.",
+              "correctAnswer": [
+                "set_tests_properties(MyTest PROPERTIES TIMEOUT 30)",
+                "properties"
+              ],
+              "explanation": "Set test properties.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-3-14",
+              "type": "code",
+              "question": "Testing cmake.",
+              "correctAnswer": [
+                "void testCMake() { // Test CMake testing }",
+                "test"
+              ],
+              "explanation": "Test CMake testing.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-3-15",
+              "type": "code",
+              "question": "Test fixtures.",
+              "correctAnswer": [
+                "// GTEST fixture, Catch2 sections",
+                "fixtures"
+              ],
+              "explanation": "Test fixtures.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-3-16",
+              "type": "code",
+              "question": "Parameterized tests.",
+              "correctAnswer": [
+                "// GTEST parameterized tests",
+                "parameterized"
+              ],
+              "explanation": "Parameterized tests.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-3-17",
+              "type": "code",
+              "question": "Test timeout.",
+              "correctAnswer": [
+                "set_tests_properties(MyTest PROPERTIES TIMEOUT 60)",
+                "timeout"
+              ],
+              "explanation": "Test timeout.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-3-18",
+              "type": "code",
+              "question": "Test labels.",
+              "correctAnswer": [
+                "set_tests_properties(MyTest PROPERTIES LABELS \"fast\")",
+                "labels"
+              ],
+              "explanation": "Test labels.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-3-19",
+              "type": "code",
+              "question": "Run subset.",
+              "correctAnswer": [
+                "ctest -L fast",
+                "subset"
+              ],
+              "explanation": "Run test subset.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-3-20",
+              "type": "code",
+              "question": "Parallel tests.",
+              "correctAnswer": [
+                "ctest -j8",
+                "parallel"
+              ],
+              "explanation": "Parallel tests.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-3-21",
+              "type": "code",
+              "question": "Test output.",
+              "correctAnswer": [
+                "ctest --output-on-failure",
+                "output"
+              ],
+              "explanation": "Test output.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-3-22",
+              "type": "code",
+              "question": "Mocking.",
+              "correctAnswer": [
+                "// GMock for Google Test",
+                "mocking"
+              ],
+              "explanation": "Test mocking.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-3-23",
+              "type": "code",
+              "question": "Coverage.",
+              "correctAnswer": [
+                "// Enable code coverage with flags",
+                "coverage"
+              ],
+              "explanation": "Code coverage.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-3-24",
+              "type": "code",
+              "question": "Testing wrapper.",
+              "correctAnswer": [
+                "// CMake test helpers",
+                "wrapper"
+              ],
+              "explanation": "Testing wrapper.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-3-25",
+              "type": "code",
+              "question": "Summary.",
+              "correctAnswer": [
+                "// Testing: enable_testing, add_test, ctest, frameworks",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# CMake Testing\n\nUnit testing with CMake.\n\n## Enable Testing\n\n```cmake\nenable_testing()\n```\n\n## Basic Test\n\n```cmake\nadd_executable(mytest test.cpp)\nadd_test(NAME MyTest COMMAND mytest)\n```\n\n## Run Tests\n\n```bash\n# Run all tests\nctest\n\n# Verbose output\nctest --verbose\n\n# Run specific test\nctest -R MyTest\n\n# Run tests with label\nctest -L fast\n\n# Parallel execution\nctest -j8\n```\n\n## Google Test\n\n```cmake\nfind_package(GTest REQUIRED)\n\nadd_executable(mytest test.cpp)\ntarget_link_libraries(mytest PRIVATE GTest::gtest GTest::gtest_main)\n\nadd_test(NAME MyTest COMMAND mytest)\n\n# Auto-discover tests\ninclude(GoogleTest)\ngtest_discover_tests(mytest)\n```\n\n### GTest Example\n\n```cpp\n#include <gtest/gtest.h>\n\nTEST(MathTest, Add) {\n    EXPECT_EQ(add(2, 3), 5);\n}\n\nTEST(MathTest, Multiply) {\n    EXPECT_EQ(multiply(2, 3), 6);\n}\n\nint main(int argc, char** argv) {\n    ::testing::InitGoogleTest(&argc, argv);\n    return RUN_ALL_TESTS();\n}\n```\n\n## Catch2\n\n```cmake\nfind_package(Catch2 REQUIRED)\n\nadd_executable(mytest test.cpp)\ntarget_link_libraries(mytest PRIVATE Catch2::Catch2)\n\nadd_test(NAME MyTest COMMAND mytest)\n```\n\n### Catch2 Example\n\n```cpp\n#include <catch2/catch.hpp>\n\nTEST_CASE(\"Math add\") {\n    REQUIRE(add(2, 3) == 5);\n}\n\nTEST_CASE(\"Math multiply\", \"[math]\") {\n    REQUIRE(multiply(2, 3) == 6);\n}\n```\n\n## Test Properties\n\n```cmake\nadd_test(NAME MyTest COMMAND mytest)\n\n# Set timeout\nset_tests_properties(MyTest PROPERTIES TIMEOUT 30)\n\n# Set labels\nset_tests_properties(MyTest PROPERTIES LABELS \"fast\")\nset_tests_properties(MyTest PROPERTIES LABELS \"slow\")\n\n# Set working directory\nset_tests_properties(MyTest PROPERTIES WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/tests)\n```\n\n## Test Fixtures\n\n```cpp\n// GTest\nclass MyFixture : public ::testing::Test {\nprotected:\n    void SetUp() override {\n        // Setup\n    }\n    \n    void TearDown() override {\n        // Cleanup\n    }\n    \n    MyClass obj;\n};\n\nTEST_F(MyFixture, Test1) {\n    obj.doSomething();\n}\n\n// Catch2\nTEST_CASE(\"Fixture test\") {\n    MyClass obj;\n    \n    SECTION(\"Case 1\") {\n        obj.doSomething();\n    }\n}\n```\n\n## Best Practices\n\n1. **Use test frameworks** (GTest, Catch2)\n2. **Organize tests** by functionality\n3. **Use fixtures** for shared setup\n4. **Set timeouts** for all tests\n5. **Use labels** for test categorization\n6. **Run tests in parallel** for speed\n7. **Maintain high coverage**\n"
         },
         {
           "id": "cpp-U42-L4",
-          "title": "Segment trees",
-          "unitTitle": "42. Range Query Techniques",
-          "xp": 15,
+          "title": "CMake Installation",
+          "unitTitle": "42. Build Systems & Package Management",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-42-4-1",
+              "type": "typing",
+              "question": "install()?",
+              "correctAnswer": [
+                "install",
+                "destination",
+                "CMake"
+              ],
+              "explanation": "Install command.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-4-2",
+              "type": "typing",
+              "question": "CMAKE_INSTALL_PREFIX?",
+              "correctAnswer": [
+                "prefix",
+                "install",
+                "path"
+              ],
+              "explanation": "Install prefix.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-4-3",
+              "type": "typing",
+              "question": "make install?",
+              "correctAnswer": [
+                "install",
+                "CMake",
+                "make"
+              ],
+              "explanation": "Install command.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-4-4",
+              "type": "multiple",
+              "question": "Install types?",
+              "options": [
+                "TARGETS",
+                "FILES",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both types.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-4-5",
+              "type": "multiple",
+              "question": "Install locations?",
+              "options": [
+                "bin",
+                "lib",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both locations.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-4-6",
+              "type": "code",
+              "question": "Install executable.",
+              "correctAnswer": [
+                "install(TARGETS myapp DESTINATION bin)",
+                "install target"
+              ],
+              "explanation": "Install executable.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-4-7",
+              "type": "code",
+              "question": "Install library.",
+              "correctAnswer": [
+                "install(TARGETS mylib DESTINATION lib)",
+                "install lib"
+              ],
+              "explanation": "Install library.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-4-8",
+              "type": "code",
+              "question": "Install headers.",
+              "correctAnswer": [
+                "install(DIRECTORY include/ DESTINATION include)",
+                "install headers"
+              ],
+              "explanation": "Install headers.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-4-9",
+              "type": "code",
+              "question": "Install files.",
+              "correctAnswer": [
+                "install(FILES README.md DESTINATION .)",
+                "install files"
+              ],
+              "explanation": "Install files.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-4-10",
+              "type": "code",
+              "question": "Set prefix.",
+              "correctAnswer": [
+                "cmake -DCMAKE_INSTALL_PREFIX=/usr/local -S . -B build",
+                "prefix"
+              ],
+              "explanation": "Set install prefix.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-4-11",
+              "type": "code",
+              "question": "Run install.",
+              "correctAnswer": [
+                "cmake --install build",
+                "install"
+              ],
+              "explanation": "Run install.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-4-12",
+              "type": "code",
+              "question": "Install rules.",
+              "correctAnswer": [
+                "install(FILES config.ini DESTINATION etc)",
+                "rules"
+              ],
+              "explanation": "Install rules.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-4-13",
+              "type": "code",
+              "question": "Testing install.",
+              "correctAnswer": [
+                "void testInstall() { // Test installation }",
+                "test"
+              ],
+              "explanation": "Test install.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-4-14",
+              "type": "code",
+              "question": "Install scripts.",
+              "correctAnswer": [
+                "install(PROGRAMS script.sh DESTINATION bin)",
+                "scripts"
+              ],
+              "explanation": "Install scripts.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-4-15",
+              "type": "code",
+              "question": "Install components.",
+              "correctAnswer": [
+                "install(TARGETS myapp DESTINATION bin COMPONENT main)",
+                "components"
+              ],
+              "explanation": "Install components.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-4-16",
+              "type": "code",
+              "question": "Install exports.",
+              "correctAnswer": [
+                "install(EXPORT MyTargets DESTINATION lib/cmake/MyApp)",
+                "exports"
+              ],
+              "explanation": "Install exports.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-4-17",
+              "type": "code",
+              "question": "Install config.",
+              "correctAnswer": [
+                "install(FILES MyConfig.cmake DESTINATION lib/cmake/MyApp)",
+                "config"
+              ],
+              "explanation": "Install config.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-4-18",
+              "type": "code",
+              "question": "Install with permissions.",
+              "correctAnswer": [
+                "install(FILES file DESTINATION bin PERMISSIONS OWNER_READ OWNER_WRITE)",
+                "permissions"
+              ],
+              "explanation": "Set permissions.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-4-19",
+              "type": "code",
+              "question": "Install directory.",
+              "correctAnswer": [
+                "install(DIRECTORY data/ DESTINATION share/myapp)",
+                "directory"
+              ],
+              "explanation": "Install directory.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-4-20",
+              "type": "code",
+              "question": "CPack setup.",
+              "correctAnswer": [
+                "include(CPack)",
+                "cpack"
+              ],
+              "explanation": "CPack packaging.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-4-21",
+              "type": "code",
+              "question": "Package target.",
+              "correctAnswer": [
+                "set(CPACK_PACKAGE_NAME MyApp)",
+                "package"
+              ],
+              "explanation": "Package settings.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-4-22",
+              "type": "code",
+              "question": "Debian package.",
+              "correctAnswer": [
+                "set(CPACK_GENERATOR DEB)",
+                "debian"
+              ],
+              "explanation": "Debian package.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-4-23",
+              "type": "code",
+              "question": "RPM package.",
+              "correctAnswer": [
+                "set(CPACK_GENERATOR RPM)",
+                "rpm"
+              ],
+              "explanation": "RPM package.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-4-24",
+              "type": "code",
+              "question": "Install wrapper.",
+              "correctAnswer": [
+                "// CMake install helpers",
+                "wrapper"
+              ],
+              "explanation": "Install wrapper.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-4-25",
+              "type": "code",
+              "question": "Summary.",
+              "correctAnswer": [
+                "// Install: targets, files, directories, prefix, packaging",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# CMake Installation\n\nInstalling and packaging your project.\n\n## Basic Installation\n\n```cmake\ninstall(TARGETS myapp DESTINATION bin)\ninstall(TARGETS mylib DESTINATION lib)\ninstall(DIRECTORY include/ DESTINATION include)\n```\n\n## Set Install Prefix\n\n```bash\ncmake -DCMAKE_INSTALL_PREFIX=/usr/local -S . -B build\n```\n\n## Install Executable\n\n```cmake\ninstall(TARGETS myapp\n    RUNTIME DESTINATION bin\n)\n```\n\n## Install Library\n\n```cmake\ninstall(TARGETS mylib\n    LIBRARY DESTINATION lib\n    ARCHIVE DESTINATION lib\n    RUNTIME DESTINATION bin\n)\n```\n\n## Install Headers\n\n```cmake\ninstall(DIRECTORY include/\n    DESTINATION include\n    FILES_MATCHING PATTERN \"*.h\" PATTERN \"*.hpp\"\n)\n```\n\n## Install Files\n\n```cmake\ninstall(FILES README.md LICENSE\n    DESTINATION .\n)\n\ninstall(FILES config.ini\n    DESTINATION etc/myapp\n)\n```\n\n## Install Scripts\n\n```cmake\ninstall(PROGRAMS scripts/myscript.sh\n    DESTINATION bin\n)\n```\n\n## Install Directory\n\n```cmake\ninstall(DIRECTORY data/\n    DESTINATION share/myapp\n)\n```\n\n## Run Install\n\n```bash\n# CMake 3.15+\ncmake --install build\n\n# Older\ncd build && make install\n```\n\n## CPack Packaging\n\n```cmake\ninclude(CPack)\n\nset(CPACK_PACKAGE_NAME MyApp)\nset(CPACK_PACKAGE_VERSION ${PROJECT_VERSION})\nset(CPACK_PACKAGE_DESCRIPTION \"My Application\")\nset(CPACK_PACKAGE_CONTACT \"user@example.com\")\n```\n\n### Package Generators\n\n```bash\n# Generate all packages\ncpack\n\n# Generate specific package\ncpack -G DEB   # Debian\ncpack -G RPM   # Red Hat\ncpack -G TGZ   # Tarball\ncpack -G NuGet # NuGet\n```\n\n## Best Practices\n\n1. **Use standard paths** (/usr/local, /opt)\n2. **Separate install rules** for different targets\n3. **Document** installation requirements\n4. **Package** for distribution\n5. **Test** installation after build\n"
         },
         {
           "id": "cpp-U42-L5",
-          "title": "Fenwick trees",
-          "unitTitle": "42. Range Query Techniques",
-          "xp": 15,
+          "title": "Package Managers",
+          "unitTitle": "42. Build Systems & Package Management",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-42-5-1",
+              "type": "typing",
+              "question": "vcpkg?",
+              "correctAnswer": [
+                "Microsoft",
+                "C++",
+                "manager"
+              ],
+              "explanation": "Microsoft C++ manager.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-5-2",
+              "type": "typing",
+              "question": "Conan?",
+              "correctAnswer": [
+                "C++",
+                "package",
+                "manager"
+              ],
+              "explanation": "C++ package manager.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-5-3",
+              "type": "typing",
+              "question": "Homebrew?",
+              "correctAnswer": [
+                "macOS",
+                "Linux",
+                "manager"
+              ],
+              "explanation": "macOS package manager.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-5-4",
+              "type": "multiple",
+              "question": "Package managers?",
+              "options": [
+                "vcpkg",
+                "Conan",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both managers.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-5-5",
+              "type": "multiple",
+              "question": "System packages?",
+              "options": [
+                "apt",
+                "yum",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both managers.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-5-6",
+              "type": "code",
+              "question": "vcpkg install.",
+              "correctAnswer": [
+                "vcpkg install boost:x64-linux",
+                "vcpkg install"
+              ],
+              "explanation": "Install with vcpkg.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-5-7",
+              "type": "code",
+              "question": "vcpkg integrate.",
+              "correctAnswer": [
+                "vcpkg integrate install",
+                "integrate"
+              ],
+              "explanation": "Integrate vcpkg.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-5-8",
+              "type": "code",
+              "question": "Conan install.",
+              "correctAnswer": [
+                "conan install . --build=missing",
+                "conan install"
+              ],
+              "explanation": "Install with Conan.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-5-9",
+              "type": "code",
+              "question": "Conanfile.txt.",
+              "correctAnswer": [
+                "[requires]\nboost/1.80.0",
+                "conanfile"
+              ],
+              "explanation": "Conan file.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-5-10",
+              "type": "code",
+              "question": "apt install.",
+              "correctAnswer": [
+                "sudo apt install libboost-dev",
+                "apt"
+              ],
+              "explanation": "Install with apt.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-5-11",
+              "type": "code",
+              "question": "brew install.",
+              "correctAnswer": [
+                "brew install boost",
+                "brew"
+              ],
+              "explanation": "Install with brew.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-5-12",
+              "type": "code",
+              "question": "Find package.",
+              "correctAnswer": [
+                "find_package(Boost REQUIRED)",
+                "find"
+              ],
+              "explanation": "Find package.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-5-13",
+              "type": "code",
+              "question": "Testing packages.",
+              "correctAnswer": [
+                "void testPackages() { // Test packages }",
+                "test"
+              ],
+              "explanation": "Test packages.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-5-14",
+              "type": "code",
+              "question": "vcpkg toolchain.",
+              "correctAnswer": [
+                "-DCMAKE_TOOLCHAIN_FILE=vcpkg/scripts/buildsystems/vcpkg.cmake",
+                "toolchain"
+              ],
+              "explanation": "vcpkg toolchain.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-5-15",
+              "type": "code",
+              "question": "Conan profile.",
+              "correctAnswer": [
+                "conan profile detect",
+                "profile"
+              ],
+              "explanation": "Conan profile.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-5-16",
+              "type": "code",
+              "question": "Package search.",
+              "correctAnswer": [
+                "vcpkg search boost",
+                "search"
+              ],
+              "explanation": "Search packages.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-5-17",
+              "type": "code",
+              "question": "Package list.",
+              "correctAnswer": [
+                "vcpkg list",
+                "list"
+              ],
+              "explanation": "List packages.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-5-18",
+              "type": "code",
+              "question": "Package update.",
+              "correctAnswer": [
+                "vcpkg update",
+                "update"
+              ],
+              "explanation": "Update packages.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-5-19",
+              "type": "code",
+              "question": "Package remove.",
+              "correctAnswer": [
+                "vcpkg remove boost",
+                "remove"
+              ],
+              "explanation": "Remove package.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-5-20",
+              "type": "code",
+              "question": "Cross-platform.",
+              "correctAnswer": [
+                "// Use vcpkg/Conan for cross-platform",
+                "cross"
+              ],
+              "explanation": "Cross-platform packages.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-5-21",
+              "type": "code",
+              "question": "Package wrapper.",
+              "correctAnswer": [
+                "// Package manager helpers",
+                "wrapper"
+              ],
+              "explanation": "Package wrapper.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-5-22",
+              "type": "code",
+              "question": "Dependency lock.",
+              "correctAnswer": [
+                "// Lock package versions",
+                "lock"
+              ],
+              "explanation": "Dependency locking.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-5-23",
+              "type": "code",
+              "question": "Private registry.",
+              "correctAnswer": [
+                "// Use private package registry",
+                "registry"
+              ],
+              "explanation": "Private registry.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-5-24",
+              "type": "code",
+              "question": "System integration.",
+              "correctAnswer": [
+                "// Integrate with system packages",
+                "integration"
+              ],
+              "explanation": "System integration.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-5-25",
+              "type": "code",
+              "question": "Summary.",
+              "correctAnswer": [
+                "// Packages: vcpkg, Conan, system, find_package",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Package Managers\n\nManaging C++ dependencies.\n\n## vcpkg\n\n### Installation\n\n```bash\ngit clone https://github.com/Microsoft/vcpkg.git\ncd vcpkg\n./bootstrap-vcpkg.sh\n```\n\n### Install Package\n\n```bash\nvcpkg install boost:x64-linux\nvcpkg install fmt:x64-windows\n```\n\n### Integrate with CMake\n\n```cmake\nfind_package(Boost REQUIRED)\ntarget_link_libraries(myapp PRIVATE Boost::boost)\n```\n\n### Toolchain\n\n```bash\ncmake -DCMAKE_TOOLCHAIN_FILE=vcpkg/scripts/buildsystems/vcpkg.cmake \\\n      -S . -B build\n```\n\n## Conan\n\n### Installation\n\n```bash\npip install conan\n```\n\n### conanfile.txt\n\n```ini\n[requires]\nboost/1.80.0\nfmt/9.1.0\n\n[generators]\nCMakeDeps\nCMakeToolchain\n```\n\n### Install Dependencies\n\n```bash\nconan install . --build=missing\n```\n\n### CMake Integration\n\n```cmake\nfind_package(Boost REQUIRED)\nfind_package(fmt REQUIRED)\n\ntarget_link_libraries(myapp PRIVATE Boost::boost fmt::fmt)\n```\n\n## System Package Managers\n\n### Debian/Ubuntu\n\n```bash\nsudo apt update\nsudo apt install libboost-dev libfmt-dev\n```\n\n### Fedora/RHEL\n\n```bash\nsudo dnf install boost-devel fmt-devel\n```\n\n### macOS (Homebrew)\n\n```bash\nbrew install boost fmt\n```\n\n## Finding Packages\n\n```cmake\n# Basic\nfind_package(Boost REQUIRED)\nfind_package(fmt REQUIRED)\n\n# With version\nfind_package(Boost 1.80 REQUIRED)\n\n# With components\nfind_package(Boost REQUIRED COMPONENTS filesystem system)\n```\n\n## Best Practices\n\n1. **Use vcpkg/Conan** for cross-platform\n2. **Pin versions** for reproducibility\n3. **Use system packages** when appropriate\n4. **Document** dependencies clearly\n5. **Cache** packages locally\n"
         },
         {
           "id": "cpp-U42-L6",
-          "title": "Mo’s algorithm",
-          "unitTitle": "42. Range Query Techniques",
-          "xp": 15,
+          "title": "Make",
+          "unitTitle": "42. Build Systems & Package Management",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-42-6-1",
+              "type": "typing",
+              "question": "Make?",
+              "correctAnswer": [
+                "build",
+                "tool",
+                "automation"
+              ],
+              "explanation": "Build automation tool.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-6-2",
+              "type": "typing",
+              "question": "Makefile?",
+              "correctAnswer": [
+                "rules",
+                "targets",
+                "dependencies"
+              ],
+              "explanation": "Make configuration.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-6-3",
+              "type": "typing",
+              "question": "make?",
+              "correctAnswer": [
+                "build",
+                "target",
+                "Makefile"
+              ],
+              "explanation": "Build command.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-6-4",
+              "type": "multiple",
+              "question": "Targets?",
+              "options": [
+                "all",
+                "clean",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both targets.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-6-5",
+              "type": "multiple",
+              "question": "Variables?",
+              "options": [
+                "CC",
+                "CXX",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both variables.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-6-6",
+              "type": "code",
+              "question": "Basic Makefile.",
+              "correctAnswer": [
+                "all: myapp\n\nmyapp: main.cpp\n\tg++ -o myapp main.cpp",
+                "makefile"
+              ],
+              "explanation": "Basic Makefile.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-6-7",
+              "type": "code",
+              "question": "Clean target.",
+              "correctAnswer": [
+                "clean:\n\trm -f myapp *.o",
+                "clean"
+              ],
+              "explanation": "Clean target.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-6-8",
+              "type": "code",
+              "question": "Variables.",
+              "correctAnswer": [
+                "CXX = g++\nCXXFLAGS = -std=c++17 -Wall",
+                "variables"
+              ],
+              "explanation": "Make variables.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-6-9",
+              "type": "code",
+              "question": "Dependencies.",
+              "correctAnswer": [
+                "myapp: main.o utils.o\n\t$(CXX) -o myapp main.o utils.o",
+                "dependencies"
+              ],
+              "explanation": "Target dependencies.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-6-10",
+              "type": "code",
+              "question": "Pattern rules.",
+              "correctAnswer": [
+                "%.o: %.cpp\n\t$(CXX) -c $(CXXFLAGS) $< -o $@",
+                "pattern"
+              ],
+              "explanation": "Pattern rules.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-6-11",
+              "type": "code",
+              "question": "Phony targets.",
+              "correctAnswer": [
+                ".PHONY: all clean",
+                "phony"
+              ],
+              "explanation": "Phony targets.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-6-12",
+              "type": "code",
+              "question": "Make with options.",
+              "correctAnswer": [
+                "make CXXFLAGS='-O2 -march=native'",
+                "options"
+              ],
+              "explanation": "Pass options.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-6-13",
+              "type": "code",
+              "question": "Testing make.",
+              "correctAnswer": [
+                "void testMake() { // Test Make }",
+                "test"
+              ],
+              "explanation": "Test Make.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-6-14",
+              "type": "code",
+              "question": "Automatic variables.",
+              "correctAnswer": [
+                "// $@, $<, $^, $*",
+                "automatic"
+              ],
+              "explanation": "Automatic variables.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-6-15",
+              "type": "code",
+              "question": "Conditional.",
+              "correctAnswer": [
+                "ifdef DEBUG\nCXXFLAGS += -g\nendif",
+                "conditional"
+              ],
+              "explanation": "Conditional logic.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-6-16",
+              "type": "code",
+              "question": "Include makefiles.",
+              "correctAnswer": [
+                "include common.mk",
+                "include"
+              ],
+              "explanation": "Include files.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-6-17",
+              "type": "code",
+              "question": "Functions.",
+              "correctAnswer": [
+                "SRCS = $(wildcard src/*.cpp)",
+                "functions"
+              ],
+              "explanation": "Make functions.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-6-18",
+              "type": "code",
+              "question": "Make wrapper.",
+              "correctAnswer": [
+                "// Make helper functions",
+                "wrapper"
+              ],
+              "explanation": "Make wrapper.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-6-19",
+              "type": "code",
+              "question": "Parallel make.",
+              "correctAnswer": [
+                "make -j8",
+                "parallel"
+              ],
+              "explanation": "Parallel builds.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-6-20",
+              "type": "code",
+              "question": "Dry run.",
+              "correctAnswer": [
+                "make -n",
+                "dry run"
+              ],
+              "explanation": "Dry run.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-6-21",
+              "type": "code",
+              "question": "Verbose.",
+              "correctAnswer": [
+                "make VERBOSE=1",
+                "verbose"
+              ],
+              "explanation": "Verbose make.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-6-22",
+              "type": "code",
+              "question": "Make install.",
+              "correctAnswer": [
+                "install: all\n\tinstall myapp /usr/local/bin",
+                "install"
+              ],
+              "explanation": "Make install.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-6-23",
+              "type": "code",
+              "question": "Make debug.",
+              "correctAnswer": [
+                "make DEBUG=1",
+                "debug"
+              ],
+              "explanation": "Debug make.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-6-24",
+              "type": "code",
+              "question": "Make release.",
+              "correctAnswer": [
+                "make RELEASE=1",
+                "release"
+              ],
+              "explanation": "Release make.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-6-25",
+              "type": "code",
+              "question": "Summary.",
+              "correctAnswer": [
+                "// Make: targets, variables, patterns, phony, functions",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Make\n\nTraditional build automation.\n\n## Basic Makefile\n\n```makefile\nCXX = g++\nCXXFLAGS = -std=c++17 -Wall\n\nall: myapp\n\nmyapp: main.cpp\n\t$(CXX) $(CXXFLAGS) -o myapp main.cpp\n\nclean:\n\trm -f myapp\n\n.PHONY: all clean\n```\n\n## Variables\n\n```makefile\n# Compiler\nCXX = g++\nCC = gcc\n\n# Flags\nCXXFLAGS = -std=c++17 -Wall -O2\nLDFLAGS = -pthread\n\n# Directories\nSRCDIR = src\nOBJDIR = obj\nBINDIR = bin\n```\n\n## Pattern Rules\n\n```makefile\n# Compile .cpp to .o\n%.o: %.cpp\n\t$(CXX) $(CXXFLAGS) -c $< -o $@\n\n# Automatic variables: $@ (target), $< (first prerequisite)\n```\n\n## Multiple Targets\n\n```makefile\nSRCS = main.cpp utils.cpp\nOBJS = $(SRCS:.cpp=.o)\n\nmyapp: $(OBJS)\n\t$(CXX) $(LDFLAGS) -o $@ $^\n\n%.o: %.cpp\n\t$(CXX) $(CXXFLAGS) -c $< -o $@\n\nclean:\n\trm -f $(OBJS) myapp\n\n.PHONY: all clean\n```\n\n## Wildcard\n\n```makefile\nSRCS = $(wildcard src/*.cpp)\nOBJS = $(patsubst src/%.cpp,obj/%.o,$(SRCS))\n```\n\n## Conditional\n\n```makefile\nifdef DEBUG\nCXXFLAGS += -g -O0\nelse\nCXXFLAGS += -O2\nendif\n```\n\n## Running Make\n\n```bash\n# Build default target\nmake\n\n# Build specific target\nmake clean\n\n# Parallel build\nmake -j8\n\n# Verbose\nmake VERBOSE=1\n\n# Dry run\nmake -n\n\n# Override variable\nmake CXXFLAGS='-O3'\n```\n\n## Best Practices\n\n1. **Use pattern rules** for compilation\n2. **Use variables** for flexibility\n3. **Use .PHONY** for non-file targets\n4. **Use automatic variables** ($@, $<, $^)\n5. **Document** special targets\n"
         },
         {
           "id": "cpp-U42-L7",
-          "title": "Wavelet tree",
-          "unitTitle": "42. Range Query Techniques",
-          "xp": 15,
+          "title": "CMake Advanced",
+          "unitTitle": "42. Build Systems & Package Management",
+          "xp": 85,
           "type": "lesson",
-          "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "difficulty": "advanced",
+          "questions": [
+            {
+              "id": "cpp-42-7-1",
+              "type": "typing",
+              "question": "option()?",
+              "correctAnswer": [
+                "user",
+                "choice",
+                "boolean"
+              ],
+              "explanation": "User option.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-7-2",
+              "type": "typing",
+              "question": "find_package()?",
+              "correctAnswer": [
+                "find",
+                "library",
+                "module"
+              ],
+              "explanation": "Find package.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-7-3",
+              "type": "typing",
+              "question": "export()?",
+              "correctAnswer": [
+                "export",
+                "targets",
+                "config"
+              ],
+              "explanation": "Export targets.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-7-4",
+              "type": "multiple",
+              "question": "Advanced features?",
+              "options": [
+                "functions",
+                "macros",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both features.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-7-5",
+              "type": "multiple",
+              "question": "Config files?",
+              "options": [
+                "Config.cmake",
+                "package",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both files.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-7-6",
+              "type": "code",
+              "question": "Define option.",
+              "correctAnswer": [
+                "option(BUILD_TESTS \"Build tests\" ON)",
+                "option"
+              ],
+              "explanation": "Define option.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-7-7",
+              "type": "code",
+              "question": "Check option.",
+              "correctAnswer": [
+                "if(BUILD_TESTS)\n  add_subdirectory(tests)\nendif()",
+                "check"
+              ],
+              "explanation": "Check option.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-7-8",
+              "type": "code",
+              "question": "CMake function.",
+              "correctAnswer": [
+                "function(my_function arg)\n  # code\nendfunction()",
+                "function"
+              ],
+              "explanation": "Define function.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-7-9",
+              "type": "code",
+              "question": "CMake macro.",
+              "correctAnswer": [
+                "macro(my_macro arg)\n  # code\nendmacro()",
+                "macro"
+              ],
+              "explanation": "Define macro.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-7-10",
+              "type": "code",
+              "question": "Export targets.",
+              "correctAnswer": [
+                "install(EXPORT MyTargets DESTINATION lib/cmake/MyApp)",
+                "export"
+              ],
+              "explanation": "Export targets.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-7-11",
+              "type": "code",
+              "question": "Config file.",
+              "correctAnswer": [
+                "include(CMakePackageConfigHelpers)\nwrite_basic_package_version_file(...)",
+                "config"
+              ],
+              "explanation": "Config file.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-7-12",
+              "type": "code",
+              "question": "Generator expressions.",
+              "correctAnswer": [
+                "$<$<CONFIG:Debug>:DEBUG_MODE>",
+                "generator"
+              ],
+              "explanation": "Generator expression.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-7-13",
+              "type": "code",
+              "question": "Testing advanced.",
+              "correctAnswer": [
+                "void testAdvanced() { // Test advanced CMake }",
+                "test"
+              ],
+              "explanation": "Test advanced.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-7-14",
+              "type": "code",
+              "question": "Module mode.",
+              "correctAnswer": [
+                "find_package(MyPackage CONFIG)",
+                "module"
+              ],
+              "explanation": "Config mode.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-7-15",
+              "type": "code",
+              "question": "Find module.",
+              "correctAnswer": [
+                "# FindMyPackage.cmake\nfind_package_handle_standard_args",
+                "find module"
+              ],
+              "explanation": "Find module.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-7-16",
+              "type": "code",
+              "question": "Target compile features.",
+              "correctAnswer": [
+                "target_compile_features(myapp PRIVATE cxx_std_17)",
+                "compile features"
+              ],
+              "explanation": "Compile features.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-7-17",
+              "type": "code",
+              "question": "Interface library.",
+              "correctAnswer": [
+                "add_library(mylib INTERFACE)",
+                "interface"
+              ],
+              "explanation": "Interface library.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-7-18",
+              "type": "code",
+              "question": "Object library.",
+              "correctAnswer": [
+                "add_library(myobjects OBJECT source.cpp)",
+                "object"
+              ],
+              "explanation": "Object library.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-7-19",
+              "type": "code",
+              "question": "Advanced wrapper.",
+              "correctAnswer": [
+                "// Advanced CMake helpers",
+                "wrapper"
+              ],
+              "explanation": "Advanced wrapper.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-7-20",
+              "type": "code",
+              "question": "Configuring.",
+              "correctAnswer": [
+                "configure_file(config.h.in config.h)",
+                "configure"
+              ],
+              "explanation": "Configure file.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-7-21",
+              "type": "code",
+              "question": "Policies.",
+              "correctAnswer": [
+                "cmake_policy(SET CMP0077 NEW)",
+                "policies"
+              ],
+              "explanation": "CMake policies.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-7-22",
+              "type": "code",
+              "question": "Presets.",
+              "correctAnswer": [
+                "// CMakePresets.json for configurations",
+                "presets"
+              ],
+              "explanation": "CMake presets.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-7-23",
+              "type": "code",
+              "question": "Toolchain file.",
+              "correctAnswer": [
+                "# Toolchain file for cross-compilation",
+                "toolchain"
+              ],
+              "explanation": "Toolchain file.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-7-24",
+              "type": "code",
+              "question": "CMake wrapper.",
+              "correctAnswer": [
+                "// Advanced CMake helpers",
+                "wrapper"
+              ],
+              "explanation": "Advanced wrapper.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-7-25",
+              "type": "code",
+              "question": "Summary.",
+              "correctAnswer": [
+                "// Advanced: options, functions, exports, config, generators",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# CMake Advanced\n\nAdvanced CMake features.\n\n## Options\n\n```cmake\noption(BUILD_TESTS \"Build tests\" ON)\noption(BUILD_EXAMPLES \"Build examples\" OFF)\noption(ENABLE_OPTIMIZATIONS \"Enable optimizations\" ON)\n\nif(BUILD_TESTS)\n    add_subdirectory(tests)\nendif()\n```\n\n## Functions and Macros\n\n```cmake\nfunction(add_my_target name)\n    add_executable(${name} ${ARGN})\n    target_include_directories(${name} PRIVATE include)\n    target_compile_features(${name} PRIVATE cxx_std_17)\nendfunction()\n\nadd_my_target(myapp main.cpp)\n```\n\n## Find Package (Config Mode)\n\n```cmake\nfind_package(Boost 1.80 REQUIRED CONFIG)\nfind_package(fmt REQUIRED CONFIG)\n\ntarget_link_libraries(myapp PRIVATE Boost::boost fmt::fmt)\n```\n\n## Export Targets\n\n```cmake\ninstall(TARGETS mylib\n    EXPORT MyLibTargets\n    LIBRARY DESTINATION lib\n    ARCHIVE DESTINATION lib\n    INCLUDES DESTINATION include\n)\n\ninstall(EXPORT MyLibTargets\n    FILE MyLibTargets.cmake\n    NAMESPACE MyLib::\n    DESTINATION lib/cmake/MyLib\n)\n```\n\n## Package Configuration\n\n```cmake\ninclude(CMakePackageConfigHelpers)\nwrite_basic_package_version_file(\n    \"${CMAKE_CURRENT_BINARY_DIR}/MyLibConfigVersion.cmake\"\n    VERSION ${PROJECT_VERSION}\n    COMPATIBILITY SameMajorVersion\n)\n\ninstall(FILES\n    \"${CMAKE_CURRENT_BINARY_DIR}/MyLibConfig.cmake\"\n    \"${CMAKE_CURRENT_BINARY_DIR}/MyLibConfigVersion.cmake\"\n    DESTINATION lib/cmake/MyLib\n)\n```\n\n## Generator Expressions\n\n```cmake\n# Debug only\ntarget_compile_definitions(myapp PRIVATE\n    $<$<CONFIG:Debug>:DEBUG_MODE>\n)\n\n# Platform specific\ntarget_compile_options(myapp PRIVATE\n    $<$<CXX_COMPILER_ID:MSVC>:/W4>\n    $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wall>\n)\n```\n\n## Best Practices\n\n1. **Use options** for user choices\n2. **Use functions** for reusable logic\n3. **Export targets** for reusability\n4. **Use config mode** for modern packages\n5. **Use generator expressions** for flexibility\n"
         },
         {
           "id": "cpp-U42-L8",
-          "title": "Dynamic Programming",
-          "unitTitle": "42. Range Query Techniques",
-          "xp": 15,
+          "title": "Cross-Platform Build",
+          "unitTitle": "42. Build Systems & Package Management",
+          "xp": 85,
+          "type": "lesson",
+          "difficulty": "advanced",
+          "questions": [
+            {
+              "id": "cpp-42-8-1",
+              "type": "typing",
+              "question": "CMAKE_SYSTEM_NAME?",
+              "correctAnswer": [
+                "platform",
+                "OS",
+                "system"
+              ],
+              "explanation": "System name.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-8-2",
+              "type": "typing",
+              "question": "WIN32?",
+              "correctAnswer": [
+                "Windows",
+                "MSVC",
+                "platform"
+              ],
+              "explanation": "Windows platform.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-8-3",
+              "type": "typing",
+              "question": "APPLE?",
+              "correctAnswer": [
+                "macOS",
+                "Darwin",
+                "platform"
+              ],
+              "explanation": "macOS platform.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-8-4",
+              "type": "multiple",
+              "question": "Platforms?",
+              "options": [
+                "Windows",
+                "Linux",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both platforms.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-8-5",
+              "type": "multiple",
+              "question": "Compilers?",
+              "options": [
+                "GCC",
+                "Clang",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both compilers.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-8-6",
+              "type": "code",
+              "question": "Check Windows.",
+              "correctAnswer": [
+                "if(WIN32)",
+                "windows"
+              ],
+              "explanation": "Check Windows.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-8-7",
+              "type": "code",
+              "question": "Check Apple.",
+              "correctAnswer": [
+                "if(APPLE)",
+                "apple"
+              ],
+              "explanation": "Check macOS.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-8-8",
+              "type": "code",
+              "question": "Check UNIX.",
+              "correctAnswer": [
+                "if(UNIX)",
+                "unix"
+              ],
+              "explanation": "Check UNIX.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-8-9",
+              "type": "code",
+              "question": "Compiler ID.",
+              "correctAnswer": [
+                "if(CMAKE_CXX_COMPILER_ID MATCHES \"GNU\")",
+                "compiler id"
+              ],
+              "explanation": "Check compiler.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-8-10",
+              "type": "code",
+              "question": "Platform-specific libs.",
+              "correctAnswer": [
+                "if(WIN32)\n  target_link_libraries(myapp PRIVATE ws2_32)\nelseif(UNIX)\n  target_link_libraries(myapp PRIVATE pthread)\nendif()",
+                "platform libs"
+              ],
+              "explanation": "Platform-specific libs.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-8-11",
+              "type": "code",
+              "question": "Testing cross-platform.",
+              "correctAnswer": [
+                "void testCrossPlatform() { // Test cross-platform }",
+                "test"
+              ],
+              "explanation": "Test cross-platform.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-8-12",
+              "type": "code",
+              "question": "Path handling.",
+              "correctAnswer": [
+                "// Use CMAKE_CURRENT_SOURCE_DIR, CMAKE_CURRENT_BINARY_DIR",
+                "paths"
+              ],
+              "explanation": "Path handling.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-8-13",
+              "type": "code",
+              "question": "Executable extension.",
+              "correctAnswer": [
+                "set_target_properties(myapp PROPERTIES SUFFIX \".exe\")",
+                "extension"
+              ],
+              "explanation": "Executable extension.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-8-14",
+              "type": "code",
+              "question": "Library extension.",
+              "correctAnswer": [
+                "// .dll, .so, .dylib handled automatically",
+                "lib extension"
+              ],
+              "explanation": "Library extensions.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-8-15",
+              "type": "code",
+              "question": "Include paths.",
+              "correctAnswer": [
+                "// Use include/ structure, CMAKE_INSTALL_PREFIX",
+                "include"
+              ],
+              "explanation": "Include paths.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-8-16",
+              "type": "code",
+              "question": "Shared vs static.",
+              "correctAnswer": [
+                "if(BUILD_SHARED_LIBS)",
+                "shared static"
+              ],
+              "explanation": "Shared vs static.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-8-17",
+              "type": "code",
+              "question": "RPATH.",
+              "correctAnswer": [
+                "set_target_properties(myapp PROPERTIES INSTALL_RPATH \"\\$ORIGIN\")",
+                "rpath"
+              ],
+              "explanation": "RPATH handling.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-8-18",
+              "type": "code",
+              "question": "Cross-compile.",
+              "correctAnswer": [
+                "# Toolchain file for cross-compilation",
+                "cross compile"
+              ],
+              "explanation": "Cross-compilation.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-8-19",
+              "type": "code",
+              "question": "Android build.",
+              "correctAnswer": [
+                "# Android toolchain file",
+                "android"
+              ],
+              "explanation": "Android build.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-8-20",
+              "type": "code",
+              "question": "iOS build.",
+              "correctAnswer": [
+                "# iOS toolchain file",
+                "ios"
+              ],
+              "explanation": "iOS build.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-8-21",
+              "type": "code",
+              "question": "Cross-platform wrapper.",
+              "correctAnswer": [
+                "// Cross-platform helpers",
+                "wrapper"
+              ],
+              "explanation": "Cross-platform wrapper.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-8-22",
+              "type": "code",
+              "question": "Endianness.",
+              "correctAnswer": [
+                "if(CMAKE_BYTE_ORDER STREQUAL BIG_ENDIAN)",
+                "endianness"
+              ],
+              "explanation": "Endianness.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-8-23",
+              "type": "code",
+              "question": "Architecture.",
+              "correctAnswer": [
+                "if(CMAKE_SIZEOF_VOID_P EQUAL 8)",
+                "architecture"
+              ],
+              "explanation": "Architecture.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-8-24",
+              "type": "code",
+              "question": "Platform wrapper.",
+              "correctAnswer": [
+                "// Platform abstraction",
+                "wrapper"
+              ],
+              "explanation": "Platform wrapper.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-8-25",
+              "type": "code",
+              "question": "Summary.",
+              "correctAnswer": [
+                "// Cross-platform: platform checks, compiler IDs, paths",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Cross-Platform Build\n\nBuilding across different platforms.\n\n## Platform Detection\n\n```cmake\nif(WIN32)\n    message(\"Building for Windows\")\nelseif(APPLE)\n    message(\"Building for macOS\")\nelseif(UNIX)\n    message(\"Building for Linux/UNIX\")\nendif()\n```\n\n## Compiler Detection\n\n```cmake\nif(CMAKE_CXX_COMPILER_ID MATCHES \"GNU\")\n    set(COMPILER_IS_GNU TRUE)\nelseif(CMAKE_CXX_COMPILER_ID MATCHES \"Clang\")\n    set(COMPILER_IS_CLANG TRUE)\nelseif(CMAKE_CXX_COMPILER_ID STREQUAL \"MSVC\")\n    set(COMPILER_IS_MSVC TRUE)\nendif()\n```\n\n## Platform-Specific Code\n\n```cmake\n# Windows\nif(WIN32)\n    target_compile_definitions(myapp PRIVATE _WIN32_WINNT=0x0601)\n    target_link_libraries(myapp PRIVATE ws2_32)\nendif()\n\n# Linux\nif(UNIX AND NOT APPLE)\n    target_link_libraries(myapp PRIVATE pthread dl)\nendif()\n\n# macOS\nif(APPLE)\n    target_link_libraries(myapp PRIVATE \"-framework Foundation\")\nendif()\n```\n\n## Cross-Compilation\n\n### Toolchain File\n\n```cmake\n# android-aarch64.cmake\nset(CMAKE_SYSTEM_NAME Android)\nset(CMAKE_SYSTEM_VERSION 21)\nset(CMAKE_ANDROID_ARCH_ABI arm64-v8a)\nset(CMAKE_ANDROID_NDK $ENV{ANDROID_NDK_PATH})\nset(CMAKE_ANDROID_STL c++_shared)\n```\n\n### Usage\n\n```bash\ncmake -DCMAKE_TOOLCHAIN_FILE=android-aarch64.cmake \\\n      -S . -B build-android\n```\n\n## Best Practices\n\n1. **Use CMake variables** for platform detection\n2. **Use generator expressions** for conditional flags\n3. **Test on all platforms**\n4. **Document** platform-specific requirements\n5. **Use toolchain files** for cross-compilation\n"
+        },
+        {
+          "id": "cpp-U42-L9",
+          "title": "Build Systems Summary",
+          "questions": [
+            {
+              "id": "cpp-42-9-1",
+              "type": "typing",
+              "question": "CMake?",
+              "correctAnswer": [
+                "build",
+                "system",
+                "generator"
+              ],
+              "explanation": "Build system.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-9-2",
+              "type": "typing",
+              "question": "Make?",
+              "correctAnswer": [
+                "build",
+                "automation",
+                "tool"
+              ],
+              "explanation": "Build tool.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-9-3",
+              "type": "typing",
+              "question": "CTest?",
+              "correctAnswer": [
+                "test",
+                "framework",
+                "CMake"
+              ],
+              "explanation": "Testing framework.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-9-4",
+              "type": "multiple",
+              "question": "Package managers?",
+              "options": [
+                "vcpkg",
+                "Conan",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both managers.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-9-5",
+              "type": "multiple",
+              "question": "Best practices?",
+              "options": [
+                "out-of-source",
+                "target_*",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both practices.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-42-9-6",
+              "type": "code",
+              "question": "Complete example.",
+              "correctAnswer": [
+                "// Full CMake project",
+                "complete"
+              ],
+              "explanation": "Complete example.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-9-7",
+              "type": "code",
+              "question": "CMake patterns.",
+              "correctAnswer": [
+                "// Targets, dependencies, testing, installation",
+                "patterns"
+              ],
+              "explanation": "CMake patterns.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-9-8",
+              "type": "code",
+              "question": "Make patterns.",
+              "correctAnswer": [
+                "// Targets, variables, pattern rules",
+                "make patterns"
+              ],
+              "explanation": "Make patterns.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-9-9",
+              "type": "code",
+              "question": "Package management.",
+              "correctAnswer": [
+                "// vcpkg, Conan, find_package",
+                "package management"
+              ],
+              "explanation": "Package management.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-9-10",
+              "type": "code",
+              "question": "Testing summary.",
+              "correctAnswer": [
+                "// CTest, GTest, Catch2",
+                "testing"
+              ],
+              "explanation": "Testing summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-9-11",
+              "type": "code",
+              "question": "Installation summary.",
+              "correctAnswer": [
+                "// install, CPack",
+                "installation"
+              ],
+              "explanation": "Installation summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-9-12",
+              "type": "code",
+              "question": "Cross-platform summary.",
+              "correctAnswer": [
+                "// Platform checks, toolchains",
+                "cross-platform"
+              ],
+              "explanation": "Cross-platform summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-9-13",
+              "type": "code",
+              "question": "Best practices.",
+              "correctAnswer": [
+                "// Out-of-source, target_*, options, testing",
+                "practices"
+              ],
+              "explanation": "Best practices.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-9-14",
+              "type": "code",
+              "question": "Debugging tips.",
+              "correctAnswer": [
+                "// cmake --trace, VERBOSE=1",
+                "debug"
+              ],
+              "explanation": "Debug builds.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-9-15",
+              "type": "code",
+              "question": "Testing build.",
+              "correctAnswer": [
+                "void testBuild() { // Test build systems }",
+                "test"
+              ],
+              "explanation": "Test build systems.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-9-16",
+              "type": "code",
+              "question": "Tools.",
+              "correctAnswer": [
+                "// cmake, make, ctest, cpack, vcpkg, conan",
+                "tools"
+              ],
+              "explanation": "Build tools.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-9-17",
+              "type": "code",
+              "question": "Real-world projects.",
+              "correctAnswer": [
+                "// C++ projects with proper build systems",
+                "projects"
+              ],
+              "explanation": "Real-world projects.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-9-18",
+              "type": "code",
+              "question": "Unit 42 summary.",
+              "correctAnswer": [
+                "// Unit 42: CMake, Make, packages, testing, cross-platform",
+                "unit summary"
+              ],
+              "explanation": "Unit 42 summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-9-19",
+              "type": "code",
+              "question": "Course progress.",
+              "correctAnswer": [
+                "// Completing Unit 42 of 49",
+                "progress"
+              ],
+              "explanation": "Course progress.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-9-20",
+              "type": "code",
+              "question": "Practice projects.",
+              "correctAnswer": [
+                "// Set up build systems for projects",
+                "projects"
+              ],
+              "explanation": "Practice projects.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-9-21",
+              "type": "code",
+              "question": "Advanced topics.",
+              "correctAnswer": [
+                "// Presets, toolchains, custom commands",
+                "advanced"
+              ],
+              "explanation": "Advanced topics.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-9-22",
+              "type": "code",
+              "question": "Final summary.",
+              "correctAnswer": [
+                "// Build: CMake, Make, packages, testing, cross-platform",
+                "final"
+              ],
+              "explanation": "Final summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-9-23",
+              "type": "code",
+              "question": "Congratulations.",
+              "correctAnswer": [
+                "// Unit 42 COMPLETE! Mastered C++ Build Systems!",
+                "congratulations"
+              ],
+              "explanation": "Congratulations!",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-9-24",
+              "type": "code",
+              "question": "Next steps.",
+              "correctAnswer": [
+                "// Continue to next unit, practice, build projects",
+                "next"
+              ],
+              "explanation": "Next steps.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-42-9-25",
+              "type": "code",
+              "question": "Milestone.",
+              "correctAnswer": [
+                "// 86% COMPLETE! 7 more units to 100%!",
+                "milestone"
+              ],
+              "explanation": "Milestone!",
+              "xp": 15
+            }
+          ],
+          "unitTitle": "42. Build Systems & Package Management",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "lessonText": "# Build Systems Summary\n\nComplete guide to C++ build systems.\n\n## Key Concepts\n\n| Concept | Description |\n|---------|-------------|\n| **CMake** | Modern build system generator |\n| **Make** | Traditional build automation |\n| **Package Managers** | vcpkg, Conan, system |\n| **Testing** | CTest, GTest, Catch2 |\n| **Installation** | install(), CPack |\n| **Cross-Platform** | Platform detection, toolchains |\n\n## Quick Reference\n\n### CMake Basics\n```cmake\ncmake_minimum_required(VERSION 3.10)\nproject(MyProject VERSION 1.0 LANGUAGES CXX)\nset(CMAKE_CXX_STANDARD 17)\n\nadd_executable(myapp main.cpp)\nadd_library(mylib mylib.cpp)\n\ntarget_link_libraries(myapp PRIVATE mylib)\n```\n\n### Build\n```bash\ncmake -S . -B build\ncmake --build build\n```\n\n### Testing\n```cmake\nenable_testing()\nadd_executable(mytest test.cpp)\nadd_test(NAME MyTest COMMAND mytest)\n```\n\n### Install\n```cmake\ninstall(TARGETS myapp DESTINATION bin)\ninstall(DIRECTORY include/ DESTINATION include)\n```\n\n## Complete Example\n\n```cmake\ncmake_minimum_required(VERSION 3.15)\nproject(MyApp VERSION 1.0 LANGUAGES CXX)\n\nset(CMAKE_CXX_STANDARD 17)\nset(CMAKE_CXX_STANDARD_REQUIRED ON)\n\n# Options\noption(BUILD_TESTS \"Build tests\" ON)\noption(BUILD_EXAMPLES \"Build examples\" OFF)\n\n# Dependencies\nfind_package(Boost REQUIRED COMPONENTS filesystem system)\nfind_package(fmt REQUIRED)\n\n# Library\nadd_library(mylib\n    src/mylib.cpp\n    src/utils.cpp\n)\n\ntarget_include_directories(mylib PUBLIC\n    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>\n    $<INSTALL_INTERFACE:include>\n)\n\ntarget_link_libraries(mylib PUBLIC\n    Boost::filesystem\n    fmt::fmt\n)\n\n# Executable\nadd_executable(myapp\n    src/main.cpp\n)\n\ntarget_link_libraries(myapp PRIVATE mylib)\n\n# Testing\nif(BUILD_TESTS)\n    enable_testing()\n    add_subdirectory(tests)\nendif()\n\n# Installation\ninclude(GNUInstallDirs)\ninstall(TARGETS mylib myapp\n    EXPORT MyAppTargets\n    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}\n    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}\n    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}\n)\n\ninstall(DIRECTORY include/\n    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}\n)\n\ninstall(EXPORT MyAppTargets\n    FILE MyAppTargets.cmake\n    NAMESPACE MyApp::\n    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/MyApp\n)\n```\n\n## Best Practices\n\n1. **Use out-of-source builds** (build directory)\n2. **Use target_* commands** over global\n3. **Set C++ standard** explicitly\n4. **Use package managers** for dependencies\n5. **Enable testing** from the start\n6. **Document** CMake options\n7. **Test** on all platforms\n\n## Tools\n\n| Tool | Purpose |\n|------|---------|\n| cmake | Build system |\n| make | Build tool |\n| ctest | Run tests |\n| cpack | Package |\n| vcpkg | Package manager |\n| Conan | Package manager |\n\n## Project Ideas\n\n1. **Library with Tests**: Full CMake setup\n2. **Cross-Platform App**: Platform detection\n3. **Package Distribution**: CPack setup\n4. **Dependency Management**: vcpkg/Conan\n\n## Further Learning\n\n- **CMake Documentation**: cmake.org\n- **Professional CMake**: Effective Modern CMake\n- **CMake Cookbook**: Practical recipes\n\nCongratulations! You've completed Build Systems & Package Management!\n"
         }
-      ]
+      ],
+      "unitTitle": "42. Build Systems & Package Management"
     },
     {
       "unitId": "43",
