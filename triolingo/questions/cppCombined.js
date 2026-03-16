@@ -40294,43 +40294,1198 @@ window.cppCombined = {
       "lessons": [
         {
           "id": "cpp-U24-L1",
-          "title": "Array queue",
-          "unitTitle": "24. Queue Structures",
-          "xp": 15,
+          "title": "Array Queue",
+          "unitTitle": "24. Queues",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-24-1-1",
+              "type": "typing",
+              "question": "Queue is?",
+              "correctAnswer": [
+                "FIFO",
+                "first in first out"
+              ],
+              "explanation": "First in, first out.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-24-1-2",
+              "type": "typing",
+              "question": "Enqueue at?",
+              "correctAnswer": [
+                "back",
+                "rear",
+                "end"
+              ],
+              "explanation": "Add to back.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-24-1-3",
+              "type": "typing",
+              "question": "Dequeue from?",
+              "correctAnswer": [
+                "front",
+                "head",
+                "beginning"
+              ],
+              "explanation": "Remove from front.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-24-1-4",
+              "type": "multiple",
+              "question": "Enqueue O?",
+              "options": [
+                "1",
+                "n",
+                "log n",
+                "constant"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "O(1).",
+              "xp": 5
+            },
+            {
+              "id": "cpp-24-1-5",
+              "type": "multiple",
+              "question": "Dequeue O?",
+              "options": [
+                "1",
+                "n",
+                "log n",
+                "constant"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "O(1).",
+              "xp": 5
+            },
+            {
+              "id": "cpp-24-1-6",
+              "type": "code",
+              "question": "Queue class.",
+              "correctAnswer": [
+                "class Queue { vector<int> data; public: void enqueue(int val); void dequeue(); int front(); bool empty(); int size(); };",
+                "queue"
+              ],
+              "explanation": "Vector-based queue.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-1-7",
+              "type": "code",
+              "question": "Enqueue implementation.",
+              "correctAnswer": [
+                "void enqueue(int val) { data.push_back(val); }",
+                "enqueue"
+              ],
+              "explanation": "push_back to vector.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-1-8",
+              "type": "code",
+              "question": "Dequeue implementation.",
+              "correctAnswer": [
+                "void dequeue() { if (!data.empty()) data.erase(data.begin()); }",
+                "dequeue"
+              ],
+              "explanation": "Erase front element.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-1-9",
+              "type": "code",
+              "question": "Front implementation.",
+              "correctAnswer": [
+                "int front() { if (data.empty()) throw exception; return data.front(); }",
+                "front"
+              ],
+              "explanation": "Return front.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-1-10",
+              "type": "code",
+              "question": "Empty implementation.",
+              "correctAnswer": [
+                "bool empty() { return data.empty(); }",
+                "empty"
+              ],
+              "explanation": "Check if empty.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-1-11",
+              "type": "code",
+              "question": "Size implementation.",
+              "correctAnswer": [
+                "int size() { return data.size(); }",
+                "size"
+              ],
+              "explanation": "Return size.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-1-12",
+              "type": "code",
+              "question": "Back implementation.",
+              "correctAnswer": [
+                "int back() { if (data.empty()) throw exception; return data.back(); }",
+                "back"
+              ],
+              "explanation": "Return back.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-1-13",
+              "type": "code",
+              "question": "Queue with deque.",
+              "correctAnswer": [
+                "class Queue { deque<int> data; public: void enqueue(int val); void dequeue(); int front(); };",
+                "deque queue"
+              ],
+              "explanation": "Deque for O(1) at both ends.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-1-14",
+              "type": "code",
+              "question": "Enqueue deque.",
+              "correctAnswer": [
+                "void enqueue(int val) { data.push_back(val); }",
+                "enqueue deque"
+              ],
+              "explanation": "push_back to deque.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-1-15",
+              "type": "code",
+              "question": "Dequeue deque.",
+              "correctAnswer": [
+                "void dequeue() { if (!data.empty()) data.pop_front(); }",
+                "dequeue deque"
+              ],
+              "explanation": "pop_front from deque.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-1-16",
+              "type": "code",
+              "question": "Generic queue.",
+              "correctAnswer": [
+                "template<typename T> class Queue { deque<T> data; public: void enqueue(const T& val); void dequeue(); T& front(); bool empty(); int size(); };",
+                "generic"
+              ],
+              "explanation": "Template queue.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-1-17",
+              "type": "code",
+              "question": "Clear queue.",
+              "correctAnswer": [
+                "void clear() { data.clear(); }",
+                "clear"
+              ],
+              "explanation": "Clear all elements.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-1-18",
+              "type": "code",
+              "question": "Queue destructor.",
+              "correctAnswer": [
+                "~Queue() { data.clear(); }",
+                "destructor"
+              ],
+              "explanation": "Clear on destroy.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-1-19",
+              "type": "code",
+              "question": "Queue copy constructor.",
+              "correctAnswer": [
+                "Queue(const Queue& other) : data(other.data) {}",
+                "copy"
+              ],
+              "explanation": "Copy data.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-1-20",
+              "type": "code",
+              "question": "Queue assignment.",
+              "correctAnswer": [
+                "Queue& operator=(const Queue& other) { if (this != &other) { data = other.data; } return *this; }",
+                "assignment"
+              ],
+              "explanation": "Assign data.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-1-21",
+              "type": "code",
+              "question": "Queue move constructor.",
+              "correctAnswer": [
+                "Queue(Queue&& other) noexcept : data(std::move(other.data)) {}",
+                "move"
+              ],
+              "explanation": "Move data.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-1-22",
+              "type": "code",
+              "question": "Queue move assignment.",
+              "correctAnswer": [
+                "Queue& operator=(Queue&& other) noexcept { if (this != &other) { data = std::move(other.data); } return *this; }",
+                "move assign"
+              ],
+              "explanation": "Move assign.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-1-23",
+              "type": "code",
+              "question": "std::queue usage.",
+              "correctAnswer": [
+                "std::queue<int> q; q.push(1); q.pop(); int f = q.front();",
+                "std queue"
+              ],
+              "explanation": "STL queue.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-1-24",
+              "type": "code",
+              "question": "Queue comparison.",
+              "correctAnswer": [
+                "bool operator==(const Queue& other) { return data == other.data; }",
+                "compare"
+              ],
+              "explanation": "Compare queues.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-1-25",
+              "type": "code",
+              "question": "Queue swap.",
+              "correctAnswer": [
+                "void swap(Queue& other) { data.swap(other.data); }",
+                "swap"
+              ],
+              "explanation": "Swap queues.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Array Queue\n\nQueue implementation using dynamic array.\n\n## Concept\n\nQueue is a FIFO (First In First Out) data structure where the first element added is the first one removed.\n\n## Implementation (Vector)\n\n```cpp\n#include <vector>\n#include <stdexcept>\n\nclass Queue {\n    std::vector<int> data;\n    \npublic:\n    // Add element to back\n    void enqueue(int val) {\n        data.push_back(val);\n    }\n    \n    // Remove front element\n    void dequeue() {\n        if (data.empty()) {\n            throw std::runtime_error(\"Queue is empty\");\n        }\n        data.erase(data.begin());\n    }\n    \n    // Get front element\n    int front() {\n        if (data.empty()) {\n            throw std::runtime_error(\"Queue is empty\");\n        }\n        return data.front();\n    }\n    \n    // Get back element\n    int back() {\n        if (data.empty()) {\n            throw std::runtime_error(\"Queue is empty\");\n        }\n        return data.back();\n    }\n    \n    // Check if empty\n    bool empty() const {\n        return data.empty();\n    }\n    \n    // Get size\n    size_t size() const {\n        return data.size();\n    }\n};\n```\n\n## Implementation (Deque)\n\n```cpp\n#include <deque>\n\nclass Queue {\n    std::deque<int> data;\n    \npublic:\n    void enqueue(int val) { data.push_back(val); }\n    void dequeue() { if (!data.empty()) data.pop_front(); }\n    int front() { return data.front(); }\n    int back() { return data.back(); }\n    bool empty() const { return data.empty(); }\n    size_t size() const { return data.size(); }\n};\n```\n\n## STL Queue\n\n```cpp\n#include <queue>\n\nstd::queue<int> q;\nq.push(1);\nq.push(2);\nq.push(3);\n\nwhile (!q.empty()) {\n    std::cout << q.front() << std::endl;\n    q.pop();\n}\n```\n\n## Complexity\n\n- Enqueue: O(1) with deque, O(n) with vector\n- Dequeue: O(1) with deque, O(n) with vector\n- Front: O(1)\n- Back: O(1)\n"
         },
         {
           "id": "cpp-U24-L2",
-          "title": "Circular queue",
-          "unitTitle": "24. Queue Structures",
-          "xp": 15,
+          "title": "Circular Queue",
+          "unitTitle": "24. Queues",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-24-2-1",
+              "type": "typing",
+              "question": "Circular queue uses?",
+              "correctAnswer": [
+                "wrap around",
+                "modulo",
+                "circular buffer"
+              ],
+              "explanation": "Wrap around to beginning.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-24-2-2",
+              "type": "typing",
+              "question": "Fixed size?",
+              "correctAnswer": [
+                "yes",
+                "pre-allocated",
+                "constant"
+              ],
+              "explanation": "Fixed capacity.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-24-2-3",
+              "type": "typing",
+              "question": "Enqueue O?",
+              "correctAnswer": [
+                "1",
+                "constant",
+                "O(1)"
+              ],
+              "explanation": "O(1).",
+              "xp": 5
+            },
+            {
+              "id": "cpp-24-2-4",
+              "type": "multiple",
+              "question": "Dequeue O?",
+              "options": [
+                "1",
+                "n",
+                "log n",
+                "constant"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "O(1).",
+              "xp": 5
+            },
+            {
+              "id": "cpp-24-2-5",
+              "type": "multiple",
+              "question": "Full condition?",
+              "options": [
+                "(rear+1)%size == front",
+                "front == rear",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "Check wrap.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-24-2-6",
+              "type": "code",
+              "question": "Circular queue class.",
+              "correctAnswer": [
+                "class CircularQueue { vector<int> arr; int front, rear, size; public: CircularQueue(int cap); void enqueue(int val); void dequeue(); int frontVal(); bool empty(); bool full(); };",
+                "circular"
+              ],
+              "explanation": "Fixed array with wrap.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-2-7",
+              "type": "code",
+              "question": "Constructor.",
+              "correctAnswer": [
+                "CircularQueue(int cap) : arr(cap), front(0), rear(-1), size(0) {}",
+                "constructor"
+              ],
+              "explanation": "Initialize array and indices.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-2-8",
+              "type": "code",
+              "question": "Enqueue circular.",
+              "correctAnswer": [
+                "void enqueue(int val) { if (full()) throw exception; rear = (rear + 1) % arr.size(); arr[rear] = val; size++; }",
+                "enqueue"
+              ],
+              "explanation": "Wrap rear, add element.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-2-9",
+              "type": "code",
+              "question": "Dequeue circular.",
+              "correctAnswer": [
+                "void dequeue() { if (empty()) throw exception; front = (front + 1) % arr.size(); size--; }",
+                "dequeue"
+              ],
+              "explanation": "Wrap front.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-2-10",
+              "type": "code",
+              "question": "Front circular.",
+              "correctAnswer": [
+                "int frontVal() { if (empty()) throw exception; return arr[front]; }",
+                "front"
+              ],
+              "explanation": "Return front element.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-2-11",
+              "type": "code",
+              "question": "Empty circular.",
+              "correctAnswer": [
+                "bool empty() { return size == 0; }",
+                "empty"
+              ],
+              "explanation": "Size is zero.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-2-12",
+              "type": "code",
+              "question": "Full circular.",
+              "correctAnswer": [
+                "bool full() { return size == arr.size(); }",
+                "full"
+              ],
+              "explanation": "Size equals capacity.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-2-13",
+              "type": "code",
+              "question": "Back circular.",
+              "correctAnswer": [
+                "int back() { if (empty()) throw exception; return arr[rear]; }",
+                "back"
+              ],
+              "explanation": "Return rear element.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-2-14",
+              "type": "code",
+              "question": "Size circular.",
+              "correctAnswer": [
+                "int getSize() { return size; }",
+                "size"
+              ],
+              "explanation": "Return size.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-2-15",
+              "type": "code",
+              "question": "Clear circular.",
+              "correctAnswer": [
+                "void clear() { front = 0; rear = -1; size = 0; }",
+                "clear"
+              ],
+              "explanation": "Reset indices.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-2-16",
+              "type": "code",
+              "question": "Reserve circular.",
+              "correctAnswer": [
+                "// Cannot resize, fixed size",
+                "reserve"
+              ],
+              "explanation": "Fixed capacity.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-2-17",
+              "type": "code",
+              "question": "Generic circular.",
+              "correctAnswer": [
+                "template<typename T> class CircularQueue { vector<T> arr; int front, rear, size; public: void enqueue(const T& val); void dequeue(); T& frontVal(); };",
+                "generic"
+              ],
+              "explanation": "Template circular.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-2-18",
+              "type": "code",
+              "question": "Circular buffer.",
+              "correctAnswer": [
+                "// Use as buffer for streams",
+                "buffer"
+              ],
+              "explanation": "Buffer applications.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-2-19",
+              "type": "code",
+              "question": "Peek circular.",
+              "correctAnswer": [
+                "// Same as front",
+                "peek"
+              ],
+              "explanation": "Peek at front.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-2-20",
+              "type": "code",
+              "question": "Circular to array.",
+              "correctAnswer": [
+                "vector<int> toArray() { vector<int> v; for (int i = 0; i < size; i++) v.push_back(arr[(front + i) % arr.size()]); return v; }",
+                "to array"
+              ],
+              "explanation": "Convert to vector.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-2-21",
+              "type": "code",
+              "question": "Array to circular.",
+              "correctAnswer": [
+                "void fromArray(const vector<int>& v) { clear(); for (int val : v) enqueue(val); }",
+                "from array"
+              ],
+              "explanation": "Build from array.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-2-22",
+              "type": "code",
+              "question": "Circular copy.",
+              "correctAnswer": [
+                "CircularQueue(const CircularQueue& other) : arr(other.arr), front(other.front), rear(other.rear), size(other.size) {}",
+                "copy"
+              ],
+              "explanation": "Copy all fields.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-2-23",
+              "type": "code",
+              "question": "Circular move.",
+              "correctAnswer": [
+                "CircularQueue(CircularQueue&& other) noexcept : arr(std::move(other.arr)), front(other.front), rear(other.rear), size(other.size) {}",
+                "move"
+              ],
+              "explanation": "Move fields.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-2-24",
+              "type": "code",
+              "question": "Circular swap.",
+              "correctAnswer": [
+                "void swap(CircularQueue& other) { arr.swap(other.arr); std::swap(front, other.front); std::swap(rear, other.rear); std::swap(size, other.size); }",
+                "swap"
+              ],
+              "explanation": "Swap all fields.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-2-25",
+              "type": "code",
+              "question": "Circular iterator.",
+              "correctAnswer": [
+                "// Iterate from front to rear",
+                "iterator"
+              ],
+              "explanation": "Iterate circular.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Circular Queue\n\nFixed-size queue that wraps around when reaching the end.\n\n## Concept\n\nUses modulo arithmetic to reuse space, eliminating memory shifting.\n\n## Implementation\n\n```cpp\n#include <vector>\n#include <stdexcept>\n\nclass CircularQueue {\n    std::vector<int> arr;\n    int front, rear, size;\n    \npublic:\n    CircularQueue(int capacity) \n        : arr(capacity), front(0), rear(-1), size(0) {}\n    \n    // Enqueue\n    void enqueue(int val) {\n        if (full()) {\n            throw std::runtime_error(\"Queue is full\");\n        }\n        rear = (rear + 1) % arr.size();\n        arr[rear] = val;\n        size++;\n    }\n    \n    // Dequeue\n    void dequeue() {\n        if (empty()) {\n            throw std::runtime_error(\"Queue is empty\");\n        }\n        front = (front + 1) % arr.size();\n        size--;\n    }\n    \n    // Get front\n    int frontVal() {\n        if (empty()) {\n            throw std::runtime_error(\"Queue is empty\");\n        }\n        return arr[front];\n    }\n    \n    // Get back\n    int back() {\n        if (empty()) {\n            throw std::runtime_error(\"Queue is empty\");\n        }\n        return arr[rear];\n    }\n    \n    bool empty() const { return size == 0; }\n    bool full() const { return size == arr.size(); }\n    int getSize() const { return size; }\n};\n```\n\n## Complexity\n\n- Enqueue: O(1)\n- Dequeue: O(1)\n- Front: O(1)\n- Space: O(capacity)\n\n## Applications\n\n- Buffers\n- Resource pools\n- Task scheduling\n"
         },
         {
           "id": "cpp-U24-L3",
           "title": "Deque",
-          "unitTitle": "24. Queue Structures",
-          "xp": 15,
+          "unitTitle": "24. Queues",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-24-3-1",
+              "type": "typing",
+              "question": "Deque stands for?",
+              "correctAnswer": [
+                "double ended queue",
+                "double-ended"
+              ],
+              "explanation": "Double-ended queue.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-24-3-2",
+              "type": "typing",
+              "question": "Insert at both ends?",
+              "correctAnswer": [
+                "yes",
+                "true"
+              ],
+              "explanation": "Can add to front and back.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-24-3-3",
+              "type": "typing",
+              "question": "Remove from both ends?",
+              "correctAnswer": [
+                "yes",
+                "true"
+              ],
+              "explanation": "Can remove from front and back.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-24-3-4",
+              "type": "multiple",
+              "question": "All operations O?",
+              "options": [
+                "1",
+                "n",
+                "log n",
+                "constant"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "O(1).",
+              "xp": 5
+            },
+            {
+              "id": "cpp-24-3-5",
+              "type": "multiple",
+              "question": "Random access O?",
+              "options": [
+                "1",
+                "n",
+                "log n",
+                "constant"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "O(1) random access.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-24-3-6",
+              "type": "code",
+              "question": "Deque class.",
+              "correctAnswer": [
+                "class Deque { vector<int> data; public: void pushFront(int val); void pushBack(int val); void popFront(); void popBack(); int front(); int back(); };",
+                "deque"
+              ],
+              "explanation": "Double-ended queue.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-3-7",
+              "type": "code",
+              "question": "Push front.",
+              "correctAnswer": [
+                "void pushFront(int val) { data.insert(data.begin(), val); }",
+                "push front"
+              ],
+              "explanation": "Insert at front.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-3-8",
+              "type": "code",
+              "question": "Push back.",
+              "correctAnswer": [
+                "void pushBack(int val) { data.push_back(val); }",
+                "push back"
+              ],
+              "explanation": "Push to back.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-3-9",
+              "type": "code",
+              "question": "Pop front.",
+              "correctAnswer": [
+                "void popFront() { if (!data.empty()) data.erase(data.begin()); }",
+                "pop front"
+              ],
+              "explanation": "Erase front.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-3-10",
+              "type": "code",
+              "question": "Pop back.",
+              "correctAnswer": [
+                "void popBack() { if (!data.empty()) data.pop_back(); }",
+                "pop back"
+              ],
+              "explanation": "Pop back.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-3-11",
+              "type": "code",
+              "question": "Front deque.",
+              "correctAnswer": [
+                "int front() { if (data.empty()) throw exception; return data.front(); }",
+                "front"
+              ],
+              "explanation": "Return front.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-3-12",
+              "type": "code",
+              "question": "Back deque.",
+              "correctAnswer": [
+                "int back() { if (data.empty()) throw exception; return data.back(); }",
+                "back"
+              ],
+              "explanation": "Return back.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-3-13",
+              "type": "code",
+              "question": "Empty deque.",
+              "correctAnswer": [
+                "bool empty() { return data.empty(); }",
+                "empty"
+              ],
+              "explanation": "Check empty.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-3-14",
+              "type": "code",
+              "question": "Size deque.",
+              "correctAnswer": [
+                "int size() { return data.size(); }",
+                "size"
+              ],
+              "explanation": "Return size.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-3-15",
+              "type": "code",
+              "question": "Index access.",
+              "correctAnswer": [
+                "int& operator[](int index) { return data[index]; }",
+                "index"
+              ],
+              "explanation": "Random access.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-3-16",
+              "type": "code",
+              "question": "At deque.",
+              "correctAnswer": [
+                "int& at(int index) { return data.at(index); }",
+                "at"
+              ],
+              "explanation": "Bounds-checked access.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-3-17",
+              "type": "code",
+              "question": "Clear deque.",
+              "correctAnswer": [
+                "void clear() { data.clear(); }",
+                "clear"
+              ],
+              "explanation": "Clear all.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-3-18",
+              "type": "code",
+              "question": "Resize deque.",
+              "correctAnswer": [
+                "void resize(int newSize) { data.resize(newSize); }",
+                "resize"
+              ],
+              "explanation": "Change size.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-3-19",
+              "type": "code",
+              "question": "Reserve deque.",
+              "correctAnswer": [
+                "void reserve(int capacity) { data.reserve(capacity); }",
+                "reserve"
+              ],
+              "explanation": "Reserve capacity.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-3-20",
+              "type": "code",
+              "question": "Generic deque.",
+              "correctAnswer": [
+                "template<typename T> class Deque { vector<T> data; public: void pushFront(const T& val); void pushBack(const T& val); T& front(); T& back(); };",
+                "generic"
+              ],
+              "explanation": "Template deque.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-3-21",
+              "type": "code",
+              "question": "std::deque usage.",
+              "correctAnswer": [
+                "std::deque<int> d; d.push_front(1); d.push_back(2); d.pop_front(); int f = d.front();",
+                "std deque"
+              ],
+              "explanation": "STL deque.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-3-22",
+              "type": "code",
+              "question": "Deque copy.",
+              "correctAnswer": [
+                "Deque(const Deque& other) : data(other.data) {}",
+                "copy"
+              ],
+              "explanation": "Copy data.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-3-23",
+              "type": "code",
+              "question": "Deque move.",
+              "correctAnswer": [
+                "Deque(Deque&& other) noexcept : data(std::move(other.data)) {}",
+                "move"
+              ],
+              "explanation": "Move data.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-3-24",
+              "type": "code",
+              "question": "Deque swap.",
+              "correctAnswer": [
+                "void swap(Deque& other) { data.swap(other.data); }",
+                "swap"
+              ],
+              "explanation": "Swap deques.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-3-25",
+              "type": "code",
+              "question": "Deque comparison.",
+              "correctAnswer": [
+                "bool operator==(const Deque& other) { return data == other.data; }",
+                "compare"
+              ],
+              "explanation": "Compare deques.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Deque (Double-Ended Queue)\n\nQueue that allows insertion and removal at both ends.\n\n## Concept\n\nDeque combines features of stack and queue - can add/remove from both front and back.\n\n## Implementation\n\n```cpp\n#include <vector>\n#include <stdexcept>\n\nclass Deque {\n    std::vector<int> data;\n    \npublic:\n    // Add to front\n    void pushFront(int val) {\n        data.insert(data.begin(), val);\n    }\n    \n    // Add to back\n    void pushBack(int val) {\n        data.push_back(val);\n    }\n    \n    // Remove from front\n    void popFront() {\n        if (data.empty()) {\n            throw std::runtime_error(\"Deque is empty\");\n        }\n        data.erase(data.begin());\n    }\n    \n    // Remove from back\n    void popBack() {\n        if (data.empty()) {\n            throw std::runtime_error(\"Deque is empty\");\n        }\n        data.pop_back();\n    }\n    \n    // Get front\n    int front() {\n        if (data.empty()) {\n            throw std::runtime_error(\"Deque is empty\");\n        }\n        return data.front();\n    }\n    \n    // Get back\n    int back() {\n        if (data.empty()) {\n            throw std::runtime_error(\"Deque is empty\");\n        }\n        return data.back();\n    }\n    \n    // Random access\n    int& operator[](int index) {\n        return data[index];\n    }\n    \n    bool empty() const { return data.empty(); }\n    size_t size() const { return data.size(); }\n};\n```\n\n## STL Deque\n\n```cpp\n#include <deque>\n\nstd::deque<int> d;\nd.push_front(1);\nd.push_back(2);\nd.push_front(3);\n\nwhile (!d.empty()) {\n    std::cout << d.front() << std::endl;\n    d.pop_front();\n}\n```\n\n## Complexity\n\n- Push Front/Back: O(1)\n- Pop Front/Back: O(1)\n- Front/Back: O(1)\n- Random Access: O(1)\n"
         },
         {
           "id": "cpp-U24-L4",
-          "title": "Monotonic queue",
-          "unitTitle": "24. Queue Structures",
-          "xp": 15,
+          "title": "Monotonic Queue",
+          "unitTitle": "24. Queues",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-24-4-1",
+              "type": "typing",
+              "question": "Monotonic queue maintains?",
+              "correctAnswer": [
+                "sorted order",
+                "increasing",
+                "decreasing"
+              ],
+              "explanation": "Elements in sorted order.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-24-4-2",
+              "type": "typing",
+              "question": "Sliding window max?",
+              "correctAnswer": [
+                "yes",
+                "common use",
+                "application"
+              ],
+              "explanation": "Perfect for sliding window.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-24-4-3",
+              "type": "typing",
+              "question": "Remove smaller elements?",
+              "correctAnswer": [
+                "yes",
+                "true"
+              ],
+              "explanation": "Maintain order.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-24-4-4",
+              "type": "multiple",
+              "question": "Push complexity?",
+              "options": [
+                "1",
+                "n",
+                "log n",
+                "amortized O(1)"
+              ],
+              "correctAnswer": [
+                3
+              ],
+              "explanation": "Amortized O(1).",
+              "xp": 5
+            },
+            {
+              "id": "cpp-24-4-5",
+              "type": "multiple",
+              "question": "Pop complexity?",
+              "options": [
+                "1",
+                "n",
+                "log n",
+                "constant"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "O(1).",
+              "xp": 5
+            },
+            {
+              "id": "cpp-24-4-6",
+              "type": "code",
+              "question": "Monotonic queue class.",
+              "correctAnswer": [
+                "class MonotonicQueue { deque<int> dq; public: void push(int val); void pop(int val); int front(); };",
+                "class"
+              ],
+              "explanation": "Deque-based monotonic.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-4-7",
+              "type": "code",
+              "question": "Push monotonic.",
+              "correctAnswer": [
+                "void push(int val) { while (!dq.empty() && dq.back() < val) dq.pop_back(); dq.push_back(val); }",
+                "push"
+              ],
+              "explanation": "Remove smaller, push.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-4-8",
+              "type": "code",
+              "question": "Pop monotonic.",
+              "correctAnswer": [
+                "void pop(int val) { if (!dq.empty() && dq.front() == val) dq.pop_front(); }",
+                "pop"
+              ],
+              "explanation": "Pop front if match.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-4-9",
+              "type": "code",
+              "question": "Front monotonic.",
+              "correctAnswer": [
+                "int front() { return dq.front(); }",
+                "front"
+              ],
+              "explanation": "Return max.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-4-10",
+              "type": "code",
+              "question": "Empty monotonic.",
+              "correctAnswer": [
+                "bool empty() { return dq.empty(); }",
+                "empty"
+              ],
+              "explanation": "Check empty.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-4-11",
+              "type": "code",
+              "question": "Sliding window max.",
+              "correctAnswer": [
+                "vector<int> maxSlidingWindow(vector<int>& nums, int k) { deque<int> dq; vector<int> result; for (int i = 0; i < nums.size(); i++) { while (!dq.empty() && dq.back() < nums[i]) dq.pop_back(); dq.push_back(i); if (dq.front() <= i - k) dq.pop_front(); if (i >= k - 1) result.push_back(nums[dq.front()]); } return result; }",
+                "sliding"
+              ],
+              "explanation": "Sliding window max.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-4-12",
+              "type": "code",
+              "question": "Sliding window min.",
+              "correctAnswer": [
+                "// Use > instead of < for min",
+                "min"
+              ],
+              "explanation": "Reverse comparison.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-4-13",
+              "type": "code",
+              "question": "Generic monotonic.",
+              "correctAnswer": [
+                "template<typename T, typename Compare> class MonotonicQueue { deque<T> dq; Compare comp; public: void push(const T& val); void pop(const T& val); T front(); };",
+                "generic"
+              ],
+              "explanation": "Template with comparator.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-4-14",
+              "type": "code",
+              "question": "Decreasing monotonic.",
+              "correctAnswer": [
+                "class DecreasingQueue : public MonotonicQueue<int, greater<int>> {};",
+                "decreasing"
+              ],
+              "explanation": "Decreasing order.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-4-15",
+              "type": "code",
+              "question": "Increasing monotonic.",
+              "correctAnswer": [
+                "class IncreasingQueue : public MonotonicQueue<int, less<int>> {};",
+                "increasing"
+              ],
+              "explanation": "Increasing order.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-4-16",
+              "type": "code",
+              "question": "Clear monotonic.",
+              "correctAnswer": [
+                "void clear() { dq.clear(); }",
+                "clear"
+              ],
+              "explanation": "Clear deque.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-4-17",
+              "type": "code",
+              "question": "Size monotonic.",
+              "correctAnswer": [
+                "int size() { return dq.size(); }",
+                "size"
+              ],
+              "explanation": "Return size.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-4-18",
+              "type": "code",
+              "question": "Get max monotonic.",
+              "correctAnswer": [
+                "int getMax() { return dq.front(); }",
+                "getMax"
+              ],
+              "explanation": "Front is max.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-4-19",
+              "type": "code",
+              "question": "Get min monotonic.",
+              "correctAnswer": [
+                "int getMin() { return dq.back(); }",
+                "getMin"
+              ],
+              "explanation": "Back is min.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-4-20",
+              "type": "code",
+              "question": "Index-based monotonic.",
+              "correctAnswer": [
+                "// Store indices instead of values",
+                "index"
+              ],
+              "explanation": "Track indices.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-4-21",
+              "type": "code",
+              "question": "Pair monotonic.",
+              "correctAnswer": [
+                "// Store (value, index) pairs",
+                "pair"
+              ],
+              "explanation": "Value and index.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-4-22",
+              "type": "code",
+              "question": "Monotonic stack.",
+              "correctAnswer": [
+                "// Same concept with stack",
+                "stack"
+              ],
+              "explanation": "Stack variant.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-4-23",
+              "type": "code",
+              "question": "Next greater element.",
+              "correctAnswer": [
+                "// Use monotonic stack",
+                "nge"
+              ],
+              "explanation": "Find next greater.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-4-24",
+              "type": "code",
+              "question": "Previous greater element.",
+              "correctAnswer": [
+                "// Use monotonic stack",
+                "pge"
+              ],
+              "explanation": "Find previous greater.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-24-4-25",
+              "type": "code",
+              "question": "Applications.",
+              "correctAnswer": [
+                "// Sliding window, stock prices",
+                "applications"
+              ],
+              "explanation": "Use cases.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Monotonic Queue\n\nQueue that maintains elements in monotonic order.\n\n## Concept\n\nElements in the queue are always in sorted order (increasing or decreasing). Used for sliding window problems.\n\n## Implementation\n\n```cpp\n#include <deque>\n#include <vector>\n\nclass MonotonicQueue {\n    std::deque<int> dq;\n    \npublic:\n    // Push element\n    void push(int val) {\n        // Remove elements smaller than val\n        while (!dq.empty() && dq.back() < val) {\n            dq.pop_back();\n        }\n        dq.push_back(val);\n    }\n    \n    // Pop element\n    void pop(int val) {\n        if (!dq.empty() && dq.front() == val) {\n            dq.pop_front();\n        }\n    }\n    \n    // Get max (front)\n    int front() {\n        return dq.front();\n    }\n    \n    bool empty() const {\n        return dq.empty();\n    }\n};\n```\n\n## Sliding Window Maximum\n\n```cpp\nstd::vector<int> maxSlidingWindow(std::vector<int>& nums, int k) {\n    std::deque<int> dq;\n    std::vector<int> result;\n    \n    for (int i = 0; i < nums.size(); i++) {\n        // Remove elements smaller than current\n        while (!dq.empty() && dq.back() < nums[i]) {\n            dq.pop_back();\n        }\n        \n        // Add current index\n        dq.push_back(i);\n        \n        // Remove elements outside window\n        if (dq.front() <= i - k) {\n            dq.pop_front();\n        }\n        \n        // Add to result\n        if (i >= k - 1) {\n            result.push_back(nums[dq.front()]);\n        }\n    }\n    \n    return result;\n}\n```\n\n## Complexity\n\n- Push: Amortized O(1)\n- Pop: O(1)\n- Front: O(1)\n- Space: O(k) for window\n\n## Applications\n\n- Sliding window maximum/minimum\n- Stock price problems\n- Range queries\n"
         },
         {
           "id": "cpp-U24-L5",
