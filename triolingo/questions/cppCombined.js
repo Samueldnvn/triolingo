@@ -53516,75 +53516,2704 @@ window.cppCombined = {
       "lessons": [
         {
           "id": "cpp-U28-L1",
-          "title": "B-tree",
-          "unitTitle": "28. Multiway Trees",
-          "xp": 15,
+          "title": "Hash Functions",
+          "unitTitle": "28. Hash Tables",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-28-1-1",
+              "type": "typing",
+              "question": "Hash function purpose?",
+              "correctAnswer": [
+                "key to index",
+                "map keys",
+                "transform key"
+              ],
+              "explanation": "Maps key to array index.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-1-2",
+              "type": "typing",
+              "question": "Ideal hash function?",
+              "correctAnswer": [
+                "uniform",
+                "random",
+                "even distribution"
+              ],
+              "explanation": "Distribute keys uniformly.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-1-3",
+              "type": "typing",
+              "question": "Collision?",
+              "correctAnswer": [
+                "same index",
+                "two keys map",
+                "hash clash"
+              ],
+              "explanation": "Keys map to same index.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-1-4",
+              "type": "multiple",
+              "question": "Modulo operation?",
+              "options": [
+                "common",
+                "rare",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "Modulo is common.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-1-5",
+              "type": "multiple",
+              "question": "Perfect hash?",
+              "options": [
+                "no collisions",
+                "possible",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "No collisions.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-1-6",
+              "type": "code",
+              "question": "Simple hash function.",
+              "correctAnswer": [
+                "int simpleHash(int key, int size) { return key % size; }",
+                "hash"
+              ],
+              "explanation": "Simple modulo hash.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-1-7",
+              "type": "code",
+              "question": "String hash function.",
+              "correctAnswer": [
+                "int stringHash(const string& key, int size) { int hash = 0; for (char c : key) { hash = (hash * 31 + c) % size; } return hash; }",
+                "string hash"
+              ],
+              "explanation": "Polynomial rolling hash.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-1-8",
+              "type": "code",
+              "question": "Multiplication method.",
+              "correctAnswer": [
+                "int multiplyHash(int key, int size) { double A = 0.6180339887; return (int)(size * ((key * A) - floor(key * A))); }",
+                "multiply"
+              ],
+              "explanation": "Multiplication method.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-1-9",
+              "type": "code",
+              "question": "Division method.",
+              "correctAnswer": [
+                "int divisionHash(int key, int size) { return key % size; }",
+                "division"
+              ],
+              "explanation": "Division method.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-1-10",
+              "type": "code",
+              "question": "Universal hashing.",
+              "correctAnswer": [
+                "int universalHash(int key, int size, int a, int b, int p) { return ((a * key + b) % p) % size; }",
+                "universal"
+              ],
+              "explanation": "Universal hash family.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-1-11",
+              "type": "code",
+              "question": "DJB2 hash.",
+              "correctAnswer": [
+                "unsigned long djb2Hash(const string& key) { unsigned long hash = 5381; for (char c : key) { hash = ((hash << 5) + hash) + c; } return hash; }",
+                "djb2"
+              ],
+              "explanation": "DJB2 string hash.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-1-12",
+              "type": "code",
+              "question": "SDBM hash.",
+              "correctAnswer": [
+                "unsigned long sdbmHash(const string& key) { unsigned long hash = 0; for (char c : key) { hash = c + (hash << 6) + (hash << 16) - hash; } return hash; }",
+                "sdbm"
+              ],
+              "explanation": "SDBM string hash.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-1-13",
+              "type": "code",
+              "question": "FNV-1 hash.",
+              "correctAnswer": [
+                "unsigned long fnv1Hash(const string& key) { unsigned long hash = 14695981039346656037ULL; for (char c : key) { hash *= 1099511628211ULL; hash ^= c; } return hash; }",
+                "fnv1"
+              ],
+              "explanation": "FNV-1 hash.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-1-14",
+              "type": "code",
+              "question": "Murmur hash.",
+              "correctAnswer": [
+                "// Complex mixing, avalanche effect",
+                "murmur"
+              ],
+              "explanation": "Murmur hash overview.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-1-15",
+              "type": "code",
+              "question": "Hash quality.",
+              "correctAnswer": [
+                "// Uniform distribution, avalanche",
+                "quality"
+              ],
+              "explanation": "Good hash properties.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-1-16",
+              "type": "code",
+              "question": "Collision probability.",
+              "correctAnswer": [
+                "// Birthday paradox",
+                "collision prob"
+              ],
+              "explanation": "Collision likelihood.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-1-17",
+              "type": "code",
+              "question": "Load factor effect.",
+              "correctAnswer": [
+                "// Higher load = more collisions",
+                "load factor"
+              ],
+              "explanation": "Load factor impact.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-1-18",
+              "type": "code",
+              "question": "Prime table size.",
+              "correctAnswer": [
+                "// Better distribution",
+                "prime"
+              ],
+              "explanation": "Prime advantages.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-1-19",
+              "type": "code",
+              "question": "Power of two size.",
+              "correctAnswer": [
+                "// Fast with bitmask",
+                "power of two"
+              ],
+              "explanation": "Power of two advantages.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-1-20",
+              "type": "code",
+              "question": "Bitmask hash.",
+              "correctAnswer": [
+                "int bitmaskHash(int key, int size) { return key & (size - 1); }",
+                "bitmask"
+              ],
+              "explanation": "Bitmask hash.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-1-21",
+              "type": "code",
+              "question": "Hash for pairs.",
+              "correctAnswer": [
+                "int pairHash(int a, int b, int size) { return ((a * 31 + b) % size + size) % size; }",
+                "pair"
+              ],
+              "explanation": "Hash pair.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-1-22",
+              "type": "code",
+              "question": "Hash for tuples.",
+              "correctAnswer": [
+                "int tupleHash(const vector<int>& vals, int size) { int hash = 0; for (int v : vals) { hash = (hash * 31 + v) % size; } return (hash + size) % size; }",
+                "tuple"
+              ],
+              "explanation": "Hash tuple.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-1-23",
+              "type": "code",
+              "question": "Commutative hash.",
+              "correctAnswer": [
+                "int commutativeHash(int a, int b, int size) { return ((a + b) % size + size) % size; }",
+                "commutative"
+              ],
+              "explanation": "Commutative hash.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-1-24",
+              "type": "code",
+              "question": "Hash combination.",
+              "correctAnswer": [
+                "int combineHash(int h1, int h2, int size) { return ((h1 * 31 + h2) % size + size) % size; }",
+                "combine"
+              ],
+              "explanation": "Combine hashes.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-1-25",
+              "type": "code",
+              "question": "Hash verification.",
+              "correctAnswer": [
+                "bool testHash(const vector<int>& keys, int size) { vector<int> counts(size, 0); for (int key : keys) counts[hash(key, size)]++; return *max_element(counts.begin(), counts.end()) <= 2; }",
+                "test"
+              ],
+              "explanation": "Test hash quality.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Hash Functions\n\nFunctions that map keys to array indices for hash tables.\n\n## Properties of Good Hash Functions\n\n1. **Deterministic**: Same key → same hash\n2. **Uniform distribution**: Even spread\n3. **Efficient**: Fast to compute\n4. **Avalanche effect**: Small input change → large output change\n\n## Common Hash Functions\n\n### Division Method\n```cpp\nint divisionHash(int key, int size) {\n    return key % size;\n}\n```\n\n### Multiplication Method\n```cpp\nint multiplyHash(int key, int size) {\n    double A = 0.6180339887;  // Golden ratio\n    return (int)(size * ((key * A) - floor(key * A)));\n}\n```\n\n### Polynomial Rolling Hash (Strings)\n```cpp\nint stringHash(const std::string& key, int size) {\n    int hash = 0;\n    for (char c : key) {\n        hash = (hash * 31 + c) % size;\n    }\n    return hash;\n}\n```\n\n### DJB2 Hash\n```cpp\nunsigned long djb2Hash(const std::string& key) {\n    unsigned long hash = 5381;\n    for (char c : key) {\n        hash = ((hash << 5) + hash) + c;  // hash * 33 + c\n    }\n    return hash;\n}\n```\n\n### Universal Hashing\n```cpp\nint universalHash(int key, int size, int a, int b, int p) {\n    return ((a * key + b) % p) % size;\n}\n```\n\n## Table Size Considerations\n\n- **Prime numbers**: Better distribution with division\n- **Power of two**: Faster with bitmask operations\n- **Size**: Should be ~2× expected elements for good performance\n"
         },
         {
           "id": "cpp-U28-L2",
-          "title": "B+ tree",
-          "unitTitle": "28. Multiway Trees",
-          "xp": 15,
+          "title": "Collision Resolution - Chaining",
+          "unitTitle": "28. Hash Tables",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-28-2-1",
+              "type": "typing",
+              "question": "Chaining uses?",
+              "correctAnswer": [
+                "linked lists",
+                "list per bucket",
+                "list at each index"
+              ],
+              "explanation": "List at each bucket.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-2-2",
+              "type": "typing",
+              "question": "Chain lookup?",
+              "correctAnswer": [
+                "O(n) worst",
+                "O(1) avg",
+                "O(k) where k is chain length"
+              ],
+              "explanation": "Search through chain.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-2-3",
+              "type": "typing",
+              "question": "Memory overhead?",
+              "correctAnswer": [
+                "pointers",
+                "extra per node",
+                "list nodes"
+              ],
+              "explanation": "Pointer overhead.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-2-4",
+              "type": "multiple",
+              "question": "Load factor can exceed?",
+              "options": [
+                "1",
+                "0.75",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "Can exceed 1.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-2-5",
+              "type": "multiple",
+              "question": "Performance?",
+              "options": [
+                "good",
+                "excellent",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "Good performance.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-2-6",
+              "type": "code",
+              "question": "Chain node.",
+              "correctAnswer": [
+                "template<typename K, typename V> struct ChainNode { K key; V value; ChainNode* next; ChainNode(const K& k, const V& v) : key(k), value(v), next(nullptr) {} };",
+                "node"
+              ],
+              "explanation": "Chain node struct.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-2-7",
+              "type": "code",
+              "question": "Hash table chain.",
+              "correctAnswer": [
+                "template<typename K, typename V> class ChainingHashTable { vector<ChainNode<K,V>*> table; int size; public: ChainingHashTable(int s) : size(s), table(s, nullptr) {} };",
+                "table"
+              ],
+              "explanation": "Chain hash table.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-2-8",
+              "type": "code",
+              "question": "Chain insert.",
+              "correctAnswer": [
+                "void insert(const K& key, const V& value) { int index = hash(key, size); ChainNode<K,V>* node = new ChainNode<K,V>(key, value); node->next = table[index]; table[index] = node; }",
+                "insert"
+              ],
+              "explanation": "Insert at head.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-2-9",
+              "type": "code",
+              "question": "Chain search.",
+              "correctAnswer": [
+                "V* search(const K& key) { int index = hash(key, size); ChainNode<K,V>* node = table[index]; while (node) { if (node->key == key) return &node->value; node = node->next; } return nullptr; }",
+                "search"
+              ],
+              "explanation": "Search through chain.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-2-10",
+              "type": "code",
+              "question": "Chain delete.",
+              "correctAnswer": [
+                "bool erase(const K& key) { int index = hash(key, size); ChainNode<K,V>* node = table[index]; ChainNode<K,V>* prev = nullptr; while (node) { if (node->key == key) { if (prev) prev->next = node->next; else table[index] = node->next; delete node; return true; } prev = node; node = node->next; } return false; }",
+                "delete"
+              ],
+              "explanation": "Delete from chain.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-2-11",
+              "type": "code",
+              "question": "Chain length.",
+              "correctAnswer": [
+                "int getChainLength(int index) { int len = 0; ChainNode<K,V>* node = table[index]; while (node) { len++; node = node->next; } return len; }",
+                "length"
+              ],
+              "explanation": "Get chain length.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-2-12",
+              "type": "code",
+              "question": "Load factor.",
+              "correctAnswer": [
+                "double getLoadFactor() { int count = 0; for (auto& bucket : table) { ChainNode<K,V>* node = bucket; while (node) { count++; node = node->next; } } return (double)count / size; }",
+                "load factor"
+              ],
+              "explanation": "Calculate load factor.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-2-13",
+              "type": "code",
+              "question": "Max chain length.",
+              "correctAnswer": [
+                "int getMaxChainLength() { int maxLen = 0; for (auto& bucket : table) { int len = getChainLength(&bucket - &table[0]); maxLen = max(maxLen, len); } return maxLen; }",
+                "max chain"
+              ],
+              "explanation": "Find max chain.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-2-14",
+              "type": "code",
+              "question": "Rehash chain.",
+              "correctAnswer": [
+                "void rehash(int newSize) { vector<ChainNode<K,V>*> newTable(newSize, nullptr); for (auto& bucket : table) { ChainNode<K,V>* node = bucket; while (node) { ChainNode<K,V>* next = node->next; int newIndex = hash(node->key, newSize); node->next = newTable[newIndex]; newTable[newIndex] = node; node = next; } } table = move(newTable); size = newSize; }",
+                "rehash"
+              ],
+              "explanation": "Rehash table.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-2-15",
+              "type": "code",
+              "question": "Clear table.",
+              "correctAnswer": [
+                "void clear() { for (auto& bucket : table) { ChainNode<K,V>* node = bucket; while (node) { ChainNode<K,V>* next = node->next; delete node; node = next; } bucket = nullptr; } }",
+                "clear"
+              ],
+              "explanation": "Clear all buckets.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-2-16",
+              "type": "code",
+              "question": "Iterator chain.",
+              "correctAnswer": [
+                "class Iterator { ChainNode<K,V>* node; int bucketIndex; public: // traversal methods };",
+                "iterator"
+              ],
+              "explanation": "Chain iterator.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-2-17",
+              "type": "code",
+              "question": "Ordered chain.",
+              "correctAnswer": [
+                "// Can maintain sorted order",
+                "ordered"
+              ],
+              "explanation": "Sorted chains.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-2-18",
+              "type": "code",
+              "question": "vs open addressing.",
+              "correctAnswer": [
+                "// Handles high load better",
+                "compare"
+              ],
+              "explanation": "Comparison.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-2-19",
+              "type": "code",
+              "question": "Memory efficiency.",
+              "correctAnswer": [
+                "// Higher overhead due to pointers",
+                "memory"
+              ],
+              "explanation": "Memory usage.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-2-20",
+              "type": "code",
+              "question": "Cache performance.",
+              "correctAnswer": [
+                "// Poor due to pointer chasing",
+                "cache"
+              ],
+              "explanation": "Cache behavior.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-2-21",
+              "type": "code",
+              "question": "STL unordered_map.",
+              "correctAnswer": [
+                "// Uses chaining",
+                "stl"
+              ],
+              "explanation": "STL implementation.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-2-22",
+              "type": "code",
+              "question": "Bucket count.",
+              "correctAnswer": [
+                "int bucket_count() const { return size; }",
+                "bucket count"
+              ],
+              "explanation": "Get bucket count.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-2-23",
+              "type": "code",
+              "question": "Bucket size.",
+              "correctAnswer": [
+                "size_type bucket_size(size_type n) const { return getChainLength(n); }",
+                "bucket size"
+              ],
+              "explanation": "Get bucket size.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-2-24",
+              "type": "code",
+              "question": "Max load factor.",
+              "correctAnswer": [
+                "void max_load_factor(float factor) { maxLoadFactor = factor; }",
+                "max load"
+              ],
+              "explanation": "Set max load.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-2-25",
+              "type": "code",
+              "question": "Applications.",
+              "correctAnswer": [
+                "// General purpose hash table",
+                "applications"
+              ],
+              "explanation": "Use cases.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Collision Resolution - Chaining\n\nEach bucket holds a linked list of colliding elements.\n\n## Implementation\n\n```cpp\ntemplate<typename K, typename V>\nstruct ChainNode {\n    K key;\n    V value;\n    ChainNode* next;\n    \n    ChainNode(const K& k, const V& v) \n        : key(k), value(v), next(nullptr) {}\n};\n\ntemplate<typename K, typename V>\nclass ChainingHashTable {\nprivate:\n    std::vector<ChainNode<K,V>*> table;\n    int size;\n    \n    int hash(const K& key, int tableSize) {\n        return std::hash<K>{}(key) % tableSize;\n    }\n    \npublic:\n    ChainingHashTable(int s) : size(s) {\n        table.resize(s, nullptr);\n    }\n    \n    void insert(const K& key, const V& value) {\n        int index = hash(key, size);\n        ChainNode<K,V>* node = new ChainNode<K,V>(key, value);\n        node->next = table[index];\n        table[index] = node;\n    }\n    \n    V* search(const K& key) {\n        int index = hash(key, size);\n        ChainNode<K,V>* node = table[index];\n        \n        while (node) {\n            if (node->key == key) {\n                return &node->value;\n            }\n            node = node->next;\n        }\n        \n        return nullptr;\n    }\n    \n    bool erase(const K& key) {\n        int index = hash(key, size);\n        ChainNode<K,V>* node = table[index];\n        ChainNode<K,V>* prev = nullptr;\n        \n        while (node) {\n            if (node->key == key) {\n                if (prev) {\n                    prev->next = node->next;\n                } else {\n                    table[index] = node->next;\n                }\n                delete node;\n                return true;\n            }\n            prev = node;\n            node = node->next;\n        }\n        \n        return false;\n    }\n};\n```\n\n## Complexity\n\n- **Insert**: O(1) average, O(n) worst\n- **Search**: O(1) average, O(n) worst\n- **Delete**: O(1) average, O(n) worst\n\n## Advantages\n\n- Handles high load factor (>1)\n- Simple implementation\n- Stable performance\n\n## Disadvantages\n\n- Pointer overhead\n- Poor cache locality\n- Extra memory per node\n"
         },
         {
           "id": "cpp-U28-L3",
-          "title": "B* tree",
-          "unitTitle": "28. Multiway Trees",
-          "xp": 15,
+          "title": "Collision Resolution - Open Addressing",
+          "unitTitle": "28. Hash Tables",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-28-3-1",
+              "type": "typing",
+              "question": "Open addressing?",
+              "correctAnswer": [
+                "store in table",
+                "no lists",
+                "inline storage"
+              ],
+              "explanation": "Store in array.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-3-2",
+              "type": "typing",
+              "question": "Probe?",
+              "correctAnswer": [
+                "find empty slot",
+                "search table",
+                "linear search"
+              ],
+              "explanation": "Find next slot.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-3-3",
+              "type": "typing",
+              "question": "Load factor max?",
+              "correctAnswer": [
+                "< 1",
+                "0.7",
+                "must stay below 1"
+              ],
+              "explanation": "Must be < 1.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-3-4",
+              "type": "multiple",
+              "question": "Cache locality?",
+              "options": [
+                "good",
+                "poor",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "Good cache.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-3-5",
+              "type": "multiple",
+              "question": "Memory?",
+              "options": [
+                "efficient",
+                "wasteful",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "Memory efficient.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-3-6",
+              "type": "code",
+              "question": "Entry struct.",
+              "correctAnswer": [
+                "template<typename K, typename V> struct Entry { K key; V value; bool occupied; bool deleted; Entry() : occupied(false), deleted(false) {} };",
+                "entry"
+              ],
+              "explanation": "Open addressing entry.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-3-7",
+              "type": "code",
+              "question": "Linear probing.",
+              "correctAnswer": [
+                "int linearProbe(int index, int i, int size) { return (index + i) % size; }",
+                "linear"
+              ],
+              "explanation": "Linear probe function.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-3-8",
+              "type": "code",
+              "question": "Quadratic probing.",
+              "correctAnswer": [
+                "int quadraticProbe(int index, int i, int size) { return (index + i * i) % size; }",
+                "quadratic"
+              ],
+              "explanation": "Quadratic probe.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-3-9",
+              "type": "code",
+              "question": "Double hashing.",
+              "correctAnswer": [
+                "int doubleHash(int h1, int h2, int i, int size) { return (h1 + i * h2) % size; }",
+                "double"
+              ],
+              "explanation": "Double hash probe.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-3-10",
+              "type": "code",
+              "question": "Insert open address.",
+              "correctAnswer": [
+                "bool insert(const K& key, const V& value) { int index = hash(key); for (int i = 0; i < size; i++) { int pos = probe(index, i); if (!table[pos].occupied) { table[pos].key = key; table[pos].value = value; table[pos].occupied = true; table[pos].deleted = false; return true; } } return false; }",
+                "insert"
+              ],
+              "explanation": "Insert with probing.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-3-11",
+              "type": "code",
+              "question": "Search open address.",
+              "correctAnswer": [
+                "V* search(const K& key) { int index = hash(key); for (int i = 0; i < size; i++) { int pos = probe(index, i); if (!table[pos].occupied && !table[pos].deleted) return nullptr; if (table[pos].occupied && table[pos].key == key) return &table[pos].value; } return nullptr; }",
+                "search"
+              ],
+              "explanation": "Search with probing.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-3-12",
+              "type": "code",
+              "question": "Delete open address.",
+              "correctAnswer": [
+                "bool erase(const K& key) { int index = hash(key); for (int i = 0; i < size; i++) { int pos = probe(index, i); if (!table[pos].occupied && !table[pos].deleted) return false; if (table[pos].occupied && table[pos].key == key) { table[pos].occupied = false; table[pos].deleted = true; return true; } } return false; }",
+                "delete"
+              ],
+              "explanation": "Lazy delete.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-3-13",
+              "type": "code",
+              "question": "Tombstone.",
+              "correctAnswer": [
+                "// deleted flag",
+                "tombstone"
+              ],
+              "explanation": "Tombstone concept.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-3-14",
+              "type": "code",
+              "question": "Clustering.",
+              "correctAnswer": [
+                "// Primary clustering in linear",
+                "clustering"
+              ],
+              "explanation": "Clustering problem.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-3-15",
+              "type": "code",
+              "question": "Rehash open address.",
+              "correctAnswer": [
+                "void rehash(int newSize) { vector<Entry> newTable(newSize); for (auto& entry : table) { if (entry.occupied && !entry.deleted) { // insert into new table } } table = move(newTable); size = newSize; }",
+                "rehash"
+              ],
+              "explanation": "Rehash table.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-3-16",
+              "type": "code",
+              "question": "Load factor calculation.",
+              "correctAnswer": [
+                "double getLoadFactor() { int count = 0; for (auto& entry : table) { if (entry.occupied) count++; } return (double)count / size; }",
+                "load factor"
+              ],
+              "explanation": "Calculate load.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-3-17",
+              "type": "code",
+              "question": "vs chaining.",
+              "correctAnswer": [
+                "// Better cache, lower memory",
+                "compare"
+              ],
+              "explanation": "Comparison.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-3-18",
+              "type": "code",
+              "question": "Linear pros.",
+              "correctAnswer": [
+                "// Simple, good cache",
+                "linear pros"
+              ],
+              "explanation": "Linear benefits.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-3-19",
+              "type": "code",
+              "question": "Linear cons.",
+              "correctAnswer": [
+                "// Primary clustering",
+                "linear cons"
+              ],
+              "explanation": "Linear drawbacks.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-3-20",
+              "type": "code",
+              "question": "Quadratic pros.",
+              "correctAnswer": [
+                "// Reduces clustering",
+                "quadratic pros"
+              ],
+              "explanation": "Quadratic benefits.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-3-21",
+              "type": "code",
+              "question": "Quadratic cons.",
+              "correctAnswer": [
+                "// May not find slot",
+                "quadratic cons"
+              ],
+              "explanation": "Quadratic drawbacks.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-3-22",
+              "type": "code",
+              "question": "Double hash pros.",
+              "correctAnswer": [
+                "// Best distribution",
+                "double pros"
+              ],
+              "explanation": "Double hash benefits.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-3-23",
+              "type": "code",
+              "question": "Double hash cons.",
+              "correctAnswer": [
+                "// Two hash functions",
+                "double cons"
+              ],
+              "explanation": "Double hash drawbacks.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-3-24",
+              "type": "code",
+              "question": "Robin Hood.",
+              "correctAnswer": [
+                "// Minimize probe length",
+                "robin hood"
+              ],
+              "explanation": "Robin Hood hashing.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-3-25",
+              "type": "code",
+              "question": "Hopscotch.",
+              "correctAnswer": [
+                "// Neighborhood constraint",
+                "hopscotch"
+              ],
+              "explanation": "Hopscotch hashing.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Collision Resolution - Open Addressing\n\nAll elements stored directly in the array. Collisions resolved by probing.\n\n## Probe Strategies\n\n### Linear Probing\n```cpp\nint linearProbe(int index, int i, int size) {\n    return (index + i) % size;\n}\n```\n\n### Quadratic Probing\n```cpp\nint quadraticProbe(int index, int i, int size) {\n    return (index + i * i) % size;\n}\n```\n\n### Double Hashing\n```cpp\nint doubleHash(int h1, int h2, int i, int size) {\n    return (h1 + i * h2) % size;\n}\n```\n\n## Implementation\n\n```cpp\ntemplate<typename K, typename V>\nstruct Entry {\n    K key;\n    V value;\n    bool occupied;\n    bool deleted;  // Tombstone\n    \n    Entry() : occupied(false), deleted(false) {}\n};\n\ntemplate<typename K, typename V>\nclass OpenAddressingHashTable {\nprivate:\n    std::vector<Entry<K,V>> table;\n    int size;\n    \n    int hash(const K& key) {\n        return std::hash<K>{}(key) % size;\n    }\n    \n    int probe(int index, int i) {\n        // Linear probing\n        return (index + i) % size;\n    }\n    \npublic:\n    OpenAddressingHashTable(int s) : size(s) {\n        table.resize(s);\n    }\n    \n    bool insert(const K& key, const V& value) {\n        int index = hash(key);\n        \n        for (int i = 0; i < size; i++) {\n            int pos = probe(index, i);\n            \n            if (!table[pos].occupied && !table[pos].deleted) {\n                table[pos].key = key;\n                table[pos].value = value;\n                table[pos].occupied = true;\n                table[pos].deleted = false;\n                return true;\n            }\n        }\n        \n        return false;  // Table full\n    }\n    \n    V* search(const K& key) {\n        int index = hash(key);\n        \n        for (int i = 0; i < size; i++) {\n            int pos = probe(index, i);\n            \n            if (!table[pos].occupied && !table[pos].deleted) {\n                return nullptr;  // Key not found\n            }\n            \n            if (table[pos].occupied && table[pos].key == key) {\n                return &table[pos].value;\n            }\n        }\n        \n        return nullptr;\n    }\n    \n    bool erase(const K& key) {\n        int index = hash(key);\n        \n        for (int i = 0; i < size; i++) {\n            int pos = probe(index, i);\n            \n            if (!table[pos].occupied && !table[pos].deleted) {\n                return false;  // Key not found\n            }\n            \n            if (table[pos].occupied && table[pos].key == key) {\n                table[pos].occupied = false;\n                table[pos].deleted = true;  // Tombstone\n                return true;\n            }\n        }\n        \n        return false;\n    }\n};\n```\n\n## Complexity\n\n- **Insert**: O(1) average, O(n) worst\n- **Search**: O(1) average, O(n) worst\n- **Delete**: O(1) average, O(n) worst\n\n## Pros/Cons\n\n**Pros:**\n- Good cache locality\n- No pointer overhead\n- Memory efficient\n\n**Cons:**\n- Load factor must be < 1\n- Clustering problems\n- Deletion is tricky (tombstones)\n"
         },
         {
           "id": "cpp-U28-L4",
-          "title": "2-3 tree",
-          "unitTitle": "28. Multiway Trees",
-          "xp": 15,
+          "title": "Rehashing and Resizing",
+          "unitTitle": "28. Hash Tables",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-28-4-1",
+              "type": "typing",
+              "question": "Rehash when?",
+              "correctAnswer": [
+                "load high",
+                "table full",
+                "threshold"
+              ],
+              "explanation": "When load exceeded.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-4-2",
+              "type": "typing",
+              "question": "New size?",
+              "correctAnswer": [
+                "2x or prime",
+                "double",
+                "next prime"
+              ],
+              "explanation": "Double or next prime.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-4-3",
+              "type": "typing",
+              "question": "Rehash complexity?",
+              "correctAnswer": [
+                "O(n)",
+                "linear",
+                "size of table"
+              ],
+              "explanation": "O(n) time.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-4-4",
+              "type": "multiple",
+              "question": "Amortized O?",
+              "options": [
+                "1",
+                "n",
+                "log n",
+                "both"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "O(1) amortized.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-4-5",
+              "type": "multiple",
+              "question": "Shrink threshold?",
+              "options": [
+                "0.25",
+                "0.5",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "0.25 typically.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-4-6",
+              "type": "code",
+              "question": "Check rehash needed.",
+              "correctAnswer": [
+                "bool needsRehash() { return getLoadFactor() > maxLoadFactor; }",
+                "check"
+              ],
+              "explanation": "Check if rehash needed.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-4-7",
+              "type": "code",
+              "question": "Next prime.",
+              "correctAnswer": [
+                "int nextPrime(int n) { while (!isPrime(n)) n++; return n; }",
+                "next prime"
+              ],
+              "explanation": "Find next prime.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-4-8",
+              "type": "code",
+              "question": "Is prime.",
+              "correctAnswer": [
+                "bool isPrime(int n) { if (n < 2) return false; for (int i = 2; i * i <= n; i++) if (n % i == 0) return false; return true; }",
+                "is prime"
+              ],
+              "explanation": "Check prime.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-4-9",
+              "type": "code",
+              "question": "Power of two.",
+              "correctAnswer": [
+                "int nextPowerOfTwo(int n) { int p = 1; while (p < n) p <<= 1; return p; }",
+                "power of two"
+              ],
+              "explanation": "Next power of 2.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-4-10",
+              "type": "code",
+              "question": "Rehash chain.",
+              "correctAnswer": [
+                "void rehashChain(int newSize) { vector<ChainNode<K,V>*> newTable(newSize, nullptr); for (auto& bucket : table) { ChainNode<K,V>* node = bucket; while (node) { ChainNode<K,V>* next = node->next; int newIndex = hash(node->key, newSize); node->next = newTable[newIndex]; newTable[newIndex] = node; node = next; } } table = move(newTable); }",
+                "rehash chain"
+              ],
+              "explanation": "Rehash chain table.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-4-11",
+              "type": "code",
+              "question": "Rehash open address.",
+              "correctAnswer": [
+                "void rehashOpen(int newSize) { vector<Entry> newTable(newSize); for (auto& entry : table) { if (entry.occupied && !entry.deleted) { // insert into new table using probing } } table = move(newTable); }",
+                "rehash open"
+              ],
+              "explanation": "Rehash open address.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-4-12",
+              "type": "code",
+              "question": "Auto rehash on insert.",
+              "correctAnswer": [
+                "void insertWithAutoRehash(const K& key, const V& value) { if (needsRehash()) rehash(nextSize()); insert(key, value); }",
+                "auto rehash"
+              ],
+              "explanation": "Auto rehash insert.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-4-13",
+              "type": "code",
+              "question": "Shrink table.",
+              "correctAnswer": [
+                "void shrinkIfNeeded() { if (getLoadFactor() < minLoadFactor) rehash(max(size / 2, minSize)); }",
+                "shrink"
+              ],
+              "explanation": "Shrink if needed.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-4-14",
+              "type": "code",
+              "question": "Max load factor.",
+              "correctAnswer": [
+                "float maxLoadFactor = 0.75;",
+                "max load"
+              ],
+              "explanation": "Max load threshold.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-4-15",
+              "type": "code",
+              "question": "Min load factor.",
+              "correctAnswer": [
+                "float minLoadFactor = 0.25;",
+                "min load"
+              ],
+              "explanation": "Min load threshold.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-4-16",
+              "type": "code",
+              "question": "Size planning.",
+              "correctAnswer": [
+                "// Size based on expected elements",
+                "size planning"
+              ],
+              "explanation": "Size planning.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-4-17",
+              "type": "code",
+              "question": "Incremental rehash.",
+              "correctAnswer": [
+                "// Gradual rehashing",
+                "incremental"
+              ],
+              "explanation": "Incremental rehash.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-4-18",
+              "type": "code",
+              "question": "Rehash cost.",
+              "correctAnswer": [
+                "// O(n) but amortized O(1)",
+                "cost"
+              ],
+              "explanation": "Rehash analysis.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-4-19",
+              "type": "code",
+              "question": "STL rehash.",
+              "correctAnswer": [
+                "// STL calls this reserve/rehash",
+                "stl"
+              ],
+              "explanation": "STL rehash.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-4-20",
+              "type": "code",
+              "question": "Prime vs power of two.",
+              "correctAnswer": [
+                "// Trade-off between distribution and speed",
+                "prime vs power"
+              ],
+              "explanation": "Size choice.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-4-21",
+              "type": "code",
+              "question": "Memory overhead.",
+              "correctAnswer": [
+                "// Extra table during rehash",
+                "memory"
+              ],
+              "explanation": "Memory overhead.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-4-22",
+              "type": "code",
+              "question": "Concurrent rehash.",
+              "correctAnswer": [
+                "// Need locking for concurrent",
+                "concurrent"
+              ],
+              "explanation": "Thread safety.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-4-23",
+              "type": "code",
+              "question": "Rehash frequency.",
+              "correctAnswer": [
+                "// Rehash O(log n) times total",
+                "frequency"
+              ],
+              "explanation": "Rehash frequency.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-4-24",
+              "type": "code",
+              "question": "Optimal load.",
+              "correctAnswer": [
+                "// 0.5-0.75 for open address",
+                "optimal"
+              ],
+              "explanation": "Optimal load factor.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-4-25",
+              "type": "code",
+              "question": "Predict rehash.",
+              "correctAnswer": [
+                "// Estimate next rehash",
+                "predict"
+              ],
+              "explanation": "Predict rehash.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Rehashing and Resizing\n\nDynamically resize hash table to maintain good performance.\n\n## When to Rehash\n\n- **Grow**: When load factor > threshold (typically 0.75)\n- **Shrink**: When load factor < minimum (typically 0.25)\n\n## New Size Strategies\n\n### Double Size (Power of Two)\n```cpp\nint nextPowerOfTwo(int n) {\n    int p = 1;\n    while (p < n) {\n        p <<= 1;\n    }\n    return p;\n}\n```\n\n### Next Prime\n```cpp\nint nextPrime(int n) {\n    while (!isPrime(n)) {\n        n++;\n    }\n    return n;\n}\n\nbool isPrime(int n) {\n    if (n < 2) return false;\n    for (int i = 2; i * i <= n; i++) {\n        if (n % i == 0) return false;\n    }\n    return true;\n}\n```\n\n## Rehashing Process\n\n```cpp\ntemplate<typename K, typename V>\nvoid rehash(int newSize) {\n    std::vector<Entry<K,V>> newTable(newSize);\n    \n    for (auto& entry : table) {\n        if (entry.occupied && !entry.deleted) {\n            // Re-insert into new table\n            int index = hash(entry.key) % newSize;\n            \n            for (int i = 0; i < newSize; i++) {\n                int pos = (index + i) % newSize;\n                \n                if (!newTable[pos].occupied) {\n                    newTable[pos] = entry;\n                    break;\n                }\n            }\n        }\n    }\n    \n    table = std::move(newTable);\n    size = newSize;\n}\n```\n\n## Auto-Rehash on Insert\n\n```cpp\nvoid insert(const K& key, const V& value) {\n    if (needsRehash()) {\n        rehash(nextSize());\n    }\n    // ... insert logic\n}\n```\n\n## Complexity\n\n- **Rehash operation**: O(n)\n- **Amortized per operation**: O(1)\n\n## Trade-offs\n\n| Size Type | Pros | Cons |\n|-----------|------|------|\n| Power of Two | Fast (bitmask), predictable | More clustering |\n| Prime | Better distribution | Slower, no bitmask |\n"
         },
         {
           "id": "cpp-U28-L5",
-          "title": "2-3-4 tree",
-          "unitTitle": "28. Multiway Trees",
-          "xp": 15,
+          "title": "Hash Table Implementation",
+          "unitTitle": "28. Hash Tables",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-28-5-1",
+              "type": "typing",
+              "question": "Hash table stores?",
+              "correctAnswer": [
+                "key-value pairs",
+                "mapping",
+                "dictionary"
+              ],
+              "explanation": "Key to value mapping.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-5-2",
+              "type": "typing",
+              "question": "Complexity average?",
+              "correctAnswer": [
+                "O(1)",
+                "constant",
+                "amortized O(1)"
+              ],
+              "explanation": "Average O(1).",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-5-3",
+              "type": "typing",
+              "question": "Worst case?",
+              "correctAnswer": [
+                "O(n)",
+                "linear",
+                "all collisions"
+              ],
+              "explanation": "All in one bucket.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-5-4",
+              "type": "multiple",
+              "question": "Ordering?",
+              "options": [
+                "none",
+                "sorted",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "No ordering.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-5-5",
+              "type": "multiple",
+              "question": "Iteration?",
+              "options": [
+                "O(n)",
+                "O(1)",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "Linear iteration.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-5-6",
+              "type": "code",
+              "question": "Hash table class.",
+              "correctAnswer": [
+                "template<typename K, typename V> class HashTable { vector<Entry<K,V>> table; int size; int count; public: HashTable(int s) : size(s), count(0) { table.resize(s); } };",
+                "class"
+              ],
+              "explanation": "Hash table class.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-5-7",
+              "type": "code",
+              "question": "Hash function.",
+              "correctAnswer": [
+                "size_t hash(const K& key) { return std::hash<K>{}(key) % size; }",
+                "hash"
+              ],
+              "explanation": "Hash function.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-5-8",
+              "type": "code",
+              "question": "Insert operator[].",
+              "correctAnswer": [
+                "V& operator[](const K& key) { int index = hash(key); // find or create and return value }",
+                "operator[]"
+              ],
+              "explanation": "Subscript operator.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-5-9",
+              "type": "code",
+              "question": "At method.",
+              "correctAnswer": [
+                "V& at(const K& key) { V* result = search(key); if (!result) throw std::out_of_range(\"Key not found\"); return *result; }",
+                "at"
+              ],
+              "explanation": "At method.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-5-10",
+              "type": "code",
+              "question": "Count method.",
+              "correctAnswer": [
+                "size_t count(const K& key) { return search(key) ? 1 : 0; }",
+                "count"
+              ],
+              "explanation": "Count keys.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-5-11",
+              "type": "code",
+              "question": "Size method.",
+              "correctAnswer": [
+                "size_t size() const { return count; }",
+                "size"
+              ],
+              "explanation": "Get size.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-5-12",
+              "type": "code",
+              "question": "Empty method.",
+              "correctAnswer": [
+                "bool empty() const { return count == 0; }",
+                "empty"
+              ],
+              "explanation": "Check empty.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-5-13",
+              "type": "code",
+              "question": "Clear method.",
+              "correctAnswer": [
+                "void clear() { table.clear(); table.resize(size); count = 0; }",
+                "clear"
+              ],
+              "explanation": "Clear all.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-5-14",
+              "type": "code",
+              "question": "Iterator class.",
+              "correctAnswer": [
+                "class iterator { Entry<K,V>* current; size_t bucket; HashTable* table; public: // iterator methods };",
+                "iterator"
+              ],
+              "explanation": "Iterator class.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-5-15",
+              "type": "code",
+              "question": "Begin.",
+              "correctAnswer": [
+                "iterator begin() { for (size_t i = 0; i < table.size(); i++) { if (table[i].occupied) return iterator(&table[i], i, this); } return end(); }",
+                "begin"
+              ],
+              "explanation": "Begin iterator.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-5-16",
+              "type": "code",
+              "question": "End.",
+              "correctAnswer": [
+                "iterator end() { return iterator(nullptr, table.size(), this); }",
+                "end"
+              ],
+              "explanation": "End iterator.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-5-17",
+              "type": "code",
+              "question": "Copy constructor.",
+              "correctAnswer": [
+                "HashTable(const HashTable& other) : size(other.size), count(other.count), table(other.table) {};",
+                "copy"
+              ],
+              "explanation": "Copy constructor.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-5-18",
+              "type": "code",
+              "question": "Move constructor.",
+              "correctAnswer": [
+                "HashTable(HashTable&& other) noexcept : size(other.size), count(other.count), table(move(other.table)) { other.size = 0; other.count = 0; }",
+                "move"
+              ],
+              "explanation": "Move constructor.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-5-19",
+              "type": "code",
+              "question": "Assignment.",
+              "correctAnswer": [
+                "HashTable& operator=(HashTable other) { swap(size, other.size); swap(count, other.count); swap(table, other.table); return *this; }",
+                "assign"
+              ],
+              "explanation": "Copy/move assignment.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-5-20",
+              "type": "code",
+              "question": "Destructor.",
+              "correctAnswer": [
+                "~HashTable() { clear(); }",
+                "destructor"
+              ],
+              "explanation": "Destructor.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-5-21",
+              "type": "code",
+              "question": "Reserve method.",
+              "correctAnswer": [
+                "void reserve(size_t n) { if (n > size) rehash(n); }",
+                "reserve"
+              ],
+              "explanation": "Reserve capacity.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-5-22",
+              "type": "code",
+              "question": "Max load factor setter.",
+              "correctAnswer": [
+                "void max_load_factor(float f) { maxLoad = f; }",
+                "max load"
+              ],
+              "explanation": "Set max load.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-5-23",
+              "type": "code",
+              "question": "Swap method.",
+              "correctAnswer": [
+                "void swap(HashTable& other) { std::swap(size, other.size); std::swap(count, other.count); std::swap(table, other.table); }",
+                "swap"
+              ],
+              "explanation": "Swap tables.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-5-24",
+              "type": "code",
+              "question": "Find method.",
+              "correctAnswer": [
+                "iterator find(const K& key) { int index = hash(key); // search and return iterator }",
+                "find"
+              ],
+              "explanation": "Find method.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-5-25",
+              "type": "code",
+              "question": "Erase iterator.",
+              "correctAnswer": [
+                "iterator erase(iterator it) { // erase and return next iterator }",
+                "erase iterator"
+              ],
+              "explanation": "Erase by iterator.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Hash Table Implementation\n\nComplete hash table with STL-like interface.\n\n## Basic Interface\n\n```cpp\ntemplate<typename K, typename V>\nclass HashTable {\nprivate:\n    struct Entry {\n        K key;\n        V value;\n        bool occupied;\n        bool deleted;\n        \n        Entry() : occupied(false), deleted(false) {}\n    };\n    \n    std::vector<Entry> table;\n    int size;\n    int count;\n    float maxLoadFactor;\n    \n    size_t hash(const K& key) const {\n        return std::hash<K>{}(key) % size;\n    }\n    \n    void rehash(int newSize) {\n        std::vector<Entry> newTable(newSize);\n        \n        for (auto& entry : table) {\n            if (entry.occupied && !entry.deleted) {\n                int index = hash(entry.key) % newSize;\n                for (int i = 0; i < newSize; i++) {\n                    int pos = (index + i) % newSize;\n                    if (!newTable[pos].occupied) {\n                        newTable[pos] = entry;\n                        break;\n                    }\n                }\n            }\n        }\n        \n        table = std::move(newTable);\n        size = newSize;\n    }\n    \npublic:\n    HashTable(int s = 16) : size(s), count(0), maxLoadFactor(0.75f) {\n        table.resize(s);\n    }\n    \n    bool insert(const K& key, const V& value) {\n        if (static_cast<float>(count) / size > maxLoadFactor) {\n            rehash(size * 2);\n        }\n        \n        int index = hash(key);\n        for (int i = 0; i < size; i++) {\n            int pos = (index + i) % size;\n            \n            if (!table[pos].occupied && !table[pos].deleted) {\n                table[pos].key = key;\n                table[pos].value = value;\n                table[pos].occupied = true;\n                table[pos].deleted = false;\n                count++;\n                return true;\n            }\n            \n            if (table[pos].occupied && table[pos].key == key) {\n                table[pos].value = value;  // Update\n                return true;\n            }\n        }\n        \n        return false;\n    }\n    \n    V* find(const K& key) {\n        int index = hash(key);\n        for (int i = 0; i < size; i++) {\n            int pos = (index + i) % size;\n            \n            if (!table[pos].occupied && !table[pos].deleted) {\n                return nullptr;\n            }\n            \n            if (table[pos].occupied && table[pos].key == key) {\n                return &table[pos].value;\n            }\n        }\n        return nullptr;\n    }\n    \n    bool erase(const K& key) {\n        int index = hash(key);\n        for (int i = 0; i < size; i++) {\n            int pos = (index + i) % size;\n            \n            if (!table[pos].occupied && !table[pos].deleted) {\n                return false;\n            }\n            \n            if (table[pos].occupied && table[pos].key == key) {\n                table[pos].occupied = false;\n                table[pos].deleted = true;\n                count--;\n                return true;\n            }\n        }\n        return false;\n    }\n    \n    size_t getSize() const { return count; }\n    bool empty() const { return count == 0; }\n    void clear() { table.clear(); table.resize(size); count = 0; }\n};\n```\n\n## Complexity\n\n- **insert**: O(1) average, O(n) worst\n- **find**: O(1) average, O(n) worst\n- **erase**: O(1) average, O(n) worst\n"
         },
         {
           "id": "cpp-U28-L6",
-          "title": "Fusion tree",
-          "unitTitle": "28. Multiway Trees",
-          "xp": 15,
+          "title": "std::unordered_map",
+          "unitTitle": "28. Hash Tables",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-28-6-1",
+              "type": "typing",
+              "question": "unordered_map uses?",
+              "correctAnswer": [
+                "hash table",
+                "hashing",
+                "O(1) average"
+              ],
+              "explanation": "Hash-based map.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-6-2",
+              "type": "typing",
+              "question": "vs map?",
+              "correctAnswer": [
+                "unordered",
+                "no order",
+                "hash vs tree"
+              ],
+              "explanation": "Not ordered.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-6-3",
+              "type": "typing",
+              "question": "Header?",
+              "correctAnswer": [
+                "<unordered_map>",
+                "include",
+                "header file"
+              ],
+              "explanation": "Include header.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-6-4",
+              "type": "multiple",
+              "question": "Complexity?",
+              "options": [
+                "O(1)",
+                "O(log n)",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "O(1) average.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-6-5",
+              "type": "multiple",
+              "question": "Ordering?",
+              "options": [
+                "none",
+                "key order",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "No ordering.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-6-6",
+              "type": "code",
+              "question": "Include unordered_map.",
+              "correctAnswer": [
+                "#include <unordered_map>",
+                "include"
+              ],
+              "explanation": "Include header.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-6-7",
+              "type": "code",
+              "question": "Create unordered_map.",
+              "correctAnswer": [
+                "std::unordered_map<string, int> scores;",
+                "create"
+              ],
+              "explanation": "Declare map.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-6-8",
+              "type": "code",
+              "question": "Insert.",
+              "correctAnswer": [
+                "scores[\"Alice\"] = 95;",
+                "insert"
+              ],
+              "explanation": "Insert element.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-6-9",
+              "type": "code",
+              "question": "Find.",
+              "correctAnswer": [
+                "auto it = scores.find(\"Alice\"); if (it != scores.end()) cout << it->second;",
+                "find"
+              ],
+              "explanation": "Find element.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-6-10",
+              "type": "code",
+              "question": "Erase.",
+              "correctAnswer": [
+                "scores.erase(\"Alice\");",
+                "erase"
+              ],
+              "explanation": "Remove element.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-6-11",
+              "type": "code",
+              "question": "Count.",
+              "correctAnswer": [
+                "if (scores.count(\"Alice\")) cout << \"Found\";",
+                "count"
+              ],
+              "explanation": "Check existence.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-6-12",
+              "type": "code",
+              "question": "Size.",
+              "correctAnswer": [
+                "size_t n = scores.size();",
+                "size"
+              ],
+              "explanation": "Get size.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-6-13",
+              "type": "code",
+              "question": "Empty.",
+              "correctAnswer": [
+                "if (scores.empty()) cout << \"Empty\";",
+                "empty"
+              ],
+              "explanation": "Check empty.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-6-14",
+              "type": "code",
+              "question": "Clear.",
+              "correctAnswer": [
+                "scores.clear();",
+                "clear"
+              ],
+              "explanation": "Clear all.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-6-15",
+              "type": "code",
+              "question": "Iterate.",
+              "correctAnswer": [
+                "for (auto& [key, value] : scores) { cout << key << \": \" << value << endl; }",
+                "iterate"
+              ],
+              "explanation": "Iterate map.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-6-16",
+              "type": "code",
+              "question": "Reserve.",
+              "correctAnswer": [
+                "scores.reserve(1000);",
+                "reserve"
+              ],
+              "explanation": "Reserve buckets.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-6-17",
+              "type": "code",
+              "question": "Bucket count.",
+              "correctAnswer": [
+                "size_t buckets = scores.bucket_count();",
+                "bucket count"
+              ],
+              "explanation": "Get bucket count.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-6-18",
+              "type": "code",
+              "question": "Load factor.",
+              "correctAnswer": [
+                "float load = scores.load_factor();",
+                "load factor"
+              ],
+              "explanation": "Get load factor.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-6-19",
+              "type": "code",
+              "question": "Max load factor.",
+              "correctAnswer": [
+                "scores.max_load_factor(0.75f);",
+                "max load"
+              ],
+              "explanation": "Set max load.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-6-20",
+              "type": "code",
+              "question": "Custom hash.",
+              "correctAnswer": [
+                "struct StringHash { size_t operator()(const string& s) const { return std::hash<string>{}(s); } };",
+                "custom hash"
+              ],
+              "explanation": "Custom hasher.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-6-21",
+              "type": "code",
+              "question": "Custom equality.",
+              "correctAnswer": [
+                "struct StringEqual { bool operator()(const string& a, const string& b) const { return a == b; } };",
+                "custom equal"
+              ],
+              "explanation": "Custom equality.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-6-22",
+              "type": "code",
+              "question": "Use custom hash.",
+              "correctAnswer": [
+                "std::unordered_map<string, int, StringHash, StringEqual> custom_map;",
+                "use custom"
+              ],
+              "explanation": "Map with custom hash.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-6-23",
+              "type": "code",
+              "question": "At method.",
+              "correctAnswer": [
+                "int score = scores.at(\"Alice\");",
+                "at"
+              ],
+              "explanation": "At method.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-6-24",
+              "type": "code",
+              "question": "Try emplace.",
+              "correctAnswer": [
+                "scores.try_emplace(\"Bob\", 90);",
+                "try emplace"
+              ],
+              "explanation": "Try emplace.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-6-25",
+              "type": "code",
+              "question": "Merge.",
+              "correctAnswer": [
+                "scores.merge(other_scores);",
+                "merge"
+              ],
+              "explanation": "Merge maps.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# std::unordered_map\n\nC++ STL hash-based associative container.\n\n## Basic Usage\n\n```cpp\n#include <unordered_map>\n#include <string>\n\nint main() {\n    // Create unordered_map\n    std::unordered_map<std::string, int> scores;\n    \n    // Insert\n    scores[\"Alice\"] = 95;\n    scores[\"Bob\"] = 87;\n    scores.insert({\"Charlie\", 92});\n    \n    // Access\n    int aliceScore = scores[\"Alice\"];\n    \n    // Find\n    auto it = scores.find(\"Alice\");\n    if (it != scores.end()) {\n        std::cout << it->first << \": \" << it->second << std::endl;\n    }\n    \n    // Check existence\n    if (scores.count(\"Alice\")) {\n        std::cout << \"Alice exists\" << std::endl;\n    }\n    \n    // Erase\n    scores.erase(\"Alice\");\n    \n    // Size\n    std::cout << \"Size: \" << scores.size() << std::endl;\n    \n    // Iterate\n    for (const auto& [key, value] : scores) {\n        std::cout << key << \": \" << value << std::endl;\n    }\n    \n    return 0;\n}\n```\n\n## Performance\n\n- **Average**: O(1) for insert, find, erase\n- **Worst**: O(n) (rare, with bad hash)\n\n## Capacity Management\n\n```cpp\nstd::unordered_map<std::string, int> map;\n\n// Reserve buckets\nmap.reserve(1000);\n\n// Get bucket count\nsize_t buckets = map.bucket_count();\n\n// Get load factor\nfloat load = map.load_factor();\n\n// Set max load factor\nmap.max_load_factor(0.75f);\n\n// Rehash to specific size\nmap.rehash(1000);\n```\n\n## Custom Hash and Equality\n\n```cpp\nstruct Person {\n    std::string name;\n    int age;\n};\n\nstruct PersonHash {\n    size_t operator()(const Person& p) const {\n        return std::hash<std::string>{}(p.name) ^ \n               std::hash<int>{}(p.age);\n    }\n};\n\nstruct PersonEqual {\n    bool operator()(const Person& a, const Person& b) const {\n        return a.name == b.name && a.age == b.age;\n    }\n};\n\nstd::unordered_map<Person, int, PersonHash, PersonEqual> people;\n```\n\n## vs std::map\n\n| Feature | unordered_map | map |\n|---------|---------------|-----|\n| Implementation | Hash table | Red-black tree |\n| Order | None | Sorted by key |\n| Average complexity | O(1) | O(log n) |\n| Worst complexity | O(n) | O(log n) |\n| Memory | More overhead | Less overhead |\n"
         },
         {
           "id": "cpp-U28-L7",
-          "title": "Cache-oblivious tree",
-          "unitTitle": "28. Multiway Trees",
-          "xp": 15,
+          "title": "std::unordered_set",
+          "unitTitle": "28. Hash Tables",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-28-7-1",
+              "type": "typing",
+              "question": "unordered_set stores?",
+              "correctAnswer": [
+                "unique keys",
+                "no duplicates",
+                "set of values"
+              ],
+              "explanation": "Unique keys only.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-7-2",
+              "type": "typing",
+              "question": "vs set?",
+              "correctAnswer": [
+                "unordered",
+                "hash vs tree",
+                "no order"
+              ],
+              "explanation": "Not ordered.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-7-3",
+              "type": "typing",
+              "question": "Header?",
+              "correctAnswer": [
+                "<unordered_set>",
+                "include",
+                "header file"
+              ],
+              "explanation": "Include header.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-7-4",
+              "type": "multiple",
+              "question": "Duplicates?",
+              "options": [
+                "no",
+                "yes",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "No duplicates.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-7-5",
+              "type": "multiple",
+              "question": "Complexity?",
+              "options": [
+                "O(1)",
+                "O(log n)",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "O(1) average.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-7-6",
+              "type": "code",
+              "question": "Include unordered_set.",
+              "correctAnswer": [
+                "#include <unordered_set>",
+                "include"
+              ],
+              "explanation": "Include header.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-7-7",
+              "type": "code",
+              "question": "Create unordered_set.",
+              "correctAnswer": [
+                "std::unordered_set<int> numbers;",
+                "create"
+              ],
+              "explanation": "Declare set.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-7-8",
+              "type": "code",
+              "question": "Insert.",
+              "correctAnswer": [
+                "numbers.insert(42);",
+                "insert"
+              ],
+              "explanation": "Insert element.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-7-9",
+              "type": "code",
+              "question": "Find.",
+              "correctAnswer": [
+                "auto it = numbers.find(42); if (it != numbers.end()) cout << *it;",
+                "find"
+              ],
+              "explanation": "Find element.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-7-10",
+              "type": "code",
+              "question": "Erase.",
+              "correctAnswer": [
+                "numbers.erase(42);",
+                "erase"
+              ],
+              "explanation": "Remove element.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-7-11",
+              "type": "code",
+              "question": "Count.",
+              "correctAnswer": [
+                "if (numbers.count(42)) cout << \"Found\";",
+                "count"
+              ],
+              "explanation": "Check existence.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-7-12",
+              "type": "code",
+              "question": "Size.",
+              "correctAnswer": [
+                "size_t n = numbers.size();",
+                "size"
+              ],
+              "explanation": "Get size.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-7-13",
+              "type": "code",
+              "question": "Empty.",
+              "correctAnswer": [
+                "if (numbers.empty()) cout << \"Empty\";",
+                "empty"
+              ],
+              "explanation": "Check empty.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-7-14",
+              "type": "code",
+              "question": "Clear.",
+              "correctAnswer": [
+                "numbers.clear();",
+                "clear"
+              ],
+              "explanation": "Clear all.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-7-15",
+              "type": "code",
+              "question": "Iterate.",
+              "correctAnswer": [
+                "for (const auto& value : numbers) { cout << value << endl; }",
+                "iterate"
+              ],
+              "explanation": "Iterate set.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-7-16",
+              "type": "code",
+              "question": "Reserve.",
+              "correctAnswer": [
+                "numbers.reserve(1000);",
+                "reserve"
+              ],
+              "explanation": "Reserve buckets.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-7-17",
+              "type": "code",
+              "question": "Bucket count.",
+              "correctAnswer": [
+                "size_t buckets = numbers.bucket_count();",
+                "bucket count"
+              ],
+              "explanation": "Get bucket count.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-7-18",
+              "type": "code",
+              "question": "Load factor.",
+              "correctAnswer": [
+                "float load = numbers.load_factor();",
+                "load factor"
+              ],
+              "explanation": "Get load factor.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-7-19",
+              "type": "code",
+              "question": "Custom hash.",
+              "correctAnswer": [
+                "struct StringHash { size_t operator()(const string& s) const { return std::hash<string>{}(s); } };",
+                "custom hash"
+              ],
+              "explanation": "Custom hasher.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-7-20",
+              "type": "code",
+              "question": "Use custom hash.",
+              "correctAnswer": [
+                "std::unordered_set<string, StringHash> custom_set;",
+                "use custom"
+              ],
+              "explanation": "Set with custom hash.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-7-21",
+              "type": "code",
+              "question": "Emplace.",
+              "correctAnswer": [
+                "numbers.emplace(42);",
+                "emplace"
+              ],
+              "explanation": "Emplace element.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-7-22",
+              "type": "code",
+              "question": "Merge.",
+              "correctAnswer": [
+                "numbers.merge(other_numbers);",
+                "merge"
+              ],
+              "explanation": "Merge sets.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-7-23",
+              "type": "code",
+              "question": "Extract.",
+              "correctAnswer": [
+                "auto node = numbers.extract(42);",
+                "extract"
+              ],
+              "explanation": "Extract node.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-7-24",
+              "type": "code",
+              "question": "Rehash.",
+              "correctAnswer": [
+                "numbers.rehash(1000);",
+                "rehash"
+              ],
+              "explanation": "Rehash set.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-7-25",
+              "type": "code",
+              "question": "Set operations.",
+              "correctAnswer": [
+                "// No built-in set operations",
+                "set ops"
+              ],
+              "explanation": "Set operations note.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# std::unordered_set\n\nC++ STL hash-based set container for unique elements.\n\n## Basic Usage\n\n```cpp\n#include <unordered_set>\n\nint main() {\n    // Create unordered_set\n    std::unordered_set<int> numbers;\n    \n    // Insert\n    numbers.insert(42);\n    numbers.insert(17);\n    numbers.insert(23);\n    \n    // Insert duplicates (ignored)\n    numbers.insert(42);  // Won't add duplicate\n    \n    // Find\n    auto it = numbers.find(42);\n    if (it != numbers.end()) {\n        std::cout << \"Found: \" << *it << std::endl;\n    }\n    \n    // Check existence\n    if (numbers.count(42)) {\n        std::cout << \"42 exists\" << std::endl;\n    }\n    \n    // Erase\n    numbers.erase(42);\n    \n    // Size\n    std::cout << \"Size: \" << numbers.size() << std::endl;\n    \n    // Iterate\n    for (const auto& value : numbers) {\n        std::cout << value << std::endl;\n    }\n    \n    return 0;\n}\n```\n\n## Use Cases\n\n- Deduplication\n- Fast membership testing\n- Set operations (manual implementation)\n- Caching keys\n\n## Common Patterns\n\n### Deduplicate Array\n```cpp\nstd::vector<int> removeDuplicates(const std::vector<int>& arr) {\n    std::unordered_set<int> seen(arr.begin(), arr.end());\n    return std::vector<int>(seen.begin(), seen.end());\n}\n```\n\n### Check Substring\n```cpp\nbool containsAll(const std::string& s, const std::unordered_set<char>& chars) {\n    for (char c : s) {\n        if (chars.count(c)) {\n            return true;\n        }\n    }\n    return false;\n}\n```\n\n### Find Intersection\n```cpp\nstd::vector<int> intersection(const std::vector<int>& a, \n                               const std::vector<int>& b) {\n    std::unordered_set<int> setA(a.begin(), a.end());\n    std::vector<int> result;\n    \n    for (int x : b) {\n        if (setA.erase(x)) {  // Removes and returns true if found\n            result.push_back(x);\n        }\n    }\n    \n    return result;\n}\n```\n\n## Custom Hash\n\n```cpp\nstruct Point {\n    int x, y;\n};\n\nstruct PointHash {\n    size_t operator()(const Point& p) const {\n        return std::hash<int>{}(p.x) ^ (std::hash<int>{}(p.y) << 1);\n    }\n};\n\nstruct PointEqual {\n    bool operator()(const Point& a, const Point& b) const {\n        return a.x == b.x && a.y == b.y;\n    }\n};\n\nstd::unordered_set<Point, PointHash, PointEqual> points;\n```\n\n## vs std::set\n\n| Feature | unordered_set | set |\n|---------|---------------|-----|\n| Implementation | Hash table | Red-black tree |\n| Order | None | Sorted |\n| Average complexity | O(1) | O(log n) |\n| Memory | More overhead | Less overhead |\n"
+        },
+        {
+          "id": "cpp-U28-L8",
+          "title": "Hash Table Applications",
+          "questions": [
+            {
+              "id": "cpp-28-8-1",
+              "type": "typing",
+              "question": "Hash tables good for?",
+              "correctAnswer": [
+                "lookup",
+                "dictionary",
+                "key-value"
+              ],
+              "explanation": "Fast lookups.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-8-2",
+              "type": "typing",
+              "question": "Cache use?",
+              "correctAnswer": [
+                "LRU cache",
+                "key-value store",
+                "memoization"
+              ],
+              "explanation": "Caching.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-8-3",
+              "type": "typing",
+              "question": "Deduplication?",
+              "correctAnswer": [
+                "set",
+                "unordered_set",
+                "unique elements"
+              ],
+              "explanation": "Remove duplicates.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-8-4",
+              "type": "multiple",
+              "question": "Symbol table?",
+              "options": [
+                "yes",
+                "no",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "Used in compilers.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-8-5",
+              "type": "multiple",
+              "question": "Database index?",
+              "options": [
+                "yes",
+                "no",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "Hash indexes.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-8-6",
+              "type": "code",
+              "question": "Word count.",
+              "correctAnswer": [
+                "unordered_map<string, int> wordCount(const vector<string>& words) { unordered_map<string, int> count; for (const auto& word : words) { count[word]++; } return count; }",
+                "word count"
+              ],
+              "explanation": "Count word frequency.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-8-7",
+              "type": "code",
+              "question": "Two sum.",
+              "correctAnswer": [
+                "vector<int> twoSum(const vector<int>& nums, int target) { unordered_map<int, int> seen; for (int i = 0; i < nums.size(); i++) { int complement = target - nums[i]; if (seen.count(complement)) return {seen[complement], i}; seen[nums[i]] = i; } return {}; }",
+                "two sum"
+              ],
+              "explanation": "Two sum problem.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-8-8",
+              "type": "code",
+              "question": "Group anagrams.",
+              "correctAnswer": [
+                "vector<vector<string>> groupAnagrams(vector<string>& strs) { unordered_map<string, vector<string>> groups; for (auto& s : strs) { string key = s; sort(key.begin(), key.end()); groups[key].push_back(s); } vector<vector<string>> result; for (auto& [key, group] : groups) result.push_back(group); return result; }",
+                "anagrams"
+              ],
+              "explanation": "Group anagrams.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-8-9",
+              "type": "code",
+              "question": "LRU cache.",
+              "correctAnswer": [
+                "class LRUCache { int capacity; list<pair<int,int>> cache; unordered_map<int, list<pair<int,int>>::iterator> map; public: LRUCache(int cap) : capacity(cap) {} int get(int key) { if (map.find(key) == map.end()) return -1; cache.splice(cache.begin(), cache, map[key]); return map[key]->second; } void put(int key, int value) { if (map.find(key) != map.end()) { cache.splice(cache.begin(), cache, map[key]); map[key]->second = value; } else { if (cache.size() >= capacity) { map.erase(cache.back().first); cache.pop_back(); } cache.push_front({key, value}); map[key] = cache.begin(); } } };",
+                "lru"
+              ],
+              "explanation": "LRU cache implementation.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-8-10",
+              "type": "code",
+              "question": "Memoization.",
+              "correctAnswer": [
+                "unordered_map<int, int> memo; int fib(int n) { if (n <= 1) return n; if (memo.count(n)) return memo[n]; memo[n] = fib(n-1) + fib(n-2); return memo[n]; }",
+                "memo"
+              ],
+              "explanation": "Fibonacci memoization.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-8-11",
+              "type": "code",
+              "question": "Find duplicate.",
+              "correctAnswer": [
+                "int findDuplicate(const vector<int>& nums) { unordered_set<int> seen; for (int num : nums) { if (seen.count(num)) return num; seen.insert(num); } return -1; }",
+                "duplicate"
+              ],
+              "explanation": "Find duplicate.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-8-12",
+              "type": "code",
+              "question": "Remove duplicates.",
+              "correctAnswer": [
+                "vector<int> removeDuplicates(const vector<int>& arr) { unordered_set<int> seen(arr.begin(), arr.end()); return vector<int>(seen.begin(), seen.end()); }",
+                "remove dup"
+              ],
+              "explanation": "Remove duplicates.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-8-13",
+              "type": "code",
+              "question": "Find intersection.",
+              "correctAnswer": [
+                "vector<int> intersection(const vector<int>& a, const vector<int>& b) { unordered_set<int> setA(a.begin(), a.end()); vector<int> result; for (int x : b) { if (setA.erase(x)) result.push_back(x); } return result; }",
+                "intersection"
+              ],
+              "explanation": "Find intersection.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-8-14",
+              "type": "code",
+              "question": "Check palindrome.",
+              "correctAnswer": [
+                "bool canPalindrome(const string& s) { unordered_map<char, int> count; for (char c : s) count[c]++; int odd = 0; for (auto& [c, cnt] : count) { if (cnt % 2 == 1) odd++; } return odd <= 1; }",
+                "palindrome"
+              ],
+              "explanation": "Check palindrome possible.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-8-15",
+              "type": "code",
+              "question": "Subarray sum equals k.",
+              "correctAnswer": [
+                "int subarraySum(vector<int>& nums, int k) { unordered_map<int, int> prefixCount; prefixCount[0] = 1; int sum = 0, count = 0; for (int num : nums) { sum += num; count += prefixCount[sum - k]; prefixCount[sum]++; } return count; }",
+                "subarray"
+              ],
+              "explanation": "Subarray sum equals k.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-8-16",
+              "type": "code",
+              "question": "Longest consecutive sequence.",
+              "correctAnswer": [
+                "int longestConsecutive(vector<int>& nums) { unordered_set<int> numSet(nums.begin(), nums.end()); int longest = 0; for (int num : numSet) { if (!numSet.count(num - 1)) { int current = num, streak = 1; while (numSet.count(current + 1)) { current++; streak++; } longest = max(longest, streak); } } return longest; }",
+                "consecutive"
+              ],
+              "explanation": "Longest consecutive sequence.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-8-17",
+              "type": "code",
+              "question": "Valid anagram.",
+              "correctAnswer": [
+                "bool isAnagram(string s, string t) { if (s.size() != t.size()) return false; unordered_map<char, int> count; for (char c : s) count[c]++; for (char c : t) { if (--count[c] < 0) return false; } return true; }",
+                "valid anagram"
+              ],
+              "explanation": "Valid anagram check.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-8-18",
+              "type": "code",
+              "question": "Find missing number.",
+              "correctAnswer": [
+                "int missingNumber(vector<int>& nums) { unordered_set<int> numSet(nums.begin(), nums.end()); for (int i = 0; i <= nums.size(); i++) { if (!numSet.count(i)) return i; } return -1; }",
+                "missing"
+              ],
+              "explanation": "Find missing number.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-8-19",
+              "type": "code",
+              "question": "Find unique.",
+              "correctAnswer": [
+                "vector<int> findUnique(const vector<int>& nums) { unordered_map<int, int> count; for (int num : nums) count[num]++; vector<int> result; for (auto& [num, cnt] : count) { if (cnt == 1) result.push_back(num); } return result; }",
+                "unique"
+              ],
+              "explanation": "Find unique elements.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-8-20",
+              "type": "code",
+              "question": "Pattern matching.",
+              "correctAnswer": [
+                "bool wordPattern(string pattern, string s) { unordered_map<char, string> charToWord; unordered_map<string, char> wordToChar; vector<string> words; stringstream ss(s); string word; while (ss >> word) words.push_back(word); if (pattern.size() != words.size()) return false; for (int i = 0; i < pattern.size(); i++) { char c = pattern[i]; string w = words[i]; if (charToWord.count(c)) { if (charToWord[c] != w) return false; } else { charToWord[c] = w; } if (wordToChar.count(w)) { if (wordToChar[w] != c) return false; } else { wordToChar[w] = c; } } return true; }",
+                "pattern"
+              ],
+              "explanation": "Word pattern matching.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-8-21",
+              "type": "code",
+              "question": "Symbol table.",
+              "correctAnswer": [
+                "class SymbolTable { unordered_map<string, int> table; public: bool insert(const string& name, int value) { if (table.count(name)) return false; table[name] = value; return true; } int lookup(const string& name) { if (!table.count(name)) throw runtime_error(\"Symbol not found\"); return table[name]; } };",
+                "symbol table"
+              ],
+              "explanation": "Simple symbol table.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-8-22",
+              "type": "code",
+              "question": "Frequency sort.",
+              "correctAnswer": [
+                "vector<int> frequencySort(vector<int>& nums) { unordered_map<int, int> freq; for (int num : nums) freq[num]++; sort(nums.begin(), nums.end(), [&freq](int a, int b) { if (freq[a] != freq[b]) return freq[a] > freq[b]; return a > b; }); return nums; }",
+                "freq sort"
+              ],
+              "explanation": "Sort by frequency.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-8-23",
+              "type": "code",
+              "question": "Top K frequent.",
+              "correctAnswer": [
+                "vector<int> topKFrequent(vector<int>& nums, int k) { unordered_map<int, int> freq; for (int num : nums) freq[num]++; vector<pair<int, int>> items(freq.begin(), freq.end()); nth_element(items.begin(), items.begin() + k, items.end(), [](auto& a, auto& b) { return a.second > b.second; }); vector<int> result(k); for (int i = 0; i < k; i++) result[i] = items[i].first; return result; }",
+                "top k"
+              ],
+              "explanation": "Top K frequent elements.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-8-24",
+              "type": "code",
+              "question": "Graph adjacency.",
+              "correctAnswer": [
+                "class Graph { unordered_map<int, unordered_set<int>> adj; public: void addEdge(int u, int v) { adj[u].insert(v); adj[v].insert(u); } bool hasEdge(int u, int v) { return adj[u].count(v); } };",
+                "graph"
+              ],
+              "explanation": "Graph with hash adjacency.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-8-25",
+              "type": "code",
+              "question": "Cache hit rate.",
+              "correctAnswer": [
+                "double hitRate(vector<int>& requests, int cacheSize) { unordered_set<int> cache; int hits = 0; for (int req : requests) { if (cache.count(req)) { hits++; } else { if (cache.size() >= cacheSize) { cache.erase(cache.begin()); } cache.insert(req); } } return (double)hits / requests.size(); }",
+                "hit rate"
+              ],
+              "explanation": "Calculate cache hit rate.",
+              "xp": 15
+            }
+          ],
+          "unitTitle": "28. Hash Tables",
+          "xp": 85,
+          "type": "lesson",
+          "difficulty": "intermediate",
+          "lessonText": "# Hash Table Applications\n\nCommon real-world uses of hash tables.\n\n## Classic Algorithms\n\n### Two Sum\n```cpp\nvector<int> twoSum(const vector<int>& nums, int target) {\n    unordered_map<int, int> seen;\n    \n    for (int i = 0; i < nums.size(); i++) {\n        int complement = target - nums[i];\n        \n        if (seen.count(complement)) {\n            return {seen[complement], i};\n        }\n        \n        seen[nums[i]] = i;\n    }\n    \n    return {};\n}\n```\n\n### Group Anagrams\n```cpp\nvector<vector<string>> groupAnagrams(vector<string>& strs) {\n    unordered_map<string, vector<string>> groups;\n    \n    for (auto& s : strs) {\n        string key = s;\n        sort(key.begin(), key.end());\n        groups[key].push_back(s);\n    }\n    \n    vector<vector<string>> result;\n    for (auto& [key, group] : groups) {\n        result.push_back(group);\n    }\n    \n    return result;\n}\n```\n\n### Longest Consecutive Sequence\n```cpp\nint longestConsecutive(vector<int>& nums) {\n    unordered_set<int> numSet(nums.begin(), nums.end());\n    int longest = 0;\n    \n    for (int num : numSet) {\n        if (!numSet.count(num - 1)) {\n            int current = num, streak = 1;\n            \n            while (numSet.count(current + 1)) {\n                current++;\n                streak++;\n            }\n            \n            longest = max(longest, streak);\n        }\n    }\n    \n    return longest;\n}\n```\n\n### Subarray Sum Equals K\n```cpp\nint subarraySum(vector<int>& nums, int k) {\n    unordered_map<int, int> prefixCount;\n    prefixCount[0] = 1;\n    \n    int sum = 0, count = 0;\n    for (int num : nums) {\n        sum += num;\n        count += prefixCount[sum - k];\n        prefixCount[sum]++;\n    }\n    \n    return count;\n}\n```\n\n## LRU Cache\n\n```cpp\nclass LRUCache {\nprivate:\n    int capacity;\n    list<pair<int, int>> cache;\n    unordered_map<int, list<pair<int, int>>::iterator> map;\n    \npublic:\n    LRUCache(int cap) : capacity(cap) {}\n    \n    int get(int key) {\n        if (map.find(key) == map.end()) {\n            return -1;\n        }\n        \n        // Move to front\n        cache.splice(cache.begin(), cache, map[key]);\n        return map[key]->second;\n    }\n    \n    void put(int key, int value) {\n        if (map.find(key) != map.end()) {\n            cache.splice(cache.begin(), cache, map[key]);\n            map[key]->second = value;\n            return;\n        }\n        \n        if (cache.size() >= capacity) {\n            map.erase(cache.back().first);\n            cache.pop_back();\n        }\n        \n        cache.push_front({key, value});\n        map[key] = cache.begin();\n    }\n};\n```\n\n## Use Cases\n\n1. **Caching**: Fast key-value storage\n2. **Deduplication**: Remove duplicates from collections\n3. **Symbol Tables**: Compiler implementation\n4. **Database Indexes**: Hash-based indexes\n5. **Memoization**: Cache computed results\n6. **Frequency Analysis**: Count occurrences\n7. **Set Operations**: Union, intersection, difference\n8. **Graph Algorithms**: Adjacency lists\n"
+        },
+        {
+          "id": "cpp-U28-L9",
+          "title": "Advanced Hash Table Topics",
+          "questions": [
+            {
+              "id": "cpp-28-9-1",
+              "type": "typing",
+              "question": "Bloom filter?",
+              "correctAnswer": [
+                "probabilistic",
+                "space efficient",
+                "false positives"
+              ],
+              "explanation": "Space-efficient prob.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-9-2",
+              "type": "typing",
+              "question": "Cuckoo hashing?",
+              "correctAnswer": [
+                "kick out",
+                "relocate",
+                "two hash"
+              ],
+              "explanation": "Two hash functions.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-9-3",
+              "type": "typing",
+              "question": "Consistent hashing?",
+              "correctAnswer": [
+                "distributed",
+                "minimal changes",
+                "scaling"
+              ],
+              "explanation": "Distributed systems.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-9-4",
+              "type": "multiple",
+              "question": "Bloom errors?",
+              "options": [
+                "false positive",
+                "false negative",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                0
+              ],
+              "explanation": "No false negatives.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-9-5",
+              "type": "multiple",
+              "question": "Concurrent hash?",
+              "options": [
+                "lock needed",
+                "lock-free",
+                "both",
+                "neither"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Various approaches.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-28-9-6",
+              "type": "code",
+              "question": "Bloom filter.",
+              "correctAnswer": [
+                "class BloomFilter { vector<bool> bits; int size; int numHashes; public: BloomFilter(int s, int k) : size(s), numHashes(k), bits(s, false) {} void add(const string& key) { for (int i = 0; i < numHashes; i++) { int index = hash(key + to_string(i)) % size; bits[index] = true; } } bool mightContain(const string& key) { for (int i = 0; i < numHashes; i++) { int index = hash(key + to_string(i)) % size; if (!bits[index]) return false; } return true; } };",
+                "bloom"
+              ],
+              "explanation": "Bloom filter basic.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-9-7",
+              "type": "code",
+              "question": "Bloom parameters.",
+              "correctAnswer": [
+                "// m = -n * ln(p) / (ln(2)^2), k = (m/n) * ln(2)",
+                "params"
+              ],
+              "explanation": "Optimal parameters.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-9-8",
+              "type": "code",
+              "question": "Cuckoo hash insert.",
+              "correctAnswer": [
+                "bool insertCuckoo(int key, int value) { int index1 = hash1(key); int index2 = hash2(key); if (!table1[index1].occupied) { table1[index1] = {key, value, true}; return true; } if (!table2[index2].occupied) { table2[index2] = {key, value, true}; return true; } // Kick out and relocate return relocate(index1, key, value); }",
+                "cuckoo"
+              ],
+              "explanation": "Cuckoo insert.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-9-9",
+              "type": "code",
+              "question": "Cuckoo relocate.",
+              "correctAnswer": [
+                "bool relocate(int tableNum, int key, int value) { int cycles = 0; while (cycles < MAX_CYCLES) { int newIndex = (tableNum == 0) ? hash2(key) : hash1(key); auto& targetTable = (tableNum == 0) ? table2 : table1; if (!targetTable[newIndex].occupied) { targetTable[newIndex] = {key, value, true}; return true; } swap(key, targetTable[newIndex].key); swap(value, targetTable[newIndex].value); tableNum = 1 - tableNum; cycles++; } return false; }",
+                "relocate"
+              ],
+              "explanation": "Cuckoo relocate.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-9-10",
+              "type": "code",
+              "question": "Consistent hashing.",
+              "correctAnswer": [
+                "int findNode(int key, const vector<int>& nodes) { if (nodes.empty()) return -1; int hashKey = hash(key); auto it = lower_bound(nodes.begin(), nodes.end(), hashKey); if (it == nodes.end()) return nodes[0]; return *it; }",
+                "consistent"
+              ],
+              "explanation": "Consistent hash find.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-9-11",
+              "type": "code",
+              "question": "Add node consistent.",
+              "correctAnswer": [
+                "void addNode(vector<int>& ring, int node) { int hashNode = hash(node); ring.insert(lower_bound(ring.begin(), ring.end(), hashNode), hashNode); }",
+                "add node"
+              ],
+              "explanation": "Add node to ring.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-9-12",
+              "type": "code",
+              "question": "Remove node consistent.",
+              "correctAnswer": [
+                "void removeNode(vector<int>& ring, int node) { int hashNode = hash(node); auto it = lower_bound(ring.begin(), ring.end(), hashNode); if (it != ring.end() && *it == hashNode) ring.erase(it); }",
+                "remove node"
+              ],
+              "explanation": "Remove node from ring.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-9-13",
+              "type": "code",
+              "question": "Concurrent hash with lock.",
+              "correctAnswer": [
+                "class ConcurrentHashTable { vector<mutex> locks; vector<Entry> table; public: bool insert(const K& key, const V& value) { int index = hash(key); lock_guard<mutex> lock(locks[index % locks.size()]); // insert } };",
+                "concurrent lock"
+              ],
+              "explanation": "Striped locking.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-9-14",
+              "type": "code",
+              "question": "Lock-free CAS.",
+              "correctAnswer": [
+                "bool compareAndSwap(atomic<int>* ptr, int expected, int desired) { return ptr->compare_exchange_strong(expected, desired); }",
+                "cas"
+              ],
+              "explanation": "CAS operation.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-9-15",
+              "type": "code",
+              "question": "Perfect hash.",
+              "correctAnswer": [
+                "// Build perfect hash for known set",
+                "perfect"
+              ],
+              "explanation": "Perfect hash concept.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-9-16",
+              "type": "code",
+              "question": "Minimal perfect hash.",
+              "correctAnswer": [
+                "// No empty slots",
+                "minimal perfect"
+              ],
+              "explanation": "Minimal perfect.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-9-17",
+              "type": "code",
+              "question": "FNV hash variants.",
+              "correctAnswer": [
+                "// FNV-1a: XOR before multiply",
+                "fnv variant"
+              ],
+              "explanation": "FNV-1a variant.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-9-18",
+              "type": "code",
+              "question": "Murmur3 mix.",
+              "correctAnswer": [
+                "// Complex mixing for avalanche",
+                "murmur mix"
+              ],
+              "explanation": "Murmur mixing.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-9-19",
+              "type": "code",
+              "question": "SipHash.",
+              "correctAnswer": [
+                "// Cryptographic hash for DoS protection",
+                "siphash"
+              ],
+              "explanation": "SipHash usage.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-9-20",
+              "type": "code",
+              "question": "Hash DoS.",
+              "correctAnswer": [
+                "// Attack by creating collisions",
+                "dos"
+              ],
+              "explanation": "Hash DoS attack.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-9-21",
+              "type": "code",
+              "question": "Randomized hash seed.",
+              "correctAnswer": [
+                "// Seed per process to prevent attacks",
+                "seed"
+              ],
+              "explanation": "Randomized seeds.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-9-22",
+              "type": "code",
+              "question": "Hash table persistence.",
+              "correctAnswer": [
+                "// Serialize/deserialize table",
+                "persist"
+              ],
+              "explanation": "Persistence.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-9-23",
+              "type": "code",
+              "question": "Memory-mapped hash.",
+              "correctAnswer": [
+                "// Hash table in shared memory",
+                "mmap"
+              ],
+              "explanation": "Memory-mapped.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-9-24",
+              "type": "code",
+              "question": "Compressed hash.",
+              "correctAnswer": [
+                "// Reduce memory footprint",
+                "compress"
+              ],
+              "explanation": "Compression.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-28-9-25",
+              "type": "code",
+              "question": "Hash table benchmarks.",
+              "correctAnswer": [
+                "// Measure performance",
+                "benchmark"
+              ],
+              "explanation": "Benchmarking.",
+              "xp": 15
+            }
+          ],
+          "unitTitle": "28. Hash Tables",
+          "xp": 85,
+          "type": "lesson",
+          "difficulty": "intermediate",
+          "lessonText": "# Advanced Hash Table Topics\n\nAdvanced hash table variants and applications.\n\n## Bloom Filter\n\nProbabilistic data structure for membership testing.\n\n```cpp\nclass BloomFilter {\nprivate:\n    std::vector<bool> bits;\n    int size;\n    int numHashes;\n    \n    int hash(const std::string& key, int seed) const {\n        std::hash<std::string> hasher;\n        return (hasher(key) ^ seed) % size;\n    }\n    \npublic:\n    BloomFilter(int s, int k) : size(s), numHashes(k), bits(s, false) {}\n    \n    void add(const std::string& key) {\n        for (int i = 0; i < numHashes; i++) {\n            int index = hash(key, i);\n            bits[index] = true;\n        }\n    }\n    \n    bool mightContain(const std::string& key) const {\n        for (int i = 0; i < numHashes; i++) {\n            int index = hash(key, i);\n            if (!bits[index]) {\n                return false;\n            }\n        }\n        return true;  // Maybe contains\n    }\n};\n```\n\n**Properties:**\n- Never false negatives\n- Possible false positives\n- Very space-efficient\n\n## Cuckoo Hashing\n\nUses two hash functions and kicks out colliding elements.\n\n```cpp\nclass CuckooHashTable {\nprivate:\n    std::vector<Entry> table1, table2;\n    \n    int hash1(const K& key) const {\n        return std::hash<K>{}(key) % table1.size();\n    }\n    \n    int hash2(const K& key) const {\n        return std::hash<K>{}(key + 1) % table2.size();\n    }\n    \npublic:\n    bool insert(const K& key, const V& value) {\n        int index1 = hash1(key);\n        int index2 = hash2(key);\n        \n        if (!table1[index1].occupied) {\n            table1[index1] = {key, value, true};\n            return true;\n        }\n        \n        if (!table2[index2].occupied) {\n            table2[index2] = {key, value, true};\n            return true;\n        }\n        \n        // Kick out and relocate\n        return relocate(0, key, value);\n    }\n};\n```\n\n## Consistent Hashing\n\nUsed in distributed systems for load balancing.\n\n```cpp\nint findNode(int key, const std::vector<int>& ring) {\n    if (ring.empty()) return -1;\n    \n    int hashKey = std::hash<int>{}(key);\n    auto it = std::lower_bound(ring.begin(), ring.end(), hashKey);\n    \n    if (it == ring.end()) {\n        return ring[0];  // Wrap around\n    }\n    \n    return *it;\n}\n```\n\n## Concurrent Hash Tables\n\n### Striped Locking\n```cpp\nclass ConcurrentHashTable {\nprivate:\n    std::vector<std::mutex> locks;\n    std::vector<Entry> table;\n    \npublic:\n    bool insert(const K& key, const V& value) {\n        int index = hash(key);\n        int lockIndex = index % locks.size();\n        \n        std::lock_guard<std::mutex> lock(locks[lockIndex]);\n        // Insert logic\n    }\n};\n```\n\n### Lock-Free\n- Use atomic operations\n- Compare-and-swap (CAS)\n- Memory ordering\n\n## Advanced Topics\n\n1. **Perfect Hash**: No collisions for known set\n2. **Minimal Perfect Hash**: No collisions + no empty slots\n3. **SipHash**: Cryptographic hash for DoS protection\n4. **Randomized Seeds**: Prevent hash DoS attacks\n5. **Memory-Mapped**: Hash table in shared memory\n6. **Compressed**: Reduce memory footprint\n"
         }
-      ]
+      ],
+      "unitTitle": "28. Hash Tables"
     },
     {
       "unitId": "29",
