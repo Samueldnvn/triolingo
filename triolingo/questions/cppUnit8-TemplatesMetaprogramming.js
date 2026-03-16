@@ -1,1322 +1,1609 @@
-// C++ Unit 8 - Templates and Metaprogramming
+// C++ Unit 8 - TemplatesMetaprogramming
 // Generated from cppCombined.js
 
 window.cppUnit8 = {
-  "unitId": "8",
-  "unitName": "8. Templates and Metaprogramming",
+  "unitId": "9",
+  "unitName": "9. Standard Template Library (STL)",
   "lessons": [
     {
-      "id": 41,
-      "title": "Function Templates",
-      "unitTitle": "8. Templates and Metaprogramming",
+      "id": 46,
+      "title": "Overview of STL Components",
+      "unitTitle": "9. Standard Template Library (STL)",
       "xp": 85,
       "type": "lesson",
       "difficulty": "intermediate",
       "questions": [
         {
-          "id": "cpp-8-1-1",
+          "id": "cpp-9-1-1",
           "type": "typing",
-          "question": "What is a function template?",
+          "question": "What does STL stand for?",
           "correctAnswer": [
-            "function that works with multiple types",
-            "generic function"
+            "Standard Template Library"
           ],
-          "explanation": "Function templates work with multiple data types.",
+          "explanation": "STL is Standard Template Library.",
           "xp": 5
         },
         {
-          "id": "cpp-8-1-2",
+          "id": "cpp-9-1-2",
           "type": "typing",
-          "question": "What keyword declares function template?",
+          "question": "What are the three main components of STL?",
           "correctAnswer": [
-            "template",
-            "template<typename T>"
+            "containers, algorithms, iterators"
           ],
-          "explanation": "Use template keyword with type parameters.",
+          "explanation": "STL has containers, algorithms, and iterators.",
           "xp": 5
         },
         {
-          "id": "cpp-8-1-3",
+          "id": "cpp-9-1-3",
           "type": "typing",
-          "question": "What is template parameter?",
+          "question": "What are STL containers?",
           "correctAnswer": [
-            "placeholder for type",
-            "typename T",
-            "type parameter"
+            "data structures that store data",
+            "collections of objects"
           ],
-          "explanation": "Template parameter is type placeholder like T.",
+          "explanation": "Containers are data structures that store collections of objects.",
           "xp": 5
         },
         {
-          "id": "cpp-8-1-4",
+          "id": "cpp-9-1-4",
           "type": "multiple",
-          "question": "Can function template have multiple parameters?",
+          "question": "What do STL algorithms do?",
           "options": [
-            "Yes",
+            "Operate on ranges",
+            "Define data structures",
+            "Iterate over containers",
+            "Manage memory"
+          ],
+          "correctAnswer": [
+            0
+          ],
+          "explanation": "Algorithms operate on ranges of elements.",
+          "xp": 5
+        },
+        {
+          "id": "cpp-9-1-5",
+          "type": "multiple",
+          "question": "What do iterators provide?",
+          "options": [
+            "Way to traverse containers",
+            "Memory management",
+            "Algorithm implementation",
+            "Type safety"
+          ],
+          "correctAnswer": [
+            0
+          ],
+          "explanation": "Iterators provide a way to traverse containers.",
+          "xp": 5
+        },
+        {
+          "id": "cpp-9-1-6",
+          "type": "code",
+          "question": "Include vector header.",
+          "correctAnswer": [
+            "#include <vector>"
+          ],
+          "explanation": "Include <vector> to use vector container.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-1-7",
+          "type": "code",
+          "question": "Include algorithm header.",
+          "correctAnswer": [
+            "#include <algorithm>"
+          ],
+          "explanation": "Include <algorithm> to use STL algorithms.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-1-8",
+          "type": "code",
+          "question": "Create vector of integers.",
+          "correctAnswer": [
+            "std::vector<int> v;",
+            "vector<int> v;"
+          ],
+          "explanation": "Create vector of type int.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-1-9",
+          "type": "code",
+          "question": "Include iostream header.",
+          "correctAnswer": [
+            "#include <iostream>"
+          ],
+          "explanation": "Include <iostream> for input/output.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-1-10",
+          "type": "code",
+          "question": "Use std namespace.",
+          "correctAnswer": [
+            "using namespace std;",
+            "std::cout",
+            "std::vector"
+          ],
+          "explanation": "Use namespace std to avoid std:: prefix.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-1-11",
+          "type": "code",
+          "question": "Include string header.",
+          "correctAnswer": [
+            "#include <string>"
+          ],
+          "explanation": "Include <string> to use std::string.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-1-12",
+          "type": "code",
+          "question": "Include map header.",
+          "correctAnswer": [
+            "#include <map>"
+          ],
+          "explanation": "Include <map> for associative containers.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-1-13",
+          "type": "code",
+          "question": "Create deque of strings.",
+          "correctAnswer": [
+            "std::deque<std::string> d;",
+            "deque<string> d;"
+          ],
+          "explanation": "Create deque of type string.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-1-14",
+          "type": "code",
+          "question": "Include list header.",
+          "correctAnswer": [
+            "#include <list>"
+          ],
+          "explanation": "Include <list> for doubly linked list.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-1-15",
+          "type": "code",
+          "question": "Include set header.",
+          "correctAnswer": [
+            "#include <set>"
+          ],
+          "explanation": "Include <set> for set container.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-1-16",
+          "type": "code",
+          "question": "Create stack of integers.",
+          "correctAnswer": [
+            "std::stack<int> s;",
+            "stack<int> s;"
+          ],
+          "explanation": "Create stack of type int.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-1-17",
+          "type": "code",
+          "question": "Create queue of strings.",
+          "correctAnswer": [
+            "std::queue<std::string> q;",
+            "queue<string> q;"
+          ],
+          "explanation": "Create queue of type string.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-1-18",
+          "type": "code",
+          "question": "Include iterator header.",
+          "correctAnswer": [
+            "#include <iterator>"
+          ],
+          "explanation": "Include <iterator> for iterator utilities.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-1-19",
+          "type": "code",
+          "question": "Use begin() on vector.",
+          "correctAnswer": [
+            "v.begin()",
+            "auto it = v.begin();"
+          ],
+          "explanation": "begin() returns iterator to first element.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-1-20",
+          "type": "code",
+          "question": "Use end() on vector.",
+          "correctAnswer": [
+            "v.end()",
+            "auto it = v.end();"
+          ],
+          "explanation": "end() returns iterator past last element.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-1-21",
+          "type": "code",
+          "question": "Use size() on container.",
+          "correctAnswer": [
+            "v.size()",
+            "size_t sz = v.size();"
+          ],
+          "explanation": "size() returns number of elements.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-1-22",
+          "type": "code",
+          "question": "Use empty() on container.",
+          "correctAnswer": [
+            "v.empty()",
+            "if (v.empty())"
+          ],
+          "explanation": "empty() returns true if container is empty.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-1-23",
+          "type": "code",
+          "question": "Clear container.",
+          "correctAnswer": [
+            "v.clear()",
+            "v.clear();"
+          ],
+          "explanation": "clear() removes all elements from container.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-1-24",
+          "type": "code",
+          "question": "Push back to vector.",
+          "correctAnswer": [
+            "v.push_back(5);",
+            "v.push_back(value);"
+          ],
+          "explanation": "push_back() adds element to end.",
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-1-25",
+          "type": "code",
+          "question": "Pop back from vector.",
+          "correctAnswer": [
+            "v.pop_back();",
+            "v.pop_back();"
+          ],
+          "explanation": "pop_back() removes last element.",
+          "xp": 15
+        }
+      ],
+      "lessonText": "# Standard Template Library (STL)\n\nSTL is a collection of powerful C++ template classes and algorithms.\n\n## Three Main Components\n\n### 1. Containers\nData structures that store objects:\n- **Sequence containers**: vector, deque, list\n- **Associative containers**: map, set, multimap, multiset\n- **Container adaptors**: stack, queue, priority_queue\n\n### 2. Algorithms\nFunctions that operate on ranges of elements:\n- Sorting: `sort()`, `stable_sort()`\n- Searching: `find()`, `binary_search()`\n- Modifying: `transform()`, `copy()`, `remove()`\n- Numeric: `accumulate()`, `inner_product()`\n\n### 3. Iterators\nObjects that traverse and access container elements:\n- **Input iterators**: read-only\n- **Output iterators**: write-only\n- **Forward iterators**: read/write forward\n- **Bidirectional iterators**: read/write both directions\n- **Random access iterators**: direct access\n\n## Basic Usage\n\n```cpp\n#include <vector>\n#include <algorithm>\n#include <iostream>\n\nint main() {\n    std::vector<int> v = {5, 2, 8, 1, 9};\n    \n    // Sort\n    std::sort(v.begin(), v.end());\n    \n    // Print\n    for (int x : v) {\n        std::cout << x << ' ';\n    }\n}\n```\n\n## Common Operations\n\n```cpp\nv.push_back(10);      // Add element\nv.pop_back();          // Remove last\nv.size();              // Get size\nv.empty();             // Check if empty\nv.clear();             // Remove all\nv.begin();             // First element iterator\nv.end();               // Past-end iterator\n```\n"
+    },
+    {
+      "id": 47,
+      "title": "Iterators",
+      "unitTitle": "9. Standard Template Library (STL)",
+      "xp": 85,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": [
+        {
+          "id": "cpp-9-2-1",
+          "type": "typing",
+          "question": "What is an iterator?",
+          "correctAnswer": [
+            "object that traverses container",
+            "pointer to container elements"
+          ],
+          "explanation": "Iterator provides uniform way to access container elements.",
+          "xp": 5
+        },
+        {
+          "id": "cpp-9-2-2",
+          "type": "typing",
+          "question": "What does begin() return?",
+          "correctAnswer": [
+            "iterator to first element"
+          ],
+          "explanation": "begin() returns iterator to first element.",
+          "xp": 5
+        },
+        {
+          "id": "cpp-9-2-3",
+          "type": "typing",
+          "question": "What does end() return?",
+          "correctAnswer": [
+            "iterator past last element",
+            "one past end"
+          ],
+          "explanation": "end() returns iterator past last element.",
+          "xp": 5
+        },
+        {
+          "id": "cpp-9-2-4",
+          "type": "multiple",
+          "question": "How to dereference iterator?",
+          "options": [
+            "*it",
+            "it->",
+            "it*",
+            "&it"
+          ],
+          "correctAnswer": [
+            0
+          ],
+          "explanation": "Dereference with * operator.",
+          "xp": 5
+        },
+        {
+          "id": "cpp-9-2-5",
+          "type": "multiple",
+          "question": "How to advance iterator?",
+          "options": [
+            "++it",
+            "it++",
+            "next(it)",
+            "advance(it)"
+          ],
+          "correctAnswer": [
+            0
+          ],
+          "explanation": "Use ++ to advance iterator.",
+          "xp": 5
+        },
+        {
+          "id": "cpp-9-2-6",
+          "type": "code",
+          "question": "Create iterator loop.",
+          "correctAnswer": [
+            "for (auto it = v.begin(); it != v.end(); ++it)"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-2-7",
+          "type": "code",
+          "question": "Dereference iterator.",
+          "correctAnswer": [
+            "*it",
+            "int value = *it;"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-2-8",
+          "type": "code",
+          "question": "Use range-based for loop.",
+          "correctAnswer": [
+            "for (int x : v)",
+            "for (auto x : v)"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-2-9",
+          "type": "code",
+          "question": "Access member through iterator.",
+          "correctAnswer": [
+            "it->member",
+            "it->method();"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-2-10",
+          "type": "code",
+          "question": "Use rbegin() and rend().",
+          "correctAnswer": [
+            "for (auto it = v.rbegin(); it != v.rend(); ++it)"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-2-11",
+          "type": "code",
+          "question": "Use cbegin() for const iterator.",
+          "correctAnswer": [
+            "auto it = v.cbegin();",
+            "for (auto it = v.cbegin(); it != v.cend(); ++it)"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-2-12",
+          "type": "code",
+          "question": "Advance iterator by n.",
+          "correctAnswer": [
+            "it + n",
+            "std::advance(it, n)"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-2-13",
+          "type": "code",
+          "question": "Get distance between iterators.",
+          "correctAnswer": [
+            "std::distance(begin, end)",
+            "auto dist = end - begin;"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-2-14",
+          "type": "code",
+          "question": "Use std::next().",
+          "correctAnswer": [
+            "auto next_it = std::next(it);"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-2-15",
+          "type": "code",
+          "question": "Use std::prev().",
+          "correctAnswer": [
+            "auto prev_it = std::prev(it);"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-2-16",
+          "type": "code",
+          "question": "Insert at iterator position.",
+          "correctAnswer": [
+            "v.insert(it, value);"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-2-17",
+          "type": "code",
+          "question": "Erase at iterator position.",
+          "correctAnswer": [
+            "v.erase(it);",
+            "it = v.erase(it);"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-2-18",
+          "type": "code",
+          "question": "Use reverse iterator.",
+          "correctAnswer": [
+            "for (auto it = v.rbegin(); it != v.rend(); ++it)"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-2-19",
+          "type": "code",
+          "question": "Compare iterators for equality.",
+          "correctAnswer": [
+            "it1 == it2",
+            "if (it1 != it2)"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-2-20",
+          "type": "code",
+          "question": "Use iterator with algorithm.",
+          "correctAnswer": [
+            "std::find(v.begin(), v.end(), value);"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-2-21",
+          "type": "code",
+          "question": "Get iterator to element.",
+          "correctAnswer": [
+            "auto it = v.begin() + index;"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-2-22",
+          "type": "code",
+          "question": "Use std::advance with negative.",
+          "correctAnswer": [
+            "std::advance(it, -n);"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-2-23",
+          "type": "code",
+          "question": "Use iterator with map.",
+          "correctAnswer": [
+            "for (auto it = m.begin(); it != m.end(); ++it) { cout << it->first << \"=\" << it->second; }"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-2-24",
+          "type": "code",
+          "question": "Create const_iterator.",
+          "correctAnswer": [
+            "std::vector<int>::const_iterator it;"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-2-25",
+          "type": "code",
+          "question": "Use std::lower_bound.",
+          "correctAnswer": [
+            "auto it = std::lower_bound(v.begin(), v.end(), value);"
+          ],
+          "xp": 15
+        }
+      ],
+      "lessonText": "# Iterators\n\nIterators provide a uniform way to traverse containers.\n\n```cpp\nstd::vector<int> v = {1, 2, 3, 4, 5};\n\n// Iterator loop\nfor (auto it = v.begin(); it != v.end(); ++it) {\n    std::cout << *it << ' ';\n}\n\n// Range-based for (C++11)\nfor (int x : v) {\n    std::cout << x << ' ';\n}\n```\n\n**Iterator operations:**\n- `*it` - dereference\n- `++it` - advance\n- `it->member` - member access\n- `it + n` - random access (some iterators)"
+    },
+    {
+      "id": 48,
+      "title": "Sequence Containers (vector, deque, list)",
+      "unitTitle": "9. Standard Template Library (STL)",
+      "xp": 85,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": [
+        {
+          "id": "cpp-9-3-1",
+          "type": "typing",
+          "question": "What is vector?",
+          "correctAnswer": [
+            "dynamic array",
+            "resizable array"
+          ],
+          "explanation": "Vector is dynamic array with fast random access.",
+          "xp": 5
+        },
+        {
+          "id": "cpp-9-3-2",
+          "type": "typing",
+          "question": "What is deque?",
+          "correctAnswer": [
+            "double-ended queue",
+            "double ended queue"
+          ],
+          "explanation": "Deque is double-ended queue for fast front/back operations.",
+          "xp": 5
+        },
+        {
+          "id": "cpp-9-3-3",
+          "type": "typing",
+          "question": "What is list?",
+          "correctAnswer": [
+            "doubly linked list",
+            "linked list"
+          ],
+          "explanation": "List is doubly linked list with fast insertions.",
+          "xp": 5
+        },
+        {
+          "id": "cpp-9-3-4",
+          "type": "multiple",
+          "question": "Which has fastest random access?",
+          "options": [
+            "vector",
+            "deque",
+            "list",
+            "All same"
+          ],
+          "correctAnswer": [
+            0
+          ],
+          "explanation": "Vector has O(1) random access.",
+          "xp": 5
+        },
+        {
+          "id": "cpp-9-3-5",
+          "type": "multiple",
+          "question": "Which has fastest front insertion?",
+          "options": [
+            "deque and list",
+            "vector only",
+            "All same",
+            "None"
+          ],
+          "correctAnswer": [
+            0
+          ],
+          "explanation": "Deque and list have O(1) front insertion.",
+          "xp": 5
+        },
+        {
+          "id": "cpp-9-3-6",
+          "type": "code",
+          "question": "Create vector of integers.",
+          "correctAnswer": [
+            "std::vector<int> v;",
+            "vector<int> v;"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-3-7",
+          "type": "code",
+          "question": "Push back to vector.",
+          "correctAnswer": [
+            "v.push_back(5);"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-3-8",
+          "type": "code",
+          "question": "Access vector element with operator[].",
+          "correctAnswer": [
+            "v[0]",
+            "int x = v[2];"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-3-9",
+          "type": "code",
+          "question": "Use at() for bounds checking.",
+          "correctAnswer": [
+            "v.at(0)",
+            "int x = v.at(i);"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-3-10",
+          "type": "code",
+          "question": "Create deque of strings.",
+          "correctAnswer": [
+            "std::deque<std::string> d;"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-3-11",
+          "type": "code",
+          "question": "Push front to deque.",
+          "correctAnswer": [
+            "d.push_front(1);"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-3-12",
+          "type": "code",
+          "question": "Create list of doubles.",
+          "correctAnswer": [
+            "std::list<double> l;",
+            "list<double> l;"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-3-13",
+          "type": "code",
+          "question": "Insert in list.",
+          "correctAnswer": [
+            "l.insert(it, value);"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-3-14",
+          "type": "code",
+          "question": "Resize vector.",
+          "correctAnswer": [
+            "v.resize(10);",
+            "v.resize(newSize, defaultValue);"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-3-15",
+          "type": "code",
+          "question": "Reserve capacity for vector.",
+          "correctAnswer": [
+            "v.reserve(100);"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-3-16",
+          "type": "code",
+          "question": "Get vector capacity.",
+          "correctAnswer": [
+            "v.capacity();"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-3-17",
+          "type": "code",
+          "question": "Pop front from deque.",
+          "correctAnswer": [
+            "d.pop_front();"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-3-18",
+          "type": "code",
+          "question": "Sort list.",
+          "correctAnswer": [
+            "l.sort();",
+            "l.sort(std::greater<int>());"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-3-19",
+          "type": "code",
+          "question": "Merge two lists.",
+          "correctAnswer": [
+            "l1.merge(l2);"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-3-20",
+          "type": "code",
+          "question": "Erase element from vector.",
+          "correctAnswer": [
+            "v.erase(v.begin() + index);"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-3-21",
+          "type": "code",
+          "question": "Clear vector.",
+          "correctAnswer": [
+            "v.clear();"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-3-22",
+          "type": "code",
+          "question": "Check if vector empty.",
+          "correctAnswer": [
+            "v.empty();",
+            "if (v.empty())"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-3-23",
+          "type": "code",
+          "question": "Get vector size.",
+          "correctAnswer": [
+            "v.size();"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-3-24",
+          "type": "code",
+          "question": "Use initializer list.",
+          "correctAnswer": [
+            "std::vector<int> v = {1, 2, 3, 4, 5};"
+          ],
+          "xp": 15
+        },
+        {
+          "id": "cpp-9-3-25",
+          "type": "code",
+          "question": "Use emplace_back.",
+          "correctAnswer": [
+            "v.emplace_back(args...);"
+          ],
+          "xp": 15
+        }
+      ],
+      "lessonText": "# Sequence Containers\n\n**vector** - Dynamic array with fast random access\n```cpp\nstd::vector<int> v = {1, 2, 3};\nv.push_back(4);        // Add to end\nv[0] = 10;            // Random access\n```\n\n**deque** - Double-ended queue\n```cpp\nstd::deque<int> d;\nd.push_front(1);        // Add to front\nd.push_back(2);         // Add to end\n```\n\n**list** - Doubly linked list\n```cpp\nstd::list<int> l = {1, 2, 3};\nl.push_front(0);       // Add to front\nl.insert(it, 5);       // Insert at position\n```"
+    },
+    {
+      "id": 49,
+      "title": "Associative Containers (map, set)",
+      "unitTitle": "9. Standard Template Library (STL)",
+      "xp": 85,
+      "type": "lesson",
+      "difficulty": "intermediate",
+      "questions": [
+        {
+          "id": "cpp-9-4-1",
+          "type": "typing",
+          "question": "What is map?",
+          "correctAnswer": [
+            "key-value pairs",
+            "associative array",
+            "dictionary"
+          ],
+          "explanation": "Map stores key-value pairs sorted by key.",
+          "xp": 5
+        },
+        {
+          "id": "cpp-9-4-2",
+          "type": "typing",
+          "question": "What is set?",
+          "correctAnswer": [
+            "unique sorted elements",
+            "sorted collection"
+          ],
+          "explanation": "Set stores unique elements sorted.",
+          "xp": 5
+        },
+        {
+          "id": "cpp-9-4-3",
+          "type": "typing",
+          "question": "What is time complexity for map insert?",
+          "correctAnswer": [
+            "O(log n)",
+            "logarithmic"
+          ],
+          "explanation": "Map insert is O(log n) due to tree structure.",
+          "xp": 5
+        },
+        {
+          "id": "cpp-9-4-4",
+          "type": "multiple",
+          "question": "Can set contain duplicates?",
+          "options": [
             "No",
-            "Only one",
-            "Only two"
-          ],
-          "correctAnswer": [
-            0
-          ],
-          "explanation": "Function templates can have multiple type parameters.",
-          "xp": 5
-        },
-        {
-          "id": "cpp-8-1-5",
-          "type": "multiple",
-          "question": "What is template instantiation?",
-          "options": [
-            "Generating function for specific type",
-            "Calling template",
-            "Template parameter",
-            "Type deduction"
-          ],
-          "correctAnswer": [
-            0
-          ],
-          "explanation": "Template instantiation generates function for specific type.",
-          "xp": 5
-        },
-        {
-          "id": "cpp-8-1-6",
-          "type": "code",
-          "question": "Create function template to find maximum.",
-          "correctAnswer": [
-            "template<typename T> T max(T a, T b) { return (a > b) ? a : b; }"
-          ],
-          "explanation": "template<typename T> T max(T a, T b) { return (a > b) ? a : b; }",
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-1-7",
-          "type": "code",
-          "question": "Create function template to swap values.",
-          "correctAnswer": [
-            "template<typename T> void swap(T& a, T& b) { T temp = a; a = b; b = temp; }"
-          ],
-          "explanation": "Swap template works with any type.",
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-1-8",
-          "type": "code",
-          "question": "Create function template with two type parameters.",
-          "correctAnswer": [
-            "template<typename T, typename U> void func(T t, U u) {}"
-          ],
-          "explanation": "Multiple type parameters: template<typename T, typename U>",
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-1-9",
-          "type": "code",
-          "question": "Create function template to print value.",
-          "correctAnswer": [
-            "template<typename T> void print(T value) { cout << value; }"
-          ],
-          "explanation": "Print template works with any type supporting <<.",
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-1-10",
-          "type": "code",
-          "question": "Create function template for absolute value.",
-          "correctAnswer": [
-            "template<typename T> T abs(T value) { return (value < 0) ? -value : value; }"
-          ],
-          "explanation": "Absolute value template.",
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-1-11",
-          "type": "code",
-          "question": "Create function template with default type.",
-          "correctAnswer": [
-            "template<typename T = int> void func(T val) {}"
-          ],
-          "explanation": "Default type: template<typename T = int>",
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-1-12",
-          "type": "code",
-          "question": "Use explicit template instantiation.",
-          "correctAnswer": [
-            "max<int>(10, 20);",
-            "func<double>(3.14);"
-          ],
-          "explanation": "Explicit instantiation: func<int>(value)",
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-1-13",
-          "type": "code",
-          "question": "Create function template to add values.",
-          "correctAnswer": [
-            "template<typename T> T add(T a, T b) { return a + b; }"
-          ],
-          "explanation": "Add template requires + operator.",
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-1-14",
-          "type": "code",
-          "question": "Create function template to compare values.",
-          "correctAnswer": [
-            "template<typename T> bool equals(T a, T b) { return a == b; }"
-          ],
-          "explanation": "Comparison template requires == operator.",
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-1-15",
-          "type": "code",
-          "question": "Create function template with non-type parameter.",
-          "correctAnswer": [
-            "template<typename T, int N> void func(T arr[N]) {}"
-          ],
-          "explanation": "Non-type parameter: template<typename T, int N>",
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-1-16",
-          "type": "code",
-          "question": "Use class template in function template.",
-          "correctAnswer": [
-            "template<typename T> void func(vector<T>& v) {}"
-          ],
-          "explanation": "Function template accepting class template parameter.",
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-1-17",
-          "type": "code",
-          "question": "Create function template returning pointer.",
-          "correctAnswer": [
-            "template<typename T> T* create() { return new T(); }"
-          ],
-          "explanation": "Function template returning pointer to T.",
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-1-18",
-          "type": "code",
-          "question": "Create function template with auto return (C++14).",
-          "correctAnswer": [
-            "template<typename T> auto func(T t) -> decltype(t) { return t; }"
-          ],
-          "explanation": "auto return type deduction.",
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-1-19",
-          "type": "code",
-          "question": "Use constexpr with function template.",
-          "correctAnswer": [
-            "template<typename T> constexpr T square(T x) { return x * x; }"
-          ],
-          "explanation": "constexpr template evaluated at compile time if possible.",
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-1-20",
-          "type": "code",
-          "question": "Create function template for sorting.",
-          "correctAnswer": [
-            "template<typename T> void sort(T arr[], int size) { for (int i = 0; i < size-1; i++) for (int j = i+1; j < size; j++) if (arr[i] > arr[j]) { T temp = arr[i]; arr[i] = arr[j]; arr[j] = temp; } }"
-          ],
-          "explanation": "Sort template requires comparison operator.",
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-1-21",
-          "type": "code",
-          "question": "Use function template with lambda.",
-          "correctAnswer": [
-            "template<typename F> void apply(F f, T t) { f(t); }"
-          ],
-          "explanation": "Function template accepting function object.",
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-1-22",
-          "type": "code",
-          "question": "Create function template with constraints (C++20).",
-          "correctAnswer": [
-            "template<typename T> requires integral<T> T func(T t) { return t; }"
-          ],
-          "explanation": "Concepts constrain template parameters.",
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-1-23",
-          "type": "code",
-          "question": "Use typename vs class in template.",
-          "correctAnswer": [
-            "template<typename T>",
-            "template<class T>"
-          ],
-          "explanation": "typename and class are equivalent in function templates.",
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-1-24",
-          "type": "code",
-          "question": "Create function template with variadic parameters (C++11).",
-          "correctAnswer": [
-            "template<typename... Args> void print(Args... args) { (cout << ... << args) << endl; }"
-          ],
-          "explanation": "Variadic templates accept any number of arguments.",
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-1-25",
-          "type": "code",
-          "question": "Use std::forward in function template.",
-          "correctAnswer": [
-            "template<typename T> void func(T&& t) { std::forward<T>(t); }"
-          ],
-          "explanation": "Forward preserves value category in templates.",
-          "xp": 15
-        }
-      ],
-      "lessonText": "# Function Templates\n\nFunction templates create generic functions that work with multiple types.\n\n## Basic Syntax\n\n```cpp\ntemplate<typename T>\nT maximum(T a, T b) {\n    return (a > b) ? a : b;\n}\n```\n\n## Usage\n\n```cpp\n// Type deduction\nmax(10, 20);        // int\nmax(3.14, 2.71);    // double\n\n// Explicit instantiation\nmax<int>(10, 20);\nmax<double>(3.14, 2.71);\n```\n\n## Multiple Type Parameters\n\n```cpp\ntemplate<typename T, typename U>\nvoid print(T t, U u) {\n    std::cout << t << \" \" << u;\n}\n\nprint(10, 3.14);  // int, double\nprint(\"hi\", 42);   // string, int\n```\n\n## Default Type Parameters\n\n```cpp\ntemplate<typename T = int>\nvoid print(T value) {\n    std::cout << value;\n}\n\nprint(42);        // int (default)\nprint(3.14);     // double\n```\n\n## Non-Type Parameters\n\n```cpp\ntemplate<typename T, int N>\nvoid printArray(T (&arr)[N]) {\n    for (int i = 0; i < N; i++) {\n        std::cout << arr[i] << \" \";\n    }\n}\n\nint arr[5] = {1, 2, 3, 4, 5};\nprintArray(arr);  // N is deduced as 5\n```\n\n## constexpr Function Templates\n\n```cpp\ntemplate<typename T>\nconstexpr T square(T x) {\n    return x * x;\n}\n\nconstexpr int result = square(5);  // Computed at compile time\n```\n\n## Perfect Forwarding\n\n```cpp\ntemplate<typename T>\nvoid wrapper(T&& arg) {\n    func(std::forward<T>(arg));\n}\n```\n"
-    },
-    {
-      "id": 42,
-      "title": "Class Templates",
-      "unitTitle": "8. Templates and Metaprogramming",
-      "xp": 85,
-      "type": "lesson",
-      "difficulty": "intermediate",
-      "questions": [
-        {
-          "id": "cpp-8-2-1",
-          "type": "typing",
-          "question": "What is a class template?",
-          "correctAnswer": [
-            "class that works with multiple types",
-            "generic class"
-          ],
-          "explanation": "Class templates create classes that work with multiple data types.",
-          "xp": 5
-        },
-        {
-          "id": "cpp-8-2-2",
-          "type": "typing",
-          "question": "Where is template declaration placed?",
-          "correctAnswer": [
-            "before class definition",
-            "before class"
-          ],
-          "explanation": "Template declaration goes before class definition.",
-          "xp": 5
-        },
-        {
-          "id": "cpp-8-2-3",
-          "type": "typing",
-          "question": "How to instantiate class template?",
-          "correctAnswer": [
-            "ClassName<Type> object",
-            "Stack<int> s"
-          ],
-          "explanation": "Specify type in angle brackets.",
-          "xp": 5
-        },
-        {
-          "id": "cpp-8-2-4",
-          "type": "multiple",
-          "question": "Can class template have multiple type parameters?",
-          "options": [
             "Yes",
-            "No",
-            "Only one",
-            "Only two"
+            "Only with multiset",
+            "Depends"
           ],
           "correctAnswer": [
             0
           ],
-          "explanation": "Class templates can have multiple type parameters.",
+          "explanation": "Set cannot contain duplicates.",
           "xp": 5
         },
         {
-          "id": "cpp-8-2-5",
+          "id": "cpp-9-4-5",
           "type": "multiple",
-          "question": "Where are member functions defined?",
+          "question": "What does map[key] do if key not found?",
           "options": [
-            "Inside or outside class",
-            "Only inside",
-            "Only outside",
-            "In separate file"
+            "Creates default value",
+            "Throws exception",
+            "Returns null",
+            "Returns -1"
           ],
           "correctAnswer": [
             0
           ],
-          "explanation": "Member functions can be defined inside or outside the class.",
+          "explanation": "map[key] creates element with default value if not found.",
           "xp": 5
         },
         {
-          "id": "cpp-8-2-6",
+          "id": "cpp-9-4-6",
           "type": "code",
-          "question": "Create class template for pair.",
+          "question": "Create map of string to int.",
           "correctAnswer": [
-            "template<typename T1, typename T2> class Pair { T1 first; T2 second; };"
+            "std::map<std::string, int> m;",
+            "map<string, int> m;"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-2-7",
+          "id": "cpp-9-4-7",
           "type": "code",
-          "question": "Create class template for array wrapper.",
+          "question": "Insert into map.",
           "correctAnswer": [
-            "template<typename T, size_t N> class Array { T data[N]; };"
+            "m[\"key\"] = value;",
+            "m.insert({\"key\", value});"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-2-8",
+          "id": "cpp-9-4-8",
           "type": "code",
-          "question": "Define member function outside class template.",
+          "question": "Create set of integers.",
           "correctAnswer": [
-            "template<typename T> void Stack<T>::push(const T& value) {}"
+            "std::set<int> s;",
+            "set<int> s;"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-2-9",
-          "question": "Create class template with default type.",
-          "correctAnswer": [
-            "template<typename T = int> class Box { T data; };"
-          ],
+          "id": "cpp-9-4-9",
           "type": "code",
+          "question": "Insert into set.",
+          "correctAnswer": [
+            "s.insert(5);",
+            "s.insert(value);"
+          ],
           "xp": 15
         },
         {
-          "id": "cpp-8-2-10",
-          "question": "Instantiate class template with int.",
-          "correctAnswer": [
-            "Box<int> b;",
-            "Stack<int> s;"
-          ],
+          "id": "cpp-9-4-10",
           "type": "code",
+          "question": "Find in map.",
+          "correctAnswer": [
+            "auto it = m.find(key);",
+            "if (m.find(key) != m.end())"
+          ],
           "xp": 15
         },
         {
-          "id": "cpp-8-2-11",
-          "question": "Use template member variable.",
-          "correctAnswer": [
-            "template<typename T> class MyClass { T value; };"
-          ],
+          "id": "cpp-9-4-11",
           "type": "code",
+          "question": "Find in set.",
+          "correctAnswer": [
+            "auto it = s.find(value);"
+          ],
           "xp": 15
         },
         {
-          "id": "cpp-8-2-12",
-          "question": "Create class template with vector member.",
-          "correctAnswer": [
-            "template<typename T> class Container { vector<T> items; };"
-          ],
+          "id": "cpp-9-4-12",
           "type": "code",
+          "question": "Erase from map.",
+          "correctAnswer": [
+            "m.erase(key);",
+            "m.erase(it);"
+          ],
           "xp": 15
         },
         {
-          "id": "cpp-8-2-13",
-          "question": "Define constructor for class template.",
-          "correctAnswer": [
-            "template<typename T> MyClass<T>::MyClass() {}"
-          ],
+          "id": "cpp-9-4-13",
           "type": "code",
+          "question": "Erase from set.",
+          "correctAnswer": [
+            "s.erase(value);"
+          ],
           "xp": 15
         },
         {
-          "id": "cpp-8-2-14",
-          "question": "Use template friend function.",
-          "correctAnswer": [
-            "template<typename T> friend void func(MyClass<T>& obj);"
-          ],
+          "id": "cpp-9-4-14",
           "type": "code",
+          "question": "Iterate over map.",
+          "correctAnswer": [
+            "for (auto& p : m) { cout << p.first << \"=\" << p.second; }"
+          ],
           "xp": 15
         },
         {
-          "id": "cpp-8-2-15",
-          "question": "Create class template with iterator.",
-          "correctAnswer": [
-            "template<typename T> class Vector { T* begin(); T* end(); };"
-          ],
+          "id": "cpp-9-4-15",
           "type": "code",
+          "question": "Iterate over set.",
+          "correctAnswer": [
+            "for (int x : s)",
+            "for (auto& x : s)"
+          ],
           "xp": 15
         },
         {
-          "id": "cpp-8-2-16",
-          "question": "Use static member in class template.",
-          "correctAnswer": [
-            "template<typename T> class MyClass { static T value; };"
-          ],
+          "id": "cpp-9-4-16",
           "type": "code",
+          "question": "Use count() on map.",
+          "correctAnswer": [
+            "m.count(key)",
+            "if (m.count(key) > 0)"
+          ],
           "xp": 15
         },
         {
-          "id": "cpp-8-2-17",
-          "question": "Create class template with const method.",
-          "correctAnswer": [
-            "template<typename T> class MyClass { T get() const; };"
-          ],
+          "id": "cpp-9-4-17",
           "type": "code",
+          "question": "Check if map empty.",
+          "correctAnswer": [
+            "m.empty();",
+            "if (m.empty())"
+          ],
           "xp": 15
         },
         {
-          "id": "cpp-8-2-18",
-          "question": "Use nested class template.",
-          "correctAnswer": [
-            "template<typename T> class Outer { template<typename U> class Inner {}; };"
-          ],
+          "id": "cpp-9-4-18",
           "type": "code",
+          "question": "Get map size.",
+          "correctAnswer": [
+            "m.size();"
+          ],
           "xp": 15
         },
         {
-          "id": "cpp-8-2-19",
-          "question": "Create class template with non-type parameter.",
-          "correctAnswer": [
-            "template<typename T, int Size> class Buffer { T data[Size]; };"
-          ],
+          "id": "cpp-9-4-19",
           "type": "code",
+          "question": "Create unordered_map.",
+          "correctAnswer": [
+            "std::unordered_map<std::string, int> m;"
+          ],
           "xp": 15
         },
         {
-          "id": "cpp-8-2-20",
-          "question": "Use template alias for class template.",
-          "correctAnswer": [
-            "template<typename T> using Vec = vector<T>;"
-          ],
+          "id": "cpp-9-4-20",
           "type": "code",
+          "question": "Create unordered_set.",
+          "correctAnswer": [
+            "std::unordered_set<int> s;"
+          ],
           "xp": 15
         },
         {
-          "id": "cpp-8-2-21",
-          "question": "Create class template with move semantics.",
-          "correctAnswer": [
-            "template<typename T> class MyClass { MyClass(MyClass&&) noexcept; };"
-          ],
+          "id": "cpp-9-4-21",
           "type": "code",
+          "question": "Use lower_bound on map.",
+          "correctAnswer": [
+            "auto it = m.lower_bound(key);"
+          ],
           "xp": 15
         },
         {
-          "id": "cpp-8-2-22",
-          "question": "Use explicit instantiation declaration.",
-          "correctAnswer": [
-            "extern template class MyClass<int>;"
-          ],
+          "id": "cpp-9-4-22",
           "type": "code",
+          "question": "Use upper_bound on map.",
+          "correctAnswer": [
+            "auto it = m.upper_bound(key);"
+          ],
           "xp": 15
         },
         {
-          "id": "cpp-8-2-23",
-          "question": "Create class template with constructor template.",
-          "correctAnswer": [
-            "template<typename T> class MyClass { template<typename U> MyClass(U); };"
-          ],
+          "id": "cpp-9-4-23",
           "type": "code",
+          "question": "Create multiset.",
+          "correctAnswer": [
+            "std::multiset<int> ms;"
+          ],
           "xp": 15
         },
         {
-          "id": "cpp-8-2-24",
-          "question": "Use decltype in class template.",
-          "correctAnswer": [
-            "template<typename T> class MyClass { decltype(T()) value; };"
-          ],
+          "id": "cpp-9-4-24",
           "type": "code",
+          "question": "Use emplace on map.",
+          "correctAnswer": [
+            "m.emplace(key, value);"
+          ],
           "xp": 15
         },
         {
-          "id": "cpp-8-2-25",
-          "question": "Create class template with destructor.",
-          "correctAnswer": [
-            "template<typename T> class MyClass { ~MyClass(); };"
-          ],
+          "id": "cpp-9-4-25",
           "type": "code",
+          "question": "Access map element safely.",
+          "correctAnswer": [
+            "auto it = m.find(key); if (it != m.end()) { value = it->second; }"
+          ],
           "xp": 15
         }
       ],
-      "lessonText": "# Class Templates\n\nClass templates create generic classes that work with multiple types.\n\n```cpp\ntemplate<typename T>\nclass Stack {\nprivate:\n    std::vector<T> data;\npublic:\n    void push(const T& value) { data.push_back(value); }\n    T pop() { T val = data.back(); data.pop_back(); return val; }\n};\n\nStack<int> intStack;\nStack<std::string> stringStack;\n```\n\n**Key points:**\n- Template syntax: `template<typename T>` before class\n- Type deduction from usage\n- Can have multiple type parameters\n- Member functions can be defined inside or outside class"
+      "lessonText": "# Associative Containers\n\n**map** - Key-value pairs sorted by key\n```cpp\nstd::map<std::string, int> ages;\nages[\"Alice\"] = 25;\nages[\"Bob\"] = 30;\n\n// Access\nint aliceAge = ages[\"Alice\"];\n```\n\n**set** - Unique sorted elements\n```cpp\nstd::set<int> s = {5, 2, 8, 2, 5};  // {2, 5, 8}\ns.insert(10);\n\n// Find\nif (s.find(5) != s.end()) {\n    // Found\n}\n```\n\n**unordered_map/set** - Hash-based, O(1) average"
     },
     {
-      "id": 43,
-      "title": "Template Specialization",
-      "unitTitle": "8. Templates and Metaprogramming",
+      "id": 50,
+      "title": "Container Adaptors (stack, queue)",
+      "unitTitle": "9. Standard Template Library (STL)",
       "xp": 85,
       "type": "lesson",
       "difficulty": "intermediate",
       "questions": [
         {
-          "id": "cpp-8-3-1",
+          "id": "cpp-9-5-1",
           "type": "typing",
-          "question": "What is template specialization?",
+          "question": "What is stack?",
           "correctAnswer": [
-            "custom implementation for specific type",
-            "override for specific type"
+            "LIFO",
+            "last in first out"
           ],
-          "explanation": "Specialization provides custom implementation for specific types.",
+          "explanation": "Stack is Last In First Out structure.",
           "xp": 5
         },
         {
-          "id": "cpp-8-3-2",
+          "id": "cpp-9-5-2",
           "type": "typing",
-          "question": "What is full specialization?",
+          "question": "What is queue?",
           "correctAnswer": [
-            "all template parameters specified",
-            "complete specialization"
+            "FIFO",
+            "first in first out"
           ],
-          "explanation": "Full specialization specifies all template parameters.",
+          "explanation": "Queue is First In First Out structure.",
           "xp": 5
         },
         {
-          "id": "cpp-8-3-3",
+          "id": "cpp-9-5-3",
           "type": "typing",
-          "question": "What is partial specialization?",
+          "question": "What does stack.top() return?",
           "correctAnswer": [
-            "some template parameters specified",
-            "partial override"
+            "top element",
+            "element on top"
           ],
-          "explanation": "Partial specialization specifies only some parameters.",
+          "explanation": "top() returns top element without removing.",
           "xp": 5
         },
         {
-          "id": "cpp-8-3-4",
+          "id": "cpp-9-5-4",
           "type": "multiple",
-          "question": "Can function templates be partially specialized?",
+          "question": "What does queue.pop() do?",
           "options": [
-            "No",
-            "Yes",
-            "Only with C++20",
-            "Only with C++17"
+            "Removes front element",
+            "Returns front",
+            "Removes back",
+            "Returns back"
           ],
           "correctAnswer": [
             0
           ],
-          "explanation": "Only class templates support partial specialization.",
+          "explanation": "queue.pop() removes front element.",
           "xp": 5
         },
         {
-          "id": "cpp-8-3-5",
+          "id": "cpp-9-5-5",
           "type": "multiple",
-          "question": "Which can be fully specialized?",
+          "question": "What does priority_queue return on pop?",
           "options": [
-            "Function and class templates",
-            "Only class templates",
-            "Only function templates",
-            "Neither"
+            "Highest priority element",
+            "First element",
+            "Random",
+            "Lowest"
           ],
           "correctAnswer": [
             0
           ],
-          "explanation": "Both function and class templates support full specialization.",
+          "explanation": "priority_queue returns highest priority.",
           "xp": 5
         },
         {
-          "id": "cpp-8-3-6",
+          "id": "cpp-9-5-6",
           "type": "code",
-          "question": "Create full specialization for const char*.",
+          "question": "Create stack of integers.",
           "correctAnswer": [
-            "template<> void func<const char*>(const char* str);"
+            "std::stack<int> s;",
+            "stack<int> s;"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-3-7",
+          "id": "cpp-9-5-7",
           "type": "code",
-          "question": "Create full specialization for bool.",
+          "question": "Push to stack.",
           "correctAnswer": [
-            "template<> void func<bool>(bool value);"
+            "s.push(5);"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-3-8",
+          "id": "cpp-9-5-8",
           "type": "code",
-          "question": "Create partial specialization for pointer types.",
+          "question": "Get top of stack.",
           "correctAnswer": [
-            "template<typename T> class MyClass<T*> {};"
+            "s.top();",
+            "int top = s.top();"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-3-9",
+          "id": "cpp-9-5-9",
           "type": "code",
-          "question": "Create partial specialization for reference types.",
+          "question": "Pop from stack.",
           "correctAnswer": [
-            "template<typename T> class MyClass<T&> {};"
+            "s.pop();"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-3-10",
+          "id": "cpp-9-5-10",
           "type": "code",
-          "question": "Specialize function template for string.",
+          "question": "Create queue of strings.",
           "correctAnswer": [
-            "template<> void func<std::string>(const std::string& s);"
+            "std::queue<std::string> q;",
+            "queue<string> q;"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-3-11",
+          "id": "cpp-9-5-11",
           "type": "code",
-          "question": "Create partial specialization for const types.",
+          "question": "Push to queue.",
           "correctAnswer": [
-            "template<typename T> class MyClass<const T> {};"
+            "q.push(5);"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-3-12",
+          "id": "cpp-9-5-12",
           "type": "code",
-          "question": "Specialize class template for array.",
+          "question": "Get front of queue.",
           "correctAnswer": [
-            "template<typename T, int N> class MyClass<T[N]> {};"
+            "q.front();",
+            "int front = q.front();"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-3-13",
+          "id": "cpp-9-5-13",
           "type": "code",
-          "question": "Create specialization for vector.",
+          "question": "Get back of queue.",
           "correctAnswer": [
-            "template<typename T> class MyClass<std::vector<T>> {};"
+            "q.back();",
+            "int back = q.back();"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-3-14",
+          "id": "cpp-9-5-14",
           "type": "code",
-          "question": "Use enable_if for SFINAE.",
+          "question": "Pop from queue.",
           "correctAnswer": [
-            "template<typename T, typename = typename std::enable_if<std::is_integral<T>::value>::type> void func(T t);"
+            "q.pop();"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-3-15",
+          "id": "cpp-9-5-15",
           "type": "code",
-          "question": "Create specialization for pointers.",
+          "question": "Create priority_queue.",
           "correctAnswer": [
-            "template<typename T> void func(T* ptr);"
+            "std::priority_queue<int> pq;",
+            "priority_queue<int> pq;"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-3-16",
+          "id": "cpp-9-5-16",
           "type": "code",
-          "question": "Use std::true_type/std::false_type in specialization.",
+          "question": "Push to priority_queue.",
           "correctAnswer": [
-            "template<typename T> void func(T t, std::true_type);"
+            "pq.push(5);"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-3-17",
+          "id": "cpp-9-5-17",
           "type": "code",
-          "question": "Create specialization for shared_ptr.",
+          "question": "Get top of priority_queue.",
           "correctAnswer": [
-            "template<typename T> class MyClass<std::shared_ptr<T>> {};"
+            "pq.top();"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-3-18",
+          "id": "cpp-9-5-18",
           "type": "code",
-          "question": "Use constexpr if for specialization (C++17).",
+          "question": "Pop from priority_queue.",
           "correctAnswer": [
-            "template<typename T> void func(T t) { if constexpr (std::is_integral_v<T>) {} else {} }"
+            "pq.pop();"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-3-19",
+          "id": "cpp-9-5-19",
           "type": "code",
-          "question": "Create explicit specialization for int.",
+          "question": "Create min priority_queue.",
           "correctAnswer": [
-            "template<> void func<int>(int value);"
+            "std::priority_queue<int, vector<int>, greater<int>> pq;"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-3-20",
+          "id": "cpp-9-5-20",
           "type": "code",
-          "question": "Use partial specialization with two parameters.",
+          "question": "Check if stack empty.",
           "correctAnswer": [
-            "template<typename T, typename U> class MyClass<T, U*> {};"
+            "s.empty();",
+            "if (s.empty())"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-3-21",
+          "id": "cpp-9-5-21",
           "type": "code",
-          "question": "Specialize for rvalue reference.",
+          "question": "Get stack size.",
           "correctAnswer": [
-            "template<typename T> class MyClass<T&&> {};"
+            "s.size();"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-3-22",
+          "id": "cpp-9-5-22",
           "type": "code",
-          "question": "Create specialization for tuple.",
+          "question": "Swap two stacks.",
           "correctAnswer": [
-            "template<typename... Args> class MyClass<std::tuple<Args...>> {};"
+            "s1.swap(s2);",
+            "swap(s1, s2);"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-3-23",
+          "id": "cpp-9-5-23",
           "type": "code",
-          "question": "Use concepts for specialization (C++20).",
+          "question": "Create priority_queue with custom comparator.",
           "correctAnswer": [
-            "template<typename T> requires integral<T> void func(T t);"
+            "std::priority_queue<Type, vector<Type>, Compare> pq;"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-3-24",
+          "id": "cpp-9-5-24",
           "type": "code",
-          "question": "Create partial specialization with default parameter.",
+          "question": "Emplace in stack.",
           "correctAnswer": [
-            "template<typename T, typename U = int> class MyClass<T, U*> {};"
+            "s.emplace(args...);"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-3-25",
+          "id": "cpp-9-5-25",
           "type": "code",
-          "question": "Override member in specialized class.",
+          "question": "Use queue with pair.",
           "correctAnswer": [
-            "template<> void MyClass<int>::func() {}"
+            "std::queue<pair<int, int>> q;"
           ],
           "xp": 15
         }
       ],
-      "lessonText": "# Template Specialization\n\nTemplate specialization provides custom implementation for specific types.\n\n```cpp\ntemplate<typename T>\nclass Printer {\npublic:\n    void print(const T& value) {\n        std::cout << value;\n    }\n};\n\n// Full specialization for bool\ntemplate<>\nclass Printer<bool> {\npublic:\n    void print(bool value) {\n        std::cout << (value ? \"true\" : \"false\");\n    }\n};\n```\n\n**Types:**\n- Full specialization: All parameters specified\n- Partial specialization: Some parameters specified (class templates only)"
+      "lessonText": "# Container Adaptors\n\n**stack** - LIFO (Last In, First Out)\n```cpp\nstd::stack<int> s;\ns.push(10);     // Push\nint top = s.top();  // Peek\ns.pop();           // Pop\n```\n\n**queue** - FIFO (First In, First Out)\n```cpp\nstd::queue<int> q;\nq.push(10);      // Enqueue\nint front = q.front();  // Front\nq.pop();               // Dequeue\n```\n\n**priority_queue** - Highest priority first\n```cpp\nstd::priority_queue<int> pq;\npq.push(10);  // O(log n)\npq.pop();     // O(log n)\n```"
     },
     {
-      "id": 44,
-      "title": "Variadic Templates",
-      "unitTitle": "8. Templates and Metaprogramming",
+      "id": 51,
+      "title": "STL Algorithms",
+      "unitTitle": "9. Standard Template Library (STL)",
       "xp": 85,
       "type": "lesson",
       "difficulty": "intermediate",
       "questions": [
         {
-          "id": "cpp-8-4-1",
+          "id": "cpp-9-6-1",
           "type": "typing",
-          "question": "What are variadic templates?",
+          "question": "What does std::sort do?",
           "correctAnswer": [
-            "templates with variable number of arguments",
-            "accept any number of arguments"
+            "sorts range",
+            "orders elements"
           ],
-          "explanation": "Variadic templates accept variable number of template arguments.",
+          "explanation": "sort() sorts elements in ascending order.",
           "xp": 5
         },
         {
-          "id": "cpp-8-4-2",
+          "id": "cpp-9-6-2",
           "type": "typing",
-          "question": "What is parameter pack?",
+          "question": "What does std::find do?",
           "correctAnswer": [
-            "collection of template parameters",
-            "Args...",
-            "args..."
+            "finds element in range",
+            "searches for value"
           ],
-          "explanation": "Parameter pack collects zero or more template parameters.",
+          "explanation": "find() searches for element in range.",
           "xp": 5
         },
         {
-          "id": "cpp-8-4-3",
+          "id": "cpp-9-6-3",
           "type": "typing",
-          "question": "What is fold expression?",
+          "question": "What does std::fill do?",
           "correctAnswer": [
-            "operator over parameter pack",
-            "expand and combine"
+            "fills range with value",
+            "sets all elements"
           ],
-          "explanation": "Fold expressions apply binary operator over parameter pack.",
+          "explanation": "fill() sets all elements to given value.",
           "xp": 5
         },
         {
-          "id": "cpp-8-4-4",
+          "id": "cpp-9-6-4",
           "type": "multiple",
-          "question": "When were fold expressions introduced?",
+          "question": "What is complexity of sort?",
           "options": [
-            "C++17",
-            "C++11",
-            "C++14",
-            "C++20"
+            "O(n log n)",
+            "O(n)",
+            "O(n^2)",
+            "O(1)"
           ],
           "correctAnswer": [
             0
           ],
-          "explanation": "Fold expressions introduced in C++17.",
+          "explanation": "sort() has O(n log n) complexity.",
           "xp": 5
         },
         {
-          "id": "cpp-8-4-5",
+          "id": "cpp-9-6-5",
           "type": "multiple",
-          "question": "What is ... (ellipsis) used for in variadic templates?",
+          "question": "What does std::transform do?",
           "options": [
-            "Expand parameter pack",
-            "End of list",
-            "Pointer",
-            "Range"
+            "Applies function to each element",
+            "Sorts elements",
+            "Finds element",
+            "Counts elements"
           ],
           "correctAnswer": [
             0
           ],
-          "explanation": "Ellipsis expands parameter pack.",
+          "explanation": "transform() applies function to each element.",
           "xp": 5
         },
         {
-          "id": "cpp-8-4-6",
+          "id": "cpp-9-6-6",
           "type": "code",
-          "question": "Create variadic template function.",
+          "question": "Sort vector in ascending order.",
           "correctAnswer": [
-            "template<typename... Args> void func(Args... args) {}"
+            "std::sort(v.begin(), v.end());"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-4-7",
+          "id": "cpp-9-6-7",
           "type": "code",
-          "question": "Create fold expression for sum.",
+          "question": "Sort vector in descending order.",
           "correctAnswer": [
-            "template<typename... Args> auto sum(Args... args) { return (args + ... + 0); }"
+            "std::sort(v.begin(), v.end(), std::greater<int>());"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-4-8",
+          "id": "cpp-9-6-8",
           "type": "code",
-          "question": "Create fold expression for product.",
+          "question": "Find element in vector.",
           "correctAnswer": [
-            "template<typename... Args> auto product(Args... args) { return (args * ... * 1); }"
+            "auto it = std::find(v.begin(), v.end(), value);"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-4-9",
+          "id": "cpp-9-6-9",
           "type": "code",
-          "question": "Print all variadic arguments.",
+          "question": "Binary search in sorted vector.",
           "correctAnswer": [
-            "template<typename... Args> void print(Args... args) { (cout << ... << args) << endl; }"
+            "std::binary_search(v.begin(), v.end(), value);"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-4-10",
+          "id": "cpp-9-6-10",
           "type": "code",
-          "question": "Count variadic arguments.",
+          "question": "Count occurrences of value.",
           "correctAnswer": [
-            "template<typename... Args> constexpr size_t count = sizeof...(Args);"
+            "std::count(v.begin(), v.end(), value);"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-4-11",
+          "id": "cpp-9-6-11",
           "type": "code",
-          "question": "Create variadic template class.",
+          "question": "Fill vector with value.",
           "correctAnswer": [
-            "template<typename... Ts> class Tuple {};"
+            "std::fill(v.begin(), v.end(), value);"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-4-12",
+          "id": "cpp-9-6-12",
           "type": "code",
-          "question": "Use std::forward with variadic templates.",
+          "question": "Copy vector to another.",
           "correctAnswer": [
-            "template<typename... Args> void func(Args&&... args) { std::forward<Args>(args)...; }"
+            "std::copy(src.begin(), src.end(), dest.begin());"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-4-13",
+          "id": "cpp-9-6-13",
           "type": "code",
-          "question": "Pass variadic args to another function.",
+          "question": "Transform vector with lambda.",
           "correctAnswer": [
-            "template<typename... Args> void wrapper(Args... args) { func(args...); }"
+            "std::transform(v.begin(), v.end(), result.begin(), [](int x) { return x * 2; });"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-4-14",
+          "id": "cpp-9-6-14",
           "type": "code",
-          "question": "Create fold expression with comma operator.",
+          "question": "Remove elements by value.",
           "correctAnswer": [
-            "template<typename... Args> void print(Args... args) { (process(args), ...); }"
+            "v.erase(std::remove(v.begin(), v.end(), value), v.end());"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-4-15",
+          "id": "cpp-9-6-15",
           "type": "code",
-          "question": "Use variadic constructor.",
+          "question": "Generate sequence with iota.",
           "correctAnswer": [
-            "template<typename... Args> MyClass(Args... args) {}"
+            "std::iota(v.begin(), v.end(), 0);"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-4-16",
+          "id": "cpp-9-6-16",
           "type": "code",
-          "question": "Create fold expression for AND.",
+          "question": "Shuffle vector.",
           "correctAnswer": [
-            "template<typename... Args> bool all(Args... args) { return (args && ...); }"
+            "std::random_shuffle(v.begin(), v.end());",
+            "std::shuffle(v.begin(), v.end(), rng);"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-4-17",
+          "id": "cpp-9-6-17",
           "type": "code",
-          "question": "Create fold expression for OR.",
+          "question": "Reverse vector.",
           "correctAnswer": [
-            "template<typename... Args> bool any(Args... args) { return (args || ...); }"
+            "std::reverse(v.begin(), v.end());"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-4-18",
+          "id": "cpp-9-6-18",
           "type": "code",
-          "question": "Use index_sequence with variadic templates.",
+          "question": "Accumulate values.",
           "correctAnswer": [
-            "template<typename... Ts, size_t... Is> void func(std::index_sequence<Is...>);"
+            "std::accumulate(v.begin(), v.end(), 0);"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-4-19",
+          "id": "cpp-9-6-19",
           "type": "code",
-          "question": "Create variadic lambda capture (C++20).",
+          "question": "Find min element.",
           "correctAnswer": [
-            "auto lambda = [...args = std::move(args)]() {};"
+            "auto it = std::min_element(v.begin(), v.end());"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-4-20",
+          "id": "cpp-9-6-20",
           "type": "code",
-          "question": "Pass variadic args to printf.",
+          "question": "Find max element.",
           "correctAnswer": [
-            "template<typename... Args> void print(const char* fmt, Args... args) { printf(fmt, args...); }"
+            "auto it = std::max_element(v.begin(), v.end());"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-4-21",
+          "id": "cpp-9-6-21",
           "type": "code",
-          "question": "Create make_tuple with variadic templates.",
+          "question": "Sort with custom comparator.",
           "correctAnswer": [
-            "template<typename... Args> auto make(Args... args) { return std::make_tuple(args...); }"
+            "std::sort(v.begin(), v.end(), [](int a, int b) { return a > b; });"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-4-22",
+          "id": "cpp-9-6-22",
           "type": "code",
-          "question": "Use requires with variadic templates (C++20).",
+          "question": "Partition vector.",
           "correctAnswer": [
-            "template<typename... Args> requires (integral<Args> && ...) void func(Args... args);"
+            "auto it = std::partition(v.begin(), v.end(), [](int x) { return x > 0; });"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-4-23",
+          "id": "cpp-9-6-23",
           "type": "code",
-          "question": "Expand variadic template in array.",
+          "question": "Rotate vector.",
           "correctAnswer": [
-            "template<typename... Ts> auto toArray(Ts... args) { return std::array<int, sizeof...(Ts)>{args...}; }"
+            "std::rotate(v.begin(), v.begin() + k, v.end());"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-4-24",
+          "id": "cpp-9-6-24",
           "type": "code",
-          "question": "Create variadic template friend.",
+          "question": "Use for_each algorithm.",
           "correctAnswer": [
-            "template<typename... Args> friend void func(MyClass<Args...>&);"
+            "std::for_each(v.begin(), v.end(), [](int x) { cout << x; });"
           ],
           "xp": 15
         },
         {
-          "id": "cpp-8-4-25",
+          "id": "cpp-9-6-25",
           "type": "code",
-          "question": "Use declval with variadic templates.",
+          "question": "Unique elements in sorted vector.",
           "correctAnswer": [
-            "template<typename... Ts> void func() { (std::declval<Ts>(), ...); }"
+            "v.erase(std::unique(v.begin(), v.end()), v.end());"
           ],
           "xp": 15
         }
       ],
-      "lessonText": "# Variadic Templates\n\nVariadic templates accept any number of arguments.\n\n```cpp\ntemplate<typename... Args>\nvoid print(Args... args) {\n    (std::cout << ... << args) << '\\n';\n}\n\nprint(1, 2.0, \"hello\", 'a');\n```\n\n**Fold expressions (C++17):**\n```cpp\ntemplate<typename... Args>\nauto sum(Args... args) {\n    return (args + ... + 0);\n}\n```\n\n**Parameter pack:**\n- `Args...` - type parameter pack\n- `args...` - function parameter pack"
-    },
-    {
-      "id": 45,
-      "title": "Compile-Time Programming",
-      "unitTitle": "8. Templates and Metaprogramming",
-      "xp": 85,
-      "type": "lesson",
-      "difficulty": "intermediate",
-      "questions": [
-        {
-          "id": "cpp-8-5-1",
-          "type": "typing",
-          "question": "What is compile-time programming?",
-          "correctAnswer": [
-            "code executed during compilation",
-            "computed at compile time"
-          ],
-          "explanation": "Compile-time programming runs during compilation, not runtime.",
-          "xp": 5
-        },
-        {
-          "id": "cpp-8-5-2",
-          "type": "typing",
-          "question": "What does constexpr do?",
-          "correctAnswer": [
-            "evaluates at compile time if possible",
-            "compile-time evaluation"
-          ],
-          "explanation": "constexpr functions can be evaluated at compile time.",
-          "xp": 5
-        },
-        {
-          "id": "cpp-8-5-3",
-          "type": "typing",
-          "question": "What are type traits?",
-          "correctAnswer": [
-            "compile-time type information",
-            "query type properties"
-          ],
-          "explanation": "Type traits provide compile-time type information.",
-          "xp": 5
-        },
-        {
-          "id": "cpp-8-5-4",
-          "type": "multiple",
-          "question": "What does static_assert do?",
-          "options": [
-            "Compile-time assertion",
-            "Runtime assertion",
-            "Warning",
-            "Optimization"
-          ],
-          "correctAnswer": [
-            0
-          ],
-          "explanation": "static_assert is compile-time assertion that fails if condition is false.",
-          "xp": 5
-        },
-        {
-          "id": "cpp-8-5-5",
-          "type": "multiple",
-          "question": "When is constexpr function evaluated?",
-          "options": [
-            "At compile time if possible",
-            "Always at compile time",
-            "Always at runtime",
-            "Never"
-          ],
-          "correctAnswer": [
-            0
-          ],
-          "explanation": "constexpr evaluated at compile time if all arguments are constant expressions.",
-          "xp": 5
-        },
-        {
-          "id": "cpp-8-6",
-          "type": "code",
-          "question": "Create constexpr factorial function.",
-          "correctAnswer": [
-            "constexpr int factorial(int n) { return (n <= 1) ? 1 : n * factorial(n - 1); }"
-          ],
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-5-7",
-          "type": "code",
-          "question": "Create constexpr fibonacci function.",
-          "correctAnswer": [
-            "constexpr int fib(int n) { return (n <= 1) ? n : fib(n-1) + fib(n-2); }"
-          ],
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-5-8",
-          "type": "code",
-          "question": "Use static_assert for type check.",
-          "correctAnswer": [
-            "static_assert(std::is_integral_v<T>, \"T must be integral\");"
-          ],
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-5-9",
-          "type": "code",
-          "question": "Use if constexpr for conditional code.",
-          "correctAnswer": [
-            "if constexpr (std::is_pointer_v<T>) { }"
-          ],
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-5-10",
-          "type": "code",
-          "question": "Create constexpr power function.",
-          "correctAnswer": [
-            "constexpr int power(int base, int exp) { return (exp == 0) ? 1 : base * power(base, exp - 1); }"
-          ],
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-5-11",
-          "type": "code",
-          "question": "Check if type is integral.",
-          "correctAnswer": [
-            "std::is_integral<T>::value",
-            "std::is_integral_v<T>"
-          ],
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-5-12",
-          "type": "code",
-          "question": "Check if type is pointer.",
-          "correctAnswer": [
-            "std::is_pointer<T>::value",
-            "std::is_pointer_v<T>"
-          ],
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-5-13",
-          "type": "code",
-          "question": "Get type size at compile time.",
-          "correctAnswer": [
-            "sizeof(T)",
-            "constexpr size_t size = sizeof(T);"
-          ],
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-5-14",
-          "type": "code",
-          "question": "Use enable_if with SFINAE.",
-          "correctAnswer": [
-            "template<typename T, typename = typename std::enable_if<std::is_integral<T>::value>::type> void func(T t);"
-          ],
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-5-15",
-          "type": "code",
-          "question": "Create constexpr constructor.",
-          "correctAnswer": [
-            "constexpr MyClass(int x) : value(x) {}"
-          ],
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-5-16",
-          "type": "code",
-          "question": "Use decltype for type deduction.",
-          "correctAnswer": [
-            "decltype(expr)",
-            "auto x = decltype(expr){};"
-          ],
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-5-17",
-          "type": "code",
-          "question": "Get common type of multiple types.",
-          "correctAnswer": [
-            "std::common_type<T, U>::type",
-            "std::common_type_t<T, U>"
-          ],
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-5-18",
-          "type": "code",
-          "question": "Remove reference from type.",
-          "correctAnswer": [
-            "std::remove_reference<T>::type",
-            "std::remove_reference_t<T>"
-          ],
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-5-19",
-          "type": "code",
-          "question": "Remove const from type.",
-          "correctAnswer": [
-            "std::remove_const<T>::type",
-            "std::remove_const_t<T>"
-          ],
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-5-20",
-          "type": "code",
-          "question": "Add const to type.",
-          "correctAnswer": [
-            "std::add_const<T>::type",
-            "std::add_const_t<T>"
-          ],
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-5-21",
-          "type": "code",
-          "question": "Create constexpr member function.",
-          "correctAnswer": [
-            "constexpr int getValue() const { return value; }"
-          ],
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-5-22",
-          "type": "code",
-          "question": "Use static_assert with message.",
-          "correctAnswer": [
-            "static_assert(sizeof(int) == 4, \"int must be 4 bytes\");"
-          ],
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-5-23",
-          "type": "code",
-          "question": "Create template recursion for compile-time computation.",
-          "correctAnswer": [
-            "template<int N> struct Factorial { static constexpr int value = N * Factorial<N-1>::value; }; template<> struct Factorial<0> { static constexpr int value = 1; };"
-          ],
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-5-24",
-          "type": "code",
-          "question": "Use std::true_type/std::false_type.",
-          "correctAnswer": [
-            "template<typename T> void func(T t, std::true_type) {}"
-          ],
-          "xp": 15
-        },
-        {
-          "id": "cpp-8-5-25",
-          "type": "code",
-          "question": "Create constexpr variable template.",
-          "correctAnswer": [
-            "template<typename T> constexpr T pi = T(3.14159);"
-          ],
-          "xp": 15
-        }
-      ],
-      "lessonText": "# Compile-Time Programming\n\nCompute values and make decisions at compile time.\n\n**constexpr functions:**\n```cpp\nconstexpr int factorial(int n) {\n    return (n <= 1) ? 1 : n * factorial(n - 1);\n}\n\nconstexpr int result = factorial(5);  // Computed at compile time\n```\n\n**Type traits:**\n```cpp\nstatic_assert(std::is_integral_v<int>, \"Must be integral\");\n```\n\n**Compile-time conditionals:**\n```cpp\ntemplate<typename T>\nvoid process(T value) {\n    if constexpr (std::is_pointer_v<T>) {\n        // Pointer handling\n    } else {\n        // Value handling\n    }\n}\n```"
+      "lessonText": "# STL Algorithms\n\nPowerful algorithms that work on ranges.\n\n**Sorting:**\n```cpp\nstd::sort(v.begin(), v.end());           // Ascending\nstd::sort(v.begin(), v.end(), std::greater<int>());  // Descending\n```\n\n**Searching:**\n```cpp\nauto it = std::find(v.begin(), v.end(), value);\nbool found = std::binary_search(v.begin(), v.end(), value);\n```\n\n**Modifying:**\n```cpp\nstd::fill(v.begin(), v.end(), 0);\nstd::transform(v.begin(), v.end(), result.begin(), [](int x) { return x * 2; });\nstd::copy(src.begin(), src.end(), dest.begin());\n```"
     }
   ]
 };
