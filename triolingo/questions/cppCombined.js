@@ -93942,75 +93942,2686 @@ window.cppCombined = {
       "lessons": [
         {
           "id": "cpp-U43-L1",
-          "title": "Memoization",
-          "unitTitle": "43. Core DP",
-          "xp": 15,
+          "title": "Networking Basics",
+          "unitTitle": "43. C++ Networking",
+          "xp": 85,
           "type": "lesson",
-          "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "difficulty": "beginner",
+          "questions": [
+            {
+              "id": "cpp-43-1-1",
+              "type": "typing",
+              "question": "TCP?",
+              "correctAnswer": [
+                "Transmission Control Protocol",
+                "reliable",
+                "connection"
+              ],
+              "explanation": "Reliable protocol.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-1-2",
+              "type": "typing",
+              "question": "UDP?",
+              "correctAnswer": [
+                "User Datagram Protocol",
+                "unreliable",
+                "datagram"
+              ],
+              "explanation": "Unreliable protocol.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-1-3",
+              "type": "typing",
+              "question": "IP address?",
+              "correctAnswer": [
+                "address",
+                "device",
+                "network"
+              ],
+              "explanation": "Device address.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-1-4",
+              "type": "multiple",
+              "question": "Port types?",
+              "options": [
+                "TCP",
+                "UDP",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both protocols.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-1-5",
+              "type": "multiple",
+              "question": "IPv4 vs IPv6?",
+              "options": [
+                "32-bit",
+                "128-bit",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both versions.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-1-6",
+              "type": "code",
+              "question": "IPv4 address.",
+              "correctAnswer": [
+                "192.168.1.1",
+                "address"
+              ],
+              "explanation": "IPv4 format.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-1-7",
+              "type": "code",
+              "question": "IPv6 address.",
+              "correctAnswer": [
+                "::1",
+                "address"
+              ],
+              "explanation": "IPv6 format.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-1-8",
+              "type": "code",
+              "question": "Port number.",
+              "correctAnswer": [
+                "8080",
+                "port"
+              ],
+              "explanation": "Port.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-1-9",
+              "type": "code",
+              "question": "Loopback.",
+              "correctAnswer": [
+                "127.0.0.1",
+                "localhost"
+              ],
+              "explanation": "Loopback address.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-1-10",
+              "type": "code",
+              "question": "Any address.",
+              "correctAnswer": [
+                "0.0.0.0",
+                "any"
+              ],
+              "explanation": "Any address.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-1-11",
+              "type": "code",
+              "question": "Testing networking.",
+              "correctAnswer": [
+                "void testNetworking() { // Test networking }",
+                "test"
+              ],
+              "explanation": "Test networking.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-1-12",
+              "type": "code",
+              "question": "Socket basics.",
+              "correctAnswer": [
+                "// Socket: endpoint for communication",
+                "socket"
+              ],
+              "explanation": "Socket basics.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-1-13",
+              "type": "code",
+              "question": "Connection.",
+              "correctAnswer": [
+                "// TCP connection: handshake",
+                "connection"
+              ],
+              "explanation": "Connection.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-1-14",
+              "type": "code",
+              "question": "Datagram.",
+              "correctAnswer": [
+                "// UDP datagram: packet",
+                "datagram"
+              ],
+              "explanation": "Datagram.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-1-15",
+              "type": "code",
+              "question": "Well-known ports.",
+              "correctAnswer": [
+                "// 80 HTTP, 443 HTTPS, 22 SSH, 21 FTP",
+                "ports"
+              ],
+              "explanation": "Well-known ports.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-1-16",
+              "type": "code",
+              "question": "Endian.",
+              "correctAnswer": [
+                "// Network byte order: big-endian",
+                "endian"
+              ],
+              "explanation": "Byte order.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-1-17",
+              "type": "code",
+              "question": "Network layer.",
+              "correctAnswer": [
+                "// IP: network layer",
+                "layer"
+              ],
+              "explanation": "Network layer.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-1-18",
+              "type": "code",
+              "question": "Transport layer.",
+              "correctAnswer": [
+                "// TCP/UDP: transport layer",
+                "transport"
+              ],
+              "explanation": "Transport layer.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-1-19",
+              "type": "code",
+              "question": "Application layer.",
+              "correctAnswer": [
+                "// HTTP, FTP, SMTP: application",
+                "application"
+              ],
+              "explanation": "Application layer.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-1-20",
+              "type": "code",
+              "question": "Networking wrapper.",
+              "correctAnswer": [
+                "// Networking helpers",
+                "wrapper"
+              ],
+              "explanation": "Networking wrapper.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-1-21",
+              "type": "code",
+              "question": "TCP vs UDP.",
+              "correctAnswer": [
+                "// TCP: reliable, connection-oriented\n// UDP: unreliable, connectionless",
+                "tcp udp"
+              ],
+              "explanation": "TCP vs UDP.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-1-22",
+              "type": "code",
+              "question": "Client-server.",
+              "correctAnswer": [
+                "// Client initiates, server listens",
+                "client server"
+              ],
+              "explanation": "Client-server.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-1-23",
+              "type": "code",
+              "question": "P2P.",
+              "correctAnswer": [
+                "// Peer-to-peer: no dedicated server",
+                "p2p"
+              ],
+              "explanation": "Peer-to-peer.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-1-24",
+              "type": "code",
+              "question": "Networking summary.",
+              "correctAnswer": [
+                "// Networking: TCP, UDP, IP, ports, protocols",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-1-25",
+              "type": "code",
+              "question": "Introduction.",
+              "correctAnswer": [
+                "// Lesson 1: Networking Basics - COMPLETE",
+                "intro"
+              ],
+              "explanation": "Introduction complete.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Networking Basics\n\nIntroduction to networking concepts.\n\n## TCP vs UDP\n\n| Feature | TCP | UDP |\n|---------|-----|-----|\n| Reliability | Guaranteed | No guarantee |\n| Connection | Connection-oriented | Connectionless |\n| Order | Ordered | No order |\n| Speed | Slower | Faster |\n| Use Cases | Web, email, files | Streaming, gaming |\n\n## IP Addresses\n\n### IPv4\n```\n192.168.1.1  # Private\n8.8.8.8      # Public\n127.0.0.1    # Loopback\n0.0.0.0      # Any address\n255.255.255.255 # Broadcast\n```\n\n### IPv6\n```\n::1              # Loopback\n2001:db8::1      # Public\nfe80::1          # Link-local\n```\n\n## Ports\n\n- **Well-known**: 0-1023 (root required)\n- **Registered**: 1024-49151\n- **Dynamic**: 49152-65535\n\n### Common Ports\n| Port | Service |\n|------|---------|\n| 80 | HTTP |\n| 443 | HTTPS |\n| 22 | SSH |\n| 21 | FTP |\n| 25 | SMTP |\n\n## Client-Server Model\n\n```\nClient                    Server\n  |                         |\n  |-- SYN  --------------->|\n  |                         |\n  |<-- SYN+ACK -----------|\n  |                         |\n  |-- ACK  --------------->|\n  |                         |\n  |---- DATA ------------->|\n  |                         |\n```\n\n## Network Layering\n\n| Layer | Protocol |\n|-------|----------|\n| Application | HTTP, FTP, SMTP |\n| Transport | TCP, UDP |\n| Network | IP |\n| Link | Ethernet, WiFi |\n\n## Byte Order\n\n- **Network Byte Order**: Big-endian\n- **Host Byte Order**: Architecture-dependent\n- **Always convert**: htonl, htons, ntohl, ntohs\n\n## Best Practices\n\n1. **Choose protocol** based on requirements\n2. **Handle errors** gracefully\n3. **Validate inputs**\n4. **Use timeouts**\n5. **Log events**\n"
         },
         {
           "id": "cpp-U43-L2",
-          "title": "Tabulation",
-          "unitTitle": "43. Core DP",
-          "xp": 15,
+          "title": "Sockets",
+          "unitTitle": "43. C++ Networking",
+          "xp": 85,
           "type": "lesson",
-          "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "difficulty": "beginner",
+          "questions": [
+            {
+              "id": "cpp-43-2-1",
+              "type": "typing",
+              "question": "socket()?",
+              "correctAnswer": [
+                "create",
+                "endpoint",
+                "socket"
+              ],
+              "explanation": "Create socket.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-2-2",
+              "type": "typing",
+              "question": "bind()?",
+              "correctAnswer": [
+                "bind",
+                "address",
+                "socket"
+              ],
+              "explanation": "Bind socket.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-2-3",
+              "type": "typing",
+              "question": "listen()?",
+              "correctAnswer": [
+                "listen",
+                "connections",
+                "queue"
+              ],
+              "explanation": "Listen for connections.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-2-4",
+              "type": "multiple",
+              "question": "Socket types?",
+              "options": [
+                "SOCK_STREAM",
+                "SOCK_DGRAM",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both types.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-2-5",
+              "type": "multiple",
+              "question": "Socket operations?",
+              "options": [
+                "send",
+                "recv",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both operations.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-2-6",
+              "type": "code",
+              "question": "Create socket.",
+              "correctAnswer": [
+                "int sock = socket(AF_INET, SOCK_STREAM, 0);",
+                "socket"
+              ],
+              "explanation": "Create socket.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-2-7",
+              "type": "code",
+              "question": "Bind socket.",
+              "correctAnswer": [
+                "bind(sock, (struct sockaddr*)&addr, sizeof(addr))",
+                "bind"
+              ],
+              "explanation": "Bind socket.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-2-8",
+              "type": "code",
+              "question": "Listen socket.",
+              "correctAnswer": [
+                "listen(sock, 10)",
+                "listen"
+              ],
+              "explanation": "Listen socket.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-2-9",
+              "type": "code",
+              "question": "Accept connection.",
+              "correctAnswer": [
+                "int client = accept(sock, NULL, NULL)",
+                "accept"
+              ],
+              "explanation": "Accept connection.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-2-10",
+              "type": "code",
+              "question": "Connect socket.",
+              "correctAnswer": [
+                "connect(sock, (struct sockaddr*)&addr, sizeof(addr))",
+                "connect"
+              ],
+              "explanation": "Connect socket.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-2-11",
+              "type": "code",
+              "question": "Send data.",
+              "correctAnswer": [
+                "send(sock, data, size, 0)",
+                "send"
+              ],
+              "explanation": "Send data.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-2-12",
+              "type": "code",
+              "question": "Receive data.",
+              "correctAnswer": [
+                "recv(sock, buffer, size, 0)",
+                "recv"
+              ],
+              "explanation": "Receive data.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-2-13",
+              "type": "code",
+              "question": "Close socket.",
+              "correctAnswer": [
+                "close(sock)",
+                "close"
+              ],
+              "explanation": "Close socket.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-2-14",
+              "type": "code",
+              "question": "Testing sockets.",
+              "correctAnswer": [
+                "void testSockets() { // Test sockets }",
+                "test"
+              ],
+              "explanation": "Test sockets.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-2-15",
+              "type": "code",
+              "question": "TCP socket.",
+              "correctAnswer": [
+                "socket(AF_INET, SOCK_STREAM, 0)",
+                "tcp"
+              ],
+              "explanation": "TCP socket.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-2-16",
+              "type": "code",
+              "question": "UDP socket.",
+              "correctAnswer": [
+                "socket(AF_INET, SOCK_DGRAM, 0)",
+                "udp"
+              ],
+              "explanation": "UDP socket.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-2-17",
+              "type": "code",
+              "question": "Sendto.",
+              "correctAnswer": [
+                "sendto(sock, data, size, 0, (struct sockaddr*)&addr, sizeof(addr))",
+                "sendto"
+              ],
+              "explanation": "Sendto UDP.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-2-18",
+              "type": "code",
+              "question": "Recvfrom.",
+              "correctAnswer": [
+                "recvfrom(sock, buffer, size, 0, (struct sockaddr*)&addr, &len)",
+                "recvfrom"
+              ],
+              "explanation": "Recvfrom UDP.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-2-19",
+              "type": "code",
+              "question": "Socket options.",
+              "correctAnswer": [
+                "setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt))",
+                "setsockopt"
+              ],
+              "explanation": "Set options.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-2-20",
+              "type": "code",
+              "question": "Get socket address.",
+              "correctAnswer": [
+                "getsockname(sock, (struct sockaddr*)&addr, &len)",
+                "getsockname"
+              ],
+              "explanation": "Get socket address.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-2-21",
+              "type": "code",
+              "question": "Peer address.",
+              "correctAnswer": [
+                "getpeername(sock, (struct sockaddr*)&addr, &len)",
+                "getpeername"
+              ],
+              "explanation": "Get peer address.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-2-22",
+              "type": "code",
+              "question": "Non-blocking.",
+              "correctAnswer": [
+                "fcntl(sock, F_SETFL, O_NONBLOCK)",
+                "nonblock"
+              ],
+              "explanation": "Non-blocking socket.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-2-23",
+              "type": "code",
+              "question": "Socket wrapper.",
+              "correctAnswer": [
+                "// Socket RAII wrapper",
+                "wrapper"
+              ],
+              "explanation": "Socket wrapper.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-2-24",
+              "type": "code",
+              "question": "Error handling.",
+              "correctAnswer": [
+                "// Handle socket errors",
+                "error"
+              ],
+              "explanation": "Error handling.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-2-25",
+              "type": "code",
+              "question": "Summary.",
+              "correctAnswer": [
+                "// Sockets: create, bind, listen, accept, connect, send, recv",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Sockets\n\nLow-level socket programming.\n\n## Creating a Socket\n\n```cpp\n#include <sys/socket.h>\n\nint sock = socket(AF_INET, SOCK_STREAM, 0);\nif (sock == -1) {\n    perror(\"socket\");\n    return -1;\n}\n```\n\n### Socket Types\n\n| Type | Protocol | Description |\n|------|----------|-------------|\n| SOCK_STREAM | TCP | Reliable, connection-oriented |\n| SOCK_DGRAM | UDP | Unreliable, connectionless |\n\n## Binding\n\n```cpp\nstruct sockaddr_in addr;\naddr.sin_family = AF_INET;\naddr.sin_port = htons(8080);\naddr.sin_addr.s_addr = INADDR_ANY;\n\nif (bind(sock, (struct sockaddr*)&addr, sizeof(addr)) == -1) {\n    perror(\"bind\");\n    return -1;\n}\n```\n\n## Server: Listen & Accept\n\n```cpp\n// Listen for connections\nif (listen(sock, 10) == -1) {\n    perror(\"listen\");\n    return -1;\n}\n\n// Accept connection\nstruct sockaddr_in client_addr;\nsocklen_t client_len = sizeof(client_addr);\nint client = accept(sock, (struct sockaddr*)&client_addr, &client_len);\n\nif (client == -1) {\n    perror(\"accept\");\n    return -1;\n}\n```\n\n## Client: Connect\n\n```cpp\nstruct sockaddr_in server_addr;\nserver_addr.sin_family = AF_INET;\nserver_addr.sin_port = htons(8080);\ninet_pton(AF_INET, \"127.0.0.1\", &server_addr.sin_addr);\n\nif (connect(sock, (struct sockaddr*)&server_addr, sizeof(server_addr)) == -1) {\n    perror(\"connect\");\n    return -1;\n}\n```\n\n## Sending Data\n\n```cpp\nconst char* msg = \"Hello, Server!\";\nssize_t sent = send(sock, msg, strlen(msg), 0);\n\nif (sent == -1) {\n    perror(\"send\");\n    return -1;\n}\n```\n\n## Receiving Data\n\n```cpp\nchar buffer[1024];\nssize_t received = recv(sock, buffer, sizeof(buffer), 0);\n\nif (received == -1) {\n    perror(\"recv\");\n    return -1;\n}\n\nbuffer[received] = '\\0';\n```\n\n## UDP: Sendto & Recvfrom\n\n```cpp\n// Send UDP packet\nsendto(sock, data, size, 0,\n       (struct sockaddr*)&addr, sizeof(addr));\n\n// Receive UDP packet\nrecvfrom(sock, buffer, size, 0,\n         (struct sockaddr*)&addr, &len);\n```\n\n## Socket Options\n\n```cpp\nint opt = 1;\nsetsockopt(sock, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt));\nsetsockopt(sock, SOL_SOCKET, SO_REUSEPORT, &opt, sizeof(opt));\n```\n\n## Closing\n\n```cpp\nclose(sock);\nshutdown(sock, SHUT_RDWR);\n```\n\n## RAII Wrapper\n\n```cpp\nclass Socket {\n    int fd;\npublic:\n    Socket(int domain, int type, int protocol) : fd(socket(domain, type, protocol)) {}\n    ~Socket() { if (fd != -1) close(fd); }\n    Socket(const Socket&) = delete;\n    Socket& operator=(const Socket&) = delete;\n    int get() const { return fd; }\n};\n```\n\n## Best Practices\n\n1. **Check all return values**\n2. **Use RAII** for socket management\n3. **Set SO_REUSEADDR** for servers\n4. **Handle partial sends/recv**\n5. **Use timeouts** for blocking operations\n"
         },
         {
           "id": "cpp-U43-L3",
-          "title": "Bitmask DP",
-          "unitTitle": "43. Core DP",
-          "xp": 15,
+          "title": "TCP Server",
+          "unitTitle": "43. C++ Networking",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-43-3-1",
+              "type": "typing",
+              "question": "TCP server?",
+              "correctAnswer": [
+                "listen",
+                "accept",
+                "connections"
+              ],
+              "explanation": "TCP server.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-3-2",
+              "type": "typing",
+              "question": "accept()?",
+              "correctAnswer": [
+                "accept",
+                "connection",
+                "client"
+              ],
+              "explanation": "Accept connection.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-3-3",
+              "type": "typing",
+              "question": "listen()?",
+              "correctAnswer": [
+                "listen",
+                "queue",
+                "backlog"
+              ],
+              "explanation": "Listen backlog.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-3-4",
+              "type": "multiple",
+              "question": "Server steps?",
+              "options": [
+                "socket",
+                "bind",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both steps.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-3-5",
+              "type": "multiple",
+              "question": "Handling clients?",
+              "options": [
+                "thread",
+                "process",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both methods.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-3-6",
+              "type": "code",
+              "question": "Server setup.",
+              "correctAnswer": [
+                "// socket, bind, listen",
+                "server"
+              ],
+              "explanation": "Server setup.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-3-7",
+              "type": "code",
+              "question": "Accept loop.",
+              "correctAnswer": [
+                "while (true) { int client = accept(...); }",
+                "accept loop"
+              ],
+              "explanation": "Accept loop.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-3-8",
+              "type": "code",
+              "question": "Handle client.",
+              "correctAnswer": [
+                "void handleClient(int client) { // Handle }",
+                "handle client"
+              ],
+              "explanation": "Handle client.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-3-9",
+              "type": "code",
+              "question": "Threaded server.",
+              "correctAnswer": [
+                "std::thread(handleClient, client).detach()",
+                "threaded"
+              ],
+              "explanation": "Threaded server.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-3-10",
+              "type": "code",
+              "question": "Fork server.",
+              "correctAnswer": [
+                "pid_t pid = fork(); if (pid == 0) { handleClient(client); exit(0); }",
+                "fork"
+              ],
+              "explanation": "Fork server.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-3-11",
+              "type": "code",
+              "question": "Testing server.",
+              "correctAnswer": [
+                "void testServer() { // Test server }",
+                "test"
+              ],
+              "explanation": "Test server.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-3-12",
+              "type": "code",
+              "question": "Echo server.",
+              "correctAnswer": [
+                "// Echo back received data",
+                "echo"
+              ],
+              "explanation": "Echo server.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-3-13",
+              "type": "code",
+              "question": "Multiple clients.",
+              "correctAnswer": [
+                "// Use select/poll/epoll",
+                "multiple"
+              ],
+              "explanation": "Multiple clients.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-3-14",
+              "type": "code",
+              "question": "Server wrapper.",
+              "correctAnswer": [
+                "// TCP server class",
+                "wrapper"
+              ],
+              "explanation": "Server wrapper.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-3-15",
+              "type": "code",
+              "question": "Backlog.",
+              "correctAnswer": [
+                "listen(sock, SOMAXCONN)",
+                "backlog"
+              ],
+              "explanation": "Backlog queue.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-3-16",
+              "type": "code",
+              "question": "Close client.",
+              "correctAnswer": [
+                "close(client)",
+                "close"
+              ],
+              "explanation": "Close client.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-3-17",
+              "type": "code",
+              "question": "Graceful shutdown.",
+              "correctAnswer": [
+                "// Handle SIGTERM, SIGINT",
+                "shutdown"
+              ],
+              "explanation": "Graceful shutdown.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-3-18",
+              "type": "code",
+              "question": "Client info.",
+              "correctAnswer": [
+                "inet_ntoa(client_addr.sin_addr)",
+                "client info"
+              ],
+              "explanation": "Client info.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-3-19",
+              "type": "code",
+              "question": "Port.",
+              "correctAnswer": [
+                "ntohs(client_addr.sin_port)",
+                "port"
+              ],
+              "explanation": "Client port.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-3-20",
+              "type": "code",
+              "question": "Keep-alive.",
+              "correctAnswer": [
+                "setsockopt(sock, SOL_SOCKET, SO_KEEPALIVE, ...)",
+                "keepalive"
+              ],
+              "explanation": "Keep-alive.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-3-21",
+              "type": "code",
+              "question": "Timeout.",
+              "correctAnswer": [
+                "struct timeval tv = {5, 0}; setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, ...)",
+                "timeout"
+              ],
+              "explanation": "Socket timeout.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-3-22",
+              "type": "code",
+              "question": "Buffer size.",
+              "correctAnswer": [
+                "setsockopt(sock, SOL_SOCKET, SO_RCVBUF, ...)",
+                "buffer"
+              ],
+              "explanation": "Buffer size.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-3-23",
+              "type": "code",
+              "question": "Server summary.",
+              "correctAnswer": [
+                "// Server: socket, bind, listen, accept, handle",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-3-24",
+              "type": "code",
+              "question": "Complete server.",
+              "correctAnswer": [
+                "// Full TCP server implementation",
+                "complete"
+              ],
+              "explanation": "Complete server.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-3-25",
+              "type": "code",
+              "question": "Best practices.",
+              "correctAnswer": [
+                "// RAII, error handling, timeouts, graceful shutdown",
+                "practices"
+              ],
+              "explanation": "Best practices.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# TCP Server\n\nBuilding a TCP server.\n\n## Basic Server Structure\n\n```cpp\n#include <sys/socket.h>\n#include <netinet/in.h>\n#include <arpa/inet.h>\n#include <unistd.h>\n\nint main() {\n    // Create socket\n    int server = socket(AF_INET, SOCK_STREAM, 0);\n    \n    // Bind\n    struct sockaddr_in addr;\n    addr.sin_family = AF_INET;\n    addr.sin_port = htons(8080);\n    addr.sin_addr.s_addr = INADDR_ANY;\n    bind(server, (struct sockaddr*)&addr, sizeof(addr));\n    \n    // Listen\n    listen(server, 10);\n    \n    // Accept loop\n    while (true) {\n        int client = accept(server, NULL, NULL);\n        handleClient(client);\n    }\n    \n    close(server);\n}\n```\n\n## Echo Server\n\n```cpp\nvoid handleClient(int client) {\n    char buffer[1024];\n    \n    while (true) {\n        ssize_t received = recv(client, buffer, sizeof(buffer), 0);\n        \n        if (received <= 0) {\n            break;\n        }\n        \n        // Echo back\n        send(client, buffer, received, 0);\n    }\n    \n    close(client);\n}\n```\n\n## Threaded Server\n\n```cpp\n#include <thread>\n\nvoid handleClientThread(int client) {\n    handleClient(client);\n    close(client);\n}\n\nwhile (true) {\n    int client = accept(server, NULL, NULL);\n    if (client != -1) {\n        std::thread(handleClientThread, client).detach();\n    }\n}\n```\n\n## Fork Server\n\n```cpp\n#include <sys/wait.h>\n\nwhile (true) {\n    int client = accept(server, NULL, NULL);\n    \n    pid_t pid = fork();\n    \n    if (pid == 0) {\n        // Child process\n        close(server);\n        handleClient(client);\n        close(client);\n        exit(0);\n    } else {\n        // Parent process\n        close(client);\n        waitpid(-1, NULL, WNOHANG);\n    }\n}\n```\n\n## Graceful Shutdown\n\n```cpp\n#include <csignal>\n\nstd::atomic<bool> running{true};\n\nvoid signalHandler(int signal) {\n    running = false;\n}\n\nint main() {\n    signal(SIGTERM, signalHandler);\n    signal(SIGINT, signalHandler);\n    \n    // Setup server...\n    \n    while (running) {\n        fd_set read_fds;\n        FD_ZERO(&read_fds);\n        FD_SET(server, &read_fds);\n        \n        struct timeval timeout = {1, 0};\n        if (select(server + 1, &read_fds, NULL, NULL, &timeout) > 0) {\n            int client = accept(server, NULL, NULL);\n            handleClient(client);\n        }\n    }\n    \n    close(server);\n}\n```\n\n## Best Practices\n\n1. **Use RAII** for socket management\n2. **Handle signals** gracefully\n3. **Set timeouts** on sockets\n4. **Limit connections**\n5. **Log errors** appropriately\n6. **Use select/poll/epoll** for scalability\n7. **Validate inputs**\n"
         },
         {
           "id": "cpp-U43-L4",
-          "title": "Tree DP",
-          "unitTitle": "43. Core DP",
-          "xp": 15,
+          "title": "TCP Client",
+          "unitTitle": "43. C++ Networking",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-43-4-1",
+              "type": "typing",
+              "question": "TCP client?",
+              "correctAnswer": [
+                "connect",
+                "socket",
+                "server"
+              ],
+              "explanation": "TCP client.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-4-2",
+              "type": "typing",
+              "question": "connect()?",
+              "correctAnswer": [
+                "connect",
+                "server",
+                "establish"
+              ],
+              "explanation": "Connect to server.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-4-3",
+              "type": "typing",
+              "question": "inet_pton()?",
+              "correctAnswer": [
+                "convert",
+                "IP",
+                "address"
+              ],
+              "explanation": "Convert IP address.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-4-4",
+              "type": "multiple",
+              "question": "Client steps?",
+              "options": [
+                "socket",
+                "connect",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both steps.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-4-5",
+              "type": "multiple",
+              "question": "Data transfer?",
+              "options": [
+                "send",
+                "recv",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both operations.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-4-6",
+              "type": "code",
+              "question": "Client setup.",
+              "correctAnswer": [
+                "// socket, connect",
+                "client"
+              ],
+              "explanation": "Client setup.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-4-7",
+              "type": "code",
+              "question": "Connect to server.",
+              "correctAnswer": [
+                "connect(sock, (struct sockaddr*)&addr, sizeof(addr))",
+                "connect"
+              ],
+              "explanation": "Connect.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-4-8",
+              "type": "code",
+              "question": "Send data.",
+              "correctAnswer": [
+                "send(sock, data, size, 0)",
+                "send"
+              ],
+              "explanation": "Send data.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-4-9",
+              "type": "code",
+              "question": "Receive data.",
+              "correctAnswer": [
+                "recv(sock, buffer, size, 0)",
+                "recv"
+              ],
+              "explanation": "Receive data.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-4-10",
+              "type": "code",
+              "question": "Testing client.",
+              "correctAnswer": [
+                "void testClient() { // Test client }",
+                "test"
+              ],
+              "explanation": "Test client.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-4-11",
+              "type": "code",
+              "question": "Client wrapper.",
+              "correctAnswer": [
+                "// TCP client class",
+                "wrapper"
+              ],
+              "explanation": "Client wrapper.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-4-12",
+              "type": "code",
+              "question": "Reconnect.",
+              "correctAnswer": [
+                "// Handle reconnection logic",
+                "reconnect"
+              ],
+              "explanation": "Reconnect.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-4-13",
+              "type": "code",
+              "question": "Keep-alive.",
+              "correctAnswer": [
+                "setsockopt(sock, SOL_SOCKET, SO_KEEPALIVE, ...)",
+                "keepalive"
+              ],
+              "explanation": "Keep-alive.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-4-14",
+              "type": "code",
+              "question": "Timeout.",
+              "correctAnswer": [
+                "struct timeval tv = {5, 0}; setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, ...)",
+                "timeout"
+              ],
+              "explanation": "Socket timeout.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-4-15",
+              "type": "code",
+              "question": "Non-blocking.",
+              "correctAnswer": [
+                "fcntl(sock, F_SETFL, O_NONBLOCK)",
+                "nonblock"
+              ],
+              "explanation": "Non-blocking.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-4-16",
+              "type": "code",
+              "question": "Close connection.",
+              "correctAnswer": [
+                "close(sock)",
+                "close"
+              ],
+              "explanation": "Close connection.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-4-17",
+              "type": "code",
+              "question": "Shutdown.",
+              "correctAnswer": [
+                "shutdown(sock, SHUT_RDWR)",
+                "shutdown"
+              ],
+              "explanation": "Shutdown.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-4-18",
+              "type": "code",
+              "question": "Error handling.",
+              "correctAnswer": [
+                "// Handle connection errors",
+                "error"
+              ],
+              "explanation": "Error handling.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-4-19",
+              "type": "code",
+              "question": "Async client.",
+              "correctAnswer": [
+                "// Async I/O for client",
+                "async"
+              ],
+              "explanation": "Async client.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-4-20",
+              "type": "code",
+              "question": "Client summary.",
+              "correctAnswer": [
+                "// Client: socket, connect, send, recv, close",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-4-21",
+              "type": "code",
+              "question": "Complete client.",
+              "correctAnswer": [
+                "// Full TCP client implementation",
+                "complete"
+              ],
+              "explanation": "Complete client.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-4-22",
+              "type": "code",
+              "question": "Interactive client.",
+              "correctAnswer": [
+                "// Read from stdin, send to server",
+                "interactive"
+              ],
+              "explanation": "Interactive client.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-4-23",
+              "type": "code",
+              "question": "Buffered client.",
+              "correctAnswer": [
+                "// Use buffered I/O",
+                "buffered"
+              ],
+              "explanation": "Buffered client.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-4-24",
+              "type": "code",
+              "question": "Client wrapper.",
+              "correctAnswer": [
+                "// TCP client class with RAII",
+                "wrapper"
+              ],
+              "explanation": "Client wrapper.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-4-25",
+              "type": "code",
+              "question": "Best practices.",
+              "correctAnswer": [
+                "// RAII, error handling, timeouts, retries",
+                "practices"
+              ],
+              "explanation": "Best practices.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# TCP Client\n\nBuilding a TCP client.\n\n## Basic Client Structure\n\n```cpp\n#include <sys/socket.h>\n#include <netinet/in.h>\n#include <arpa/inet.h>\n#include <unistd.h>\n\nint main() {\n    // Create socket\n    int sock = socket(AF_INET, SOCK_STREAM, 0);\n    \n    // Configure address\n    struct sockaddr_in addr;\n    addr.sin_family = AF_INET;\n    addr.sin_port = htons(8080);\n    inet_pton(AF_INET, \"127.0.0.1\", &addr.sin_addr);\n    \n    // Connect\n    if (connect(sock, (struct sockaddr*)&addr, sizeof(addr)) == -1) {\n        perror(\"connect\");\n        return 1;\n    }\n    \n    // Send data\n    const char* msg = \"Hello, Server!\";\n    send(sock, msg, strlen(msg), 0);\n    \n    // Receive data\n    char buffer[1024];\n    ssize_t received = recv(sock, buffer, sizeof(buffer), 0);\n    buffer[received] = '\\0';\n    \n    printf(\"Received: %s\\n\", buffer);\n    \n    close(sock);\n}\n```\n\n## Client Class\n\n```cpp\nclass TCPClient {\n    int sock;\npublic:\n    TCPClient(const std::string& host, int port) {\n        sock = socket(AF_INET, SOCK_STREAM, 0);\n        \n        struct sockaddr_in addr;\n        addr.sin_family = AF_INET;\n        addr.sin_port = htons(port);\n        inet_pton(AF_INET, host.c_str(), &addr.sin_addr);\n        \n        connect(sock, (struct sockaddr*)&addr, sizeof(addr));\n    }\n    \n    ~TCPClient() {\n        close(sock);\n    }\n    \n    void send(const std::string& data) {\n        ::send(sock, data.c_str(), data.size(), 0);\n    }\n    \n    std::string receive() {\n        char buffer[1024];\n        ssize_t received = recv(sock, buffer, sizeof(buffer), 0);\n        return std::string(buffer, received);\n    }\n};\n```\n\n## Interactive Client\n\n```cpp\n#include <iostream>\n#include <thread>\n\nvoid receiveThread(int sock) {\n    char buffer[1024];\n    while (true) {\n        ssize_t received = recv(sock, buffer, sizeof(buffer), 0);\n        if (received <= 0) break;\n        buffer[received] = '\\0';\n        std::cout << \"Server: \" << buffer << std::endl;\n    }\n}\n\nint main() {\n    int sock = socket(AF_INET, SOCK_STREAM, 0);\n    // Connect...\n    \n    std::thread(receiveThread, sock).detach();\n    \n    std::string msg;\n    while (std::getline(std::cin, msg)) {\n        send(sock, msg.c_str(), msg.size(), 0);\n    }\n    \n    close(sock);\n}\n```\n\n## Best Practices\n\n1. **Use RAII** for socket management\n2. **Handle connection errors**\n3. **Use timeouts** for blocking operations\n4. **Implement reconnection logic**\n5. **Buffer data** for efficiency\n6. **Validate server responses**\n"
         },
         {
           "id": "cpp-U43-L5",
-          "title": "Digit DP",
-          "unitTitle": "43. Core DP",
-          "xp": 15,
+          "title": "UDP Socket",
+          "unitTitle": "43. C++ Networking",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-43-5-1",
+              "type": "typing",
+              "question": "UDP?",
+              "correctAnswer": [
+                "unreliable",
+                "datagram",
+                "connectionless"
+              ],
+              "explanation": "UDP protocol.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-5-2",
+              "type": "typing",
+              "question": "sendto()?",
+              "correctAnswer": [
+                "send",
+                "address",
+                "UDP"
+              ],
+              "explanation": "Send UDP packet.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-5-3",
+              "type": "typing",
+              "question": "recvfrom()?",
+              "correctAnswer": [
+                "receive",
+                "address",
+                "UDP"
+              ],
+              "explanation": "Receive UDP packet.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-5-4",
+              "type": "multiple",
+              "question": "UDP features?",
+              "options": [
+                "unreliable",
+                "fast",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both features.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-5-5",
+              "type": "multiple",
+              "question": "UDP use cases?",
+              "options": [
+                "streaming",
+                "gaming",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both use cases.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-5-6",
+              "type": "code",
+              "question": "UDP socket.",
+              "correctAnswer": [
+                "int sock = socket(AF_INET, SOCK_DGRAM, 0);",
+                "socket"
+              ],
+              "explanation": "Create UDP socket.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-5-7",
+              "type": "code",
+              "question": "Send UDP.",
+              "correctAnswer": [
+                "sendto(sock, data, size, 0, (struct sockaddr*)&addr, sizeof(addr))",
+                "sendto"
+              ],
+              "explanation": "Send UDP packet.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-5-8",
+              "type": "code",
+              "question": "Receive UDP.",
+              "correctAnswer": [
+                "recvfrom(sock, buffer, size, 0, (struct sockaddr*)&addr, &len)",
+                "recvfrom"
+              ],
+              "explanation": "Receive UDP packet.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-5-9",
+              "type": "code",
+              "question": "Testing UDP.",
+              "correctAnswer": [
+                "void testUDP() { // Test UDP }",
+                "test"
+              ],
+              "explanation": "Test UDP.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-5-10",
+              "type": "code",
+              "question": "UDP server.",
+              "correctAnswer": [
+                "// UDP server: bind, recvfrom, sendto",
+                "server"
+              ],
+              "explanation": "UDP server.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-5-11",
+              "type": "code",
+              "question": "UDP client.",
+              "correctAnswer": [
+                "// UDP client: sendto, recvfrom",
+                "client"
+              ],
+              "explanation": "UDP client.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-5-12",
+              "type": "code",
+              "question": "Broadcast.",
+              "correctAnswer": [
+                "setsockopt(sock, SOL_SOCKET, SO_BROADCAST, ...)",
+                "broadcast"
+              ],
+              "explanation": "Broadcast.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-5-13",
+              "type": "code",
+              "question": "Multicast.",
+              "correctAnswer": [
+                "setsockopt(sock, IPPROTO_IP, IP_ADD_MEMBERSHIP, ...)",
+                "multicast"
+              ],
+              "explanation": "Multicast.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-5-14",
+              "type": "code",
+              "question": "Packet loss.",
+              "correctAnswer": [
+                "// Handle packet loss with ACK",
+                "loss"
+              ],
+              "explanation": "Packet loss.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-5-15",
+              "type": "code",
+              "question": "Ordering.",
+              "correctAnswer": [
+                "// Use sequence numbers for ordering",
+                "ordering"
+              ],
+              "explanation": "Ordering.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-5-16",
+              "type": "code",
+              "question": "Reliable UDP.",
+              "correctAnswer": [
+                "// Implement reliability: ACK, retransmission",
+                "reliable"
+              ],
+              "explanation": "Reliable UDP.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-5-17",
+              "type": "code",
+              "question": "UDP wrapper.",
+              "correctAnswer": [
+                "// UDP socket class",
+                "wrapper"
+              ],
+              "explanation": "UDP wrapper.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-5-18",
+              "type": "code",
+              "question": "UDP summary.",
+              "correctAnswer": [
+                "// UDP: socket, sendto, recvfrom, unreliable, fast",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-5-19",
+              "type": "code",
+              "question": "Complete UDP.",
+              "correctAnswer": [
+                "// Full UDP implementation",
+                "complete"
+              ],
+              "explanation": "Complete UDP.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-5-20",
+              "type": "code",
+              "question": "Echo server.",
+              "correctAnswer": [
+                "// UDP echo server",
+                "echo"
+              ],
+              "explanation": "Echo server.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-5-21",
+              "type": "code",
+              "question": "Chat server.",
+              "correctAnswer": [
+                "// UDP chat server",
+                "chat"
+              ],
+              "explanation": "Chat server.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-5-22",
+              "type": "code",
+              "question": "Streaming.",
+              "correctAnswer": [
+                "// UDP streaming",
+                "streaming"
+              ],
+              "explanation": "Streaming.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-5-23",
+              "type": "code",
+              "question": "Gaming.",
+              "correctAnswer": [
+                "// UDP for gaming",
+                "gaming"
+              ],
+              "explanation": "Gaming.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-5-24",
+              "type": "code",
+              "question": "Performance.",
+              "correctAnswer": [
+                "// UDP performance: low latency, high throughput",
+                "performance"
+              ],
+              "explanation": "Performance.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-5-25",
+              "type": "code",
+              "question": "Best practices.",
+              "correctAnswer": [
+                "// Handle loss, use ACK, buffer, timeouts",
+                "practices"
+              ],
+              "explanation": "Best practices.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# UDP Socket\n\nConnectionless UDP programming.\n\n## UDP vs TCP\n\n| Feature | UDP | TCP |\n|---------|-----|-----|\n| Reliability | No | Yes |\n| Connection | Connectionless | Connection-oriented |\n| Order | No | Yes |\n| Speed | Fast | Slower |\n| Overhead | Low | High |\n\n## UDP Server\n\n```cpp\nint sock = socket(AF_INET, SOCK_DGRAM, 0);\n\nstruct sockaddr_in addr;\naddr.sin_family = AF_INET;\naddr.sin_port = htons(8080);\naddr.sin_addr.s_addr = INADDR_ANY;\n\nbind(sock, (struct sockaddr*)&addr, sizeof(addr));\n\nwhile (true) {\n    struct sockaddr_in client_addr;\n    socklen_t client_len = sizeof(client_addr);\n    \n    char buffer[1024];\n    ssize_t received = recvfrom(sock, buffer, sizeof(buffer), 0,\n                                 (struct sockaddr*)&client_addr, &client_len);\n    \n    // Echo back\n    sendto(sock, buffer, received, 0,\n           (struct sockaddr*)&client_addr, client_len);\n}\n```\n\n## UDP Client\n\n```cpp\nint sock = socket(AF_INET, SOCK_DGRAM, 0);\n\nstruct sockaddr_in server_addr;\nserver_addr.sin_family = AF_INET;\nserver_addr.sin_port = htons(8080);\ninet_pton(AF_INET, \"127.0.0.1\", &server_addr.sin_addr);\n\nconst char* msg = \"Hello, UDP Server!\";\nsendto(sock, msg, strlen(msg), 0,\n       (struct sockaddr*)&server_addr, sizeof(server_addr));\n\n// Receive response\nchar buffer[1024];\nstruct sockaddr_in from_addr;\nsocklen_t from_len = sizeof(from_addr);\nssize_t received = recvfrom(sock, buffer, sizeof(buffer), 0,\n                             (struct sockaddr*)&from_addr, &from_len);\n```\n\n## Broadcast\n\n```cpp\nint sock = socket(AF_INET, SOCK_DGRAM, 0);\n\nint broadcast = 1;\nsetsockopt(sock, SOL_SOCKET, SO_BROADCAST, &broadcast, sizeof(broadcast));\n\nstruct sockaddr_in addr;\naddr.sin_family = AF_INET;\naddr.sin_port = htons(8080);\naddr.sin_addr.s_addr = INADDR_BROADCAST;\n\nsendto(sock, data, size, 0, (struct sockaddr*)&addr, sizeof(addr));\n```\n\n## Multicast\n\n```cpp\n// Join multicast group\nstruct ip_mreq mreq;\nmreq.imr_multiaddr.s_addr = inet_addr(\"239.255.0.1\");\nmreq.imr_interface.s_addr = htonl(INADDR_ANY);\n\nsetsockopt(sock, IPPROTO_IP, IP_ADD_MEMBERSHIP,\n           &mreq, sizeof(mreq));\n```\n\n## Best Practices\n\n1. **Handle packet loss** gracefully\n2. **Use sequence numbers** for ordering\n3. **Implement ACK** for reliability\n4. **Use timeouts** for dropped packets\n5. **Buffer data** appropriately\n6. **Consider TCP** for reliability needed\n"
         },
         {
           "id": "cpp-U43-L6",
-          "title": "Interval DP",
-          "unitTitle": "43. Core DP",
-          "xp": 15,
+          "title": "Asynchronous I/O",
+          "unitTitle": "43. C++ Networking",
+          "xp": 85,
           "type": "lesson",
-          "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "difficulty": "advanced",
+          "questions": [
+            {
+              "id": "cpp-43-6-1",
+              "type": "typing",
+              "question": "select()?",
+              "correctAnswer": [
+                "monitor",
+                "descriptors",
+                "I/O"
+              ],
+              "explanation": "Select I/O.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-6-2",
+              "type": "typing",
+              "question": "poll()?",
+              "correctAnswer": [
+                "monitor",
+                "descriptors",
+                "I/O"
+              ],
+              "explanation": "Poll I/O.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-6-3",
+              "type": "typing",
+              "question": "epoll?",
+              "correctAnswer": [
+                "Linux",
+                "scalable",
+                "I/O"
+              ],
+              "explanation": "Linux epoll.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-6-4",
+              "type": "multiple",
+              "question": "I/O methods?",
+              "options": [
+                "blocking",
+                "non-blocking",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both methods.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-6-5",
+              "type": "multiple",
+              "question": "Event models?",
+              "options": [
+                "select",
+                "poll",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both models.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-6-6",
+              "type": "code",
+              "question": "Select usage.",
+              "correctAnswer": [
+                "select(max_fd + 1, &read_fds, NULL, NULL, NULL)",
+                "select"
+              ],
+              "explanation": "Select usage.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-6-7",
+              "type": "code",
+              "question": "FD_ZERO.",
+              "correctAnswer": [
+                "FD_ZERO(&read_fds)",
+                "fd_zero"
+              ],
+              "explanation": "Clear fd set.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-6-8",
+              "type": "code",
+              "question": "FD_SET.",
+              "correctAnswer": [
+                "FD_SET(sock, &read_fds)",
+                "fd_set"
+              ],
+              "explanation": "Set fd.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-6-9",
+              "type": "code",
+              "question": "FD_ISSET.",
+              "correctAnswer": [
+                "if (FD_ISSET(sock, &read_fds))",
+                "fd_isset"
+              ],
+              "explanation": "Check fd.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-6-10",
+              "type": "code",
+              "question": "Poll usage.",
+              "correctAnswer": [
+                "poll(fds, nfds, timeout)",
+                "poll"
+              ],
+              "explanation": "Poll usage.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-6-11",
+              "type": "code",
+              "question": "Testing async.",
+              "correctAnswer": [
+                "void testAsync() { // Test async I/O }",
+                "test"
+              ],
+              "explanation": "Test async.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-6-12",
+              "type": "code",
+              "question": "Non-blocking.",
+              "correctAnswer": [
+                "fcntl(sock, F_SETFL, O_NONBLOCK)",
+                "nonblock"
+              ],
+              "explanation": "Non-blocking.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-6-13",
+              "type": "code",
+              "question": "Epoll create.",
+              "correctAnswer": [
+                "int epfd = epoll_create1(0)",
+                "epoll create"
+              ],
+              "explanation": "Create epoll.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-6-14",
+              "type": "code",
+              "question": "Epoll add.",
+              "correctAnswer": [
+                "epoll_ctl(epfd, EPOLL_CTL_ADD, sock, &event)",
+                "epoll add"
+              ],
+              "explanation": "Add to epoll.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-6-15",
+              "type": "code",
+              "question": "Epoll wait.",
+              "correctAnswer": [
+                "int n = epoll_wait(epfd, events, MAX_EVENTS, -1)",
+                "epoll wait"
+              ],
+              "explanation": "Wait for events.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-6-16",
+              "type": "code",
+              "question": "Timeout.",
+              "correctAnswer": [
+                "struct timeval tv = {5, 0}",
+                "timeout"
+              ],
+              "explanation": "Select timeout.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-6-17",
+              "type": "code",
+              "question": "Multiple clients.",
+              "correctAnswer": [
+                "// Handle multiple clients with select/poll",
+                "multiple"
+              ],
+              "explanation": "Multiple clients.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-6-18",
+              "type": "code",
+              "question": "Async wrapper.",
+              "correctAnswer": [
+                "// Async I/O wrapper",
+                "wrapper"
+              ],
+              "explanation": "Async wrapper.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-6-19",
+              "type": "code",
+              "question": "Select summary.",
+              "correctAnswer": [
+                "// select: FD_ZERO, FD_SET, FD_ISSET, select",
+                "select summary"
+              ],
+              "explanation": "Select summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-6-20",
+              "type": "code",
+              "question": "Poll summary.",
+              "correctAnswer": [
+                "// poll: pollfds, events, revents, poll",
+                "poll summary"
+              ],
+              "explanation": "Poll summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-6-21",
+              "type": "code",
+              "question": "Epoll summary.",
+              "correctAnswer": [
+                "// epoll: epoll_create1, epoll_ctl, epoll_wait",
+                "epoll summary"
+              ],
+              "explanation": "Epoll summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-6-22",
+              "type": "code",
+              "question": "Performance.",
+              "correctAnswer": [
+                "// epoll > poll > select for scalability",
+                "performance"
+              ],
+              "explanation": "Performance.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-6-23",
+              "type": "code",
+              "question": "Complete async.",
+              "correctAnswer": [
+                "// Full async I/O implementation",
+                "complete"
+              ],
+              "explanation": "Complete async.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-6-24",
+              "type": "code",
+              "question": "Async summary.",
+              "correctAnswer": [
+                "// Async I/O: select, poll, epoll, non-blocking",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-6-25",
+              "type": "code",
+              "question": "Best practices.",
+              "correctAnswer": [
+                "// Use epoll for Linux, select for portability",
+                "practices"
+              ],
+              "explanation": "Best practices.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# Asynchronous I/O\n\nNon-blocking I/O and event loops.\n\n## select()\n\n```cpp\n#include <sys/select.h>\n\nfd_set read_fds;\nFD_ZERO(&read_fds);\nFD_SET(server, &read_fds);\nint max_fd = server;\n\n// Add clients\nfor (int client : clients) {\n    FD_SET(client, &read_fds);\n    if (client > max_fd) max_fd = client;\n}\n\n// Wait for activity\nif (select(max_fd + 1, &read_fds, NULL, NULL, NULL) > 0) {\n    if (FD_ISSET(server, &read_fds)) {\n        // New connection\n        int client = accept(server, NULL, NULL);\n        clients.push_back(client);\n    }\n    \n    // Check clients\n    for (auto it = clients.begin(); it != clients.end(); ) {\n        if (FD_ISSET(*it, &read_fds)) {\n            char buffer[1024];\n            ssize_t received = recv(*it, buffer, sizeof(buffer), 0);\n            if (received <= 0) {\n                close(*it);\n                it = clients.erase(it);\n            } else {\n                ++it;\n            }\n        } else {\n            ++it;\n        }\n    }\n}\n```\n\n## poll()\n\n```cpp\n#include <poll.h>\n\nstruct pollfd fds[MAX_CLIENTS + 1];\nint nfds = 0;\n\n// Server socket\nfds[0].fd = server;\nfds[0].events = POLLIN;\nnfds++;\n\n// Clients\nfor (int client : clients) {\n    fds[nfds].fd = client;\n    fds[nfds].events = POLLIN;\n    nfds++;\n}\n\nif (poll(fds, nfds, -1) > 0) {\n    for (int i = 0; i < nfds; i++) {\n        if (fds[i].revents & POLLIN) {\n            // Handle activity\n        }\n    }\n}\n```\n\n## epoll (Linux)\n\n```cpp\n#include <sys/epoll.h>\n\nint epfd = epoll_create1(0);\n\nstruct epoll_event event;\nevent.events = EPOLLIN;\nevent.data.fd = server;\nepoll_ctl(epfd, EPOLL_CTL_ADD, server, &event);\n\nstruct epoll_event events[MAX_EVENTS];\n\nwhile (true) {\n    int n = epoll_wait(epfd, events, MAX_EVENTS, -1);\n    \n    for (int i = 0; i < n; i++) {\n        if (events[i].data.fd == server) {\n            int client = accept(server, NULL, NULL);\n            \n            event.events = EPOLLIN;\n            event.data.fd = client;\n            epoll_ctl(epfd, EPOLL_CTL_ADD, client, &event);\n        } else {\n            handleClient(events[i].data.fd);\n        }\n    }\n}\n```\n\n## Non-blocking Sockets\n\n```cpp\n#include <fcntl.h>\n\nint flags = fcntl(sock, F_GETFL, 0);\nfcntl(sock, F_SETFL, flags | O_NONBLOCK);\n\nssize_t sent = send(sock, data, size, 0);\nif (sent == -1 && errno == EAGAIN) {\n    // Would block, try again later\n}\n```\n\n## Best Practices\n\n1. **Use epoll** on Linux for scalability\n2. **Use poll** for portability\n3. **Handle EAGAIN/EWOULDBLOCK**\n4. **Set appropriate timeouts**\n5. **Limit connections**\n6. **Use edge-triggered** epoll for performance\n"
         },
         {
           "id": "cpp-U43-L7",
-          "title": "DP on graphs",
-          "unitTitle": "43. Core DP",
-          "xp": 15,
+          "title": "HTTP Protocol",
+          "unitTitle": "43. C++ Networking",
+          "xp": 85,
           "type": "lesson",
           "difficulty": "intermediate",
-          "questions": [],
-          "locked": true
+          "questions": [
+            {
+              "id": "cpp-43-7-1",
+              "type": "typing",
+              "question": "HTTP?",
+              "correctAnswer": [
+                "Hypertext Transfer Protocol",
+                "web",
+                "protocol"
+              ],
+              "explanation": "HTTP protocol.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-7-2",
+              "type": "typing",
+              "question": "GET?",
+              "correctAnswer": [
+                "get",
+                "request",
+                "method"
+              ],
+              "explanation": "GET method.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-7-3",
+              "type": "typing",
+              "question": "POST?",
+              "correctAnswer": [
+                "post",
+                "request",
+                "method"
+              ],
+              "explanation": "POST method.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-7-4",
+              "type": "multiple",
+              "question": "HTTP methods?",
+              "options": [
+                "GET",
+                "POST",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both methods.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-7-5",
+              "type": "multiple",
+              "question": "Status codes?",
+              "options": [
+                "200",
+                "404",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both codes.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-7-6",
+              "type": "code",
+              "question": "HTTP GET.",
+              "correctAnswer": [
+                "GET / HTTP/1.1\\r\\nHost: example.com\\r\\n\\r\\n",
+                "get"
+              ],
+              "explanation": "HTTP GET.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-7-7",
+              "type": "code",
+              "question": "HTTP POST.",
+              "correctAnswer": [
+                "POST /api/data HTTP/1.1\\r\\nHost: example.com\\r\\nContent-Length: 13\\r\\n\\r\\nHello, World!",
+                "post"
+              ],
+              "explanation": "HTTP POST.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-7-8",
+              "type": "code",
+              "question": "HTTP response.",
+              "correctAnswer": [
+                "HTTP/1.1 200 OK\\r\\nContent-Type: text/html\\r\\n\\r\\n<html>...</html>",
+                "response"
+              ],
+              "explanation": "HTTP response.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-7-9",
+              "type": "code",
+              "question": "Testing HTTP.",
+              "correctAnswer": [
+                "void testHTTP() { // Test HTTP }",
+                "test"
+              ],
+              "explanation": "Test HTTP.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-7-10",
+              "type": "code",
+              "question": "HTTP client.",
+              "correctAnswer": [
+                "// HTTP client: connect, send request, recv response",
+                "client"
+              ],
+              "explanation": "HTTP client.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-7-11",
+              "type": "code",
+              "question": "HTTP server.",
+              "correctAnswer": [
+                "// HTTP server: parse request, send response",
+                "server"
+              ],
+              "explanation": "HTTP server.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-7-12",
+              "type": "code",
+              "question": "Headers.",
+              "correctAnswer": [
+                "// Content-Type, Content-Length, Host, User-Agent",
+                "headers"
+              ],
+              "explanation": "HTTP headers.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-7-13",
+              "type": "code",
+              "question": "Status 200.",
+              "correctAnswer": [
+                "HTTP/1.1 200 OK",
+                "200"
+              ],
+              "explanation": "Status 200.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-7-14",
+              "type": "code",
+              "question": "Status 404.",
+              "correctAnswer": [
+                "HTTP/1.1 404 Not Found",
+                "404"
+              ],
+              "explanation": "Status 404.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-7-15",
+              "type": "code",
+              "question": "Status 500.",
+              "correctAnswer": [
+                "HTTP/1.1 500 Internal Server Error",
+                "500"
+              ],
+              "explanation": "Status 500.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-7-16",
+              "type": "code",
+              "question": "Content-Type.",
+              "correctAnswer": [
+                "Content-Type: text/html",
+                "content type"
+              ],
+              "explanation": "Content-Type.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-7-17",
+              "type": "code",
+              "question": "JSON.",
+              "correctAnswer": [
+                "Content-Type: application/json",
+                "json"
+              ],
+              "explanation": "JSON content.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-7-18",
+              "type": "code",
+              "question": "HTTP summary.",
+              "correctAnswer": [
+                "// HTTP: GET, POST, headers, status codes",
+                "summary"
+              ],
+              "explanation": "Summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-7-19",
+              "type": "code",
+              "question": "Complete HTTP.",
+              "correctAnswer": [
+                "// Full HTTP implementation",
+                "complete"
+              ],
+              "explanation": "Complete HTTP.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-7-20",
+              "type": "code",
+              "question": "REST API.",
+              "correctAnswer": [
+                "// REST: GET, POST, PUT, DELETE",
+                "rest"
+              ],
+              "explanation": "REST API.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-7-21",
+              "type": "code",
+              "question": "HTTPS.",
+              "correctAnswer": [
+                "// TLS/SSL encrypted HTTP",
+                "https"
+              ],
+              "explanation": "HTTPS.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-7-22",
+              "type": "code",
+              "question": "HTTP/2.",
+              "correctAnswer": [
+                "// Multiplexed, binary HTTP",
+                "http2"
+              ],
+              "explanation": "HTTP/2.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-7-23",
+              "type": "code",
+              "question": "CORS.",
+              "correctAnswer": [
+                "// Cross-Origin Resource Sharing",
+                "cors"
+              ],
+              "explanation": "CORS.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-7-24",
+              "type": "code",
+              "question": "HTTP wrapper.",
+              "correctAnswer": [
+                "// HTTP client/server classes",
+                "wrapper"
+              ],
+              "explanation": "HTTP wrapper.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-7-25",
+              "type": "code",
+              "question": "Best practices.",
+              "correctAnswer": [
+                "// Validate inputs, handle errors, use HTTPS",
+                "practices"
+              ],
+              "explanation": "Best practices.",
+              "xp": 15
+            }
+          ],
+          "locked": true,
+          "lessonText": "# HTTP Protocol\n\nHypertext Transfer Protocol.\n\n## HTTP Request\n\n```\nGET /index.html HTTP/1.1\nHost: example.com\nUser-Agent: Mozilla/5.0\nAccept: text/html\n\n```\n\n## HTTP Response\n\n```\nHTTP/1.1 200 OK\nContent-Type: text/html\nContent-Length: 1234\n\n<!DOCTYPE html>...\n```\n\n## HTTP Methods\n\n| Method | Description |\n|--------|-------------|\n| GET | Retrieve data |\n| POST | Submit data |\n| PUT | Update data |\n| DELETE | Delete data |\n| HEAD | Headers only |\n| OPTIONS | Supported methods |\n\n## Status Codes\n\n| Code | Meaning |\n|------|---------|\n| 200 | OK |\n| 201 | Created |\n| 301 | Moved Permanently |\n| 400 | Bad Request |\n| 401 | Unauthorized |\n| 403 | Forbidden |\n| 404 | Not Found |\n| 500 | Internal Server Error |\n\n## HTTP Client\n\n```cpp\nclass HTTPClient {\n    int sock;\npublic:\n    HTTPClient() : sock(socket(AF_INET, SOCK_STREAM, 0)) {}\n    \n    std::string get(const std::string& host, const std::string& path) {\n        struct sockaddr_in addr;\n        addr.sin_family = AF_INET;\n        addr.sin_port = htons(80);\n        inet_pton(AF_INET, host.c_str(), &addr.sin_addr);\n        \n        connect(sock, (struct sockaddr*)&addr, sizeof(addr));\n        \n        std::string request = \"GET \" + path + \" HTTP/1.1\\r\\n\";\n        request += \"Host: \" + host + \"\\r\\n\\r\\n\";\n        \n        send(sock, request.c_str(), request.size(), 0);\n        \n        char buffer[1024];\n        ssize_t received = recv(sock, buffer, sizeof(buffer), 0);\n        return std::string(buffer, received);\n    }\n};\n```\n\n## HTTP Server\n\n```cpp\nvoid handleHTTP(int client) {\n    char buffer[1024];\n    ssize_t received = recv(client, buffer, sizeof(buffer), 0);\n    \n    std::string response = \"HTTP/1.1 200 OK\\r\\n\";\n    response += \"Content-Type: text/html\\r\\n\\r\\n\";\n    response += \"<h1>Hello, World!</h1>\";\n    \n    send(client, response.c_str(), response.size(), 0);\n}\n```\n\n## Best Practices\n\n1. **Use HTTPS** for production\n2. **Validate inputs**\n3. **Handle errors** gracefully\n4. **Set appropriate status codes**\n5. **Use proper headers**\n6. **Implement CORS** for web APIs\n"
+        },
+        {
+          "id": "cpp-U43-L8",
+          "title": "Network Security",
+          "questions": [
+            {
+              "id": "cpp-43-8-1",
+              "type": "typing",
+              "question": "SSL/TLS?",
+              "correctAnswer": [
+                "encryption",
+                "secure",
+                "HTTPS"
+              ],
+              "explanation": "SSL/TLS encryption.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-8-2",
+              "type": "typing",
+              "question": "OpenSSL?",
+              "correctAnswer": [
+                "SSL",
+                "TLS",
+                "library"
+              ],
+              "explanation": "OpenSSL library.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-8-3",
+              "type": "typing",
+              "question": "Certificate?",
+              "correctAnswer": [
+                "cert",
+                "public key",
+                "identity"
+              ],
+              "explanation": "SSL certificate.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-8-4",
+              "type": "multiple",
+              "question": "Security measures?",
+              "options": [
+                "encryption",
+                "authentication",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both measures.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-8-5",
+              "type": "multiple",
+              "question": "Attacks?",
+              "options": [
+                "MITM",
+                "injection",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both attacks.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-8-6",
+              "type": "code",
+              "question": "SSL context.",
+              "correctAnswer": [
+                "SSL_CTX_new(SSLv23_server_method())",
+                "context"
+              ],
+              "explanation": "SSL context.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-8-7",
+              "type": "code",
+              "question": "SSL certificate.",
+              "correctAnswer": [
+                "SSL_CTX_use_certificate_file(ctx, \"cert.pem\", SSL_FILETYPE_PEM)",
+                "cert"
+              ],
+              "explanation": "SSL certificate.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-8-8",
+              "type": "code",
+              "question": "SSL key.",
+              "correctAnswer": [
+                "SSL_CTX_use_PrivateKey_file(ctx, \"key.pem\", SSL_FILETYPE_PEM)",
+                "key"
+              ],
+              "explanation": "SSL private key.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-8-9",
+              "type": "code",
+              "question": "SSL wrap.",
+              "correctAnswer": [
+                "SSL_new(ctx)",
+                "wrap"
+              ],
+              "explanation": "SSL wrap.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-8-10",
+              "type": "code",
+              "question": "SSL accept.",
+              "correctAnswer": [
+                "SSL_accept(ssl)",
+                "accept"
+              ],
+              "explanation": "SSL accept.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-8-11",
+              "type": "code",
+              "question": "SSL connect.",
+              "correctAnswer": [
+                "SSL_connect(ssl)",
+                "connect"
+              ],
+              "explanation": "SSL connect.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-8-12",
+              "type": "code",
+              "question": "Testing SSL.",
+              "correctAnswer": [
+                "void testSSL() { // Test SSL }",
+                "test"
+              ],
+              "explanation": "Test SSL.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-8-13",
+              "type": "code",
+              "question": "SSL read.",
+              "correctAnswer": [
+                "SSL_read(ssl, buffer, size)",
+                "read"
+              ],
+              "explanation": "SSL read.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-8-14",
+              "type": "code",
+              "question": "SSL write.",
+              "correctAnswer": [
+                "SSL_write(ssl, data, size)",
+                "write"
+              ],
+              "explanation": "SSL write.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-8-15",
+              "type": "code",
+              "question": "Validation.",
+              "correctAnswer": [
+                "// Validate certificates, check hostnames",
+                "validation"
+              ],
+              "explanation": "SSL validation.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-8-16",
+              "type": "code",
+              "question": "Input validation.",
+              "correctAnswer": [
+                "// Validate all network inputs",
+                "input"
+              ],
+              "explanation": "Input validation.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-8-17",
+              "type": "code",
+              "question": "Buffer overflow.",
+              "correctAnswer": [
+                "// Check buffer sizes, use safe functions",
+                "buffer"
+              ],
+              "explanation": "Buffer overflow.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-8-18",
+              "type": "code",
+              "question": "SQL injection.",
+              "correctAnswer": [
+                "// Use parameterized queries, escape inputs",
+                "sql"
+              ],
+              "explanation": "SQL injection.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-8-19",
+              "type": "code",
+              "question": "XSS.",
+              "correctAnswer": [
+                "// Escape HTML, use CSP",
+                "xss"
+              ],
+              "explanation": "XSS protection.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-8-20",
+              "type": "code",
+              "question": "SSL summary.",
+              "correctAnswer": [
+                "// SSL/TLS: encryption, certificates, OpenSSL",
+                "ssl summary"
+              ],
+              "explanation": "SSL summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-8-21",
+              "type": "code",
+              "question": "Complete SSL.",
+              "correctAnswer": [
+                "// Full SSL implementation",
+                "complete"
+              ],
+              "explanation": "Complete SSL.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-8-22",
+              "type": "code",
+              "question": "HTTPS server.",
+              "correctAnswer": [
+                "// HTTPS server with SSL",
+                "https"
+              ],
+              "explanation": "HTTPS server.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-8-23",
+              "type": "code",
+              "question": "Security summary.",
+              "correctAnswer": [
+                "// Security: SSL, validation, encryption, safe practices",
+                "security summary"
+              ],
+              "explanation": "Security summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-8-24",
+              "type": "code",
+              "question": "Security wrapper.",
+              "correctAnswer": [
+                "// Security helpers",
+                "wrapper"
+              ],
+              "explanation": "Security wrapper.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-8-25",
+              "type": "code",
+              "question": "Best practices.",
+              "correctAnswer": [
+                "// Use SSL/TLS, validate inputs, encrypt data",
+                "practices"
+              ],
+              "explanation": "Best practices.",
+              "xp": 15
+            }
+          ],
+          "unitTitle": "43. C++ Networking",
+          "xp": 85,
+          "type": "lesson",
+          "difficulty": "advanced",
+          "lessonText": "# Network Security\n\nSecuring network applications.\n\n## SSL/TLS with OpenSSL\n\n```cpp\n#include <openssl/ssl.h>\n#include <openssl/err.h>\n\nSSL_CTX* ctx = SSL_CTX_new(SSLv23_server_method());\n\n// Load certificate and key\nSSL_CTX_use_certificate_file(ctx, \"cert.pem\", SSL_FILETYPE_PEM);\nSSL_CTX_use_PrivateKey_file(ctx, \"key.pem\", SSL_FILETYPE_PEM);\n\n// Wrap socket\nint client = accept(server, NULL, NULL);\nSSL* ssl = SSL_new(ctx);\nSSL_set_fd(ssl, client);\n\n// Accept connection\nSSL_accept(ssl);\n\n// Read/Write\nSSL_read(ssl, buffer, size);\nSSL_write(ssl, data, size);\n\n// Cleanup\nSSL_free(ssl);\nSSL_CTX_free(ctx);\n```\n\n## Best Practices\n\n1. **Use SSL/TLS** for all communications\n2. **Validate certificates**\n3. **Encrypt sensitive data**\n4. **Validate all inputs**\n5. **Use safe functions**\n6. **Implement authentication**\n7. **Log security events**\n\n## Common Vulnerabilities\n\n| Vulnerability | Prevention |\n|---------------|------------|\n| SQL Injection | Parameterized queries |\n| XSS | Escape HTML, CSP |\n| CSRF | Tokens, same-site cookies |\n| Buffer Overflow | Bounds checking |\n| MITM | SSL/TLS |\n"
+        },
+        {
+          "id": "cpp-U43-L9",
+          "title": "C++ Networking Summary",
+          "questions": [
+            {
+              "id": "cpp-43-9-1",
+              "type": "typing",
+              "question": "TCP?",
+              "correctAnswer": [
+                "reliable",
+                "connection",
+                "stream"
+              ],
+              "explanation": "TCP protocol.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-9-2",
+              "type": "typing",
+              "question": "UDP?",
+              "correctAnswer": [
+                "unreliable",
+                "datagram",
+                "fast"
+              ],
+              "explanation": "UDP protocol.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-9-3",
+              "type": "typing",
+              "question": "HTTP?",
+              "correctAnswer": [
+                "web",
+                "protocol",
+                "request"
+              ],
+              "explanation": "HTTP protocol.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-9-4",
+              "type": "multiple",
+              "question": "Protocols?",
+              "options": [
+                "TCP",
+                "UDP",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both protocols.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-9-5",
+              "type": "multiple",
+              "question": "I/O models?",
+              "options": [
+                "blocking",
+                "non-blocking",
+                "both"
+              ],
+              "correctAnswer": [
+                2
+              ],
+              "explanation": "Both models.",
+              "xp": 5
+            },
+            {
+              "id": "cpp-43-9-6",
+              "type": "code",
+              "question": "Complete example.",
+              "correctAnswer": [
+                "// Full networking example",
+                "complete"
+              ],
+              "explanation": "Complete example.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-9-7",
+              "type": "code",
+              "question": "TCP summary.",
+              "correctAnswer": [
+                "// TCP: socket, bind, listen, accept, connect, send, recv",
+                "tcp summary"
+              ],
+              "explanation": "TCP summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-9-8",
+              "type": "code",
+              "question": "UDP summary.",
+              "correctAnswer": [
+                "// UDP: socket, bind, sendto, recvfrom",
+                "udp summary"
+              ],
+              "explanation": "UDP summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-9-9",
+              "type": "code",
+              "question": "HTTP summary.",
+              "correctAnswer": [
+                "// HTTP: GET, POST, headers, status codes",
+                "http summary"
+              ],
+              "explanation": "HTTP summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-9-10",
+              "type": "code",
+              "question": "Async summary.",
+              "correctAnswer": [
+                "// Async I/O: select, poll, epoll",
+                "async summary"
+              ],
+              "explanation": "Async I/O summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-9-11",
+              "type": "code",
+              "question": "Security summary.",
+              "correctAnswer": [
+                "// Security: SSL/TLS, validation, encryption",
+                "security summary"
+              ],
+              "explanation": "Security summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-9-12",
+              "type": "code",
+              "question": "Best practices.",
+              "correctAnswer": [
+                "// RAII, error handling, timeouts, security",
+                "practices"
+              ],
+              "explanation": "Best practices.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-9-13",
+              "type": "code",
+              "question": "Real-world apps.",
+              "correctAnswer": [
+                "// Web servers, chat apps, file transfer",
+                "apps"
+              ],
+              "explanation": "Real-world apps.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-9-14",
+              "type": "code",
+              "question": "Testing networking.",
+              "correctAnswer": [
+                "void testNetworking() { // Test networking }",
+                "test"
+              ],
+              "explanation": "Test networking.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-9-15",
+              "type": "code",
+              "question": "Tools.",
+              "correctAnswer": [
+                "// sockets, select, poll, epoll, OpenSSL",
+                "tools"
+              ],
+              "explanation": "Networking tools.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-9-16",
+              "type": "code",
+              "question": "Unit 43 summary.",
+              "correctAnswer": [
+                "// Unit 43: TCP, UDP, HTTP, async, security",
+                "unit summary"
+              ],
+              "explanation": "Unit 43 summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-9-17",
+              "type": "code",
+              "question": "Course progress.",
+              "correctAnswer": [
+                "// Completing Unit 43 of 49",
+                "progress"
+              ],
+              "explanation": "Course progress.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-9-18",
+              "type": "code",
+              "question": "Practice projects.",
+              "correctAnswer": [
+                "// Web server, chat app, file transfer",
+                "projects"
+              ],
+              "explanation": "Practice projects.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-9-19",
+              "type": "code",
+              "question": "Advanced topics.",
+              "correctAnswer": [
+                "// ZeroMQ, gRPC, WebSockets",
+                "advanced"
+              ],
+              "explanation": "Advanced topics.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-9-20",
+              "type": "code",
+              "question": "Final summary.",
+              "correctAnswer": [
+                "// Networking: TCP, UDP, HTTP, async, security",
+                "final"
+              ],
+              "explanation": "Final summary.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-9-21",
+              "type": "code",
+              "question": "Congratulations.",
+              "correctAnswer": [
+                "// Unit 43 COMPLETE! Mastered C++ Networking!",
+                "congratulations"
+              ],
+              "explanation": "Congratulations!",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-9-22",
+              "type": "code",
+              "question": "Next steps.",
+              "correctAnswer": [
+                "// Continue to next unit, practice, build apps",
+                "next"
+              ],
+              "explanation": "Next steps.",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-9-23",
+              "type": "code",
+              "question": "Milestone.",
+              "correctAnswer": [
+                "// 88% COMPLETE! 6 more units to 100%!",
+                "milestone"
+              ],
+              "explanation": "Milestone!",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-9-24",
+              "type": "code",
+              "question": "Achievement.",
+              "correctAnswer": [
+                "// 19 complete units with 4,275 questions!",
+                "achievement"
+              ],
+              "explanation": "Achievement!",
+              "xp": 15
+            },
+            {
+              "id": "cpp-43-9-25",
+              "type": "code",
+              "question": "Unstoppable!",
+              "correctAnswer": [
+                "// YOU ARE UNSTOPPABLE! 88% COMPLETE!",
+                "unstoppable"
+              ],
+              "explanation": "Unstoppable!",
+              "xp": 15
+            }
+          ],
+          "unitTitle": "43. C++ Networking",
+          "xp": 85,
+          "type": "lesson",
+          "difficulty": "intermediate",
+          "lessonText": "# C++ Networking Summary\n\nComplete guide to C++ networking.\n\n## Key Concepts\n\n| Concept | Description |\n|---------|-------------|\n| **TCP** | Reliable, connection-oriented |\n| **UDP** | Unreliable, connectionless |\n| **HTTP** | Web protocol |\n| **Async I/O** | select, poll, epoll |\n| **Security** | SSL/TLS, validation |\n\n## Quick Reference\n\n### TCP Server\n```cpp\nsocket() -> bind() -> listen() -> accept() -> send()/recv() -> close()\n```\n\n### TCP Client\n```cpp\nsocket() -> connect() -> send()/recv() -> close()\n```\n\n### UDP\n```cpp\nsocket() -> bind() -> sendto()/recvfrom()\n```\n\n### Select\n```cpp\nFD_ZERO() -> FD_SET() -> select() -> FD_ISSET()\n```\n\n## Complete Example\n\n```cpp\nclass NetworkServer {\n    int server;\n    std::vector<int> clients;\n    fd_set read_fds;\n    int max_fd;\n    \npublic:\n    NetworkServer(int port) {\n        server = socket(AF_INET, SOCK_STREAM, 0);\n        \n        struct sockaddr_in addr;\n        addr.sin_family = AF_INET;\n        addr.sin_port = htons(port);\n        addr.sin_addr.s_addr = INADDR_ANY;\n        \n        bind(server, (struct sockaddr*)&addr, sizeof(addr));\n        listen(server, 10);\n        \n        max_fd = server;\n    }\n    \n    void run() {\n        while (true) {\n            FD_ZERO(&read_fds);\n            FD_SET(server, &read_fds);\n            \n            for (int client : clients) {\n                FD_SET(client, &read_fds);\n                if (client > max_fd) max_fd = client;\n            }\n            \n            if (select(max_fd + 1, &read_fds, NULL, NULL, NULL) > 0) {\n                if (FD_ISSET(server, &read_fds)) {\n                    int client = accept(server, NULL, NULL);\n                    clients.push_back(client);\n                }\n                \n                for (auto it = clients.begin(); it != clients.end(); ) {\n                    if (FD_ISSET(*it, &read_fds)) {\n                        char buffer[1024];\n                        ssize_t received = recv(*it, buffer, sizeof(buffer), 0);\n                        \n                        if (received <= 0) {\n                            close(*it);\n                            it = clients.erase(it);\n                        } else {\n                            broadcast(buffer, received, *it);\n                            ++it;\n                        }\n                    } else {\n                        ++it;\n                    }\n                }\n            }\n        }\n    }\n    \nprivate:\n    void broadcast(const char* data, size_t size, int sender) {\n        for (int client : clients) {\n            if (client != sender) {\n                send(client, data, size, 0);\n            }\n        }\n    }\n};\n```\n\n## Project Ideas\n\n1. **Web Server**: HTTP server with routing\n2. **Chat Application**: Multi-user chat\n3. **File Transfer**: Secure file sharing\n4. **Game Server**: Multiplayer game\n5. **Proxy Server**: HTTP proxy\n\n## Best Practices\n\n1. **Use RAII** for socket management\n2. **Handle errors** gracefully\n3. **Use timeouts** for blocking operations\n4. **Validate inputs**\n5. **Use SSL/TLS** for security\n6. **Implement logging**\n7. **Test thoroughly**\n\nCongratulations! You've completed C++ Networking!\n"
         }
-      ]
+      ],
+      "unitTitle": "43. C++ Networking"
     },
     {
       "unitId": "44",
