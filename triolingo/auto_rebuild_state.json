@@ -1,11 +1,11 @@
 {
-  "total_fixed": 267,
-  "batches_completed": 89,
-  "questions_rebuilt": 6675,
-  "last_batch_time": "2026-03-17T19:35:02.213259",
+  "total_fixed": 270,
+  "batches_completed": 90,
+  "questions_rebuilt": 6750,
+  "last_batch_time": "2026-03-17T19:40:02.496735",
   "last_batch_lessons": [
-    "Unit 48, L5: Game Development",
-    "Unit 14, L1: Threads (std::thread)",
-    "Unit 45, L7: std::span"
+    "Unit 26, L5: B-Trees",
+    "Unit 46, L7: Testing",
+    "Unit 38, L5: HTTP Protocol"
   ]
 }

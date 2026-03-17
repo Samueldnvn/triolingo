@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 89 Complete**
+📦 **Batch 90 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 48, L5: Game Development
-  • Unit 14, L1: Threads (std::thread)
-  • Unit 45, L7: std::span
+  • Unit 26, L5: B-Trees
+  • Unit 46, L7: Testing
+  • Unit 38, L5: HTTP Protocol
 
 📊 **Progress:**
-• Fixed: 267/317 lessons (84.2%)
-• Questions: 6675+
-• Remaining: 23 lessons
+• Fixed: 270/317 lessons (85.2%)
+• Questions: 6750+
+• Remaining: 20 lessons
 
 🚀 Keep it going!
