@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 68 Complete**
+📦 **Batch 69 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 20, L5: Error Handling Across Boundaries
-  • Unit 21, L2: Dynamic Arrays
-  • Unit 21, L7: Difference Arrays
+  • Unit 26, L1: Binary Tree Traversal
+  • Unit 30, L2: Insert and Search
+  • Unit 35, L7: Shortest Path Performance
 
 📊 **Progress:**
-• Fixed: 204/317 lessons (64.4%)
-• Questions: 5100+
-• Remaining: 86 lessons
+• Fixed: 207/317 lessons (65.3%)
+• Questions: 5175+
+• Remaining: 83 lessons
 
 🚀 Keep it going!

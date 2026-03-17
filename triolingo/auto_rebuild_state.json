@@ -1,11 +1,11 @@
 {
-  "total_fixed": 204,
-  "batches_completed": 68,
-  "questions_rebuilt": 5100,
-  "last_batch_time": "2026-03-17T17:50:03.699261",
+  "total_fixed": 207,
+  "batches_completed": 69,
+  "questions_rebuilt": 5175,
+  "last_batch_time": "2026-03-17T17:55:02.934638",
   "last_batch_lessons": [
-    "Unit 20, L5: Error Handling Across Boundaries",
-    "Unit 21, L2: Dynamic Arrays",
-    "Unit 21, L7: Difference Arrays"
+    "Unit 26, L1: Binary Tree Traversal",
+    "Unit 30, L2: Insert and Search",
+    "Unit 35, L7: Shortest Path Performance"
   ]
 }
