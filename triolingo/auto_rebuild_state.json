@@ -1,11 +1,11 @@
 {
-  "total_fixed": 18,
-  "batches_completed": 6,
-  "questions_rebuilt": 450,
-  "last_batch_time": "2026-03-17T12:40:02.830581",
+  "total_fixed": 21,
+  "batches_completed": 7,
+  "questions_rebuilt": 525,
+  "last_batch_time": "2026-03-17T12:45:03.097792",
   "last_batch_lessons": [
-    "Unit 44, L7: Async & Futures",
-    "Unit 44, L9: Concurrency Summary",
-    "Unit 24, L3: Deque"
+    "Unit 27, L4: Treap",
+    "Unit 28, L5: Hash Table Implementation",
+    "Unit 29, L3: Insert and Delete"
   ]
 }
