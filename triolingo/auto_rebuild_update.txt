@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 61 Complete**
+📦 **Batch 62 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 29, L7: Binary Heap Variants
-  • Unit 20, L13: Resource Management
-  • Unit 25, L9: Quadratic Probing
+  • Unit 31, L2: Range Sum Query
+  • Unit 22, L8: Intrusive Lists
+  • Unit 28, L9: Advanced Hash Table Topics
 
 📊 **Progress:**
-• Fixed: 183/317 lessons (57.7%)
-• Questions: 4575+
-• Remaining: 107 lessons
+• Fixed: 186/317 lessons (58.7%)
+• Questions: 4650+
+• Remaining: 104 lessons
 
 🚀 Keep it going!
