@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 62 Complete**
+📦 **Batch 63 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 31, L2: Range Sum Query
-  • Unit 22, L8: Intrusive Lists
-  • Unit 28, L9: Advanced Hash Table Topics
+  • Unit 25, L4: Rolling Hash
+  • Unit 30, L3: Delete
+  • Unit 22, L2: Doubly Linked List
 
 📊 **Progress:**
-• Fixed: 186/317 lessons (58.7%)
-• Questions: 4650+
-• Remaining: 104 lessons
+• Fixed: 189/317 lessons (59.6%)
+• Questions: 4725+
+• Remaining: 101 lessons
 
 🚀 Keep it going!

@@ -1,11 +1,11 @@
 {
-  "total_fixed": 186,
-  "batches_completed": 62,
-  "questions_rebuilt": 4650,
-  "last_batch_time": "2026-03-17T17:20:02.819606",
+  "total_fixed": 189,
+  "batches_completed": 63,
+  "questions_rebuilt": 4725,
+  "last_batch_time": "2026-03-17T17:25:03.519961",
   "last_batch_lessons": [
-    "Unit 31, L2: Range Sum Query",
-    "Unit 22, L8: Intrusive Lists",
-    "Unit 28, L9: Advanced Hash Table Topics"
+    "Unit 25, L4: Rolling Hash",
+    "Unit 30, L3: Delete",
+    "Unit 22, L2: Doubly Linked List"
   ]
 }
