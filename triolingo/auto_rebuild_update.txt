@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 29 Complete**
+📦 **Batch 30 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 42, L9: Build Systems Summary
-  • Unit 44, L3: Condition Variables
-  • Unit 23, L6: Multi-stack Structures
+  • Unit 24, L6: Double-ended Priority Queue
+  • Unit 25, L12: Cuckoo Hashing
+  • Unit 36, L2: Graph Traversal
 
 📊 **Progress:**
-• Fixed: 87/317 lessons (27.4%)
-• Questions: 2175+
-• Remaining: 203 lessons
+• Fixed: 90/317 lessons (28.4%)
+• Questions: 2250+
+• Remaining: 200 lessons
 
 🚀 Keep it going!

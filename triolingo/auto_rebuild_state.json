@@ -1,11 +1,11 @@
 {
-  "total_fixed": 87,
-  "batches_completed": 29,
-  "questions_rebuilt": 2175,
-  "last_batch_time": "2026-03-17T14:35:02.605050",
+  "total_fixed": 90,
+  "batches_completed": 30,
+  "questions_rebuilt": 2250,
+  "last_batch_time": "2026-03-17T14:40:02.991146",
   "last_batch_lessons": [
-    "Unit 42, L9: Build Systems Summary",
-    "Unit 44, L3: Condition Variables",
-    "Unit 23, L6: Multi-stack Structures"
+    "Unit 24, L6: Double-ended Priority Queue",
+    "Unit 25, L12: Cuckoo Hashing",
+    "Unit 36, L2: Graph Traversal"
   ]
 }
