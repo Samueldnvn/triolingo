@@ -1,11 +1,11 @@
 {
-  "total_fixed": 24,
-  "batches_completed": 8,
-  "questions_rebuilt": 600,
-  "last_batch_time": "2026-03-17T12:50:02.772887",
+  "total_fixed": 27,
+  "batches_completed": 9,
+  "questions_rebuilt": 675,
+  "last_batch_time": "2026-03-17T12:55:03.044632",
   "last_batch_lessons": [
-    "Unit 25, L17: HyperLogLog",
-    "Unit 41, L6: Async & Futures",
-    "Unit 43, L4: TCP Client"
+    "Unit 46, L6: Safety & Security",
+    "Unit 48, L9: Projects & Applications Summary",
+    "Unit 49, L4: Memory & Pointers Review"
   ]
 }
