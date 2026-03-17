@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 45 Complete**
+📦 **Batch 46 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 30, L5: Compressed Trie
-  • Unit 32, L4: Range Update Range Query
-  • Unit 39, L2: Database Connections
+  • Unit 20, L7: C++ Standard Library Compatibility
+  • Unit 22, L1: Singly Linked List
+  • Unit 24, L7: Persistent Queue
 
 📊 **Progress:**
-• Fixed: 135/317 lessons (42.6%)
-• Questions: 3375+
-• Remaining: 155 lessons
+• Fixed: 138/317 lessons (43.5%)
+• Questions: 3450+
+• Remaining: 152 lessons
 
 🚀 Keep it going!

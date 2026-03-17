@@ -1,11 +1,11 @@
 {
-  "total_fixed": 135,
-  "batches_completed": 45,
-  "questions_rebuilt": 3375,
-  "last_batch_time": "2026-03-17T15:55:02.585744",
+  "total_fixed": 138,
+  "batches_completed": 46,
+  "questions_rebuilt": 3450,
+  "last_batch_time": "2026-03-17T16:00:03.367410",
   "last_batch_lessons": [
-    "Unit 30, L5: Compressed Trie",
-    "Unit 32, L4: Range Update Range Query",
-    "Unit 39, L2: Database Connections"
+    "Unit 20, L7: C++ Standard Library Compatibility",
+    "Unit 22, L1: Singly Linked List",
+    "Unit 24, L7: Persistent Queue"
   ]
 }
