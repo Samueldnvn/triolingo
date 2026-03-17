@@ -1,11 +1,11 @@
 {
-  "total_fixed": 51,
-  "batches_completed": 17,
-  "questions_rebuilt": 1275,
-  "last_batch_time": "2026-03-17T13:35:03.291797",
+  "total_fixed": 54,
+  "batches_completed": 18,
+  "questions_rebuilt": 1350,
+  "last_batch_time": "2026-03-17T13:40:02.867478",
   "last_batch_lessons": [
-    "Unit 42, L8: Cross-Platform Build",
-    "Unit 25, L19: Consistent Hashing",
-    "Unit 42, L5: Package Managers"
+    "Unit 23, L4: Max Stack",
+    "Unit 40, L5: Multi-Client Servers",
+    "Unit 45, L2: Ranges"
   ]
 }
