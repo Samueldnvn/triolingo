@@ -1,11 +1,11 @@
 {
-  "total_fixed": 201,
-  "batches_completed": 67,
-  "questions_rebuilt": 5025,
-  "last_batch_time": "2026-03-17T17:45:03.893364",
+  "total_fixed": 204,
+  "batches_completed": 68,
+  "questions_rebuilt": 5100,
+  "last_batch_time": "2026-03-17T17:50:03.699261",
   "last_batch_lessons": [
-    "Unit 34, L2: Kruskal's Algorithm",
-    "Unit 34, L4: Prim's with Priority Queue",
-    "Unit 33, L4: DSU Applications"
+    "Unit 20, L5: Error Handling Across Boundaries",
+    "Unit 21, L2: Dynamic Arrays",
+    "Unit 21, L7: Difference Arrays"
   ]
 }

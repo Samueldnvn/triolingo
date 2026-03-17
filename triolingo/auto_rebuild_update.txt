@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 67 Complete**
+📦 **Batch 68 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 34, L2: Kruskal's Algorithm
-  • Unit 34, L4: Prim's with Priority Queue
-  • Unit 33, L4: DSU Applications
+  • Unit 20, L5: Error Handling Across Boundaries
+  • Unit 21, L2: Dynamic Arrays
+  • Unit 21, L7: Difference Arrays
 
 📊 **Progress:**
-• Fixed: 201/317 lessons (63.4%)
-• Questions: 5025+
-• Remaining: 89 lessons
+• Fixed: 204/317 lessons (64.4%)
+• Questions: 5100+
+• Remaining: 86 lessons
 
 🚀 Keep it going!
