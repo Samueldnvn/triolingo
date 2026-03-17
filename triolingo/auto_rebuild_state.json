@@ -1,11 +1,11 @@
 {
-  "total_fixed": 108,
-  "batches_completed": 36,
-  "questions_rebuilt": 2700,
-  "last_batch_time": "2026-03-17T15:10:02.841503",
+  "total_fixed": 111,
+  "batches_completed": 37,
+  "questions_rebuilt": 2775,
+  "last_batch_time": "2026-03-17T15:15:03.580257",
   "last_batch_lessons": [
-    "Unit 49, L1: Language Fundamentals Review",
-    "Unit 27, L9: Randomized BST",
-    "Unit 26, L2: Threaded Binary Tree"
+    "Unit 31, L3: Range Min/Max Query",
+    "Unit 41, L8: Advanced Patterns",
+    "Unit 22, L4: XOR Linked List"
   ]
 }

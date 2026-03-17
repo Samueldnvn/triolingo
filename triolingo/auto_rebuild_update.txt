@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 36 Complete**
+📦 **Batch 37 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 49, L1: Language Fundamentals Review
-  • Unit 27, L9: Randomized BST
-  • Unit 26, L2: Threaded Binary Tree
+  • Unit 31, L3: Range Min/Max Query
+  • Unit 41, L8: Advanced Patterns
+  • Unit 22, L4: XOR Linked List
 
 📊 **Progress:**
-• Fixed: 108/317 lessons (34.1%)
-• Questions: 2700+
-• Remaining: 182 lessons
+• Fixed: 111/317 lessons (35.0%)
+• Questions: 2775+
+• Remaining: 179 lessons
 
 🚀 Keep it going!
