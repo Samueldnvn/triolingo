@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 82 Complete**
+📦 **Batch 83 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 10, L1: C++11 Features
-  • Unit 19, L3: Avoiding Raw Pointers
-  • Unit 15, L1: File Streams
+  • Unit 35, L4: Shortest Path Variants
+  • Unit 32, L9: BIT Challenges
+  • Unit 16, L4: Move Semantics and Performance
 
 📊 **Progress:**
-• Fixed: 246/317 lessons (77.6%)
-• Questions: 6150+
-• Remaining: 44 lessons
+• Fixed: 249/317 lessons (78.5%)
+• Questions: 6225+
+• Remaining: 41 lessons
 
 🚀 Keep it going!

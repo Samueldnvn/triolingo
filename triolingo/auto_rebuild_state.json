@@ -1,11 +1,11 @@
 {
-  "total_fixed": 246,
-  "batches_completed": 82,
-  "questions_rebuilt": 6150,
-  "last_batch_time": "2026-03-17T19:00:06.454315",
+  "total_fixed": 249,
+  "batches_completed": 83,
+  "questions_rebuilt": 6225,
+  "last_batch_time": "2026-03-17T19:05:03.219731",
   "last_batch_lessons": [
-    "Unit 10, L1: C++11 Features",
-    "Unit 19, L3: Avoiding Raw Pointers",
-    "Unit 15, L1: File Streams"
+    "Unit 35, L4: Shortest Path Variants",
+    "Unit 32, L9: BIT Challenges",
+    "Unit 16, L4: Move Semantics and Performance"
   ]
 }
