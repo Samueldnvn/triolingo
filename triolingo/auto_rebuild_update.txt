@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 83 Complete**
+📦 **Batch 84 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 35, L4: Shortest Path Variants
-  • Unit 32, L9: BIT Challenges
-  • Unit 16, L4: Move Semantics and Performance
+  • Unit 29, L9: Heap Challenges
+  • Unit 14, L4: Futures and Promises
+  • Unit 49, L7: Modern C++ Features Review
 
 📊 **Progress:**
-• Fixed: 249/317 lessons (78.5%)
-• Questions: 6225+
-• Remaining: 41 lessons
+• Fixed: 252/317 lessons (79.5%)
+• Questions: 6300+
+• Remaining: 38 lessons
 
 🚀 Keep it going!
