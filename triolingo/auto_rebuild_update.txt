@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 42 Complete**
+📦 **Batch 43 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 39, L9: Database Programming Summary
-  • Unit 20, L9: Cross-Platform Development
-  • Unit 30, L4: Trie Applications
+  • Unit 33, L9: DSU Performance
+  • Unit 20, L10: C++ and Other Languages
+  • Unit 25, L5: Perfect Hashing
 
 📊 **Progress:**
-• Fixed: 126/317 lessons (39.7%)
-• Questions: 3150+
-• Remaining: 164 lessons
+• Fixed: 129/317 lessons (40.7%)
+• Questions: 3225+
+• Remaining: 161 lessons
 
 🚀 Keep it going!

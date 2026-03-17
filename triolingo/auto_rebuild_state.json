@@ -1,11 +1,11 @@
 {
-  "total_fixed": 126,
-  "batches_completed": 42,
-  "questions_rebuilt": 3150,
-  "last_batch_time": "2026-03-17T15:40:02.416359",
+  "total_fixed": 129,
+  "batches_completed": 43,
+  "questions_rebuilt": 3225,
+  "last_batch_time": "2026-03-17T15:45:02.671896",
   "last_batch_lessons": [
-    "Unit 39, L9: Database Programming Summary",
-    "Unit 20, L9: Cross-Platform Development",
-    "Unit 30, L4: Trie Applications"
+    "Unit 33, L9: DSU Performance",
+    "Unit 20, L10: C++ and Other Languages",
+    "Unit 25, L5: Perfect Hashing"
   ]
 }
