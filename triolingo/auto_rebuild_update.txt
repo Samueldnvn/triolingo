@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 57 Complete**
+📦 **Batch 58 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 28, L1: Hash Functions
-  • Unit 25, L11: Separate Chaining
-  • Unit 24, L1: Array Queue
+  • Unit 31, L9: Segment Tree Applications
+  • Unit 45, L6: Constexpr Improvements
+  • Unit 25, L2: Hash Functions
 
 📊 **Progress:**
-• Fixed: 171/317 lessons (53.9%)
-• Questions: 4275+
-• Remaining: 119 lessons
+• Fixed: 174/317 lessons (54.9%)
+• Questions: 4350+
+• Remaining: 116 lessons
 
 🚀 Keep it going!

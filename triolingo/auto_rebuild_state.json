@@ -1,11 +1,11 @@
 {
-  "total_fixed": 171,
-  "batches_completed": 57,
-  "questions_rebuilt": 4275,
-  "last_batch_time": "2026-03-17T16:55:03.649240",
+  "total_fixed": 174,
+  "batches_completed": 58,
+  "questions_rebuilt": 4350,
+  "last_batch_time": "2026-03-17T17:00:03.021698",
   "last_batch_lessons": [
-    "Unit 28, L1: Hash Functions",
-    "Unit 25, L11: Separate Chaining",
-    "Unit 24, L1: Array Queue"
+    "Unit 31, L9: Segment Tree Applications",
+    "Unit 45, L6: Constexpr Improvements",
+    "Unit 25, L2: Hash Functions"
   ]
 }
