@@ -1,11 +1,11 @@
 {
-  "total_fixed": 228,
-  "batches_completed": 76,
-  "questions_rebuilt": 5700,
-  "last_batch_time": "2026-03-17T18:30:03.515660",
+  "total_fixed": 231,
+  "batches_completed": 77,
+  "questions_rebuilt": 5775,
+  "last_batch_time": "2026-03-17T18:35:02.707016",
   "last_batch_lessons": [
-    "Unit 25, L6: Universal Hashing",
-    "Unit 35, L3: Bellman-Ford Algorithm",
-    "Unit 21, L1: Static Arrays"
+    "Unit 43, L2: Sockets",
+    "Unit 33, L2: Path Compression",
+    "Unit 34, L8: MST Challenges"
   ]
 }

@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 76 Complete**
+📦 **Batch 77 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 25, L6: Universal Hashing
-  • Unit 35, L3: Bellman-Ford Algorithm
-  • Unit 21, L1: Static Arrays
+  • Unit 43, L2: Sockets
+  • Unit 33, L2: Path Compression
+  • Unit 34, L8: MST Challenges
 
 📊 **Progress:**
-• Fixed: 228/317 lessons (71.9%)
-• Questions: 5700+
-• Remaining: 62 lessons
+• Fixed: 231/317 lessons (72.9%)
+• Questions: 5775+
+• Remaining: 59 lessons
 
 🚀 Keep it going!
