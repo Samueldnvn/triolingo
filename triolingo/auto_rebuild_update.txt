@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 40 Complete**
+📦 **Batch 41 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 42, L4: CMake Installation
-  • Unit 23, L5: Persistent Stack
-  • Unit 32, L2: Range Query and Point Update
+  • Unit 23, L3: Min Stack
+  • Unit 28, L8: Hash Table Applications
+  • Unit 38, L7: Network Security
 
 📊 **Progress:**
-• Fixed: 120/317 lessons (37.9%)
-• Questions: 3000+
-• Remaining: 170 lessons
+• Fixed: 123/317 lessons (38.8%)
+• Questions: 3075+
+• Remaining: 167 lessons
 
 🚀 Keep it going!
