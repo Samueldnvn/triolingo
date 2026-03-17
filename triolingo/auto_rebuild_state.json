@@ -1,11 +1,11 @@
 {
-  "total_fixed": 81,
-  "batches_completed": 27,
-  "questions_rebuilt": 2025,
-  "last_batch_time": "2026-03-17T14:25:02.981220",
+  "total_fixed": 84,
+  "batches_completed": 28,
+  "questions_rebuilt": 2100,
+  "last_batch_time": "2026-03-17T14:30:03.283267",
   "last_batch_lessons": [
-    "Unit 42, L1: CMake Basics",
-    "Unit 31, L1: Segment Tree Basics",
-    "Unit 31, L4: Range GCD Query"
+    "Unit 33, L5: Rollback DSU",
+    "Unit 41, L9: Multithreading Summary",
+    "Unit 38, L4: Socket Options"
   ]
 }
