@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 70 Complete**
+📦 **Batch 71 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 30, L8: Suffix Trie
-  • Unit 22, L5: Skip List
-  • Unit 22, L7: Self-organizing List
+  • Unit 35, L8: Shortest Path Advanced Topics
+  • Unit 32, L6: Advanced BIT Operations
+  • Unit 33, L3: Union by Rank/Size
 
 📊 **Progress:**
-• Fixed: 210/317 lessons (66.2%)
-• Questions: 5250+
-• Remaining: 80 lessons
+• Fixed: 213/317 lessons (67.2%)
+• Questions: 5325+
+• Remaining: 77 lessons
 
 🚀 Keep it going!

@@ -1,11 +1,11 @@
 {
-  "total_fixed": 210,
-  "batches_completed": 70,
-  "questions_rebuilt": 5250,
-  "last_batch_time": "2026-03-17T18:00:03.414583",
+  "total_fixed": 213,
+  "batches_completed": 71,
+  "questions_rebuilt": 5325,
+  "last_batch_time": "2026-03-17T18:05:02.621681",
   "last_batch_lessons": [
-    "Unit 30, L8: Suffix Trie",
-    "Unit 22, L5: Skip List",
-    "Unit 22, L7: Self-organizing List"
+    "Unit 35, L8: Shortest Path Advanced Topics",
+    "Unit 32, L6: Advanced BIT Operations",
+    "Unit 33, L3: Union by Rank/Size"
   ]
 }
