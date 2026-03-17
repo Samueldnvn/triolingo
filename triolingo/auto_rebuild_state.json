@@ -1,11 +1,11 @@
 {
-  "total_fixed": 72,
-  "batches_completed": 24,
-  "questions_rebuilt": 1800,
-  "last_batch_time": "2026-03-17T14:10:03.180973",
+  "total_fixed": 75,
+  "batches_completed": 25,
+  "questions_rebuilt": 1875,
+  "last_batch_time": "2026-03-17T14:15:02.499982",
   "last_batch_lessons": [
-    "Unit 37, L5: String Streams",
-    "Unit 39, L3: Executing Queries",
-    "Unit 48, L1: Project Structure"
+    "Unit 27, L7: Tango Tree",
+    "Unit 37, L3: Reading Files",
+    "Unit 41, L5: Thread Pools"
   ]
 }
