@@ -1,11 +1,11 @@
 {
-  "total_fixed": 261,
-  "batches_completed": 87,
-  "questions_rebuilt": 6525,
-  "last_batch_time": "2026-03-17T19:25:03.137445",
+  "total_fixed": 264,
+  "batches_completed": 88,
+  "questions_rebuilt": 6600,
+  "last_batch_time": "2026-03-17T19:30:03.034965",
   "last_batch_lessons": [
-    "Unit 34, L6: MST Variants",
-    "Unit 9, L5: Container Adaptors (stack, queue)",
-    "Unit 43, L9: C++ Networking Summary"
+    "Unit 12, L3: Lambda Functions",
+    "Unit 15, L3: Parsing Structured Data",
+    "Unit 43, L1: Networking Basics"
   ]
 }

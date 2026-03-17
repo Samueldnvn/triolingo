@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 87 Complete**
+📦 **Batch 88 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 34, L6: MST Variants
-  • Unit 9, L5: Container Adaptors (stack, queue)
-  • Unit 43, L9: C++ Networking Summary
+  • Unit 12, L3: Lambda Functions
+  • Unit 15, L3: Parsing Structured Data
+  • Unit 43, L1: Networking Basics
 
 📊 **Progress:**
-• Fixed: 261/317 lessons (82.3%)
-• Questions: 6525+
-• Remaining: 29 lessons
+• Fixed: 264/317 lessons (83.3%)
+• Questions: 6600+
+• Remaining: 26 lessons
 
 🚀 Keep it going!
