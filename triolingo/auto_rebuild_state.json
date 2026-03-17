@@ -1,11 +1,11 @@
 {
-  "total_fixed": 156,
-  "batches_completed": 52,
-  "questions_rebuilt": 3900,
-  "last_batch_time": "2026-03-17T16:30:05.844211",
+  "total_fixed": 159,
+  "batches_completed": 53,
+  "questions_rebuilt": 3975,
+  "last_batch_time": "2026-03-17T16:35:03.576361",
   "last_batch_lessons": [
-    "Unit 20, L14: Type Safety and Casting",
-    "Unit 30, L6: Advanced Trie Topics",
-    "Unit 34, L7: Second Best MST"
+    "Unit 34, L9: MST Performance",
+    "Unit 19, L2: Idiomatic STL Usage",
+    "Unit 21, L8: Prefix Arrays"
   ]
 }

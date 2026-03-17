@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 52 Complete**
+📦 **Batch 53 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 20, L14: Type Safety and Casting
-  • Unit 30, L6: Advanced Trie Topics
-  • Unit 34, L7: Second Best MST
+  • Unit 34, L9: MST Performance
+  • Unit 19, L2: Idiomatic STL Usage
+  • Unit 21, L8: Prefix Arrays
 
 📊 **Progress:**
-• Fixed: 156/317 lessons (49.2%)
-• Questions: 3900+
-• Remaining: 134 lessons
+• Fixed: 159/317 lessons (50.2%)
+• Questions: 3975+
+• Remaining: 131 lessons
 
 🚀 Keep it going!
