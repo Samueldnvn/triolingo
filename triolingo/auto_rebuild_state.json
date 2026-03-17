@@ -1,11 +1,11 @@
 {
-  "total_fixed": 45,
-  "batches_completed": 15,
-  "questions_rebuilt": 1125,
-  "last_batch_time": "2026-03-17T13:25:02.599889",
+  "total_fixed": 48,
+  "batches_completed": 16,
+  "questions_rebuilt": 1200,
+  "last_batch_time": "2026-03-17T13:30:02.950979",
   "last_batch_lessons": [
-    "Unit 25, L14: Hopscotch Hashing",
-    "Unit 39, L8: Performance Optimization",
-    "Unit 44, L8: Concurrency Patterns"
+    "Unit 47, L4: Profiling Tools",
+    "Unit 32, L1: BIT Basics",
+    "Unit 40, L9: Network Programming Summary"
   ]
 }
