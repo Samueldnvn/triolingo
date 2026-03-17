@@ -1,11 +1,11 @@
 {
-  "total_fixed": 12,
-  "batches_completed": 4,
-  "questions_rebuilt": 300,
-  "last_batch_time": "2026-03-17T12:30:03.086874",
+  "total_fixed": 15,
+  "batches_completed": 5,
+  "questions_rebuilt": 375,
+  "last_batch_time": "2026-03-17T12:35:02.436045",
   "last_batch_lessons": [
-    "Unit 25, L18: Locality-Sensitive Hashing",
-    "Unit 27, L8: Weight-Balanced Tree",
-    "Unit 38, L6: Asynchronous I/O"
+    "Unit 44, L2: Thread Synchronization",
+    "Unit 25, L16: Count-Min Sketch",
+    "Unit 39, L6: Database Design"
   ]
 }
