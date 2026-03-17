@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 85 Complete**
+📦 **Batch 86 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 20, L2: Calling Native Libraries
-  • Unit 9, L3: Sequence Containers (vector, deque, list)
-  • Unit 41, L2: Thread Synchronization
+  • Unit 17, L1: Makefiles
+  • Unit 38, L3: UDP Programming
+  • Unit 20, L3: ABI and Binary Compatibility
 
 📊 **Progress:**
-• Fixed: 255/317 lessons (80.4%)
-• Questions: 6375+
-• Remaining: 35 lessons
+• Fixed: 258/317 lessons (81.4%)
+• Questions: 6450+
+• Remaining: 32 lessons
 
 🚀 Keep it going!
