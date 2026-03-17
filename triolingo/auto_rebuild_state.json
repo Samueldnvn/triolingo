@@ -1,11 +1,11 @@
 {
-  "total_fixed": 9,
-  "batches_completed": 3,
-  "questions_rebuilt": 225,
-  "last_batch_time": "2026-03-17T12:25:02.708405",
+  "total_fixed": 12,
+  "batches_completed": 4,
+  "questions_rebuilt": 300,
+  "last_batch_time": "2026-03-17T12:30:03.086874",
   "last_batch_lessons": [
-    "Unit 48, L3: Network Programming",
-    "Unit 42, L3: CMake Testing",
-    "Unit 20, L4: C++11 Features for Interoperability"
+    "Unit 25, L18: Locality-Sensitive Hashing",
+    "Unit 27, L8: Weight-Balanced Tree",
+    "Unit 38, L6: Asynchronous I/O"
   ]
 }
