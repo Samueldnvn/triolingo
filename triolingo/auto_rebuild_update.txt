@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 28 Complete**
+📦 **Batch 29 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 33, L5: Rollback DSU
-  • Unit 41, L9: Multithreading Summary
-  • Unit 38, L4: Socket Options
+  • Unit 42, L9: Build Systems Summary
+  • Unit 44, L3: Condition Variables
+  • Unit 23, L6: Multi-stack Structures
 
 📊 **Progress:**
-• Fixed: 84/317 lessons (26.5%)
-• Questions: 2100+
-• Remaining: 206 lessons
+• Fixed: 87/317 lessons (27.4%)
+• Questions: 2175+
+• Remaining: 203 lessons
 
 🚀 Keep it going!

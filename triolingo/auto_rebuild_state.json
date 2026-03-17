@@ -1,11 +1,11 @@
 {
-  "total_fixed": 84,
-  "batches_completed": 28,
-  "questions_rebuilt": 2100,
-  "last_batch_time": "2026-03-17T14:30:03.283267",
+  "total_fixed": 87,
+  "batches_completed": 29,
+  "questions_rebuilt": 2175,
+  "last_batch_time": "2026-03-17T14:35:02.605050",
   "last_batch_lessons": [
-    "Unit 33, L5: Rollback DSU",
-    "Unit 41, L9: Multithreading Summary",
-    "Unit 38, L4: Socket Options"
+    "Unit 42, L9: Build Systems Summary",
+    "Unit 44, L3: Condition Variables",
+    "Unit 23, L6: Multi-stack Structures"
   ]
 }
