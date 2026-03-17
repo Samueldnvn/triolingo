@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 44 Complete**
+📦 **Batch 45 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 24, L5: Priority Queue
-  • Unit 25, L3: Polynomial Hashing
-  • Unit 25, L7: Open Addressing
+  • Unit 30, L5: Compressed Trie
+  • Unit 32, L4: Range Update Range Query
+  • Unit 39, L2: Database Connections
 
 📊 **Progress:**
-• Fixed: 132/317 lessons (41.6%)
-• Questions: 3300+
-• Remaining: 158 lessons
+• Fixed: 135/317 lessons (42.6%)
+• Questions: 3375+
+• Remaining: 155 lessons
 
 🚀 Keep it going!
