@@ -1,11 +1,11 @@
 {
-  "total_fixed": 69,
-  "batches_completed": 23,
-  "questions_rebuilt": 1725,
-  "last_batch_time": "2026-03-17T14:05:02.811486",
+  "total_fixed": 72,
+  "batches_completed": 24,
+  "questions_rebuilt": 1800,
+  "last_batch_time": "2026-03-17T14:10:03.180973",
   "last_batch_lessons": [
-    "Unit 47, L2: Package Managers",
-    "Unit 23, L2: Linked Stack",
-    "Unit 46, L9: Best Practices Summary"
+    "Unit 37, L5: String Streams",
+    "Unit 39, L3: Executing Queries",
+    "Unit 48, L1: Project Structure"
   ]
 }
