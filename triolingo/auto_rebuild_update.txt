@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 32 Complete**
+📦 **Batch 33 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 20, L11: Performance Considerations
-  • Unit 41, L7: Deadlock & Race Conditions
-  • Unit 49, L6: Multithreading & Concurrency Review
+  • Unit 28, L3: Collision Resolution - Open Addressing
+  • Unit 25, L21: Hash-Based Applications
+  • Unit 28, L2: Collision Resolution - Chaining
 
 📊 **Progress:**
-• Fixed: 96/317 lessons (30.3%)
-• Questions: 2400+
-• Remaining: 194 lessons
+• Fixed: 99/317 lessons (31.2%)
+• Questions: 2475+
+• Remaining: 191 lessons
 
 🚀 Keep it going!

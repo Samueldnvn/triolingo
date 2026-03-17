@@ -1,11 +1,11 @@
 {
-  "total_fixed": 96,
-  "batches_completed": 32,
-  "questions_rebuilt": 2400,
-  "last_batch_time": "2026-03-17T14:50:02.555666",
+  "total_fixed": 99,
+  "batches_completed": 33,
+  "questions_rebuilt": 2475,
+  "last_batch_time": "2026-03-17T14:55:02.911930",
   "last_batch_lessons": [
-    "Unit 20, L11: Performance Considerations",
-    "Unit 41, L7: Deadlock & Race Conditions",
-    "Unit 49, L6: Multithreading & Concurrency Review"
+    "Unit 28, L3: Collision Resolution - Open Addressing",
+    "Unit 25, L21: Hash-Based Applications",
+    "Unit 28, L2: Collision Resolution - Chaining"
   ]
 }
