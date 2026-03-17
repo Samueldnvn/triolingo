@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 50 Complete**
+📦 **Batch 51 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 48, L8: Performance Optimization
-  • Unit 36, L5: Strongly Connected Components
-  • Unit 46, L5: Performance Tips
+  • Unit 29, L8: Advanced Heap Topics
+  • Unit 31, L5: Lazy Propagation
+  • Unit 33, L6: Persistent DSU
 
 📊 **Progress:**
-• Fixed: 150/317 lessons (47.3%)
-• Questions: 3750+
-• Remaining: 140 lessons
+• Fixed: 153/317 lessons (48.3%)
+• Questions: 3825+
+• Remaining: 137 lessons
 
 🚀 Keep it going!

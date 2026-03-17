@@ -1,11 +1,11 @@
 {
-  "total_fixed": 150,
-  "batches_completed": 50,
-  "questions_rebuilt": 3750,
-  "last_batch_time": "2026-03-17T16:20:02.607960",
+  "total_fixed": 153,
+  "batches_completed": 51,
+  "questions_rebuilt": 3825,
+  "last_batch_time": "2026-03-17T16:25:03.497862",
   "last_batch_lessons": [
-    "Unit 48, L8: Performance Optimization",
-    "Unit 36, L5: Strongly Connected Components",
-    "Unit 46, L5: Performance Tips"
+    "Unit 29, L8: Advanced Heap Topics",
+    "Unit 31, L5: Lazy Propagation",
+    "Unit 33, L6: Persistent DSU"
   ]
 }
