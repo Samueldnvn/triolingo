@@ -1,11 +1,11 @@
 {
-  "total_fixed": 192,
-  "batches_completed": 64,
-  "questions_rebuilt": 4800,
-  "last_batch_time": "2026-03-17T17:30:03.238300",
+  "total_fixed": 195,
+  "batches_completed": 65,
+  "questions_rebuilt": 4875,
+  "last_batch_time": "2026-03-17T17:35:02.541563",
   "last_batch_lessons": [
-    "Unit 36, L6: Graph Applications",
-    "Unit 21, L3: Multidimensional Arrays",
-    "Unit 21, L9: Sliding Window Arrays"
+    "Unit 35, L5: Shortest Path Applications",
+    "Unit 33, L8: DSU Challenges",
+    "Unit 36, L4: Topological Sort"
   ]
 }

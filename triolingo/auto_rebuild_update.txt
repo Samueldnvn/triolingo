@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 64 Complete**
+📦 **Batch 65 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 36, L6: Graph Applications
-  • Unit 21, L3: Multidimensional Arrays
-  • Unit 21, L9: Sliding Window Arrays
+  • Unit 35, L5: Shortest Path Applications
+  • Unit 33, L8: DSU Challenges
+  • Unit 36, L4: Topological Sort
 
 📊 **Progress:**
-• Fixed: 192/317 lessons (60.6%)
-• Questions: 4800+
-• Remaining: 98 lessons
+• Fixed: 195/317 lessons (61.5%)
+• Questions: 4875+
+• Remaining: 95 lessons
 
 🚀 Keep it going!
