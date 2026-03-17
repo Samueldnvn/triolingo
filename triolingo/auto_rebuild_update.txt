@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 31 Complete**
+📦 **Batch 32 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 25, L1: Direct Addressing
-  • Unit 31, L7: Segment Tree Beats
-  • Unit 45, L9: C++20 Summary
+  • Unit 20, L11: Performance Considerations
+  • Unit 41, L7: Deadlock & Race Conditions
+  • Unit 49, L6: Multithreading & Concurrency Review
 
 📊 **Progress:**
-• Fixed: 93/317 lessons (29.3%)
-• Questions: 2325+
-• Remaining: 197 lessons
+• Fixed: 96/317 lessons (30.3%)
+• Questions: 2400+
+• Remaining: 194 lessons
 
 🚀 Keep it going!
