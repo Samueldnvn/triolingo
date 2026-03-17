@@ -1,11 +1,11 @@
 {
-  "total_fixed": 234,
-  "batches_completed": 78,
-  "questions_rebuilt": 5850,
-  "last_batch_time": "2026-03-17T18:40:03.960395",
+  "total_fixed": 237,
+  "batches_completed": 79,
+  "questions_rebuilt": 5925,
+  "last_batch_time": "2026-03-17T18:45:04.038744",
   "last_batch_lessons": [
-    "Unit 19, L1: C++ Coding Guidelines",
-    "Unit 22, L3: Circular Linked List",
-    "Unit 47, L7: Version Control"
+    "Unit 17, L2: CMake Basics",
+    "Unit 17, L5: Debugging Tools (gdb, sanitizers)",
+    "Unit 38, L1: Network Basics"
   ]
 }

@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 78 Complete**
+📦 **Batch 79 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 19, L1: C++ Coding Guidelines
-  • Unit 22, L3: Circular Linked List
-  • Unit 47, L7: Version Control
+  • Unit 17, L2: CMake Basics
+  • Unit 17, L5: Debugging Tools (gdb, sanitizers)
+  • Unit 38, L1: Network Basics
 
 📊 **Progress:**
-• Fixed: 234/317 lessons (73.8%)
-• Questions: 5850+
-• Remaining: 56 lessons
+• Fixed: 237/317 lessons (74.8%)
+• Questions: 5925+
+• Remaining: 53 lessons
 
 🚀 Keep it going!
