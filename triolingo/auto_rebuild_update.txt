@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 39 Complete**
+📦 **Batch 40 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 28, L4: Rehashing and Resizing
-  • Unit 24, L2: Circular Queue
-  • Unit 45, L4: Coroutines
+  • Unit 42, L4: CMake Installation
+  • Unit 23, L5: Persistent Stack
+  • Unit 32, L2: Range Query and Point Update
 
 📊 **Progress:**
-• Fixed: 117/317 lessons (36.9%)
-• Questions: 2925+
-• Remaining: 173 lessons
+• Fixed: 120/317 lessons (37.9%)
+• Questions: 3000+
+• Remaining: 170 lessons
 
 🚀 Keep it going!

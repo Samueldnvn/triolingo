@@ -1,11 +1,11 @@
 {
-  "total_fixed": 117,
-  "batches_completed": 39,
-  "questions_rebuilt": 2925,
-  "last_batch_time": "2026-03-17T15:25:03.486937",
+  "total_fixed": 120,
+  "batches_completed": 40,
+  "questions_rebuilt": 3000,
+  "last_batch_time": "2026-03-17T15:30:02.762180",
   "last_batch_lessons": [
-    "Unit 28, L4: Rehashing and Resizing",
-    "Unit 24, L2: Circular Queue",
-    "Unit 45, L4: Coroutines"
+    "Unit 42, L4: CMake Installation",
+    "Unit 23, L5: Persistent Stack",
+    "Unit 32, L2: Range Query and Point Update"
   ]
 }
