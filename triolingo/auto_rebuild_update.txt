@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 48 Complete**
+📦 **Batch 49 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 30, L7: Trie Performance
-  • Unit 39, L4: Transactions
-  • Unit 44, L6: Parallel Algorithms
+  • Unit 26, L6: Augmented Trees
+  • Unit 34, L3: Prim's Algorithm
+  • Unit 33, L7: DSU on Trees
 
 📊 **Progress:**
-• Fixed: 144/317 lessons (45.4%)
-• Questions: 3600+
-• Remaining: 146 lessons
+• Fixed: 147/317 lessons (46.4%)
+• Questions: 3675+
+• Remaining: 143 lessons
 
 🚀 Keep it going!

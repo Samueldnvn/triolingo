@@ -1,11 +1,11 @@
 {
-  "total_fixed": 144,
-  "batches_completed": 48,
-  "questions_rebuilt": 3600,
-  "last_batch_time": "2026-03-17T16:10:02.932129",
+  "total_fixed": 147,
+  "batches_completed": 49,
+  "questions_rebuilt": 3675,
+  "last_batch_time": "2026-03-17T16:15:03.315272",
   "last_batch_lessons": [
-    "Unit 30, L7: Trie Performance",
-    "Unit 39, L4: Transactions",
-    "Unit 44, L6: Parallel Algorithms"
+    "Unit 26, L6: Augmented Trees",
+    "Unit 34, L3: Prim's Algorithm",
+    "Unit 33, L7: DSU on Trees"
   ]
 }
