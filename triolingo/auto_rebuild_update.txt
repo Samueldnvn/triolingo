@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 69 Complete**
+📦 **Batch 70 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 26, L1: Binary Tree Traversal
-  • Unit 30, L2: Insert and Search
-  • Unit 35, L7: Shortest Path Performance
+  • Unit 30, L8: Suffix Trie
+  • Unit 22, L5: Skip List
+  • Unit 22, L7: Self-organizing List
 
 📊 **Progress:**
-• Fixed: 207/317 lessons (65.3%)
-• Questions: 5175+
-• Remaining: 83 lessons
+• Fixed: 210/317 lessons (66.2%)
+• Questions: 5250+
+• Remaining: 80 lessons
 
 🚀 Keep it going!
