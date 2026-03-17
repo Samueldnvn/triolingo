@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 37 Complete**
+📦 **Batch 38 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 31, L3: Range Min/Max Query
-  • Unit 41, L8: Advanced Patterns
-  • Unit 22, L4: XOR Linked List
+  • Unit 38, L9: Network Programming Summary
+  • Unit 42, L2: CMake Targets & Dependencies
+  • Unit 45, L1: Concepts
 
 📊 **Progress:**
-• Fixed: 111/317 lessons (35.0%)
-• Questions: 2775+
-• Remaining: 179 lessons
+• Fixed: 114/317 lessons (36.0%)
+• Questions: 2850+
+• Remaining: 176 lessons
 
 🚀 Keep it going!
