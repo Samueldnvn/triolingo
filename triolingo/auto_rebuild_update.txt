@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 30 Complete**
+📦 **Batch 31 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 24, L6: Double-ended Priority Queue
-  • Unit 25, L12: Cuckoo Hashing
-  • Unit 36, L2: Graph Traversal
+  • Unit 25, L1: Direct Addressing
+  • Unit 31, L7: Segment Tree Beats
+  • Unit 45, L9: C++20 Summary
 
 📊 **Progress:**
-• Fixed: 90/317 lessons (28.4%)
-• Questions: 2250+
-• Remaining: 200 lessons
+• Fixed: 93/317 lessons (29.3%)
+• Questions: 2325+
+• Remaining: 197 lessons
 
 🚀 Keep it going!

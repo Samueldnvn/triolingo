@@ -1,11 +1,11 @@
 {
-  "total_fixed": 90,
-  "batches_completed": 30,
-  "questions_rebuilt": 2250,
-  "last_batch_time": "2026-03-17T14:40:02.991146",
+  "total_fixed": 93,
+  "batches_completed": 31,
+  "questions_rebuilt": 2325,
+  "last_batch_time": "2026-03-17T14:45:03.260806",
   "last_batch_lessons": [
-    "Unit 24, L6: Double-ended Priority Queue",
-    "Unit 25, L12: Cuckoo Hashing",
-    "Unit 36, L2: Graph Traversal"
+    "Unit 25, L1: Direct Addressing",
+    "Unit 31, L7: Segment Tree Beats",
+    "Unit 45, L9: C++20 Summary"
   ]
 }
