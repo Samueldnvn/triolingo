@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 88 Complete**
+📦 **Batch 89 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 12, L3: Lambda Functions
-  • Unit 15, L3: Parsing Structured Data
-  • Unit 43, L1: Networking Basics
+  • Unit 48, L5: Game Development
+  • Unit 14, L1: Threads (std::thread)
+  • Unit 45, L7: std::span
 
 📊 **Progress:**
-• Fixed: 264/317 lessons (83.3%)
-• Questions: 6600+
-• Remaining: 26 lessons
+• Fixed: 267/317 lessons (84.2%)
+• Questions: 6675+
+• Remaining: 23 lessons
 
 🚀 Keep it going!
