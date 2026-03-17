@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 81 Complete**
+📦 **Batch 82 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 20, L8: Template Interoperability
-  • Unit 14, L2: Mutexes and Locks
-  • Unit 30, L9: Trie Challenges
+  • Unit 10, L1: C++11 Features
+  • Unit 19, L3: Avoiding Raw Pointers
+  • Unit 15, L1: File Streams
 
 📊 **Progress:**
-• Fixed: 243/317 lessons (76.7%)
-• Questions: 6075+
-• Remaining: 47 lessons
+• Fixed: 246/317 lessons (77.6%)
+• Questions: 6150+
+• Remaining: 44 lessons
 
 🚀 Keep it going!
