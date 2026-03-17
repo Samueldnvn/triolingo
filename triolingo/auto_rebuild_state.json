@@ -1,11 +1,11 @@
 {
-  "total_fixed": 219,
-  "batches_completed": 73,
-  "questions_rebuilt": 5475,
-  "last_batch_time": "2026-03-17T18:15:03.279850",
+  "total_fixed": 222,
+  "batches_completed": 74,
+  "questions_rebuilt": 5550,
+  "last_batch_time": "2026-03-17T18:20:03.355039",
   "last_batch_lessons": [
-    "Unit 32, L3: Range Update Point Query",
-    "Unit 22, L6: Unrolled Linked List",
-    "Unit 32, L7: BIT Applications"
+    "Unit 34, L5: MST Applications",
+    "Unit 18, L3: Asynchronous I/O and Select",
+    "Unit 18, L5: JSON and Web APIs"
   ]
 }

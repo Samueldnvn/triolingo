@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 73 Complete**
+📦 **Batch 74 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 32, L3: Range Update Point Query
-  • Unit 22, L6: Unrolled Linked List
-  • Unit 32, L7: BIT Applications
+  • Unit 34, L5: MST Applications
+  • Unit 18, L3: Asynchronous I/O and Select
+  • Unit 18, L5: JSON and Web APIs
 
 📊 **Progress:**
-• Fixed: 219/317 lessons (69.1%)
-• Questions: 5475+
-• Remaining: 71 lessons
+• Fixed: 222/317 lessons (70.0%)
+• Questions: 5550+
+• Remaining: 68 lessons
 
 🚀 Keep it going!
