@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 53 Complete**
+📦 **Batch 54 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 34, L9: MST Performance
-  • Unit 19, L2: Idiomatic STL Usage
-  • Unit 21, L8: Prefix Arrays
+  • Unit 20, L15: Advanced Interoperability Patterns
+  • Unit 36, L3: Graph Properties
+  • Unit 29, L2: Heapify
 
 📊 **Progress:**
-• Fixed: 159/317 lessons (50.2%)
-• Questions: 3975+
-• Remaining: 131 lessons
+• Fixed: 162/317 lessons (51.1%)
+• Questions: 4050+
+• Remaining: 128 lessons
 
 🚀 Keep it going!

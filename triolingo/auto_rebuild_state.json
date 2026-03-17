@@ -1,11 +1,11 @@
 {
-  "total_fixed": 159,
-  "batches_completed": 53,
-  "questions_rebuilt": 3975,
-  "last_batch_time": "2026-03-17T16:35:03.576361",
+  "total_fixed": 162,
+  "batches_completed": 54,
+  "questions_rebuilt": 4050,
+  "last_batch_time": "2026-03-17T16:40:06.185836",
   "last_batch_lessons": [
-    "Unit 34, L9: MST Performance",
-    "Unit 19, L2: Idiomatic STL Usage",
-    "Unit 21, L8: Prefix Arrays"
+    "Unit 20, L15: Advanced Interoperability Patterns",
+    "Unit 36, L3: Graph Properties",
+    "Unit 29, L2: Heapify"
   ]
 }
