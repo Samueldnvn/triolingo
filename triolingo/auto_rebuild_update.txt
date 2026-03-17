@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 34 Complete**
+📦 **Batch 35 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 37, L6: Error Handling
-  • Unit 39, L5: Prepared Statements
-  • Unit 39, L7: Error Handling
+  • Unit 24, L8: Hashing
+  • Unit 25, L8: Linear Probing
+  • Unit 40, L6: Non-Blocking I/O
 
 📊 **Progress:**
-• Fixed: 102/317 lessons (32.2%)
-• Questions: 2550+
-• Remaining: 188 lessons
+• Fixed: 105/317 lessons (33.1%)
+• Questions: 2625+
+• Remaining: 185 lessons
 
 🚀 Keep it going!
