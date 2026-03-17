@@ -1,11 +1,11 @@
 {
-  "total_fixed": 123,
-  "batches_completed": 41,
-  "questions_rebuilt": 3075,
-  "last_batch_time": "2026-03-17T15:35:03.101608",
+  "total_fixed": 126,
+  "batches_completed": 42,
+  "questions_rebuilt": 3150,
+  "last_batch_time": "2026-03-17T15:40:02.416359",
   "last_batch_lessons": [
-    "Unit 23, L3: Min Stack",
-    "Unit 28, L8: Hash Table Applications",
-    "Unit 38, L7: Network Security"
+    "Unit 39, L9: Database Programming Summary",
+    "Unit 20, L9: Cross-Platform Development",
+    "Unit 30, L4: Trie Applications"
   ]
 }
