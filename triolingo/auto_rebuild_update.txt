@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 74 Complete**
+📦 **Batch 75 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 34, L5: MST Applications
-  • Unit 18, L3: Asynchronous I/O and Select
-  • Unit 18, L5: JSON and Web APIs
+  • Unit 29, L5: Heap Sort
+  • Unit 18, L2: HTTP with C++
+  • Unit 35, L2: Dijkstra's Algorithm
 
 📊 **Progress:**
-• Fixed: 222/317 lessons (70.0%)
-• Questions: 5550+
-• Remaining: 68 lessons
+• Fixed: 225/317 lessons (71.0%)
+• Questions: 5625+
+• Remaining: 65 lessons
 
 🚀 Keep it going!
