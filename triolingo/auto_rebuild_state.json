@@ -1,11 +1,11 @@
 {
-  "total_fixed": 189,
-  "batches_completed": 63,
-  "questions_rebuilt": 4725,
-  "last_batch_time": "2026-03-17T17:25:03.519961",
+  "total_fixed": 192,
+  "batches_completed": 64,
+  "questions_rebuilt": 4800,
+  "last_batch_time": "2026-03-17T17:30:03.238300",
   "last_batch_lessons": [
-    "Unit 25, L4: Rolling Hash",
-    "Unit 30, L3: Delete",
-    "Unit 22, L2: Doubly Linked List"
+    "Unit 36, L6: Graph Applications",
+    "Unit 21, L3: Multidimensional Arrays",
+    "Unit 21, L9: Sliding Window Arrays"
   ]
 }
