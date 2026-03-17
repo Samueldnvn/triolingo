@@ -1,11 +1,11 @@
 {
-  "total_fixed": 225,
-  "batches_completed": 75,
-  "questions_rebuilt": 5625,
-  "last_batch_time": "2026-03-17T18:25:02.750190",
+  "total_fixed": 228,
+  "batches_completed": 76,
+  "questions_rebuilt": 5700,
+  "last_batch_time": "2026-03-17T18:30:03.515660",
   "last_batch_lessons": [
-    "Unit 29, L5: Heap Sort",
-    "Unit 18, L2: HTTP with C++",
-    "Unit 35, L2: Dijkstra's Algorithm"
+    "Unit 25, L6: Universal Hashing",
+    "Unit 35, L3: Bellman-Ford Algorithm",
+    "Unit 21, L1: Static Arrays"
   ]
 }
