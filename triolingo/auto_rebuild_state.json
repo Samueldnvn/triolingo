@@ -1,11 +1,11 @@
 {
-  "total_fixed": 105,
-  "batches_completed": 35,
-  "questions_rebuilt": 2625,
-  "last_batch_time": "2026-03-17T15:05:03.449921",
+  "total_fixed": 108,
+  "batches_completed": 36,
+  "questions_rebuilt": 2700,
+  "last_batch_time": "2026-03-17T15:10:02.841503",
   "last_batch_lessons": [
-    "Unit 24, L8: Hashing",
-    "Unit 25, L8: Linear Probing",
-    "Unit 40, L6: Non-Blocking I/O"
+    "Unit 49, L1: Language Fundamentals Review",
+    "Unit 27, L9: Randomized BST",
+    "Unit 26, L2: Threaded Binary Tree"
   ]
 }

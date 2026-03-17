@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 35 Complete**
+📦 **Batch 36 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 24, L8: Hashing
-  • Unit 25, L8: Linear Probing
-  • Unit 40, L6: Non-Blocking I/O
+  • Unit 49, L1: Language Fundamentals Review
+  • Unit 27, L9: Randomized BST
+  • Unit 26, L2: Threaded Binary Tree
 
 📊 **Progress:**
-• Fixed: 105/317 lessons (33.1%)
-• Questions: 2625+
-• Remaining: 185 lessons
+• Fixed: 108/317 lessons (34.1%)
+• Questions: 2700+
+• Remaining: 182 lessons
 
 🚀 Keep it going!
