@@ -1,0 +1,1274 @@
+======================================================================
+C++ COURSE: PROBLEMATIC LESSONS (Sorted by Worst)
+======================================================================
+
+Total problematic lessons: 317
+
+1. Unit 39, Lesson 1: SQL Basics
+   Questions: 25, Avg length: 9.6 chars
+   Short questions: 25/25
+
+2. Unit 43, Lesson 7: HTTP Protocol
+   Questions: 25, Avg length: 10.0 chars
+   Short questions: 25/25
+
+3. Unit 28, Lesson 7: std::unordered_set
+   Questions: 25, Avg length: 10.2 chars
+   Short questions: 22/25
+
+4. Unit 28, Lesson 6: std::unordered_map
+   Questions: 25, Avg length: 10.6 chars
+   Short questions: 23/25
+
+5. Unit 20, Lesson 12: Debugging Mixed Code
+   Questions: 25, Avg length: 10.8 chars
+   Short questions: 25/25
+
+6. Unit 40, Lesson 1: Socket Basics
+   Questions: 25, Avg length: 10.8 chars
+   Short questions: 25/25
+
+7. Unit 48, Lesson 2: CLI Applications
+   Questions: 25, Avg length: 10.9 chars
+   Short questions: 25/25
+
+8. Unit 48, Lesson 7: Machine Learning
+   Questions: 25, Avg length: 11.0 chars
+   Short questions: 25/25
+
+9. Unit 40, Lesson 2: TCP Client-Server
+   Questions: 25, Avg length: 11.0 chars
+   Short questions: 25/25
+
+10. Unit 43, Lesson 5: UDP Socket
+   Questions: 25, Avg length: 11.0 chars
+   Short questions: 25/25
+
+11. Unit 47, Lesson 6: IDE & Editors
+   Questions: 25, Avg length: 11.1 chars
+   Short questions: 25/25
+
+12. Unit 47, Lesson 7: Version Control
+   Questions: 25, Avg length: 11.1 chars
+   Short questions: 25/25
+
+13. Unit 48, Lesson 4: GUI Applications
+   Questions: 25, Avg length: 11.1 chars
+   Short questions: 25/25
+
+14. Unit 49, Lesson 3: STL & Algorithms Review
+   Questions: 25, Avg length: 11.1 chars
+   Short questions: 25/25
+
+15. Unit 47, Lesson 8: CI/CD
+   Questions: 25, Avg length: 11.2 chars
+   Short questions: 24/25
+
+16. Unit 48, Lesson 5: Game Development
+   Questions: 25, Avg length: 11.3 chars
+   Short questions: 25/25
+
+17. Unit 38, Lesson 5: HTTP Protocol
+   Questions: 25, Avg length: 11.4 chars
+   Short questions: 24/25
+
+18. Unit 40, Lesson 3: UDP Communication
+   Questions: 25, Avg length: 11.5 chars
+   Short questions: 25/25
+
+19. Unit 47, Lesson 3: Debugging Tools
+   Questions: 25, Avg length: 11.6 chars
+   Short questions: 25/25
+
+20. Unit 43, Lesson 6: Asynchronous I/O
+   Questions: 25, Avg length: 11.7 chars
+   Short questions: 25/25
+
+21. Unit 38, Lesson 3: UDP Programming
+   Questions: 25, Avg length: 11.8 chars
+   Short questions: 25/25
+
+22. Unit 42, Lesson 6: Make
+   Questions: 25, Avg length: 11.8 chars
+   Short questions: 24/25
+
+23. Unit 31, Lesson 8: 2D Segment Tree
+   Questions: 25, Avg length: 11.9 chars
+   Short questions: 24/25
+
+24. Unit 25, Lesson 13: Robin Hood Hashing
+   Questions: 25, Avg length: 11.9 chars
+   Short questions: 24/25
+
+25. Unit 49, Lesson 2: Object-Oriented Programming Review
+   Questions: 25, Avg length: 12.0 chars
+   Short questions: 25/25
+
+26. Unit 27, Lesson 3: AA Tree
+   Questions: 25, Avg length: 12.0 chars
+   Short questions: 25/25
+
+27. Unit 43, Lesson 8: Network Security
+   Questions: 25, Avg length: 12.1 chars
+   Short questions: 25/25
+
+28. Unit 25, Lesson 20: Merkle Trees
+   Questions: 25, Avg length: 12.2 chars
+   Short questions: 25/25
+
+29. Unit 45, Lesson 7: std::span
+   Questions: 25, Avg length: 12.2 chars
+   Short questions: 25/25
+
+30. Unit 46, Lesson 7: Testing
+   Questions: 25, Avg length: 12.2 chars
+   Short questions: 24/25
+
+31. Unit 49, Lesson 7: Modern C++ Features Review
+   Questions: 25, Avg length: 12.2 chars
+   Short questions: 24/25
+
+32. Unit 27, Lesson 1: AVL Tree
+   Questions: 25, Avg length: 12.2 chars
+   Short questions: 24/25
+
+33. Unit 43, Lesson 1: Networking Basics
+   Questions: 25, Avg length: 12.3 chars
+   Short questions: 25/25
+
+34. Unit 40, Lesson 4: Socket Options
+   Questions: 25, Avg length: 12.4 chars
+   Short questions: 25/25
+
+35. Unit 27, Lesson 5: Splay Tree
+   Questions: 25, Avg length: 12.4 chars
+   Short questions: 25/25
+
+36. Unit 27, Lesson 2: Red-Black Tree
+   Questions: 25, Avg length: 12.4 chars
+   Short questions: 22/25
+
+37. Unit 29, Lesson 1: Binary Heap Basics
+   Questions: 25, Avg length: 12.6 chars
+   Short questions: 24/25
+
+38. Unit 46, Lesson 8: Documentation
+   Questions: 25, Avg length: 12.6 chars
+   Short questions: 24/25
+
+39. Unit 47, Lesson 9: Development Tools Summary
+   Questions: 25, Avg length: 12.6 chars
+   Short questions: 25/25
+
+40. Unit 21, Lesson 6: Bit Arrays
+   Questions: 25, Avg length: 12.6 chars
+   Short questions: 25/25
+
+41. Unit 38, Lesson 1: Network Basics
+   Questions: 25, Avg length: 12.6 chars
+   Short questions: 23/25
+
+42. Unit 43, Lesson 9: C++ Networking Summary
+   Questions: 25, Avg length: 12.6 chars
+   Short questions: 25/25
+
+43. Unit 43, Lesson 2: Sockets
+   Questions: 25, Avg length: 12.7 chars
+   Short questions: 25/25
+
+44. Unit 41, Lesson 2: Thread Synchronization
+   Questions: 25, Avg length: 12.7 chars
+   Short questions: 24/25
+
+45. Unit 43, Lesson 3: TCP Server
+   Questions: 25, Avg length: 12.7 chars
+   Short questions: 25/25
+
+46. Unit 30, Lesson 1: Trie Basics
+   Questions: 25, Avg length: 12.8 chars
+   Short questions: 24/25
+
+47. Unit 26, Lesson 5: Order Statistic Tree
+   Questions: 25, Avg length: 12.8 chars
+   Short questions: 25/25
+
+48. Unit 37, Lesson 1: I/O Stream Basics
+   Questions: 25, Avg length: 12.8 chars
+   Short questions: 22/25
+
+49. Unit 40, Lesson 7: Network Protocols
+   Questions: 25, Avg length: 12.9 chars
+   Short questions: 25/25
+
+50. Unit 29, Lesson 4: std::priority_queue
+   Questions: 25, Avg length: 12.9 chars
+   Short questions: 20/25
+
+51. Unit 37, Lesson 8: File System Operations
+   Questions: 25, Avg length: 13.0 chars
+   Short questions: 25/25
+
+52. Unit 32, Lesson 5: 2D Binary Indexed Tree
+   Questions: 25, Avg length: 13.0 chars
+   Short questions: 23/25
+
+53. Unit 40, Lesson 8: Network Security
+   Questions: 25, Avg length: 13.0 chars
+   Short questions: 24/25
+
+54. Unit 48, Lesson 3: Network Programming
+   Questions: 25, Avg length: 13.0 chars
+   Short questions: 24/25
+
+55. Unit 42, Lesson 3: CMake Testing
+   Questions: 25, Avg length: 13.0 chars
+   Short questions: 24/25
+
+56. Unit 20, Lesson 4: C++11 Features for Interoperability
+   Questions: 25, Avg length: 13.1 chars
+   Short questions: 24/25
+
+57. Unit 25, Lesson 18: Locality-Sensitive Hashing
+   Questions: 25, Avg length: 13.1 chars
+   Short questions: 23/25
+
+58. Unit 27, Lesson 8: Weight-Balanced Tree
+   Questions: 25, Avg length: 13.1 chars
+   Short questions: 24/25
+
+59. Unit 38, Lesson 6: Asynchronous I/O
+   Questions: 25, Avg length: 13.1 chars
+   Short questions: 24/25
+
+60. Unit 44, Lesson 2: Thread Synchronization
+   Questions: 25, Avg length: 13.1 chars
+   Short questions: 24/25
+
+61. Unit 25, Lesson 16: Count-Min Sketch
+   Questions: 25, Avg length: 13.2 chars
+   Short questions: 22/25
+
+62. Unit 39, Lesson 6: Database Design
+   Questions: 25, Avg length: 13.2 chars
+   Short questions: 25/25
+
+63. Unit 44, Lesson 7: Async & Futures
+   Questions: 25, Avg length: 13.2 chars
+   Short questions: 25/25
+
+64. Unit 44, Lesson 9: Concurrency Summary
+   Questions: 25, Avg length: 13.2 chars
+   Short questions: 24/25
+
+65. Unit 24, Lesson 3: Deque
+   Questions: 25, Avg length: 13.3 chars
+   Short questions: 23/25
+
+66. Unit 27, Lesson 4: Treap
+   Questions: 25, Avg length: 13.4 chars
+   Short questions: 24/25
+
+67. Unit 28, Lesson 5: Hash Table Implementation
+   Questions: 25, Avg length: 13.4 chars
+   Short questions: 24/25
+
+68. Unit 29, Lesson 3: Insert and Delete
+   Questions: 25, Avg length: 13.4 chars
+   Short questions: 24/25
+
+69. Unit 25, Lesson 17: HyperLogLog
+   Questions: 25, Avg length: 13.4 chars
+   Short questions: 21/25
+
+70. Unit 41, Lesson 6: Async & Futures
+   Questions: 25, Avg length: 13.4 chars
+   Short questions: 25/25
+
+71. Unit 43, Lesson 4: TCP Client
+   Questions: 25, Avg length: 13.4 chars
+   Short questions: 25/25
+
+72. Unit 46, Lesson 6: Safety & Security
+   Questions: 25, Avg length: 13.4 chars
+   Short questions: 24/25
+
+73. Unit 48, Lesson 9: Projects & Applications Summary
+   Questions: 25, Avg length: 13.4 chars
+   Short questions: 24/25
+
+74. Unit 49, Lesson 4: Memory & Pointers Review
+   Questions: 25, Avg length: 13.4 chars
+   Short questions: 24/25
+
+75. Unit 44, Lesson 1: Thread Basics
+   Questions: 25, Avg length: 13.5 chars
+   Short questions: 24/25
+
+76. Unit 44, Lesson 4: Atomic Operations
+   Questions: 25, Avg length: 13.5 chars
+   Short questions: 22/25
+
+77. Unit 49, Lesson 8: Best Practices & Patterns Review
+   Questions: 25, Avg length: 13.5 chars
+   Short questions: 24/25
+
+78. Unit 20, Lesson 6: Memory Management Interoperability
+   Questions: 25, Avg length: 13.5 chars
+   Short questions: 23/25
+
+79. Unit 37, Lesson 2: File Operations
+   Questions: 25, Avg length: 13.5 chars
+   Short questions: 24/25
+
+80. Unit 38, Lesson 8: Network Applications
+   Questions: 25, Avg length: 13.5 chars
+   Short questions: 23/25
+
+81. Unit 26, Lesson 3: Binary Search Tree
+   Questions: 25, Avg length: 13.6 chars
+   Short questions: 22/25
+
+82. Unit 27, Lesson 6: Scapegoat Tree
+   Questions: 25, Avg length: 13.6 chars
+   Short questions: 24/25
+
+83. Unit 41, Lesson 4: Atomic Operations
+   Questions: 25, Avg length: 13.6 chars
+   Short questions: 22/25
+
+84. Unit 45, Lesson 8: std::format
+   Questions: 25, Avg length: 13.6 chars
+   Short questions: 24/25
+
+85. Unit 46, Lesson 2: Memory Management
+   Questions: 25, Avg length: 13.6 chars
+   Short questions: 24/25
+
+86. Unit 48, Lesson 6: Embedded Systems
+   Questions: 25, Avg length: 13.6 chars
+   Short questions: 24/25
+
+87. Unit 44, Lesson 5: Thread Pools
+   Questions: 25, Avg length: 13.6 chars
+   Short questions: 24/25
+
+88. Unit 46, Lesson 1: Modern C++ Style
+   Questions: 25, Avg length: 13.6 chars
+   Short questions: 24/25
+
+89. Unit 21, Lesson 5: Sparse Arrays
+   Questions: 25, Avg length: 13.6 chars
+   Short questions: 21/25
+
+90. Unit 25, Lesson 14: Hopscotch Hashing
+   Questions: 25, Avg length: 13.6 chars
+   Short questions: 25/25
+
+91. Unit 39, Lesson 8: Performance Optimization
+   Questions: 25, Avg length: 13.6 chars
+   Short questions: 23/25
+
+92. Unit 44, Lesson 8: Concurrency Patterns
+   Questions: 25, Avg length: 13.7 chars
+   Short questions: 22/25
+
+93. Unit 47, Lesson 4: Profiling Tools
+   Questions: 25, Avg length: 13.7 chars
+   Short questions: 24/25
+
+94. Unit 32, Lesson 1: BIT Basics
+   Questions: 25, Avg length: 13.8 chars
+   Short questions: 24/25
+
+95. Unit 40, Lesson 9: Network Programming Summary
+   Questions: 25, Avg length: 13.8 chars
+   Short questions: 23/25
+
+96. Unit 42, Lesson 8: Cross-Platform Build
+   Questions: 25, Avg length: 13.8 chars
+   Short questions: 21/25
+
+97. Unit 25, Lesson 19: Consistent Hashing
+   Questions: 25, Avg length: 13.8 chars
+   Short questions: 22/25
+
+98. Unit 42, Lesson 5: Package Managers
+   Questions: 25, Avg length: 13.8 chars
+   Short questions: 25/25
+
+99. Unit 23, Lesson 4: Max Stack
+   Questions: 25, Avg length: 13.9 chars
+   Short questions: 25/25
+
+100. Unit 40, Lesson 5: Multi-Client Servers
+   Questions: 25, Avg length: 13.9 chars
+   Short questions: 22/25
+
+101. Unit 45, Lesson 2: Ranges
+   Questions: 25, Avg length: 13.9 chars
+   Short questions: 22/25
+
+102. Unit 25, Lesson 15: Bloom Filters
+   Questions: 25, Avg length: 13.9 chars
+   Short questions: 24/25
+
+103. Unit 26, Lesson 4: Balanced BST
+   Questions: 25, Avg length: 13.9 chars
+   Short questions: 25/25
+
+104. Unit 42, Lesson 7: CMake Advanced
+   Questions: 25, Avg length: 13.9 chars
+   Short questions: 23/25
+
+105. Unit 45, Lesson 3: Modules
+   Questions: 25, Avg length: 13.9 chars
+   Short questions: 24/25
+
+106. Unit 49, Lesson 5: Templates & Generics Review
+   Questions: 25, Avg length: 13.9 chars
+   Short questions: 24/25
+
+107. Unit 46, Lesson 3: Error Handling
+   Questions: 25, Avg length: 14.0 chars
+   Short questions: 24/25
+
+108. Unit 41, Lesson 1: Thread Basics
+   Questions: 25, Avg length: 14.1 chars
+   Short questions: 23/25
+
+109. Unit 47, Lesson 5: Static Analysis
+   Questions: 25, Avg length: 14.1 chars
+   Short questions: 23/25
+
+110. Unit 49, Lesson 9: Course Completion & Final Summary
+   Questions: 25, Avg length: 14.1 chars
+   Short questions: 23/25
+
+111. Unit 25, Lesson 10: Double Hashing
+   Questions: 25, Avg length: 14.1 chars
+   Short questions: 22/25
+
+112. Unit 33, Lesson 1: Union-Find Basics
+   Questions: 25, Avg length: 14.1 chars
+   Short questions: 22/25
+
+113. Unit 47, Lesson 1: Build Systems
+   Questions: 25, Avg length: 14.2 chars
+   Short questions: 23/25
+
+114. Unit 47, Lesson 2: Package Managers
+   Questions: 25, Avg length: 14.2 chars
+   Short questions: 24/25
+
+115. Unit 23, Lesson 2: Linked Stack
+   Questions: 25, Avg length: 14.2 chars
+   Short questions: 24/25
+
+116. Unit 46, Lesson 9: Best Practices Summary
+   Questions: 25, Avg length: 14.2 chars
+   Short questions: 21/25
+
+117. Unit 37, Lesson 5: String Streams
+   Questions: 25, Avg length: 14.2 chars
+   Short questions: 23/25
+
+118. Unit 39, Lesson 3: Executing Queries
+   Questions: 25, Avg length: 14.2 chars
+   Short questions: 24/25
+
+119. Unit 48, Lesson 1: Project Structure
+   Questions: 25, Avg length: 14.2 chars
+   Short questions: 23/25
+
+120. Unit 27, Lesson 7: Tango Tree
+   Questions: 25, Avg length: 14.3 chars
+   Short questions: 24/25
+
+121. Unit 37, Lesson 3: Reading Files
+   Questions: 25, Avg length: 14.3 chars
+   Short questions: 22/25
+
+122. Unit 41, Lesson 5: Thread Pools
+   Questions: 25, Avg length: 14.3 chars
+   Short questions: 23/25
+
+123. Unit 37, Lesson 4: Writing Files
+   Questions: 25, Avg length: 14.3 chars
+   Short questions: 22/25
+
+124. Unit 38, Lesson 2: TCP Programming
+   Questions: 25, Avg length: 14.3 chars
+   Short questions: 23/25
+
+125. Unit 41, Lesson 3: Condition Variables
+   Questions: 25, Avg length: 14.3 chars
+   Short questions: 22/25
+
+126. Unit 42, Lesson 1: CMake Basics
+   Questions: 25, Avg length: 14.3 chars
+   Short questions: 22/25
+
+127. Unit 31, Lesson 1: Segment Tree Basics
+   Questions: 25, Avg length: 14.4 chars
+   Short questions: 23/25
+
+128. Unit 31, Lesson 4: Range GCD Query
+   Questions: 25, Avg length: 14.4 chars
+   Short questions: 21/25
+
+129. Unit 33, Lesson 5: Rollback DSU
+   Questions: 25, Avg length: 14.4 chars
+   Short questions: 22/25
+
+130. Unit 41, Lesson 9: Multithreading Summary
+   Questions: 25, Avg length: 14.4 chars
+   Short questions: 22/25
+
+131. Unit 38, Lesson 4: Socket Options
+   Questions: 25, Avg length: 14.4 chars
+   Short questions: 24/25
+
+132. Unit 42, Lesson 9: Build Systems Summary
+   Questions: 25, Avg length: 14.4 chars
+   Short questions: 22/25
+
+133. Unit 44, Lesson 3: Condition Variables
+   Questions: 25, Avg length: 14.4 chars
+   Short questions: 24/25
+
+134. Unit 23, Lesson 6: Multi-stack Structures
+   Questions: 25, Avg length: 14.5 chars
+   Short questions: 23/25
+
+135. Unit 24, Lesson 6: Double-ended Priority Queue
+   Questions: 25, Avg length: 14.5 chars
+   Short questions: 23/25
+
+136. Unit 25, Lesson 12: Cuckoo Hashing
+   Questions: 25, Avg length: 14.5 chars
+   Short questions: 24/25
+
+137. Unit 36, Lesson 2: Graph Traversal
+   Questions: 25, Avg length: 14.5 chars
+   Short questions: 21/25
+
+138. Unit 25, Lesson 1: Direct Addressing
+   Questions: 25, Avg length: 14.5 chars
+   Short questions: 21/25
+
+139. Unit 31, Lesson 7: Segment Tree Beats
+   Questions: 25, Avg length: 14.5 chars
+   Short questions: 23/25
+
+140. Unit 45, Lesson 9: C++20 Summary
+   Questions: 25, Avg length: 14.5 chars
+   Short questions: 25/25
+
+141. Unit 20, Lesson 11: Performance Considerations
+   Questions: 25, Avg length: 14.6 chars
+   Short questions: 23/25
+
+142. Unit 41, Lesson 7: Deadlock & Race Conditions
+   Questions: 25, Avg length: 14.6 chars
+   Short questions: 24/25
+
+143. Unit 49, Lesson 6: Multithreading & Concurrency Review
+   Questions: 25, Avg length: 14.6 chars
+   Short questions: 16/25
+
+144. Unit 28, Lesson 3: Collision Resolution - Open Addressing
+   Questions: 25, Avg length: 14.7 chars
+   Short questions: 20/25
+
+145. Unit 25, Lesson 21: Hash-Based Applications
+   Questions: 25, Avg length: 14.7 chars
+   Short questions: 23/25
+
+146. Unit 28, Lesson 2: Collision Resolution - Chaining
+   Questions: 25, Avg length: 14.7 chars
+   Short questions: 24/25
+
+147. Unit 37, Lesson 6: Error Handling
+   Questions: 25, Avg length: 14.7 chars
+   Short questions: 23/25
+
+148. Unit 39, Lesson 5: Prepared Statements
+   Questions: 25, Avg length: 14.7 chars
+   Short questions: 22/25
+
+149. Unit 39, Lesson 7: Error Handling
+   Questions: 25, Avg length: 14.7 chars
+   Short questions: 24/25
+
+150. Unit 24, Lesson 8: Hashing
+   Questions: 25, Avg length: 14.8 chars
+   Short questions: 22/25
+
+151. Unit 25, Lesson 8: Linear Probing
+   Questions: 25, Avg length: 14.8 chars
+   Short questions: 22/25
+
+152. Unit 40, Lesson 6: Non-Blocking I/O
+   Questions: 25, Avg length: 14.8 chars
+   Short questions: 21/25
+
+153. Unit 49, Lesson 1: Language Fundamentals Review
+   Questions: 25, Avg length: 14.8 chars
+   Short questions: 16/25
+
+154. Unit 27, Lesson 9: Randomized BST
+   Questions: 25, Avg length: 14.9 chars
+   Short questions: 23/25
+
+155. Unit 26, Lesson 2: Threaded Binary Tree
+   Questions: 25, Avg length: 15.0 chars
+   Short questions: 23/25
+
+156. Unit 31, Lesson 3: Range Min/Max Query
+   Questions: 25, Avg length: 15.0 chars
+   Short questions: 23/25
+
+157. Unit 41, Lesson 8: Advanced Patterns
+   Questions: 25, Avg length: 15.0 chars
+   Short questions: 22/25
+
+158. Unit 22, Lesson 4: XOR Linked List
+   Questions: 25, Avg length: 15.0 chars
+   Short questions: 22/25
+
+159. Unit 38, Lesson 9: Network Programming Summary
+   Questions: 25, Avg length: 15.0 chars
+   Short questions: 20/25
+
+160. Unit 42, Lesson 2: CMake Targets & Dependencies
+   Questions: 25, Avg length: 15.1 chars
+   Short questions: 21/25
+
+161. Unit 45, Lesson 1: Concepts
+   Questions: 25, Avg length: 15.1 chars
+   Short questions: 23/25
+
+162. Unit 28, Lesson 4: Rehashing and Resizing
+   Questions: 25, Avg length: 15.1 chars
+   Short questions: 21/25
+
+163. Unit 24, Lesson 2: Circular Queue
+   Questions: 25, Avg length: 15.2 chars
+   Short questions: 23/25
+
+164. Unit 45, Lesson 4: Coroutines
+   Questions: 25, Avg length: 15.2 chars
+   Short questions: 23/25
+
+165. Unit 42, Lesson 4: CMake Installation
+   Questions: 25, Avg length: 15.2 chars
+   Short questions: 23/25
+
+166. Unit 23, Lesson 5: Persistent Stack
+   Questions: 25, Avg length: 15.3 chars
+   Short questions: 24/25
+
+167. Unit 32, Lesson 2: Range Query and Point Update
+   Questions: 25, Avg length: 15.3 chars
+   Short questions: 20/25
+
+168. Unit 23, Lesson 3: Min Stack
+   Questions: 25, Avg length: 15.4 chars
+   Short questions: 22/25
+
+169. Unit 28, Lesson 8: Hash Table Applications
+   Questions: 25, Avg length: 15.4 chars
+   Short questions: 21/25
+
+170. Unit 38, Lesson 7: Network Security
+   Questions: 25, Avg length: 15.4 chars
+   Short questions: 20/25
+
+171. Unit 39, Lesson 9: Database Programming Summary
+   Questions: 25, Avg length: 15.4 chars
+   Short questions: 22/25
+
+172. Unit 20, Lesson 9: Cross-Platform Development
+   Questions: 25, Avg length: 15.4 chars
+   Short questions: 20/25
+
+173. Unit 30, Lesson 4: Trie Applications
+   Questions: 25, Avg length: 15.4 chars
+   Short questions: 20/25
+
+174. Unit 33, Lesson 9: DSU Performance
+   Questions: 25, Avg length: 15.4 chars
+   Short questions: 20/25
+
+175. Unit 20, Lesson 10: C++ and Other Languages
+   Questions: 25, Avg length: 15.5 chars
+   Short questions: 20/25
+
+176. Unit 25, Lesson 5: Perfect Hashing
+   Questions: 25, Avg length: 15.5 chars
+   Short questions: 22/25
+
+177. Unit 24, Lesson 5: Priority Queue
+   Questions: 25, Avg length: 15.5 chars
+   Short questions: 20/25
+
+178. Unit 25, Lesson 3: Polynomial Hashing
+   Questions: 25, Avg length: 15.5 chars
+   Short questions: 21/25
+
+179. Unit 25, Lesson 7: Open Addressing
+   Questions: 25, Avg length: 15.5 chars
+   Short questions: 22/25
+
+180. Unit 30, Lesson 5: Compressed Trie
+   Questions: 25, Avg length: 15.5 chars
+   Short questions: 21/25
+
+181. Unit 32, Lesson 4: Range Update Range Query
+   Questions: 25, Avg length: 15.6 chars
+   Short questions: 20/25
+
+182. Unit 39, Lesson 2: Database Connections
+   Questions: 25, Avg length: 15.6 chars
+   Short questions: 22/25
+
+183. Unit 20, Lesson 7: C++ Standard Library Compatibility
+   Questions: 25, Avg length: 15.6 chars
+   Short questions: 21/25
+
+184. Unit 22, Lesson 1: Singly Linked List
+   Questions: 25, Avg length: 15.6 chars
+   Short questions: 21/25
+
+185. Unit 24, Lesson 7: Persistent Queue
+   Questions: 25, Avg length: 15.6 chars
+   Short questions: 25/25
+
+186. Unit 37, Lesson 9: I/O Summary
+   Questions: 25, Avg length: 15.6 chars
+   Short questions: 21/25
+
+187. Unit 18, Lesson 1: Socket Programming Basics
+   Questions: 25, Avg length: 15.6 chars
+   Short questions: 22/25
+
+188. Unit 37, Lesson 7: Advanced I/O
+   Questions: 25, Avg length: 15.6 chars
+   Short questions: 21/25
+
+189. Unit 30, Lesson 7: Trie Performance
+   Questions: 25, Avg length: 15.7 chars
+   Short questions: 21/25
+
+190. Unit 39, Lesson 4: Transactions
+   Questions: 25, Avg length: 15.7 chars
+   Short questions: 18/25
+
+191. Unit 44, Lesson 6: Parallel Algorithms
+   Questions: 25, Avg length: 15.7 chars
+   Short questions: 23/25
+
+192. Unit 26, Lesson 6: Augmented Trees
+   Questions: 25, Avg length: 15.8 chars
+   Short questions: 20/25
+
+193. Unit 34, Lesson 3: Prim's Algorithm
+   Questions: 25, Avg length: 15.8 chars
+   Short questions: 21/25
+
+194. Unit 33, Lesson 7: DSU on Trees
+   Questions: 25, Avg length: 15.8 chars
+   Short questions: 17/25
+
+195. Unit 48, Lesson 8: Performance Optimization
+   Questions: 25, Avg length: 15.8 chars
+   Short questions: 14/25
+
+196. Unit 36, Lesson 5: Strongly Connected Components
+   Questions: 25, Avg length: 15.9 chars
+   Short questions: 20/25
+
+197. Unit 46, Lesson 5: Performance Tips
+   Questions: 25, Avg length: 15.9 chars
+   Short questions: 15/25
+
+198. Unit 29, Lesson 8: Advanced Heap Topics
+   Questions: 25, Avg length: 15.9 chars
+   Short questions: 19/25
+
+199. Unit 31, Lesson 5: Lazy Propagation
+   Questions: 25, Avg length: 15.9 chars
+   Short questions: 19/25
+
+200. Unit 33, Lesson 6: Persistent DSU
+   Questions: 25, Avg length: 15.9 chars
+   Short questions: 22/25
+
+201. Unit 20, Lesson 14: Type Safety and Casting
+   Questions: 25, Avg length: 16.0 chars
+   Short questions: 18/25
+
+202. Unit 30, Lesson 6: Advanced Trie Topics
+   Questions: 25, Avg length: 16.0 chars
+   Short questions: 23/25
+
+203. Unit 34, Lesson 7: Second Best MST
+   Questions: 25, Avg length: 16.0 chars
+   Short questions: 15/25
+
+204. Unit 34, Lesson 9: MST Performance
+   Questions: 25, Avg length: 16.0 chars
+   Short questions: 19/25
+
+205. Unit 19, Lesson 2: Idiomatic STL Usage
+   Questions: 25, Avg length: 16.1 chars
+   Short questions: 21/25
+
+206. Unit 21, Lesson 8: Prefix Arrays
+   Questions: 25, Avg length: 16.1 chars
+   Short questions: 20/25
+
+207. Unit 20, Lesson 15: Advanced Interoperability Patterns
+   Questions: 25, Avg length: 16.1 chars
+   Short questions: 21/25
+
+208. Unit 36, Lesson 3: Graph Properties
+   Questions: 25, Avg length: 16.1 chars
+   Short questions: 21/25
+
+209. Unit 29, Lesson 2: Heapify
+   Questions: 25, Avg length: 16.2 chars
+   Short questions: 20/25
+
+210. Unit 29, Lesson 6: Priority Queue Applications
+   Questions: 25, Avg length: 16.2 chars
+   Short questions: 19/25
+
+211. Unit 31, Lesson 6: Persistent Segment Tree
+   Questions: 25, Avg length: 16.2 chars
+   Short questions: 20/25
+
+212. Unit 34, Lesson 1: MST Basics
+   Questions: 25, Avg length: 16.2 chars
+   Short questions: 19/25
+
+213. Unit 36, Lesson 8: Graph Challenges
+   Questions: 25, Avg length: 16.2 chars
+   Short questions: 18/25
+
+214. Unit 46, Lesson 4: Code Organization
+   Questions: 25, Avg length: 16.2 chars
+   Short questions: 13/25
+
+215. Unit 32, Lesson 8: BIT Performance
+   Questions: 25, Avg length: 16.3 chars
+   Short questions: 20/25
+
+216. Unit 28, Lesson 1: Hash Functions
+   Questions: 25, Avg length: 16.3 chars
+   Short questions: 19/25
+
+217. Unit 25, Lesson 11: Separate Chaining
+   Questions: 25, Avg length: 16.4 chars
+   Short questions: 21/25
+
+218. Unit 24, Lesson 1: Array Queue
+   Questions: 25, Avg length: 16.4 chars
+   Short questions: 16/25
+
+219. Unit 31, Lesson 9: Segment Tree Applications
+   Questions: 25, Avg length: 16.4 chars
+   Short questions: 19/25
+
+220. Unit 45, Lesson 6: Constexpr Improvements
+   Questions: 25, Avg length: 16.4 chars
+   Short questions: 22/25
+
+221. Unit 25, Lesson 2: Hash Functions
+   Questions: 25, Avg length: 16.5 chars
+   Short questions: 19/25
+
+222. Unit 36, Lesson 9: Graph Theory Summary
+   Questions: 25, Avg length: 16.6 chars
+   Short questions: 19/25
+
+223. Unit 35, Lesson 1: Shortest Path Basics
+   Questions: 25, Avg length: 16.6 chars
+   Short questions: 17/25
+
+224. Unit 21, Lesson 10: Cache-aware Arrays
+   Questions: 25, Avg length: 16.6 chars
+   Short questions: 17/25
+
+225. Unit 36, Lesson 7: Graph Algorithms
+   Questions: 25, Avg length: 16.8 chars
+   Short questions: 18/25
+
+226. Unit 45, Lesson 5: Three-way Comparison
+   Questions: 25, Avg length: 16.8 chars
+   Short questions: 21/25
+
+227. Unit 21, Lesson 4: Circular Arrays
+   Questions: 25, Avg length: 16.8 chars
+   Short questions: 20/25
+
+228. Unit 29, Lesson 7: Binary Heap Variants
+   Questions: 25, Avg length: 16.8 chars
+   Short questions: 17/25
+
+229. Unit 20, Lesson 13: Resource Management
+   Questions: 25, Avg length: 16.9 chars
+   Short questions: 18/25
+
+230. Unit 25, Lesson 9: Quadratic Probing
+   Questions: 25, Avg length: 16.9 chars
+   Short questions: 17/25
+
+231. Unit 31, Lesson 2: Range Sum Query
+   Questions: 25, Avg length: 16.9 chars
+   Short questions: 20/25
+
+232. Unit 22, Lesson 8: Intrusive Lists
+   Questions: 25, Avg length: 17.0 chars
+   Short questions: 16/25
+
+233. Unit 28, Lesson 9: Advanced Hash Table Topics
+   Questions: 25, Avg length: 17.0 chars
+   Short questions: 18/25
+
+234. Unit 25, Lesson 4: Rolling Hash
+   Questions: 25, Avg length: 17.0 chars
+   Short questions: 19/25
+
+235. Unit 30, Lesson 3: Delete
+   Questions: 25, Avg length: 17.0 chars
+   Short questions: 19/25
+
+236. Unit 22, Lesson 2: Doubly Linked List
+   Questions: 25, Avg length: 17.1 chars
+   Short questions: 21/25
+
+237. Unit 36, Lesson 6: Graph Applications
+   Questions: 25, Avg length: 17.2 chars
+   Short questions: 16/25
+
+238. Unit 21, Lesson 3: Multidimensional Arrays
+   Questions: 25, Avg length: 17.2 chars
+   Short questions: 20/25
+
+239. Unit 21, Lesson 9: Sliding Window Arrays
+   Questions: 25, Avg length: 17.3 chars
+   Short questions: 19/25
+
+240. Unit 35, Lesson 5: Shortest Path Applications
+   Questions: 25, Avg length: 17.3 chars
+   Short questions: 17/25
+
+241. Unit 33, Lesson 8: DSU Challenges
+   Questions: 25, Avg length: 17.4 chars
+   Short questions: 18/25
+
+242. Unit 36, Lesson 4: Topological Sort
+   Questions: 25, Avg length: 17.4 chars
+   Short questions: 14/25
+
+243. Unit 23, Lesson 1: Array Stack
+   Questions: 25, Avg length: 17.5 chars
+   Short questions: 17/25
+
+244. Unit 35, Lesson 9: Shortest Path Summary
+   Questions: 25, Avg length: 17.6 chars
+   Short questions: 18/25
+
+245. Unit 18, Lesson 4: DNS Resolution
+   Questions: 25, Avg length: 17.7 chars
+   Short questions: 15/25
+
+246. Unit 34, Lesson 2: Kruskal's Algorithm
+   Questions: 25, Avg length: 17.7 chars
+   Short questions: 19/25
+
+247. Unit 34, Lesson 4: Prim's with Priority Queue
+   Questions: 25, Avg length: 17.8 chars
+   Short questions: 16/25
+
+248. Unit 33, Lesson 4: DSU Applications
+   Questions: 25, Avg length: 17.8 chars
+   Short questions: 14/25
+
+249. Unit 20, Lesson 5: Error Handling Across Boundaries
+   Questions: 25, Avg length: 17.9 chars
+   Short questions: 17/25
+
+250. Unit 21, Lesson 2: Dynamic Arrays
+   Questions: 25, Avg length: 17.9 chars
+   Short questions: 18/25
+
+251. Unit 21, Lesson 7: Difference Arrays
+   Questions: 25, Avg length: 18.1 chars
+   Short questions: 17/25
+
+252. Unit 26, Lesson 1: Binary Tree Traversal
+   Questions: 25, Avg length: 18.1 chars
+   Short questions: 16/25
+
+253. Unit 30, Lesson 2: Insert and Search
+   Questions: 25, Avg length: 18.1 chars
+   Short questions: 15/25
+
+254. Unit 35, Lesson 7: Shortest Path Performance
+   Questions: 25, Avg length: 18.1 chars
+   Short questions: 16/25
+
+255. Unit 30, Lesson 8: Suffix Trie
+   Questions: 25, Avg length: 18.2 chars
+   Short questions: 16/25
+
+256. Unit 22, Lesson 5: Skip List
+   Questions: 25, Avg length: 18.2 chars
+   Short questions: 19/25
+
+257. Unit 22, Lesson 7: Self-organizing List
+   Questions: 25, Avg length: 18.2 chars
+   Short questions: 14/25
+
+258. Unit 35, Lesson 8: Shortest Path Advanced Topics
+   Questions: 25, Avg length: 18.2 chars
+   Short questions: 14/25
+
+259. Unit 32, Lesson 6: Advanced BIT Operations
+   Questions: 25, Avg length: 18.3 chars
+   Short questions: 14/25
+
+260. Unit 33, Lesson 3: Union by Rank/Size
+   Questions: 25, Avg length: 18.3 chars
+   Short questions: 12/25
+
+261. Unit 24, Lesson 4: Monotonic Queue
+   Questions: 25, Avg length: 18.4 chars
+   Short questions: 17/25
+
+262. Unit 35, Lesson 6: Shortest Path Challenges
+   Questions: 25, Avg length: 18.5 chars
+   Short questions: 14/25
+
+263. Unit 36, Lesson 1: Graph Basics
+   Questions: 25, Avg length: 18.5 chars
+   Short questions: 14/25
+
+264. Unit 32, Lesson 3: Range Update Point Query
+   Questions: 25, Avg length: 18.6 chars
+   Short questions: 15/25
+
+265. Unit 22, Lesson 6: Unrolled Linked List
+   Questions: 25, Avg length: 18.6 chars
+   Short questions: 12/25
+
+266. Unit 32, Lesson 7: BIT Applications
+   Questions: 25, Avg length: 18.7 chars
+   Short questions: 17/25
+
+267. Unit 34, Lesson 5: MST Applications
+   Questions: 25, Avg length: 18.7 chars
+   Short questions: 13/25
+
+268. Unit 18, Lesson 3: Asynchronous I/O and Select
+   Questions: 25, Avg length: 18.9 chars
+   Short questions: 14/25
+
+269. Unit 18, Lesson 5: JSON and Web APIs
+   Questions: 25, Avg length: 18.9 chars
+   Short questions: 15/25
+
+270. Unit 29, Lesson 5: Heap Sort
+   Questions: 25, Avg length: 18.9 chars
+   Short questions: 13/25
+
+271. Unit 18, Lesson 2: HTTP with C++
+   Questions: 25, Avg length: 18.9 chars
+   Short questions: 12/25
+
+272. Unit 35, Lesson 2: Dijkstra's Algorithm
+   Questions: 25, Avg length: 18.9 chars
+   Short questions: 15/25
+
+273. Unit 25, Lesson 6: Universal Hashing
+   Questions: 25, Avg length: 19.0 chars
+   Short questions: 11/25
+
+274. Unit 35, Lesson 3: Bellman-Ford Algorithm
+   Questions: 25, Avg length: 19.2 chars
+   Short questions: 14/25
+
+275. Unit 21, Lesson 1: Static Arrays
+   Questions: 25, Avg length: 19.2 chars
+   Short questions: 13/25
+
+276. Unit 33, Lesson 2: Path Compression
+   Questions: 25, Avg length: 19.4 chars
+   Short questions: 13/25
+
+277. Unit 34, Lesson 8: MST Challenges
+   Questions: 25, Avg length: 19.4 chars
+   Short questions: 9/25
+
+278. Unit 19, Lesson 1: C++ Coding Guidelines
+   Questions: 25, Avg length: 19.5 chars
+   Short questions: 11/25
+
+279. Unit 22, Lesson 3: Circular Linked List
+   Questions: 25, Avg length: 19.5 chars
+   Short questions: 11/25
+
+280. Unit 17, Lesson 2: CMake Basics
+   Questions: 25, Avg length: 19.6 chars
+   Short questions: 14/25
+
+281. Unit 17, Lesson 5: Debugging Tools (gdb, sanitizers)
+   Questions: 25, Avg length: 19.6 chars
+   Short questions: 18/25
+
+282. Unit 10, Lesson 4: C++20 Features
+   Questions: 30, Avg length: 19.8 chars
+   Short questions: 16/30
+
+283. Unit 12, Lesson 6: std::optional, std::variant, std::any
+   Questions: 25, Avg length: 20.0 chars
+   Short questions: 12/25
+
+284. Unit 9, Lesson 4: Associative Containers (map, set)
+   Questions: 25, Avg length: 20.0 chars
+   Short questions: 15/25
+
+285. Unit 20, Lesson 8: Template Interoperability
+   Questions: 25, Avg length: 20.0 chars
+   Short questions: 13/25
+
+286. Unit 14, Lesson 2: Mutexes and Locks
+   Questions: 25, Avg length: 20.2 chars
+   Short questions: 11/25
+
+287. Unit 30, Lesson 9: Trie Challenges
+   Questions: 25, Avg length: 20.3 chars
+   Short questions: 14/25
+
+288. Unit 10, Lesson 1: C++11 Features
+   Questions: 30, Avg length: 20.3 chars
+   Short questions: 12/30
+
+289. Unit 19, Lesson 3: Avoiding Raw Pointers
+   Questions: 25, Avg length: 20.3 chars
+   Short questions: 14/25
+
+290. Unit 15, Lesson 1: File Streams
+   Questions: 25, Avg length: 20.4 chars
+   Short questions: 8/25
+
+291. Unit 35, Lesson 4: Shortest Path Variants
+   Questions: 25, Avg length: 20.4 chars
+   Short questions: 10/25
+
+292. Unit 32, Lesson 9: BIT Challenges
+   Questions: 25, Avg length: 20.5 chars
+   Short questions: 12/25
+
+293. Unit 16, Lesson 4: Move Semantics and Performance
+   Questions: 25, Avg length: 20.6 chars
+   Short questions: 10/25
+
+294. Unit 29, Lesson 9: Heap Challenges
+   Questions: 25, Avg length: 20.6 chars
+   Short questions: 11/25
+
+295. Unit 14, Lesson 4: Futures and Promises
+   Questions: 25, Avg length: 20.6 chars
+   Short questions: 12/25
+
+296. Unit 20, Lesson 2: Calling Native Libraries
+   Questions: 25, Avg length: 21.0 chars
+   Short questions: 8/25
+
+297. Unit 9, Lesson 3: Sequence Containers (vector, deque, list)
+   Questions: 25, Avg length: 21.1 chars
+   Short questions: 10/25
+
+298. Unit 17, Lesson 1: Makefiles
+   Questions: 25, Avg length: 21.2 chars
+   Short questions: 11/25
+
+299. Unit 20, Lesson 3: ABI and Binary Compatibility
+   Questions: 25, Avg length: 21.4 chars
+   Short questions: 11/25
+
+300. Unit 34, Lesson 6: MST Variants
+   Questions: 25, Avg length: 21.4 chars
+   Short questions: 10/25
+
+301. Unit 9, Lesson 5: Container Adaptors (stack, queue)
+   Questions: 25, Avg length: 21.5 chars
+   Short questions: 12/25
+
+302. Unit 12, Lesson 3: Lambda Functions
+   Questions: 25, Avg length: 21.6 chars
+   Short questions: 8/25
+
+303. Unit 15, Lesson 3: Parsing Structured Data
+   Questions: 25, Avg length: 21.6 chars
+   Short questions: 11/25
+
+304. Unit 14, Lesson 1: Threads (std::thread)
+   Questions: 25, Avg length: 22.5 chars
+   Short questions: 7/25
+
+305. Unit 16, Lesson 5: Profiling and Optimization
+   Questions: 25, Avg length: 23.0 chars
+   Short questions: 8/25
+
+306. Unit 9, Lesson 1: Overview of STL Components
+   Questions: 25, Avg length: 23.3 chars
+   Short questions: 4/25
+
+307. Unit 15, Lesson 2: Binary vs Text Files
+   Questions: 25, Avg length: 23.3 chars
+   Short questions: 5/25
+
+308. Unit 16, Lesson 2: Cache and Memory Layout
+   Questions: 25, Avg length: 23.5 chars
+   Short questions: 4/25
+
+309. Unit 17, Lesson 3: Dependency Management
+   Questions: 25, Avg length: 23.5 chars
+   Short questions: 7/25
+
+310. Unit 9, Lesson 6: STL Algorithms
+   Questions: 25, Avg length: 23.7 chars
+   Short questions: 7/25
+
+311. Unit 16, Lesson 1: Value vs Reference Semantics
+   Questions: 25, Avg length: 23.7 chars
+   Short questions: 7/25
+
+312. Unit 13, Lesson 4: Alternatives to Exceptions
+   Questions: 25, Avg length: 23.8 chars
+   Short questions: 5/25
+
+313. Unit 16, Lesson 3: Inline vs Virtual Costs
+   Questions: 25, Avg length: 23.9 chars
+   Short questions: 7/25
+
+314. Unit 9, Lesson 2: Iterators
+   Questions: 25, Avg length: 24.6 chars
+   Short questions: 2/25
+
+315. Unit 14, Lesson 5: Parallel Algorithms
+   Questions: 25, Avg length: 24.7 chars
+   Short questions: 8/25
+
+316. Unit 20, Lesson 1: C and C++ Interoperability
+   Questions: 25, Avg length: 24.8 chars
+   Short questions: 5/25
+
+317. Unit 13, Lesson 1: try, catch, throw
+   Questions: 25, Avg length: 24.9 chars
+   Short questions: 5/25
+
