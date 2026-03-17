@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 79 Complete**
+📦 **Batch 80 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 17, L2: CMake Basics
-  • Unit 17, L5: Debugging Tools (gdb, sanitizers)
-  • Unit 38, L1: Network Basics
+  • Unit 10, L4: C++20 Features
+  • Unit 12, L6: std::optional, std::variant, std::any
+  • Unit 9, L4: Associative Containers (map, set)
 
 📊 **Progress:**
-• Fixed: 237/317 lessons (74.8%)
-• Questions: 5925+
-• Remaining: 53 lessons
+• Fixed: 240/317 lessons (75.7%)
+• Questions: 6000+
+• Remaining: 50 lessons
 
 🚀 Keep it going!

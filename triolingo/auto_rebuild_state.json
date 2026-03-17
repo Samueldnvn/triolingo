@@ -1,11 +1,11 @@
 {
-  "total_fixed": 237,
-  "batches_completed": 79,
-  "questions_rebuilt": 5925,
-  "last_batch_time": "2026-03-17T18:45:04.038744",
+  "total_fixed": 240,
+  "batches_completed": 80,
+  "questions_rebuilt": 6000,
+  "last_batch_time": "2026-03-17T18:50:02.774812",
   "last_batch_lessons": [
-    "Unit 17, L2: CMake Basics",
-    "Unit 17, L5: Debugging Tools (gdb, sanitizers)",
-    "Unit 38, L1: Network Basics"
+    "Unit 10, L4: C++20 Features",
+    "Unit 12, L6: std::optional, std::variant, std::any",
+    "Unit 9, L4: Associative Containers (map, set)"
   ]
 }
