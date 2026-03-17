@@ -1,11 +1,11 @@
 {
-  "total_fixed": 54,
-  "batches_completed": 18,
-  "questions_rebuilt": 1350,
-  "last_batch_time": "2026-03-17T13:40:02.867478",
+  "total_fixed": 57,
+  "batches_completed": 19,
+  "questions_rebuilt": 1425,
+  "last_batch_time": "2026-03-17T13:45:03.173919",
   "last_batch_lessons": [
-    "Unit 23, L4: Max Stack",
-    "Unit 40, L5: Multi-Client Servers",
-    "Unit 45, L2: Ranges"
+    "Unit 25, L15: Bloom Filters",
+    "Unit 26, L4: Balanced BST",
+    "Unit 42, L7: CMake Advanced"
   ]
 }
