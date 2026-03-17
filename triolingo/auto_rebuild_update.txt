@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 80 Complete**
+📦 **Batch 81 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 10, L4: C++20 Features
-  • Unit 12, L6: std::optional, std::variant, std::any
-  • Unit 9, L4: Associative Containers (map, set)
+  • Unit 20, L8: Template Interoperability
+  • Unit 14, L2: Mutexes and Locks
+  • Unit 30, L9: Trie Challenges
 
 📊 **Progress:**
-• Fixed: 240/317 lessons (75.7%)
-• Questions: 6000+
-• Remaining: 50 lessons
+• Fixed: 243/317 lessons (76.7%)
+• Questions: 6075+
+• Remaining: 47 lessons
 
 🚀 Keep it going!
