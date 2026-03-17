@@ -1,11 +1,11 @@
 {
-  "total_fixed": 66,
-  "batches_completed": 22,
-  "questions_rebuilt": 1650,
-  "last_batch_time": "2026-03-17T14:00:03.472110",
+  "total_fixed": 69,
+  "batches_completed": 23,
+  "questions_rebuilt": 1725,
+  "last_batch_time": "2026-03-17T14:05:02.811486",
   "last_batch_lessons": [
-    "Unit 25, L10: Double Hashing",
-    "Unit 33, L1: Union-Find Basics",
-    "Unit 47, L1: Build Systems"
+    "Unit 47, L2: Package Managers",
+    "Unit 23, L2: Linked Stack",
+    "Unit 46, L9: Best Practices Summary"
   ]
 }
