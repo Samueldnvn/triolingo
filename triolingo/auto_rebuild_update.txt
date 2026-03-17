@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 38 Complete**
+📦 **Batch 39 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 38, L9: Network Programming Summary
-  • Unit 42, L2: CMake Targets & Dependencies
-  • Unit 45, L1: Concepts
+  • Unit 28, L4: Rehashing and Resizing
+  • Unit 24, L2: Circular Queue
+  • Unit 45, L4: Coroutines
 
 📊 **Progress:**
-• Fixed: 114/317 lessons (36.0%)
-• Questions: 2850+
-• Remaining: 176 lessons
+• Fixed: 117/317 lessons (36.9%)
+• Questions: 2925+
+• Remaining: 173 lessons
 
 🚀 Keep it going!

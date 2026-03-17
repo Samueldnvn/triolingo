@@ -1,11 +1,11 @@
 {
-  "total_fixed": 114,
-  "batches_completed": 38,
-  "questions_rebuilt": 2850,
-  "last_batch_time": "2026-03-17T15:20:02.857709",
+  "total_fixed": 117,
+  "batches_completed": 39,
+  "questions_rebuilt": 2925,
+  "last_batch_time": "2026-03-17T15:25:03.486937",
   "last_batch_lessons": [
-    "Unit 38, L9: Network Programming Summary",
-    "Unit 42, L2: CMake Targets & Dependencies",
-    "Unit 45, L1: Concepts"
+    "Unit 28, L4: Rehashing and Resizing",
+    "Unit 24, L2: Circular Queue",
+    "Unit 45, L4: Coroutines"
   ]
 }
