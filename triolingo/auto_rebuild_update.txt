@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 65 Complete**
+📦 **Batch 66 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 35, L5: Shortest Path Applications
-  • Unit 33, L8: DSU Challenges
-  • Unit 36, L4: Topological Sort
+  • Unit 23, L1: Array Stack
+  • Unit 35, L9: Shortest Path Summary
+  • Unit 18, L4: DNS Resolution
 
 📊 **Progress:**
-• Fixed: 195/317 lessons (61.5%)
-• Questions: 4875+
-• Remaining: 95 lessons
+• Fixed: 198/317 lessons (62.5%)
+• Questions: 4950+
+• Remaining: 92 lessons
 
 🚀 Keep it going!
