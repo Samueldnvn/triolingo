@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Auto-rebuild script for Triolingo - Runs continuously to fix low-quality lessons
-Sends updates to Discord general channel
+Saves updates to file for Discord polling
 """
 import json
 import os
@@ -14,9 +14,9 @@ WORKSPACE = "/home/samueldnvn4/.openclaw/workspace"
 TRIO_DIR = f"{WORKSPACE}/triolingo"
 DATA_FILE = f"{TRIO_DIR}/questions/cppCombined.js"
 STATE_FILE = f"{TRIO_DIR}/auto_rebuild_state.json"
+UPDATE_FILE = f"{TRIO_DIR}/auto_rebuild_update.txt"
 BATCH_SIZE = 3
 TARGET_AVG_LENGTH = 25
-DISCORD_CHANNEL = "1471223364478697636"  # General channel ID
 
 def load_data():
     """Load cppCombined.js data"""
@@ -155,8 +155,8 @@ def run_batch():
         'percent_complete': round((state['total_fixed'] / total_lessons) * 100, 1)
     }
 
-def send_discord_update(success, result):
-    """Send update to Discord general channel"""
+def save_update(success, result):
+    """Save update to file for Discord"""
     if success:
         msg = f"""⚡ **Triolingo Auto-Rebuild Update** ⚡
 
@@ -180,15 +180,9 @@ def send_discord_update(success, result):
 
 All lessons have been rebuilt with high-quality questions!"""
 
-    # Send via message tool
-    try:
-        import subprocess
-        # Use OpenClaw's message tool
-        cmd = ['openclaw', 'message', 'send', '--channel', 'discord', '--target', DISCORD_CHANNEL, '--message', msg]
-        subprocess.run(cmd, check=True, capture_output=True)
-        print(f"✅ Discord update sent")
-    except Exception as e:
-        print(f"⚠️ Failed to send Discord update: {e}")
+    with open(UPDATE_FILE, 'w') as f:
+        f.write(msg)
+    print(f"✅ Update saved to {UPDATE_FILE}")
 
 def main():
     """Main function"""
@@ -197,7 +191,7 @@ def main():
     
     try:
         success, result = run_batch()
-        send_discord_update(success, result)
+        save_update(success, result)
         
         if success:
             print(f"\n✅ Batch {result['batch_num']} complete!")
