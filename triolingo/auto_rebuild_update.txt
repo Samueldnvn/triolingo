@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 91 Complete**
+📦 **Batch 92 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 16, L5: Profiling and Optimization
-  • Unit 47, L9: Development Tools Summary
-  • Unit 9, L1: Overview of STL Components
+  • Unit 15, L2: Binary vs Text Files
+  • Unit 43, L3: TCP Server
+  • Unit 16, L2: Cache and Memory Layout
 
 📊 **Progress:**
-• Fixed: 273/317 lessons (86.1%)
-• Questions: 6825+
-• Remaining: 17 lessons
+• Fixed: 276/317 lessons (87.1%)
+• Questions: 6900+
+• Remaining: 14 lessons
 
 🚀 Keep it going!

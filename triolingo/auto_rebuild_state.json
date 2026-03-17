@@ -1,11 +1,11 @@
 {
-  "total_fixed": 273,
-  "batches_completed": 91,
-  "questions_rebuilt": 6825,
-  "last_batch_time": "2026-03-17T19:45:02.787090",
+  "total_fixed": 276,
+  "batches_completed": 92,
+  "questions_rebuilt": 6900,
+  "last_batch_time": "2026-03-17T19:50:02.987096",
   "last_batch_lessons": [
-    "Unit 16, L5: Profiling and Optimization",
-    "Unit 47, L9: Development Tools Summary",
-    "Unit 9, L1: Overview of STL Components"
+    "Unit 15, L2: Binary vs Text Files",
+    "Unit 43, L3: TCP Server",
+    "Unit 16, L2: Cache and Memory Layout"
   ]
 }
