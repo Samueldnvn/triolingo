@@ -1,11 +1,11 @@
 {
-  "total_fixed": 213,
-  "batches_completed": 71,
-  "questions_rebuilt": 5325,
-  "last_batch_time": "2026-03-17T18:05:02.621681",
+  "total_fixed": 216,
+  "batches_completed": 72,
+  "questions_rebuilt": 5400,
+  "last_batch_time": "2026-03-17T18:10:02.939981",
   "last_batch_lessons": [
-    "Unit 35, L8: Shortest Path Advanced Topics",
-    "Unit 32, L6: Advanced BIT Operations",
-    "Unit 33, L3: Union by Rank/Size"
+    "Unit 24, L4: Monotonic Queue",
+    "Unit 35, L6: Shortest Path Challenges",
+    "Unit 36, L1: Graph Basics"
   ]
 }

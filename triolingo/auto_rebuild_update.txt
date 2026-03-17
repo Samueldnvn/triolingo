@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 71 Complete**
+📦 **Batch 72 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 35, L8: Shortest Path Advanced Topics
-  • Unit 32, L6: Advanced BIT Operations
-  • Unit 33, L3: Union by Rank/Size
+  • Unit 24, L4: Monotonic Queue
+  • Unit 35, L6: Shortest Path Challenges
+  • Unit 36, L1: Graph Basics
 
 📊 **Progress:**
-• Fixed: 213/317 lessons (67.2%)
-• Questions: 5325+
-• Remaining: 77 lessons
+• Fixed: 216/317 lessons (68.1%)
+• Questions: 5400+
+• Remaining: 74 lessons
 
 🚀 Keep it going!
