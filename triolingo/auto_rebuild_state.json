@@ -1,11 +1,11 @@
 {
-  "total_fixed": 129,
-  "batches_completed": 43,
-  "questions_rebuilt": 3225,
-  "last_batch_time": "2026-03-17T15:45:02.671896",
+  "total_fixed": 132,
+  "batches_completed": 44,
+  "questions_rebuilt": 3300,
+  "last_batch_time": "2026-03-17T15:50:03.012196",
   "last_batch_lessons": [
-    "Unit 33, L9: DSU Performance",
-    "Unit 20, L10: C++ and Other Languages",
-    "Unit 25, L5: Perfect Hashing"
+    "Unit 24, L5: Priority Queue",
+    "Unit 25, L3: Polynomial Hashing",
+    "Unit 25, L7: Open Addressing"
   ]
 }

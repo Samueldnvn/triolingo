@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 43 Complete**
+📦 **Batch 44 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 33, L9: DSU Performance
-  • Unit 20, L10: C++ and Other Languages
-  • Unit 25, L5: Perfect Hashing
+  • Unit 24, L5: Priority Queue
+  • Unit 25, L3: Polynomial Hashing
+  • Unit 25, L7: Open Addressing
 
 📊 **Progress:**
-• Fixed: 129/317 lessons (40.7%)
-• Questions: 3225+
-• Remaining: 161 lessons
+• Fixed: 132/317 lessons (41.6%)
+• Questions: 3300+
+• Remaining: 158 lessons
 
 🚀 Keep it going!
