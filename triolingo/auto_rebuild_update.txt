@@ -1,0 +1,17 @@
+⚡ **Triolingo Auto-Rebuild Update** ⚡
+
+📦 **Batch 27 Complete**
+✅ 3 lessons rebuilt
+📝 75 questions added
+
+**Lessons:**
+  • Unit 42, L1: CMake Basics
+  • Unit 31, L1: Segment Tree Basics
+  • Unit 31, L4: Range GCD Query
+
+📊 **Progress:**
+• Fixed: 81/317 lessons (25.6%)
+• Questions: 2025+
+• Remaining: 209 lessons
+
+🚀 Keep it going!
