@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 66 Complete**
+📦 **Batch 67 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 23, L1: Array Stack
-  • Unit 35, L9: Shortest Path Summary
-  • Unit 18, L4: DNS Resolution
+  • Unit 34, L2: Kruskal's Algorithm
+  • Unit 34, L4: Prim's with Priority Queue
+  • Unit 33, L4: DSU Applications
 
 📊 **Progress:**
-• Fixed: 198/317 lessons (62.5%)
-• Questions: 4950+
-• Remaining: 92 lessons
+• Fixed: 201/317 lessons (63.4%)
+• Questions: 5025+
+• Remaining: 89 lessons
 
 🚀 Keep it going!

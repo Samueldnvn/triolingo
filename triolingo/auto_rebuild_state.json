@@ -1,11 +1,11 @@
 {
-  "total_fixed": 198,
-  "batches_completed": 66,
-  "questions_rebuilt": 4950,
-  "last_batch_time": "2026-03-17T17:40:04.878663",
+  "total_fixed": 201,
+  "batches_completed": 67,
+  "questions_rebuilt": 5025,
+  "last_batch_time": "2026-03-17T17:45:03.893364",
   "last_batch_lessons": [
-    "Unit 23, L1: Array Stack",
-    "Unit 35, L9: Shortest Path Summary",
-    "Unit 18, L4: DNS Resolution"
+    "Unit 34, L2: Kruskal's Algorithm",
+    "Unit 34, L4: Prim's with Priority Queue",
+    "Unit 33, L4: DSU Applications"
   ]
 }
