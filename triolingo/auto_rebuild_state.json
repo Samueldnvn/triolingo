@@ -1,11 +1,11 @@
 {
-  "total_fixed": 39,
-  "batches_completed": 13,
-  "questions_rebuilt": 975,
-  "last_batch_time": "2026-03-17T13:15:02.966727",
+  "total_fixed": 42,
+  "batches_completed": 14,
+  "questions_rebuilt": 1050,
+  "last_batch_time": "2026-03-17T13:20:03.374863",
   "last_batch_lessons": [
-    "Unit 45, L8: std::format",
-    "Unit 46, L2: Memory Management",
-    "Unit 48, L6: Embedded Systems"
+    "Unit 44, L5: Thread Pools",
+    "Unit 46, L1: Modern C++ Style",
+    "Unit 21, L5: Sparse Arrays"
   ]
 }
