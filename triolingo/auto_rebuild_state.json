@@ -1,11 +1,11 @@
 {
-  "total_fixed": 168,
-  "batches_completed": 56,
-  "questions_rebuilt": 4200,
-  "last_batch_time": "2026-03-17T16:50:02.874656",
+  "total_fixed": 171,
+  "batches_completed": 57,
+  "questions_rebuilt": 4275,
+  "last_batch_time": "2026-03-17T16:55:03.649240",
   "last_batch_lessons": [
-    "Unit 36, L8: Graph Challenges",
-    "Unit 46, L4: Code Organization",
-    "Unit 32, L8: BIT Performance"
+    "Unit 28, L1: Hash Functions",
+    "Unit 25, L11: Separate Chaining",
+    "Unit 24, L1: Array Queue"
   ]
 }
