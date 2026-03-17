@@ -1,11 +1,11 @@
 {
-  "total_fixed": 216,
-  "batches_completed": 72,
-  "questions_rebuilt": 5400,
-  "last_batch_time": "2026-03-17T18:10:02.939981",
+  "total_fixed": 219,
+  "batches_completed": 73,
+  "questions_rebuilt": 5475,
+  "last_batch_time": "2026-03-17T18:15:03.279850",
   "last_batch_lessons": [
-    "Unit 24, L4: Monotonic Queue",
-    "Unit 35, L6: Shortest Path Challenges",
-    "Unit 36, L1: Graph Basics"
+    "Unit 32, L3: Range Update Point Query",
+    "Unit 22, L6: Unrolled Linked List",
+    "Unit 32, L7: BIT Applications"
   ]
 }

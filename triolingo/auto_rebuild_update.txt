@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 72 Complete**
+📦 **Batch 73 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 24, L4: Monotonic Queue
-  • Unit 35, L6: Shortest Path Challenges
-  • Unit 36, L1: Graph Basics
+  • Unit 32, L3: Range Update Point Query
+  • Unit 22, L6: Unrolled Linked List
+  • Unit 32, L7: BIT Applications
 
 📊 **Progress:**
-• Fixed: 216/317 lessons (68.1%)
-• Questions: 5400+
-• Remaining: 74 lessons
+• Fixed: 219/317 lessons (69.1%)
+• Questions: 5475+
+• Remaining: 71 lessons
 
 🚀 Keep it going!
