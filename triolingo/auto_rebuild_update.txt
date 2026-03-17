@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 51 Complete**
+📦 **Batch 52 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 29, L8: Advanced Heap Topics
-  • Unit 31, L5: Lazy Propagation
-  • Unit 33, L6: Persistent DSU
+  • Unit 20, L14: Type Safety and Casting
+  • Unit 30, L6: Advanced Trie Topics
+  • Unit 34, L7: Second Best MST
 
 📊 **Progress:**
-• Fixed: 153/317 lessons (48.3%)
-• Questions: 3825+
-• Remaining: 137 lessons
+• Fixed: 156/317 lessons (49.2%)
+• Questions: 3900+
+• Remaining: 134 lessons
 
 🚀 Keep it going!
