@@ -1,11 +1,11 @@
 {
-  "total_fixed": 252,
-  "batches_completed": 84,
-  "questions_rebuilt": 6300,
-  "last_batch_time": "2026-03-17T19:10:03.024239",
+  "total_fixed": 255,
+  "batches_completed": 85,
+  "questions_rebuilt": 6375,
+  "last_batch_time": "2026-03-17T19:15:02.705914",
   "last_batch_lessons": [
-    "Unit 29, L9: Heap Challenges",
-    "Unit 14, L4: Futures and Promises",
-    "Unit 49, L7: Modern C++ Features Review"
+    "Unit 20, L2: Calling Native Libraries",
+    "Unit 9, L3: Sequence Containers (vector, deque, list)",
+    "Unit 41, L2: Thread Synchronization"
   ]
 }

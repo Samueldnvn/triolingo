@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 84 Complete**
+📦 **Batch 85 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 29, L9: Heap Challenges
-  • Unit 14, L4: Futures and Promises
-  • Unit 49, L7: Modern C++ Features Review
+  • Unit 20, L2: Calling Native Libraries
+  • Unit 9, L3: Sequence Containers (vector, deque, list)
+  • Unit 41, L2: Thread Synchronization
 
 📊 **Progress:**
-• Fixed: 252/317 lessons (79.5%)
-• Questions: 6300+
-• Remaining: 38 lessons
+• Fixed: 255/317 lessons (80.4%)
+• Questions: 6375+
+• Remaining: 35 lessons
 
 🚀 Keep it going!
