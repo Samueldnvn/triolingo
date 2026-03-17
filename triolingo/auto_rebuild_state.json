@@ -1,11 +1,11 @@
 {
-  "total_fixed": 258,
-  "batches_completed": 86,
-  "questions_rebuilt": 6450,
-  "last_batch_time": "2026-03-17T19:20:03.450783",
+  "total_fixed": 261,
+  "batches_completed": 87,
+  "questions_rebuilt": 6525,
+  "last_batch_time": "2026-03-17T19:25:03.137445",
   "last_batch_lessons": [
-    "Unit 17, L1: Makefiles",
-    "Unit 38, L3: UDP Programming",
-    "Unit 20, L3: ABI and Binary Compatibility"
+    "Unit 34, L6: MST Variants",
+    "Unit 9, L5: Container Adaptors (stack, queue)",
+    "Unit 43, L9: C++ Networking Summary"
   ]
 }

@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 86 Complete**
+📦 **Batch 87 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 17, L1: Makefiles
-  • Unit 38, L3: UDP Programming
-  • Unit 20, L3: ABI and Binary Compatibility
+  • Unit 34, L6: MST Variants
+  • Unit 9, L5: Container Adaptors (stack, queue)
+  • Unit 43, L9: C++ Networking Summary
 
 📊 **Progress:**
-• Fixed: 258/317 lessons (81.4%)
-• Questions: 6450+
-• Remaining: 32 lessons
+• Fixed: 261/317 lessons (82.3%)
+• Questions: 6525+
+• Remaining: 29 lessons
 
 🚀 Keep it going!
