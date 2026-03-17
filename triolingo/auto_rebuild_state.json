@@ -1,11 +1,11 @@
 {
-  "total_fixed": 138,
-  "batches_completed": 46,
-  "questions_rebuilt": 3450,
-  "last_batch_time": "2026-03-17T16:00:03.367410",
+  "total_fixed": 141,
+  "batches_completed": 47,
+  "questions_rebuilt": 3525,
+  "last_batch_time": "2026-03-17T16:05:02.614769",
   "last_batch_lessons": [
-    "Unit 20, L7: C++ Standard Library Compatibility",
-    "Unit 22, L1: Singly Linked List",
-    "Unit 24, L7: Persistent Queue"
+    "Unit 37, L9: I/O Summary",
+    "Unit 18, L1: Socket Programming Basics",
+    "Unit 37, L7: Advanced I/O"
   ]
 }
