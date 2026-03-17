@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 49 Complete**
+📦 **Batch 50 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 26, L6: Augmented Trees
-  • Unit 34, L3: Prim's Algorithm
-  • Unit 33, L7: DSU on Trees
+  • Unit 48, L8: Performance Optimization
+  • Unit 36, L5: Strongly Connected Components
+  • Unit 46, L5: Performance Tips
 
 📊 **Progress:**
-• Fixed: 147/317 lessons (46.4%)
-• Questions: 3675+
-• Remaining: 143 lessons
+• Fixed: 150/317 lessons (47.3%)
+• Questions: 3750+
+• Remaining: 140 lessons
 
 🚀 Keep it going!

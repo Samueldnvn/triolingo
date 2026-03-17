@@ -1,11 +1,11 @@
 {
-  "total_fixed": 147,
-  "batches_completed": 49,
-  "questions_rebuilt": 3675,
-  "last_batch_time": "2026-03-17T16:15:03.315272",
+  "total_fixed": 150,
+  "batches_completed": 50,
+  "questions_rebuilt": 3750,
+  "last_batch_time": "2026-03-17T16:20:02.607960",
   "last_batch_lessons": [
-    "Unit 26, L6: Augmented Trees",
-    "Unit 34, L3: Prim's Algorithm",
-    "Unit 33, L7: DSU on Trees"
+    "Unit 48, L8: Performance Optimization",
+    "Unit 36, L5: Strongly Connected Components",
+    "Unit 46, L5: Performance Tips"
   ]
 }
