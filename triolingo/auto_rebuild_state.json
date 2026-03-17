@@ -1,11 +1,11 @@
 {
-  "total_fixed": 27,
-  "batches_completed": 9,
-  "questions_rebuilt": 675,
-  "last_batch_time": "2026-03-17T12:55:03.044632",
+  "total_fixed": 30,
+  "batches_completed": 10,
+  "questions_rebuilt": 750,
+  "last_batch_time": "2026-03-17T13:00:02.829132",
   "last_batch_lessons": [
-    "Unit 46, L6: Safety & Security",
-    "Unit 48, L9: Projects & Applications Summary",
-    "Unit 49, L4: Memory & Pointers Review"
+    "Unit 44, L1: Thread Basics",
+    "Unit 44, L4: Atomic Operations",
+    "Unit 49, L8: Best Practices & Patterns Review"
   ]
 }
