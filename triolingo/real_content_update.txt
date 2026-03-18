@@ -1,10 +1,10 @@
 📚 **Triolingo Real Content Update**
 
 ✅ **Lesson Enhanced**
-• Unit 46, L12: Skip lists
+• Unit 46, L13: Monte Carlo algorithms
 
 📊 **Progress:**
-• Enhanced: 18 lessons
-• Remaining: 37 lessons
+• Enhanced: 19 lessons
+• Remaining: 36 lessons
 
 📖 Content created with proper explanations, examples, and best practices!
