@@ -1,10 +1,10 @@
 📚 **Triolingo Real Content Update**
 
 ✅ **Lesson Enhanced**
-• Unit 31, L10: Graph Data Structures
+• Unit 44, L10: Huffman coding
 
 📊 **Progress:**
-• Enhanced: 3 lessons
-• Remaining: 52 lessons
+• Enhanced: 4 lessons
+• Remaining: 51 lessons
 
 📖 Content created with proper explanations, examples, and best practices!
