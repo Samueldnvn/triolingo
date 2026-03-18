@@ -1,10 +1,10 @@
 📚 **Triolingo Real Content Update**
 
 ✅ **Lesson Enhanced**
-• Unit 46, L17: Local search
+• Unit 46, L18: PTAS
 
 📊 **Progress:**
-• Enhanced: 23 lessons
-• Remaining: 32 lessons
+• Enhanced: 24 lessons
+• Remaining: 31 lessons
 
 📖 Content created with proper explanations, examples, and best practices!
