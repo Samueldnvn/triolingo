@@ -1,10 +1,10 @@
 📚 **Triolingo Real Content Update**
 
 ✅ **Lesson Enhanced**
-• Unit 46, L18: PTAS
+• Unit 46, L19: FPTAS
 
 📊 **Progress:**
-• Enhanced: 24 lessons
-• Remaining: 31 lessons
+• Enhanced: 25 lessons
+• Remaining: 30 lessons
 
 📖 Content created with proper explanations, examples, and best practices!
