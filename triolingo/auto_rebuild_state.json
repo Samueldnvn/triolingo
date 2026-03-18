@@ -1,11 +1,11 @@
 {
-  "total_fixed": 279,
-  "batches_completed": 93,
-  "questions_rebuilt": 6975,
-  "last_batch_time": "2026-03-17T19:55:03.708589",
+  "total_fixed": 282,
+  "batches_completed": 94,
+  "questions_rebuilt": 7050,
+  "last_batch_time": "2026-03-17T20:00:02.997046",
   "last_batch_lessons": [
-    "Unit 40, L4: Socket Options",
-    "Unit 17, L3: Dependency Management",
-    "Unit 9, L6: STL Algorithms"
+    "Unit 16, L1: Value vs Reference Semantics",
+    "Unit 30, L1: Trie Basics",
+    "Unit 13, L4: Alternatives to Exceptions"
   ]
 }

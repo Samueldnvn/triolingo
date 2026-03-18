@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 93 Complete**
+📦 **Batch 94 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 40, L4: Socket Options
-  • Unit 17, L3: Dependency Management
-  • Unit 9, L6: STL Algorithms
+  • Unit 16, L1: Value vs Reference Semantics
+  • Unit 30, L1: Trie Basics
+  • Unit 13, L4: Alternatives to Exceptions
 
 📊 **Progress:**
-• Fixed: 279/317 lessons (88.0%)
-• Questions: 6975+
-• Remaining: 11 lessons
+• Fixed: 282/317 lessons (89.0%)
+• Questions: 7050+
+• Remaining: 8 lessons
 
 🚀 Keep it going!
