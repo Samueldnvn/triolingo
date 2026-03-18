@@ -1,10 +1,10 @@
 📚 **Triolingo Real Content Update**
 
 ✅ **Lesson Enhanced**
-• Unit 44, L15: Merge sort
+• Unit 44, L16: Quick sort
 
 📊 **Progress:**
-• Enhanced: 9 lessons
-• Remaining: 46 lessons
+• Enhanced: 10 lessons
+• Remaining: 45 lessons
 
 📖 Content created with proper explanations, examples, and best practices!
