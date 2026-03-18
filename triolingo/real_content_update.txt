@@ -1,10 +1,10 @@
 📚 **Triolingo Real Content Update**
 
 ✅ **Lesson Enhanced**
-• Unit 29, L11: Tournament tree
+• Unit 31, L10: Graph Data Structures
 
 📊 **Progress:**
-• Enhanced: 2 lessons
-• Remaining: 53 lessons
+• Enhanced: 3 lessons
+• Remaining: 52 lessons
 
 📖 Content created with proper explanations, examples, and best practices!
