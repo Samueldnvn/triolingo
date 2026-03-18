@@ -1,10 +1,10 @@
 📚 **Triolingo Real Content Update**
 
 ✅ **Lesson Enhanced**
-• Unit 44, L16: Quick sort
+• Unit 44, L17: Karatsuba multiplication
 
 📊 **Progress:**
-• Enhanced: 10 lessons
-• Remaining: 45 lessons
+• Enhanced: 11 lessons
+• Remaining: 44 lessons
 
 📖 Content created with proper explanations, examples, and best practices!
