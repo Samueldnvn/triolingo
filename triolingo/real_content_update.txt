@@ -1,10 +1,10 @@
 📚 **Triolingo Real Content Update**
 
 ✅ **Lesson Enhanced**
-• Unit 44, L13: Divide and Conquer
+• Unit 44, L14: Binary search
 
 📊 **Progress:**
-• Enhanced: 7 lessons
-• Remaining: 48 lessons
+• Enhanced: 8 lessons
+• Remaining: 47 lessons
 
 📖 Content created with proper explanations, examples, and best practices!
