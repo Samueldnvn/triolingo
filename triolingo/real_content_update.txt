@@ -1,10 +1,10 @@
 📚 **Triolingo Real Content Update**
 
 ✅ **Lesson Enhanced**
-• Unit 44, L14: Binary search
+• Unit 44, L15: Merge sort
 
 📊 **Progress:**
-• Enhanced: 8 lessons
-• Remaining: 47 lessons
+• Enhanced: 9 lessons
+• Remaining: 46 lessons
 
 📖 Content created with proper explanations, examples, and best practices!
