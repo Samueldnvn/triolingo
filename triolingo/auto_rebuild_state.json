@@ -1,11 +1,11 @@
 {
-  "total_fixed": 276,
-  "batches_completed": 92,
-  "questions_rebuilt": 6900,
-  "last_batch_time": "2026-03-17T19:50:02.987096",
+  "total_fixed": 279,
+  "batches_completed": 93,
+  "questions_rebuilt": 6975,
+  "last_batch_time": "2026-03-17T19:55:03.708589",
   "last_batch_lessons": [
-    "Unit 15, L2: Binary vs Text Files",
-    "Unit 43, L3: TCP Server",
-    "Unit 16, L2: Cache and Memory Layout"
+    "Unit 40, L4: Socket Options",
+    "Unit 17, L3: Dependency Management",
+    "Unit 9, L6: STL Algorithms"
   ]
 }

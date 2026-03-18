@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 92 Complete**
+📦 **Batch 93 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 15, L2: Binary vs Text Files
-  • Unit 43, L3: TCP Server
-  • Unit 16, L2: Cache and Memory Layout
+  • Unit 40, L4: Socket Options
+  • Unit 17, L3: Dependency Management
+  • Unit 9, L6: STL Algorithms
 
 📊 **Progress:**
-• Fixed: 276/317 lessons (87.1%)
-• Questions: 6900+
-• Remaining: 14 lessons
+• Fixed: 279/317 lessons (88.0%)
+• Questions: 6975+
+• Remaining: 11 lessons
 
 🚀 Keep it going!
