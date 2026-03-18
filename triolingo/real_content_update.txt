@@ -1,10 +1,10 @@
 📚 **Triolingo Real Content Update**
 
 ✅ **Lesson Enhanced**
-• Unit 46, L16: Greedy approximation
+• Unit 46, L17: Local search
 
 📊 **Progress:**
-• Enhanced: 22 lessons
-• Remaining: 33 lessons
+• Enhanced: 23 lessons
+• Remaining: 32 lessons
 
 📖 Content created with proper explanations, examples, and best practices!
