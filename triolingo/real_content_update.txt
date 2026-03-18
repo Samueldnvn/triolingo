@@ -1,10 +1,10 @@
 📚 **Triolingo Real Content Update**
 
 ✅ **Lesson Enhanced**
-• Unit 46, L13: Monte Carlo algorithms
+• Unit 46, L14: Las Vegas algorithms
 
 📊 **Progress:**
-• Enhanced: 19 lessons
-• Remaining: 36 lessons
+• Enhanced: 20 lessons
+• Remaining: 35 lessons
 
 📖 Content created with proper explanations, examples, and best practices!
