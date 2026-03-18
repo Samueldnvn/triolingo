@@ -1,10 +1,10 @@
 📚 **Triolingo Real Content Update**
 
 ✅ **Lesson Enhanced**
-• Unit 29, L10: Cartesian tree
+• Unit 29, L11: Tournament tree
 
 📊 **Progress:**
-• Enhanced: 1 lessons
-• Remaining: 54 lessons
+• Enhanced: 2 lessons
+• Remaining: 53 lessons
 
 📖 Content created with proper explanations, examples, and best practices!
