@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 94 Complete**
+📦 **Batch 95 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 16, L1: Value vs Reference Semantics
-  • Unit 30, L1: Trie Basics
-  • Unit 13, L4: Alternatives to Exceptions
+  • Unit 16, L3: Inline vs Virtual Costs
+  • Unit 9, L2: Iterators
+  • Unit 46, L8: Documentation
 
 📊 **Progress:**
-• Fixed: 282/317 lessons (89.0%)
-• Questions: 7050+
-• Remaining: 8 lessons
+• Fixed: 285/317 lessons (89.9%)
+• Questions: 7125+
+• Remaining: 5 lessons
 
 🚀 Keep it going!
