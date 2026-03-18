@@ -1,17 +1,17 @@
 ⚡ **Triolingo Auto-Rebuild Update** ⚡
 
-📦 **Batch 95 Complete**
+📦 **Batch 96 Complete**
 ✅ 3 lessons rebuilt
 📝 75 questions added
 
 **Lessons:**
-  • Unit 16, L3: Inline vs Virtual Costs
-  • Unit 9, L2: Iterators
-  • Unit 46, L8: Documentation
+  • Unit 21, L6: Bit Arrays
+  • Unit 14, L5: Parallel Algorithms
+  • Unit 20, L1: C and C++ Interoperability
 
 📊 **Progress:**
-• Fixed: 285/317 lessons (89.9%)
-• Questions: 7125+
-• Remaining: 5 lessons
+• Fixed: 288/317 lessons (90.9%)
+• Questions: 7200+
+• Remaining: 2 lessons
 
 🚀 Keep it going!
