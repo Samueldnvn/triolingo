@@ -1,10 +1,10 @@
 📚 **Triolingo Real Content Update**
 
 ✅ **Lesson Enhanced**
-• Unit 46, L11: Reservoir sampling
+• Unit 46, L12: Skip lists
 
 📊 **Progress:**
-• Enhanced: 17 lessons
-• Remaining: 38 lessons
+• Enhanced: 18 lessons
+• Remaining: 37 lessons
 
 📖 Content created with proper explanations, examples, and best practices!
