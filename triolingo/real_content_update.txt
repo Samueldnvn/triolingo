@@ -1,10 +1,10 @@
 📚 **Triolingo Real Content Update**
 
 ✅ **Lesson Enhanced**
-• Unit 12, L6: std::optional, std::variant, std::any
+• Unit 48, L6: Embedded Systems
 
 📊 **Progress:**
-• Enhanced: 42 lessons
-• Remaining: 13 lessons
+• Enhanced: 43 lessons
+• Remaining: 12 lessons
 
 📖 Content created with proper explanations, examples, and best practices!
