@@ -1,10 +1,10 @@
 📚 **Triolingo Real Content Update**
 
 ✅ **Lesson Enhanced**
-• Unit 12, L4: enum class
+• Unit 12, L2: Range-Based Loops
 
 📊 **Progress:**
-• Enhanced: 31 lessons
-• Remaining: 24 lessons
+• Enhanced: 32 lessons
+• Remaining: 23 lessons
 
 📖 Content created with proper explanations, examples, and best practices!
