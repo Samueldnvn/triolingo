@@ -1,10 +1,10 @@
 📚 **Triolingo Real Content Update**
 
 ✅ **Lesson Enhanced**
-• Unit 1, L1: Introduction to C++
+• Unit 6, L6: Operator Overloading
 
 📊 **Progress:**
-• Enhanced: 38 lessons
-• Remaining: 17 lessons
+• Enhanced: 39 lessons
+• Remaining: 16 lessons
 
 📖 Content created with proper explanations, examples, and best practices!
