@@ -1,10 +1,10 @@
 📚 **Triolingo Real Content Update**
 
 ✅ **Lesson Enhanced**
-• Unit 47, L2: Package Managers
+• Unit 10, L2: C++14 Features
 
 📊 **Progress:**
-• Enhanced: 48 lessons
-• Remaining: 7 lessons
+• Enhanced: 49 lessons
+• Remaining: 6 lessons
 
 📖 Content created with proper explanations, examples, and best practices!
