@@ -4005,3 +4005,58 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
     font-size: 12px;
   }
 }
+
+/* ============================================
+   MOBILE SIDEBAR & HEADER — DEFINITIVE FIX
+   ============================================ */
+
+/* Toggle lives inside .top-header — never position:fixed, never separate bar */
+.mobile-menu-toggle {
+  position: static !important;
+  top: auto !important;
+  right: auto !important;
+}
+
+@media (max-width: 768px) {
+  /* Stacking order:
+     sidebar (3000) > overlay (2000) > top-header (800)
+     Sidebar must be ABOVE overlay so sidebar nav items are tappable */
+  .sidebar {
+    z-index: 3000 !important;
+  }
+  .mobile-overlay {
+    z-index: 2000 !important;
+  }
+  .top-header {
+    z-index: 800 !important;
+    position: sticky !important;
+    top: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 8px;
+    padding: 8px 16px;
+  }
+
+  /* Toggle is the first child of .top-header */
+  .mobile-menu-toggle {
+    display: flex !important;
+    flex-shrink: 0;
+    order: -1;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    margin: 0;
+  }
+
+  /* Header content sits naturally next to toggle */
+  .header-left {
+    flex: 1;
+    min-width: 0;
+  }
+  .header-right {
+    flex-wrap: nowrap;
+    margin-top: 0 !important;
+    width: auto !important;
+  }
+}
