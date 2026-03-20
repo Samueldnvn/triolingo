@@ -1849,17 +1849,16 @@ let isMobileMenuOpen = false;
 
 function toggleMobileMenu() {
   const sidebar = document.querySelector('.sidebar');
-  const overlay = document.querySelector('.mobile-overlay');
-  const toggle = document.querySelector('.mobile-menu-toggle');
-  
+  const overlay = document.getElementById('mobile-overlay');
+  const toggle = document.getElementById('mobile-menu-toggle');
+
   isMobileMenuOpen = !isMobileMenuOpen;
-  
+
   if (isMobileMenuOpen) {
     sidebar.classList.add('open');
-    overlay.classList.add('active');
-    toggle.classList.add('active');
-    toggle.innerHTML = '✕';
-    document.body.style.overflow = 'hidden'; // Prevent scrolling
+    if (overlay) overlay.classList.add('active');
+    if (toggle) { toggle.classList.add('active'); toggle.innerHTML = '✕'; }
+    document.body.style.overflow = 'hidden';
   } else {
     closeMobileMenu();
   }
@@ -1867,43 +1866,19 @@ function toggleMobileMenu() {
 
 function closeMobileMenu() {
   const sidebar = document.querySelector('.sidebar');
-  const overlay = document.querySelector('.mobile-overlay');
-  const toggle = document.querySelector('.mobile-menu-toggle');
-  
+  const overlay = document.getElementById('mobile-overlay');
+  const toggle = document.getElementById('mobile-menu-toggle');
+
   isMobileMenuOpen = false;
   sidebar.classList.remove('open');
-  overlay.classList.remove('active');
-  toggle.classList.remove('active');
-  toggle.innerHTML = '☰';
-  document.body.style.overflow = ''; // Re-enable scrolling
+  if (overlay) overlay.classList.remove('active');
+  if (toggle) { toggle.classList.remove('active'); toggle.innerHTML = '☰'; }
+  document.body.style.overflow = '';
 }
 
-// Create mobile menu toggle button
-function createMobileMenuToggle() {
-  const toggle = document.createElement('button');
-  toggle.className = 'mobile-menu-toggle';
-  toggle.innerHTML = '☰';
-  toggle.setAttribute('aria-label', 'Toggle menu');
-  toggle.onclick = toggleMobileMenu;
-  document.body.appendChild(toggle);
-}
-
-// Create mobile overlay
-function createMobileOverlay() {
-  const overlay = document.createElement('div');
-  overlay.className = 'mobile-overlay';
-  overlay.onclick = closeMobileMenu;
-  document.body.appendChild(overlay);
-}
-
-// Initialize mobile UI
+// Initialize mobile UI - elements are now in HTML, nothing to create
 function initMobileUI() {
-  // Only create mobile elements if on mobile device
-  if (isMobileDevice()) {
-    createMobileMenuToggle();
-    createMobileOverlay();
-    console.log('Mobile UI initialized');
-  }
+  console.log('Mobile UI initialized');
 }
 
 // Close mobile menu when navigating to a new view
@@ -1940,11 +1915,7 @@ window.addEventListener('resize', function() {
       closeMobileMenu();
     }
     
-    // Recreate mobile UI if switching from desktop to mobile
-    if (isNowMobile && !document.querySelector('.mobile-menu-toggle')) {
-      createMobileMenuToggle();
-      createMobileOverlay();
-    }
+    // Mobile elements are in HTML — nothing to recreate
   }, 250);
 });
 

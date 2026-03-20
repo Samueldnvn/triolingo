@@ -3284,29 +3284,27 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
    MOBILE RESPONSIVE DESIGN
    ============================================ */
 
-/* Mobile Navigation Toggle */
+/* Mobile Navigation Toggle - hidden by default, shown via media query */
 .mobile-menu-toggle {
   display: none;
-  position: fixed;
-  top: 8px;
-  right: var(--space-md);
-  z-index: 900;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
   background: var(--accent);
   color: white;
   border: none;
   border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  font-size: 22px;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+  transition: background 0.2s;
   line-height: 1;
   text-align: center;
-}
-
-.mobile-menu-toggle:hover {
-  transform: scale(1.1);
+  margin-right: 10px;
+  z-index: auto;
+  position: static;
 }
 
 .mobile-menu-toggle.active {
@@ -3322,29 +3320,26 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 998;
+  z-index: 1000;
 }
 
 .mobile-overlay.active {
   display: block;
 }
 
-/* Fix z-index to ensure mobile menu is above everything on mobile */
+/* Z-index layering on mobile */
 @media (max-width: 768px) {
-  .mobile-menu-toggle {
-    z-index: 9999;
-  }
-
   .mobile-overlay {
-    z-index: 9990;
+    z-index: 1000;   /* dim layer */
   }
 
   .sidebar {
-    z-index: 9995;
+    z-index: 1010;   /* above overlay so taps land on nav items */
   }
 
   .top-header {
-    z-index: 800;
+    z-index: 200;
+    position: relative;
   }
 
   #view-container,
@@ -3387,11 +3382,9 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
     left: 0;
   }
 
-  /* Show mobile menu toggle */
+  /* Show mobile menu toggle inline in header */
   .mobile-menu-toggle {
     display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   /* Main content adjusts */
@@ -3626,12 +3619,10 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
     left: 0;
   }
 
-  /* Mobile menu toggle - adjust position */
+  /* Mobile menu toggle - sizing only */
   .mobile-menu-toggle {
-    top: var(--space-sm);
-    right: var(--space-sm);
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     font-size: 20px;
   }
 
@@ -3870,24 +3861,7 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
   }
 }
 
-/* Fix top header z-index conflict with mobile menu */
-@media (max-width: 768px) {
-  .top-header {
-    z-index: 800 !important;
-  }
-
-  .mobile-menu-toggle {
-    z-index: 9999 !important;
-  }
-
-  .mobile-overlay {
-    z-index: 9990 !important;
-  }
-
-  .sidebar {
-    z-index: 9995 !important;
-  }
-}
+/* z-index override block removed - consolidated above */
 
 /* ============================================
    USER ANSWER DISPLAY IN FEEDBACK

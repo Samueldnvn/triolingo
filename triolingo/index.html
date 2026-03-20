@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Triolingo</title>
-  <link rel="stylesheet" href="styles.css?v=73">
+  <link rel="stylesheet" href="styles.css?v=1774042178037">
   <link rel="stylesheet" href="dashboard.css?v=73">
   <link rel="stylesheet" href="conversations.css?v=72">
   <link rel="stylesheet" href="settings.css?v=68">
@@ -88,6 +88,7 @@
     <main class="main-content">
       <!-- Top Header Bar -->
       <header class="top-header">
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu" onclick="toggleMobileMenu()">☰</button>
         <div class="header-left">
           <h2 id="header-title">Triolingo</h2>
         </div>
@@ -119,6 +120,8 @@
       </div>
     </main>
   </div>
+  <!-- Mobile sidebar overlay -->
+  <div class="mobile-overlay" id="mobile-overlay" onclick="closeMobileMenu()"></div>
 
   <script src="themeManager.js?v=70"></script>
   <script src="damacy_items_list.js"></script>
@@ -292,6 +295,6 @@
   <script src="questions/linearAlgebraAllTopics.js?t=1741478200002"></script>
   <script src="questions/hexapodAllTopics.js?t=1741478200003"></script>
   <script src="conversationLessons.js?t=1741478200004"></script>
-  <script src="app.js?t=1774041313014"></script>
+  <script src="app.js?t=1774042178037"></script>
 </body>
 </html>
