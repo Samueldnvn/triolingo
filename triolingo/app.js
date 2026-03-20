@@ -503,7 +503,8 @@ function renderView(viewName) {
       'progress': 'Progress',
       'settings': 'Settings',
       'lesson': 'Lesson',
-      'conversation-chat': 'Conversation Practice'
+      'conversation-chat': 'Conversation Practice',
+      'memory-palace': 'Memory Palaces'
     };
     headerTitle.textContent = titles[viewName] || 'Triolingo';
   }
@@ -530,6 +531,10 @@ function renderView(viewName) {
     case 'settings':
       container.innerHTML = renderSettings();
       setupSettingsListeners();
+      break;
+    case 'memory-palace':
+      container.innerHTML = renderMemoryPalace();
+      setupMemoryPalaceListeners();
       break;
     case 'lesson':
       container.innerHTML = renderLesson();
