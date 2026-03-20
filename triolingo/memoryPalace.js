@@ -164,21 +164,24 @@ const MP = {
 
     return `
       <div class="mp-flashcard-bar">
-        <div class="mp-card-nav">
-          <button class="mp-nav-btn" onclick="MP.prevPin()" ${this.activePinIndex === 0 ? 'disabled' : ''}>‹</button>
-          <span class="mp-card-counter">${this.activePinIndex + 1} / ${total}</span>
-          <button class="mp-nav-btn" onclick="MP.nextPin()" ${this.activePinIndex === total - 1 ? 'disabled' : ''}>›</button>
-        </div>
-        <div class="mp-flashcard ${this.cardFlipped ? 'flipped' : ''}" onclick="MP.flipCard()">
-          <div class="mp-card-inner">
-            <div class="mp-card-front">
+        <div class="mp-flashcard">
+          <div class="mp-card-nav mp-card-nav-left">
+            <button class="mp-nav-btn" onclick="MP.prevPin()" ${this.activePinIndex === 0 ? 'disabled' : ''}>‹</button>
+          </div>
+          <div class="mp-card-face">
+            <div class="mp-card-section mp-card-cue">
               <div class="mp-card-label">CUE</div>
               <div class="mp-card-text">${pin.front || '<em>No cue set — click Edit</em>'}</div>
             </div>
-            <div class="mp-card-back">
+            <div class="mp-card-divider"></div>
+            <div class="mp-card-section mp-card-memory">
               <div class="mp-card-label">MEMORY</div>
               <div class="mp-card-text">${pin.back || '<em>No memory set — click Edit</em>'}</div>
             </div>
+            <div class="mp-card-counter-inline">${this.activePinIndex + 1} / ${total}</div>
+          </div>
+          <div class="mp-card-nav mp-card-nav-right">
+            <button class="mp-nav-btn" onclick="MP.nextPin()" ${this.activePinIndex === total - 1 ? 'disabled' : ''}>›</button>
           </div>
         </div>
         <div class="mp-card-actions">
