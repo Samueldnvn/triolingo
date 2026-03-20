@@ -325,31 +325,41 @@ function loadCourseData() {
     console.warn('⚠️ Calculus not loaded');
   }
 
-  // Load C++ data - assembled from chunks for mobile compatibility
+  // Load C++ data - try three sources in priority order
+  const cppUnits = [];
+
+  // 1. Try chunk files (primary, mobile-friendly)
   const cppChunkVars = [
     'cppChunk_1_5', 'cppChunk_6_10', 'cppChunk_11_15', 'cppChunk_16_20',
     'cppChunk_21_25', 'cppChunk_26_30', 'cppChunk_31_35', 'cppChunk_36_40',
     'cppChunk_41_45', 'cppChunk_46_49'
   ];
-  const cppUnits = [];
   cppChunkVars.forEach(varName => {
     if (window[varName] && Array.isArray(window[varName])) {
       cppUnits.push(...window[varName]);
-      console.log(`✅ C++ chunk ${varName}: ${window[varName].length} units`);
-    } else {
-      console.warn(`⚠️ C++ chunk missing: ${varName}`);
     }
   });
-  // Also fall back to cppCombined if chunks didn't load
+  if (cppUnits.length > 0) {
+    console.log('✅ C++ loaded from chunks:', cppUnits.length, 'units');
+  }
+
+  // 2. Fallback: cppCombined single file
   if (cppUnits.length === 0 && window.cppCombined && window.cppCombined.units) {
     cppUnits.push(...window.cppCombined.units);
-    console.log('✅ C++ loaded from cppCombined fallback:', cppUnits.length, 'units');
+    console.log('✅ C++ loaded from cppCombined:', cppUnits.length, 'units');
   }
+
+  // 3. Fallback: old cppCourse (from cppCourse.js + old unit files)
+  if (cppUnits.length === 0 && window.cppCourse && window.cppCourse.units) {
+    cppUnits.push(...window.cppCourse.units);
+    console.log('✅ C++ loaded from cppCourse fallback:', cppUnits.length, 'units');
+  }
+
   if (cppUnits.length > 0) {
     courses.cpp.units = cppUnits;
-    console.log('✅ C++ total loaded:', courses.cpp.units.length, 'units');
+    console.log('✅ C++ total:', courses.cpp.units.length, 'units');
   } else {
-    console.warn('⚠️ C++ not loaded - no chunks or combined file found');
+    console.warn('⚠️ C++ not loaded - all sources failed');
   }
 
   // Load Hexapod data
