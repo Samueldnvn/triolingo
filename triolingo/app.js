@@ -325,13 +325,31 @@ function loadCourseData() {
     console.warn('⚠️ Calculus not loaded');
   }
 
-  // Load C++ data
-  console.log('Checking cppCombined:', typeof window.cppCombined);
-  if (window.cppCombined && window.cppCombined.units && window.cppCombined.units.length > 0) {
-    courses.cpp.units = window.cppCombined.units;
-    console.log('✅ C++ loaded:', courses.cpp.units.length, 'units');
+  // Load C++ data - assembled from chunks for mobile compatibility
+  const cppChunkVars = [
+    'cppChunk_1_5', 'cppChunk_6_10', 'cppChunk_11_15', 'cppChunk_16_20',
+    'cppChunk_21_25', 'cppChunk_26_30', 'cppChunk_31_35', 'cppChunk_36_40',
+    'cppChunk_41_45', 'cppChunk_46_49'
+  ];
+  const cppUnits = [];
+  cppChunkVars.forEach(varName => {
+    if (window[varName] && Array.isArray(window[varName])) {
+      cppUnits.push(...window[varName]);
+      console.log(`✅ C++ chunk ${varName}: ${window[varName].length} units`);
+    } else {
+      console.warn(`⚠️ C++ chunk missing: ${varName}`);
+    }
+  });
+  // Also fall back to cppCombined if chunks didn't load
+  if (cppUnits.length === 0 && window.cppCombined && window.cppCombined.units) {
+    cppUnits.push(...window.cppCombined.units);
+    console.log('✅ C++ loaded from cppCombined fallback:', cppUnits.length, 'units');
+  }
+  if (cppUnits.length > 0) {
+    courses.cpp.units = cppUnits;
+    console.log('✅ C++ total loaded:', courses.cpp.units.length, 'units');
   } else {
-    console.warn('⚠️ C++ not loaded');
+    console.warn('⚠️ C++ not loaded - no chunks or combined file found');
   }
 
   // Load Hexapod data
