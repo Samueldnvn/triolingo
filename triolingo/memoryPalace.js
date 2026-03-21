@@ -33,16 +33,40 @@ const MP = {
     }
   },
   load() {
-    try { const r = localStorage.getItem('mp_palaces'); this.palaces = r ? JSON.parse(r) : []; }
-    catch { this.palaces = []; }
-    // Rehydrate images from IDB async; refresh once loaded
+    const stored = localStorage.getItem('mp_palaces');
+    if (stored) {
+      try { this.palaces = JSON.parse(stored); }
+      catch { this.palaces = []; }
+      this._rehydrateImages();
+    } else {
+      // First load: try bundled data file
+      fetch('data/memoryPalaces.json')
+        .then(r => r.json())
+        .then(data => {
+          if (Array.isArray(data) && data.length > 0) {
+            this.palaces = data;
+            this.save();
+            this.refresh();
+          }
+        })
+        .catch(() => {});
+      this.palaces = [];
+      this._rehydrateImages();
+    }
+  },
+  _rehydrateImages() {
     MPIDB.loadAllImages().then(imgMap => {
       let changed = false;
       this.palaces.forEach(p => {
         if (imgMap[p.id]) { p.imageDataUrl = imgMap[p.id]; changed = true; }
       });
       if (changed && this.activePalaceId) this.refresh();
+      else if (changed) this._refreshListThumbs();
     });
+  },
+  _refreshListThumbs() {
+    // Lightweight refresh only if on list view
+    if (!this.activePalaceId) this.refresh();
   },
   async saveImage(palaceId, dataUrl) {
     await MPIDB.saveImage(palaceId, dataUrl);
@@ -59,6 +83,31 @@ const MP = {
   uid: () => '_' + Math.random().toString(36).slice(2, 9),
   activePalace() { return this.palaces.find(p => p.id === this.activePalaceId) || null; },
 
+  // ─── Export / Import ─────────────────────────────────────────────────────
+  exportPalaces() {
+    const slim = this.palaces.map(p => { const { imageDataUrl, ...rest } = p; return rest; });
+    const blob = new Blob([JSON.stringify(slim, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+    a.download = 'memoryPalaces.json'; a.click();
+    // hint
+    alert('Saved! To bundle with the app, replace triolingo/data/memoryPalaces.json with this file and push.');
+  },
+  importPalaces(event) {
+    const file = event.target.files[0]; if (!file) return;
+    const reader = new FileReader();
+    reader.onload = e => {
+      try {
+        const data = JSON.parse(e.target.result);
+        if (!Array.isArray(data)) throw new Error('Not an array');
+        if (!confirm(`Import ${data.length} palace(s)? This will MERGE with existing palaces.`)) return;
+        const existingIds = new Set(this.palaces.map(p => p.id));
+        data.forEach(p => { if (!existingIds.has(p.id)) this.palaces.push(p); });
+        this.save(); this.refresh();
+      } catch(err) { alert('Import failed: ' + err.message); }
+    };
+    reader.readAsText(file);
+  },
+
   // ─── Render: Palace List ──────────────────────────────────────────────────
   renderList() {
     const list = this.palaces.map((p, i) => `
@@ -72,14 +121,21 @@ const MP = {
           <span class="mp-palace-name">${p.name}</span>
           <span class="mp-palace-count">${p.pins.length} pin${p.pins.length !== 1 ? 's' : ''}</span>
         </div>
-        <button class="mp-palace-delete" onclick="event.stopPropagation();MP.deletePalace('${p.id}')" title="Delete">🗑</button>
+        <button class="mp-palace-delete" onclick="event.stopPropagation();MP.deletePalace('${p.id}')" title="Delete palace">🗑 Delete</button>
       </div>
     `).join('');
     return `
       <div class="mp-list-panel">
         <div class="mp-list-header">
           <h3>Memory Palaces</h3>
-          <button class="btn btn-primary mp-new-btn" onclick="MP.createNew()">+ New Palace</button>
+          <div style="display:flex;gap:6px;align-items:center">
+            <label class="btn btn-secondary" style="font-size:0.78rem;padding:4px 10px;cursor:pointer" title="Import palaces from JSON">
+              📥 Import
+              <input type="file" accept=".json" style="display:none" onchange="MP.importPalaces(event)">
+            </label>
+            <button class="btn btn-secondary" style="font-size:0.78rem;padding:4px 10px" onclick="MP.exportPalaces()" title="Export palaces to JSON">📤 Export</button>
+            <button class="btn btn-primary mp-new-btn" onclick="MP.createNew()">+ New Palace</button>
+          </div>
         </div>
         <div class="mp-palace-list">
           ${list || '<p class="mp-empty">No palaces yet. Create one to get started!</p>'}
@@ -142,6 +198,7 @@ const MP = {
                      onchange="MP.handleImageUpload(event, '${palace.id}')">
             </label>
             <button class="btn btn-secondary" onclick="MP.resetView()">⌖ Reset</button>
+            <button class="btn btn-danger" onclick="MP.deletePalace('${palace.id}')" title="Delete this palace">🗑 Delete Palace</button>
             <button class="btn ${this.cardListOpen ? 'btn-primary' : 'btn-secondary'}"
                     onclick="MP.toggleCardList()" title="Toggle card list">
               ☰ Cards ${palace.pins.length > 0 ? `(${palace.pins.length})` : ''}
@@ -168,9 +225,8 @@ const MP = {
             ${pins}
           </div>
           ${this.placingPin ? '<div class="mp-placing-overlay">Click anywhere on the map to place a pin</div>' : ''}
+          ${palace.pins.length > 0 ? this.renderFlashcardBar() : ''}
         </div>
-
-        ${palace.pins.length > 0 ? this.renderFlashcardBar() : ''}
       </div>
     `;
   },
@@ -270,9 +326,8 @@ const MP = {
           </div>
         </div>
         <div class="mp-card-field">
-          <label class="mp-field-label">🖼 Memory Image (URL or emoji)</label>
-          <input id="mp-edit-image" type="text" class="mp-field-input" placeholder="https://... or 🧠"
-                 value="${pin.image || ''}">
+          <label class="mp-field-label">💭 Mental Image / Vivid Scene</label>
+          <textarea id="mp-edit-image" class="mp-field-input" rows="2" placeholder="Describe a vivid mental image or scene to anchor this memory…">${pin.image || ''}</textarea>
         </div>
         <div class="mp-card-field">
           <label class="mp-field-label">📌 Description</label>
@@ -295,17 +350,12 @@ const MP = {
           </div>
         </div>
         <div class="mp-card-body">
-          <div class="mp-card-image-col">
-            ${pin.image
-              ? (pin.image.startsWith('http') || pin.image.startsWith('data')
-                  ? `<img src="${pin.image}" class="mp-card-img" alt="memory image">`
-                  : `<div class="mp-card-emoji">${pin.image}</div>`)
-              : `<div class="mp-card-emoji mp-card-img-placeholder">🗺️</div>`}
-          </div>
           <div class="mp-card-text-col">
-            <div class="mp-card-section-label">📌 Description</div>
+            <div class="mp-card-section-label">💭 Mental Image</div>
+            <div class="mp-card-mental-image">${pin.image || '<em class="mp-placeholder">No mental image — click Edit</em>'}</div>
+            <div class="mp-card-section-label" style="margin-top:4px">📌 Description</div>
             <div class="mp-card-desc">${pin.desc || pin.front || '<em class="mp-placeholder">No description — click Edit</em>'}</div>
-            <div class="mp-card-section-label">💡 Remember</div>
+            <div class="mp-card-section-label" style="margin-top:4px">💡 Remember</div>
             <div class="mp-card-info">${pin.info || pin.back || '<em class="mp-placeholder">Nothing here yet — click Edit</em>'}</div>
           </div>
         </div>
@@ -328,7 +378,7 @@ const MP = {
     if (!s || !palace) return '';
     const pin = palace.pins[s.pinIndex];
     const total = palace.pins.length;
-    const fieldLabels = { image: '🖼 Memory Image', desc: '📌 Description', info: '💡 Info to Remember' };
+    const fieldLabels = { image: '💭 Mental Image', desc: '📌 Description', info: '💡 Info to Remember' };
 
     // Build hint: show the OTHER two fields as context
     const contextParts = [];
@@ -391,7 +441,10 @@ const MP = {
   },
 
   deletePalace(id) {
-    if (!confirm('Delete this palace and all its pins?')) return;
+    const palace = this.palaces.find(p => p.id === id);
+    const name = palace ? palace.name : 'this palace';
+    if (!confirm(`Delete "${name}" and all its pins?\n\nThis cannot be undone.`)) return;
+    if (!confirm(`Are you sure? All ${palace?.pins?.length || 0} pin(s) will be permanently deleted.`)) return;
     this.palaces = this.palaces.filter(p => p.id !== id);
     if (this.activePalaceId === id) this.activePalaceId = null;
     this.deleteImage(id);
@@ -486,7 +539,11 @@ const MP = {
   },
 
   deletePin(index) {
-    if (!confirm('Delete this pin?')) return;
+    const palace = this.activePalace();
+    const pin = palace?.pins?.[index];
+    const label = pin?.desc || pin?.front || `Pin ${index + 1}`;
+    if (!confirm(`Delete pin "${label}"?`)) return;
+    if (!confirm('Are you sure? This cannot be undone.')) return;
     const palace = this.activePalace();
     if (!palace) return;
     palace.pins.splice(index, 1);
@@ -625,7 +682,15 @@ const MP = {
 
     wrapper.onwheel = (e) => {
       e.preventDefault();
-      this.zoom = Math.min(Math.max(this.zoom * (e.deltaY > 0 ? 0.9 : 1.1), 0.2), 8);
+      const rect = wrapper.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+      const factor = e.deltaY > 0 ? 0.9 : 1.1;
+      const newZoom = Math.min(Math.max(this.zoom * factor, 0.2), 8);
+      // Adjust pan so the point under the cursor stays fixed
+      this.pan.x = mouseX - (mouseX - this.pan.x) * (newZoom / this.zoom);
+      this.pan.y = mouseY - (mouseY - this.pan.y) * (newZoom / this.zoom);
+      this.zoom = newZoom;
       canvas.style.transform = `translate(${this.pan.x}px,${this.pan.y}px) scale(${this.zoom})`;
       this._rescalePins();
     };
