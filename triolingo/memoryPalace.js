@@ -8,6 +8,10 @@ const MP = {
   activePinIndex: 0,
   cardFlipped: false,
   editingCard: false,
+  studyMode: false,       // whether study overlay is open
+  studyFields: { image: true, desc: true, info: true }, // which fields to test
+  studyState: null,       // { pinIndex, field, revealed, answer, correct }
+  studyConfiguring: false,// showing field-picker before starting
 
   pan: { x: 0, y: 0 },
   zoom: 1,
@@ -140,15 +144,49 @@ const MP = {
     const isFirst = this.activePinIndex === 0;
     const isLast = this.activePinIndex === total - 1;
 
-    // Card content (view or edit mode — inline on card)
+    // Study config overlay
+    if (this.studyConfiguring) {
+      return `
+        <div class="mp-flashcard-bar mp-bar-study-config">
+          <div class="mp-study-config-card">
+            <div class="mp-study-config-title">📖 Study Mode — Choose fields to test</div>
+            <div class="mp-study-config-fields">
+              <label class="mp-study-field-check">
+                <input type="checkbox" id="sc-image" ${this.studyFields.image ? 'checked' : ''}
+                       onchange="MP.studyFields.image = this.checked"> 🖼 Memory Image
+              </label>
+              <label class="mp-study-field-check">
+                <input type="checkbox" id="sc-desc" ${this.studyFields.desc ? 'checked' : ''}
+                       onchange="MP.studyFields.desc = this.checked"> 📌 Description
+              </label>
+              <label class="mp-study-field-check">
+                <input type="checkbox" id="sc-info" ${this.studyFields.info ? 'checked' : ''}
+                       onchange="MP.studyFields.info = this.checked"> 💡 Info to Remember
+              </label>
+            </div>
+            <div class="mp-study-config-btns">
+              <button class="mp-card-icon-btn mp-cancel-btn" onclick="MP.cancelStudy()">Cancel</button>
+              <button class="mp-card-icon-btn mp-save-btn" onclick="MP.startStudyRun()">▶ Start</button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // Study question overlay
+    if (this.studyMode && this.studyState) {
+      return this.renderStudyQuestion();
+    }
+
+    // Normal card content (edit or view)
     const cardContent = this.editingCard ? `
       <div class="mp-card-edit-mode">
         <div class="mp-card-edit-header">
           <span class="mp-card-counter-inline">${this.activePinIndex + 1} / ${total}</span>
           <div class="mp-card-edit-btns">
-            <button class="mp-card-icon-btn mp-save-btn" onclick="MP.saveCard()" title="Save">✓ Save</button>
-            <button class="mp-card-icon-btn mp-cancel-btn" onclick="MP.cancelEdit()" title="Cancel">✕</button>
-            <button class="mp-card-icon-btn mp-delete-btn" onclick="MP.deletePin(${this.activePinIndex})" title="Delete pin">🗑</button>
+            <button class="mp-card-icon-btn mp-save-btn" onclick="MP.saveCard()">✓ Save</button>
+            <button class="mp-card-icon-btn mp-cancel-btn" onclick="MP.cancelEdit()">✕</button>
+            <button class="mp-card-icon-btn mp-delete-btn" onclick="MP.deletePin(${this.activePinIndex})">🗑</button>
           </div>
         </div>
         <div class="mp-card-field">
@@ -171,7 +209,10 @@ const MP = {
       <div class="mp-card-view-mode">
         <div class="mp-card-top-row">
           <span class="mp-card-counter-inline">${this.activePinIndex + 1} / ${total}</span>
-          <button class="mp-card-icon-btn mp-edit-btn" onclick="MP.startEdit()" title="Edit">✏️ Edit</button>
+          <div style="display:flex;gap:4px">
+            <button class="mp-card-icon-btn mp-study-btn" onclick="MP.openStudyConfig()">📖 Study</button>
+            <button class="mp-card-icon-btn mp-edit-btn" onclick="MP.startEdit()">✏️ Edit</button>
+          </div>
         </div>
         <div class="mp-card-body">
           <div class="mp-card-image-col">
@@ -196,6 +237,61 @@ const MP = {
         <button class="mp-nav-btn" onclick="MP.prevPin()" ${isFirst ? 'disabled' : ''}>‹</button>
         <div class="mp-flashcard">${cardContent}</div>
         <button class="mp-nav-btn" onclick="MP.nextPin()" ${isLast ? 'disabled' : ''}>›</button>
+      </div>
+    `;
+  },
+
+  // ─── Render: Study question ───────────────────────────────────────────────
+  renderStudyQuestion() {
+    const palace = this.activePalace();
+    const s = this.studyState;
+    if (!s || !palace) return '';
+    const pin = palace.pins[s.pinIndex];
+    const total = palace.pins.length;
+    const fieldLabels = { image: '🖼 Memory Image', desc: '📌 Description', info: '💡 Info to Remember' };
+
+    // Build hint: show the OTHER two fields as context
+    const contextParts = [];
+    if (s.field !== 'image' && pin.image)
+      contextParts.push(`<span class="mp-q-context-item">${pin.image.startsWith('http') ? '<em>[image]</em>' : pin.image}</span>`);
+    if (s.field !== 'desc' && (pin.desc || pin.front))
+      contextParts.push(`<span class="mp-q-context-item">${pin.desc || pin.front}</span>`);
+    if (s.field !== 'info' && (pin.info || pin.back))
+      contextParts.push(`<span class="mp-q-context-item">${pin.info || pin.back}</span>`);
+
+    const correctAnswer = s.field === 'image' ? (pin.image || '')
+                        : s.field === 'desc'  ? (pin.desc || pin.front || '')
+                        : (pin.info || pin.back || '');
+
+    const feedbackHtml = s.revealed ? `
+      <div class="mp-q-feedback ${s.correct ? 'correct' : 'wrong'}">
+        ${s.correct ? '✅ Correct!' : `❌ Answer: <strong>${correctAnswer}</strong>`}
+        <button class="mp-card-icon-btn mp-save-btn" style="margin-left:8px" onclick="MP.studyNext()">Next →</button>
+      </div>
+    ` : `
+      <div class="mp-q-input-row">
+        <input id="mp-study-input" type="text" class="mp-field-input" placeholder="Type your answer..."
+               onkeydown="if(event.key==='Enter')MP.submitStudyAnswer()">
+        <button class="mp-card-icon-btn mp-save-btn" onclick="MP.submitStudyAnswer()">Check</button>
+        <button class="mp-card-icon-btn" onclick="MP.revealStudyAnswer()" style="opacity:0.7">Reveal</button>
+      </div>
+    `;
+
+    return `
+      <div class="mp-flashcard-bar mp-bar-study">
+        <button class="mp-nav-btn" onclick="MP.cancelStudy()" title="Stop studying">✕</button>
+        <div class="mp-flashcard mp-flashcard-study">
+          <div class="mp-card-view-mode">
+            <div class="mp-card-top-row">
+              <span class="mp-card-counter-inline">Pin ${s.pinIndex + 1}/${total} · ${fieldLabels[s.field]}</span>
+              <button class="mp-card-icon-btn mp-cancel-btn" onclick="MP.cancelStudy()">Stop</button>
+            </div>
+            <div class="mp-q-prompt">What is the <strong>${fieldLabels[s.field]}</strong> for this pin?</div>
+            ${contextParts.length ? `<div class="mp-q-context">Hint: ${contextParts.join(' · ')}</div>` : ''}
+            ${feedbackHtml}
+          </div>
+        </div>
+        <button class="mp-nav-btn" onclick="MP.studyNext()">›</button>
       </div>
     `;
   },
@@ -321,6 +417,88 @@ const MP = {
     this.save();
     this.refresh();
     requestAnimationFrame(() => this.bindCanvasEvents());
+  },
+
+  // ─── Study mode actions ───────────────────────────────────────────────────
+  openStudyConfig() {
+    this.studyConfiguring = true;
+    this.studyMode = false;
+    this.studyState = null;
+    this.refreshFlashcard();
+  },
+
+  cancelStudy() {
+    this.studyConfiguring = false;
+    this.studyMode = false;
+    this.studyState = null;
+    this.refreshFlashcard();
+  },
+
+  startStudyRun() {
+    // Read checkboxes (they're live since we bound onchange already)
+    if (!this.studyFields.image && !this.studyFields.desc && !this.studyFields.info) {
+      alert('Pick at least one field to test!'); return;
+    }
+    this.studyConfiguring = false;
+    this.studyMode = true;
+    this.studyState = null;
+    this._studyQueue = this._buildStudyQueue();
+    this._studyQueueIdx = 0;
+    this._loadStudyQuestion();
+    this.refreshFlashcard();
+  },
+
+  _buildStudyQueue() {
+    const palace = this.activePalace();
+    if (!palace) return [];
+    const queue = [];
+    palace.pins.forEach((pin, i) => {
+      if (this.studyFields.image && (pin.image)) queue.push({ pinIndex: i, field: 'image' });
+      if (this.studyFields.desc  && (pin.desc || pin.front)) queue.push({ pinIndex: i, field: 'desc' });
+      if (this.studyFields.info  && (pin.info || pin.back))  queue.push({ pinIndex: i, field: 'info' });
+    });
+    return queue;
+  },
+
+  _loadStudyQuestion() {
+    const q = this._studyQueue[this._studyQueueIdx];
+    if (!q) { this.cancelStudy(); return; }
+    this.studyState = { pinIndex: q.pinIndex, field: q.field, revealed: false, correct: false, answer: '' };
+    this.activePinIndex = q.pinIndex;
+    this.highlightPin();
+  },
+
+  submitStudyAnswer() {
+    const input = document.getElementById('mp-study-input');
+    if (!input) return;
+    const answer = input.value.trim().toLowerCase();
+    const palace = this.activePalace();
+    if (!palace || !this.studyState) return;
+    const pin = palace.pins[this.studyState.pinIndex];
+    const correct = (this.studyState.field === 'image' ? (pin.image || '')
+                   : this.studyState.field === 'desc'  ? (pin.desc || pin.front || '')
+                   : (pin.info || pin.back || '')).toLowerCase();
+    this.studyState.answer = answer;
+    this.studyState.revealed = true;
+    this.studyState.correct = correct.length > 0 && correct.includes(answer) || answer.includes(correct);
+    this.refreshFlashcard();
+  },
+
+  revealStudyAnswer() {
+    if (!this.studyState) return;
+    this.studyState.revealed = true;
+    this.studyState.correct = false;
+    this.refreshFlashcard();
+  },
+
+  studyNext() {
+    this._studyQueueIdx++;
+    if (this._studyQueueIdx >= this._studyQueue.length) {
+      alert('🎉 You finished studying all ' + this._studyQueue.length + ' questions!');
+      this.cancelStudy(); return;
+    }
+    this._loadStudyQuestion();
+    this.refreshFlashcard();
   },
 
   resetView() {
