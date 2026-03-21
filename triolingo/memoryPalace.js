@@ -104,8 +104,11 @@ const MP = {
                     onclick="MP.togglePinMode()">
               ${this.placingPin ? '✕ Cancel' : '📍 Add Pin'}
             </button>
-            <label class="btn btn-secondary mp-upload-btn">
-              🖼️ Change Map
+            <button class="btn btn-secondary" onclick="MPPicker.open('${palace.id}')" title="Pick from satellite/street/topo map">
+              🛰 Browse Map
+            </button>
+            <label class="btn btn-secondary mp-upload-btn" title="Upload your own image">
+              🖼 Upload
               <input type="file" accept="image/*" style="display:none"
                      onchange="MP.handleImageUpload(event, '${palace.id}')">
             </label>
@@ -125,8 +128,9 @@ const MP = {
             ${palace.imageDataUrl
               ? `<img src="${palace.imageDataUrl}" class="mp-map-img" draggable="false" id="mp-map-img">`
               : `<div class="mp-no-map">
-                  <p>No map uploaded yet.</p>
-                  <label class="btn btn-primary">Upload Map Image
+                  <p>No map yet. Choose a source:</p>
+                  <button class="btn btn-primary" onclick="MPPicker.open('${palace.id}')">🛰 Browse Satellite / Street Map</button>
+                  <label class="btn btn-secondary" style="margin-top:8px">📁 Upload Image
                     <input type="file" accept="image/*" style="display:none"
                            onchange="MP.handleImageUpload(event, '${palace.id}')">
                   </label>
@@ -659,3 +663,201 @@ function renderMemoryPalace() { return MP.render(); }
 function setupMemoryPalaceListeners() {
   if (MP.activePalaceId) requestAnimationFrame(() => MP.bindCanvasEvents());
 }
+
+// ─── Map Picker ───────────────────────────────────────────────────────────────
+const MPPicker = {
+  _map: null,
+  _layer: null,
+  _targetPalaceId: null,
+
+  layers: {
+    satellite: {
+      url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+      attr: 'Esri World Imagery',
+      exportService: 'World_Imagery'
+    },
+    street: {
+      url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      attr: '© OpenStreetMap contributors',
+      exportService: null
+    },
+    topo: {
+      url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',
+      attr: 'Esri World Topo',
+      exportService: 'World_Topo_Map'
+    },
+    dark: {
+      url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+      attr: '© CartoDB',
+      exportService: null
+    },
+    ocean: {
+      url: 'https://server.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Base/MapServer/tile/{z}/{y}/{x}',
+      attr: 'Esri Ocean',
+      exportService: 'Ocean/World_Ocean_Base'
+    }
+  },
+
+  _currentLayerKey: 'satellite',
+
+  open(palaceId) {
+    this._targetPalaceId = palaceId;
+    const modal = document.getElementById('mp-map-picker');
+    if (!modal) return;
+    modal.style.display = 'flex';
+
+    if (!this._map) {
+      this._map = L.map('mp-picker-map', { zoomControl: true }).setView([20, 0], 3);
+      this._applyLayer('satellite');
+      this._map.on('moveend zoomend', () => this._updateHint());
+    } else {
+      setTimeout(() => this._map.invalidateSize(), 100);
+    }
+  },
+
+  close() {
+    const modal = document.getElementById('mp-map-picker');
+    if (modal) modal.style.display = 'none';
+  },
+
+  _applyLayer(key) {
+    if (this._layer) this._map.removeLayer(this._layer);
+    const def = this.layers[key];
+    this._layer = L.tileLayer(def.url, { attribution: def.attr, maxZoom: 19 }).addTo(this._map);
+    this._currentLayerKey = key;
+    document.querySelectorAll('.mp-picker-layer-btn').forEach(b => b.classList.remove('active'));
+    const btn = document.getElementById('layer-' + key);
+    if (btn) btn.classList.add('active');
+  },
+
+  setLayer(key) { this._applyLayer(key); },
+
+  async search() {
+    const q = document.getElementById('mp-picker-search')?.value?.trim();
+    if (!q) return;
+    const hint = document.querySelector('.mp-picker-hint');
+    if (hint) hint.textContent = 'Searching…';
+    try {
+      const res = await fetch(
+        `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q)}&format=json&limit=1`,
+        { headers: { 'Accept-Language': 'en', 'User-Agent': 'TriolingoMemoryPalace/1.0' } }
+      );
+      const data = await res.json();
+      if (data.length > 0) {
+        const { lat, lon, boundingbox } = data[0];
+        const sw = [parseFloat(boundingbox[0]), parseFloat(boundingbox[2])];
+        const ne = [parseFloat(boundingbox[1]), parseFloat(boundingbox[3])];
+        this._map.fitBounds([sw, ne]);
+        if (hint) hint.textContent = 'Found! Navigate, then click Capture.';
+      } else {
+        if (hint) hint.textContent = 'Location not found. Try a different search.';
+      }
+    } catch(e) {
+      if (hint) hint.textContent = 'Search failed. Check your connection.';
+    }
+  },
+
+  _updateHint() {
+    const hint = document.querySelector('.mp-picker-hint');
+    if (hint) hint.textContent = 'Navigate to any area, then click Capture.';
+  },
+
+  async capture() {
+    const hint = document.querySelector('.mp-picker-hint');
+    if (hint) hint.textContent = '📸 Capturing…';
+
+    const bounds = this._map.getBounds();
+    const sw = bounds.getSouthWest();
+    const ne = bounds.getNorthEast();
+    const def = this.layers[this._currentLayerKey];
+
+    let imageUrl = null;
+
+    // Try Esri Export API first (satellite, topo, ocean)
+    if (def.exportService) {
+      const bbox = `${sw.lng},${sw.lat},${ne.lng},${ne.lat}`;
+      const w = 1200, h = 900;
+      const esriUrl =
+        `https://services.arcgisonline.com/arcgis/rest/services/${def.exportService}/MapServer/export` +
+        `?bbox=${encodeURIComponent(bbox)}&bboxSR=4326&size=${w},${h}` +
+        `&imageSR=4326&format=png32&transparent=false&f=image`;
+
+      // Fetch via blob to convert to dataUrl
+      try {
+        const resp = await fetch(esriUrl);
+        if (!resp.ok) throw new Error('Esri fetch failed');
+        const blob = await resp.blob();
+        imageUrl = await this._blobToDataUrl(blob);
+      } catch(e) {
+        console.warn('Esri export failed, falling back to canvas snapshot', e);
+      }
+    }
+
+    // Fallback: snapshot Leaflet canvas tiles using html2canvas-style approach
+    if (!imageUrl) {
+      imageUrl = await this._snapshotLeaflet();
+    }
+
+    if (imageUrl) {
+      this._applyImage(imageUrl);
+    } else {
+      if (hint) hint.textContent = '❌ Capture failed. Try a different layer or use URL.';
+    }
+  },
+
+  // Snapshot by drawing leaflet tiles onto an offscreen canvas
+  async _snapshotLeaflet() {
+    try {
+      const container = document.getElementById('mp-picker-map');
+      const w = container.clientWidth;
+      const h = container.clientHeight;
+      const canvas = document.createElement('canvas');
+      canvas.width = w * 2; canvas.height = h * 2;
+      const ctx = canvas.getContext('2d');
+      ctx.scale(2, 2);
+
+      const tiles = container.querySelectorAll('.leaflet-tile-pane img.leaflet-tile');
+      const promises = [...tiles].map(img => new Promise(resolve => {
+        const r = img.getBoundingClientRect();
+        const cr = container.getBoundingClientRect();
+        const x = r.left - cr.left, y = r.top - cr.top;
+        if (img.complete && img.naturalWidth > 0) {
+          try { ctx.drawImage(img, x, y, r.width, r.height); } catch {}
+          resolve();
+        } else {
+          img.onload = () => { try { ctx.drawImage(img, x, y, r.width, r.height); } catch {} resolve(); };
+          img.onerror = resolve;
+        }
+      }));
+      await Promise.all(promises);
+      return canvas.toDataURL('image/png');
+    } catch(e) {
+      console.warn('Snapshot failed', e);
+      return null;
+    }
+  },
+
+  _blobToDataUrl(blob) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = e => resolve(e.target.result);
+      reader.onerror = reject;
+      reader.readAsDataURL(blob);
+    });
+  },
+
+  useUrl() {
+    const url = document.getElementById('mp-picker-url')?.value?.trim();
+    if (!url) return;
+    this._applyImage(url);
+  },
+
+  _applyImage(imageUrl) {
+    const palace = MP.palaces.find(p => p.id === this._targetPalaceId);
+    if (!palace) { this.close(); return; }
+    palace.imageDataUrl = imageUrl;
+    MP.save();
+    this.close();
+    MP.openPalace(this._targetPalaceId);
+  }
+};
