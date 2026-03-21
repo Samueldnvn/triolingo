@@ -120,6 +120,7 @@ const MP = {
         <div class="mp-palace-info">
           <span class="mp-palace-name">${p.name}</span>
           <span class="mp-palace-count">${p.pins.length} pin${p.pins.length !== 1 ? 's' : ''}</span>
+          <span class="mp-palace-type ${p.type === '3d' ? 'mp-palace-type-3d' : 'mp-palace-type-2d'}">${p.type === '3d' ? '3D' : '2D'}</span>
         </div>
         <button class="mp-palace-delete" onclick="event.stopPropagation();MP.deletePalace('${p.id}')" title="Delete palace">🗑 Delete</button>
       </div>
@@ -426,8 +427,106 @@ const MP = {
     `;
   },
 
+  // ─── Render: 3D Viewer ────────────────────────────────────────────────────
+  render3DViewer() {
+    const palace = this.activePalace();
+    if (!palace) return '';
+    const total = palace.pins.length;
+    const isFirst = this.activePinIndex === 0;
+    const isLast  = this.activePinIndex === total - 1;
+
+    return `
+      <div class="mp-viewer-panel">
+        <div class="mp-viewer-toolbar">
+          <button class="btn btn-secondary mp-back-btn" onclick="MP.closeViewer()">← Back</button>
+          <span class="mp-palace-title">${palace.name} <span class="mp-3d-badge">3D</span></span>
+          <div class="mp-toolbar-actions">
+            <button class="btn btn-primary" onclick="window.MP3D?.startPinPlacement()" title="Add a pin at current position">📍 Add Pin</button>
+            <label class="btn btn-secondary" title="Load 3D map file (GLB, GLTF, OBJ, FBX, BSP)">
+              📁 Load Map
+              <input type="file" style="display:none"
+                     accept=".glb,.gltf,.obj,.fbx,.bsp"
+                     onchange="MP.handle3DMapUpload(event)">
+            </label>
+            <button class="btn btn-secondary" onclick="window.MP3D?.teleportToPin(MP.activePinIndex)" title="Teleport to active pin">⊛ Go to Pin</button>
+            <button class="btn ${this.cardListOpen ? 'btn-primary' : 'btn-secondary'}"
+                    onclick="MP.toggleCardList()">☰ Cards (${total})</button>
+            <button class="btn btn-danger" onclick="MP.deletePalace('${palace.id}')">🗑 Delete</button>
+          </div>
+        </div>
+
+        ${this.cardListOpen ? this.renderCardList(palace) : ''}
+
+        <div class="mp3d-wrapper">
+          <div id="mp3d-viewport" class="mp3d-viewport"></div>
+          <div class="mp3d-crosshair">+</div>
+          <div id="mp3d-status" class="mp3d-status" style="display:none"></div>
+          ${total > 0 ? `
+          <div class="mp-flashcard-bar mp-flashcard-bar-3d">
+            <button class="mp-nav-btn" onclick="MP.prevPin()" ${isFirst ? 'disabled' : ''}>‹</button>
+            <div class="mp-flashcard">${this._renderCardContent(palace.pins[this.activePinIndex], this.activePinIndex, total)}</div>
+            <button class="mp-nav-btn" onclick="MP.nextPin()" ${isLast ? 'disabled' : ''}>›</button>
+          </div>` : ''}
+        </div>
+      </div>
+    `;
+  },
+
+  _renderCardContent(pin, idx, total) {
+    if (!pin) return '';
+    if (this.editingCard) {
+      return `
+        <div class="mp-card-edit-mode">
+          <div class="mp-card-edit-header">
+            <span class="mp-card-counter-inline">${idx + 1} / ${total}</span>
+            <div class="mp-card-edit-btns">
+              <button class="mp-card-icon-btn mp-save-btn" onclick="MP.saveCard()">✓ Save</button>
+              <button class="mp-card-icon-btn mp-cancel-btn" onclick="MP.cancelEdit()">✕</button>
+              <button class="mp-card-icon-btn mp-delete-btn" onclick="MP.deletePin(${idx})">🗑</button>
+            </div>
+          </div>
+          <div class="mp-card-field">
+            <label class="mp-field-label">💭 Mental Image / Vivid Scene</label>
+            <textarea id="mp-edit-image" class="mp-field-input" rows="2" placeholder="Describe a vivid mental image…">${pin.image || ''}</textarea>
+          </div>
+          <div class="mp-card-field">
+            <label class="mp-field-label">📌 Description</label>
+            <input id="mp-edit-desc" type="text" class="mp-field-input" placeholder="Short label…" value="${pin.desc || pin.front || ''}">
+          </div>
+          <div class="mp-card-field">
+            <label class="mp-field-label">💡 Info to Remember</label>
+            <textarea id="mp-edit-info" class="mp-field-input" rows="2">${pin.info || pin.back || ''}</textarea>
+          </div>
+        </div>`;
+    }
+    return `
+      <div class="mp-card-view-mode">
+        <div class="mp-card-top-row">
+          <span class="mp-card-counter-inline">${idx + 1} / ${total}</span>
+          <div style="display:flex;gap:4px">
+            <button class="mp-card-icon-btn mp-study-btn" onclick="MP.openStudyConfig()">📖 Study</button>
+            <button class="mp-card-icon-btn mp-edit-btn" onclick="MP.startEdit()">✏️ Edit</button>
+          </div>
+        </div>
+        <div class="mp-card-body">
+          <div class="mp-card-text-col">
+            <div class="mp-card-section-label">💭 Mental Image</div>
+            <div class="mp-card-mental-image">${pin.image || '<em class="mp-placeholder">No mental image</em>'}</div>
+            <div class="mp-card-section-label" style="margin-top:4px">📌 Description</div>
+            <div class="mp-card-desc">${pin.desc || pin.front || '<em class="mp-placeholder">—</em>'}</div>
+            <div class="mp-card-section-label" style="margin-top:4px">💡 Remember</div>
+            <div class="mp-card-info">${pin.info || pin.back || '<em class="mp-placeholder">—</em>'}</div>
+          </div>
+        </div>
+      </div>`;
+  },
+
   // ─── Full render ──────────────────────────────────────────────────────────
   render() {
+    const palace = this.activePalaceId ? this.activePalace() : null;
+    if (palace?.type === '3d') {
+      return `<div class="mp-root">${this.render3DViewer()}</div>`;
+    }
     return `<div class="mp-root">${this.activePalaceId ? this.renderViewer() : this.renderList()}</div>`;
   },
 
@@ -435,7 +534,8 @@ const MP = {
   createNew() {
     const name = prompt('Name your Memory Palace:', 'My Palace');
     if (!name) return;
-    this.palaces.push({ id: this.uid(), name: name.trim(), imageDataUrl: null, pins: [] });
+    const type = confirm('Create a 3D palace?\n\nOK = 3D (walk-through)\nCancel = 2D (flat map)') ? '3d' : '2d';
+    this.palaces.push({ id: this.uid(), name: name.trim(), type, imageDataUrl: null, pins: [] });
     this.save();
     this.openPalace(this.palaces[this.palaces.length - 1].id);
   },
@@ -452,6 +552,8 @@ const MP = {
   },
 
   openPalace(id) {
+    // Tear down 3D if switching away
+    if (window.MP3D?.renderer) window.MP3D.destroy();
     this.activePalaceId = id;
     this.activePinIndex = 0;
     this.cardFlipped = false;
@@ -460,10 +562,29 @@ const MP = {
     this.pan = { x: 0, y: 0 };
     this.zoom = 1;
     this.refresh();
-    requestAnimationFrame(() => this.bindCanvasEvents());
+    const palace = this.activePalace();
+    if (palace?.type === '3d') {
+      requestAnimationFrame(() => {
+        window.MP3D?.init('mp3d-viewport');
+        window.MP3D?._renderPinMeshes();
+      });
+    } else {
+      requestAnimationFrame(() => this.bindCanvasEvents());
+    }
   },
 
-  closeViewer() { this.activePalaceId = null; this.placingPin = false; this.refresh(); },
+  closeViewer() {
+    if (window.MP3D?.renderer) window.MP3D.destroy();
+    this.activePalaceId = null;
+    this.placingPin = false;
+    this.refresh();
+  },
+
+  handle3DMapUpload(event) {
+    const file = event.target.files[0];
+    if (!file || !window.MP3D) return;
+    window.MP3D.loadFile(file);
+  },
 
   handleImageUpload(event, palaceId) {
     const file = event.target.files[0];
@@ -489,6 +610,7 @@ const MP = {
     this.editingCard = false;
     this.refreshFlashcard();
     document.querySelectorAll('.mp-pin').forEach((el, i) => el.classList.toggle('active', i === index));
+    window.MP3D?.updateActivePinIndex?.(index);
   },
 
   prevPin() {
@@ -652,6 +774,18 @@ const MP = {
   },
 
   refreshFlashcard() {
+    const palace = this.activePalace();
+    if (palace?.type === '3d') {
+      // In 3D mode, refresh just the card content
+      const card = document.querySelector('.mp-flashcard');
+      if (card) {
+        card.innerHTML = this._renderCardContent(
+          palace.pins[this.activePinIndex], this.activePinIndex, palace.pins.length
+        );
+      }
+      window.MP3D?.updateActivePinIndex?.(this.activePinIndex);
+      return;
+    }
     const bar = document.querySelector('.mp-flashcard-bar');
     if (bar) {
       bar.outerHTML = this.renderFlashcardBar();
