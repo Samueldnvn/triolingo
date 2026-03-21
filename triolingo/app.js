@@ -612,6 +612,42 @@ function renderDashboard() {
 
   if (!course.units || course.units.length === 0) {
     console.warn('No units in course!');
+
+    // ── Mobile debug panel ────────────────────────────────────────────────
+    const chunkVars = ['cppChunk_1_5','cppChunk_6_10','cppChunk_11_15','cppChunk_16_20',
+      'cppChunk_21_25','cppChunk_26_30','cppChunk_31_35','cppChunk_36_40','cppChunk_41_45','cppChunk_46_49'];
+    const chunkStatus = chunkVars.map(v =>
+      `${v}: ${window[v] ? '✅ ' + window[v].length + ' units' : '❌ missing'}`
+    ).join('<br>');
+    const cppCombinedStatus = window.cppCombined
+      ? `✅ cppCombined: ${window.cppCombined.units?.length} units`
+      : '❌ cppCombined: missing';
+    const cppCourseStatus = window.cppCourse
+      ? `✅ cppCourse: ${window.cppCourse.units?.length} units`
+      : '❌ cppCourse: missing';
+    const allCourses = Object.entries(courses).map(([k,v]) =>
+      `${k}: ${v.units?.length ?? 0} units`
+    ).join('<br>');
+    const ua = navigator.userAgent;
+    const scriptTags = [...document.querySelectorAll('script[src]')]
+      .filter(s => s.src.includes('cpp'))
+      .map(s => `<span style="word-break:break-all">${s.src.split('/').pop()}</span>`)
+      .join('<br>') || '(none found)';
+
+    const debugHtml = `
+      <div style="background:#1a1a1a;color:#00ff88;font-family:monospace;font-size:12px;
+                  padding:16px;margin:12px;border-radius:8px;border:1px solid #00ff88;
+                  overflow-x:auto;white-space:pre-wrap;word-break:break-word">
+        <strong style="color:#fff;font-size:14px">🐛 C++ Debug (Mobile)</strong><br><br>
+        <strong>Course selected:</strong> ${courseId}<br>
+        <strong>courses.cpp.units.length:</strong> ${course.units.length}<br><br>
+        <strong>── Chunk Variables ──</strong><br>${chunkStatus}<br><br>
+        <strong>── Fallbacks ──</strong><br>${cppCombinedStatus}<br>${cppCourseStatus}<br><br>
+        <strong>── All course unit counts ──</strong><br>${allCourses}<br><br>
+        <strong>── C++ script tags found ──</strong><br>${scriptTags}<br><br>
+        <strong>── User Agent ──</strong><br>${ua}
+      </div>`;
+
     return `
       <div class="dashboard">
         <div class="progress-card">
@@ -635,6 +671,7 @@ function renderDashboard() {
         </div>
         <div class="units-container">
           <p>No units available for this course.</p>
+          ${debugHtml}
         </div>
       </div>
     `;
