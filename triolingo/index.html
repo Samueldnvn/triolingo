@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="dashboard.css?v=73">
   <link rel="stylesheet" href="conversations.css?v=72">
   <link rel="stylesheet" href="settings.css?v=68">
-  <link rel="stylesheet" href="memoryPalace.css?t=1774063855893">
+  <link rel="stylesheet" href="memoryPalace.css?t=1774064436763">
   <!-- MathJax for math notation -->
   <script>
   window.MathJax = {
@@ -280,7 +280,7 @@
   <script src="ttsManager.js"></script>
     <script src="ollamaChat.js"></script>
     <script type="module" src="memoryPalace3D.js?t=1774065000000"></script>
-    <script src="memoryPalace.js?t=1774063855893"></script>
+    <script src="memoryPalace.js?t=1774064436763"></script>
   <script src="hundredsPlaceholders.js?t=1741476830001"></script>
   <!-- Load all topic lessons -->
   <script src="questions/aiAllTopics.js?t=1741478200000"></script>
@@ -318,16 +318,37 @@
         <button class="mp-picker-layer-btn" id="layer-ocean"     onclick="MPPicker.setLayer('ocean')">🌊 Ocean</button>
       </div>
       <div class="mp-picker-url-row">
-        <span class="mp-picker-layer-label">Custom / game map URL:</span>
-        <input id="mp-picker-url" type="text" placeholder="Paste any image URL (wiki map, game map, …)">
+        <span class="mp-picker-layer-label">Paste image URL:</span>
+        <input id="mp-picker-url" type="text" placeholder="https://… (any image URL)">
         <button class="mp-picker-btn" onclick="MPPicker.useUrl()">Use Image</button>
       </div>
+      <!-- Tab switcher -->
+      <div class="mp-picker-tabs">
+        <button class="mp-picker-tab active" id="mp-tab-map" onclick="MPPicker.switchTab('map')">🗺 Map Browser</button>
+        <button class="mp-picker-tab" id="mp-tab-search" onclick="MPPicker.switchTab('search')">🔍 Search Maps</button>
+      </div>
     </div>
-    <div id="mp-picker-map"></div>
-    <div class="mp-picker-footer">
-      <span class="mp-picker-hint">Navigate to any area, then click Capture.</span>
-      <button class="mp-picker-btn mp-picker-cancel" onclick="MPPicker.close()">Cancel</button>
-      <button class="mp-picker-btn mp-picker-capture" onclick="MPPicker.capture()">📸 Capture This View</button>
+
+    <!-- Map Browser tab -->
+    <div id="mp-picker-map-pane">
+      <div id="mp-picker-map"></div>
+      <div class="mp-picker-footer">
+        <span class="mp-picker-hint">Navigate to any area, then click Capture.</span>
+        <button class="mp-picker-btn mp-picker-cancel" onclick="MPPicker.close()">Cancel</button>
+        <button class="mp-picker-btn mp-picker-capture" onclick="MPPicker.capture()">📸 Capture This View</button>
+      </div>
+    </div>
+
+    <!-- Image Search tab -->
+    <div id="mp-picker-search-pane" style="display:none;flex:1;flex-direction:column;overflow:hidden">
+      <div class="mp-imgsearch-bar">
+        <input id="mp-imgsearch-q" type="text" placeholder="Search for any map… e.g. IKEA floor plan, Hogwarts map, Fallout 4 map"
+               onkeydown="if(event.key==='Enter')MPPicker.imageSearch()">
+        <button class="mp-picker-btn mp-picker-capture" onclick="MPPicker.imageSearch()">Search</button>
+        <button class="mp-picker-btn mp-picker-cancel" onclick="MPPicker.close()">Cancel</button>
+      </div>
+      <div id="mp-imgsearch-status" class="mp-imgsearch-status"></div>
+      <div id="mp-imgsearch-results" class="mp-imgsearch-results"></div>
     </div>
   </div>
 </div>

@@ -135,7 +135,8 @@ const MP = {
               <input type="file" accept=".json" style="display:none" onchange="MP.importPalaces(event)">
             </label>
             <button class="btn btn-secondary" style="font-size:0.78rem;padding:4px 10px" onclick="MP.exportPalaces()" title="Export palaces to JSON">📤 Export</button>
-            <button class="btn btn-primary mp-new-btn" onclick="MP.createNew()">+ New Palace</button>
+            <button class="btn btn-primary mp-new-btn" onclick="MP.createNew('2d')">+ New 2D Palace</button>
+            <button class="btn btn-primary mp-new-btn" style="background:linear-gradient(135deg,#667eea,#764ba2);border:none" onclick="MP.createNew('3d')">+ New 3D Palace</button>
           </div>
         </div>
         <div class="mp-palace-list">
@@ -531,10 +532,9 @@ const MP = {
   },
 
   // ─── Actions ──────────────────────────────────────────────────────────────
-  createNew() {
-    const name = prompt('Name your Memory Palace:', 'My Palace');
+  createNew(type = '2d') {
+    const name = prompt(`Name your ${type.toUpperCase()} Memory Palace:`, 'My Palace');
     if (!name) return;
-    const type = confirm('Create a 3D palace?\n\nOK = 3D (walk-through)\nCancel = 2D (flat map)') ? '3d' : '2d';
     this.palaces.push({ id: this.uid(), name: name.trim(), type, imageDataUrl: null, pins: [] });
     this.save();
     this.openPalace(this.palaces[this.palaces.length - 1].id);
@@ -977,6 +977,8 @@ const MPPicker = {
     const modal = document.getElementById('mp-map-picker');
     if (!modal) return;
     modal.style.display = 'flex';
+    // Reset to map tab
+    this.switchTab('map');
 
     if (!this._map) {
       this._map = L.map('mp-picker-map', { zoomControl: true }).setView([20, 0], 3);
@@ -1122,6 +1124,117 @@ const MPPicker = {
     const url = document.getElementById('mp-picker-url')?.value?.trim();
     if (!url) return;
     this._applyImage(url);
+  },
+
+  // ── Tab switching ─────────────────────────────────────────────────────────
+  switchTab(tab) {
+    document.getElementById('mp-picker-map-pane').style.display    = tab === 'map'    ? 'flex' : 'none';
+    document.getElementById('mp-picker-search-pane').style.display = tab === 'search' ? 'flex' : 'none';
+    document.getElementById('mp-tab-map').classList.toggle('active',    tab === 'map');
+    document.getElementById('mp-tab-search').classList.toggle('active', tab === 'search');
+    if (tab === 'map' && this._map) setTimeout(() => this._map.invalidateSize(), 50);
+  },
+
+  // ── Image search (no API key — DuckDuckGo scrape via CORS proxy) ──────────
+  async imageSearch() {
+    const q = document.getElementById('mp-imgsearch-q')?.value?.trim();
+    if (!q) return;
+    const status = document.getElementById('mp-imgsearch-status');
+    const results = document.getElementById('mp-imgsearch-results');
+    status.textContent = '🔍 Searching…';
+    results.innerHTML = '';
+
+    try {
+      const images = await this._fetchImages(q);
+      if (!images.length) { status.textContent = 'No results found. Try different keywords.'; return; }
+      status.textContent = `Found ${images.length} results — click one to use it as your map.`;
+      results.innerHTML = images.map((img, i) => `
+        <div class="mp-img-result" onclick="MPPicker.selectImageResult(${i})" data-url="${img.url}" title="${img.title}\n${img.source}">
+          <img src="${img.thumb}" loading="lazy" alt="${img.title}"
+               onerror="this.src='';this.parentElement.style.display='none'">
+          <div class="mp-img-result-label">${img.title}</div>
+          <div class="mp-img-result-source">${img.source}</div>
+        </div>
+      `).join('');
+    } catch(e) {
+      status.textContent = '❌ Search failed: ' + e.message;
+    }
+  },
+
+  _imageCache: [],
+
+  async _fetchImages(query) {
+    this._imageCache = [];
+
+    // Strategy 1: Wikimedia Commons (CORS-open, no key, best for official maps)
+    const wikiImgs = await this._fetchWikimediaImages(query);
+    this._imageCache.push(...wikiImgs);
+
+    // Strategy 2: DuckDuckGo image search via CORS proxy
+    const ddgImgs = await this._fetchDDGImages(query);
+    this._imageCache.push(...ddgImgs);
+
+    // Deduplicate by URL
+    const seen = new Set();
+    return this._imageCache.filter(img => {
+      if (seen.has(img.url)) return false;
+      seen.add(img.url); return true;
+    });
+  },
+
+  async _fetchWikimediaImages(query) {
+    try {
+      const url = `https://commons.wikimedia.org/w/api.php?action=query&generator=search` +
+        `&gsrsearch=${encodeURIComponent(query)}&gsrnamespace=6&gsrlimit=20` +
+        `&prop=imageinfo&iiprop=url|thumburl|extmetadata&iiurlwidth=400&format=json&origin=*`;
+      const data = await fetch(url).then(r => r.json());
+      const pages = Object.values(data?.query?.pages || {});
+      return pages.map(p => ({
+        url:    p.imageinfo?.[0]?.url || '',
+        thumb:  p.imageinfo?.[0]?.thumburl || p.imageinfo?.[0]?.url || '',
+        title:  p.title?.replace(/^File:/,'') || '',
+        source: 'Wikimedia Commons'
+      })).filter(x => x.url && /\.(jpg|jpeg|png|gif|svg|webp)/i.test(x.url));
+    } catch { return []; }
+  },
+
+  async _fetchDDGImages(query) {
+    // DuckDuckGo image search: first get VQD token, then fetch results
+    const proxies = [
+      u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
+      u => `https://corsproxy.io/?${encodeURIComponent(u)}`,
+    ];
+
+    for (const proxy of proxies) {
+      try {
+        // Step 1: Get VQD token
+        const htmlUrl = `https://duckduckgo.com/?q=${encodeURIComponent(query)}&ia=images`;
+        const html = await fetch(proxy(htmlUrl), { signal: AbortSignal.timeout(8000) }).then(r => r.text());
+        const vqd = html.match(/vqd=["']?([0-9-]+)["']?/)?.[1] || html.match(/vqd%3D([0-9-]+)/)?.[1];
+        if (!vqd) continue;
+
+        // Step 2: Fetch image results JSON
+        const imgUrl = `https://duckduckgo.com/i.js?q=${encodeURIComponent(query)}&vqd=${vqd}&o=json&p=1&s=0&u=bing&f=,,,,,&l=us-en`;
+        const data = await fetch(proxy(imgUrl), { signal: AbortSignal.timeout(8000) }).then(r => r.json());
+        if (data?.results?.length) {
+          return data.results.slice(0, 40).map(r => ({
+            url:    r.image || '',
+            thumb:  r.thumbnail || r.image || '',
+            title:  r.title || '',
+            source: r.url ? new URL(r.url).hostname : 'Web'
+          })).filter(x => x.url);
+        }
+      } catch { continue; }
+    }
+    return [];
+  },
+
+  selectImageResult(index) {
+    const img = this._imageCache[index];
+    if (!img?.url) return;
+    const status = document.getElementById('mp-imgsearch-status');
+    if (status) status.textContent = `💾 Loading "${img.title}"…`;
+    this._applyImage(img.url);
   },
 
   async _applyImage(imageUrl) {

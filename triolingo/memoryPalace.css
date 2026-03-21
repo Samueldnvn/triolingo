@@ -949,3 +949,116 @@ textarea.mp-field-input { flex: 1; min-height: 0; }
 }
 .mp-palace-type-3d { background: #553c9a22; color: #553c9a; border: 1px solid #b794f4; }
 .mp-palace-type-2d { background: #2b6cb022; color: #2b6cb0; border: 1px solid #90cdf4; }
+
+/* ── Map Picker Tabs ────────────────────────────────────────────────────── */
+.mp-picker-tabs {
+  display: flex;
+  gap: 4px;
+  border-top: 1px solid var(--border, #e2e8f0);
+  padding-top: 8px;
+}
+
+.mp-picker-tab {
+  padding: 5px 14px;
+  border-radius: 7px 7px 0 0;
+  border: 1px solid var(--border, #e2e8f0);
+  border-bottom: none;
+  background: transparent;
+  color: var(--text-secondary, #718096);
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+.mp-picker-tab.active {
+  background: var(--primary, #4299e1);
+  color: #fff;
+  border-color: var(--primary, #4299e1);
+}
+
+#mp-picker-map-pane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+#mp-picker-search-pane {
+  flex: 1;
+  min-height: 0;
+}
+
+/* ── Image Search ────────────────────────────────────────────────────────── */
+.mp-imgsearch-bar {
+  display: flex;
+  gap: 8px;
+  padding: 10px 14px;
+  align-items: center;
+  background: var(--bg-secondary, #f7fafc);
+  border-bottom: 1px solid var(--border, #e2e8f0);
+  flex-shrink: 0;
+}
+
+.mp-imgsearch-bar input[type="text"] {
+  flex: 1;
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: 7px;
+  padding: 7px 12px;
+  font-size: 0.88rem;
+  background: var(--bg-primary, #fff);
+  color: var(--text-primary, #2d3748);
+  outline: none;
+}
+.mp-imgsearch-bar input:focus { border-color: var(--primary, #4299e1); }
+
+.mp-imgsearch-status {
+  padding: 8px 14px;
+  font-size: 0.78rem;
+  color: var(--text-secondary, #718096);
+  flex-shrink: 0;
+}
+
+.mp-imgsearch-results {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 10px;
+  align-content: start;
+}
+
+.mp-img-result {
+  border: 2px solid var(--border, #e2e8f0);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.15s, transform 0.12s;
+  background: var(--bg-secondary, #f7fafc);
+}
+.mp-img-result:hover {
+  border-color: var(--primary, #4299e1);
+  transform: scale(1.03);
+}
+.mp-img-result img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  display: block;
+}
+.mp-img-result-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-primary, #2d3748);
+  padding: 4px 6px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.mp-img-result-source {
+  font-size: 0.64rem;
+  color: var(--text-secondary, #718096);
+  padding: 0 6px 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
