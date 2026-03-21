@@ -8,10 +8,11 @@ const MP = {
   activePinIndex: 0,
   cardFlipped: false,
   editingCard: false,
-  studyMode: false,       // whether study overlay is open
-  studyFields: { image: true, desc: true, info: true }, // which fields to test
-  studyState: null,       // { pinIndex, field, revealed, answer, correct }
-  studyConfiguring: false,// showing field-picker before starting
+  studyMode: false,
+  studyFields: { image: true, desc: true, info: true },
+  studyState: null,
+  studyConfiguring: false,
+  cardListOpen: false,    // toggleable pin list sidebar
 
   pan: { x: 0, y: 0 },
   zoom: 1,
@@ -109,8 +110,14 @@ const MP = {
                      onchange="MP.handleImageUpload(event, '${palace.id}')">
             </label>
             <button class="btn btn-secondary" onclick="MP.resetView()">⌖ Reset</button>
+            <button class="btn ${this.cardListOpen ? 'btn-primary' : 'btn-secondary'}"
+                    onclick="MP.toggleCardList()" title="Toggle card list">
+              ☰ Cards ${palace.pins.length > 0 ? `(${palace.pins.length})` : ''}
+            </button>
           </div>
         </div>
+
+        ${this.cardListOpen ? this.renderCardList(palace) : ''}
 
         <div class="mp-canvas-wrapper" id="mp-canvas-wrapper">
           <div class="mp-canvas" id="mp-canvas"
@@ -133,6 +140,46 @@ const MP = {
         ${palace.pins.length > 0 ? this.renderFlashcardBar() : ''}
       </div>
     `;
+  },
+
+  // ─── Render: Card List (toggleable) ──────────────────────────────────────
+  renderCardList(palace) {
+    const rows = palace.pins.map((pin, i) => {
+      const isActive = i === this.activePinIndex;
+      const img = pin.image
+        ? (pin.image.startsWith('http') || pin.image.startsWith('data')
+            ? `<img src="${pin.image}" class="mp-list-thumb" alt="">`
+            : `<span class="mp-list-emoji">${pin.image}</span>`)
+        : `<span class="mp-list-emoji mp-list-emoji-empty">🗺️</span>`;
+      return `
+        <div class="mp-card-list-row ${isActive ? 'active' : ''}" onclick="MP.selectPin(${i})">
+          <div class="mp-list-num">${i + 1}</div>
+          <div class="mp-list-img-col">${img}</div>
+          <div class="mp-list-text-col">
+            <div class="mp-list-desc">${pin.desc || pin.front || '<em>No description</em>'}</div>
+            <div class="mp-list-info">${pin.info || pin.back || ''}</div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    return `
+      <div class="mp-card-list-panel" id="mp-card-list">
+        <div class="mp-card-list-header">
+          <span>📋 All Cards</span>
+          <button class="mp-card-icon-btn mp-cancel-btn" onclick="MP.toggleCardList()">✕</button>
+        </div>
+        <div class="mp-card-list-rows">
+          ${rows || '<p style="padding:12px;color:var(--text-secondary)">No pins yet.</p>'}
+        </div>
+      </div>
+    `;
+  },
+
+  toggleCardList() {
+    this.cardListOpen = !this.cardListOpen;
+    this.refresh();
+    if (this.activePalaceId) requestAnimationFrame(() => this.bindCanvasEvents());
   },
 
   // ─── Render: Flashcard Bar ────────────────────────────────────────────────
@@ -506,6 +553,15 @@ const MP = {
     this.zoom = 1;
     const canvas = document.getElementById('mp-canvas');
     if (canvas) canvas.style.transform = `translate(0px,0px) scale(1)`;
+    this._rescalePins();
+  },
+
+  _rescalePins() {
+    const s = 1 / this.zoom;
+    document.querySelectorAll('.mp-pin').forEach(el => {
+      // counter-scale so pins stay visually constant size
+      el.style.transform = `translate(-50%, -${50 + 50 * s}%) scale(${s})`;
+    });
   },
 
   refreshFlashcard() {
@@ -540,6 +596,7 @@ const MP = {
       e.preventDefault();
       this.zoom = Math.min(Math.max(this.zoom * (e.deltaY > 0 ? 0.9 : 1.1), 0.2), 8);
       canvas.style.transform = `translate(${this.pan.x}px,${this.pan.y}px) scale(${this.zoom})`;
+      this._rescalePins();
     };
 
     wrapper.onmousedown = (e) => {
