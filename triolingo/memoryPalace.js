@@ -1163,159 +1163,72 @@ const MPPicker = {
 
   _imageCache: [],
 
-  // CORS proxy wrappers — tries each in sequence
-  _proxies: [
-    u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
-    u => `https://corsproxy.io/?${encodeURIComponent(u)}`,
-    u => `https://thingproxy.freeboard.io/fetch/${u}`,
+  // SearXNG public instances — open-source metasearch, JSON API, CORS-open
+  // Aggregates Google Images, Bing Images, and more on the server side.
+  _searxInstances: [
+    'https://search.ononoki.org',
+    'https://searx.tiekoetter.com',
+    'https://searxng.site',
+    'https://paulgo.io',
+    'https://search.inetol.net',
+    'https://opnxng.com',
+    'https://searx.be',
+    'https://search.mdosch.de',
+    'https://northboot.xyz',
+    'https://searx.lunar.icu',
   ],
-
-  async _proxyFetch(url, asJson = false, timeoutMs = 10000) {
-    for (const proxy of this._proxies) {
-      try {
-        const r = await fetch(proxy(url), { signal: AbortSignal.timeout(timeoutMs) });
-        if (!r.ok) continue;
-        return asJson ? await r.json() : await r.text();
-      } catch { continue; }
-    }
-    return null;
-  },
 
   async _fetchImages(query) {
     this._imageCache = [];
     const status = document.getElementById('mp-imgsearch-status');
     const update = t => { if (status) status.textContent = t; };
+    update('🔍 Querying search engines…');
 
-    // Run all sources in parallel for speed
-    update('🔍 Searching Bing, Google, Yandex, DuckDuckGo…');
-    const [bing, google, yandex, ddg] = await Promise.allSettled([
-      this._fetchBingImages(query),
-      this._fetchGoogleImages(query),
-      this._fetchYandexImages(query),
-      this._fetchDDGImages(query),
-    ]);
+    // Try SearXNG instances in parallel — first batch of 4, then remaining
+    const results = await this._searchSearXNG(query, update);
 
-    const allImgs = [
-      ...(bing.value    || []),
-      ...(google.value  || []),
-      ...(yandex.value  || []),
-      ...(ddg.value     || []),
-    ];
-
-    // Deduplicate
     const seen = new Set();
-    this._imageCache = allImgs.filter(img => {
+    this._imageCache = results.filter(img => {
       if (!img.url || seen.has(img.url)) return false;
       seen.add(img.url); return true;
     });
 
-    const counts = [bing,google,yandex,ddg].map((r,i) => `${['Bing','Google','Yandex','DDG'][i]}:${r.value?.length||0}`);
-    update(`Found ${this._imageCache.length} results (${counts.join(' · ')}) — click to use`);
+    update(this._imageCache.length
+      ? `Found ${this._imageCache.length} results — click to use as your map`
+      : 'No results. Try different keywords or check your connection.');
     return this._imageCache;
   },
 
-  // ── Bing Image Search ───────────────────────────────────────────────────
-  async _fetchBingImages(query) {
-    try {
-      const url = `https://www.bing.com/images/search?q=${encodeURIComponent(query)}&count=50&first=1&tsc=ImageBasicHover`;
-      const html = await this._proxyFetch(url);
-      if (!html) return [];
-      const imgs = [];
-      // Bing embeds image data as JSON objects with "murl" (main url) and "turl" (thumb)
-      const blocks = html.matchAll(/\{"murl":"([^"]+)","turl":"([^"]+)"[^}]*"t":"([^"]*)"[^}]*"purl":"([^"]*)"/g);
-      for (const m of blocks) {
-        imgs.push({ url: m[1], thumb: m[2], title: m[3] || '', source: (() => { try { return new URL(m[4]).hostname; } catch { return 'Bing'; } })() });
-        if (imgs.length >= 50) break;
-      }
-      // Fallback: grab image src from img tags
-      if (imgs.length < 5) {
-        const srcMatches = html.matchAll(/imgurl=([^&"]+)[^"]*"/g);
-        for (const m of srcMatches) {
-          const u = decodeURIComponent(m[1]);
-          imgs.push({ url: u, thumb: u, title: '', source: 'Bing' });
-          if (imgs.length >= 50) break;
-        }
-      }
-      return imgs;
-    } catch { return []; }
+  async _searchSearXNG(query, update) {
+    const instances = [...this._searxInstances];
+    // Try 4 at a time; return as soon as one responds with results
+    while (instances.length) {
+      const batch = instances.splice(0, 4);
+      const results = await Promise.any(
+        batch.map(base => this._searxFetch(base, query))
+      ).catch(() => null);
+      if (results?.length) return results;
+      update(`🔍 Trying more instances…`);
+    }
+    return [];
   },
 
-  // ── Google Image Search ─────────────────────────────────────────────────
-  async _fetchGoogleImages(query) {
-    try {
-      const url = `https://www.google.com/search?q=${encodeURIComponent(query)}&tbm=isch&num=40&hl=en`;
-      const html = await this._proxyFetch(url);
-      if (!html) return [];
-      const imgs = [];
-      // Google embeds full-size URLs in AF_initDataChunk / JSON arrays
-      // Pattern: ["https://...",<w>,<h>] or ["https://...jpg"
-      const fullMatches = html.matchAll(/\["(https?:\/\/[^"]+\.(?:jpg|jpeg|png|webp|gif)(?:\?[^"]*)?)"[,\]]/gi);
-      const thumbMatches = html.matchAll(/src="(https:\/\/encrypted-tbn[^"]+)"/g);
-      const thumbUrls = [...html.matchAll(/src="(https:\/\/encrypted-tbn[^"]+)"/g)].map(m => m[1]);
-      let ti = 0;
-      for (const m of fullMatches) {
-        const u = m[1];
-        if (u.includes('google.com') || u.includes('gstatic.com/images?')) continue;
-        imgs.push({ url: u, thumb: thumbUrls[ti++] || u, title: '', source: (() => { try { return new URL(u).hostname; } catch { return 'Google'; } })() });
-        if (imgs.length >= 40) break;
-      }
-      return imgs;
-    } catch { return []; }
-  },
-
-  // ── Yandex Image Search ─────────────────────────────────────────────────
-  async _fetchYandexImages(query) {
-    try {
-      const url = `https://yandex.com/images/search?text=${encodeURIComponent(query)}&nomisspell=1&noreask=1`;
-      const html = await this._proxyFetch(url);
-      if (!html) return [];
-      const imgs = [];
-      // Yandex puts image data in window.__INITIAL_STATE__ JSON
-      const stateMatch = html.match(/window\.__INITIAL_STATE__\s*=\s*(\{.+?\});\s*<\/script>/s);
-      if (stateMatch) {
-        try {
-          const state = JSON.parse(stateMatch[1]);
-          const entities = state?.["serpList"]?.["items"]?.["entities"];
-          if (entities) {
-            Object.values(entities).forEach(e => {
-              const orig = e?.image?.origUrl || e?.url || '';
-              const thumb = e?.thumb?.url || orig;
-              const title = e?.snippet?.title || '';
-              if (orig) imgs.push({ url: orig, thumb, title, source: 'Yandex' });
-            });
-          }
-        } catch {}
-      }
-      // Fallback: regex on origUrl
-      if (!imgs.length) {
-        const ms = html.matchAll(/"origUrl"\s*:\s*"([^"]+)"/g);
-        for (const m of ms) {
-          imgs.push({ url: m[1], thumb: m[1], title: '', source: 'Yandex' });
-          if (imgs.length >= 30) break;
-        }
-      }
-      return imgs;
-    } catch { return []; }
-  },
-
-  // ── DuckDuckGo Image Search (VQD token method) ──────────────────────────
-  async _fetchDDGImages(query) {
-    try {
-      const htmlUrl = `https://duckduckgo.com/?q=${encodeURIComponent(query)}&ia=images&iax=images`;
-      const html = await this._proxyFetch(htmlUrl, false, 10000);
-      if (!html) return [];
-      const vqd = html.match(/vqd=["']?([\d-]+)["']?/)?.[1];
-      if (!vqd) return [];
-      const imgUrl = `https://duckduckgo.com/i.js?q=${encodeURIComponent(query)}&vqd=${vqd}&o=json&p=1&s=0&u=bing&f=,,,,,&l=us-en`;
-      const data = await this._proxyFetch(imgUrl, true, 10000);
-      if (!data?.results) return [];
-      return data.results.slice(0, 50).map(r => ({
-        url:   r.image || '',
-        thumb: r.thumbnail || r.image || '',
-        title: r.title || '',
-        source: r.url ? (() => { try { return new URL(r.url).hostname; } catch { return 'DDG'; } })() : 'DDG'
-      })).filter(x => x.url);
-    } catch { return []; }
+  async _searxFetch(base, query) {
+    const url = `${base}/search?q=${encodeURIComponent(query)}&format=json&categories=images&pageno=1&language=en-US`;
+    const r = await fetch(url, {
+      signal: AbortSignal.timeout(10000),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (!r.ok) throw new Error('bad status ' + r.status);
+    const data = await r.json();
+    const imgs = (data.results || []).map(item => ({
+      url:    item.img_src || item.url || '',
+      thumb:  item.thumbnail_src || item.img_src || item.url || '',
+      title:  item.title || '',
+      source: item.source || (item.url ? (() => { try { return new URL(item.url).hostname; } catch { return base; } })() : base)
+    })).filter(x => x.url && x.url.startsWith('http'));
+    if (!imgs.length) throw new Error('no results');
+    return imgs;
   },
 
   selectImageResult(index) {
