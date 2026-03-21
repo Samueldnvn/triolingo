@@ -21,10 +21,39 @@ const MP = {
   placingPin: false,
 
   // ─── Persistence ─────────────────────────────────────────────────────────
-  save() { localStorage.setItem('mp_palaces', JSON.stringify(this.palaces)); },
+  // Images live in IndexedDB (no size limit); everything else in localStorage.
+  save() {
+    // Strip imageDataUrl before writing to localStorage — stored separately in IDB
+    const slim = this.palaces.map(p => {
+      const { imageDataUrl, ...rest } = p;
+      return rest;
+    });
+    try { localStorage.setItem('mp_palaces', JSON.stringify(slim)); } catch(e) {
+      console.warn('MP save failed', e);
+    }
+  },
   load() {
     try { const r = localStorage.getItem('mp_palaces'); this.palaces = r ? JSON.parse(r) : []; }
     catch { this.palaces = []; }
+    // Rehydrate images from IDB async; refresh once loaded
+    MPIDB.loadAllImages().then(imgMap => {
+      let changed = false;
+      this.palaces.forEach(p => {
+        if (imgMap[p.id]) { p.imageDataUrl = imgMap[p.id]; changed = true; }
+      });
+      if (changed && this.activePalaceId) this.refresh();
+    });
+  },
+  async saveImage(palaceId, dataUrl) {
+    await MPIDB.saveImage(palaceId, dataUrl);
+    const p = this.palaces.find(x => x.id === palaceId);
+    if (p) p.imageDataUrl = dataUrl;
+    this.save();
+  },
+  async deleteImage(palaceId) {
+    await MPIDB.deleteImage(palaceId);
+    const p = this.palaces.find(x => x.id === palaceId);
+    if (p) p.imageDataUrl = null;
   },
 
   uid: () => '_' + Math.random().toString(36).slice(2, 9),
@@ -365,6 +394,7 @@ const MP = {
     if (!confirm('Delete this palace and all its pins?')) return;
     this.palaces = this.palaces.filter(p => p.id !== id);
     if (this.activePalaceId === id) this.activePalaceId = null;
+    this.deleteImage(id);
     this.save(); this.refresh();
   },
 
@@ -386,11 +416,8 @@ const MP = {
     const file = event.target.files[0];
     if (!file) return;
     const reader = new FileReader();
-    reader.onload = e => {
-      const palace = this.palaces.find(p => p.id === palaceId);
-      if (!palace) return;
-      palace.imageDataUrl = e.target.result;
-      this.save();
+    reader.onload = async e => {
+      await this.saveImage(palaceId, e.target.result);
       this.openPalace(palaceId);
     };
     reader.readAsDataURL(file);
@@ -656,6 +683,53 @@ const MP = {
   }
 };
 
+// ─── IndexedDB image store ────────────────────────────────────────────────────
+const MPIDB = {
+  _db: null,
+  async _open() {
+    if (this._db) return this._db;
+    return new Promise((resolve, reject) => {
+      const req = indexedDB.open('mp_images', 1);
+      req.onupgradeneeded = e => {
+        e.target.result.createObjectStore('images', { keyPath: 'id' });
+      };
+      req.onsuccess = e => { this._db = e.target.result; resolve(this._db); };
+      req.onerror = e => reject(e);
+    });
+  },
+  async saveImage(id, dataUrl) {
+    const db = await this._open();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction('images', 'readwrite');
+      tx.objectStore('images').put({ id, dataUrl });
+      tx.oncomplete = resolve;
+      tx.onerror = reject;
+    });
+  },
+  async deleteImage(id) {
+    const db = await this._open();
+    return new Promise((resolve) => {
+      const tx = db.transaction('images', 'readwrite');
+      tx.objectStore('images').delete(id);
+      tx.oncomplete = resolve;
+      tx.onerror = resolve;
+    });
+  },
+  async loadAllImages() {
+    const db = await this._open();
+    return new Promise((resolve) => {
+      const tx = db.transaction('images', 'readonly');
+      const req = tx.objectStore('images').getAll();
+      req.onsuccess = e => {
+        const map = {};
+        (e.target.result || []).forEach(r => { map[r.id] = r.dataUrl; });
+        resolve(map);
+      };
+      req.onerror = () => resolve({});
+    });
+  }
+};
+
 // ─── Init ─────────────────────────────────────────────────────────────────────
 MP.load();
 
@@ -852,11 +926,12 @@ const MPPicker = {
     this._applyImage(url);
   },
 
-  _applyImage(imageUrl) {
+  async _applyImage(imageUrl) {
+    const hint = document.querySelector('.mp-picker-hint');
+    if (hint) hint.textContent = '💾 Saving image…';
     const palace = MP.palaces.find(p => p.id === this._targetPalaceId);
     if (!palace) { this.close(); return; }
-    palace.imageDataUrl = imageUrl;
-    MP.save();
+    await MP.saveImage(this._targetPalaceId, imageUrl);
     this.close();
     MP.openPalace(this._targetPalaceId);
   }
