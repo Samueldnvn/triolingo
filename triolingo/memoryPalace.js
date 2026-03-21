@@ -1163,70 +1163,159 @@ const MPPicker = {
 
   _imageCache: [],
 
-  async _fetchImages(query) {
-    this._imageCache = [];
+  // CORS proxy wrappers — tries each in sequence
+  _proxies: [
+    u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
+    u => `https://corsproxy.io/?${encodeURIComponent(u)}`,
+    u => `https://thingproxy.freeboard.io/fetch/${u}`,
+  ],
 
-    // Strategy 1: Wikimedia Commons (CORS-open, no key, best for official maps)
-    const wikiImgs = await this._fetchWikimediaImages(query);
-    this._imageCache.push(...wikiImgs);
-
-    // Strategy 2: DuckDuckGo image search via CORS proxy
-    const ddgImgs = await this._fetchDDGImages(query);
-    this._imageCache.push(...ddgImgs);
-
-    // Deduplicate by URL
-    const seen = new Set();
-    return this._imageCache.filter(img => {
-      if (seen.has(img.url)) return false;
-      seen.add(img.url); return true;
-    });
+  async _proxyFetch(url, asJson = false, timeoutMs = 10000) {
+    for (const proxy of this._proxies) {
+      try {
+        const r = await fetch(proxy(url), { signal: AbortSignal.timeout(timeoutMs) });
+        if (!r.ok) continue;
+        return asJson ? await r.json() : await r.text();
+      } catch { continue; }
+    }
+    return null;
   },
 
-  async _fetchWikimediaImages(query) {
+  async _fetchImages(query) {
+    this._imageCache = [];
+    const status = document.getElementById('mp-imgsearch-status');
+    const update = t => { if (status) status.textContent = t; };
+
+    // Run all sources in parallel for speed
+    update('🔍 Searching Bing, Google, Yandex, DuckDuckGo…');
+    const [bing, google, yandex, ddg] = await Promise.allSettled([
+      this._fetchBingImages(query),
+      this._fetchGoogleImages(query),
+      this._fetchYandexImages(query),
+      this._fetchDDGImages(query),
+    ]);
+
+    const allImgs = [
+      ...(bing.value    || []),
+      ...(google.value  || []),
+      ...(yandex.value  || []),
+      ...(ddg.value     || []),
+    ];
+
+    // Deduplicate
+    const seen = new Set();
+    this._imageCache = allImgs.filter(img => {
+      if (!img.url || seen.has(img.url)) return false;
+      seen.add(img.url); return true;
+    });
+
+    const counts = [bing,google,yandex,ddg].map((r,i) => `${['Bing','Google','Yandex','DDG'][i]}:${r.value?.length||0}`);
+    update(`Found ${this._imageCache.length} results (${counts.join(' · ')}) — click to use`);
+    return this._imageCache;
+  },
+
+  // ── Bing Image Search ───────────────────────────────────────────────────
+  async _fetchBingImages(query) {
     try {
-      const url = `https://commons.wikimedia.org/w/api.php?action=query&generator=search` +
-        `&gsrsearch=${encodeURIComponent(query)}&gsrnamespace=6&gsrlimit=20` +
-        `&prop=imageinfo&iiprop=url|thumburl|extmetadata&iiurlwidth=400&format=json&origin=*`;
-      const data = await fetch(url).then(r => r.json());
-      const pages = Object.values(data?.query?.pages || {});
-      return pages.map(p => ({
-        url:    p.imageinfo?.[0]?.url || '',
-        thumb:  p.imageinfo?.[0]?.thumburl || p.imageinfo?.[0]?.url || '',
-        title:  p.title?.replace(/^File:/,'') || '',
-        source: 'Wikimedia Commons'
-      })).filter(x => x.url && /\.(jpg|jpeg|png|gif|svg|webp)/i.test(x.url));
+      const url = `https://www.bing.com/images/search?q=${encodeURIComponent(query)}&count=50&first=1&tsc=ImageBasicHover`;
+      const html = await this._proxyFetch(url);
+      if (!html) return [];
+      const imgs = [];
+      // Bing embeds image data as JSON objects with "murl" (main url) and "turl" (thumb)
+      const blocks = html.matchAll(/\{"murl":"([^"]+)","turl":"([^"]+)"[^}]*"t":"([^"]*)"[^}]*"purl":"([^"]*)"/g);
+      for (const m of blocks) {
+        imgs.push({ url: m[1], thumb: m[2], title: m[3] || '', source: (() => { try { return new URL(m[4]).hostname; } catch { return 'Bing'; } })() });
+        if (imgs.length >= 50) break;
+      }
+      // Fallback: grab image src from img tags
+      if (imgs.length < 5) {
+        const srcMatches = html.matchAll(/imgurl=([^&"]+)[^"]*"/g);
+        for (const m of srcMatches) {
+          const u = decodeURIComponent(m[1]);
+          imgs.push({ url: u, thumb: u, title: '', source: 'Bing' });
+          if (imgs.length >= 50) break;
+        }
+      }
+      return imgs;
     } catch { return []; }
   },
 
-  async _fetchDDGImages(query) {
-    // DuckDuckGo image search: first get VQD token, then fetch results
-    const proxies = [
-      u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
-      u => `https://corsproxy.io/?${encodeURIComponent(u)}`,
-    ];
+  // ── Google Image Search ─────────────────────────────────────────────────
+  async _fetchGoogleImages(query) {
+    try {
+      const url = `https://www.google.com/search?q=${encodeURIComponent(query)}&tbm=isch&num=40&hl=en`;
+      const html = await this._proxyFetch(url);
+      if (!html) return [];
+      const imgs = [];
+      // Google embeds full-size URLs in AF_initDataChunk / JSON arrays
+      // Pattern: ["https://...",<w>,<h>] or ["https://...jpg"
+      const fullMatches = html.matchAll(/\["(https?:\/\/[^"]+\.(?:jpg|jpeg|png|webp|gif)(?:\?[^"]*)?)"[,\]]/gi);
+      const thumbMatches = html.matchAll(/src="(https:\/\/encrypted-tbn[^"]+)"/g);
+      const thumbUrls = [...html.matchAll(/src="(https:\/\/encrypted-tbn[^"]+)"/g)].map(m => m[1]);
+      let ti = 0;
+      for (const m of fullMatches) {
+        const u = m[1];
+        if (u.includes('google.com') || u.includes('gstatic.com/images?')) continue;
+        imgs.push({ url: u, thumb: thumbUrls[ti++] || u, title: '', source: (() => { try { return new URL(u).hostname; } catch { return 'Google'; } })() });
+        if (imgs.length >= 40) break;
+      }
+      return imgs;
+    } catch { return []; }
+  },
 
-    for (const proxy of proxies) {
-      try {
-        // Step 1: Get VQD token
-        const htmlUrl = `https://duckduckgo.com/?q=${encodeURIComponent(query)}&ia=images`;
-        const html = await fetch(proxy(htmlUrl), { signal: AbortSignal.timeout(8000) }).then(r => r.text());
-        const vqd = html.match(/vqd=["']?([0-9-]+)["']?/)?.[1] || html.match(/vqd%3D([0-9-]+)/)?.[1];
-        if (!vqd) continue;
-
-        // Step 2: Fetch image results JSON
-        const imgUrl = `https://duckduckgo.com/i.js?q=${encodeURIComponent(query)}&vqd=${vqd}&o=json&p=1&s=0&u=bing&f=,,,,,&l=us-en`;
-        const data = await fetch(proxy(imgUrl), { signal: AbortSignal.timeout(8000) }).then(r => r.json());
-        if (data?.results?.length) {
-          return data.results.slice(0, 40).map(r => ({
-            url:    r.image || '',
-            thumb:  r.thumbnail || r.image || '',
-            title:  r.title || '',
-            source: r.url ? new URL(r.url).hostname : 'Web'
-          })).filter(x => x.url);
+  // ── Yandex Image Search ─────────────────────────────────────────────────
+  async _fetchYandexImages(query) {
+    try {
+      const url = `https://yandex.com/images/search?text=${encodeURIComponent(query)}&nomisspell=1&noreask=1`;
+      const html = await this._proxyFetch(url);
+      if (!html) return [];
+      const imgs = [];
+      // Yandex puts image data in window.__INITIAL_STATE__ JSON
+      const stateMatch = html.match(/window\.__INITIAL_STATE__\s*=\s*(\{.+?\});\s*<\/script>/s);
+      if (stateMatch) {
+        try {
+          const state = JSON.parse(stateMatch[1]);
+          const entities = state?.["serpList"]?.["items"]?.["entities"];
+          if (entities) {
+            Object.values(entities).forEach(e => {
+              const orig = e?.image?.origUrl || e?.url || '';
+              const thumb = e?.thumb?.url || orig;
+              const title = e?.snippet?.title || '';
+              if (orig) imgs.push({ url: orig, thumb, title, source: 'Yandex' });
+            });
+          }
+        } catch {}
+      }
+      // Fallback: regex on origUrl
+      if (!imgs.length) {
+        const ms = html.matchAll(/"origUrl"\s*:\s*"([^"]+)"/g);
+        for (const m of ms) {
+          imgs.push({ url: m[1], thumb: m[1], title: '', source: 'Yandex' });
+          if (imgs.length >= 30) break;
         }
-      } catch { continue; }
-    }
-    return [];
+      }
+      return imgs;
+    } catch { return []; }
+  },
+
+  // ── DuckDuckGo Image Search (VQD token method) ──────────────────────────
+  async _fetchDDGImages(query) {
+    try {
+      const htmlUrl = `https://duckduckgo.com/?q=${encodeURIComponent(query)}&ia=images&iax=images`;
+      const html = await this._proxyFetch(htmlUrl, false, 10000);
+      if (!html) return [];
+      const vqd = html.match(/vqd=["']?([\d-]+)["']?/)?.[1];
+      if (!vqd) return [];
+      const imgUrl = `https://duckduckgo.com/i.js?q=${encodeURIComponent(query)}&vqd=${vqd}&o=json&p=1&s=0&u=bing&f=,,,,,&l=us-en`;
+      const data = await this._proxyFetch(imgUrl, true, 10000);
+      if (!data?.results) return [];
+      return data.results.slice(0, 50).map(r => ({
+        url:   r.image || '',
+        thumb: r.thumbnail || r.image || '',
+        title: r.title || '',
+        source: r.url ? (() => { try { return new URL(r.url).hostname; } catch { return 'DDG'; } })() : 'DDG'
+      })).filter(x => x.url);
+    } catch { return []; }
   },
 
   selectImageResult(index) {
