@@ -544,7 +544,6 @@ const MP = {
     const label = pin?.desc || pin?.front || `Pin ${index + 1}`;
     if (!confirm(`Delete pin "${label}"?`)) return;
     if (!confirm('Are you sure? This cannot be undone.')) return;
-    const palace = this.activePalace();
     if (!palace) return;
     palace.pins.splice(index, 1);
     if (this.activePinIndex >= palace.pins.length)
