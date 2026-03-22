@@ -57,7 +57,9 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
   display: flex;
   height: 100vh;
   position: relative;
-  z-index: 1;
+  /* No z-index here — setting z-index would create a stacking context that
+     traps the sidebar inside it, making the mobile-overlay (outside #app)
+     always paint on top regardless of sidebar z-index. */
 }
 
 /* Sidebar */
