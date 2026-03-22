@@ -992,6 +992,22 @@ function renderSettings() {
           ${fontCards}
         </div>
       </div>
+
+      <div class="settings-section">
+        <h3>✏️ Lesson Edits</h3>
+        <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:12px">
+          Edit any lesson using the ✏️ Edit button. Changes are saved locally in your browser.
+          Export to make them permanent (replace <code>data/lessonEdits.json</code> and push).
+        </p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn btn-primary" onclick="LessonEditor.exportEdits()">
+            📤 Export Edits (<span id="le-pending-count">${window.LessonEditor ? window.LessonEditor.pendingCount() : 0}</span>)
+          </button>
+          <button class="btn btn-secondary" onclick="LessonEditor.clearEdits();renderView('settings')">
+            🗑 Clear Local Edits
+          </button>
+        </div>
+      </div>
     </div>
   `;
 }
@@ -1022,6 +1038,7 @@ function renderLesson() {
             <div class="progress-fill" style="width: ${((currentQuestionIndex + 1) / currentLesson.questions.length) * 100}%"></div>
           </div>
           <p>${currentQuestionIndex + 1} / ${currentLesson.questions.length}</p>
+          <button class="le-edit-pill" onclick="LessonEditor.open('${currentLesson.id}')" title="Edit this lesson">✏️</button>
         </div>
         <div class="question-container">
           ${renderQuestion(question)}
@@ -1409,7 +1426,10 @@ function renderLessonContent() {
   return `
     <div class="lesson-view">
       <div class="lesson-content">
-        <h2 class="lesson-title">${currentLesson.title}</h2>
+        <div class="lesson-title-row">
+          <h2 class="lesson-title">${currentLesson.title}</h2>
+          <button class="le-edit-pill" onclick="LessonEditor.open('${currentLesson.id}')" title="Edit this lesson">✏️ Edit</button>
+        </div>
         ${hasText ? `
           <div class="lesson-text-content">
             ${renderMarkdownContent(lessonText)}
@@ -1713,6 +1733,11 @@ async function init() {
 
     // Load course data from external files
     loadCourseData();
+    // Apply any saved lesson edits (localStorage + bundled data/lessonEdits.json)
+    if (window.LessonEditor) {
+      await window.LessonEditor.loadBundled();
+      window.LessonEditor.applyAllToCourses();
+    }
 
     // Ensure themeManager is initialized
     if (typeof themeManager === 'undefined') {
