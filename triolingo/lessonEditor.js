@@ -33,16 +33,32 @@ const LessonEditor = {
 
   // ── Open editor modal ──────────────────────────────────────────────────────
   open(lessonId) {
-    // Find the lesson in courses
+    // Prefer the already-loaded currentLesson (fastest, most reliable)
     let lesson = null;
-    for (const course of Object.values(window.courses || {})) {
-      for (const unit of (course.units || [])) {
-        const found = (unit.lessons || []).find(l => l.id === lessonId);
-        if (found) { lesson = found; break; }
-      }
-      if (lesson) break;
+    if (window.currentLesson && window.currentLesson.id === lessonId) {
+      lesson = window.currentLesson;
     }
-    if (!lesson) { alert('Lesson not found: ' + lessonId); return; }
+    // Fallback: search all courses (handles edge cases)
+    if (!lesson) {
+      for (const course of Object.values(window.courses || {})) {
+        for (const unit of (course.units || [])) {
+          // Units may have a .lessons array or BE the lesson directly
+          const lessons = unit.lessons || (unit.id ? [unit] : []);
+          const found = lessons.find(l => l.id === lessonId);
+          if (found) { lesson = found; break; }
+        }
+        if (lesson) break;
+      }
+    }
+    if (!lesson) {
+      // Last resort: build a stub so the user can still edit content
+      lesson = {
+        id: lessonId,
+        title: lessonId,
+        lessonText: '',
+        questions: []
+      };
+    }
 
     // Apply any existing edits
     const merged = this.applyEdits(lesson);

@@ -3330,11 +3330,11 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
 /* Z-index layering on mobile */
 @media (max-width: 768px) {
   .mobile-overlay {
-    z-index: 1000;   /* dim layer */
+    z-index: 2000;   /* dim layer — below sidebar */
   }
 
   .sidebar {
-    z-index: 1010;   /* above overlay so taps land on nav items */
+    z-index: 3000;   /* above overlay so nav item taps land correctly */
   }
 
   .top-header {
@@ -3373,7 +3373,7 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
     top: 0;
     bottom: 0;
     width: 280px;
-    z-index: 999;
+    z-index: 3000;   /* above overlay (2000) so nav items are tappable */
     transition: left 0.3s ease;
     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
   }
