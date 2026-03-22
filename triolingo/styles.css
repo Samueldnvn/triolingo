@@ -4319,3 +4319,43 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
   .le-modal-backdrop { padding: 0; }
   .le-modal { border-radius: 0; max-height: 100vh; }
 }
+
+/* ── Add Unit / Add Lesson buttons ─────────────────────────────────────── */
+.le-add-unit-btn {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+  padding: 12px;
+  background: none;
+  border: 2px dashed var(--accent);
+  border-radius: 12px;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.le-add-unit-btn:hover { background: rgba(99,179,237,0.1); }
+
+.le-add-lesson-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  background: none;
+  border: 2px dashed var(--border-color);
+  border-radius: 10px;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  grid-column: 1 / -1; /* span full width inside lesson grid */
+}
+.le-add-lesson-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(99,179,237,0.08);
+}

@@ -666,6 +666,7 @@ function renderDashboard() {
       </div>
       <div class="units-container">
         ${unitsHtml}
+        <button class="le-add-unit-btn" onclick="LessonEditor.openAddUnit('${courseId}')">＋ Add Unit</button>
       </div>
     </div>
   `;
@@ -695,6 +696,8 @@ function renderUnit(unit) {
   }
 
   const lessonsHtml = unit.lessons.map(lesson => renderLessonCard(lesson)).join('');
+  const unitId = unit.unitId || unit.id || unitName;
+  const courseId = document.getElementById('courseSelect')?.value || '';
 
   return `
     <div class="unit">
@@ -704,6 +707,7 @@ function renderUnit(unit) {
       </div>
       <div class="lessons-grid">
         ${lessonsHtml}
+        <button class="le-add-lesson-btn" onclick="LessonEditor.openAddLesson('${courseId}', '${unitId}')">＋ Add Lesson</button>
       </div>
     </div>
   `;

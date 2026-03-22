@@ -189,6 +189,144 @@ const LessonEditor = {
 
   close() { document.getElementById('le-modal')?.remove(); },
 
+  // ── Add Unit ───────────────────────────────────────────────────────────────
+  openAddUnit(courseId) {
+    document.getElementById('le-modal')?.remove();
+    const modal = document.createElement('div');
+    modal.id = 'le-modal';
+    modal.className = 'le-modal-backdrop';
+    modal.innerHTML = `
+      <div class="le-modal" style="max-width:480px">
+        <div class="le-modal-header">
+          <span class="le-modal-title">➕ Add Unit to <em>${courseId}</em></span>
+          <button class="le-close-btn" onclick="LessonEditor.close()">✕</button>
+        </div>
+        <div class="le-modal-body">
+          <label class="le-label">Unit Name</label>
+          <input id="le-unit-name" class="le-input" placeholder="e.g. 5. Advanced Topics" style="margin-bottom:10px">
+          <label class="le-label">Unit Description</label>
+          <input id="le-unit-desc" class="le-input" placeholder="e.g. Deep dive into advanced concepts">
+        </div>
+        <div class="le-modal-footer">
+          <span id="le-save-status" class="le-save-status"></span>
+          <button class="le-btn le-btn-secondary" onclick="LessonEditor.close()">Cancel</button>
+          <button class="le-btn le-btn-primary" onclick="LessonEditor.saveNewUnit('${courseId}')">➕ Add Unit</button>
+        </div>
+      </div>`;
+    document.body.appendChild(modal);
+    modal.addEventListener('click', e => { if (e.target === modal) this.close(); });
+    document.getElementById('le-unit-name')?.focus();
+  },
+
+  saveNewUnit(courseId) {
+    const name = document.getElementById('le-unit-name')?.value.trim();
+    const desc = document.getElementById('le-unit-desc')?.value.trim();
+    if (!name) { alert('Please enter a unit name.'); return; }
+
+    const course = window.courses?.[courseId];
+    if (!course) return;
+
+    const unitId = 'u-' + Date.now();
+    const newUnit = {
+      unitId,
+      unitName: name,
+      unitDescription: desc || 'New unit',
+      lessons: []
+    };
+    course.units = course.units || [];
+    course.units.push(newUnit);
+
+    // Persist
+    const edits = this.getEdits();
+    edits[`__unit__${unitId}`] = { _type: 'unit', courseId, unit: newUnit, _editedAt: new Date().toISOString() };
+    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(edits));
+
+    this.close();
+    if (window.renderView) renderView('dashboard');
+  },
+
+  // ── Add Lesson ─────────────────────────────────────────────────────────────
+  openAddLesson(courseId, unitId) {
+    document.getElementById('le-modal')?.remove();
+    const modal = document.createElement('div');
+    modal.id = 'le-modal';
+    modal.className = 'le-modal-backdrop';
+    modal.innerHTML = `
+      <div class="le-modal">
+        <div class="le-modal-header">
+          <span class="le-modal-title">➕ Add Lesson</span>
+          <button class="le-close-btn" onclick="LessonEditor.close()">✕</button>
+        </div>
+        <div class="le-modal-body">
+          <label class="le-label">Lesson Title</label>
+          <input id="le-new-lesson-title" class="le-input" placeholder="e.g. Pointers and Memory" style="margin-bottom:10px">
+
+          <label class="le-label">📝 Lesson Text (Markdown)</label>
+          <textarea id="le-new-lesson-text" class="le-textarea le-textarea-large"
+                    placeholder="Enter lesson content in Markdown…"></textarea>
+
+          <div class="le-section-header">
+            <span>❓ Questions</span>
+            <button class="le-add-btn" onclick="LessonEditor.addQuestion()">+ Add Question</button>
+          </div>
+          <div id="le-questions-list" class="le-questions-list"></div>
+        </div>
+        <div class="le-modal-footer">
+          <span id="le-save-status" class="le-save-status"></span>
+          <button class="le-btn le-btn-secondary" onclick="LessonEditor.close()">Cancel</button>
+          <button class="le-btn le-btn-primary" onclick="LessonEditor.saveNewLesson('${courseId}','${unitId}')">➕ Add Lesson</button>
+        </div>
+      </div>`;
+    document.body.appendChild(modal);
+    modal.addEventListener('click', e => { if (e.target === modal) this.close(); });
+    document.getElementById('le-new-lesson-title')?.focus();
+  },
+
+  saveNewLesson(courseId, unitId) {
+    const title = document.getElementById('le-new-lesson-title')?.value.trim();
+    const lessonText = document.getElementById('le-new-lesson-text')?.value || '';
+    if (!title) { alert('Please enter a lesson title.'); return; }
+
+    // Collect questions (reuse same DOM structure as edit modal)
+    const questions = [];
+    document.querySelectorAll('#le-questions-list .le-question-block').forEach(block => {
+      const type    = block.querySelector('.le-q-type').value;
+      const xp      = parseInt(block.querySelector('.le-q-xp').value) || 4;
+      const text    = block.querySelector('.le-q-text').value.trim();
+      const correct = block.querySelector('.le-q-correct').value.trim();
+      const expl    = block.querySelector('.le-q-explanation').value.trim();
+      const options = [...block.querySelectorAll('.le-opt-input')].map(i => i.value.trim()).filter(Boolean);
+      if (!text) return;
+      questions.push({ id: `custom-${Date.now()}-q${questions.length}`, type, xp, question: text,
+        options, correctAnswer: options.find(o => o.toLowerCase().includes(correct.toLowerCase())) || correct,
+        explanation: expl });
+    });
+
+    const lessonId = `custom-${courseId}-${unitId}-${Date.now()}`;
+    const newLesson = { id: lessonId, title, lessonText, questions, xp: questions.reduce((s, q) => s + (q.xp||4), 0) || 10, type: 'lesson', difficulty: 'beginner' };
+
+    // Add to live course data
+    const course = window.courses?.[courseId];
+    if (course) {
+      const unit = course.units?.find(u => (u.unitId || u.id) == unitId);
+      if (unit) {
+        unit.lessons = unit.lessons || [];
+        unit.lessons.push(newLesson);
+      }
+    }
+
+    // Persist
+    this.saveEdit(lessonId, newLesson);
+    const edits = this.getEdits();
+    edits[lessonId]._type = 'new-lesson';
+    edits[lessonId]._courseId = courseId;
+    edits[lessonId]._unitId = unitId;
+    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(edits));
+
+    this.close();
+    if (window.renderView) renderView('dashboard');
+  },
+
   // ── Export edits as JSON ───────────────────────────────────────────────────
   exportEdits() {
     const edits = this.getEdits();
@@ -227,16 +365,42 @@ const LessonEditor = {
   applyAllToCourses() {
     const edits = this.getEdits();
     if (!Object.keys(edits).length) return;
+
+    // Pass 1: apply edits to existing lessons
     for (const course of Object.values(window.courses || {})) {
       for (const unit of (course.units || [])) {
         for (const lesson of (unit.lessons || [])) {
           const edit = edits[lesson.id];
-          if (edit) {
+          if (edit && edit._type !== 'new-lesson') {
             if (edit.lessonText !== undefined) lesson.lessonText = edit.lessonText;
             if (edit.questions  !== undefined) lesson.questions  = edit.questions;
           }
         }
       }
+    }
+
+    // Pass 2: restore new units
+    for (const [key, edit] of Object.entries(edits)) {
+      if (edit._type !== 'unit') continue;
+      const course = window.courses?.[edit.courseId];
+      if (!course) continue;
+      const exists = course.units?.find(u => (u.unitId || u.id) === edit.unit.unitId);
+      if (!exists) {
+        course.units = course.units || [];
+        course.units.push({ ...edit.unit, lessons: edit.unit.lessons || [] });
+      }
+    }
+
+    // Pass 3: restore new lessons into their units
+    for (const [lessonId, edit] of Object.entries(edits)) {
+      if (edit._type !== 'new-lesson') continue;
+      const course = window.courses?.[edit._courseId];
+      if (!course) continue;
+      const unit = course.units?.find(u => (u.unitId || u.id) == edit._unitId);
+      if (!unit) continue;
+      unit.lessons = unit.lessons || [];
+      const exists = unit.lessons.find(l => l.id === lessonId);
+      if (!exists) unit.lessons.push({ id: lessonId, title: edit.title, lessonText: edit.lessonText, questions: edit.questions || [], xp: edit.xp || 10, type: 'lesson', difficulty: edit.difficulty || 'beginner' });
     }
   },
 
