@@ -3327,6 +3327,9 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
 
 .mobile-overlay.active {
   display: block;
+  /* Start after the sidebar so the overlay physically cannot cover nav items,
+     eliminating all z-index competition between sidebar and overlay. */
+  left: 280px;
 }
 
 /* Z-index layering on mobile */
