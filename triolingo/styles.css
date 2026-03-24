@@ -3344,7 +3344,8 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
 
   .top-header {
     z-index: 200;
-    position: relative;
+    position: sticky;
+    top: 0;
   }
 
   #view-container,
