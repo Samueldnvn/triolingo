@@ -75,6 +75,17 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
 
 .logo {
   margin-bottom: var(--space-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .logo h1 {
