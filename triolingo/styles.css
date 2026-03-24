@@ -4360,3 +4360,47 @@ h1, h2, h3, h4, h5, h6, .view-header, .view-header h2, .view-header p, .logo h1,
   color: var(--accent);
   background: rgba(99,179,237,0.08);
 }
+
+/* ── Course edit mode ───────────────────────────────────────────────────── */
+.course-edit-toggle-row {
+  display: flex;
+  justify-content: flex-end;
+  padding: 4px 0 8px;
+}
+
+.le-course-edit-toggle {
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.le-course-edit-toggle:hover,
+.le-course-edit-toggle.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* Hide add buttons unless edit mode is on */
+.le-add-unit-btn,
+.le-add-lesson-btn,
+.le-edit-pill {
+  display: none;
+}
+
+.edit-mode .le-add-unit-btn,
+.edit-mode .le-add-lesson-btn {
+  display: block;
+}
+
+/* lesson-title-row edit pill: shown inline only in edit mode */
+.edit-mode .le-edit-pill,
+.edit-mode .lesson-progress .le-edit-pill {
+  display: inline-flex;
+  align-items: center;
+}

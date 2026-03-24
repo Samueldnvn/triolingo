@@ -644,7 +644,13 @@ function renderDashboard() {
   console.log('Generated units HTML length:', unitsHtml.length);
 
   return `
-    <div class="dashboard">
+    <div class="dashboard" id="course-dashboard">
+      <div class="course-edit-toggle-row">
+        <button class="le-course-edit-toggle" id="course-edit-toggle"
+                onclick="toggleCourseEditMode()" title="Toggle edit mode">
+          ✏️ Edit Course
+        </button>
+      </div>
       <div class="progress-card">
         <div class="progress-stats">
           <div class="progress-stat">
@@ -1964,3 +1970,35 @@ document.addEventListener('DOMContentLoaded', function() {
   initMobileUI();
   logDeviceInfo();
 });
+
+// ── Course edit mode toggle ──────────────────────────────────────────────────
+let _courseEditMode = false;
+
+function toggleCourseEditMode() {
+  _courseEditMode = !_courseEditMode;
+  _applyCourseEditMode();
+}
+
+function _applyCourseEditMode() {
+  const dashboard = document.getElementById('course-dashboard');
+  const btn = document.getElementById('course-edit-toggle');
+  if (!dashboard) return;
+  if (_courseEditMode) {
+    dashboard.classList.add('edit-mode');
+    if (btn) { btn.textContent = '✅ Done Editing'; btn.classList.add('active'); }
+  } else {
+    dashboard.classList.remove('edit-mode');
+    if (btn) { btn.textContent = '✏️ Edit Course'; btn.classList.remove('active'); }
+  }
+}
+
+// Re-apply after each renderView so the state persists across re-renders
+const _origRenderView2 = window.renderView;
+if (typeof _origRenderView2 === 'function') {
+  window.renderView = function(view) {
+    _origRenderView2(view);
+    if (view === 'dashboard' || view === 'learn') {
+      requestAnimationFrame(_applyCourseEditMode);
+    }
+  };
+}
