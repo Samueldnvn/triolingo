@@ -532,7 +532,8 @@ function renderView(viewName) {
       'settings': 'Settings',
       'lesson': 'Lesson',
       'conversation-chat': 'Conversation Practice',
-      'memory-palace': 'Memory Palaces'
+      'memory-palace': 'Memory Palaces',
+      'question-editor': 'Question Editor'
     };
     headerTitle.textContent = titles[viewName] || 'Triolingo';
   }
@@ -559,6 +560,9 @@ function renderView(viewName) {
     case 'settings':
       container.innerHTML = renderSettings();
       setupSettingsListeners();
+      break;
+    case 'question-editor':
+      container.innerHTML = QE.render();
       break;
     case 'memory-palace':
       container.innerHTML = renderMemoryPalace();
