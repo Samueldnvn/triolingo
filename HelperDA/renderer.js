@@ -1,8 +1,8 @@
-// Load Tesseract.js
-const Tesseract = require('tesseract.js');
+// Tesseract.js is loaded from CDN in renderer.html
 
 // DOM Elements
 const sourceSelect = document.getElementById('sourceSelect');
+const reloadBtn = document.getElementById('reloadBtn');
 const takeScreenshotBtn = document.getElementById('takeScreenshotBtn');
 const clearBtn = document.getElementById('clearBtn');
 const copyBtn = document.getElementById('copyBtn');
@@ -28,17 +28,30 @@ async function init() {
 // Load available screens/windows
 async function loadSources() {
   try {
+    console.log('Loading sources...');
     const sources = await window.electronAPI.getSources();
+    console.log('Got sources:', sources.length);
+
     sourceSelect.innerHTML = '<option value="">Select screen/window...</option>';
-    sources.forEach(source => {
+
+    if (sources.length === 0) {
+      ocrStatus.textContent = 'No screens/windows found';
+      return;
+    }
+
+    sources.forEach((source, index) => {
+      console.log(`Source ${index}:`, source.id, source.name);
       const option = document.createElement('option');
       option.value = source.id;
       option.textContent = source.name;
       sourceSelect.appendChild(option);
     });
+
+    ocrStatus.textContent = `Found ${sources.length} screen(s)/window(s)`;
+    console.log('Sources loaded successfully');
   } catch (error) {
     console.error('Failed to load sources:', error);
-    ocrStatus.textContent = 'Failed to load screens';
+    ocrStatus.textContent = 'Failed to load screens: ' + error.message;
   }
 }
 
@@ -149,6 +162,12 @@ saveBtn.addEventListener('click', async () => {
     console.error('Save failed:', error);
     ocrStatus.textContent = 'Failed to save';
   }
+});
+
+// Reload sources button
+reloadBtn.addEventListener('click', async () => {
+  ocrStatus.textContent = 'Reloading sources...';
+  await loadSources();
 });
 
 // Refresh sources when select is clicked

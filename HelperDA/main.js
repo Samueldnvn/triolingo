@@ -11,17 +11,16 @@ function createWindow() {
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
-      nodeIntegration: false
+      nodeIntegration: false,
+      sandbox: false // Required for desktopCapturer
     },
     title: 'HelperDA - Screenshot OCR'
   });
 
   mainWindow.loadFile('renderer.html');
 
-  // Open DevTools in development
-  if (process.env.NODE_ENV === 'development') {
-    mainWindow.webContents.openDevTools();
-  }
+  // Open DevTools for debugging
+  mainWindow.webContents.openDevTools();
 }
 
 app.whenReady().then(createWindow);
@@ -40,11 +39,17 @@ app.on('activate', () => {
 
 // IPC handlers
 ipcMain.handle('get-sources', async () => {
-  const sources = await desktopCapturer.getSources({
-    types: ['window', 'screen'],
-    thumbnailSize: { width: 150, height: 150 }
-  });
-  return sources;
+  try {
+    const sources = await desktopCapturer.getSources({
+      types: ['window', 'screen'],
+      thumbnailSize: { width: 150, height: 150 }
+    });
+    console.log('Available sources:', sources.map(s => ({ id: s.id, name: s.name })));
+    return sources;
+  } catch (error) {
+    console.error('Error getting sources:', error);
+    return [];
+  }
 });
 
 ipcMain.handle('take-screenshot', async (event, sourceId) => {

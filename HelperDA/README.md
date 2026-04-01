@@ -28,6 +28,8 @@ An Electron desktop application that captures screenshots and extracts text usin
    npm start
    ```
 
+**Note:** When you run the app, a permission dialog may appear asking for screen capture access. This is normal — grant the permission to allow HelperDA to capture screenshots.
+
 ## Usage
 
 ### Single Screenshot Mode
