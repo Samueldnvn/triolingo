@@ -170,11 +170,6 @@ reloadBtn.addEventListener('click', async () => {
   await loadSources();
 });
 
-// Refresh sources when select is clicked
-sourceSelect.addEventListener('click', async () => {
-  await loadSources();
-});
-
 // Loading overlay helpers
 function showLoading(text) {
   loadingText.textContent = text;
