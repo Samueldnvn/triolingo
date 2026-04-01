@@ -30,6 +30,9 @@ An Electron desktop application that captures screenshots and extracts text usin
 
 **Note:** When you run the app, a permission dialog may appear asking for screen capture access. This is normal — grant the permission to allow HelperDA to capture screenshots.
 
+### WSL2 Note
+If you're running this on WSL2 (Windows Subsystem for Linux), you may need to run the app from Windows using `npm start` after installing the dependencies. The screen capture may not work properly when running entirely within the WSL2 environment.
+
 ## Usage
 
 ### Single Screenshot Mode
@@ -55,7 +58,8 @@ An Electron desktop application that captures screenshots and extracts text usin
 ## Dependencies
 
 - **Electron** - Desktop application framework
-- **Tesseract.js** - OCR engine for text extraction
+- **Tesseract.js** - OCR engine for text extraction (loaded from CDN)
+- **screenshot-desktop** - Cross-platform screen capture library
 
 ## How It Works
 

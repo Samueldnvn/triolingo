@@ -1,6 +1,7 @@
-const { app, BrowserWindow, ipcMain, desktopCapturer } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const fs = require('fs');
+const screenshot = require('screenshot-desktop');
 
 let mainWindow;
 
@@ -40,30 +41,43 @@ app.on('activate', () => {
 // IPC handlers
 ipcMain.handle('get-sources', async () => {
   try {
-    const sources = await desktopCapturer.getSources({
-      types: ['window', 'screen'],
-      thumbnailSize: { width: 150, height: 150 }
-    });
-    console.log('Available sources:', sources.map(s => ({ id: s.id, name: s.name })));
+    // screenshot-desktop doesn't provide source listing, so we return a mock list
+    const displays = await screenshot.listDisplays();
+    console.log('Available displays:', displays);
+
+    const sources = displays.map((display, index) => ({
+      id: `screen:${index}`,
+      name: display.name || `Screen ${index + 1}`,
+      displayId: display.id
+    }));
+
     return sources;
   } catch (error) {
     console.error('Error getting sources:', error);
-    return [];
+    // Fallback to a single screen option
+    return [{
+      id: 'screen:0',
+      name: 'Primary Screen'
+    }];
   }
 });
 
 ipcMain.handle('take-screenshot', async (event, sourceId) => {
-  const sources = await desktopCapturer.getSources({
-    types: ['window', 'screen'],
-    thumbnailSize: { width: 1920, height: 1080 }
-  });
+  try {
+    console.log('Taking screenshot of:', sourceId);
 
-  const source = sources.find(s => s.id === sourceId);
-  if (!source) {
-    throw new Error('Source not found');
+    // Parse screen index from sourceId (format: "screen:0", "screen:1", etc.)
+    const screenIndex = parseInt(sourceId.split(':')[1]) || 0;
+
+    // Take screenshot
+    const img = await screenshot({ screen: screenIndex });
+    console.log('Screenshot captured, size:', img.length);
+
+    return img;
+  } catch (error) {
+    console.error('Screenshot failed:', error);
+    throw new Error('Failed to capture screenshot: ' + error.message);
   }
-
-  return source.thumbnail.toPNG();
 });
 
 ipcMain.handle('save-text', async (event, text, filename) => {
