@@ -1,0 +1,24 @@
+{
+  "name": "helper-da",
+  "version": "1.0.0",
+  "description": "Screenshot OCR app for extracting text from screen content",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "keywords": [
+    "electron",
+    "ocr",
+    "screenshot",
+    "text-extraction"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.0.0"
+  },
+  "dependencies": {
+    "tesseract.js": "^5.0.4"
+  }
+}

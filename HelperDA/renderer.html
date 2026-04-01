@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HelperDA - Screenshot OCR</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>⚡ HelperDA</h1>
+      <p>Screenshot OCR Text Extractor</p>
+    </header>
+
+    <div class="controls">
+      <select id="sourceSelect">
+        <option value="">Select screen/window...</option>
+      </select>
+      <button id="takeScreenshotBtn" class="btn primary">📸 Take Screenshot</button>
+      <button id="clearBtn" class="btn secondary">🗑️ Clear</button>
+      <label class="toggle-label">
+        <input type="checkbox" id="multiMode">
+        <span>Multi-screenshot mode (scroll capture)</span>
+      </label>
+    </div>
+
+    <div class="content">
+      <div class="preview-section">
+        <h2>Screenshot Preview</h2>
+        <div id="previewContainer" class="preview-container">
+          <p id="previewPlaceholder">No screenshot taken yet</p>
+          <img id="previewImage" class="hidden" alt="Screenshot preview">
+        </div>
+      </div>
+
+      <div class="text-section">
+        <h2>Extracted Text</h2>
+        <div class="text-controls">
+          <button id="copyBtn" class="btn small">📋 Copy</button>
+          <button id="saveBtn" class="btn small">💾 Save to File</button>
+          <span id="ocrStatus" class="status"></span>
+        </div>
+        <textarea id="extractedText" placeholder="Extracted text will appear here..."></textarea>
+      </div>
+    </div>
+
+    <div id="loadingOverlay" class="loading-overlay hidden">
+      <div class="spinner"></div>
+      <p id="loadingText">Processing...</p>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
