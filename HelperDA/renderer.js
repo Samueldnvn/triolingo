@@ -3,6 +3,7 @@
 // DOM Elements
 const sourceSelect = document.getElementById('sourceSelect');
 const reloadBtn = document.getElementById('reloadBtn');
+const testScreenshotBtn = document.getElementById('testScreenshotBtn');
 const takeScreenshotBtn = document.getElementById('takeScreenshotBtn');
 const clearBtn = document.getElementById('clearBtn');
 const copyBtn = document.getElementById('copyBtn');
@@ -82,22 +83,38 @@ takeScreenshotBtn.addEventListener('click', async () => {
     return;
   }
 
+  console.log('Screenshot button clicked, sourceId:', sourceId);
   showLoading('Taking screenshot...');
 
   try {
+    console.log('Calling electronAPI.takeScreenshot...');
     // Capture screenshot
     const pngBuffer = await window.electronAPI.takeScreenshot(sourceId);
+
+    console.log('Got buffer, size:', pngBuffer.length, 'bytes');
+
+    if (!pngBuffer || pngBuffer.length === 0) {
+      throw new Error('Received empty screenshot data');
+    }
 
     // Display preview
     const blob = new Blob([pngBuffer], { type: 'image/png' });
     const url = URL.createObjectURL(blob);
     previewImage.src = url;
+    previewImage.onload = () => {
+      console.log('Preview image loaded successfully');
+    };
+    previewImage.onerror = () => {
+      console.error('Preview image failed to load');
+    };
     previewImage.classList.remove('hidden');
     previewPlaceholder.classList.add('hidden');
 
     // Perform OCR
     loadingText.textContent = 'Running OCR...';
     const { data: { text } } = await worker.recognize(pngBuffer);
+
+    console.log('OCR completed, text length:', text.length);
 
     // Handle text based on mode
     if (multiModeCheckbox.checked) {
@@ -113,7 +130,8 @@ takeScreenshotBtn.addEventListener('click', async () => {
 
   } catch (error) {
     console.error('Screenshot failed:', error);
-    ocrStatus.textContent = 'Failed to capture screenshot';
+    ocrStatus.textContent = 'Error: ' + error.message;
+    alert('Screenshot failed: ' + error.message);
   } finally {
     hideLoading();
   }
@@ -168,6 +186,33 @@ saveBtn.addEventListener('click', async () => {
 reloadBtn.addEventListener('click', async () => {
   ocrStatus.textContent = 'Reloading sources...';
   await loadSources();
+});
+
+// Test screenshot button (simpler version)
+testScreenshotBtn.addEventListener('click', async () => {
+  const sourceId = sourceSelect.value || 'screen:0';
+  console.log('Test screenshot button clicked, sourceId:', sourceId);
+
+  showLoading('Testing capture...');
+
+  try {
+    const pngBuffer = await window.electronAPI.takeScreenshot(sourceId);
+    console.log('Test capture got buffer, size:', pngBuffer.length);
+
+    const blob = new Blob([pngBuffer], { type: 'image/png' });
+    const url = URL.createObjectURL(blob);
+    previewImage.src = url;
+    previewImage.classList.remove('hidden');
+    previewPlaceholder.classList.add('hidden');
+
+    ocrStatus.textContent = `Capture successful! Buffer: ${pngBuffer.length} bytes`;
+  } catch (error) {
+    console.error('Test failed:', error);
+    ocrStatus.textContent = 'Test failed: ' + error.message;
+    alert('Test capture error: ' + error.message);
+  } finally {
+    hideLoading();
+  }
 });
 
 // Loading overlay helpers

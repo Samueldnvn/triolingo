@@ -69,9 +69,22 @@ ipcMain.handle('take-screenshot', async (event, sourceId) => {
     // Parse screen index from sourceId (format: "screen:0", "screen:1", etc.)
     const screenIndex = parseInt(sourceId.split(':')[1]) || 0;
 
-    // Take screenshot
-    const img = await screenshot({ screen: screenIndex });
-    console.log('Screenshot captured, size:', img.length);
+    console.log('Screen index:', screenIndex);
+
+    // Take screenshot - try multiple methods
+    let img;
+    try {
+      img = await screenshot({ screen: screenIndex });
+      console.log('Screenshot captured, size:', img.length);
+    } catch (e) {
+      console.log('Method 1 failed, trying without screen parameter:', e);
+      img = await screenshot();
+      console.log('Screenshot captured (default), size:', img.length);
+    }
+
+    if (!img || img.length === 0) {
+      throw new Error('Screenshot returned empty data');
+    }
 
     return img;
   } catch (error) {
